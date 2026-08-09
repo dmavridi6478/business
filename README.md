@@ -15,5 +15,14 @@ A starter bundle of business-oriented Claude skills lives in `.claude/skills/`:
 - `content-strategy` — content planning, topic clusters, editorial calendars
 - `internal-comms` — company newsletters, FAQs, general internal communications
 - `doc-coauthoring` — structured workflow for co-authoring docs, proposals, and specs
+- `attachment-intake` — how to handle uploaded files (zips, photo batches, docs) that arrive with no or mismatched instructions, instead of guessing at intent
 
 Drop this repo into a Claude Code project (or point `.claude/skills` at it) to make these available.
+
+## Procedures
+
+Standard operating procedures live in `docs/procedures/`:
+
+- `attachment-intake.md` — inspect an unlabeled/ambiguous attachment before
+  acting, ask a grounded clarifying question, and don't force-fit mismatched
+  answers onto the file. Backs the `attachment-intake` skill above.
