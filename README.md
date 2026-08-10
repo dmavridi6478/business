@@ -56,6 +56,7 @@ A fourth pair covers **personal AI infrastructure** — setting up Claude Code i
 - `humanizer` — strips AI-writing tells (inflated symbolism, promotional language, em dash overuse, filler phrases, etc.) from drafted text; vendored for real from [blader/humanizer](https://github.com/blader/humanizer) (MIT)
 - `claude-code-tooling` — curated directory of external Claude Code tools (a design-engine desktop app, a senior-engineer skill pack, multi-agent orchestration, a skills package manager, an agent context/memory database, five browser-automation frameworks) that are standalone software, not skill files, so they're documented here rather than vendored in
 - `web-task-scoping` — governance procedure for scoping any browser-automation task (Target → Limit → Run → Review) before granting a web agent more autonomy; companion to `/scope-web-task`
+- `night-shift-workflow` — design and govern a scheduled/unattended Claude workflow (a recurring brief, digest, or Routine) that gathers, triages, and drafts while the user is away, with an explicit Claude-may/human-approval boundary; companion to the `night-shift-canvas` procedure
 
 Drop this repo into a Claude Code project (or point `.claude/skills` at it) to make these available.
 
@@ -146,9 +147,17 @@ Skills") section pointing at the others that feed it or consume its output:
   rule via `/scope-web-task` before granting a web agent autonomy on a
   side-effecting task.
 
-`attachment-intake`, `claude-code-tooling`, and `web-task-scoping` are
-separate, meta-level skills and aren't part of the business/design content
-chain above.
+- `night-shift-workflow` applies the same match-oversight-to-stakes discipline
+  as `web-task-scoping` to scheduled/unattended workflows instead of browser
+  tasks — use the `night-shift-canvas` procedure to define a workflow's
+  output/trigger/sources/rules/actions/approval boundary before scheduling
+  it as a Routine. `business-intelligence-report`/`ceo-reporting-skill` supply
+  the reporting structure if the scheduled brief is business-facing rather
+  than personal.
+
+`attachment-intake`, `claude-code-tooling`, `web-task-scoping`, and
+`night-shift-workflow` are separate, meta-level skills and aren't part of
+the business/design content chain above.
 
 ### ⚠️ `brand-guidelines` applies Anthropic's brand, not the user's
 
@@ -169,3 +178,7 @@ Standard operating procedures live in `docs/procedures/`:
   portability-vs-support trade-off, and security/compliance handling to weigh
   before swapping a paid SaaS tool for a free/open-source one from
   `lean-software-stack`; revisit at each business-stage change, not just once.
+- `night-shift-canvas.md` — the six design decisions (Output, Trigger,
+  Sources, Rules, Actions, Approval) plus a system readiness check to run
+  before scheduling any autonomous/unattended Claude workflow. Backs the
+  `night-shift-workflow` skill.
