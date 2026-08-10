@@ -1,11 +1,11 @@
 ---
 name: ai-search-marketing-2026
-description: Framework for planning, auditing, or reporting on marketing and search visibility in the AI-search era (2026+). Covers the five-discipline SEO wheel (SEO / SXO / AEO / GEO / AIO), the modern-marketing taxonomy (AI Search Visibility, SEO & Organic, Brand & Positioning, Content Strategy, Paid & Performance), the five board-level marketing-analytics questions executives should be asking their AI/BI tools (cohort revenue, marginal CAC, payback period, contribution margin, channel concentration), and a sequenced 15-day day-by-day action plan for improving AI search visibility. Use this whenever the user asks to audit search/AI visibility, build a marketing plan or content calendar, structure a marketing report for a CEO or board, evaluate marketing dashboards or KPIs, discuss AEO/GEO/AI citations/ChatGPT-Perplexity-Gemini visibility, wants a concrete day-by-day plan to get cited by AI, or wants a checklist for "how do we get found in 2026." Also trigger for MedTech/healthcare marketing content strategy work where AI-search visibility of clinical/product content is relevant.
+description: Framework for planning, auditing, or reporting on marketing and search visibility in the AI-search era (2026+). Covers the five-discipline SEO wheel (SEO / SXO / AEO / GEO / AIO), the modern-marketing taxonomy (AI Search Visibility, SEO & Organic, Brand & Positioning, Content Strategy, Paid & Performance), the five board-level marketing-analytics questions executives should be asking their AI/BI tools (cohort revenue, marginal CAC, payback period, contribution margin, channel concentration), a sequenced 15-day day-by-day action plan for improving AI search visibility, and a 20-source AI-search-visibility ecosystem map (ChatGPT, Reddit, G2, Wikipedia, GBP, etc.) with a live check of which sources have an actual MCP connector available to this account. Use this whenever the user asks to audit search/AI visibility, build a marketing plan or content calendar, structure a marketing report for a CEO or board, evaluate marketing dashboards or KPIs, discuss AEO/GEO/AI citations/ChatGPT-Perplexity-Gemini visibility, wants a concrete day-by-day plan to get cited by AI, wants to know which AI-search sources can actually be monitored/queried with this account's tools, or wants a checklist for "how do we get found in 2026." Also trigger for MedTech/healthcare marketing content strategy work where AI-search visibility of clinical/product content is relevant.
 ---
 
 # AI-Search Marketing Framework (2026)
 
-Source: four infographics (AI marketing analytics questions — D. Manela; Modern Marketing 2026 taxonomy — Searchable.com; SEO in 2026 wheel — E. Möller; 15-Day AI Search Action Plan — Searchable.com), synthesized into one operating framework. This is a **planning and audit lens**, not raw data — always ground specific numbers/claims in the user's actual analytics, not this framework's examples.
+Source: five infographics (AI marketing analytics questions — D. Manela; Modern Marketing 2026 taxonomy — Searchable.com; SEO in 2026 wheel — E. Möller; 15-Day AI Search Action Plan — Searchable.com; AI Search Visibility Ecosystem — Searchable.com), synthesized into one operating framework. This is a **planning and audit lens**, not raw data — always ground specific numbers/claims in the user's actual analytics, not this framework's examples.
 
 ## When to use which reference
 
@@ -13,8 +13,9 @@ Source: four infographics (AI marketing analytics questions — D. Manela; Moder
 - **A concrete day-by-day plan/schedule to improve AI search visibility** → `references/15-day-ai-search-action-plan.md` (sequences the wheel's disciplines into 15 days)
 - **Building a marketing plan, content calendar, or explaining "what does modern marketing cover"** → `references/marketing-taxonomy.md`
 - **Building/reviewing a marketing dashboard, CEO/board report, or challenging vanity metrics** → `references/exec-ai-questions.md`
+- **"Where" AI visibility work actually needs to happen, or which of those sources this account can actually monitor/query with a live connector** → `references/ai-search-visibility-ecosystem.md`
 
-Read only the reference(s) relevant to the request — don't load all four for a narrow question.
+Read only the reference(s) relevant to the request — don't load all five for a narrow question.
 
 ## Core operating principle: the two-question test
 
