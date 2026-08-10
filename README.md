@@ -29,7 +29,12 @@ A design/output bundle sits alongside it, for turning business content into actu
 - `campaign-page-one-shot` — one-shot marketing landing pages
 - `brand-guidelines` — **Anthropic's own** brand colors/fonts specifically, not a generic client-branding tool (see caveat in the skill itself)
 - `pptx` / `docx` / `xlsx` / `pdf` — editable PowerPoint, Word, Excel, and PDF file creation/editing
-- `design-templates` — 5 ready-to-use, verified-rendering HTML/CSS templates (iMessage mockup, social device frame, 3D product tilt, halftone/dither effect, moodboard grid) to drop into a build instead of writing from scratch
+- `design-templates` — 6 ready-to-use, verified-rendering HTML/CSS templates (iMessage mockup, social device frame, 3D product tilt, halftone/dither effect, moodboard grid, brand board) to drop into a build instead of writing from scratch
+- `ui-motion-design` — tasteful UI motion: easing curves, spring physics, timing, and micro-interaction patterns
+- `design-review-audit` — audits a finished build against a spacing/hierarchy/contrast/consistency/AI-slop checklist; companion to `/design-review`
+- `brandkit-generator` — turns a one-line idea into 2-3 brand directions (wordmark, palette, type pairing, brand board), fast and explicitly non-final
+- `design-token-extractor` — extracts a reusable color/type/spacing token set from a reference site or screenshot
+- `image-to-code` — clones a reference screenshot into real code, then renders and compares before calling it done
 
 A third bundle covers **setting up a new business** — validating an idea and turning someone's own expertise into a sellable product/service before (or instead of) building a team-scale product:
 
@@ -56,6 +61,7 @@ automatically when relevant), commands are invoked explicitly by name:
 
 - `/ask-the-board [question]` — answers a question using the advisory board set up by the `advisory-board` skill; refuses to improvise generic advisor impressions if no board has been configured yet
 - `/improve-system` — reviews the current session for one genuine, durable behavioral signal (not a transcript summary) and persists it to a `memory/` file, updating the memory index
+- `/design-review [file or description]` — runs the `design-review-audit` checklist against a build and reports a prioritized punch list
 
 **Skill vs. command, in this repo:** a skill is background knowledge/procedure
 Claude reaches for when relevant ("how do I structure a quarterly OKR cascade");
@@ -92,6 +98,12 @@ Skills") section pointing at the others that feed it or consume its output:
 - `design-templates` provides ready-made device-mockup/3D-tilt/halftone/moodboard
   snippets to the same design skills, approximating what `design-dev-resources`'
   niche tools (Javii, Ultramock, Ditther, Logo System) produce.
+- `ui-motion-design` and `design-review-audit` (`/design-review`) bookend a
+  build: motion guidance going in, a checklist audit coming out.
+- `brandkit-generator` turns a one-liner into a brand direction, assembled via
+  `design-templates`' `brand-board.html`; `design-token-extractor` turns any
+  reference (that or an external site) into reusable tokens; `image-to-code`
+  clones a reference screenshot into real code using those tokens.
 - For a brand-new business: `the-specific-knowledge-excavator` finds the
   expertise → `the-productize-yourself-blueprint` turns it into a product/service
   format → `saas-idea-validator` / `product-strategy-session` stress-test it →

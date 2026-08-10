@@ -1,0 +1,148 @@
+<!doctype html>
+<!--
+  Brand board / moodboard layout for the `brandkit-generator` skill's output —
+  wordmark, palette with named roles, type pairing, and a mock application
+  preview, assembled into one shareable board.
+
+  Usage: replace the wordmark text, palette swatches, font names, and the
+  mock application content with the real brand direction's output.
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Brand board</title>
+<style>
+  :root {
+    --primary: #1f6f5c;
+    --secondary: #a7c4a0;
+    --neutral: #e7e2d8;
+    --accent: #d98e4a;
+    --text: #1c1a16;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    padding: 48px;
+    background: #f4f1ea;
+    font-family: -apple-system, "Segoe UI", Roboto, sans-serif;
+    color: var(--text);
+  }
+  .board {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+  .card {
+    background: #fff;
+    border-radius: 16px;
+    padding: 24px;
+    box-shadow: 0 1px 3px rgba(0,0,0,.06);
+  }
+  .card-label {
+    font-size: 11px;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    color: #8a8477;
+    margin-bottom: 14px;
+  }
+
+  .wordmark-card { grid-column: 1 / -1; text-align: center; padding: 48px 24px; }
+  .wordmark { font-family: Georgia, "Times New Roman", serif; font-size: 56px; font-weight: 400; letter-spacing: -.01em; }
+  .tagline { margin-top: 10px; font-size: 15px; color: #6b6558; }
+
+  .palette-swatches { display: flex; gap: 10px; }
+  .swatch { flex: 1; }
+  .swatch-color { height: 64px; border-radius: 10px; margin-bottom: 8px; }
+  .swatch-name { font-size: 12px; font-weight: 600; }
+  .swatch-hex { font-size: 11px; color: #8a8477; }
+
+  .type-sample .display { font-family: Georgia, serif; font-size: 32px; margin: 0 0 4px; }
+  .type-sample .body { font-family: -apple-system, "Segoe UI", Roboto, sans-serif; font-size: 15px; line-height: 1.5; color: #4a473f; margin: 0; }
+  .type-name { font-size: 12px; color: #8a8477; margin-top: 14px; }
+
+  .app-preview {
+    grid-column: 1 / -1;
+    background: var(--neutral);
+    border-radius: 14px;
+    overflow: hidden;
+  }
+  .app-preview .bar {
+    background: var(--primary);
+    color: #fff;
+    padding: 14px 20px;
+    font-weight: 600;
+    font-family: Georgia, serif;
+  }
+  .app-preview .body-area { padding: 24px; display: flex; gap: 16px; }
+  .app-preview .btn {
+    background: var(--accent);
+    color: #fff;
+    border-radius: 8px;
+    padding: 10px 18px;
+    font-size: 14px;
+    font-weight: 600;
+    display: inline-block;
+  }
+  .app-preview .btn-secondary {
+    background: transparent;
+    border: 1.5px solid var(--secondary);
+    color: var(--primary);
+    border-radius: 8px;
+    padding: 10px 18px;
+    font-size: 14px;
+    font-weight: 600;
+  }
+</style>
+</head>
+<body>
+  <div class="board">
+    <div class="card wordmark-card">
+      <div class="wordmark">Ritual</div>
+      <div class="tagline">Wellness brand for daily rituals</div>
+    </div>
+
+    <div class="card">
+      <div class="card-label">Colours</div>
+      <div class="palette-swatches">
+        <div class="swatch">
+          <div class="swatch-color" style="background:var(--primary)"></div>
+          <div class="swatch-name">Primary</div>
+          <div class="swatch-hex">#1F6F5C</div>
+        </div>
+        <div class="swatch">
+          <div class="swatch-color" style="background:var(--secondary)"></div>
+          <div class="swatch-name">Secondary</div>
+          <div class="swatch-hex">#A7C4A0</div>
+        </div>
+        <div class="swatch">
+          <div class="swatch-color" style="background:var(--neutral)"></div>
+          <div class="swatch-name">Neutral</div>
+          <div class="swatch-hex">#E7E2D8</div>
+        </div>
+        <div class="swatch">
+          <div class="swatch-color" style="background:var(--accent)"></div>
+          <div class="swatch-name">Accent</div>
+          <div class="swatch-hex">#D98E4A</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card type-sample">
+      <div class="card-label">Typography</div>
+      <p class="display">Aa Bb Cc</p>
+      <p class="body">Slow mornings, made a habit. Body copy set in a humanist sans for warmth and readability.</p>
+      <div class="type-name">Display: Georgia · Body: Inter</div>
+    </div>
+
+    <div class="app-preview">
+      <div class="bar">Ritual</div>
+      <div class="body-area">
+        <span class="btn">Get started</span>
+        <span class="btn-secondary">Learn more</span>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
