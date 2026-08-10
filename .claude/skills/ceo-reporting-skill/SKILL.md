@@ -44,3 +44,8 @@ When asked to generate or analyze a report, always structure your output using t
 - **Financial & Commercial Scorecard:** Markdown table with Metric, Target, Actual, Variance, Status (🔴/🟡/🟢).
 - **Greek Market Tailwinds/Headwinds:** Analysis of tender delays, public funding (e.g., RRF/Ταμείο Ανάκαμψης), and private sector health-group dynamics.
 - **Strategic Next Steps:** 3 actionable, high-utility operational recommendations.
+
+## Related skills in this repo
+
+- **business-intelligence-report**: The general-purpose version of this skill — use that one instead when the audience is BU managers rather than the CEO specifically, or when the Greek-market/MedTech localization (ESIDIS tenders, ΕΣΥ vs. private DSO, robotics pull-through) doesn't apply.
+- **quarterly-okr-architect**: Source the Target values in the Financial & Commercial Scorecard from the goals set with that skill, so this report is tracking against stated commitments rather than arbitrary numbers.

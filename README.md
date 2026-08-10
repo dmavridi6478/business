@@ -19,6 +19,30 @@ A starter bundle of business-oriented Claude skills lives in `.claude/skills/`:
 
 Drop this repo into a Claude Code project (or point `.claude/skills` at it) to make these available.
 
+### How the skills connect
+
+The 10 business skills aren't siloed — each `SKILL.md` has a "Related skills in
+this repo" (or annotated "Related Skills") section pointing at the others that
+feed it or consume its output:
+
+- `product-marketing-context` is the foundational doc: `sales-enablement`,
+  `competitor-profiling`, and `content-strategy` all pull from it.
+- `business-decision-frameworks` prioritizes initiatives/topics that feed
+  `quarterly-okr-architect` (goal cascades) and `content-strategy` (editorial
+  calendars).
+- `quarterly-okr-architect` sets the targets that `business-intelligence-report`
+  and `ceo-reporting-skill` report progress against.
+- `business-intelligence-report` and `ceo-reporting-skill` are a pair —
+  the former is the general BU-manager version, the latter is specialized for
+  a Greek MedTech CEO audience.
+- `content-strategy` decides what to write; `doc-coauthoring` (long-form) and
+  `internal-comms` (short-form) draft it.
+- `competitor-profiling` feeds both `sales-enablement` (battle cards) and
+  `content-strategy` (competitive content gaps).
+
+`attachment-intake` is a separate, meta-level skill (how to handle ambiguous
+uploads) and isn't part of this content chain.
+
 ## Procedures
 
 Standard operating procedures live in `docs/procedures/`:

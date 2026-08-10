@@ -351,9 +351,12 @@ For partner sales enablement, see the [tools registry](../../tools/REGISTRY.md):
 
 ## Related Skills
 
+Installed in this repo: **product-marketing-context**, **competitor-profiling** (below). The rest are marketplace skills not currently installed here.
+
 - **competitor-alternatives**: For public-facing comparison and alternative pages
 - **copywriting**: For marketing website copy
 - **cold-email**: For outbound prospecting emails
 - **revops**: For lead lifecycle, scoring, routing, and pipeline management
 - **pricing-strategy**: For pricing decisions and packaging
-- **product-marketing-context**: For foundational positioning and messaging
+- **product-marketing-context** *(in this repo)*: For foundational positioning and messaging
+- **competitor-profiling** *(in this repo)*: Source material for battle cards and objection handling

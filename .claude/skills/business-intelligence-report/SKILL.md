@@ -43,4 +43,10 @@ Tone and Style:
 - Avoid generic business fluff; focus heavily on variance, margin mechanics, and structural trends.
 - Use structured tables, markdown formatting, and clear bullet points to ensure the insights are scannable and presentation-ready for C-level leadership.
 
+## Related skills in this repo
+
+- **ceo-reporting-skill**: Use that skill instead when the audience is specifically a MedTech CEO in the Greek healthcare market (ESIDIS tenders, ΕΣΥ/public vs. private DSO, robotics pull-through) — it applies this same reporting discipline with Greek-market-specific metrics. Use this skill for the general BU-manager audience and broader product/margin analysis.
+- **quarterly-okr-architect**: If the report needs to show progress against stated goals rather than just raw performance, pull the targets from that skill's output first.
+- **business-decision-frameworks**: The Minto Pyramid reference there helps structure the Executive Summary & Strategic Verdict section as a persuasive narrative.
+
 Here is the data:

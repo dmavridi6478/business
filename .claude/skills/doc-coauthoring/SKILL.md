@@ -373,3 +373,8 @@ Announce document completion. Provide a few final tips:
 - Don't rush through stages
 - Each iteration should make meaningful improvements
 - The goal is a document that actually works for readers
+
+## Related skills in this repo
+
+- **internal-comms**: Use that skill instead for short-format updates (status reports, newsletters, FAQs) — this skill is for longer documents that benefit from the multi-stage co-authoring process (specs, proposals, policies).
+- **content-strategy**: Useful upstream when the "document" is actually a piece of content that needs a topic/angle decided first, before drafting begins here.

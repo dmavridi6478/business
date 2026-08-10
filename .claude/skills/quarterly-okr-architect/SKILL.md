@@ -129,3 +129,8 @@ Present the full architecture as one document (template below), then **add a sho
 ## Notes on tone
 
 This skill is for business-formal, senior-audience output by default (BU managers, CEO, board). Avoid the infographic-poster tone of the source frameworks ("Top 1%" energy) — strip that out entirely. The fusion logic stays; the delivery should read like a strategist's working document, not a motivational graphic.
+
+## Related skills in this repo
+
+- **business-decision-frameworks**: Prioritize and score candidate initiatives (RICE, Value vs Effort) before architecting them into a goal cascade here.
+- **business-intelligence-report** / **ceo-reporting-skill**: Use the OKRs and lead measures produced here as the targets those reporting skills track progress against each period.

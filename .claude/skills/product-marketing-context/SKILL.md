@@ -239,3 +239,11 @@ After gathering information, create `.agents/product-marketing-context.md` with 
 - **Ask for examples**: "Can you give me an example?" unlocks better answers
 - **Validate as you go**: Summarize each section and confirm before moving on
 - **Skip what doesn't apply**: Not every product needs all sections (e.g., Personas for B2C)
+
+## Related skills in this repo
+
+This is the foundational context document — treat it as an input to the other skills below rather than something they duplicate:
+
+- **sales-enablement**: Pulls positioning, personas, and objections from here into battle cards and pitch materials.
+- **competitor-profiling**: Uses the Competitive Landscape and Differentiation sections as the starting comparison set.
+- **content-strategy**: Uses Target Audience, Problems & Pain Points, and Customer Language to shape topic and messaging decisions.

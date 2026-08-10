@@ -402,10 +402,13 @@ Only ask if not answered by context or input:
 
 ## Related Skills
 
+Installed in this repo: **content-strategy**, **sales-enablement**, **product-marketing-context** (below). The rest are marketplace skills not currently installed here.
+
 - **competitor-alternatives**: For creating comparison/alternative pages from these profiles
 - **customer-research**: For mining reviews and community sentiment in depth
-- **content-strategy**: For using competitor content gaps to plan your own content
+- **content-strategy** *(in this repo)*: For using competitor content gaps to plan your own content
 - **seo-audit**: For auditing your own site relative to competitors
-- **sales-enablement**: For turning profiles into battle cards and sales collateral
+- **sales-enablement** *(in this repo)*: For turning profiles into battle cards and sales collateral
 - **paid-ads**: For analyzing competitor ad strategies
 - **pricing-strategy**: For deeper pricing analysis informed by competitor profiles
+- **product-marketing-context** *(in this repo)*: Use its Competitive Landscape section as a starting point before running a full profile here

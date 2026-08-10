@@ -33,3 +33,9 @@ A reference library of four named-framework domains extracted from business/prod
 3. Apply the framework's "How To Use" steps to the user's actual content — don't just recite the framework back.
 4. If the user is choosing *between* frameworks (e.g. "MoSCoW or RICE?"), use the decision guidance at the top of `prioritization-frameworks.md` rather than presenting all six as equally applicable — they solve different problems and picking the wrong one for the situation is a common, correctable mistake.
 5. For prioritization work specifically, check whether `product-strategy-session` (if installed) is a better fit — that skill runs the full positioning → discovery → roadmap process; this skill is the lighter-weight reference for a single scoring/ranking decision.
+
+## Related skills in this repo
+
+- **quarterly-okr-architect**: Once initiatives are prioritized here, feed the top ones into that skill to build a full quarterly goal architecture around them.
+- **content-strategy**: Use the prioritization frameworks (RICE, Value vs Effort) to rank topic/content ideas before building an editorial calendar.
+- **business-intelligence-report** / **ceo-reporting-skill**: The storytelling pyramid (Minto) reference here pairs with those skills when a report needs a persuasive executive narrative, not just a data table.

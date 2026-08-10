@@ -30,3 +30,8 @@ If the communication type doesn't match any existing guideline, ask for clarific
 
 ## Keywords
 3P updates, company newsletter, company comms, weekly update, faqs, common questions, updates, internal comms
+
+## Related skills in this repo
+
+- **doc-coauthoring**: Use that skill instead when the piece is a long-form, iteratively-refined document (a spec, proposal, or policy) rather than a short-format update covered by this skill's `examples/` guides.
+- **quarterly-okr-architect** / **business-intelligence-report** / **ceo-reporting-skill**: Good sources of content for a leadership update or status report — draft the analysis there, then use this skill's formats to communicate it internally.

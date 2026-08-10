@@ -356,6 +356,8 @@ Visual or structured representation of how content interconnects.
 
 ## Related Skills
 
+Installed in this repo: **product-marketing-context**, **competitor-profiling**, **business-decision-frameworks**, **internal-comms**, **doc-coauthoring** (below). The rest are marketplace skills not currently installed here.
+
 - **copywriting**: For writing individual content pieces
 - **seo-audit**: For technical SEO and on-page optimization
 - **ai-seo**: For optimizing content for AI search engines and getting cited by LLMs
@@ -363,3 +365,8 @@ Visual or structured representation of how content interconnects.
 - **site-architecture**: For page hierarchy, navigation design, and URL structure
 - **email-sequence**: For email-based content
 - **social-content**: For social media content
+- **product-marketing-context** *(in this repo)*: Ground topic and messaging decisions in the audience/positioning doc from that skill
+- **competitor-profiling** *(in this repo)*: Source competitive content gaps to prioritize here
+- **business-decision-frameworks** *(in this repo)*: Use RICE/Value-vs-Effort to rank topic ideas into an editorial calendar
+- **internal-comms** *(in this repo)*: For internal-facing content instead of external content
+- **doc-coauthoring** *(in this repo)*: For drafting individual long-form pieces once a topic is chosen here
