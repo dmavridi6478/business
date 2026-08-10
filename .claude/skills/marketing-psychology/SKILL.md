@@ -54,6 +54,7 @@ Don't apply all eight to one piece of copy — like the prioritization framework
 - **content-strategy**: Use these principles when writing hooks/headlines for planned content, not just standalone copy.
 - **landing-page-cro-expert** *(marketplace, not installed here)*: If conversion-rate optimization for a live page becomes a recurring need, that's the deeper CRO-specific skill; this one is the persuasion-principle layer underneath any conversion work.
 - **business-decision-frameworks**: Its prioritization-framework discipline ("pick the framework that fits, don't apply all of them") is the same discipline this skill applies to picking a persuasion principle.
+- **outbound-campaign-brief**: Picks the persuasive lever for cold outreach copy specifically — pair with real audience research, not assumption, since a wrong-fit principle in cold outreach reads as generic faster than in warm content.
 
 ## Notes
 

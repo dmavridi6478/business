@@ -84,6 +84,7 @@ Before proposing a Night Shift-style workflow, check what's actually connected (
 - **ai-discoverable-site** / **advisory-board**: Also part of the "personal AI infrastructure" bundle — setting up Claude Code itself as a tool rather than producing a business deliverable directly.
 - **business-intelligence-report** / **ceo-reporting-skill**: If the scheduled brief is business/executive-facing rather than personal, those skills' reporting structure and tone apply to the brief's content once this skill has defined its cadence and triage rules.
 - **improve-system**: A different kind of recurring self-check (session-signal capture to memory) — same "runs on its own cadence" shape, different purpose (system improvement vs. operational briefing).
+- **outbound-campaign-brief**: Applies this skill's Claude-may/human-approval boundary to B2B outbound specifically — building the target list and drafting outreach is autonomous, sending is gated behind explicit approval and a stated send cap.
 
 ## Notes
 

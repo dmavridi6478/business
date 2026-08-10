@@ -22,6 +22,7 @@ A starter bundle of business-oriented Claude skills lives in `.claude/skills/`:
 - `ai-search-marketing-2026` — the SEO/SXO/AEO/GEO/AIO five-discipline wheel, a modern-marketing taxonomy, 5 exec-level marketing-analytics questions, a 15-day day-by-day AI-search action plan, and a 20-source AI-visibility ecosystem map cross-checked against which sources this account can actually query via a live MCP connector
 - `growth-operating-framework` — a 7-step sequence for capital-efficient growth (real-business alignment → North Star metric → data foundation → feedback loop → cross-functional accountability → capital-efficient scale → fast iteration)
 - `linkedin-virality-playbook` — 9 tactics for LinkedIn posts that reach beyond the author's own network (proof-led hooks, repostable angles, reusable visual templates, real engagement questions)
+- `outbound-campaign-brief` — turns a one-line plain-English brief into a B2B outbound campaign (derived target filters, drafted outreach via `copywriting`, real prospecting data instead of fabricated leads) gated behind explicit human approval and a stated send cap before anything sends
 
 A design/output bundle sits alongside it, for turning business content into actual visual deliverables:
 
@@ -159,6 +160,13 @@ Skills") section pointing at the others that feed it or consume its output:
   it as a Routine. `business-intelligence-report`/`ceo-reporting-skill` supply
   the reporting structure if the scheduled brief is business-facing rather
   than personal.
+
+- `outbound-campaign-brief` turns a one-line target/channel brief into a
+  B2B outbound campaign: real prospecting data (not fabricated leads) →
+  `copywriting` (using `marketing-psychology`'s persuasive lever) for the
+  message → `night-shift-workflow`'s Claude-may/human-approval boundary,
+  applied as an explicit send cap, before anything actually goes out.
+  `sales-enablement` picks up the conversation once a reply comes in.
 
 `attachment-intake`, `claude-code-tooling`, `web-task-scoping`, and
 `night-shift-workflow` are separate, meta-level skills and aren't part of

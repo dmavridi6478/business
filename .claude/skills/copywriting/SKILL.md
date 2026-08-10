@@ -65,6 +65,7 @@ Helpful, confident, human. Not salesy, not robotic, not hedging. Write like a pe
 - **product-marketing-context**: The source of truth for the real value proposition and differentiators the Promise/Proof steps should draw from — don't invent positioning here that contradicts it.
 - **humanizer**: Run on the finished draft to strip AI-writing tells before publishing.
 - **campaign-page-one-shot** / **frontend-design**: Build the actual landing page once this skill's copy exists.
+- **outbound-campaign-brief**: Uses this skill's framework for the actual outreach message once a target list and channel are defined — this skill writes the words, that one owns the targeting → drafting → approval-gated-send workflow.
 
 ## Notes
 
