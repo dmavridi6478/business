@@ -53,7 +53,8 @@ A fourth pair covers **personal AI infrastructure** — setting up Claude Code i
 - `advisory-board` — set up a personal "council of experts" (named advisors + their real source material) that the `/ask-the-board` command draws on
 - `ai-discoverable-site` — make a personal/company site readable by AI assistants (semantic HTML, meta descriptions, `llms.txt`, `robots.txt`, an "Ask AI about me" cross-provider block)
 - `humanizer` — strips AI-writing tells (inflated symbolism, promotional language, em dash overuse, filler phrases, etc.) from drafted text; vendored for real from [blader/humanizer](https://github.com/blader/humanizer) (MIT)
-- `claude-code-tooling` — curated directory of external Claude Code tools (a design-engine desktop app, a senior-engineer skill pack, multi-agent orchestration, a skills package manager, an agent context/memory database) that are standalone software, not skill files, so they're documented here rather than vendored in
+- `claude-code-tooling` — curated directory of external Claude Code tools (a design-engine desktop app, a senior-engineer skill pack, multi-agent orchestration, a skills package manager, an agent context/memory database, five browser-automation frameworks) that are standalone software, not skill files, so they're documented here rather than vendored in
+- `web-task-scoping` — governance procedure for scoping any browser-automation task (Target → Limit → Run → Review) before granting a web agent more autonomy; companion to `/scope-web-task`
 
 Drop this repo into a Claude Code project (or point `.claude/skills` at it) to make these available.
 
@@ -65,6 +66,7 @@ automatically when relevant), commands are invoked explicitly by name:
 - `/ask-the-board [question]` — answers a question using the advisory board set up by the `advisory-board` skill; refuses to improvise generic advisor impressions if no board has been configured yet
 - `/improve-system` — reviews the current session for one genuine, durable behavioral signal (not a transcript summary) and persists it to a `memory/` file, updating the memory index
 - `/design-review [file or description]` — runs the `design-review-audit` checklist against a build and reports a prioritized punch list
+- `/scope-web-task [task]` — applies the `web-task-scoping` skill's Target/Limit/Run/Review discipline to a browser-automation task before it runs; refuses to proceed on side-effecting tasks (submit/purchase/post/delete) until all four are explicit
 
 **Skill vs. command, in this repo:** a skill is background knowledge/procedure
 Claude reaches for when relevant ("how do I structure a quarterly OKR cascade");
@@ -134,8 +136,15 @@ Skills") section pointing at the others that feed it or consume its output:
   both extend `content-strategy` with channel-specific reach tactics (LinkedIn
   posts; AI-search visibility) once the underlying topic is decided.
 
-`attachment-intake` and `claude-code-tooling` are separate, meta-level skills
-and aren't part of this content chain.
+- `web-task-scoping` governs *how* to run any of `claude-code-tooling`'s five
+  browser-automation frameworks (Playwright MCP, Stagehand, Skyvern,
+  Magentic-UI, Steel Browser) against a real site — apply its Target/Limit/Run/Review
+  rule via `/scope-web-task` before granting a web agent autonomy on a
+  side-effecting task.
+
+`attachment-intake`, `claude-code-tooling`, and `web-task-scoping` are
+separate, meta-level skills and aren't part of the business/design content
+chain above.
 
 ### ⚠️ `brand-guidelines` applies Anthropic's brand, not the user's
 
