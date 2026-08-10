@@ -51,6 +51,7 @@ A third bundle covers **setting up a new business** — validating an idea and t
 - `the-leverage-stack-auditor` — diagnoses whether a business idea is actually leveraged (media/code) or just relabeled labor
 - `content-repurposing-service` — a concrete worked example: a productized weekly service that turns one client recording into a 7-asset content pack (carousel, video outlines, email, text posts) on a Mon–Fri cadence
 - `lean-software-stack` — curated directory of 8 free/open-source desktop apps (AppFlowy, Joplin, KeePassXC, OBS Studio, Kdenlive, Element, PDFsam Basic, LocalSend) that replace common paid SaaS tools, for controlling software costs before revenue validates the spend; companion to `/tool-stack-check`
+- `self-hosted-docker-stack` — curated directory of 10 verified, self-hostable Docker services (Pterodactyl, Frigate, Jellyfin, Dockge, Stirling PDF, Open WebUI, AdGuard Home, Uptime Kuma, Vaultwarden, Forgejo) for a homelab/server stack, each repo confirmed by live search rather than taken from branding alone; overlaps with `lean-software-stack` on PDF tooling and password managers as the server-hosted vs. desktop choice
 
 A fourth pair covers **personal AI infrastructure** — setting up Claude Code itself as a tool, rather than producing business deliverables:
 
@@ -128,7 +129,10 @@ Skills") section pointing at the others that feed it or consume its output:
   `content-repurposing-service` is a ready-made example of running that whole
   chain and landing on a productized content service. `lean-software-stack`
   keeps founder overhead near zero during this phase, checked against the
-  `free-vs-paid-tool-decision` procedure via `/tool-stack-check`.
+  `free-vs-paid-tool-decision` procedure via `/tool-stack-check`;
+  `self-hosted-docker-stack` extends the same cost-control lens to
+  server-hosted infrastructure once the business needs more than a desktop
+  app (e.g. self-hosted Git or uptime monitoring instead of paid seats).
 
 - For personal AI setup: `advisory-board` supplies advisors that
   `product-strategy-session`, `quarterly-okr-architect`, and the new-business
