@@ -431,3 +431,4 @@ Mini example excerpt:
 - **the-productize-yourself-blueprint**, **the-specific-knowledge-excavator**, **the-leverage-stack-auditor**: Useful inputs for the Positioning & Market Context phase when the "product" is really a solo operator's own expertise/service rather than a team-built software product.
 - **product-marketing-context**: Capture the validated positioning this session produces here so other skills can reuse it.
 - **content-repurposing-service**: An example of a concrete productized-service strategy this process could validate and roadmap.
+- **advisory-board**: Use `/ask-the-board` to stress-test the strategy against real named perspectives once a draft direction exists.

@@ -39,7 +39,27 @@ A third bundle covers **setting up a new business** — validating an idea and t
 - `the-leverage-stack-auditor` — diagnoses whether a business idea is actually leveraged (media/code) or just relabeled labor
 - `content-repurposing-service` — a concrete worked example: a productized weekly service that turns one client recording into a 7-asset content pack (carousel, video outlines, email, text posts) on a Mon–Fri cadence
 
+A fourth pair covers **personal AI infrastructure** — setting up Claude Code itself as a tool, rather than producing business deliverables:
+
+- `advisory-board` — set up a personal "council of experts" (named advisors + their real source material) that the `/ask-the-board` command draws on
+- `ai-discoverable-site` — make a personal/company site readable by AI assistants (semantic HTML, meta descriptions, `llms.txt`, `robots.txt`, an "Ask AI about me" cross-provider block)
+
 Drop this repo into a Claude Code project (or point `.claude/skills` at it) to make these available.
+
+## Commands
+
+Slash commands live in `.claude/commands/` — unlike skills (which Claude loads
+automatically when relevant), commands are invoked explicitly by name:
+
+- `/ask-the-board [question]` — answers a question using the advisory board set up by the `advisory-board` skill; refuses to improvise generic advisor impressions if no board has been configured yet
+- `/improve-system` — reviews the current session for one genuine, durable behavioral signal (not a transcript summary) and persists it to a `memory/` file, updating the memory index
+
+**Skill vs. command, in this repo:** a skill is background knowledge/procedure
+Claude reaches for when relevant ("how do I structure a quarterly OKR cascade");
+a command is something the user explicitly invokes by typing `/name` ("run my
+board" / "reflect on this session now"). `advisory-board` (skill) documents
+*how to set up* the board; `/ask-the-board` (command) is *how you use it* once
+set up.
 
 ### How the skills connect
 
@@ -74,6 +94,12 @@ Skills") section pointing at the others that feed it or consume its output:
   the business/design/output skills take over from there.
   `content-repurposing-service` is a ready-made example of running that whole
   chain and landing on a productized content service.
+
+- For personal AI setup: `advisory-board` supplies advisors that
+  `product-strategy-session`, `quarterly-okr-architect`, and the new-business
+  cluster can sanity-check decisions against via `/ask-the-board`.
+  `ai-discoverable-site` pulls its "who they are" content from
+  `product-marketing-context` and hands implementation to `frontend-design`.
 
 `attachment-intake` is a separate, meta-level skill and isn't part of this
 content chain.
