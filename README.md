@@ -16,6 +16,7 @@ A starter bundle of business-oriented Claude skills lives in `.claude/skills/`:
 - `internal-comms` — company newsletters, FAQs, general internal communications
 - `doc-coauthoring` — structured workflow for co-authoring docs, proposals, and specs
 - `attachment-intake` — how to handle uploaded files (zips, photo batches, docs) that arrive with no or mismatched instructions, instead of guessing at intent
+- `design-dev-resources` — curated directory of free design/frontend tool sites (unDraw, SVGL, Aceternity, Glassmorphism generator, JSON Crack) to reach for instead of hand-rolling icons/illustrations/CSS
 
 Drop this repo into a Claude Code project (or point `.claude/skills` at it) to make these available.
 
@@ -40,8 +41,8 @@ feed it or consume its output:
 - `competitor-profiling` feeds both `sales-enablement` (battle cards) and
   `content-strategy` (competitive content gaps).
 
-`attachment-intake` is a separate, meta-level skill (how to handle ambiguous
-uploads) and isn't part of this content chain.
+`attachment-intake` and `design-dev-resources` are separate, meta/reference-level
+skills and aren't part of this content chain.
 
 ## Procedures
 
