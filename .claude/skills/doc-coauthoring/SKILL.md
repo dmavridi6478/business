@@ -378,3 +378,5 @@ Announce document completion. Provide a few final tips:
 
 - **internal-comms**: Use that skill instead for short-format updates (status reports, newsletters, FAQs) — this skill is for longer documents that benefit from the multi-stage co-authoring process (specs, proposals, policies).
 - **content-strategy**: Useful upstream when the "document" is actually a piece of content that needs a topic/angle decided first, before drafting begins here.
+- **docx**: Produce the final polished document as an actual Word file once co-authoring here is done.
+- **pdf**: Export the finished document for distribution when Word editability isn't needed.

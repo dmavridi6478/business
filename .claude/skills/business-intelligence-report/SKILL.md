@@ -48,5 +48,8 @@ Tone and Style:
 - **ceo-reporting-skill**: Use that skill instead when the audience is specifically a MedTech CEO in the Greek healthcare market (ESIDIS tenders, ΕΣΥ/public vs. private DSO, robotics pull-through) — it applies this same reporting discipline with Greek-market-specific metrics. Use this skill for the general BU-manager audience and broader product/margin analysis.
 - **quarterly-okr-architect**: If the report needs to show progress against stated goals rather than just raw performance, pull the targets from that skill's output first.
 - **business-decision-frameworks**: The Minto Pyramid reference there helps structure the Executive Summary & Strategic Verdict section as a persuasive narrative.
+- **pptx** / **premium-html-presentation**: Turn this report into an actual slide deck (editable PowerPoint or an HTML deck) for presenting to BU managers.
+- **xlsx**: Build the underlying scorecard/data workbook this report's tables and charts are drawn from.
+- **pdf**: Export the finished report for distribution.
 
 Here is the data:

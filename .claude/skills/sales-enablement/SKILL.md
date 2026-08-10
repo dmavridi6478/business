@@ -360,3 +360,5 @@ Installed in this repo: **product-marketing-context**, **competitor-profiling** 
 - **pricing-strategy**: For pricing decisions and packaging
 - **product-marketing-context** *(in this repo)*: For foundational positioning and messaging
 - **competitor-profiling** *(in this repo)*: Source material for battle cards and objection handling
+- **premium-html-presentation** / **pptx** *(in this repo)*: Turn this skill's content into an actual pitch deck (HTML or editable PowerPoint)
+- **design-dev-resources** *(in this repo)*: Real icons/illustrations/logos for sales collateral instead of hand-drawn SVG

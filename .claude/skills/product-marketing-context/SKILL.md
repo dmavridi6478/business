@@ -247,3 +247,4 @@ This is the foundational context document — treat it as an input to the other 
 - **sales-enablement**: Pulls positioning, personas, and objections from here into battle cards and pitch materials.
 - **competitor-profiling**: Uses the Competitive Landscape and Differentiation sections as the starting comparison set.
 - **content-strategy**: Uses Target Audience, Problems & Pain Points, and Customer Language to shape topic and messaging decisions.
+- **frontend-design**, **premium-html-presentation**, **canvas-design**, **pptx**: Use this document's Brand Voice and positioning as the actual brand to apply — not the `brand-guidelines` skill, which is Anthropic-specific.

@@ -134,3 +134,5 @@ This skill is for business-formal, senior-audience output by default (BU manager
 
 - **business-decision-frameworks**: Prioritize and score candidate initiatives (RICE, Value vs Effort) before architecting them into a goal cascade here.
 - **business-intelligence-report** / **ceo-reporting-skill**: Use the OKRs and lead measures produced here as the targets those reporting skills track progress against each period.
+- **pptx** / **premium-html-presentation**: Present the goal cascade as an actual deck for a BU/board meeting.
+- **xlsx**: Build a scoreboard workbook tracking the lead measures defined here.

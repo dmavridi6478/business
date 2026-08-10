@@ -49,3 +49,6 @@ When asked to generate or analyze a report, always structure your output using t
 
 - **business-intelligence-report**: The general-purpose version of this skill — use that one instead when the audience is BU managers rather than the CEO specifically, or when the Greek-market/MedTech localization (ESIDIS tenders, ΕΣΥ vs. private DSO, robotics pull-through) doesn't apply.
 - **quarterly-okr-architect**: Source the Target values in the Financial & Commercial Scorecard from the goals set with that skill, so this report is tracking against stated commitments rather than arbitrary numbers.
+- **pptx** / **premium-html-presentation**: Turn this report into an actual CEO-facing slide deck.
+- **xlsx**: Build the underlying scorecard workbook (Capex/Opex split, DSO, tender win rate) this report draws from.
+- **pdf**: Export the finished report for distribution.

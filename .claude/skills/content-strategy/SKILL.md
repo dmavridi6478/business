@@ -370,3 +370,5 @@ Installed in this repo: **product-marketing-context**, **competitor-profiling**,
 - **business-decision-frameworks** *(in this repo)*: Use RICE/Value-vs-Effort to rank topic ideas into an editorial calendar
 - **internal-comms** *(in this repo)*: For internal-facing content instead of external content
 - **doc-coauthoring** *(in this repo)*: For drafting individual long-form pieces once a topic is chosen here
+- **frontend-design** / **campaign-page-one-shot** *(in this repo)*: Build a landing page or web piece for a chosen content topic
+- **design-dev-resources** *(in this repo)*: Source illustrations/logos for content pieces instead of hand-drawn SVG
