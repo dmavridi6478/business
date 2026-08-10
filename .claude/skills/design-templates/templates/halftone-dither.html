@@ -1,0 +1,106 @@
+<!doctype html>
+<!--
+  Two techniques inspired by Ditther (ditther.com):
+  1. CSS-only halftone overlay (fast, no JS, works on any image via mix-blend-mode).
+  2. Real ordered (Bayer 4x4) dithering on a <canvas>, for an actual dithered-pixel
+     look rather than an approximation — closer to what Ditther itself produces.
+
+  Usage: swap the .source background-image / <img id="src"> for the real image.
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Halftone / dither templates</title>
+<style>
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    padding: 40px;
+    background: #111;
+    color: #eee;
+    font-family: -apple-system, "Segoe UI", Roboto, sans-serif;
+    display: flex;
+    gap: 40px;
+    flex-wrap: wrap;
+  }
+  figure { margin: 0; width: 360px; }
+  figcaption { font-size: 13px; color: #999; margin-top: 10px; }
+
+  /* --- Technique 1: CSS-only halftone overlay --- */
+  .halftone {
+    width: 360px;
+    height: 240px;
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+    background:
+      linear-gradient(135deg, #ff8a00, #1c1c50 70%); /* replace with real image */
+    background-size: cover;
+    filter: grayscale(1) contrast(1.4);
+  }
+  .halftone::after {
+    content: "";
+    position: absolute; inset: 0;
+    background-image: radial-gradient(circle, #000 38%, transparent 40%);
+    background-size: 8px 8px;
+    mix-blend-mode: multiply;
+    opacity: .85;
+  }
+
+  /* --- Technique 2: real dithering on canvas --- */
+  canvas { width: 360px; height: 240px; border-radius: 8px; image-rendering: pixelated; }
+</style>
+</head>
+<body>
+  <figure>
+    <div class="halftone"></div>
+    <figcaption>Technique 1 — CSS-only halftone overlay (dot size = background-size, no JS)</figcaption>
+  </figure>
+
+  <figure>
+    <canvas id="dithered" width="360" height="240"></canvas>
+    <figcaption>Technique 2 — real 4×4 Bayer ordered dithering on &lt;canvas&gt; (actual 1-bit pixel output)</figcaption>
+  </figure>
+
+  <script>
+    // Ordered (Bayer 4x4) dithering — draws a gradient as a stand-in source;
+    // swap `drawSource` to draw a real <img> instead.
+    const canvas = document.getElementById('dithered');
+    const ctx = canvas.getContext('2d');
+    const { width, height } = canvas;
+
+    function drawSource() {
+      const g = ctx.createLinearGradient(0, 0, width, height);
+      g.addColorStop(0, '#ff8a00');
+      g.addColorStop(1, '#1c1c50');
+      ctx.fillStyle = g;
+      ctx.fillRect(0, 0, width, height);
+    }
+
+    const bayer4x4 = [
+      [0, 8, 2, 10],
+      [12, 4, 14, 6],
+      [3, 11, 1, 9],
+      [15, 7, 13, 5],
+    ].map(row => row.map(v => (v + 0.5) / 16));
+
+    function ditherOrdered() {
+      drawSource();
+      const img = ctx.getImageData(0, 0, width, height);
+      const d = img.data;
+      for (let y = 0; y < height; y++) {
+        for (let x = 0; x < width; x++) {
+          const i = (y * width + x) * 4;
+          const luma = 0.299 * d[i] + 0.587 * d[i + 1] + 0.114 * d[i + 2];
+          const threshold = bayer4x4[y % 4][x % 4] * 255;
+          const v = luma > threshold ? 255 : 0;
+          d[i] = d[i + 1] = d[i + 2] = v;
+        }
+      }
+      ctx.putImageData(img, 0, 0);
+    }
+
+    ditherOrdered();
+  </script>
+</body>
+</html>

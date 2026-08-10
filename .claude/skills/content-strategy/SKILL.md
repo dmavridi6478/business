@@ -372,3 +372,4 @@ Installed in this repo: **product-marketing-context**, **competitor-profiling**,
 - **doc-coauthoring** *(in this repo)*: For drafting individual long-form pieces once a topic is chosen here
 - **frontend-design** / **campaign-page-one-shot** *(in this repo)*: Build a landing page or web piece for a chosen content topic
 - **design-dev-resources** *(in this repo)*: Source illustrations/logos for content pieces instead of hand-drawn SVG
+- **content-repurposing-service** *(in this repo)*: A productized weekly service that operationalizes this skill's topic decisions into a repeatable multi-format asset pipeline

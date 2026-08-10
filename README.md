@@ -29,8 +29,40 @@ A design/output bundle sits alongside it, for turning business content into actu
 - `campaign-page-one-shot` — one-shot marketing landing pages
 - `brand-guidelines` — **Anthropic's own** brand colors/fonts specifically, not a generic client-branding tool (see caveat in the skill itself)
 - `pptx` / `docx` / `xlsx` / `pdf` — editable PowerPoint, Word, Excel, and PDF file creation/editing
+- `design-templates` — 5 ready-to-use, verified-rendering HTML/CSS templates (iMessage mockup, social device frame, 3D product tilt, halftone/dither effect, moodboard grid) to drop into a build instead of writing from scratch
+
+A third bundle covers **setting up a new business** — validating an idea and turning someone's own expertise into a sellable product/service before (or instead of) building a team-scale product:
+
+- `product-strategy-session` — full positioning → discovery → roadmap process for validated direction before committing to execution
+- `saas-idea-validator` — critical, non-cheerleading stress-test of a new product/software/service idea (problem-solution fit, market, competition, moat, specific failure mode)
+- `the-specific-knowledge-excavator` — reverse-engineers a person's unique intersection of expertise nobody else holds in the same combination
+- `the-productize-yourself-blueprint` — converts that expertise into a scalable product/service format that sells without the founder's live presence
+- `the-leverage-stack-auditor` — diagnoses whether a business idea is actually leveraged (media/code) or just relabeled labor
+- `content-repurposing-service` — a concrete worked example: a productized weekly service that turns one client recording into a 7-asset content pack (carousel, video outlines, email, text posts) on a Mon–Fri cadence
+
+A fourth pair covers **personal AI infrastructure** — setting up Claude Code itself as a tool, rather than producing business deliverables:
+
+- `advisory-board` — set up a personal "council of experts" (named advisors + their real source material) that the `/ask-the-board` command draws on
+- `ai-discoverable-site` — make a personal/company site readable by AI assistants (semantic HTML, meta descriptions, `llms.txt`, `robots.txt`, an "Ask AI about me" cross-provider block)
+- `humanizer` — strips AI-writing tells (inflated symbolism, promotional language, em dash overuse, filler phrases, etc.) from drafted text; vendored for real from [blader/humanizer](https://github.com/blader/humanizer) (MIT)
+- `claude-code-tooling` — curated directory of external Claude Code tools (a design-engine desktop app, a senior-engineer skill pack, multi-agent orchestration, a skills package manager, an agent context/memory database) that are standalone software, not skill files, so they're documented here rather than vendored in
 
 Drop this repo into a Claude Code project (or point `.claude/skills` at it) to make these available.
+
+## Commands
+
+Slash commands live in `.claude/commands/` — unlike skills (which Claude loads
+automatically when relevant), commands are invoked explicitly by name:
+
+- `/ask-the-board [question]` — answers a question using the advisory board set up by the `advisory-board` skill; refuses to improvise generic advisor impressions if no board has been configured yet
+- `/improve-system` — reviews the current session for one genuine, durable behavioral signal (not a transcript summary) and persists it to a `memory/` file, updating the memory index
+
+**Skill vs. command, in this repo:** a skill is background knowledge/procedure
+Claude reaches for when relevant ("how do I structure a quarterly OKR cascade");
+a command is something the user explicitly invokes by typing `/name` ("run my
+board" / "reflect on this session now"). `advisory-board` (skill) documents
+*how to set up* the board; `/ask-the-board` (command) is *how you use it* once
+set up.
 
 ### How the skills connect
 
@@ -57,9 +89,30 @@ Skills") section pointing at the others that feed it or consume its output:
 - `design-dev-resources` supplies real icons/illustrations/logos to
   `frontend-design`, `web-artifacts-builder`, `canvas-design`, and
   `campaign-page-one-shot` instead of hand-drawn SVG.
+- `design-templates` provides ready-made device-mockup/3D-tilt/halftone/moodboard
+  snippets to the same design skills, approximating what `design-dev-resources`'
+  niche tools (Javii, Ultramock, Ditther, Logo System) produce.
+- For a brand-new business: `the-specific-knowledge-excavator` finds the
+  expertise → `the-productize-yourself-blueprint` turns it into a product/service
+  format → `saas-idea-validator` / `product-strategy-session` stress-test it →
+  `the-leverage-stack-auditor` checks it's actually leveraged →
+  `product-marketing-context` captures the validated positioning → the rest of
+  the business/design/output skills take over from there.
+  `content-repurposing-service` is a ready-made example of running that whole
+  chain and landing on a productized content service.
 
-`attachment-intake` is a separate, meta-level skill and isn't part of this
-content chain.
+- For personal AI setup: `advisory-board` supplies advisors that
+  `product-strategy-session`, `quarterly-okr-architect`, and the new-business
+  cluster can sanity-check decisions against via `/ask-the-board`.
+  `ai-discoverable-site` pulls its "who they are" content from
+  `product-marketing-context` and hands implementation to `frontend-design`.
+
+- `humanizer` is a general-purpose editing pass — run it on drafts from
+  `sales-enablement`, `content-strategy`, `doc-coauthoring`, `internal-comms`,
+  or `content-repurposing-service` before delivering them.
+
+`attachment-intake` and `claude-code-tooling` are separate, meta-level skills
+and aren't part of this content chain.
 
 ### ⚠️ `brand-guidelines` applies Anthropic's brand, not the user's
 
