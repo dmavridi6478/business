@@ -49,3 +49,4 @@ Remember: Claude is capable of extraordinary creative work. Don't hold back, sho
 - **brand-guidelines**: Applies *Anthropic's* specific brand colors/fonts — only relevant if the output is meant to carry Anthropic's identity, not a generic "use existing brand" tool. For the user's own brand, pull colors/voice from `product-marketing-context` instead.
 - **campaign-page-one-shot** / **premium-html-presentation**: Higher-level skills that call on this one's aesthetic guidance for a landing page or a full deck specifically.
 - **ai-discoverable-site**: Apply when the page being built is a personal/company site that should also be readable by AI assistants (semantic HTML, meta descriptions, llms.txt, robots.txt) — not just visually polished.
+- **design-templates**: Ready-made device-mockup, 3D-tilt, halftone, and moodboard-grid snippets to drop into a build instead of writing them from scratch.

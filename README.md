@@ -29,6 +29,7 @@ A design/output bundle sits alongside it, for turning business content into actu
 - `campaign-page-one-shot` — one-shot marketing landing pages
 - `brand-guidelines` — **Anthropic's own** brand colors/fonts specifically, not a generic client-branding tool (see caveat in the skill itself)
 - `pptx` / `docx` / `xlsx` / `pdf` — editable PowerPoint, Word, Excel, and PDF file creation/editing
+- `design-templates` — 5 ready-to-use, verified-rendering HTML/CSS templates (iMessage mockup, social device frame, 3D product tilt, halftone/dither effect, moodboard grid) to drop into a build instead of writing from scratch
 
 A third bundle covers **setting up a new business** — validating an idea and turning someone's own expertise into a sellable product/service before (or instead of) building a team-scale product:
 
@@ -88,6 +89,9 @@ Skills") section pointing at the others that feed it or consume its output:
 - `design-dev-resources` supplies real icons/illustrations/logos to
   `frontend-design`, `web-artifacts-builder`, `canvas-design`, and
   `campaign-page-one-shot` instead of hand-drawn SVG.
+- `design-templates` provides ready-made device-mockup/3D-tilt/halftone/moodboard
+  snippets to the same design skills, approximating what `design-dev-resources`'
+  niche tools (Javii, Ultramock, Ditther, Logo System) produce.
 - For a brand-new business: `the-specific-knowledge-excavator` finds the
   expertise → `the-productize-yourself-blueprint` turns it into a product/service
   format → `saas-idea-validator` / `product-strategy-session` stress-test it →

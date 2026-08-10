@@ -1,0 +1,99 @@
+<!doctype html>
+<!--
+  3D-tilted product/screenshot shot with a soft floor shadow, similar in
+  spirit to what Ultramock (ultramock.io) produces. Pure CSS 3D transform —
+  no build step, no external library.
+
+  Usage: replace .screen-image's background-image with the real screenshot.
+  Drag with the mouse (desktop) to adjust the tilt live; the exported static
+  look is controlled by --tilt-x / --tilt-y / --zoom below.
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>3D product tilt mockup</title>
+<style>
+  :root {
+    --tilt-x: -14deg;
+    --tilt-y: 22deg;
+    --zoom: 1;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+    background: linear-gradient(180deg,#eef0f3,#dfe3e8);
+    font-family: -apple-system, "Segoe UI", Roboto, sans-serif;
+    perspective: 1600px;
+  }
+  .stage {
+    width: 900px;
+    height: 560px;
+    display: grid;
+    place-items: center;
+  }
+  .shot {
+    width: 620px;
+    height: 388px;
+    border-radius: 14px;
+    background: linear-gradient(160deg,#111827,#1f2937);
+    box-shadow: 0 10px 30px rgba(15,23,42,.5);
+    transform-style: preserve-3d;
+    transform:
+      rotateX(var(--tilt-x))
+      rotateY(var(--tilt-y))
+      scale(var(--zoom));
+    transition: transform .15s ease-out;
+    position: relative;
+    overflow: hidden;
+  }
+  .screen-image {
+    position: absolute; inset: 10px;
+    border-radius: 8px;
+    background: linear-gradient(135deg,#4f46e5,#06b6d4);
+    display: grid;
+    place-items: center;
+    color: #fff;
+    font-size: 22px;
+    font-weight: 600;
+    letter-spacing: -.01em;
+  }
+  .floor-shadow {
+    width: 560px;
+    height: 60px;
+    margin-top: -40px;
+    background: radial-gradient(ellipse at center, rgba(15,23,42,.35), transparent 70%);
+    filter: blur(2px);
+  }
+</style>
+</head>
+<body>
+  <div class="stage">
+    <div>
+      <div class="shot" id="shot">
+        <div class="screen-image">Replace with a real screenshot</div>
+      </div>
+      <div class="floor-shadow"></div>
+    </div>
+  </div>
+  <script>
+    // Optional: live-tilt on mouse move for previewing angles before locking
+    // in --tilt-x / --tilt-y for a static export.
+    const shot = document.getElementById('shot');
+    const stage = document.querySelector('.stage');
+    stage.addEventListener('mousemove', (e) => {
+      const r = stage.getBoundingClientRect();
+      const px = (e.clientX - r.left) / r.width - 0.5;
+      const py = (e.clientY - r.top) / r.height - 0.5;
+      shot.style.setProperty('--tilt-y', `${px * 40}deg`);
+      shot.style.setProperty('--tilt-x', `${-py * 30}deg`);
+    });
+    stage.addEventListener('mouseleave', () => {
+      shot.style.setProperty('--tilt-x', '-14deg');
+      shot.style.setProperty('--tilt-y', '22deg');
+    });
+  </script>
+</body>
+</html>

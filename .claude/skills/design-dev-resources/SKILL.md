@@ -23,6 +23,21 @@ Reach for one of these instead of improvising when a task needs:
 | Glassmorphism generator | Generates the CSS (`backdrop-filter`, blur, refraction, border) for a glassmorphism effect and lets you copy it directly | https://glassmorphism.com |
 | JSON Crack | Visualizes JSON as an interactive, explorable graph | https://jsoncrack.com |
 
+## More niche design tools
+
+A second batch, oriented around specific effects/workflows the mainstream lists skip:
+
+| Site | What it's for | Link |
+|---|---|---|
+| Ditther | Turns any image/video into dithered, ASCII, or halftone pixel art in-browser, no account | https://ditther.com |
+| Cooldock | A second macOS Dock for live widgets (music, weather, todos, stats) — desktop utility, not a web asset | https://dock.cool |
+| Selected | Live leaderboard of ~8,800 Framer marketplace templates ranked by real marketplace position | https://selected.site |
+| Logo System | 1,300+ curated logos/wordmarks/animated marks, searchable by color/style, with a moodboard view | https://logosystem.co |
+| Ultramock | Drops a product screenshot into a real 3D camera — tilt/zoom/keyframe, export with motion blur, for product marketing shots | https://ultramock.io |
+| Javii | A dozen tiny single-purpose apps for content visuals — iMessage/TikTok device mockups, tags, stamps, overlays | https://javii.tools |
+
+See the **design-templates** skill for ready-to-use HTML/CSS starting points that approximate what Ditther (halftone effect), Ultramock (3D product tilt), Javii (device mockup frames), and Logo System (moodboard grid) produce — for when the actual tool isn't available or a quick copy-paste snippet is faster than a new dependency.
+
 ## External AI tools worth knowing about
 
 Not Claude Code skills — external SaaS products. Mention these to the user as *options* when they're evaluating tooling; don't assume access or an account exists.
@@ -39,6 +54,6 @@ An unnamed "secret tool" appeared in the source carousel as an engagement-bait C
 
 ## Notes
 
-- Sources: curated from two design/AI-tools screenshot carousels ("Insane Website for Developers" by @glorydotdev; "5 AI Tools You'll Wish You Found Earlier" by @finitopotatoes). Verify each site/tool is still live, current, and re-check licensing/attribution/pricing terms before relying on it in client-facing work — e.g. SVGL logos link back to the source product and note that permission may be required for some; unDraw is attribution-free; the AI tools above are commercial products that may require a paid plan.
+- Sources: curated from three design/AI-tools screenshot carousels ("Insane Website for Developers" by @glorydotdev; "5 AI Tools You'll Wish You Found Earlier" by @finitopotatoes; "6 design tools that never make the lists" by @webnailed). Verify each site/tool is still live, current, and re-check licensing/attribution/pricing terms before relying on it in client-facing work — e.g. SVGL logos link back to the source product and note that permission may be required for some; unDraw is attribution-free; the AI tools above are commercial products that may require a paid plan.
 - Treat the design resources as free/open starting points, not a substitute for a client's actual brand assets when the logo or illustration needs to be pixel-accurate to their identity.
 - Pairs well with the `frontend-design`, `web-artifacts-builder`, `campaign-page-one-shot`, `premium-html-presentation`, `canvas-design`, and `theme-factory` skills when those need real icons/illustrations instead of custom SVG paths, or when picking a tool for a task Claude itself doesn't cover (e.g. AI video generation).
