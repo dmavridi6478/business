@@ -37,6 +37,7 @@ The client is buying seven consistent assets from real expertise every week — 
 - **sales-enablement**: Turn this pipeline into a pitch, one-pager, or proposal for prospective clients.
 - **content-strategy**: Informs which topics/angles the "strong moments" in step 2 get prioritized into.
 - **quarterly-okr-architect** / **business-decision-frameworks**: Useful once this is running as a business — set targets for client count/retention, and prioritize which niches or formats to expand into next.
+- **humanizer**: A ready-made implementation of step 4 ("Restore the Human") — run it on every draft before the client approval round in step 5.
 
 ## Notes
 

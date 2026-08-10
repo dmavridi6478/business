@@ -43,6 +43,8 @@ A fourth pair covers **personal AI infrastructure** — setting up Claude Code i
 
 - `advisory-board` — set up a personal "council of experts" (named advisors + their real source material) that the `/ask-the-board` command draws on
 - `ai-discoverable-site` — make a personal/company site readable by AI assistants (semantic HTML, meta descriptions, `llms.txt`, `robots.txt`, an "Ask AI about me" cross-provider block)
+- `humanizer` — strips AI-writing tells (inflated symbolism, promotional language, em dash overuse, filler phrases, etc.) from drafted text; vendored for real from [blader/humanizer](https://github.com/blader/humanizer) (MIT)
+- `claude-code-tooling` — curated directory of external Claude Code tools (a design-engine desktop app, a senior-engineer skill pack, multi-agent orchestration, a skills package manager, an agent context/memory database) that are standalone software, not skill files, so they're documented here rather than vendored in
 
 Drop this repo into a Claude Code project (or point `.claude/skills` at it) to make these available.
 
@@ -101,8 +103,12 @@ Skills") section pointing at the others that feed it or consume its output:
   `ai-discoverable-site` pulls its "who they are" content from
   `product-marketing-context` and hands implementation to `frontend-design`.
 
-`attachment-intake` is a separate, meta-level skill and isn't part of this
-content chain.
+- `humanizer` is a general-purpose editing pass — run it on drafts from
+  `sales-enablement`, `content-strategy`, `doc-coauthoring`, `internal-comms`,
+  or `content-repurposing-service` before delivering them.
+
+`attachment-intake` and `claude-code-tooling` are separate, meta-level skills
+and aren't part of this content chain.
 
 ### ⚠️ `brand-guidelines` applies Anthropic's brand, not the user's
 
