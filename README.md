@@ -13,6 +13,8 @@ A starter bundle of business-oriented Claude skills lives in `.claude/skills/`:
 - `product-marketing-context` — product/audience/positioning context doc used by other marketing skills
 - `competitor-profiling` — structured competitor research and profiles
 - `content-strategy` — content planning, topic clusters, editorial calendars
+- `copywriting` — writes individual persuasive copy (headlines, product descriptions, email copy, CTAs) via a Problem → Promise → Proof → CTA framework, once `content-strategy` has picked the topic
+- `marketing-psychology` — 8 behavioral persuasion principles (framing, social proof, anchoring, curiosity, loss aversion, specificity, pricing context, decision friction) to pick the right lever for a message instead of stacking random tactics
 - `internal-comms` — company newsletters, FAQs, general internal communications
 - `doc-coauthoring` — structured workflow for co-authoring docs, proposals, and specs
 - `attachment-intake` — how to handle uploaded files (zips, photo batches, docs) that arrive with no or mismatched instructions, instead of guessing at intent
@@ -96,6 +98,9 @@ Skills") section pointing at the others that feed it or consume its output:
   a Greek MedTech CEO audience.
 - `content-strategy` decides what to write; `doc-coauthoring` (long-form) and
   `internal-comms` (short-form) draft it; `docx`/`pdf` produce the final file.
+  `copywriting` handles short persuasive pieces specifically (headlines, CTAs,
+  product/pricing copy), drawing on `marketing-psychology`'s principles for
+  the persuasive lever and `humanizer` for the final pass.
 - `competitor-profiling` feeds both `sales-enablement` (battle cards) and
   `content-strategy` (competitive content gaps).
 - Any of the reporting/planning skills can hand off to `pptx`, `premium-html-presentation`,
@@ -182,3 +187,8 @@ Standard operating procedures live in `docs/procedures/`:
   Sources, Rules, Actions, Approval) plus a system readiness check to run
   before scheduling any autonomous/unattended Claude workflow. Backs the
   `night-shift-workflow` skill.
+- `personal-voice-skill.md` — how to use Anthropic's Skill Creator to turn a
+  person's real writing samples into a reusable private voice skill (not
+  vendored here — it's Anthropic's own meta-tool, same category as the
+  `claude-code-tooling` entries), so future drafts sound like them without
+  re-explaining preferences each time.
