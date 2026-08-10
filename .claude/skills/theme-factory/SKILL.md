@@ -62,3 +62,5 @@ To handle cases where none of the existing themes work for an artifact, create a
 
 - **frontend-design**, **premium-html-presentation**, **canvas-design**, **pptx**: Apply a theme from here as the starting palette/typography for any of these instead of picking colors from scratch.
 - **product-marketing-context**: When the artifact needs the user's *own* brand rather than one of these preset themes, pull colors/voice from there instead (see the caveat on `brand-guidelines`, which is Anthropic-specific, not a generic brand tool).
+- **design-token-extractor**: When matching a specific external reference rather than picking a preset, extract real tokens from it instead.
+- **brandkit-generator**: A preset theme here can seed the starting palette/typography for a brand direction before it's refined into a full brand board.

@@ -51,5 +51,7 @@ Tone and Style:
 - **pptx** / **premium-html-presentation**: Turn this report into an actual slide deck (editable PowerPoint or an HTML deck) for presenting to BU managers.
 - **xlsx**: Build the underlying scorecard/data workbook this report's tables and charts are drawn from.
 - **pdf**: Export the finished report for distribution.
+- **ai-search-marketing-2026**: Run its five exec-ai-questions against any marketing section of this report before it goes to a CEO or board.
+- **growth-operating-framework**: Structure a growth-specific report section around this framework's 7 steps rather than a flat metrics dump.
 
 Here is the data:

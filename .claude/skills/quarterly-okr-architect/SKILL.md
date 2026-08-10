@@ -138,3 +138,4 @@ This skill is for business-formal, senior-audience output by default (BU manager
 - **xlsx**: Build a scoreboard workbook tracking the lead measures defined here.
 - **product-strategy-session** / **saas-idea-validator** / **the-productize-yourself-blueprint**: For a brand-new business, validate the idea and product/service format with these before setting quarterly goals around it.
 - **advisory-board**: Sanity-check the resulting goal cascade with `/ask-the-board` before committing to it.
+- **growth-operating-framework**: Use that skill to pick *what* to build growth goals around (North Star metric, data foundation) before architecting the OKR cascade here.

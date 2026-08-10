@@ -135,3 +135,4 @@ To create additional pages when requested, create more creative pages along the 
 - **theme-factory**: Ready-made theme as a starting palette/typography system.
 - **brand-guidelines**: Applies *Anthropic's* specific brand colors/fonts — only relevant if the piece is meant to carry Anthropic's identity. For the user's own brand, pull colors/voice from `product-marketing-context` instead.
 - **frontend-design**: The web/interface counterpart to this skill's poster/print-style output.
+- **brandkit-generator**: Can use a canvas piece instead of the HTML `brand-board.html` template for a poster-style brand board.
