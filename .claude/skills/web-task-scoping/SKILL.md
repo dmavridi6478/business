@@ -39,6 +39,7 @@ This skill governs *how* to scope the task, not *which* tool executes it. `claud
 
 - **claude-code-tooling**: Documents the five external browser-agent frameworks (Playwright MCP, Stagehand, Skyvern, Magentic-UI, Steel Browser) this governance procedure applies to.
 - **attachment-intake**: Same underlying discipline (inspect before acting, don't force autonomy onto ambiguous input) applied to files instead of web actions.
+- **night-shift-workflow**: The same "match oversight to the stakes" autonomy boundary, applied to scheduled/unattended background workflows instead of interactive browser tasks — apply both together when a scheduled workflow's job involves web automation.
 - **image-to-code** / **design-templates**: Both already use a scoped, single-purpose Playwright CLI pattern (screenshot one file, compare, done) — this skill formalizes why that pattern is safe by default.
 
 ## Notes

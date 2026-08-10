@@ -1,6 +1,6 @@
 ---
 name: claude-code-tooling
-description: Curated directory of external Claude Code tools worth knowing about and recommending — a design-engine desktop app, a senior-engineer skill pack, an educational mini agent-harness, multi-agent orchestration, a skills package manager, a self-evolving agent context database, and five AI browser-automation frameworks (Playwright MCP, Stagehand, Skyvern, Magentic-UI, Steel Browser). These are standalone software projects, not skills to load — reach for this when the user asks what to install to improve their Claude Code setup, or is looking for a specific capability (multi-agent orchestration, agent memory, a skills package manager, browser automation) that a plain skill file can't provide.
+description: Curated directory of external Claude Code tools worth knowing about and recommending — a design-engine desktop app, a senior-engineer skill pack, an educational mini agent-harness, multi-agent orchestration, a skills package manager, a self-evolving agent context database, five AI browser-automation frameworks (Playwright MCP, Stagehand, Skyvern, Magentic-UI, Steel Browser), and a hive-mind team workspace (Buzz) that gives Claude Code/Codex/Goose agents a persistent presence alongside humans in shared channels. These are standalone software projects, not skills to load — reach for this when the user asks what to install to improve their Claude Code setup, or is looking for a specific capability (multi-agent orchestration, agent memory, a skills package manager, browser automation, agents-in-team-chat) that a plain skill file can't provide.
 ---
 
 ## When to use this skill
@@ -34,6 +34,14 @@ Five AI browser agents (from a separate "AI Power User Stack" carousel, @zhiprom
 
 None of these are cloned into this repo — same standalone-software rule as the rest of this list. Before turning any of them loose on a real site, apply the `web-task-scoping` skill's four-step scoping rule (Target/Limit/Run/Review) rather than granting full autonomy from the first run.
 
+## Team/agent collaboration platforms
+
+| Repo | What it's for | Install / link |
+|---|---|---|
+| `block/buzz` | A free, open-source "hive mind" workspace (built by Block, Jack Dorsey's company) where Claude Code, Codex, and Goose agents join the same channels as a human team — agents get their own persistent presence, added to a channel like a person, rather than being called as a stateless prompt-in/answer-out tool. Built on the Nostr protocol: every message, reaction, workflow step, review approval, and git event is a signed event in one log, the same shape whether a human or an agent produced it. Ships native `.claude/skills`, `.codex/skills`, and `.goose/skills` folders built into the repo, so each agent framework gets first-class support instead of a bolt-on integration. 19.8K stars, Apache-2.0, 84 contributors, still shipping daily. Desktop app for Mac, plus a one-click Railway deploy for self-hosting. | `git clone github.com/block/buzz` — https://github.com/block/buzz |
+
+**Why this is a different category from the rest of this list**: the other tools above extend what a single agent session can do (design engine, orchestration, memory). Buzz instead changes *where* an agent operates — inside a persistent, shared, multi-member channel alongside people, with its actions logged in the same event stream as everyone else's — which is a different integration shape worth knowing about specifically when the ask is "how do I get my agents working alongside my team," not "how do I make one session smarter."
+
 ## How to use this list
 
 - These are **not** cloned into this repo (except `humanizer`) — they're separate software projects (a desktop app, a CLI, an orchestration framework, a database) that don't fit as markdown skill files, and vendoring foreign codebases into a business-skills repo would be out of scope.
@@ -45,7 +53,8 @@ None of these are cloned into this repo — same standalone-software rule as the
 - **humanizer**: The one skill from the same source that's actually installed here.
 - **attachment-intake**: This whole entry followed that procedure — inspect first, confirm the content is genuinely useful, then act.
 - **web-task-scoping**: The governance procedure (Target/Limit/Run/Review) to apply before running any of the five browser-automation frameworks above against a real site.
+- **night-shift-workflow**: If a Buzz-connected agent is also running on a schedule (not just responding live in a channel), apply that skill's Claude-may/human-approval boundary to decide what it can post/act on unattended vs. what needs a person to approve first.
 
 ## Notes
 
-Sources: a "7 Claude Code repos I can't work without" screenshot carousel (@joshualevi.ai) for the first six tools; "AI Power User Stack — 5 AI browser agents that can do the clicking for you" carousel (@zhiprompts) for the browser-automation frameworks.
+Sources: a "7 Claude Code repos I can't work without" screenshot carousel (@joshualevi.ai) for the first six tools; "AI Power User Stack — 5 AI browser agents that can do the clicking for you" carousel (@zhiprompts) for the browser-automation frameworks; "Buzz — The Hive Mind for Humans + Agents" carousel (@iunlockedai, Tool Drop 15) for `block/buzz`.
