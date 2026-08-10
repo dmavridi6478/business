@@ -47,6 +47,7 @@ A third bundle covers **setting up a new business** — validating an idea and t
 - `the-productize-yourself-blueprint` — converts that expertise into a scalable product/service format that sells without the founder's live presence
 - `the-leverage-stack-auditor` — diagnoses whether a business idea is actually leveraged (media/code) or just relabeled labor
 - `content-repurposing-service` — a concrete worked example: a productized weekly service that turns one client recording into a 7-asset content pack (carousel, video outlines, email, text posts) on a Mon–Fri cadence
+- `lean-software-stack` — curated directory of 8 free/open-source desktop apps (AppFlowy, Joplin, KeePassXC, OBS Studio, Kdenlive, Element, PDFsam Basic, LocalSend) that replace common paid SaaS tools, for controlling software costs before revenue validates the spend; companion to `/tool-stack-check`
 
 A fourth pair covers **personal AI infrastructure** — setting up Claude Code itself as a tool, rather than producing business deliverables:
 
@@ -67,6 +68,7 @@ automatically when relevant), commands are invoked explicitly by name:
 - `/improve-system` — reviews the current session for one genuine, durable behavioral signal (not a transcript summary) and persists it to a `memory/` file, updating the memory index
 - `/design-review [file or description]` — runs the `design-review-audit` checklist against a build and reports a prioritized punch list
 - `/scope-web-task [task]` — applies the `web-task-scoping` skill's Target/Limit/Run/Review discipline to a browser-automation task before it runs; refuses to proceed on side-effecting tasks (submit/purchase/post/delete) until all four are explicit
+- `/tool-stack-check [current tools]` — checks a described software stack against `lean-software-stack`'s free alternatives and applies the `free-vs-paid-tool-decision` procedure to recommend switch/keep-paid per tool
 
 **Skill vs. command, in this repo:** a skill is background knowledge/procedure
 Claude reaches for when relevant ("how do I structure a quarterly OKR cascade");
@@ -116,7 +118,9 @@ Skills") section pointing at the others that feed it or consume its output:
   `product-marketing-context` captures the validated positioning → the rest of
   the business/design/output skills take over from there.
   `content-repurposing-service` is a ready-made example of running that whole
-  chain and landing on a productized content service.
+  chain and landing on a productized content service. `lean-software-stack`
+  keeps founder overhead near zero during this phase, checked against the
+  `free-vs-paid-tool-decision` procedure via `/tool-stack-check`.
 
 - For personal AI setup: `advisory-board` supplies advisors that
   `product-strategy-session`, `quarterly-okr-architect`, and the new-business
@@ -161,3 +165,7 @@ Standard operating procedures live in `docs/procedures/`:
 - `attachment-intake.md` — inspect an unlabeled/ambiguous attachment before
   acting, ask a grounded clarifying question, and don't force-fit mismatched
   answers onto the file. Backs the `attachment-intake` skill above.
+- `free-vs-paid-tool-decision.md` — team size, sync/collaboration needs,
+  portability-vs-support trade-off, and security/compliance handling to weigh
+  before swapping a paid SaaS tool for a free/open-source one from
+  `lean-software-stack`; revisit at each business-stage change, not just once.
