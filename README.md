@@ -17,6 +17,9 @@ A starter bundle of business-oriented Claude skills lives in `.claude/skills/`:
 - `doc-coauthoring` — structured workflow for co-authoring docs, proposals, and specs
 - `attachment-intake` — how to handle uploaded files (zips, photo batches, docs) that arrive with no or mismatched instructions, instead of guessing at intent
 - `design-dev-resources` — curated directory of free design/frontend tool sites (unDraw, SVGL, Aceternity, Glassmorphism generator, JSON Crack) plus notable external AI tools (Genspark, Google Stitch, Google Flow, Gumloop, Figma Make) worth knowing about
+- `ai-search-marketing-2026` — the SEO/SXO/AEO/GEO/AIO five-discipline wheel, a modern-marketing taxonomy, 5 exec-level marketing-analytics questions, and a 15-day day-by-day AI-search action plan
+- `growth-operating-framework` — a 7-step sequence for capital-efficient growth (real-business alignment → North Star metric → data foundation → feedback loop → cross-functional accountability → capital-efficient scale → fast iteration)
+- `linkedin-virality-playbook` — 9 tactics for LinkedIn posts that reach beyond the author's own network (proof-led hooks, repostable angles, reusable visual templates, real engagement questions)
 
 A design/output bundle sits alongside it, for turning business content into actual visual deliverables:
 
@@ -122,6 +125,14 @@ Skills") section pointing at the others that feed it or consume its output:
 - `humanizer` is a general-purpose editing pass — run it on drafts from
   `sales-enablement`, `content-strategy`, `doc-coauthoring`, `internal-comms`,
   or `content-repurposing-service` before delivering them.
+
+- `growth-operating-framework` decides *what* to grow and by which metric;
+  `quarterly-okr-architect` turns that into a goal cascade; `business-decision-frameworks`
+  prioritizes which channels/experiments to run; `ai-search-marketing-2026`'s
+  exec questions and `business-intelligence-report`/`ceo-reporting-skill` report
+  on how it's going. `linkedin-virality-playbook` and `ai-search-marketing-2026`
+  both extend `content-strategy` with channel-specific reach tactics (LinkedIn
+  posts; AI-search visibility) once the underlying topic is decided.
 
 `attachment-intake` and `claude-code-tooling` are separate, meta-level skills
 and aren't part of this content chain.

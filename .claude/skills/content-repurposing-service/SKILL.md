@@ -39,6 +39,7 @@ The client is buying seven consistent assets from real expertise every week — 
 - **quarterly-okr-architect** / **business-decision-frameworks**: Useful once this is running as a business — set targets for client count/retention, and prioritize which niches or formats to expand into next.
 - **humanizer**: A ready-made implementation of step 4 ("Restore the Human") — run it on every draft before the client approval round in step 5.
 - **design-templates**: The social device-frame template is a quick way to preview short-video/carousel assets in a realistic phone frame before delivery.
+- **linkedin-virality-playbook**: When one of the 7 assets is a LinkedIn post specifically, apply this playbook's 9 tactics on top of step 3's format-specific build.
 
 ## Notes
 

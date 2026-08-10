@@ -39,3 +39,4 @@ A reference library of four named-framework domains extracted from business/prod
 - **quarterly-okr-architect**: Once initiatives are prioritized here, feed the top ones into that skill to build a full quarterly goal architecture around them.
 - **content-strategy**: Use the prioritization frameworks (RICE, Value vs Effort) to rank topic/content ideas before building an editorial calendar.
 - **business-intelligence-report** / **ceo-reporting-skill**: The storytelling pyramid (Minto) reference here pairs with those skills when a report needs a persuasive executive narrative, not just a data table.
+- **growth-operating-framework**: Step 6 of that framework ("what works best, scalable, replicable") is a prioritization decision — apply RICE/Value-vs-Effort here to rank growth channels/experiments.
