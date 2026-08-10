@@ -362,3 +362,4 @@ Installed in this repo: **product-marketing-context**, **competitor-profiling** 
 - **competitor-profiling** *(in this repo)*: Source material for battle cards and objection handling
 - **premium-html-presentation** / **pptx** *(in this repo)*: Turn this skill's content into an actual pitch deck (HTML or editable PowerPoint)
 - **design-dev-resources** *(in this repo)*: Real icons/illustrations/logos for sales collateral instead of hand-drawn SVG
+- **content-repurposing-service** *(in this repo)*: A productized-service offer this skill can turn into a pitch/proposal for prospective clients

@@ -30,6 +30,15 @@ A design/output bundle sits alongside it, for turning business content into actu
 - `brand-guidelines` — **Anthropic's own** brand colors/fonts specifically, not a generic client-branding tool (see caveat in the skill itself)
 - `pptx` / `docx` / `xlsx` / `pdf` — editable PowerPoint, Word, Excel, and PDF file creation/editing
 
+A third bundle covers **setting up a new business** — validating an idea and turning someone's own expertise into a sellable product/service before (or instead of) building a team-scale product:
+
+- `product-strategy-session` — full positioning → discovery → roadmap process for validated direction before committing to execution
+- `saas-idea-validator` — critical, non-cheerleading stress-test of a new product/software/service idea (problem-solution fit, market, competition, moat, specific failure mode)
+- `the-specific-knowledge-excavator` — reverse-engineers a person's unique intersection of expertise nobody else holds in the same combination
+- `the-productize-yourself-blueprint` — converts that expertise into a scalable product/service format that sells without the founder's live presence
+- `the-leverage-stack-auditor` — diagnoses whether a business idea is actually leveraged (media/code) or just relabeled labor
+- `content-repurposing-service` — a concrete worked example: a productized weekly service that turns one client recording into a 7-asset content pack (carousel, video outlines, email, text posts) on a Mon–Fri cadence
+
 Drop this repo into a Claude Code project (or point `.claude/skills` at it) to make these available.
 
 ### How the skills connect
@@ -57,6 +66,14 @@ Skills") section pointing at the others that feed it or consume its output:
 - `design-dev-resources` supplies real icons/illustrations/logos to
   `frontend-design`, `web-artifacts-builder`, `canvas-design`, and
   `campaign-page-one-shot` instead of hand-drawn SVG.
+- For a brand-new business: `the-specific-knowledge-excavator` finds the
+  expertise → `the-productize-yourself-blueprint` turns it into a product/service
+  format → `saas-idea-validator` / `product-strategy-session` stress-test it →
+  `the-leverage-stack-auditor` checks it's actually leveraged →
+  `product-marketing-context` captures the validated positioning → the rest of
+  the business/design/output skills take over from there.
+  `content-repurposing-service` is a ready-made example of running that whole
+  chain and landing on a productized content service.
 
 `attachment-intake` is a separate, meta-level skill and isn't part of this
 content chain.
