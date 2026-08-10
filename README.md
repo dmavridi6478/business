@@ -57,9 +57,10 @@ A fourth pair covers **personal AI infrastructure** — setting up Claude Code i
 - `advisory-board` — set up a personal "council of experts" (named advisors + their real source material) that the `/ask-the-board` command draws on
 - `ai-discoverable-site` — make a personal/company site readable by AI assistants (semantic HTML, meta descriptions, `llms.txt`, `robots.txt`, an "Ask AI about me" cross-provider block)
 - `humanizer` — strips AI-writing tells (inflated symbolism, promotional language, em dash overuse, filler phrases, etc.) from drafted text; vendored for real from [blader/humanizer](https://github.com/blader/humanizer) (MIT)
-- `claude-code-tooling` — curated directory of external Claude Code tools (a design-engine desktop app, a senior-engineer skill pack, multi-agent orchestration, a skills package manager, an agent context/memory database, five browser-automation frameworks, a hive-mind team workspace) that are standalone software, not skill files, so they're documented here rather than vendored in
+- `claude-code-tooling` — curated directory of external Claude Code tools (a design-engine desktop app, a senior-engineer skill pack, multi-agent orchestration, a skills package manager, an agent context/memory database, five browser-automation frameworks, a hive-mind team workspace, five open-source AI video-generation models) that are standalone software, not skill files, so they're documented here rather than vendored in
 - `web-task-scoping` — governance procedure for scoping any browser-automation task (Target → Limit → Run → Review) before granting a web agent more autonomy; companion to `/scope-web-task`
 - `night-shift-workflow` — design and govern a scheduled/unattended Claude workflow (a recurring brief, digest, or Routine) that gathers, triages, and drafts while the user is away, with an explicit Claude-may/human-approval boundary; companion to the `night-shift-canvas` procedure
+- `video-model-evaluation` — the "five-clip test": a controlled comparison method (same brief, source, duration, aspect ratio, and rubric fixed before generating) for picking an AI video-generation model based on usable footage instead of a hand-picked demo clip
 
 Drop this repo into a Claude Code project (or point `.claude/skills` at it) to make these available.
 
@@ -168,9 +169,16 @@ Skills") section pointing at the others that feed it or consume its output:
   applied as an explicit send cap, before anything actually goes out.
   `sales-enablement` picks up the conversation once a reply comes in.
 
-`attachment-intake`, `claude-code-tooling`, `web-task-scoping`, and
-`night-shift-workflow` are separate, meta-level skills and aren't part of
-the business/design content chain above.
+- `video-model-evaluation`'s five-clip test is the fixed-rubric-before-generating
+  discipline applied to picking one of `claude-code-tooling`'s open
+  video-generation models — the same "define everything before running, or
+  it isn't ready" discipline `night-shift-canvas` applies to workflow setup
+  and `design-review-audit` applies to a finished build.
+
+`attachment-intake`, `claude-code-tooling`, `web-task-scoping`,
+`night-shift-workflow`, and `video-model-evaluation` are separate,
+meta-level skills and aren't part of the business/design content chain
+above.
 
 ### ⚠️ `brand-guidelines` applies Anthropic's brand, not the user's
 
