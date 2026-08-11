@@ -1,6 +1,6 @@
 ---
 name: design-dev-resources
-description: Curated directory of free design/frontend tool sites (illustration library, SVG logo directory, UI component kit, CSS glassmorphism generator, JSON visualizer, real-app UI-pattern library, ecommerce UX pattern library, creator-shared component snippets, motion-technique reference) plus notable external AI tools (multi-agent workspace, text-to-UI, AI video, workflow automation, AI prototyping, AI design-to-code agent) and a design-engineering job board, worth knowing about for design and frontend work. Consult this whenever a design/frontend task needs stock illustrations, real brand logos as SVG, landing-page component patterns, a glassmorphism effect, JSON debugging, real shipped-product UI flows for reference/taste-building, ecommerce/product-page UX patterns, interface motion-technique examples, an AI tool that turns a prompt/screenshot/sketch into a UI concept or production frontend, or when a designer/engineer is job-hunting for design-engineering roles specifically.
+description: Curated directory of free design/frontend tool sites (illustration library, SVG logo directory, UI component kit, CSS glassmorphism generator, JSON visualizer, real-app UI-pattern library, ecommerce UX pattern library, creator-shared component snippets, motion-technique reference, color/font previewer, shadcn token editor, layered-shadow generator, animated icon set, abstract-shape asset library, font inspector) plus notable external AI tools (multi-agent workspace, text-to-UI, AI video, workflow automation, AI prototyping, AI design-to-code agent) and a design-engineering job board, worth knowing about for design and frontend work. Consult this whenever a design/frontend task needs stock illustrations, real brand logos as SVG, landing-page component patterns, a glassmorphism effect, JSON debugging, real shipped-product UI flows for reference/taste-building, ecommerce/product-page UX patterns, interface motion-technique examples, a color/font/shadow/icon/shape asset, font-file inspection, an AI tool that turns a prompt/screenshot/sketch into a UI concept or production frontend, or when a designer/engineer is job-hunting for design-engineering roles specifically.
 ---
 
 ## When to use this skill
@@ -15,6 +15,10 @@ Reach for one of these instead of improvising when a task needs:
 - **Studying real iOS/web product flows screen-by-screen** for reference before designing one, instead of guessing at patterns → Mobbin
 - **Studying ecommerce/product-page UX patterns specifically** (filterable by platform/category) → Ecomm.Design
 - **Browsing creator-shared UI component snippets** by component type for a sharper starting point → UI.live
+- **Previewing a color palette and font pairing on a real layout** before committing to a hex value → Realtime Colors
+- **Editing shadcn design tokens against a live dashboard preview** instead of guessing at CSS variables → tweakcn
+- **Building a realistic layered shadow** (not a flat single box-shadow) and copying it as CSS or a Figma layer → Smooth Shadows
+- **Inspecting what a font file actually supports** (variable axes, layout features, glyph count) before relying on it → Wakamai Fondue
 
 ## Resources
 
@@ -28,6 +32,10 @@ Reach for one of these instead of improvising when a task needs:
 | Mobbin | Library of real iOS & web app screens/flows from 1,000+ shipped products — study patterns screen-by-screen instead of designing from a blank canvas | https://mobbin.com |
 | Ecomm.Design | Ecommerce sites filterable by platform and category, for comparing product-page and shopping-UX patterns specifically | https://ecomm.design |
 | UI.live | Creator-shared interface snippets browsable by component (buttons, cards, dashboards, data viz, etc.) for a sharper starting point than a blank canvas | https://ui.live/components |
+| Realtime Colors | Preview a color palette and font pairing directly on a real sample layout before committing to a hex value; 300K+ users, free | https://realtimecolors.com |
+| tweakcn | Edits every shadcn design token against a live dashboard preview — 42 presets, no login required (AI-assisted generation is the paid tier) | https://tweakcn.com |
+| Smooth Shadows | Builds a realistic shadow from one light source using up to 10 stacked layers, then copies it as CSS or a Figma layer | https://smoothshadows.com |
+| lucide-animated | Lucide icons animated with Motion, added to a project via a single shadcn CLI command — MIT licensed | https://lucide-animated.com |
 
 ## More niche design tools
 
@@ -44,6 +52,8 @@ A second batch, oriented around specific effects/workflows the mainstream lists 
 | Motion.ed | Interactive examples of interface motion techniques — easing, delay, masking, parallax, zoom — for learning or referencing a specific motion technique by name | https://motion.zajno.com |
 | Drawerrr | Skill-building platform: real-world design challenges, peer collaboration, and feedback from industry experts | https://drawerrr.com |
 | Generative design (Dribbble search) | A curated Dribbble search for generative-design, creative-coding, and animation references — for when static inspiration feels too familiar | https://dribbble.com/search/generative-design |
+| coolshapes | 100+ abstract, grainy-gradient shapes as SVG, JSX, or PNG — MIT licensed, ships with a Figma file and a React package | https://coolshap.es |
+| Wakamai Fondue | Drop in a font file and read exactly what it supports — variable axes, instances, glyph count, and every layout feature, before relying on it in a build | https://wakamaifondue.com |
 
 See the **design-templates** skill for ready-to-use HTML/CSS starting points that approximate what Ditther (halftone effect), Ultramock (3D product tilt), Javii (device mockup frames), and Logo System (moodboard grid) produce — for when the actual tool isn't available or a quick copy-paste snippet is faster than a new dependency. See the **ui-motion-design** skill for the underlying easing/timing/spring-physics principles Motion.ed's examples demonstrate visually.
 
@@ -73,6 +83,6 @@ Not a design tool — included because it's the natural next step once `design-r
 
 ## Notes
 
-- Sources: curated from five design/AI-tools screenshot carousels ("Insane Website for Developers" by @glorydotdev; "5 AI Tools You'll Wish You Found Earlier" by @finitopotatoes; "6 design tools that never make the lists" by @webnailed; "The Shortlist: 3 websites to improve your taste as a frontend developer" by @riteshbiswas.in; "6 useful websites for better UI design" by @webnailed). Verify each site/tool is still live, current, and re-check licensing/attribution/pricing terms before relying on it in client-facing work — e.g. SVGL logos link back to the source product and note that permission may be required for some; unDraw is attribution-free; the AI tools above are commercial products that may require a paid plan; Mobbin's and Ecomm.Design's screen libraries are for reference/inspiration, not for lifting a competitor's exact UI wholesale into client work; UI.live's snippets are creator-shared and may carry individual attribution/licensing terms worth checking per-snippet.
+- Sources: curated from six design/AI-tools screenshot carousels ("Insane Website for Developers" by @glorydotdev; "5 AI Tools You'll Wish You Found Earlier" by @finitopotatoes; "6 design tools that never make the lists" by @webnailed; "The Shortlist: 3 websites to improve your taste as a frontend developer" by @riteshbiswas.in; "6 useful websites for better UI design" by @webnailed; "If your UI feels flat, it's your defaults" by @webnailed). Verify each site/tool is still live, current, and re-check licensing/attribution/pricing terms before relying on it in client-facing work — e.g. SVGL logos link back to the source product and note that permission may be required for some; unDraw is attribution-free; the AI tools above are commercial products that may require a paid plan; Mobbin's and Ecomm.Design's screen libraries are for reference/inspiration, not for lifting a competitor's exact UI wholesale into client work; UI.live's snippets are creator-shared and may carry individual attribution/licensing terms worth checking per-snippet; coolshapes and lucide-animated are MIT licensed, tweakcn's base tool is free with AI generation gated behind a paid tier.
 - Treat the design resources as free/open starting points, not a substitute for a client's actual brand assets when the logo or illustration needs to be pixel-accurate to their identity.
 - Pairs well with the `frontend-design`, `web-artifacts-builder`, `campaign-page-one-shot`, `premium-html-presentation`, `canvas-design`, and `theme-factory` skills when those need real icons/illustrations instead of custom SVG paths, or when picking a tool for a task Claude itself doesn't cover (e.g. AI video generation).
