@@ -63,6 +63,7 @@ A fourth pair covers **personal AI infrastructure** — setting up Claude Code i
 - `web-task-scoping` — governance procedure for scoping any browser-automation task (Target → Limit → Run → Review) before granting a web agent more autonomy; companion to `/scope-web-task`
 - `night-shift-workflow` — design and govern a scheduled/unattended Claude workflow (a recurring brief, digest, or Routine) that gathers, triages, and drafts while the user is away, with an explicit Claude-may/human-approval boundary; companion to the `night-shift-canvas` procedure
 - `video-model-evaluation` — the "five-clip test": a controlled comparison method (same brief, source, duration, aspect ratio, and rubric fixed before generating) for picking an AI video-generation model based on usable footage instead of a hand-picked demo clip
+- `rag-pipeline-architecture` — reference architecture for building a Retrieval-Augmented Generation system (indexing pipeline: chunk → embed → vector DB; query pipeline: embed → search → top-K → prompt → LLM → grounded answer), the "index first, then query" build-order discipline, and the chunk-quality × retrieval-quality failure model; companion to the `rag-build-order` procedure
 
 Drop this repo into a Claude Code project (or point `.claude/skills` at it) to make these available.
 
@@ -217,3 +218,8 @@ Standard operating procedures live in `docs/procedures/`:
   vendored here — it's Anthropic's own meta-tool, same category as the
   `claude-code-tooling` entries), so future drafts sound like them without
   re-explaining preferences each time.
+- `rag-build-order.md` — build and validate the indexing pipeline completely
+  before touching the query pipeline, test retrieval in isolation before
+  adding generation, and diagnose answer-quality issues chunk-quality →
+  retrieval-quality → generation, in that order. Backs the
+  `rag-pipeline-architecture` skill.
