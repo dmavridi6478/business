@@ -56,6 +56,7 @@ A third bundle covers **setting up a new business** — validating an idea and t
 A fourth pair covers **personal AI infrastructure** — setting up Claude Code itself as a tool, rather than producing business deliverables:
 
 - `advisory-board` — set up a personal "council of experts" (named advisors + their real source material) that the `/ask-the-board` command draws on
+- `personal-growth-prompts` — 6 ready-to-use generic "act as X" persona prompts (Elite AI Mentor, CEO mindset, Life Optimization Coach, Brutally Honest Advisor, Personal Success OS, 10x Improvement Coach) for fast personal-development framing without setting up a full named board
 - `ai-discoverable-site` — make a personal/company site readable by AI assistants (semantic HTML, meta descriptions, `llms.txt`, `robots.txt`, an "Ask AI about me" cross-provider block)
 - `humanizer` — strips AI-writing tells (inflated symbolism, promotional language, em dash overuse, filler phrases, etc.) from drafted text; vendored for real from [blader/humanizer](https://github.com/blader/humanizer) (MIT)
 - `claude-code-tooling` — curated directory of external Claude Code tools (a design-engine desktop app, a senior-engineer skill pack, multi-agent orchestration, a skills package manager, an agent context/memory database, five browser-automation frameworks, a hive-mind team workspace, five open-source AI video-generation models) that are standalone software, not skill files, so they're documented here rather than vendored in
@@ -139,6 +140,10 @@ Skills") section pointing at the others that feed it or consume its output:
   cluster can sanity-check decisions against via `/ask-the-board`.
   `ai-discoverable-site` pulls its "who they are" content from
   `product-marketing-context` and hands implementation to `frontend-design`.
+  `personal-growth-prompts` is the fast, no-setup alternative to
+  `advisory-board` — generic archetypal personas instead of named real
+  advisors — and its 10x Improvement Coach prompt is a lighter, per-goal
+  version of `the-leverage-stack-auditor`'s fuller audit.
 
 - `humanizer` is a general-purpose editing pass — run it on drafts from
   `sales-enablement`, `content-strategy`, `doc-coauthoring`, `internal-comms`,
