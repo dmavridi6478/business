@@ -37,6 +37,7 @@ A design/output bundle sits alongside it, for turning business content into actu
 - `pptx` / `docx` / `xlsx` / `pdf` — editable PowerPoint, Word, Excel, and PDF file creation/editing
 - `design-templates` — 6 ready-to-use, verified-rendering HTML/CSS templates (iMessage mockup, social device frame, 3D product tilt, halftone/dither effect, moodboard grid, brand board) to drop into a build instead of writing from scratch
 - `ui-motion-design` — tasteful UI motion: easing curves, spring physics, timing, and micro-interaction patterns
+- `gsap-core`, `gsap-timeline`, `gsap-scrolltrigger`, `gsap-react`, `gsap-frameworks`, `gsap-utils`, `gsap-performance`, `gsap-plugins` — GreenSock's own official 8-part GSAP implementation skill pack (core API, timelines, ScrollTrigger, React, Vue/Svelte, utils, performance, plugins); vendored for real from [greensock/gsap-skills](https://github.com/greensock/gsap-skills) (MIT) — the code-level counterpart to `ui-motion-design`'s principles
 - `design-review-audit` — audits a finished build against a spacing/hierarchy/contrast/consistency/AI-slop checklist; companion to `/design-review`
 - `brandkit-generator` — turns a one-line idea into 2-3 brand directions (wordmark, palette, type pairing, brand board), fast and explicitly non-final
 - `design-token-extractor` — extracts a reusable color/type/spacing token set from a reference site or screenshot
@@ -59,7 +60,7 @@ A fourth pair covers **personal AI infrastructure** — setting up Claude Code i
 - `personal-growth-prompts` — 6 ready-to-use generic "act as X" persona prompts (Elite AI Mentor, CEO mindset, Life Optimization Coach, Brutally Honest Advisor, Personal Success OS, 10x Improvement Coach) for fast personal-development framing without setting up a full named board
 - `ai-discoverable-site` — make a personal/company site readable by AI assistants (semantic HTML, meta descriptions, `llms.txt`, `robots.txt`, an "Ask AI about me" cross-provider block)
 - `humanizer` — strips AI-writing tells (inflated symbolism, promotional language, em dash overuse, filler phrases, etc.) from drafted text; vendored for real from [blader/humanizer](https://github.com/blader/humanizer) (MIT)
-- `claude-code-tooling` — curated directory of external Claude Code tools (a design-engine desktop app, a senior-engineer skill pack, multi-agent orchestration, a skills package manager, an agent context/memory database, five browser-automation frameworks, a hive-mind team workspace, five open-source AI video-generation models, a live-verified 22-repo "skills to install in Claude" collection, and 5 power-user CLI/MCP tools for cost tracking/model routing/multi-agent management) that are standalone software, not skill files, so they're documented here rather than vendored in
+- `claude-code-tooling` — curated directory of external Claude Code tools (a design-engine desktop app, a senior-engineer skill pack, multi-agent orchestration, a skills package manager, an agent context/memory database, five browser-automation frameworks, a hive-mind team workspace, five open-source AI video-generation models, a live-verified 22-repo "skills to install in Claude" collection, 5 power-user CLI/MCP tools for cost tracking/model routing/multi-agent management, and a 4-repo motion-skills batch where cloning and reading each repo changed the verdict on 3 of the 4) that are standalone software, not skill files, so they're documented here rather than vendored in
 - `web-task-scoping` — governance procedure for scoping any browser-automation task (Target → Limit → Run → Review) before granting a web agent more autonomy; companion to `/scope-web-task`
 - `night-shift-workflow` — design and govern a scheduled/unattended Claude workflow (a recurring brief, digest, or Routine) that gathers, triages, and drafts while the user is away, with an explicit Claude-may/human-approval boundary; companion to the `night-shift-canvas` procedure
 - `video-model-evaluation` — the "five-clip test": a controlled comparison method (same brief, source, duration, aspect ratio, and rubric fixed before generating) for picking an AI video-generation model based on usable footage instead of a hand-picked demo clip
@@ -119,6 +120,9 @@ Skills") section pointing at the others that feed it or consume its output:
   niche tools (Javii, Ultramock, Ditther, Logo System) produce.
 - `ui-motion-design` and `design-review-audit` (`/design-review`) bookend a
   build: motion guidance going in, a checklist audit coming out.
+  `gsap-core` and its 7 vendored siblings are the code-level layer between
+  them — `ui-motion-design` decides what motion should communicate, the
+  `gsap-*` skills implement it.
 - `brandkit-generator` turns a one-liner into a brand direction, assembled via
   `design-templates`' `brand-board.html`; `design-token-extractor` turns any
   reference (that or an external site) into reusable tokens; `image-to-code`
