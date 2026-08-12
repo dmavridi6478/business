@@ -64,6 +64,7 @@ A fourth pair covers **personal AI infrastructure** — setting up Claude Code i
 - `night-shift-workflow` — design and govern a scheduled/unattended Claude workflow (a recurring brief, digest, or Routine) that gathers, triages, and drafts while the user is away, with an explicit Claude-may/human-approval boundary; companion to the `night-shift-canvas` procedure
 - `video-model-evaluation` — the "five-clip test": a controlled comparison method (same brief, source, duration, aspect ratio, and rubric fixed before generating) for picking an AI video-generation model based on usable footage instead of a hand-picked demo clip
 - `rag-pipeline-architecture` — reference architecture for building a Retrieval-Augmented Generation system (indexing pipeline: chunk → embed → vector DB; query pipeline: embed → search → top-K → prompt → LLM → grounded answer), the "index first, then query" build-order discipline, and the chunk-quality × retrieval-quality failure model; companion to the `rag-build-order` procedure
+- `subagent-depth-control` — explains Claude Code's subagent nesting-depth limit (each layer multiplies context windows/token cost, not adds), how the default has changed across versions (5 locked → 1 → 3, configurable since v2.1.217), and the `CLAUDE_CODE_MAX_SUBAGENT_SPAWN_DEPTH` setting — with the general lesson to check `claude --version` before trusting a guide's claimed default on any fast-moving setting
 
 Drop this repo into a Claude Code project (or point `.claude/skills` at it) to make these available.
 
@@ -185,10 +186,15 @@ Skills") section pointing at the others that feed it or consume its output:
   it isn't ready" discipline `night-shift-canvas` applies to workflow setup
   and `design-review-audit` applies to a finished build.
 
+- `subagent-depth-control` applies `web-task-scoping`'s "don't grant more
+  scope than the task needs" discipline to Claude Code's own subagent
+  nesting-depth setting, and feeds into `night-shift-workflow` when a
+  scheduled workflow spawns nested subagents.
+
 `attachment-intake`, `claude-code-tooling`, `web-task-scoping`,
-`night-shift-workflow`, and `video-model-evaluation` are separate,
-meta-level skills and aren't part of the business/design content chain
-above.
+`night-shift-workflow`, `video-model-evaluation`, and
+`subagent-depth-control` are separate, meta-level skills and aren't part
+of the business/design content chain above.
 
 ### ⚠️ `brand-guidelines` applies Anthropic's brand, not the user's
 
