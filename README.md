@@ -183,6 +183,7 @@ automatically when relevant), commands are invoked explicitly by name:
 - `/improve-system` — reviews the current session for one genuine, durable behavioral signal (not a transcript summary) and persists it to a `memory/` file, updating the memory index
 - `/design-review [file or description]` — runs the `design-review-audit` checklist against a build and reports a prioritized punch list
 - `/outreach-campaign [product/offer and target market]` — runs the `outreach-*` skill bundle end to end (strategy → list-building → copywriting → campaign design) into a single `outreach-brief.md`; stops to ask if the ICP is still vague, or if the GTM stress test finds a serious flaw, rather than shipping a brief built on a plan already known to be broken
+- `/content-pipeline [niche/topic]` — runs the 7-agent content team (research → hook → script → design → schedule) in sequence, then always stops for explicit approval before `content-publisher` touches a live platform
 - `/scope-web-task [task]` — applies the `web-task-scoping` skill's Target/Limit/Run/Review discipline to a browser-automation task before it runs; refuses to proceed on side-effecting tasks (submit/purchase/post/delete) until all four are explicit
 - `/tool-stack-check [current tools]` — checks a described software stack against `lean-software-stack`'s free alternatives and applies the `free-vs-paid-tool-decision` procedure to recommend switch/keep-paid per tool
 
@@ -311,6 +312,25 @@ into something that actually runs, scoped to this repo's conventions:
   `/improve-system` writes to (orphaned files, near-duplicates,
   contradictions), rather than deciding what's worth saving in the first
   place
+
+A second set of seven — a coherent, working content-team pipeline this
+time, not concept demos — came from a "Claude Code AI Company OS: I built
+an AI content team, 7 AI employees" post. Each floor of that mockup became
+one subagent, wired to this repo's existing content skills rather than
+duplicating them, run in sequence by `/content-pipeline`:
+
+- `content-researcher` — finds trends, studies competitors, surfaces ranked content opportunities with evidence
+- `content-hook-writer` — applies the `hook-writer` skill to a researched opportunity, producing several distinct ranked angles
+- `content-script-writer` — builds the full script/caption around the chosen hook, routing to `caption-writer`/`carousel-writer` per format
+- `content-designer` — specifies (and routes to `frontend-design`/`canvas-design`/`design-templates` to produce) the visuals a finished script needs
+- `content-analyst` — reads real performance data (retention, saves, CTR — never fabricated) and feeds conclusions back to the researcher/hook-writer stages
+- `content-manager` — sequences finished pieces into the content calendar and tracks pipeline state; never publishes
+- `content-publisher` — the only stage that touches a live account; **requires an explicit human go-ahead for the specific piece every time**, never auto-chained from a calendar slot
+
+The publisher's confirmation gate is deliberate, not an oversight — see
+"Executing actions with care" in this project's standing instructions:
+scheduling a slot is a plan, posting to a real audience is a side-effecting
+action that needs its own explicit approval regardless of what came before it.
 
 ## Procedures
 
