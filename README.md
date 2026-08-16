@@ -219,6 +219,36 @@ look-and-feel specifically. For the user's own company or client branding, use
 `product-marketing-context` to capture their real brand and apply it manually
 in the design skills instead.
 
+## Agents
+
+Subagents live in `.claude/agents/` — unlike skills (loaded automatically
+into the main conversation) and commands (invoked by typing `/name`), an
+agent runs as a separate subagent via the Agent tool, with its own bounded
+context and tool access. These six were built from an "AI Agents: 6 must
+know terms" glossary card (MCP, Agent Loops, Skills, Single vs Multi-Agent
+Architecture, Agentic RAG, Agent Memory) — each turns one of those concepts
+into something that actually runs, scoped to this repo's conventions:
+
+- `mcp-integration-scout` — checks which MCP connectors are already
+  available/connectable before a task reaches for a hand-rolled API
+  integration or scraper
+- `task-loop-runner` — runs a bounded act → evaluate → retry loop on a
+  single task with a checkable success condition (refine a draft against a
+  checklist, reconcile numbers until they tie out), instead of grinding
+  silently or looping forever
+- `capability-scout` — matches a task against this repo's own ~50 skills
+  and installed plugins before anyone improvises a solution from scratch
+- `multi-agent-orchestrator` — splits a complex/high-stakes task across
+  specialized passes (retrieve → validate → write) instead of one pass
+  doing everything, when the reliability gain is worth the overhead
+- `agentic-researcher` — for market/competitor research: routes each claim
+  to the right source, validates it actually confirms the claim, and
+  decides whether to re-retrieve rather than trusting the first hit
+- `memory-keeper` — audits and reconciles the `memory/*.md` store that
+  `/improve-system` writes to (orphaned files, near-duplicates,
+  contradictions), rather than deciding what's worth saving in the first
+  place
+
 ## Procedures
 
 Standard operating procedures live in `docs/procedures/`:
