@@ -111,6 +111,16 @@ real PM methodology — WBS/critical path/EVM (CPI/SPI/EAC)/RACI/RAG
 reporting — with Claude's actual role at each step called out, plus only
 the AI-PM tool claims that were independently verifiable.
 
+A ninth addition, `agent-platform-governance`, is the same pattern once
+more but with a lighter touch: a "5 Key Learnings from Claude & Copilot
+Studio Testing" infographic had a garbled intro paragraph and one unverified
+specific claim (dropped rather than repeated), but its core framework —
+governance dimensions (monitoring, integration, team sharing, identity,
+audit trails, compliance) and full build/govern/monitor/share/maintain
+lifecycle thinking — checked out as real and useful, so that part is kept
+(rewritten cleanly, with a verified check against Microsoft's own Copilot
+Studio governance docs).
+
 Drop this repo into a Claude Code project (or point `.claude/skills` at it) to make these available.
 
 ## Plugins
