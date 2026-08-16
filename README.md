@@ -77,6 +77,21 @@ verified vendors:
 - `notebooklm-skill` — drives Google NotebookLM (source-grounded Q&A, research-to-content workflows, generated audio/video/slides/study material) from Claude; vendored from [claude-world/notebooklm-skill](https://github.com/claude-world/notebooklm-skill) (MIT). **Best-guess match** — at least 4 similarly-named repos exist; needs its bundled MCP server (not vendored) for full functionality
 - `vite`, `vue` — Vite 8/Rolldown build-tool and Vue 3 Composition API reference skills, auto-generated from source docs; **best-guess match** for the infographic's generic "skills" entry ("Vue and Vite core team skills collection") — vendored from [antfu/skills](https://github.com/antfu/skills) (MIT, Anthony Fu's curated collection, 19 skills total — only these 2 are vendored here)
 
+A sixth bundle is original content, not vendored — authored for this repo
+after reviewing a "Claude Code outreach project" social post that showed a
+26-file skill-tree mockup with no actual source repo to clone. Consolidated
+into 8 category skills (rather than 26 thin ones) covering a full
+cold-outbound-sales system, orchestrated by `/outreach-campaign`:
+
+- `outreach-strategy` — trigger-based ICP (not static firmographics), per-role persona cards, a signal→pain map, and outcome-framed offer statements
+- `outreach-list-building` — company sourcing (Apollo/Clay/lemlist-style filters), people sourcing (Sales Navigator), intent-signal sourcing (G2/Product Hunt), dedup + CSV assembly
+- `outreach-copywriting` — signal-led first-touch (<100 words), follow-up + breakup sequence, a VP-toned variant, a strict quality checklist, and a benchmarking pass
+- `outreach-channels` — LinkedIn (2-DM max rule), a 6-part cold-call script, and AI-personalized video outreach (Tavus/HeyGen-style)
+- `outreach-campaign-design` — 3+ messaging angles per ICP, full multi-touch/multi-channel campaign architecture, and a deliberate GTM stress test before launch
+- `outreach-replies-pipeline` — reply triage across 8 reply types, benchmarking against outbound performance data, and stage-by-stage pipeline diagnosis
+- `outreach-automation` — n8n workflow building/debugging and supplementary website scraping for enrichment
+- `outreach-data-connections` — maps which of the tools above are actually connected in a given environment before the rest of the bundle assumes they are; pairs with the `mcp-integration-scout` agent
+
 Drop this repo into a Claude Code project (or point `.claude/skills` at it) to make these available.
 
 ## Plugins
@@ -138,6 +153,7 @@ automatically when relevant), commands are invoked explicitly by name:
 - `/ask-the-board [question]` — answers a question using the advisory board set up by the `advisory-board` skill; refuses to improvise generic advisor impressions if no board has been configured yet
 - `/improve-system` — reviews the current session for one genuine, durable behavioral signal (not a transcript summary) and persists it to a `memory/` file, updating the memory index
 - `/design-review [file or description]` — runs the `design-review-audit` checklist against a build and reports a prioritized punch list
+- `/outreach-campaign [product/offer and target market]` — runs the `outreach-*` skill bundle end to end (strategy → list-building → copywriting → campaign design) into a single `outreach-brief.md`; stops to ask if the ICP is still vague, or if the GTM stress test finds a serious flaw, rather than shipping a brief built on a plan already known to be broken
 - `/scope-web-task [task]` — applies the `web-task-scoping` skill's Target/Limit/Run/Review discipline to a browser-automation task before it runs; refuses to proceed on side-effecting tasks (submit/purchase/post/delete) until all four are explicit
 - `/tool-stack-check [current tools]` — checks a described software stack against `lean-software-stack`'s free alternatives and applies the `free-vs-paid-tool-decision` procedure to recommend switch/keep-paid per tool
 
