@@ -70,6 +70,13 @@ recording exact repo/commit), the same way `humanizer` above was:
 - `hook-writer`, `caption-writer`, `carousel-writer` — write the opening hook, the caption/post copy, and swipeable carousel slides respectively, all voice-matched to a `brand-profile`; a curated 3-skill subset of the 106-skill [social-media-skills/skills](https://github.com/social-media-skills/skills) library (MIT). Install the rest with `npx skills add social-media-skills/skills -g -a claude-code -s '*' -y`
 - `gstack` — router skill for Garry Tan's 23+-skill "virtual engineering team" setup (CEO/Designer/Eng Manager/Release Manager/Doc Engineer/QA agents); vendored from [garrytan/gstack](https://github.com/garrytan/gstack) (MIT). Only the top-level router is vendored — the real installer needs the `bun` runtime and symlinks into multiple AI-tool configs, so it wasn't run automatically (see `SOURCE.md` for the exact command)
 
+A second roundup ("24 Things to Install in Claude") added four more real,
+verified vendors:
+
+- `hyperframes` — "write HTML, render video" agent-native video framework (compositions are plain HTML, no React/proprietary DSL); vendored from [heygen-com/hyperframes](https://github.com/heygen-com/hyperframes) (MIT). Only the mandatory entry-point skill is vendored — the full repo ships 19 skills plus the CLI/renderer itself
+- `notebooklm-skill` — drives Google NotebookLM (source-grounded Q&A, research-to-content workflows, generated audio/video/slides/study material) from Claude; vendored from [claude-world/notebooklm-skill](https://github.com/claude-world/notebooklm-skill) (MIT). **Best-guess match** — at least 4 similarly-named repos exist; needs its bundled MCP server (not vendored) for full functionality
+- `vite`, `vue` — Vite 8/Rolldown build-tool and Vue 3 Composition API reference skills, auto-generated from source docs; **best-guess match** for the infographic's generic "skills" entry ("Vue and Vite core team skills collection") — vendored from [antfu/skills](https://github.com/antfu/skills) (MIT, Anthony Fu's curated collection, 19 skills total — only these 2 are vendored here)
+
 Drop this repo into a Claude Code project (or point `.claude/skills` at it) to make these available.
 
 ## Plugins
@@ -89,13 +96,14 @@ needed to reproduce the setup on any machine:
 | [`superpowers`](https://github.com/obra/superpowers) | Jesse Vincent's (obra) TDD/debugging/brainstorming dev methodology, 20+ composable skills | `claude plugin marketplace add obra/superpowers-marketplace`<br>`claude plugin install superpowers@superpowers-marketplace` |
 | [`gstack`](https://github.com/garrytan/gstack) | See the vendored `gstack` skill above — not distributed as a plugin marketplace, needs its own installer | `git clone --single-branch --depth 1 https://github.com/garrytan/gstack.git ~/.claude/skills/gstack && cd ~/.claude/skills/gstack && ./setup` (requires `bun`) |
 | [`repomix`](https://github.com/yamadashy/repomix) | Standalone CLI — packs a repo into one LLM-friendly file; not a skill/plugin | `npm install -g repomix` |
+| [`codex-plugin-cc`](https://github.com/openai/codex-plugin-cc) | **Verified official** — OpenAI's own plugin to use Codex from inside Claude Code (`/codex:review`, `/codex:rescue`, `/codex:transfer`); needs a ChatGPT subscription or OpenAI API key | `claude plugin marketplace add openai/codex-plugin-cc`<br>`claude plugin install codex@openai-codex` |
 
-The marketingskills, claude-for-legal, claude-skills, financial-services, and
-superpowers marketplaces are registered and the plugins above installed
-(user scope) in this environment; `repomix` and `agent-browser` (below) are
-installed globally via npm. None of this persists outside this Claude Code
-installation — rerun the commands above on any machine that should have the
-same setup.
+The marketingskills, claude-for-legal, claude-skills, financial-services,
+superpowers, and openai-codex marketplaces are registered and the plugins
+above installed (user scope) in this environment; `repomix` and
+`agent-browser` (below) are installed globally via npm. None of this
+persists outside this Claude Code installation — rerun the commands above
+on any machine that should have the same setup.
 
 ## MCP Servers & external tools
 
@@ -111,6 +119,9 @@ your own account's connector state may differ.
 | Perplexity | ❌ not connected | Needs auth via claude.ai connector settings (can't be done from a non-interactive session) |
 | `instagram-mcp` (**best-guess match, uncertain**) | ❌ not installed | No single canonical repo; closest name match is [mcpware/instagram-mcp](https://github.com/mcpware/instagram-mcp) (Graph API, 23 tools). Needs an Instagram Graph API token to connect — add with `claude mcp add instagram-mcp -- npx @mcpware/instagram-mcp` once you have credentials |
 | `agent-browser` | ✅ installed as a CLI | [vercel-labs/agent-browser](https://github.com/vercel-labs/agent-browser) — despite the "MCP Servers" slide, Vercel built this as a token-efficient browser-automation **CLI**, not an MCP server. Installed globally: `npm install -g agent-browser && agent-browser install` |
+| `granola` (**best-guess, uncertain**) | ❌ not installed | Reads local [Granola](https://granola.ai) meeting notes/transcripts. No official/canonical MCP server found — a dozen community repos share the name (e.g. [chrisguillory/granola-mcp](https://github.com/chrisguillory/granola-mcp), [bhandzo/pantry](https://github.com/bhandzo/granola-mcp)). Requires the Granola desktop app running locally, so nothing to verify from this session — pick one and `claude mcp add` it once you have Granola installed |
+| `kondo` | ❌ **could not verify — not installed** | No repo named `kondo` matching "flags which LinkedIn DMs need a reply" was found. LinkedIn message automation also generally violates LinkedIn's Terms of Service and risks account bans — flagging rather than guessing a substitute here. If you have the actual source for this one, send the link and it'll get reviewed properly |
+| `higgsfield` | ❌ not installed | Cinematic AI image/video generation. [Official docs](https://higgsfield.ai/mcp) exist but no official GitHub org repo was found; several community MCP servers do ([Hikhakk/higgsfield-mcp-unified](https://github.com/Hikhakk/higgsfield-mcp-unified) — 27 models — looked most complete). Needs a Higgsfield API key/account either way |
 
 ## Commands
 
