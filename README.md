@@ -102,6 +102,15 @@ legitimately generic and worth having: prompting techniques (shot count,
 prompt shapes, the role+examples+step-by-step combo) and what Skills, Hooks,
 MCP, Projects, and Artifacts actually are and how they differ.
 
+An eighth addition, `ai-project-management`, is the same correction pattern
+again: a social "AI-Powered Project Management with Claude" infographic
+turned out to be unreliable on inspection (duplicate/conflicting section
+numbers, fabricated-looking repeated metrics, garbled labels in every
+panel, a tools table with unresolvable names). Rewritten from scratch as
+real PM methodology — WBS/critical path/EVM (CPI/SPI/EAC)/RACI/RAG
+reporting — with Claude's actual role at each step called out, plus only
+the AI-PM tool claims that were independently verifiable.
+
 Drop this repo into a Claude Code project (or point `.claude/skills` at it) to make these available.
 
 ## Plugins
