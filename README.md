@@ -107,8 +107,10 @@ on any machine that should have the same setup.
 
 ## MCP Servers & external tools
 
-Reviewed from the same roundup. Status reflects **this account/session** —
-your own account's connector state may differ.
+Reviewed from the roundups above, plus a personal "daily tool stack" post
+(Codex, Claude, Linear, Obsidian, The Pulp — mostly standalone apps rather
+than installable connectors, noted below for completeness). Status reflects
+**this account/session** — your own account's connector state may differ.
 
 | Item | Status here | Notes |
 |---|---|---|
@@ -122,6 +124,11 @@ your own account's connector state may differ.
 | `granola` (**best-guess, uncertain**) | ❌ not installed | Reads local [Granola](https://granola.ai) meeting notes/transcripts. No official/canonical MCP server found — a dozen community repos share the name (e.g. [chrisguillory/granola-mcp](https://github.com/chrisguillory/granola-mcp), [bhandzo/pantry](https://github.com/bhandzo/granola-mcp)). Requires the Granola desktop app running locally, so nothing to verify from this session — pick one and `claude mcp add` it once you have Granola installed |
 | [`kondo`](https://www.trykondo.com/) | ❌ not connected | **Correction: real, but not open-source** — not a GitHub repo (the earlier "could not verify" note was from only searching GitHub). Kondo is a commercial LinkedIn inbox-management Chrome extension ("Superhuman for LinkedIn DMs" — labels, snooze, keyboard triage) that ships a hosted MCP connector on its **Business plan** ($36/user/month), set up at [docs.trykondo.com/mcp-setup](https://docs.trykondo.com/mcp-setup); it requires the Kondo browser extension actively running and reads your live LinkedIn inbox locally in-browser (per their docs, it doesn't store LinkedIn data server-side). Needs a paid account + the extension — can't be connected from this session |
 | `higgsfield` | ❌ not installed | Cinematic AI image/video generation. [Official docs](https://higgsfield.ai/mcp) exist but no official GitHub org repo was found; several community MCP servers do ([Hikhakk/higgsfield-mcp-unified](https://github.com/Hikhakk/higgsfield-mcp-unified) — 27 models — looked most complete). Needs a Higgsfield API key/account either way |
+| [Linear](https://linear.app) | ✅ **registered** (auth pending) | Official remote MCP server, `https://mcp.linear.app/mcp` — registered in this project with `claude mcp add --transport http linear-server https://mcp.linear.app/mcp`. First real use opens a browser OAuth prompt this non-interactive session can't complete; a project-management-workflow one, separate from `claude-for-legal`'s own Linear connector (which is scoped to `product-legal` only) |
+| Obsidian | 📋 documented, not installed | Local note-taking app — no cloud API, so nothing to connect from this session. [coddingtonbear/obsidian-local-rest-api](https://github.com/coddingtonbear/obsidian-local-rest-api) is the community plugin (install from inside Obsidian → Settings → Community plugins) that now ships a built-in MCP endpoint at `/mcp/`; enable it, then `claude mcp add --transport http obsidian http://localhost:27124/mcp` (port/token from the plugin's settings) |
+| Codex | ✅ already covered | Not an MCP server — OpenAI's own coding agent/CLI. The actual Claude-Code-relevant integration is the `codex-plugin-cc` plugin documented above, already installed |
+| "Claude Design" | N/A | Not a separate tool — this is Claude itself (Anthropic's own branding), used as a general writing/brainstorming assistant. Nothing to install |
+| "The Pulp" | ❓ unverified | Described as a personalized daily-briefing/podcast app. Could not confirm a matching product by that name (an unrelated media-industry podcast shares the name; closest real equivalents are apps like Huxe or Spotify's Personal Podcasts). Even if real, it reads as a closed consumer app with no public API/MCP/skill surface — nothing to clone or install either way |
 
 ## Commands
 
