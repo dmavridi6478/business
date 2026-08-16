@@ -58,7 +58,59 @@ A fourth pair covers **personal AI infrastructure** — setting up Claude Code i
 - `web-task-scoping` — governance procedure for scoping any browser-automation task (Target → Limit → Run → Review) before granting a web agent more autonomy; companion to `/scope-web-task`
 - `night-shift-workflow` — design and govern a scheduled/unattended Claude workflow (a recurring brief, digest, or Routine) that gathers, triages, and drafts while the user is away, with an explicit Claude-may/human-approval boundary; companion to the `night-shift-canvas` procedure
 
+A fifth bundle was reviewed and vendored from a "Claude tools worth installing"
+social-media roundup (GitHub repos / plugins / skills / MCP servers). Each is a
+real external project, vendored for real (SKILL.md + LICENSE + a `SOURCE.md`
+recording exact repo/commit), the same way `humanizer` above was:
+
+- `caveman` — ultra-compressed "talk like a caveman" response mode, ~65% fewer output tokens with no accuracy loss; vendored from [JuliusBrussee/caveman](https://github.com/JuliusBrussee/caveman) (MIT). Only the flagship `caveman` skill is vendored — the source repo also ships a CLI, agent runtime, and ~20 related sub-skills (`caveman-commit`, `caveman-review`, etc.)
+- `claude-ads` — paid-media audit/optimization orchestrator (250+ checks across Google, Meta, YouTube, LinkedIn, TikTok, Microsoft, Apple, Amazon, Reddit, Pinterest, Snapchat, X); vendored from [AgriciDaniel/claude-ads](https://github.com/AgriciDaniel/claude-ads) (MIT). Full platform sub-skills and bundled Python tooling require the real plugin/repo install (see `SOURCE.md`)
+- `claude-seo` — universal SEO analysis orchestrator (technical SEO, schema, E-E-A-T, GEO/AEO for AI Overviews/ChatGPT/Perplexity); vendored from [AgriciDaniel/claude-seo](https://github.com/AgriciDaniel/claude-seo) (MIT). Same caveat: the 24 sub-skills/18 sub-agents need the full install
+- `ai-second-brain` — walks through building a living, searchable wiki from ChatGPT + Claude export history (Karpathy-wiki pattern); vendored from [charlie947/ai-second-brain](https://github.com/charlie947/ai-second-brain) (MIT). **Best-guess match** — several similarly-named repos exist, this one matched the source description most closely but wasn't independently confirmed
+- `hook-writer`, `caption-writer`, `carousel-writer` — write the opening hook, the caption/post copy, and swipeable carousel slides respectively, all voice-matched to a `brand-profile`; a curated 3-skill subset of the 106-skill [social-media-skills/skills](https://github.com/social-media-skills/skills) library (MIT). Install the rest with `npx skills add social-media-skills/skills -g -a claude-code -s '*' -y`
+- `gstack` — router skill for Garry Tan's 23+-skill "virtual engineering team" setup (CEO/Designer/Eng Manager/Release Manager/Doc Engineer/QA agents); vendored from [garrytan/gstack](https://github.com/garrytan/gstack) (MIT). Only the top-level router is vendored — the real installer needs the `bun` runtime and symlinks into multiple AI-tool configs, so it wasn't run automatically (see `SOURCE.md` for the exact command)
+
 Drop this repo into a Claude Code project (or point `.claude/skills` at it) to make these available.
+
+## Plugins
+
+Claude Code **plugins** (bundles of skills + agents + commands + MCP
+connectors, installed via `/plugin` rather than copied as files) reviewed from
+the same roundup. Plugin state lives in the Claude Code installation, not in
+this git repo, so what's tracked here is the marketplace + install commands
+needed to reproduce the setup on any machine:
+
+| Item (source) | What it is | Reproduce with |
+|---|---|---|
+| [`marketingskills`](https://github.com/coreyhaines31/marketingskills) | CRO, copywriting, SEO, analytics, growth-engineering skills for marketers | `claude plugin marketplace add coreyhaines31/marketingskills`<br>`claude plugin install marketing-skills@marketingskills` |
+| [`claude-for-legal`](https://github.com/anthropics/claude-for-legal) | Anthropic's official 12-plugin legal suite (commercial, privacy, product, corporate, employment, regulatory, AI-governance, litigation, IP, law-student, legal-clinic, CoCounsel) + ~20 MCP connectors (Ironclad, DocuSign, Box, CourtListener, etc. — each needs its own auth) | `claude plugin marketplace add anthropics/claude-for-legal`<br>`claude plugin install <plugin-name>@claude-for-legal` (see repo for all 12 names) |
+| `claude-skills` (**best-guess match, uncertain**) | Generic "many skills across platforms" — no repo matched "263+ skills" exactly; closest candidate installed was [alirezarezvani/claude-skills](https://github.com/alirezarezvani/claude-skills) (5.2k★, 88 bundled plugins) | `claude plugin marketplace add alirezarezvani/claude-skills`<br>`claude plugin install marketing-skills@claude-code-skills` (one of 88 — browse the rest with `/plugin` in an interactive session) |
+| [`financial-services`](https://github.com/anthropics/financial-services) | Anthropic's official banking/PE/equity-research suite | `claude plugin marketplace add anthropics/financial-services`<br>`claude plugin install <financial-analysis\|investment-banking\|equity-research\|private-equity\|wealth-management>@claude-for-financial-services` |
+| [`superpowers`](https://github.com/obra/superpowers) | Jesse Vincent's (obra) TDD/debugging/brainstorming dev methodology, 20+ composable skills | `claude plugin marketplace add obra/superpowers-marketplace`<br>`claude plugin install superpowers@superpowers-marketplace` |
+| [`gstack`](https://github.com/garrytan/gstack) | See the vendored `gstack` skill above — not distributed as a plugin marketplace, needs its own installer | `git clone --single-branch --depth 1 https://github.com/garrytan/gstack.git ~/.claude/skills/gstack && cd ~/.claude/skills/gstack && ./setup` (requires `bun`) |
+| [`repomix`](https://github.com/yamadashy/repomix) | Standalone CLI — packs a repo into one LLM-friendly file; not a skill/plugin | `npm install -g repomix` |
+
+The marketingskills, claude-for-legal, claude-skills, financial-services, and
+superpowers marketplaces are registered and the plugins above installed
+(user scope) in this environment; `repomix` and `agent-browser` (below) are
+installed globally via npm. None of this persists outside this Claude Code
+installation — rerun the commands above on any machine that should have the
+same setup.
+
+## MCP Servers & external tools
+
+Reviewed from the same roundup. Status reflects **this account/session** —
+your own account's connector state may differ.
+
+| Item | Status here | Notes |
+|---|---|---|
+| Slack | ✅ already connected (claude.ai connector) | — |
+| Notion | ✅ already connected (claude.ai connector) | — |
+| Google Drive | ✅ already connected (claude.ai connector) | — |
+| Zapier | ✅ already connected (claude.ai connector) | Bridges to 9,000+ apps' actions, including Instagram — may cover the `instagram-mcp` use case without a dedicated server |
+| Perplexity | ❌ not connected | Needs auth via claude.ai connector settings (can't be done from a non-interactive session) |
+| `instagram-mcp` (**best-guess match, uncertain**) | ❌ not installed | No single canonical repo; closest name match is [mcpware/instagram-mcp](https://github.com/mcpware/instagram-mcp) (Graph API, 23 tools). Needs an Instagram Graph API token to connect — add with `claude mcp add instagram-mcp -- npx @mcpware/instagram-mcp` once you have credentials |
+| `agent-browser` | ✅ installed as a CLI | [vercel-labs/agent-browser](https://github.com/vercel-labs/agent-browser) — despite the "MCP Servers" slide, Vercel built this as a token-efficient browser-automation **CLI**, not an MCP server. Installed globally: `npm install -g agent-browser && agent-browser install` |
 
 ## Commands
 
