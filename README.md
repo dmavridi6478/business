@@ -92,6 +92,16 @@ cold-outbound-sales system, orchestrated by `/outreach-campaign`:
 - `outreach-automation` — n8n workflow building/debugging and supplementary website scraping for enrichment
 - `outreach-data-connections` — maps which of the tools above are actually connected in a given environment before the rest of the bundle assumes they are; pairs with the `mcp-integration-scout` agent
 
+A seventh addition, `claude-cheat-sheet`, is also original content rather
+than vendored: a social-media "Claude AI Cheat Sheet" infographic turned out
+to be unreliable on review (wrong model names, garbled/nonsensical text
+throughout, a non-Anthropic URL presented as an official courses link, and
+mangled tool names in its tools table) — rather than install any of that,
+this is a from-scratch, accurate reference on the parts that were
+legitimately generic and worth having: prompting techniques (shot count,
+prompt shapes, the role+examples+step-by-step combo) and what Skills, Hooks,
+MCP, Projects, and Artifacts actually are and how they differ.
+
 Drop this repo into a Claude Code project (or point `.claude/skills` at it) to make these available.
 
 ## Plugins
