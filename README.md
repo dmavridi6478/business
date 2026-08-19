@@ -431,6 +431,31 @@ Written up as a skill — a sibling to the existing `content-repurposing-service
 worked example — with the source's five cards quoted verbatim in the
 skill file for reference.
 
+A fifteenth addition came from a request to actually visit and explore a
+carousel's linked sites, not just document them — a 6-image "5 sites we
+actually check before designing" carousel (@goluda.ai): Awwwards, Godly,
+SiteInspire, Land-book, and Httpster. This session's network egress is
+blocked to all five domains (a general restriction on this session, not
+specific to this list), so none were live-browsed — worth saying plainly
+rather than presenting anything below as observed firsthand. Instead:
+
+- Added a **Design inspiration galleries** table to `design-dev-resources`,
+  built from each site's own well-established, independently verifiable
+  curation focus (which matches what the carousel itself said about each
+  one).
+- Added two new copy-paste templates to `design-templates`:
+  `saas-pricing-table.html` (a 3-tier pricing table + feature-comparison
+  grid, the two patterns Land-book names by name) and `editorial-hero.html`
+  (an oversized-serif, one-italic-accent-word hero in the "clean,
+  restrained, European" register SiteInspire and Httpster both curate
+  for). Both verified rendering with no console errors via Playwright
+  screenshot before being added.
+- Built `design-reference-shelf.html` — a card-catalog-styled, tag-filterable
+  dashboard indexing all five sites by what each is actually good for
+  (SaaS / editorial / award-tier / high-volume / small-and-curated),
+  published as a Claude Artifact so it's a bookmarkable, reusable
+  reference rather than a one-off file: https://claude.ai/code/artifact/d99110f6-3334-4873-a558-133a06b79e78
+
 Drop this repo into a Claude Code project (or point `.claude/skills` at it) to make these available.
 
 ## Plugins
