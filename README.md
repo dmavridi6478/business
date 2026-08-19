@@ -20,6 +20,7 @@ A starter bundle of business-oriented Claude skills lives in `.claude/skills/`:
 - `ai-search-marketing-2026` — the SEO/SXO/AEO/GEO/AIO five-discipline wheel, a modern-marketing taxonomy, 5 exec-level marketing-analytics questions, a 15-day day-by-day AI-search action plan, and a 20-source AI-visibility ecosystem map cross-checked against which sources this account can actually query via a live MCP connector
 - `growth-operating-framework` — a 7-step sequence for capital-efficient growth (real-business alignment → North Star metric → data foundation → feedback loop → cross-functional accountability → capital-efficient scale → fast iteration)
 - `linkedin-virality-playbook` — 9 tactics for LinkedIn posts that reach beyond the author's own network (proof-led hooks, repostable angles, reusable visual templates, real engagement questions)
+- `contract-review` — reviews contracts (NDAs, employment agreements, SaaS terms, M&A documents) for unfavorable terms, suggests redlines, and benchmarks clauses against market standards; built on the CUAD dataset (41 risk categories), ContractEval, and LegalBench; vendored in full from [evolsb/claude-legal-skill](https://github.com/evolsb/claude-legal-skill) (MIT) — distinct from the already-installed `claude-for-legal` 12-plugin suite, which doesn't include a focused contract-review skill
 
 A design/output bundle sits alongside it, for turning business content into actual visual deliverables:
 
@@ -38,6 +39,7 @@ A design/output bundle sits alongside it, for turning business content into actu
 - `brandkit-generator` — turns a one-line idea into 2-3 brand directions (wordmark, palette, type pairing, brand board), fast and explicitly non-final
 - `design-token-extractor` — extracts a reusable color/type/spacing token set from a reference site or screenshot
 - `image-to-code` — clones a reference screenshot into real code, then renders and compares before calling it done
+- `hallmark` — "anti-AI-slop" design skill for greenfield builds, audits, redesigns, and DNA-extraction from a URL/screenshot (`audit`/`redesign`/`study` verbs); enforces structural variety across 21 named themes/21 macrostructures so builds don't converge on the same hero→3-feature→CTA→footer template; vendored in full (SKILL.md + its whole `references/` library — component cookbook, anti-patterns, typography/color/motion) from [nutlope/hallmark](https://github.com/nutlope/hallmark) (MIT)
 
 A third bundle covers **setting up a new business** — validating an idea and turning someone's own expertise into a sellable product/service before (or instead of) building a team-scale product:
 
@@ -121,6 +123,16 @@ lifecycle thinking — checked out as real and useful, so that part is kept
 (rewritten cleanly, with a verified check against Microsoft's own Copilot
 Studio governance docs).
 
+A tenth addition, `hallmark` and `contract-review`, are vendored for real
+(SKILL.md + LICENSE + a `SOURCE.md` recording exact repo/commit, same as
+`humanizer`/`caveman` above) out of another raw `gh repo clone` list that
+was reviewed item by item — see the Plugins section below for the full
+review, including everything checked but **not** added (fake repos,
+name collisions, off-pattern standalone apps, and a live npm
+supply-chain-compromise flag). Both passed the bar for full vendoring:
+real, actively maintained, clearly licensed (MIT), and genuinely not
+duplicating anything already in this repo.
+
 Drop this repo into a Claude Code project (or point `.claude/skills` at it) to make these available.
 
 ## Plugins
@@ -143,12 +155,12 @@ needed to reproduce the setup on any machine:
 | [`codex-plugin-cc`](https://github.com/openai/codex-plugin-cc) | **Verified official** — OpenAI's own plugin to use Codex from inside Claude Code (`/codex:review`, `/codex:rescue`, `/codex:transfer`); needs a ChatGPT subscription or OpenAI API key | `claude plugin marketplace add openai/codex-plugin-cc`<br>`claude plugin install codex@openai-codex` |
 | [`claude-code-router`](https://github.com/musistudio/claude-code-router) | **Verified, real find** — local gateway that routes Claude Code (and Codex/Kimi/OpenCode) requests across multiple model providers, with request fusion, logging, and cost tracking; 36.7k★, MIT, very high adoption | `npm install -g @musistudio/claude-code-router` then run `ccr code` in place of `claude` (see repo for provider config) |
 | [`pal-mcp-server`](https://github.com/BeehiveInnovations/pal-mcp-server) | **Verified real** — MCP server connecting Claude Code (or Codex/Gemini CLI/Cursor) to other models (OpenAI, Gemini, Azure, Grok, Ollama, OpenRouter) for second-opinion/debate workflows; 11.7k★, Apache 2.0 | Add as an MCP server per the repo's README (multi-provider API keys required) — exact `claude mcp add` invocation not independently verified here |
-| [`hallmark`](https://github.com/nutlope/hallmark) | **Verified real** — "anti-AI-slop" design-quality skill for Claude Code/Cursor/Codex (design gates + themes against generic AI page look); real author (Hassan El Mghari), trending mid-2026 | `npx skills add nutlope/hallmark` |
+| [`hallmark`](https://github.com/nutlope/hallmark) | **Vendored for real, in full** — see the `hallmark` skill above; not a plugin, listed here for completeness | Already in `.claude/skills/hallmark/` — reproduce elsewhere with `npx skills add nutlope/hallmark` |
 | [`gsap-skills`](https://github.com/greensock/gsap-skills) | **Verified, official** — published under the real GreenSock org; teaches correct GSAP usage (core API, timelines, ScrollTrigger, framework integration) to AI agents; MIT | `npx skills add greensock/gsap-skills` — complements the existing `ui-motion-design` skill (GSAP-specific vs. general easing/spring-physics principles) |
 | [`threejs-skills`](https://github.com/CloudAI-X/threejs-skills) | **Verified real** — 10-file skill bundle teaching Claude Code Three.js (scene setup, shaders, animation, post-processing); MIT, ~3k★ | `npx skills add CloudAI-X/threejs-skills` — complements `frontend-design`/`canvas-design` for 3D web work |
 | [`design-dna`](https://github.com/zanwei/design-dna) | **Verified real** — turns a reference UI screenshot/URL into a structured "Design DNA" JSON (tokens/style/effects), then generates matching UI; MIT, single-maintainer, ~1.4k★ | `npx skills add zanwei/design-dna` — overlaps with `design-token-extractor`; compare outputs before choosing one |
 | [`genjutsu`](https://github.com/AThevon/genjutsu) | **Corrected match** — the list's `iamovi/genjutsu` is an unrelated 24h-ephemeral social app; the real "creative coding skills for Claude" repo (animation/3D/design-system orchestrators) is [AThevon/genjutsu](https://github.com/AThevon/genjutsu), MIT, ~247★ | `npx skills add AThevon/genjutsu` |
-| [`claude-legal-skill`](https://github.com/evolsb/claude-legal-skill) | **Verified real, not a duplicate** — focused AI contract-review skill (CUAD risk detection, market benchmarks, lawyer-ready redlines); distinct from the already-installed `claude-for-legal` 12-plugin suite; MIT, 412★ | `npx skills add evolsb/claude-legal-skill` |
+| [`claude-legal-skill`](https://github.com/evolsb/claude-legal-skill) | **Vendored for real, in full**, as `contract-review` (its own SKILL.md `name:`) — see that skill above; not a plugin, listed here for completeness | Already in `.claude/skills/contract-review/` — reproduce elsewhere with `npx skills add evolsb/claude-legal-skill` |
 | [`knowledge-work-plugins`](https://github.com/anthropics/knowledge-work-plugins) | **Verified official** — Anthropic's 11-plugin Cowork suite (productivity, data, design, **operations**, sales, marketing, legal, etc.); Apache 2.0, 23.6k★. Its `operations` plugin (vendor mgmt, process docs, compliance tracking, capacity planning) is a real gap-filler for this repo; its `legal` plugin likely overlaps with the installed `claude-for-legal` — diff before installing both | `claude plugin marketplace add anthropics/knowledge-work-plugins`<br>`claude plugin install operations@knowledge-work-plugins` |
 | [`seo-audit-skill`](https://github.com/seo-skills/seo-audit-skill) | **Verified real** — CLI SEO audit (108 rules/12 categories: Core Web Vitals, security headers, structured data, accessibility) with an `--format llm` mode, backed by SEOmator; MIT, 381★; complements the existing `claude-seo` skill | `npx skills add seo-skills/seo-audit-skill` |
 | [`anthropics/skills`](https://github.com/anthropics/skills) | **Verified official** — Anthropic's own public Agent Skills repo; the upstream source of the `docx`/`pdf`/`pptx`/`xlsx` skills this repo already uses. Apache 2.0 (skills subfolders source-available); ~170k★ | Reference only — already consumed indirectly via the skills already in `.claude/skills/` |
