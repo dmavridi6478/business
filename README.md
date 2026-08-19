@@ -311,6 +311,108 @@ Advanced Prompt Control
 /nobullet - paragraph format
 ```
 
+A thirteenth addition is 48 more slash commands, reviewed from a third
+uploaded photo batch (a 9-image carousel from a third social account,
+@your.aimentor, titled "48 Fable 5 Prompts"). Unlike both carousels above,
+this one had no clickbait framing or unverified claims to flag — each image
+showed 6 full, coherent, well-structured prompts (not one-liners) across 8
+categories, all built around the same idea: long-horizon, self-verifying
+"work order" prompts that tell the model to keep going — loop, verify,
+re-verify — rather than handing control back after one pass. "Fable 5" is a
+real current Claude model (see this session's own model list), so the
+branding checks out, though no independent claim is made here about
+Fable 5 specifically outperforming other models on these prompts — that's
+the source account's framing, not a verified fact.
+
+Each of the 48 was installed as its own command in `.claude/commands/`,
+grouped by the carousel's 8 categories, with the original prompt kept
+verbatim in the command body (placeholders like `[APP]`/`[REPO]`/`[GOAL]`
+filled from `$ARGUMENTS`, with an instruction to ask rather than guess for
+anything not supplied) plus a short note to actually loop/verify rather
+than stop at the first pass, matching what the prompts ask for. Renamed
+away from generic labels to avoid colliding with the 100 commands added
+above (e.g. the source's second refactor-flavored prompt became
+`/refactor-safely`, not `/refactor`, which already means something
+narrower from the prior batch):
+
+- **Build / Ship**: `/build-complete-app`, `/migrate-system`, `/idea-to-build`, `/rebuild-from-ground-up`, `/build-multipart-system`, `/finish-paused-project`
+- **Understand / Refactor existing code**: `/map-codebase`, `/refactor-safely`, `/add-missing-tests`, `/explain-and-fix-bug`, `/update-old-project`, `/add-feature-matching-style`
+- **Automation / Pipelines**: `/build-pipeline`, `/self-healing-automation`, `/scheduled-routine`, `/trigger-based-automation`, `/content-automation-pipeline`, `/unattended-ops-automation`
+- **Recurring work → reusable skill/system**: `/task-to-reusable-skill`, `/audit-my-workflow-for-skills`, `/process-to-teammate-system`, `/oneoff-to-reusable-pipeline`, `/harden-prompt-into-asset`, `/organize-queryable-knowledge`
+- **Multi-agent orchestration**: `/build-orchestrator`, `/build-tool-using-agent`, `/design-agent-team`, `/parallel-research-subagents`, `/autonomous-goal-agent`, `/add-agent-guardrails`
+- **Research / fact-check**: `/research-and-self-factcheck`, `/deepening-research-passes`, `/steelman-both-sides`, `/verify-common-claim`, `/pressure-test-options`, `/map-space-for-gaps`
+- **Loop until done**: `/build-loop-until-tests-pass`, `/grade-and-rewrite-loop`, `/test-and-fix-loop`, `/build-eval-and-improve`, `/verify-with-fresh-subagent`, `/draft-critique-loop`
+- **Audit / Review**: `/full-repo-audit`, `/honest-rewrite-review`, `/find-quietly-broken`, `/brutal-senior-review`, `/sweep-for-inconsistencies`, `/preflight-ship-audit`
+
+The full source list, reproduced in plain text as the carousel presented
+it (bracketed placeholders as shown, one prompt per line):
+
+```text
+Build / Ship
+1. Build me a complete working [APP] in one go: data, logic, UI, edge cases. Keep going across as many steps as it takes, test it yourself, and don't hand it back until it runs.
+2. Migrate my [SYSTEM] from [A] to [B]. Map it first, do it piece by piece, keep it working at every step, and verify nothing broke before you tell me it's done.
+3. Take this rough idea: [IDEA]. Write the spec, build it, test it, fix what breaks, and take it all the way to a working thing. Check in only at the milestones I'd care about.
+4. Rebuild my [THING] properly from the ground up. Keep what works, fix what doesn't, carry it to done in one long pass. Show me the before and after and every decision.
+5. Build a system with [N] connected parts for [GOAL]. Hold the whole thing in your head, build each part so they fit, and wire them together without losing the plot halfway.
+6. Here's a project I started and never finished: [PASTE]. Work out where I left off, finish it properly, fix anything I did badly, and take it to shipped. Tell me what changed.
+
+Understand / Refactor existing code
+1. Here's a codebase I don't know: [REPO]. Map it: what each part does, how data flows, where the risky bits are, and the 3 files I should read first. Plain English.
+2. Refactor [MESSY CODE] to be clean and readable without changing what it does. Do it in safe steps, keep it working the whole way, and show me each change with why it's safe.
+3. Add tests across [PROJECT] where there are none. Start with the riskiest logic, write tests that catch real bugs, run them, and tell me what they revealed.
+4. This code is broken: [PASTE]. Explain in plain English what it's meant to do, what's actually going wrong and why, then fix it and prove the fix works.
+5. Bring my [OLD PROJECT] up to date: dependencies, patterns, dead code, security. Do it incrementally, keep it running at every step, and give me the changelog.
+6. Understand my [CODEBASE], then add [FEATURE] the way the existing code would, matching its style and patterns. Show me where it plugs in and what you touched.
+
+Automation / Pipelines
+1. Build a pipeline that takes [INPUT], runs it through [STEPS], and drops the result in [DESTINATION] with no hand-holding. Handle edge cases, retry failures, log each run.
+2. Take my automation [DESCRIBE] and make it self-healing: detect a failed step, retry with backoff, fall back to a safe path, and alert me only when it truly can't recover.
+3. Set up a routine that runs [TASK] on [SCHEDULE] without me: what it checks, what it produces, where it saves, and the one condition that makes it stop and ping me.
+4. Build an automation that watches [SOURCE] and acts when [CONDITION] hits: the trigger, what it does, the safeguard so it never fires wrongly. Then dry-run it on last month's data.
+5. Build the automation that turns one [INPUT] into a week of content: draft, repurpose, schedule. Show where AI works, where I approve, and how it keeps running after I sign off.
+6. Design an automation that runs my [OPS TASK] unattended: the trigger, every step, the tools, and the checkpoint that catches mistakes before they ship.
+
+Recurring work into a reusable skill/system
+1. Take this thing I do over and over: [TASK]. Turn it into a reusable skill with a name, a trigger, the exact steps and output, so I fire it in one command and get the same result.
+2. Look at how I work: [DESCRIBE]. Find every repeatable job and turn each into a skill. Give me the stack: name, when to use it, what it does. Flag any two that should merge.
+3. Watch how I did [PROCESS] and turn it into a system a teammate could run without me: the steps, the tools, what good looks like, the traps. Then build the checklist that enforces it.
+4. Turn this one-off I just did: [TASK] into a pipeline I can rerun on new inputs. Parametrise it, handle the variations, and show me how to run it next time in one line.
+5. Here's a prompt I keep tweaking: [PASTE]. Turn it into a proper reusable asset: harden it, add the structure and examples that make it reliable. Give me the version I never edit again.
+6. Organise my files and notes into a system I can query: how it's structured, what things are named, and how I ask a question in plain English and get the right answer back.
+
+Multi-agent orchestration
+1. Build an orchestrator that spawns subagents to [GOAL] in parallel, merges their results, keeps a shared memory and a step budget, and knows when to stop. Then run it.
+2. Build an agent that can [TASK] using [TOOLS]. It decides which tool to call when, handles failures, and stops to ask me only before anything irreversible. Show the decision log.
+3. Design an agent team for [WORKFLOW]: a planner, 2-3 specialists, and a reviewer that gates the output. Give each a job and how work passes between them, then run it.
+4. Spin up parallel subagents to research [TOPIC], each on a different angle. They report back, a lead agent reconciles the conflicts and writes one brief. Show which agent found what.
+5. Give an agent this goal: [GOAL]. Let it plan its own steps, work through them, check its own output, and surface only when it's done or genuinely stuck. Cap it at [N] steps.
+6. Add guardrails to my agent doing [WORKFLOW]: which actions need my approval, which errors it retries vs stops on, a hard step and cost cap, and how it flags being stuck.
+
+Research / fact-check
+1. Research [TOPIC] properly: gather sources, then adversarially fact-check your own claims, drop anything you can't stand up, and give me a brief where every point is one you'd defend.
+2. Do [N] passes on [QUESTION], each going deeper and challenging the last, until you stop finding anything new. Then synthesise the answer and show me what each pass added.
+3. Research [DEBATE]. Build the strongest case for each side from real evidence, attack each one, then tell me which survives and the single fact that would change your mind.
+4. Everyone says [CLAIM] about [TOPIC]. Go verify it: what's true, what's marketing, what's out of date. Cite what backs each verdict. Don't repeat something just because it's everywhere.
+5. Compare [OPTIONS] for [GOAL], but pressure-test every marketing claim against real evidence. Score them on what actually matters to me, name the pick, and the condition that flips it.
+6. Map the whole [SPACE], then tell me what nobody's talking about: the gaps, the quiet risks, the thing everyone assumes that might be wrong. Verify before you assert.
+
+Loop until done
+1. Build [FEATURE], run it, read the errors, fix them, and loop until every test passes. Don't check in between rounds, keep going until it's green, then show me the diff.
+2. Make [OUTPUT], have a fresh subagent grade it against [STANDARD], rewrite, and repeat until it clears the bar. Show me the final plus what each pass fixed.
+3. Write tests for [CODE], run them, and fix whatever fails, looping until they all pass and the edge cases are covered. Then tell me what was broken that I didn't know about.
+4. Build an eval for [TASK] with 8-10 cases, run my current approach against it, then improve the approach and re-run until the score stops climbing. Show the before and after.
+5. Do [TASK], then spin up a fresh subagent to verify it against [GOAL] and flag every hole. Fix them and re-verify. Repeat until it passes clean, then show what changed.
+6. Draft [DELIVERABLE], then run rounds of "what's still weak here", fixing the biggest flaw each round, until there's nothing left worth fixing. Stop yourself when it's genuinely good.
+
+Audit / Review
+1. Here's a project I built without you: [REPO]. Audit the whole thing. Every bug, dead path, security hole and lazy shortcut, ranked by severity, with the fix for the top 5. Don't stop at file one.
+2. Here's work I shipped before Fable 5: [PASTE]. Tell me honestly where it's weak, what a better version looks like, and rewrite the worst section so I can see the gap.
+3. Go through my [PROJECT] and find everything quietly broken or half-finished: dead links, TODOs, unhandled cases, stale copy. List it ranked by what bites first, with the fix.
+4. Review this [WORK] as a brutal senior reviewer. Flag every assumption and cut corner, and the one thing that would embarrass me if it shipped. No praise, just problems and fixes.
+5. Sweep my [DOCS / CODE] for inconsistencies: contradictions, mismatched names, drifted formatting, things that disagree with each other. Return every one with where it is and the fix.
+6. Before I ship [THING], run a full pre-flight audit against what "done" should mean: what's missing, what's risky, what I haven't tested. Give me a go / no-go with the exact blockers.
+```
+
 Drop this repo into a Claude Code project (or point `.claude/skills` at it) to make these available.
 
 ## Plugins
@@ -470,6 +572,7 @@ automatically when relevant), commands are invoked explicitly by name:
 - `/tool-stack-check [current tools]` — checks a described software stack against `lean-software-stack`'s free alternatives and applies the `free-vs-paid-tool-decision` procedure to recommend switch/keep-paid per tool
 - `/one-person-business [skills/interests, or an existing idea/offer]` — runs the `one-person-*` skill bundle end to end (idea → offer → content system → sales system → scaling); stops to ask if the idea failed its own validation check, or if scaling is requested before a content/sales system actually exists
 - 100 single-purpose shorthand commands (`/debug`, `/brief`, `/eli5`, `/linkedin`, `/resume-review`, `/startup`, `/plan`, `/learn-topic`, `/profile`, `/toneformal`, and 90 more) — see "A twelfth addition" above for the full category list and source; each takes one argument and applies one specific behavior modifier or micro-task rather than running a multi-step workflow
+- 48 long-horizon "work order" commands (`/build-complete-app`, `/refactor-safely`, `/build-orchestrator`, `/research-and-self-factcheck`, `/build-loop-until-tests-pass`, `/full-repo-audit`, and 42 more) — see "A thirteenth addition" above for the full category list, source, and verbatim prompts; each runs a full self-verifying pass (build/refactor/automate/orchestrate/research/loop/audit) rather than a single-step response
 
 **Skill vs. command, in this repo:** a skill is background knowledge/procedure
 Claude reaches for when relevant ("how do I structure a quarterly OKR cascade");
