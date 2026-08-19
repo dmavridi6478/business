@@ -49,6 +49,7 @@ A third bundle covers **setting up a new business** — validating an idea and t
 - `the-productize-yourself-blueprint` — converts that expertise into a scalable product/service format that sells without the founder's live presence
 - `the-leverage-stack-auditor` — diagnoses whether a business idea is actually leveraged (media/code) or just relabeled labor
 - `content-repurposing-service` — a concrete worked example: a productized weekly service that turns one client recording into a 7-asset content pack (carousel, video outlines, email, text posts) on a Mon–Fri cadence
+- `data-cleanup-brief-service` — a sibling worked example: a productized weekly service that turns a client's recurring messy CSV exports into a clean, verified one-page change brief (deterministic pandas/DuckDB cleanup first, AI narrative only after the numbers are locked), with an honestly-labeled sample price to validate rather than a guaranteed-revenue claim
 - `lean-software-stack` — curated directory of 8 free/open-source desktop apps (AppFlowy, Joplin, KeePassXC, OBS Studio, Kdenlive, Element, PDFsam Basic, LocalSend) that replace common paid SaaS tools, for controlling software costs before revenue validates the spend; companion to `/tool-stack-check`
 
 A fourth pair covers **personal AI infrastructure** — setting up Claude Code itself as a tool, rather than producing business deliverables:
@@ -413,6 +414,23 @@ Audit / Review
 6. Before I ship [THING], run a full pre-flight audit against what "done" should mean: what's missing, what's risky, what I haven't tested. Give me a go / no-go with the exact blockers.
 ```
 
+A fourteenth addition, `data-cleanup-brief-service`, came from a fifth
+uploaded photo batch that turned out to be two unrelated carousels mixed
+into one zip: a 6-image "AI Income Playbook" (@zhiprompts) and a 7-image
+"5 repos that run AI on your machine" (@ty.prompts.ai, documented in the
+Local AI / offline LLM runtimes table above instead, since those are
+standalone apps rather than a skill). The @zhiprompts carousel had no
+literal AI prompts to install as commands — it's a 5-step productized
+service methodology (target a client with recurring messy CSV exports →
+lock a column mapping → clean deterministically in pandas/DuckDB → draft
+an AI narrative only after the numbers are verified → price and validate a
+sample package), refreshingly free of the hype seen in earlier batches: it
+labels its own $300/month figure "a testable example" and explicitly says
+to validate with a real buyer before treating it as recurring revenue.
+Written up as a skill — a sibling to the existing `content-repurposing-service`
+worked example — with the source's five cards quoted verbatim in the
+skill file for reference.
+
 Drop this repo into a Claude Code project (or point `.claude/skills` at it) to make these available.
 
 ## Plugins
@@ -557,6 +575,27 @@ than installable connectors, noted below for completeness). Status reflects
 | Codex | ✅ already covered | Not an MCP server — OpenAI's own coding agent/CLI. The actual Claude-Code-relevant integration is the `codex-plugin-cc` plugin documented above, already installed |
 | "Claude Design" | N/A | Not a separate tool — this is Claude itself (Anthropic's own branding), used as a general writing/brainstorming assistant. Nothing to install |
 | "The Pulp" | ❓ unverified | Described as a personalized daily-briefing/podcast app. Could not confirm a matching product by that name (an unrelated media-industry podcast shares the name; closest real equivalents are apps like Huxe or Spotify's Personal Podcasts). Even if real, it reads as a closed consumer app with no public API/MCP/skill surface — nothing to clone or install either way |
+
+### Local AI / offline LLM runtimes
+
+Reviewed from a fourth uploaded photo batch (a 7-image carousel,
+@ty.prompts.ai, "5 repos that run AI on your machine, no API bill"). All
+five repo paths, descriptions, and star counts were independently
+verified — real, accurate, no corrections needed except one the carousel
+actually got right where a guess would've gotten it wrong (`llamafile`
+lives at `mozilla-ai/llamafile` today, not the project's original
+`Mozilla-Ocho` org, which now redirects there). These are standalone
+local-inference apps/engines, not Claude Code skills/plugins/MCP servers —
+documented here for completeness, same treatment as `OpenHands`/
+`anything-llm`/`khoj` in the Plugins section above.
+
+| Item | What it is | Notes |
+|---|---|---|
+| [`janhq/jan`](https://github.com/janhq/jan) | Open-source ChatGPT-alternative desktop app, runs 100% offline; ✅ verified, ~44k★, Apache 2.0 | The one to start with if you just want a local chat app, not a dev tool |
+| [`ollama/ollama`](https://github.com/ollama/ollama) | The standard local model runner most of the local-AI ecosystem plugs into (`ollama run <model>`); ✅ verified, ~179k★, MIT | Supports Kimi, GLM, MiniMax, DeepSeek, gpt-oss, Qwen, Gemma, and more |
+| [`mudler/LocalAI`](https://github.com/mudler/LocalAI) | Open-source AI engine — LLMs, vision, voice, image, video, no GPU required, OpenAI-API-compatible; ✅ verified, ~49k★, MIT | Drop-in replacement for the OpenAI API in existing code |
+| [`mozilla-ai/llamafile`](https://github.com/mozilla-ai/llamafile) | Distributes and runs an entire LLM as a single executable file — no install, no runtime, no dependencies; ✅ verified, ~26k★, Apache 2.0 | Correct current org — the project's original `Mozilla-Ocho/llamafile` path now redirects here |
+| [`ggml-org/llama.cpp`](https://github.com/ggml-org/llama.cpp) | LLM inference engine in C/C++ — the low-level engine most of the above (and much of the wider local-AI ecosystem) is built on; ✅ verified, ~125k★, MIT | Correct current org — moved from the original `ggerganov/llama.cpp` |
 
 ## Commands
 
