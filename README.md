@@ -141,13 +141,103 @@ needed to reproduce the setup on any machine:
 | [`gstack`](https://github.com/garrytan/gstack) | See the vendored `gstack` skill above — not distributed as a plugin marketplace, needs its own installer | `git clone --single-branch --depth 1 https://github.com/garrytan/gstack.git ~/.claude/skills/gstack && cd ~/.claude/skills/gstack && ./setup` (requires `bun`) |
 | [`repomix`](https://github.com/yamadashy/repomix) | Standalone CLI — packs a repo into one LLM-friendly file; not a skill/plugin | `npm install -g repomix` |
 | [`codex-plugin-cc`](https://github.com/openai/codex-plugin-cc) | **Verified official** — OpenAI's own plugin to use Codex from inside Claude Code (`/codex:review`, `/codex:rescue`, `/codex:transfer`); needs a ChatGPT subscription or OpenAI API key | `claude plugin marketplace add openai/codex-plugin-cc`<br>`claude plugin install codex@openai-codex` |
+| [`claude-code-router`](https://github.com/musistudio/claude-code-router) | **Verified, real find** — local gateway that routes Claude Code (and Codex/Kimi/OpenCode) requests across multiple model providers, with request fusion, logging, and cost tracking; 36.7k★, MIT, very high adoption | `npm install -g @musistudio/claude-code-router` then run `ccr code` in place of `claude` (see repo for provider config) |
+| [`pal-mcp-server`](https://github.com/BeehiveInnovations/pal-mcp-server) | **Verified real** — MCP server connecting Claude Code (or Codex/Gemini CLI/Cursor) to other models (OpenAI, Gemini, Azure, Grok, Ollama, OpenRouter) for second-opinion/debate workflows; 11.7k★, Apache 2.0 | Add as an MCP server per the repo's README (multi-provider API keys required) — exact `claude mcp add` invocation not independently verified here |
+| [`hallmark`](https://github.com/nutlope/hallmark) | **Verified real** — "anti-AI-slop" design-quality skill for Claude Code/Cursor/Codex (design gates + themes against generic AI page look); real author (Hassan El Mghari), trending mid-2026 | `npx skills add nutlope/hallmark` |
+| [`gsap-skills`](https://github.com/greensock/gsap-skills) | **Verified, official** — published under the real GreenSock org; teaches correct GSAP usage (core API, timelines, ScrollTrigger, framework integration) to AI agents; MIT | `npx skills add greensock/gsap-skills` — complements the existing `ui-motion-design` skill (GSAP-specific vs. general easing/spring-physics principles) |
+| [`threejs-skills`](https://github.com/CloudAI-X/threejs-skills) | **Verified real** — 10-file skill bundle teaching Claude Code Three.js (scene setup, shaders, animation, post-processing); MIT, ~3k★ | `npx skills add CloudAI-X/threejs-skills` — complements `frontend-design`/`canvas-design` for 3D web work |
+| [`design-dna`](https://github.com/zanwei/design-dna) | **Verified real** — turns a reference UI screenshot/URL into a structured "Design DNA" JSON (tokens/style/effects), then generates matching UI; MIT, single-maintainer, ~1.4k★ | `npx skills add zanwei/design-dna` — overlaps with `design-token-extractor`; compare outputs before choosing one |
+| [`genjutsu`](https://github.com/AThevon/genjutsu) | **Corrected match** — the list's `iamovi/genjutsu` is an unrelated 24h-ephemeral social app; the real "creative coding skills for Claude" repo (animation/3D/design-system orchestrators) is [AThevon/genjutsu](https://github.com/AThevon/genjutsu), MIT, ~247★ | `npx skills add AThevon/genjutsu` |
+| [`claude-legal-skill`](https://github.com/evolsb/claude-legal-skill) | **Verified real, not a duplicate** — focused AI contract-review skill (CUAD risk detection, market benchmarks, lawyer-ready redlines); distinct from the already-installed `claude-for-legal` 12-plugin suite; MIT, 412★ | `npx skills add evolsb/claude-legal-skill` |
+| [`knowledge-work-plugins`](https://github.com/anthropics/knowledge-work-plugins) | **Verified official** — Anthropic's 11-plugin Cowork suite (productivity, data, design, **operations**, sales, marketing, legal, etc.); Apache 2.0, 23.6k★. Its `operations` plugin (vendor mgmt, process docs, compliance tracking, capacity planning) is a real gap-filler for this repo; its `legal` plugin likely overlaps with the installed `claude-for-legal` — diff before installing both | `claude plugin marketplace add anthropics/knowledge-work-plugins`<br>`claude plugin install operations@knowledge-work-plugins` |
+| [`seo-audit-skill`](https://github.com/seo-skills/seo-audit-skill) | **Verified real** — CLI SEO audit (108 rules/12 categories: Core Web Vitals, security headers, structured data, accessibility) with an `--format llm` mode, backed by SEOmator; MIT, 381★; complements the existing `claude-seo` skill | `npx skills add seo-skills/seo-audit-skill` |
+| [`anthropics/skills`](https://github.com/anthropics/skills) | **Verified official** — Anthropic's own public Agent Skills repo; the upstream source of the `docx`/`pdf`/`pptx`/`xlsx` skills this repo already uses. Apache 2.0 (skills subfolders source-available); ~170k★ | Reference only — already consumed indirectly via the skills already in `.claude/skills/` |
+| [`buildwithclaude`](https://github.com/davepoon/buildwithclaude) | **Verified real** — discovery hub/marketplace indexing ~117 agents/175 commands/26 skills and 20k+ community plugins; MIT, ~3.3k★ | Not installable itself — useful as a browse-and-discover starting point for future additions to this repo |
+| [`awesome-compliance`](https://github.com/getprobo/awesome-compliance) | **Verified real** — curated "awesome list" of GRC resources (ISO 27001, SOC 2, SOX, ESG frameworks/tools); CC0-1.0, 103★ | Reference list, not a skill — link from a future compliance skill rather than install directly |
 
 The marketingskills, claude-for-legal, claude-skills, financial-services,
-superpowers, and openai-codex marketplaces are registered and the plugins
-above installed (user scope) in this environment; `repomix` and
-`agent-browser` (below) are installed globally via npm. None of this
-persists outside this Claude Code installation — rerun the commands above
-on any machine that should have the same setup.
+superpowers, openai-codex, and knowledge-work-plugins marketplaces are
+registered and the plugins above installed (user scope) in this
+environment; `repomix` and `agent-browser` (below) are installed globally
+via npm. None of this persists outside this Claude Code installation —
+rerun the commands above on any machine that should have the same setup.
+`claude-code-router`, `pal-mcp-server`, and the `npx skills add ...` items
+above were identified and verified during review but not installed in
+this session — reproduce with the commands shown when you're ready to use
+them.
+
+### Reviewed and not added
+
+A raw list of `gh repo clone` commands (source unverified — looked like
+another social-media "tools to install" roundup) was checked item by item
+before writing the additions above. Several entries didn't hold up:
+
+- **Doesn't exist / unverifiable as named:** `HaydenLundin/marketing-psychology`,
+  `akhilesh-bisht/email-sequence-app` — no matching repo found under either
+  path.
+- **Name-collision false positives** (real repos, wrong domain): `CMVSR/def-model-review`
+  (an NLP "definition modeling" paper, not financial model review),
+  `e0397123/comp-analysis` (an LLM dialogue-evaluation paper, not competitor
+  analysis), `orgs/croservices` (the Raku-language **Cro** framework org, not
+  conversion-rate optimization), `Google-Health/path-foundation` (Google's
+  digital-pathology imaging model — genuinely irrelevant to business use as
+  suspected), `jajokine/Business-Cases` (grad-school data-science coursework,
+  not business-ops content). `r-lib/pillar` (the well-known tidyverse R
+  package) and `pillarhq/pillar` (a small AI-copilot-widget SDK) are both
+  real but are two *unrelated* projects sharing a name — neither fits this
+  repo's pattern.
+- **Real but off-pattern** (standalone apps/SDKs, not Claude
+  skills/plugins/MCP servers): `trypostit/trypost` (self-hosted social
+  scheduler), `pillarhq/pillar` (embeddable AI-copilot SDK),
+  `dolanmiu/docx` (the well-known npm library for generating `.docx`
+  files in JS — unrelated to this repo's own `docx` *Claude skill*),
+  `enochtangg/quick-SQL-cheatsheet` (a static reference doc),
+  `orgs/slackhq` (Slack's general OSS org — Bolt SDKs etc., no official
+  Slack MCP server found there), `orgs/NVIDIA-Omniverse` (89 repos, all
+  3D-simulation/robotics tooling, no general-purpose Claude skill or MCP
+  server), `OpenHands/OpenHands` (83k★ MIT — a full competing coding-agent
+  platform, not a Claude Code add-on), `Mintplex-Labs/anything-llm`,
+  `khoj-ai/khoj`, `Zie619/n8n-workflows` (flagged: a DMCA-driven history
+  rewrite is a caution sign), `omnigent-ai/omnigent` (a multi-agent
+  orchestration framework, different category from a skill/plugin),
+  `MadsLorentzen/ai-job-search` (a real personal Claude-Code project, but
+  niche/single-purpose rather than reusable infra).
+- **Low-maturity / unverified quality — flagged, not installed as-is:**
+  `pro-how-ai/sop-builder-kit` (2★, 1 commit — directly fills a real SOP
+  gap conceptually, but too thin to vouch for), `JimCortes/LBO_Model` (7★,
+  no license), `arnavchaturvedi17/…3_Statement_Financial_Model` (solo Excel
+  template, no license stated), `openrunbook/openrunbook` (5★, skews
+  SRE/infra runbooks rather than general business ops),
+  `diegosouzapw/OmniRoute` (claims "450+ contributors," unusually high for
+  an obscure repo — verify before trusting).
+- **Reference content worth citing but not packaging as a skill:**
+  [`joelparkerhenderson/pitch-deck`](https://github.com/joelparkerhenderson/pitch-deck)
+  (curated pitch-deck advice from YC/500 Startups/Unusual Ventures, 432★ —
+  a good source for `sales-enablement`) and
+  [`danluu/post-mortems`](https://github.com/danluu/post-mortems) (a
+  well-known, actively maintained collection of real-world incident
+  postmortems, 12.3k★ — relevant if this repo ever adds an ops/incident
+  skill).
+- **`@zapier/sdk` and `@zapier/mcp` don't exist on npm as named.** The real
+  official packages are `@zapier/zapier-sdk` and `@zapier/mcp-integration`
+  (which lets *Zapier* call remote MCP servers — the reverse of what an
+  agent needs). Skip either way: this repo already has Zapier connected as
+  a claude.ai connector covering the same 9,000+-app use case, and several
+  `@zapier/*` packages were hit by a November 2025 npm supply-chain
+  compromise (the "Shai-Hulud" worm, harvesting npm/GitHub tokens) — don't
+  `npm install` any `@zapier/*` package without confirming the installed
+  version postdates the fix.
+- **Duplicate of an existing best-guess entry:** `jlbadano/ig-mcp` (a
+  Python MCP server for Instagram Business accounts via the Graph API)
+  solves the same problem as the `instagram-mcp` entry already in the MCP
+  table below (`mcpware/instagram-mcp`) — pick one rather than installing
+  both; DM features are gated behind Meta App Review either way.
+- **Not a Claude tool, quick "still the same repo" check only:**
+  `coreyhaines31/marketingskills` (already vendored above, confirmed
+  unchanged; its ~44.9k★ figure recurred consistently across checks but is
+  unusually high for its category and worth a manual spot-check before
+  citing it publicly), `anthropics/financial-services` (already vendored,
+  confirmed unchanged).
 
 ## MCP Servers & external tools
 
@@ -163,7 +253,9 @@ than installable connectors, noted below for completeness). Status reflects
 | Google Drive | ✅ already connected (claude.ai connector) | — |
 | Zapier | ✅ already connected (claude.ai connector) | Bridges to 9,000+ apps' actions, including Instagram — may cover the `instagram-mcp` use case without a dedicated server |
 | Perplexity | ❌ not connected | Needs auth via claude.ai connector settings (can't be done from a non-interactive session) |
-| `instagram-mcp` (**best-guess match, uncertain**) | ❌ not installed | No single canonical repo; closest name match is [mcpware/instagram-mcp](https://github.com/mcpware/instagram-mcp) (Graph API, 23 tools). Needs an Instagram Graph API token to connect — add with `claude mcp add instagram-mcp -- npx @mcpware/instagram-mcp` once you have credentials |
+| `instagram-mcp` (**best-guess match, uncertain**) | ❌ not installed | No single canonical repo; closest name match is [mcpware/instagram-mcp](https://github.com/mcpware/instagram-mcp) (Graph API, 23 tools). A second real option, [jlbadano/ig-mcp](https://github.com/jlbadano/ig-mcp) (Python, Graph API), turned up in a later review — same use case, pick one rather than both. Needs an Instagram Graph API token to connect — add with `claude mcp add instagram-mcp -- npx @mcpware/instagram-mcp` once you have credentials |
+| [`OfficeCLI`](https://github.com/iOfficeAI/OfficeCLI) | ❌ not installed, verified real | CLI + bundled MCP server letting an agent read/edit/automate Word/Excel/PowerPoint files without Office installed; actively releasing (v1.0.143+) | Add per repo README once needed — overlaps with this repo's own `docx`/`pptx`/`xlsx` skills but operates on real files via MCP rather than generating new ones |
+| [`DesktopCommanderMCP`](https://github.com/wonderwhy-er/DesktopCommanderMCP) | ❌ not installed, verified real | Well-known MCP server giving Claude terminal control, filesystem search, and diff-based file editing; actively maintained | `npx @wonderwhy-er/desktop-commander@latest setup` (or via Smithery/Docker — see repo) |
 | `agent-browser` | ✅ installed as a CLI | [vercel-labs/agent-browser](https://github.com/vercel-labs/agent-browser) — despite the "MCP Servers" slide, Vercel built this as a token-efficient browser-automation **CLI**, not an MCP server. Installed globally: `npm install -g agent-browser && agent-browser install` |
 | `granola` (**best-guess, uncertain**) | ❌ not installed | Reads local [Granola](https://granola.ai) meeting notes/transcripts. No official/canonical MCP server found — a dozen community repos share the name (e.g. [chrisguillory/granola-mcp](https://github.com/chrisguillory/granola-mcp), [bhandzo/pantry](https://github.com/bhandzo/granola-mcp)). Requires the Granola desktop app running locally, so nothing to verify from this session — pick one and `claude mcp add` it once you have Granola installed |
 | [`kondo`](https://www.trykondo.com/) | ❌ not connected | **Correction: real, but not open-source** — not a GitHub repo (the earlier "could not verify" note was from only searching GitHub). Kondo is a commercial LinkedIn inbox-management Chrome extension ("Superhuman for LinkedIn DMs" — labels, snooze, keyboard triage) that ships a hosted MCP connector on its **Business plan** ($36/user/month), set up at [docs.trykondo.com/mcp-setup](https://docs.trykondo.com/mcp-setup); it requires the Kondo browser extension actively running and reads your live LinkedIn inbox locally in-browser (per their docs, it doesn't store LinkedIn data server-side). Needs a paid account + the extension — can't be connected from this session |
