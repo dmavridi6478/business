@@ -456,6 +456,24 @@ rather than presenting anything below as observed firsthand. Instead:
   published as a Claude Artifact so it's a bookmarkable, reusable
   reference rather than a one-off file: https://claude.ai/code/artifact/d99110f6-3334-4873-a558-133a06b79e78
 
+A sixteenth addition, `waitlist-app-builder`, came from a 12-slide
+carousel (@earchoe, "build_with_ai") delivered as a `.rar` archive rather
+than a zip — extracted with `unrar` (installed for the session, not
+previously available). It's a genuine 4-prompt system for building a
+full-stack waitlist app with a viral referral mechanic (refer 3 → jump to
+the front 25%, refer 10 → guaranteed access), a Resend-based email drip,
+and a password-protected admin dashboard — scaffold, drip sequence,
+referral engine, admin dashboard, in that order, with the admin dashboard
+explicitly meant to come after the core build ships rather than alongside
+it. One caveat worth flagging: slide 2 cites "3x higher day-1 conversion"
+and "62% of signups share the product" with no source given — kept out of
+the skill's own reasoning as fact, while the underlying referral-psychology
+principles (visible position, specific rewards, meaningful scarcity) are
+kept since they're well-established independent of that particular
+statistic. All 4 prompts are quoted verbatim in the skill file, plus an
+orchestrating command, `/waitlist-app`, that runs them in the right
+sequence.
+
 Drop this repo into a Claude Code project (or point `.claude/skills` at it) to make these available.
 
 ## Plugins
@@ -635,6 +653,7 @@ automatically when relevant), commands are invoked explicitly by name:
 - `/scope-web-task [task]` — applies the `web-task-scoping` skill's Target/Limit/Run/Review discipline to a browser-automation task before it runs; refuses to proceed on side-effecting tasks (submit/purchase/post/delete) until all four are explicit
 - `/tool-stack-check [current tools]` — checks a described software stack against `lean-software-stack`'s free alternatives and applies the `free-vs-paid-tool-decision` procedure to recommend switch/keep-paid per tool
 - `/one-person-business [skills/interests, or an existing idea/offer]` — runs the `one-person-*` skill bundle end to end (idea → offer → content system → sales system → scaling); stops to ask if the idea failed its own validation check, or if scaling is requested before a content/sales system actually exists
+- `/waitlist-app [product name, description, target user, tone]` — runs the `waitlist-app-builder` skill's 4 prompts end to end (scaffold → drip sequence → referral engine → admin dashboard); holds the admin dashboard for a follow-up pass rather than building it before the core signup/referral loop is verified working
 - 100 single-purpose shorthand commands (`/debug`, `/brief`, `/eli5`, `/linkedin`, `/resume-review`, `/startup`, `/plan`, `/learn-topic`, `/profile`, `/toneformal`, and 90 more) — see "A twelfth addition" above for the full category list and source; each takes one argument and applies one specific behavior modifier or micro-task rather than running a multi-step workflow
 - 48 long-horizon "work order" commands (`/build-complete-app`, `/refactor-safely`, `/build-orchestrator`, `/research-and-self-factcheck`, `/build-loop-until-tests-pass`, `/full-repo-audit`, and 42 more) — see "A thirteenth addition" above for the full category list, source, and verbatim prompts; each runs a full self-verifying pass (build/refactor/automate/orchestrate/research/loop/audit) rather than a single-step response
 
