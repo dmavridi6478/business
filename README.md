@@ -20,6 +20,8 @@ A starter bundle of business-oriented Claude skills lives in `.claude/skills/`:
 - `ai-search-marketing-2026` — the SEO/SXO/AEO/GEO/AIO five-discipline wheel, a modern-marketing taxonomy, 5 exec-level marketing-analytics questions, a 15-day day-by-day AI-search action plan, and a 20-source AI-visibility ecosystem map cross-checked against which sources this account can actually query via a live MCP connector
 - `growth-operating-framework` — a 7-step sequence for capital-efficient growth (real-business alignment → North Star metric → data foundation → feedback loop → cross-functional accountability → capital-efficient scale → fast iteration)
 - `linkedin-virality-playbook` — 9 tactics for LinkedIn posts that reach beyond the author's own network (proof-led hooks, repostable angles, reusable visual templates, real engagement questions)
+- `inbound-content-playbook` — a 12-step compounding loop (visibility → trust → conversations → inbound → feedback) for generating inbound leads through content instead of cold outreach, ending in a 5-question self-check
+- `resume-prompt-kit` — 10 structured prompts covering a full resume build (positioning → intake → summary → experience → skills → certs → education → ATS proofread) plus JD-tailoring and a cover letter
 - `contract-review` — reviews contracts (NDAs, employment agreements, SaaS terms, M&A documents) for unfavorable terms, suggests redlines, and benchmarks clauses against market standards; built on the CUAD dataset (41 risk categories), ContractEval, and LegalBench; vendored in full from [evolsb/claude-legal-skill](https://github.com/evolsb/claude-legal-skill) (MIT) — distinct from the already-installed `claude-for-legal` 12-plugin suite, which doesn't include a focused contract-review skill
 
 A design/output bundle sits alongside it, for turning business content into actual visual deliverables:
@@ -474,6 +476,53 @@ statistic. All 4 prompts are quoted verbatim in the skill file, plus an
 orchestrating command, `/waitlist-app`, that runs them in the right
 sequence.
 
+A seventeenth addition came from a batch of 6 uploaded infographics
+attached directly (not zipped) — a mix of business methodology, real
+prompt templates, and one that turned out to be sourced data rather than
+a tool:
+
+- **`inbound-content-playbook`** (new skill) — a "CEO's Playbook:
+  Generating Inbound Leads Using Content" infographic (smarterwithai.news),
+  a 12-step visibility→trust→conversations→inbound→feedback loop. No
+  literal prompts, so written up as a skill; cross-referenced against
+  `one-person-content-system` and `linkedin-virality-playbook` rather than
+  duplicating their territory.
+- **`resume-prompt-kit`** (new skill) + **`/build-resume`** (new command)
+  — a "ChatGPT Prompts for Building a Standout Resume" cheat sheet
+  (smarterwithai.news), 10 real prompts covering a full resume build
+  through to a tailored cover letter. All 10 quoted verbatim in the skill
+  file. Deeper than the existing `/resume-review` one-liner (from an
+  earlier reviewed shorthand-command batch) — that command still covers
+  a quick polish pass; this kit is for building or overhauling from
+  scratch.
+- **`claude-cheat-sheet` extended** — a "How to Prompt AI" infographic
+  contributed the 5 C's, SEED, and PEEL structured-prompt frameworks
+  (folded into the existing skill rather than a new one, since it's the
+  same territory) plus 6 new commands for its "Advanced Prompting
+  Techniques": `/plan-then-answer`, `/reflect-then-revise`,
+  `/self-critique-pass`, `/evidence-first-grounding`,
+  `/assumptions-and-gaps`, `/contrast-few-shot`.
+- **15 new commands** from a "Top 15 Perplexity Prompts" infographic —
+  genuine, Perplexity-branded but tool-agnostic templates:
+  `/market-research-scan`, `/trend-analysis`,
+  `/competitor-benchmark-scorecard`, `/customer-feedback-themes`,
+  `/case-studies-roundup`, `/industry-report-digest`,
+  `/skill-learning-plan`, `/expert-opinion-compare`,
+  `/content-ideas-schedule`, `/pdf-summary-digest`,
+  `/product-comparison-table`, `/strategy-action-plan`,
+  `/event-news-recap`, `/decision-matrix`, `/business-idea-gonogo`. Named
+  distinctly from existing commands/skills covering similar ground
+  (`competitor-profiling`, `saas-idea-validator`, `one-person-business-idea`,
+  `/compare`, `/proscons`, `/contentplan`) rather than colliding with or
+  duplicating them.
+- **Not turned into a skill or command**: a McKinsey infographic ("Two-
+  thirds of today's people management processes can be largely
+  automated"). It's sourced data (McKinsey Global Institute Automation
+  Model), not a prompt, repo, or tool — nothing to clone or install, and
+  this repo has no HR/people-ops skill for it to extend. Noted here for
+  completeness rather than forced into an artifact thin enough to not be
+  worth having.
+
 Drop this repo into a Claude Code project (or point `.claude/skills` at it) to make these available.
 
 ## Plugins
@@ -654,6 +703,8 @@ automatically when relevant), commands are invoked explicitly by name:
 - `/tool-stack-check [current tools]` — checks a described software stack against `lean-software-stack`'s free alternatives and applies the `free-vs-paid-tool-decision` procedure to recommend switch/keep-paid per tool
 - `/one-person-business [skills/interests, or an existing idea/offer]` — runs the `one-person-*` skill bundle end to end (idea → offer → content system → sales system → scaling); stops to ask if the idea failed its own validation check, or if scaling is requested before a content/sales system actually exists
 - `/waitlist-app [product name, description, target user, tone]` — runs the `waitlist-app-builder` skill's 4 prompts end to end (scaffold → drip sequence → referral engine → admin dashboard); holds the admin dashboard for a follow-up pass rather than building it before the core signup/referral loop is verified working
+- `/build-resume [target role, industry, seniority, optional job posting]` — runs the `resume-prompt-kit` skill's 10 prompts end to end (positioning → intake → summary → experience → skills → certs → education → ATS proofread), then tailoring + a cover letter if a specific job posting was given; asks for real background details rather than inventing achievements or dates
+- 21 more single-purpose commands from a reviewed infographic batch (`/plan-then-answer`, `/self-critique-pass`, `/market-research-scan`, `/business-idea-gonogo`, `/decision-matrix`, and 16 more) — see "A seventeenth addition" above for the full list and source
 - 100 single-purpose shorthand commands (`/debug`, `/brief`, `/eli5`, `/linkedin`, `/resume-review`, `/startup`, `/plan`, `/learn-topic`, `/profile`, `/toneformal`, and 90 more) — see "A twelfth addition" above for the full category list and source; each takes one argument and applies one specific behavior modifier or micro-task rather than running a multi-step workflow
 - 48 long-horizon "work order" commands (`/build-complete-app`, `/refactor-safely`, `/build-orchestrator`, `/research-and-self-factcheck`, `/build-loop-until-tests-pass`, `/full-repo-audit`, and 42 more) — see "A thirteenth addition" above for the full category list, source, and verbatim prompts; each runs a full self-verifying pass (build/refactor/automate/orchestrate/research/loop/audit) rather than a single-step response
 
