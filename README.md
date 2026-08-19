@@ -160,6 +160,157 @@ included one image that was just a "link in bio" ad for a separate paid
 upsell with no verifiable content behind it, not something to install, and
 isn't reflected in the skills above.
 
+A twelfth addition is 100 slash **commands** rather than skills, reviewed
+from a second uploaded photo batch (an 11-image carousel from a different
+social account, @ai_slacker, titled "Hidden Claude Codes That Unlock Insane
+AI Capabilities — swipe left for more"). That title oversells what's
+actually there: these aren't hidden or Claude-specific at all — they're a
+personal shorthand-macro list for any chat AI, and each one only works if
+something (custom instructions, or here, an actual `.claude/commands/`
+file) defines it. Unlike the two prompt carousels above, none of the 100
+entries were full role/task/steps/rules prompts — each was a one-line
+`/shortname – one-line behavior` pairing across 10 categories (Coding/Tech,
+Execution/Output Modes, Thinking Styles, Content Creation, Career/Job Help,
+Business/Strategy, Productivity, Learning, Personal Branding, Advanced
+Prompt Control). That shape maps almost exactly onto Claude Code's real
+custom-slash-command mechanism, so all 100 were installed as real commands
+in `.claude/commands/`, each with a short operationalized instruction
+rather than just the one-line label. Five were renamed from the source
+name to avoid real or likely confusion: `/resume` → `/resume-review`
+(collides with Claude Code's own built-in session-resume command),
+`/simplify` → `/simplify-explain` (this environment already has a
+`simplify` skill/command with unrelated meaning — code-quality cleanup,
+not "explain simply"), and `/skills`, `/learn`, `/data` →
+`/skills-to-learn`, `/learn-topic`, `/data-driven` (generic enough names to
+risk future collisions). Several commands point at this repo's existing,
+deeper skills instead of duplicating them (e.g. `/hook` → `hook-writer`,
+`/icp` → `outreach-strategy`, `/startup` → `saas-idea-validator`).
+
+The full source list, reproduced in plain text as the carousel presented
+it, organized by category:
+
+```text
+Coding / Tech
+/debug - find bugs
+/refactor - clean code
+/optimizecode - improve performance
+/systemdesign - architecture design
+/api - API structure
+/database - DB design
+/scalability - scaling approach
+/security - security checks
+/testcases - generate tests
+/pseudocode - logic only
+
+Execution / Output Modes
+/ghost - only final answer, no explanation
+/minimal - shortest possible response
+/brief - 3-5 lines max
+/expand - detailed explanation
+/stepbystep - clear steps
+/checklist - actionable checklist
+/framework - structured framework
+/blueprint - implementation plan
+/playbook - repeatable system
+/roadmap - timeline based steps
+
+Thinking Styles
+/analyst - deep analysis
+/critic - find flaws only
+/optimizer - improve what's given
+/simplify - explain like beginner
+/eli5 - very simple explanation
+/deepdive - go very detailed
+/compare - compare options
+/proscons - list pros and cons
+/firstprinciples - break to basics
+/contrarian - challenge idea
+
+Content Creation
+/linkedin - LinkedIn post
+/twitter - short thread style
+/script - video/reel script
+/hook - strong opening lines
+/story - storytelling format
+/carousel - slide-wise content
+/headlines - multiple title options
+/captions - social captions
+/viral - high engagement style
+/authority - expert tone
+
+Career / Job Help
+/resume - improve resume
+/interview - interview Q&A
+/mockinterview - simulate interview
+/hr - HR round answers
+/portfolio - project ideas
+/roadmapcareer - career roadmap
+/jobsearch - job strategy
+/referral - referral message
+/salary - salary negotiation
+/skills - skills to learn
+
+Business / Strategy
+/startup - startup idea
+/gtm - go to market plan
+/monetize - revenue ideas
+/validate - validate idea
+/icp - ideal customer profile
+/sales - sales pitch
+/colddm - cold outreach
+/offer - offer creation
+/funnel - funnel strategy
+/retention - retention ideas
+
+Productivity
+/plan - daily plan
+/weekly - weekly plan
+/prioritize - what to do first
+/focus - remove distractions
+/automate - automation ideas
+/delegate - what to delegate
+/habits - habit building
+/track - tracking system
+/timeblock - time blocking
+/review - weekly review
+
+Learning
+/learn - explain topic
+/resources - best resources
+/practice - practice questions
+/quiz - test knowledge
+/mistakes - common mistakes
+/summary - summarize topic
+/revision - quick revision
+/notes - structured notes
+/examples - real examples
+/explainwhy - reasoning
+
+Personal Branding
+/profile - LinkedIn profile review
+/headline - headline ideas
+/bio - bio rewrite
+/contentplan - content calendar
+/niche - niche clarity
+/audience - target audience
+/positioning - brand positioning
+/engagement - increase engagement
+/dms - DM strategy
+/growth - growth strategy
+
+Advanced Prompt Control
+/toneformal - formal tone
+/tonecasual - casual tone
+/persuasive - convincing tone
+/data - include stats
+/examplesonly - only examples
+/noexamples - no examples
+/limit - limit words
+/expandpoints - expand each point
+/bullet - bullet format
+/nobullet - paragraph format
+```
+
 Drop this repo into a Claude Code project (or point `.claude/skills` at it) to make these available.
 
 ## Plugins
@@ -318,6 +469,7 @@ automatically when relevant), commands are invoked explicitly by name:
 - `/scope-web-task [task]` — applies the `web-task-scoping` skill's Target/Limit/Run/Review discipline to a browser-automation task before it runs; refuses to proceed on side-effecting tasks (submit/purchase/post/delete) until all four are explicit
 - `/tool-stack-check [current tools]` — checks a described software stack against `lean-software-stack`'s free alternatives and applies the `free-vs-paid-tool-decision` procedure to recommend switch/keep-paid per tool
 - `/one-person-business [skills/interests, or an existing idea/offer]` — runs the `one-person-*` skill bundle end to end (idea → offer → content system → sales system → scaling); stops to ask if the idea failed its own validation check, or if scaling is requested before a content/sales system actually exists
+- 100 single-purpose shorthand commands (`/debug`, `/brief`, `/eli5`, `/linkedin`, `/resume-review`, `/startup`, `/plan`, `/learn-topic`, `/profile`, `/toneformal`, and 90 more) — see "A twelfth addition" above for the full category list and source; each takes one argument and applies one specific behavior modifier or micro-task rather than running a multi-step workflow
 
 **Skill vs. command, in this repo:** a skill is background knowledge/procedure
 Claude reaches for when relevant ("how do I structure a quarterly OKR cascade");
