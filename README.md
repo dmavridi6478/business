@@ -347,3 +347,7 @@ Standard operating procedures live in `docs/procedures/`:
   Sources, Rules, Actions, Approval) plus a system readiness check to run
   before scheduling any autonomous/unattended Claude workflow. Backs the
   `night-shift-workflow` skill.
+- `loop-engineering.md` — a tool-agnostic 5-stage loop (Inspect → Build →
+  Verify → Red Team → Score/Rewrite) plus a copy-paste prompt template for
+  running it in any AI tool, and a note on where `task-loop-runner` already
+  covers the middle stages in this environment.
