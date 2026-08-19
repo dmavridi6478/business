@@ -133,6 +133,33 @@ supply-chain-compromise flag). Both passed the bar for full vendoring:
 real, actively maintained, clearly licensed (MIT), and genuinely not
 duplicating anything already in this repo.
 
+An eleventh addition, `one-person-business-idea` through
+`one-person-business-scaling`, is original content again, same pattern as
+the outreach bundle: reviewed from an uploaded photo batch (a 7-image
+carousel from a social account, @yourgptguide/"Your GPT Guide"), no GitHub
+repo to vendor since it was 5 raw prompts rather than a repo. The carousel's
+own framing — "BREAKING: Claude can now help you..." (Claude could always
+do this) and "like Dan Koe's $5M solo operation" (an unverified claim about
+a third party) — is marketing hype, kept out of the skills themselves; the
+prompts underneath it are decent, coherently structured prompt engineering
+and were kept. Turned into 5 skills (one per stage) plus one orchestrating
+command, `/one-person-business`, following the same
+one-skill-per-stage-plus-orchestrator shape as `/outreach-campaign`:
+
+- `one-person-business-idea` — intersects skills/interests/market demand into 3 validated business models and a one-sentence positioning statement
+- `one-person-offer-architect` — turns that positioning into a premium-priced offer selling a transformation, never a service/deliverable
+- `one-person-content-system` — one owned thesis expanded into ~30 pieces via a cross-platform repurposing map, sized to under 2 hours/week
+- `one-person-sales-system` — a zero-sales-call pipeline from content viewer → lead capture → nurture → conversion
+- `one-person-business-scaling` — productizes time-for-money work into a digital-product/passive-income layer with a 12-month, milestone-based roadmap, explicitly without hiring
+
+Each skill's `SKILL.md` carries its original prompt verbatim in a
+`Prompt (copy-paste)` section, for anyone who wants to run a stage directly
+in another assistant instead of through this repo. The photo batch also
+included one image that was just a "link in bio" ad for a separate paid
+"Art of AI 2.0" prompt bundle (100K prompts, 15+ courses) — that's a paid
+upsell with no verifiable content behind it, not something to install, and
+isn't reflected in the skills above.
+
 Drop this repo into a Claude Code project (or point `.claude/skills` at it) to make these available.
 
 ## Plugins
@@ -290,6 +317,7 @@ automatically when relevant), commands are invoked explicitly by name:
 - `/content-pipeline [niche/topic]` — runs the 7-agent content team (research → hook → script → design → schedule) in sequence, then always stops for explicit approval before `content-publisher` touches a live platform
 - `/scope-web-task [task]` — applies the `web-task-scoping` skill's Target/Limit/Run/Review discipline to a browser-automation task before it runs; refuses to proceed on side-effecting tasks (submit/purchase/post/delete) until all four are explicit
 - `/tool-stack-check [current tools]` — checks a described software stack against `lean-software-stack`'s free alternatives and applies the `free-vs-paid-tool-decision` procedure to recommend switch/keep-paid per tool
+- `/one-person-business [skills/interests, or an existing idea/offer]` — runs the `one-person-*` skill bundle end to end (idea → offer → content system → sales system → scaling); stops to ask if the idea failed its own validation check, or if scaling is requested before a content/sales system actually exists
 
 **Skill vs. command, in this repo:** a skill is background knowledge/procedure
 Claude reaches for when relevant ("how do I structure a quarterly OKR cascade");
