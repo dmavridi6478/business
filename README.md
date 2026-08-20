@@ -639,6 +639,36 @@ Neither infographic contained a literal AI prompt, so there's nothing new
 to paste as copy-paste text this time — both were architectural/
 definitional content, handled as connective documentation instead.
 
+A twenty-second addition came from 3 more infographics, all from
+smarterwithai.news and The Limitless CMO:
+
+- **"How to Learn 10x Faster with AI"** (smarterwithai.news) — 10 learning
+  prompt templates. 2 of the 10 duplicated existing commands almost
+  exactly (Interactive Quiz → `/quiz`, Analogies → `/eli5`) and were
+  skipped rather than re-installed; the other 8 became new commands:
+  `/learn-simplified-breakdown`, `/learn-motivation-frame`,
+  `/learn-role-play-mentor`, `/learn-mind-map`, `/learn-multi-perspective`
+  (checked against the existing `/steelman-both-sides` and `/proscons` —
+  distinct enough since this one is learning-oriented, not adversarial or
+  weighing-a-decision), `/learn-mnemonics`, `/learn-explanation-feedback`,
+  and `/learn-feynman`.
+- **"ChatGPT-4o Capabilities"** (smarterwithai.news) — mostly a generic
+  capability/marketing reference for a different product (ChatGPT-4o, not
+  Claude), with no named external tools in its "Alternatives & Tools"
+  section (just unnamed categories) — not turned into a skill, same
+  treatment as the earlier McKinsey infographic. Its "Advanced Prompts"
+  section did have 4 genuinely reusable prompt patterns, installed as
+  commands: `/summarize-with-constraints`, `/role-lens-rewrite`,
+  `/translate-preserve-tone`, `/controlled-step-reasoning`.
+- **`marketing-org-operating-model`** (new skill) — "How to Future-Proof
+  Your Marketing Organization" (Lisa Cole, The Limitless CMO): a 5-step
+  operating-model redesign (mandates → codify the work → in-house/
+  outsource/automate → apply AI → prove to finance). Checked against the
+  existing `growth-operating-framework` first — that skill is
+  growth-*strategy* (North Star metric, capital efficiency); this one is
+  the org-design layer underneath it (how the marketing function's actual
+  work gets routed and executed), so it's a companion, not a duplicate.
+
 Drop this repo into a Claude Code project (or point `.claude/skills` at it) to make these available.
 
 ## Plugins
