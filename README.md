@@ -7,6 +7,7 @@ A starter bundle of business-oriented Claude skills lives in `.claude/skills/`:
 
 - `sales-enablement` — pitch decks, one-pagers, objection handling, MEDDPICC/MEDDIC/BANT
 - `business-decision-frameworks` — MoSCoW, RICE, OKRs, Kano, roadmap formats, Minto Pyramid
+- `kpi-reference-handbook` — ~44 standard financial KPI formulas across 8 categories (profitability, efficiency, liquidity, financial structure, cash, investor/valuation), plus an 8-step process for turning a KPI into an action plan
 - `quarterly-okr-architect` — quarterly/annual goal architectures (4DX, MASTER, DUMB, backward planning)
 - `business-intelligence-report` — reports for managers/CEO on results, trends, predictive analysis
 - `ceo-reporting-skill` — growth/business reports for the CEO (Greek healthcare context)
@@ -522,6 +523,21 @@ a tool:
   this repo has no HR/people-ops skill for it to extend. Noted here for
   completeness rather than forced into an artifact thin enough to not be
   worth having.
+
+An eighteenth addition, `kpi-reference-handbook`, came from a single
+"KPIs Handbook" infographic (Bojan Radojicic, promotional material for a
+paid handbook sold on Gumroad). No prompts and no repo — it's a dense
+formula reference (~44 standard financial KPIs across 8 categories, plus
+an 8-step goal→data→calculate→interpret→compare→act process), so nothing
+was installed as a command; instead it was written up as a skill the same
+way `business-decision-frameworks` reproduces MoSCoW/RICE/OKRs. The
+formulas themselves are standard, well-known financial metrics, not
+proprietary to that book — worth saying plainly if the source's own paid
+product comes up, since this skill isn't a substitute for it, just a
+formula lookup. One inconsistency in the source kept visible rather than
+silently resolved: it lists "Cash Ratio" twice with two different
+denominators (current liabilities under Liquidity, total liabilities
+under Cash) — both are kept, labeled distinctly.
 
 Drop this repo into a Claude Code project (or point `.claude/skills` at it) to make these available.
 
