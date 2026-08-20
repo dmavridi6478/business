@@ -1,6 +1,6 @@
 ---
 name: claude-code-tooling
-description: Curated directory of external Claude Code tools worth knowing about and recommending — a design-engine desktop app, a senior-engineer skill pack, an educational mini agent-harness, multi-agent orchestration, a skills package manager, a self-evolving agent context database, five AI browser-automation frameworks (Playwright MCP, Stagehand, Skyvern, Magentic-UI, Steel Browser), and a hive-mind team workspace (Buzz) that gives Claude Code/Codex/Goose agents a persistent presence alongside humans in shared channels. These are standalone software projects, not skills to load — reach for this when the user asks what to install to improve their Claude Code setup, or is looking for a specific capability (multi-agent orchestration, agent memory, a skills package manager, browser automation, agents-in-team-chat) that a plain skill file can't provide.
+description: Curated directory of external Claude Code tools worth knowing about and recommending — a design-engine desktop app, a senior-engineer skill pack, an educational mini agent-harness, multi-agent orchestration, a skills package manager, a self-evolving agent context database, five AI browser-automation frameworks (Playwright MCP, Stagehand, Skyvern, Magentic-UI, Steel Browser), five AI agent-building frameworks (Pydantic AI, Agno, Mastra, Strands Agents, Google ADK) plus a framework-bakeoff evaluation method, and a hive-mind team workspace (Buzz) that gives Claude Code/Codex/Goose agents a persistent presence alongside humans in shared channels. These are standalone software projects, not skills to load — reach for this when the user asks what to install to improve their Claude Code setup, is choosing an agent-building framework, or is looking for a specific capability (multi-agent orchestration, agent memory, a skills package manager, browser automation, agents-in-team-chat) that a plain skill file can't provide.
 ---
 
 ## When to use this skill
@@ -34,6 +34,22 @@ Five AI browser agents (from a separate "AI Power User Stack" carousel, @zhiprom
 
 None of these are cloned into this repo — same standalone-software rule as the rest of this list. Before turning any of them loose on a real site, apply the `web-task-scoping` skill's four-step scoping rule (Target/Limit/Run/Review) rather than granting full autonomy from the first run.
 
+## AI agent-building frameworks
+
+Five agent-builder SDKs/frameworks (from an "AI Power User Stack — 5 AI agent builders to try before LangChain" carousel, @zhiprompts) — for writing the agent's own logic (tools, memory, state, evals), a different layer than the browser-automation frameworks above:
+
+| Repo | What it's for | Install / link |
+|---|---|---|
+| `pydantic/pydantic-ai` | Model-agnostic agents with typed inputs, structured outputs, tools, and dependencies as testable Python code — from the Pydantic team, so validation is first-class rather than bolted on — 19k stars, Python | https://github.com/pydantic/pydantic-ai |
+| `agno-agi/agno` | Compose agents and teams of agents with tools, memory, knowledge, reasoning, and model-provider flexibility (swap providers without a rewrite) — 42k stars, Python | https://github.com/agno-agi/agno |
+| `mastra-ai/mastra` | Agents, workflows, RAG, memory, and evaluations in one integrated TypeScript application framework — the JS/TS-native option when the rest of the stack is already TypeScript — 27k stars, TypeScript | https://github.com/mastra-ai/mastra |
+| `strands-agents/harness-sdk` | Lightweight, model-driven agent loop with tools and provider integrations from the Strands ecosystem (Python & TypeScript, Apache-2.0) — 6.7k stars | https://github.com/strands-agents/harness-sdk |
+| `google/adk-python` | Google's open-source Python toolkit for building, evaluating, and deploying agents, with Google's model ecosystem as a first-party integration — 21k stars, Python | https://github.com/google/adk-python |
+
+Star counts are as shown in the source carousel, not independently re-verified — check current counts before treating one as a production-scale endorsement.
+
+**Choosing between them before defaulting to LangChain**: the source carousel's framing (LangChain isn't wrong, just often the default reached for without comparing alternatives first) pairs with a "build the same small agent twice" evaluation method from the same account: give two candidate frameworks the same job, the same tools/state/test set, the same approval rule, and the same deployment target, then compare the resulting code, execution traces, failure modes, and cost — a framework decision based on operational fit for the actual job, not GitHub stars alone. Worth running before committing a new agent build to any framework on this list (or to LangChain).
+
 ## Team/agent collaboration platforms
 
 | Repo | What it's for | Install / link |
@@ -57,4 +73,4 @@ None of these are cloned into this repo — same standalone-software rule as the
 
 ## Notes
 
-Sources: a "7 Claude Code repos I can't work without" screenshot carousel (@joshualevi.ai) for the first six tools; "AI Power User Stack — 5 AI browser agents that can do the clicking for you" carousel (@zhiprompts) for the browser-automation frameworks; "Buzz — The Hive Mind for Humans + Agents" carousel (@iunlockedai, Tool Drop 15) for `block/buzz`.
+Sources: a "7 Claude Code repos I can't work without" screenshot carousel (@joshualevi.ai) for the first six tools; "AI Power User Stack — 5 AI browser agents that can do the clicking for you" carousel (@zhiprompts) for the browser-automation frameworks; "AI Power User Stack — 5 AI agent builders to try before LangChain" carousel (@zhiprompts) for the agent-building frameworks and the "build the same small agent twice" evaluation method; "Buzz — The Hive Mind for Humans + Agents" carousel (@iunlockedai, Tool Drop 15) for `block/buzz`.

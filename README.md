@@ -669,6 +669,37 @@ smarterwithai.news and The Limitless CMO:
   the org-design layer underneath it (how the marketing function's actual
   work gets routed and executed), so it's a companion, not a duplicate.
 
+A twenty-third addition came from a 15-photo batch containing two carousels:
+
+- **The @yourgptguide "5 Claude prompts" one-person-business carousel** (Find
+  Your Idea → Build Your Offer → Content System → Sales System → Scale) —
+  compared image-by-image against the existing `one-person-business-idea`,
+  `one-person-offer-architect`, `one-person-content-system`,
+  `one-person-sales-system`, and `one-person-business-scaling` skills and
+  confirmed word-for-word identical to the prompts already vendored there
+  (same XML-tag `<role>/<task>/<steps>/<rules>/<output>` structure, same
+  text). Treated as a duplicate upload — nothing new installed. The batch's
+  2 promotional slides (a "Claude can now help you build a $5M solo
+  operation" hook and a paid "Art of AI 2.0" prompt-bundle ad) aren't
+  prompts and weren't turned into anything either.
+- **The @zhiprompts "5 AI agent builders to try before LangChain" carousel**
+  — 5 real agent-building SDKs (Pydantic AI, Agno, Mastra, Strands Agents,
+  Google ADK) plus a "build the same small agent twice" framework-bakeoff
+  evaluation method (same job, same tools/state/test set/approval rule/
+  deployment target on two candidates, then compare code/traces/failures/
+  cost). Added to the existing `claude-code-tooling` skill's tool
+  directory as a new "AI agent-building frameworks" section, alongside its
+  existing browser-automation-frameworks section from the same @zhiprompts
+  account — genuinely new content, not a duplicate. Strands Agents' repo
+  name (`harness-sdk`, not the more commonly seen `sdk-python`) was
+  spot-checked with a web search before including it, since it looked like
+  it might be a mislabel; it's real and current.
+
+No new prompts to paste as copy-paste text this round — the one prompt
+carousel in this batch was a duplicate of what's already in the README's
+plain-text prompt sections above, and the tool roundup had no prompts, just
+repos.
+
 Drop this repo into a Claude Code project (or point `.claude/skills` at it) to make these available.
 
 ## Plugins
