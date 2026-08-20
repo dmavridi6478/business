@@ -42,6 +42,7 @@ A design/output bundle sits alongside it, for turning business content into actu
 - `brandkit-generator` — turns a one-line idea into 2-3 brand directions (wordmark, palette, type pairing, brand board), fast and explicitly non-final
 - `design-token-extractor` — extracts a reusable color/type/spacing token set from a reference site or screenshot
 - `image-to-code` — clones a reference screenshot into real code, then renders and compares before calling it done
+- `ai-video-image-prompt-structure` — a 6-part structural pattern (subject → action → setting → camera/shot direction → style/VFX → closing beat) for writing an AI image/video generation prompt that produces a specific result instead of a generic one
 - `hallmark` — "anti-AI-slop" design skill for greenfield builds, audits, redesigns, and DNA-extraction from a URL/screenshot (`audit`/`redesign`/`study` verbs); enforces structural variety across 21 named themes/21 macrostructures so builds don't converge on the same hero→3-feature→CTA→footer template; vendored in full (SKILL.md + its whole `references/` library — component cookbook, anti-patterns, typography/color/motion) from [nutlope/hallmark](https://github.com/nutlope/hallmark) (MIT)
 
 A third bundle covers **setting up a new business** — validating an idea and turning someone's own expertise into a sellable product/service before (or instead of) building a team-scale product:
@@ -538,6 +539,34 @@ formula lookup. One inconsistency in the source kept visible rather than
 silently resolved: it lists "Cash Ratio" twice with two different
 denominators (current liabilities under Liquidity, total liabilities
 under Cash) — both are kept, labeled distinctly.
+
+A nineteenth addition came from a different kind of source: an uploaded
+screen-recording video (`.MP4`), not photos — a TikTok (@simplydigital)
+titled "3 Websites for unlimited FREE PROMPTS." No local speech-to-text
+was available in this session, so the video was reviewed by extracting
+frames with `ffmpeg` (installed for the session) at 1fps and reading the
+on-screen text/URLs directly, which was enough — all three sites'
+identities and UI were clearly shown on screen. Attempted to actually
+visit and browse each site as asked, but this session's network egress is
+blocked to all three domains, same limitation as the design-inspiration
+carousel earlier — said so rather than presenting anything as observed
+firsthand:
+
+- **Meigen.ai**, **Yesand.ai**, **YouMind.com/prompts** — added to
+  `design-dev-resources` as a new "AI prompt discovery libraries" table.
+  These aren't design-reference galleries, they're community libraries of
+  *other people's* actual AI image/video generation prompts (YouMind
+  claims 20,000+, updated daily), each with a one-click "use this prompt"
+  flow. The example prompts visible in the recording are attributed to
+  named individual creators on those platforms (e.g. a Meigen.ai post
+  credited to "Pierrick Chevallier | IA") — none are reproduced verbatim
+  here, since they belong to those creators, not this repo.
+- **`ai-video-image-prompt-structure`** (new skill) — rather than copy
+  someone else's specific prompt and present it as a generic template,
+  this skill is written fresh: the 6-part structural pattern (subject →
+  action → setting → camera/shot direction → style/VFX → closing beat)
+  that the recording's examples had in common, illustrated with an
+  original worked example instead of a lifted one.
 
 Drop this repo into a Claude Code project (or point `.claude/skills` at it) to make these available.
 
