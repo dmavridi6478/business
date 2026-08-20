@@ -608,6 +608,37 @@ skills before adding anything:
   higher-rigor goal-architecture fusion; this one is the backward-looking
   retrospective that feeds it, not a lighter-weight duplicate of it.
 
+A twenty-first addition came from 2 conceptual infographics — reviewed,
+checked against existing skills, and deliberately turned into small
+connective edits rather than new skills, since both concepts were already
+covered:
+
+- **"RAG vs Agentic RAG"** (AI For Leaders.com) — explains single-pass RAG
+  (query → retrieve → augment → generate, for simple/fast/low-complexity
+  lookups) versus Agentic RAG (a 7-step loop — understand → decide →
+  retrieve → reason → refine, looping back to "decide" as needed → respond
+  — for complex/dynamic/high-accuracy research). No new skill: this repo's
+  existing `agentic-researcher` agent already *is* a working Agentic RAG
+  implementation — its own description states "This is agentic RAG,"
+  and it already does the route/validate/re-retrieve/confidence-label loop
+  the infographic diagrams. Reviewed and cross-referenced, not duplicated.
+- **"OKRs Vs. KPIs for Measuring Performance"** (Vantom Group, promotional
+  for a paid mini-course) — defines OKRs and KPIs side by side with
+  benefits and a 4-step how-to for each. Most of the content was already
+  covered in more depth by the existing `quarterly-okr-architect` (OKRs)
+  and `kpi-reference-handbook` (KPIs) skills, so no new skill was created.
+  Two genuine gaps got fixed instead: `kpi-reference-handbook` already
+  cross-referenced `quarterly-okr-architect`, but the reverse link was
+  missing — added, along with an explicit OKR-vs-KPI distinction (OKR =
+  the ambitious, time-boxed direction; KPI = the ongoing health metric for
+  something already running; KPIs commonly serve as an OKR's Key Results
+  or 4DX lead/lag measures) in `quarterly-okr-architect`'s "Related
+  skills" section.
+
+Neither infographic contained a literal AI prompt, so there's nothing new
+to paste as copy-paste text this time — both were architectural/
+definitional content, handled as connective documentation instead.
+
 Drop this repo into a Claude Code project (or point `.claude/skills` at it) to make these available.
 
 ## Plugins
