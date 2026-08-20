@@ -9,6 +9,7 @@ A starter bundle of business-oriented Claude skills lives in `.claude/skills/`:
 - `business-decision-frameworks` — MoSCoW, RICE, OKRs, Kano, roadmap formats, Minto Pyramid
 - `kpi-reference-handbook` — ~44 standard financial KPI formulas across 8 categories (profitability, efficiency, liquidity, financial structure, cash, investor/valuation), plus an 8-step process for turning a KPI into an action plan
 - `quarterly-okr-architect` — quarterly/annual goal architectures (4DX, MASTER, DUMB, backward planning)
+- `quarterly-review-cadence` — a 5-step retrospective-and-planning session (Wins → Challenges → Learnings → Unfinished → Next-Quarter Targets) with 3 questions each, a 4-stage prep timeline, and 5 signs it's actually changing behavior; backward-looking companion to `quarterly-okr-architect`'s forward-only goal cascade
 - `business-intelligence-report` — reports for managers/CEO on results, trends, predictive analysis
 - `ceo-reporting-skill` — growth/business reports for the CEO (Greek healthcare context)
 - `product-marketing-context` — product/audience/positioning context doc used by other marketing skills
@@ -94,6 +95,7 @@ cold-outbound-sales system, orchestrated by `/outreach-campaign`:
 - `outreach-list-building` — company sourcing (Apollo/Clay/lemlist-style filters), people sourcing (Sales Navigator), intent-signal sourcing (G2/Product Hunt), dedup + CSV assembly
 - `outreach-copywriting` — signal-led first-touch (<100 words), follow-up + breakup sequence, a VP-toned variant, a strict quality checklist, and a benchmarking pass
 - `outreach-channels` — LinkedIn (2-DM max rule), a 6-part cold-call script, and AI-personalized video outreach (Tavus/HeyGen-style)
+- `linkedin-signal-outreach` — prioritizes and messages LinkedIn prospects by type (warm/cold/dream) and real engagement signal (profile views, comments, funding/role moves, public problems), on a spot-signal → match-message → send-within-24-hours flow; companion to `outreach-channels`, not a duplicate of its volume rule
 - `outreach-campaign-design` — 3+ messaging angles per ICP, full multi-touch/multi-channel campaign architecture, and a deliberate GTM stress test before launch
 - `outreach-replies-pipeline` — reply triage across 8 reply types, benchmarking against outbound performance data, and stage-by-stage pipeline diagnosis
 - `outreach-automation` — n8n workflow building/debugging and supplementary website scraping for enrichment
@@ -567,6 +569,44 @@ firsthand:
   action → setting → camera/shot direction → style/VFX → closing beat)
   that the recording's examples had in common, illustrated with an
   original worked example instead of a lifted one.
+
+A twentieth addition came from a batch of 4 infographics, two of them
+literal templates and two structured procedures checked against existing
+skills before adding anything:
+
+- **9 CEO email templates** (Eric Partaker, promotional material for a
+  newsletter selling "100 more tools") — installed as 9 commands
+  (`/ceo-email-bad-news`, `/ceo-email-reject-idea`,
+  `/ceo-email-tough-feedback`, `/ceo-email-delegate-project`,
+  `/ceo-email-team-conflict`, `/ceo-email-strategic-change`,
+  `/ceo-email-urgent-action`, `/ceo-email-celebrate-win`,
+  `/ceo-email-set-boundary`), each filling in the source's real template
+  from context rather than paraphrasing it.
+- **9 advanced content-analysis prompts** ("Stop using 'summarize
+  this'," smarterwithai.news) — installed as 9 more commands
+  (`/surface-strategic-takeaways`, `/ideas-to-next-steps`,
+  `/core-principles-extract`, `/competing-viewpoints`,
+  `/role-specific-summary`, `/teaching-framework`,
+  `/reveal-hidden-assumptions`, `/extract-contrarian-insights`,
+  `/rewrite-for-influence`). `/extract-contrarian-insights` was named to
+  avoid confusion with the existing `/contrarian` command from an
+  earlier batch — that one challenges a single idea directly, this one
+  pulls unconventional insights out of a larger piece of content.
+- **`linkedin-signal-outreach`** (new skill) — "The LinkedIn Outreach
+  Matrix Nobody's Using" (Josh Sanders): 3 prospect types (warm/cold/
+  dream) each with a real example message, 5 engagement signals to
+  watch, and a spot→match→send-within-24-hours flow. Checked against the
+  existing `outreach-channels` skill first — that one covers LinkedIn's
+  2-DM volume rule, cold-call script, and video outreach; this is a
+  genuinely different concern (who to message and when, not how much),
+  so it's a companion, not a duplicate.
+- **`quarterly-review-cadence`** (new skill) — "How to Run a Quarterly
+  Review" (Amy Gibson): a 5-step retrospective (Wins → Challenges →
+  Learnings → Unfinished → Next-Quarter Targets, 3 questions each), a
+  4-stage prep timeline, and 5 signs it's actually working. Checked
+  against `quarterly-okr-architect` first — that skill is a forward-only,
+  higher-rigor goal-architecture fusion; this one is the backward-looking
+  retrospective that feeds it, not a lighter-weight duplicate of it.
 
 Drop this repo into a Claude Code project (or point `.claude/skills` at it) to make these available.
 
