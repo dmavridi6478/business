@@ -700,6 +700,37 @@ carousel in this batch was a duplicate of what's already in the README's
 plain-text prompt sections above, and the tool roundup had no prompts, just
 repos.
 
+A twenty-fourth addition came from an 18-photo batch containing two more
+carousels:
+
+- **The @ai_slacker "Hidden Claude Codes" shorthand carousel** — 10 of its
+  category slides (Learning, Coding/Tech, Execution/Output Modes, Thinking
+  Styles, Content Creation, Career/Job Help, Business/Strategy,
+  Productivity, Personal Branding, Advanced Prompt Control) were checked
+  one-by-one against the 100 shorthand commands already installed from
+  this same carousel earlier in this session (`/learn`, `/debug`,
+  `/analyst`, `/linkedin`, `/resume-review`, `/plan`, `/startup`,
+  `/profile`, `/toneformal`, and 91 more) — every single command shown was
+  already present. Confirmed duplicate, nothing new installed.
+- **The @aigenesis.official "It's Just 2 Commands" carousel** — a
+  promotional pitch ("REPLACED" stamped over the Claude/ChatGPT logos,
+  "SAVE THIS POST") for a fully local/offline AI coding setup. The framing
+  overclaims ("same experience as Claude or ChatGPT" doesn't hold for an
+  8B local model), but the actual setup is real and useful: Ollama + a
+  local Qwen3 model + `sst/opencode` (verified via web search, ~195k★,
+  the open-source terminal AI coding agent at opencode.ai). Added to the
+  existing `claude-code-tooling` skill as a new "Local, offline AI coding
+  setup" section with the exact install commands, plus a genuinely useful
+  tip from the same source: raising Ollama's `num_ctx` (context window)
+  above its small default so a local coding agent doesn't lose track of
+  earlier parts of a codebase mid-session.
+
+No prompts to paste as copy-paste text this round either — the duplicate
+carousel's prompts are already pasted in earlier sections of this README,
+and the local-AI-setup carousel had shell install commands, not AI prompts
+(those are in the `claude-code-tooling` skill above, copy-paste-ready as
+shown).
+
 Drop this repo into a Claude Code project (or point `.claude/skills` at it) to make these available.
 
 ## Plugins

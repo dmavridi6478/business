@@ -1,6 +1,6 @@
 ---
 name: claude-code-tooling
-description: Curated directory of external Claude Code tools worth knowing about and recommending — a design-engine desktop app, a senior-engineer skill pack, an educational mini agent-harness, multi-agent orchestration, a skills package manager, a self-evolving agent context database, five AI browser-automation frameworks (Playwright MCP, Stagehand, Skyvern, Magentic-UI, Steel Browser), five AI agent-building frameworks (Pydantic AI, Agno, Mastra, Strands Agents, Google ADK) plus a framework-bakeoff evaluation method, and a hive-mind team workspace (Buzz) that gives Claude Code/Codex/Goose agents a persistent presence alongside humans in shared channels. These are standalone software projects, not skills to load — reach for this when the user asks what to install to improve their Claude Code setup, is choosing an agent-building framework, or is looking for a specific capability (multi-agent orchestration, agent memory, a skills package manager, browser automation, agents-in-team-chat) that a plain skill file can't provide.
+description: Curated directory of external Claude Code tools worth knowing about and recommending — a design-engine desktop app, a senior-engineer skill pack, an educational mini agent-harness, multi-agent orchestration, a skills package manager, a self-evolving agent context database, five AI browser-automation frameworks (Playwright MCP, Stagehand, Skyvern, Magentic-UI, Steel Browser), five AI agent-building frameworks (Pydantic AI, Agno, Mastra, Strands Agents, Google ADK) plus a framework-bakeoff evaluation method, a free local/offline AI coding setup (Ollama + Qwen3 + OpenCode, with the exact install commands and an Ollama context-window tip), and a hive-mind team workspace (Buzz) that gives Claude Code/Codex/Goose agents a persistent presence alongside humans in shared channels. These are standalone software projects, not skills to load — reach for this when the user asks what to install to improve their Claude Code setup, is choosing an agent-building framework, wants a free/offline coding-assistant setup, or is looking for a specific capability (multi-agent orchestration, agent memory, a skills package manager, browser automation, agents-in-team-chat) that a plain skill file can't provide.
 ---
 
 ## When to use this skill
@@ -19,6 +19,51 @@ The user's setup needs a capability beyond what a markdown skill can provide —
 | `volcengine/OpenViking` | Self-evolving context database that unifies agent memory, knowledge RAG, and skills — an agent that remembers a project between sessions instead of starting cold each time | https://github.com/volcengine/OpenViking |
 
 `blader/humanizer` — the seventh tool in the same source list — was installed for real as the `humanizer` skill in this repo (`.claude/skills/humanizer/`), since it's an actual skill file (MIT licensed), not a standalone tool. It removes AI-writing tells from text.
+
+## Local, offline AI coding setup (free)
+
+From an "It's just 2 commands" carousel (@aigenesis.official) pitching a
+fully local replacement for Claude/ChatGPT for coding. The framing is
+promotional ("REPLACED" stamped over the Claude/ChatGPT logos, "SAVE THIS
+POST") and the "same experience as Claude or ChatGPT" claim doesn't hold —
+a locally-run 8B model is a real, useful tool, not an equivalent to a
+frontier model — but the setup itself is real and the commands check out:
+[`sst/opencode`](https://github.com/sst/opencode) (~195k★, the terminal AI
+coding agent at opencode.ai, verified via web search) run against
+[`ollama/ollama`](https://github.com/ollama/ollama) (already in this
+repo's README "Local AI / offline LLM runtimes" table) serving a local
+Qwen3 model:
+
+```bash
+# 1. Install Ollama
+curl -fsSL ollama.ai/install.sh | sh
+
+# 2. Pull a local model (8B fits an 8GB laptop; free, no signup)
+ollama pull qwen3:8b
+
+# 3. Install OpenCode
+curl -fsSL opencode.ai/install | bash
+
+# 4. Run it in a project — OpenCode auto-detects the local Ollama server
+opencode
+```
+
+One genuinely useful tip from the same source, easy to miss in official
+docs: Ollama's default context window is small enough to make an AI
+coding agent "forget" earlier parts of a codebase mid-session. Raise it
+inside an Ollama session before relying on it for anything beyond a
+single small file:
+
+```
+/set parameter num_ctx 16384
+```
+
+**When this is the right call vs. Claude Code itself**: no API cost, works
+fully offline, no rate limits — genuinely useful for air-gapped work, cost-
+sensitive experimentation, or learning how an agentic coding loop works
+under the hood. Not a swap-in replacement for Claude Code's model quality
+on anything beyond small, well-scoped tasks — treat "replaced them" as the
+source's marketing, not a technical claim to repeat uncritically.
 
 ## Browser-automation frameworks
 
@@ -73,4 +118,4 @@ Star counts are as shown in the source carousel, not independently re-verified �
 
 ## Notes
 
-Sources: a "7 Claude Code repos I can't work without" screenshot carousel (@joshualevi.ai) for the first six tools; "AI Power User Stack — 5 AI browser agents that can do the clicking for you" carousel (@zhiprompts) for the browser-automation frameworks; "AI Power User Stack — 5 AI agent builders to try before LangChain" carousel (@zhiprompts) for the agent-building frameworks and the "build the same small agent twice" evaluation method; "Buzz — The Hive Mind for Humans + Agents" carousel (@iunlockedai, Tool Drop 15) for `block/buzz`.
+Sources: a "7 Claude Code repos I can't work without" screenshot carousel (@joshualevi.ai) for the first six tools; "AI Power User Stack — 5 AI browser agents that can do the clicking for you" carousel (@zhiprompts) for the browser-automation frameworks; "AI Power User Stack — 5 AI agent builders to try before LangChain" carousel (@zhiprompts) for the agent-building frameworks and the "build the same small agent twice" evaluation method; a 7-slide "It's Just 2 Commands" carousel (@aigenesis.official) for the local/offline AI coding setup; "Buzz — The Hive Mind for Humans + Agents" carousel (@iunlockedai, Tool Drop 15) for `block/buzz`.
