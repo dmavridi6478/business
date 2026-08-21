@@ -186,6 +186,8 @@ automatically when relevant), commands are invoked explicitly by name:
 - `/content-pipeline [niche/topic]` — runs the 7-agent content team (research → hook → script → design → schedule) in sequence, then always stops for explicit approval before `content-publisher` touches a live platform
 - `/scope-web-task [task]` — applies the `web-task-scoping` skill's Target/Limit/Run/Review discipline to a browser-automation task before it runs; refuses to proceed on side-effecting tasks (submit/purchase/post/delete) until all four are explicit
 - `/tool-stack-check [current tools]` — checks a described software stack against `lean-software-stack`'s free alternatives and applies the `free-vs-paid-tool-decision` procedure to recommend switch/keep-paid per tool
+- `/how-to [task]` — turns a vague "how do I X" into a concrete, numbered step-by-step plan; asks clarifying questions first if the task or starting point is unclear, and add "ELI5" to the arguments for a beginner-level walkthrough
+- `/about-me` — loads standing personal/working context from `docs/about-me.md` (role, current priorities, working style, what "good" looks like) for this conversation only; offers to create the file on first use rather than inventing placeholder content
 
 **Skill vs. command, in this repo:** a skill is background knowledge/procedure
 Claude reaches for when relevant ("how do I structure a quarterly OKR cascade");
