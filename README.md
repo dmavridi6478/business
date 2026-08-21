@@ -188,6 +188,7 @@ automatically when relevant), commands are invoked explicitly by name:
 - `/tool-stack-check [current tools]` — checks a described software stack against `lean-software-stack`'s free alternatives and applies the `free-vs-paid-tool-decision` procedure to recommend switch/keep-paid per tool
 - `/how-to [task]` — turns a vague "how do I X" into a concrete, numbered step-by-step plan; asks clarifying questions first if the task or starting point is unclear, and add "ELI5" to the arguments for a beginner-level walkthrough
 - `/about-me` — loads standing personal/working context from `docs/about-me.md` (role, current priorities, working style, what "good" looks like) for this conversation only; offers to create the file on first use rather than inventing placeholder content
+- `/research-synthesis [sources]` — runs the `research-synthesis` procedure's 6 stages (Knowledge Map → Literature Review → Gap Finder → Contradiction Detector → Methodology Auditor → Executive Brief) against a pasted or referenced source set in one pass; distinct from `agentic-researcher`, which finds sources rather than synthesizing ones already in hand
 
 **Skill vs. command, in this repo:** a skill is background knowledge/procedure
 Claude reaches for when relevant ("how do I structure a quarterly OKR cascade");
@@ -353,3 +354,7 @@ Standard operating procedures live in `docs/procedures/`:
   Verify → Red Team → Score/Rewrite) plus a copy-paste prompt template for
   running it in any AI tool, and a note on where `task-loop-runner` already
   covers the middle stages in this environment.
+- `research-synthesis.md` — six copy-paste prompts (Knowledge Map →
+  Literature Review → Gap Finder → Contradiction Detector → Methodology
+  Auditor → Executive Brief) for turning a pile of already-gathered sources
+  into a decision-ready brief. Backs the `/research-synthesis` command.
