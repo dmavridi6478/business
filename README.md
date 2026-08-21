@@ -365,3 +365,9 @@ Standard operating procedures live in `docs/procedures/`:
   content system; fills a real gap in the global `video` skill, which
   covers Hyperframes/Remotion/Veo/HeyGen but never mentions Canva. Backs
   the `/canva-video-plan` command.
+- `source-verification.md` — for any AI-generated reading list/citation
+  set (from `learn`, `research-synthesis`, or a competitor/market report):
+  require a stated audience, a verified link, and an official-vs-secondary
+  label per source, and treat anything unverifiable as fiction rather than
+  a hedged recommendation. The one piece of a "make AI teach you anything"
+  carousel not already covered by the global `learn` skill.
