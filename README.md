@@ -189,6 +189,7 @@ automatically when relevant), commands are invoked explicitly by name:
 - `/how-to [task]` — turns a vague "how do I X" into a concrete, numbered step-by-step plan; asks clarifying questions first if the task or starting point is unclear, and add "ELI5" to the arguments for a beginner-level walkthrough
 - `/about-me` — loads standing personal/working context from `docs/about-me.md` (role, current priorities, working style, what "good" looks like) for this conversation only; offers to create the file on first use rather than inventing placeholder content
 - `/research-synthesis [sources]` — runs the `research-synthesis` procedure's 6 stages (Knowledge Map → Literature Review → Gap Finder → Contradiction Detector → Methodology Auditor → Executive Brief) against a pasted or referenced source set in one pass; distinct from `agentic-researcher`, which finds sources rather than synthesizing ones already in hand
+- `/canva-video-plan [content need]` — recommends which of Canva's 5 built-in AI video formats to use (per `canva-ai-video.md`) for a stated platform/goal/footage situation, with the concrete steps and export spec; defers to the `video` skill's heavier stack when the need calls for a custom avatar, programmatic batch rendering, or a dedicated AI-generation model
 
 **Skill vs. command, in this repo:** a skill is background knowledge/procedure
 Claude reaches for when relevant ("how do I structure a quarterly OKR cascade");
@@ -358,3 +359,9 @@ Standard operating procedures live in `docs/procedures/`:
   Literature Review → Gap Finder → Contradiction Detector → Methodology
   Auditor → Executive Brief) for turning a pile of already-gathered sources
   into a decision-ready brief. Backs the `/research-synthesis` command.
+- `canva-ai-video.md` — Canva's 5 built-in AI video formats (animated
+  design, talking presentation, video editing, AI voiceover, text-to-video)
+  with a decision shortcut, platform export specs, and a 4-week recurring
+  content system; fills a real gap in the global `video` skill, which
+  covers Hyperframes/Remotion/Veo/HeyGen but never mentions Canva. Backs
+  the `/canva-video-plan` command.
