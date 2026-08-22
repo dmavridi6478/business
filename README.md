@@ -786,6 +786,53 @@ A twenty-fifth addition came from 5 directly-attached infographics:
 Plain-text prompts to copy and paste are given below for the 4 new
 commands and are also embedded verbatim in each command's `.md` file.
 
+A twenty-sixth addition came from 5 more directly-attached infographics:
+
+- **9 new commands from "R.I.P. McKinsey: 10 AI Prompts to Replace
+  $500/Hour Business Consultants"** (smarterwithai.news) —
+  `/swot-analysis`, `/growth-levers`, `/ninety-day-plan`,
+  `/revenue-model-projection`, `/churn-reduction`,
+  `/kpi-dashboard-framework`, `/pricing-strategy`, `/value-proposition`,
+  `/pivot-directions`. The 10th prompt ("Go-to-Market Plan") was checked
+  against the existing `/gtm` command first and found near word-for-word
+  identical (target segment/channels/positioning/launch sequence in both)
+  — skipped as a duplicate rather than re-installed. `/kpi-dashboard-framework`
+  cross-references the existing `kpi-reference-handbook` skill for exact
+  formulas once KPIs are chosen, rather than duplicating that reference.
+- **`stakeholder-engagement-matrix`** (new skill) — "Not all stakeholders
+  are created equal" (Hustle Badger): a Power/Interest 2x2 (Manage
+  Closely, Keep Satisfied, Monitor, Keep Informed), each quadrant with a
+  distinct effort level, examples, and how-to-handle guidance, plus an
+  Objective/Channel/Schedule structure for designing the actual comms.
+  Checked against the existing `internal-comms` skill first — that skill
+  formats a given communication; this one decides *who* gets *how much*
+  of it before drafting, so it's a companion, not a duplicate. Cross-
+  referenced back into `internal-comms`.
+- **Not turned into a skill or command**: "Generative AI Ecosystem
+  Overview" (smarterwithai.news) — a definitional taxonomy chart (Deep
+  Learning, Transformer Models, Cybersecurity Intelligence, Business
+  Intelligence, Automation & Integration, and 5 more domains, each with a
+  bullet list of sub-techniques/applications). No prompts, no specific
+  tools, no procedure — an educational reference chart, not something to
+  clone or install.
+- **Not turned into a skill or command**: "Claude Revenue System" — a
+  lead-magnet post (blurred-out background icons, "Comment 'REVENUE' For
+  Free Access") with no visible content behind the ask beyond a generic
+  6-stage cycle diagram (Understand the Market → Find Opportunities →
+  Engage Prospects → Close Deals → Grow Revenue → Retain & Expand).
+  Nothing to verify or install.
+- **Not turned into a skill or command**: "9 AI builds for hands-off GTM"
+  (Frontal / Alex Vacca, frontal.so) — another "comment for access" post.
+  Each of its 9 cards states an unverified performance metric (5x designer
+  output, $200K/month ad spend, 30+ min saved per deal, 2,000+ runs/day)
+  for a single account's own business, with no prompt, config, or repo
+  link actually given — only a generic mention of "a free repo" with 32
+  hooks/15 integrations, not a named URL. Reviewed and flagged as
+  marketing claims from one unverified source, not installed.
+
+Plain-text prompts for the 9 new commands are given below and are also
+embedded verbatim in each command's `.md` file.
+
 Drop this repo into a Claude Code project (or point `.claude/skills` at it) to make these available.
 
 ## Plugins
