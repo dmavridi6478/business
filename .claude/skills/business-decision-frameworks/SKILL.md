@@ -1,6 +1,6 @@
 ---
 name: business-decision-frameworks
-description: Reference library of named business frameworks: prioritization (MoSCoW, RICE, OKRs, Kano, Value vs Effort, Opportunity Solution Tree), product decision-making (CIRCLES), roadmap formats (Now/Next/Later, Hybrid, Strategic, Gantt, OKR, Dashboard), storytelling/slides (Minto Pyramid), and leadership self-assessment (LEADERSHIP model). Use when the user asks to prioritize a backlog/roadmap, score or rank initiatives, choose a roadmap display format, structure a product decision or interview answer, build a persuasive slide, or assess leadership competencies — even unnamed (e.g. "what should we build first", "what roadmap format should I use", "make this slide land better"). Also trigger on direct framework-name references or requests to compare methods.
+description: Reference library of named business frameworks: prioritization (MoSCoW, RICE, OKRs, Kano, Value vs Effort, Opportunity Solution Tree), product decision-making (CIRCLES), roadmap formats (Now/Next/Later, Hybrid, Strategic, Gantt, OKR, Dashboard), storytelling/slides (Minto Pyramid), leadership self-assessment (LEADERSHIP model), and messaging/communication frameworks (AIDA, PAS, FAB, STAR, SMART, SWOT). Use when the user asks to prioritize a backlog/roadmap, score or rank initiatives, choose a roadmap display format, structure a product decision or interview answer, build a persuasive slide, assess leadership competencies, write ad/sales copy, structure an interview answer, set a goal, or run a strategic SWOT scan — even unnamed (e.g. "what should we build first", "what roadmap format should I use", "make this slide land better", "help me write this ad"). Also trigger on direct framework-name references or requests to compare methods.
 ---
 
 # Business Decision Frameworks
@@ -25,6 +25,7 @@ A reference library of four named-framework domains extracted from business/prod
 | Structuring a product decision, framing a PM interview answer, "how do I think through this problem" | `references/circles-framework.md` |
 | Building a persuasive slide, exec summary, or narrative; "make this land better"; structuring a deck | `references/storytelling-pyramid.md` |
 | Leadership self-assessment, competency talking points, team culture language | `references/leadership-cheatsheet.md` (see caveat above — offer a stronger alternative if this is for formal use) |
+| Writing ad/sales/email copy, structuring an interview or case-study answer, setting a SMART goal, running a quick SWOT scan | `references/messaging-frameworks.md` |
 
 ## How to use these references
 
@@ -40,3 +41,5 @@ A reference library of four named-framework domains extracted from business/prod
 - **content-strategy**: Use the prioritization frameworks (RICE, Value vs Effort) to rank topic/content ideas before building an editorial calendar.
 - **business-intelligence-report** / **ceo-reporting-skill**: The storytelling pyramid (Minto) reference here pairs with those skills when a report needs a persuasive executive narrative, not just a data table.
 - **growth-operating-framework**: Step 6 of that framework ("what works best, scalable, replicable") is a prioritization decision — apply RICE/Value-vs-Effort here to rank growth channels/experiments.
+- **outreach-copywriting**: AIDA/PAS/FAB from `references/messaging-frameworks.md` structure the copy; that skill supplies the channel-specific length/tone constraints.
+- **resume-prompt-kit**: STAR (same reference file) is the standard structure for resume experience bullets and interview prep.

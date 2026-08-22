@@ -731,6 +731,61 @@ and the local-AI-setup carousel had shell install commands, not AI prompts
 (those are in the `claude-code-tooling` skill above, copy-paste-ready as
 shown).
 
+A twenty-fifth addition came from 5 directly-attached infographics:
+
+- **`google-ai-toolkit`** (new skill) — "Top 11 Free AI Tools from Google"
+  (smarterwithai.news): maps 11 Google AI products (Imagen/Nano Banana,
+  Veo, Gemini Live, Gemini in Sheets, Gems in Gemini, Gemini Ask on
+  YouTube, NotebookLM, Google AI Studio, Firebase Studio, Google App
+  Builder) to use case, plus the source's choose-the-right-tool map, 5
+  reusable prompt patterns, quality/safety checks, and a 4-step workflow
+  blueprint (Explore → Produce → Package). Cross-referenced against the
+  existing `notebooklm-skill`, which already vendors real working
+  automation for one of the 11 — that skill's actual commands, not this
+  entry's use-case description, is what to reach for when NotebookLM
+  itself is the job.
+- **4 new commands from "Mastering ChatGPT"'s "Engagement Prompts"
+  section** (smarterwithai.news) — `/action-plan-from-notes`,
+  `/micro-curriculum`, `/reflect-on-situation`, `/adaptive-quiz`. The rest
+  of that infographic (model tiers, expert-role prompts, prompting
+  frameworks) was checked against existing content first: its AIDA/PAS/
+  FAB/STAR/SMART/SWOT frameworks weren't covered anywhere in this repo, so
+  they were added as a new `references/messaging-frameworks.md` file
+  inside the existing `business-decision-frameworks` skill (which already
+  catalogs named business frameworks in the same reference-library
+  pattern) rather than a new skill; `/adaptive-quiz` was kept distinct
+  from the existing `/quiz` command since it adds difficulty-adaptation
+  and weak-area tracking, a genuinely different behavior, not just a
+  rename.
+- **Not turned into a skill or command**: "92 Claude agents now run our
+  GTM" and "The Ultimate Claude GTM Engine" (two related posts, both
+  ending in a "Comment '92'/'GTM' for free access" call-to-action). These
+  are lead-magnet engagement bait — a list of 92 agent *names* and an
+  8-department org chart of agent *roles*, with no actual prompts,
+  configs, or repos behind any of them to install or verify. The
+  department categories they describe (ICP/market intelligence, offer
+  positioning, messaging, content, sales enablement, lead generation,
+  pipeline/growth, analytics) are already covered in more depth and with
+  real content by this repo's existing `outreach-*` skill bundle
+  (`outreach-strategy`, `outreach-list-building`, `outreach-copywriting`,
+  `outreach-campaign-design`, `outreach-automation`, `outreach-channels`,
+  `outreach-replies-pipeline`, `outreach-data-connections`) — nothing here
+  added anything those skills don't already do for real.
+- **Not turned into a skill or command**: "60 AI Tools" (Mindstream/
+  HubSpot Media newsletter ad). A 6-category logo wall (Productivity,
+  Marketing, Programming, Design, Video Creation, Sales) with tool names
+  and icons only — no descriptions, use cases, or links for any of the 60,
+  unlike the richer tool roundups already turned into skills in this repo
+  (`design-dev-resources`, `claude-code-tooling`, `lean-software-stack`).
+  A handful of the named tools are already covered here in more depth
+  (NotebookLM has its own skill; Clay/Seamless AI/Apollo appear in
+  `outreach-data-connections`) — the rest would need individual research
+  before they're worth cataloging, which a bare logo grid doesn't provide
+  grounds for.
+
+Plain-text prompts to copy and paste are given below for the 4 new
+commands and are also embedded verbatim in each command's `.md` file.
+
 Drop this repo into a Claude Code project (or point `.claude/skills` at it) to make these available.
 
 ## Plugins
