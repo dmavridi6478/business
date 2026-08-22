@@ -833,6 +833,44 @@ A twenty-sixth addition came from 5 more directly-attached infographics:
 Plain-text prompts for the 9 new commands are given below and are also
 embedded verbatim in each command's `.md` file.
 
+A twenty-seventh addition came from 2 more directly-attached infographics:
+
+- **8 new commands from "ChatGPT for LinkedIn"** (10 prompts,
+  smarterwithai.news) — `/linkedin-profile-rewrite`,
+  `/linkedin-positioning-statement`, `/linkedin-week-content-plan`,
+  `/linkedin-thought-leader-post`, `/linkedin-dm-funnel`,
+  `/linkedin-engagement-post-ideas`, `/linkedin-profile-funnel`,
+  `/linkedin-growth-audit-checklist`. 2 of the 10 ("Growth Hook
+  Generator," "Carousel Structure Blueprint") were checked against the
+  existing `/hook` and `/carousel` commands first and found close enough
+  in mechanics (both generate hooks/opening lines; both outline a
+  slide-by-slide carousel) to be duplicates rather than genuinely new
+  behavior — skipped. `/linkedin-thought-leader-post` and
+  `/linkedin-dm-funnel` cross-reference the existing
+  `linkedin-virality-playbook` and `linkedin-signal-outreach` skills
+  respectively, since they cover adjacent but distinct ground (general
+  virality tactics; signal-based outreach to non-followers) rather than
+  the same thing.
+- **`sales-enablement` extended** — "Selling to the C-Suite" (Haris
+  Halkic, SalesDaily.co): an 8-role table (CEO, CFO, COO, CRO, CMO, CHRO,
+  CIO/CTO, CPO) pairing what each role is actually measured on with a
+  "don't say this generic thing" / "say this quantified thing instead"
+  pattern. The existing `sales-enablement` skill already had a shallow
+  4-row "Value Prop by Persona" table (CTO/VP Eng, VP Sales, CFO, End
+  user) inside its ROI-calculator section — rather than duplicate or
+  replace it, the fuller 8-role table was added alongside it as a new
+  "Selling to the C-Suite (expanded)" section, since it covers 6 roles
+  the original table didn't and goes deeper on the 2 it shared (CFO,
+  CTO). The infographic's example proof-lines (e.g. "reduced vendor cost
+  18%") are the source's own illustrations, not this business's verified
+  numbers — flagged in the skill as a shape to fill with real figures,
+  not a script to recite.
+
+Plain-text prompts for the 8 new LinkedIn commands are given below and
+are also embedded verbatim in each command's `.md` file. The C-suite
+messaging table has no single AI prompt to paste — it's a reference table,
+now living in `sales-enablement/SKILL.md`.
+
 Drop this repo into a Claude Code project (or point `.claude/skills` at it) to make these available.
 
 ## Plugins
