@@ -1,6 +1,6 @@
 ---
 name: claude-code-tooling
-description: Curated directory of external Claude Code tools worth knowing about and recommending — a design-engine desktop app, a senior-engineer skill pack, an educational mini agent-harness, multi-agent orchestration, a skills package manager, a self-evolving agent context database, five AI browser-automation frameworks (Playwright MCP, Stagehand, Skyvern, Magentic-UI, Steel Browser), five AI agent-building frameworks (Pydantic AI, Agno, Mastra, Strands Agents, Google ADK) plus a framework-bakeoff evaluation method, a free local/offline AI coding setup (Ollama + Qwen3 + OpenCode, with the exact install commands and an Ollama context-window tip), and a hive-mind team workspace (Buzz) that gives Claude Code/Codex/Goose agents a persistent presence alongside humans in shared channels. These are standalone software projects, not skills to load — reach for this when the user asks what to install to improve their Claude Code setup, is choosing an agent-building framework, wants a free/offline coding-assistant setup, or is looking for a specific capability (multi-agent orchestration, agent memory, a skills package manager, browser automation, agents-in-team-chat) that a plain skill file can't provide.
+description: Curated directory of external Claude Code tools worth knowing about and recommending — a design-engine desktop app, a senior-engineer skill pack, an educational mini agent-harness, multi-agent orchestration, a skills package manager, a self-evolving agent context database, five AI browser-automation frameworks (Playwright MCP, Stagehand, Skyvern, Magentic-UI, Steel Browser), five AI agent-building frameworks (Pydantic AI, Agno, Mastra, Strands Agents, Google ADK) plus a framework-bakeoff evaluation method, two AI design-taste/anti-slop skills (impeccable, Taste Skill), a free local/offline AI coding setup (Ollama + Qwen3 + OpenCode, with the exact install commands and an Ollama context-window tip), and a hive-mind team workspace (Buzz) that gives Claude Code/Codex/Goose agents a persistent presence alongside humans in shared channels. These are standalone software projects, not skills to load — reach for this when the user asks what to install to improve their Claude Code setup, is choosing an agent-building framework, wants a free/offline coding-assistant setup, wants Claude Code to stop producing generic "AI slop" designs, or is looking for a specific capability (multi-agent orchestration, agent memory, a skills package manager, browser automation, agents-in-team-chat) that a plain skill file can't provide.
 ---
 
 ## When to use this skill
@@ -19,6 +19,26 @@ The user's setup needs a capability beyond what a markdown skill can provide —
 | `volcengine/OpenViking` | Self-evolving context database that unifies agent memory, knowledge RAG, and skills — an agent that remembers a project between sessions instead of starting cold each time | https://github.com/volcengine/OpenViking |
 
 `blader/humanizer` — the seventh tool in the same source list — was installed for real as the `humanizer` skill in this repo (`.claude/skills/humanizer/`), since it's an actual skill file (MIT licensed), not a standalone tool. It removes AI-writing tells from text.
+
+## AI design-taste / anti-slop skills for Claude Code
+
+From "How to Turn Claude Code Into a Web Design Genius" (@ai_slacker) —
+skills that give Claude Code a shared design vocabulary so it stops
+defaulting to the same handful of "AI slop" tells (purple gradients,
+Inter-for-everything, rounded-everything friendliness). Both verified
+real via web search:
+
+| Repo | What it's for | Install / link |
+|---|---|---|
+| `pbakaus/impeccable` | "The missing design vocabulary for agents" — 1 skill, 23 commands, 59 deterministic detector rules for AI-slop/design-quality issues across 7 dimensions; 50,000+★ | https://github.com/pbakaus/impeccable — paste the URL into Claude Code, it installs itself |
+| `Leonxlnx/taste-skill` ("Taste Skill") | Upgrades layout/typography/motion/spacing decisions instead of boilerplate defaults; v2 reads the brief, infers the design language, tunes VARIANCE/MOTION/DENSITY dials; tens of thousands of★ | https://github.com/Leonxlnx/taste-skill |
+
+Both pair with this repo's own `hallmark` skill and the new
+`web-design-taste-workflow` skill (curate a taste library → install these
+tools → never one-shot a design, build 5 directions wide and narrow down)
+— see that skill for the full workflow and a reusable 4-part prompt
+template. `21st.dev` (copy-paste component prompts) is the same source's
+third recommendation — a web tool, not a repo to install.
 
 ## Local, offline AI coding setup (free)
 
@@ -118,4 +138,4 @@ Star counts are as shown in the source carousel, not independently re-verified �
 
 ## Notes
 
-Sources: a "7 Claude Code repos I can't work without" screenshot carousel (@joshualevi.ai) for the first six tools; "AI Power User Stack — 5 AI browser agents that can do the clicking for you" carousel (@zhiprompts) for the browser-automation frameworks; "AI Power User Stack — 5 AI agent builders to try before LangChain" carousel (@zhiprompts) for the agent-building frameworks and the "build the same small agent twice" evaluation method; a 7-slide "It's Just 2 Commands" carousel (@aigenesis.official) for the local/offline AI coding setup; "Buzz — The Hive Mind for Humans + Agents" carousel (@iunlockedai, Tool Drop 15) for `block/buzz`.
+Sources: a "7 Claude Code repos I can't work without" screenshot carousel (@joshualevi.ai) for the first six tools; "AI Power User Stack — 5 AI browser agents that can do the clicking for you" carousel (@zhiprompts) for the browser-automation frameworks; "AI Power User Stack — 5 AI agent builders to try before LangChain" carousel (@zhiprompts) for the agent-building frameworks and the "build the same small agent twice" evaluation method; a 7-slide "It's Just 2 Commands" carousel (@aigenesis.official) for the local/offline AI coding setup; a 9-slide "How to Turn Claude Code Into a Web Design Genius" carousel (@ai_slacker) for the design-taste/anti-slop skills (full workflow in `web-design-taste-workflow`); "Buzz — The Hive Mind for Humans + Agents" carousel (@iunlockedai, Tool Drop 15) for `block/buzz`.

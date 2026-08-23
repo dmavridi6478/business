@@ -904,6 +904,38 @@ frameworks are a reference (already fully captured in the skill file
 above), and the LinkedIn course was a table of contents with no content
 behind it.
 
+A twenty-ninth addition came from 2 uploaded zips — one a duplicate, one
+new. The duplicate (identical MD5 hash to a zip already processed earlier
+in this session — the @ai_slacker shorthand-carousel-repeat +
+@aigenesis.official local-AI batch) was skipped without reprocessing. The
+new one was a 9-photo carousel:
+
+- **`web-design-taste-workflow`** (new skill) — "How to Turn Claude Code
+  Into a Web Design Genius" (@ai_slacker): a 3-step workflow (build a
+  Taste Library of real design references grouped by family → arm Claude
+  with anti-slop tools it doesn't ship with → never one-shot, build 5
+  aesthetic directions wide and narrow down), plus a reusable 4-part
+  prompt template (Aesthetic + Reference + Intent + Guardrails, with
+  explicit always/never lists) generalized from the source's worked
+  example, and a 5-step "iterate until it's yours" tweaks pass. Checked
+  against the existing `hallmark` skill first — that's Claude's own
+  internal anti-AI-slop design *study* process; this is the external-
+  tooling-and-prompting workflow that feeds it, so it's a companion, not
+  a duplicate (and `hallmark` wasn't edited, since it's vendored
+  verbatim from its source repo).
+- **`pbakaus/impeccable`** and **`Leonxlnx/taste-skill`** added to
+  `claude-code-tooling`'s directory as a new "AI design-taste / anti-slop
+  skills" section — both independently verified real via web search (the
+  infographic's cited star counts, ~50K and ~66K, were close enough to
+  what's actually listed for each repo to trust the rest of the claims).
+  `21st.dev` (a web tool, not a repo) and Higgsfield MCP (already
+  available as a connected MCP server in environments where it's
+  configured — check `/mcp`) round out the same source's toolbelt.
+
+Plain-text prompt template for the 4-part prompt is given below and is
+also embedded in full (with the actual illustrated example) in the
+`web-design-taste-workflow` skill file.
+
 Drop this repo into a Claude Code project (or point `.claude/skills` at it) to make these available.
 
 ## Plugins
