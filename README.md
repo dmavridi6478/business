@@ -936,6 +936,37 @@ Plain-text prompt template for the 4-part prompt is given below and is
 also embedded in full (with the actual illustrated example) in the
 `web-design-taste-workflow` skill file.
 
+A thirtieth addition came from 2 new zip uploads (both had unique hashes,
+no duplicates this time):
+
+- **`canva-template-etsy-shop`** (new skill) — "Build one Canva template
+  with AI. List on Etsy. Sell it while you sleep." (@earchoe, a
+  9-slide entry from a longer 21-part series): what template types sell
+  best (Instagram carousel packs, pitch decks, media kits, AI prompt
+  cards, lead magnets), a platform comparison (Etsy/Gumroad/Beacons —
+  fees and best-for), a 4-tier pricing guide, a 30-minute AI-assisted
+  build process (2 literal Canva Magic Design prompts, quoted below), an
+  Etsy-listing structure template, and a launch checklist. Checked
+  against the existing `the-productize-yourself-blueprint` and
+  `one-person-business-scaling` skills first — those are the general
+  digitize-your-expertise framework; this is a fully worked, specific
+  example of that pattern (Canva templates specifically), so it's a
+  companion, not a duplicate.
+- **Not turned into a skill or command**: "The Layers of Modern AI
+  Systems" (@aicareersuite, 9-slide educational carousel — LLM → RAG →
+  Tool Calling → Memory → AI Agent → Skills & Hooks → Governance &
+  Observability → Agentic AI). Purely definitional/architectural
+  explainer content — no prompts, tools, or procedures to install, same
+  treatment as the earlier "Generative AI Ecosystem Overview" and "RAG
+  vs Agentic RAG" infographics. Worth flagging one naming collision: the
+  infographic's "Skills & Hooks" (generic AI-agent-architecture terms —
+  reusable capabilities + automatic triggers) is a different, broader
+  concept than this repo's own `claude-cheat-sheet` skill's "Skills" and
+  "hooks" entries, which explain the actual Claude Code mechanisms by
+  those names — don't conflate the two when discussing either.
+
+Prompts to copy and paste (from the Canva Etsy shop skill) are below.
+
 Drop this repo into a Claude Code project (or point `.claude/skills` at it) to make these available.
 
 ## Plugins
