@@ -871,6 +871,39 @@ are also embedded verbatim in each command's `.md` file. The C-suite
 messaging table has no single AI prompt to paste — it's a reference table,
 now living in `sales-enablement/SKILL.md`.
 
+A twenty-eighth addition came from 2 more directly-attached infographics:
+
+- **`business-decision-frameworks` extended again** — "6 Storytelling
+  Frameworks That Help You Lead Inspiringly" (Kelly Knight): Pixar's Story
+  Spine, The Golden Circle (Simon Sinek), Duarte's Sparkline, The Hero's
+  Journey (Joseph Campbell), And-But-Therefore (Randy Olson), and
+  What/So-What/Now-What — 6 named narrative structures for leading
+  through change, vision talks, and debriefs. Added as a new
+  `references/leadership-storytelling-frameworks.md` file in the existing
+  `business-decision-frameworks` skill, distinct from that skill's
+  existing `storytelling-pyramid.md` (Minto Pyramid structures a
+  *persuasive argument* for a slide; these six structure a *story* for a
+  leadership moment — different job, so kept as separate reference
+  files rather than merged). Cross-referenced into `quarterly-review-cadence`,
+  since What/So-What/Now-What is a compressed 3-step version of that
+  skill's full 5-step retrospective.
+- **Not turned into a skill or command**: "How to Build a LinkedIn
+  Presence and Not Get Lost in the Noise" — a 15-day course table of
+  contents (day titles only: "How LinkedIn Actually Works," "9 Content
+  Formats That Consistently Work," "Writing Hooks That Make People Stop,"
+  etc.), explicitly marked "for educational purposes only" with no actual
+  per-day content shown — a curriculum outline, not a prompt or
+  procedure. Its topics (hooks, content formats, what drives reach, post
+  structure, consistency) are already covered in more depth by this
+  repo's `linkedin-virality-playbook` skill and the LinkedIn commands
+  installed in the two prior additions, so there's nothing here those
+  don't already do for real.
+
+No new prompts to paste as copy-paste text this round — the storytelling
+frameworks are a reference (already fully captured in the skill file
+above), and the LinkedIn course was a table of contents with no content
+behind it.
+
 Drop this repo into a Claude Code project (or point `.claude/skills` at it) to make these available.
 
 ## Plugins

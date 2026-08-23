@@ -99,3 +99,7 @@ the thing to diagnose — not just the targets it's producing.
   `/ask-the-board` before locking them in.
 - **improve-system**: a similar reflect-and-persist loop at the
   session/behavioral level rather than the quarterly/team level.
+- **business-decision-frameworks**: the What/So-What/Now-What leadership
+  storytelling framework in `references/leadership-storytelling-frameworks.md`
+  is a compressed 3-step version of this skill's full 5-step session —
+  use it when the moment calls for the shorter form.

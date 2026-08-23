@@ -1,6 +1,6 @@
 ---
 name: business-decision-frameworks
-description: Reference library of named business frameworks: prioritization (MoSCoW, RICE, OKRs, Kano, Value vs Effort, Opportunity Solution Tree), product decision-making (CIRCLES), roadmap formats (Now/Next/Later, Hybrid, Strategic, Gantt, OKR, Dashboard), storytelling/slides (Minto Pyramid), leadership self-assessment (LEADERSHIP model), and messaging/communication frameworks (AIDA, PAS, FAB, STAR, SMART, SWOT). Use when the user asks to prioritize a backlog/roadmap, score or rank initiatives, choose a roadmap display format, structure a product decision or interview answer, build a persuasive slide, assess leadership competencies, write ad/sales copy, structure an interview answer, set a goal, or run a strategic SWOT scan — even unnamed (e.g. "what should we build first", "what roadmap format should I use", "make this slide land better", "help me write this ad"). Also trigger on direct framework-name references or requests to compare methods.
+description: Reference library of named business frameworks: prioritization (MoSCoW, RICE, OKRs, Kano, Value vs Effort, Opportunity Solution Tree), product decision-making (CIRCLES), roadmap formats (Now/Next/Later, Hybrid, Strategic, Gantt, OKR, Dashboard), argument/slide storytelling (Minto Pyramid), leadership self-assessment (LEADERSHIP model), messaging/communication frameworks (AIDA, PAS, FAB, STAR, SMART, SWOT), and leadership narrative storytelling frameworks (Pixar's Story Spine, The Golden Circle, Duarte's Sparkline, The Hero's Journey, And-But-Therefore, What/So-What/Now-What). Use when the user asks to prioritize a backlog/roadmap, score or rank initiatives, choose a roadmap display format, structure a product decision or interview answer, build a persuasive slide, assess leadership competencies, write ad/sales copy, structure an interview answer, set a goal, run a strategic SWOT scan, lead a team through change, or make an announcement/vision talk/debrief memorable — even unnamed (e.g. "what should we build first", "what roadmap format should I use", "make this slide land better", "help me write this ad", "how do I announce this change well"). Also trigger on direct framework-name references or requests to compare methods.
 ---
 
 # Business Decision Frameworks
@@ -26,6 +26,7 @@ A reference library of four named-framework domains extracted from business/prod
 | Building a persuasive slide, exec summary, or narrative; "make this land better"; structuring a deck | `references/storytelling-pyramid.md` |
 | Leadership self-assessment, competency talking points, team culture language | `references/leadership-cheatsheet.md` (see caveat above — offer a stronger alternative if this is for formal use) |
 | Writing ad/sales/email copy, structuring an interview or case-study answer, setting a SMART goal, running a quick SWOT scan | `references/messaging-frameworks.md` |
+| Leading a team through change, a vision/values talk, a team debrief, or making an announcement memorable rather than a bulleted list | `references/leadership-storytelling-frameworks.md` |
 
 ## How to use these references
 
