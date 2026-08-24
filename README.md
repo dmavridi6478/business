@@ -967,6 +967,30 @@ no duplicates this time):
 
 Prompts to copy and paste (from the Canva Etsy shop skill) are below.
 
+A thirty-first addition came from a 23-photo zip mixing duplicate and new
+carousels:
+
+- **Duplicates, skipped**: the @ty.prompts.ai "5 repos that run AI on your
+  machine, no API bill" carousel (Jan, Ollama, LocalAI, llamafile,
+  llama.cpp — all already in the README's "Local AI / offline LLM
+  runtimes" table) and the @zhiprompts "AI Income Playbook" data-cleanup
+  carousel (all 5 numbered cards word-for-word identical to what's
+  already quoted in the `data-cleanup-brief-service` skill).
+- **New — added to `claude-code-tooling`**: the same @zhiprompts account's
+  "5 AI agent tools that automate real work" carousel — a genuinely
+  different set from the "5 AI agent builders" carousel reviewed earlier
+  this session (that one was code-first SDKs; this one is no-code/visual
+  orchestration platforms): `langgenius/dify`, `FlowiseAI/Flowise`,
+  `langflow-ai/langflow`, `crewAIInc/crewAI`, `microsoft/autogen`. Added
+  as a new section, plus the carousel's "give it one job" agent-trust
+  methodology (Job → Boundary → Evaluate → Approve — an agent earns more
+  responsibility through measured performance, not by being handed it up
+  front), cross-referenced against the existing `night-shift-workflow`
+  and `web-task-scoping` skills.
+
+No new prompts to paste this round — this batch was a tool roundup (repos
+and a governance methodology), not AI prompts.
+
 Drop this repo into a Claude Code project (or point `.claude/skills` at it) to make these available.
 
 ## Plugins
