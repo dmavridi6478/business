@@ -2032,3 +2032,59 @@ names lack the org prefixes needed to resolve real install paths, and the
 star-count inflation confirms this is illustrative content rather than a
 verified registry. The 50-marketing-use-cases infographic contained no
 actionable repo or prompt data.
+
+---
+
+**42nd addition** (`afa3386e-iCloud_Photos_1.zip`, 14 images + 2 MP4s, August 2026)
+— Four distinct content sources: (1) @ux_snacks UX course ad; (2) VAMSHI.WORK
+"10 UX Laws Explained Visually" carousel; (3) two @51ultron infographics;
+(4) @adentech_hq MS-900 cloud exam content. One new skill created.
+
+**Content breakdown:**
+
+- **@ux_snacks UX course ad** — promotional image for a 510-page UX/UI
+  playbook (2000+ students). Informational only.
+
+- **VAMSHI.WORK "10 UX Laws Explained Visually"** (TikTok: @ux_snacks, 11
+  slides) — visual explainers for ten cognitive/design psychology laws
+  with before/after UI examples: 01 Jakob's Law (familiarity reduces
+  friction); 02 Hick's Law (less choice = faster decisions); 03 Fitts's Law
+  (target size/distance); 04 Miller's Law (working memory chunks of 7±2);
+  05 Proximity Law (closeness implies relationship); 06 Von Restorff Effect
+  (different element gets remembered); 07 Serial Position Effect (first/last
+  remembered best); 08 Tesler's Law (product absorbs complexity); 09 Doherty
+  Threshold (fast feedback keeps users engaged); 10 Peak-End Rule (people
+  judge by peak + end moment). No repos — pure UX reference content.
+
+- **@adentech_hq "MS-900 Deep Dive Part 3 — Cloud Service Models"** — exam
+  prep infographic comparing IaaS/PaaS/SaaS (who manages what, scenarios,
+  examples). Microsoft certification study content. No repos, no prompts.
+
+- **@51ultron "How Claude Dreams"** — fictional/creative visualization
+  claiming Claude consolidates memories overnight. Not a real Claude feature
+  (Claude has no persistent memory between conversations by default, and no
+  "dreaming" process). Informational/entertainment only.
+
+- **@51ultron "5 Claude Folders For Client Acquisition"** — 5-folder system
+  containing 50 described Claude skills organized by sales pipeline stage:
+  Client & Market Intelligence (9 skills), Prospecting & Lead Intelligence
+  (10 skills), Outreach & Conversation Starters (10 skills), Sales Conversion
+  (10 skills), Pipeline & Acquisition Optimisation (10 skills). Named skills
+  include ICP Architect, Pain Point Intelligence Builder, Buying Signal
+  Detector, Personalised Opener Writer, Objection Handler, Proposal Writer,
+  Win-Loss Analyst, and others. No GitHub source — described as a Claude
+  Projects folders system.
+
+**Skill created:**
+
+- **`client-acquisition-skills`** — vendored from @51ultron's "5 Claude
+  Folders For Client Acquisition" system. Contains 16 paste-ready prompts
+  across the 5 acquisition stages, expanded from the named skills shown in
+  the carousel (ICP Architect, Pain Point Intelligence Builder, Buyer Language
+  Extractor, Competitive Positioning Analyst, Ideal Prospect Finder, Buying
+  Signal Detector, Lead Scoring Expert, Account Prioritiser, Personalised
+  Opener Writer, Icebreaker Strategist, LinkedIn Message Writer,
+  Multi-Channel Outreach Planner, Objection Handler, Value Proposition
+  Builder, Proposal Writer, Negotiation Assistant, Pipeline Health Checker,
+  Follow-Up Strategist, Win-Loss Analyst, Acquisition Optimiser).
+  Stored at `.claude/skills/client-acquisition-skills/SKILL.md`.
