@@ -1917,3 +1917,25 @@ Informational only (no repos to install):
   area); skipped.
 - **`Mintplex-Labs/anything-llm`** — already in README (line 1318, Plugins
   section); skipped.
+
+---
+
+**40th addition** (`9c8dd4c3-iCloud_Photos_1.zip`, 8 images, August 2026)
+— Single 7-slide carousel from @iunlockedai "AI Unlocked Tool Drop 40"
+covering `dmmulroy/anti-slop`. No prompts; one new repo.
+
+Repo identified:
+
+- [`dmmulroy/anti-slop`](https://github.com/dmmulroy/anti-slop) (1.7K★,
+  MIT, Aug 2026) — 15 opinionated Oxlint rules that reject low-evidence
+  TypeScript and JavaScript patterns produced by AI agents. Key distinction:
+  most tools (CLAUDE.md, skills, system prompts) try to coach the model
+  *before* it writes; this linter runs *after*, on the file that actually
+  exists, and doesn't care how confident the model sounded. Install vendors
+  the rules directly into your repo (no upstream dependency, but also no
+  upstream fixes): `npx skills add dmmulroy/anti-slop --skill install-anti-slop`.
+  Patterns it rejects: double casts (`x as object as T`), `Reflect.get` on
+  `object` by string key, functions returning `unknown`, and type assertions
+  with no `SAFETY:` comment explaining what was verified. In a 28-line demo
+  of typical agent output, running `npx oxlint` with ten rules on caught 11
+  errors — every one of them compiles fine and proves nothing.
