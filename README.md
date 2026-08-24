@@ -1183,6 +1183,40 @@ above were identified and verified during review but not installed in
 this session — reproduce with the commands shown when you're ready to use
 them.
 
+A thirty-fifth addition came from a 26-image iCloud Photos zip
+(`b37a33ac-iCloud_Photos.zip`) spanning three carousels: a
+@zhiprompts "5 AI Voice Tools" repo roundup, a @iunlockedai series
+on Claude Code's own CLAUDE.md pruning practice (Boris Cherny, YC
+Startup School 2026: Anthropic deleted 80% of Claude Code's own
+system prompt — it tested slightly smarter without it; rewrite your
+CLAUDE.md at every model release, delete and rebuild from scratch
+every six months), and a @earchoe "one-person team" thesis (AI as
+a workforce, not a shortcut — one person + the right system = what
+used to take a team). One new skill was created; five repos were
+confirmed new against the existing README (zero duplicates):
+
+- **New — `ai-voice-tools` skill**: five open-source voice/TTS
+  repos from the @zhiprompts roundup, with per-tool setup snippets
+  and a quick-selection guide for choosing between them.
+
+Repos identified in this batch (not previously in README):
+
+- `myshell-ai/OpenVoice` (37K★, Python) — zero-shot voice cloning
+  with style control (emotion, accent, rhythm); instant results from
+  a short reference sample
+- `SWivid/F5-TTS` (15K★, Python) — flow-matching TTS with in-context
+  voice cloning; no fine-tuning required
+- `fishaudio/fish-speech` (32K★, Python) — actively developed
+  multilingual speech-generation and TTS system (EN, ZH, JP and more)
+- `hexgrad/kokoro` (8.2K★, JavaScript) — lightweight open TTS model;
+  runs on CPU via ONNX, no GPU required for basic narration
+- `QwenAudio/CosyVoice` (23K★, Python) — enterprise-grade
+  multilingual voice synthesis from Qwen/Alibaba's speech research;
+  zero-shot and cross-lingual cloning, instruction-based voice control
+
+No paste-ready prompts in this batch (all three carousels were tool
+roundups or conceptual/inspirational content, not prompt templates).
+
 ### Reviewed and not added
 
 A raw list of `gh repo clone` commands (source unverified — looked like
