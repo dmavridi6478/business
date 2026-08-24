@@ -2156,3 +2156,107 @@ Informational only (no repos to install):
   (Sales Scripts and Outreach), Step 6 (Connect Your Tools), Step 7 (Cowork on
   Real Documents), Step 8 (Build the Product with Claude Code), Step 9 (Daily
   Business Brief). Stored at `.claude/skills/claude-start-business/SKILL.md`.
+
+---
+
+**44th addition** (`3df70276-iCloud_Photos_1.zip`, 42 JPEGs + 1 PNG + 1 MP4, August 2026)
+— Batch covers five carousels and two informational slides: @ty.prompts.ai "5 free
+repos from the agent harness war" (7 slides); @ai.blueprint "5 AI agents that
+actually make money" (7 slides); @replace.so "3 GitHub repos so good they
+shouldn't be free" (excalidraw + langflow identified); @appmillers "5 Claude
+Code Design Upgrades" (5 techniques); @your.aimentor "56 Commands for
+Maximizing Claude Code Output" (56 prefix commands); @51ultron "Build an AI
+Agent in 10 Minutes" (9 steps — distinct from claude-start-business skill).
+Also: @the21.i Stripe–OpenRouter acquisition news (informational); @aiemergence
+8-layer AI Agent Architecture diagram (informational); @wellx.tech 25 IT Project
+Ideas (informational); @aisimplified23 Claude Functions Cheat Sheet
+(informational).
+
+**Repos documented (new — not previously in README):**
+
+- **[`livekit/agents`](https://github.com/livekit/agents)** (11k★) — Python
+  framework for building realtime voice AI agents; powers AI receptionists,
+  voice assistants, and audio-interactive applications. Production-ready; used
+  by @ai.blueprint as the "AI receptionist" money-making agent archetype.
+  Install: `pip install livekit-agents`.
+
+- **[`xai-org/grok-build`](https://github.com/xai-org/grok-build)** (26k★,
+  4.8k forks) — xAI's full-screen terminal agent; implements the Agent Client
+  Protocol (ACP) for standardised agent-to-agent communication. Drop-in for
+  CLI-first workflows where Claude Code or Codex is used today.
+
+- **[`andrewyng/openworker`](https://github.com/andrewyng/openworker)** (15k★,
+  2.1k forks) — Andrew Ng's open-source desktop coworker agent; runs locally,
+  controls the desktop GUI, executes multi-step agentic tasks. Clone and run
+  per the repo README.
+
+- **[`yc-software/qm`](https://github.com/yc-software/qm)** (14k★, 1.7k forks)
+  — YC-backed multiplayer agent harness; single shared core drives Pi, OpenCode,
+  Codex, and Claude Code concurrently. Designed for teams where multiple agents
+  collaborate on the same codebase.
+
+- **[`XiaomiMiMo/MiMo-Code`](https://github.com/XiaomiMiMo/MiMo-Code)** (13k★,
+  1.3k forks) — Xiaomi's terminal-native coding agent with persistent memory;
+  stores prior session context across runs. Fits workflows where state and
+  project history must survive session restarts.
+
+- **[`excalidraw/excalidraw`](https://github.com/excalidraw/excalidraw)**
+  (★ high) — Open-source collaborative infinite-canvas whiteboard with a
+  hand-drawn diagram aesthetic; runs entirely in the browser. Self-hostable;
+  useful for async architecture diagrams, brainstorming boards, and shared
+  visual planning without a SaaS subscription.
+  Run locally: `npx excalidraw` or `docker run -p 80:80 excalidraw/excalidraw`.
+
+**Repos confirmed duplicate (already in README — skipped):**
+
+| Repo | First documented |
+|---|---|
+| `langgenius/dify` | 28th addition (line 983) |
+| `langflow-ai/langflow` | 28th addition (line 984) |
+| `crewAIInc/crewAI` | 28th addition (line 984) |
+| `firecrawl/firecrawl` | 39th addition |
+| `deepseek-ai/deepseek-harness` | 43rd addition |
+| `n8n-io/n8n` | prior batch |
+
+**Skills created:**
+
+- **`your-aimentor-56-commands`** — full set of 56 prefix commands from
+  @your.aimentor, grouped into four categories: Role & Persona (1–14: /human,
+  /expert, /ceo, /viral, /seo, /critic, /teacher, /eli5, /brief, /strategy,
+  /copywriter, /research, /brainstorm, /promptengineer), Problem-Solving &
+  Productivity (15–28: /problemsolver, /decisionhelper, /moneyideas,
+  /skillbuilder, /negotiationcoach, /contentoptimizer, /promptimprover,
+  /emailwizard, /productivityboost, /socialmediaai, /storytellerai,
+  /persuasivemode, /datainterpreter, /automateit), Career & Personal Development
+  (29–42: /jobinterviewer, /careercoach, /resumewriter, /coverlettergen,
+  /linkedinbooster, /personaldeveloper, /habittracker, /healthcoach,
+  /mealplanner, /workoutbuddy, /travelplanner, /budgetplanner, /financetips,
+  /booksummary), Growth & Marketing (43–56: /trendpredictor, /deepthink,
+  /unpopularopinion, /growthhack, /contentrecycler, /ctaexpert, /psychowords,
+  /brandstory, /viralhook, /audienceavatar, /competitorroast, /frameworkify,
+  /examplewizard, /tl;dr). Stored at
+  `.claude/skills/your-aimentor-56-commands/SKILL.md`.
+
+- **`appmillers-claude-code-design-kit`** — 5-technique Claude Code design
+  upgrade kit from @appmillers: (01) TASTE SKILL — feed premium references to
+  calibrate first-draft aesthetics; (02) WEB DESIGN GUIDELINES AUDIT — audit
+  against Vercel's Web Interface Guidelines for usability/accessibility/
+  consistency; (03) AWESOME DESIGN.md — create a project-level DESIGN.md
+  capturing colours, typography, spacing, buttons, components, and motion so
+  every session stays in-system; (04) IMAGE TO CODE — drop a screenshot and
+  Claude generates high-fidelity matching components; (05) PLAYWRIGHT CLI LOOP
+  — give Claude eyes via build → screenshot → inspect → fix feedback loop using
+  `npx playwright screenshot`. Stored at
+  `.claude/skills/appmillers-claude-code-design-kit/SKILL.md`.
+
+- **`build-ai-agent-10-minutes`** — @51ultron's 9-step framework for building
+  and running a personal Claude Code agent system (distinct from
+  `claude-start-business` which covers launching a *business*; this skill covers
+  building the *agent itself*): Step 1 Install Claude Code; Step 2 Build context
+  (CLAUDE.md); Step 3 Build memory (corrections.md + preferences.md persistent
+  files); Step 4 Refine prompts (iterative prompting with structured critique);
+  Step 5 Build skills (SKILL.md packaging); Step 6 Test & iterate (structured
+  quality scoring); Step 7 Multi-agent architecture (Strategist Opus →
+  Builder Sonnet → QA Gate 95/100); Step 8 Autopilot (Claude Routines as cron);
+  Step 9 Scale & deploy (document, parameterise, onboard, harden, package).
+  Stored at `.claude/skills/build-ai-agent-10-minutes/SKILL.md`.
