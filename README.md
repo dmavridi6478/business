@@ -1866,3 +1866,54 @@ Paste-ready prompts from this batch:
 - **Microsoft Playwright MCP** — already integrated into the
   `claude-code-tooling` skill as one of its five browser-automation
   frameworks; skipped as a standalone entry.
+
+---
+
+**39th addition** (`674d3232-iCloud_Photos_1.zip`, 15 images, August 2026)
+— Batch covers @mario_esquer_ "Turn Claude into a Money Printing Machine —
+7 free repos" carousel and @aiemergence "Three frontier models dropped in
+one day" 6-slide series. No new skills created (no prompt carousels).
+`crewAIInc/crewAI` and `Mintplex-Labs/anything-llm` confirmed duplicates;
+five new repos documented.
+
+Repos identified in this batch (@mario_esquer_ carousel):
+
+- [`pipecat-ai/pipecat`](https://github.com/pipecat-ai/pipecat) (14K★) —
+  open-source framework for voice agents, multimodal apps, and realtime AI;
+  maintained by Daily. Plug Claude in as the brain and it handles inbound
+  calls, appointment booking, and calendar updates — a receptionist that
+  never sleeps.
+- [`cline/cline`](https://github.com/cline/cline) (66K★) — autonomous
+  coding agent available as a VS Code extension, SDK, or CLI; hands Claude
+  the keyboard and lets it build a whole site file by file while you watch.
+- [`gitroomhq/postiz-app`](https://github.com/gitroomhq/postiz-app) (35K★)
+  — the ultimate agentic social media scheduling tool; write a month of
+  posts in Claude then fire them at every channel on schedule. MIT license.
+- [`browser-use/browser-use`](https://github.com/browser-use/browser-use)
+  (109K★) — makes websites accessible for AI agents; Claude opens a real
+  browser and clicks through repetitive tasks a human does every day.
+  Python library, MIT license.
+- [`firecrawl/firecrawl`](https://github.com/mendableai/firecrawl) (168K★)
+  — context API to search, scrape, and interact with the web at scale; turns
+  any website into clean structured data and feeds it straight to Claude for
+  lead generation, research, or data pipelines.
+
+Informational only (no repos to install):
+
+- @aiemergence "Three frontier models dropped in one day" — comparison of
+  Grok 4.6 ($2/$6/M tokens, best agentic coding, best in Cursor), Qwen 3.8
+  Max ($2/$6, 2.4T params / 95B active MoE, open weights, self-hostable),
+  and DeepSeek V4 Pro 0813 (cheapest option, strongest agentic coding
+  update, weights on Hugging Face). Useful model-selection heuristic:
+  speed+agents → Grok, control+ownership → Qwen, cost → DeepSeek.
+- "Everything you must know in Claude" wheel infographic — covers the 6
+  dimensions: where to open it, which model to pick, effort levels, work
+  modes (Chat/Cowork/Claude Design/Projects/Claude Code), output types
+  (Artifacts/Real Files/Live Artifacts), and connectors/memory/skills.
+
+### Reviewed and not added (39th batch)
+
+- **`crewAIInc/crewAI`** — already in README (line 984, 28th addition
+  area); skipped.
+- **`Mintplex-Labs/anything-llm`** — already in README (line 1318, Plugins
+  section); skipped.
