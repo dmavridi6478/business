@@ -1217,6 +1217,74 @@ Repos identified in this batch (not previously in README):
 No paste-ready prompts in this batch (all three carousels were tool
 roundups or conceptual/inspirational content, not prompt templates).
 
+---
+
+**36th addition** (`98487103-iCloud_Photos_1.zip`, 74 images + 2 MP4s,
+August 2026) — Batch spans six accounts (@martiendejong_dev,
+@productester11, @ai_slacker, @buildwithmuj, @iunlockedai, @avarlyhq,
+@claude.with.christelle, @speakresume.ai, @51ultron). One new skill was
+created; no new GitHub repos were found (n8n was already covered under the
+existing `outreach-automation` skill entry via `Zie619/n8n-workflows`):
+
+- **New — `life-mastery-prompts` skill**: seven AI prompts for personal
+  mastery from the @martiendejong_dev carousel — billionaire mindset,
+  neuro-optimized learning, expert knowledge download, cognitive OS
+  upgrading, high-performance life design, time-leverage strategy, and
+  psychological identity reprogramming. Each prompt is paste-ready with
+  bracketed placeholders for personalization.
+
+Paste-ready prompts from this batch (all from @martiendejong_dev; now
+installed in `life-mastery-prompts`):
+
+1. **Think Like a Billionaire** — "You are a thinking coach trained on the
+   minds of Elon Musk, Naval Ravikant, Jeff Bezos, and top polymaths.
+   Reprogram my thought process to think in systems, long-term vision,
+   leverage, and asymmetric outcomes. Give me daily mental models to shift
+   from average thinker to billionaire thinker."
+
+2. **Neuro-Optimized Tutor** — "You are a neuro-optimized tutor. I want to
+   learn any complex skill 10x faster than others. Create a weekly learning
+   blueprint based on spaced repetition, interleaving, the Feynman
+   technique, and active recall. Apply it to [insert topic]. I want to be
+   in the top 1% in 90 days."
+
+3. **Download Expert-Level Knowledge** — "You are a world-class expert in
+   [insert any skill]. Train me as if I'm your apprentice, from beginner to
+   mastery. Break it into stages, tasks, uncommon resources, and shortcuts.
+   Include simulations or real-life practice assignments to truly
+   internalize each level."
+
+4. **Cognitive OS Upgrader** — "You are my cognitive OS upgrader. Audit my
+   current thought patterns, habits, and beliefs based on this description:
+   [describe how you think now]. Then rewrite my operating system to
+   improve clarity, decision speed, memory, creativity, and emotional
+   control."
+
+5. **High-Performance Architect** — "You are my high-performance architect.
+   Help me design a god-tier life based on time freedom, health, wealth,
+   relationships, and purpose. Create a daily system, environment, people I
+   must avoid, habits to master, and beliefs to rewire to become
+   unstoppable."
+
+6. **Compress Decades into Days** — "You are a time-leverage strategist. I
+   want to achieve in 1 year what most take 10 years to do. Based on my
+   goal: [insert goal], create a high-leverage blueprint using shortcuts,
+   tools, mentors, delegation, automation, and AI to leapfrog everyone
+   else."
+
+7. **Psychological Reprogrammer** — "You are a psychological reprogrammer.
+   Based on my goal to become [insert ideal self], help me destroy my
+   current limiting identity and install a new operating self-image, thought
+   pattern, and behavior map that aligns with my highest version."
+
+Other carousels in this batch were commercial-app roundups (Buffer,
+Mailchimp, Canva, Gemini, Gemini Notebook, Manus, HeyKleos.dev,
+avarly.io), Claude Code informational explainers (auto-mode default,
+cross-session messaging, deny-rules, plugin sha256 pinning), or
+conceptual prompting advice with no extractable repos or reusable prompts.
+The @51ultron "7 website building prompts" carousel gated actual content
+behind engagement-bait DMs — no prompts were visible in the images.
+
 ### Reviewed and not added
 
 A raw list of `gh repo clone` commands (source unverified — looked like
