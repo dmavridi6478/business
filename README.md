@@ -1752,3 +1752,117 @@ MAGIC — M: Motivation · A: Audience · G: Goal · I: Input · C: Create
 - **`LocalSend`** — already in README (34th addition); skipped.
 - **`ollama/ollama`** — already in README (Local AI / offline LLM runtimes
   section); skipped.
+
+---
+
+**38th addition** (`b314bb3d-iCloud_Photos_1.zip`, 53 images, August 2026)
+— Batch covers accounts including @ray_fu, @appmillers, and
+@TheChatGPTMarketer, focusing on Claude Code ecosystem repos and
+full-stack marketing prompts. Two new skills were created from prompt
+content; several Claude Code repos were identified for the reference
+index. `repomix` was confirmed a duplicate (already in README at the
+Claude Code Tooling table).
+
+New skills created:
+
+- **`claude-clean-audit-prompts`** — the three-layer "Clean Your Claude"
+  audit system from @appmillers. Layer 1 audits CLAUDE.md line-by-line
+  against Anthropic's live guidance (DELETE/KEEP/REWRITE verdicts with
+  source quotes). Layer 2 audits the skills folder for overlap and dead
+  weight (groups by job, flags unused/orphaned skills, produces a merged
+  version of the biggest group). Layer 3 audits every hook (lists all,
+  flags expensive always-on triggers, common trigger words, conflicts,
+  broken file paths, forgotten hooks — verdict table, nothing changed
+  until you say so). A bonus "Hook Discovery" prompt finds what should
+  become a hook in the first place. Run in order: Discovery → Layer 1 →
+  Layer 2 → Layer 3.
+
+- **`marketing-10-prompts`** — ten production-ready marketing prompts from
+  @TheChatGPTMarketer covering the full marketing stack: (1) Deep
+  Competitor Teardown — UVPs, pricing table, top complaints, gaps with
+  citations; (2) Voice-of-Customer Mining — theme groups, 3-word labels,
+  top quotes, copy ideas; (3) Complete Content Audit — Keep/Refresh/Delete
+  labels per URL with quick-win flags; (4) Customer-Journey Map — six
+  stages, goals/questions/objections/content/AI prompt per stage;
+  (5) Keyword & Intent Gap Analysis — missing high-intent keywords scored
+  by impact × ease; (6) Quarterly Trend Scan — top 3 industry trends with
+  stats and B2B action ideas; (7) Attribution Sanity Check — ROAS/CAC
+  calculation plus 30%+ attribution inflation flags; (8) A/B-Test Idea
+  Backlog — ICE-scored hypotheses per funnel drop-off; (9) Evergreen FAQ &
+  Knowledge Base Build — feature-grouped FAQ from support tickets;
+  (10) Press-Ready Data Stories — 3 headline-worthy data insights with
+  chart recommendations.
+
+Repos identified in this batch (from @ray_fu "10 Claude GitHub Repos
+that Actually Matter"):
+
+- [`hesreallyhim/awesome-claude-code`](https://github.com/hesreallyhim/awesome-claude-code)
+  (28.5K★) — curated directory of 545 Claude Code resources: 142 Skills,
+  63 Hooks, 88 Commands, 110 Plugins, plus CLAUDE.md examples and agents.
+  Reference index, not a plugin install.
+- [`forrestchang/andrej-karpathy-skills`](https://github.com/forrestchang/andrej-karpathy-skills)
+  — CLAUDE.md with Karpathy's 4 coding principles packaged as a Claude Code
+  plugin; install: `npx claude plugin add forrestchang/andrej-karpathy-skills`
+- **TDD Guard** (1.7K★) — Claude Code hook that blocks the agent from writing
+  code until tests are written first; enforces test-driven development at the
+  hook level.
+- [`everything-claude-code`](https://github.com/disler/everything-claude-code)
+  — hackathon-winning repo containing 30 agents, 136 skills, and 60 commands;
+  the most comprehensive single-repo Claude Code starter kit.
+- [`wshobson/agents`](https://github.com/wshobson/agents) (25K★) — production
+  subagent library covering specialized roles (researcher, coder, reviewer,
+  planner) for multi-agent orchestration workflows.
+- **`claude-squad`** (5.6K★) — terminal multiplexer for running multiple
+  parallel Claude Code agents in the same session; each agent gets its own
+  pane and git worktree.
+- **`claude-subconscious`** (2.4K★) — memory agent that runs in the
+  background and automatically surfaces relevant past context into the active
+  session without the user prompting for it.
+
+Paste-ready prompts from this batch:
+
+**Layer 1 — CLAUDE.md Audit (@appmillers):**
+
+> Audit my instructions against Anthropic's current guidance and tell me what to delete. 1. FETCH THE LIVE RULES FIRST. Read Anthropic's page for my exact model. 2. GO LINE BY LINE. One verdict each: DELETE, KEEP or REWRITE, with the reason. 3. QUOTE YOUR SOURCE. No quote from Anthropic, the verdict is KEEP. 4. FLAG EVERY VERIFY-TWICE RULE. It self-corrects. I pay twice. 5. NEVER TOUCH A TRUTH RULE. "Only claim what you verified" stays. 6. TELL ME WHAT IS MISSING. Then a table, one row per instruction, the honest count, and anything unchecked marked NOT RUN.
+
+**Layer 2 — Skills Audit (@appmillers):**
+
+> Audit my skills folder for overlap and dead weight. Do not delete anything. 1) LIST EVERY SKILL with its name and one line on what it does. 2) GROUP THEM BY THE JOB they do, not by their name. Same job, same skill. 3) FOR EACH GROUP OF TWO OR MORE, which to keep and exactly what the others miss. 4) FLAG EVERY SKILL I have never actually used. 5) FLAG EVERY SKILL that only works because of a file that no longer exists. Then give me ONE merged version of the biggest group, written out in full. Tell me what I lose by merging.
+
+**Layer 3 — Hooks Audit (@appmillers):**
+
+> Audit every hook I have set up. Do not change or delete anything. 1. LIST THEM ALL. What triggers it, when it fires, what it does. Plain English. 2. WHICH ONES FIRE ON EVERY MESSAGE. Those are the expensive ones. 3. ANY TRIGGER WORD TOO COMMON. It will fire when I did not mean it. 4. ANY TWO THAT COULD FIRE AT ONCE, and what happens when they do. 5. ANY POINTING AT A FILE or folder that no longer exists. 6. WHICH ONES I HAVE PROBABLY FORGOTTEN I set up. Then a table: keep, fix or remove, one line of reasoning each. Do not touch anything until I say so.
+
+**Hook Discovery (@appmillers):**
+
+> Help me work out what I should turn into a hook. Find what I ask for over and over in the same words. Tell me the phrase I say, what you should read the moment I say it, and whether it is unique enough. Top three, ranked.
+
+**10 Marketing Prompts (@TheChatGPTMarketer):**
+
+1. **Competitor Teardown** — Act as a competitive analyst. Analyze these websites [list URLs] and products [names] for this audience [segment]. Summarize each UVP in 25 words or less, compare pricing in a table, list top 5 customer complaints from reviews, and find 3 gaps we can target. Return in markdown with citation links.
+
+2. **VOC Mining** — Act as a VOC miner. Use this raw feedback [paste text] to group comments into themes, give each a 3-word label and top quote, rank by frequency, and suggest one copy idea per theme. Return as a markdown table.
+
+3. **Content Audit** — Act as a content auditor. Use this site map [link] and metrics CSV [file] to list every URL with its metrics, label each Keep/Refresh/Delete, and flag quick wins needing less than 2 hours. Return as a markdown CSV.
+
+4. **Customer-Journey Map** — Be a lifecycle strategist for [product] targeting [persona]. Map the stages (Awareness, Consideration, Purchase, Onboarding, Retention, Expansion) with goals, key questions, objections, ideal content, and suggest one AI prompt per stage. Return as a table.
+
+5. **Keyword Gap** — Be an SEO gap analyst. Compare my site [URL] to competitors [URLs] and find missing high-intent keywords (KD <40, 500+ volume), suggest a headline and brief for each, and score by traffic impact times ease. Return in markdown.
+
+6. **Trend Scan** — Use Deep Research to scan the last 90 days in [industry] and return the top 3 trends (under 30 words each) with a supporting stat or quote (linked) and a B2B marketing action idea for each, formatted as bulleted markdown.
+
+7. **Attribution Check** — Act as an attribution analyst. Combine this ad spend CSV, CRM revenue CSV, and GA4 channel report to calculate ROAS and CAC, find channels with over 30% attribution inflation (last-touch vs multi-touch), and recommend budget shifts. Return summary and table.
+
+8. **A/B Backlog** — Act as an experiment planner. Using funnel metrics (steps, conversion rates) and past tests, find biggest drop-offs, create 5 hypotheses per drop-off, score them on Impact, Confidence, Effort (ICE), and sort by total score. Return a markdown table ready for backlog.
+
+9. **FAQ Build** — Act as a knowledge base builder. Using the top 100 support tickets and product docs, group questions by feature, write short FAQ answers (under 60 words), suggest related how-to article titles, and outline a site structure as a nested markdown list.
+
+10. **Data Stories** — Be a PR writer. Using [internal stats] and [external datasets], find 3 headline-worthy insights with numbers, write a press-style headline and 2-sentence blurb for each, and suggest a chart (type and axes). Return as a markdown list.
+
+### Reviewed and not added (38th batch)
+
+- **`repomix`** (`yamadashy/repomix`) — already in README (Claude Code
+  Tooling table, 34th addition area); skipped.
+- **Microsoft Playwright MCP** — already integrated into the
+  `claude-code-tooling` skill as one of its five browser-automation
+  frameworks; skipped as a standalone entry.
