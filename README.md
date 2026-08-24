@@ -2088,3 +2088,71 @@ actionable repo or prompt data.
   Builder, Proposal Writer, Negotiation Assistant, Pipeline Health Checker,
   Follow-Up Strategist, Win-Loss Analyst, Acquisition Optimiser).
   Stored at `.claude/skills/client-acquisition-skills/SKILL.md`.
+
+---
+
+**43rd addition** (`356d1e2e-iCloud_Photos_1.zip`, 19 images + 1 MP4, August 2026)
+— Batch covers two multi-slide carousels (@theromanknox "Hermes Agent QuickSilver
+Revolution" 8-slide series; @iunlockedai "AI Unlocked Tool Drop #42" 8-slide
+deepseek-harness analysis), one @51ultron 9-step business-launch infographic,
+and one @aiemergence "Best AI Tools for Marketing in 2026" pyramid.
+
+**Repo documented (developer preview — do not install for production):**
+
+- **[`deepseek-ai/deepseek-harness`](https://github.com/deepseek-ai/deepseek-harness)**
+  (154k★, MIT, official deepseek-ai org) — Plugin-based open agent harness;
+  "Everything is a Plugin" (models, tools, sessions, sandboxes, storage, agent
+  loop all load as plugins); model-agnostic with Anthropic adapters. First
+  commit dated 2026-06-10; made public 2026-08-13 (69-day-old project, not a
+  five-day build). Try with: `npx @deepseek-ai/dsh web` → http://127.0.0.1:3080.
+  **⚠️ Currently `v0.1.0-rc.7` developer preview — repo README warns in caps
+  "THERE WILL BE COMPATIBILITY-BREAKING CHANGES." Use to preview agent tooling
+  direction; do not move production workflows onto it yet.** Also: 1,491+
+  squatter repos share the name "deepseek-harness" — always verify the owner
+  is `deepseek-ai` before installing anything.
+
+Informational only (no repos to install):
+
+- **@theromanknox "Hermes Agent QuickSilver Revolution"** — 8-slide carousel
+  for a paid product/service (skool.com/knox). Demonstrates five capabilities
+  of the Quicksilver agent platform: Smart Approvals (a second model vets each
+  command, stops asking about safe operations), Durable Background Jobs
+  (results survive a restart), Delivery Ledger (failed replies get retried,
+  not forgotten), Profile Routing (other people text the same bot; their
+  memory stays separate), Per-Task Effort controls (Max/Ultra effort, pay only
+  when it matters). Key workflow tips: drop a YouTube URL and say "study this,
+  summarize it, store it" to build a queryable knowledge base; assign each
+  team member a private Obsidian/agent profile via plain-English instruction;
+  to borrow an expensive model for one turn only, say "use this model ONCE" or
+  run `/model sol --once` then it auto-switches back. No GitHub source. No install.
+
+- **@51ultron "How to use Claude to start a business"** — 9-step infographic
+  framework: (1) Validate idea with Claude before building; (2) Create core
+  files `about-me.md` + `brand-voice.md` for persistent context; (3) Build
+  separate Claude Projects per business function (Strategy, Brand, Operations),
+  each with its own system prompt; (4) Use Artifacts to produce business assets
+  (pitch decks, homepages, email sequences); (5) Generate sales scripts and
+  outreach sequences; (6) Connect tools via Claude Settings → Connectors
+  (Gmail, Calendar, Notion, HubSpot, Slack, etc.); (7) Use Cowork for
+  collaborative real document editing; (8) Use Claude Code to build the actual
+  product; (9) Run a daily business brief to stay on track. No GitHub source.
+
+- **@aiemergence "The Best AI Tools for Marketing in 2026"** — seven-layer
+  pyramid tool survey. Bottom to top: Learning (NextWork) → General Assistants
+  (Claude, ChatGPT, Perplexity, Gemini) → Research & Writing (NotebookLM,
+  Grammarly, Notion, Wispr) → Design (Canva, Figma, Paper, Framer) → Dev &
+  No-Code (Cursor, Lovable, Replit, v0, Bolt) → Automation & Data (Zapier,
+  Make, n8n, Lindy, Apollo, PostHog, Apify) → Content & Media (HeyGen,
+  Descript, Opus Clip, Gamma, Beehiiv, Midjourney, Veo, Higgsfield,
+  ElevenLabs, Suno). Informational tool survey only; no repos, no prompts.
+
+**Skill created:**
+
+- **`claude-start-business`** — vendored from @51ultron's 9-step "How to use
+  Claude to start a business" framework. Contains 9 paste-ready prompts: Step 1
+  (Validate the Idea), Step 2 (Create Core Files — about-me.md + brand-voice.md),
+  Step 3 (Build Claude Projects by Function with system prompts for Strategy /
+  Brand / Operations), Step 4 (Create Business Assets with Artifacts), Step 5
+  (Sales Scripts and Outreach), Step 6 (Connect Your Tools), Step 7 (Cowork on
+  Real Documents), Step 8 (Build the Product with Claude Code), Step 9 (Daily
+  Business Brief). Stored at `.claude/skills/claude-start-business/SKILL.md`.
