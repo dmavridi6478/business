@@ -1042,6 +1042,102 @@ hashes) — skipped entirely; only the first zip processed.
 No prompts to paste this round — the graph engineering batch was a conceptual
 framework carousel, not AI prompts.
 
+A thirty-fourth addition came from a 140-image iCloud Photos zip
+(`96ba2053-iCloud_Photos_1.zip`) — the largest single batch yet. Images spanned
+tool roundups, carousel posts, pricing comparisons, repo spotlights, and a full
+@ai_slacker dev-prompts series. Two new skills were created and 25 repos were
+identified (all checked against the existing README — zero duplicates):
+
+- **New — `ai-slacker-prompts` skill**: eight battle-tested prompts from
+  @ai_slacker's "8 Claude prompts for devs" series — (01) Write a Full PRD,
+  (02) Full UI & UX Design Brief, (03) Find Security Gaps, (04) Debug an Error
+  Fast, (05) E2E Tests with Playwright, (06) Clean Up & Refactor Dead Code,
+  (07) Write Clean Git Commits, (08) Turn a Task into a Skill. Each prompt is a
+  complete paste-ready instruction targeting a distinct dev workflow stage.
+- **New — `engineering-claude-md` skill**: the @your.ai.mentor Engineering
+  CLAUDE.md system prompt — a structured discipline for AI coding agents
+  covering (1) investigate the repo before asking anything, (2) deliver a
+  design summary with max-3 clarifications then pause for approval, (3) match
+  planning depth to change risk, (4) build only after approval, never silently
+  pivot. Includes working-assumptions documentation, solution-evaluation
+  comparison, and a final 8-item quality checklist (correct, simple,
+  maintainable, secure, well-tested, backward compatible, consistent with
+  architecture, readable).
+
+Repos identified in this batch (not previously in README):
+
+- `jarrodwatts/claude-hud` (27K★) — Claude Code HUD plugin, heads-up display
+  for active agent sessions
+- `penpot/penpot` (57K★) — open-source Figma alternative (design + prototype,
+  web-based, self-hostable)
+- `@your.ai.mentor/designer-skills` (2K★) — Claude skills bundle for design
+  teams
+- `@your.ai.mentor/Brand-building-skills` (468★) — Claude skills for brand
+  building workflows
+- `@your.ai.mentor/agent-skill-creator` (2.1K★) — Claude skills for creating
+  new Claude skills
+- `@your.ai.mentor/claude-code-settings` (1.6K★) — all-in-one Claude Code
+  settings collection
+- `Panniantong/Agent-Reach` (67K★) — gives Claude live internet access
+- `gastownhall/beads` (26K★) — graph-based issue tracker / agent memory
+  upgrade
+- `headroomlabs-ai/headroom` (65K★) — compresses tool outputs to reduce token
+  usage (~20% fewer tokens)
+- `shanraisshan/claude-code-best-practice` (64K★) — vibe coding best-practices
+  guide for Claude Code
+- `jaywcjlove/awesome-mac` (109K★) — curated list of macOS software and tools
+- `harry0703/MoneyPrinterTurbo` (102K★) — automated topic-to-video pipeline
+- `VoltAgent/awesome-design-md` (107K★) — DESIGN.md files from famous brands /
+  design systems
+- `luongnv/claude-howto` (41K★) — visual Claude Code how-to guide
+- `twentyhq/twenty` (54K★) — open-source Salesforce/CRM alternative
+- `ruvnet/RuView` (89K★) — WiFi presence and health sensing with Claude Code
+- `puppeteer/puppeteer` (95K★) — headless Chrome Node.js library
+- `router-for-me/CLIProxyAPI` (46K★) — wraps Claude Code / Codex as an
+  OpenAI-compatible API endpoint
+- `ultraworkers/claw-code` (195K★) — Rust agent harness CLI
+- `D4Vinci/Scrapling` (73K★) — adaptive web scraping with anti-bot bypass
+- `DIYgod/RSSHub` (45K★) — "Everything is RSSible" RSS aggregator
+- `medusajs/medusa` (35K★) — open-source flexible e-commerce platform
+  (TypeScript)
+- `reverse-skill` (19K★) — automated reverse engineering and security analysis
+  for APKs, files, and websites
+- `manaflow-ai/cmux` (26K★) — Ghostty-based macOS terminal with vertical tabs
+  and notifications built for AI coding agents (see every Claude instance at a
+  glance, get pinged when one needs you)
+- `wasp-lang/open-saas` (15K★) — 100% free modern JS SaaS boilerplate (React,
+  NodeJS, Prisma) with full auth (email, Google, GitHub, Slack, MS) and email
+  sending
+
+Prompts from this batch — paste-ready plain text:
+
+**@ai_slacker card 01 — WRITE A FULL PRD**
+> Act as a senior product manager. Before writing anything, ask me 5 questions about users, scope and constraints. Then write a full PRD: problem, target user, user stories, core features (MVP vs later), success metrics, edge cases, and out-of-scope.
+
+**@ai_slacker card 02 — FULL UI & UX DESIGN BRIEF**
+> Act as a product designer. From this PRD, produce a design brief: user flows, screen inventory, layout for each screen, component list, design tokens (colors, type scale, spacing), states (empty/loading/error/success), and accessibility notes.
+
+**@ai_slacker card 03 — FIND SECURITY GAPS**
+> Audit this codebase like a security engineer. Find auth flaws, exposed secrets, injection risks, insecure API routes, missing rate limits and unsafe data exposure. Rank by severity, explain the exploit, then give the exact fix.
+
+**@ai_slacker card 04 — DEBUG AN ERROR FAST**
+> Here's the error + relevant code. Do NOT change anything yet. List the 3 most likely root causes ranked by probability, tell me exactly what to log or check to confirm each, and only after we confirm, write the fix.
+
+**@ai_slacker card 05 — E2E TEST YOUR APP (PLAYWRIGHT)**
+> Set up Playwright for this project. Write E2E tests covering the critical user journeys: signup, login, core action, payment, logout. Include happy path + failure states. Use data-testid selectors, add fixtures for auth, and a script I can run in CI.
+
+**@ai_slacker card 06 — CLEAN UP & REFACTOR DEAD CODE**
+> Scan this repo for dead code: unused files, components, imports, deps, env vars and commented-out blocks. Show me the list with proof it's unused BEFORE deleting. Then refactor duplicated logic into shared utils — behaviour must stay identical.
+
+**@ai_slacker card 07 — WRITE CLEAN GIT COMMITS**
+> Review my staged changes. Split them into logical atomic commits. For each: a Conventional Commits message (feat/fix/refactor/chore), a scope, and a body explaining WHY not what. Give me the git commands to run in order.
+
+**@ai_slacker card 08 — TURN A TASK INTO A SKILL**
+> I just did this task with you. Turn it into a reusable Skill: a clear name, a description of exactly when to trigger it, step-by-step instructions, examples, and common failure modes. Write it so a fresh model with zero context can execute it perfectly.
+
+**@your.ai.mentor — Engineering CLAUDE.md system prompt** (full text in `engineering-claude-md` skill):
+Key sections: (1) Learn Before You Ask — inspect source, tests, docs, architecture, existing patterns before interrupting; (2) Deliver a Design Summary then Pause — problem/outcome/constraints, max-3 clarifications with defaults, working assumptions, compare ≥2 approaches, execution plan, then stop for approval; (3) Match Depth to Risk — lightweight for small edits, deeper for auth/payments/infra/migrations; (4) Build Only After Approval — never silently pivot; Engineering Expectations — clarity over cleverness, no unnecessary abstractions, maintainability first, observability from the start; Final Checklist — correct, simple, maintainable, secure, well-tested, backward compatible, architecturally consistent, readable.
+
 Drop this repo into a Claude Code project (or point `.claude/skills` at it) to make these available.
 
 ## Plugins
