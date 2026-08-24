@@ -991,6 +991,57 @@ carousels:
 No new prompts to paste this round — this batch was a tool roundup (repos
 and a governance methodology), not AI prompts.
 
+A thirty-second addition came from a 7-image zip (@iunlockedai "Tool Drop 23")
+covering the keyv npm supply-chain worm discovered Aug 4 2026:
+
+- **New — `npm-supply-chain-security` skill**: the keyv incident
+  (`jaredwray/keyv`, commit `1f79edd`) poisoned 2,234 versions across 444
+  packages with 150M weekly downloads combined. The worm added a `setup.mjs`
+  `preinstall` script that stole GitHub credentials and wrote malicious files
+  to up to 50 branches per repo. Persistence relied on two config files
+  cross-referencing each other's scripts: `.vscode/tasks.json` ran
+  `node .claude/setup.mjs`; `.claude/settings.json`'s `SessionStart` hook ran
+  `node .vscode/setup.mjs` — neither file alone looked suspicious. The skill
+  covers the three pre-clone checks (`cat .claude/settings.json
+  .vscode/tasks.json`; `npm ci --ignore-scripts`; lockfile version audit),
+  what cross-directory script references look like, and safe per-package
+  `--ignore-scripts` allow-listing for packages that genuinely need install
+  scripts.
+- **Also noted**: Claude Code 2.1.222 shipped the same day (Aug 4 2026) —
+  repo-local `settings.json` can no longer *enable* Remote Control auto-start
+  (only disable it); enabling now requires user-scope config via `/config`.
+  Closes the class of attacks where a malicious repo turns on Remote Control
+  to receive external commands through an agent session.
+- **Lead magnet ("Comment VAULT") skipped** — no actual content behind it.
+
+No prompts to paste this round — this batch was a security incident breakdown
+with shell commands (reproduced in the skill).
+
+A thirty-third addition came from a 10-image zip (@finitopotatoes "Graph
+Engineering explained simply"). A second zip (`1d57f97c`) contained an exact
+byte-for-byte duplicate of this batch (all 10 filenames with identical MD5
+hashes) — skipped entirely; only the first zip processed.
+
+- **New — `agent-graph-engineering` skill**: covers the Nodes/Edges/State
+  model for multi-agent systems (Nodes = specialized workers; Edges = hand-off
+  rules; State = shared notebook), why single-agent loops fail on real work
+  (compounding context, repeated mistakes, no parallelism, unbounded token
+  burn), and three actionable design rules: (1) draw the graph before you
+  build it, (2) never let the same agent check its own work — always a
+  separate verifier, (3) add hard stops and budgets (max steps, token/cost
+  cap, clear success condition). Includes a zero-code manual starting method
+  (run each node as a separate Claude chat, merge in a reviewer chat — "that's
+  a graph, manual version first") and cross-references to `night-shift-workflow`,
+  `web-task-scoping`, and the `multi-agent-orchestrator` agent. Checked against
+  existing `claude-code-tooling` skill — that covers *which platforms to pick*
+  (Dify, Flowise, CrewAI, AutoGen, etc.); this skill covers *how to design
+  the graph* regardless of platform. Distinct; no overlap.
+- **Lead magnet ("Comment GRAPH for the free starter checklist") skipped** —
+  no actual content behind it.
+
+No prompts to paste this round — the graph engineering batch was a conceptual
+framework carousel, not AI prompts.
+
 Drop this repo into a Claude Code project (or point `.claude/skills` at it) to make these available.
 
 ## Plugins
