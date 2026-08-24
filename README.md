@@ -1585,3 +1585,170 @@ Standard operating procedures live in `docs/procedures/`:
   Sources, Rules, Actions, Approval) plus a system readiness check to run
   before scheduling any autonomous/unattended Claude workflow. Backs the
   `night-shift-workflow` skill.
+
+---
+
+**37th addition** (`83ad5cc1-iCloud_Photos.zip`, 130 images, August 2026)
+— Batch covers accounts including @jessiekimbooks, @aigenesis.official,
+@claude.with.christelle, and others spanning prompt frameworks, writing
+guides, job-application systems, and local-AI tools. Four new skills were
+created; no new GitHub repos were installed (two candidates were confirmed
+duplicates of existing README entries).
+
+New skills created:
+
+- **`claude-prompt-frameworks`** — eight acronym-based frameworks for
+  structuring AI requests: CLARITY, SOCRATES, ANTICIPATE, PARTNER, TRUST,
+  RIPPLE, CATCH, and MAGIC. Each letter maps to a component of a complete
+  prompt (Context, Look & Feel, Ask, Rules, etc.). Includes a quick-selection
+  guide mapping use cases (quick one-off, creative work, complex research,
+  project/campaign) to the best framework.
+
+- **`claude-20-prompts`** — twenty ready-to-use paste-and-go prompts from
+  @aigenesis.official across four categories (Work, Study, Life, Money):
+  Screenshot Audit, Meeting to Actions, Inbox Zero, Doc Interrogation, Build
+  a Skill, Notes to Cheatsheet, Exam Me, Explain 3 Ways, Feynman Check,
+  Study Plan, Hard Conversation, Trip Planner, Meal Plan, Habit Debug,
+  Decision Coach, Contract Traps, Negotiation Prep, Offer Compare, Bill
+  Decoder, Side-Income Ideas. Each prompt has bracketed placeholders.
+
+- **`claude-writing-prompts`** — four writing prompts for book authors from
+  @jessiekimbooks "Claude, Uncomplicated": (1) find the real problem via
+  Reddit/review mining before outlining; (2) structure chapters so each one
+  changes a belief; (3) extract voice from 500 words then write Chapter 1;
+  (4) show what to cut rather than improve.
+
+- **`job-application-5-prompts`** — five-prompt job application system from
+  @claude.with.christelle, engineered to tailor a resume to a specific job
+  in under 45 minutes: Job Description Decoder → Resume Audit → Bullet
+  Rewrite → Cover Letter → Interview Prep. Distinct from the existing
+  `resume-prompt-kit` skill (which is a general resume builder); this one
+  is purpose-built for job-specific tailoring with their exact language.
+
+Repos identified in this batch (not previously in README):
+
+- [`Zackriya-Solutions/meetily`](https://github.com/Zackriya-Solutions/meetily)
+  (29k★, MIT, Rust) — privacy-first local AI meeting assistant; transcribes
+  with Parakeet/Whisper, summarizes via Ollama — no data leaves the machine
+- [`ItzCrazyKns/Vane`](https://github.com/ItzCrazyKns/Vane) (36k★, MIT) —
+  local AI-powered search/answering engine via Ollama with cited sources;
+  open-source Perplexity alternative
+- `mcp-explorer` (pip install, Apache-2.0, ~109★, by Simon Willison) — CLI
+  to inspect and audit any MCP server's exposed tools without a full client
+  setup; `pip install mcp-explorer && mcp-explorer <server>`
+
+Paste-ready prompts from this batch:
+
+**From `claude-prompt-frameworks` (8 acronym frameworks):**
+
+CLARITY — C: Context · L: Look & Feel · A: Ask · R: Rules · I: Input ·
+T: Target · Y: You (role)
+
+SOCRATES — S: Situation · O: Objective · C: Constraints · R: Role ·
+A: Action · T: Thinking · E: Evaluation · S: Summary
+
+ANTICIPATE — A: Audience · N: Need · T: Task · I: Information ·
+C: Constraints · I: Illustrate · P: Plan · A: Ask · T: Test · E: Enhance
+
+PARTNER — P: Purpose · A: Audience · R: Research · T: Think · N: Narrow ·
+E: Execute · R: Review
+
+TRUST — T: Task · R: Reason · U: Understand · S: Structure · T: Tailor
+
+RIPPLE — R: Role · I: Input · P: Process · P: Points · L: Layout ·
+E: Evaluate
+
+CATCH — C: Context · A: Aim · T: Tone · C: Criteria · H: Help
+
+MAGIC — M: Motivation · A: Audience · G: Goal · I: Input · C: Create
+
+**From `claude-writing-prompts` (book authors, @jessiekimbooks):**
+
+1. Before outlining — "Research what people say about [topic] on Reddit and in
+   reviews. Give me the 10 complaints that repeat most — in their words."
+
+2. Structure — "Build an outline where each chapter changes one belief. Then
+   cut the chapters that don't earn their place."
+
+3. Voice — "Extract the rules of my voice from these 500 words. Then write
+   Chapter 1 following them."
+
+4. Editing — "Don't improve this chapter. Show me what to cut."
+
+**From `claude-20-prompts` (Work/Study/Life/Money, @aigenesis.official):**
+
+*Work:*
+- Screenshot Audit — "Paste a dashboard screenshot: what is wrong with this
+  and what would you fix?"
+- Meeting to Actions — "Turn this call transcript into decisions, owners and
+  deadlines: [PASTE]"
+- Inbox Zero — "Sort my inbox into reply, delegate, ignore and draft the
+  replies: [PASTE]"
+- Doc Interrogation — "Answer only from this document: what does it claim and
+  quietly avoid: [PASTE]"
+- Build a Skill — "Turn this repeated task into a reusable skill I fire with
+  one command."
+
+*Study:*
+- Notes to Cheatsheet — "Turn these 40 pages into a one-page cheat sheet: [PASTE]"
+- Exam Me — "Quiz me on [TOPIC] like a real exam, then grade and explain my misses."
+- Explain 3 Ways — "Explain [CONCEPT] with a metaphor, an example, and a
+  diagram in words."
+- Feynman Check — "I will explain [TOPIC] to you — catch where my
+  understanding is wrong."
+- Study Plan — "Build a 2-week plan to learn [TOPIC] in [HOURS] a day, no filler."
+
+*Life:*
+- Hard Conversation — "Script a hard talk about [SITUATION]: what to open
+  with, what to avoid."
+- Trip Planner — "Plan a [DAYS]-day trip to [PLACE] with real downtime, flag
+  what to book early."
+- Meal Plan — "Plan 5 dinners for [DIET] and give one grocery list by aisle."
+- Habit Debug — "I keep failing to [HABIT] — find the real reason and the
+  smallest fix."
+- Decision Coach — "Ask me the 5 questions that decide [OPTION A] vs [OPTION B]."
+
+*Money:*
+- Contract Traps — "Read this contract and flag every clause that could cost
+  me: [PASTE]"
+- Negotiation Prep — "Prep me to negotiate [DEAL]: my leverage, their BATNA,
+  my walk-away."
+- Offer Compare — "Compare these two job offers on total value, not just
+  salary: [PASTE]"
+- Bill Decoder — "Explain this bill in plain English and what I am actually
+  paying for: [PASTE]"
+- Side-Income Ideas — "Given my skills [X], list 5 realistic ways to earn on
+  the side."
+
+**From `job-application-5-prompts` (job tailoring system, @claude.with.christelle):**
+
+1. Job Description Decoder — "Analyze this job description. Extract the 5
+   most important skills they want. Identify the exact keywords used
+   repeatedly. Tell me what this company actually values — not what they say,
+   but what the repetition reveals."
+
+2. Resume Audit — "Audit this resume against the job description. Where do I
+   have the experience but buried it in wrong words? What is missing? What is
+   irrelevant? Be specific. Be brutal."
+
+3. Bullet Rewrite — "Rewrite every bullet using the exact keywords from the
+   job description. Every bullet must follow this formula: Action verb +
+   Achievement + Number. No responsibilities. No duties. Only accomplishments
+   with numbers. If I gave you no numbers — ask me for them before you write."
+
+4. Cover Letter — "Write me a cover letter for this role. Do not summarize my
+   resume. Instead — tell a story about one specific moment in my career that
+   proves I can do the most important thing this job requires. Open with the
+   story. Use their exact language. Close with one sentence that makes it
+   impossible not to call me."
+
+5. Interview Prep — "Give me the 5 hardest interview questions for this role
+   and for someone with my background. Write a strong model answer for each
+   using the STAR method. Pull from my resume for the specific experiences to
+   reference. Use the company's own language and values in the answers."
+
+### Reviewed and not added (37th batch)
+
+- **`LocalSend`** — already in README (34th addition); skipped.
+- **`ollama/ollama`** — already in README (Local AI / offline LLM runtimes
+  section); skipped.
