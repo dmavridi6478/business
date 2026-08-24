@@ -1939,3 +1939,96 @@ Repo identified:
   with no `SAFETY:` comment explaining what was verified. In a 28-line demo
   of typical agent output, running `npx oxlint` with ten rules on caught 11
   errors — every one of them compiles fine and proves nothing.
+
+---
+
+**41st addition** (`f325b067-iCloud_Photos_1.zip`, 7 images, August 2026)
+— Two separate carousels: (1) an anonymous infographic listing 50 marketing
+use-case one-liners (informational only, no repos or prompts to extract);
+(2) @appmillers "30 Things to Install in Claude" by Elshad Karimov
+(www.appmillers.com), 5-slide categorical breakdown of 30 repo names.
+
+**Caveat on the @appmillers carousel**: all 30 entries are given as short
+"nickname" names only (no GitHub org prefix), and the star counts displayed
+(e.g. 270.7K for "superpowers", 239.4K for "ECC", 168K for "claude-skills")
+are wildly higher than any real repos carry — this is a stylized marketing
+presentation, not a live GitHub snapshot. Items below require manual
+owner/org lookup before installing.
+
+**Duplicate-check against existing README** — already covered, skipped:
+
+| Carousel name | Already in README / skills |
+|---|---|
+| `gstack` | 39th addition (garrytan/gstack) |
+| `karpathy-skills` | 38th addition (andrej-karpathy-skills) |
+| `repomix` | Earlier additions |
+| `firecrawl` | 39th addition |
+| `caveman` | Skills folder |
+| `playwright-mcp` | claude-code-tooling skill |
+| `taste-skill` | 38th addition (Leonxlnx/taste-skill) |
+| `claude-hud` | 36th addition (jarrodwatts/claude-hud) |
+| `claude-code-router` | Plugin table (musistudio/claude-code-router) |
+| `codex-plugin-cc` | Plugin table (openai/codex-plugin-cc) |
+| `best-practice` | 36th addition (shanraisshan/claude-code-best-practice) |
+| `superpowers` | Plugin table (obra/superpowers-marketplace) |
+| `agents` | 40th addition context (wshobson/agents) |
+| `claude-skills` | Plugin table (alirezarezvani/claude-skills, uncertain) |
+
+**New entries identified** (short names only — GitHub org unknown; verify before installing):
+
+*Harness:*
+- `ECC` — described as "tunes the whole harness for speed"; likely an
+  Enhanced/Efficient Claude Code CLAUDE.md variant; no verified repo found
+- `ponytail` — "forces short, one-line replies"; appears to be a
+  response-length constraint CLAUDE.md or skill; no verified repo found
+- `learn-claude-code` — "a tiny harness, built to read"; beginner-oriented
+  CLAUDE.md scaffold; no verified repo found
+
+*Skills:*
+- `ui-ux-pro-max` — "palettes and fonts that just work"; UI/UX design-system
+  skill bundle; no verified repo found
+- `awesome-claude-skills` — "the curated list of every skill"; analogous to
+  [hesreallyhim/awesome-claude-code](https://github.com/hesreallyhim/awesome-claude-code)
+  but skill-focused; no verified repo found (note: `awesome-claude-code` is
+  already in this README)
+- `claude-plugins` — described as "Anthropic's own plugin directory"; likely
+  refers to the official plugin marketplace, which is browsed via
+  `claude plugin marketplace` in an interactive session rather than a
+  standalone repo
+
+*Memory:*
+- `graphify` — "turns a codebase into a map"; graph-based code-understanding
+  tool; no verified repo found
+- `claude-mem` — "keeps context across every session"; persistent memory
+  layer; no verified repo found
+- `codegraph` — "indexes your code, syncs itself"; code-index MCP/skill; no
+  verified repo found
+- `planning-with-files` — "planning that survives a restart"; file-backed
+  planning persistence; no verified repo found
+
+*Tools:*
+- `cc-switch` — "switch models without leaving Claude"; in-session model
+  switcher; no verified repo found
+- `awesome-mcp-servers` — "every MCP server, in one list"; curated MCP
+  catalog; the canonical real-world equivalent is
+  [punkpeye/awesome-mcp-servers](https://github.com/punkpeye/awesome-mcp-servers)
+  (browse-only, not installable itself)
+- `multica` — "one issue, twenty agents"; multi-agent parallelism orchestrator;
+  no verified repo found
+- `github-mcp` — "reads and writes your GitHub"; GitHub MCP server; the
+  verified equivalent is the official
+  [modelcontextprotocol/servers](https://github.com/modelcontextprotocol/servers)
+  GitHub connector, or `@modelcontextprotocol/server-github` via npm
+- `vibe-kanban` — "a board for what your agents do"; agent task-tracking
+  kanban; no verified repo found
+
+*Cost:*
+- `system-prompts-ai` — "the real system prompts, collected"; compiled
+  leak/reverse-engineered system prompts from major AI products; no verified
+  repo found (numerous community collections exist under different names)
+
+No skills, commands, or agents were created from this batch — the carousel
+names lack the org prefixes needed to resolve real install paths, and the
+star-count inflation confirms this is illustrative content rather than a
+verified registry. The 50-marketing-use-cases infographic contained no
+actionable repo or prompt data.
