@@ -2444,3 +2444,29 @@ comparison; @finitopotatoes Claude Code skills series slides (Motion 4/5);
 @entrp0 Gamma tool slide; @zhiprompts creator distribution strategy cover;
 @engeldata local agentic AI system cover; @njugunalucy0 n8n certificate
 workflow steps 7–8/9.
+
+---
+
+### 47th addition — open-source project management, minimalist publishing & finance AI prompts
+
+**Repos cloned / registered:**
+
+- `makeplane/plane` — open-source project management platform: work items, cycles, modules, roadmaps, AI-powered workflows; cloud, self-hosted, and air-gapped ready
+  `git clone https://github.com/makeplane/plane`
+- `WriteFreely/writefreely` — open-source minimalist publishing platform; focused blog readers can visit directly; 5.2k★, Go, 385 forks
+  `git clone https://github.com/WriteFreely/writefreely`
+- `opf/openproject` — open-source project management software: planning, tracking, Gantt charts, agile boards, roadmaps, and team tools
+  `git clone https://github.com/opf/openproject`
+
+**Skills installed:**
+
+- `finance-ai-prompts` — 20 AI prompts for FP&A and accounting professionals: Excel Formulas, Create PPT with AI, Python Analysis, Deep Research, Financial Analysis, Scenario Analysis, Budget Instructions, Set Up Action Plan, Financial Statement Notes, Scenario Modeling, ROI Analysis, Write Email Request, Advanced Modeling, Scenario Planning, Cash Flow Projection, Dunning Process, Cost Reduction, Interview Preparation, Commentaries with AI, Create an SOP.
+
+Most other content in this batch was informational: @iunlockedai Claude Code
+changelog (v2.1.228/229 — hardened skills, Write tool update,
+/commit-push-pr safety); @iunlockedai token cost tip (fewer restarts, smaller
+context = lower usage); @engeldata Lovable→GitHub→Vercel agentic AI workflow
+and local testing tip; @njugunalucy0 n8n certificate automation steps 3–4/9
+(Set data node + IF node); @webnailed DevDocs and JSON Crack (both already in
+README). JSON Crack (AykutSarac/jsoncrack.com) was skipped — already listed
+under `design-dev-resources`.
