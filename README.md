@@ -2514,3 +2514,33 @@ recommendation series (No Priors, Tina Huang, Sabrina Ramonov, Andrei Karpathy,
 SEO tips (Greek content); @sovello.oy SaaS idea concepts (no repos); @aiemergence
 "5 AI Tools to Replace Employees" (Superhuman, Ocoya, Sidekick, Durable, Motion —
 commercial SaaS, no repos to clone).
+
+---
+
+### 49th addition — self-hosted productivity tools and a local-first AI notebook
+
+**Repos cloned / registered:**
+
+**Open-source self-hosted tools (from @replace.so "5 GitHub repos so good they shouldn't be free" carousel):**
+- `Skyvern-AutoGPT/skyvern` — 22.7k★; Apache 2.0; AI browser automation using LLMs and computer vision; navigates websites by understanding their visual layout rather than brittle CSS selectors or XPaths
+  `git clone https://github.com/Skyvern-AutoGPT/skyvern`
+- `alainm23/planify` — 5.6k★; GPL-3.0; open-source GNOME task manager for GNU/Linux; integrates with Todoist and Google Tasks; supports boards, timeline, and scheduling
+  `git clone https://github.com/alainm23/planify`
+- `appsmithorg/appsmith` — 40.6k★; Apache 2.0; open-source low-code platform for building internal dashboards, admin panels, and CRUD apps; connects to any database or API
+  `git clone https://github.com/appsmithorg/appsmith`
+- `usememos/memos` — 62k★; MIT; self-hosted Markdown-native note-taking with a public timeline interface; lightweight, privacy-first, no vendor lock-in
+  `git clone https://github.com/usememos/memos`
+- `chrisvel/tududi` — 3.2k★; self-hosted productivity app combining tasks, projects, CalDAV calendar sync, and Telegram bot integration
+  `git clone https://github.com/chrisvel/tududi`
+
+**Open-source collaboration and note-taking (from additional @replace.so carousels):**
+- `colanode/colanode` — 4.3k★; MIT; local-first open-source alternative to Slack + Notion combined; real-time collaboration without cloud lock-in
+  `git clone https://github.com/colanode/colanode`
+- `blinkospace/blinko` — 10.9k★; MIT; self-hosted AI note-taking app with natural-language search across notes; privacy-first with local storage option
+  `git clone https://github.com/blinkospace/blinko`
+
+**Local-first AI notebook (from @replace.so "6 free Github repos blew up this week" carousel):**
+- `deta/surf` — 3.5k★; open-source; Deta Surf is a local-first AI notebook that brings files and webpages into your stream of thought; organizes sources and generates rich notes using user-selected models
+  `git clone https://github.com/deta/surf`
+
+Most other content in this batch was informational: @felix_builds_ai "5 tools for a $100k business" (Higgsfield, Ubserve, Wispr Flow, Perplexity — commercial SaaS, no repos); @mrsai119 color-palette design tips (8 slides, no repos); @FutureWithAI "Think of Claude Code as Two Dials" (model + effort selection guide — informational); @the.wealth.lab "30 Things to Install in Claude" (plugins/skills/MCPs listed by title only, no GitHub slugs); @appmillers "15 Claude non-negotiables" (skills, connectors, settings recommendations — informational); @AIEMERGENCE "Models I Can Work With On Their Own" (AI model trust-tier rankings — informational). Worklenz was skipped — already in README.
