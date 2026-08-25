@@ -2564,3 +2564,47 @@ Most other content in this batch was informational: @felix_builds_ai "5 tools fo
 - `.claude/skills/humanize-ai-writing-prompts/SKILL.md` — 8 prompts from @the.wealth.lab to strip AI writing patterns and restore a natural human voice
 
 Most other content in this batch was informational: @lunktech Gortex features carousel (slides confirming Gortex MCP/agent integrations); @aigentsofficial "5 Free AI Tools" (Deepsite, Feedough, Google Open, Pinokio, Recraft — only Pinokio is open-source); @gwenleceo "How much does it cost to build a SaaS in 2026?" (Claude Code $100 + Makelead + Hostinger VPS + Stripe + Cloudflare R2 + Supabase ≈ $115/month — informational, all commercial SaaS); @easyclaw6 "10 AI Tools to Build a Business from Scratch in 2026" (Perplexity, ChatGPT/Claude, Framer/Carrd, Canva/Gamma, Notion/Airtable/Zapier — informational, commercial SaaS); @iunlockedai Claude Code v2.1.238 memory leak fix (informational).
+
+---
+
+### 51st addition — privacy/anti-surveillance repos, open-source task manager, AI watermark remover, and two Claude workflow skills
+
+**Privacy & surveillance-pricing repos (from @ty.prompts.ai "5 free repos that hide you from surveillance pricing" carousel):**
+
+- `AdguardTeam/AdGuardHome` — 36k★; network-wide DNS-level ad and tracker blocker; runs as a DNS server on your LAN so every device on the network is protected without per-device configuration; self-hosted, no cloud required
+  `git clone https://github.com/AdguardTeam/AdGuardHome`
+
+- `gorhill/uBlock` — 67k★; uBlock Origin for Chrome and Firefox; efficient, wide-spectrum content blocker; uses less memory than competing blockers; blocks ads, trackers, and malware domains
+  `git clone https://github.com/gorhill/uBlock`
+
+- `mozilla/multi-account-containers` — 3.1k★; Firefox Multi-Account Containers extension; isolates site cookies per container so sites can't track you across tabs; separate identities for work, personal, shopping, social
+  `git clone https://github.com/mozilla/multi-account-containers`
+
+- `arkenfox/user.js` — 13k★; Firefox hardened privacy configuration file; opinionated user.js that locks down browser fingerprinting, telemetry, and tracking; regularly maintained against Firefox changes
+  `git clone https://github.com/arkenfox/user.js`
+
+- `dgtlmoon/changedetection.io` — 33k★; best-in-class website change detection and price monitoring; point it at any product page and get alerted when price, stock, or content changes; self-hosted, no SaaS required
+  `git clone https://github.com/dgtlmoon/changedetection.io`
+
+**AI utility repos (from @will.ai.m "5 repos blowing up on GitHub — August 2026" carousel):**
+
+- `mahlernim/google-timeline-visualizer` — 2,649★; Kotlin; converts your Google Maps location history export into a cinematic travel video with map overlays; local processing, no cloud upload
+  `git clone https://github.com/mahlernim/google-timeline-visualizer`
+
+- `guillaumemeyer/watermarks-remover` — 17,225★; Python; strips hidden AI watermarks embedded by Midjourney, DALL-E, Firefly, and others from generated images; batch-processing CLI
+  `git clone https://github.com/guillaumemeyer/watermarks-remover`
+
+- `vorssaint/vorssaint-utils` — 7,475★; Swift; single macOS menu-bar app that replaces a dozen paid Mac utilities: clipboard manager, window snapping, quick-launch, system stats, focus timer, and more
+  `git clone https://github.com/vorssaint/vorssaint-utils`
+
+**Open-source task manager (from @replace.so "Super Productivity" carousel):**
+
+- `johannesjo/super-productivity` — open-source task manager for timeboxing work, tracking time, building habits, and syncing tasks across devices; offline-first, privacy-first, no cloud account required
+  `git clone https://github.com/johannesjo/super-productivity`
+
+**Skills created:**
+
+- `.claude/skills/build-claude-ai-employee/SKILL.md` — 7-step methodology from @SkillDropAI to build a reusable Claude AI employee: Give It One Job → Add the Inputs → Add the Context → Force the Output → Test and Iterate → Save It As a Skill
+- `.claude/skills/claude-anti-slop-stack/SKILL.md` — 10-rule design system from @futurewithai.dev to stop Claude from inventing generic UI: provide Figma references, feed a real design system, use design tokens, map existing components, build a feedback loop
+
+Most other content in this batch was informational: @SkillDropAI "Build Your First Claude AI Employee" slides 2/7, 3/7, 5/7 (Give It One Job, Add The Inputs, Force the Output — captured in skill above); @wellx.tech "10 Rules to Ship Safe Apps" rule 06 "Cap the Blast Radius" (set usage caps and billing alerts on hosting, database, email, maps, and AI APIs — captured in skill); @futurewithai.dev "Claude Anti-Slop Stack" slides 04–07 (captured in skill above); @automatedigital email sorting workflow (Gmail Trigger → n8n → Claude → Gmail Labels — step-by-step n8n tutorial, no repo); @automatedigital multi-platform video repurposing workflow (YouTube → n8n → Claude → Buffer → LinkedIn — tutorial); @askyourdigitalagency "7 prompts to design a logo with Claude" (intro + promo slides only, actual prompts not visible); @lior "AI business ideas" (AI Small-Biz Lawyer, Reno Estimator, AI Agent Staffing, Self-Running Store — editorial); @emmadroid "Railway" deployment platform (commercial SaaS, no clone); @witonic2 "Obsidian" and "Mobbin" (commercial/no clone); @starterstory 10-step SaaS launch checklist (editorial); @AIEMERGENCE "5 Free AI Tools" (Deepsite, Feedough, Google Open, Pinokio, Recraft — Pinokio already in README, others are commercial SaaS); `harry0703/MoneyPrinterTurbo`, `deepseek-ai/deepseek-harness`, `cocktailpeanut/pinokio` — all already in README, skipped.
