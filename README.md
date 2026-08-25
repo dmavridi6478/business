@@ -2608,3 +2608,78 @@ Most other content in this batch was informational: @lunktech Gortex features ca
 - `.claude/skills/claude-anti-slop-stack/SKILL.md` — 10-rule design system from @futurewithai.dev to stop Claude from inventing generic UI: provide Figma references, feed a real design system, use design tokens, map existing components, build a feedback loop
 
 Most other content in this batch was informational: @SkillDropAI "Build Your First Claude AI Employee" slides 2/7, 3/7, 5/7 (Give It One Job, Add The Inputs, Force the Output — captured in skill above); @wellx.tech "10 Rules to Ship Safe Apps" rule 06 "Cap the Blast Radius" (set usage caps and billing alerts on hosting, database, email, maps, and AI APIs — captured in skill); @futurewithai.dev "Claude Anti-Slop Stack" slides 04–07 (captured in skill above); @automatedigital email sorting workflow (Gmail Trigger → n8n → Claude → Gmail Labels — step-by-step n8n tutorial, no repo); @automatedigital multi-platform video repurposing workflow (YouTube → n8n → Claude → Buffer → LinkedIn — tutorial); @askyourdigitalagency "7 prompts to design a logo with Claude" (intro + promo slides only, actual prompts not visible); @lior "AI business ideas" (AI Small-Biz Lawyer, Reno Estimator, AI Agent Staffing, Self-Running Store — editorial); @emmadroid "Railway" deployment platform (commercial SaaS, no clone); @witonic2 "Obsidian" and "Mobbin" (commercial/no clone); @starterstory 10-step SaaS launch checklist (editorial); @AIEMERGENCE "5 Free AI Tools" (Deepsite, Feedough, Google Open, Pinokio, Recraft — Pinokio already in README, others are commercial SaaS); `harry0703/MoneyPrinterTurbo`, `deepseek-ai/deepseek-harness`, `cocktailpeanut/pinokio` — all already in README, skipped.
+
+---
+
+### 52nd addition — open-source tool alternatives, Claude Code workspace, self-training AI model, and three prompt skills
+
+**Open-source tool alternatives spotted across this batch (primarily @emmadroid "Paid vs Free" carousel and others):**
+
+- **Vikunja** (vikunja.io) — free open-source Todoist alternative; kanban + list + table views; CalDAV/CardDAV sync; self-hosted or cloud
+  Install: `docker run -d -p 3456:3456 vikunja/vikunja`
+
+- **Dyad** — local open-source AI app builder; 20k★; builds full-stack apps locally without sending code to the cloud
+  `git clone https://github.com/dyad-sh/dyad`
+
+- **Chatwoot** — open-source customer support chat platform; self-hosted alternative to Intercom/Zendesk; multi-channel inbox
+  `git clone https://github.com/chatwoot/chatwoot`
+
+- **Quests** — open-source desktop app builder driven by LLMs; describe what you want in plain English, get a native app
+  `git clone https://github.com/0-don/quests`
+
+- **`yt-dlp/yt-dlp`** (182k★) — download videos from YouTube, TikTok, Twitter/X, Instagram, and 1,800+ other sites; actively maintained fork of youtube-dl
+  Install: `pip install yt-dlp` or `brew install yt-dlp`
+
+- **`jamiepine/voicebox`** (49.1k★) — open-source AI voice studio; record, clone, and generate voices locally; no subscription
+  `git clone https://github.com/jamiepine/voicebox`
+
+- **Kuku** (kuku.mom) — local-first macOS Markdown workspace; keeps notes on-device, no sync fees
+  Download from kuku.mom
+
+- **`unclecode/crawl4ai`** (76.1k★) — open-source LLM-friendly web crawler; returns clean structured Markdown from any URL; drop-in for scraping steps in agent pipelines
+  Install: `pip install crawl4ai`
+
+- **Bitwarden** — open-source 1Password alternative; self-hosted or cloud; free tier covers unlimited passwords across devices
+  `git clone https://github.com/bitwarden/server` or download from bitwarden.com
+
+- **`LibreTranslate/LibreTranslate`** — self-hosted open-source machine translation API; free DeepL alternative; runs on-device with no API costs
+  `git clone https://github.com/LibreTranslate/LibreTranslate`
+
+- **Baserow** — open-source Airtable alternative; no-code database and spreadsheet UI; self-hosted for $0
+  `git clone https://github.com/bram2w/baserow`
+
+- **Nextcloud** — open-source Dropbox/Google Drive alternative; file sync + calendar + contacts + video calls; self-hosted on any server
+  `git clone https://github.com/nextcloud/server`
+
+**Claude Code skills and tooling (from @trailofbits, @mattpocock, @microsoft, @melibuilds.io carousels):**
+
+- **`trailofbits/skills`** (6.4k★) — Trail of Bits Claude Code skills collection; security-focused skills for code auditing, exploit research, and hardening
+  `git clone https://github.com/trailofbits/skills`
+
+- **`mattpocock/skills`** (203k★) — "Skills for Real Engineers" Claude Code skill collection from Matt Pocock (TypeScript guru); TypeScript, testing, and engineering workflow skills
+  `git clone https://github.com/mattpocock/skills`
+
+- **`microsoft/SkillOpt`** (15.6k★) — Microsoft research tool for skills that self-optimize for LLM agents; automatically improves skill prompts based on observed task performance
+  `git clone https://github.com/microsoft/SkillOpt`
+
+- **`pbakaus/impeccable`** (55.1k★) — already in README (51st addition); the design language that kills AI slop with 60 detectors
+
+**Open-source AI coding agents and workspaces:**
+
+- **Frontman** (frontman.ai) — open-source browser-based AI coding agent; runs entirely in the browser; no local install required
+  Available at frontman.ai
+
+- **Nimbalyst** — open-source integrated visual workspace for Claude Code and Codex; orchestrates parallel AI coding sessions, streams agent edits into editors, manages local projects, worktrees, and files; free for individuals
+  Download at nimbalyst.com (Apple Silicon Mac / Intel Mac / Windows / Linux)
+
+**Self-training open-source AI model:**
+
+- **Ornith-1.5** (@aigenesis.official) — 1.5GB open-source AI model that trains itself on increasingly difficult coding tasks; generates its own tools and task scaffolds; learns from successful and failed attempts; available in 9B, 35B, and 397B variants; designed to improve coding and agentic performance through self-training
+
+**Skills created:**
+
+- `.claude/skills/ai-video-prompts-viral/SKILL.md` — 5 viral AI video prompts from @productester11 (Before/After Morph, City Hyperlapse, Found-Footage Walk, Dreamy Loop, Unexpected Job Swap) — copy-paste ready for Sora, Veo, and Kling
+- `.claude/skills/overwhelm-to-action-prompts/SKILL.md` — 6 productivity prompts from @the21.i: Empty Your Brain, Plan the Week, Just Tell Me What to Do Next, Find What AI Can Do For Me, Turn Notes Into Action, Find the Bottleneck
+- `.claude/skills/perplexity-research-workflow/SKILL.md` — 3 Perplexity + Claude research workflows from @earchoe: Research-to-Content, Client Research Before a Pitch, Competitor Analysis + Positioning Gap
+
+Most other content in this batch was informational: @buildwithmuj "Local AI hardware tiers" (Strix Halo mini PC $2K, RTX 4090/5090 $1.6-5K, DGX Spark/Mac Studio $4.7-10K, H100/H200 clusters $250-400K — informational); @melibuilds.io "10 GitHub repositories that will change your life" (title + impeccable slides; impeccable already in README); @mydlytracker "Writing Automations 15-21" (Transcript to Article, Meeting Notes to Draft, Long Post to Thread, SEO Refresh, Proofreading Pass, FAQ Generator, Old Content Updater — informational); @clicksandranks "3 apps behind my 6 figure business" (title slide only, no apps visible); @replace.so "5 open-source website builders" + Crystal/Nimbalyst carousel (Nimbalyst captured above); @easyclaw6 "AI Chatbots" + commentary slides (ChatGPT/Gemini/Claude — informational); @emmadroid "Paid vs Free" carousel (Notes: Notion vs Obsidian; Cloud: Dropbox vs Nextcloud; Databases: Airtable vs Baserow; Forms: Typeform vs Google Forms; Tasks: Todoist vs Vikunja — open-source alternatives captured above, commercial tools informational); @dk.mindset15 FoundersDB.net promo (1,500+ real founder case studies at foundersdb.net — commercial service, no repo); @imma.uiux COMMANDS.md Claude Code orchestration slide (informational, part of ongoing carousel); @productester11 slide 1/7 title and 5/7 Dreamy Loop (captured in skill above); @the21.i slides 03/08 Plan the Week and 06/08 Turn Notes Into Action (captured in skill above).
