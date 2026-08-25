@@ -2260,3 +2260,146 @@ Ideas (informational); @aisimplified23 Claude Functions Cheat Sheet
   Builder Sonnet → QA Gate 95/100); Step 8 Autopilot (Claude Routines as cron);
   Step 9 Scale & deploy (document, parameterise, onboard, harden, package).
   Stored at `.claude/skills/build-ai-agent-10-minutes/SKILL.md`.
+
+---
+
+**45th addition** (`57efd9a4-_____________.zip`, 55 images, August 2026)
+— Batch spans accounts including @zhiprompts, @dupodev, @ai_slacker,
+@webnailed, @replace.so, @ty.prompts.ai, @iunlockedai, @51ultron,
+@finitopotatoes, @njugunalucy0, @codez_dev, @engeldata, and @entrp0.
+Two new skills were created and six new repos were identified (all
+checked against the existing README — zero duplicates):
+
+**New skills created:**
+
+- **`claude-marketing-8-frameworks`** — eight acronym-based marketing
+  prompt frameworks: ANGLE (Audience/Need/Gap/Language/Edge — positioning),
+  CLAIM (Context/Lure/Ache/Impact/Motion — offer/conversion copy), FLOW
+  (Focus/Line/Offer/Warmth — content narrative), RAMP (Reach/Angle/
+  Milestones/Push — campaign planning), KNOW (Known/Needs/Obstacles/Wants —
+  buyer psychology), VALUE (Vehicle/Audience/Length/Upside/Evidence —
+  content strategy), VOICE (Values/Overtone/Inclusions/Cuts/Examples —
+  brand voice), PATH (Problem/Action/Trust/Hand-off — sales sequences).
+  Each framework ships as a fill-in-the-bracket prompt. Includes a
+  quick-selection guide and a full-brief chaining sequence
+  (KNOW → ANGLE → CLAIM → PATH → FLOW → RAMP). Stored at
+  `.claude/skills/claude-marketing-8-frameworks/SKILL.md`.
+
+- **`ai-slacker-premortem`** — two adversarial premortem prompts from
+  @ai_slacker: "The Adversary" (play the competitor who benefits most
+  from your plan failing — where they'd attack, what they'd do the week
+  you launch, the move you'd never see coming) and "The Verdict" (from
+  the failure list, name the Most Likely vs Most Dangerous failure and
+  explain why they differ, then surface the single hidden assumption
+  that could be fatal). Packaged as a full 3-step sequence: generate
+  failure modes → run The Adversary → run The Verdict. Stored at
+  `.claude/skills/ai-slacker-premortem/SKILL.md`.
+
+**Repos identified in this batch (not previously in README):**
+
+- **[`composio-dev/composio`](https://github.com/composio-dev/composio)**
+  — Tooling platform connecting AI agents and LLMs to 1,000+ tools and
+  MCP servers via a single integration layer; manages auth, retries, and
+  tool discovery. Actively maintained.
+
+- **[`mastodon/mastodon`](https://github.com/mastodon/mastodon)**
+  (50k★, Ruby) — The official Mastodon server. Self-hosted federated
+  microblogging platform (ActivityPub); a real alternative to X/Twitter
+  for community-owned social.
+
+- **[`discourse/discourse`](https://github.com/discourse/discourse)**
+  (48k★, 9.0k forks, Ruby) — Open-source discussion platform. Use when
+  discussion, searchable answers, and moderation justify a dedicated
+  forum rather than a Slack/Discord community.
+
+- **[`directus/directus`](https://github.com/directus/directus)**
+  (37k★, TypeScript) — Open data platform and headless CMS. Wraps any
+  SQL database with a real-time API and a no-code app for managing
+  content and assets across channels.
+
+- **[`InternLM/InternLM`](https://github.com/InternLM/InternLM)**
+  (7.3k★, Apache 2.0) — InternLM series of LLMs from Shanghai AI Lab;
+  strong multilingual (Chinese/English) reasoning. Open-weights, self-
+  hostable via Ollama or LocalAI.
+
+- **[`btcpayserver/btcpayserver`](https://github.com/btcpayserver/btcpayserver)**
+  (7.7k★, C#, MIT) — Self-hosted, open-source Bitcoin payment processor.
+  Accepts BTC and Lightning Network payments with no third-party
+  dependency, no fees, no KYC.
+
+**Tools/references (no install, documented for completeness):**
+
+- **Worklenz** (worklenz.com) — Open-source project management platform
+  (tasks, time tracking, resource management, client portal). Likely
+  `Worklenz/worklenz` on GitHub — verify before cloning.
+- **Aceternity UI** (ui.aceternity.com) — React component library with
+  premium animated/glassmorphic UI components.
+- **unDraw** (undraw.co) — Free MIT-licensed SVG illustration library,
+  color-customizable via URL parameter.
+- **Glassmorphism generator** — CSS glassmorphism/frosted-glass effect
+  generator; several at `ui.glass/generator` and similar.
+- **JSON Crack** (jsoncrack.com) — Visualizes JSON/YAML/CSV/XML/TOML as
+  interactive graphs; free web tool.
+- **DevDocs** (devdocs.io) — Unified offline-capable docs browser
+  aggregating documentation for 100+ languages and frameworks.
+- **Plasmic** — Open-source visual page builder and CMS; design in a
+  Figma-like canvas and output React/HTML. Core is open-source.
+- **FFMPEG pipeline for content** (@finitopotatoes Claude Code Skill
+  5/5) — Claude Code scripting the full FFmpeg pipeline: resize video
+  for TikTok/Reels/Shorts (9:16), Instagram (1:1), and YouTube (16:9);
+  burn captions; cut clips; export clean. Best for repurposing demos,
+  podcasts, and clips.
+
+Paste-ready prompts from this batch:
+
+**8 Claude Marketing Frameworks (now in `claude-marketing-8-frameworks`):**
+
+**ANGLE — Positioning & Differentiation**
+> Audience: [who you're speaking to] / Need: [core problem or desire] / Gap: [what the market misses] / Language: [words and tone they use] / Edge: [your unique differentiator]
+> "Using this ANGLE framework, write a positioning statement and tagline for [product/brand]."
+
+**CLAIM — Offer & Conversion Copy**
+> Context: [situation the reader is in] / Lure: [hook or promise] / Ache: [painful problem] / Impact: [transformation after your offer] / Motion: [call to action]
+> "Using this CLAIM framework, write [landing page headline + subhead / email subject + opener / ad copy] for [product/service]."
+
+**FLOW — Content & Narrative Structure**
+> Focus: [single idea] / Line: [opening hook] / Offer: [value or next step] / Warmth: [human/emotional tone]
+> "Using this FLOW framework, write a [LinkedIn post / email / short-form video script] about [topic]."
+
+**RAMP — Campaign & Growth Planning**
+> Reach: [channels and audiences] / Angle: [campaign concept] / Milestones: [3–4 checkpoints] / Push: [amplification tactics]
+> "Using this RAMP framework, build a [30-day / 90-day] campaign plan for [product/launch/event]."
+
+**KNOW — Audience Research & Messaging**
+> Known: [what audience already believes] / Needs: [functional requirements] / Obstacles: [what stops them buying] / Wants: [emotional desires]
+> "Using this KNOW framework, map the full buyer psychology for [target customer] and rewrite [headline / email / sales page] to speak directly to it."
+
+**VALUE — Content Strategy & Proof**
+> Vehicle: [content format] / Audience: [who will see this] / Length: [word count or duration] / Upside: [main benefit] / Evidence: [proof points]
+> "Using this VALUE framework, outline and draft a [content piece] about [topic] for [platform]."
+
+**VOICE — Brand Voice & Style Guide**
+> Values: [2–3 core brand values] / Overtone: [emotional register] / Inclusions: [words/phrases to use] / Cuts: [words/tones to avoid] / Examples: [1–2 correct examples]
+> "Using this VOICE framework, define the brand voice for [brand/product] and rewrite [sample text] in that voice."
+
+**PATH — Sales & Nurture Sequences**
+> Problem: [specific problem prospect is stuck on] / Action: [first small action] / Trust: [how you demonstrate credibility] / Hand-off: [natural next step]
+> "Using this PATH framework, write a [3-email / 5-email] nurture sequence for [product/service] starting from [entry point]."
+
+**@ai_slacker Premortem Prompts (now in `ai-slacker-premortem`):**
+
+**Generate failure modes first:**
+> "Assume my plan has failed completely — 12 months from now, it did not work. List the 7 most likely reasons it failed, ranked by probability. For each: one sentence on what went wrong and one sentence on the early warning sign I should have caught. My plan: [paste your plan here]"
+
+**The Adversary:**
+> "Now play the person who benefits most from my plan failing. A competitor, a rival, someone who wants my spot. You've seen my plan. Tell me exactly where you'd attack it, what you'd do the week I launch, and the move I'd never see coming."
+
+**The Verdict:**
+> "From those 7 failures, tell me which is MOST LIKELY and which is MOST DANGEROUS, and explain why they're different. Then name the single biggest hidden assumption I'm making that I don't realise is an assumption. Be blunt. If my plan has a fatal flaw, say the words."
+
+Most other content in this batch was informational: Claude Code version notes
+(@iunlockedai — fork-mode default in v2.1.232, Tool Drops 34/35, security
+fix), dashboard UI showcases (@codez_dev), n8n certificate-automation
+workflow finale (@njugunalucy0 slide 9/9), Chinese LLM comparison
+(@engeldata — Qwen model selection), Perplexity-as-research-tool tips
+(@entrp0), and Anthropic product/course announcements.
