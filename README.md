@@ -2544,3 +2544,23 @@ commercial SaaS, no repos to clone).
   `git clone https://github.com/deta/surf`
 
 Most other content in this batch was informational: @felix_builds_ai "5 tools for a $100k business" (Higgsfield, Ubserve, Wispr Flow, Perplexity — commercial SaaS, no repos); @mrsai119 color-palette design tips (8 slides, no repos); @FutureWithAI "Think of Claude Code as Two Dials" (model + effort selection guide — informational); @the.wealth.lab "30 Things to Install in Claude" (plugins/skills/MCPs listed by title only, no GitHub slugs); @appmillers "15 Claude non-negotiables" (skills, connectors, settings recommendations — informational); @AIEMERGENCE "Models I Can Work With On Their Own" (AI model trust-tier rankings — informational). Worklenz was skipped — already in README.
+
+---
+
+### 50th addition — local code intelligence graph and 1-click AI model runner; two prompt skills
+
+**Repos cloned / registered:**
+
+- `zzet/gortex` — 824★; Apache-2.0; Go; local code intelligence that converts a codebase into a queryable graph, reducing AI agent token usage by up to 50×; exposes 100+ MCP tools; parses 257 languages; single static binary, no network calls, supports Claude Code, Cursor, Copilot, Windsurf, Cline, Aider, and 12+ more
+  Install: `curl -fsSL https://get.gortex.dev | sh`
+  Usage: `gortex install && gortex daemon start --detach && gortex track ~/projects/myapp`
+
+- `cocktailpeanut/pinokio` — "The 1-Click Localhost Cloud"; open-source browser that lets you install and run any open-source AI model locally with one click; no API costs, no cloud; supports Stable Diffusion, LLaMA, Whisper, and hundreds of community scripts
+  `git clone https://github.com/cocktailpeanut/pinokio`
+
+**Skills created:**
+
+- `.claude/skills/brandarmor-coding-workflow/SKILL.md` — 4-step AI coding workflow from @brandarmor.ai (Plan/Attack/Build/Verify using two independent sessions so the builder never approves its own work)
+- `.claude/skills/humanize-ai-writing-prompts/SKILL.md` — 8 prompts from @the.wealth.lab to strip AI writing patterns and restore a natural human voice
+
+Most other content in this batch was informational: @lunktech Gortex features carousel (slides confirming Gortex MCP/agent integrations); @aigentsofficial "5 Free AI Tools" (Deepsite, Feedough, Google Open, Pinokio, Recraft — only Pinokio is open-source); @gwenleceo "How much does it cost to build a SaaS in 2026?" (Claude Code $100 + Makelead + Hostinger VPS + Stripe + Cloudflare R2 + Supabase ≈ $115/month — informational, all commercial SaaS); @easyclaw6 "10 AI Tools to Build a Business from Scratch in 2026" (Perplexity, ChatGPT/Claude, Framer/Carrd, Canva/Gamma, Notion/Airtable/Zapier — informational, commercial SaaS); @iunlockedai Claude Code v2.1.238 memory leak fix (informational).
