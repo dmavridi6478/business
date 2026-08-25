@@ -2403,3 +2403,44 @@ fix), dashboard UI showcases (@codez_dev), n8n certificate-automation
 workflow finale (@njugunalucy0 slide 9/9), Chinese LLM comparison
 (@engeldata — Qwen model selection), Perplexity-as-research-tool tips
 (@entrp0), and Anthropic product/course announcements.
+
+---
+
+### 46th addition — local LLMs, open-source business tools & complete premortem skill
+
+**Repos cloned / registered:**
+
+**Local LLMs (from @ty.prompts.ai carousel, slides 2–5):**
+- `QwenLM/Qwen3` — Alibaba's Qwen3 family: 27B and 35B-A3B sizes, also Qwen3.5 line down to 0.8B; Apache 2.0; 3.8k★
+  `git clone https://github.com/QwenLM/Qwen3`
+- `deepseek-ai/DeepSeek-R1` — MIT; 92k★, 12k forks; distilled versions: 1.5B, 7B, 8B, 14B (gaming GPU), 32B
+  `git clone https://github.com/deepseek-ai/DeepSeek-R1`
+- `OpenBMB/MiniCPM-V` — 26k★; multimodal (image + video) pocket LLM; 1.3B params deploys on iOS/Android/HarmonyOS
+  `git clone https://github.com/OpenBMB/MiniCPM-V`
+- `OpenBMB/MiniCPM` — 10k★; Apache 2.0; SOTA 1B on-device text LLM
+  `git clone https://github.com/OpenBMB/MiniCPM`
+
+**Open-source business tools (from @replace.so "6 free GitHub repos" carousel):**
+- `Brightbean-studio` — self-hostable social-media platform: compose, schedule, publish, approve, analyse across 10+ networks; "Free Forever"
+  `git clone https://github.com/Brightbean-studio/Brightbean-studio`
+- `Talivia` — self-hosted revenue analytics: web tracking, session replay, payment integrations, first/last-touch attribution
+  `git clone https://github.com/talivia-analytics/talivia`
+- `Note-gen` — local-first, cross-platform (Windows/macOS/Linux/Android/iOS) Markdown notes + AI organisation; "Capture first, organise later"; 12.6k★
+  `git clone https://github.com/codexu/note-gen`
+- `Leantime` — open-source project management for the non-project manager; built with ADHD and neurodivergence in mind; behavioural-science + AI
+  `git clone https://github.com/Leantime/leantime`
+- `Ever-gauzy` — open business-management platform: ERP, CRM, HRM, ATS, PM in one self-hosted suite
+  `git clone https://github.com/ever-co/ever-gauzy`
+- `APITable` — open-source collaborative database-spreadsheet: structured workspaces, forms, dashboards, automations, low-code apps; 10k★
+  `git clone https://github.com/apitable/apitable`
+
+**Skills updated / installed:**
+
+- `ai-slacker-premortem` — **updated** with the complete 5-prompt sequence (Slide 1: The Premortem Prompt / forensic failure analyst; Slide 2: The Verdict / most-likely vs most-dangerous + hidden assumption; Slide 3: The Rebuild / rewrite with failures closed + pre-launch checklist; Slide 4: The Adversary / competitor attack angle; Slide 5: The Tripwire / measurable signals by week). Previous install had only Slides 2 and 4.
+
+Most other content in this batch was informational: @iunlockedai Claude Code
+token-cost breakdown (4-type pricing, cache-read math) and fork-vs-subagent
+comparison; @finitopotatoes Claude Code skills series slides (Motion 4/5);
+@entrp0 Gamma tool slide; @zhiprompts creator distribution strategy cover;
+@engeldata local agentic AI system cover; @njugunalucy0 n8n certificate
+workflow steps 7–8/9.
