@@ -2697,3 +2697,126 @@ Batch of 3 images reviewed. Duplicate check run against README and existing skil
 - **"How to Build a LinkedIn Presence and Not Get Lost in the Noise?"** — 15-day course outline (Day 1–15 topic titles) — already noted in the 28th batch as informational-only (curriculum titles with no per-day content shown); its topics are already covered by `.claude/skills/linkedin-virality-playbook/` and `.claude/skills/inbound-content-playbook/`. Skipped.
 
 No new repos, skills, commands, or tools installed this batch. No copy-paste prompts — the batch contained frameworks and course outlines, not AI prompts.
+
+---
+
+### 54th addition — Claude Code skill repos, dev/QA tools, and two prompt skills
+
+**Batch:** 93 images from iCloud Photos (`a26ae912-iCloud_Photos.zip`). 22 repos identified; all checked against existing README — zero duplicates. Two new skills created from prompt content.
+
+**Claude Code skill repos (installable with `npx skills add`):**
+
+- **`lmbad0202/academic-research-skills`** (43k★, 3k forks) — Academic Research Skills for Claude Code; covers literature review, citation management, hypothesis formation, and research methodology
+  `npx skills add lmbad0202/academic-research-skills`
+
+- **`emilkowalski/skills`** (32k★, 2k forks) — Skills for Designers and Engineers from Emil Kowalski; covers component design, animation, and engineering workflow
+  `npx skills add emilkowalski/skills`
+
+- **`phuryn/pm-skills`** (26k★) — Product Management skills for Claude Code; PRD writing, roadmapping, stakeholder communication, sprint planning
+  `npx skills add phuryn/pm-skills`
+
+- **`cathrynlavery/diagram-design`** (26k★) — Diagram and visual design skills for Claude Code
+  `npx skills add cathrynlavery/diagram-design`
+
+- **`virgiliojr94/book-to-skill`** (24k★, 3k forks) — Converts a book's key insights into a Claude Code skill; structured methodology for extracting and packaging book knowledge
+  `npx skills add virgiliojr94/book-to-skill`
+
+- **`mukul975/Anthropic-Cybersecurity-Skills`** (31k★, 4k forks) — Cybersecurity skills for Claude Code; threat modeling, penetration testing methodology, vulnerability assessment
+  `npx skills add mukul975/Anthropic-Cybersecurity-Skills`
+
+- **`msitarzewski/agency-agents`** (125k★, 20.2k forks, MIT) — 200+ specialist subagents for running an AI agency; client communication, project management, content creation, and technical delivery roles
+  `npx skills add msitarzewski/agency-agents`
+
+- **`browser-use/video-use`** (13.5k★, 1.7k forks, MIT) — Edit videos with coding agents; ships a SKILL.md; companion to the `browser-use` browser automation framework; video editing via natural language instructions
+  `npx skills add browser-use/video-use`
+
+**Codebase knowledge graph:**
+
+- **`safishamsi/graphify`** (75.6k★, 7.5k forks, MIT) — Turns any repository into a queryable knowledge graph for Claude Code, Codex, and Cursor; agents navigate the graph for context rather than reading every file; overlaps in goal with the existing `zzet/gortex` (50th batch, batch 50) — compare before installing both
+  `git clone https://github.com/safishamsi/graphify`
+
+**Self-hosted personal AI assistant:**
+
+- **`leon-ai/leon`** (17k★) — Open-source self-hosted personal AI assistant; server/client architecture; modular skill system; runs locally with no API costs
+  `git clone https://github.com/leon-ai/leon`
+
+**Collaborative AI agent workspace:**
+
+- **Sim** (simstudio.ai, 29.4k★) — Open-source collaborative workspace for building and running AI agent workflows; visual pipeline builder; supports Claude, GPT-4, and local models; available at simstudio.ai
+
+**Desktop RPA (Windows):**
+
+- **Astron-rpa** (5.8k★) — Open-source desktop RPA for Windows; automates repetitive UI tasks at the OS level without browser limitations
+  `git clone https://github.com/Astron-rpa/Astron`
+
+**Multi-agent orchestration:**
+
+- **ORCA** (from @lunktech) — Manages and runs multiple coding agents in parallel; referenced alongside `manaflow-ai/cmux` (batch 34); no GitHub slug captured — check @lunktech's profile for the current repo path
+
+**Workflow orchestration engine:**
+
+- **`conductor-oss/conductor`** (32.1k★, Apache-2.0) — Netflix's open-source workflow orchestration engine; runs multi-step workflows as code with retry, timeout, and branching; language-agnostic; complements the visual-pipeline tools (Dify/Flowise/Langflow) already in `claude-code-tooling`
+  `npm install -g @conductor-oss/conductor-cli`
+
+**Developer tooling and UI frameworks:**
+
+- **`ChromeDevTools/chrome-devtools-mcp`** (44.9k★, Apache-2.0) — Official Chrome DevTools MCP server; exposes the DevTools Protocol as MCP tools for debugging, performance profiling, and DOM inspection from within an agent session; requires Chrome/Chromium running locally; add via `claude mcp add` per the repo README
+
+- **Arwes** (7.5k★) — Science-fiction UI design system and React framework; animated, cosmic-themed components for futuristic interfaces; complements `ui-motion-design` for stylized/branded builds
+  `npm i @arwes/react`
+
+**Validation and QA tools:**
+
+- **Nu Html Checker (`validator/validator`)** — Official W3C HTML/CSS/SVG validator; batch-validates HTML files locally without a network roundtrip to validator.w3.org; download `vnu.jar` from validator.github.io
+  `java -jar vnu.jar index.html` (or `--format json` for machine-readable output)
+
+- **`argos-ci/argos`** — Open-source visual regression testing; captures and compares screenshots across deploys; integrates with CI/CD pipelines; catches layout regressions the unit tests miss
+  `npm i @argos-ci/core`
+
+- **Lychee** — Fast link checker in Rust; validates internal and external links in Markdown and HTML; a CI step before publishing to catch broken URLs
+  `lychee README.md public/**/*.html` (install: `cargo install lychee`)
+
+- **sitespeed.io** — Open-source Web Vitals and performance testing suite; measures TTFB, render time, and Core Web Vitals against real or synthetic traffic; complements `seo-audit-skill`
+  `sitespeed.io https://site -n 5` (install: `npm install -g sitespeed.io`)
+
+- **ZAP by Checkmarx** (Apache-2.0) — Open-source DAST security scanner; automated web application security testing in CI/CD; pairs with `npm-supply-chain-security` for a defense-in-depth QA pipeline
+  `zap-baseline.py -t https://site` (install per checkmarx.github.io/zaproxy)
+
+**Speech recognition:**
+
+- **OpenWhisper (`openai/whisper`)** — Open-source speech recognition model from OpenAI; runs locally; converts audio to text across 99 languages; no API costs, no data leaves the machine; complements `ai-voice-tools` (batch 35) for transcription use cases
+  `pip install openai-whisper`
+
+**Skills created:**
+
+- **`weekly-planning-workflow`** — 4-step (of a 7-step series) structured weekly planning methodology: (1) connect Google Calendar and verify read access before prompting; (2) brain-dump every deadline and half-finished item in one messy paragraph — the mess is the input; (3) ask Claude to ask you questions before planning anything — energy, hard deadlines, what cannot move; (4) request calendar blocks with specific start/finish times and buffers. Steps 5–7 were not visible in the batch.
+
+- **`/clarify-first` command** — from the "6 Claude Formulas" infographic (Formula 4): `I want [task] to [goal]. Ask me questions with AskUserQuestion first.` A lightweight pre-prompt that forces clarification before any output; pairs with `/plan-then-answer` and the `claude-clean-audit-prompts` three-layer audit pattern.
+
+**Reviewed and not added (confirmed duplicates against existing README):**
+
+- `D4Vinci/Scrapling` — already in batch 34; skipped
+- `Skyvern-AutoGPT/skyvern` — already in batch 49; skipped
+- `MadsLorentzen/ai-job-search` — already in batch 34 "reviewed and not added" section; skipped
+- `Panniantong/Agent-Reach` — already in batch 34; skipped
+- ElevenLabs references — already covered in `ai-voice-tools` (batch 35); skipped
+
+**Note on repo verification:** All repos above were seen in batch screenshots but not independently web-verified during this session (same approach as batches 34, 51, 52). Star counts are as shown in screenshots; actual counts may differ. `npx skills add` commands are the standard install path for Claude Code skill repos but will fail silently if the repo doesn't exist or isn't structured as a skills package — run `npx skills add --dry-run` first when uncertain.
+
+Paste-ready prompts from this batch are below.
+
+---
+
+**Weekly planning with Claude (4 of 7 steps, from batch 54):**
+
+> Step 1: Connect Google Calendar and verify you can see my events for this week before I give you any planning prompt.
+
+> Step 2: Here is everything I'm carrying this week: [brain dump — one long paragraph, every deadline and half-finished thing, no organizing yet]
+
+> Step 3: Before you make any plan, ask me questions. I need you to surface my energy levels for each day, any hard deadlines that cannot move, and what is optional vs. required.
+
+> Step 4: Now give me a calendar plan with specific start and finish times for each block, and at least 15 minutes of buffer between blocks.
+
+**"6 Claude Formulas" — Formula 4:**
+
+> I want [task] to [goal]. Ask me questions with AskUserQuestion on first.
