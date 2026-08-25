@@ -2470,3 +2470,47 @@ and local testing tip; @njugunalucy0 n8n certificate automation steps 3–4/9
 (Set data node + IF node); @webnailed DevDocs and JSON Crack (both already in
 README). JSON Crack (AykutSarac/jsoncrack.com) was skipped — already listed
 under `design-dev-resources`.
+
+---
+
+### 48th addition — offline-resilience tools, AI video production repos, personal development & Claude prompt shortcuts
+
+**Repos cloned / registered:**
+
+**Offline Resilience (from @ty.prompts.ai "offline tools" carousel):**
+- `Crosstalk-Solutions/project-nomad` — 36k★; peer-to-peer offline knowledge server; works without internet
+  `git clone https://github.com/Crosstalk-Solutions/project-nomad`
+- `markqvist/Reticulum` — 7k★; cryptographic networking stack designed for no-internet/mesh environments; works over radio, LoRa, serial links
+  `git clone https://github.com/markqvist/Reticulum`
+- `off-grid-ai/OGAM` — 3k★; MIT; offline AI assistant manager; run LLMs entirely without internet
+  `git clone https://github.com/off-grid-ai/OGAM`
+- `kylecorry31/Trail-Sense` — 2.8k★; Android app for offline navigation and survival tools; GPS, compass, weather, tides — no data connection needed
+  `git clone https://github.com/kylecorry31/Trail-Sense`
+- `DSheirer/sdrtrunk` — 2.2k★; cross-platform Java app for decoding, monitoring, recording, and streaming trunked radio protocols via Software Defined Radio (SDR); works when towers and wifi are gone
+  `git clone https://github.com/DSheirer/sdrtrunk`
+
+**AI Video Production (from @ty.prompts.ai "AI video repos" carousel):**
+- `HKUDS/ViMax` — 12k★; MIT; agentic video generation — runs director, screenwriter, producer, and generator as one agent; has a research paper behind it
+  `git clone https://github.com/HKUDS/ViMax`
+- `HBAI-Ltd/Toonflow-app` — 14k★; Apache 2.0; AI animated drama maker; one-click character-consistent story video generation
+  `git clone https://github.com/HBAI-Ltd/Toonflow-app`
+- `Forget-C/Jellyfish` — 6k★; end-to-end production workspace for AI-generated short dramas; centrally manages character, scene, prop, and costume consistency to prevent drift between shots
+  `git clone https://github.com/Forget-C/Jellyfish`
+- `MemeCalculate/moyin-creator` — 4.3k★; AI film production pipeline — script → character → scene → director, all feeding into Seedance 2.0 (the model behind TikTok's free AI video generator); no manual handoff between steps
+  `git clone https://github.com/MemeCalculate/moyin-creator`
+- `tin2tin/Pallaidium` — 1.5k★; generative AI video, image, and audio directly inside Blender's Video Sequence Editor; local production without leaving Blender
+  `git clone https://github.com/tin2tin/Pallaidium`
+
+**Skills installed:**
+
+- `personal-development-prompts` — 11 life-improvement plan prompts from @martiendejong_dev: Focus & Productivity System, 30-Day Skill Accelerator, Social Media Growth Plan, 30-Day Fitness Blueprint, High-Energy Morning Routine, Sleep Reset Plan, Personal Finance Reset, Online Business Launch Plan, Stress Management Plan, Communication Skills Upgrade, Digital Detox Plan.
+- `claude-prompt-shortcuts` — 50 Claude prompt shortcuts from @ti.prompts.ai, organized across 5 categories (Think / Plan / Create / Business / Execute) each with a slash-command format: `/mental model [topic]`, `/negotiate [situation]`, `/story [topic]`, `/prioritize [tasks]`, `/troubleshoot [code]`, and 45 more.
+
+Most other content in this batch was informational: @zoout "8 jobs → 8 specialists"
+carousel (N8N and Langflow already in README; OpenHuman, OpenCode, Qwen, Google
+Stitch, NotebookLM — no repo slugs captured); @sakispapakos Greek channel
+recommendation series (No Priors, Tina Huang, Sabrina Ramonov, Andrei Karpathy,
+3Blue1Brown, Futurepedia, Ben AI — informational); @nswebdesign.gr JSON-LD/Schema
+SEO tips (Greek content); @sovello.oy SaaS idea concepts (no repos); @aiemergence
+"5 AI Tools to Replace Employees" (Superhuman, Ocoya, Sidekick, Durable, Motion —
+commercial SaaS, no repos to clone).
