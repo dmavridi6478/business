@@ -2683,3 +2683,17 @@ Most other content in this batch was informational: @SkillDropAI "Build Your Fir
 - `.claude/skills/perplexity-research-workflow/SKILL.md` — 3 Perplexity + Claude research workflows from @earchoe: Research-to-Content, Client Research Before a Pitch, Competitor Analysis + Positioning Gap
 
 Most other content in this batch was informational: @buildwithmuj "Local AI hardware tiers" (Strix Halo mini PC $2K, RTX 4090/5090 $1.6-5K, DGX Spark/Mac Studio $4.7-10K, H100/H200 clusters $250-400K — informational); @melibuilds.io "10 GitHub repositories that will change your life" (title + impeccable slides; impeccable already in README); @mydlytracker "Writing Automations 15-21" (Transcript to Article, Meeting Notes to Draft, Long Post to Thread, SEO Refresh, Proofreading Pass, FAQ Generator, Old Content Updater — informational); @clicksandranks "3 apps behind my 6 figure business" (title slide only, no apps visible); @replace.so "5 open-source website builders" + Crystal/Nimbalyst carousel (Nimbalyst captured above); @easyclaw6 "AI Chatbots" + commentary slides (ChatGPT/Gemini/Claude — informational); @emmadroid "Paid vs Free" carousel (Notes: Notion vs Obsidian; Cloud: Dropbox vs Nextcloud; Databases: Airtable vs Baserow; Forms: Typeform vs Google Forms; Tasks: Todoist vs Vikunja — open-source alternatives captured above, commercial tools informational); @dk.mindset15 FoundersDB.net promo (1,500+ real founder case studies at foundersdb.net — commercial service, no repo); @imma.uiux COMMANDS.md Claude Code orchestration slide (informational, part of ongoing carousel); @productester11 slide 1/7 title and 5/7 Dreamy Loop (captured in skill above); @the21.i slides 03/08 Plan the Week and 06/08 Turn Notes Into Action (captured in skill above).
+
+---
+
+### 53rd addition — all three images confirmed duplicates, no new installs
+
+Batch of 3 images reviewed. Duplicate check run against README and existing skills before any action taken. All content already covered:
+
+- **"The New SEO Playbook: AEO. GEO. AIO. SXO."** (@TheBestOfAI) — the four-quadrant breakdown (AEO = Answer Engine Optimization, GEO = Generative Engine Optimization, AIO = AI Integration Optimization, SXO = Search Experience Optimization) is already captured in full in `.claude/skills/ai-search-marketing-2026/SKILL.md` (added in an earlier batch, cross-referenced on line 22 of this README). Skipped.
+
+- **"6 Storytelling Frameworks That Help You Lead Inspiringly"** (Kelly Knight) — Pixar's Story Spine, The Golden Circle (Simon Sinek), Duarte's Sparkline, The Hero's Journey (Joseph Campbell), And-But-Therefore (Randy Olson), What/So-What/Now-What — already added in the 28th batch as `references/leadership-storytelling-frameworks.md` inside `.claude/skills/business-decision-frameworks/`. Skipped.
+
+- **"How to Build a LinkedIn Presence and Not Get Lost in the Noise?"** — 15-day course outline (Day 1–15 topic titles) — already noted in the 28th batch as informational-only (curriculum titles with no per-day content shown); its topics are already covered by `.claude/skills/linkedin-virality-playbook/` and `.claude/skills/inbound-content-playbook/`. Skipped.
+
+No new repos, skills, commands, or tools installed this batch. No copy-paste prompts — the batch contained frameworks and course outlines, not AI prompts.
