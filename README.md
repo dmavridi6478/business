@@ -2820,3 +2820,49 @@ Paste-ready prompts from this batch are below.
 **"6 Claude Formulas" — Formula 4:**
 
 > I want [task] to [goal]. Ask me questions with AskUserQuestion on first.
+
+---
+
+### 55th addition — JetroExtension/Jetro, LinkedIn Profile Auditor skill, and AI tools from the 2026 pyramid
+
+**Batch:** 4 images — Marketing Strategy vs Plan infographic (Alec Rickard), The Claude Profile Auditor LinkedIn workflow, Best AI Tools of 2026 pyramid (Anastasiia Shapovalova), B2B vs B2C Marketing comparison (Pierre Herubel). Also: explicit user request to document `JetroExtension/Jetro`.
+
+**New repo:**
+
+- **`JetroExtension/Jetro`** — browser extension; clone per the repo README
+  `git clone https://github.com/JetroExtension/Jetro`
+
+**New tools from the Best AI Tools of 2026 pyramid not previously in README:**
+
+- **Base44** — no-code/AI-assisted app builder; builds functional web apps from a prompt; competes with Lovable and Replit in the vibe-coding space; commercial (base44.com), no open-source repo
+- **Manus AI** — autonomous AI agent for complex multi-step tasks (research, coding, spreadsheet automation); Chinese-developed, accessed via manus.im; no public GitHub repo
+- **Otio AI** — AI reading and research tool; uploads PDFs, URLs, and YouTube videos then chats with the content; replaces manual literature review for research workflows; commercial (otio.com), no open-source repo
+- **Read AI** — AI meeting intelligence: auto-joins calls, generates summaries, transcripts, and action items; integrates with Google Meet, Zoom, Teams; commercial (read.ai), no open-source repo
+- **Softr** — no-code web app builder (client portals, internal tools, member sites) on top of Airtable or Google Sheets; no open-source repo; complements the existing `outreach-automation` and `waitlist-app-builder` skills for lightweight front-ends without code
+
+**Already in README — skipped from pyramid:**
+Claude, ChatGPT, Perplexity, Cursor, Lovable, Replit, HeyGen, Synthesia, Descript, Opus Clip, Beehiiv, Grammarly, NotebookLM, Gamma, Granola, Wispr Flow, ElevenLabs, Suno, Midjourney, Runway, Kling, Pika Labs, Figma, Canva, Google Veo, Higgsfield, Softr (noted above), n8n, Zapier, Lindy AI, Claude Code, Gemini, Notion AI, Apify, Clay
+
+**Skill created:**
+
+- **`linkedin-profile-auditor`** — 4-step Claude Projects setup for auditing LinkedIn profiles section by section. Create a dedicated project named "LinkedIn Profile Audit"; paste the full system prompt (get it by commenting "AUDIT" on the original creator's post) into Project Instructions; upload your voice guide + example audits to Project Knowledge; then introduce yourself in a new chat — Claude asks 3 quick questions (whose profile, audit goal, target audience), then reviews each section: headline, about, experience, featured, skills, positioning, CTA.
+
+**Educational frameworks documented (reference, no tool/repo):**
+
+- **Marketing Strategy vs Marketing Plan** (Alec Rickard) — 11 strategy→tactic pairings: authority content → publish blogs/case studies/whitepapers; high-intent conversions → targeted campaigns optimised weekly; relationship + lead gen → quarterly events; organic visibility → keyword research + on-page SEO; PR → pitch media; customer retention → personalised behavioural email; affiliate/partner distribution → recruit affiliates + provide assets; OKR-aligned marketing → track performance + adjust; influencer reach → partner + track results; personalised comms → targeted direct mail; brand awareness + community → consistent cross-platform content.
+
+- **B2B vs B2C Marketing** (Pierre Herubel) — key differences across audience (businesses + firmographic vs. consumers + demographic), buying cycles (multiple stakeholders + touchpoints vs. single buyer + quick decision), content focus (case studies/thought leadership/webinars vs. UGC/influencer/social), decision drivers (ROI + efficiency + risk mitigation vs. price + emotion + convenience), and success factors (positioning + segmentation + working proof vs. brand identity + storytelling + social proof). Shared foundations: attract/engage/convert, clear value proposition, brand trust, digital channels.
+
+**Paste-ready prompts:**
+
+**LinkedIn Profile Auditor intro:**
+
+> Hi. I'd like to audit a LinkedIn profile. Let's begin.
+
+**Marketing strategy audit (derived from the Strategy vs Plan framework):**
+
+> Map my current marketing activities to the Marketing Strategy vs Plan framework. For each strategic goal I have, identify the tactical execution it maps to and flag any goals with no active tactic, or tactics with no clear strategic goal behind them.
+
+**B2B vs B2C alignment check (derived from the comparison framework):**
+
+> Using the B2B vs B2C marketing framework, analyse my current marketing approach. Am I marketing like a B2B business (ROI-driven, multi-stakeholder, case study content) or a B2C business (emotion-driven, mass appeal, social content)? Where am I misaligned for the buyers I'm actually selling to?
