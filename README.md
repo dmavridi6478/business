@@ -3002,3 +3002,77 @@ Claude, ChatGPT, Perplexity, Cursor, Lovable, Replit, HeyGen, Synthesia, Descrip
 > 18 /teachback — Explain the idea back to me and expose what is still unclear.
 
 **Note on repo verification:** All repos above were seen in batch screenshots. Star counts are as shown in screenshots; actual counts may differ. Install commands are the standard paths for each tool's type but should be verified against the current repo README before use — project names and namespaces occasionally change. `conductor-oss/conductor` (54th batch), `Remotion`, `MoneyPrinterTurbo`, `AI-Shorts-Generator`, and `WhisperX` (seen in this batch's "5 repos that make viral content" slide) are all already covered in earlier additions and were skipped.
+
+---
+
+### 57th addition — 11 open-source repos, 2 commands, and a brand-building skill
+
+**Batch:** 101 images from iCloud Photos (`e2be2e26-iCloud_Photos_4.zip`). 17 repos/tools identified; 6 confirmed duplicates — 11 are new. Two new commands created from @ai.blueprint prompts; one new skill from @martiendejong_dev's 8-prompt brand+website series.
+
+**Duplicate-check (skip):**
+
+| Repo | First documented |
+|---|---|
+| `cline/cline` | 39th addition |
+| `opf/openproject` | 47th addition |
+| `makeplane/plane` | 47th addition |
+| Nimbalyst | 52nd addition |
+| `virgiliojr94/book-to-skill` | 54th addition |
+| `zhaoxuya520/reverse-skill` | 34th addition (listed as `reverse-skill`) |
+
+**New repos and tools:**
+
+**Open-source .NET CMS:**
+
+- **Umbraco** (`umbraco/Umbraco-CMS`) — the leading open-source .NET CMS; flexible headless and traditional content management; MIT
+  `git clone https://github.com/umbraco/Umbraco-CMS`
+
+**AI-native IDEs and agentic development environments (from @replace.so carousel):**
+
+- **Neuralinverse** — open-source AI-native IDE; designed for agentic coding workflows; check @replace.so for current GitHub path
+- **Jat** — open-source self-hosted agentic development environment; check @replace.so for current GitHub path
+
+**DeepSeek-native coding agent:**
+
+- **`esengine/DeepSeek-Reasonix`** (34.3k★) — terminal coding agent built natively on DeepSeek's reasoning model; CLI-native, fast reasoning loop; drop-in for terminal workflows where Claude Code or Codex is used today
+  `git clone https://github.com/esengine/DeepSeek-Reasonix`
+
+**Fast Rust PDF inspection library:**
+
+- **`firecrawl/pdf-inspector`** (15.1k★, MIT, Rust) — fast PDF inspection library from the Firecrawl team; extracts structure, metadata, and text from PDFs at high speed; distinct from `firecrawl/firecrawl` (the web-scraping tool, already in README)
+  `git clone https://github.com/firecrawl/pdf-inspector`
+
+**Open-source desktop console for AI coding agents:**
+
+- **BossConsole (BOSS)** — open-source desktop console for managing and orchestrating AI coding agents (Claude Code, Codex, and others); visual dashboard for agent sessions; check GitHub for current repo path
+
+**RAG for monorepos using knowledge graphs:**
+
+- **`vitali87/code-graph-rag`** (4.1k★) — RAG system for monorepos that builds a knowledge graph of the codebase and answers agent queries through graph traversal; reduces hallucination on large codebases; complements `zzet/gortex` (50th batch) and `safishamsi/graphify` (54th batch) for code-intelligence use cases
+  `git clone https://github.com/vitali87/code-graph-rag`
+
+**Open-source all-in-one business platform:**
+
+- **Huly** (`hcengineering/huly`) — open-source all-in-one business platform that replaces Linear, Jira, Slack, and Notion in a single self-hosted install; project management, issue tracking, team chat, and docs in one place
+  `git clone https://github.com/hcengineering/huly`
+
+**Claude Code skill repos (installable with `npx skills add`):**
+
+- **`addyosmani/agent-skills`** (86.7k★) — production-grade engineering skills for AI coding agents from Addy Osmani; performance engineering, accessibility, code review, and modern web development practices
+  `npx skills add addyosmani/agent-skills`
+
+- **`google/skills`** (18k★, Apache-2.0) — official Google agent skills for Claude Code; Google engineering best practices packaged as Claude Code skills
+  `npx skills add google/skills`
+
+**Give your agent its own computer:**
+
+- **`cloudflare/computer`** (7.9k★, MIT) — Cloudflare's open-source tool for giving AI agents their own isolated computer environment; the agent gets a full browser, filesystem, and shell without touching the user's machine
+  `git clone https://github.com/cloudflare/computer`
+
+**Skills and commands created:**
+
+- **`brand-website-8-prompts`** — 8-prompt sequential workflow from @martiendejong_dev "8 prompts to build brand + website in one afternoon": (1) Lean Brand Consultant — minimum brand elements to go live; (2) Messaging Strategist — one core message readable in 5 seconds; (3) Lean Brand Designer — minimal visual identity (2 colors, 1 font pair, 1 logo concept in 15 minutes); (4) Lean Website Strategist — conversion-focused one-page structure with headline, proof, CTA; (5) Credibility Consultant — strongest authentic proof available today, no invented credibility; (6) Lean Copywriter — complete website copy, headline through CTA, publish-ready; (7) Launch Coordinator — go-live checklist, flags only critical blockers; (8) Growth Consultant — 2-week post-launch iteration plan on real signals. Stored at `.claude/skills/brand-website-8-prompts/SKILL.md`.
+
+- **`/pressure-test-idea`** — @ai.blueprint Step 1: skeptical-advisor pressure test for a new business idea — 5 most likely failure reasons and what proof would be needed before believing the idea can work. Distinct from the existing `/pressure-test-options` (which compares two named alternatives) — this one stress-tests a described idea cold.
+
+- **`/daily-brief`** — @ai.blueprint Step 8: 5-bullet morning brief from priorities file and CRM notes — top 3 priorities, most urgent follow-up, and one thing that's probably being forgotten. For use with a connected CRM or project-management connector (Notion, Linear, HubSpot, etc.).
