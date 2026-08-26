@@ -3076,3 +3076,58 @@ Claude, ChatGPT, Perplexity, Cursor, Lovable, Replit, HeyGen, Synthesia, Descrip
 - **`/pressure-test-idea`** — @ai.blueprint Step 1: skeptical-advisor pressure test for a new business idea — 5 most likely failure reasons and what proof would be needed before believing the idea can work. Distinct from the existing `/pressure-test-options` (which compares two named alternatives) — this one stress-tests a described idea cold.
 
 - **`/daily-brief`** — @ai.blueprint Step 8: 5-bullet morning brief from priorities file and CRM notes — top 3 priorities, most urgent follow-up, and one thing that's probably being forgotten. For use with a connected CRM or project-management connector (Notion, Linear, HubSpot, etc.).
+
+### 58th addition — 11 open-source repos, 0 new commands
+
+**Batch:** 70 images from iCloud Photos (`dc1830a5-iCloud_Photos_5.zip`). Five carousels identified with actionable repos. All @earchoe LinkedIn prompts (profile rewrite, post writer, outreach DM) already covered by existing commands — no new commands created.
+
+**Duplicate-check (skip):**
+
+| Repo / Tool | First documented |
+|---|---|
+| `twentyhq/twenty` | 29th addition |
+| Dyad | 55th addition |
+| Chatwoot | 53rd addition |
+| Nextcloud | 46th addition |
+| ORCA (multi-agent coding workspace) | 34th addition |
+
+**New repos and tools:**
+
+**Self-hosted homelab stack — @networkllama "How to start a homelab from zero" (8-step guide):**
+
+- **Proxmox VE** — open-source bare-metal hypervisor; runs VMs and LXC containers on any old PC or mini PC; the foundation of most homelabs
+  `https://www.proxmox.com/en/proxmox-virtual-environment`
+
+- **Pi-hole** (`pi-hole/pi-hole`) — network-level ad and tracker blocker; runs on your LAN, blocks ads for every device without installing anything on them
+  `git clone https://github.com/pi-hole/pi-hole`
+
+- **Jellyfin** (`jellyfin/jellyfin`) — free open-source media server; turns your movie and show collection into a private Netflix — stream to phone, TV, or laptop with no subscription or algorithm
+  `git clone https://github.com/jellyfin/jellyfin`
+
+- **Home Assistant** (`home-assistant/core`) — open-source smart home hub; connects all smart devices into one local hub you control; automations run locally, not in the cloud; works offline
+  `git clone https://github.com/home-assistant/core`
+
+- **Portainer** (`portainer/portainer`) — Docker and Kubernetes container management UI; manage all containers visually from a browser dashboard
+  `git clone https://github.com/portainer/portainer`
+
+- **Nginx Proxy Manager** (`NginxProxyManager/nginx-proxy-manager`) — reverse proxy with a GUI; assign one clean URL per homelab service, with automatic SSL; no manual nginx config
+  `git clone https://github.com/NginxProxyManager/nginx-proxy-manager`
+
+**Open-source SaaS replacements — @quadri_folo carousel:**
+
+- **Webstudio** (`webstudio-is/webstudio`) — open-source alternative to Webflow; visual website builder with full source-code access and self-hosting; no vendor lock-in
+  `git clone https://github.com/webstudio-is/webstudio`
+
+- **OpenSign** (`OpenSignLabs/OpenSign`) — free open-source alternative to DocuSign; send documents for e-signature, create reusable templates, multiple signers, audit trails; self-host your documents
+  `git clone https://github.com/OpenSignLabs/OpenSign`
+
+- **Dokploy** (`Dokploy/dokploy`) — open-source alternative to Vercel, Netlify, and Heroku; deploy and manage web apps, Docker containers, PostgreSQL, Redis, and multiple servers; includes SSL, monitoring, backups, and GitHub deployments
+  `git clone https://github.com/Dokploy/dokploy`
+
+- **Rybbit** (`rybbit-io/rybbit`) — privacy-friendly open-source alternative to Google Analytics; self-hostable, no cookies, GDPR-compliant; replaces GA without the tracking overhead
+  `git clone https://github.com/rybbit-io/rybbit`
+
+- **Paperless-ngx** (`paperless-ngx/paperless-ngx`) — open-source document management system; scan, index, and archive physical documents into a searchable digital library; self-hosted
+  `git clone https://github.com/paperless-ngx/paperless-ngx`
+
+Most other content in this batch was informational: @risenworks MCP configuration tips (MAX_MCP_OUTPUT_TOKENS=50000, ENABLE_TOOL_SEARCH=auto:5, timeout settings — informational); @aicareersuite "150 AI Agent Ideas for Local Businesses" across 10 industries (restaurants, salons, gyms, real estate, clinics, retail — informational); @toolradar8 carousel covering Perplexity, NotebookLM, and ElevenLabs (SaaS tools, no repos); @webnailed "7 security concepts every backend needs" (SQL injection, password hashing, rate limiting, JWT, input validation, webhook signature — educational); @inkaai Claude PDF tips (3,000 tokens/page; convert to Markdown to reduce token cost — informational); @earchoe LinkedIn client system (9-slide carousel on using LinkedIn to attract clients — prompts already covered by existing commands); @aiemergence Google Jitro (autonomous coding agent, goal-driven AI — informational/news).
