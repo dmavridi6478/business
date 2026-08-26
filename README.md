@@ -3131,3 +3131,37 @@ Claude, ChatGPT, Perplexity, Cursor, Lovable, Replit, HeyGen, Synthesia, Descrip
   `git clone https://github.com/paperless-ngx/paperless-ngx`
 
 Most other content in this batch was informational: @risenworks MCP configuration tips (MAX_MCP_OUTPUT_TOKENS=50000, ENABLE_TOOL_SEARCH=auto:5, timeout settings — informational); @aicareersuite "150 AI Agent Ideas for Local Businesses" across 10 industries (restaurants, salons, gyms, real estate, clinics, retail — informational); @toolradar8 carousel covering Perplexity, NotebookLM, and ElevenLabs (SaaS tools, no repos); @webnailed "7 security concepts every backend needs" (SQL injection, password hashing, rate limiting, JWT, input validation, webhook signature — educational); @inkaai Claude PDF tips (3,000 tokens/page; convert to Markdown to reduce token cost — informational); @earchoe LinkedIn client system (9-slide carousel on using LinkedIn to attract clients — prompts already covered by existing commands); @aiemergence Google Jitro (autonomous coding agent, goal-driven AI — informational/news).
+
+### 59th addition — 3 open-source repos, 0 new commands
+
+**Batch:** 6 TikTok videos (`f5a2ed33-____________.zip`). Frames extracted and analyzed across all 6 videos.
+
+**Duplicate-check (skip):**
+
+| Repo / Tool | First documented |
+|---|---|
+| OpenAI Codex | `codex-plugin-cc` plugin table + multiple entries |
+| `MadsLorentzen/AI-JOB-SEARCH` | 34th addition "reviewed and not added" |
+| Karpathy Skills (`forrestchang/andrej-karpathy-skills`) | 38th addition |
+| `makeplane/plane` | 47th addition |
+| `thedotmack/claude-mem` | Already documented (persistent memory for Claude Code) |
+
+**New repos and tools:**
+
+**Trending AI coding agents and dev tools — @simplec03 "Top 5 Trending Repos" + @github.signals:**
+
+- **graff** (`justrach/codegraff`) — AI coding agent that actually does the work rather than just chatting about it; install via single binary (3.7MB, zero dependencies, built in Zig), sign in with your existing AI subscription, give it plain-English tasks; writes and runs code, automates boring work, digs through files, researches the web, and runs its own experiments on its own until the job is done; can spin up a whole team of sub-agents working in parallel; works on your real terminal with your real files and the real internet; 20× cheaper than Claude Code per-task ($0.022 vs $0.51 per task per benchmark); also has a desktop app
+  `curl -fsSL https://github.com/justrach/codegraff/releases/latest/download/install.sh | sh`
+
+- **FREE-CLAUDE-CODE** (`Alishahryar-one/FREE-CLAUDE-CODE`) — Python tool for accessing Claude Code without a paid subscription; #1 trending repo (GitHub) at time of video recording
+  `git clone https://github.com/Alishahryar-one/FREE-CLAUDE-CODE`
+
+**Free developer resources — @nate.volkov "Free API Goldmine":**
+
+- **public-apis** (`public-apis/public-apis`) — massive curated list of free public APIs for developers and builders; organized by category (weather, finance, aviation, search, files, screenshots, forex, email validation, and hundreds more); the go-to resource when you need an API for a project and don't want to pay
+  `git clone https://github.com/public-apis/public-apis`
+
+**Informational / educational (no repos added):**
+- @codenameposhan: Claude Code + CrewAI multi-agent orchestration tutorial — Orchestrator delegates to Researcher, Writer, Reviewer sub-agents; no new installable repo shown
+- @justhitsend (Ep 231 — file access): Always start Claude Code inside the project folder (not ~/Desktop); run `pwd` first to check, then `cd` into the project; use `/permissions` to block secrets — educational tip, no new repo
+- @jake.joker.crypto (5 Claude Code plugins): Overview of MCP plugins (Slack, Notion visible in setup screen); covered free-tier LLM token budget dashboard (Kiro: 50 credits, Qoder: unlimited, LongCat: 50M/day, Cerebras: 1M/day, NVIDIA: 40 rpm, Pollinations: no key) — the main featured repo `thedotmack/claude-mem` is already documented
