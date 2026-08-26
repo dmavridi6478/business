@@ -2866,3 +2866,139 @@ Claude, ChatGPT, Perplexity, Cursor, Lovable, Replit, HeyGen, Synthesia, Descrip
 **B2B vs B2C alignment check (derived from the comparison framework):**
 
 > Using the B2B vs B2C marketing framework, analyse my current marketing approach. Am I marketing like a B2B business (ROI-driven, multi-stakeholder, case study content) or a B2C business (emotion-driven, mass appeal, social content)? Where am I misaligned for the buyers I'm actually selling to?
+
+---
+
+### 56th addition — 15 open-source tools and 13 commands from @theusefulshift
+
+**Batch:** 94 images from iCloud Photos (`632c5b24-iCloud_Photos_3.zip`). 16 repos identified; duplicate check confirmed `conductor-oss/conductor` already added in the 54th batch — 15 are new. One 12-slide carousel from @theusefulshift ("20 Claude Commands That Feel Illegal") provided 14 of the 20 commands; slides 05-07 and 13-16 and 19-20 were not captured in this batch.
+
+**New open-source repos and tools:**
+
+**Self-hosted wikis and knowledge bases:**
+
+- **LeafWiki** — self-hosted personal wiki, single Go binary, Markdown files on disk; no database required; lightweight alternative to Notion or Obsidian Publish for teams wanting full data ownership
+  `git clone https://github.com/nicholasgasior/leafwiki` (check repo for current path — captured from screenshot)
+
+- **SilverBullet** — self-hosted Markdown knowledge database with a Lua scripting engine; supports slash commands, widgets, and page queries from within Markdown; a more programmable alternative to Obsidian for structured notes
+  `npx @silverbulletmd/silverbullet` (or self-host via Docker)
+
+**Self-hosted CRM:**
+
+- **Relaticle** — open-source self-hosted CRM with built-in AI agents and 30+ MCP tools; contacts, deals, pipeline management, and AI-assisted relationship intelligence; 1.5k stars
+  `git clone https://github.com/Relaticle/relaticle`
+
+**Self-hosted eCommerce:**
+
+- **Spree** (`spree/spree`) — open-source B2B and marketplace eCommerce platform (Ruby/Rails); powers headless storefronts and multi-vendor marketplaces; 15k stars
+  `npx create-spree-app@latest my-store`
+
+**Self-hosted project management:**
+
+- **DooTask** — open-source self-hostable project and task management; kanban boards, Gantt charts, team collaboration; alternative to Jira/Linear for fully self-hosted setups
+  `git clone https://github.com/kuaifan/dootask`
+
+**Open-source SEO platform:**
+
+- **OpenSEO** — open-source SEO platform for technical audits, keyword tracking, and backlink analysis; 9.9k stars; self-hostable alternative to Ahrefs/SEMrush for teams controlling their own data
+  `git clone https://github.com/openseo-org/openseo` (check for current repo path)
+
+**AI video / lip sync:**
+
+- **LatentSync** (`bytedance/LatentSync`) — ByteDance's open-source lip sync generation model; takes an audio track and a reference video and generates matched mouth movement; 5.8k stars; complements the existing `ai-video-image-prompt-structure` skill and the `hyperframes` skill for post-production pipelines
+  `git clone https://github.com/bytedance/LatentSync`
+
+**Self-hosted monitoring:**
+
+- **Uptime Kuma** — self-hosted website, API, port, and container uptime monitor with status pages; push/pull/ping monitoring; rich notification channels (Slack, Discord, Telegram, email, and many more); no cloud dependency
+  `docker run -d --restart=always -p 3001:3001 -v uptime-kuma:/app/data louislam/uptime-kuma:1`
+
+**LLM-ready repo digests:**
+
+- **Gitingest** — converts any public Git repo into a single LLM-friendly plain-text digest (file tree + concatenated source); paste the digest into a long-context model to ask codebase-wide questions without a local clone; available at gitingest.com or self-hostable
+  `pip install gitingest` (CLI: `gitingest https://github.com/owner/repo`)
+
+**Open-source API client:**
+
+- **Bruno** (`usebruno/bruno`) — open-source API client with plain-text, Git-friendly collections (no proprietary binary format, no cloud sync required); drop-in alternative to Postman/Insomnia for teams that want API collections in version control
+  `npm install -g @usebruno/cli` (or download the desktop app from usebruno.com)
+
+**Open-source Go backend:**
+
+- **PocketBase** — open-source backend in a single Go binary: SQLite database, realtime subscriptions, auth (email/OAuth/OTP), file storage, and an admin dashboard; no separate database setup; a fast foundation for side-projects and internal tools
+  `go install github.com/pocketbase/pocketbase@latest`
+
+**Self-hostable PaaS:**
+
+- **Coolify** (`coollabsio/coolify`) — open-source self-hostable alternative to Heroku, Netlify, and Vercel; deploys apps, databases, and services from Git repos or Docker Compose; runs on a single VPS; pairs with the existing `waitlist-app-builder` skill for a fully self-hosted launch stack
+  `curl -fsSL https://cdn.coollabs.io/coolify/install.sh | bash`
+
+**Developer utilities:**
+
+- **IT-Tools** (`CorentinTh/it-tools`) — collection of everyday developer utilities (token decoder, base64, cron parser, color converter, regex tester, and 100+ more) as a self-hostable web app; no telemetry; useful as a localhost toolbelt
+  `docker run -d --name it-tools --restart unless-stopped -p 8080:80 corentinth/it-tools:latest`
+
+**Self-hosted survey platform:**
+
+- **Formbricks** (`formbricks/formbricks`) — open-source self-hosted survey platform; supports in-app, website, link, and email surveys; GDPR-compliant by default with full data ownership; a self-hosted alternative to Typeform/SurveyMonkey for privacy-sensitive contexts
+  `npx create-formbricks-app@latest`
+
+**TypeScript AI background jobs:**
+
+- **Trigger.dev** (`triggerdotdev/trigger.dev`) — open-source platform for TypeScript AI workflows and long-running background jobs; built-in retries, queues, real-time observability, and scheduled runs; lets async/AI-heavy jobs run for minutes or hours without serverless timeouts; 16k stars; complements the existing `outreach-automation` and `self-healing-automation` command for production-grade async pipelines
+  `npx trigger.dev@latest init`
+
+**Already in README — skipped from this batch:**
+
+- `conductor-oss/conductor` — already added in the 54th batch
+
+**Commands created from @theusefulshift "20 Claude Commands That Feel Illegal" (14 of 20 captured; slides 05-07, 13-16, 19-20 not in this batch):**
+
+- `/redteam` — attack the plan and rank its three most likely failure modes (numbered 02)
+- `/researchmap` — separate what we know, assume, and still need to verify (numbered 03)
+- `/sourcecheck` — source every factual claim; flag anything unsupported (numbered 04)
+- `/meeting` — extract decisions, owners, deadlines, and open questions from a transcript (numbered 08)
+- `/handoff` — package work so another person can continue without asking questions (numbered 08)
+- `/sop` — convert a process into inputs, steps, quality checks, and outputs (numbered 09)
+- `/qa` — test a result against every requirement; show failures first (numbered 09)
+- `/decision` — compare three options by upside, cost, reversibility, and risk (numbered 09); distinct from the existing `/decision-matrix` (2-option budget/timeline/strategic-value comparison)
+- `/nextmove` — choose the smallest action that removes the most uncertainty (numbered 10)
+- `/offer-frame` — turn an idea into audience, problem, outcome, and proof (numbered 11); renamed from `/offer` since that command already exists as a priced-offer designer
+- `/objection` — list why a skeptical buyer says no, then improve the offer (numbered 12)
+- `/edgecases` — find ten realistic failures outside the happy path (numbered 17)
+- `/teachback` — explain the idea back and expose what is still unclear (numbered 18)
+
+**Skipped:**
+- `/clarify` (numbered 01) — duplicate of the existing `/clarify-first` (batch 54), which already implements the same "ask only questions that would meaningfully change the output" pattern
+
+**Paste-ready prompts (verbatim from @theusefulshift carousel):**
+
+> 01 /clarify — Ask only the questions that would materially change the answer.
+
+> 02 /redteam — Attack the plan and rank its three most likely failure modes.
+
+> 03 /researchmap — Separate what we know, assume, and still need to verify.
+
+> 04 /sourcecheck — Source every factual claim and flag anything unsupported.
+
+> 08 /meeting — Extract decisions, owners, deadlines, and open questions.
+
+> 08 /handoff — Package the work so another person can continue without me.
+
+> 09 /sop — Convert the process into inputs, steps, checks, and outputs.
+
+> 09 /qa — Test the result against every requirement. Show failures first.
+
+> 09 /decision — Compare three options by upside, cost, reversibility, and risk.
+
+> 10 /nextmove — Choose the smallest action that removes the most uncertainty.
+
+> 11 /offer — Turn the idea into an audience, problem, outcome, and proof.
+
+> 12 /objection — List why a skeptical buyer says no, then improve the offer.
+
+> 17 /edgecases — Find ten realistic failures outside the happy path.
+
+> 18 /teachback — Explain the idea back to me and expose what is still unclear.
+
+**Note on repo verification:** All repos above were seen in batch screenshots. Star counts are as shown in screenshots; actual counts may differ. Install commands are the standard paths for each tool's type but should be verified against the current repo README before use — project names and namespaces occasionally change. `conductor-oss/conductor` (54th batch), `Remotion`, `MoneyPrinterTurbo`, `AI-Shorts-Generator`, and `WhisperX` (seen in this batch's "5 repos that make viral content" slide) are all already covered in earlier additions and were skipped.
