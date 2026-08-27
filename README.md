@@ -3414,3 +3414,37 @@ Paste-ready prompts from this batch:
 **Welcome Email (@earchoe):**
 
 > Write the welcome email for my new subscriber. Lead magnet they downloaded: [name] What they wanted when they signed up: [their goal] What my email list is about: [what I send regularly] My name and what I do: [brief intro] Email format: - Subject: make it personal, not promotional - Line 1: acknowledge what they just downloaded - Para 1: what they can expect from my emails - Para 2: one quick tip they can use today (from the magnet) - CTA: reply to this email with [specific question] — so I know what to focus on
+
+### 64th addition — 0 new repos, 1 new command (6 MP4 TikTok videos)
+
+**Batch:** 6 MP4 TikTok videos (`0bfce4fd-____________.zip`). 3 of 6 videos were unreadable (corrupt TikTok downloads with no valid duration). Actionable content extracted from 3 videos via ffmpeg frame extraction at multiple timestamps.
+
+**Sources:**
+- Video 1: @ai.honeycove — Graphly knowledge-graph visualiser + Claude Code security review demo
+- Video 3: @automatedintelligenceai — Apodex 1.1 AI research agent (scientific work)
+- Video 5: @promptbuilder.cc — FORGE, a 110-prompt 6-role marketing team system
+
+**Informational only (no installable repos):**
+
+- **Graphly** — web-based interactive knowledge graph that maps LLM/AI concepts and their relationships; nodes include agent frameworks, knowledge compilation paradigms, coding tools, model releases; communities visible include Claude Code Ecosystem, Agent Self-improvement, Knowledge Compilation, Claude Code Interfaces; web tool, no public GitHub repo identified
+  `https://graphly.ai` (domain inferred from browser bar)
+
+- **Apodex 1.1** — commercial AI research agent demonstrated doing complex scientific work (seawater carbonate system reconstruction, magnesium-alloy nanoindentation analysis); positioned as "frontier-level performance across Professional Work and Scientific Research — matching expert-level quality, leading complex open-ended research tasks"; not a self-hostable repo
+
+**Command created:**
+
+- **`/forge-marketing-team`** — @promptbuilder.cc FORGE system: 6 Claude marketing roles activated by slash command — `/seo` (search & rankings), `/social` (posts & reels), `/ads` (paid traffic), `/content` (copy & offers), `/inbound` (replies & leads), `/analytics` (numbers & decisions). Distilled from the 110-prompt FORGE file (MARKETING 45 prompts, SOCIAL 17, SMALL BUSINESS 31, FINANCE 8). Type `/[role] [task]` to activate a coworker.
+
+**Paste-ready FORGE role activations:**
+
+> /seo [task or URL] — activates SEO specialist for keyword research, on-page audits, content briefs, technical recommendations, SERP analysis
+
+> /social [platform + topic] — activates social strategist for platform-native captions, reel scripts, content calendars, hashtag strategy, content repurposing
+
+> /ads [platform + product/offer] — activates performance marketer for ad copy (Meta/Google/TikTok), audience targeting, A/B variants, landing page critique, budget allocation
+
+> /content [format + product/topic] — activates conversion copywriter for sales pages, email sequences, offer positioning, VSL scripts, SEO blog posts
+
+> /inbound [channel + scenario] — activates inbound specialist for DM reply scripts, comment templates, lead qualification questions, discovery call frameworks, warm-lead follow-ups
+
+> /analytics [platform + question] — activates marketing analyst for KPI dashboards, campaign performance analysis, reporting structure, attribution models, ad manager/GA4 interpretation
