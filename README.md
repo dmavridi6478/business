@@ -3175,3 +3175,47 @@ Most other content in this batch was informational: @risenworks MCP configuratio
 - **`/medtech-brand-strategy`** (`.claude/commands/medtech-brand-strategy.md`) — MedTech 3-Tier Commercial Architecture. Guides brand strategy work in strict top-down sequence: Tier 1 Clinical Brand Strategy (standard-of-care vision, clinical integrity, paradigm positioning, specialty-specific value prop) → Tier 2 Market & Economic Strategy (VAC stakeholder mapping, HEOR dossiers, TCO/DRG models, go-to-market route) → Tier 3 Execution (proctorship programs, KOL masterclasses, CME symposia, commercial marketing). Includes a strategic comparison table contrasting the "Tactical Rep" (feature-first, price-war outcome) vs. "Strategic Portfolio Leader" (brand-first, standard-of-care adoption outcome). Usage: `/medtech-brand-strategy [device or technology name]`
 
 - **`/medtech-salesflow`** (`.claude/commands/medtech-salesflow.md`) — 2026 MedTech 5-Stage SalesFlow Architecture. Built around the 2026 healthcare buyer reality (81% of physicians use AI/LLMs; 90% of hospital decision-makers do ~12 online searches; 68% of searches end in zero-clicks; 90% of addressable buyers are out-of-market). Five stages: (1) Understand — persona journey maps for Surgeon, CFO, OR Director, IT/BioMed, VAC; (2) Amplify — convert 3-day congress into 60-day digital pipeline (pre/during/post); (3) Verify — AI/LLM citation share via Schema.org, LinkedIn long-form, Wikipedia/peer-review indexing; (4) Expand — LinkedIn B2B precision targeting with boolean AND, Thought Leader Ads via KOL surgeons, ICP tiering; (5) Nurture — 24-month persona-segmented automation, quarterly KOL masterclasses, RWE registry engine, trigger-based escalation. Includes pipeline health dashboard KPIs per stage. Usage: `/medtech-salesflow [device or technology name]`
+
+### 61st addition — 0 repos cloned, 1 MCP server documented, 1 skill noted
+
+**Batch:** 4 TikTok videos from `5ed1d53d-_____________2.zip`. Sources: @automatedintelligenceai (Spline AI demo), @bingley.ai (AI sales skills), @ivan.geoffreyy × 2 (AI coder plugins; Claude Code improvements). Frames extracted at 1/4s (61 frames total across v1–v4).
+
+**Video 1 — @automatedintelligenceai — Spline (3D AI design):**
+
+- **Spline** (spline.design) — browser-based 3D design tool with an embedded AI agent mode; the AI agent operates inside the Spline editor, accepting plain-English prompts to build full 3D scenes (castle with drawbridge and towers, voxel characters, floating tropical island, energy production facility with power lines); uses primitives, extrusions, and materials natively; free tier available; SaaS only, no open-source repo to clone
+  Site: https://spline.design
+
+**Video 2 — @bingley.ai — "5 AI Skills Every Salesperson Needs":**
+
+- **Bingley** (bingley.ai) — AI-powered sales intelligence SaaS platform; features shown: (1) Lead Prospecting — AI builds targeted prospect lists by industry/title/geography with enriched contact data; (2) Competitive Intelligence — real-time competitor monitoring, battlecard generation, win/loss pattern analysis; (3) Reply Intelligence — trained on 90M+ email replies, scores cold outreach and suggests subject-line and opening-line improvements; (4) Daily Sales Digest — morning briefing on pipeline health, deal commitments, follow-up priorities with a "commitments tracker" view; (5) "The Sales Brain" — persistent fact store capturing product knowledge, objection responses, and deal context for instant retrieval; SaaS only, no open-source repo
+  Site: https://bingley.ai
+
+**Video 3 — @ivan.geoffreyy — "5 Plugins Every AI Coder Needs":**
+
+- **Playwright** (`microsoft/playwright`) — already documented (see earlier additions); shown here as the browser-testing/automation plugin for AI coders: write E2E tests in natural language, screenshot capture, headless browser control from Claude Code
+- **Context7** (Upstash / context7.com) — MCP server that injects real-time, version-accurate library documentation directly into LLM context; solves the hallucination problem where Claude generates code against outdated API signatures; add `use context7` to any prompt and the server fetches the current docs for whichever library you're working with (React, Next.js, Prisma, LangChain, etc.); maintained by Upstash; **new, not previously documented**
+  Install as Claude Code MCP server:
+  ```
+  claude mcp add context7 -- npx -y @upstash/context7-mcp@latest
+  ```
+  Or add to `.claude/mcp.json`:
+  ```json
+  {
+    "mcpServers": {
+      "context7": {
+        "command": "npx",
+        "args": ["-y", "@upstash/context7-mcp@latest"]
+      }
+    }
+  }
+  ```
+
+**Video 4 — @ivan.geoffreyy — "Claude Code Just Got Better":**
+
+- **Taste Skill** (`Leonxlnx/taste-skill`) — already documented (38th addition); shown here again as the anti-slop frontend framework; install: `npx skills add Leonxlnx/taste-skill`
+- **Guideline Skill** (tasteskill.dev companion) — Claude Code skill that feeds curated UI/UX design references (typography scales, spacing systems, button styles, layout patterns) into Claude's context before generating frontend components; prevents generic/plain output by grounding the AI in a specific visual aesthetic; shown alongside the Taste Skill in the same video, suggesting it is part of the tasteskill.dev ecosystem; the video demonstrated it improving a smoothie app UI and a "Bluebird" security SaaS site from "ui/ux rusty" to polished output; **new, not previously documented** — exact install path at tasteskill.dev/guideline-skill or similar
+  Likely install: `npx skills add Leonxlnx/guideline-skill` *(verify at tasteskill.dev)*
+
+**Informational / already documented:**
+- Chase AI website (localhost:3000) — demo project built live with Claude Code v2.1.70 (Opus 4.6, high-effort mode); shown as proof of output quality; not an installable tool
+- Playwright — already documented; not re-added
