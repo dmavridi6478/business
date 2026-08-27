@@ -3341,3 +3341,76 @@ Paste-ready prompts from this batch:
 **YouTube SEO Optimizer (@earchoe):**
 
 > Help me optimise this YouTube video for search. Video topic: [what the video is about] My channel niche: [your niche] Target viewer: [who searches for this] Give me: 1. 5 title options (keyword-first, under 60 chars, creates curiosity) 2. Video description (first 150 chars are crucial — hook + keyword here) 3. 15 tags (mix of broad and specific keywords) 4. 3 chapter timestamps and names for the video description 5. The thumbnail text (under 6 words — the hook in visual form)
+
+---
+
+### 63rd addition
+
+**Batch:** 103 images from iCloud Photos (`3a11c455-iCloud_Photos.zip`). Sources include @joshualevi.ai (7 open-source tools to replace paid SaaS: plausible, caddy, searxng, NocoDB, and more), @replace.so (7 open-source Obsidian alternatives: Logseq, NoteGen already added), @iunlockedai (addyosmani/factory — Claude Code issue-triage factory), @your.aimentor (6 Claude Code skills including `swiftui-design-skill`), @earchoe (9-slide email list building series: lead magnet, landing page, welcome email prompts), @ty.prompts.ai (5 side-hustle automation repos), and @the.wealth.lab (AI agent frameworks for business). Note-gen already covered in 62nd addition.
+
+**New repos:**
+
+- **Plausible Analytics** (`plausible/analytics`) — open-source, privacy-first, cookie-free web analytics; lightweight Google Analytics alternative; no consent banner required; self-hosted or cloud; 29k★
+  `git clone https://github.com/plausible/analytics`
+
+- **Caddy** (`caddyserver/caddy`) — fast, extensible HTTP/1-2-3 web server with automatic HTTPS via Let's Encrypt; zero-config TLS; readable config files; 75k★
+  `git clone https://github.com/caddyserver/caddy`
+
+- **SearXNG** (`searxng/searxng`) — free, self-hostable internet metasearch engine that aggregates results from 70+ sources; tracks nobody; cheapest way to give an AI agent real web search without paid APIs; 36k★
+  `git clone https://github.com/searxng/searxng`
+  `docker run -d -p 8080:8080 searxng/searxng`
+
+- **Addyosmani/Factory** (`addyosmani/factory`) — Claude Code Routine-based issue-triage factory: new GitHub issues trigger a fresh Claude Code session that triages, labels, and comments; ships an `ADVICE.md` explaining when stock Claude Code is already enough; MIT; 68★ (brand new, Aug 2026)
+  `git clone https://github.com/addyosmani/factory.git`
+  `cd /path/to/your/repo && /path/to/factory/install.sh --dry-run .`
+
+- **Logseq** (`logseq/logseq`) — open-source, local-first knowledge-management app: outliner-based notes, tasks, and ideas organised in bidirectional graphs; desktop, web, and mobile; privacy-first, plain-text Markdown/Org storage
+  `git clone https://github.com/logseq/logseq`
+
+- **NocoDB** (`nocodb/nocodb`) — open-source Airtable alternative: turn any SQL database (Postgres, MySQL, SQLite, MariaDB) into a smart spreadsheet with API, forms, gallery, and Kanban views; 65k★
+  `git clone https://github.com/nocodb/nocodb`
+  `docker run -d -p 8080:8080 nocodb/nocodb:latest`
+
+- **ERPNext** (`frappe/erpnext`) — open-source, full-stack ERP: accounting, inventory, manufacturing, HR, CRM, projects, and support in one self-hosted platform; 38k★
+  `git clone https://github.com/frappe/erpnext`
+
+- **Lago** (`getlago/lago`) — open-source usage-based billing and metering: Stripe-alternative for event-driven pricing; supports subscriptions, pay-as-you-go, hybrid models; 10k★
+  `git clone https://github.com/getlago/lago`
+  `docker compose up`
+
+**Skills installed:**
+
+- **`swiftui-design-skill`** (`Wholiver/swiftui-design-skill`) — Claude Code skill that teaches polished iOS/macOS SwiftUI UI design: spacing, typography, hierarchy, color, layout systems, brand integration, and design review; use when building SwiftUI views, choosing visual styles, or when UI looks generic; 165★
+  `npx skills add Wholiver/swiftui-design-skill`
+
+**Commands created:**
+
+- **`/email-list-builder`** (`.claude/commands/email-list-builder.md`) — @earchoe 3-prompt email list building system: (1) Lead Magnet Builder — title, format, 10+ contents, landing page headline, opt-in copy, welcome email in one prompt; (2) Landing Page Copy — headline, subheadline, bullet points, button text, reassurance line; (3) Welcome Email — personal subject, downloaded-magnet acknowledgement, expectations para, one quick tip, CTA to reply. Usage: `/email-list-builder [your niche, audience, content topic, their biggest problem]`
+
+**Reviewed and not added (63rd batch):**
+
+| Repo / Tool | Reason skipped |
+|---|---|
+| `makeplane/plane` | Already in 47th addition |
+| `uptime-kuma` | Already in recent addition |
+| `trigger.dev` | Already in recent addition |
+| `relaticle` | Already in recent addition |
+| `openai/codex` | Covered via `codex-plugin-cc` (plugin table) |
+| `multica-ai/andrej-karpathy-skills` | `forrestchang/andrej-karpathy-skills` already in 38th addition |
+| `note-gen` | Already in 62nd addition |
+| `mobile-app-ui-design` (6-skill pack) | No standalone GitHub repo identified — part of same @your.aimentor series as swiftui-design-skill |
+| `addyosmani/factory` lead-magnet CTA | No content behind "Comment VAULT" CTA |
+
+Paste-ready prompts from this batch:
+
+**Lead Magnet Builder (@earchoe):**
+
+> Build me a lead magnet I can create in 2 hours. My niche: [what you do] My audience: [who follows me] My content topic: [what your TikTok / content is about] Their biggest problem: [the thing they struggle with most] Give me: 1. Lead magnet title (specific, promise-driven, under 10 words) 2. Format (swipe file / checklist / mini guide / toolkit) 3. Exactly what is included (minimum 10 items) 4. Landing page headline and 3 bullet points 5. The opt-in form copy (headline + button text) 6. First email after they sign up (subject + 150-word welcome)
+
+**Landing Page Copy (@earchoe):**
+
+> Write the landing page copy for my free lead magnet. Lead magnet: [name of your magnet] What they get: [list the contents] Who it is for: [describe your audience] The one result they get from it: [specific outcome] Write: 1. Headline (under 10 words — the result they get) 2. Subheadline (who it is for and what is inside) 3. 3 bullet points (what they walk away knowing/having) 4. Email opt-in button text (not "Submit" — make it specific) 5. Below-button reassurance line ("No spam. Unsubscribe any time.")
+
+**Welcome Email (@earchoe):**
+
+> Write the welcome email for my new subscriber. Lead magnet they downloaded: [name] What they wanted when they signed up: [their goal] What my email list is about: [what I send regularly] My name and what I do: [brief intro] Email format: - Subject: make it personal, not promotional - Line 1: acknowledge what they just downloaded - Para 1: what they can expect from my emails - Para 2: one quick tip they can use today (from the magnet) - CTA: reply to this email with [specific question] — so I know what to focus on
