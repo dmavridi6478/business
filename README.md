@@ -3448,3 +3448,47 @@ Paste-ready prompts from this batch:
 > /inbound [channel + scenario] — activates inbound specialist for DM reply scripts, comment templates, lead qualification questions, discovery call frameworks, warm-lead follow-ups
 
 > /analytics [platform + question] — activates marketing analyst for KPI dashboards, campaign performance analysis, reporting structure, attribution models, ad manager/GA4 interpretation
+
+---
+
+## 65th Addition — 2026-08-27
+
+**Batch:** 3 iCloud Photos zips (`1b56d730-iCloud_Photos.zip` [65a: 21 JPEGs + 1 MP4], `7d7b4faf-iCloud_Photos_1.zip` [65b: 6 JPEGs], `31da51a2-iCloud_Photos_2.zip` [65c: 30 JPEGs + 1 MP4]). Sources: @theromanknox Knox "120 Claude MCP" reference carousel (65a), @github.signals TikTok showcasing fathom-starmap (65a MP4), @junaid_jamel "Sites for Developers" (65b), @toolradar8 "5 hidden websites" (65c), @earchoe "AI Research System" (65c), @risenworks Claude review tips (65c), @tomm3hshipp GitHub Trending Aug 25 (65c), @github.signals TikTok showcasing Open Executive (65c MP4). 7 new repos, 1 new command, 9 paste-ready prompts.
+
+**Repos added:**
+
+- **[dryweather-2544/fathom-starmap](https://github.com/dryweather-2544/fathom-starmap)** — "Your Obsidian vault as a living 3D galaxy." Every note is a star; folders become colored constellations wrapped in nebula fog; links are threads of light; archived notes fall into a black hole. Real physics (notes repel, links attract, constellations form), galaxy shapes (spiral, disc, ring, shell, helix, torus, clusters), spaceship flight (W to take off, WASD thrusts). MIT license. Showcased by @github.signals.
+
+- **[sentelabsai/openexecutive](https://github.com/SenteLabsAI/openexecutive)** — AI system that acts as your company's virtual executive team — a senior advisor with Harvard MBA-level knowledge customized for your business. Eight specialist AI agents: Chief Strategy Officer, Chief Financial Officer, CHRO/People Officer, General Counsel, Chief Operating Officer, Chief Marketing Officer, Chief Product Officer, Board Communications Director. Maintains episodic memory of decisions and initiatives across sessions; built-in scheduler surfaces follow-ups proactively. Apache 2.0, Python 3.11+, Next.js 15. Showcased by @github.signals.
+
+- **[freestylefly/awesome-gpt-image-2](https://github.com/freestylefly/awesome-gpt-image-2)** — Curated collection of 530 GPT-Image-2 prompts organized for rapid creative use. 17k stars, 1.8k forks. JavaScript. Source: @tomm3hshipp GitHub Trending Aug 25.
+
+- **[anthropics/claude-plugins-community](https://github.com/anthropics/claude-plugins-community)** — Community plugin marketplace for Claude Cowork and Claude Code. 1.6k stars. Python. Source: @tomm3hshipp GitHub Trending Aug 25.
+
+- **[AgriciDaniel/claude-obsidian](https://github.com/AgriciDaniel/claude-obsidian)** — Self-organizing AI second brain for Obsidian + Claude Code. 12k stars. Python. Source: @tomm3hshipp GitHub Trending Aug 25.
+
+- **[tinyhumansai/openhuman](https://github.com/tinyhumansai/openhuman)** — Personal AI super intelligence, local-first memory. 38k stars, 3.7k forks. Rust. Source: @tomm3hshipp GitHub Trending Aug 25.
+
+- **[marin-community/marin](https://github.com/marin-community/marin)** — Open-source framework for research and development of foundation models. 2.0k stars, 188 forks. Python. Source: @tomm3hshipp GitHub Trending Aug 25.
+
+**Command created:**
+
+- **`/ai-research-system`** (`.claude/commands/ai-research-system.md`) — @earchoe "The AI Research System: Learn Anything 10× Faster." Three-prompt learning system: `/feynman [topic]` (Feynman method — plain-language explanation, analogy, misconceptions, context, quiz), `/daily [work/challenges/goal]` (10-minute daily learning habit — one concept, 150-word explanation, weekly application, reflection question), `/content [notes + audience]` (research-to-content — turn Feynman notes into a 9-slide TikTok carousel with hook, six points, CTA, poll). Usage: `/ai-research-system [feynman | daily | content] [topic or context]`
+
+**Informational only (no repo):**
+
+- **@theromanknox "120 Claude MCP — Claude as Super Agent"** — reference carousel (skool.com/knox) mapping 120 MCP integrations across 12 categories of 10 each: Cat 01 Web & Browsing, Cat 02 Developer & Code, Cat 03 Databases & Data, Cat 04 Productivity & Work (Notion, Linear, Atlassian, Asana, ClickUp, Todoist, Obsidian, Monday.com, Trello, Airtable), Cat 05 Google & Microsoft, Cat 06 Communication, Cat 07 Marketing & Sales, Cat 08 Content & Creative, Cat 09 Automation & Workflows, Cat 10 AI Models & Memory, Cat 11 Cloud & DevOps, Cat 12 Finance & Business (Stripe, PayPal, Square, Plaid, Alpha Vantage, Polygon.io, Mixpanel, Amplitude, QuickBooks, Metabase)
+
+- **@junaid_jamel "Sites for Developers"** — balsamiq.com (wireframing), codefronts.com, websiteprompts.ai, 3dicons.co (3D icons library)
+
+- **@toolradar8 "The Internet Has A Hidden Side — 5 websites"** — radio.garden (live radio from anywhere on Earth), zoom.earth (real-time weather/satellite imagery), neal.fun (interactive experiments), 12ft.io (article paywall bypass)
+
+- **@risenworks "6 ways to use Claude on work you did not write"** — built-in Claude Code `/code-review` workflow tips (targeting, noise level, bug tagging, REVIEW.md, neutral conclusion)
+
+**Paste-ready AI Research System prompts:**
+
+> **Feynman Method:** Teach me [topic/concept] using the Feynman method. Assume I am intelligent but know nothing about this topic. Step 1: Explain it in plain language — no jargon. Under 200 words. Step 2: Give me one real-world analogy that makes it click. Step 3: Tell me the 3 most common misconceptions people have about this. Step 4: Show me how this applies to [my specific context / business / niche]. Step 5: Give me 3 questions I should now be able to answer if I understood this. After I answer those questions, tell me what I missed or got wrong.
+
+> **Daily Learning:** I have 10 minutes to learn something useful for my work today. My work: [what you do] Current challenges: [what you are struggling with] What I am trying to get better at: [skill or knowledge area] Give me: 1. One concept I should know that I probably do not yet 2. A 150-word explanation of that concept 3. How to apply it in my specific context this week 4. One question to reflect on before tomorrow Keep it tight. I need to be able to act on this today.
+
+> **Research-to-Content:** I just learned this: [paste your Claude summary or Feynman notes] Turn it into a 9-slide TikTok carousel for my audience of [describe them]. Format: Slide 1: Hook (under 8 words — create curiosity without giving away the answer) Slides 2-7: One practical point per slide, explained simply Slide 8: The one action they should take today Slide 9: Poll — [suggest a relevant question] My tone: [direct / warm / educational] Do not use jargon. Assume they are smart but new to this topic.
