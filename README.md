@@ -3219,3 +3219,125 @@ Most other content in this batch was informational: @risenworks MCP configuratio
 **Informational / already documented:**
 - Chase AI website (localhost:3000) — demo project built live with Claude Code v2.1.70 (Opus 4.6, high-effort mode); shown as proof of output quality; not an installable tool
 - Playwright — already documented; not re-added
+
+---
+
+### 62nd addition — privacy/surveillance tools, dev productivity repos, AI scrapers, self-hosted AI stack, and 3 new commands
+
+**Batch:** 4 iCloud Photos zip files (`2297464f-iCloud_Photos_1.zip`, `44268f6c-iCloud_Photos_2.zip`, `ca99468f-iCloud_Photos_3.zip`, `fcb5d053-iCloud_Photos_6.zip`). Sources include @martiendejong_dev (7 personal finance prompts), @earchoe (YouTube niche + SEO), @ty.prompts.ai (5 surveillance-evasion repos), @baniascodes (6 dev tools), @appmillers (AI scrapers), @deans.lester.tech (n8n AI starter kit). 15 new repos/tools documented; 3 new commands created.
+
+**Duplicate-check (skip):**
+
+| Repo / Tool | First documented |
+|---|---|
+| Brightbean-studio | 46th addition |
+| Nimbalyst | 52nd addition |
+| Superpowers | Plugins table |
+| Repomix | Plugin table |
+| Claude HUD (`jarrodwatts/claude-hud`) | 34th addition |
+| Scrapling (`D4Vinci/Scrapling`) | 34th addition |
+| Agent Reach (`Panniantong/Agent-Reach`) | 34th addition |
+| Karpathy Skills (`forrestchang/andrej-karpathy-skills`) | 38th addition |
+
+**Privacy & digital-security repos — @ty.prompts.ai "5 free repos to avoid surveillance state" (7-slide carousel):**
+
+- **[`EFForg/rayhunter`](https://github.com/EFForg/rayhunter)** — EFF's open-source Rust tool that runs on Orbic mobile hotspots to detect IMSI catchers (fake cell towers / "Stingrays") that intercept your calls and texts; logs suspicious network behaviour, generates a visual web dashboard, and flags anomalies in real time; no cloud, no account
+  `git clone https://github.com/EFForg/rayhunter`
+
+- **[`mvt-project/mvt`](https://github.com/mvt-project/mvt)** (13k★) — Mobile Verification Toolkit; forensic tool from Amnesty International's Security Lab for detecting stalkerware, spyware (Pegasus), and other malware on Android and iOS devices; scans device backups and filesystem images for indicators of compromise
+  `pip install mvt`
+
+- **[`mollyim/mollyim-android`](https://github.com/mollyim/mollyim-android)** (3.7k★) — Molly: hardened fork of Signal for Android; adds database encryption at rest, auto-lock with inactivity timeout, passphrase-protected backups, and UnifiedPush support so you don't need Google Play Services; same wire protocol as Signal, compatible with Signal contacts
+  Install via F-Droid or download APK from GitHub Releases
+
+- **[`guardianproject/orbot-android`](https://github.com/guardianproject/orbot-android)** (3.5k★) — Orbot: Tor for Android by Guardian Project; routes your phone's traffic through the Tor network to anonymise your IP and bypass censorship; supports per-app VPN mode so only selected apps use Tor
+  Install via Google Play or F-Droid
+
+- **[`TrackerControl/tracker-control-android`](https://github.com/TrackerControl/tracker-control-android)** — TrackerControl: open-source Android app that monitors and blocks hidden data collection by tracking companies embedded in other apps; shows which trackers each app contacts in real time; based on NetGuard, no root required
+  Install via F-Droid or GitHub Releases
+
+**Dev productivity tools — @baniascodes carousel:**
+
+- **[`affaan-m/ECC`](https://github.com/affaan-m/ECC)** — Enhanced Claude Code (ECC): CLAUDE.md harness tuned for speed and reduced token consumption; pairs with the official Claude Code CLI; install by cloning and copying the CLAUDE.md into your project root (the 41st addition referenced this name without a verified GitHub path — this is the resolved repo)
+  `git clone https://github.com/affaan-m/ECC`
+
+- **[`langchain-ai/openwiki`](https://github.com/langchain-ai/openwiki)** — OpenWiki: open-source knowledge base and wiki system from LangChain AI; connect your docs, PDFs, and web pages, then query them with natural language; self-hostable
+  `pip install openwiki`
+
+- **[`Tencent/AI-Infra-Guard`](https://github.com/Tencent/AI-Infra-Guard)** — Tencent's AI Infrastructure Guard: security scanning tool for AI/ML pipelines and model deployments; detects misconfigurations, exposed model files, and supply-chain risks in AI infrastructure
+  `pip install aig-skill-scan`
+
+- **[`styler-ai/ProjectAtlas`](https://github.com/styler-ai/ProjectAtlas)** — ProjectAtlas: Rust CLI that maps a codebase into a structured, agent-navigable project atlas; reduces LLM token consumption by giving agents a compact map instead of raw file reads
+  `cargo install project-atlas`
+
+- **[`evo-hq/evo`](https://github.com/evo-hq/evo)** — Evo: agentic CLI tool for evolving codebases; runs iterative improvement loops on code quality, test coverage, and documentation; installed via `uv`
+  `uv tool install evo-hq-cli`
+
+- **[`oraios/serena`](https://github.com/oraios/serena)** — Serena: MCP server that gives Claude Code precise semantic code navigation (go-to-definition, find-all-references, rename symbol, class hierarchy) by connecting to language servers; bridges Claude Code to LSP for accurate code understanding without relying on fuzzy text search
+  `pip install serena-mcp`
+
+**AI web scrapers — @appmillers carousel:**
+
+- **[`ScrapeGraphAI/Scrapegraph-ai`](https://github.com/ScrapeGraphAI/Scrapegraph-ai)** — ScrapeGraphAI: AI-powered web scraper that uses LLMs to understand and extract structured data from any website; describe what you want in natural language and it handles the extraction — no XPath, no CSS selector maintenance; integrates with Claude, GPT-4, and local models
+  `pip install scrapegraphai`
+
+**Self-hosted AI automation stack — @deans.lester.tech:**
+
+- **[`n8n-io/self-hosted-ai-starter-kit`](https://github.com/n8n-io/self-hosted-ai-starter-kit)** — n8n's official self-hosted AI starter kit: a Docker Compose bundle that spins up n8n (workflow automation) + Ollama (local LLMs) + Qdrant (vector store) + PostgreSQL in one command; the foundation for a fully local, no-API-cost AI automation stack; distinct from `n8n-io/n8n` (already in README) — this kit bundles the full AI stack
+  ```
+  git clone https://github.com/n8n-io/self-hosted-ai-starter-kit.git
+  cd self-hosted-ai-starter-kit
+  docker compose --profile cpu up
+  ```
+
+**WhatsApp CRM — @fcb5d053 batch:**
+
+- **Wacrm** (`getcodyai/wacrm`) — self-hostable WhatsApp CRM backed by Supabase; manage customer conversations, contacts, and pipeline from a unified inbox without a SaaS subscription; open-source
+  `git clone https://github.com/getcodyai/wacrm`
+
+**Markdown notes + MCP + CLI — @fcb5d053 batch:**
+
+- **ZenNotes** (`nicholasleclerc1983/ZenNotes`) — open-source local-first Markdown note-taking app with an integrated MCP server (lets Claude Code read and write your notes) and a `zen` CLI for terminal-based capture; privacy-first, no cloud sync required
+  `git clone https://github.com/nicholasleclerc1983/ZenNotes`
+
+**Commands created:**
+
+- **`/personal-finance-claude`** (`.claude/commands/personal-finance-claude.md`) — 7-prompt sequential wealth-building system from @martiendejong_dev: (1) Financial X-Ray — brutally honest 90-day action plan; (2) Build My Money System — paycheck allocation with exact percentages; (3) Destroy My Debt — avalanche vs snowball payoff strategy; (4) Build My First $10K — step-by-step savings plan; (5) Create My Investment Strategy — beginner investing roadmap; (6) Find My Extra Income — 10 ranked income streams with 30-day execution plans; (7) My 1-Year Wealth Blueprint — complete 12-month roadmap with weekly actions. Usage: `/personal-finance-claude [optional financial context]`
+
+- **`/youtube-niche-finder`** (`.claude/commands/youtube-niche-finder.md`) — @earchoe faceless YouTube niche finder: inputs background, tools (ElevenLabs/Claude/Canva), weekly time, and income goal; outputs 5 niches with search volume but not max competition, each with channel ideas, 5 video titles, and reasoning for why it works faceless. Usage: `/youtube-niche-finder [background, skills, interests, time, income goal]`
+
+- **`/youtube-seo-optimizer`** (`.claude/commands/youtube-seo-optimizer.md`) — @earchoe YouTube video SEO optimizer: inputs video topic, channel niche, and target viewer; outputs 5 keyword-first title options (≤60 chars), full description (with hook in the first 150 chars), 15 tags, 3 chapter timestamps, and thumbnail text (≤6 words). Usage: `/youtube-seo-optimizer [video topic, channel niche, target viewer]`
+
+**Reviewed and not added (62nd batch):**
+
+| Repo / Tool | Reason skipped |
+|---|---|
+| Brightbean-studio | Already in 46th addition |
+| Nimbalyst | Already in 52nd addition |
+| SERPtag (serptag.com) | SaaS only, no GitHub repo |
+
+Paste-ready prompts from this batch:
+
+**7 Personal Finance Prompts (@martiendejong_dev):**
+
+> **Prompt 1 — Financial X-Ray:** Act as my brutally honest personal finance strategist. Analyze my entire financial situation from scratch. I'll give you my income, expenses, savings, debts, assets, subscriptions, investments, and financial goals. Identify exactly where my money is leaking, what I'm doing wrong, and what I should change first. Then create a prioritized action plan to improve my finances over the next 90 days.
+
+> **Prompt 2 — Build My Money System:** Based on my income and expenses, build me a simple financial system that automatically divides every dollar I earn into spending, bills, emergency savings, investing, and wealth-building. Give me exact percentages and amounts, explain the reasoning, and create rules I can follow every payday without relying on willpower.
+
+> **Prompt 3 — Destroy My Debt:** Act as a debt-elimination strategist. Analyze all my debts, including balances, interest rates, and minimum payments. Compare the avalanche and snowball methods, then create the fastest realistic payoff strategy for me. Show me exactly how much extra I need to pay each month and how much interest I could save.
+
+> **Prompt 4 — Build My First $10K:** I want to build my first $10,000 in savings. Analyze my current income and expenses and create a realistic step-by-step plan to reach $10K as quickly as possible without destroying my quality of life. Find areas where I can cut expenses, suggest ways to increase income, and give me monthly and weekly targets.
+
+> **Prompt 5 — Create My Investment Strategy:** Act as a long-term investing coach. Based on my age, income, financial goals, emergency fund, debt, risk tolerance, and investment timeline, create a beginner-friendly investment strategy. Explain what types of assets I should consider, how much I could invest each month, how to diversify, and what mistakes I absolutely need to avoid. Do not recommend anything until you've analyzed my situation.
+
+> **Prompt 6 — Find My Extra Income:** Analyze my skills, experience, available time, interests, and current income. Find 10 realistic ways I could increase my monthly income. Rank them by startup cost, difficulty, time to first income, scalability, and potential monthly earnings. Then choose the top 3 and create a 30-day execution plan for each.
+
+> **Prompt 7 — My 1-Year Wealth Blueprint:** Act as my personal wealth strategist. Take everything you know about my financial situation and build a complete 12-month wealth-building roadmap. Give me specific monthly targets for income, spending, debt repayment, emergency savings, investing, and additional income. Break each month into weekly actions and create measurable milestones so I know exactly whether I'm on track.
+
+**YouTube Niche Finder (@earchoe):**
+
+> Help me find the best niche for a faceless YouTube channel. About me: [your background, skills, interests] Tools I am using: ElevenLabs for voice, Claude for scripts, Canva for visuals Time available per week: [hours] Income goal: [£X/month within Y months] Suggest 5 niches that: 1. Have search volume but not maximum competition 2. Work well for faceless format (no personality required) 3. Have multiple monetisation paths beyond AdSense 4. I could create 50+ videos about without running out of ideas 5. Attract an audience with purchasing power For each: name the niche, example channel ideas, 5 video titles, and why it works for faceless content.
+
+**YouTube SEO Optimizer (@earchoe):**
+
+> Help me optimise this YouTube video for search. Video topic: [what the video is about] My channel niche: [your niche] Target viewer: [who searches for this] Give me: 1. 5 title options (keyword-first, under 60 chars, creates curiosity) 2. Video description (first 150 chars are crucial — hook + keyword here) 3. 15 tags (mix of broad and specific keywords) 4. 3 chapter timestamps and names for the video description 5. The thumbnail text (under 6 words — the hook in visual form)
