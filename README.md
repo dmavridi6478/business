@@ -3492,3 +3492,59 @@ Paste-ready prompts from this batch:
 > **Daily Learning:** I have 10 minutes to learn something useful for my work today. My work: [what you do] Current challenges: [what you are struggling with] What I am trying to get better at: [skill or knowledge area] Give me: 1. One concept I should know that I probably do not yet 2. A 150-word explanation of that concept 3. How to apply it in my specific context this week 4. One question to reflect on before tomorrow Keep it tight. I need to be able to act on this today.
 
 > **Research-to-Content:** I just learned this: [paste your Claude summary or Feynman notes] Turn it into a 9-slide TikTok carousel for my audience of [describe them]. Format: Slide 1: Hook (under 8 words — create curiosity without giving away the answer) Slides 2-7: One practical point per slide, explained simply Slide 8: The one action they should take today Slide 9: Poll — [suggest a relevant question] My tone: [direct / warm / educational] Do not use jargon. Assume they are smart but new to this topic.
+
+---
+
+## 66 — @earchoe AI Newsletter System · @__ai_slacker__ Vibecoding Prompts · @replace.so Analytics Repos · @datascibykas Claude Watermarks · @app.crafter Mobile Stack · @mydlytracker AI Projects · @structurewebworks AI Social OS
+
+*Sources: 66a — 19 screenshots (TikTok carousels); 66b — 23 screenshots + 1 video (@structurewebworks)*
+
+### Commands installed
+
+**`/ai-newsletter-system`** — 2-prompt newsletter workflow from @earchoe "The AI Newsletter System: Build to 500 Paid Subscribers Without a Big Audience." Two sub-prompts:
+- `/writer` — full weekly issue draft (subject line, hook, 300–400-word main section, quick win, CTA)
+- `/subject` — generates 10 subject lines across 5 formulas, flags top 3 to A/B test
+- Platform: Beehiiv (free to 2,500 subs, referral, paid subs, SEO-indexed)
+
+**`/vibecoding-prompts`** — 5 structured prompts from @__ai_slacker__ "5 Prompts I Use While Vibecoding: From Blank Project → Polished UI." Five sub-prompts:
+- `/build` — senior frontend engineer kickoff (structure, components, approach, then code)
+- `/design` — visual system definition (layout, typography, colours, spacing, hierarchy)
+- `/debug` — systematic root-cause fix (identify → explain → smallest fix → verify)
+- `/modify` — minimal change protocol (list what changes, list what stays, make only that)
+- `/think` — senior product designer critical review (weaknesses, gaps, 3 concrete improvements)
+
+### Analytics repos (@replace.so "4 GitHub Analytics Repos That Shouldn't Be Free")
+
+- **Plausible Analytics** — open-source, privacy-first, cookie-free web analytics; EU-hosted, self-hostable
+- **Umami** — privacy-first web analytics, 38K+ GitHub stars, cookie-free, self-hosted
+- **Talivia** — self-hosted revenue analytics; web tracking + session replay + payment integrations + attribution
+
+### Carousels noted (no install action)
+
+- **@datascibykas** — "How to Remove Claude Watermarks from Text, Code, and Files?" (7 slides): Claude uses SynthID-Text for text (statistical pattern in word choices), same for code (weaker — fewer arbitrary choices), and signed C2PA metadata for files (.png/.jpg/.svg). Text needs a full rewrite to remove; code needs real source transformation; files break with format conversion or re-save.
+- **@app.crafter** — "Stop dreaming. Start building." mobile app stack guide (8 slides): framework (SwiftUI / Flutter / Expo+React Native), backend (on-device / Supabase / Appwrite+Firebase), shipping (TestFlight / EAS Build / App Store / Play Store), payments (RevenueCat / Adapty), AI copilots (Claude Code / Cursor / Codex / Antigravity), analytics (Firebase / Crashlytics / Microsoft Clarity / Sentry), distribution (TikTok+Reels / Instagram / Reddit / group chat).
+- **@mydlytracker** — "4 AI Projects You Should Build in 2026": (1) AI data analyst — CSV in, plain-English questions, charts out; (2) Voice action assistant — speak naturally, AI asks when needed, uses tools; (3) MCP workspace agent — connects calendar/docs/tasks, suggests action, runs after approval; (4) Research agent — give it a messy question, it searches web + files, returns a cited brief.
+- **@structurewebworks** — "AI Social Media Operating System" (video): 7-module pipeline — Research/Scraping Intelligence → Content Engine (write/narrate) → Production Studio (presenter/B-roll) → Distribution (auto cross-post) → Engagement (reply/capture) → Analytics (winning hooks fed back to research) → Monetization (leads convert to booked calls). Product demo, not open-source.
+
+### Plain-text prompts to copy
+
+**Weekly Newsletter Writer (@earchoe):**
+> Write this week's newsletter for my [niche] audience. Newsletter name: [your name] This week's theme: [topic] Things that happened this week I can reference: [any news, personal events, learnings] Tool or resource to feature: [optional] Structure: 1. Subject line (under 50 chars — creates curiosity, not clickbait) 2. Opening hook (2-3 sentences — personal, relevant, conversational) 3. Main section (300-400 words — value, insight, or how-to) 4. Quick win (one thing they can do in under 10 minutes this week) 5. CTA (one action — reply, click, or share) Tone: [warm / direct / educational] — not corporate
+
+**Subject Line Generator (@earchoe):**
+> Write 10 subject line options for my newsletter this week. Topic: [what this issue covers] My audience: [who subscribes] Open rate goal: above 40% Formula options to use: - Curiosity gap: "Why I stopped doing X" - Number: "3 things I learned from X" - Personal: "I made a mistake last week" - Bold claim: "The AI tool everyone is sleeping on" - Question: "Are you making this mistake?" Flag which 3 you would A/B test first and why.
+
+**BUILD — Start a New Project (@__ai_slacker__):**
+> You are a senior frontend engineer. I'm building [PROJECT]. Goal: [WHAT IT DOES] Target users: [AUDIENCE] Tech stack: - [FRAMEWORK] - [STYLING] - [LIBRARIES] Core features: 1. [FEATURE] 2. [FEATURE] 3. [FEATURE] Before coding: 1. Propose the project structure. 2. Identify the key components. 3. Explain your implementation approach. 4. Then start building. Keep the architecture simple, scalable, and production-ready.
+
+**DESIGN — Define the Visual System (@__ai_slacker__):**
+> Design this interface with a [DESIGN STYLE] aesthetic. Design direction: - Layout: [DESCRIPTION] - Typography: [STYLE] - Colors: [PALETTE] - Spacing: [TIGHT / AIRY] - Components: [STYLE] - Visual hierarchy: [DESCRIPTION] Reference: [IMAGE / WEBSITE / DESIGN] Before implementing, explain: 1. The visual system 2. The layout hierarchy 3. The interaction patterns Then implement it. Do not add unnecessary elements. Prioritize clarity and consistency.
+
+**DEBUG — Systematic Error Fix (@__ai_slacker__):**
+> I have this error: [PASTE ERROR] Context: [WHAT I WAS DOING] Relevant code: [PASTE CODE] Debug this systematically. 1. Identify the root cause. 2. Explain why it is happening. 3. Identify the exact file/component responsible. 4. Propose the smallest correct fix. 5. Implement the fix. 6. Verify that the fix doesn't introduce another issue. Do not rewrite unrelated code.
+
+**MODIFY — Change One Thing Without Breaking Others (@__ai_slacker__):**
+> Modify the existing design. I want to change: [EXACT CHANGE] KEEP UNCHANGED: - Overall layout - Typography - Color system - Existing functionality - Responsive behavior - Component structure Before making changes: 1. Identify what needs to change. 2. Identify what must remain untouched. 3. Make the SMALLEST NECESSARY CHANGES. Do not redesign the page. Do not add new dependencies. Do not change unrelated components. Then verify the result across desktop and mobile.
+
+**THINK — Senior Product Designer Review (@__ai_slacker__):**
+> Act as a senior product designer reviewing this idea. My idea: [DESCRIBE IDEA] Target user: [TARGET USER] Current approach: [DESCRIBE APPROACH] Think critically about it. Tell me: 1. What's weak or unnecessary? 2. What's missing? 3. What would make it simpler? 4. What would make it more useful? 5. What would you change? Give me 3 CONCRETE IMPROVEMENTS I can implement immediately. Don't agree with me just to be helpful. Prioritize the best user experience.
