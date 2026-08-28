@@ -3548,3 +3548,39 @@ Paste-ready prompts from this batch:
 
 **THINK — Senior Product Designer Review (@__ai_slacker__):**
 > Act as a senior product designer reviewing this idea. My idea: [DESCRIBE IDEA] Target user: [TARGET USER] Current approach: [DESCRIBE APPROACH] Think critically about it. Tell me: 1. What's weak or unnecessary? 2. What's missing? 3. What would make it simpler? 4. What would make it more useful? 5. What would you change? Give me 3 CONCRETE IMPROVEMENTS I can implement immediately. Don't agree with me just to be helpful. Prioritize the best user experience.
+
+---
+
+## 67 — Tim Tsai New Team 30-Day Playbook · AIPlanetX Free Courses · Emilia Möller Claude Code Growth Marketing · Mo Bunnell Client Trust Model · McKinsey Agentic Change Levels
+
+*Sources: 5 screenshots (LinkedIn/Twitter carousels)*
+
+### Command installed
+
+**`/new-team-30-days`** — 30-action leadership playbook from Tim Tsai "Your First 30 Days Leading a New Team." Six phases × 5 actions each:
+- **Phase 1 — Listen Without an Agenda**: Open With a Question / Meet Everyone Once / Sit In as a Guest / Read Before You Ask / Track the Contradictions
+- **Phase 2 — Learn How Work Actually Gets Done**: Follow the Handoffs / Learn the Workarounds / Find the Real Bottleneck / Watch the Actual Work / Name the Unwritten Rules
+- **Phase 3 — Map the Team Behind the Org Chart**: Find the Informal Leader / Spot the Steady Contributor / Ask About the Last Leader / Watch Who People Follow / Learn What Changed Last Time
+- **Phase 4 — Diagnose Before You Decide**: Separate People From Systems / Test Your First Theory / Ask What They'd Fix First / Follow the Recurring Complaint / Hold Your Verdict
+- **Phase 5 — Build Trust Through Small Moves**: Fix One Small Thing Fast / Give Credit in Public / Deliver One Ask / Show Up on Time Every Time / Own Your Blind Spot
+- **Phase 6 — Earn the Right to Change Something**: Name What You Learned / Pick One Change First / Explain the Why / Involve the Closest Person / Set the Next Checkpoint
+- Usage: `/new-team-30-days [phase number or phase name]` — or run with no args for the full playbook
+
+### Informational only (no install action)
+
+- **AIPlanetX.com "9 Free Personal Development Courses"** — curated university courses: Improving Communication Skills (Wharton, 4.7★), Critical Thinking Fundamentals (Harvard, 4.8★), Rhetoric (Harvard, 4.9★), Negotiations (Wharton, 4.5★), The Nature of Genius (Yale, 4.8★), Managing Happiness (Harvard, 4.9★), The Psychology of Emotions (Cambridge, 4.6★), Finding Purpose and Meaning in Life (Michigan, 4.8★), The Science of Success (Michigan, 4.8★)
+
+- **Emilia Möller "Claude Code for Growth Marketing"** — 9 marketing automations Claude Code can build without engineering: (1) Google Ads automation — BigQuery + Google Ads + GA4; (2) Figma creative plugin — Meta + Figma + Google Drive; (3) Meta Ads connection — Claude + Meta + GA4; (4) Ad testing system — PostHog + Meta + Google Ads; (5) Creative performance tracker — Figma + Meta + GA4; (6) Competitor monitor — Slack + Searchable + Firecrawl; (7) Programmatic SEO — DataForSEO + Webflow + GSC; (8) Landing page builder — Figma + GitHub + Vercel; (9) Marketing analytics — GA4 + BigQuery + Searchable
+
+- **Mo Bunnell / BIG "Turn a Skeptical Client Into a Loyal One"** — U-curve trust model: clients start at "What's the catch?" → dip to "I don't think about them at all" → rise to "That was actually useful" → peak at "They're the first call I make." The lever is proactive giving: Expertise (insights they didn't ask for), Experiences (connecting them to events/people), Introductions (to the right person at the right moment), Insights (strategic observations about their world). Transition happens when giving shifts from transactional to genuinely other-focused.
+
+- **McKinsey & Company "Agentic transformation is the next frontier of change"** — 4 agentic change levels (each builds on the prior):
+  - **C1 — Execute**: Manage tactical change — OKRs, stakeholder analysis, communications plans, training
+  - **C2 — Mobilize**: Win hearts and minds — address root mindsets, craft change story via inspiration and emotion, build capability
+  - **C3 — Transform**: Drive performance and health — set bold goals, maintain a portfolio of initiatives, apply execution rigor, shift behaviors
+  - **C4 — Reinvent**: Create value with new identity — address new customer needs, shift organizational identity, let go of the past, redefine leading as learning
+
+### Plain-text prompt to copy
+
+**New Team 30-Day Phase Coaching (Tim Tsai):**
+> I'm in [PHASE NAME / PHASE NUMBER] of leading a new team. Current situation: [what you're observing or struggling with] Team size: [number] Industry/context: [brief description] Help me: 1. Identify which of the 5 actions in this phase I should prioritize. 2. Give me a specific script or question I can use today. 3. Flag any risk I should watch for in this phase. 4. Suggest the one thing I should NOT do right now.
