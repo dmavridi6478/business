@@ -3584,3 +3584,84 @@ Paste-ready prompts from this batch:
 
 **New Team 30-Day Phase Coaching (Tim Tsai):**
 > I'm in [PHASE NAME / PHASE NUMBER] of leading a new team. Current situation: [what you're observing or struggling with] Team size: [number] Industry/context: [brief description] Help me: 1. Identify which of the 5 actions in this phase I should prioritize. 2. Give me a specific script or question I can use today. 3. Flag any risk I should watch for in this phase. 4. Suggest the one thing I should NOT do right now.
+
+---
+
+## 68 — "How to Build an AI Agent" Aug 2026 Framework · @ajsilber Decision Making Frameworks · Anastasiia Shapovalova Claude Power User Guide · smarterwithai.news AI PowerPoint Alternatives · Hustle Badger Product Ops for AI-Native Teams
+
+*Sources: 5 screenshots (LinkedIn/Twitter carousels and infographics)*
+
+### Commands installed
+
+**`/build-ai-agent-guide`** — 8-step AI agent building checklist from the Aug 2026 "How to Build an AI Agent" framework. Each step includes a focused prompt:
+- **Step 1 — Define Purpose & Scope**: use case / user needs / success criteria / constraints
+- **Step 2 — System Prompt Design**: goals / role-persona / instructions / guardrails
+- **Step 3 — Choose LLM**: base model / reasoning effort level / context window / cost-latency tradeoff; includes Aug 2026 tool comparison table (ChatGPT GPT-5.6, Claude Opus 5, Perplexity, Cursor, Windsurf SWE-1.6, Claude Code Claude 5, Lindy, Zapier Agents, n8n, LangGraph, CrewAI, LlamaIndex)
+- **Step 4 — Tools & Integrations**: simple/local / API / MCP server / AI-agent-as-tool / custom functions
+- **Step 5 — Memory Systems**: episodic (conversation) / working memory / vector database / SQL-structured DB / file storage
+- **Step 6 — Orchestration**: routes-workflows / triggers / parameters / message queues / Agent2Agent / error handling
+- **Step 7 — User Interface**: chat / web app / API endpoint / Slack-Discord bot
+- **Step 8 — Testing & Evals**: unit tests / latency testing / quality metrics / iterate-and-improve
+- Includes a quick 8-item checklist at the end
+
+**`/decision-frameworks`** — 6 decision-making frameworks from @ajsilber "Unlock the Power of Decision Making," each with an embedded paste-ready prompt:
+- **RAPID**: Responsible / Accountable / Power to Decide / Informed / Deliver — clarifies accountability when multiple stakeholders are involved
+- **DACI**: Driver / Approver / Contributors / Informed — streamlined role assignment for project decisions
+- **Cynefin**: Simple (Clear) / Complicated / Complex / Chaotic / Disorder — matches the response approach to the problem's complexity domain
+- **Decision Matrix**: weighted scoring grid — list options as columns, criteria as rows, weight × score, highest total wins
+- **Pareto Principle (80/20)**: find the 20% of actions that drive 80% of outcomes; stop doing the 80% that produces 20%
+- **SWOT Analysis**: Strengths / Weaknesses / Opportunities / Threats — strategic positioning for projects, products, or career moves
+- Usage: `/decision-frameworks [rapid | daci | cynefin | matrix | pareto | swot] [decision or situation]`
+
+### Informational only (no install action)
+
+- **Anastasiia Shapovalova "Claude Power User Guide"** — comprehensive reference covering all five Claude capabilities: Artifacts (docs/dashboards/charts/code/spreadsheets/web pages; ask Claude to create, then edit, refine, download/publish); Skills (custom instructions/workflows/templates Claude can follow on demand — define in Claude Settings → Create Skill with name/description/instructions/examples); Connectors (Google Drive, Gmail, Slack, Notion, Salesforce, Web Search, MCP, Database, API, Calendar); Claude Code (generate/refactor code, explain codebases, write tests, debug, terminal/IDE, multi-file edits, run scripts, review PRs, security scan — slash commands: /explain, /refactor, /test, /fix, /doc, /review, /pr, /optimize, /security); Automation (Trigger → Scheduled Task → Action → Condition → Output → Integrate). Power Use Cases: Content Creation (Research → Outline → Draft → Refine → Publish), Research & Intelligence (Deep research → Analyze → Report → Share), Business Operations (Reports → Dashboards → Insights → Automate), Developer Workflow (Code → Test → Document → Deploy). Success Formula: Knowledge + Tools + Automation + Consistency = Freedom.
+
+- **smarterwithai.news "AI-Powered Alternatives to PowerPoint"** — 9 tools with quick-compare picks:
+  - **Gamma** — AI-first, prompt-to-deck, strong layout automation, web-based
+  - **Decktopus AI** — guided creation, speed, templates
+  - **Pitch** — collaborative, team workflows, brand consistency
+  - **SlideSpeak** — doc-to-slides, summarizes uploaded documents, extracts insights
+  - **Simplified** — all-in-one content suite with fast slide generation
+  - **Plus AI** — in-slide assistant, works inside existing tools
+  - **Designs.ai** — presentations + visuals + video + branding assets
+  - **Haiku Deck** — visual storytelling, AI-assisted layout, simplicity focus
+  - **Slidebean** — pitch decks, investor storytelling, structure-focused
+  - Quick Compare: Fastest prompt-to-deck → Gamma, Decktopus AI; Best for teams → Pitch, Plus AI; Best for investors → Slidebean
+  - Workflow: Prompt/Doc → Outline → Draft Slides → Design Polish → Present/Share
+
+- **Hustle Badger "Why Product Ops is the key to an AI-Native Product Team"** — five-part framework for building an AI-native team layer:
+  - The rationale: "team layer" = shared context, skills, tools, permissions that let each person's work make everyone else better; without it, the best workflow dies on one person's laptop
+  - Job description: (1) Own the team's shared context (strategy, ICP, metric definitions, past decisions, insights); (2) Build internal tooling (feedback triage, research synthesis, competitor monitoring, exec updates); (3) Own quality — use evals to make sure automations actually work; (4) Own access — decide what agents can read/write and where humans get involved; (5) Drive adoption and prove the return
+  - The proof: Anthropic pays $240–325K for Product Ops who "build the tools you need yourself" and have "written the prompts, built the evals"; Meta has Product Ops roles building autonomous agents for bug triage and running a model evals programme, open in five locations
+  - Ideal candidate: shipped an AI workflow others use / systems thinker / technical enough to build and debug without being an engineer / sees process as a product / knows what good product work looks like
+  - Key decisions: Context engineering (system prompt vs. skill vs. file vs. retrieval) / Agent architecture (deterministic workflow vs. agent loop) / Evals (define good quantitatively) / Observability (agents aren't black boxes) / Tool design (effective tool descriptions + which MCPs the team gets)
+
+### Plain-text prompts to copy
+
+**AI Agent Step 1 — Define Purpose & Scope:**
+> My agent's use case is [X]. Its users are [Y]. I'll know it's working when [Z]. It must never [constraints]. Help me tighten this scope before I build.
+
+**AI Agent Step 2 — System Prompt Design:**
+> Help me write a system prompt for an agent that [use case]. It should act as [persona], always [positive behaviors], and never [negative behaviors]. Include guardrails for [edge cases].
+
+**AI Agent Step 5 — Memory Architecture:**
+> My agent needs to remember [X across sessions / Y within a session / Z about the user]. What memory architecture fits? Give me the tradeoffs between vector vs. SQL for my use case.
+
+**AI Agent Step 8 — Evals:**
+> Help me design an eval suite for my agent that [use case]. What should I test? What's a good golden dataset? How do I measure quality without human review on every output?
+
+**RAPID Framework:**
+> I need to make a decision about [DECISION]. The people involved are [LIST PEOPLE/ROLES]. Apply the RAPID framework: 1. Assign each role (R/A/P/I/D) to the right person. 2. Flag any gaps or conflicts in accountability. 3. Tell me what could go wrong if any role is unclear.
+
+**Cynefin Framework:**
+> I'm facing this challenge: [DESCRIBE SITUATION] Apply the Cynefin framework: 1. Which domain does this fall into (Simple, Complicated, Complex, Chaotic, Disorder)? 2. Why — what's the evidence for that classification? 3. What's the right response strategy for this domain? 4. What would make me reclassify it to a different domain?
+
+**Decision Matrix:**
+> I'm choosing between: [LIST OPTIONS] My decision criteria are: [LIST CRITERIA] Build a decision matrix: 1. Suggest weights for each criterion (1–3) based on my priorities. 2. Score each option on each criterion (1–10). 3. Show the weighted totals. 4. Recommend the winner and explain any caveats.
+
+**Pareto Principle:**
+> I'm trying to [GOAL] but have limited time/resources. Apply the Pareto Principle: 1. List all the possible actions/inputs I could take. 2. Identify the 20% that are likely to drive 80% of the outcome. 3. What should I stop doing (the 80% of effort with 20% of results)? 4. How do I validate my Pareto analysis — what data should I look at?
+
+**SWOT Analysis:**
+> I'm evaluating [PROJECT / PRODUCT / DECISION / CAREER MOVE]. Run a SWOT analysis: 1. Strengths: What internal advantages do I have? 2. Weaknesses: What internal gaps or limitations do I have? 3. Opportunities: What external trends or conditions could I exploit? 4. Threats: What external risks could hurt me? Then: Give me 2 strategic recommendations based on the SWOT.
