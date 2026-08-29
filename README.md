@@ -3936,3 +3936,49 @@ Paste-ready prompts from this batch:
 
 **Use the 20 Business Prompts (pick one):**
 > Run prompt #[NUMBER] for my business: [YOUR BUSINESS/PRODUCT/SERVICE]. Fill in the template with details about [RELEVANT CONTEXT].
+
+---
+
+## Batch 73
+
+### New commands / skills installed
+
+- **`/seo-prompts-10`** — 10 fill-in-the-bracket SEO prompts: SEO Audit (comprehensive site analysis + action plan), TASM (Total Addressable Search Market mapping), Search Intent Reverse Engineering, Programmatic SEO Template Generator, Entity-Optimised Article Creator, Topical Authority Builder (pillar + cluster plan), SERP Competitor Teardown, BOFU Content Finder (comparison/review/price keywords), LLM SEO (optimise for ChatGPT/Perplexity/AI Overviews), Untapped Demand (low-competition keyword finder)
+  `File: .claude/commands/seo-prompts-10.md`
+
+- **`/time-management-leaders`** — Tim Tsai's 9 time management techniques for leaders, each with coaching prompt: Not-To-Do List (Tim Ferriss — eliminate before optimising), Focusing Question (Gary Keller — one thing that unlocks everything), Ivy Lee Method (6 tasks in order every day), Deep Work Blocks (Cal Newport — protect uninterrupted focus), Two-Minute Rule (David Allen — do it now or schedule it), Task Batching (Cal Newport — group similar work), Parkinson's Law (shorter deadlines force focus), Weekly Review (David Allen — weekly maintenance ritual), Calendar Audit (David Allen — reclaim time from dead meetings)
+  `File: .claude/commands/time-management-leaders.md`
+
+- **`/linkedin-lead-post-types`** — 5 LinkedIn post types that generate leads, each with structure and coaching prompt: Storytelling Post (problem → feeling → frustration → lesson → life after), Framework Share (process → steps → stack frameworks → hold nothing back), Contrarian Take (position → accepted wisdom → proof → unspoken truth; avoid controversy for its own sake), Case Study (starting numbers → process → outcome with figures → client quote), Direct Offer (earn right first → announce explicitly → one CTA; ~1 in 4–5 posts)
+  `File: .claude/commands/linkedin-lead-post-types.md`
+
+### New repos to clone
+
+- No new repos in this batch
+
+### Informational only (no install action)
+
+- No additional informational-only items in this batch
+
+### Plain-text prompts to copy
+
+**Run the 10 SEO Prompts (pick one):**
+> Run SEO prompt #[NUMBER] for my website/niche: [YOUR URL OR NICHE]. Fill in all brackets with my specifics and give me a complete, actionable output.
+
+**Full SEO audit prompt:**
+> You are an SEO expert. Conduct a comprehensive SEO audit of [website URL]. Analyse the following areas and provide specific, actionable recommendations: Technical SEO: Site speed, mobile-friendliness, crawlability, indexing issues, Core Web Vitals, and HTTPS security. On-Page SEO: Title tags, meta descriptions, header structure, keyword usage, internal linking, and content quality. Content Strategy: Identify content gaps, thin content, and opportunities for new, high-ranking content. Backlink Profile: Assess the quality and quantity of backlinks, identify toxic links, and suggest link-building opportunities. User Experience: Evaluate site navigation, design, and how it impacts SEO performance. Create a prioritised action plan with specific solutions for each issue found.
+
+**Apply the Focusing Question (Gary Keller):**
+> My current priorities are: [LIST YOUR PRIORITIES OR PROJECTS]. Apply the Focusing Question: What is the ONE thing I can do this week such that by doing it, everything else becomes easier or unnecessary? Then tell me the ONE thing for today, what's blocking me from doing only that, and how I should restructure my schedule around it.
+
+**Run the Ivy Lee Method:**
+> Here is my full task list for tomorrow: [LIST ALL TASKS]. Apply the Ivy Lee Method: select the 6 most important tasks, rank them 1–6 by importance and impact, explain your ordering, and tell me what to do with everything that didn't make the top 6.
+
+**Write a LinkedIn Storytelling Post:**
+> I want to write a Storytelling Post on LinkedIn about: [YOUR STORY]. My audience is [WHO READS YOUR CONTENT]. My offer/expertise is [WHAT YOU DO]. Write the post using this structure: (1) Hook — 1 line that names the problem and stops the scroll, (2) Day-to-day feeling — 2–3 lines, (3) Frustration — the breaking point, (4) Lesson — the insight or decision, (5) Life after — what changed, (6) Closing question or CTA. Write 2 versions: one more vulnerable, one more professional. Keep each under 200 words.
+
+**Write a LinkedIn Framework Share post:**
+> I want to write a Framework Share post on LinkedIn. My process: [DESCRIBE THE PROCESS OR SYSTEM YOU USE]. My audience: [WHO NEEDS THIS]. Write the post with a hook, brief context, numbered steps (each named and explained), and a closing save-this line. Also give me 3 hook variations to test.
+
+**Write a LinkedIn Case Study post:**
+> I want to write a Case Study post on LinkedIn. Client situation before: [STARTING NUMBERS AND CONTEXT]. What we did: [THE PROCESS — be specific]. Results: [OUTCOME IN REAL NUMBERS]. Client quote: [QUOTE IF AVAILABLE]. Write the post with hook, starting situation, process, outcome, quote, and a soft CTA. Keep it under 250 words. Make the numbers the star.
