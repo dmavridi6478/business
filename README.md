@@ -3895,3 +3895,44 @@ Paste-ready prompts from this batch:
 
 **Full resume → tailored CV + cover letter + ATS score:**
 > Act as a meticulous corporate recruiter and career strategist. MY RESUME: [PASTE]. JOB DESCRIPTION: [PASTE]. PART 1 — Gap Analysis: hard skills comparison, top 5 missing keywords, 3 red flags. PART 2 — Tailored Resume: rewrite with missing keywords, reframe experience, reorder sections. PART 3 — Cover Letter: 3 paragraphs, under 300 words, specific opening hook, address top gaps, clear CTA. PART 4 — ATS Score: 0–100 score, keyword match/gap list, formatting flags, 3 improvements.
+
+## 72. Marketing Frameworks, LinkedIn Brand, Critical Thinking & WolfCut (Batch 72)
+
+*Sources: 4 images + 1 MP4 TikTok video — psychology-backed marketing frameworks, LinkedIn personal brand system, 48 critical thinking questions, 20 business prompts, open-source video editor*
+
+### New commands installed
+
+- **`/marketing-frameworks-7`** — 7 psychology-backed marketing frameworks: **Jobs To Be Done** (hire products for a job), **95-5 Rule** (only 5% ready to buy today — build brand for the 95%), **Peak-End Rule** (memory = peak + ending), **Anchoring** (first impression = reference point), **Information Gap Theory** (curiosity = gap in knowledge → hooks go viral), **Growth Loops vs Funnels** (loops compound; funnels leak), **Memory Structure** (situational cues beat feature lists); each framework has a why + how-to-apply + coaching prompt
+  `File: .claude/commands/marketing-frameworks-7.md`
+
+- **`/linkedin-personal-brand-2026`** — Josh Sanders' 9-element LinkedIn system: (1) **North Star** (one direction, 90 days), (2) **Positioning Triangle** (skills × market problem × unique take), (3) **Audience Clarity Map** (Buyers / Aspirational Followers / Learners), (4) **Content OS** (Teach / Think / Build / Sell lanes), (5) **Attention Engine** (60+120+15+20 min weekly rhythm), (6) **Trust Ladder** (Awareness→Relevance→Authority→Proof→Action), (7) **Content Feedback Loop** (Measure→Learn→Improve weekly), (8) **3-Level Brand Funnel** (reach / trust / proof), (9) **Growth Scorecard** (5 metrics: views, followers, engagement, inbound leads, newsletter signups)
+  `File: .claude/commands/linkedin-personal-brand-2026.md`
+
+- **`/critical-thinking-48`** — Justin Wright's 48 critical thinking questions across 6 categories (8 per category): **Who**, **What**, **Where**, **When**, **Why**, **How**; covers stakeholder mapping, evidence analysis, root cause, timing, significance, implementation; includes full-analysis, single-category, assumption-challenge, and decision-review prompt modes
+  `File: .claude/commands/critical-thinking-48.md`
+
+- **`/business-prompts-20`** — 20 fill-in-the-bracket business prompts from smarterwithai.news: Content Calendar, Press Release, Email Sequence, Social Media Copy, Competitor Analysis, Customer Objections, Follow-Up Emails, Customer Survey, Support Responses, Sales Pitch, SWOT, Onboarding Checklist, PM Framework, Meeting Agenda, Business Continuity Plan, Financial Forecast, Pricing Strategy, Fundraising Pitch, Cost-Cutting Framework, Market Expansion Strategy
+  `File: .claude/commands/business-prompts-20.md`
+
+### New repos to clone
+
+- **[`jub0t/WolfCut`](https://github.com/jub0t/wolfcut)** — WolfCut: free, open-source CapCut replacement; native Rust engine + React UI, runs on macOS/Windows/Linux via Tauri; no account, no watermarks, no paywalls; features: multi-track timeline, free voice filters, free local auto-captions (transcription); v0.1.0, MPL-2.0 license; from @github.signals
+  `git clone https://github.com/jub0t/wolfcut`
+
+### Informational only (no install action)
+
+- No additional informational-only items in this batch
+
+### Plain-text prompts to copy
+
+**Apply 7 Marketing Frameworks to your business:**
+> I want to analyze my marketing using all 7 psychology-backed frameworks. My business is [DESCRIBE]. Walk me through: Jobs To Be Done, the 95-5 Rule, Peak-End Rule, Anchoring, Information Gap Theory, Growth Loops vs Funnels, and Memory Structure. For each one, tell me what I'm doing well and what I should change.
+
+**Build LinkedIn Personal Brand (9-element system):**
+> Help me build my LinkedIn personal brand using Josh Sanders' 9-element system. Start with my North Star: my background is [DESCRIBE], my current goals are [DESCRIBE]. Walk me through all 9 elements and help me complete each one.
+
+**Run 48 Critical Thinking Questions on a problem:**
+> I'm facing this situation: [DESCRIBE SITUATION]. Walk me through all 6 categories of the 48 critical thinking questions (Who, What, Where, When, Why, How). For each question, answer it based on what I've described or flag what information I'd need to answer it. At the end, tell me the top 5 questions I most need to resolve.
+
+**Use the 20 Business Prompts (pick one):**
+> Run prompt #[NUMBER] for my business: [YOUR BUSINESS/PRODUCT/SERVICE]. Fill in the template with details about [RELEVANT CONTEXT].
