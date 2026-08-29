@@ -3665,3 +3665,116 @@ Paste-ready prompts from this batch:
 
 **SWOT Analysis:**
 > I'm evaluating [PROJECT / PRODUCT / DECISION / CAREER MOVE]. Run a SWOT analysis: 1. Strengths: What internal advantages do I have? 2. Weaknesses: What internal gaps or limitations do I have? 3. Opportunities: What external trends or conditions could I exploit? 4. Threats: What external risks could hurt me? Then: Give me 2 strategic recommendations based on the SWOT.
+
+---
+
+## 69 — GitHub Trending Repos · Claude Code Setup Prompts · Multi-Agent Tools · Dev Utilities · Email Verification · AirPods on Linux · Windows 95
+
+*Sources: 4 iCloud Photos zip files (`batch69a`: 28 JPEGs, `batch69b`: 12 JPEGs, `batch69c`: 60 JPEGs + 2 MP4 videos, `batch69d`: 9 JPEGs). Sources include GitHub Trending screenshots (@tomm3hshipp-style), @appmillers (Elshad Karimov), @jackroberts__, @structurewebworks, @freedombuilderai, @aicareersuite. 21 new repos documented; 1 new command created.*
+
+**Duplicate-check (skip):**
+
+| Repo / Tool | First documented |
+|---|---|
+| garrytan/gstack | 39th addition |
+| wshobson/agents | 40th addition |
+| affaan-m/ECC | 62nd addition |
+| Alishahryar1/free-claude-code | 62nd addition (as Alishahryar-one/FREE-CLAUDE-CODE) |
+| HKUDS/ViMax | 65th addition area |
+
+### Command installed
+
+**`/claude-power-prompts`** — 4 power prompts for Claude Code environment setup from @appmillers (Elshad Karimov) and @jackroberts__:
+- **`claudemd`** — interactive CLAUDE.md builder: Claude asks about your business, voice, banned words, output defaults, and working style, then writes to `~/.CLAUDE.md`
+- **`memory`** — persistent memory for corrections: every correction you make is saved as a dedicated `.md` file at `~/.claude/projects/{project}/memory/` and indexed in `MEMORY.md` for future sessions
+- **`routine`** — schedule any Claude skill or sub-agent on Anthropic's cloud on a repeating schedule; output drops into a folder, Notion page, or connected tool
+- **`dashboard`** — Jarvis OS one-screen dark dashboard: laptop health, list of Claude commands, today's schedule, live Obsidian vault notes (no tabs, no scrolling) — from @jackroberts__ Jarvis OS setup
+
+### Repos added
+
+**From batch69a — GitHub Trending / tool carousels:**
+
+- **[`HKUDS/DeepTutor`](https://github.com/HKUDS/DeepTutor)** — AI tutoring system from the HKUDS lab (same org as ViMax); interactive learning agent that explains concepts at multiple depth levels
+  `git clone https://github.com/HKUDS/DeepTutor`
+
+- **[`Fincept-Corporation/FinceptTerminal`](https://github.com/Fincept-Corporation/FinceptTerminal)** — open-source financial terminal CLI; real-time market data, portfolio tracking, and financial analysis from the command line; Python-based
+  `git clone https://github.com/Fincept-Corporation/FinceptTerminal`
+
+- **[`CJackHwang/ds2api`](https://github.com/CJackHwang/ds2api)** — wraps DeepSeek models as an OpenAI-compatible REST API; lets any OpenAI SDK client (Python, JS, Claude Code, etc.) call DeepSeek without changing client code
+  `git clone https://github.com/CJackHwang/ds2api`
+
+- **[`siddharthvaddem/openscreen`](https://github.com/siddharthvaddem/openscreen)** — browser-based open screen sharing / screen broadcasting tool; no install required for viewers
+  `git clone https://github.com/siddharthvaddem/openscreen`
+
+- **[`Z4nzu/hackingtool`](https://github.com/Z4nzu/hackingtool)** — collection of ethical hacking tools for Linux organized by category (web, network, OSINT, forensics, cracking, etc.); Python-based menu installer
+  `git clone https://github.com/Z4nzu/hackingtool`
+
+- **[`AIDC-AI/Pixelle-Video`](https://github.com/AIDC-AI/Pixelle-Video)** — AI video generation model from Alibaba AIDC-AI; text-to-video and image-to-video generation
+  `git clone https://github.com/AIDC-AI/Pixelle-Video`
+
+- **[`google-ai-edge/LiteRT-LM`](https://github.com/google-ai-edge/LiteRT-LM)** — Google's on-device LLM inference runtime (successor to TensorFlow Lite); runs large language models locally on mobile/edge devices; powers Gemma on-device
+  `git clone https://github.com/google-ai-edge/LiteRT-LM`
+
+- **[`trycua/cua`](https://github.com/trycua/cua)** — computer-use agent framework; gives AI agents the ability to control a computer (cursor, keyboard, screen) similar to Anthropic's computer-use but as a self-hostable open-source system
+  `git clone https://github.com/trycua/cua`
+
+- **[`huggingface/ml-intern`](https://github.com/huggingface/ml-intern)** — Hugging Face's ML intern utilities: tooling and scaffolding for ML tasks, experiments, and model work; used internally and released as open-source
+  `git clone https://github.com/huggingface/ml-intern`
+
+- **[`DietrichGebert/ponytail`](https://github.com/DietrichGebert/ponytail)** — AI agent code output minimizer; forces coding agents to produce short, focused, minimal responses; resolves the incomplete README entry at batch 41 ("no verified repo found") — 115k★
+  `git clone https://github.com/DietrichGebert/ponytail`
+
+**From batch69b/69c — tool carousels and GitHub Trending:**
+
+- **[`kavishdevar/librepods`](https://github.com/kavishdevar/librepods)** (26.8k★) — LibrePods: use AirPods on Android and Linux with full feature support (ear detection, battery, noise control); no iOS required; Kotlin/Python
+  `git clone https://github.com/kavishdevar/librepods`
+
+- **[`felixrieseberg/windows95`](https://github.com/felixrieseberg/windows95)** (24.1k★) — Windows 95 running inside an Electron app; runs on Mac, Windows, Linux; the actual Windows 95 OS in a desktop window for nostalgia, demos, and retro computing; MIT
+  `git clone https://github.com/felixrieseberg/windows95`
+
+- **[`pinchtab/pinchtab`](https://github.com/pinchtab/pinchtab)** (8.9k★) — Browser Control for AI Agents: MCP-compatible browser automation tool that lets Claude and other agents control Chrome/Firefox tabs programmatically; TypeScript
+  `git clone https://github.com/pinchtab/pinchtab`
+
+- **[`pranshuparmar/witr`](https://github.com/pranshuparmar/witr)** (14.7k★) — `witr`: CLI that explains why a process is running — shows the reason, parent chain, and resource usage for any PID; useful for debugging mystery processes; Rust
+  `cargo install witr`
+
+- **[`reacherhq/check-if-email-exists`](https://github.com/reacherhq/check-if-email-exists)** (8.6k★) — Rust library and self-hostable API to verify whether an email address exists without sending an email; checks MX records, SMTP handshake, and mailbox existence; powers Reacher
+  `git clone https://github.com/reacherhq/check-if-email-exists`
+
+- **[`HKUDS/CLI-Anything`](https://github.com/HKUDS/CLI-Anything)** (33.2k★) — generates a full CLI interface for any program so AI agents can drive it; converts any tool (GUI app, web service, Python script) into a command-line interface that agents can invoke; install as a Claude Code skill:
+  `npx skills add HKUDS/CLI-Anything --skill cli-hub-meta-skill -g -y`
+
+- **[`DigitalPlatDev/FreeDomain`](https://github.com/DigitalPlatDev/FreeDomain)** (160k★) — nonprofit project offering free domain registration for individuals and small projects; register a real domain at no cost; sponsored by community
+  `git clone https://github.com/DigitalPlatDev/FreeDomain`
+
+- **[`ayghri/i-have-adhd`](https://github.com/ayghri/i-have-adhd)** (25k★, 1.6k forks) — ADHD-friendly output skill for coding agents; instructs Claude Code, Cursor, and Codex to structure responses in short, clearly chunked, distraction-minimizing format; install as a skill:
+  `npx skills add ayghri/i-have-adhd`
+
+- **[`VERT-sh/VERT`](https://github.com/VERT-sh/VERT)** (14.7k★) — VERT: web-based file converter supporting 250+ formats (audio, video, image, documents, fonts) entirely via WebAssembly — no server, no upload, everything runs in the browser; self-hostable
+  `git clone https://github.com/VERT-sh/VERT`
+
+- **[`pear-devs/pear-desktop`](https://github.com/pear-devs/pear-desktop)** (31.5k★) — Pear Desktop: open-source desktop client for YouTube Music; native-feeling app with offline support, playlist management, and no ads; Electron/TypeScript
+  `git clone https://github.com/pear-devs/pear-desktop`
+
+- **[`stab1yai/orca`](https://github.com/stab1yai/orca)** (56k★, 3.8k forks) — Orca: Agent Development Environment (ADE) for running multiple coding agents in parallel side by side — Codex, Claude Code, OpenCode, and Pi in one workspace; resolves the incomplete ORCA entry from batch 34 ("from @lunktech, no GitHub slug captured") — this is the specific repo
+  `git clone https://github.com/stab1yai/orca`
+
+### Informational only (no install action)
+
+- **@structurewebworks MP4 — "55 AI Agents Run an Entire Automotive Company"** — TikTok video showing a multi-agent orchestration system where 55 specialized AI agents handle all functions of an automotive company (sales, supply chain, customer service, quality control, etc.); architecture demo, no public repo
+- **@structurewebworks MP4 — "Claude AI Sales System"** — demonstration of a Claude-powered sales system managing the full pipeline from lead capture through close; informational
+- **@aicareersuite "Build Your Own CRM" (9 slides, batch69d)** — step-by-step guide: (1) Capture leads automatically from Forms/Website/WhatsApp/Social DMs, (2) Organise every lead with Name/Source/Status/Notes/Owner fields, (3) Automate follow-ups (new lead → CRM → send email + WhatsApp + create task), 4 core parts: Lead Capture / Contact Records / Sales Pipeline / Tasks & Reminders; simple stack: Forms → n8n Automation → CRM Database → Email & WhatsApp → Dashboard; informational
+
+### Plain-text prompts to copy
+
+**Build your CLAUDE.md:**
+> Help me build my CLAUDE.md from scratch. Ask me about my business, my voice, my banned words, my output defaults, and how I want you to work. Save it to ~/.CLAUDE.md.
+
+**Enable persistent memory for corrections:**
+> From now on, whenever I correct you, save it as its own .md file at ~/.claude/projects/{project}/memory/. Index everything in MEMORY.md.
+
+**Schedule a Claude Routine on the cloud:**
+> Create a Claude Routine that runs my [skill or sub-agent] every [schedule]. Run it on Anthropic's cloud, not my laptop. Drop the output into [folder, Notion page, or tool].
+
+**Jarvis OS dark dashboard:**
+> Build me a dark dashboard on one screen: how my laptop is doing, my list of commands, today's schedule, and live notes from my Obsidian vault. No tabs, no scrolling.
