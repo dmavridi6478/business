@@ -3850,3 +3850,48 @@ Paste-ready prompts from this batch:
 
 **Build a Gemini CLI workflow:**
 > Set up Gemini CLI and help me create a workflow that does [task]. Compare it to how I'd do the same thing in Claude Code.
+
+## 71. Claude Code 301, Hermes Content Factory, YouTube→Skill & Career Tools (Batch 71)
+
+*Sources: 8 MP4 TikTok videos — advanced Claude Code features, multi-agent content pipeline, skill-building technique, resume gap analysis*
+
+### New commands installed
+
+- **`/claude-code-301`** — @hackproduct9's 9 advanced Claude Code features: **Monorepo Skills** (package-scoped skill loading), **Path Rules** (`paths:` frontmatter scopes rules to file globs), **Context Budget** (CLAUDE.md always / rules on match / skills on demand), **Marketplaces** (`/plugin marketplace add`), **Managed Policy** (`managed-settings.json` — org rules nobody skips), **Symlinked Rules** (`ln -s ~/.standards .claude/rules`), **Headless** (`claude -p "..."` for CI), **Agent SDK** (TS/Python/Go/C# — Claude inside your product), **Permission Layers** (deny anywhere beats allow everywhere)
+  `File: .claude/commands/claude-code-301.md`
+
+- **`/hermes-content-factory`** — @hackproduct9's Mental Model 03: ONE BRIEF → LOCAL AGENT TEAM → SIX CHANNELS multi-agent content pipeline; architecture: Weekly Trend Brief → Hermes Orchestrator → Claude (reason+write) + Codex (build+validate) + Capability Dock (Skills/Plugins/Tools) → 3 parallel researchers (Primary Sources / Trends+News / User Questions, top 5 each) → Synthesis Agent (Merge→Rank→Verify→Cite) → 6 channel outputs (Telegram, WhatsApp, Slack, Twitter, LinkedIn, Newsletter); principle: "Evidence merges before anything is created."
+  `File: .claude/commands/hermes-content-factory.md`
+
+- **`/youtube-to-skill`** — @bengusberg's technique for converting any YouTube video transcript into a reusable Claude Skill; 5-step process: get transcript (YouTube UI / yt-dlp / Claude) → extract methodology → structure as SKILL.md → install → test; includes full one-shot prompt; works best with framework videos, prompt engineering guides, productivity systems, technical tutorials
+  `File: .claude/commands/youtube-to-skill.md`
+
+- **`/resume-gap-analysis`** — @nathanhodgson.ai's 4-part career workflow: paste resume + job description → Claude acts as a strict corporate recruiter → (1) Gap Analysis: hard skills comparison + top 5 missing keywords + 3 experience red flags, (2) Tailored CV: keyword-optimized rewrite, (3) Cover Letter: 3-paragraph targeted letter, (4) ATS Score: 0–100 match score + formatting flags; includes full one-shot prompt for all four outputs at once
+  `File: .claude/commands/resume-gap-analysis.md`
+
+### Informational only (no install action)
+
+- **AI2UI / Verdent.ai (@verdent.ai)** — "One image. Working UI." — Verdent.ai is a commercial agentic coding product (parallel agents, Plan Mode, BYOK, Eco Mode; VS Code + JetBrains + Mac + Windows); turns screenshots/images into working UI code; no public open-source repo; website: verdent.ai; GitHub org: `github.com/verdentAI` (docs only), `github.com/verdent-ai` (demo projects)
+
+- **@nutressniftt — innerbody.com health content** — health information platform; not relevant to development tooling
+
+- **@valeridoesai — AI Motion Tool** — "This site replaced motion designers"; AI-generated motion graphics/animation tool; informational
+
+- **@anastasia.crypto.analyst — 15 Tools for Working with AI** — intro frame only; insufficient detail
+
+### Plain-text prompts to copy
+
+**Claude Code 301 — run all 9 advanced features:**
+> Walk me through the 9 advanced Claude Code features from the 301 guide: Monorepo Skills, Path Rules, Context Budget, Marketplaces, Managed Policy, Symlinked Rules, Headless mode, the Agent SDK, and Permission Layers. For each one, show me the exact config or command I need to set it up.
+
+**Hermes Content Factory — run the full pipeline:**
+> Run the Hermes Content Factory pipeline on this brief: [PASTE BRIEF]. 1) Dispatch three parallel researchers: primary sources, trends+news, user questions (top 5 each). 2) Run the synthesis agent: merge → rank → verify → cite all findings. 3) Generate content for each channel: Telegram, WhatsApp, Slack, Twitter, LinkedIn, Newsletter. Return all six channel outputs, each formatted for that platform.
+
+**YouTube → Claude Skill:**
+> I want to turn this YouTube video into a Claude Code skill. Here is the transcript: [PASTE TRANSCRIPT]. 1) Extract the core methodology, steps, principles, and any templates shown. 2) Write the full SKILL.md file with proper YAML frontmatter. 3) Save it to .claude/skills/[skill-name]/SKILL.md. 4) Tell me how to invoke it.
+
+**Resume gap analysis (one-shot):**
+> Act as a meticulous corporate recruiter. Analyze my attached resume against this job description [Insert Job Description]. Perform a strict gap analysis and provide: 1. A hard comparison of required skills vs. my stated experience. 2. The top 5 technical and soft keywords missing from my resume. 3. Three specific professional gaps or experience red flags.
+
+**Full resume → tailored CV + cover letter + ATS score:**
+> Act as a meticulous corporate recruiter and career strategist. MY RESUME: [PASTE]. JOB DESCRIPTION: [PASTE]. PART 1 — Gap Analysis: hard skills comparison, top 5 missing keywords, 3 red flags. PART 2 — Tailored Resume: rewrite with missing keywords, reframe experience, reorder sections. PART 3 — Cover Letter: 3 paragraphs, under 300 words, specific opening hook, address top gaps, clear CTA. PART 4 — ATS Score: 0–100 score, keyword match/gap list, formatting flags, 3 improvements.
