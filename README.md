@@ -3778,3 +3778,75 @@ Paste-ready prompts from this batch:
 
 **Jarvis OS dark dashboard:**
 > Build me a dark dashboard on one screen: how my laptop is doing, my list of commands, today's schedule, and live notes from my Obsidian vault. No tabs, no scrolling.
+
+---
+
+## 70. GitHub Trending, AI Courses, Team Tools & Product Frameworks (Batch 70)
+
+*Sources: batch70a (8 images + TikTok MP4) and batch70b (44 images) — frameworks, trending repos, AI courses, messaging tools, and ML resources*
+
+### New commands installed
+
+- **`/product-execution-pillars`** — 5 Pillars of Product Execution framework: **Docs**, **Prioritisation**, **Team Rhythm**, **Velocity**, **Projects**; each pillar has a structured prompt template for coaching yourself or your team through it; run with no args for the full checklist, or name a pillar to dive in
+  `File: .claude/commands/product-execution-pillars.md`
+
+- **`/strategic-thinking`** — Natan Mohart's 8 Elements of Strategic Thinking: **Vision**, **Analysis**, **Problem Solving**, **Focus**, **Synthesis**, **Storytelling**, **Decisiveness**, **Adaptability**; each element has a coaching prompt; run with no args to see all 8, or name an element
+  `File: .claude/commands/strategic-thinking.md`
+
+### New repos to clone
+
+- **[`Shubham-Saboo/awesome-llm-apps`](https://github.com/Shubham-Saboo/awesome-llm-apps)** — Awesome LLM Apps: curated collection of LLM-powered apps and examples built with Retrieval-Augmented Generation (RAG), multi-agent systems, and fine-tuning; was #1 on GitHub Trending
+  `git clone https://github.com/Shubham-Saboo/awesome-llm-apps`
+
+- **[`x1xhlol/system-prompts-and-models-of-ai-tools`](https://github.com/x1xhlol/system-prompts-and-models-of-ai-tools)** (135k★, 33.9k forks) — comprehensive collection of leaked and reverse-engineered system prompts for Claude Code, Cursor, Devin AI, Windsurf, v0, Bolt, Perplexity, and 20+ other AI tools; reveals model identities and operational instructions
+  `git clone https://github.com/x1xhlol/system-prompts-and-models-of-ai-tools`
+
+- **[`microsoft/ai-agents-for-beginners`](https://github.com/microsoft/ai-agents-for-beginners)** — Microsoft Learn course: building AI agents from scratch; covers agent architectures, tool use, multi-agent systems, and evaluation; also available at `aka.ms/ai-agents-beginners`
+  `git clone https://github.com/microsoft/ai-agents-for-beginners`
+
+- **[`microsoft/AI-For-Beginners`](https://github.com/microsoft/AI-For-Beginners)** — Microsoft AI curriculum (Microsoft Foundry); full AI course covering classical AI, neural networks, NLP, CV, and modern LLMs; also at `aka.ms/ml-beginners`
+  `git clone https://github.com/microsoft/AI-For-Beginners`
+
+- **[`frappe/raven`](https://github.com/frappe/raven)** — Raven: open-source team messaging app with built-in AI (Chat + AI); Frappe-based, self-hostable, 350+ active sites; replaces Slack for teams on the Frappe ecosystem
+  `git clone https://github.com/frappe/raven`
+
+- **[`Avik-Jain/100-Days-Of-ML-Code`](https://github.com/Avik-Jain/100-Days-Of-ML-Code)** (11.4k forks) — 100 Days of ML Code: Siraj Raval challenge; structured day-by-day ML learning with code, infographics, and practical implementations; covers supervised/unsupervised learning, deep learning, NLP
+  `git clone https://github.com/Avik-Jain/100-Days-Of-ML-Code`
+
+- **[`google-gemini/gemini-cli`](https://github.com/google-gemini/gemini-cli)** — Gemini CLI: Google's official command-line AI agent powered by Gemini; runs in the terminal similar to Claude Code; part of Google's full-stack AI ecosystem (alongside Stitch, Google ADK, Agent2Agent protocol, Jules, Veo)
+  `git clone https://github.com/google-gemini/gemini-cli`
+
+### Self-hosted tools noted (repo slugs not confirmed in images)
+
+- **Atomic** — self-hosted AI knowledge base (1.6k★); converts Markdown into linked articles with semantic search and a visual knowledge graph; local-first; no public repo slug confirmed in images — search GitHub for "atomic knowledge base"
+
+- **Haptic** — open-source local-first Markdown note-taking app; available as both a desktop client and self-hosted web app; no public repo slug confirmed in images — search GitHub for "haptic notes"
+
+- **Panaversity Learn Agentic AI (DACA)** — "Learn Agentic AI using Dapr Agentic Cloud Ascent Design Pattern"; full learning path for production-grade agentic AI systems; no public repo slug confirmed in images — search GitHub for "panaversity agentic ai"
+
+### Skipped (already in README)
+
+- `mukul975/Anthropic-Cybersecurity-Skills` — already indexed in a prior batch
+- `excalidraw/excalidraw` — already indexed in a prior batch
+
+### Informational only (no install action)
+
+- **Google Full-Stack AI Ecosystem (@aigenesis.official)** — carousel covering Gemini family (Flash/Pro/Ultra/Nano/Exp), Stitch (AI UI generator), Google ADK (Agent Development Kit), Agent2Agent (A2A) protocol, Gemini CLI, Jules (autonomous coding agent), NotebookLM, Veo 3.1; informational overview
+- **@nateherkai TikTok — "Claude Automations"** — overview of Claude Code automation capabilities; informational
+- **Ninja AI Tools carousel (Brad Gaines, @ninjaaitools)** — 7-category AI tool overview: AI Video, AI Writing, AI Voice, AI Research, AI Coding, AI Presentations, AI Meetings, Image Generation; informational
+- **@martiendejong_dev slides** — "What Will Businesses Look Like By 2050?" business futures series; informational
+- **@user5672829910 AI tools** — Otter.ai (transcription), Humata AI (PDF Q&A), Remove.bg (background removal), Glasp.co (web highlighter/summarizer), Eightfold.ai (HR/talent AI), PIXAI.ART (AI image gen, "better than DALL-E"); informational web tools
+
+### Plain-text prompts to copy
+
+**Run the 5 Pillars of Product Execution framework:**
+> I want to improve my team's execution. Walk me through the 5 Pillars framework: Docs, Prioritisation, Team Rhythm, Velocity, and Projects. Start by asking me which pillar hurts the most right now.
+
+**Run the Strategic Thinking 8 Elements:**
+> Help me think more strategically. Use the 8 Elements of Strategic Thinking framework: Vision, Analysis, Problem Solving, Focus, Synthesis, Storytelling, Decisiveness, and Adaptability. Ask me about the challenge I'm facing and which element I want to strengthen.
+
+**Explore system prompts of AI tools:**
+> I want to understand how [Claude Code / Cursor / Devin / Windsurf / v0] works under the hood. Pull from the system-prompts-and-models-of-ai-tools repo and summarize what the system prompt reveals about its design philosophy, persona, and key rules.
+
+**Build a Gemini CLI workflow:**
+> Set up Gemini CLI and help me create a workflow that does [task]. Compare it to how I'd do the same thing in Claude Code.
