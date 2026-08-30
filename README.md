@@ -4070,4 +4070,66 @@ Process them and give me:
 6. One insight from this week's reading that I should apply immediately
 
 Format as a clean organised list I can paste back into Notion.
+
+---
+
+## 76. Storytelling Frameworks Reference
+
+**Source:** Will McTighe infographic — "6 Storytelling Frameworks Everybody Must Know"
+**Type:** Claude Code command (`/storytelling-frameworks`)
+**File:** `.claude/commands/storytelling-frameworks.md`
+
+Six structured storytelling frameworks, each with a step-by-step structure and a specific "use when" scenario. Use `/storytelling-frameworks [your topic]` to get a framework applied to your situation, or run with no args to see the full reference.
+
+### Frameworks included
+
+| # | Framework | Use when |
+|---|-----------|---------|
+| 1 | **Hero's Journey** (12 steps) | Interview pitches, founder stories |
+| 2 | **The Golden Circle** (Why → How → What) | Explaining your company's purpose |
+| 3 | **The Mountain Structure** | Talks and dinner stories with a big payoff |
+| 4 | **Pixar's Story Framework** | Making someone care before you ask for something |
+| 5 | **The 3-Act Play** | Case studies, client problem walkthroughs |
+| 6 | **What, So What, Now What** | Exec presentations, budget requests |
+
+### Plain-text prompts
+
+**Hero's Journey prompt:**
+```
+Tell my story using the Hero's Journey framework:
+1. Ordinary World — [your life before]
+2. Call to Adventure — [the opportunity]
+3. Refuse the Call — [initial hesitation]
+4. Meet the Mentor — [who/what helped]
+5. Cross the First Threshold — [first step]
+6. Tests, Allies, Enemies — [obstacles]
+7. Innermost Cave — [hardest moment]
+8. Ordeal — [crisis point]
+9. Reward — [what you gained]
+10. The Road Back — [applying the lesson]
+11. Resurrection — [final challenge]
+12. Return with the Elixir — [what you offer now]
+```
+
+**Pixar's Story Framework prompt:**
+```
+Tell my story using Pixar's framework:
+Once upon a time… [who you are]
+And every day… [familiar situation before the problem]
+Until one day… [the disruption / problem]
+And because of this… [solutions you tried]
+And because of this… [consequences / stakes]
+Until finally… [your solution / offer]
+And ever since that day… [results / success story]
+```
+
+**What, So What, Now What prompt:**
+```
+Structure my presentation using What / So What / Now What:
+WHAT: [the background — what happened, what the data shows]
+SO WHAT: [the consequences — why it matters, what's at risk]
+NOW WHAT: [the recommendation — what to do next]
+```
+
+> **Note:** Four MP4 video files were uploaded alongside this image. Video content cannot be read or analyzed with currently available tools — no command was created from them.
 ```
