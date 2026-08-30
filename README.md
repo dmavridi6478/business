@@ -4133,3 +4133,53 @@ NOW WHAT: [the recommendation — what to do next]
 
 > **Note:** Four MP4 video files were uploaded alongside this image. Video content cannot be read or analyzed with currently available tools — no command was created from them.
 ```
+
+---
+
+## 77. AI Tool Finder — 250+ Curated Tools by Category
+
+**Source:** User-curated link collection (dmavridi@gmail.com)
+**Type:** Claude Code command (`/ai-tool-finder`)
+**File:** `.claude/commands/ai-tool-finder.md`
+
+Comprehensive, categorized reference of 250+ AI and productivity tools saved over time. Use `/ai-tool-finder [use case]` to get the best tools for a specific task, or run with no args for the full directory.
+
+### Categories covered
+
+| Category | Example tools |
+|----------|--------------|
+| AI Video Creation | invideo, zebracat, klingai, lumalabs, runwayml, pika, heygen |
+| AI Image Generation | midjourney, leonardo, krea, ideogram, openart, flux1 |
+| Website/App Builders | bolt.new, lovable.dev, dora.run, wegic, relume, emergent.sh |
+| PDF & Document Tools | simplepdf, lightpdf, hipdf, stirlingpdf, cloudconvert |
+| Infographics & Data Viz | napkin.ai, flourish.studio, julius, venngage, text2infographic |
+| AI Writing & Content | writesonic, hix.ai, simplified, undetectable, type.ai |
+| Learning Platforms | learnanything.xyz, roadmap.sh, shepherd.study, mindgraspai |
+| Automation & Workflow | n8n.io, zapier, lindy.ai, reply.io, string.com |
+| Voice & Audio AI | elevenlabs, podcastle, notta, musicgpt, freetts |
+| Presentation Tools | gamma, magicslides, slideteam, beautiful.ai |
+| Mind Mapping & Notes | mymind, xtiles, notebooklm, map-this |
+| Free AI Multi-Tool Hubs | tinywow, 10015.io, bestofai, futurepedia |
+| SEO & Marketing | similarweb, semrush, seostudio, validea, particl |
+| Avatar & Training Video | humva, heygen, akool, thetwinai, apob.ai |
+| 3D, Maps & Specialty | Google Earth Studio, backflip.ai, spline, zoo.dev |
+
+### Solo entrepreneur app ideas from this tool landscape
+
+Patterns in these tools reveal clear gaps and opportunities for a solo builder:
+
+1. **Niche AI tool directory** — bestfreeaiwebsites.com and futurepedia are generic; a vertical-specific directory (e.g. "AI tools for real estate agents" or "AI tools for course creators") built on an Airtable/Notion CMS + bolt.new frontend is fast to ship and monetizable via affiliate or a $9/mo membership.
+
+2. **AI infographic-as-a-service** — text2infographic.com exists but is generic. A niche service (financial summaries → infographics, research papers → one-pagers) using napkin.ai + Claude + Canva API as the backend, sold on Gumroad or as a subscription.
+
+3. **Automation workflow templates shop** — n8n.io and Zapier templates for specific industries. Sell pre-built automation bundles on Gumroad or a Notion storefront: "$29 — 10 n8n workflows for content creators." Low build cost, recurring revenue from updates.
+
+4. **AI-generated training video service** — use humva + heygen + elevenlabs to produce corporate training/onboarding videos on demand. Solo service: client provides script + brand → you deliver avatar video in 48h. $300–$800/video with nearly $0 marginal cost.
+
+5. **Competitor intelligence report service** — combine similarweb + semrush + Claude to produce weekly competitor analysis reports for small brands. $99–$299/mo subscription. Build the pipeline once in n8n, sell to 20 clients.
+
+6. **AI-powered PDF/document service** — niche document transformation: "upload your research, get an executive brief + infographic." Use stirlingpdf + Claude + napkin.ai. Sell to consultants, analysts.
+
+7. **Learning curriculum builder** — learnanything.xyz-style tool but for custom company onboarding. Client provides their product docs → Claude generates a structured learning path. SaaS on top of Supabase + lovable.dev frontend.
+
+> **Note:** 30 TikTok short-form video links were included in this batch. TikTok video content cannot be fetched or analyzed with available tools — no commands were created from those links.
