@@ -4024,3 +4024,50 @@ Paste-ready prompts from this batch:
 
 **Evaluate a repo before cloning:**
 > I'm considering self-hosting [REPO NAME / URL]. Analyse it for: (1) activity — last commit, open issues, PR merge rate; (2) deployment complexity — Docker support, required env vars, infra needs; (3) community — Discord, docs quality, contributor count; (4) security posture — known CVEs, secret scanning, dependency freshness. Give me a go / no-go recommendation.
+
+---
+
+## 75. Second Brain Weekly Review & Idea Connection Commands (Batch 75)
+
+**Batch:** 77 iCloud Photos (`d3e471d9-iCloud_Photos_2.zip`). Sources include @earchoe (second brain system + weekly review prompt + idea connection prompt), @ty.prompts.ai (NOMAD local AI tool carousel), SkillDrop AI (browser use cases), @aicareersuite (NotebookLM+Claude workflow), @emmadroid (full stack project ideas), @clicksandrank (business platforms), @byblotech (AI email tips), AI Unlocked (GitLab v2.1.232-234 changelog), and @AIEMERGENCE (AI app alternatives). All repos confirmed already in README; two new commands created from @earchoe prompts.
+
+**New Commands:**
+
+- **`/idea-connection`** (`.claude/commands/idea-connection.md`) — Monthly idea connection prompt from @earchoe: paste a selection of notes from the last month; Claude finds recurring themes, cross-domain applications, collective questions, contradictions, and the one big idea tying 3+ notes together. Usage: `/idea-connection [paste your monthly notes]`
+
+- **`/second-brain-weekly`** (`.claude/commands/second-brain-weekly.md`) — Weekly Second Brain Review from @earchoe: paste your Notion inbox every Friday; Claude returns the 3 most important ideas, missed connections between notes, which notes should become content (carousel/video/newsletter), which become actions, what to archive, and one insight to apply immediately — formatted as a clean list to paste back into Notion. Usage: `/second-brain-weekly [paste your Notion inbox / this week's notes]`
+
+**Prompts (plain text to copy):**
+
+**Monthly Idea Connection (@earchoe):**
+```
+Here are notes I have collected over the last month on various topics:
+
+[paste a selection of your notes]
+
+Find connections I might have missed:
+1. What themes keep appearing across different notes?
+2. What idea from one area could apply to a completely different area?
+3. What question do these notes collectively seem to be asking?
+4. What have I learned this month that contradicts something I believed before?
+5. What is the one big idea that ties 3+ of these notes together?
+
+This will help me generate original content and make better decisions.
+```
+
+**Weekly Second Brain Review (@earchoe):**
+```
+// WEEKLY SECOND BRAIN REVIEW – PASTE EVERY FRIDAY
+
+Here are my raw notes and ideas from this week: [paste your Notion inbox]
+
+Process them and give me:
+1. A summary of the 3 most important ideas I captured
+2. Any connections between different notes I might have missed
+3. Which notes should become content (carousel / video / newsletter)
+4. Which notes should become actions (add to my project tracker)
+5. Which notes can be archived or deleted – they are not useful
+6. One insight from this week's reading that I should apply immediately
+
+Format as a clean organised list I can paste back into Notion.
+```
