@@ -3982,3 +3982,45 @@ Paste-ready prompts from this batch:
 
 **Write a LinkedIn Case Study post:**
 > I want to write a Case Study post on LinkedIn. Client situation before: [STARTING NUMBERS AND CONTEXT]. What we did: [THE PROCESS — be specific]. Results: [OUTCOME IN REAL NUMBERS]. Client quote: [QUOTE IF AVAILABLE]. Write the post with hook, starting situation, process, outcome, quote, and a soft CTA. Keep it under 250 words. Make the numbers the star.
+
+---
+
+## 74. Open-Source App Alternatives + Claude Code Commands Reference (Batch 74)
+
+**Sources:** @joshualevi.ai (7 paid-app alternatives carousel), @korolev.timm (Claude Code commands), plus b74a/b74b tool carousels
+
+### Repos to Clone
+
+**Self-hosted & privacy tools:**
+- [`immich-app/immich`](https://github.com/immich-app/immich) (113K★) — self-hosted photo and video backup; open-source Google Photos alternative with mobile apps, face recognition, and albums
+- [`mattermost/mattermost`](https://github.com/mattermost/mattermost) (39K★) — open-source, self-hostable team messaging; Slack alternative with channels, threads, and integrations
+
+**Browser extensions & dev tools:**
+- [`petergyang/no-ai-slop`](https://github.com/petergyang/no-ai-slop) — browser extension that flags and filters AI-generated ("slop") content on the web
+- [`Comfy-Org/ComfyUI`](https://github.com/Comfy-Org/ComfyUI) — node-based GPU interface for Stable Diffusion and other image/video generation models; highly extensible workflow builder
+
+**Analytics & monitoring:**
+- [`OpenLabs-so/openanalytics`](https://github.com/OpenLabs-so/openanalytics) — privacy-first, open-source web analytics platform with built-in MCP support for querying your own traffic data in Claude
+
+**Productivity & workflow:**
+- [`usestrix/strix`](https://github.com/usestrix/strix) — AI-powered browser extension for reading, summarising, and acting on web content without leaving the page
+- [`superplanehq/superplane`](https://github.com/superplanehq/superplane) — open-source release pipeline and feature-flag orchestration tool for coordinating complex deployments
+- [`diwenne/openreply`](https://github.com/diwenne/openreply) — open-source AI reply tool for generating contextual responses across social platforms and email
+
+### Command Installed
+
+- **`/claude-code-commands-reference`** — full reference card for all 15 Claude Code slash commands (12 core + 3 bonus)
+
+  **12 core:** `/init` `/compact` `/clear` `/rewind` `/plan` `/model` `/context` `/mcp` `/agents` `/doctor` `/review` `/batch`
+  **Bonus:** `/btw` `/usage` `/loop`
+
+### Plain-Text Prompts
+
+**Look up a Claude Code slash command:**
+> What does the /[COMMAND] slash command do in Claude Code? Give me a detailed explanation with usage examples and when to use it versus alternatives.
+
+**Discover open-source alternatives to a paid tool:**
+> I currently pay for [TOOL NAME]. What is the best open-source, self-hostable alternative? Give me: (1) the top repo with stars and a one-line description, (2) how close the feature parity is, (3) the main trade-off vs the paid version, (4) the docker-compose or quickstart command to run it locally.
+
+**Evaluate a repo before cloning:**
+> I'm considering self-hosting [REPO NAME / URL]. Analyse it for: (1) activity — last commit, open issues, PR merge rate; (2) deployment complexity — Docker support, required env vars, infra needs; (3) community — Discord, docs quality, contributor count; (4) security posture — known CVEs, secret scanning, dependency freshness. Give me a go / no-go recommendation.
