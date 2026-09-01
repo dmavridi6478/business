@@ -15,6 +15,12 @@ repos=(
   "bagisto/bagisto"
   "browser-use/browser-use"
   "topoteretes/cognee"
+  "openclaw/openclaw"
+  "n8n-io/n8n"
+  "kestra-io/kestra"
+  "node-red/node-red"
+  "windmill-labs/windmill"
+  "NousResearch/hermes-agent"
 )
 for r in "${repos[@]}"; do
   name="${r##*/}"
@@ -112,15 +118,102 @@ echo "=== Installing cognee (pip) ==="
 pip install cognee
 echo "   -> python3 -c 'import cognee'"
 
+# ----------------------------------------------------------------
+# 7. OPENCLAW — self-hosted persistent AI agent
+# ----------------------------------------------------------------
+echo ""
+echo "=== Setting up OpenClaw (ports 18789/18790) ==="
+cd "$REPOS_DIR/openclaw"
+if [ ! -f .env ]; then
+  cp .env.example .env
+  GW_TOKEN=$(openssl rand -hex 32)
+  sed -i "s|OPENCLAW_GATEWAY_TOKEN=|OPENCLAW_GATEWAY_TOKEN=$GW_TOKEN|" .env
+  echo "   .env created (OPENCLAW_GATEWAY_TOKEN auto-generated)"
+fi
+docker compose up -d
+echo "   -> http://localhost:18789 (gateway)"
+
+# ----------------------------------------------------------------
+# 8. N8N — visual AI automation workflows
+# ----------------------------------------------------------------
+echo ""
+echo "=== Starting n8n (port 5678) ==="
+mkdir -p "$HOME/.n8n"
+docker run -d \
+  --name n8n \
+  -p 5678:5678 \
+  -v "$HOME/.n8n:/home/node/.n8n" \
+  --restart unless-stopped \
+  docker.io/n8nio/n8n
+echo "   -> http://localhost:5678"
+
+# ----------------------------------------------------------------
+# 9. KESTRA — complex AI orchestration / data pipelines
+# ----------------------------------------------------------------
+echo ""
+echo "=== Starting Kestra (port 8085) ==="
+docker run -d \
+  --name kestra \
+  --pull=always \
+  -p 8085:8080 \
+  --restart unless-stopped \
+  kestra/kestra:latest server local
+echo "   -> http://localhost:8085"
+
+# ----------------------------------------------------------------
+# 10. NODE-RED — visual flows connecting AI to infrastructure
+# ----------------------------------------------------------------
+echo ""
+echo "=== Starting Node-RED (port 1880) ==="
+mkdir -p "$HOME/.node-red"
+docker run -d \
+  --name node-red \
+  -p 1880:1880 \
+  -v "$HOME/.node-red:/data" \
+  --restart unless-stopped \
+  nodered/node-red
+echo "   -> http://localhost:1880"
+
+# ----------------------------------------------------------------
+# 11. WINDMILL — developer-heavy automation + AI agents
+# ----------------------------------------------------------------
+echo ""
+echo "=== Setting up Windmill (port 8090) ==="
+cd "$REPOS_DIR/windmill"
+# Remap port 80 -> 8090 to avoid conflicts
+sed -i 's/- 80:80/- 8090:80/' docker-compose.yml
+docker compose up -d
+echo "   -> http://localhost:8090"
+
+# ----------------------------------------------------------------
+# 12. HERMES AGENT — AI agent with persistent memory (Nous Research)
+# ----------------------------------------------------------------
+echo ""
+echo "=== Installing Hermes Agent (uv / pip) ==="
+cd "$REPOS_DIR/hermes-agent"
+if command -v uv &>/dev/null; then
+  uv pip install -e ".[all]"
+else
+  pip install -e ".[all]"
+fi
+echo "   -> python3 -c 'from agent import HermesAgent'"
+
 echo ""
 echo "============================================"
 echo "All services started. Endpoints:"
-echo "  Vaultwarden (passwords):  http://localhost:8880"
-echo "  Brightbean Studio (social): http://localhost:8000"
-echo "  Open-SEO:                 http://localhost:3001"
-echo "  Bagisto (e-commerce):     http://localhost:8080"
+echo "  Vaultwarden (passwords):   http://localhost:8880"
+echo "  Brightbean Studio (social):http://localhost:8000"
+echo "  Open-SEO:                  http://localhost:3001"
+echo "  Bagisto (e-commerce):      http://localhost:8080"
+echo "  OpenClaw (AI agent):       http://localhost:18789"
+echo "  n8n (automation):          http://localhost:5678"
+echo "  Kestra (orchestration):    http://localhost:8085"
+echo "  Node-RED (visual flows):   http://localhost:1880"
+echo "  Windmill (dev automation): http://localhost:8090"
 echo ""
 echo "Optional API keys to add in .env files:"
 echo "  open-seo:   DATAFORSEO_API_KEY= (for SEO data)"
 echo "  brightbean: PLATFORM_*_APP_ID/SECRET (social logins)"
+echo "  n8n:        Add AI credentials inside n8n UI"
+echo "  openclaw:   Edit ~/.openclaw/openclaw.json to add LLM API key"
 echo "============================================"
