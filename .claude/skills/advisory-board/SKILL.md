@@ -26,6 +26,7 @@ A repeatable setup process for a personal advisory board — a small panel of re
 - **the-specific-knowledge-excavator** / **the-productize-yourself-blueprint**: If the user is asking the board about their own business/product direction, these skills are natural companions for a "setting up a new business" board question.
 - **product-strategy-session**, **saas-idea-validator**: Good candidates for questions to route through the board when validating a new idea.
 - **quarterly-okr-architect**, **business-decision-frameworks**: The board is a good sanity-check step before committing to goals or prioritization produced by these skills.
+- **personal-growth-prompts**: The generic-persona counterpart — reach for those 6 prompts when the user wants fast strategic/personal-development framing without setting up a full named board; reach for this skill instead when the user wants advice grounded in a specific real person's actual documented thinking.
 
 ## Notes
 
