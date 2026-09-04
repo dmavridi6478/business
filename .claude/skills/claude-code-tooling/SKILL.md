@@ -1,6 +1,7 @@
 ---
 name: claude-code-tooling
 description: Curated directory of external Claude Code tools worth knowing about and recommending — a design-engine desktop app, a senior-engineer skill pack, an educational mini agent-harness, multi-agent orchestration, a skills package manager, a self-evolving agent context database, five AI browser-automation frameworks (Playwright MCP, Stagehand, Skyvern, Magentic-UI, Steel Browser), a hive-mind team workspace (Buzz) that gives Claude Code/Codex/Goose agents a persistent presence alongside humans in shared channels, five open-source AI video-generation model repos (Wan 2.2, LTX-Video, HunyuanVideo, CogVideo, Mochi), a live-verified 22-repo "skills to install in Claude" collection grouped by Build/Design/Research/Marketing (superpowers, impeccable, taste-skill, hyperframes, i-have-adhd, and others, with per-entry verification status), and 5 power-user CLI/MCP tools (token-cost tracker, multi-model router, multi-model consult server, multi-agent terminal manager, a community skills/agents/commands hub). These are standalone software projects, not skills to load — reach for this when the user asks what to install to improve their Claude Code setup, or is looking for a specific capability (multi-agent orchestration, agent memory, a skills package manager, browser automation, agents-in-team-chat, open video generation, anti-AI-slop design skills, cost tracking, model routing) that a plain skill file can't provide.
+description: Curated directory of external Claude Code tools worth knowing about and recommending — a design-engine desktop app, a senior-engineer skill pack, an educational mini agent-harness, multi-agent orchestration, a skills package manager, a self-evolving agent context database, five AI browser-automation frameworks (Playwright MCP, Stagehand, Skyvern, Magentic-UI, Steel Browser), five code-first AI agent-building frameworks (Pydantic AI, Agno, Mastra, Strands Agents, Google ADK) plus a framework-bakeoff evaluation method, five no-code/visual AI agent orchestration platforms (Dify, Flowise, Langflow, CrewAI, AutoGen) plus a "give it one job" agent-trust methodology, two AI design-taste/anti-slop skills (impeccable, Taste Skill), a free local/offline AI coding setup (Ollama + Qwen3 + OpenCode, with the exact install commands and an Ollama context-window tip), and a hive-mind team workspace (Buzz) that gives Claude Code/Codex/Goose agents a persistent presence alongside humans in shared channels. These are standalone software projects, not skills to load — reach for this when the user asks what to install to improve their Claude Code setup, is choosing an agent-building framework or a visual agent platform, wants a free/offline coding-assistant setup, wants Claude Code to stop producing generic "AI slop" designs, or is looking for a specific capability (multi-agent orchestration, agent memory, a skills package manager, browser automation, agents-in-team-chat) that a plain skill file can't provide.
 ---
 
 ## When to use this skill
@@ -20,6 +21,71 @@ The user's setup needs a capability beyond what a markdown skill can provide —
 
 `blader/humanizer` — the seventh tool in the same source list — was installed for real as the `humanizer` skill in this repo (`.claude/skills/humanizer/`), since it's an actual skill file (MIT licensed), not a standalone tool. It removes AI-writing tells from text.
 
+## AI design-taste / anti-slop skills for Claude Code
+
+From "How to Turn Claude Code Into a Web Design Genius" (@ai_slacker) —
+skills that give Claude Code a shared design vocabulary so it stops
+defaulting to the same handful of "AI slop" tells (purple gradients,
+Inter-for-everything, rounded-everything friendliness). Both verified
+real via web search:
+
+| Repo | What it's for | Install / link |
+|---|---|---|
+| `pbakaus/impeccable` | "The missing design vocabulary for agents" — 1 skill, 23 commands, 59 deterministic detector rules for AI-slop/design-quality issues across 7 dimensions; 50,000+★ | https://github.com/pbakaus/impeccable — paste the URL into Claude Code, it installs itself |
+| `Leonxlnx/taste-skill` ("Taste Skill") | Upgrades layout/typography/motion/spacing decisions instead of boilerplate defaults; v2 reads the brief, infers the design language, tunes VARIANCE/MOTION/DENSITY dials; tens of thousands of★ | https://github.com/Leonxlnx/taste-skill |
+
+Both pair with this repo's own `hallmark` skill and the new
+`web-design-taste-workflow` skill (curate a taste library → install these
+tools → never one-shot a design, build 5 directions wide and narrow down)
+— see that skill for the full workflow and a reusable 4-part prompt
+template. `21st.dev` (copy-paste component prompts) is the same source's
+third recommendation — a web tool, not a repo to install.
+
+## Local, offline AI coding setup (free)
+
+From an "It's just 2 commands" carousel (@aigenesis.official) pitching a
+fully local replacement for Claude/ChatGPT for coding. The framing is
+promotional ("REPLACED" stamped over the Claude/ChatGPT logos, "SAVE THIS
+POST") and the "same experience as Claude or ChatGPT" claim doesn't hold —
+a locally-run 8B model is a real, useful tool, not an equivalent to a
+frontier model — but the setup itself is real and the commands check out:
+[`sst/opencode`](https://github.com/sst/opencode) (~195k★, the terminal AI
+coding agent at opencode.ai, verified via web search) run against
+[`ollama/ollama`](https://github.com/ollama/ollama) (already in this
+repo's README "Local AI / offline LLM runtimes" table) serving a local
+Qwen3 model:
+
+```bash
+# 1. Install Ollama
+curl -fsSL ollama.ai/install.sh | sh
+
+# 2. Pull a local model (8B fits an 8GB laptop; free, no signup)
+ollama pull qwen3:8b
+
+# 3. Install OpenCode
+curl -fsSL opencode.ai/install | bash
+
+# 4. Run it in a project — OpenCode auto-detects the local Ollama server
+opencode
+```
+
+One genuinely useful tip from the same source, easy to miss in official
+docs: Ollama's default context window is small enough to make an AI
+coding agent "forget" earlier parts of a codebase mid-session. Raise it
+inside an Ollama session before relying on it for anything beyond a
+single small file:
+
+```
+/set parameter num_ctx 16384
+```
+
+**When this is the right call vs. Claude Code itself**: no API cost, works
+fully offline, no rate limits — genuinely useful for air-gapped work, cost-
+sensitive experimentation, or learning how an agentic coding loop works
+under the hood. Not a swap-in replacement for Claude Code's model quality
+on anything beyond small, well-scoped tasks — treat "replaced them" as the
+source's marketing, not a technical claim to repeat uncritically.
+
 ## Browser-automation frameworks
 
 Five AI browser agents (from a separate "AI Power User Stack" carousel, @zhiprompts) — each gives an agent a way to click/navigate/fill forms on live sites, with different tradeoffs:
@@ -33,6 +99,38 @@ Five AI browser agents (from a separate "AI Power User Stack" carousel, @zhiprom
 | `steel-dev/steel-browser` | Open-source browser API and infrastructure for agents that need durable, remote browser sessions rather than a local one-off — 7.4k stars, TypeScript | https://github.com/steel-dev/steel-browser |
 
 None of these are cloned into this repo — same standalone-software rule as the rest of this list. Before turning any of them loose on a real site, apply the `web-task-scoping` skill's four-step scoping rule (Target/Limit/Run/Review) rather than granting full autonomy from the first run.
+
+## AI agent-building frameworks
+
+Five agent-builder SDKs/frameworks (from an "AI Power User Stack — 5 AI agent builders to try before LangChain" carousel, @zhiprompts) — for writing the agent's own logic (tools, memory, state, evals), a different layer than the browser-automation frameworks above:
+
+| Repo | What it's for | Install / link |
+|---|---|---|
+| `pydantic/pydantic-ai` | Model-agnostic agents with typed inputs, structured outputs, tools, and dependencies as testable Python code — from the Pydantic team, so validation is first-class rather than bolted on — 19k stars, Python | https://github.com/pydantic/pydantic-ai |
+| `agno-agi/agno` | Compose agents and teams of agents with tools, memory, knowledge, reasoning, and model-provider flexibility (swap providers without a rewrite) — 42k stars, Python | https://github.com/agno-agi/agno |
+| `mastra-ai/mastra` | Agents, workflows, RAG, memory, and evaluations in one integrated TypeScript application framework — the JS/TS-native option when the rest of the stack is already TypeScript — 27k stars, TypeScript | https://github.com/mastra-ai/mastra |
+| `strands-agents/harness-sdk` | Lightweight, model-driven agent loop with tools and provider integrations from the Strands ecosystem (Python & TypeScript, Apache-2.0) — 6.7k stars | https://github.com/strands-agents/harness-sdk |
+| `google/adk-python` | Google's open-source Python toolkit for building, evaluating, and deploying agents, with Google's model ecosystem as a first-party integration — 21k stars, Python | https://github.com/google/adk-python |
+
+Star counts are as shown in the source carousel, not independently re-verified — check current counts before treating one as a production-scale endorsement.
+
+**Choosing between them before defaulting to LangChain**: the source carousel's framing (LangChain isn't wrong, just often the default reached for without comparing alternatives first) pairs with a "build the same small agent twice" evaluation method from the same account: give two candidate frameworks the same job, the same tools/state/test set, the same approval rule, and the same deployment target, then compare the resulting code, execution traces, failure modes, and cost — a framework decision based on operational fit for the actual job, not GitHub stars alone. Worth running before committing a new agent build to any framework on this list (or to LangChain).
+
+## No-code / visual AI agent orchestration platforms
+
+A second, related set from the same @zhiprompts "AI Power User Stack" series ("5 AI agent tools that automate real work") — where the frameworks above are for writing an agent's logic as code, these are visual/low-code platforms for wiring one together via a UI:
+
+| Repo | What it's for | Install / link |
+|---|---|---|
+| `langgenius/dify` | Open-source platform for developing *and operating* AI applications — workflows, retrieval, model configuration, ops in one app; 151k stars, TypeScript | https://github.com/langgenius/dify |
+| `FlowiseAI/Flowise` | Visual platform for building AI agent workflows — a visible, drag-and-connect chain of models/tools/data; 55k stars, TypeScript | https://github.com/FlowiseAI/Flowise |
+| `langflow-ai/langflow` | Visual framework for composing and testing component-based, agentic/retrieval workflows; 153k stars, Python | https://github.com/langflow-ai/langflow |
+| `crewAIInc/crewAI` | Framework for orchestrating role-based AI agents — a small agent *team* with distinct roles, not a single agent; 56k stars, Python | https://github.com/crewAIInc/crewAI |
+| `microsoft/autogen` | Framework for building agentic AI applications via multi-agent conversations, with explicit human-participation points; 60k stars, Python | https://github.com/microsoft/autogen |
+
+Star counts are as shown in the source carousel, not independently re-verified. The source's own guidance on when each earns its complexity: Dify when the app itself needs operating (not just a workflow prototype), Flowise/Langflow when a visible chain of models/tools/data is worth more than code you'd have to read to understand the flow, CrewAI only when genuinely distinct roles improve a *bounded* workflow (not by default), AutoGen when the job specifically needs multi-agent conversation with a human able to step in.
+
+**"Give it one job" — the same account's agent-trust methodology**: before letting any agent (built with any tool on either list above) touch anything real, choose a reversible task, restrict its tools and data, define an evaluation, and require approval before impact (Job → Boundary → Evaluate → Approve) — an agent earns more responsibility through measured performance, not through being handed it up front. Pairs with this repo's `night-shift-workflow` skill (the Claude-may/human-approval boundary for anything running unattended) and `web-task-scoping` (the Target/Limit/Run/Review discipline for a browser-facing agent task specifically).
 
 ## Team/agent collaboration platforms
 
@@ -158,3 +256,4 @@ Four `npx skills add <owner>/<repo>` packages (the same `vercel-labs/skills` ins
 Sources: a "7 Claude Code repos I can't work without" screenshot carousel (@joshualevi.ai) for the first six tools; "AI Power User Stack — 5 AI browser agents that can do the clicking for you" carousel (@zhiprompts) for the browser-automation frameworks; "Buzz — The Hive Mind for Humans + Agents" carousel (@iunlockedai, Tool Drop 15) for `block/buzz`; "AI Power User Stack — 5 open AI video models that can replace a production day" carousel (@zhiprompts) for the video-generation model repos; "22 Skills to Install in Claude" carousel (Elshad Karimov, appmillers.com) for the Build/Design/Research/Marketing collection — each entry live-checked against GitHub search before being documented, given this ecosystem's heavy same-name-fork collisions; "5 repos every Claude power user installs first" carousel (@zhiprompts) for the power-user CLI/MCP tools, also live-verified before documenting; "4 Secret Claude Skills for Motion" carousel (@hiitzroman) for the motion-skill packages — all 4 were actually cloned and read before deciding to vendor (`gsap-core` + 7 siblings) or document-only (the rest).
 
 A companion upload in the same batch ("AI Unlocked, Tool Drop 19 — your subagents stopped nesting 5 levels deep") included only its cover/teaser slide, with no actual content slides explaining the referenced setting — not enough real information to document without guessing at specifics, so it was flagged to the user rather than turned into a skill.
+Sources: a "7 Claude Code repos I can't work without" screenshot carousel (@joshualevi.ai) for the first six tools; "AI Power User Stack — 5 AI browser agents that can do the clicking for you" carousel (@zhiprompts) for the browser-automation frameworks; "AI Power User Stack — 5 AI agent builders to try before LangChain" carousel (@zhiprompts) for the code-first agent-building frameworks and the "build the same small agent twice" evaluation method; "AI Power User Stack — 5 AI agent tools that automate real work" carousel (@zhiprompts) for the no-code/visual agent orchestration platforms and the "give it one job" agent-trust methodology; a 7-slide "It's Just 2 Commands" carousel (@aigenesis.official) for the local/offline AI coding setup; a 9-slide "How to Turn Claude Code Into a Web Design Genius" carousel (@ai_slacker) for the design-taste/anti-slop skills (full workflow in `web-design-taste-workflow`); "Buzz — The Hive Mind for Humans + Agents" carousel (@iunlockedai, Tool Drop 15) for `block/buzz`.
