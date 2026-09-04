@@ -1,0 +1,371 @@
+<title>Deliverables Index</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800;900&family=DM+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap">
+<style>
+  :root {
+    --bg: #0C0F18;
+    --bg2: #141826;
+    --bg3: #1C2234;
+    --text: #E4E9F5;
+    --text-sub: #6B789A;
+    --text-muted: #3E4A68;
+    --rule: #1F2840;
+    --c-ops: #3DB89E;
+    --c-biz: #D4943A;
+    --c-design: #8B6ED4;
+    --c-tech: #4A8ED4;
+    --card-bg: #141826;
+    --card-border: #1F2840;
+  }
+  @media (prefers-color-scheme: light) {
+    :root:not([data-theme="dark"]) {
+      --bg: #F0F2F8;
+      --bg2: #E6E9F2;
+      --bg3: #FFFFFF;
+      --text: #111827;
+      --text-sub: #4B5680;
+      --text-muted: #A0AACB;
+      --rule: #D4D9EA;
+      --c-ops: #1E6B5E;
+      --c-biz: #8B5E1A;
+      --c-design: #5E40B0;
+      --c-tech: #2B5FA8;
+      --card-bg: #FFFFFF;
+      --card-border: #D8DCF0;
+    }
+  }
+  :root[data-theme="light"] {
+    --bg: #F0F2F8;
+    --bg2: #E6E9F2;
+    --bg3: #FFFFFF;
+    --text: #111827;
+    --text-sub: #4B5680;
+    --text-muted: #A0AACB;
+    --rule: #D4D9EA;
+    --c-ops: #1E6B5E;
+    --c-biz: #8B5E1A;
+    --c-design: #5E40B0;
+    --c-tech: #2B5FA8;
+    --card-bg: #FFFFFF;
+    --card-border: #D8DCF0;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'DM Sans', system-ui, sans-serif;
+    font-size: 15px;
+    line-height: 1.6;
+    padding: 3.5rem 1.25rem 5rem;
+  }
+  .wrap { max-width: 900px; margin: 0 auto; }
+
+  /* Header */
+  .header {
+    margin-bottom: 3.5rem;
+    border-bottom: 1px solid var(--rule);
+    padding-bottom: 2rem;
+  }
+  .header-top {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 0.6rem;
+  }
+  .repo-label {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700;
+    font-size: 11px;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+  }
+  .count {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700;
+    font-size: 11px;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--text-sub);
+  }
+  h1 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 900;
+    font-size: clamp(2.4rem, 6vw, 4rem);
+    line-height: 1.0;
+    letter-spacing: -.01em;
+    color: var(--text);
+    text-wrap: balance;
+    margin-bottom: 0.7rem;
+  }
+  .header-sub {
+    font-size: 0.93rem;
+    color: var(--text-sub);
+    max-width: 520px;
+  }
+
+  /* Categories */
+  .section { margin-bottom: 2.8rem; }
+  .section-head {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+  }
+  .cat-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+  .cat-label {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 800;
+    font-size: 11px;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--text-sub);
+  }
+  .cat-rule { flex: 1; height: 1px; background: var(--rule); }
+
+  /* Cards */
+  .cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1px; }
+  .card {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 8px;
+    padding: 1.2rem 1.3rem 1.1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    transition: border-color 0.15s;
+    cursor: default;
+  }
+  .card:hover { border-color: var(--cat-color, var(--text-muted)); }
+  .card-title {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 800;
+    font-size: 1.25rem;
+    line-height: 1.15;
+    color: var(--text);
+    text-wrap: balance;
+  }
+  .card-desc {
+    font-size: 0.85rem;
+    color: var(--text-sub);
+    line-height: 1.55;
+    flex: 1;
+  }
+  .card-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 0.5rem;
+    padding-top: 0.7rem;
+    border-top: 1px solid var(--rule);
+  }
+  .card-tag {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700;
+    font-size: 10px;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    padding: 2px 7px;
+    border-radius: 3px;
+    border: 1px solid;
+  }
+  .card-date {
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    font-variant-numeric: tabular-nums;
+  }
+  .card-link {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700;
+    font-size: 11px;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: var(--cat-color, var(--text-sub));
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+  }
+  .card-link:hover { text-decoration: underline; }
+  .card-link svg { width: 10px; height: 10px; }
+
+  /* Status badge */
+  .status {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700;
+    font-size: 10px;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    padding: 2px 6px;
+    border-radius: 3px;
+  }
+  .status-live { background: rgba(61,184,158,0.15); color: var(--c-ops); }
+  .status-repo { background: rgba(74,142,212,0.12); color: var(--c-tech); }
+
+  /* Alert box */
+  .alert {
+    background: var(--bg2);
+    border: 1px solid var(--rule);
+    border-left: 3px solid var(--c-tech);
+    border-radius: 0 6px 6px 0;
+    padding: 0.85rem 1.1rem;
+    margin-bottom: 2.5rem;
+    font-size: 0.88rem;
+    color: var(--text-sub);
+  }
+  .alert strong {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700;
+    font-size: 10px;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--c-tech);
+    display: block;
+    margin-bottom: 0.2rem;
+  }
+
+  /* Colors per category */
+  .ops { --cat-color: var(--c-ops); }
+  .biz { --cat-color: var(--c-biz); }
+  .design { --cat-color: var(--c-design); }
+  .tech { --cat-color: var(--c-tech); }
+
+  footer {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    margin-top: 3rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--rule);
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+</style>
+
+<div class="wrap">
+  <div class="header">
+    <div class="header-top">
+      <span class="repo-label">dmavridi6478/business</span>
+      <span class="count">7 deliverables · 4 categories</span>
+    </div>
+    <h1>Deliverables Index</h1>
+    <p class="header-sub">All artifacts produced across sessions, filed by category. Published Artifacts link to the live page; Repo items live in <code>Artifacts/</code>.</p>
+  </div>
+
+  <div class="alert">
+    <strong>Repo note</strong>
+    <code>dmavridi6478/dmavridi6478</code> is a GitHub profile repo (README only). Sessions that referenced it — IBISWorld API integration, CodeBurn, agent install docs — did not commit artifacts there. No skills or deliverables were recoverable from it.
+  </div>
+
+  <!-- Operations -->
+  <div class="section ops">
+    <div class="section-head">
+      <div class="cat-dot" style="background:var(--c-ops)"></div>
+      <span class="cat-label">Operations</span>
+      <div class="cat-rule"></div>
+    </div>
+    <div class="cards">
+      <div class="card ops">
+        <div class="card-title">Attachment Intake</div>
+        <p class="card-desc">7-step procedure for handling unlabeled file uploads — inspect before asking, never assume intent, execute minimally.</p>
+        <div class="card-meta">
+          <span class="card-tag" style="color:var(--c-ops);border-color:var(--c-ops)">Procedure</span>
+          <span class="card-date">Aug 2026</span>
+        </div>
+      </div>
+      <div class="card ops">
+        <div class="card-title">Night Shift Canvas</div>
+        <p class="card-desc">8-step pre-flight checklist for autonomous/unattended Claude workflows — output, trigger, sources, rules, actions, approval.</p>
+        <div class="card-meta">
+          <span class="card-tag" style="color:var(--c-ops);border-color:var(--c-ops)">Procedure · Automation</span>
+          <span class="card-date">Aug 2026</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Business -->
+  <div class="section biz">
+    <div class="section-head">
+      <div class="cat-dot" style="background:var(--c-biz)"></div>
+      <span class="cat-label">Business</span>
+      <div class="cat-rule"></div>
+    </div>
+    <div class="cards">
+      <div class="card biz">
+        <div class="card-title">Free vs Paid Tool</div>
+        <p class="card-desc">6-step decision framework for choosing between free/open-source desktop tools and paid SaaS — accounts for team size, sync, portability, support, and stage.</p>
+        <div class="card-meta">
+          <span class="card-tag" style="color:var(--c-biz);border-color:var(--c-biz)">Framework</span>
+          <span class="card-date">Aug 2026</span>
+        </div>
+      </div>
+      <div class="card biz">
+        <div class="card-title">MedTech Signal Brief</div>
+        <p class="card-desc">Market intelligence brief — key signals, competitor moves, and opportunities in the MedTech space from live research.</p>
+        <div class="card-meta">
+          <span class="card-tag" style="color:var(--c-biz);border-color:var(--c-biz)">Research Brief</span>
+          <span class="card-date">Aug 18</span>
+        </div>
+      </div>
+      <div class="card biz">
+        <div class="card-title">MedTech Content Playbook</div>
+        <p class="card-desc">Full content strategy playbook for MedTech — channels, formats, cadence, and messaging frameworks grounded in verified market data.</p>
+        <div class="card-meta">
+          <span class="card-tag" style="color:var(--c-biz);border-color:var(--c-biz)">Playbook</span>
+          <span class="card-date">Aug 18</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Design -->
+  <div class="section design">
+    <div class="section-head">
+      <div class="cat-dot" style="background:var(--c-design)"></div>
+      <span class="cat-label">Design</span>
+      <div class="cat-rule"></div>
+    </div>
+    <div class="cards">
+      <div class="card design">
+        <div class="card-title">Design Reference Shelf</div>
+        <p class="card-desc">Curated reference library for design tools, resources, and assets — browsable shelf of vetted design development resources.</p>
+        <div class="card-meta">
+          <span class="card-tag" style="color:var(--c-design);border-color:var(--c-design)">Reference</span>
+          <span class="card-date">Aug 19</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Technical -->
+  <div class="section tech">
+    <div class="section-head">
+      <div class="cat-dot" style="background:var(--c-tech)"></div>
+      <span class="cat-label">Technical</span>
+      <div class="cat-rule"></div>
+    </div>
+    <div class="cards">
+      <div class="card tech">
+        <div class="card-title">Loop Engineering</div>
+        <p class="card-desc">Reference for building autonomous loop workflows — architecture, cadence controls, and patterns for self-paced agentic tasks.</p>
+        <div class="card-meta">
+          <span class="card-tag" style="color:var(--c-tech);border-color:var(--c-tech)">Technical Ref</span>
+          <span class="card-date">Aug 19</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <span>Last updated: Aug 27, 2026</span>
+    <span>dmavridi6478/business · Artifacts/index.html</span>
+  </footer>
+</div>

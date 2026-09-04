@@ -35,4 +35,5 @@ If the communication type doesn't match any existing guideline, ask for clarific
 
 - **doc-coauthoring**: Use that skill instead when the piece is a long-form, iteratively-refined document (a spec, proposal, or policy) rather than a short-format update covered by this skill's `examples/` guides.
 - **quarterly-okr-architect** / **business-intelligence-report** / **ceo-reporting-skill**: Good sources of content for a leadership update or status report — draft the analysis there, then use this skill's formats to communicate it internally.
+- **stakeholder-engagement-matrix**: Decides *who* gets *how much* of a given communication and how often (Power/Interest quadrant) — use that first when a project has multiple stakeholder types, then this skill's formats to draft each one.
 - **docx**: Produce a formal internal memo/update as an actual Word file when a plain message isn't sufficient.

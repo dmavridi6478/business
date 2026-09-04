@@ -1,0 +1,196 @@
+<!doctype html>
+<!--
+  SaaS pricing table + feature comparison grid — the two patterns
+  land-book.com (a SaaS-landing-page-only inspiration gallery) calls out
+  by name as what people actually go there to unstick themselves on.
+
+  Usage: replace the tier names/prices/features and the comparison rows.
+  --highlight marks the recommended tier (scaled up, accent border).
+  Toggle the comparison grid's row values between "check"/"dash"/text.
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>SaaS pricing table</title>
+<style>
+  :root {
+    --ink: #16181d;
+    --muted: #6b7280;
+    --border: #e5e7eb;
+    --surface: #ffffff;
+    --canvas: #f9fafb;
+    --accent: #4f46e5;
+    --accent-soft: #eef2ff;
+    --good: #16a34a;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    padding: 64px 24px;
+    background: var(--canvas);
+    font-family: -apple-system, "Segoe UI", Roboto, sans-serif;
+    color: var(--ink);
+  }
+  .section-label {
+    text-align: center;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 8px;
+  }
+  h2 {
+    text-align: center;
+    font-size: 36px;
+    font-weight: 700;
+    letter-spacing: -.02em;
+    margin: 0 0 12px;
+  }
+  .subhead {
+    text-align: center;
+    color: var(--muted);
+    font-size: 16px;
+    max-width: 480px;
+    margin: 0 auto 48px;
+  }
+
+  /* Pricing table */
+  .tiers {
+    max-width: 1000px;
+    margin: 0 auto 80px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    align-items: start;
+  }
+  .tier {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 32px 28px;
+  }
+  .tier--highlight {
+    border-color: var(--accent);
+    box-shadow: 0 8px 24px rgba(79,70,229,.14);
+    transform: translateY(-8px);
+  }
+  .tier-badge {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .04em;
+    text-transform: uppercase;
+    color: var(--accent);
+    background: var(--accent-soft);
+    padding: 4px 10px;
+    border-radius: 999px;
+    margin-bottom: 14px;
+  }
+  .tier-name { font-size: 18px; font-weight: 700; margin: 0 0 4px; }
+  .tier-desc { font-size: 13px; color: var(--muted); margin: 0 0 20px; }
+  .tier-price { font-size: 42px; font-weight: 800; letter-spacing: -.02em; }
+  .tier-price span { font-size: 15px; font-weight: 500; color: var(--muted); }
+  .tier-cta {
+    display: block;
+    text-align: center;
+    margin: 20px 0 24px;
+    padding: 12px;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+  }
+  .tier--highlight .tier-cta { background: var(--accent); color: #fff; }
+  .tier:not(.tier--highlight) .tier-cta { background: var(--canvas); color: var(--ink); border: 1px solid var(--border); }
+  .tier-features { list-style: none; margin: 0; padding: 0; font-size: 14px; }
+  .tier-features li { display: flex; gap: 8px; padding: 7px 0; color: var(--ink); }
+  .tier-features li::before { content: "✓"; color: var(--good); font-weight: 700; }
+
+  /* Comparison grid */
+  .compare {
+    max-width: 900px;
+    margin: 0 auto;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    overflow: hidden;
+  }
+  .compare table { width: 100%; border-collapse: collapse; font-size: 14px; }
+  .compare th, .compare td {
+    padding: 14px 20px;
+    text-align: center;
+    border-bottom: 1px solid var(--border);
+  }
+  .compare th:first-child, .compare td:first-child { text-align: left; color: var(--muted); font-weight: 500; }
+  .compare thead th { font-weight: 700; background: var(--canvas); }
+  .compare thead th.highlight-col { color: var(--accent); }
+  .compare tbody tr:last-child td { border-bottom: none; }
+  .yes { color: var(--good); font-weight: 700; }
+  .no { color: var(--border); }
+</style>
+</head>
+<body>
+  <div class="section-label">Pricing</div>
+  <h2>Simple, transparent pricing</h2>
+  <p class="subhead">Start free. Upgrade when your team actually needs more, not before.</p>
+
+  <div class="tiers">
+    <div class="tier">
+      <div class="tier-name">Starter</div>
+      <p class="tier-desc">For solo builders trying things out</p>
+      <div class="tier-price">$0<span>/mo</span></div>
+      <a class="tier-cta" href="#">Start free</a>
+      <ul class="tier-features">
+        <li>1 project</li>
+        <li>Community support</li>
+        <li>Basic analytics</li>
+      </ul>
+    </div>
+    <div class="tier tier--highlight">
+      <span class="tier-badge">Most popular</span>
+      <div class="tier-name">Pro</div>
+      <p class="tier-desc">For teams shipping every week</p>
+      <div class="tier-price">$29<span>/mo</span></div>
+      <a class="tier-cta" href="#">Start 14-day trial</a>
+      <ul class="tier-features">
+        <li>Unlimited projects</li>
+        <li>Priority support</li>
+        <li>Advanced analytics</li>
+        <li>Team roles &amp; permissions</li>
+      </ul>
+    </div>
+    <div class="tier">
+      <div class="tier-name">Enterprise</div>
+      <p class="tier-desc">For orgs with compliance needs</p>
+      <div class="tier-price">Custom</div>
+      <a class="tier-cta" href="#">Talk to sales</a>
+      <ul class="tier-features">
+        <li>Everything in Pro</li>
+        <li>SSO &amp; audit logs</li>
+        <li>Dedicated CSM</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="compare">
+    <table>
+      <thead>
+        <tr>
+          <th>Feature</th>
+          <th>Starter</th>
+          <th class="highlight-col">Pro</th>
+          <th>Enterprise</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Projects</td><td>1</td><td>Unlimited</td><td>Unlimited</td></tr>
+        <tr><td>Team members</td><td>1</td><td>10</td><td>Unlimited</td></tr>
+        <tr><td>API access</td><td class="no">—</td><td class="yes">✓</td><td class="yes">✓</td></tr>
+        <tr><td>SSO / SAML</td><td class="no">—</td><td class="no">—</td><td class="yes">✓</td></tr>
+        <tr><td>Support</td><td>Community</td><td>Priority email</td><td>Dedicated CSM</td></tr>
+      </tbody>
+    </table>
+  </div>
+</body>
+</html>

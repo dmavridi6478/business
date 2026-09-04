@@ -1,0 +1,286 @@
+<title>Night Shift Canvas</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800&family=DM+Sans:ital,wght@0,400;0,500;1,400&display=swap">
+<style>
+  :root {
+    --bg: #F5F6F8;
+    --bg2: #ECEEF2;
+    --text: #1A1F2E;
+    --text-sub: #5A6480;
+    --accent: #1E6B5E;
+    --accent-light: #D4EEEA;
+    --rule: #D1D6E0;
+    --step-num: #C5CBD8;
+    --warn: #7B4F12;
+    --warn-light: #FDF2E3;
+    --card: #FFFFFF;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #0E1117;
+      --bg2: #161B27;
+      --text: #E2E8F5;
+      --text-sub: #7B88A8;
+      --accent: #3DB89E;
+      --accent-light: #0D2420;
+      --rule: #242C3E;
+      --step-num: #2E3A52;
+      --warn: #D4943A;
+      --warn-light: #1C1208;
+      --card: #161B27;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #0E1117;
+    --bg2: #161B27;
+    --text: #E2E8F5;
+    --text-sub: #7B88A8;
+    --accent: #3DB89E;
+    --accent-light: #0D2420;
+    --rule: #242C3E;
+    --step-num: #2E3A52;
+    --warn: #D4943A;
+    --warn-light: #1C1208;
+    --card: #161B27;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'DM Sans', system-ui, sans-serif;
+    font-size: 16px;
+    line-height: 1.7;
+    padding: 3rem 1.25rem 5rem;
+  }
+  .wrap { max-width: 660px; margin: 0 auto; }
+  .eyebrow {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700;
+    font-size: 11px;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 1.1rem;
+  }
+  h1 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 800;
+    font-size: clamp(2.2rem, 5vw, 3rem);
+    line-height: 1.08;
+    text-wrap: balance;
+    color: var(--text);
+    margin-bottom: 0.8rem;
+  }
+  .when-box {
+    background: var(--accent-light);
+    border-left: 3px solid var(--accent);
+    padding: 0.9rem 1.1rem;
+    border-radius: 0 6px 6px 0;
+    margin: 1.8rem 0 2.8rem;
+    font-size: 0.93rem;
+    color: var(--text);
+  }
+  .when-box strong {
+    display: block;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+    font-size: 11px;
+    color: var(--accent);
+    margin-bottom: 0.3rem;
+  }
+  .steps { display: flex; flex-direction: column; gap: 0; }
+  .step {
+    display: grid;
+    grid-template-columns: 2.5rem 1fr;
+    gap: 0 1.2rem;
+    padding: 1.6rem 0;
+    border-bottom: 1px solid var(--rule);
+    align-items: start;
+  }
+  .step:last-child { border-bottom: none; }
+  .step-num {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 800;
+    font-size: 2rem;
+    line-height: 1;
+    color: var(--step-num);
+    text-align: right;
+    padding-top: 0.15rem;
+    font-variant-numeric: tabular-nums;
+    user-select: none;
+  }
+  .step-title {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 800;
+    font-size: 1.15rem;
+    letter-spacing: .01em;
+    text-transform: uppercase;
+    color: var(--text);
+    margin-bottom: 0.45rem;
+  }
+  .step-body p { font-size: 0.95rem; color: var(--text); line-height: 1.7; }
+  .bucket-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem;
+    margin-top: 0.8rem;
+  }
+  .bucket {
+    background: var(--bg2);
+    border-radius: 5px;
+    padding: 0.65rem 0.8rem;
+    font-size: 0.82rem;
+  }
+  .bucket strong {
+    display: block;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700;
+    font-size: 10px;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 0.2rem;
+  }
+  .bucket p { color: var(--text-sub); }
+  .readiness {
+    background: var(--warn-light);
+    border: 1px solid var(--warn);
+    border-radius: 6px;
+    padding: 1rem 1.15rem;
+    margin-top: 2.2rem;
+  }
+  .readiness strong {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700;
+    font-size: 11px;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--warn);
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+  .readiness ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+  }
+  .readiness li {
+    font-size: 0.88rem;
+    color: var(--text);
+    display: flex;
+    gap: 0.5rem;
+    align-items: baseline;
+  }
+  .readiness li::before {
+    content: '?';
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 800;
+    color: var(--warn);
+    min-width: 1rem;
+  }
+  footer {
+    font-size: 0.8rem;
+    color: var(--text-sub);
+    margin-top: 3rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--rule);
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+</style>
+
+<div class="wrap">
+  <div class="eyebrow">Automation Procedure</div>
+  <h1>The Night Shift Canvas</h1>
+
+  <div class="when-box">
+    <strong>When this applies</strong>
+    Before building or scheduling any autonomous/unattended Claude workflow — a recurring brief, a scheduled digest, a Routine/cron job, or any "gather → triage → prepare → deliver" background task. Run this procedure once per workflow, before the first scheduled run, not after.
+  </div>
+
+  <div class="steps">
+    <div class="step">
+      <div class="step-num">01</div>
+      <div class="step-body">
+        <div class="step-title">Output — define what must be ready</div>
+        <p>State the exact deliverable in concrete terms. A vague objective ("keep me updated") cannot be automated reliably — a precise deliverable gives every scheduled run the same clear target. Define this first; every other step follows from it.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">02</div>
+      <div class="step-body">
+        <div class="step-title">Trigger — decide when it should begin</div>
+        <p>Pick the actual mechanism: a fixed recurring schedule (via <code>create_trigger</code> or <code>CronCreate</code>), a self-paced dynamic loop (<code>ScheduleWakeup</code>), or a one-shot future reminder (<code>send_later</code>). State the cadence and timezone explicitly.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">03</div>
+      <div class="step-body">
+        <div class="step-title">Sources — where does information actually live?</div>
+        <p>List each source by name and confirm it's connected and authorized — check <code>ListConnectors</code>, don't assume. Claude cannot monitor what it cannot access; an unconnected source produces silently incomplete output.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">04</div>
+      <div class="step-body">
+        <div class="step-title">Rules — write down what deserves attention</div>
+        <p>Define explicit classification criteria for four buckets. Vague rules ("use judgment") produce noisy output — write specific criteria, then refine them against what the first few real runs surface.</p>
+        <div class="bucket-row">
+          <div class="bucket"><strong>Escalate</strong><p>Deadline today, financial impact, customer risk, blocked critical work</p></div>
+          <div class="bucket"><strong>Review</strong><p>Material change, emerging risk, conflicting information</p></div>
+          <div class="bucket"><strong>Include</strong><p>Useful context, no action needed</p></div>
+          <div class="bucket"><strong>Ignore</strong><p>Duplicates, routine notifications, low-value noise</p></div>
+        </div>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">05</div>
+      <div class="step-body">
+        <div class="step-title">Actions — what may Claude prepare unattended?</div>
+        <p>State explicitly what's in scope for unattended execution: retrieving authorized information, comparing against a prior run, classifying urgency, drafting the brief, preparing (not sending) recommended actions.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">06</div>
+      <div class="step-body">
+        <div class="step-title">Approval — where must a human intervene?</div>
+        <p>State explicitly what always requires human sign-off: sending sensitive communications, committing money, changing critical records, approving consequential decisions, or acting on incomplete or conflicting evidence. This list keeps the workflow inspectable.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">07</div>
+      <div class="step-body">
+        <div class="step-title">Run the system readiness check</div>
+        <p>Confirm before scheduling — if any answer is no, resolve that gap before the first run, not after a bad one.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">08</div>
+      <div class="step-body">
+        <div class="step-title">Revisit when the workflow's job changes</div>
+        <p>A canvas answered correctly at setup can go stale — new sources added, rules that stop matching, or output used for something higher-stakes. Re-run the relevant steps rather than patching ad hoc.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="readiness">
+    <strong>Readiness checklist — all must be yes before scheduling</strong>
+    <ul>
+      <li>Is the output clearly defined in concrete terms?</li>
+      <li>Is the timing and timezone explicit?</li>
+      <li>Are all sources connected and authorized?</li>
+      <li>Are attention rules documented in four buckets?</li>
+      <li>Are permitted unattended actions clearly listed?</li>
+      <li>Is human approval boundary explicitly defined?</li>
+    </ul>
+  </div>
+
+  <footer>
+    <span>dmavridi6478/business · docs/procedures/night-shift-canvas.md</span>
+    <span>Operations · Automation</span>
+  </footer>
+</div>
