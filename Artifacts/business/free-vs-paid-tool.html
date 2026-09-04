@@ -1,0 +1,223 @@
+<title>Free vs Paid Tool</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800&family=DM+Sans:ital,wght@0,400;0,500;1,400&display=swap">
+<style>
+  :root {
+    --bg: #F5F6F8;
+    --bg2: #ECEEF2;
+    --text: #1A1F2E;
+    --text-sub: #5A6480;
+    --accent: #8B5E1A;
+    --accent-light: #F5ECD8;
+    --rule: #D1D6E0;
+    --step-num: #C5CBD8;
+    --card: #FFFFFF;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #0E1117;
+      --bg2: #161B27;
+      --text: #E2E8F5;
+      --text-sub: #7B88A8;
+      --accent: #D4943A;
+      --accent-light: #241A0A;
+      --rule: #242C3E;
+      --step-num: #2E3A52;
+      --card: #161B27;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #0E1117;
+    --bg2: #161B27;
+    --text: #E2E8F5;
+    --text-sub: #7B88A8;
+    --accent: #D4943A;
+    --accent-light: #241A0A;
+    --rule: #242C3E;
+    --step-num: #2E3A52;
+    --card: #161B27;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'DM Sans', system-ui, sans-serif;
+    font-size: 16px;
+    line-height: 1.7;
+    padding: 3rem 1.25rem 5rem;
+  }
+  .wrap { max-width: 660px; margin: 0 auto; }
+  .eyebrow {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700;
+    font-size: 11px;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 1.1rem;
+  }
+  h1 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 800;
+    font-size: clamp(2.2rem, 5vw, 3rem);
+    line-height: 1.08;
+    text-wrap: balance;
+    color: var(--text);
+    margin-bottom: 0.8rem;
+  }
+  .when-box {
+    background: var(--accent-light);
+    border-left: 3px solid var(--accent);
+    padding: 0.9rem 1.1rem;
+    border-radius: 0 6px 6px 0;
+    margin: 1.8rem 0 2.8rem;
+    font-size: 0.93rem;
+    color: var(--text);
+  }
+  .when-box strong {
+    display: block;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+    font-size: 11px;
+    color: var(--accent);
+    margin-bottom: 0.3rem;
+  }
+  .steps { display: flex; flex-direction: column; gap: 0; }
+  .step {
+    display: grid;
+    grid-template-columns: 2.5rem 1fr;
+    gap: 0 1.2rem;
+    padding: 1.6rem 0;
+    border-bottom: 1px solid var(--rule);
+    align-items: start;
+  }
+  .step:last-child { border-bottom: none; }
+  .step-num {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 800;
+    font-size: 2rem;
+    line-height: 1;
+    color: var(--step-num);
+    text-align: right;
+    padding-top: 0.15rem;
+    font-variant-numeric: tabular-nums;
+    user-select: none;
+  }
+  .step-body {}
+  .step-title {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 800;
+    font-size: 1.15rem;
+    letter-spacing: .01em;
+    text-transform: uppercase;
+    color: var(--text);
+    margin-bottom: 0.45rem;
+  }
+  .step-body p { font-size: 0.95rem; color: var(--text); line-height: 1.7; }
+  .note {
+    display: inline-block;
+    background: var(--bg2);
+    border: 1px solid var(--rule);
+    border-radius: 4px;
+    font-size: 0.82rem;
+    color: var(--text-sub);
+    padding: 0.55rem 0.8rem;
+    margin-top: 0.7rem;
+    line-height: 1.5;
+  }
+  .callout {
+    background: var(--accent-light);
+    border: 1px solid var(--accent);
+    border-radius: 6px;
+    padding: 1rem 1.15rem;
+    margin: 2rem 0;
+  }
+  .callout strong {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700;
+    font-size: 11px;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--accent);
+    display: block;
+    margin-bottom: 0.35rem;
+  }
+  .callout p { font-size: 0.93rem; color: var(--text); }
+  footer {
+    font-size: 0.8rem;
+    color: var(--text-sub);
+    margin-top: 3rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--rule);
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+</style>
+
+<div class="wrap">
+  <div class="eyebrow">Business Decision Framework</div>
+  <h1>Free vs Paid Tool</h1>
+
+  <div class="when-box">
+    <strong>When this applies</strong>
+    Choosing between a free/open-source desktop tool and a paid SaaS subscription for a business function — notes, workspace, passwords, streaming, video editing, team chat, PDFs, or file transfer.
+  </div>
+
+  <div class="steps">
+    <div class="step">
+      <div class="step-num">01</div>
+      <div class="step-body">
+        <div class="step-title">Count actual users, not just the founder</div>
+        <p>A solo founder or two-person team can usually run entirely on the free/local tool. Once a team needs shared real-time access, permissions, or admin controls across many people, the free tool's local-first design starts costing more in coordination overhead than the subscription would cost in cash.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">02</div>
+      <div class="step-body">
+        <div class="step-title">Check for a hard sync/collaboration requirement</div>
+        <p>If the workflow needs real-time multi-user editing, cross-device sync without manual setup, or mobile apps with desktop parity, verify the free tool actually covers it. Some do — Joplin has sync options — but most don't have real-time co-editing. Don't assume feature parity with the paid tool it replaces.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">03</div>
+      <div class="step-body">
+        <div class="step-title">Weigh data portability against support</div>
+        <p>Free/open-source tools generally win on data portability (local files, open formats, no vendor lock-in) and lose on support (no vendor SLA, community forums instead of a support line). For anything client-facing or revenue-critical, missing support is a real cost — weigh it explicitly, don't ignore it.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">04</div>
+      <div class="step-body">
+        <div class="step-title">Flag security/compliance-sensitive data before defaulting to local</div>
+        <p>Password vaults and file-transfer tools keep data on your own machine by design — that's a feature for sensitive data, but confirm the maintenance burden is actually owned by someone: who backs up the vault file, who patches the app.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">05</div>
+      <div class="step-body">
+        <div class="step-title">Re-run when the business's shape changes</div>
+        <p>A tool chosen correctly for a solo founder can become the wrong choice once a team forms, or once compliance or support requirements appear. Don't treat the initial choice as permanent — revisit it at each stage change, not only when something breaks.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">06</div>
+      <div class="step-body">
+        <div class="step-title">Default for pre-revenue / solo stage</div>
+        <p>Favor the free tool from <code>lean-software-stack</code> unless step 2 or 3 above surfaces a concrete blocker. Cost control matters most before the business has revenue to validate spending against.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="callout">
+    <strong>Decision shortcut</strong>
+    <p>If the answer to "does this need real-time multi-user access?" is no, start free. If it's yes, price the paid option — the coordination tax on a local tool at team scale often exceeds the subscription cost within weeks.</p>
+  </div>
+
+  <footer>
+    <span>dmavridi6478/business · docs/procedures/free-vs-paid-tool-decision.md</span>
+    <span>Business</span>
+  </footer>
+</div>
