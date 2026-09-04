@@ -1,6 +1,6 @@
 ---
 name: sales-enablement
-description: "When the user wants to create sales collateral, pitch decks, one-pagers, objection handling docs, demo scripts, or deal qualification frameworks (MEDDPICC, MEDDIC, BANT). Also use when the user mentions 'sales deck,' 'pitch deck,' 'one-pager,' 'leave-behind,' 'objection handling,' 'deal-specific ROI analysis,' 'demo script,' 'talk track,' 'sales playbook,' 'proposal template,' 'buyer persona card,' 'qualification criteria,' 'MEDDPICC,' 'help my sales team,' 'sales materials,' or 'what should I give my sales reps.' Use this for any document or asset that helps a sales team close deals. For competitor comparison pages and battle cards, see competitor-alternatives. For marketing website copy, see copywriting. For cold outreach emails, see cold-email."
+description: "When the user wants to create sales collateral, pitch decks, one-pagers, objection handling docs, demo scripts, or deal qualification frameworks (MEDDPICC, MEDDIC, BANT). Also use when the user mentions 'sales deck,' 'pitch deck,' 'one-pager,' 'leave-behind,' 'objection handling,' 'deal-specific ROI analysis,' 'demo script,' 'talk track,' 'sales playbook,' 'proposal template,' 'buyer persona card,' 'qualification criteria,' 'MEDDPICC,' 'help my sales team,' 'sales materials,' 'selling to the C-suite,' or 'what should I give my sales reps.' Includes a role-specific C-suite messaging table (CEO/CFO/COO/CRO/CMO/CHRO/CIO-CTO/CPO — what each cares about and the pitch shape that lands vs. the generic one that doesn't). Use this for any document or asset that helps a sales team close deals. For competitor comparison pages and battle cards, see competitor-alternatives. For marketing website copy, see copywriting. For cold outreach emails, see cold-email."
 metadata:
   version: 1.1.0
 ---
@@ -175,6 +175,34 @@ For each objection, document:
 | VP Sales | Pipeline, quota attainment, rep productivity | Revenue impact, time savings per rep |
 | CFO | Total cost, payback period, risk | ROI, cost reduction, financial predictability |
 | End user | Ease of use, daily workflow, learning curve | Time saved, frustration eliminated |
+
+### Selling to the C-Suite (expanded)
+
+Source: reviewed from an uploaded infographic — "Selling to the C-Suite"
+(Haris Halkic, SalesDaily.co). A fuller, role-specific version of the
+table above — what each seat actually cares about, the generic pitch that
+falls flat with them, and the kind of proof-led line that lands instead.
+Use this when the deal actually involves one of these 8 specific seats;
+the shorter table above is still fine for a quick persona check.
+
+| Role | Cares about | Don't say | Say instead (shape of the line) |
+|---|---|---|---|
+| **CEO** | Growth + Risk | Don't pitch features | Show how you help them scale faster, cut risk, or hit strategic goals — e.g. "This helps teams like yours enter [market] 3x faster, with fewer moving parts." |
+| **CFO** | Cost + ROI | "This will improve productivity" (fluff, no number) | Quantify ROI in margins/efficiency/risk-reduction terms — e.g. "We reduced vendor cost 18% and freed 22 hours/month for [role]." |
+| **COO** | Efficiency + Execution | Don't say "streamline" without proving it | Show exactly how ops get simpler and faster — e.g. "We eliminate 4 handoffs in your process, cutting fulfillment time in half." |
+| **CRO** | Pipeline + Predictability | Don't pitch dashboards | Show how reps hit number faster with fewer surprises — e.g. "We help reps close 12% more deals without changing your CRM." |
+| **CMO** | Leads + Attribution | Don't promise "awareness" | Show how demand converts into real pipeline — e.g. "We cut cost per qualified lead by 38%, and proved it with real revenue impact." |
+| **CHRO** | Retention + Culture | Don't pitch "engagement" as an abstraction | Tie the solution to measurable rep retention/onboarding/performance — e.g. "Your reps ramp 30% faster and stay longer because the system supports them." |
+| **CIO / CTO** | Security + Scalability | Don't ignore technical friction | Preempt risk, show fit with their existing stack — e.g. "No extra infrastructure, fully SOC 2 compliant, deployed in 48 hours." |
+| **CPO** | Velocity + Adoption | Don't talk features to a feature owner | Focus on roadmap-outcome acceleration or user-growth impact — e.g. "Adoption jumped 44% in 3 months because we removed friction at the edge." |
+
+The pattern across all 8: lead with the specific, quantified outcome that
+seat is measured on, never the feature list — a pitch that would work
+verbatim for any of the 8 rows is a sign it's still feature-first, not
+persona-first. The example lines above are the infographic's own
+illustrations, not verified case-study numbers from this business — treat
+them as a *shape* to fill with real, honest figures, not a script to
+recite as-is.
 
 ### Implementation Options
 

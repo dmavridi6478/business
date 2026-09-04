@@ -139,3 +139,13 @@ This skill is for business-formal, senior-audience output by default (BU manager
 - **product-strategy-session** / **saas-idea-validator** / **the-productize-yourself-blueprint**: For a brand-new business, validate the idea and product/service format with these before setting quarterly goals around it.
 - **advisory-board**: Sanity-check the resulting goal cascade with `/ask-the-board` before committing to it.
 - **growth-operating-framework**: Use that skill to pick *what* to build growth goals around (North Star metric, data foundation) before architecting the OKR cascade here.
+- **kpi-reference-handbook**: OKRs and KPIs are not the same thing —
+  an OKR (this skill) is the direction and the stretch: an ambitious,
+  time-boxed objective with a few key results that prove it's on track.
+  A KPI (that skill) is an ongoing health metric for something already
+  running, tracked continuously rather than for one quarter. In practice
+  they compose: pull a formula from `kpi-reference-handbook` to serve as
+  a Key Result or a Step 5 lead/lag measure here, rather than inventing a
+  metric from scratch — and once this cascade is running, the same KPI
+  keeps getting tracked in `kpi-reference-handbook`'s terms long after
+  this particular OKR closes out.
