@@ -1428,6 +1428,10 @@ automatically when relevant), commands are invoked explicitly by name:
 - `/content-pipeline [niche/topic]` — runs the 7-agent content team (research → hook → script → design → schedule) in sequence, then always stops for explicit approval before `content-publisher` touches a live platform
 - `/scope-web-task [task]` — applies the `web-task-scoping` skill's Target/Limit/Run/Review discipline to a browser-automation task before it runs; refuses to proceed on side-effecting tasks (submit/purchase/post/delete) until all four are explicit
 - `/tool-stack-check [current tools]` — checks a described software stack against `lean-software-stack`'s free alternatives and applies the `free-vs-paid-tool-decision` procedure to recommend switch/keep-paid per tool
+- `/how-to [task]` — turns a vague "how do I X" into a concrete, numbered step-by-step plan; asks clarifying questions first if the task or starting point is unclear, and add "ELI5" to the arguments for a beginner-level walkthrough
+- `/about-me` — loads standing personal/working context from `docs/about-me.md` (role, current priorities, working style, what "good" looks like) for this conversation only; offers to create the file on first use rather than inventing placeholder content
+- `/research-synthesis [sources]` — runs the `research-synthesis` procedure's 6 stages (Knowledge Map → Literature Review → Gap Finder → Contradiction Detector → Methodology Auditor → Executive Brief) against a pasted or referenced source set in one pass; distinct from `agentic-researcher`, which finds sources rather than synthesizing ones already in hand
+- `/canva-video-plan [content need]` — recommends which of Canva's 5 built-in AI video formats to use (per `canva-ai-video.md`) for a stated platform/goal/footage situation, with the concrete steps and export spec; defers to the `video` skill's heavier stack when the need calls for a custom avatar, programmatic batch rendering, or a dedicated AI-generation model
 - `/one-person-business [skills/interests, or an existing idea/offer]` — runs the `one-person-*` skill bundle end to end (idea → offer → content system → sales system → scaling); stops to ask if the idea failed its own validation check, or if scaling is requested before a content/sales system actually exists
 - `/waitlist-app [product name, description, target user, tone]` — runs the `waitlist-app-builder` skill's 4 prompts end to end (scaffold → drip sequence → referral engine → admin dashboard); holds the admin dashboard for a follow-up pass rather than building it before the core signup/referral loop is verified working
 - `/build-resume [target role, industry, seniority, optional job posting]` — runs the `resume-prompt-kit` skill's 10 prompts end to end (positioning → intake → summary → experience → skills → certs → education → ATS proofread), then tailoring + a cover letter if a specific job posting was given; asks for real background details rather than inventing achievements or dates
@@ -1627,6 +1631,26 @@ Standard operating procedures live in `docs/procedures/`:
   Sources, Rules, Actions, Approval) plus a system readiness check to run
   before scheduling any autonomous/unattended Claude workflow. Backs the
   `night-shift-workflow` skill.
+- `loop-engineering.md` — a tool-agnostic 5-stage loop (Inspect → Build →
+  Verify → Red Team → Score/Rewrite) plus a copy-paste prompt template for
+  running it in any AI tool, and a note on where `task-loop-runner` already
+  covers the middle stages in this environment.
+- `research-synthesis.md` — six copy-paste prompts (Knowledge Map →
+  Literature Review → Gap Finder → Contradiction Detector → Methodology
+  Auditor → Executive Brief) for turning a pile of already-gathered sources
+  into a decision-ready brief. Backs the `/research-synthesis` command.
+- `canva-ai-video.md` — Canva's 5 built-in AI video formats (animated
+  design, talking presentation, video editing, AI voiceover, text-to-video)
+  with a decision shortcut, platform export specs, and a 4-week recurring
+  content system; fills a real gap in the global `video` skill, which
+  covers Hyperframes/Remotion/Veo/HeyGen but never mentions Canva. Backs
+  the `/canva-video-plan` command.
+- `source-verification.md` — for any AI-generated reading list/citation
+  set (from `learn`, `research-synthesis`, or a competitor/market report):
+  require a stated audience, a verified link, and an official-vs-secondary
+  label per source, and treat anything unverifiable as fiction rather than
+  a hedged recommendation. The one piece of a "make AI teach you anything"
+  carousel not already covered by the global `learn` skill.
 - `personal-voice-skill.md` — how to use Anthropic's Skill Creator to turn a
   person's real writing samples into a reusable private voice skill (not
   vendored here — it's Anthropic's own meta-tool, same category as the
