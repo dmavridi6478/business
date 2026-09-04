@@ -1,6 +1,6 @@
 ---
 name: design-dev-resources
-description: Curated directory of free design/frontend tool sites (illustration library, SVG logo directory, UI component kit, CSS glassmorphism generator, JSON visualizer, real-app UI-pattern library) plus notable external AI tools (multi-agent workspace, text-to-UI, AI video, workflow automation, AI prototyping, AI design-to-code agent) and a design-engineering job board, worth knowing about for design and frontend work. Consult this whenever a design/frontend task needs stock illustrations, real brand logos as SVG, landing-page component patterns, a glassmorphism effect, JSON debugging, real shipped-product UI flows for reference/taste-building, an AI tool that turns a prompt into a production frontend, or when a designer/engineer is job-hunting for design-engineering roles specifically.
+description: Curated directory of free design/frontend tool sites (illustration library, SVG logo directory, UI component kit, CSS glassmorphism generator, JSON visualizer, real-app UI-pattern library), design-inspiration galleries, AI prompt discovery libraries (Meigen.ai, Yesand.ai, YouMind), plus notable external AI tools (multi-agent workspace, text-to-UI, AI video, workflow automation, AI prototyping, AI design-to-code agent) and a design-engineering job board. Consult this whenever a design/frontend task needs stock illustrations, real brand logos as SVG, landing-page component patterns, a glassmorphism effect, JSON debugging, real shipped-product UI flows for reference/taste-building, a real example AI image/video prompt to adapt, an AI tool that turns a prompt into a production frontend, or when a designer/engineer is job-hunting for design-engineering roles specifically.
 ---
 
 ## When to use this skill
@@ -13,6 +13,8 @@ Reach for one of these instead of improvising when a task needs:
 - **A CSS glassmorphism effect** without manually tuning blur/opacity/refraction → Glassmorphism generator
 - **Visualizing/debugging a JSON payload** as an interactive graph → JSON Crack
 - **Studying real iOS/web product flows screen-by-screen** for reference before designing one, instead of guessing at patterns → Mobbin
+- **Browsing curated reference sites before starting a build** (so it doesn't default to a template look), matched to the actual job — SaaS landing page, restrained editorial, or award-tier interaction → Design inspiration galleries below
+- **Finding a real example AI image/video generation prompt** to adapt, rather than writing one from a blank page → AI prompt discovery libraries below
 
 ## Resources
 
@@ -39,6 +41,45 @@ A second batch, oriented around specific effects/workflows the mainstream lists 
 | Javii | A dozen tiny single-purpose apps for content visuals — iMessage/TikTok device mockups, tags, stamps, overlays | https://javii.tools |
 
 See the **design-templates** skill for ready-to-use HTML/CSS starting points that approximate what Ditther (halftone effect), Ultramock (3D product tilt), Javii (device mockup frames), and Logo System (moodboard grid) produce — for when the actual tool isn't available or a quick copy-paste snippet is faster than a new dependency.
+
+## Design inspiration galleries
+
+Reference sites for *taste*, not assets — browse before designing so a build doesn't default to the same template everyone else reaches for. Different galleries suit different jobs; don't default to the first one that loads:
+
+| Site | Best for | Link |
+|---|---|---|
+| Awwwards | Industry-standard award gallery, daily selections judged by a panel — huge volume (breadth, current interaction trends), but quality varies more than the smaller curated galleries below | https://www.awwwards.com |
+| Godly | A much smaller, higher bar — 3-5 new sites a week, no submissions or awards, pure curation. Open this one for high-end client work | https://godly.website |
+| SiteInspire | Clean, restrained, European — 8,000+ sites filterable by style/type/subject. Go here for whitespace and typography, not flashy motion | https://www.siteinspire.com |
+| Land-book | Built for exactly one thing: SaaS landing pages. Filter straight to the pricing table or comparison grid you're stuck on | https://land-book.com |
+| Httpster | Small studios, quiet design — typography-driven, independent, restraint over spectacle. Good for when loud isn't the right answer | https://httpster.net |
+
+A filterable, bookmarkable version of this table — same five sites, same notes, plus tag filters (SaaS / editorial / award-tier / high-volume / small-and-curated) — is published as an Artifact: see `design-reference-shelf.html` in `design-templates/templates/` for the source, or ask to have it republished. `saas-pricing-table.html` and `editorial-hero.html` in `design-templates` are starting-point templates in the Land-book and SiteInspire/Httpster registers respectively, for when the actual site isn't reachable or a quick copy-paste snippet is faster than browsing for a reference first.
+
+## AI prompt discovery libraries
+
+Not design-reference galleries — these browse *other creators' actual AI
+image/video generation prompts*, filterable by model, with a one-click
+"use this prompt" flow. Reviewed from an uploaded screen-recording (a
+TikTok, @simplydigital, "3 Websites for unlimited FREE PROMPTS"); this
+session's network egress is blocked to all three domains, so they weren't
+independently browsed — the descriptions below come from what the
+recording actually showed on screen, not a live visit.
+
+| Site | What it's for | Link |
+|---|---|---|
+| Meigen.ai | Gallery of AI-generated images/video, filterable by model (GPT Image, Seedance 2.0, Nanobanana, Midjourney); each post shows the full prompt its creator used, with "Use as Prompt" and "Use as Ref" buttons | https://www.meigen.ai |
+| Yesand.ai | Similar prompt-attached image/video gallery, browsable by category (Featured, World Cup, Pride Month, Grads, Fashion, Collage, Video, Portrait) rather than by model | https://yesand.ai |
+| YouMind (Prompts) | Billed as "the world's largest free AI prompt library" — 20,000+ image/video/workflow prompts, updated daily, organized into curated packs and a "hottest this week" feed; each entry has a "View full prompt" / "Try now" pair | https://youmind.com/prompts |
+
+These are attribution-driven community galleries — the prompts belong to
+the individual creators who posted them (e.g. a Meigen.ai post credited
+to "Pierrick Chevallier | IA" for a Seedance 2.0 anime-action prompt),
+not the platforms. Browse and adapt from them directly rather than
+treating any single one as a generic template to copy verbatim without
+crediting its source. See `ai-video-image-prompt-structure` in this
+repo's skills for the reusable *structural pattern* these libraries all
+converge on, written fresh rather than lifted from any one example.
 
 ## External AI tools worth knowing about
 
