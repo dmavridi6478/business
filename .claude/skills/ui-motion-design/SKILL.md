@@ -57,6 +57,8 @@ Use `type: "spring"` with `stiffness`/`damping` (not `duration`) for anything th
 - **web-artifacts-builder**: Apply spring-based motion patterns to interactive artifact components.
 - **design-templates**: The device-frame and product-3d-tilt templates can take subtle entrance/hover motion from this skill instead of being fully static.
 - **premium-html-presentation**: Slide-transition timing/easing should follow the duration guidance here rather than defaulting to whatever the framework ships with.
+- **design-dev-resources**: Its Motion.ed entry is a visual, interactive reference for the same easing/delay/masking/parallax techniques this skill describes in writing — use it to see a technique before applying it.
+- **gsap-core** and its 7 siblings (`gsap-timeline`, `gsap-scrolltrigger`, `gsap-react`, `gsap-frameworks`, `gsap-utils`, `gsap-performance`, `gsap-plugins`): The official GreenSock implementation skills — use this skill to decide *what* motion should communicate, those for the actual GSAP code.
 
 ## Notes
 

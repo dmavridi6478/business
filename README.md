@@ -15,13 +15,16 @@ A starter bundle of business-oriented Claude skills lives in `.claude/skills/`:
 - `product-marketing-context` — product/audience/positioning context doc used by other marketing skills
 - `competitor-profiling` — structured competitor research and profiles
 - `content-strategy` — content planning, topic clusters, editorial calendars
+- `copywriting` — writes individual persuasive copy (headlines, product descriptions, email copy, CTAs) via a Problem → Promise → Proof → CTA framework, once `content-strategy` has picked the topic
+- `marketing-psychology` — 8 behavioral persuasion principles (framing, social proof, anchoring, curiosity, loss aversion, specificity, pricing context, decision friction) to pick the right lever for a message instead of stacking random tactics
 - `internal-comms` — company newsletters, FAQs, general internal communications
 - `doc-coauthoring` — structured workflow for co-authoring docs, proposals, and specs
 - `attachment-intake` — how to handle uploaded files (zips, photo batches, docs) that arrive with no or mismatched instructions, instead of guessing at intent
-- `design-dev-resources` — curated directory of free design/frontend tool sites (unDraw, SVGL, Aceternity, Glassmorphism generator, JSON Crack, Mobbin) plus notable external AI tools (Genspark, Google Stitch, Google Flow, Gumloop, Figma Make, Kombai) and a design-engineering job board (Design Engineer Jobs) worth knowing about
+- `design-dev-resources` — curated directory of free design/frontend tool sites (unDraw, SVGL, Aceternity, Glassmorphism generator, JSON Crack, Mobbin, Ecomm.Design, UI.live, Motion.ed, Drawerrr, Realtime Colors, tweakcn, Smooth Shadows, lucide-animated, coolshapes, Wakamai Fondue) plus notable external AI tools (Genspark, Google Stitch, Google Flow, Gumloop, Figma Make, Kombai, Visily) and a design-engineering job board (Design Engineer Jobs) worth knowing about
 - `ai-search-marketing-2026` — the SEO/SXO/AEO/GEO/AIO five-discipline wheel, a modern-marketing taxonomy, 5 exec-level marketing-analytics questions, a 15-day day-by-day AI-search action plan, and a 20-source AI-visibility ecosystem map cross-checked against which sources this account can actually query via a live MCP connector
 - `growth-operating-framework` — a 7-step sequence for capital-efficient growth (real-business alignment → North Star metric → data foundation → feedback loop → cross-functional accountability → capital-efficient scale → fast iteration)
 - `linkedin-virality-playbook` — 9 tactics for LinkedIn posts that reach beyond the author's own network (proof-led hooks, repostable angles, reusable visual templates, real engagement questions)
+- `outbound-campaign-brief` — turns a one-line plain-English brief into a B2B outbound campaign (derived target filters, drafted outreach via `copywriting`, real prospecting data instead of fabricated leads) gated behind explicit human approval and a stated send cap before anything sends
 - `inbound-content-playbook` — a 12-step compounding loop (visibility → trust → conversations → inbound → feedback) for generating inbound leads through content instead of cold outreach, ending in a 5-question self-check
 - `resume-prompt-kit` — 10 structured prompts covering a full resume build (positioning → intake → summary → experience → skills → certs → education → ATS proofread) plus JD-tailoring and a cover letter
 - `contract-review` — reviews contracts (NDAs, employment agreements, SaaS terms, M&A documents) for unfavorable terms, suggests redlines, and benchmarks clauses against market standards; built on the CUAD dataset (41 risk categories), ContractEval, and LegalBench; vendored in full from [evolsb/claude-legal-skill](https://github.com/evolsb/claude-legal-skill) (MIT) — distinct from the already-installed `claude-for-legal` 12-plugin suite, which doesn't include a focused contract-review skill
@@ -40,6 +43,7 @@ A design/output bundle sits alongside it, for turning business content into actu
 - `pptx` / `docx` / `xlsx` / `pdf` — editable PowerPoint, Word, Excel, and PDF file creation/editing
 - `design-templates` — 6 ready-to-use, verified-rendering HTML/CSS templates (iMessage mockup, social device frame, 3D product tilt, halftone/dither effect, moodboard grid, brand board) to drop into a build instead of writing from scratch
 - `ui-motion-design` — tasteful UI motion: easing curves, spring physics, timing, and micro-interaction patterns
+- `gsap-core`, `gsap-timeline`, `gsap-scrolltrigger`, `gsap-react`, `gsap-frameworks`, `gsap-utils`, `gsap-performance`, `gsap-plugins` — GreenSock's own official 8-part GSAP implementation skill pack (core API, timelines, ScrollTrigger, React, Vue/Svelte, utils, performance, plugins); vendored for real from [greensock/gsap-skills](https://github.com/greensock/gsap-skills) (MIT) — the code-level counterpart to `ui-motion-design`'s principles
 - `design-review-audit` — audits a finished build against a spacing/hierarchy/contrast/consistency/AI-slop checklist; companion to `/design-review`
 - `brandkit-generator` — turns a one-line idea into 2-3 brand directions (wordmark, palette, type pairing, brand board), fast and explicitly non-final
 - `design-token-extractor` — extracts a reusable color/type/spacing token set from a reference site or screenshot
@@ -57,15 +61,20 @@ A third bundle covers **setting up a new business** — validating an idea and t
 - `content-repurposing-service` — a concrete worked example: a productized weekly service that turns one client recording into a 7-asset content pack (carousel, video outlines, email, text posts) on a Mon–Fri cadence
 - `data-cleanup-brief-service` — a sibling worked example: a productized weekly service that turns a client's recurring messy CSV exports into a clean, verified one-page change brief (deterministic pandas/DuckDB cleanup first, AI narrative only after the numbers are locked), with an honestly-labeled sample price to validate rather than a guaranteed-revenue claim
 - `lean-software-stack` — curated directory of 8 free/open-source desktop apps (AppFlowy, Joplin, KeePassXC, OBS Studio, Kdenlive, Element, PDFsam Basic, LocalSend) that replace common paid SaaS tools, for controlling software costs before revenue validates the spend; companion to `/tool-stack-check`
+- `self-hosted-docker-stack` — curated directory of 10 verified, self-hostable Docker services (Pterodactyl, Frigate, Jellyfin, Dockge, Stirling PDF, Open WebUI, AdGuard Home, Uptime Kuma, Vaultwarden, Forgejo) for a homelab/server stack, each repo confirmed by live search rather than taken from branding alone; overlaps with `lean-software-stack` on PDF tooling and password managers as the server-hosted vs. desktop choice
 
 A fourth pair covers **personal AI infrastructure** — setting up Claude Code itself as a tool, rather than producing business deliverables:
 
 - `advisory-board` — set up a personal "council of experts" (named advisors + their real source material) that the `/ask-the-board` command draws on
+- `personal-growth-prompts` — 6 ready-to-use generic "act as X" persona prompts (Elite AI Mentor, CEO mindset, Life Optimization Coach, Brutally Honest Advisor, Personal Success OS, 10x Improvement Coach) for fast personal-development framing without setting up a full named board
 - `ai-discoverable-site` — make a personal/company site readable by AI assistants (semantic HTML, meta descriptions, `llms.txt`, `robots.txt`, an "Ask AI about me" cross-provider block)
 - `humanizer` — strips AI-writing tells (inflated symbolism, promotional language, em dash overuse, filler phrases, etc.) from drafted text; vendored for real from [blader/humanizer](https://github.com/blader/humanizer) (MIT)
-- `claude-code-tooling` — curated directory of external Claude Code tools (a design-engine desktop app, a senior-engineer skill pack, multi-agent orchestration, a skills package manager, an agent context/memory database, five browser-automation frameworks, a hive-mind team workspace) that are standalone software, not skill files, so they're documented here rather than vendored in
+- `claude-code-tooling` — curated directory of external Claude Code tools (a design-engine desktop app, a senior-engineer skill pack, multi-agent orchestration, a skills package manager, an agent context/memory database, five browser-automation frameworks, a hive-mind team workspace, five open-source AI video-generation models, a live-verified 22-repo "skills to install in Claude" collection, 5 power-user CLI/MCP tools for cost tracking/model routing/multi-agent management, and a 4-repo motion-skills batch where cloning and reading each repo changed the verdict on 3 of the 4) that are standalone software, not skill files, so they're documented here rather than vendored in
 - `web-task-scoping` — governance procedure for scoping any browser-automation task (Target → Limit → Run → Review) before granting a web agent more autonomy; companion to `/scope-web-task`
 - `night-shift-workflow` — design and govern a scheduled/unattended Claude workflow (a recurring brief, digest, or Routine) that gathers, triages, and drafts while the user is away, with an explicit Claude-may/human-approval boundary; companion to the `night-shift-canvas` procedure
+- `video-model-evaluation` — the "five-clip test": a controlled comparison method (same brief, source, duration, aspect ratio, and rubric fixed before generating) for picking an AI video-generation model based on usable footage instead of a hand-picked demo clip
+- `rag-pipeline-architecture` — reference architecture for building a Retrieval-Augmented Generation system (indexing pipeline: chunk → embed → vector DB; query pipeline: embed → search → top-K → prompt → LLM → grounded answer), the "index first, then query" build-order discipline, and the chunk-quality × retrieval-quality failure model; companion to the `rag-build-order` procedure
+- `subagent-depth-control` — explains Claude Code's subagent nesting-depth limit (each layer multiplies context windows/token cost, not adds), how the default has changed across versions (5 locked → 1 → 3, configurable since v2.1.217), and the `CLAUDE_CODE_MAX_SUBAGENT_SPAWN_DEPTH` setting — with the general lesson to check `claude --version` before trusting a guide's claimed default on any fast-moving setting
 
 A fifth bundle was reviewed and vendored from a "Claude tools worth installing"
 social-media roundup (GitHub repos / plugins / skills / MCP servers). Each is a
@@ -1455,6 +1464,9 @@ Skills") section pointing at the others that feed it or consume its output:
   a Greek MedTech CEO audience.
 - `content-strategy` decides what to write; `doc-coauthoring` (long-form) and
   `internal-comms` (short-form) draft it; `docx`/`pdf` produce the final file.
+  `copywriting` handles short persuasive pieces specifically (headlines, CTAs,
+  product/pricing copy), drawing on `marketing-psychology`'s principles for
+  the persuasive lever and `humanizer` for the final pass.
 - `competitor-profiling` feeds both `sales-enablement` (battle cards) and
   `content-strategy` (competitive content gaps).
 - Any of the reporting/planning skills can hand off to `pptx`, `premium-html-presentation`,
@@ -1467,6 +1479,9 @@ Skills") section pointing at the others that feed it or consume its output:
   niche tools (Javii, Ultramock, Ditther, Logo System) produce.
 - `ui-motion-design` and `design-review-audit` (`/design-review`) bookend a
   build: motion guidance going in, a checklist audit coming out.
+  `gsap-core` and its 7 vendored siblings are the code-level layer between
+  them — `ui-motion-design` decides what motion should communicate, the
+  `gsap-*` skills implement it.
 - `brandkit-generator` turns a one-liner into a brand direction, assembled via
   `design-templates`' `brand-board.html`; `design-token-extractor` turns any
   reference (that or an external site) into reusable tokens; `image-to-code`
@@ -1480,13 +1495,20 @@ Skills") section pointing at the others that feed it or consume its output:
   `content-repurposing-service` is a ready-made example of running that whole
   chain and landing on a productized content service. `lean-software-stack`
   keeps founder overhead near zero during this phase, checked against the
-  `free-vs-paid-tool-decision` procedure via `/tool-stack-check`.
+  `free-vs-paid-tool-decision` procedure via `/tool-stack-check`;
+  `self-hosted-docker-stack` extends the same cost-control lens to
+  server-hosted infrastructure once the business needs more than a desktop
+  app (e.g. self-hosted Git or uptime monitoring instead of paid seats).
 
 - For personal AI setup: `advisory-board` supplies advisors that
   `product-strategy-session`, `quarterly-okr-architect`, and the new-business
   cluster can sanity-check decisions against via `/ask-the-board`.
   `ai-discoverable-site` pulls its "who they are" content from
   `product-marketing-context` and hands implementation to `frontend-design`.
+  `personal-growth-prompts` is the fast, no-setup alternative to
+  `advisory-board` — generic archetypal personas instead of named real
+  advisors — and its 10x Improvement Coach prompt is a lighter, per-goal
+  version of `the-leverage-stack-auditor`'s fuller audit.
 
 - `humanizer` is a general-purpose editing pass — run it on drafts from
   `sales-enablement`, `content-strategy`, `doc-coauthoring`, `internal-comms`,
@@ -1514,9 +1536,28 @@ Skills") section pointing at the others that feed it or consume its output:
   the reporting structure if the scheduled brief is business-facing rather
   than personal.
 
-`attachment-intake`, `claude-code-tooling`, `web-task-scoping`, and
-`night-shift-workflow` are separate, meta-level skills and aren't part of
-the business/design content chain above.
+- `outbound-campaign-brief` turns a one-line target/channel brief into a
+  B2B outbound campaign: real prospecting data (not fabricated leads) →
+  `copywriting` (using `marketing-psychology`'s persuasive lever) for the
+  message → `night-shift-workflow`'s Claude-may/human-approval boundary,
+  applied as an explicit send cap, before anything actually goes out.
+  `sales-enablement` picks up the conversation once a reply comes in.
+
+- `video-model-evaluation`'s five-clip test is the fixed-rubric-before-generating
+  discipline applied to picking one of `claude-code-tooling`'s open
+  video-generation models — the same "define everything before running, or
+  it isn't ready" discipline `night-shift-canvas` applies to workflow setup
+  and `design-review-audit` applies to a finished build.
+
+- `subagent-depth-control` applies `web-task-scoping`'s "don't grant more
+  scope than the task needs" discipline to Claude Code's own subagent
+  nesting-depth setting, and feeds into `night-shift-workflow` when a
+  scheduled workflow spawns nested subagents.
+
+`attachment-intake`, `claude-code-tooling`, `web-task-scoping`,
+`night-shift-workflow`, `video-model-evaluation`, and
+`subagent-depth-control` are separate, meta-level skills and aren't part
+of the business/design content chain above.
 
 ### ⚠️ `brand-guidelines` applies Anthropic's brand, not the user's
 
@@ -1610,6 +1651,16 @@ Standard operating procedures live in `docs/procedures/`:
   label per source, and treat anything unverifiable as fiction rather than
   a hedged recommendation. The one piece of a "make AI teach you anything"
   carousel not already covered by the global `learn` skill.
+- `personal-voice-skill.md` — how to use Anthropic's Skill Creator to turn a
+  person's real writing samples into a reusable private voice skill (not
+  vendored here — it's Anthropic's own meta-tool, same category as the
+  `claude-code-tooling` entries), so future drafts sound like them without
+  re-explaining preferences each time.
+- `rag-build-order.md` — build and validate the indexing pipeline completely
+  before touching the query pipeline, test retrieval in isolation before
+  adding generation, and diagnose answer-quality issues chunk-quality →
+  retrieval-quality → generation, in that order. Backs the
+  `rag-pipeline-architecture` skill.
 ---
 
 **37th addition** (`83ad5cc1-iCloud_Photos.zip`, 130 images, August 2026)

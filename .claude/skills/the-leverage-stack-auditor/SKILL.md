@@ -39,3 +39,4 @@ d@your.aimentor
 
 - **the-productize-yourself-blueprint** / **the-specific-knowledge-excavator**: Run before or alongside this audit — they define the product/niche whose leverage is being assessed here.
 - **content-repurposing-service**: A useful test case — audit whether that service is genuinely leveraged (media: reusable assets/system) or a leverage leak (a person still has to do the weekly extract/draft/approve loop by hand).
+- **personal-growth-prompts**: Its "10x Improvement Coach" prompt applies this same highest-leverage-action lens to a single goal in the moment — reach for that prompt for a quick per-goal check, this skill for the fuller audit across a person's whole set of income sources/activities.

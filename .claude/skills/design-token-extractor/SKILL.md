@@ -41,6 +41,7 @@ description: Extract a reusable design-token set (color roles, type scale, spaci
 - **theme-factory**: A preset theme is a faster starting point when there's no specific reference to match — use this skill only when there's an actual site/screenshot to extract from.
 - **brandkit-generator**: Once a brand direction is chosen, extract it into this token format for downstream builds.
 - **design-review-audit**: Inconsistent spacing/color values found during a review are a signal to run this extraction (or define a fresh token set) instead of patching values ad hoc.
+- **design-dev-resources**: Its tweakcn entry is a live tool for editing shadcn tokens against a real dashboard preview once this skill has produced a token set — useful for iterating on the values interactively rather than only editing them as code.
 
 ## Notes
 

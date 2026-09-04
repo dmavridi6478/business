@@ -379,10 +379,11 @@ For partner sales enablement, see the [tools registry](../../tools/REGISTRY.md):
 
 ## Related Skills
 
-Installed in this repo: **product-marketing-context**, **competitor-profiling** (below). The rest are marketplace skills not currently installed here.
+Installed in this repo: **product-marketing-context**, **competitor-profiling**, **copywriting**, **marketing-psychology** (below). The rest are marketplace skills not currently installed here.
 
 - **competitor-alternatives**: For public-facing comparison and alternative pages
-- **copywriting**: For marketing website copy
+- **copywriting** *(in this repo)*: For marketing website copy, and the words/CTAs inside sales collateral this skill structures
+- **marketing-psychology** *(in this repo)*: Apply its principles when a deck, one-pager, or CTA needs to be more persuasive, not just better organized
 - **cold-email**: For outbound prospecting emails
 - **revops**: For lead lifecycle, scoring, routing, and pipeline management
 - **pricing-strategy**: For pricing decisions and packaging
