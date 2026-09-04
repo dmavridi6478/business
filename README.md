@@ -34,6 +34,7 @@ A design/output bundle sits alongside it, for turning business content into actu
 - `theme-factory` — 10 preset visual themes (colors/fonts) applicable to any artifact
 - `premium-html-presentation` — cinematic, dark-mode HTML slide decks
 - `the-design-system-prompt` — an alternative cinematic-HTML-deck prompt (secondary to `premium-html-presentation`)
+- `ai-canva-presentations` — Claude-structures → Canva-builds → polish workflow for pitch decks/proposals/reports, ~26 min for a 12-slide deck; drives the Canva connector directly when available (outline review → generate → export), one-idea-per-slide discipline, cover/content/data/CTA slide archetypes
 - `campaign-page-one-shot` — one-shot marketing landing pages
 - `brand-guidelines` — **Anthropic's own** brand colors/fonts specifically, not a generic client-branding tool (see caveat in the skill itself)
 - `pptx` / `docx` / `xlsx` / `pdf` — editable PowerPoint, Word, Excel, and PDF file creation/editing
