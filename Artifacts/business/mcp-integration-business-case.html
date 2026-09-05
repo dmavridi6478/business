@@ -1,0 +1,233 @@
+<title>MCP Integration Business Case</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800;900&family=DM+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap">
+<style>
+  :root {
+    --bg: #F5F6F8;
+    --bg2: #ECEEF2;
+    --text: #1A1F2E;
+    --text-sub: #5A6480;
+    --text-muted: #8B93AC;
+    --accent: #2B5FA8;
+    --accent-light: #E2ECFA;
+    --rule: #D1D6E0;
+    --card: #FFFFFF;
+    --before: #C24545;
+    --before-light: #FBE7E7;
+    --after: #1E6B5E;
+    --after-light: #DFF3EE;
+    --warn: #8B5E1A;
+    --warn-light: #F5ECD8;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #0C0F18; --bg2: #141826; --text: #E4E9F5; --text-sub: #8A94B8;
+      --text-muted: #5C6690; --accent: #6FA0E0; --accent-light: #16233A;
+      --rule: #232B42; --card: #141826;
+      --before: #E08585; --before-light: #2A1414; --after: #3DB89E; --after-light: #0D2420;
+      --warn: #D4943A; --warn-light: #241A0A;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #0C0F18; --bg2: #141826; --text: #E4E9F5; --text-sub: #8A94B8;
+    --text-muted: #5C6690; --accent: #6FA0E0; --accent-light: #16233A;
+    --rule: #232B42; --card: #141826;
+    --before: #E08585; --before-light: #2A1414; --after: #3DB89E; --after-light: #0D2420;
+    --warn: #D4943A; --warn-light: #241A0A;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: var(--bg); color: var(--text); font-family: 'DM Sans', system-ui, sans-serif; font-size: 15px; line-height: 1.6; padding: 3rem 1.25rem 5rem; }
+  .wrap { max-width: 920px; margin: 0 auto; }
+  .eyebrow { font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: var(--accent); margin-bottom: .8rem; }
+  h1 { font-family: 'Barlow Condensed', sans-serif; font-weight: 900; font-size: clamp(2rem, 4.5vw, 2.8rem); line-height: 1.05; margin-bottom: .6rem; }
+  .sub { color: var(--text-sub); font-size: .95rem; max-width: 640px; margin-bottom: 2.2rem; }
+  h2 { font-family: 'Barlow Condensed', sans-serif; font-weight: 800; font-size: 1.05rem; letter-spacing: .02em; text-transform: uppercase; margin-bottom: .9rem; }
+  .card { background: var(--card); border: 1px solid var(--rule); border-radius: 10px; padding: 1.4rem 1.5rem; margin-bottom: 1.4rem; }
+  .inputs { display: flex; flex-wrap: wrap; gap: 1.5rem; align-items: center; margin-bottom: 1.4rem; }
+  .field { display: flex; flex-direction: column; gap: .35rem; }
+  .field label { font-size: .78rem; color: var(--text-sub); text-transform: uppercase; letter-spacing: .06em; font-weight: 600; }
+  .field input[type=range] { width: 180px; accent-color: var(--accent); }
+  .field .val { font-family: 'Barlow Condensed', sans-serif; font-weight: 800; font-size: 1.4rem; color: var(--text); font-variant-numeric: tabular-nums; }
+  .split { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; }
+  @media (max-width: 680px) { .split { grid-template-columns: 1fr; } }
+  .panel { border-radius: 8px; padding: 1.1rem 1.1rem 1.3rem; }
+  .panel.before { background: var(--before-light); border: 1px solid color-mix(in srgb, var(--before) 40%, transparent); }
+  .panel.after { background: var(--after-light); border: 1px solid color-mix(in srgb, var(--after) 40%, transparent); }
+  .panel-label { font-family: 'Barlow Condensed', sans-serif; font-weight: 800; font-size: .82rem; letter-spacing: .1em; text-transform: uppercase; margin-bottom: .6rem; }
+  .panel.before .panel-label { color: var(--before); }
+  .panel.after .panel-label { color: var(--after); }
+  .panel svg { width: 100%; height: auto; display: block; }
+  .count { font-family: 'Barlow Condensed', sans-serif; font-weight: 900; font-size: 2.6rem; line-height: 1; margin-top: .5rem; font-variant-numeric: tabular-nums; }
+  .panel.before .count { color: var(--before); }
+  .panel.after .count { color: var(--after); }
+  .count-label { font-size: .8rem; color: var(--text-sub); margin-top: .15rem; }
+  .reduction { text-align: center; margin: 1.4rem 0 .4rem; }
+  .reduction .big { font-family: 'Barlow Condensed', sans-serif; font-weight: 900; font-size: 3rem; color: var(--after); line-height: 1; }
+  .reduction .lbl { font-size: .85rem; color: var(--text-sub); margin-top: .2rem; }
+  table { width: 100%; border-collapse: collapse; font-size: .88rem; margin-top: .6rem; }
+  th, td { text-align: left; padding: .5rem .6rem; border-bottom: 1px solid var(--rule); }
+  th { font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: .72rem; letter-spacing: .06em; text-transform: uppercase; color: var(--text-sub); }
+  td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
+  .steps { counter-reset: step; }
+  .steps ol { list-style: none; }
+  .steps li { counter-increment: step; padding: .7rem 0 .7rem 2.4rem; position: relative; border-bottom: 1px solid var(--rule); font-size: .92rem; }
+  .steps li:last-child { border-bottom: none; }
+  .steps li::before { content: counter(step); position: absolute; left: 0; top: .65rem; width: 1.7rem; height: 1.7rem; border-radius: 50%; background: var(--accent-light); color: var(--accent); font-family: 'Barlow Condensed', sans-serif; font-weight: 800; font-size: .85rem; display: flex; align-items: center; justify-content: center; }
+  .steps strong { display: block; margin-bottom: .15rem; }
+  .caveats { background: var(--warn-light); border-left: 3px solid var(--warn); border-radius: 0 8px 8px 0; padding: 1rem 1.2rem; }
+  .caveats strong { display: block; color: var(--warn); font-family: 'Barlow Condensed', sans-serif; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; font-size: .78rem; margin-bottom: .5rem; }
+  .caveats ul { padding-left: 1.1rem; }
+  .caveats li { font-size: .88rem; margin-bottom: .4rem; }
+  footer { font-size: .8rem; color: var(--text-sub); margin-top: 2.5rem; padding-top: 1.4rem; border-top: 1px solid var(--rule); display: flex; justify-content: space-between; flex-wrap: wrap; gap: .5rem; }
+</style>
+
+<div class="wrap">
+  <div class="eyebrow">MCP · Business Case Calculator</div>
+  <h1>Is MCP Worth It for This Stack?</h1>
+  <p class="sub">Drag the sliders to match a real AI-client / tool inventory. The reduction below is the actual math behind "one universal connector" — not a generic claim. Source methodology: <code>mcp-integration-business-case</code> skill.</p>
+
+  <div class="card">
+    <h2>Your stack</h2>
+    <div class="inputs">
+      <div class="field">
+        <label for="clients">AI clients (N)</label>
+        <input type="range" id="clients" min="1" max="12" value="5">
+        <span class="val" id="clientsVal">5</span>
+      </div>
+      <div class="field">
+        <label for="tools">Tools / data sources (M)</label>
+        <input type="range" id="tools" min="1" max="30" value="10">
+        <span class="val" id="toolsVal">10</span>
+      </div>
+    </div>
+
+    <div class="split">
+      <div class="panel before">
+        <div class="panel-label">Before — point to point</div>
+        <svg id="meshSvg" viewBox="0 0 260 200"></svg>
+        <div class="count" id="beforeCount">50</div>
+        <div class="count-label">custom integrations (N × M)</div>
+      </div>
+      <div class="panel after">
+        <div class="panel-label">After — MCP hub</div>
+        <svg id="hubSvg" viewBox="0 0 260 200"></svg>
+        <div class="count" id="afterCount">15</div>
+        <div class="count-label">connections (N + M)</div>
+      </div>
+    </div>
+
+    <div class="reduction">
+      <div class="big" id="reductionPct">70%</div>
+      <div class="lbl">fewer integrations to build and maintain</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>Worked examples</h2>
+    <table>
+      <thead><tr><th class="num">N clients</th><th class="num">M tools</th><th class="num">Before (N×M)</th><th class="num">After (N+M)</th><th class="num">Reduction</th></tr></thead>
+      <tbody>
+        <tr><td class="num">3</td><td class="num">5</td><td class="num">15</td><td class="num">8</td><td class="num">47%</td></tr>
+        <tr><td class="num">5</td><td class="num">10</td><td class="num">50</td><td class="num">15</td><td class="num">70%</td></tr>
+        <tr><td class="num">8</td><td class="num">20</td><td class="num">160</td><td class="num">28</td><td class="num">83%</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="card steps">
+    <h2>Business-case build order</h2>
+    <ol>
+      <li><strong>Current-state inventory</strong>Every AI-client × tool pairing that has, or would need, a custom integration.</li>
+      <li><strong>Current-state cost</strong>Build + maintenance cost per pairing, summed across the N×M count above.</li>
+      <li><strong>Complexity visualization</strong>The mesh diagram above — the single most persuasive slide, not just the number.</li>
+      <li><strong>Target-state via MCP</strong>Same clients and tools, N+M connections, hub-and-spoke diagram.</li>
+      <li><strong>Build-vs-buy per tool</strong>Does an official/community MCP server already exist, or does one need building?</li>
+      <li><strong>Migration sequencing</strong>Cut over the highest-maintenance-cost pairing first, not the easiest.</li>
+      <li><strong>Risk / caveats</strong>State them in the proposal — see below — not just internally.</li>
+    </ol>
+  </div>
+
+  <div class="caveats">
+    <strong>Where the pitch overclaims</strong>
+    <ul>
+      <li>MCP doesn't eliminate the M servers — someone still builds and maintains one per tool.</li>
+      <li>Existing integrations don't migrate themselves; cutover cost has to be netted against the savings above.</li>
+      <li>A client on a single AI client sees little benefit — this case is strongest at N ≥ 2, M ≥ 3.</li>
+      <li>MCP server quality varies between official and community builds — verify before counting a tool as "buy."</li>
+    </ul>
+  </div>
+
+  <footer>
+    <span>dmavridi6478/business · .claude/skills/mcp-integration-business-case</span>
+    <span>Business</span>
+  </footer>
+</div>
+
+<script>
+(function(){
+  var clientsEl = document.getElementById('clients');
+  var toolsEl = document.getElementById('tools');
+  var clientsVal = document.getElementById('clientsVal');
+  var toolsVal = document.getElementById('toolsVal');
+  var beforeCount = document.getElementById('beforeCount');
+  var afterCount = document.getElementById('afterCount');
+  var reductionPct = document.getElementById('reductionPct');
+  var meshSvg = document.getElementById('meshSvg');
+  var hubSvg = document.getElementById('hubSvg');
+  var css = getComputedStyle(document.documentElement);
+
+  function pos(count, cx, isLeft){
+    var pts = [];
+    var margin = 22;
+    var top = 14, bottom = 186;
+    var span = bottom - top;
+    for (var i=0;i<count;i++){
+      var y = count === 1 ? (top+bottom)/2 : top + (span * i / (count-1));
+      pts.push({x: isLeft ? margin : 260-margin, y: y});
+    }
+    return pts;
+  }
+
+  function draw(){
+    var n = Math.min(parseInt(clientsEl.value,10), 8); // cap drawn nodes for legibility
+    var m = Math.min(parseInt(toolsEl.value,10), 12);
+    var realN = parseInt(clientsEl.value,10);
+    var realM = parseInt(toolsEl.value,10);
+
+    var left = pos(n, 0, true);
+    var right = pos(m, 260, false);
+
+    // mesh (before)
+    var lines = '';
+    for (var i=0;i<left.length;i++){
+      for (var j=0;j<right.length;j++){
+        lines += '<line x1="'+left[i].x+'" y1="'+left[i].y+'" x2="'+right[j].x+'" y2="'+right[j].y+'" stroke="var(--before)" stroke-width="0.6" opacity="0.35"/>';
+      }
+    }
+    var meshNodes = '';
+    left.forEach(function(p){ meshNodes += '<circle cx="'+p.x+'" cy="'+p.y+'" r="6" fill="var(--before)"/>'; });
+    right.forEach(function(p){ meshNodes += '<circle cx="'+p.x+'" cy="'+p.y+'" r="6" fill="var(--card)" stroke="var(--before)" stroke-width="2"/>'; });
+    meshSvg.innerHTML = lines + meshNodes;
+
+    // hub (after)
+    var hubX = 130, hubY = 100;
+    var hlines = '';
+    left.forEach(function(p){ hlines += '<line x1="'+p.x+'" y1="'+p.y+'" x2="'+hubX+'" y2="'+hubY+'" stroke="var(--after)" stroke-width="1.1" opacity="0.55"/>'; });
+    right.forEach(function(p){ hlines += '<line x1="'+hubX+'" y1="'+hubY+'" x2="'+p.x+'" y2="'+p.y+'" stroke="var(--after)" stroke-width="1.1" opacity="0.55"/>'; });
+    var hubNodes = '<rect x="'+(hubX-16)+'" y="'+(hubY-12)+'" width="32" height="24" rx="5" fill="var(--after)"/><text x="'+hubX+'" y="'+(hubY+4)+'" text-anchor="middle" font-size="9" font-weight="800" fill="white" font-family=\'Barlow Condensed\',sans-serif>MCP</text>';
+    left.forEach(function(p){ hubNodes += '<circle cx="'+p.x+'" cy="'+p.y+'" r="6" fill="var(--after)"/>'; });
+    right.forEach(function(p){ hubNodes += '<circle cx="'+p.x+'" cy="'+p.y+'" r="6" fill="var(--card)" stroke="var(--after)" stroke-width="2"/>'; });
+    hubSvg.innerHTML = hlines + hubNodes;
+
+    var before = realN * realM;
+    var after = realN + realM;
+    var reduction = before > 0 ? Math.round((1 - after/before) * 100) : 0;
+    beforeCount.textContent = before;
+    afterCount.textContent = after;
+    reductionPct.textContent = (reduction < 0 ? 0 : reduction) + '%';
+  }
+
+  clientsEl.addEventListener('input', function(){ clientsVal.textContent = clientsEl.value; draw(); });
+  toolsEl.addEventListener('input', function(){ toolsVal.textContent = toolsEl.value; draw(); });
+  draw();
+})();
+</script>

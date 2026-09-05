@@ -1616,6 +1616,20 @@ The publisher's confirmation gate is deliberate, not an oversight — see
 scheduling a slot is a plan, posting to a real audience is a side-effecting
 action that needs its own explicit approval regardless of what came before it.
 
+A ninth and tenth agent came from a direct request to turn two uploaded
+images — an "MCP · The Universal Connector for AI" infographic and a SaaS
+metrics dashboard mockup (Magic Number, Rule of 40, NRR, LTV:CAC, CAC
+Payback) — into working deliverables rather than just reference reading:
+
+- `mcp-business-case-analyst` — turns a client's actual AI-client/tool
+  inventory into a quantified MCP-consolidation business case (the N×M vs
+  N+M integration math, a build-vs-buy call per tool, a migration
+  sequence) instead of pitching MCP on "fewer wires" alone
+- `saas-metrics-analyst` — computes the 5 SaaS growth-efficiency metrics
+  from raw inputs, bands each against the standard thresholds, and flags
+  where two metrics contradict each other (e.g. a strong Magic Number
+  sitting on shrinking NRR)
+
 ## Procedures
 
 Standard operating procedures live in `docs/procedures/`:
@@ -1661,6 +1675,20 @@ Standard operating procedures live in `docs/procedures/`:
   adding generation, and diagnose answer-quality issues chunk-quality →
   retrieval-quality → generation, in that order. Backs the
   `rag-pipeline-architecture` skill.
+- `mcp-integration-scoping.md` — 7-step SOP for scoping/pitching an MCP
+  consolidation project: inventory the real N×M stack, price the current
+  state before pitching the after-state, run build-vs-buy per tool,
+  sequence migration by maintenance-cost reduction, and state the
+  overclaim caveats before anyone signs anything. Backs the
+  `mcp-integration-business-case` skill and `mcp-business-case-analyst`
+  agent.
+- `saas-metrics-board-review.md` — quarterly (or monthly) cadence for a
+  SaaS board metrics packet: gather real inputs, compute in board-review
+  order (Magic Number + Rule of 40 gate → NRR → LTV:CAC by channel → CAC
+  Payback), cross-check the five against each other for contradictions,
+  and write the narrative to what changes rather than just what
+  happened. Backs the `saas-growth-efficiency-metrics` skill and
+  `saas-metrics-analyst` agent.
 ---
 
 **37th addition** (`83ad5cc1-iCloud_Photos.zip`, 130 images, August 2026)
@@ -4258,3 +4286,81 @@ Patterns in these tools reveal clear gaps and opportunities for a solo builder:
 7. **Learning curriculum builder** — learnanything.xyz-style tool but for custom company onboarding. Client provides their product docs → Claude generates a structured learning path. SaaS on top of Supabase + lovable.dev frontend.
 
 > **Note:** 30 TikTok short-form video links were included in this batch. TikTok video content cannot be fetched or analyzed with available tools — no commands were created from those links.
+
+---
+
+## 78. MCP Business Case + SaaS Growth Efficiency Dashboard (Batch 78)
+
+**Source:** Two directly uploaded images — an "MCP · Protocol — The
+Universal Connector for AI" infographic (Marios Charalampous /
+workflows.io) and a SaaS metrics dashboard mockup (Magic Number, Rule of
+40, Net Revenue Retention, LTV:CAC by channel, CAC Payback Period).
+**Request:** turn each image's structure into working deliverables —
+skills, agents, procedures, and templates/dashboards — filed to this
+repo's normal locations, not just summarized.
+
+Both source images check out as standard, accurate framing (MCP's
+before/after integration-count claim; the 5 metrics' standard
+definitions and benchmark bands) — the gap in both cases was that neither
+came with the actual math, formulas, or a repeatable procedure attached,
+just the visual claim. Both new skills fill that gap rather than
+duplicating anything already in this repo (`kpi-reference-handbook` is
+general-ratio, not SaaS-growth-specific; `mcp-integration-scout` checks
+live connector availability, not the business case for adopting MCP at
+all).
+
+### New skills
+
+- **`mcp-integration-business-case`** — the N×M (point-to-point) vs N+M
+  (MCP hub) integration-count math, worked examples, where the savings
+  actually come from (maintenance ownership shift, near-zero marginal
+  onboarding cost, centralized auth), where the pitch overclaims
+  (migration cost, single-client stacks, server-quality variance), and
+  the 7-section business-case structure.
+- **`saas-growth-efficiency-metrics`** — formulas, benchmark bands, and
+  calculation traps for Magic Number, Rule of 40, Net Revenue Retention,
+  LTV:CAC by channel, and CAC Payback Period, plus the actual
+  board-review order (efficiency gate → retention health → channel
+  economics → cash-timing check) rather than a flat 5-metric list.
+
+### New agents
+
+- **`mcp-business-case-analyst`** — runs the skill's math on a specific
+  client's real AI-client/tool inventory, calls build-vs-buy per tool,
+  and drafts the business case.
+- **`saas-metrics-analyst`** — computes and bands all 5 metrics from raw
+  inputs, flags cross-metric contradictions (e.g. strong Magic Number
+  over shrinking NRR), and drafts the board narrative.
+
+### New procedures (`docs/procedures/`)
+
+- **`mcp-integration-scoping.md`** — the SOP for scoping/pitching an MCP
+  consolidation project end to end, with explicit red flags (stack too
+  small to benefit, more than half the tools need a build not a buy, no
+  real cost numbers to price the current state).
+- **`saas-metrics-board-review.md`** — the recurring board-review
+  cadence, with red flags (fewer than 3 quarters of trend data, an
+  inconsistent margin-type between periods, a blended LTV:CAC presented
+  instead of per-channel).
+
+### New templates / dashboards (`Artifacts/business/`)
+
+- **`mcp-integration-business-case.html`** — a live calculator: drag N
+  (AI clients) and M (tools) and it redraws the before/after mesh-vs-hub
+  diagrams and recomputes the integration-count reduction in real time,
+  plus the worked-examples table and overclaim caveats from the skill.
+- **`saas-growth-efficiency-dashboard.html`** — a live 5-panel board
+  dashboard (Magic Number gauge, Rule of 40 stacked bars, NRR waterfall,
+  LTV:CAC scatter by channel, CAC Payback curve) — every input is
+  editable and every panel recomputes and re-bands on change, built
+  hand-rolled in inline SVG (no external chart library) so it renders
+  correctly as a standalone local file. Both artifacts were rendered
+  headlessly and screenshot-checked before filing — no console errors,
+  and the default inputs reproduce the source dashboard's own headline
+  numbers (0.92 Magic Number, 47% Rule of 40, 118% NRR, 11-month CAC
+  payback) as a correctness check.
+
+Both `Artifacts/index.html` and this README's `## Agents` / `##
+Procedures` sections were updated in the same batch so the registry
+stays the single source of truth rather than drifting from what's
+actually on disk.
