@@ -4360,6 +4360,25 @@ all).
   numbers (0.92 Magic Number, 47% Rule of 40, 118% NRR, 11-month CAC
   payback) as a correctness check.
 
+**`.xlsx` companions** (added same day, on request) — both dashboards
+also ship as formula-driven Excel workbooks
+(`mcp-integration-business-case.xlsx`,
+`saas-growth-efficiency-dashboard.xlsx`, same folder): every cell is a
+live formula, never a hardcoded result; yellow-filled input cells carry
+a cell comment documenting the assumption; conditional formatting bands
+the result cells to the same broken/fair/efficient thresholds as the
+skills; native charts (stacked-bar Rule of 40, stacked-bar-as-waterfall
+NRR, scatter LTV:CAC, line CAC-payback curve). This session's
+LibreOffice install had only `libreoffice-core` — no `libreoffice-calc`
+— so it silently failed to load *any* document, including a plain
+`.txt` file; `apt-get install libreoffice-calc` fixed it. `recalc.py`
+then reported zero formula errors on both workbooks, and a values-only
+reload of the Dashboard summary tab caught a real bug before shipping:
+two cross-sheet references (Rule of 40 and NRR) pointed at the wrong
+row on their source tabs, inherited from assuming every metric sheet
+used the same layout. Fixed and reverified against the same headline
+numbers as the HTML versions.
+
 Both `Artifacts/index.html` and this README's `## Agents` / `##
 Procedures` sections were updated in the same batch so the registry
 stays the single source of truth rather than drifting from what's
