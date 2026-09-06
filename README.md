@@ -4393,3 +4393,61 @@ Cross-links added: `n8n-agent-builder` (Microsoft-stack equivalent of its
 tool-use/planning patterns) and `claude-code-tooling` (documents where these
 four skills came from).
 
+---
+
+## 80. Paid-Community Playbook, 15 Work Prompts, AI-App APIs & Trading-Agent Frameworks (Batch 80)
+
+**Source:** One uploaded iCloud Photos zip, 77 images — a wide mix of
+carousels: @earchoe's 9-slide "How to Use AI to Run a Paid Community"
+series; @InkaAup/@inkaai's "15 Claude Prompts That Free Up 10+ Hours a
+Week"; @ai.global.lee's "7 APIs" series (Tavily, OpenRouter, Composio,
+Resend, ElevenLabs, Replicate, Firecrawl); @hash42labs's two "Open Source"
+AI-trading-agent drops (7 repos: TradingAgents, AI Hedge Fund, Eliza,
+Prediction Market Agent, RD-Agent, plus the RL-training tool `radixark/miles`);
+@martiendejong_dev's "5 repos blowing up on GitHub" and "10 repos challenging
+paid apps" carousels; @ty.prompts.ai's "Top 5 GitHub repos for TikTok Shop
+GMV"; @githubnow's daily briefings; @SkillDropAI's 7-slide client-follow-up
+case study; and a KPI cheat sheet, an EU obesity-rate map, and several
+proprietary SaaS tool cards (Microsoft Clarity, Content Square, SERPtag,
+Tally) with no repo to clone.
+
+**New:**
+- `paid-community-playbook` skill — platform choice (Skool/Discord/
+  WhatsApp+Beehiiv), a 3-message onboarding sequence, a monthly
+  content-calendar prompt, the first-20-members launch funnel, the 3
+  retention drivers, and the actual per-member economics math.
+- `claude-10-hours-prompts` skill — 15 distinct copy-paste prompts for
+  recurring work (not a duplicate of the existing `claude-20-prompts`,
+  which is a different Work/Study/Life/Money set from a different source).
+- **`claude-code-tooling`** — three new sections: an AI-app building-block
+  APIs table (Tavily, OpenRouter, Composio, Resend, ElevenLabs, Replicate,
+  Firecrawl), an agent-sandboxing-platform entry (`cloudflare/cloudflare-os`),
+  and an explicitly-niche AI-trading/crypto-agent-framework table
+  (TradingAgents, AI Hedge Fund, Eliza, Prediction Market Agent, RD-Agent,
+  radixark/miles) — flagged as reviewed-for-completeness rather than
+  recommended, since none fit this business's actual stack.
+- **`self-hosted-docker-stack`** — a third batch: PostHog (heavier-weight
+  analytics+session-replay alternative to the already-listed Umami), Maxun
+  (no-code scraper), SmartSub (local Whisper-based dubbing/subtitles),
+  Dub (link attribution).
+
+**Declined — not vendored or documented as a recommendation:**
+`guillaumemeyer/watermarks-remover` (real repo, confirmed to exist) strips
+invisible AI-content watermarks from Claude/AI-generated text, images, and
+PDFs so the output doesn't get flagged as AI-made. That's a detection-evasion
+tool, not a productivity tool, regardless of the "AI tools that make a
+difference" framing it shipped under — it was not installed, vendored, or
+added to any tool directory in this repo.
+
+**Already covered in earlier batches, skipped as duplicates:** Coolify,
+OpenHands, Crawl4AI, MoneyPrinterTurbo, DeepSeek Harness, Ever Gauzy,
+Bagisto (already in `setup-repos.sh`), Langflow, Browser Use, Stirling PDF.
+
+**Skipped as low-value or out of scope:** a KPI cheat sheet (fully
+overlaps `kpi-reference-handbook`), an EU obesity-rate statistical map
+(not business-relevant), a generic 7-slide "I built an AI agent for the
+job I never wanted to do again" case study (same Rules/Tone/Workflow/
+Output-format methodology already captured from an earlier `@SkillDropAI`
+batch), and proprietary SaaS tool cards with no repo to clone (Microsoft
+Clarity, Content Square, SERPtag, Tally).
+

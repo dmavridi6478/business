@@ -1,6 +1,6 @@
 ---
 name: self-hosted-docker-stack
-description: Curated directory of self-hosted, Docker-deployable services — an original 10-app batch covering game-server hosting, AI-powered local CCTV, media streaming, Docker stack management, PDF tooling, self-hosted AI chat, network-wide ad/tracker blocking, uptime monitoring, a password manager, and self-hosted Git; plus a second batch covering a document-processing pipeline (searchable document archive, messy-document-to-Markdown, RAG document prep, plain-English structured extraction, OCR) and business-ops SaaS replacements (privacy-first analytics, newsletter/mailing-list manager, screen recorder, Markdown notes, project/task board, low-code internal-tools builder, visual database, AI customer-support chatbot) — each verified against its real GitHub/Codeberg repository. Use this when the user is planning a homelab, wants to self-host infrastructure instead of paying for a cloud/SaaS equivalent, asks "what should I run on my server," or is deciding between a hosted service and a self-hosted Docker alternative. Overlaps in part with lean-software-stack (both PDF tooling and password managers appear in both, as a desktop vs. server-hosted choice) — use that skill for desktop-app alternatives, this one for services meant to run continuously on a server/NAS.
+description: Curated directory of self-hosted, Docker-deployable services — an original 10-app batch covering game-server hosting, AI-powered local CCTV, media streaming, Docker stack management, PDF tooling, self-hosted AI chat, network-wide ad/tracker blocking, uptime monitoring, a password manager, and self-hosted Git; plus a second batch covering a document-processing pipeline (searchable document archive, messy-document-to-Markdown, RAG document prep, plain-English structured extraction, OCR) and business-ops SaaS replacements (privacy-first analytics, newsletter/mailing-list manager, screen recorder, Markdown notes, project/task board, low-code internal-tools builder, visual database, AI customer-support chatbot); plus a third batch (heavier-weight product analytics, no-code web scraping, local dubbing/subtitles, link attribution) — each verified against its real GitHub/Codeberg repository. Use this when the user is planning a homelab, wants to self-host infrastructure instead of paying for a cloud/SaaS equivalent, asks "what should I run on my server," or is deciding between a hosted service and a self-hosted Docker alternative. Overlaps in part with lean-software-stack (both PDF tooling and password managers appear in both, as a desktop vs. server-hosted choice) — use that skill for desktop-app alternatives, this one for services meant to run continuously on a server/NAS.
 ---
 
 # Self-Hosted Docker Stack
@@ -60,6 +60,17 @@ super-agent harness, closer to `claude-code-tooling`'s territory than a
 single-purpose business app) and **Excalidraw** (excalidraw/excalidraw — a
 whiteboard tool with no clear business-ops slot here; `design-dev-resources`
 is the more natural home for a diagramming tool if one is wanted).
+
+## Batch 3: analytics, scraping, dubbing, link attribution (@martiendejong_dev, @ty.prompts.ai)
+
+Each confirmed to exist via `git ls-remote` before listing:
+
+| App | Replaces | What it does | Repo |
+|---|---|---|---|
+| **PostHog** | Amplitude / Mixpanel / Hotjar | Product analytics, session replay, feature flags, experiments, error tracking — heavier-weight than Umami above; reach for this when the need is product analytics + session replay together, Umami when it's just traffic analytics | https://github.com/PostHog/posthog |
+| **Maxun** | A paid web-scraping SaaS | Point-and-click, no-code scraper — turns a website into an API/spreadsheet without writing a scraper | https://github.com/getmaxun/maxun |
+| **SmartSub** | A paid captioning/dubbing service | Desktop app: generates, translates, dubs, and burns subtitles using local Whisper speech-to-text — runs offline, no per-video cost | https://github.com/buxuku/SmartSub |
+| **Dub** | A paid link-attribution platform | Modern link-attribution/short-link platform — answers which link/creator/video actually produced a conversion; open-core (enterprise features are paid) | https://github.com/dubinc/dub |
 
 ## When to reach for this list
 

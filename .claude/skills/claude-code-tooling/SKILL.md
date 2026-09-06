@@ -299,6 +299,39 @@ re-verified — re-check before quoting one):
 skill) both also appeared in this same carousel batch as separate
 "repo of the day" posts — not re-added here since they're already covered.
 
+## AI trading / crypto agent frameworks (niche — not needed by this business, documented for completeness)
+
+A batch of open-source multi-agent trading/research frameworks (@hash42labs "Open Source" series and @githubnow), confirmed to exist via `git ls-remote`. None of these fit this repo's actual business (Greek healthcare/general consulting) — documented only because they were reviewed, not because they're recommended for this business's stack:
+
+| Repo | What it's for |
+|---|---|
+| `TauricResearch/TradingAgents` | Multi-agent "trading firm" — analyst/bull/bear/trader agents debate before a decision |
+| `virattt/ai-hedge-fund` | Multiple AI investor personas (value, macro, quant, etc.) with different strategies debating a position — **best-guess match**, the source carousel didn't show a GitHub org, this is the well-known repo matching its description |
+| `elizaOS/eliza` | Framework for autonomous AI agents built for crypto/on-chain use cases specifically, extensible beyond that |
+| `gnosis/prediction-market-agent` | Agents that research, analyze, and take positions on prediction markets — **best-guess match**, same caveat as above |
+| `microsoft/RD-Agent` | Automated research-and-development loop (hypothesis → backtest → results → iterate) for quantitative trading strategies |
+| `radixark/miles` | Enterprise reinforcement-learning framework for training trillion-parameter models — an ML infra tool, not a trading agent itself, included in the same source batch |
+
+## Agent workspace / sandboxing platforms
+
+| Repo | What it's for | Install / link |
+|---|---|---|
+| `cloudflare/cloudflare-os` | Agents create sandboxed "gadgets" (private per-user app instances); "gatekeepers" manage external integrations via non-blocking approval queues; every action logged and auditable — relevant if agents need to run with real permissions but bounded blast radius, same governance concern as this repo's `web-task-scoping` skill | https://github.com/cloudflare/cloudflare-os |
+
+## AI-app building-block APIs
+
+Seven hosted APIs for common AI-app capabilities (@ai.global.lee "7 APIs" series), each a paid/freemium hosted service rather than self-hosted software — useful when building a client-facing tool that needs one of these capabilities without standing up the infrastructure yourself:
+
+| API | What it adds |
+|---|---|
+| [Tavily](https://tavily.com) | Real-time web search results in an AI-ready format (search → sources → AI answer) |
+| [OpenRouter](https://openrouter.ai) | One API for 100+ models (GPT, Claude, Gemini, etc.) — swap models without rebuilding the app; also referenced elsewhere in this file as one of `pal-mcp-server`'s supported providers |
+| [Composio](https://composio.dev) | Connects an agent to 100+ real apps (Salesforce, Gmail, Slack, Notion, HubSpot) so it can take real actions, not just talk about them |
+| [Resend](https://resend.com) | Transactional email API — trigger, send, and track delivery from an app or agent workflow |
+| [ElevenLabs](https://elevenlabs.io) | Text-to-speech, voice cloning, multilingual voice output |
+| [Replicate](https://replicate.com) | Run image/video/AI models in the cloud without managing GPU infrastructure, pay per use |
+| [Firecrawl](https://firecrawl.dev) | Turns any URL into clean Markdown/JSON for feeding into an LLM — already referenced as a technique inside `claude-seo` and `competitor-profiling`, documented here as its own API for when the need is standalone scraping rather than part of an SEO/competitor workflow |
+
 ## How to use this list
 
 - These are **not** cloned into this repo (except `humanizer` and the 8 `gsap-*` skills) — the rest are separate software projects (a desktop app, a CLI, an orchestration framework, a database) that don't fit as markdown skill files, and vendoring foreign codebases into a business-skills repo would be out of scope.
