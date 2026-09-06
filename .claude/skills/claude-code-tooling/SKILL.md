@@ -320,6 +320,7 @@ skill) both also appeared in this same carousel batch as separate
 - **night-shift-workflow**: Apply its Claude-may/human-approval boundary if `pal-mcp-server`'s multi-model-consult pattern runs as part of a scheduled/unattended workflow rather than an interactive session.
 - **vercel-labs/skills** (above): `davepoon/buildwithclaude` is a browsable community hub covering similar ground to that CLI-based skills package manager — different interface, same "find and install a skill" job. It's also the exact tool the `npx skills add` commands in the motion-skill packages below use.
 - **gsap-core** and its 7 siblings: The one skill pack from the motion-skills batch below that was actually clean enough to vendor for real — see those skills directly rather than this entry, which now just documents the source.
+- **ai-agents-for-beginners**, **microsoft-docs**, **jupyter-notebook**, **azure-openai-to-responses**: Vendored from a direct `gh repo clone microsoft/ai-agents-for-beginners` request — same clone-and-inspect-before-vendoring discipline as this whole file, applied to a full course repo instead of a social-media carousel.
 
 ## Notes
 

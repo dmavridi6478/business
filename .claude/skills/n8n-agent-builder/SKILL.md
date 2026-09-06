@@ -93,3 +93,4 @@ an invented node, it doesn't eliminate the need for the test.
 - **content-repurposing-service**: An n8n workflow can automate the extract/draft/deliver pipeline from that skill
 - **new-client-system**: Outreach sequences and follow-ups can run as n8n automations
 - **claude-usage-limits** (procedure): The model-matching and Project-caching guidance behind step 4 above
+- **ai-agents-for-beginners**: The Microsoft-stack equivalent of this skill's tool-use/planning patterns, taught as a structured curriculum rather than a build-it-now workflow — useful if the underlying design pattern (not the n8n implementation) needs more grounding first

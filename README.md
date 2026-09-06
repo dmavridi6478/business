@@ -4356,3 +4356,40 @@ it. The two accessibility bugs the scan surfaced were not fixed as part of
 this review — flagged as a separate follow-up rather than folded into a
 tool-evaluation task.
 
+---
+
+## 79. AI Agents for Beginners — Cloned and Vendored for Real (Batch 79)
+
+**Source:** Direct request — `gh repo clone microsoft/ai-agents-for-beginners`
+— rather than a social-media carousel. This repo had already been mentioned
+once before, in Batch 70, as a one-line "repo to clone" entry sourced from a
+carousel and never actually cloned or inspected. This batch replaces that
+placeholder with a real clone-and-inspect pass.
+
+**New skill** `ai-agents-for-beginners` — a curriculum-summary skill (same
+pattern as `30-days-of-python`/`90-days-cybersecurity`) covering the course's
+19 lessons (00 Course Setup through 18 Securing AI Agents), the course's own
+STUDY_GUIDE.md learning-path table, a study prompt, and a stack-mismatch note
+(the course's code targets Microsoft Agent Framework / Azure OpenAI /
+Foundry, not Claude — flagged so the concepts transfer but the code isn't a
+copy-paste fit for this repo's actual stack).
+
+**Vendored for real** (SKILL.md/assets + LICENSE + SOURCE.md, at commit
+`7b20684`) — three of the course's own `.agents/skills/` that are genuinely
+portable outside the course repo (checked for repo-relative path references
+before vendoring; these three had none):
+- `microsoft-docs` — Microsoft Learn/Azure/Agent Framework documentation research skill
+- `jupyter-notebook` — scaffolds clean Jupyter notebooks from bundled templates + a helper script (Apache 2.0, its own LICENSE)
+- `azure-openai-to-responses` — migrates Python apps from Azure OpenAI Chat Completions to the Responses API
+
+**Reviewed, not vendored:** `testing-course-samples`, `deploying-scalable-agents`,
+`local-ai-agents` — all three reference the course repo's own file layout
+directly (`scripts/validate-notebooks.ps1`, `16-deploying-scalable-agents/
+code_samples`, `17-creating-local-ai-agents/code_samples`), so they only work
+inside an actual checkout of the course, not vendored standalone. Noted in
+the new skill's file rather than copied.
+
+Cross-links added: `n8n-agent-builder` (Microsoft-stack equivalent of its
+tool-use/planning patterns) and `claude-code-tooling` (documents where these
+four skills came from).
+
