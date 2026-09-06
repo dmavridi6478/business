@@ -1,0 +1,111 @@
+<!doctype html>
+<!--
+  Restrained, typography-led editorial hero — the "clean, restrained,
+  European" look siteinspire.com and httpster.net curate for: an oversized
+  serif headline with one italic accent word, a thin rule under a small
+  category label, muted ink on a near-white dotted canvas, no imagery
+  required. Good for a hero, section divider, or quote slide when "loud"
+  is the wrong answer.
+
+  Usage: swap --accent for the brand color, replace the label/headline/
+  subhead text, and adjust --italic-word (wrap it in <em> in the markup)
+  to whichever word in the headline should carry the accent color.
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Editorial hero</title>
+<style>
+  :root {
+    --ink: #16181d;
+    --muted: #6b7280;
+    --accent: #2b4bf2;
+    --canvas: #f7f8fa;
+    --dot: #d7dae0;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    background:
+      radial-gradient(var(--dot) 1px, transparent 1px) 0 0/22px 22px,
+      var(--canvas);
+    font-family: -apple-system, "Segoe UI", Roboto, sans-serif;
+    color: var(--ink);
+  }
+  .hero {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 64px 40px;
+  }
+  .label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 14px;
+  }
+  .label::after {
+    content: "";
+    flex: 1;
+    max-width: 220px;
+    height: 2px;
+    background: linear-gradient(90deg, var(--accent), transparent);
+  }
+  h1 {
+    font-family: Georgia, "Times New Roman", serif;
+    font-weight: 400;
+    font-size: 56px;
+    line-height: 1.12;
+    letter-spacing: -.01em;
+    margin: 0 0 22px;
+  }
+  h1 em {
+    font-style: italic;
+    color: var(--accent);
+  }
+  .subhead {
+    font-size: 17px;
+    line-height: 1.6;
+    color: var(--muted);
+    max-width: 480px;
+    margin: 0 0 32px;
+  }
+  .actions { display: flex; gap: 14px; align-items: center; }
+  .btn-primary {
+    background: var(--ink);
+    color: #fff;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 12px 22px;
+    border-radius: 8px;
+    text-decoration: none;
+  }
+  .btn-link {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--ink);
+    text-decoration: none;
+    border-bottom: 1.5px solid var(--dot);
+    padding-bottom: 2px;
+  }
+</style>
+</head>
+<body>
+  <div class="hero">
+    <div class="label">Editorial</div>
+    <h1>Clean, restrained,<br><em>considered</em>.</h1>
+    <p class="subhead">Built for whitespace and typography, not flashy motion — the quiet register for when the message should carry the page, not the animation.</p>
+    <div class="actions">
+      <a class="btn-primary" href="#">Get started</a>
+      <a class="btn-link" href="#">Read the story →</a>
+    </div>
+  </div>
+</body>
+</html>

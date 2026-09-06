@@ -1,0 +1,335 @@
+<!doctype html>
+<!--
+  Design-reference "shelf" dashboard — a filterable, bookmarkable index of
+  5 design-inspiration galleries (Awwwards, Godly, SiteInspire, Land-book,
+  Httpster), tagged by what each is actually good for (SaaS, editorial,
+  award-tier, high-volume, small-and-curated). Built and verified as a
+  Claude Artifact (light/dark theme tokens, Google Fonts link, small JS
+  tag filter) rather than the plain self-contained-CSS style of the other
+  files in this folder — republish via the Artifact tool rather than
+  copy-pasting into another page.
+
+  Usage: swap the 5 cards for a different reference set, or add more —
+  each `<article class="card" data-tags="...">` just needs matching
+  buttons in `.filters` to stay filterable.
+-->
+<title>Design Reference Shelf</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,500&family=IBM+Plex+Mono:wght@400;500;600&family=Source+Sans+3:wght@400;500;600&display=swap">
+<style>
+  :root {
+    --paper: #f4f3ee;
+    --paper-raised: #ffffff;
+    --ink: #1c1e24;
+    --ink-soft: #5b5e68;
+    --ink-faint: #8b8e97;
+    --rule: #dcd9cf;
+    --rule-strong: #c7c3b6;
+    --accent: #23409a;
+    --accent-soft: #e7eaf6;
+    --stamp: #b3391f;
+    --focus: #23409a;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --paper: #17181c;
+      --paper-raised: #1f2126;
+      --ink: #eeefe9;
+      --ink-soft: #a8abb4;
+      --ink-faint: #75787f;
+      --rule: #33353c;
+      --rule-strong: #45474e;
+      --accent: #7f9aef;
+      --accent-soft: #232a42;
+      --stamp: #e2775f;
+      --focus: #7f9aef;
+    }
+  }
+  :root[data-theme="dark"] {
+    --paper: #17181c;
+    --paper-raised: #1f2126;
+    --ink: #eeefe9;
+    --ink-soft: #a8abb4;
+    --ink-faint: #75787f;
+    --rule: #33353c;
+    --rule-strong: #45474e;
+    --accent: #7f9aef;
+    --accent-soft: #232a42;
+    --stamp: #e2775f;
+    --focus: #7f9aef;
+  }
+
+  * { box-sizing: border-box; }
+  html { color-scheme: light dark; }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: "Source Sans 3", -apple-system, "Segoe UI", sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  ::selection { background: var(--accent-soft); }
+  :focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
+
+  .wrap {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 72px 28px 96px;
+  }
+
+  header {
+    margin-bottom: 44px;
+  }
+  .eyebrow {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 12px;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    color: var(--stamp);
+    margin: 0 0 14px;
+  }
+  h1 {
+    font-family: "Fraunces", Georgia, serif;
+    font-weight: 600;
+    font-size: clamp(32px, 5vw, 44px);
+    line-height: 1.08;
+    letter-spacing: -.01em;
+    margin: 0 0 16px;
+    text-wrap: balance;
+  }
+  header p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--ink-soft);
+    max-width: 56ch;
+    margin: 0;
+  }
+
+  .filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 28px 0 0;
+    padding-top: 24px;
+    border-top: 1px solid var(--rule);
+  }
+  .filter-label {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 11px;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    display: flex;
+    align-items: center;
+    margin-right: 4px;
+  }
+  .tag-btn {
+    font: inherit;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 12px;
+    color: var(--ink-soft);
+    background: var(--paper-raised);
+    border: 1px solid var(--rule);
+    border-radius: 999px;
+    padding: 6px 13px;
+    cursor: pointer;
+    transition: border-color .15s ease, color .15s ease, background .15s ease;
+  }
+  .tag-btn:hover { border-color: var(--rule-strong); color: var(--ink); }
+  .tag-btn[aria-pressed="true"] {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: var(--paper-raised);
+  }
+
+  .shelf {
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .card {
+    display: grid;
+    grid-template-columns: 44px 1fr;
+    gap: 20px;
+    padding: 28px 0;
+    border-top: 1px solid var(--rule);
+  }
+  .card:last-child { border-bottom: 1px solid var(--rule); }
+
+  .index {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 13px;
+    color: var(--ink-faint);
+    padding-top: 4px;
+  }
+
+  .card-name {
+    font-family: "Fraunces", Georgia, serif;
+    font-size: 24px;
+    font-weight: 600;
+    letter-spacing: -.01em;
+    margin: 0 0 4px;
+  }
+  .card-name a {
+    color: inherit;
+    text-decoration: none;
+    border-bottom: 1.5px solid transparent;
+    transition: border-color .15s ease;
+  }
+  .card-name a:hover { border-color: var(--accent); }
+
+  .card-domain {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 12.5px;
+    color: var(--accent);
+    margin: 0 0 14px;
+  }
+
+  .card-verdict {
+    font-size: 15px;
+    line-height: 1.6;
+    color: var(--ink);
+    margin: 0 0 6px;
+    max-width: 58ch;
+  }
+  .card-note {
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--ink-soft);
+    margin: 0 0 16px;
+    max-width: 58ch;
+  }
+
+  .card-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+  .chip {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 10.5px;
+    letter-spacing: .03em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    background: var(--accent-soft);
+    border-radius: 4px;
+    padding: 4px 8px;
+  }
+
+  .card[hidden] { display: none; }
+
+  footer {
+    margin-top: 56px;
+    padding-top: 24px;
+    border-top: 1px solid var(--rule);
+    font-size: 13px;
+    color: var(--ink-faint);
+    line-height: 1.7;
+  }
+  footer strong { color: var(--ink-soft); font-weight: 600; }
+
+  @media (max-width: 480px) {
+    .wrap { padding: 48px 20px 72px; }
+    .card { grid-template-columns: 1fr; gap: 6px; }
+    .index { display: none; }
+  }
+</style>
+
+<div class="wrap">
+  <header>
+    <p class="eyebrow">Reference · Design</p>
+    <h1>The shelf you actually check before designing.</h1>
+    <p>Five curation sites, five different jobs. Not a moodboard dump — pick the one built for the specific problem in front of you, filter by what you need below.</p>
+  </header>
+
+  <nav class="filters" id="filters" aria-label="Filter by what you need">
+    <span class="filter-label">Filter</span>
+    <button class="tag-btn" data-tag="all" aria-pressed="true">All</button>
+    <button class="tag-btn" data-tag="saas" aria-pressed="false">SaaS</button>
+    <button class="tag-btn" data-tag="editorial" aria-pressed="false">Editorial</button>
+    <button class="tag-btn" data-tag="award-tier" aria-pressed="false">Award-tier</button>
+    <button class="tag-btn" data-tag="high-volume" aria-pressed="false">High volume</button>
+    <button class="tag-btn" data-tag="curated" aria-pressed="false">Small &amp; curated</button>
+  </nav>
+
+  <div class="shelf" id="shelf">
+    <article class="card" data-tags="award-tier high-volume">
+      <div class="index">01</div>
+      <div>
+        <h2 class="card-name"><a href="https://www.awwwards.com" target="_blank" rel="noopener">Awwwards</a></h2>
+        <p class="card-domain">awwwards.com</p>
+        <p class="card-verdict">The industry-standard award gallery — daily selections judged by a panel.</p>
+        <p class="card-note">Huge volume, so quality varies more than the smaller curated galleries below. Good for breadth and current interaction trends, not a quality guarantee on any single entry.</p>
+        <div class="card-tags"><span class="chip">Award-tier</span><span class="chip">High volume</span><span class="chip">Interaction</span></div>
+      </div>
+    </article>
+
+    <article class="card" data-tags="award-tier curated">
+      <div class="index">02</div>
+      <div>
+        <h2 class="card-name"><a href="https://godly.website" target="_blank" rel="noopener">Godly</a></h2>
+        <p class="card-domain">godly.website</p>
+        <p class="card-verdict">A much smaller, higher bar — maybe 3-5 new sites a week, not dozens a day.</p>
+        <p class="card-note">No submissions, no awards, just pure curation. The one to open for high-end client work when volume would just add noise.</p>
+        <div class="card-tags"><span class="chip">Award-tier</span><span class="chip">Small &amp; curated</span></div>
+      </div>
+    </article>
+
+    <article class="card" data-tags="editorial curated">
+      <div class="index">03</div>
+      <div>
+        <h2 class="card-name"><a href="https://www.siteinspire.com" target="_blank" rel="noopener">SiteInspire</a></h2>
+        <p class="card-domain">siteinspire.com</p>
+        <p class="card-verdict">Clean, restrained, European. 8,000+ sites filterable by style, type, and subject.</p>
+        <p class="card-note">Go here for whitespace and typography, not flashy motion — the register for when the message should carry the page.</p>
+        <div class="card-tags"><span class="chip">Editorial</span><span class="chip">Typography</span></div>
+      </div>
+    </article>
+
+    <article class="card" data-tags="saas">
+      <div class="index">04</div>
+      <div>
+        <h2 class="card-name"><a href="https://land-book.com" target="_blank" rel="noopener">Land-book</a></h2>
+        <p class="card-domain">land-book.com</p>
+        <p class="card-verdict">Built for exactly one thing: SaaS landing pages.</p>
+        <p class="card-note">Filter down to just the pricing table or comparison grid you're stuck on. Practical, not just pretty — see <code>saas-pricing-table.html</code> in this repo's <code>design-templates</code> skill for a starting point in that style.</p>
+        <div class="card-tags"><span class="chip">SaaS</span><span class="chip">Pricing &amp; comparison</span></div>
+      </div>
+    </article>
+
+    <article class="card" data-tags="editorial curated">
+      <div class="index">05</div>
+      <div>
+        <h2 class="card-name"><a href="https://httpster.net" target="_blank" rel="noopener">Httpster</a></h2>
+        <p class="card-domain">httpster.net</p>
+        <p class="card-verdict">Small studios. Quiet design.</p>
+        <p class="card-note">Typography-driven, independent designers, restraint over spectacle. Good for when loud isn't the right answer — see <code>editorial-hero.html</code> in <code>design-templates</code> for a starting point in that register.</p>
+        <div class="card-tags"><span class="chip">Editorial</span><span class="chip">Small &amp; curated</span></div>
+      </div>
+    </article>
+  </div>
+
+  <footer>
+    Sourced from a reviewed social carousel (@goluda.ai). Bookmark this page rather than the original post — it links straight through, and the filters make it faster to find the right reference for the job at hand than swiping back through six slides. <strong>Not templates</strong> — references, so a build never looks like everyone else's.
+  </footer>
+</div>
+
+<script>
+  (function () {
+    var buttons = Array.prototype.slice.call(document.querySelectorAll('.tag-btn'));
+    var cards = Array.prototype.slice.call(document.querySelectorAll('.card'));
+
+    buttons.forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        buttons.forEach(function (b) { b.setAttribute('aria-pressed', 'false'); });
+        btn.setAttribute('aria-pressed', 'true');
+        var tag = btn.getAttribute('data-tag');
+        cards.forEach(function (card) {
+          var tags = card.getAttribute('data-tags');
+          var show = tag === 'all' || (tags && tags.indexOf(tag) !== -1);
+          card.hidden = !show;
+        });
+      });
+    });
+  })();
+</script>

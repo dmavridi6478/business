@@ -356,9 +356,10 @@ Visual or structured representation of how content interconnects.
 
 ## Related Skills
 
-Installed in this repo: **product-marketing-context**, **competitor-profiling**, **business-decision-frameworks**, **internal-comms**, **doc-coauthoring** (below). The rest are marketplace skills not currently installed here.
+Installed in this repo: **product-marketing-context**, **competitor-profiling**, **business-decision-frameworks**, **internal-comms**, **doc-coauthoring**, **copywriting**, **marketing-psychology** (below). The rest are marketplace skills not currently installed here.
 
-- **copywriting**: For writing individual content pieces
+- **copywriting** *(in this repo)*: For writing individual content pieces once a topic is chosen here — that skill's Problem→Promise→Proof→CTA framework does the actual writing
+- **marketing-psychology** *(in this repo)*: Apply its behavioral principles (framing, curiosity, etc.) when writing hooks/headlines for planned content
 - **seo-audit**: For technical SEO and on-page optimization
 - **ai-seo**: For optimizing content for AI search engines and getting cited by LLMs
 - **programmatic-seo**: For scaled content generation

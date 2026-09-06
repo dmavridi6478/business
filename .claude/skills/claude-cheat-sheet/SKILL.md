@@ -1,6 +1,6 @@
 ---
 name: claude-cheat-sheet
-description: Quick reference for getting more out of Claude — prompting techniques (zero/one/few-shot, role-based prompting, the role+examples+step-by-step combo), what Skills/Hooks/MCP/Projects/Artifacts actually are and how they differ, and a short list of durable pro tips. Use when asked how to write a better prompt, what a Claude concept (skill/hook/MCP/artifact/project) means, or for a general "how do I use Claude well" reference.
+description: Quick reference for getting more out of Claude — prompting techniques (zero/one/few-shot, role-based prompting, the role+examples+step-by-step combo), structured prompt frameworks (the 5 C's, SEED, PEEL), what Skills/Hooks/MCP/Projects/Artifacts actually are and how they differ, and a short list of durable pro tips. Use when asked how to write a better prompt, what a Claude concept (skill/hook/MCP/artifact/project) means, or for a general "how do I use Claude well" reference.
 ---
 
 # Claude Cheat Sheet
@@ -26,6 +26,40 @@ Source: prompted by reviewing a social-media "Claude AI Cheat Sheet" infographic
 **Role-based prompting**: "act as [role]" primes the vocabulary, priorities, and blind spots of that role — most useful when paired with a concrete task and output format, not on its own. A role with no task ("act as a marketer") gets generic output; a role with a specific task and format ("act as a performance marketer, audit this landing page, output a prioritized punch list") gets usable output.
 
 **The reliable combo**: **role + examples + explicit step-by-step instructions** together outperform any one of the three alone. The role sets the lens, the examples set the format/tone, and the step-by-step breakdown keeps a multi-part task from collapsing into a single shallow pass.
+
+## Structured prompt frameworks
+
+Added from a reviewed "How to Prompt AI" infographic — named templates
+for when a prompt needs more structure than a single instruction, without
+reinventing the shape each time.
+
+**The 5 C's** — the checklist every strong prompt should pass: **C**lear
+(say exactly what's needed), **C**ontextual (add relevant background),
+**C**omplete (state constraints up front, not as a follow-up correction),
+**C**onversational (delegate like briefing a colleague, not issuing a
+command to a machine), **C**haracter (assign a role or voice when tone
+matters).
+
+**SEED** — for task-execution prompts: **S**cenario ("here is the
+situation: [context/data]"), **E**xpertise ("act as a [role]"), **E**xecute
+("perform [analysis or task]"), **D**eliverable ("output as [format]").
+
+**PEEL** — for prompts that need a worked example to anchor tone/format:
+**P**ersona ("act as a [role]"), **E**xplain ("your task is to
+[deliverable]"), **E**xamples ("here are 1-2 style references [links or
+snippets]"), **L**imitations ("must follow [length, tone, format,
+rules]").
+
+Six advanced techniques from the same source are installed as their own
+commands (each takes the task as `$ARGUMENTS`) rather than duplicated here
+as text: `/plan-then-answer` (plan silently, output only the final
+answer), `/reflect-then-revise` (draft, self-score 1–5, fix anything
+under 4), `/self-critique-pass` (three internal drafts, return the best
+with why), `/evidence-first-grounding` (answer only from an attached
+source, flag anything unverifiable), `/assumptions-and-gaps` (list
+assumptions/missing info before answering, state the safest default for
+anything critical), `/contrast-few-shot` (match a Good example's traits,
+avoid a Not-Good example's).
 
 ## Skills, Hooks, MCP, Projects, and Artifacts — what each actually is
 

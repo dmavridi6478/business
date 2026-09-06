@@ -40,6 +40,7 @@ Source: "8 Free Desktop Apps That Replace Paid Tools" carousel (@nawraskader). E
 - **content-repurposing-service**: OBS Studio (record) and Kdenlive (edit) cover that skill's raw-recording → asset-pack pipeline without a paid tool.
 - **doc-coauthoring** / **internal-comms**: AppFlowy and Joplin are viable drafting/organizing surfaces before content moves into `docx`/`pdf` for final delivery.
 - **claude-code-tooling** / **design-dev-resources**: Sibling curated-tool directories — this one is for general business-ops software, not Claude Code tools or design assets specifically.
+- **self-hosted-docker-stack**: The server-hosted sibling list — PDF tooling and password managers appear in both; use this skill's desktop options for a solo user with no sync/team need, that skill's server-hosted options once multiple devices/people need shared access. Shares this skill's `free-vs-paid-tool-decision` procedure.
 - **attachment-intake**: This entry followed that procedure — inspected the carousel's actual content before building anything from it.
 
 ## Notes
