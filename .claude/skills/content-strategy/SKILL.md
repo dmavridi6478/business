@@ -374,4 +374,4 @@ Installed in this repo: **product-marketing-context**, **competitor-profiling**,
 - **design-dev-resources** *(in this repo)*: Source illustrations/logos for content pieces instead of hand-drawn SVG
 - **content-repurposing-service** *(in this repo)*: A productized weekly service that operationalizes this skill's topic decisions into a repeatable multi-format asset pipeline
 - **linkedin-virality-playbook** *(in this repo)*: For LinkedIn specifically, apply that skill's 9 reach-focused tactics once this skill has decided the topic
-- **ai-search-marketing-2026** *(in this repo)*: Its marketing taxonomy's "Content Strategy" branch and AEO patterns inform how content gets structured for AI-search visibility, not just topic selection
+- **ai-search-visibility** *(in this repo)*: Its marketing taxonomy's "Content Strategy" branch and AEO patterns inform how content gets structured for AI-search visibility, not just topic selection

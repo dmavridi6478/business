@@ -17,7 +17,7 @@ A starter bundle of business-oriented Claude skills lives in `.claude/skills/`:
 - `doc-coauthoring` — structured workflow for co-authoring docs, proposals, and specs
 - `attachment-intake` — how to handle uploaded files (zips, photo batches, docs) that arrive with no or mismatched instructions, instead of guessing at intent
 - `design-dev-resources` — curated directory of free design/frontend tool sites (unDraw, SVGL, Aceternity, Glassmorphism generator, JSON Crack, Mobbin) plus notable external AI tools (Genspark, Google Stitch, Google Flow, Gumloop, Figma Make, Kombai) and a design-engineering job board (Design Engineer Jobs) worth knowing about
-- `ai-search-marketing-2026` — the SEO/SXO/AEO/GEO/AIO five-discipline wheel, a modern-marketing taxonomy, 5 exec-level marketing-analytics questions, a 15-day day-by-day AI-search action plan, and a 20-source AI-visibility ecosystem map cross-checked against which sources this account can actually query via a live MCP connector
+- `ai-search-visibility` — the SEO/SXO/AEO/GEO/AIO five-discipline wheel, a modern-marketing taxonomy, 5 exec-level marketing-analytics questions, a 15-day day-by-day AI-search action plan, a 20-source AI-visibility ecosystem map cross-checked against which sources this account can actually query via a live MCP connector, plus the tactical page-level implementation that makes a site readable by AI assistants (semantic HTML, meta descriptions, `llms.txt`, `robots.txt`, an "Ask AI about me" block) — consolidates the former `ai-search-marketing-2026` and `ai-discoverable-site`
 - `growth-operating-framework` — a 7-step sequence for capital-efficient growth (real-business alignment → North Star metric → data foundation → feedback loop → cross-functional accountability → capital-efficient scale → fast iteration)
 - `linkedin-virality-playbook` — 9 tactics for LinkedIn posts that reach beyond the author's own network (proof-led hooks, repostable angles, reusable visual templates, real engagement questions)
 
@@ -52,7 +52,6 @@ A third bundle covers **setting up a new business** — validating an idea and t
 A fourth pair covers **personal AI infrastructure** — setting up Claude Code itself as a tool, rather than producing business deliverables:
 
 - `advisory-board` — set up a personal "council of experts" (named advisors + their real source material) that the `/ask-the-board` command draws on
-- `ai-discoverable-site` — make a personal/company site readable by AI assistants (semantic HTML, meta descriptions, `llms.txt`, `robots.txt`, an "Ask AI about me" cross-provider block)
 - `humanizer` — strips AI-writing tells (inflated symbolism, promotional language, em dash overuse, filler phrases, etc.) from drafted text; vendored for real from [blader/humanizer](https://github.com/blader/humanizer) (MIT)
 - `claude-code-tooling` — curated directory of external Claude Code tools (a design-engine desktop app, a senior-engineer skill pack, multi-agent orchestration, a skills package manager, an agent context/memory database, five browser-automation frameworks, a hive-mind team workspace) that are standalone software, not skill files, so they're documented here rather than vendored in
 - `web-task-scoping` — governance procedure for scoping any browser-automation task (Target → Limit → Run → Review) before granting a web agent more autonomy; companion to `/scope-web-task`
@@ -80,17 +79,12 @@ verified vendors:
 A sixth bundle is original content, not vendored — authored for this repo
 after reviewing a "Claude Code outreach project" social post that showed a
 26-file skill-tree mockup with no actual source repo to clone. Consolidated
-into 8 category skills (rather than 26 thin ones) covering a full
+into 2 phase skills (originally 8 category skills, further consolidated —
+see `outreach-planning`'s own file for the fold-in history) covering a full
 cold-outbound-sales system, orchestrated by `/outreach-campaign`:
 
-- `outreach-strategy` — trigger-based ICP (not static firmographics), per-role persona cards, a signal→pain map, and outcome-framed offer statements
-- `outreach-list-building` — company sourcing (Apollo/Clay/lemlist-style filters), people sourcing (Sales Navigator), intent-signal sourcing (G2/Product Hunt), dedup + CSV assembly
-- `outreach-copywriting` — signal-led first-touch (<100 words), follow-up + breakup sequence, a VP-toned variant, a strict quality checklist, and a benchmarking pass
-- `outreach-channels` — LinkedIn (2-DM max rule), a 6-part cold-call script, and AI-personalized video outreach (Tavus/HeyGen-style)
-- `outreach-campaign-design` — 3+ messaging angles per ICP, full multi-touch/multi-channel campaign architecture, and a deliberate GTM stress test before launch
-- `outreach-replies-pipeline` — reply triage across 8 reply types, benchmarking against outbound performance data, and stage-by-stage pipeline diagnosis
-- `outreach-automation` — n8n workflow building/debugging and supplementary website scraping for enrichment
-- `outreach-data-connections` — maps which of the tools above are actually connected in a given environment before the rest of the bundle assumes they are; pairs with the `mcp-integration-scout` agent
+- `outreach-planning` — trigger-based ICP (not static firmographics), per-role persona cards, a signal→pain map, outcome-framed offer statements, a pre-flight data-connection check, company/people/intent-signal sourcing into a deduplicated CSV list, and full campaign architecture (angles, channel mix, cadence, exit conditions, GTM stress test)
+- `outreach-execution` — signal-led first-touch copy (<100 words), follow-up + breakup sequence, a VP-toned variant, a strict quality checklist and benchmarking pass, LinkedIn/cold-call/video-outreach channel execution, reply triage across 8 reply types with stage-by-stage pipeline diagnosis, and n8n workflow automation
 
 A seventh addition, `claude-cheat-sheet`, is also original content rather
 than vendored: a social-media "Claude AI Cheat Sheet" infographic turned out
@@ -242,7 +236,7 @@ Skills") section pointing at the others that feed it or consume its output:
 - For personal AI setup: `advisory-board` supplies advisors that
   `product-strategy-session`, `quarterly-okr-architect`, and the new-business
   cluster can sanity-check decisions against via `/ask-the-board`.
-  `ai-discoverable-site` pulls its "who they are" content from
+  `ai-search-visibility` pulls its "who they are" content from
   `product-marketing-context` and hands implementation to `frontend-design`.
 
 - `humanizer` is a general-purpose editing pass — run it on drafts from
@@ -251,9 +245,9 @@ Skills") section pointing at the others that feed it or consume its output:
 
 - `growth-operating-framework` decides *what* to grow and by which metric;
   `quarterly-okr-architect` turns that into a goal cascade; `business-decision-frameworks`
-  prioritizes which channels/experiments to run; `ai-search-marketing-2026`'s
+  prioritizes which channels/experiments to run; `ai-search-visibility`'s
   exec questions and `business-intelligence-report`/`ceo-reporting-skill` report
-  on how it's going. `linkedin-virality-playbook` and `ai-search-marketing-2026`
+  on how it's going. `linkedin-virality-playbook` and `ai-search-visibility`
   both extend `content-strategy` with channel-specific reach tactics (LinkedIn
   posts; AI-search visibility) once the underlying topic is decided.
 

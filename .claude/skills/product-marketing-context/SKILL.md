@@ -250,4 +250,4 @@ This is the foundational context document — treat it as an input to the other 
 - **brandkit-generator**: When this document doesn't exist yet and the request is really "give me a visual starting point for a new brand," use that skill instead — it's faster and produces a visual board, not a full positioning doc.
 - **product-strategy-session**, **saas-idea-validator**, **the-productize-yourself-blueprint**, **the-specific-knowledge-excavator**: When setting up a *new* business rather than documenting an existing product, run one of these first — this document is where the validated result gets captured.
 - **frontend-design**, **premium-html-presentation**, **canvas-design**, **pptx**: Use this document's Brand Voice and positioning as the actual brand to apply — not the `brand-guidelines` skill, which is Anthropic-specific.
-- **ai-discoverable-site**: Source of the "who they are, what they do" summary that populates a site's `llms.txt` and "Ask AI about me" prompt.
+- **ai-search-visibility**: Source of the "who they are, what they do" summary that populates a site's `llms.txt` and "Ask AI about me" prompt.
