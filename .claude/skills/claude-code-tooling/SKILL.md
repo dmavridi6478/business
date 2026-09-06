@@ -31,10 +31,61 @@ real via web search:
 
 | Repo | What it's for | Install / link |
 |---|---|---|
-| `pbakaus/impeccable` | "The missing design vocabulary for agents" — 1 skill, 23 commands, 59 deterministic detector rules for AI-slop/design-quality issues across 7 dimensions; 50,000+★ | https://github.com/pbakaus/impeccable — paste the URL into Claude Code, it installs itself |
+| `pbakaus/impeccable` | "The missing design vocabulary for agents" — 1 skill, 23 commands, 61 deterministic detector rules for AI-slop/design-quality issues; Apache 2.0. **Actually tested against a real build (not just documented from the README) — see below.** | `npx impeccable install` in the target project (not this one — see note below), then `/impeccable init`. https://github.com/pbakaus/impeccable |
 | `Leonxlnx/taste-skill` ("Taste Skill") | Upgrades layout/typography/motion/spacing decisions instead of boilerplate defaults; v2 reads the brief, infers the design language, tunes VARIANCE/MOTION/DENSITY dials; tens of thousands of★ | https://github.com/Leonxlnx/taste-skill |
 
-Both pair with this repo's own `hallmark` skill and the new
+### `impeccable`, tested against a real build
+
+Impeccable isn't a markdown skill file the way `caveman` or `humanizer` are —
+it's a real product: an npm-distributed CLI launcher (`bin: impeccable`) that
+downloads a compiled per-platform engine binary on first run, plus a Claude
+Code/Cursor/Codex skill wrapping 23 slash-commands around that binary. That
+combination — network fetch + a compiled binary, not just prompt text — is
+why it's documented here rather than vendored as a skill file: vendoring the
+markdown alone without the engine it calls out to (`Bash(npx impeccable *)`
+is its one `allowed-tools` entry) would ship a skill that can't actually run
+its detectors.
+
+It was cloned and its static-scan CLI (`npx impeccable detect <path>` — no
+browser required, works directly on HTML/CSS/JSX/TSX/Vue/Svelte files) was
+run for real, in an isolated scratch directory, against two things:
+
+1. **A deliberately bad test page** (purple/blue gradient hero with
+   gradient-clipped text, Inter font, gray-on-gradient body copy, a skipped
+   h1→h3 heading level, "Supercharge Your Workflow" marketing copy). Result:
+   **11 anti-patterns found**, correctly naming the gradient text, the
+   AI-typical purple/violet palette, gray-on-color contrast, the exact WCAG
+   contrast ratio, the overused font, the skipped heading level, and the
+   marketing-buzzword phrase — matching what the README claims it detects,
+   not just a plausible-sounding pitch.
+2. **Two of this repo's own already-published artifacts**
+   (`Artifacts/business/free-vs-paid-tool.html`,
+   `Artifacts/operations/night-shift-canvas.html`) — real deliverables, not
+   a strawman. Result: **22 and 32 anti-patterns respectively**, including a
+   genuine WCAG contrast failure (1.2:1 against a 4.5:1 requirement — light
+   gray text on white, essentially unreadable, not a style nitpick), a
+   `hero-eyebrow-chip` finding (the "small uppercase label above an
+   oversized hero headline" AI-tell) on both files, 10px interactive text
+   below its 11px legibility floor, and repeated long-run all-caps body text.
+   Neither file had been checked against this tool before, and both are
+   real, already-shipped work — this isn't a synthetic result.
+
+**Verdict**: the tool does what its README claims, on real HTML, with no
+license concerns (Apache 2.0) and no stray config/telemetry files left
+behind by a scan. The WCAG contrast finding in particular is a genuine bug
+class this repo's `design-review-audit`/`hallmark` skills don't currently
+check with a measured contrast ratio — they catch AI-slop *patterns*,
+Impeccable's detector also catches a specific *measured* accessibility
+failure. **Recommendation: run `npx impeccable detect <path>` (the
+no-install, no-binary-write scan-only form) against any new HTML/CSS build
+from `frontend-design`/`web-artifacts-builder`/`canvas-design` as a final
+check, the way `design-review-audit` is already used** — rather than running
+the full `npx impeccable install` (which writes `.claude/settings.json`
+hooks and a per-project `.impeccable/` config) directly into this
+business-skills repo, which doesn't have a live frontend build of its own
+for those hooks to attach to.
+
+Both `impeccable` and `Leonxlnx/taste-skill` pair with this repo's own `hallmark` skill and the new
 `web-design-taste-workflow` skill (curate a taste library → install these
 tools → never one-shot a design, build 5 directions wide and narrow down)
 — see that skill for the full workflow and a reusable 4-part prompt
@@ -173,7 +224,7 @@ A 22-repo carousel grouped into Build (6), Design (6), Research (6), and Marketi
 
 | Repo | What it's for | Status |
 |---|---|---|
-| `pbakaus/impeccable` | "The design language that makes your AI harness better at design" — a final polish pass | ✅ Verified — 58k+ stars, matches carousel's ballpark. **Overlaps with this repo's `design-review-audit` skill** — both exist to catch generic-AI-slop output; compare before adding both to a workflow |
+| `pbakaus/impeccable` | "The design language that makes your AI harness better at design" — a final polish pass | ✅ Verified — 58k+ stars, matches carousel's ballpark. **Actually cloned and run against real HTML** — see the dedicated test-results section above, which found genuine WCAG contrast failures in two of this repo's own already-published artifacts. **Overlaps with this repo's `design-review-audit` skill** — both exist to catch generic-AI-slop output, but Impeccable's engine also checks a measured contrast ratio, which `design-review-audit`'s checklist doesn't; compare before adding both to a workflow |
 | `Leonxlnx/taste-skill` | Stops an agent generating generic/boring UI | ✅ Verified — 75k+ stars, matches carousel's ballpark. **Overlaps with `design-review-audit` and `frontend-design`** in this repo — same anti-slop goal from a different angle |
 | `heygen-com/hyperframes` | Write HTML, render an actual video, built for coding agents | ✅ Verified — 40k+ stars, matches carousel's ballpark. Real HeyGen product |
 | "ui-ux-pro-max" (67 styles, 96 palettes, 57 font pairings) | Design-token/style intelligence skill | ⚠️ Multiple forks exist under this name, none matching the carousel's claimed 110k-star scale in search results — canonical repo unclear. **Overlaps with `design-token-extractor` and `theme-factory`** in this repo regardless of which fork is real |

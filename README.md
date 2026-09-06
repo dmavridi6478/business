@@ -4337,3 +4337,22 @@ click through on the user's behalf — the grounding-project *technique* was
 captured in `n8n-agent-builder` above instead, with the exact instruction
 text ready to paste.
 
+**Follow-up, same session:** asked to actually try `impeccable` rather than
+just document it from its README. It was cloned, and its CLI's static
+`detect` scan (no browser/binary-install needed for this mode) was run in an
+isolated scratch directory against a deliberately bad test page (correctly
+found 11 real anti-patterns) and against two of this repo's own
+already-published artifacts, `Artifacts/business/free-vs-paid-tool.html` and
+`Artifacts/operations/night-shift-canvas.html` (found 22 and 32
+anti-patterns respectively, including a genuine 1.2:1 WCAG contrast failure
+on both — light-gray text on white, not a style nitpick — that this repo's
+own `design-review-audit` checklist had not caught on either file). Full
+write-up, including why the tool is documented rather than vendored (it's a
+compiled-binary CLI product, not a markdown skill), is in
+`claude-code-tooling`'s `impeccable` entry; a cross-reference was added to
+`design-review-audit` recommending `npx impeccable detect` as a mechanical
+cross-check layered on top of that skill's checklist, not a replacement for
+it. The two accessibility bugs the scan surfaced were not fixed as part of
+this review — flagged as a separate follow-up rather than folded into a
+tool-evaluation task.
+

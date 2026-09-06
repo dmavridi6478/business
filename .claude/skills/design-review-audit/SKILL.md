@@ -48,6 +48,7 @@ A prioritized list: **blocking** (breaks usability/accessibility/looks broken) �
 - **ui-motion-design**: If motion is part of the build, check it against that skill's timing/easing guidance as part of the review.
 - **canvas-design**, **premium-html-presentation**, **web-artifacts-builder**: Any of these builds is a valid audit target.
 - **design-token-extractor**: If the audit finds inconsistent spacing/color values, this skill is the fix — extract or define a proper token set instead of patching individual values.
+- **claude-code-tooling**'s `impeccable` entry: this skill's own contrast checklist item (WCAG AA, above) is a self-assessment prompt — run against two of this repo's own already-published artifacts, `npx impeccable detect` still found real, un-caught 1.2:1 contrast failures on both. A checklist question gets skipped or eyeballed; a deterministic contrast-ratio calculator doesn't. Run `npx impeccable detect <path>` as a mechanical cross-check on any build this checklist has already passed, not as a replacement for the parts of this checklist (spacing rhythm, hierarchy, consistency) it doesn't cover.
 
 ## Notes
 
