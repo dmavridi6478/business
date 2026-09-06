@@ -61,7 +61,7 @@ A third bundle covers **setting up a new business** — validating an idea and t
 - `content-repurposing-service` — a concrete worked example: a productized weekly service that turns one client recording into a 7-asset content pack (carousel, video outlines, email, text posts) on a Mon–Fri cadence
 - `data-cleanup-brief-service` — a sibling worked example: a productized weekly service that turns a client's recurring messy CSV exports into a clean, verified one-page change brief (deterministic pandas/DuckDB cleanup first, AI narrative only after the numbers are locked), with an honestly-labeled sample price to validate rather than a guaranteed-revenue claim
 - `lean-software-stack` — curated directory of 8 free/open-source desktop apps (AppFlowy, Joplin, KeePassXC, OBS Studio, Kdenlive, Element, PDFsam Basic, LocalSend) that replace common paid SaaS tools, for controlling software costs before revenue validates the spend; companion to `/tool-stack-check`
-- `self-hosted-docker-stack` — curated directory of 10 verified, self-hostable Docker services (Pterodactyl, Frigate, Jellyfin, Dockge, Stirling PDF, Open WebUI, AdGuard Home, Uptime Kuma, Vaultwarden, Forgejo) for a homelab/server stack, each repo confirmed by live search rather than taken from branding alone; overlaps with `lean-software-stack` on PDF tooling and password managers as the server-hosted vs. desktop choice
+- `self-hosted-docker-stack` — curated directory of verified, self-hostable Docker services: an original 10-app batch (Pterodactyl, Frigate, Jellyfin, Dockge, Stirling PDF, Open WebUI, AdGuard Home, Uptime Kuma, Vaultwarden, Forgejo) for a homelab/server stack, plus a second batch covering a document-processing pipeline (paperless-ngx, MinerU, docling, Unstract, PaddleOCR) and business-ops SaaS replacements (Umami, Listmonk, Cap, Memos, Kaneo, Appsmith, Apitable, Botpress) — each repo confirmed to exist by live check rather than taken from branding alone; overlaps with `lean-software-stack` on PDF tooling and password managers as the server-hosted vs. desktop choice
 
 A fourth pair covers **personal AI infrastructure** — setting up Claude Code itself as a tool, rather than producing business deliverables:
 
@@ -69,7 +69,7 @@ A fourth pair covers **personal AI infrastructure** — setting up Claude Code i
 - `personal-growth-prompts` — 6 ready-to-use generic "act as X" persona prompts (Elite AI Mentor, CEO mindset, Life Optimization Coach, Brutally Honest Advisor, Personal Success OS, 10x Improvement Coach) for fast personal-development framing without setting up a full named board
 - `ai-discoverable-site` — make a personal/company site readable by AI assistants (semantic HTML, meta descriptions, `llms.txt`, `robots.txt`, an "Ask AI about me" cross-provider block)
 - `humanizer` — strips AI-writing tells (inflated symbolism, promotional language, em dash overuse, filler phrases, etc.) from drafted text; vendored for real from [blader/humanizer](https://github.com/blader/humanizer) (MIT)
-- `claude-code-tooling` — curated directory of external Claude Code tools (a design-engine desktop app, a senior-engineer skill pack, multi-agent orchestration, a skills package manager, an agent context/memory database, five browser-automation frameworks, a hive-mind team workspace, five open-source AI video-generation models, a live-verified 22-repo "skills to install in Claude" collection, 5 power-user CLI/MCP tools for cost tracking/model routing/multi-agent management, and a 4-repo motion-skills batch where cloning and reading each repo changed the verdict on 3 of the 4) that are standalone software, not skill files, so they're documented here rather than vendored in
+- `claude-code-tooling` — curated directory of external Claude Code tools (a design-engine desktop app, a senior-engineer skill pack, multi-agent orchestration, a skills package manager, an agent context/memory database, five browser-automation frameworks, a hive-mind team workspace, five open-source AI video-generation models, a live-verified 22-repo "skills to install in Claude" collection, 5 power-user CLI/MCP tools for cost tracking/model routing/multi-agent management, a 4-repo motion-skills batch where cloning and reading each repo changed the verdict on 3 of the 4, and a batch of terminal coding-agent CLIs/harness add-ons — pi, oh-my-pi, ECC, and an `anomalyco/opencode` whose relationship to the already-documented `sst/opencode` wasn't verified) that are standalone software, not skill files, so they're documented here rather than vendored in
 - `web-task-scoping` — governance procedure for scoping any browser-automation task (Target → Limit → Run → Review) before granting a web agent more autonomy; companion to `/scope-web-task`
 - `night-shift-workflow` — design and govern a scheduled/unattended Claude workflow (a recurring brief, digest, or Routine) that gathers, triages, and drafts while the user is away, with an explicit Claude-may/human-approval boundary; companion to the `night-shift-canvas` procedure
 - `video-model-evaluation` — the "five-clip test": a controlled comparison method (same brief, source, duration, aspect ratio, and rubric fixed before generating) for picking an AI video-generation model based on usable footage instead of a hand-picked demo clip
@@ -4258,3 +4258,82 @@ Patterns in these tools reveal clear gaps and opportunities for a solo builder:
 7. **Learning curriculum builder** — learnanything.xyz-style tool but for custom company onboarding. Client provides their product docs → Claude generates a structured learning path. SaaS on top of Supabase + lovable.dev frontend.
 
 > **Note:** 30 TikTok short-form video links were included in this batch. TikTok video content cannot be fetched or analyzed with available tools — no commands were created from those links.
+
+---
+
+## 78. Claude Usage-Limit Tips, n8n Grounding Technique, Coding-Agent CLIs & OSS-to-Service Ideas (Batch 78)
+
+**Source:** Three uploaded iCloud Photos zips (64 images total) covering
+several distinct social-media carousels: a 12-tip "How to Use Claude Without
+Hitting Usage Limits" series (@your.aimentor); a 6-step "How to Build AI
+Agents With Claude" n8n-workflow-generator walkthrough (@epic8244); repeated
+"5/8/4 GitHub repos so good they shouldn't be free" series (@replace.so,
+@repoloot, @githubnow); a "5 free repos that do the paperwork you keep
+avoiding" series (@ty.prompts.ai); and a "you don't need to build a SaaS, you
+can just sell these 7 free repos" series (@thesocialalpha_). Two unrelated
+images (an iPhone Clock-app screenshot, a macOS-dock "open Claude" step
+image) carried no actionable content and were skipped.
+
+Every repo name mentioned across the batch (33 distinct repos) was checked
+for real existence via a live `git ls-remote` before anything was written
+down — all 33 checked out as real repos, unlike some earlier batches in this
+README where carousel-claimed repos turned out to be fabricated or
+unlocatable. That does **not** mean every claimed star count, price, or
+"$X,000 you could charge for this" framing was independently re-verified —
+those are repeated as shown in each source, flagged as such in the files
+below.
+
+**New:**
+- `docs/procedures/claude-usage-limits.md` — the 12-tip carousel, synthesized
+  into 9 checks (fresh chats every 15-20 messages, edit-don't-stack, batch
+  questions into one message, Project-level file caching, turning off unused
+  tools, model-to-task matching, shorter/more specific prompts, spreading
+  sessions across the day, and a peak-hours caveat flagged as directional
+  rather than a currently-verified schedule).
+- `docs/procedures/oss-tool-to-service-ideas.md` — the "sell these free
+  repos" pitch, kept but pressure-tested rather than repeated uncritically:
+  5 repo→service mappings (Scrapling→lead-gen, changedetection.io→competitor
+  watchtower, ppt-master→report engine, ai-website-cloner-template→site
+  rebuild, PaddleOCR→document digitization) plus the license, support-burden,
+  and "relabeled labor vs. real leverage" checks to run before quoting a
+  client any of the carousel's illustrative prices. Linked from
+  `the-productize-yourself-blueprint`'s related skills.
+- **`n8n-agent-builder`** — added a "grounding-project" section: create a
+  dedicated Claude Project, paste a grounding-rule instruction referencing
+  the real `n8n-io/n8n` repo, upload 2-3 of your own exported n8n workflow
+  JSON files as project knowledge, and use Sonnet — to cut down on Claude
+  inventing n8n nodes/parameters that don't exist. Doesn't replace testing
+  the generated workflow in a real n8n instance.
+- **`claude-code-tooling`** — added a "Terminal coding-agent CLIs & harness
+  add-ons" table: `earendil-works/pi`, `can1357/oh-my-pi`, `affaan-m/ECC`,
+  and `anomalyco/opencode` (flagged: its relationship, if any, to the
+  already-documented `sst/opencode` wasn't verified — both repos exist
+  independently as of this review). `pbakaus/impeccable` and
+  `JuliusBrussee/caveman` reappeared in this same source batch as separate
+  "repo of the day" posts but weren't re-added since both are already
+  covered (impeccable documented, caveman fully vendored).
+- **`self-hosted-docker-stack`** — added a "Batch 2" section: a
+  document-processing pipeline (paperless-ngx, MinerU, docling, Unstract,
+  PaddleOCR — complementing rather than duplicating the existing Stirling
+  PDF entry) and business-ops SaaS replacements (Umami, Listmonk, Cap,
+  Memos, Kaneo, Appsmith, Apitable, Botpress). Three of those org names
+  (Kaneo, Umami, Apitable) weren't visible on-screen in the source carousels
+  and had to be independently located and confirmed rather than assumed.
+
+**Reviewed, not added — with reasons:**
+| Repo/item | Why it wasn't installed or vendored |
+|---|---|
+| `bytedance/deer-flow`, `excalidraw/excalidraw` | Real, but don't fit either business-ops or document-processing category cleanly; closer to `claude-code-tooling`/`design-dev-resources` territory if wanted later |
+| `onlook-dev/onlook`, `hugohe3/ppt-master`'s underlying repo, Openhuman/TinyHumans | Dev/personal-AI tools rather than business infrastructure; no clear slot in this repo's current skill set |
+| `bikini/exploitarium` | A personal archive of public exploit PoCs/vulnerability write-ups — real repo, but a security-research reading list isn't something to "install," and this repo has no active pentesting/security-research skill it would slot into (`90-days-cybersecurity` is a learning curriculum, not a project this fits) |
+| `xai-org/x-algorithm`, `bilawalsidhu/gods-eye-view` | Genuinely interesting open-sourced projects (X's feed-ranking algorithm; a live-data 3D globe) but not business-tooling relevant to this repo |
+| `nvm-sh/nvm` | A real, standard dev tool, but this environment doesn't do local Node development work that would benefit from vendoring a version-manager reference |
+
+**Not executed:** the carousel's own "Step 1-6" build recipe (open Claude
+desktop app → Projects → new Project → paste grounding instructions → upload
+n8n workflow exports → prompt) describes actions inside the Claude.ai web/
+desktop app, which this environment (Claude Code on the web) has no way to
+click through on the user's behalf — the grounding-project *technique* was
+captured in `n8n-agent-builder` above instead, with the exact instruction
+text ready to paste.
+

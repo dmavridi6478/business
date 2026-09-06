@@ -229,6 +229,25 @@ Four `npx skills add <owner>/<repo>` packages (the same `vercel-labs/skills` ins
 
 **Lesson from this batch**: a carousel's one-line pitch for a skill repo can describe a different (often narrower or differently-licensed) thing than what's actually in the repo — `waapi` and `css-animations` are both examples here. Clone and read before vendoring or recommending, the same discipline already applied to the 22-repo collection above.
 
+## Terminal coding-agent CLIs & harness add-ons ("8 GitHub repos blowing up" batch, @repoloot)
+
+A batch of standalone terminal coding agents and Claude Code harness
+add-ons, each confirmed to exist via a live `git ls-remote` check (star
+counts below are as shown in the source carousel, not independently
+re-verified — re-check before quoting one):
+
+| Repo | What it's for | Install / link |
+|---|---|---|
+| `earendil-works/pi` | Terminal coding agent that reads/writes code and runs commands, plus building blocks to make your own — avoids hand-wiring a separate setup per AI provider | https://github.com/earendil-works/pi |
+| `can1357/oh-my-pi` | Coding agent wired into the IDE itself (reads/searches/edits the open project) rather than a separate chat window to copy code in and out of | https://github.com/can1357/oh-my-pi |
+| `affaan-m/ECC` | Agent-harness performance-optimization system — skills, "instincts," memory, and security/research-first development practices for Claude Code, Codex, OpenCode, and Cursor; install once instead of re-explaining the same process in every prompt | https://github.com/affaan-m/ECC |
+| `anomalyco/opencode` | An open-source terminal coding agent under this name and org — **not independently confirmed to be the same project as the already-documented `sst/opencode` above** (both repos exist as of this review; the relationship between them, if any, wasn't verified). Check which one is the actively-maintained project before installing | https://github.com/anomalyco/opencode |
+
+`pbakaus/impeccable` (design-language skill, already documented above) and
+`JuliusBrussee/caveman` (already vendored for real as this repo's `caveman`
+skill) both also appeared in this same carousel batch as separate
+"repo of the day" posts — not re-added here since they're already covered.
+
 ## How to use this list
 
 - These are **not** cloned into this repo (except `humanizer` and the 8 `gsap-*` skills) — the rest are separate software projects (a desktop app, a CLI, an orchestration framework, a database) that don't fit as markdown skill files, and vendoring foreign codebases into a business-skills repo would be out of scope.

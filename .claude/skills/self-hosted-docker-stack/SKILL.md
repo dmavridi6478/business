@@ -1,6 +1,6 @@
 ---
 name: self-hosted-docker-stack
-description: Curated directory of 10 self-hosted, Docker-deployable services covering game-server hosting, AI-powered local CCTV, media streaming, Docker stack management, PDF tooling, self-hosted AI chat, network-wide ad/tracker blocking, uptime monitoring, a self-hosted password manager, and self-hosted Git — each verified against its real GitHub/Codeberg repository. Use this when the user is planning a homelab, wants to self-host infrastructure instead of paying for a cloud/SaaS equivalent, asks "what should I run on my server," or is deciding between a hosted service and a self-hosted Docker alternative. Overlaps in part with lean-software-stack (both PDF tooling and password managers appear in both, as a desktop vs. server-hosted choice) — use that skill for desktop-app alternatives, this one for services meant to run continuously on a server/NAS.
+description: Curated directory of self-hosted, Docker-deployable services — an original 10-app batch covering game-server hosting, AI-powered local CCTV, media streaming, Docker stack management, PDF tooling, self-hosted AI chat, network-wide ad/tracker blocking, uptime monitoring, a password manager, and self-hosted Git; plus a second batch covering a document-processing pipeline (searchable document archive, messy-document-to-Markdown, RAG document prep, plain-English structured extraction, OCR) and business-ops SaaS replacements (privacy-first analytics, newsletter/mailing-list manager, screen recorder, Markdown notes, project/task board, low-code internal-tools builder, visual database, AI customer-support chatbot) — each verified against its real GitHub/Codeberg repository. Use this when the user is planning a homelab, wants to self-host infrastructure instead of paying for a cloud/SaaS equivalent, asks "what should I run on my server," or is deciding between a hosted service and a self-hosted Docker alternative. Overlaps in part with lean-software-stack (both PDF tooling and password managers appear in both, as a desktop vs. server-hosted choice) — use that skill for desktop-app alternatives, this one for services meant to run continuously on a server/NAS.
 ---
 
 # Self-Hosted Docker Stack
@@ -21,6 +21,45 @@ Source: "10 Docker Apps — Apps you'll actually use" carousel (@wellx.tech). Ea
 | 8 | **Uptime Kuma** | Uptime monitoring | Self-hosted uptime monitoring with status pages and alerting — a self-hosted alternative to a paid status-page SaaS | https://github.com/louislam/uptime-kuma |
 | 9 | **Vaultwarden** | Password manager | Unofficial Bitwarden-compatible server written in Rust — lightweight self-hosted alternative to running the official (resource-heavy) Bitwarden server, compatible with official Bitwarden clients | https://github.com/dani-garcia/vaultwarden |
 | 10 | **Forgejo** | Self-hosted Git | Lightweight, community-governed self-hosted Git service (a hard fork of Gitea) — repos, issues, pull requests; primary home is Codeberg, not GitHub | https://codeberg.org/forgejo (mirrors exist on GitHub, but Codeberg is the authoritative source) |
+
+## Batch 2: document-processing pipeline + business-ops apps ("5 Github repos" / "repo of the day" carousels, @replace.so and @ty.prompts.ai)
+
+Existence of every repo below was confirmed via a live `git ls-remote` check
+before listing (star counts are as shown in source, not independently
+re-verified).
+
+**Document intake & processing** — complements Stirling PDF above rather
+than duplicating it: Stirling PDF is a manual PDF-editing toolbox; these are
+pipeline stages for turning a pile of documents into searchable/structured
+data, mostly unattended:
+
+| App | What it does | Repo |
+|---|---|---|
+| **paperless-ngx** | Scan-once, searchable document archive — indexes everything so a document is findable by typing a word instead of digging through folders | https://github.com/paperless-ngx/paperless-ngx |
+| **MinerU** | Turns messy real-world documents (scans, Office files, tables, formulas) into clean Markdown/JSON — handles cases Stirling PDF's toolset isn't built for. Apache-licensed with added terms — read the license before selling a service built on it | https://github.com/opendatalab/MinerU |
+| **docling** | Prepares documents for a gen-AI/RAG pipeline specifically (so a chatbot can actually read a contract instead of choking on the PDF); Linux Foundation project, MIT | https://github.com/docling-project/docling |
+| **Unstract** | Describe the fields you want in plain English (invoice number, total, due date); returns structured JSON. Deployable as an API so invoice processing runs unattended | https://github.com/Zipstack/unstract |
+| **PaddleOCR** | OCR toolkit — turns scanned PDFs/images into structured data; the engine behind the `oss-tool-to-service-ideas` procedure's document-digitization example | https://github.com/PaddlePaddle/PaddleOCR |
+
+**Business-ops self-hosted apps** — each replaces a specific paid SaaS category:
+
+| App | Replaces | What it does | Repo |
+|---|---|---|---|
+| **Umami** | Google Analytics / Plausible | Privacy-first, cookie-free web analytics (traffic, campaigns, behavior, conversions) | https://github.com/umami-software/umami |
+| **Listmonk** | Mailchimp / ConvertKit | Self-hosted newsletter & mailing-list manager, PostgreSQL-backed, single-binary deploy | https://github.com/knadh/listmonk |
+| **Cap** | Loom | Open-source screen recorder (macOS/Windows) with local editing, share links, transcripts; self-hostable storage | https://github.com/CapSoftware/Cap |
+| **Memos** | Evernote / a private Twitter-style feed | Self-hosted, Markdown-native quick-capture notes with a timeline view | https://github.com/usememos/memos |
+| **Kaneo** | Linear / Asana (light use) | Self-hosted project/task board with labels, self-hosted deployment | https://github.com/usekaneo/kaneo |
+| **Appsmith** | Retool | Low-code platform for building internal dashboards/admin panels from a database or API | https://github.com/appsmithorg/appsmith |
+| **Apitable** | Airtable | Open-source visual database/low-code platform for CRMs, forms, dashboards | https://github.com/apitable/apitable |
+| **Botpress** | Intercom + a chatbot vendor | AI-native customer-support chatbot platform, TypeScript SDK/CLI | https://github.com/botpress/botpress |
+
+Not added to either table (reviewed, judged out of scope for this list):
+**DeerFlow** (bytedance/deer-flow — a general-purpose research/coding
+super-agent harness, closer to `claude-code-tooling`'s territory than a
+single-purpose business app) and **Excalidraw** (excalidraw/excalidraw — a
+whiteboard tool with no clear business-ops slot here; `design-dev-resources`
+is the more natural home for a diagramming tool if one is wanted).
 
 ## When to reach for this list
 
@@ -52,7 +91,16 @@ Pick the desktop option for a solo user with no sync/team need; pick the server-
 - **the-leverage-stack-auditor**: Check a recurring hosted-SaaS cost against this list before assuming a paid replacement is the only option.
 - **claude-code-tooling**: Sibling curated-tool directory (Claude Code-specific tools) using the same standalone-software, non-vendoring convention.
 - **attachment-intake**: This entry followed that procedure — inspected the carousel, then verified each tool's real repo via search before documenting anything, rather than trusting branding alone.
+- **oss-tool-to-service-ideas** (procedure): PaddleOCR in the batch-2 document table is the same repo that procedure's document-digitization example is built on.
 
 ## Notes
 
 Source: "10 Docker Apps — Apps you'll actually use" carousel (@wellx.tech). Unlike earlier tool-directory entries in this repo, the source material didn't display GitHub URLs directly — each repo listed above was located and confirmed via live web search, not carried over from the carousel's branding/logos alone.
+
+Batch 2 source: two "5 GitHub repos so good they shouldn't be free" carousels
+(@replace.so) for the business-ops apps, and a "5 free repos that do the
+paperwork you keep avoiding" carousel (@ty.prompts.ai) for the
+document-processing table. Every repo path was confirmed to exist via a live
+`git ls-remote` check (including three — Kaneo, Umami, Apitable — whose org
+name wasn't visible on-screen in the source carousel and had to be
+independently located and confirmed rather than assumed).
