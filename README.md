@@ -4973,3 +4973,76 @@ into commands:
   alternate install path (a Claude Code plugin marketplace install
   rather than `npx skills add`) — noted here, not a new item.
 
+---
+
+## 85. Low-Yield Batch — Mostly Duplicates, Two New Repos Flagged (Batch 85)
+
+**Source:** Two uploaded zips, 25 files total — a small "Νέος φάκελος"
+("New folder," Greek) zip with 2 images + 2 videos, and a 21-image
+`iCloud_Photos.zip`. The 2 videos had no scene-detectable cuts in one
+case, so both were decoded with `ffmpeg` (1 fps fixed-interval sampling
+for the 14s video, scene-detection for the 49s one) and reviewed as
+still frames, same approach as batch 83.
+
+**Result: this was the most duplicate-heavy batch yet.** Nearly every
+named tool/repo across all 25 files was already in this README —
+`CloudAI-X/threejs-skills`, `greensock/gsap-skills` (this repo already
+has an entire 8-part GSAP skill pack), `zanwei/design-dna`,
+`Panniantong/Agent-Reach`, `nutlope/hallmark` (confirmed by the "Made by
+Together AI" credit line in the new screenshot — Nutlope works at
+Together AI, same person/repo), `DietrichGebert/ponytail` (115k★ exact
+match confirms), Vercel's Web Interface Guidelines, `VoltAgent/awesome-design-md`,
+and Playwright MCP. One video (a Git-concepts glossary — commit, branch,
+merge, rebase, stash, cherry-pick, PR, stacked PRs, tag, fork) had no
+actionable content at all, just definitions.
+
+**The one strong prompt candidate turned out to be a near-exact
+duplicate**: @earchoe's "Content Repurposing Chain" (one piece of
+content → 5 platform-adapted formats: LinkedIn, Twitter/X thread,
+Instagram caption, email intro, Pinterest description) is functionally
+the same prompt as the existing `/content-repurpose` command (SkillDrop
+AI source, LinkedIn/Twitter/Instagram/email/video-hook) — not
+re-created.
+
+### New items (small)
+
+- **Attention Span** (Claude Code skill, shown with 872★, AGPL-3.0,
+  v0.7) — shortens AI answers by ~43% "while keeping the actual work
+  untouched"; no GitHub org/repo path was visible in the screenshot,
+  only the tool name and stats — search for it before installing rather
+  than guessing a slug
+- **`pixiates/motion-design`** — a Claude Code UI-motion skill; low
+  priority given this repo already has `ui-motion-design` plus the full
+  GreenSock GSAP skill pack covering the same territory, but the exact
+  repo wasn't previously documented
+- **Genjutsu — org ambiguity, now a third candidate.** This repo already
+  flags two different GitHub orgs both using the name "genjutsu"
+  (`iamovi/genjutsu` — an unrelated ephemeral social app — vs.
+  `AThevon/genjutsu` — the real creative-coding-skills repo, currently
+  vendored). This batch's screenshot names a **third** org,
+  `nullbyte-xyz/genjutsu`, for what's described as the same kind of tool
+  ("mind-bending interfaces," visual-FX skill). Not verified against
+  `AThevon/genjutsu` — could be a rebrand, a fork, or another unrelated
+  same-named repo. Don't assume they're the same; check both before
+  relying on either.
+
+### Informational only (no install action)
+
+- **@earchoe "Outsource Your Social Media in 90 Days"** (9 slides) — a
+  content-ops roadmap (Month 1: build a Notion "Content OS" + brand-voice
+  doc; Month 2: run the repurposing chain above; Month 3: full scheduling
+  automation + weekly analytics prompt), claiming a drop from 10–15
+  hrs/week to 3 hrs/week by day 90. Procedural, not a literal prompt
+  beyond the repurposing chain already covered — no new command.
+- **@hash42labs "5 Claude Code Skills for Insane UI Animations"** — Three.js, GSAP, Design DNA, Motion Design, Genjutsu; 4 of 5 already documented (see above), no action beyond the two new-repo notes.
+- **A video decoding to a Git-concepts glossary** (commit/branch/merge/
+  rebase/stash/cherry-pick/PR/stacked-PRs/tag/fork) — definitions only,
+  no commands, no repo, nothing to install.
+- **A second video, "5 Claude Code plugins" for design QA** — Vercel Web
+  Interface Guidelines, an "Awesome DESIGN.md" concept, and a
+  Playwright-based browser-QA plugin — all three already documented in
+  this README under other names.
+- **Two generic Claude Code tips** ("give Claude better context,"
+  "use a CLAUDE.md file") — standard advice already covered conceptually
+  throughout this repo's existing Claude Code guidance.
+
