@@ -4726,3 +4726,101 @@ command itself walks you through it):**
 > Run `/linkedin-optimizer-system` with no arguments and follow the steps in order: home, then audit, then positioning, then rewrite, then content (repeat weekly).
 > Run `/agent-task-ideas` with no arguments to see all 9 agent-task prompts, then pick one and fill in the brackets.
 
+---
+
+## 83. Agent-Harness Trend, Context-Engineering Repos & Two Prompt Checklists (Batch 83)
+
+**Source:** Three uploaded iCloud Photos zips (52 files: 51 images + 1
+unreadable video). Recurring series: @replace.so and @githubnow (GitHub
+repo showcases), @martiendejong_dev (a "0X/09" GitHub-repo countdown —
+mostly the same content already logged in batch 82's GitHub-Trending
+section, plus new entries), @brandarmor.ai ("AI Agents Are Wasting
+Context: 6 Open-Source Projects Fixing It"), @build.dev (5-prompt coding
+checklist, all 5 slides present), @will.ai.m (4-prompt Monday-reset
+series, all 4 slides present, distinct from this handle's already-logged
+"5 repos blowing up on GitHub" carousel), and @dynamic_felix.ai ("Sites
+for developers" — mostly commercial tools, not repos). One video
+(`v26044gc0000da7g8qvog65h89cllhlg.mp4`) couldn't be read by the image
+tool — not reviewed. One image was a restaurant receipt, skipped.
+
+### New commands installed
+
+- **`/ai-coding-checklist-prompts`** — the complete 5-prompt set from
+  @build.dev: `/spec` (turn a one-liner into a spec before coding),
+  `/debug` (root-cause a stack trace without a full repo dump), `/split`
+  (propose a module split before a file becomes unmanageable), `/test`
+  (write unit tests immediately after a change), `/review` (self-review a
+  diff as a skeptical reviewer before merge). Overlaps topically with the
+  existing `ai-slacker-prompts` skill (also covers debugging/testing) but
+  is a distinct, verbatim source with its own exact wording — kept
+  separate per this repo's existing convention of not merging different
+  creators' phrasing into one file.
+- **`/monday-reset-prompts`** — the complete 4-prompt set from @will.ai.m:
+  `/triage` (force a carry-forward/kill/delegate split on last week's
+  leftovers), `/unstick` (break down the task you're avoiding into
+  45-minute blocks), `/meeting-prep` (Gmail+Calendar meeting prep),
+  `/relationship-read` (Gmail sentiment read on key contacts). Each uses
+  the creator's fixed Context/Input/Output/Rules format — kept intact
+  rather than genericized.
+
+### New repos to clone
+
+- [`anywhere-labs/dsh-desktop`](https://github.com/anywhere-labs/dsh-desktop) — desktop client for the DeepSeek Harness (already-documented `deepseek-ai/deepseek-harness`) plugin ecosystem; shown with 21k★, plugin catalogue itself at 13k★
+  `git clone https://github.com/anywhere-labs/dsh-desktop`
+- [`lidge-jun/opencodex`](https://github.com/lidge-jun/opencodex) — universal provider proxy for OpenAI Codex and Claude Code; run either harness against Claude, Gemini, Grok, DeepSeek, or Ollama; shown with 12k★
+  `git clone https://github.com/lidge-jun/opencodex`
+- [`Lakr233/vphone-cli`](https://github.com/Lakr233/vphone-cli) — "Virtual iPhone CLI": automates virtualized iPhone VMs on Apple Silicon (configurable firmware/jailbreak patch levels, APFS fast clone, SSH/VNC access) — niche iOS research-infrastructure tool, not a business-workflow fit for this repo but flagged for completeness
+  `git clone https://github.com/Lakr233/vphone-cli`
+- [`ToolJet/ToolJet`](https://github.com/ToolJet/ToolJet) — open-source low-code platform for building internal tools, dashboards, workflows, and AI agents; 40.8k★
+  `git clone https://github.com/ToolJet/ToolJet`
+- [`alyssaxuu/screenity`](https://github.com/alyssaxuu/screenity) — free, privacy-friendly screen recorder and annotation tool; 18.7k★
+  `git clone https://github.com/alyssaxuu/screenity`
+- [`novuhq/novu`](https://github.com/novuhq/novu) — single API for product notifications and agent conversations across inbox, email, SMS, push, chat, Slack, Teams, Telegram; 39.8k★; quickstart: `npx novu connect`
+  `git clone https://github.com/novuhq/novu`
+- [`getfider/fider`](https://github.com/getfider/fider) — open-source customer feedback portal for feature requests and voting; 4.5k★
+  `git clone https://github.com/getfider/fider`
+- [`apache/maka`](https://github.com/apache/maka) — agent harness that logs every model message, tool call, and permission decision as an append-only event log, replayable and benchmarkable against official verifiers; sessions/settings stay local
+
+### Unverified — name and star count only, no repo slug shown
+
+Part of @brandarmor.ai's "6 Open-Source Projects" context-engineering
+series — 3 of 6 were already covered in earlier batches (`caveman`,
+`claude-mem`, `serena`); these 3 are new to this repo but need the actual
+GitHub org confirmed before cloning:
+- **rtk** (78k★) — compresses noisy terminal/CLI output before it reaches an agent
+- **jcodemunch** (2.6k★) — tree-sitter-based precise symbol retrieval instead of dumping whole files
+- **context-mode** (20k★) — sandboxes large tool outputs outside the context window, agent retrieves only what it needs
+
+### Already covered — skipped as duplicates
+
+`affaan-m/ECC`, `earendil-works/pi`, `caveman` (vendored skill),
+`AppFlowy` (in `lean-software-stack`), `deepseek-ai/deepseek-harness`,
+`omnigent-ai/omnigent`, `xai-org/grok-build`, `yc-software/qm`,
+`XiaomiMiMo/MiMo-Code`, `21st.dev`, `dubinc/dub` (`self-hosted-docker-stack`),
+`NousResearch/hermes-agent` (already cloned via `setup-repos.sh`; its
+install one-liner is `curl -fsSL https://hermes-agent.nousresearch.com/install.sh | bash`,
+noted here in case the docker-based clone path in `setup-repos.sh` is ever
+swapped for this).
+
+### Informational only (no install action)
+
+- **@dynamic_felix.ai "Sites for developers"** — mostly commercial/hosted
+  tools, not repos to clone: **v0.app** (Vercel's AI site builder),
+  **cta.gallery** (CTA design inspiration), **21st.dev** (already
+  documented), **glass3d.dev** (CSS glass-effect generator),
+  **60fps.design** (motion/animation inspiration), **repolyze.mxcorp.in**
+  (claims to be an open-source AI codebase analyzer but no GitHub repo
+  shown — verify before relying on the "open-source" claim). One tool name
+  in this series ("metatags.io" captioned as a JSON-graph visualizer) does
+  not match that domain's actual real-world purpose (meta-tag preview) —
+  likely a mislabel in the source carousel; not documented as a working
+  link.
+- **@martiendejong_dev "0X/09" GitHub countdown** — largely the same
+  agent-harness trend already covered in batch 82 and above
+  (`deepseek-harness`, `omnigent`, `grok-build`, `qm`, `MiMo-Code`) plus
+  the two new entries listed above (`dsh-desktop`, `opencodex`).
+- **@githubnow daily briefing (4 Sept 2026)** — named "Agent Workspace"
+  (`apache/maka`, listed above), "Agent Harness OS" (`affaan-m/ECC`,
+  already covered), and "Virtual iPhone CLI" (`Lakr233/vphone-cli`,
+  listed above).
+
