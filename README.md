@@ -4570,3 +4570,479 @@ Output-format methodology already captured from an earlier `@SkillDropAI`
 batch), and proprietary SaaS tool cards with no repo to clone (Microsoft
 Clarity, Content Square, SERPtag, Tally).
 
+---
+
+## 82. LinkedIn Optimizer System, Agent-Task Prompt Pack & GitHub Trending Repos (Batch 82)
+
+**Source:** Two uploaded iCloud Photos zips, 67 images total — carousels from
+@theromanknox ("Claude's Free Skillset"), @ai_slacker (11-slide "prompt.md"
+agent-task series), @rroobbyynnt (6-step "Build Your Own LinkedIn Optimizer
+with Claude"), @melibuilds.io ("GitHub Trending — 29"), @hash42labs ("H42
+Open Source #003"), @martiendejong_dev (three separate GitHub-repo carousels),
+@quadri_folo ("Claude Code plugins" list, partial), and @futurewithai.dev
+(five Claude-plugin business-model diagrams). Cross-checked every named
+repo/skill against the existing README — most of the skills.sh links and
+several GitHub repos were already documented in earlier batches.
+
+### New commands installed
+
+- **`/linkedin-optimizer-system`** — 5-step system from @rroobbyynnt, meant
+  to run inside one Claude Project: `/home` (sets project custom
+  instructions once), `/audit` (strict section-by-section profile audit),
+  `/positioning` (5 sequential clarifying questions → one positioning
+  statement), `/rewrite` (headline/about/experience rewrite under strict
+  word limits), `/content` (weekly 3-pillar content system + one ready post,
+  repeat weekly). Distinct from the existing `linkedin-profile-auditor` /
+  `linkedin-positioning-statement` / `linkedin-profile-rewrite` /
+  `linkedin-week-content-plan` commands — those are generic one-shot
+  templates; this is the specific, more rigorous multi-step sequence with
+  its own strict rules (source discipline, honesty, word caps) meant to
+  compound inside a single project's memory.
+- **`/agent-task-ideas`** — 9 copy-paste prompts from @ai_slacker's
+  "prompt.md" series, each written to hand to an autonomous/browser-using
+  agent rather than ask in chat: `/garage-sale` (marketplace flipping),
+  `/agency-to-software` (turn a service business into a $500–5K/mo product),
+  `/dashboard` (weekly 1-person-company operator briefing),
+  `/competitor-spy` (monthly competitor-product report), `/qa-team`
+  (nightly mobile regression pass), `/browser-operator` (turn a manual
+  workflow into a documented SOP + automation plan), `/browser-game` (lead
+  magnet game with real hooks), `/audit-opportunities` (rank tasks to
+  automate before hiring), `/bill-negotiator` (renegotiate recurring
+  bills). Distinct from the existing `vibecoding-prompts` (`/build`
+  `/design` `/debug` `/modify` `/think`) and `ai-slacker-premortem` skill —
+  different @ai_slacker series, no overlap.
+
+### New repos to clone
+
+- [`paperclipai/paperclip`](https://github.com/paperclipai/paperclip) —
+  open-source dashboard for managing/monitoring multiple AI agents at
+  once; site paperclip.ing, MIT, shown with 78.1k★/14.3k forks (unverified
+  — screenshot claim)
+  `git clone https://github.com/paperclipai/paperclip`
+- [`PrimeIntellect-ai/prime-agent`](https://github.com/PrimeIntellect-ai/prime-agent) —
+  self-improving RLM agent for coding workflows and long-running autonomous
+  tasks; MIT, shown with 15.6k★
+  `git clone https://github.com/PrimeIntellect-ai/prime-agent`
+- [`semantica-agi/semantica`](https://github.com/semantica-agi/semantica) —
+  graph-native agent memory/context infrastructure — keeps context as a
+  traceable graph instead of a flat log; site getsemantica.ai, shown with
+  6.9k★
+  `git clone https://github.com/semantica-agi/semantica`
+- [`huangruiteng/loopx`](https://github.com/huangruiteng/loopx) —
+  lightweight state kernel for long-running multi-agent teams; works across
+  Codex, Claude Code, and other coding agents — durable goals, executable
+  todos, evidence logs, verifiable handoffs; shown with 4.6k★
+  `git clone https://github.com/huangruiteng/loopx`
+- **Archon** — multi-agent orchestrator (Planner → Coder/Tester/
+  Reviewer/Deployer, with auto-fix); exact org/repo slug not shown in the
+  screenshot — verify before cloning, several unrelated "Archon" repos
+  exist on GitHub
+- **Browser Use WebUI** — the web-UI companion to the already-cloned
+  `browser-use/browser-use` (in `setup-repos.sh`); likely
+  `browser-use/web-ui` — verify slug before cloning
+  `git clone https://github.com/browser-use/web-ui`
+
+### Unverified / needs confirmation before installing
+
+These were shown only as marketing/product screenshots with no GitHub page
+or repo slug visible — do not blind-install:
+- **Singulary** ("self-hosted Lovable" — full-stack app builder) — no repo
+  confirmed, may be closed-source/commercial
+- **Open Generative AI** (400+ self-hosted image/video/lip-sync models) —
+  product name only
+- **Open Notebook** (self-hosted NotebookLM alternative) — likely
+  `lfnovo/open-notebook` based on the description, but not confirmed from
+  the screenshot itself
+- **OmniRoute** — already documented in an earlier batch with a star-count
+  discrepancy flagged; this screenshot repeats the same unverified claims
+- **AI Job Search** (turns Claude Code into a job hunter: scores listings,
+  tailors CV, writes cover letters) — product name only, no repo
+- **usestrix/strix** — already documented (batch 74) as a browser
+  extension for reading/summarizing web content; this new screenshot
+  describes it as an autonomous pentesting agent instead. Same name, two
+  different pitches — re-check the actual repo before relying on either
+  description
+- **Screenshot-to-Code** — generic category shown via mockup only; the
+  well-known real project matching this description is
+  [`abi/screenshot-to-code`](https://github.com/abi/screenshot-to-code),
+  not confirmed as the one shown
+
+### skills.sh links (unverified marketplace — review before installing)
+
+All eight were shown on one promotional carousel (@theromanknox) as
+`skills.sh/<author>/<skill>` install links. `skills.sh` is a third-party
+skill marketplace, not something this session can vet the contents of —
+read each skill's source before installing anything from it into a real
+Claude Code environment:
+- Understand Anything — `skills.sh/Egonex-AI/Understand-Anything` (simplify dense docs/research)
+- Frontend Slides — `skills.sh/zarazhangrui/frontend-slides` (code-built presentations)
+- Stop Slop — `skills.sh/hardikpandya/stop-slop` (cut filler, sharpen reasoning — distinct from the already-vendored `petergyang/no-ai-slop` browser extension)
+- Humanizer, Impeccable, UI/UX Pro Max, Diagram Design, Taste Skills — all four already vendored/documented in earlier batches, skipped here as duplicates
+
+### Already covered — skipped as duplicates
+
+`claude-mem`, `Context7` (MCP), `Superpowers` (obra/superpowers plugin
+marketplace), `can1357/oh-my-pi`, `OpenSEO`/`every-app/open-seo`,
+`ayghri/i-have-adhd`, `cathrynlavery/diagram-design`,
+`virgiliojr94/book-to-skill`, `OpenHands`, `petergyang/no-ai-slop` (the
+"No AI Slop" tool), `pbakaus/impeccable`, `Leonxlnx/taste-skill`,
+`ui-ux-pro-max`, `blader/humanizer`. The @quadri_folo "Claude Code plugins"
+slides for **code-review**, **skill-creator**, and **security-guidance**
+are functionally covered by this account's own global `code-review`,
+`skill-creator`, and `security-review` skills already available via the
+Skill tool (no local vendoring needed); **Language Servers** overlaps with
+the already-documented `oraios/serena` MCP server (LSP bridge for Claude
+Code).
+
+### Informational only (no install action)
+
+- **@futurewithai.dev** — five "Claude plugin" business-model diagrams
+  (lead-research-to-outreach, proposal generator, content-repurposing
+  pipeline, "sell one painful workflow" sales framework, and a recap
+  "3 plugins businesses pay $5K+ for"). These are pitch-deck concepts for
+  productizing a Claude workflow as a client offer, not tools to install —
+  overlaps with the existing `outbound-campaign-brief` and
+  `one-person-offer-architect` skills; no new skill created.
+- **@quadri_folo** partial "Claude Code plugins" list — only 3 of what
+  looks like a longer numbered series were visible across these photos
+  (`security-guidance`, `code-review`, `Language Servers`, plus
+  `Superpowers`, `Context7`, `claude-mem`, `frontend-design`, `skill-creator`
+  from other slides in the same account's series) — all already covered
+  above; the remaining list items weren't in this photo set.
+- **@your.aimentor** "9 Claude Skills" prompt-refinement pipeline
+  (`/prompt-maker` → `/grill-me` → `/how-to` → `/5` → `/fable` →
+  `/personal-voice` → `/anti-ai` → `/write-a-skill` → `/handoff`) — two of
+  the nine (`/how-to`, `/handoff`) already exist as commands in this repo;
+  the rest are marketing for this creator's own "56 commands" pack (already
+  captured as the `your-aimentor-56-commands` skill) — not re-created here.
+- **GPT-6 Astra Mastery Guide** (@ai_slacker) — engagement-bait slide
+  asking viewers to comment a keyword for a prompt pack; no actual prompt
+  text shown, nothing to install.
+
+### Plain-text prompts to copy
+
+**Look up how to use the new commands (no arguments needed — running the
+command itself walks you through it):**
+> Run `/linkedin-optimizer-system` with no arguments and follow the steps in order: home, then audit, then positioning, then rewrite, then content (repeat weekly).
+> Run `/agent-task-ideas` with no arguments to see all 9 agent-task prompts, then pick one and fill in the brackets.
+
+---
+
+## 83. Agent-Harness Trend, Context-Engineering Repos & Two Prompt Checklists (Batch 83)
+
+**Source:** Three uploaded iCloud Photos zips (52 files: 51 images + 1
+unreadable video). Recurring series: @replace.so and @githubnow (GitHub
+repo showcases), @martiendejong_dev (a "0X/09" GitHub-repo countdown —
+mostly the same content already logged in batch 82's GitHub-Trending
+section, plus new entries), @brandarmor.ai ("AI Agents Are Wasting
+Context: 6 Open-Source Projects Fixing It"), @build.dev (5-prompt coding
+checklist, all 5 slides present), @will.ai.m (4-prompt Monday-reset
+series, all 4 slides present, distinct from this handle's already-logged
+"5 repos blowing up on GitHub" carousel), and @dynamic_felix.ai ("Sites
+for developers" — mostly commercial tools, not repos). One video
+(`v26044gc0000da7g8qvog65h89cllhlg.mp4`) couldn't be read by the image
+tool — not reviewed. One image was a restaurant receipt, skipped.
+
+### New commands installed
+
+- **`/ai-coding-checklist-prompts`** — the complete 5-prompt set from
+  @build.dev: `/spec` (turn a one-liner into a spec before coding),
+  `/debug` (root-cause a stack trace without a full repo dump), `/split`
+  (propose a module split before a file becomes unmanageable), `/test`
+  (write unit tests immediately after a change), `/review` (self-review a
+  diff as a skeptical reviewer before merge). Overlaps topically with the
+  existing `ai-slacker-prompts` skill (also covers debugging/testing) but
+  is a distinct, verbatim source with its own exact wording — kept
+  separate per this repo's existing convention of not merging different
+  creators' phrasing into one file.
+- **`/monday-reset-prompts`** — the complete 4-prompt set from @will.ai.m:
+  `/triage` (force a carry-forward/kill/delegate split on last week's
+  leftovers), `/unstick` (break down the task you're avoiding into
+  45-minute blocks), `/meeting-prep` (Gmail+Calendar meeting prep),
+  `/relationship-read` (Gmail sentiment read on key contacts). Each uses
+  the creator's fixed Context/Input/Output/Rules format — kept intact
+  rather than genericized.
+
+### New repos to clone
+
+- [`anywhere-labs/dsh-desktop`](https://github.com/anywhere-labs/dsh-desktop) — desktop client for the DeepSeek Harness (already-documented `deepseek-ai/deepseek-harness`) plugin ecosystem; shown with 21k★, plugin catalogue itself at 13k★
+  `git clone https://github.com/anywhere-labs/dsh-desktop`
+- [`lidge-jun/opencodex`](https://github.com/lidge-jun/opencodex) — universal provider proxy for OpenAI Codex and Claude Code; run either harness against Claude, Gemini, Grok, DeepSeek, or Ollama; shown with 12k★
+  `git clone https://github.com/lidge-jun/opencodex`
+- [`Lakr233/vphone-cli`](https://github.com/Lakr233/vphone-cli) — "Virtual iPhone CLI": automates virtualized iPhone VMs on Apple Silicon (configurable firmware/jailbreak patch levels, APFS fast clone, SSH/VNC access) — niche iOS research-infrastructure tool, not a business-workflow fit for this repo but flagged for completeness
+  `git clone https://github.com/Lakr233/vphone-cli`
+- [`ToolJet/ToolJet`](https://github.com/ToolJet/ToolJet) — open-source low-code platform for building internal tools, dashboards, workflows, and AI agents; 40.8k★
+  `git clone https://github.com/ToolJet/ToolJet`
+- [`alyssaxuu/screenity`](https://github.com/alyssaxuu/screenity) — free, privacy-friendly screen recorder and annotation tool; 18.7k★
+  `git clone https://github.com/alyssaxuu/screenity`
+- [`novuhq/novu`](https://github.com/novuhq/novu) — single API for product notifications and agent conversations across inbox, email, SMS, push, chat, Slack, Teams, Telegram; 39.8k★; quickstart: `npx novu connect`
+  `git clone https://github.com/novuhq/novu`
+- [`getfider/fider`](https://github.com/getfider/fider) — open-source customer feedback portal for feature requests and voting; 4.5k★
+  `git clone https://github.com/getfider/fider`
+- [`apache/maka`](https://github.com/apache/maka) — agent harness that logs every model message, tool call, and permission decision as an append-only event log, replayable and benchmarkable against official verifiers; sessions/settings stay local
+
+### Unverified — name and star count only, no repo slug shown
+
+Part of @brandarmor.ai's "6 Open-Source Projects" context-engineering
+series — 3 of 6 were already covered in earlier batches (`caveman`,
+`claude-mem`, `serena`); these 3 are new to this repo but need the actual
+GitHub org confirmed before cloning:
+- **rtk** (78k★) — compresses noisy terminal/CLI output before it reaches an agent
+- **jcodemunch** (2.6k★) — tree-sitter-based precise symbol retrieval instead of dumping whole files
+- **context-mode** (20k★) — sandboxes large tool outputs outside the context window, agent retrieves only what it needs
+
+### Already covered — skipped as duplicates
+
+`affaan-m/ECC`, `earendil-works/pi`, `caveman` (vendored skill),
+`AppFlowy` (in `lean-software-stack`), `deepseek-ai/deepseek-harness`,
+`omnigent-ai/omnigent`, `xai-org/grok-build`, `yc-software/qm`,
+`XiaomiMiMo/MiMo-Code`, `21st.dev`, `dubinc/dub` (`self-hosted-docker-stack`),
+`NousResearch/hermes-agent` (already cloned via `setup-repos.sh`; its
+install one-liner is `curl -fsSL https://hermes-agent.nousresearch.com/install.sh | bash`,
+noted here in case the docker-based clone path in `setup-repos.sh` is ever
+swapped for this).
+
+### Informational only (no install action)
+
+- **@dynamic_felix.ai "Sites for developers"** — mostly commercial/hosted
+  tools, not repos to clone: **v0.app** (Vercel's AI site builder),
+  **cta.gallery** (CTA design inspiration), **21st.dev** (already
+  documented), **glass3d.dev** (CSS glass-effect generator),
+  **60fps.design** (motion/animation inspiration), **repolyze.mxcorp.in**
+  (claims to be an open-source AI codebase analyzer but no GitHub repo
+  shown — verify before relying on the "open-source" claim). One tool name
+  in this series ("metatags.io" captioned as a JSON-graph visualizer) does
+  not match that domain's actual real-world purpose (meta-tag preview) —
+  likely a mislabel in the source carousel; not documented as a working
+  link.
+- **@martiendejong_dev "0X/09" GitHub countdown** — largely the same
+  agent-harness trend already covered in batch 82 and above
+  (`deepseek-harness`, `omnigent`, `grok-build`, `qm`, `MiMo-Code`) plus
+  the two new entries listed above (`dsh-desktop`, `opencodex`).
+- **@githubnow daily briefing (4 Sept 2026)** — named "Agent Workspace"
+  (`apache/maka`, listed above), "Agent Harness OS" (`affaan-m/ECC`,
+  already covered), and "Virtual iPhone CLI" (`Lakr233/vphone-cli`,
+  listed above).
+
+### Video reviewed via extracted frames
+
+One file in this batch (`v26044gc0000da7g8qvog65h89cllhlg.mp4`) is a
+52-second TikTok video the image-reading tool couldn't open directly. Ran
+it through `ffmpeg` (installed via `pip install imageio-ffmpeg`, no system
+package available) with scene-change detection (`select='gt(scene,0.25)'`)
+to pull 39 still frames, then reviewed those. Source: **@ivan.geoffreyy**,
+"5 MCPs That Supercharge Claude Code."
+
+- **Perplexity MCP Server** — connects Claude to Perplexity's search and
+  reasoning; official MCP, **new to this repo**. Exact install string
+  wasn't legible in the video frames (only the docs-page intro text was
+  captured) — add via `claude mcp add` once you've confirmed the current
+  command on Perplexity's own MCP docs, same pattern as the other
+  officially-documented MCP entries in this README.
+- **Playwright MCP**, **Chrome DevTools MCP** — both already documented
+  in this repo (the video used Playwright MCP to demo building/testing a
+  movie-browsing app).
+- **Higgsfield** — referenced for a creative image/video-generation
+  segment (Seedance 2.0/Lite, GPT Image 2, Gemini 3 Flash Image Generator
+  as the underlying models); already documented as not having an official
+  GitHub repo, API-key-gated either way.
+- A parallel-subagent research demo cited `google/langextract`,
+  `github/gh-aw`, `microsoft/PowerToys`, `ChromeDevTools/chrome-devtools`,
+  `EveryInc/compound-engineering`, `patchy631/ai-engineering-hub` as
+  example repos being summarized — these are demo content, not something
+  the video was recommending users install, so not added as entries.
+
+---
+
+## 84. Portfolio-Site Brief, Local-LLM Harness Repos & the Full @ai.blueprint Series (Batch 84)
+
+**Source:** One uploaded iCloud Photos zip, 67 images. Recurring series:
+@futurewithai.dev (two parallel tracks — a "build a portfolio site with
+Claude Code" walkthrough, and a "run Qwen locally instead of Claude"
+local-harness walkthrough), @buildwithneej ("GitHub Repos" numbered
+series, 5 repos + a "what I'd actually install" opinion slide),
+@quadri_folo ("10 Claude Code Tips" series — tips 1, 4, 5, 6, 7, 8, 9, 10
+captured), @ai.blueprint (an 8-step "set up your business in Claude"
+series — steps 1–8 now fully assembled across this batch and earlier
+ones), @yassinezaanouni (a 6-tool web-design-inspiration directory), and
+@mydlytracker (a note-taking app's "Collections" feature — commercial,
+already logged in earlier batches).
+
+### New commands installed
+
+- **`/portfolio-site-brief`** — turns "build me a portfolio" into an
+  actual Claude Code brief, from @futurewithai.dev's 6-field framework
+  (Purpose/Content/Design/Stack/Function/Constraints), complete with a
+  fill-in template, a fully worked example, and the post-build
+  inspect-and-fix loop. New — no existing command in this repo covers
+  briefing a portfolio-site build this specifically (the existing
+  `/portfolio` command is unrelated — it's a project-ideation prompt).
+
+### New repos and tools to evaluate
+
+- **OpenViking** (ByteDance, Python, AGPL-3.0, shown with 31.6k★) — open
+  context/memory database for agents: memory, RAG, and skills live in one
+  virtual filesystem the agent browses with `ls`/`tree`/`grep`, loading
+  summaries first and full files only on demand; vendor claims up to 91%
+  input-token reduction and 57%→80% recall improvement (unverified,
+  vendor's own numbers)
+  `pip install openviking`
+- **needle** (Cactus Compute, Python, Apache-2.0, shown with 8.3k★) — a
+  14MB/45M-param function-calling model quantized to 2 bits, built to run
+  on phones, wearables, and a Raspberry Pi 5 (~500 tokens/sec) instead of
+  a cloud model; niche (edge/embedded agents), not a fit for this repo's
+  actual stack but flagged for completeness
+  `pip install cactus-needle`
+- **Switchyard** (NVIDIA, Rust, Apache-2.0, shown with 2k★) — an LLM-call
+  routing proxy: one TOML config routes easy agent turns to cheap models
+  and escalates hard ones to frontier models; NVIDIA's own 145-task eval
+  claims 74% cost reduction (unverified, vendor's own numbers)
+  `cargo install switchyard-server` — then `switchyard-server --config routes.toml --port 4000`
+- **omarchy** (DHH, Shell, shown with 27.4k★) — an opinionated,
+  preconfigured Arch+Hyprland Linux distro shipped as a bootable ISO
+  (`iso.omarchy.org`); v4.0 added a Claude Code menu-bar widget; niche
+  (full-disk installer wipes the drive) — not business-tooling, flagged
+  for completeness only, same treatment as `Lakr233/vphone-cli` in batch 83
+
+### Local-LLM alternative stack (informational)
+
+@futurewithai.dev's parallel series on running a coding agent without
+Claude: **Ollama** hosts the model (`qwen3.8:27b`, "32GB RAM = the local
+coding sweet spot"), **Qwen Code** is the CLI harness that gives it
+hands (read files / edit code / run commands), and the same
+`QWEN.md`/`AGENTS.md`/per-task `SKILL.md` pattern from batch 83 supplies
+persistent project memory. Core claim worth keeping: **"coding agent =
+model + harness + tools + memory + permissions + feedback loop" — a
+better model alone won't recreate what Claude Code already does.** Not
+vendored as a skill (this repo's actual stack is Claude Code, not Qwen),
+but the harness-design point applies regardless of model.
+
+### The @ai.blueprint 8-step series — now complete
+
+Steps 1 and 8 already exist as commands (`/pressure-test-idea` = Step 1
+"Test Your Idea Before You Build It"; `/daily-brief` = Step 8 "Set Up A
+Daily Business Brief" — both confirmed exact matches to this batch's
+images, not re-created). Steps 2–7, newly captured, are procedural
+rather than copy-paste prompts, so documented here rather than turned
+into commands:
+
+- **Step 2 — Create two core files**: `about-me.md` (business, ICP,
+  goals, current stage) and `brand-voice.md` (tone, rules, banned
+  words/phrases) — make once, every Claude chat gets better after
+- **Step 3 — One Claude Project per business function**: e.g. Strategy,
+  Content, Operations — each pre-loaded with its own reference files so
+  Claude doesn't have to guess which files matter
+- **Step 4 — Use Artifacts for first business assets**: pitch deck,
+  financial model, landing-page copy, brand positioning doc, content
+  calendar, pricing page
+- **Step 5 — Connect tools via Connectors**: Settings → Connectors →
+  Browse → Add (Google Drive, Notion, Slack, 50+ others) so Claude can
+  search them mid-chat
+- **Step 6 — Move to Cowork for real documents**: point it at a folder
+  (TXT/XLSX/DOCX/PDF/PNG/MD) plus instructions to generate proposals,
+  financial models, weekly reports, onboarding docs, SOPs, sales decks
+- **Step 7 — Use Claude Code to build the actual product**: for
+  non-technical founders, hire one technical person and give them Claude
+  Code from day one — one developer with it can outpace several without
+
+### Informational only (no install action)
+
+- **@quadri_folo "10 Claude Code Tips"** (tips 1, 4–10 captured across
+  this and batch 83): auto-approve trusted actions, custom commands for
+  repeated prompts, subagents for specialized work (testing/review/
+  research/debugging), use Skills instead of one giant prompt, connect
+  external tools via MCP, review Claude's own output before accepting
+  it, automate repetitive non-coding work (tests/docs/maintenance), and
+  "build workflows, not just prompts" (You→Agent→Tools→Review→Test→Output
+  instead of You→Prompt→Claude→Code). General best-practice advice,
+  already covered conceptually elsewhere in this repo's Claude Code
+  guidance — no new command needed.
+- **@yassinezaanouni's 6-tool web-design-inspiration directory**:
+  httpster.net (volume), curated.design (filtered by industry/style),
+  hoverstat.es (alternative/weird design), unsection.com (single UI
+  sections), pageflows.com (recorded user flows, not static screens),
+  cosmos.so (searchable moodboard collections, flags AI-generated
+  images). Plus a self-promo tool, reelfolio.io ("turns screenshots into
+  showreels"). Commercial/free web tools, not repos — a reference list,
+  not something to install.
+- **@mydlytracker "Collections" feature** (mydailyNotebook app) —
+  already logged in batch 66; this batch's screenshots show the same
+  product's Projects/Ideas/Learning/People use cases, no new information.
+- **`diagram-design`** — already vendored (batch 82); this batch's
+  screenshot additionally shows `/plugin install diagram-design` as an
+  alternate install path (a Claude Code plugin marketplace install
+  rather than `npx skills add`) — noted here, not a new item.
+
+---
+
+## 85. Low-Yield Batch — Mostly Duplicates, Two New Repos Flagged (Batch 85)
+
+**Source:** Two uploaded zips, 25 files total — a small "Νέος φάκελος"
+("New folder," Greek) zip with 2 images + 2 videos, and a 21-image
+`iCloud_Photos.zip`. The 2 videos had no scene-detectable cuts in one
+case, so both were decoded with `ffmpeg` (1 fps fixed-interval sampling
+for the 14s video, scene-detection for the 49s one) and reviewed as
+still frames, same approach as batch 83.
+
+**Result: this was the most duplicate-heavy batch yet.** Nearly every
+named tool/repo across all 25 files was already in this README —
+`CloudAI-X/threejs-skills`, `greensock/gsap-skills` (this repo already
+has an entire 8-part GSAP skill pack), `zanwei/design-dna`,
+`Panniantong/Agent-Reach`, `nutlope/hallmark` (confirmed by the "Made by
+Together AI" credit line in the new screenshot — Nutlope works at
+Together AI, same person/repo), `DietrichGebert/ponytail` (115k★ exact
+match confirms), Vercel's Web Interface Guidelines, `VoltAgent/awesome-design-md`,
+and Playwright MCP. One video (a Git-concepts glossary — commit, branch,
+merge, rebase, stash, cherry-pick, PR, stacked PRs, tag, fork) had no
+actionable content at all, just definitions.
+
+**The one strong prompt candidate turned out to be a near-exact
+duplicate**: @earchoe's "Content Repurposing Chain" (one piece of
+content → 5 platform-adapted formats: LinkedIn, Twitter/X thread,
+Instagram caption, email intro, Pinterest description) is functionally
+the same prompt as the existing `/content-repurpose` command (SkillDrop
+AI source, LinkedIn/Twitter/Instagram/email/video-hook) — not
+re-created.
+
+### New items (small)
+
+- **Attention Span** (Claude Code skill, shown with 872★, AGPL-3.0,
+  v0.7) — shortens AI answers by ~43% "while keeping the actual work
+  untouched"; no GitHub org/repo path was visible in the screenshot,
+  only the tool name and stats — search for it before installing rather
+  than guessing a slug
+- **`pixiates/motion-design`** — a Claude Code UI-motion skill; low
+  priority given this repo already has `ui-motion-design` plus the full
+  GreenSock GSAP skill pack covering the same territory, but the exact
+  repo wasn't previously documented
+- **Genjutsu — org ambiguity, now a third candidate.** This repo already
+  flags two different GitHub orgs both using the name "genjutsu"
+  (`iamovi/genjutsu` — an unrelated ephemeral social app — vs.
+  `AThevon/genjutsu` — the real creative-coding-skills repo, currently
+  vendored). This batch's screenshot names a **third** org,
+  `nullbyte-xyz/genjutsu`, for what's described as the same kind of tool
+  ("mind-bending interfaces," visual-FX skill). Not verified against
+  `AThevon/genjutsu` — could be a rebrand, a fork, or another unrelated
+  same-named repo. Don't assume they're the same; check both before
+  relying on either.
+
+### Informational only (no install action)
+
+- **@earchoe "Outsource Your Social Media in 90 Days"** (9 slides) — a
+  content-ops roadmap (Month 1: build a Notion "Content OS" + brand-voice
+  doc; Month 2: run the repurposing chain above; Month 3: full scheduling
+  automation + weekly analytics prompt), claiming a drop from 10–15
+  hrs/week to 3 hrs/week by day 90. Procedural, not a literal prompt
+  beyond the repurposing chain already covered — no new command.
+- **@hash42labs "5 Claude Code Skills for Insane UI Animations"** — Three.js, GSAP, Design DNA, Motion Design, Genjutsu; 4 of 5 already documented (see above), no action beyond the two new-repo notes.
+- **A video decoding to a Git-concepts glossary** (commit/branch/merge/
+  rebase/stash/cherry-pick/PR/stacked-PRs/tag/fork) — definitions only,
+  no commands, no repo, nothing to install.
+- **A second video, "5 Claude Code plugins" for design QA** — Vercel Web
+  Interface Guidelines, an "Awesome DESIGN.md" concept, and a
+  Playwright-based browser-QA plugin — all three already documented in
+  this README under other names.
+- **Two generic Claude Code tips** ("give Claude better context,"
+  "use a CLAUDE.md file") — standard advice already covered conceptually
+  throughout this repo's existing Claude Code guidance.
+
