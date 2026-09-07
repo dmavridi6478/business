@@ -70,7 +70,7 @@ This isn't aspirational — this session has the real primitives the source caro
 | Sources (connected, authorized) | Whatever's live via `ListConnectors`/installed MCP servers (Gmail, Google Calendar, Google Drive, Notion, Slack, etc.) — never assume a source is connected; check before building the workflow around it |
 | Managing/updating the trigger later | `update_trigger`, `delete_trigger`, `fire_trigger` (manual on-demand run), `list_triggers` |
 
-Before proposing a Night Shift-style workflow, check what's actually connected (`ListConnectors`) rather than designing around a source that isn't available — this mirrors the `ai-search-marketing-2026` skill's discipline of verifying real connector availability instead of assuming it.
+Before proposing a Night Shift-style workflow, check what's actually connected (`ListConnectors`) rather than designing around a source that isn't available — this mirrors the `ai-search-visibility` skill's discipline of verifying real connector availability instead of assuming it.
 
 ## Output conventions when using this skill
 
@@ -81,7 +81,7 @@ Before proposing a Night Shift-style workflow, check what's actually connected (
 ## Related skills in this repo
 
 - **web-task-scoping**: The same autonomy-boundary discipline (what an agent may do unattended vs. what needs approval), applied to browser/web tasks instead of scheduled background workflows — apply both together when a scheduled workflow's job involves web automation.
-- **ai-discoverable-site** / **advisory-board**: Also part of the "personal AI infrastructure" bundle — setting up Claude Code itself as a tool rather than producing a business deliverable directly.
+- **ai-search-visibility** / **advisory-board**: Also part of the "personal AI infrastructure" bundle — setting up Claude Code itself as a tool rather than producing a business deliverable directly.
 - **business-intelligence-report** / **ceo-reporting-skill**: If the scheduled brief is business/executive-facing rather than personal, those skills' reporting structure and tone apply to the brief's content once this skill has defined its cadence and triage rules.
 - **improve-system**: A different kind of recurring self-check (session-signal capture to memory) — same "runs on its own cadence" shape, different purpose (system improvement vs. operational briefing).
 - **outbound-campaign-brief**: Applies this skill's Claude-may/human-approval boundary to B2B outbound specifically — building the target list and drafting outreach is autonomous, sending is gated behind explicit approval and a stated send cap.

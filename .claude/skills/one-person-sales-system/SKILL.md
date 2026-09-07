@@ -77,12 +77,10 @@ in Claude or another assistant outside this skill:
 
 ## Related skills in this repo
 
-- **outreach-*** bundle (`outreach-strategy`, `outreach-list-building`,
-  `outreach-copywriting`, `outreach-channels`, `outreach-campaign-design`,
-  `outreach-replies-pipeline`): a much deeper cold-outbound system — reach
-  for that bundle instead when the acquisition motion is proactive outbound
-  rather than converting inbound content viewers, which is this skill's
-  scope.
+- **outreach-planning** / **outreach-execution** bundle: a much deeper
+  cold-outbound system — reach for that bundle instead when the
+  acquisition motion is proactive outbound rather than converting inbound
+  content viewers, which is this skill's scope.
 - **one-person-content-system**: stage 3 — the upstream source of the
   content viewers this system converts.
 - **one-person-business-scaling**: stage 5 — scales the revenue this

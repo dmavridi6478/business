@@ -21,7 +21,7 @@ A starter bundle of business-oriented Claude skills lives in `.claude/skills/`:
 - `doc-coauthoring` — structured workflow for co-authoring docs, proposals, and specs
 - `attachment-intake` — how to handle uploaded files (zips, photo batches, docs) that arrive with no or mismatched instructions, instead of guessing at intent
 - `design-dev-resources` — curated directory of free design/frontend tool sites (unDraw, SVGL, Aceternity, Glassmorphism generator, JSON Crack, Mobbin, Ecomm.Design, UI.live, Motion.ed, Drawerrr, Realtime Colors, tweakcn, Smooth Shadows, lucide-animated, coolshapes, Wakamai Fondue) plus notable external AI tools (Genspark, Google Stitch, Google Flow, Gumloop, Figma Make, Kombai, Visily) and a design-engineering job board (Design Engineer Jobs) worth knowing about
-- `ai-search-marketing-2026` — the SEO/SXO/AEO/GEO/AIO five-discipline wheel, a modern-marketing taxonomy, 5 exec-level marketing-analytics questions, a 15-day day-by-day AI-search action plan, and a 20-source AI-visibility ecosystem map cross-checked against which sources this account can actually query via a live MCP connector
+- `ai-search-visibility` — the SEO/SXO/AEO/GEO/AIO five-discipline wheel, a modern-marketing taxonomy, 5 exec-level marketing-analytics questions, a 15-day day-by-day AI-search action plan, a 20-source AI-visibility ecosystem map cross-checked against which sources this account can actually query via a live MCP connector, plus the tactical page-level implementation that makes a site readable by AI assistants (semantic HTML, meta descriptions, `llms.txt`, `robots.txt`, an "Ask AI about me" block) — consolidates the former `ai-search-marketing-2026` and `ai-discoverable-site`
 - `growth-operating-framework` — a 7-step sequence for capital-efficient growth (real-business alignment → North Star metric → data foundation → feedback loop → cross-functional accountability → capital-efficient scale → fast iteration)
 - `linkedin-virality-playbook` — 9 tactics for LinkedIn posts that reach beyond the author's own network (proof-led hooks, repostable angles, reusable visual templates, real engagement questions)
 - `outbound-campaign-brief` — turns a one-line plain-English brief into a B2B outbound campaign (derived target filters, drafted outreach via `copywriting`, real prospecting data instead of fabricated leads) gated behind explicit human approval and a stated send cap before anything sends
@@ -67,7 +67,6 @@ A fourth pair covers **personal AI infrastructure** — setting up Claude Code i
 
 - `advisory-board` — set up a personal "council of experts" (named advisors + their real source material) that the `/ask-the-board` command draws on
 - `personal-growth-prompts` — 6 ready-to-use generic "act as X" persona prompts (Elite AI Mentor, CEO mindset, Life Optimization Coach, Brutally Honest Advisor, Personal Success OS, 10x Improvement Coach) for fast personal-development framing without setting up a full named board
-- `ai-discoverable-site` — make a personal/company site readable by AI assistants (semantic HTML, meta descriptions, `llms.txt`, `robots.txt`, an "Ask AI about me" cross-provider block)
 - `humanizer` — strips AI-writing tells (inflated symbolism, promotional language, em dash overuse, filler phrases, etc.) from drafted text; vendored for real from [blader/humanizer](https://github.com/blader/humanizer) (MIT)
 - `claude-code-tooling` — curated directory of external Claude Code tools (a design-engine desktop app, a senior-engineer skill pack, multi-agent orchestration, a skills package manager, an agent context/memory database, five browser-automation frameworks, a hive-mind team workspace, five open-source AI video-generation models, a live-verified 22-repo "skills to install in Claude" collection, 5 power-user CLI/MCP tools for cost tracking/model routing/multi-agent management, a 4-repo motion-skills batch where cloning and reading each repo changed the verdict on 3 of the 4, and a batch of terminal coding-agent CLIs/harness add-ons — pi, oh-my-pi, ECC, and an `anomalyco/opencode` whose relationship to the already-documented `sst/opencode` wasn't verified) that are standalone software, not skill files, so they're documented here rather than vendored in
 - `web-task-scoping` — governance procedure for scoping any browser-automation task (Target → Limit → Run → Review) before granting a web agent more autonomy; companion to `/scope-web-task`
@@ -98,18 +97,13 @@ verified vendors:
 A sixth bundle is original content, not vendored — authored for this repo
 after reviewing a "Claude Code outreach project" social post that showed a
 26-file skill-tree mockup with no actual source repo to clone. Consolidated
-into 8 category skills (rather than 26 thin ones) covering a full
+into 2 phase skills (originally 8 category skills, further consolidated —
+see `outreach-planning`'s own file for the fold-in history) covering a full
 cold-outbound-sales system, orchestrated by `/outreach-campaign`:
 
-- `outreach-strategy` — trigger-based ICP (not static firmographics), per-role persona cards, a signal→pain map, and outcome-framed offer statements
-- `outreach-list-building` — company sourcing (Apollo/Clay/lemlist-style filters), people sourcing (Sales Navigator), intent-signal sourcing (G2/Product Hunt), dedup + CSV assembly
-- `outreach-copywriting` — signal-led first-touch (<100 words), follow-up + breakup sequence, a VP-toned variant, a strict quality checklist, and a benchmarking pass
-- `outreach-channels` — LinkedIn (2-DM max rule), a 6-part cold-call script, and AI-personalized video outreach (Tavus/HeyGen-style)
-- `linkedin-signal-outreach` — prioritizes and messages LinkedIn prospects by type (warm/cold/dream) and real engagement signal (profile views, comments, funding/role moves, public problems), on a spot-signal → match-message → send-within-24-hours flow; companion to `outreach-channels`, not a duplicate of its volume rule
-- `outreach-campaign-design` — 3+ messaging angles per ICP, full multi-touch/multi-channel campaign architecture, and a deliberate GTM stress test before launch
-- `outreach-replies-pipeline` — reply triage across 8 reply types, benchmarking against outbound performance data, and stage-by-stage pipeline diagnosis
-- `outreach-automation` — n8n workflow building/debugging and supplementary website scraping for enrichment
-- `outreach-data-connections` — maps which of the tools above are actually connected in a given environment before the rest of the bundle assumes they are; pairs with the `mcp-integration-scout` agent
+- `outreach-planning` — trigger-based ICP (not static firmographics), per-role persona cards, a signal→pain map, outcome-framed offer statements, a pre-flight data-connection check, company/people/intent-signal sourcing into a deduplicated CSV list, and full campaign architecture (angles, channel mix, cadence, exit conditions, GTM stress test)
+- `outreach-execution` — signal-led first-touch copy (<100 words), follow-up + breakup sequence, a VP-toned variant, a strict quality checklist and benchmarking pass, LinkedIn/cold-call/video-outreach channel execution, reply triage across 8 reply types with stage-by-stage pipeline diagnosis, and n8n workflow automation
+- `linkedin-signal-outreach` — prioritizes and messages LinkedIn prospects by type (warm/cold/dream) and real engagement signal (profile views, comments, funding/role moves, public problems), on a spot-signal → match-message → send-within-24-hours flow; companion to `outreach-execution`'s channel-execution part, not a duplicate of its volume rule
 
 A seventh addition, `claude-cheat-sheet`, is also original content rather
 than vendored: a social-media "Claude AI Cheat Sheet" infographic turned out
@@ -1503,7 +1497,7 @@ Skills") section pointing at the others that feed it or consume its output:
 - For personal AI setup: `advisory-board` supplies advisors that
   `product-strategy-session`, `quarterly-okr-architect`, and the new-business
   cluster can sanity-check decisions against via `/ask-the-board`.
-  `ai-discoverable-site` pulls its "who they are" content from
+  `ai-search-visibility` pulls its "who they are" content from
   `product-marketing-context` and hands implementation to `frontend-design`.
   `personal-growth-prompts` is the fast, no-setup alternative to
   `advisory-board` — generic archetypal personas instead of named real
@@ -1516,9 +1510,9 @@ Skills") section pointing at the others that feed it or consume its output:
 
 - `growth-operating-framework` decides *what* to grow and by which metric;
   `quarterly-okr-architect` turns that into a goal cascade; `business-decision-frameworks`
-  prioritizes which channels/experiments to run; `ai-search-marketing-2026`'s
+  prioritizes which channels/experiments to run; `ai-search-visibility`'s
   exec questions and `business-intelligence-report`/`ceo-reporting-skill` report
-  on how it's going. `linkedin-virality-playbook` and `ai-search-marketing-2026`
+  on how it's going. `linkedin-virality-playbook` and `ai-search-visibility`
   both extend `content-strategy` with channel-specific reach tactics (LinkedIn
   posts; AI-search visibility) once the underlying topic is decided.
 
@@ -1616,6 +1610,20 @@ The publisher's confirmation gate is deliberate, not an oversight — see
 scheduling a slot is a plan, posting to a real audience is a side-effecting
 action that needs its own explicit approval regardless of what came before it.
 
+A ninth and tenth agent came from a direct request to turn two uploaded
+images — an "MCP · The Universal Connector for AI" infographic and a SaaS
+metrics dashboard mockup (Magic Number, Rule of 40, NRR, LTV:CAC, CAC
+Payback) — into working deliverables rather than just reference reading:
+
+- `mcp-business-case-analyst` — turns a client's actual AI-client/tool
+  inventory into a quantified MCP-consolidation business case (the N×M vs
+  N+M integration math, a build-vs-buy call per tool, a migration
+  sequence) instead of pitching MCP on "fewer wires" alone
+- `saas-metrics-analyst` — computes the 5 SaaS growth-efficiency metrics
+  from raw inputs, bands each against the standard thresholds, and flags
+  where two metrics contradict each other (e.g. a strong Magic Number
+  sitting on shrinking NRR)
+
 ## Procedures
 
 Standard operating procedures live in `docs/procedures/`:
@@ -1661,6 +1669,20 @@ Standard operating procedures live in `docs/procedures/`:
   adding generation, and diagnose answer-quality issues chunk-quality →
   retrieval-quality → generation, in that order. Backs the
   `rag-pipeline-architecture` skill.
+- `mcp-integration-scoping.md` — 7-step SOP for scoping/pitching an MCP
+  consolidation project: inventory the real N×M stack, price the current
+  state before pitching the after-state, run build-vs-buy per tool,
+  sequence migration by maintenance-cost reduction, and state the
+  overclaim caveats before anyone signs anything. Backs the
+  `mcp-integration-business-case` skill and `mcp-business-case-analyst`
+  agent.
+- `saas-metrics-board-review.md` — quarterly (or monthly) cadence for a
+  SaaS board metrics packet: gather real inputs, compute in board-review
+  order (Magic Number + Rule of 40 gate → NRR → LTV:CAC by channel → CAC
+  Payback), cross-check the five against each other for contradictions,
+  and write the narrative to what changes rather than just what
+  happened. Backs the `saas-growth-efficiency-metrics` skill and
+  `saas-metrics-analyst` agent.
 ---
 
 **37th addition** (`83ad5cc1-iCloud_Photos.zip`, 130 images, August 2026)
@@ -4261,7 +4283,104 @@ Patterns in these tools reveal clear gaps and opportunities for a solo builder:
 
 ---
 
-## 78. Claude Usage-Limit Tips, n8n Grounding Technique, Coding-Agent CLIs & OSS-to-Service Ideas (Batch 78)
+## 78. MCP Business Case + SaaS Growth Efficiency Dashboard (Batch 78)
+
+**Source:** Two directly uploaded images — an "MCP · Protocol — The
+Universal Connector for AI" infographic (Marios Charalampous /
+workflows.io) and a SaaS metrics dashboard mockup (Magic Number, Rule of
+40, Net Revenue Retention, LTV:CAC by channel, CAC Payback Period).
+**Request:** turn each image's structure into working deliverables —
+skills, agents, procedures, and templates/dashboards — filed to this
+repo's normal locations, not just summarized.
+
+Both source images check out as standard, accurate framing (MCP's
+before/after integration-count claim; the 5 metrics' standard
+definitions and benchmark bands) — the gap in both cases was that neither
+came with the actual math, formulas, or a repeatable procedure attached,
+just the visual claim. Both new skills fill that gap rather than
+duplicating anything already in this repo (`kpi-reference-handbook` is
+general-ratio, not SaaS-growth-specific; `mcp-integration-scout` checks
+live connector availability, not the business case for adopting MCP at
+all).
+
+### New skills
+
+- **`mcp-integration-business-case`** — the N×M (point-to-point) vs N+M
+  (MCP hub) integration-count math, worked examples, where the savings
+  actually come from (maintenance ownership shift, near-zero marginal
+  onboarding cost, centralized auth), where the pitch overclaims
+  (migration cost, single-client stacks, server-quality variance), and
+  the 7-section business-case structure.
+- **`saas-growth-efficiency-metrics`** — formulas, benchmark bands, and
+  calculation traps for Magic Number, Rule of 40, Net Revenue Retention,
+  LTV:CAC by channel, and CAC Payback Period, plus the actual
+  board-review order (efficiency gate → retention health → channel
+  economics → cash-timing check) rather than a flat 5-metric list.
+
+### New agents
+
+- **`mcp-business-case-analyst`** — runs the skill's math on a specific
+  client's real AI-client/tool inventory, calls build-vs-buy per tool,
+  and drafts the business case.
+- **`saas-metrics-analyst`** — computes and bands all 5 metrics from raw
+  inputs, flags cross-metric contradictions (e.g. strong Magic Number
+  over shrinking NRR), and drafts the board narrative.
+
+### New procedures (`docs/procedures/`)
+
+- **`mcp-integration-scoping.md`** — the SOP for scoping/pitching an MCP
+  consolidation project end to end, with explicit red flags (stack too
+  small to benefit, more than half the tools need a build not a buy, no
+  real cost numbers to price the current state).
+- **`saas-metrics-board-review.md`** — the recurring board-review
+  cadence, with red flags (fewer than 3 quarters of trend data, an
+  inconsistent margin-type between periods, a blended LTV:CAC presented
+  instead of per-channel).
+
+### New templates / dashboards (`Artifacts/business/`)
+
+- **`mcp-integration-business-case.html`** — a live calculator: drag N
+  (AI clients) and M (tools) and it redraws the before/after mesh-vs-hub
+  diagrams and recomputes the integration-count reduction in real time,
+  plus the worked-examples table and overclaim caveats from the skill.
+- **`saas-growth-efficiency-dashboard.html`** — a live 5-panel board
+  dashboard (Magic Number gauge, Rule of 40 stacked bars, NRR waterfall,
+  LTV:CAC scatter by channel, CAC Payback curve) — every input is
+  editable and every panel recomputes and re-bands on change, built
+  hand-rolled in inline SVG (no external chart library) so it renders
+  correctly as a standalone local file. Both artifacts were rendered
+  headlessly and screenshot-checked before filing — no console errors,
+  and the default inputs reproduce the source dashboard's own headline
+  numbers (0.92 Magic Number, 47% Rule of 40, 118% NRR, 11-month CAC
+  payback) as a correctness check.
+
+**`.xlsx` companions** (added same day, on request) — both dashboards
+also ship as formula-driven Excel workbooks
+(`mcp-integration-business-case.xlsx`,
+`saas-growth-efficiency-dashboard.xlsx`, same folder): every cell is a
+live formula, never a hardcoded result; yellow-filled input cells carry
+a cell comment documenting the assumption; conditional formatting bands
+the result cells to the same broken/fair/efficient thresholds as the
+skills; native charts (stacked-bar Rule of 40, stacked-bar-as-waterfall
+NRR, scatter LTV:CAC, line CAC-payback curve). This session's
+LibreOffice install had only `libreoffice-core` — no `libreoffice-calc`
+— so it silently failed to load *any* document, including a plain
+`.txt` file; `apt-get install libreoffice-calc` fixed it. `recalc.py`
+then reported zero formula errors on both workbooks, and a values-only
+reload of the Dashboard summary tab caught a real bug before shipping:
+two cross-sheet references (Rule of 40 and NRR) pointed at the wrong
+row on their source tabs, inherited from assuming every metric sheet
+used the same layout. Fixed and reverified against the same headline
+numbers as the HTML versions.
+
+Both `Artifacts/index.html` and this README's `## Agents` / `##
+Procedures` sections were updated in the same batch so the registry
+stays the single source of truth rather than drifting from what's
+actually on disk.
+
+---
+
+## 79. Claude Usage-Limit Tips, n8n Grounding Technique, Coding-Agent CLIs & OSS-to-Service Ideas (Batch 79)
 
 **Source:** Three uploaded iCloud Photos zips (64 images total) covering
 several distinct social-media carousels: a 12-tip "How to Use Claude Without
@@ -4358,7 +4477,7 @@ tool-evaluation task.
 
 ---
 
-## 79. AI Agents for Beginners — Cloned and Vendored for Real (Batch 79)
+## 80. AI Agents for Beginners — Cloned and Vendored for Real (Batch 80)
 
 **Source:** Direct request — `gh repo clone microsoft/ai-agents-for-beginners`
 — rather than a social-media carousel. This repo had already been mentioned
@@ -4395,7 +4514,7 @@ four skills came from).
 
 ---
 
-## 80. Paid-Community Playbook, 15 Work Prompts, AI-App APIs & Trading-Agent Frameworks (Batch 80)
+## 81. Paid-Community Playbook, 15 Work Prompts, AI-App APIs & Trading-Agent Frameworks (Batch 81)
 
 **Source:** One uploaded iCloud Photos zip, 77 images — a wide mix of
 carousels: @earchoe's 9-slide "How to Use AI to Run a Paid Community"

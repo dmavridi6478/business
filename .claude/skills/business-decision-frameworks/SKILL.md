@@ -42,5 +42,5 @@ A reference library of four named-framework domains extracted from business/prod
 - **content-strategy**: Use the prioritization frameworks (RICE, Value vs Effort) to rank topic/content ideas before building an editorial calendar.
 - **business-intelligence-report** / **ceo-reporting-skill**: The storytelling pyramid (Minto) reference here pairs with those skills when a report needs a persuasive executive narrative, not just a data table.
 - **growth-operating-framework**: Step 6 of that framework ("what works best, scalable, replicable") is a prioritization decision — apply RICE/Value-vs-Effort here to rank growth channels/experiments.
-- **outreach-copywriting**: AIDA/PAS/FAB from `references/messaging-frameworks.md` structure the copy; that skill supplies the channel-specific length/tone constraints.
+- **outreach-execution**: AIDA/PAS/FAB from `references/messaging-frameworks.md` structure the copy; that skill supplies the channel-specific length/tone constraints.
 - **resume-prompt-kit**: STAR (same reference file) is the standard structure for resume experience bullets and interview prep.

@@ -77,7 +77,7 @@ makes a specific Threat dangerous.
 
 ## Related skills in this repo
 
-- **outreach-copywriting**: AIDA/PAS/FAB apply directly to cold-outbound
+- **outreach-execution**: AIDA/PAS/FAB apply directly to cold-outbound
   first-touch and follow-up copy — use this reference's structure, that
   skill's channel-specific length/tone constraints.
 - **resume-prompt-kit** / `/build-resume`: STAR is the standard structure

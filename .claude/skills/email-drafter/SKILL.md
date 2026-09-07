@@ -1,6 +1,6 @@
 ---
 name: email-drafter
-description: Multi-mode email drafting system covering cold outreach, follow-ups, and negotiation emails — each with its own tone, structure, and psychological framework. Use when the user needs to write any professional email and wants Claude to apply the right approach for the situation rather than produce generic copy. Distinct from outreach-copywriting (which focuses on high-volume cold sequences); this skill covers the full spectrum of professional email scenarios including negotiation and relationship maintenance. Source: @ai_slacker "25 Powerful AI Skills, Agents & Automations You Can Build Today."
+description: Multi-mode email drafting system covering cold outreach, follow-ups, and negotiation emails — each with its own tone, structure, and psychological framework. Use when the user needs to write any professional email and wants Claude to apply the right approach for the situation rather than produce generic copy. Distinct from outreach-execution (which focuses on high-volume cold sequences); this skill covers the full spectrum of professional email scenarios including negotiation and relationship maintenance. Source: @ai_slacker "25 Powerful AI Skills, Agents & Automations You Can Build Today."
 ---
 
 # Email Drafter
@@ -88,7 +88,7 @@ Rules:
 
 ## Related skills
 
-- **outreach-copywriting**: High-volume cold sequence design (Mode 1 at scale)
-- **outreach-strategy**: Which channel and message type to use before writing
+- **outreach-execution**: High-volume cold sequence design (Mode 1 at scale)
+- **outreach-planning**: Which channel and message type to use before writing
 - **new-client-system**: Cold email is one node in the full client acquisition system
 - **sales-enablement**: Negotiation email pairs with proposal and pitch deck layer
