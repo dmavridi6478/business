@@ -31,10 +31,61 @@ real via web search:
 
 | Repo | What it's for | Install / link |
 |---|---|---|
-| `pbakaus/impeccable` | "The missing design vocabulary for agents" — 1 skill, 23 commands, 59 deterministic detector rules for AI-slop/design-quality issues across 7 dimensions; 50,000+★ | https://github.com/pbakaus/impeccable — paste the URL into Claude Code, it installs itself |
+| `pbakaus/impeccable` | "The missing design vocabulary for agents" — 1 skill, 23 commands, 61 deterministic detector rules for AI-slop/design-quality issues; Apache 2.0. **Actually tested against a real build (not just documented from the README) — see below.** | `npx impeccable install` in the target project (not this one — see note below), then `/impeccable init`. https://github.com/pbakaus/impeccable |
 | `Leonxlnx/taste-skill` ("Taste Skill") | Upgrades layout/typography/motion/spacing decisions instead of boilerplate defaults; v2 reads the brief, infers the design language, tunes VARIANCE/MOTION/DENSITY dials; tens of thousands of★ | https://github.com/Leonxlnx/taste-skill |
 
-Both pair with this repo's own `hallmark` skill and the new
+### `impeccable`, tested against a real build
+
+Impeccable isn't a markdown skill file the way `caveman` or `humanizer` are —
+it's a real product: an npm-distributed CLI launcher (`bin: impeccable`) that
+downloads a compiled per-platform engine binary on first run, plus a Claude
+Code/Cursor/Codex skill wrapping 23 slash-commands around that binary. That
+combination — network fetch + a compiled binary, not just prompt text — is
+why it's documented here rather than vendored as a skill file: vendoring the
+markdown alone without the engine it calls out to (`Bash(npx impeccable *)`
+is its one `allowed-tools` entry) would ship a skill that can't actually run
+its detectors.
+
+It was cloned and its static-scan CLI (`npx impeccable detect <path>` — no
+browser required, works directly on HTML/CSS/JSX/TSX/Vue/Svelte files) was
+run for real, in an isolated scratch directory, against two things:
+
+1. **A deliberately bad test page** (purple/blue gradient hero with
+   gradient-clipped text, Inter font, gray-on-gradient body copy, a skipped
+   h1→h3 heading level, "Supercharge Your Workflow" marketing copy). Result:
+   **11 anti-patterns found**, correctly naming the gradient text, the
+   AI-typical purple/violet palette, gray-on-color contrast, the exact WCAG
+   contrast ratio, the overused font, the skipped heading level, and the
+   marketing-buzzword phrase — matching what the README claims it detects,
+   not just a plausible-sounding pitch.
+2. **Two of this repo's own already-published artifacts**
+   (`Artifacts/business/free-vs-paid-tool.html`,
+   `Artifacts/operations/night-shift-canvas.html`) — real deliverables, not
+   a strawman. Result: **22 and 32 anti-patterns respectively**, including a
+   genuine WCAG contrast failure (1.2:1 against a 4.5:1 requirement — light
+   gray text on white, essentially unreadable, not a style nitpick), a
+   `hero-eyebrow-chip` finding (the "small uppercase label above an
+   oversized hero headline" AI-tell) on both files, 10px interactive text
+   below its 11px legibility floor, and repeated long-run all-caps body text.
+   Neither file had been checked against this tool before, and both are
+   real, already-shipped work — this isn't a synthetic result.
+
+**Verdict**: the tool does what its README claims, on real HTML, with no
+license concerns (Apache 2.0) and no stray config/telemetry files left
+behind by a scan. The WCAG contrast finding in particular is a genuine bug
+class this repo's `design-review-audit`/`hallmark` skills don't currently
+check with a measured contrast ratio — they catch AI-slop *patterns*,
+Impeccable's detector also catches a specific *measured* accessibility
+failure. **Recommendation: run `npx impeccable detect <path>` (the
+no-install, no-binary-write scan-only form) against any new HTML/CSS build
+from `frontend-design`/`web-artifacts-builder`/`canvas-design` as a final
+check, the way `design-review-audit` is already used** — rather than running
+the full `npx impeccable install` (which writes `.claude/settings.json`
+hooks and a per-project `.impeccable/` config) directly into this
+business-skills repo, which doesn't have a live frontend build of its own
+for those hooks to attach to.
+
+Both `impeccable` and `Leonxlnx/taste-skill` pair with this repo's own `hallmark` skill and the new
 `web-design-taste-workflow` skill (curate a taste library → install these
 tools → never one-shot a design, build 5 directions wide and narrow down)
 — see that skill for the full workflow and a reusable 4-part prompt
@@ -173,7 +224,7 @@ A 22-repo carousel grouped into Build (6), Design (6), Research (6), and Marketi
 
 | Repo | What it's for | Status |
 |---|---|---|
-| `pbakaus/impeccable` | "The design language that makes your AI harness better at design" — a final polish pass | ✅ Verified — 58k+ stars, matches carousel's ballpark. **Overlaps with this repo's `design-review-audit` skill** — both exist to catch generic-AI-slop output; compare before adding both to a workflow |
+| `pbakaus/impeccable` | "The design language that makes your AI harness better at design" — a final polish pass | ✅ Verified — 58k+ stars, matches carousel's ballpark. **Actually cloned and run against real HTML** — see the dedicated test-results section above, which found genuine WCAG contrast failures in two of this repo's own already-published artifacts. **Overlaps with this repo's `design-review-audit` skill** — both exist to catch generic-AI-slop output, but Impeccable's engine also checks a measured contrast ratio, which `design-review-audit`'s checklist doesn't; compare before adding both to a workflow |
 | `Leonxlnx/taste-skill` | Stops an agent generating generic/boring UI | ✅ Verified — 75k+ stars, matches carousel's ballpark. **Overlaps with `design-review-audit` and `frontend-design`** in this repo — same anti-slop goal from a different angle |
 | `heygen-com/hyperframes` | Write HTML, render an actual video, built for coding agents | ✅ Verified — 40k+ stars, matches carousel's ballpark. Real HeyGen product |
 | "ui-ux-pro-max" (67 styles, 96 palettes, 57 font pairings) | Design-token/style intelligence skill | ⚠️ Multiple forks exist under this name, none matching the carousel's claimed 110k-star scale in search results — canonical repo unclear. **Overlaps with `design-token-extractor` and `theme-factory`** in this repo regardless of which fork is real |
@@ -229,6 +280,58 @@ Four `npx skills add <owner>/<repo>` packages (the same `vercel-labs/skills` ins
 
 **Lesson from this batch**: a carousel's one-line pitch for a skill repo can describe a different (often narrower or differently-licensed) thing than what's actually in the repo — `waapi` and `css-animations` are both examples here. Clone and read before vendoring or recommending, the same discipline already applied to the 22-repo collection above.
 
+## Terminal coding-agent CLIs & harness add-ons ("8 GitHub repos blowing up" batch, @repoloot)
+
+A batch of standalone terminal coding agents and Claude Code harness
+add-ons, each confirmed to exist via a live `git ls-remote` check (star
+counts below are as shown in the source carousel, not independently
+re-verified — re-check before quoting one):
+
+| Repo | What it's for | Install / link |
+|---|---|---|
+| `earendil-works/pi` | Terminal coding agent that reads/writes code and runs commands, plus building blocks to make your own — avoids hand-wiring a separate setup per AI provider | https://github.com/earendil-works/pi |
+| `can1357/oh-my-pi` | Coding agent wired into the IDE itself (reads/searches/edits the open project) rather than a separate chat window to copy code in and out of | https://github.com/can1357/oh-my-pi |
+| `affaan-m/ECC` | Agent-harness performance-optimization system — skills, "instincts," memory, and security/research-first development practices for Claude Code, Codex, OpenCode, and Cursor; install once instead of re-explaining the same process in every prompt | https://github.com/affaan-m/ECC |
+| `anomalyco/opencode` | An open-source terminal coding agent under this name and org — **not independently confirmed to be the same project as the already-documented `sst/opencode` above** (both repos exist as of this review; the relationship between them, if any, wasn't verified). Check which one is the actively-maintained project before installing | https://github.com/anomalyco/opencode |
+
+`pbakaus/impeccable` (design-language skill, already documented above) and
+`JuliusBrussee/caveman` (already vendored for real as this repo's `caveman`
+skill) both also appeared in this same carousel batch as separate
+"repo of the day" posts — not re-added here since they're already covered.
+
+## AI trading / crypto agent frameworks (niche — not needed by this business, documented for completeness)
+
+A batch of open-source multi-agent trading/research frameworks (@hash42labs "Open Source" series and @githubnow), confirmed to exist via `git ls-remote`. None of these fit this repo's actual business (Greek healthcare/general consulting) — documented only because they were reviewed, not because they're recommended for this business's stack:
+
+| Repo | What it's for |
+|---|---|
+| `TauricResearch/TradingAgents` | Multi-agent "trading firm" — analyst/bull/bear/trader agents debate before a decision |
+| `virattt/ai-hedge-fund` | Multiple AI investor personas (value, macro, quant, etc.) with different strategies debating a position — **best-guess match**, the source carousel didn't show a GitHub org, this is the well-known repo matching its description |
+| `elizaOS/eliza` | Framework for autonomous AI agents built for crypto/on-chain use cases specifically, extensible beyond that |
+| `gnosis/prediction-market-agent` | Agents that research, analyze, and take positions on prediction markets — **best-guess match**, same caveat as above |
+| `microsoft/RD-Agent` | Automated research-and-development loop (hypothesis → backtest → results → iterate) for quantitative trading strategies |
+| `radixark/miles` | Enterprise reinforcement-learning framework for training trillion-parameter models — an ML infra tool, not a trading agent itself, included in the same source batch |
+
+## Agent workspace / sandboxing platforms
+
+| Repo | What it's for | Install / link |
+|---|---|---|
+| `cloudflare/cloudflare-os` | Agents create sandboxed "gadgets" (private per-user app instances); "gatekeepers" manage external integrations via non-blocking approval queues; every action logged and auditable — relevant if agents need to run with real permissions but bounded blast radius, same governance concern as this repo's `web-task-scoping` skill | https://github.com/cloudflare/cloudflare-os |
+
+## AI-app building-block APIs
+
+Seven hosted APIs for common AI-app capabilities (@ai.global.lee "7 APIs" series), each a paid/freemium hosted service rather than self-hosted software — useful when building a client-facing tool that needs one of these capabilities without standing up the infrastructure yourself:
+
+| API | What it adds |
+|---|---|
+| [Tavily](https://tavily.com) | Real-time web search results in an AI-ready format (search → sources → AI answer) |
+| [OpenRouter](https://openrouter.ai) | One API for 100+ models (GPT, Claude, Gemini, etc.) — swap models without rebuilding the app; also referenced elsewhere in this file as one of `pal-mcp-server`'s supported providers |
+| [Composio](https://composio.dev) | Connects an agent to 100+ real apps (Salesforce, Gmail, Slack, Notion, HubSpot) so it can take real actions, not just talk about them |
+| [Resend](https://resend.com) | Transactional email API — trigger, send, and track delivery from an app or agent workflow |
+| [ElevenLabs](https://elevenlabs.io) | Text-to-speech, voice cloning, multilingual voice output |
+| [Replicate](https://replicate.com) | Run image/video/AI models in the cloud without managing GPU infrastructure, pay per use |
+| [Firecrawl](https://firecrawl.dev) | Turns any URL into clean Markdown/JSON for feeding into an LLM — already referenced as a technique inside `claude-seo` and `competitor-profiling`, documented here as its own API for when the need is standalone scraping rather than part of an SEO/competitor workflow |
+
 ## How to use this list
 
 - These are **not** cloned into this repo (except `humanizer` and the 8 `gsap-*` skills) — the rest are separate software projects (a desktop app, a CLI, an orchestration framework, a database) that don't fit as markdown skill files, and vendoring foreign codebases into a business-skills repo would be out of scope.
@@ -250,6 +353,7 @@ Four `npx skills add <owner>/<repo>` packages (the same `vercel-labs/skills` ins
 - **night-shift-workflow**: Apply its Claude-may/human-approval boundary if `pal-mcp-server`'s multi-model-consult pattern runs as part of a scheduled/unattended workflow rather than an interactive session.
 - **vercel-labs/skills** (above): `davepoon/buildwithclaude` is a browsable community hub covering similar ground to that CLI-based skills package manager — different interface, same "find and install a skill" job. It's also the exact tool the `npx skills add` commands in the motion-skill packages below use.
 - **gsap-core** and its 7 siblings: The one skill pack from the motion-skills batch below that was actually clean enough to vendor for real — see those skills directly rather than this entry, which now just documents the source.
+- **ai-agents-for-beginners**, **microsoft-docs**, **jupyter-notebook**, **azure-openai-to-responses**: Vendored from a direct `gh repo clone microsoft/ai-agents-for-beginners` request — same clone-and-inspect-before-vendoring discipline as this whole file, applied to a full course repo instead of a social-media carousel.
 
 ## Notes
 

@@ -58,9 +58,39 @@ Be specific. Don't give me vague steps — give me exact node names and connecti
 | Content to social post | Manual / webhook | OpenAI, HTTP Request (social API) |
 | Customer onboarding | Webhook | Wait, Email, Slack, CRM update |
 
+## Reducing hallucinated nodes — the grounding-project technique
+
+Claude can invent n8n node names/parameters that don't exist, especially for
+less common integrations. A dedicated Claude Project with real reference
+material cuts this down before it starts:
+
+1. **Create a Project** named something like "n8n Workflows."
+2. **Set project instructions** telling Claude to check its work against the
+   real n8n source before inventing anything:
+   ```
+   // Grounding rules
+   Always reference the "n8n-io/n8n" Github repo before building anything.
+   Never invent nodes or features that don't exist.
+   ```
+3. **Upload 2-3 of your own real, exported n8n workflow JSON files** to the
+   Project (Settings → project knowledge). This isn't decorative — Claude
+   pattern-matches the exact JSON shape (node types, `parameters` keys,
+   `connections` structure) your actual n8n version produces, instead of
+   guessing at a plausible-looking but wrong schema.
+4. **Use Sonnet, not a lighter model, for this Project.** Node-schema
+   accuracy is exactly the kind of task `claude-usage-limits`'s model-matching
+   tip (procedure) puts in the "Sonnet" tier, not Haiku.
+5. Then use the copy-paste prompt above as normal, inside this Project.
+
+This doesn't replace testing the generated workflow in a real n8n instance
+before trusting it in production — it reduces how often that test fails on
+an invented node, it doesn't eliminate the need for the test.
+
 ## Related skills
 
 - **saas-mvp-24h**: If the workflow is the backbone of a product, combine with this skill for the full build stack
 - **lean-software-stack** / **open-source-devtools-2026**: n8n is itself on the lean-stack tier — self-hostable, replaces Zapier/Make
 - **content-repurposing-service**: An n8n workflow can automate the extract/draft/deliver pipeline from that skill
 - **new-client-system**: Outreach sequences and follow-ups can run as n8n automations
+- **claude-usage-limits** (procedure): The model-matching and Project-caching guidance behind step 4 above
+- **ai-agents-for-beginners**: The Microsoft-stack equivalent of this skill's tool-use/planning patterns, taught as a structured curriculum rather than a build-it-now workflow — useful if the underlying design pattern (not the n8n implementation) needs more grounding first
