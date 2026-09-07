@@ -8,9 +8,10 @@ description: Prioritize and message LinkedIn prospects by type (warm/cold/dream)
 Source: reviewed from an uploaded infographic — "The LinkedIn Outreach
 Matrix Nobody's Using" (Josh Sanders). No repo, but 3 real example
 messages, quoted verbatim below. Complements this repo's existing
-`outreach-channels` skill (which covers LinkedIn's 2-DM-max volume rule,
-plus cold-call and video-outreach) rather than duplicating it — this
-skill is about *who to message and when*, not the volume ceiling.
+`outreach-execution` skill (whose channel-execution part covers LinkedIn's
+2-DM-max volume rule, plus cold-call and video-outreach) rather than
+duplicating it — this skill is about *who to message and when*, not the
+volume ceiling.
 
 ## 1. Know your 3 types
 
@@ -79,14 +80,12 @@ the message itself.
 
 ## Related skills in this repo
 
-- **outreach-channels**: the LinkedIn 2-DM-max volume rule, cold-call
-  script, and video-outreach guidance this skill's message-matching
-  layers on top of.
-- **outreach-strategy**: supplies the trigger-based ICP and persona cards
+- **outreach-planning**: supplies the trigger-based ICP and persona cards
   that define what counts as a "signal" and who the dream prospects
   actually are.
-- **outreach-copywriting**: the general first-touch/follow-up copy
-  discipline; this skill is the LinkedIn-specific, signal-timed variant
-  of the same idea.
-- **outreach-replies-pipeline**: once a signal-triggered message gets a
-  reply, that skill triages what happens next.
+- **outreach-execution**: the LinkedIn 2-DM-max volume rule, cold-call
+  script, and video-outreach guidance this skill's message-matching
+  layers on top of; also covers the general first-touch/follow-up copy
+  discipline (this skill is the LinkedIn-specific, signal-timed variant
+  of the same idea) and, once a signal-triggered message gets a reply,
+  the reply triage for what happens next.

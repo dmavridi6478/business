@@ -69,7 +69,7 @@ layer underneath any growth strategy.
   automated at all.
 - **ceo-reporting-skill** / **business-intelligence-report**: the delivery
   layer for step 5's finance-language proof.
-- **outreach-automation** / **content-automation-pipeline**: concrete
+- **outreach-execution** / **content-automation-pipeline**: concrete
   examples of step 4 (AI/automation embedded in a specific marketing
   workflow) already built out in this repo.
 

@@ -48,7 +48,7 @@ Remember: Claude is capable of extraordinary creative work. Don't hold back, sho
 - **theme-factory** / **canvas-design**: For a ready-made visual theme or a poster/print-style canvas layout instead of building the aesthetic from scratch.
 - **brand-guidelines**: Applies *Anthropic's* specific brand colors/fonts — only relevant if the output is meant to carry Anthropic's identity, not a generic "use existing brand" tool. For the user's own brand, pull colors/voice from `product-marketing-context` instead.
 - **campaign-page-one-shot** / **premium-html-presentation**: Higher-level skills that call on this one's aesthetic guidance for a landing page or a full deck specifically.
-- **ai-discoverable-site**: Apply when the page being built is a personal/company site that should also be readable by AI assistants (semantic HTML, meta descriptions, llms.txt, robots.txt) — not just visually polished.
+- **ai-search-visibility**: Apply when the page being built is a personal/company site that should also be readable by AI assistants (semantic HTML, meta descriptions, llms.txt, robots.txt) — not just visually polished.
 - **design-templates**: Ready-made device-mockup, 3D-tilt, halftone, moodboard-grid, and brand-board snippets to drop into a build instead of writing them from scratch.
 - **ui-motion-design**: Apply when the build should have purposeful motion (transitions, hover/tap feedback) rather than being fully static.
 - **design-review-audit** / `/design-review`: Run once a build is done to catch spacing/hierarchy/contrast/consistency issues before delivery.
