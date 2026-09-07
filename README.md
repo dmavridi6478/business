@@ -4852,3 +4852,124 @@ to pull 39 still frames, then reviewed those. Source: **@ivan.geoffreyy**,
   example repos being summarized — these are demo content, not something
   the video was recommending users install, so not added as entries.
 
+---
+
+## 84. Portfolio-Site Brief, Local-LLM Harness Repos & the Full @ai.blueprint Series (Batch 84)
+
+**Source:** One uploaded iCloud Photos zip, 67 images. Recurring series:
+@futurewithai.dev (two parallel tracks — a "build a portfolio site with
+Claude Code" walkthrough, and a "run Qwen locally instead of Claude"
+local-harness walkthrough), @buildwithneej ("GitHub Repos" numbered
+series, 5 repos + a "what I'd actually install" opinion slide),
+@quadri_folo ("10 Claude Code Tips" series — tips 1, 4, 5, 6, 7, 8, 9, 10
+captured), @ai.blueprint (an 8-step "set up your business in Claude"
+series — steps 1–8 now fully assembled across this batch and earlier
+ones), @yassinezaanouni (a 6-tool web-design-inspiration directory), and
+@mydlytracker (a note-taking app's "Collections" feature — commercial,
+already logged in earlier batches).
+
+### New commands installed
+
+- **`/portfolio-site-brief`** — turns "build me a portfolio" into an
+  actual Claude Code brief, from @futurewithai.dev's 6-field framework
+  (Purpose/Content/Design/Stack/Function/Constraints), complete with a
+  fill-in template, a fully worked example, and the post-build
+  inspect-and-fix loop. New — no existing command in this repo covers
+  briefing a portfolio-site build this specifically (the existing
+  `/portfolio` command is unrelated — it's a project-ideation prompt).
+
+### New repos and tools to evaluate
+
+- **OpenViking** (ByteDance, Python, AGPL-3.0, shown with 31.6k★) — open
+  context/memory database for agents: memory, RAG, and skills live in one
+  virtual filesystem the agent browses with `ls`/`tree`/`grep`, loading
+  summaries first and full files only on demand; vendor claims up to 91%
+  input-token reduction and 57%→80% recall improvement (unverified,
+  vendor's own numbers)
+  `pip install openviking`
+- **needle** (Cactus Compute, Python, Apache-2.0, shown with 8.3k★) — a
+  14MB/45M-param function-calling model quantized to 2 bits, built to run
+  on phones, wearables, and a Raspberry Pi 5 (~500 tokens/sec) instead of
+  a cloud model; niche (edge/embedded agents), not a fit for this repo's
+  actual stack but flagged for completeness
+  `pip install cactus-needle`
+- **Switchyard** (NVIDIA, Rust, Apache-2.0, shown with 2k★) — an LLM-call
+  routing proxy: one TOML config routes easy agent turns to cheap models
+  and escalates hard ones to frontier models; NVIDIA's own 145-task eval
+  claims 74% cost reduction (unverified, vendor's own numbers)
+  `cargo install switchyard-server` — then `switchyard-server --config routes.toml --port 4000`
+- **omarchy** (DHH, Shell, shown with 27.4k★) — an opinionated,
+  preconfigured Arch+Hyprland Linux distro shipped as a bootable ISO
+  (`iso.omarchy.org`); v4.0 added a Claude Code menu-bar widget; niche
+  (full-disk installer wipes the drive) — not business-tooling, flagged
+  for completeness only, same treatment as `Lakr233/vphone-cli` in batch 83
+
+### Local-LLM alternative stack (informational)
+
+@futurewithai.dev's parallel series on running a coding agent without
+Claude: **Ollama** hosts the model (`qwen3.8:27b`, "32GB RAM = the local
+coding sweet spot"), **Qwen Code** is the CLI harness that gives it
+hands (read files / edit code / run commands), and the same
+`QWEN.md`/`AGENTS.md`/per-task `SKILL.md` pattern from batch 83 supplies
+persistent project memory. Core claim worth keeping: **"coding agent =
+model + harness + tools + memory + permissions + feedback loop" — a
+better model alone won't recreate what Claude Code already does.** Not
+vendored as a skill (this repo's actual stack is Claude Code, not Qwen),
+but the harness-design point applies regardless of model.
+
+### The @ai.blueprint 8-step series — now complete
+
+Steps 1 and 8 already exist as commands (`/pressure-test-idea` = Step 1
+"Test Your Idea Before You Build It"; `/daily-brief` = Step 8 "Set Up A
+Daily Business Brief" — both confirmed exact matches to this batch's
+images, not re-created). Steps 2–7, newly captured, are procedural
+rather than copy-paste prompts, so documented here rather than turned
+into commands:
+
+- **Step 2 — Create two core files**: `about-me.md` (business, ICP,
+  goals, current stage) and `brand-voice.md` (tone, rules, banned
+  words/phrases) — make once, every Claude chat gets better after
+- **Step 3 — One Claude Project per business function**: e.g. Strategy,
+  Content, Operations — each pre-loaded with its own reference files so
+  Claude doesn't have to guess which files matter
+- **Step 4 — Use Artifacts for first business assets**: pitch deck,
+  financial model, landing-page copy, brand positioning doc, content
+  calendar, pricing page
+- **Step 5 — Connect tools via Connectors**: Settings → Connectors →
+  Browse → Add (Google Drive, Notion, Slack, 50+ others) so Claude can
+  search them mid-chat
+- **Step 6 — Move to Cowork for real documents**: point it at a folder
+  (TXT/XLSX/DOCX/PDF/PNG/MD) plus instructions to generate proposals,
+  financial models, weekly reports, onboarding docs, SOPs, sales decks
+- **Step 7 — Use Claude Code to build the actual product**: for
+  non-technical founders, hire one technical person and give them Claude
+  Code from day one — one developer with it can outpace several without
+
+### Informational only (no install action)
+
+- **@quadri_folo "10 Claude Code Tips"** (tips 1, 4–10 captured across
+  this and batch 83): auto-approve trusted actions, custom commands for
+  repeated prompts, subagents for specialized work (testing/review/
+  research/debugging), use Skills instead of one giant prompt, connect
+  external tools via MCP, review Claude's own output before accepting
+  it, automate repetitive non-coding work (tests/docs/maintenance), and
+  "build workflows, not just prompts" (You→Agent→Tools→Review→Test→Output
+  instead of You→Prompt→Claude→Code). General best-practice advice,
+  already covered conceptually elsewhere in this repo's Claude Code
+  guidance — no new command needed.
+- **@yassinezaanouni's 6-tool web-design-inspiration directory**:
+  httpster.net (volume), curated.design (filtered by industry/style),
+  hoverstat.es (alternative/weird design), unsection.com (single UI
+  sections), pageflows.com (recorded user flows, not static screens),
+  cosmos.so (searchable moodboard collections, flags AI-generated
+  images). Plus a self-promo tool, reelfolio.io ("turns screenshots into
+  showreels"). Commercial/free web tools, not repos — a reference list,
+  not something to install.
+- **@mydlytracker "Collections" feature** (mydailyNotebook app) —
+  already logged in batch 66; this batch's screenshots show the same
+  product's Projects/Ideas/Learning/People use cases, no new information.
+- **`diagram-design`** — already vendored (batch 82); this batch's
+  screenshot additionally shows `/plugin install diagram-design` as an
+  alternate install path (a Claude Code plugin marketplace install
+  rather than `npx skills add`) — noted here, not a new item.
+
