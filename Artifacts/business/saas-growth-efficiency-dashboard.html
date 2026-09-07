@@ -1,0 +1,423 @@
+<title>SaaS Growth Efficiency Dashboard</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800;900&family=DM+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap">
+<style>
+  :root {
+    --bg: #F5F6F8; --bg2: #ECEEF2; --text: #1A1F2E; --text-sub: #5A6480; --text-muted: #8B93AC;
+    --rule: #D1D6E0; --card: #FFFFFF;
+    --good: #1E6B5E; --good-light: #DFF3EE;
+    --fair: #8B5E1A; --fair-light: #F5ECD8;
+    --bad: #A83B3B; --bad-light: #FBE7E7;
+    --accent: #2B5FA8; --accent-light: #E2ECFA;
+    --grid: #E4E7EF;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #0C0F18; --bg2: #141826; --text: #E4E9F5; --text-sub: #8A94B8; --text-muted: #5C6690;
+      --rule: #232B42; --card: #141826;
+      --good: #3DB89E; --good-light: #0D2420;
+      --fair: #D4943A; --fair-light: #241A0A;
+      --bad: #E08585; --bad-light: #2A1414;
+      --accent: #6FA0E0; --accent-light: #16233A;
+      --grid: #1E2740;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #0C0F18; --bg2: #141826; --text: #E4E9F5; --text-sub: #8A94B8; --text-muted: #5C6690;
+    --rule: #232B42; --card: #141826;
+    --good: #3DB89E; --good-light: #0D2420;
+    --fair: #D4943A; --fair-light: #241A0A;
+    --bad: #E08585; --bad-light: #2A1414;
+    --accent: #6FA0E0; --accent-light: #16233A;
+    --grid: #1E2740;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: var(--bg); color: var(--text); font-family: 'DM Sans', system-ui, sans-serif; font-size: 14px; line-height: 1.55; padding: 2.6rem 1.25rem 5rem; }
+  .wrap { max-width: 1180px; margin: 0 auto; }
+  .eyebrow { font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: var(--accent); margin-bottom: .7rem; }
+  h1 { font-family: 'Barlow Condensed', sans-serif; font-weight: 900; font-size: clamp(1.9rem, 4vw, 2.5rem); line-height: 1.05; margin-bottom: .5rem; }
+  .sub { color: var(--text-sub); font-size: .92rem; max-width: 720px; margin-bottom: 1.6rem; }
+  .order { display: flex; flex-wrap: wrap; gap: .5rem; margin-bottom: 2rem; }
+  .order span { font-size: .74rem; padding: .3rem .65rem; border-radius: 999px; background: var(--bg2); border: 1px solid var(--rule); color: var(--text-sub); }
+  .order span b { color: var(--text); }
+  .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.1rem; }
+  @media (max-width: 820px) { .grid { grid-template-columns: 1fr; } }
+  .card { background: var(--card); border: 1px solid var(--rule); border-radius: 10px; padding: 1.2rem 1.3rem 1.35rem; margin-bottom: 1.1rem; }
+  .card-head { display: flex; align-items: center; justify-content: space-between; margin-bottom: .9rem; gap: .6rem; flex-wrap: wrap; }
+  .card-title { font-family: 'Barlow Condensed', sans-serif; font-weight: 800; font-size: 1.02rem; letter-spacing: .01em; }
+  .badge { font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: .72rem; letter-spacing: .06em; text-transform: uppercase; padding: .28rem .6rem; border-radius: 5px; white-space: nowrap; }
+  .badge.good { background: var(--good-light); color: var(--good); }
+  .badge.fair { background: var(--fair-light); color: var(--fair); }
+  .badge.bad { background: var(--bad-light); color: var(--bad); }
+  .row-inputs { display: flex; flex-wrap: wrap; gap: .9rem; margin-bottom: .9rem; }
+  .field { display: flex; flex-direction: column; gap: .25rem; min-width: 92px; }
+  .field label { font-size: .68rem; color: var(--text-sub); text-transform: uppercase; letter-spacing: .05em; font-weight: 600; }
+  .field input { font-family: 'DM Sans', sans-serif; font-size: .85rem; padding: .35rem .5rem; border: 1px solid var(--rule); border-radius: 5px; background: var(--bg2); color: var(--text); width: 100%; }
+  .bigstat { font-family: 'Barlow Condensed', sans-serif; font-weight: 900; font-size: 2.4rem; line-height: 1; }
+  .statlbl { font-size: .78rem; color: var(--text-sub); margin-top: .2rem; }
+  svg text { font-family: 'DM Sans', sans-serif; }
+  .legend { display: flex; gap: 1rem; flex-wrap: wrap; margin-top: .6rem; font-size: .76rem; color: var(--text-sub); }
+  .legend span { display: inline-flex; align-items: center; gap: .35rem; }
+  .swatch { width: 9px; height: 9px; border-radius: 2px; display: inline-block; }
+  table.chan { width: 100%; border-collapse: collapse; font-size: .78rem; margin-top: .8rem; }
+  table.chan th, table.chan td { padding: .35rem .4rem; border-bottom: 1px solid var(--rule); text-align: left; }
+  table.chan th { color: var(--text-sub); font-weight: 600; font-size: .68rem; text-transform: uppercase; letter-spacing: .04em; }
+  table.chan input { width: 62px; font-size: .78rem; padding: .2rem .3rem; border: 1px solid var(--rule); border-radius: 4px; background: var(--bg2); color: var(--text); }
+  .ratio { font-variant-numeric: tabular-nums; font-weight: 700; }
+  .payback-stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: .8rem; margin-top: .9rem; }
+  @media (max-width: 560px) { .payback-stats { grid-template-columns: 1fr 1fr; } }
+  .pstat .num { font-family: 'Barlow Condensed', sans-serif; font-weight: 800; font-size: 1.35rem; }
+  .pstat .lbl { font-size: .72rem; color: var(--text-sub); }
+  footer { font-size: .8rem; color: var(--text-sub); margin-top: 2.2rem; padding-top: 1.3rem; border-top: 1px solid var(--rule); display: flex; justify-content: space-between; flex-wrap: wrap; gap: .5rem; }
+</style>
+
+<div class="wrap">
+  <div class="eyebrow">SaaS Growth Efficiency · Live Board Panel</div>
+  <h1>5-Metric SaaS Growth Efficiency Dashboard</h1>
+  <p class="sub">Edit any input — every gauge, bar, waterfall, scatter and line recomputes and re-bands live. Formulas and benchmark bands: <code>saas-growth-efficiency-metrics</code> skill.</p>
+  <div class="order">
+    <span>1. <b>Magic Number + Rule of 40</b> — efficiency gate</span>
+    <span>2. <b>NRR</b> — existing-base health</span>
+    <span>3. <b>LTV:CAC by channel</b> — where growth is efficient</span>
+    <span>4. <b>CAC Payback</b> — cash-timing check</span>
+  </div>
+
+  <div class="grid">
+    <!-- Magic Number -->
+    <div class="card">
+      <div class="card-head">
+        <div class="card-title">Magic Number</div>
+        <div class="badge" id="mnBadge">—</div>
+      </div>
+      <div class="row-inputs">
+        <div class="field"><label>Net New ARR ($M, ann.)</label><input type="number" id="mnArr" value="1.68" step="0.01"></div>
+        <div class="field"><label>Prior-Q S&amp;M Spend ($M)</label><input type="number" id="mnSm" value="1.83" step="0.01"></div>
+      </div>
+      <svg id="mnGauge" viewBox="0 0 240 140" style="width:100%;max-width:280px;display:block;margin:0 auto"></svg>
+      <div class="legend">
+        <span><i class="swatch" style="background:var(--bad)"></i>&lt;0.5 broken</span>
+        <span><i class="swatch" style="background:var(--fair)"></i>0.5–0.75 fair</span>
+        <span><i class="swatch" style="background:var(--good)"></i>&gt;0.75 efficient</span>
+      </div>
+    </div>
+
+    <!-- Rule of 40 -->
+    <div class="card">
+      <div class="card-head">
+        <div class="card-title">Rule of 40</div>
+        <div class="badge" id="r40Badge">—</div>
+      </div>
+      <div class="row-inputs">
+        <div class="field"><label>This-Q Growth %</label><input type="number" id="r40Growth" value="44" step="1"></div>
+        <div class="field"><label>This-Q FCF Margin %</label><input type="number" id="r40Margin" value="3" step="1"></div>
+      </div>
+      <svg id="r40Chart" viewBox="0 0 400 170" style="width:100%;height:auto;display:block"></svg>
+      <div class="legend">
+        <span><i class="swatch" style="background:var(--accent)"></i>Revenue growth %</span>
+        <span><i class="swatch" style="background:var(--fair)"></i>FCF margin %</span>
+      </div>
+    </div>
+
+    <!-- NRR -->
+    <div class="card">
+      <div class="card-head">
+        <div class="card-title">Net Revenue Retention</div>
+        <div class="badge" id="nrrBadge">—</div>
+      </div>
+      <div class="row-inputs">
+        <div class="field"><label>Starting ARR ($M)</label><input type="number" id="nrrStart" value="3.15" step="0.01"></div>
+        <div class="field"><label>Expansion ($M)</label><input type="number" id="nrrExp" value="1.00" step="0.01"></div>
+        <div class="field"><label>Churn ($M)</label><input type="number" id="nrrChurn" value="0.30" step="0.01"></div>
+        <div class="field"><label>Contraction ($M)</label><input type="number" id="nrrContr" value="0.13" step="0.01"></div>
+      </div>
+      <div class="bigstat" id="nrrPct">118%</div>
+      <div class="statlbl">Ending ARR / Starting ARR</div>
+      <svg id="nrrWaterfall" viewBox="0 0 400 180" style="width:100%;height:auto;display:block;margin-top:.6rem"></svg>
+    </div>
+
+    <!-- LTV:CAC -->
+    <div class="card">
+      <div class="card-head">
+        <div class="card-title">LTV : CAC by Channel</div>
+        <div class="badge" id="ltvBadge">—</div>
+      </div>
+      <svg id="ltvScatter" viewBox="0 0 380 220" style="width:100%;height:auto;display:block"></svg>
+      <table class="chan">
+        <thead><tr><th>Channel</th><th>CAC ($)</th><th>LTV ($)</th><th>Ratio</th></tr></thead>
+        <tbody id="ltvBody"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- CAC Payback -->
+  <div class="card">
+    <div class="card-head">
+      <div class="card-title">CAC Payback Period</div>
+      <div class="badge" id="cacBadge">—</div>
+    </div>
+    <div class="row-inputs">
+      <div class="field"><label>CAC ($)</label><input type="number" id="cacCac" value="9900" step="100"></div>
+      <div class="field"><label>MRR / Customer ($)</label><input type="number" id="cacMrr" value="1250" step="10"></div>
+      <div class="field"><label>Gross Margin %</label><input type="number" id="cacMargin" value="72" step="1"></div>
+    </div>
+    <svg id="cacLine" viewBox="0 0 640 210" style="width:100%;height:auto;display:block"></svg>
+    <div class="payback-stats">
+      <div class="pstat"><div class="num" id="cacPaybackMo">—</div><div class="lbl">Payback (months)</div></div>
+      <div class="pstat"><div class="num" id="cacCacOut">—</div><div class="lbl">CAC</div></div>
+      <div class="pstat"><div class="num" id="cacGrossOut">—</div><div class="lbl">Monthly gross profit</div></div>
+      <div class="pstat"><div class="num" id="cacTargetOut">&lt;18 mo</div><div class="lbl">Mid-market target</div></div>
+    </div>
+  </div>
+
+  <footer>
+    <span>dmavridi6478/business · .claude/skills/saas-growth-efficiency-metrics</span>
+    <span>Business</span>
+  </footer>
+</div>
+
+<script>
+(function(){
+  var css = getComputedStyle(document.documentElement);
+  function c(v){ return 'var(' + v + ')'; }
+
+  // ---------- Magic Number ----------
+  var mnArr = document.getElementById('mnArr'), mnSm = document.getElementById('mnSm');
+  var mnGauge = document.getElementById('mnGauge'), mnBadge = document.getElementById('mnBadge');
+  function drawMN(){
+    var arr = parseFloat(mnArr.value)||0, sm = parseFloat(mnSm.value)||0.0001;
+    var ratio = arr / sm;
+    var display = Math.max(0, Math.min(ratio, 1.5));
+    var frac = display / 1.5;
+    var angle = -180 + frac * 180; // -180..0 deg across semicircle
+    var rad = angle * Math.PI/180;
+    var cx=120, cy=120, r=95;
+    var nx = cx + r*Math.cos(rad), ny = cy + r*Math.sin(rad);
+    var band = ratio < 0.5 ? 'bad' : ratio < 0.75 ? 'fair' : 'good';
+    var label = band==='bad'?'Broken':band==='fair'?'Fair':'Efficient';
+    mnBadge.textContent = ratio.toFixed(2) + ' · ' + label.toUpperCase();
+    mnBadge.className = 'badge ' + band;
+    // arc bands: bad 0-0.5(1/3), fair 0.5-0.75(1/6), good 0.75-1.5(remaining)
+    function arcPath(a0,a1,rr){
+      var r0 = -180 + a0/1.5*180, r1 = -180 + a1/1.5*180;
+      var rad0=r0*Math.PI/180, rad1=r1*Math.PI/180;
+      var x0=cx+rr*Math.cos(rad0), y0=cy+rr*Math.sin(rad0);
+      var x1=cx+rr*Math.cos(rad1), y1=cy+rr*Math.sin(rad1);
+      var large = (a1-a0)/1.5*180 > 180 ? 1:0;
+      return 'M'+x0+' '+y0+' A '+rr+' '+rr+' 0 '+large+' 1 '+x1+' '+y1;
+    }
+    var svg = '';
+    svg += '<path d="'+arcPath(0,0.5,95)+'" stroke="'+c('--bad')+'" stroke-width="16" fill="none" stroke-linecap="round"/>';
+    svg += '<path d="'+arcPath(0.5,0.75,95)+'" stroke="'+c('--fair')+'" stroke-width="16" fill="none"/>';
+    svg += '<path d="'+arcPath(0.75,1.5,95)+'" stroke="'+c('--good')+'" stroke-width="16" fill="none" stroke-linecap="round"/>';
+    svg += '<line x1="'+cx+'" y1="'+cy+'" x2="'+nx+'" y2="'+ny+'" stroke="'+c('--text')+'" stroke-width="4" stroke-linecap="round"/>';
+    svg += '<circle cx="'+cx+'" cy="'+cy+'" r="7" fill="'+c('--text')+'"/>';
+    svg += '<text x="'+cx+'" y="'+(cy+34)+'" text-anchor="middle" font-size="22" font-weight="900" fill="'+c('--text')+'" font-family=\'Barlow Condensed\',sans-serif>'+ratio.toFixed(2)+'</text>';
+    mnGauge.innerHTML = svg;
+  }
+  mnArr.addEventListener('input', drawMN); mnSm.addEventListener('input', drawMN);
+
+  // ---------- Rule of 40 ----------
+  var r40Growth = document.getElementById('r40Growth'), r40Margin = document.getElementById('r40Margin');
+  var r40Chart = document.getElementById('r40Chart'), r40Badge = document.getElementById('r40Badge');
+  var r40History = [
+    {m:'Oct', g:31, f:-2}, {m:'Nov', g:33, f:-2}, {m:'Dec', g:34, f:-1}, {m:'Jan', g:39, f:0.5}, {m:'Feb', g:44, f:1.5}
+  ];
+  function drawR40(){
+    var g = parseFloat(r40Growth.value)||0, f = parseFloat(r40Margin.value)||0;
+    var periods = r40History.concat([{m:'Mar', g:g, f:f}]);
+    var w=400,h=170, padL=28, padB=24, padT=10, chartW=w-padL-16, chartH=h-padB-padT;
+    var maxV = 60;
+    var barW = chartW/periods.length*0.55;
+    var gap = chartW/periods.length;
+    var svg = '';
+    // gridline at 40
+    var y40 = padT + chartH - (40/maxV*chartH);
+    svg += '<line x1="'+padL+'" y1="'+y40+'" x2="'+(w-16)+'" y2="'+y40+'" stroke="'+c('--rule')+'" stroke-dasharray="4 3"/>';
+    svg += '<text x="'+padL+'" y="'+(y40-6)+'" text-anchor="start" font-size="9" fill="'+c('--text-sub')+'">40% target</text>';
+    periods.forEach(function(p,i){
+      var x = padL + gap*i + (gap-barW)/2;
+      var total = p.g + p.f;
+      var gH = Math.max(0,p.g)/maxV*chartH;
+      var fH = Math.abs(p.f)/maxV*chartH;
+      var yBase = padT+chartH;
+      var yG = yBase - gH;
+      var col = total >= 40 ? c('--good') : c('--accent');
+      svg += '<rect x="'+x+'" y="'+yG+'" width="'+barW+'" height="'+gH+'" fill="'+c('--accent')+'" rx="2"/>';
+      if (p.f >= 0){
+        svg += '<rect x="'+x+'" y="'+(yG-fH)+'" width="'+barW+'" height="'+fH+'" fill="'+c('--fair')+'" rx="2"/>';
+      } else {
+        svg += '<rect x="'+x+'" y="'+yBase+'" width="'+barW+'" height="'+fH+'" fill="'+c('--bad')+'" opacity="0.7" rx="2"/>';
+      }
+      svg += '<text x="'+(x+barW/2)+'" y="'+(yBase - Math.max(gH,0) - fH - 6)+'" text-anchor="middle" font-size="10" font-weight="700" fill="'+c('--text')+'">'+total.toFixed(0)+'%</text>';
+      svg += '<text x="'+(x+barW/2)+'" y="'+(h-6)+'" text-anchor="middle" font-size="9" fill="'+c('--text-sub')+'">'+p.m+'</text>';
+    });
+    r40Chart.innerHTML = svg;
+    var currentTotal = g+f;
+    var band = currentTotal >= 40 ? 'good' : 'bad';
+    r40Badge.textContent = currentTotal.toFixed(0) + '% · ' + (currentTotal>=40?'TARGET MET':'BELOW TARGET');
+    r40Badge.className = 'badge ' + band;
+  }
+  r40Growth.addEventListener('input', drawR40); r40Margin.addEventListener('input', drawR40);
+
+  // ---------- NRR ----------
+  var nrrStart = document.getElementById('nrrStart'), nrrExp = document.getElementById('nrrExp'),
+      nrrChurn = document.getElementById('nrrChurn'), nrrContr = document.getElementById('nrrContr');
+  var nrrWaterfall = document.getElementById('nrrWaterfall'), nrrBadge = document.getElementById('nrrBadge'), nrrPct = document.getElementById('nrrPct');
+  function drawNRR(){
+    var start = parseFloat(nrrStart.value)||0, exp = parseFloat(nrrExp.value)||0,
+        churn = parseFloat(nrrChurn.value)||0, contr = parseFloat(nrrContr.value)||0;
+    var end = start + exp - churn - contr;
+    var pct = start>0 ? (end/start*100) : 0;
+    nrrPct.textContent = pct.toFixed(0)+'%';
+    var band = pct < 100 ? 'bad' : pct < 110 ? 'fair' : 'good';
+    var label = pct<100?'SHRINKING':pct<110?'HEALTHY':pct<120?'STRONG':'BEST-IN-CLASS';
+    nrrBadge.textContent = pct.toFixed(0)+'% · '+label;
+    nrrBadge.className = 'badge ' + band;
+
+    var steps = [
+      {lbl:'Starting', v:start, type:'total'},
+      {lbl:'Expansion', v:exp, type:'up'},
+      {lbl:'Churn', v:-churn, type:'down'},
+      {lbl:'Contraction', v:-contr, type:'down'},
+      {lbl:'Ending', v:end, type:'total'}
+    ];
+    var maxV = Math.max(start, end, 0.01) * 1.15;
+    var w=400,h=180, padL=10, padB=28, padT=14, chartH = h-padB-padT;
+    var n = steps.length, gap = (w-20)/n, barW = gap*0.55;
+    var running = 0;
+    var svg='';
+    steps.forEach(function(s,i){
+      var x = 10 + gap*i + (gap-barW)/2;
+      var yFor = function(val){ return padT + chartH - (val/maxV*chartH); };
+      var top, bottom, col;
+      if (s.type === 'total'){
+        top = yFor(s.v); bottom = yFor(0); col = c('--accent');
+        running = s.v;
+      } else {
+        var before = running;
+        running += s.v;
+        var hi = Math.max(before, running), lo = Math.min(before, running);
+        top = yFor(hi); bottom = yFor(lo);
+        col = s.v >= 0 ? c('--good') : c('--bad');
+      }
+      svg += '<rect x="'+x+'" y="'+top+'" width="'+barW+'" height="'+Math.max(1,bottom-top)+'" fill="'+col+'" rx="2"/>';
+      svg += '<text x="'+(x+barW/2)+'" y="'+(top-6)+'" text-anchor="middle" font-size="9.5" font-weight="700" fill="'+c('--text')+'">'+(s.v>=0&&s.type!=='total'?'+':'')+s.v.toFixed(2)+'</text>';
+      svg += '<text x="'+(x+barW/2)+'" y="'+(h-8)+'" text-anchor="middle" font-size="9" fill="'+c('--text-sub')+'">'+s.lbl+'</text>';
+    });
+    nrrWaterfall.innerHTML = svg;
+  }
+  [nrrStart,nrrExp,nrrChurn,nrrContr].forEach(function(el){ el.addEventListener('input', drawNRR); });
+
+  // ---------- LTV:CAC ----------
+  var channels = [
+    {name:'Cold Outreach', cac:2100, ltv:9500, color:'#2B5FA8'},
+    {name:'Google Ads', cac:2800, ltv:9200, color:'#1E6B5E'},
+    {name:'LinkedIn Ads', cac:5200, ltv:11500, color:'#8B5E1A'},
+    {name:'Events', cac:6800, ltv:12200, color:'#A83B3B'},
+    {name:'Referral', cac:1000, ltv:4600, color:'#6D4AA6'},
+    {name:'Inbound SEO', cac:1300, ltv:4500, color:'#B8722E'}
+  ];
+  var ltvBody = document.getElementById('ltvBody'), ltvScatter = document.getElementById('ltvScatter'), ltvBadge = document.getElementById('ltvBadge');
+  function buildLtvTable(){
+    var rows = '';
+    channels.forEach(function(ch,i){
+      rows += '<tr><td>'+ch.name+'</td>'+
+        '<td><input type="number" data-i="'+i+'" data-f="cac" value="'+ch.cac+'" step="50"></td>'+
+        '<td><input type="number" data-i="'+i+'" data-f="ltv" value="'+ch.ltv+'" step="50"></td>'+
+        '<td class="ratio" id="ratio'+i+'"></td></tr>';
+    });
+    ltvBody.innerHTML = rows;
+    ltvBody.querySelectorAll('input').forEach(function(inp){
+      inp.addEventListener('input', function(){
+        var i = parseInt(inp.dataset.i,10), f = inp.dataset.f;
+        channels[i][f] = parseFloat(inp.value)||0;
+        drawLTV();
+      });
+    });
+  }
+  function drawLTV(){
+    var w=380,h=220, padL=38, padB=26, padT=12, padR=10;
+    var chartW=w-padL-padR, chartH=h-padB-padT;
+    var maxCac = Math.max.apply(null, channels.map(function(c2){return c2.cac;})) * 1.25 || 1;
+    var maxLtv = Math.max.apply(null, channels.map(function(c2){return c2.ltv;})) * 1.15 || 1;
+    function X(v){ return padL + v/maxCac*chartW; }
+    function Y(v){ return padT + chartH - v/maxLtv*chartH; }
+    var svg = '';
+    // gridlines + axes
+    svg += '<line x1="'+padL+'" y1="'+(padT+chartH)+'" x2="'+(padL+chartW)+'" y2="'+(padT+chartH)+'" stroke="'+c('--rule')+'"/>';
+    svg += '<line x1="'+padL+'" y1="'+padT+'" x2="'+padL+'" y2="'+(padT+chartH)+'" stroke="'+c('--rule')+'"/>';
+    // reference lines: 3:1 and 2:1 from origin
+    function refLine(ratio, label, dash){
+      var x2 = maxCac, y2v = maxCac*ratio;
+      var yy2 = y2v > maxLtv ? maxLtv : y2v;
+      var xx2 = y2v > maxLtv ? maxLtv/ratio : maxCac;
+      svg += '<line x1="'+X(0)+'" y1="'+Y(0)+'" x2="'+X(xx2)+'" y2="'+Y(yy2)+'" stroke="'+c('--text-muted')+'" stroke-width="1" stroke-dasharray="'+dash+'"/>';
+      svg += '<text x="'+X(xx2)+'" y="'+(Y(yy2)-4)+'" font-size="8.5" fill="'+c('--text-sub')+'" text-anchor="end">'+label+'</text>';
+    }
+    refLine(3, '3:1 scale', '5 3');
+    refLine(2, '2:1 breakeven', '2 2');
+    var bestI = -1, bestRatio = -1;
+    channels.forEach(function(ch,i){
+      var r = ch.cac>0 ? ch.ltv/ch.cac : 0;
+      if (r > bestRatio){ bestRatio = r; bestI = i; }
+      var rEl = document.getElementById('ratio'+i);
+      if (rEl) rEl.textContent = r.toFixed(1)+'x';
+      var radius = 6 + Math.min(8, ch.cac/900);
+      svg += '<circle cx="'+X(ch.cac)+'" cy="'+Y(ch.ltv)+'" r="'+radius+'" fill="'+ch.color+'" opacity="0.85"/>';
+    });
+    svg += '<text x="'+(padL+chartW/2)+'" y="'+(h-6)+'" text-anchor="middle" font-size="9" fill="'+c('--text-sub')+'">CAC ($)</text>';
+    svg += '<text x="10" y="'+(padT+8)+'" font-size="9" fill="'+c('--text-sub')+'">LTV ($)</text>';
+    ltvScatter.innerHTML = svg;
+    var band = bestRatio < 2 ? 'bad' : bestRatio < 3 ? 'fair' : 'good';
+    ltvBadge.textContent = 'BEST: '+bestRatio.toFixed(1)+'x '+channels[bestI].name.split(' ')[0].toUpperCase();
+    ltvBadge.className = 'badge '+band;
+  }
+  buildLtvTable();
+
+  // ---------- CAC Payback ----------
+  var cacCac = document.getElementById('cacCac'), cacMrr = document.getElementById('cacMrr'), cacMargin = document.getElementById('cacMargin');
+  var cacLine = document.getElementById('cacLine'), cacBadge = document.getElementById('cacBadge');
+  var cacPaybackMo = document.getElementById('cacPaybackMo'), cacCacOut = document.getElementById('cacCacOut'), cacGrossOut = document.getElementById('cacGrossOut');
+  function drawCAC(){
+    var cac = parseFloat(cacCac.value)||0, mrr = parseFloat(cacMrr.value)||0.0001, margin = (parseFloat(cacMargin.value)||0)/100;
+    var grossPerMo = mrr*margin;
+    var paybackMo = grossPerMo>0 ? cac/grossPerMo : 0;
+    cacPaybackMo.textContent = paybackMo.toFixed(1);
+    cacCacOut.textContent = '$'+cac.toLocaleString();
+    cacGrossOut.textContent = '$'+Math.round(grossPerMo).toLocaleString();
+    var band = paybackMo <= 12 ? 'good' : paybackMo <= 18 ? 'fair' : 'bad';
+    cacBadge.textContent = paybackMo.toFixed(1)+' months · '+(band==='good'?'EXCELLENT':band==='fair'?'HEALTHY':'SLOW');
+    cacBadge.className = 'badge '+band;
+
+    var months = 36;
+    var w=640,h=210, padL=48, padB=26, padT=14, padR=16;
+    var chartW=w-padL-padR, chartH=h-padB-padT;
+    var minV = -cac, maxV = Math.max(grossPerMo*months - cac, cac*0.2, 1);
+    function X(m){ return padL + m/months*chartW; }
+    function Y(v){ return padT + chartH - (v-minV)/(maxV-minV)*chartH; }
+    var svg='';
+    var y0 = Y(0);
+    svg += '<line x1="'+padL+'" y1="'+y0+'" x2="'+(padL+chartW)+'" y2="'+y0+'" stroke="'+c('--rule')+'"/>';
+    // shaded loss zone
+    svg += '<rect x="'+padL+'" y="'+padT+'" width="'+chartW+'" height="'+(y0-padT)+'" fill="'+c('--bad')+'" opacity="0.06"/>';
+    var pts = [];
+    for (var m=0;m<=months;m++){
+      var v = grossPerMo*m - cac;
+      pts.push(X(m)+','+Y(v));
+    }
+    svg += '<polyline points="'+pts.join(' ')+'" fill="none" stroke="'+c('--accent')+'" stroke-width="2.2"/>';
+    // payback marker
+    if (paybackMo>0 && paybackMo<=months){
+      var px = X(paybackMo), py = Y(0);
+      svg += '<line x1="'+px+'" y1="'+padT+'" x2="'+px+'" y2="'+(padT+chartH)+'" stroke="'+c('--good')+'" stroke-dasharray="4 3"/>';
+      svg += '<circle cx="'+px+'" cy="'+py+'" r="4.5" fill="'+c('--good')+'"/>';
+      svg += '<text x="'+px+'" y="'+(padT-2)+'" text-anchor="middle" font-size="9" font-weight="700" fill="'+c('--good')+'">Payback Mo. '+paybackMo.toFixed(1)+'</text>';
+    }
+    svg += '<text x="'+(padL+chartW/2)+'" y="'+(h-6)+'" text-anchor="middle" font-size="9" fill="'+c('--text-sub')+'">Months since acquisition</text>';
+    svg += '<text x="12" y="'+(padT+8)+'" font-size="9" fill="'+c('--text-sub')+'">Cumulative gross profit ($)</text>';
+    cacLine.innerHTML = svg;
+  }
+  [cacCac,cacMrr,cacMargin].forEach(function(el){ el.addEventListener('input', drawCAC); });
+
+  drawMN(); drawR40(); drawNRR(); drawLTV(); drawCAC();
+})();
+</script>
