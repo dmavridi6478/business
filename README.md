@@ -4824,3 +4824,31 @@ swapped for this).
   already covered), and "Virtual iPhone CLI" (`Lakr233/vphone-cli`,
   listed above).
 
+### Video reviewed via extracted frames
+
+One file in this batch (`v26044gc0000da7g8qvog65h89cllhlg.mp4`) is a
+52-second TikTok video the image-reading tool couldn't open directly. Ran
+it through `ffmpeg` (installed via `pip install imageio-ffmpeg`, no system
+package available) with scene-change detection (`select='gt(scene,0.25)'`)
+to pull 39 still frames, then reviewed those. Source: **@ivan.geoffreyy**,
+"5 MCPs That Supercharge Claude Code."
+
+- **Perplexity MCP Server** — connects Claude to Perplexity's search and
+  reasoning; official MCP, **new to this repo**. Exact install string
+  wasn't legible in the video frames (only the docs-page intro text was
+  captured) — add via `claude mcp add` once you've confirmed the current
+  command on Perplexity's own MCP docs, same pattern as the other
+  officially-documented MCP entries in this README.
+- **Playwright MCP**, **Chrome DevTools MCP** — both already documented
+  in this repo (the video used Playwright MCP to demo building/testing a
+  movie-browsing app).
+- **Higgsfield** — referenced for a creative image/video-generation
+  segment (Seedance 2.0/Lite, GPT Image 2, Gemini 3 Flash Image Generator
+  as the underlying models); already documented as not having an official
+  GitHub repo, API-key-gated either way.
+- A parallel-subagent research demo cited `google/langextract`,
+  `github/gh-aw`, `microsoft/PowerToys`, `ChromeDevTools/chrome-devtools`,
+  `EveryInc/compound-engineering`, `patchy631/ai-engineering-hub` as
+  example repos being summarized — these are demo content, not something
+  the video was recommending users install, so not added as entries.
+
