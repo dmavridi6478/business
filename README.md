@@ -4570,3 +4570,159 @@ Output-format methodology already captured from an earlier `@SkillDropAI`
 batch), and proprietary SaaS tool cards with no repo to clone (Microsoft
 Clarity, Content Square, SERPtag, Tally).
 
+---
+
+## 82. LinkedIn Optimizer System, Agent-Task Prompt Pack & GitHub Trending Repos (Batch 82)
+
+**Source:** Two uploaded iCloud Photos zips, 67 images total — carousels from
+@theromanknox ("Claude's Free Skillset"), @ai_slacker (11-slide "prompt.md"
+agent-task series), @rroobbyynnt (6-step "Build Your Own LinkedIn Optimizer
+with Claude"), @melibuilds.io ("GitHub Trending — 29"), @hash42labs ("H42
+Open Source #003"), @martiendejong_dev (three separate GitHub-repo carousels),
+@quadri_folo ("Claude Code plugins" list, partial), and @futurewithai.dev
+(five Claude-plugin business-model diagrams). Cross-checked every named
+repo/skill against the existing README — most of the skills.sh links and
+several GitHub repos were already documented in earlier batches.
+
+### New commands installed
+
+- **`/linkedin-optimizer-system`** — 5-step system from @rroobbyynnt, meant
+  to run inside one Claude Project: `/home` (sets project custom
+  instructions once), `/audit` (strict section-by-section profile audit),
+  `/positioning` (5 sequential clarifying questions → one positioning
+  statement), `/rewrite` (headline/about/experience rewrite under strict
+  word limits), `/content` (weekly 3-pillar content system + one ready post,
+  repeat weekly). Distinct from the existing `linkedin-profile-auditor` /
+  `linkedin-positioning-statement` / `linkedin-profile-rewrite` /
+  `linkedin-week-content-plan` commands — those are generic one-shot
+  templates; this is the specific, more rigorous multi-step sequence with
+  its own strict rules (source discipline, honesty, word caps) meant to
+  compound inside a single project's memory.
+- **`/agent-task-ideas`** — 9 copy-paste prompts from @ai_slacker's
+  "prompt.md" series, each written to hand to an autonomous/browser-using
+  agent rather than ask in chat: `/garage-sale` (marketplace flipping),
+  `/agency-to-software` (turn a service business into a $500–5K/mo product),
+  `/dashboard` (weekly 1-person-company operator briefing),
+  `/competitor-spy` (monthly competitor-product report), `/qa-team`
+  (nightly mobile regression pass), `/browser-operator` (turn a manual
+  workflow into a documented SOP + automation plan), `/browser-game` (lead
+  magnet game with real hooks), `/audit-opportunities` (rank tasks to
+  automate before hiring), `/bill-negotiator` (renegotiate recurring
+  bills). Distinct from the existing `vibecoding-prompts` (`/build`
+  `/design` `/debug` `/modify` `/think`) and `ai-slacker-premortem` skill —
+  different @ai_slacker series, no overlap.
+
+### New repos to clone
+
+- [`paperclipai/paperclip`](https://github.com/paperclipai/paperclip) —
+  open-source dashboard for managing/monitoring multiple AI agents at
+  once; site paperclip.ing, MIT, shown with 78.1k★/14.3k forks (unverified
+  — screenshot claim)
+  `git clone https://github.com/paperclipai/paperclip`
+- [`PrimeIntellect-ai/prime-agent`](https://github.com/PrimeIntellect-ai/prime-agent) —
+  self-improving RLM agent for coding workflows and long-running autonomous
+  tasks; MIT, shown with 15.6k★
+  `git clone https://github.com/PrimeIntellect-ai/prime-agent`
+- [`semantica-agi/semantica`](https://github.com/semantica-agi/semantica) —
+  graph-native agent memory/context infrastructure — keeps context as a
+  traceable graph instead of a flat log; site getsemantica.ai, shown with
+  6.9k★
+  `git clone https://github.com/semantica-agi/semantica`
+- [`huangruiteng/loopx`](https://github.com/huangruiteng/loopx) —
+  lightweight state kernel for long-running multi-agent teams; works across
+  Codex, Claude Code, and other coding agents — durable goals, executable
+  todos, evidence logs, verifiable handoffs; shown with 4.6k★
+  `git clone https://github.com/huangruiteng/loopx`
+- **Archon** — multi-agent orchestrator (Planner → Coder/Tester/
+  Reviewer/Deployer, with auto-fix); exact org/repo slug not shown in the
+  screenshot — verify before cloning, several unrelated "Archon" repos
+  exist on GitHub
+- **Browser Use WebUI** — the web-UI companion to the already-cloned
+  `browser-use/browser-use` (in `setup-repos.sh`); likely
+  `browser-use/web-ui` — verify slug before cloning
+  `git clone https://github.com/browser-use/web-ui`
+
+### Unverified / needs confirmation before installing
+
+These were shown only as marketing/product screenshots with no GitHub page
+or repo slug visible — do not blind-install:
+- **Singulary** ("self-hosted Lovable" — full-stack app builder) — no repo
+  confirmed, may be closed-source/commercial
+- **Open Generative AI** (400+ self-hosted image/video/lip-sync models) —
+  product name only
+- **Open Notebook** (self-hosted NotebookLM alternative) — likely
+  `lfnovo/open-notebook` based on the description, but not confirmed from
+  the screenshot itself
+- **OmniRoute** — already documented in an earlier batch with a star-count
+  discrepancy flagged; this screenshot repeats the same unverified claims
+- **AI Job Search** (turns Claude Code into a job hunter: scores listings,
+  tailors CV, writes cover letters) — product name only, no repo
+- **usestrix/strix** — already documented (batch 74) as a browser
+  extension for reading/summarizing web content; this new screenshot
+  describes it as an autonomous pentesting agent instead. Same name, two
+  different pitches — re-check the actual repo before relying on either
+  description
+- **Screenshot-to-Code** — generic category shown via mockup only; the
+  well-known real project matching this description is
+  [`abi/screenshot-to-code`](https://github.com/abi/screenshot-to-code),
+  not confirmed as the one shown
+
+### skills.sh links (unverified marketplace — review before installing)
+
+All eight were shown on one promotional carousel (@theromanknox) as
+`skills.sh/<author>/<skill>` install links. `skills.sh` is a third-party
+skill marketplace, not something this session can vet the contents of —
+read each skill's source before installing anything from it into a real
+Claude Code environment:
+- Understand Anything — `skills.sh/Egonex-AI/Understand-Anything` (simplify dense docs/research)
+- Frontend Slides — `skills.sh/zarazhangrui/frontend-slides` (code-built presentations)
+- Stop Slop — `skills.sh/hardikpandya/stop-slop` (cut filler, sharpen reasoning — distinct from the already-vendored `petergyang/no-ai-slop` browser extension)
+- Humanizer, Impeccable, UI/UX Pro Max, Diagram Design, Taste Skills — all four already vendored/documented in earlier batches, skipped here as duplicates
+
+### Already covered — skipped as duplicates
+
+`claude-mem`, `Context7` (MCP), `Superpowers` (obra/superpowers plugin
+marketplace), `can1357/oh-my-pi`, `OpenSEO`/`every-app/open-seo`,
+`ayghri/i-have-adhd`, `cathrynlavery/diagram-design`,
+`virgiliojr94/book-to-skill`, `OpenHands`, `petergyang/no-ai-slop` (the
+"No AI Slop" tool), `pbakaus/impeccable`, `Leonxlnx/taste-skill`,
+`ui-ux-pro-max`, `blader/humanizer`. The @quadri_folo "Claude Code plugins"
+slides for **code-review**, **skill-creator**, and **security-guidance**
+are functionally covered by this account's own global `code-review`,
+`skill-creator`, and `security-review` skills already available via the
+Skill tool (no local vendoring needed); **Language Servers** overlaps with
+the already-documented `oraios/serena` MCP server (LSP bridge for Claude
+Code).
+
+### Informational only (no install action)
+
+- **@futurewithai.dev** — five "Claude plugin" business-model diagrams
+  (lead-research-to-outreach, proposal generator, content-repurposing
+  pipeline, "sell one painful workflow" sales framework, and a recap
+  "3 plugins businesses pay $5K+ for"). These are pitch-deck concepts for
+  productizing a Claude workflow as a client offer, not tools to install —
+  overlaps with the existing `outbound-campaign-brief` and
+  `one-person-offer-architect` skills; no new skill created.
+- **@quadri_folo** partial "Claude Code plugins" list — only 3 of what
+  looks like a longer numbered series were visible across these photos
+  (`security-guidance`, `code-review`, `Language Servers`, plus
+  `Superpowers`, `Context7`, `claude-mem`, `frontend-design`, `skill-creator`
+  from other slides in the same account's series) — all already covered
+  above; the remaining list items weren't in this photo set.
+- **@your.aimentor** "9 Claude Skills" prompt-refinement pipeline
+  (`/prompt-maker` → `/grill-me` → `/how-to` → `/5` → `/fable` →
+  `/personal-voice` → `/anti-ai` → `/write-a-skill` → `/handoff`) — two of
+  the nine (`/how-to`, `/handoff`) already exist as commands in this repo;
+  the rest are marketing for this creator's own "56 commands" pack (already
+  captured as the `your-aimentor-56-commands` skill) — not re-created here.
+- **GPT-6 Astra Mastery Guide** (@ai_slacker) — engagement-bait slide
+  asking viewers to comment a keyword for a prompt pack; no actual prompt
+  text shown, nothing to install.
+
+### Plain-text prompts to copy
+
+**Look up how to use the new commands (no arguments needed — running the
+command itself walks you through it):**
+> Run `/linkedin-optimizer-system` with no arguments and follow the steps in order: home, then audit, then positioning, then rewrite, then content (repeat weekly).
+> Run `/agent-task-ideas` with no arguments to see all 9 agent-task prompts, then pick one and fill in the brackets.
+
