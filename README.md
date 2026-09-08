@@ -4570,3 +4570,81 @@ Output-format methodology already captured from an earlier `@SkillDropAI`
 batch), and proprietary SaaS tool cards with no repo to clone (Microsoft
 Clarity, Content Square, SERPtag, Tally).
 
+---
+
+## 82. GitHub Daily Briefing, 6-Repo Roundup & 5 AI Engineering Project Briefs (Batch 82)
+
+**Source:** One uploaded iCloud Photos zip, 19 images — three separate
+carousels covering the same news cycle (7 September 2026) from three
+accounts: @githubnow's "Three tools you will wish you knew sooner" daily
+briefing (5 slides: cover, 3 repos, outro); @martiendejong_dev's "6 GitHub
+repos blowing up today" (7 slides: cover + 6 repos); @ksk_data's "5 AI
+Engineering Projects to Build in 2026" (7 slides: intro, 5 numbered project
+briefs, outro). The two GitHub-repo carousels overlapped heavily with each
+other and with this repo's own prior batches — every repo was re-verified
+live (`git ls-remote` + GitHub search) before deciding what was actually new
+enough to add.
+
+**New:**
+- **`ai-engineering-portfolio`** skill — the ksk_data content wasn't a repo
+  to clone, it was a structured 5-project curriculum (RAG Knowledge
+  Assistant → AI Agent Workflow → AI Evaluation Dashboard → Multimodal
+  Document AI → Secure AI System), each with a build checklist and a "best
+  for" tag but no literal copy-paste prompt in the source. Wrote one
+  kickoff prompt per project from each checklist, and cross-linked each to
+  the existing skill in this repo that already covers part of the ground
+  (`rag-pipeline-architecture`, `web-task-scoping`, `invoice-receipt-processor`,
+  and Claude Code's own built-in `security-review`/`add-agent-guardrails`).
+- **`agent-memory-repos`** — filled two placeholder rows (`#2`, `#6`) that
+  batch this skill was created in had left open: `volcengine/OpenViking`
+  (36k★, unifies agent memory/RAG/skills behind a tiered `viking://`
+  filesystem) and `mksglu/context-mode` (21k★, sandboxes MCP tool output —
+  315 KB responses shrink to 5.4 KB — plus a SQLite/FTS5 session index).
+  Added install snippets and updated the "Choosing the Right Repo" table.
+- **`claude-code-tooling`** — new "Diagram renderer & official plugin
+  directory" section: `tt-a1i/archify` (54.5k★, compiles a plain-English
+  system description into a verified-topology interactive diagram) and
+  `anthropics/claude-plugins-official` (36k★, the actual Anthropic-managed
+  plugin directory this repo's own commands already reference by suffix
+  but had never documented as a repo in its own right — distinct from the
+  already-documented `anthropics/claude-plugins-community`). Also fixed a
+  pre-existing bug in this file: duplicate `description:` keys in the YAML
+  frontmatter (two full paragraphs stacked instead of one), merged into a
+  single valid description.
+
+**Already covered — re-verified, not re-added:**
+
+| Repo | First documented | Note |
+|---|---|---|
+| `freestylefly/awesome-gpt-image-2` | 65th Addition | Still real, 29.2k★ now (was 17k) |
+| `AgriciDaniel/claude-obsidian` | 65th Addition | Still real, 14.7k★ now (was 12k) |
+| `MadsLorentzen/ai-job-search` | 34th addition, "reviewed and not added" | Grown from a "niche personal project" to 41.4k★/14.2k forks since that review, but the original reasoning (job-search tooling doesn't fit this business's actual stack) still holds — not re-added |
+| `Alishahryar1/free-claude-code` | 59th addition (as `Alishahryar-one/FREE-CLAUDE-CODE`) | **Flagged now, not corrected then:** batch 59 documented this with a clone command and no scrutiny of what it actually does. Re-reading it this pass: it claims "1.3B+ free tokens" to run Claude Code, Codex, Pi, and OpenCode without paying, and describes itself as "ToS friendly" in its own README — a claim made by the tool circumventing the terms it claims to comply with is not evidence of compliance. A tool whose entire pitch is unlimited free access to a paid product almost certainly works by pooling, sharing, or otherwise routing around individual API credentials rather than any mechanism Anthropic (or OpenAI, for Codex) actually sanctions. Not re-vendored, not recommended, and flagged here so a future pass doesn't cite the batch-59 entry as an endorsement. |
+
+**Duplicate-check (repo overlap between the two GitHub-repo carousels):**
+`archify` appeared in both @githubnow's post (framed as `tt-a1i/archify`,
+"+36,689 stars this month") and @martiendejong_dev's post (framed as plain
+"archify," 17,452 stars/1,218 forks) — confirmed via GitHub search to be the
+same single repo (`tt-a1i/archify`, now 54.5k★) at two different growth
+snapshots, not two competing projects.
+
+**Plain-text prompts to copy** (kickoff prompts for the 5 project briefs —
+also in the `ai-engineering-portfolio` skill file):
+
+> **1. RAG Knowledge Assistant:** I want to build a RAG Knowledge Assistant: an AI system that answers questions from a specific set of documents instead of guessing from general knowledge. My documents are: [describe]. My stack preference: [language/framework, or "recommend one"]. Design the two pipelines: (1) Indexing — how to chunk these documents, which embedding model, which vector store, and why; (2) Query — retrieval + reranking approach, how many chunks to pass to the LLM, and how to force every answer to cite its source chunk. Then give me a build order and a way to evaluate whether an answer is actually grounded in the retrieved documents.
+
+> **2. AI Agent Workflow:** I want to build an AI agent that completes this real workflow end to end: [describe the workflow]. Design: (1) which tools/external APIs it needs to call, and each tool's input/output contract; (2) how it should hold memory or state across steps; (3) where a human approval step is required before an action executes; (4) what gets logged for every execution. Then scope a minimal first version I can build and test this week.
+
+> **3. AI Evaluation Dashboard:** I have an AI system ([describe it]) and I want to build an evaluation dashboard for it, not just eyeball whether outputs look right. Design an eval set and a scoring approach for: task success rate, answer/output quality, tool-call traces, latency and cost per run, and regression tests. Then give me a minimal dashboard structure I can run after every change to the system.
+
+> **4. Multimodal Document AI:** I want to build a multimodal document AI: upload a PDF or image (e.g. [document type]) and get back structured data I can trust. Design: (1) how to route the upload to a vision-capable model; (2) a concrete JSON schema to extract into; (3) validation checks to run before trusting the extracted data; (4) what to do when extraction confidence is low. Then scope a minimal version I can test against 5-10 real sample documents.
+
+> **5. Secure AI System:** I have an AI system ([describe it]) that [what makes it risky] and I want to harden it before calling it production-ready. Walk through: (1) prompt-injection test cases specific to this system; (2) tool permissions that should require approval; (3) access controls; (4) guardrails it should refuse to break even if instructed to; (5) audit logs for tracing a bad outcome back to its cause. Give me a checklist to run this system against before calling it production-ready.
+
+**Informational only (no install action):** @githubnow's outro slide
+("tomorrow's drop lands at the same time") and @martiendejong_dev's cover
+slide — both pure teasers, no content. @ksk_data's intro/outro slides
+("5 AI Engineering Projects to Build in 2026" / "Don't build another basic
+chatbot") — framing only, folded into the new skill's intro rather than
+documented separately.
+

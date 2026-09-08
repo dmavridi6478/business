@@ -1,17 +1,17 @@
 # Agent Memory Repos
 
-7 open-source repos for giving AI agents persistent memory — so you never re-explain your project again. Curated by @joshualevi.ai.
+7 open-source repos for giving AI agents persistent memory — so you never re-explain your project again. Rows 1, 3, 4, 5 curated by @joshualevi.ai; rows 2 and 6 added from a later @githubnow "daily briefing" batch (each confirmed live via GitHub search before being added — see stars/description).
 
 ## Repos
 
 | # | Repo | Stars | What It Does |
 |---|------|-------|--------------|
 | 1 | [topoteretes/cognee](https://github.com/topoteretes/cognee) | 30k | Graph-based AI memory — builds knowledge graphs from your docs and chat history |
-| 2 | *(see notes below)* | — | — |
+| 2 | [volcengine/OpenViking](https://github.com/volcengine/OpenViking) | 36k | Self-evolving context database — unifies agent memory, knowledge RAG, and skills behind a `viking://` filesystem; content is tiered (abstract/overview/details) and loaded on demand to cut token spend. Also referenced in `claude-code-tooling`. |
 | 3 | [MemTensor/MemOS](https://github.com/MemTensor/MemOS) | 11k | Self-evolving memory OS — memory that learns and updates itself over time |
 | 4 | [Gentleman-Programming/engram](https://github.com/Gentleman-Programming/engram) | 6k | MCP + SQLite persistent memory — plug-and-play memory server for Claude Code |
 | 5 | [eugeniughelbur/obsidian-second-brain](https://github.com/eugeniughelbur/obsidian-second-brain) | 4k | Obsidian markdown memory for Claude Code — vault-based persistent context |
-| 6 | *(see notes below)* | — | — |
+| 6 | [mksglu/context-mode](https://github.com/mksglu/context-mode) | 21k | Sandboxes MCP tool output (98% size reduction — a 315 KB response shrinks to 5.4 KB), tracks file edits/tasks/decisions in SQLite with FTS5 search to survive context compaction, and routes code execution across 17 platforms instead of dumping raw tool output through context |
 | 7 | *(see notes below)* | — | — |
 
 ## Quick Install
@@ -40,6 +40,20 @@ cd ~/repos/engram && npm install
 git clone --depth 1 https://github.com/eugeniughelbur/obsidian-second-brain ~/repos/obsidian-second-brain
 ```
 
+### OpenViking (context database)
+```bash
+git clone --depth 1 https://github.com/volcengine/OpenViking ~/repos/OpenViking
+cd ~/repos/OpenViking && pip install -e .
+```
+
+### context-mode (MCP tool-output sandboxing + session index)
+```bash
+git clone --depth 1 https://github.com/mksglu/context-mode ~/repos/context-mode
+cd ~/repos/context-mode && npm install
+# Wires in via MCP + Claude Code hooks — see the repo's own setup docs for
+# the hook config (it edits your existing hooks, so review the diff first).
+```
+
 ## Claude Code Memory Prompt
 
 ```
@@ -62,3 +76,16 @@ After completing a task, save:
 | Self-improving agent memory | MemOS |
 | Simple MCP memory for Claude Code | engram |
 | Obsidian-based personal knowledge | obsidian-second-brain |
+| Unified memory + RAG + skills, tiered/token-efficient loading | OpenViking |
+| Cutting raw MCP tool-output bloat specifically (not memory per se) | context-mode |
+
+## Batch 2 addition — not vendored here, documented for completeness
+
+`AgriciDaniel/claude-obsidian` (14.7k★, Python) — a larger, more actively
+maintained "self-organizing AI second brain for Obsidian + Claude Code" than
+the `obsidian-second-brain` entry above (row 5), covering the same job
+(drop in any source, Claude links/sorts/files it into a connected knowledge
+graph). Already documented in this repo's README (65th Addition) —
+not re-added as its own row here to avoid two competing "Obsidian memory"
+recommendations; if starting fresh, prefer this one over row 5's smaller
+repo given its size and update cadence.
