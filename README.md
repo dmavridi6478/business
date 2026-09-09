@@ -4570,3 +4570,88 @@ Output-format methodology already captured from an earlier `@SkillDropAI`
 batch), and proprietary SaaS tool cards with no repo to clone (Microsoft
 Clarity, Content Square, SERPtag, Tally).
 
+
+---
+
+### 65th addition — Claude Code visual/skill repos, a security scanner, and a new @ai_slacker learning-prompt skill
+
+**Batch:** 72 images from iCloud Photos (`596f7b78-iCloud_Photos_1.zip` + `660d1012-iCloud_Photos_2.zip`). Sources include @joshualevi.ai (two "7 skills/repos" carousels), @okaashish ("7 Biggest Claude Problems & How to Fix Them"), @buildwithneej (13-slide GitHub-trending roundup), @ai_slacker ("Infinite Private Tutor" 6-prompt learning series), @replace.so, @will.ai.m ("20 free tools" self-hosted alternatives), @brandarmor.ai ("The AI Growth Playbook" AEO/GEO series — overlaps existing `ai-search-visibility`, skipped), and @usetools_design (design-tool directory, informational). 19 candidate repos checked live via `git ls-remote` before listing; zero prior duplicates confirmed via full-text search against this README.
+
+**Claude Code skill repos (installable with `npx skills add`) — confirmed to exist:**
+
+- **`Vincentwei1021/video-shotcraft`** (8k★) — cinematic product video skill for Claude Code & Codex; built on Remotion, ships 152 shot recipe cards + 209 motion previews
+  `npx skills add Vincentwei1021/video-shotcraft`
+- **`oso95/scroll-world`** (9k★) — turns any brand into a scrollable 3D world landing page
+  `npx skills add oso95/scroll-world`
+- **`chuspeeism/dashi-ppt-skill`** (8k★) — generates browser-editable presentations from multiple visual themes, exports to HTML/PDF/PPTX
+  `npx skills add chuspeeism/dashi-ppt-skill`
+- **`LiamGvchi/gc-minimal-zine-poster`** (7k★) — Codex skill for quiet, minimal zine-style editorial poster prompts/images
+  `npx skills add LiamGvchi/gc-minimal-zine-poster`
+- **`hardikpandya/stop-slop`** (16.6k★) — a SKILL.md that strips AI writing tells ("As an AI...", "It's important to note...", "Let's dive into...") instead of relying on generic "write naturally" instructions
+  `npx skills add hardikpandya/stop-slop`
+- **`larashero3-dotcom/lieflat-charts`** (5k★) — data-visualization skill that turns raw data into polished, interactive HTML charts
+  `npx skills add larashero3-dotcom/lieflat-charts`
+- **`ericblue/visual-explainer-skill`** (38★) — transforms content or a Mermaid diagram into whiteboard sketches / infographics / mind maps via OpenAI or Gemini image generation
+  `npx skills add ericblue/visual-explainer-skill`
+- **`bradautomates/claude-video`** (16.5k★, MIT) — `/watch` skill that downloads a video, extracts frames, transcribes it, and hands the whole thing to Claude — closes the "Claude can read a transcript but can't watch the video" gap
+  `npx skills add bradautomates/claude-video`
+- **`s1dashu/ip-as-logo-skill`** (5k★) — compact agent skill for simplified, rounded, neo-skeuomorphic IP mascot logos in one consistent style
+  `npx skills add s1dashu/ip-as-logo-skill`
+- **`diffusionstudio/lottie`** (5k★) — generates production-ready Lottie animations directly from Claude Code or Codex
+  `npx skills add diffusionstudio/lottie`
+- **`tt-a1i/archify`** (26.4k★) — turns a plain-English system description into architecture/sequence/workflow/data-flow diagrams as self-contained HTML; every diagram must pass schema + layout validation before it replaces the last good version, and nodes can pin to a real git commit/line range
+  `npx skills add tt-a1i/archify -g`
+
+**Security tool — recommended first step before installing any of the above:**
+
+- **`aidongise-cell/prism-scanner`** (13★) — open-source security scanner for AI-agent skills, plugins, and MCP servers; 39 detection rules aimed at exactly this "I install every skill I see on social media, is that safe?" situation
+  `pip install prism-scanner`
+
+**Code-search MCP:**
+
+- **`zilliztech/claude-context`** (12.5k★) — code-search MCP server for Claude Code; indexes a codebase (Merkle-tree + vector search) so an agent gets only the relevant slice of code as context instead of burning tokens searching the whole repo
+
+**Standalone tools/platforms (not skills — separate installs):**
+
+- **`moinulmoin/voicetypr`** (709★) — open-source desktop dictation app (macOS/Windows), local or optional cloud transcription, inserts text at the cursor
+- **`multica-ai/multica`** — open-source workspace for assigning tasks to AI coding agents (Claude Code, Codex, Gemini CLI, OpenClaw, OpenCode), tracking progress, and reviewing results; previously flagged in this README (52nd-area notes) as "no verified repo found" — now confirmed live
+- **`strapi/strapi`** (73k★) — open-source, self-hosted headless CMS with REST/GraphQL APIs and MCP support
+- **`lmnr-ai/lmnr`** ("Laminar", 3.2k★) — open-source observability platform for AI agents (tracing, evals, dashboards, datasets), self-hostable
+
+**Self-hosted alternatives (new, from @will.ai.m's "20 free tools" series) — add to `self-hosted-docker-stack` / `lean-software-stack` on next touch:**
+
+- **`upscayl/upscayl`** (replaces Topaz) — AI image upscaler, 49k★
+- **`ocrmypdf/OCRmyPDF`** (replaces Adobe Scan) — adds a searchable text layer to scanned PDFs, 35k★
+- **`santinic/audiblez`** (replaces Audible) — turns an ebook into an audiobook, 9k★
+- **`danielgatis/rembg`** (replaces Remove.bg) — one-line background removal, 25k★
+- **`deezer/spleeter`** (replaces Moises) — splits a song into vocal/drum/bass stems, 28k★
+- **`jianchang512/pyvideotrans`** (replaces HeyGen) — dubs video into another language with AI voices, 19k★
+- **`calcom/cal.com`** (replaces Calendly) — open-source scheduling/booking platform, 48k★
+
+**Could not confirm live — flag before trusting/installing:**
+
+- `UniMOcha/self-improving-skills` and `jrtuga/transcript-critic` — both shown in source screenshots (Hermes-agent-style self-updating skills; audio/video transcription + critical-analysis skill, respectively) but `git ls-remote` returned an auth-prompt failure for both, the signature of a repo that doesn't exist at that exact path (renamed, deleted, or a transcription error from the screenshot). Don't run `npx skills add` on either without re-confirming the exact owner/repo first.
+
+**Skill created:**
+
+- **`ai-slacker-tutor-prompts`** — the complete 6-prompt @ai_slacker "Infinite Private Tutor" series (Learning Curve Destroyer, Real Mistake Simulator, Impossible Language Translator, Personal Path Architect, Hidden Gap Detector, Forced Feynman Method) — a different series from the existing `ai-slacker-prompts` (8 dev-task prompts) and `ai-slacker-premortem` (5 failure-analysis prompts); see `.claude/skills/ai-slacker-tutor-prompts/SKILL.md`.
+
+**Already covered — confirmed duplicates, skipped:** `bilawalsidhu/gods-eye-view` (declined earlier as not business-relevant), `MadsLorentzen/ai-job-search` (declined earlier as niche/single-purpose), `freestylefly/awesome-gpt-image-2`, `anthropics/claude-plugins-community` (this repo already has its own `/eli5` command — no need for the marketplace plugin version), `Zackriya-Solutions/meetily`, `OpenLabs-so/openanalytics`, `Mintplex-Labs/anything-llm`, PostHog, Vaultwarden, Immich, Nextcloud, Pi-hole, Home Assistant, SearXNG, Whisper (as `openai/whisper`), Stirling PDF, AppFlowy, NocoDB, listmonk, Formbricks, Umami, LocalSend.
+
+**Informational only, not actioned:** the "Claude Fable 5.1: Intern → Director" and "GPT-6 Astra for AI Product Managers" infographics both use version numbers with no real-world match (Gemini 3.8, GPT-8.8, GPT-6 Astra) — stylized/speculative content, not documented as fact. @brandarmor.ai's "AI Growth Playbook" AEO/GEO carousel substantially overlaps the existing `ai-search-visibility` skill — skipped. @usetools_design's design-tool roundup (MagicPattern, Shape Divider, Super Designer, fffuel, SVG Backgrounds, Pryzm) is a design-tool directory site (usetools.design) in the same spirit as the existing `design-dev-resources` skill but wasn't merged in this pass — flag for a future batch if `design-dev-resources` gets revisited.
+
+**Note on repo verification:** all 19 candidate repos above (aside from the self-hosted-alternatives list, verified separately) were checked live with `git ls-remote` before being listed — 17 confirmed, 2 could not be confirmed (see above). Star counts are as shown in the source screenshots and not independently re-verified.
+
+**Paste-ready prompts from this batch (the full `ai-slacker-tutor-prompts` set):**
+
+> **1 — Learning Curve Destroyer:** You are a teacher who only has 4 hours with me and will never see me again. Your only goal is to make me functional in [SKILL] before time runs out. Don't give me theory without use. Don't give me a list. Tell me: what to learn first, what to ignore completely, and what is the one exercise that, if I do it once, puts me ahead of 70% of people who have been studying this for months.
+
+> **2 — Real Mistake Simulator:** Don't explain [CONCEPT] to me. Drop me directly into a real situation where I'd have to use it and would probably get it wrong. When I make a mistake, don't give me the answer: ask me a question that forces me to discover where my reasoning broke. Only give me the answer after I've tried at least twice. Repeat this cycle until I get it right without hesitating.
+
+> **3 — Impossible Language Translator:** The content below is confusing to me. Before explaining, tell me: what is the single sentence that, if I understand it, makes the rest make sense on its own? Explain only that sentence first. Use a day-to-day analogy, with no technical terms. Then ask me 3 questions that only someone who truly understood can answer. Don't continue until I pass all three. [PASTE THE CONTENT HERE]
+
+> **4 — Personal Path Architect:** My real goal is [GOAL]. It's not to learn [SKILL] in general, it's to achieve [SPECIFIC RESULT] in [TIMEFRAME]. I already know [WHAT YOU ALREADY MASTER]. Based on that, build me a 7-day path. Each day has: a single task that fits in 45 minutes, a clear criterion so I know if I did it right, and what NOT to do that day so I don't waste time. If the whole path doesn't get me to the goal, redo it until it does.
+
+> **5 — Hidden Gap Detector:** I think I already master [SKILL]. I want you to prove me wrong. Ask me 5 questions that seem simple but expose the gaps of someone who has never really gone deep. For every answer I give, tell me: what does my answer reveal about what's still missing from my foundation. Don't go easy on me. If I'm shallow, say it straight.
+
+> **6 — Forced Feynman Method:** I just studied [TOPIC]. I'm going to explain to you what I understood as if you were a 10-year-old child. As I explain, stop me at every point where I use jargon without knowing what it means, where I skip a step in the reasoning, or where I oversimplify to the point of being wrong. At the end, tell me exactly what these mistakes reveal about what is still not solid in my head.
