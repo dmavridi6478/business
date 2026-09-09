@@ -1,11 +1,71 @@
 {
   "version": 1,
   "skills": {
+    "archify": {
+      "source": "tt-a1i/archify",
+      "sourceType": "github",
+      "skillPath": "archify/SKILL.md",
+      "computedHash": "ecfe0a991f5e7d0a4418125730ee7cc7ccbf45f853f8165aa38449c222c9d4f5"
+    },
+    "dashi-ppt": {
+      "source": "chuspeeism/dashi-ppt-skill",
+      "sourceType": "github",
+      "skillPath": "skills/dashi-ppt/SKILL.md",
+      "computedHash": "0e0f7f08adb489557c3709fa693b2368a2fc7d5e2bde244738a2e81d21f67ff8"
+    },
+    "gc-minimal-zine-poster-v0-3": {
+      "source": "LiamGvchi/gc-minimal-zine-poster",
+      "sourceType": "github",
+      "skillPath": "SKILL.md",
+      "computedHash": "dc3f31a6e13e2a4ca7896e178274f1417a9981ef5a3076b29c5b95ed4c1ee3fc"
+    },
+    "ip-as-logo": {
+      "source": "s1dashu/ip-as-logo-skill",
+      "sourceType": "github",
+      "skillPath": "SKILL.md",
+      "computedHash": "a5c61fb7c674373537cdfcb132640439b5f26008cd26b10b550c2cc9cd3acd59"
+    },
+    "lieflat-charts": {
+      "source": "larashero3-dotcom/lieflat-charts",
+      "sourceType": "github",
+      "skillPath": "SKILL.md",
+      "computedHash": "2c0c80a8e2effb31e59a562eb3a07d421dfd949e0c55902416c13f47d76f15fe"
+    },
+    "scroll-world": {
+      "source": "oso95/scroll-world",
+      "sourceType": "github",
+      "skillPath": "skills/scroll-world/SKILL.md",
+      "computedHash": "e7ea15d223b6a687840306ab4e3e48ce507df3094c8e78742f6f8b84ae7face0"
+    },
+    "stop-slop": {
+      "source": "hardikpandya/stop-slop",
+      "sourceType": "github",
+      "skillPath": "SKILL.md",
+      "computedHash": "617bf97d33162a6bd0da4f40a97aac589de58e5a6c9cf011ed6108992210e7cb"
+    },
     "swiftui-design-skill": {
       "source": "Wholiver/swiftui-design-skill",
       "sourceType": "github",
       "skillPath": "SKILL.md",
       "computedHash": "e566cd9af70769555a866c11a8037f326a699f600de200a9dde8518122fb0b32"
+    },
+    "text-to-lottie": {
+      "source": "diffusionstudio/lottie",
+      "sourceType": "github",
+      "skillPath": "skills/text-to-lottie/SKILL.md",
+      "computedHash": "143009abf43d2ac6bd9970c42373e6ae029b91cc56124e56287162010a0e9fc1"
+    },
+    "video-shotcraft": {
+      "source": "Vincentwei1021/video-shotcraft",
+      "sourceType": "github",
+      "skillPath": "SKILL.md",
+      "computedHash": "f4ee855f52b266a9c05d645b90e1f803be17b2c94af59907dfd52910697ac7e8"
+    },
+    "watch": {
+      "source": "bradautomates/claude-video",
+      "sourceType": "github",
+      "skillPath": "skills/watch/SKILL.md",
+      "computedHash": "657d2765e3c2e2d91fb18bbda0e5f64221543fa9731539a692017d234399fbf3"
     }
   }
 }
