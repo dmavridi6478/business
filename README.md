@@ -4570,3 +4570,52 @@ Output-format methodology already captured from an earlier `@SkillDropAI`
 batch), and proprietary SaaS tool cards with no repo to clone (Microsoft
 Clarity, Content Square, SERPtag, Tally).
 
+## 82. Claude Surfaces, Presentation Prompts, 2 GitHub Skill Repos & 5 Repos to Clone (Batch 82)
+
+**Source:** Five uploaded iCloud Photos zips, 67 images total, no
+accompanying instruction — a mix of carousels: @the21.i's 7-slide "GPT-6
+Astra: what this AI update actually changes for a small business" (fact →
+context → analysis → test prompt); @taperlymotivation's "5 repos I'd clone
+before writing code" (GitHub screenshots: plausible/analytics, calcom/cal.diy,
+shadcn-ui/ui, supabase/supabase, excalidraw/excalidraw); @clicksandranks's
+"Useful Websites for Entrepreneurs" (Hunter, SERPtag, BuiltWith, Microsoft
+Clarity, Carrd); @aisimplified23's "5 ways to use Claude you never tried"
+(one prompt each for Chat, Cowork, Projects, Code, Dispatch); @jimai005's
+"5 GitHub Skills for Claude Code" (caveman, ponytail, honey-for-devs,
+token-optimizer, claude-context-optimizer); The Wealth Lab's digital-store
+promo slides plus a genuinely separate "6 Claude Prompts That Create Entire
+Presentations" carousel; and SkillDrop AI's two how-to carousels, "Build
+Your First Mini App With Claude" (6/8-step freelance-quote-calculator
+Artifact) and "Build Your First Claude AI Research Employee" (8/10-step
+sourced competitor-comparison workflow).
+
+**Vendored for real** (SKILL.md + LICENSE + SOURCE.md, at commit, same as
+`caveman`/`humanizer` above):
+- `ponytail` — from [DietrichGebert/ponytail](https://github.com/DietrichGebert/ponytail) (MIT, commit `356918e`) — forces the laziest working solution (YAGNI ladder: stdlib → native → installed dep → one line), with lite/full/ultra intensity levels. Only the flagship skill is vendored; the repo ships 5 more (`ponytail-review`, `-audit`, `-help`, `-debt`, `-gain`).
+- `honey` — from [Green-PT/honey-for-devs](https://github.com/Green-PT/honey-for-devs) (MIT, commit `9169fc5`) — the same minimal-code discipline as `ponytail` plus a terse-prose lever and a token-efficient agent-to-agent wire-format lever; overlaps `caveman` (terse prose) and `ponytail` (minimal code) but is the only one of the three that also covers agent-to-agent message compression. Only the flagship skill is vendored; the repo ships 12 more.
+
+**Reviewed, documented (not vendored) in `claude-code-tooling`:**
+- `alexgreensh/token-optimizer` — a context-window auditor for Claude Code/Codex/OpenCode (1,100+ files: bundled `measure.py`, hooks, a keep-warm daemon). Not vendorable as a standalone SKILL.md — it's inert without the real plugin install. Also **PolyForm Noncommercial 1.0.0**, not MIT: flagged so it isn't mistaken for a freely-redistributable skill.
+- `egorfedorov/claude-context-optimizer` — claims selective CLAUDE.md/skill loading (30–50% cost reduction, unverified). The repo is real and publicly cloneable, but this session's sandbox refused every attempt to inspect its contents inside this repo (`find`/`cp` denied as "Untrusted Code Integration" even after the clone itself succeeded outside the repo) — documented as unverified rather than vendored blind.
+
+**New:**
+- `dev-repos-to-clone` skill — the 5 general dev-infrastructure repos from @taperlymotivation with clone commands and a "when to reach for which" table.
+- `entrepreneur-tool-directory` skill — the 5 @clicksandranks tools (Hunter, SERPtag, BuiltWith, Microsoft Clarity, Carrd), each with a one-line "when to use" note.
+- `claude-surfaces-playbook` skill — the 5 @aisimplified23 prompts (Chat/Cowork/Projects/Code/Dispatch), one per Claude product surface, plus a "which surface for which need" table.
+- `claude-presentation-prompts` skill — the 6 sequenced Wealth Lab presentation prompts (Architect → Hook → Slide Content → Visual Storyteller → Speaker Notes → Complete Deck Creator) plus their recommended run order; cross-linked to the existing `premium-html-presentation`/`ai-canva-presentations` skills for the actual visual build.
+- `claude-mini-app-builder` skill — SkillDrop AI's 6-step method (one job → 2-4 inputs → explicit math → precise build request → edge-case tests → personalize), worked example a freelance quote calculator; cross-linked to `build-claude-ai-employee` (same account, general-purpose prompt/skill method vs. this one's specific interactive-calculator-Artifact focus).
+- `claude-research-employee` skill — SkillDrop AI's 8-step method for a source-grounded competitor/product comparison (named subjects → fixed comparison fields → hard research rules incl. "never fill a gap with a guess" → human evidence-check before approval → save the workflow), worked example 3 Notion productivity templates; same cross-link to `build-claude-ai-employee`.
+
+**Already vendored, skipped as a duplicate:** `caveman` (JuliusBrussee/caveman) — already vendored in this repo from an earlier batch; identical repo in this carousel.
+
+**Skipped as promotional, no reusable content:** The Wealth Lab's own
+"Digital Store" slide (a paid AI-Mastery-Toolkit/Content-Creator-Kit bundle
+ad) and its "Follow Us Across All Social Platforms" slide; @aisimplified23's
+own "Found this helpful? Repost it" closer slide.
+
+**Note on the Code-surface prompt:** @aisimplified23's prompt 4 includes the
+line "Do not ask for permissions." — kept verbatim in `claude-surfaces-playbook`
+since it's the source's own text, but flagged in-skill as framing to weigh
+rather than a default to actually run with outside a personal throwaway
+project.
+
