@@ -4655,3 +4655,52 @@ GPT Image 2.5 Sunburst vs Flare model differences).
 Paseo — all from @replace.so/@githubnow cards but no confirmed owner/repo found
 at time of processing. Search GitHub directly before attempting to clone.
 
+---
+
+## 84. MIT Skills Vendored, Original-Content Skills & OSS Alternative Repos (Batch 84)
+
+**Source:** One uploaded iCloud Photos zip (`3383abc0-iCloud_Photos_6.zip`) — @replace.so and @githubnow carousel screenshots, Sep 2026.
+
+**MIT skills vendored (3-file set each: SKILL.md + LICENSE + SOURCE.md):**
+
+| Skill directory | Repo | What it is |
+|---|---|---|
+| `mixpost` | `inovector/mixpost` | Self-hosted Hootsuite alternative — schedule/publish/manage social posts. PHP/Laravel/Vue 3. ~3,673★ |
+| `openwhispr` | `openwhispr/openwhispr` | Local real-time speech-to-text via OpenAI Whisper — browser extension, CLI, desktop app. Python. ~7,935★ |
+| `public-apis` | `public-apis/public-apis` | Curated 1,400+ free public APIs with auth, HTTPS, CORS info. ~340k+★ |
+| `kesha-voice-kit` | `drakulavich/kesha-voice-kit` | Plug-and-play voice I/O toolkit for AI agents — STT, TTS, audio streaming. Python. |
+| `hermes-agent-self-evolution` | `NousResearch/Hermes-Agent-Self-Evolution` | DSPy + GEPA self-evolving agents — agents rewrite their own prompts/tools. ICLR 2026 Oral. ~5k★ |
+| `pascalorg-editor` | `pascalorg/editor` | Browser-based 3D architectural editor. TypeScript/Three.js/React. |
+| `manim` | `ManimCommunity/manim` | 3Blue1Brown's animation engine — programmatic math animations. Python/Cairo/OpenGL. |
+
+**Original-content skills authored from scratch (carousel prompts, no source repo):**
+
+| Skill directory | What it covers | Source |
+|---|---|---|
+| `skilldrop-ai-customer-support` | 8-step framework for building a Claude AI customer-support employee | @skilldropai |
+| `250-open-source-agents` | Category map of 250+ open-source AI agents | @theromanknox |
+| `5-saas-tools-niche` | Five niche SaaS tools: Inngest, goldfish.sh, Better Stack, Polar, Axiom | @alexfishhh1 |
+| `6-free-dev-tools` | Six free dev tools: GitIngest, GitDiagram, repomix, transform.tools, pglite, DevToys | @swblessed |
+| `chatgpt-astra-cheatsheet` | ChatGPT 6 Astra capabilities and prompt patterns cheat sheet | @51ultron |
+| `15-vibe-coding-prompts` | 15 Claude Code prompts for full-stack vibe coding — PRD through skill creation | @your_ai_mentor |
+
+**Non-MIT repos documented in `claude-code-tooling` (not vendored):**
+
+| Repo | License | What it is |
+|---|---|---|
+| `nashsu/llm_wiki` | GPL v3 | LLM-powered wiki / knowledge-base builder |
+| `getmaxun/maxun` | AGPL v3 | No-code web scraping platform |
+| `webstudio-is/webstudio` | AGPL v3 | Open-source Webflow alternative |
+| `coollabsio/shoutrrr` | Apache 2.0 | Notification library for Go |
+| `plasmicapp/plasmic` | MIT core + AGPL platform | Visual page builder (open-core) |
+| `liquidslr/system-design-notes` | No license | System-design interview notes |
+| `openai/skills` | Per-skill mixed | OpenAI agent skills |
+| `duongductrong/Snapzy` | BSD 3-Clause | Image/screenshot annotation tool |
+| `0xsline/OpenChatCut` | AGPL v3 | Chat session clipping and sharing |
+| `armory3d/armorpaint` | zlib/libpng | GPU-accelerated 3D texture painting |
+| `llvm/llvm-project` | Apache 2.0 + LLVM Exception | LLVM compiler infrastructure |
+
+**Updated:**
+- `dev-repos-to-clone` — appended "Additional repos (Batch 84)" section with 7 MIT-vendored skills table and 11 non-MIT document-only table.
+- `claude-code-tooling` — appended "Non-MIT repos from @replace.so and @githubnow (Batch 84)" section with 11 entries.
+
