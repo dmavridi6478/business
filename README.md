@@ -4704,3 +4704,28 @@ at time of processing. Search GitHub directly before attempting to clone.
 - `dev-repos-to-clone` — appended "Additional repos (Batch 84)" section with 7 MIT-vendored skills table and 11 non-MIT document-only table.
 - `claude-code-tooling` — appended "Non-MIT repos from @replace.so and @githubnow (Batch 84)" section with 11 entries.
 
+## 85. MIT Skills Vendored & Original-Content Skills (Batch 85)
+
+Source: iCloud Photos Batch 85 (28e3fa66-iCloud_Photos_6.zip), Sep 2026.
+
+**MIT-licensed skills vendored (3-file set: SKILL.md + LICENSE + SOURCE.md):**
+
+| Skill name | Source repo | License | What it is |
+|---|---|---|---|
+| `chatterbox` | `resemble-ai/chatterbox` | MIT | Open-source TTS and voice cloning — 4 model variants (Turbo 350M EN, Nano 110M CPU, Multilingual V3 500M 23+ langs, original 500M); replaces ElevenLabs / OpenAI TTS |
+
+**Original-content skills (synthesised from carousel pages, no source repo to clone):**
+
+| Skill name | Source | What it is |
+|---|---|---|
+| `ai-agent-founding-team` | @theromanknox (pages 2–4) | Three-page framework: org chart design, first six AI agent hires (Content, Research, Outreach, Ops, Finance, Customer), and Chief of Staff orchestrator pattern with CLAUDE.md template |
+
+**Duplicates already covered in Batch 84 (no new action):** All @replace.so, @githubnow, @swblessed, @alexfishhh1, @your.ai.mentor, and @skilldropai content was fully processed in Batch 84.
+
+**No new non-MIT repos** to add to `claude-code-tooling/SKILL.md` in this batch.
+
+**Updated:**
+- `dev-repos-to-clone` — appended "Additional repos (Batch 85)" section.
+- `.claude/skills/chatterbox/` — new 3-file MIT skill (SKILL.md, LICENSE, SOURCE.md).
+- `.claude/skills/ai-agent-founding-team/` — new original-content skill (SKILL.md).
+

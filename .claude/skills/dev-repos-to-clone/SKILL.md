@@ -80,3 +80,19 @@ infrastructure/ops time. Read each project's own `CONTRIBUTING.md`/deployment
 docs before going to production with it, since setup steps and dependencies
 (Elixir/Phoenix for Plausible, a Postgres instance for Supabase and Cal.diy)
 vary a lot from a typical Node/Python app.
+
+## Additional repos (Batch 85)
+
+**MIT-licensed — vendored as skills:**
+
+| Skill name | Source repo | What it is |
+|---|---|---|
+| `chatterbox` | `resemble-ai/chatterbox` | Open-source TTS and voice cloning; replaces ElevenLabs |
+
+**Original-content skills (no source repo):**
+
+| Skill name | Source | What it is |
+|---|---|---|
+| `ai-agent-founding-team` | @theromanknox (pages 2–4) | Org chart + first six AI agent hires + Chief of Staff orchestrator pattern |
+
+**Duplicates from Batch 84 (no new action):** All content from @replace.so, @githubnow, @swblessed, @alexfishhh1, @your.ai.mentor, and @skilldropai carousels was already processed in Batch 84.
