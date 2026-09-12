@@ -19,6 +19,9 @@ The user's setup needs a capability beyond what a markdown skill can provide —
 | `vercel-labs/skills` | Vercel's open package manager for agent skills — `npx skills` to browse/install/update skills instead of manually copying files (which is how the skills in this repo were installed) | https://github.com/vercel-labs/skills |
 | `volcengine/OpenViking` | Self-evolving context database that unifies agent memory, knowledge RAG, and skills — an agent that remembers a project between sessions instead of starting cold each time | https://github.com/volcengine/OpenViking |
 
+| `alexgreensh/token-optimizer` | Audits a Claude Code/Codex/OpenCode setup for context-window waste (bloated CLAUDE.md, duplicate skills, dead MCP servers, unmanaged autocompact) and implements the fix — claims 5–15% context recovery, 25%+ with autocompact management. **Not vendored as a skill**: its SKILL.md is a thin orchestration layer over a bundled `measure.py` + hooks + daemon (1,100+ files) that must be installed as the real plugin to function at all — copying just the instructions would be inert. **License caveat**: PolyForm Noncommercial 1.0.0, not MIT — free for personal/noncommercial use only; commercial use needs a license from the author (contact in the repo) | `npx skills add alexgreensh/token-optimizer` or via the Claude Code plugin marketplace — see the repo's `.claude-plugin/marketplace.json`. https://github.com/alexgreensh/token-optimizer |
+| `egorfedorov/claude-context-optimizer` | Claimed on a social carousel to load only the CLAUDE.md/skill files a task actually needs (30–50% lower API cost claim, unverified) instead of the full context every turn | **Unverified** — repo exists and is publicly cloneable, but this session's sandbox blocked inspecting its contents (repeated "Untrusted Code Integration" denials on `find`/`cp` into this repo), so its SKILL.md, license, and the 30–50% claim were not independently checked. Clone and review before trusting it: `git clone https://github.com/egorfedorov/claude-context-optimizer` |
+
 `blader/humanizer` — the seventh tool in the same source list — was installed for real as the `humanizer` skill in this repo (`.claude/skills/humanizer/`), since it's an actual skill file (MIT licensed), not a standalone tool. It removes AI-writing tells from text.
 
 ## AI design-taste / anti-slop skills for Claude Code
@@ -299,6 +302,30 @@ re-verified — re-check before quoting one):
 skill) both also appeared in this same carousel batch as separate
 "repo of the day" posts — not re-added here since they're already covered.
 
+## Open-source business tools (non-MIT — @replace.so batch)
+
+Two tools from an @replace.so "paid alternatives" carousel, confirmed to exist via clone. Neither is MIT — documented here rather than vendored:
+
+| Repo | What it's for | License caveat |
+|---|---|---|
+| [`ToolJet/ToolJet`](https://github.com/ToolJet/ToolJet) | Low-code internal tool builder (drag-and-drop dashboards, forms, CRUD apps) — open-source alternative to Retool | **AGPLv3** — copyleft; self-hosting for internal use is fine, but building a commercial SaaS on top requires a commercial license from ToolJet |
+| [`marin-community/marin`](https://github.com/marin-community/marin) | Open research framework for training and evaluating large language models | **Apache 2.0** — permissive but not MIT; attribution required |
+
+## H42 open-source tools (@hash42labs)
+
+Six tools from a 7-slide @hash42labs "H42 — Open Source" carousel. All were presented as open source, but exact GitHub handles were not visible in the source images — search `hash42labs` or `h42labs` on GitHub, or check h42.co, before cloning:
+
+| Tool | What it does | Status |
+|---|---|---|
+| **WACRM** | AI-powered CRM — customer relationship management with AI assistance | GitHub handle unverified |
+| **HTML Anything** | Turn any text description into a full website — AI-to-HTML generation | GitHub handle unverified |
+| **Relaticle** | Relationship/networking tool — connect, track, and manage professional relationships | GitHub handle unverified |
+| **Memex** | Second-brain notes + bookmarks + files tool — open-source personal knowledge base | GitHub handle unverified |
+| **Eclaire** | AI tool — exact function not captured clearly from source slides | GitHub handle unverified |
+| **CodeSmarter** | AI coding enhancement tool | GitHub handle unverified |
+
+Verify each on GitHub before installing — "open source" in a carousel doesn't confirm MIT or even permissive licensing.
+
 ## AI trading / crypto agent frameworks (niche — not needed by this business, documented for completeness)
 
 A batch of open-source multi-agent trading/research frameworks (@hash42labs "Open Source" series and @githubnow), confirmed to exist via `git ls-remote`. None of these fit this repo's actual business (Greek healthcare/general consulting) — documented only because they were reviewed, not because they're recommended for this business's stack:
@@ -361,3 +388,21 @@ Sources: a "7 Claude Code repos I can't work without" screenshot carousel (@josh
 
 A companion upload in the same batch ("AI Unlocked, Tool Drop 19 — your subagents stopped nesting 5 levels deep") included only its cover/teaser slide, with no actual content slides explaining the referenced setting — not enough real information to document without guessing at specifics, so it was flagged to the user rather than turned into a skill.
 Sources: a "7 Claude Code repos I can't work without" screenshot carousel (@joshualevi.ai) for the first six tools; "AI Power User Stack — 5 AI browser agents that can do the clicking for you" carousel (@zhiprompts) for the browser-automation frameworks; "AI Power User Stack — 5 AI agent builders to try before LangChain" carousel (@zhiprompts) for the code-first agent-building frameworks and the "build the same small agent twice" evaluation method; "AI Power User Stack — 5 AI agent tools that automate real work" carousel (@zhiprompts) for the no-code/visual agent orchestration platforms and the "give it one job" agent-trust methodology; a 7-slide "It's Just 2 Commands" carousel (@aigenesis.official) for the local/offline AI coding setup; a 9-slide "How to Turn Claude Code Into a Web Design Genius" carousel (@ai_slacker) for the design-taste/anti-slop skills (full workflow in `web-design-taste-workflow`); "Buzz — The Hive Mind for Humans + Agents" carousel (@iunlockedai, Tool Drop 15) for `block/buzz`.
+
+## Non-MIT repos from @replace.so and @githubnow (Batch 84)
+
+These repos were identified from Batch 84 image surveys. Each was cloned and its license verified. None qualify for direct vendoring (not MIT or absent license) — documented here for reference:
+
+| Repo | What it's for | License |
+|---|---|---|
+| [`nashsu/llm_wiki`](https://github.com/nashsu/llm_wiki) | TypeScript-based persistent RAG wiki powered by LLMs — ask questions against a self-updating knowledge base; gained 94 stars in one @githubnow briefing cycle | **GNU GPL v3** — copyleft; any modification or derivative must also be GPL. Cannot be included in proprietary software without the source being open |
+| [`getmaxun/maxun`](https://github.com/getmaxun/maxun) | No-code web scraping platform — build scrapers visually, schedule them, export as structured data (~17.4k★) | **AGPL v3** — copyleft; if you run it as a networked service you must publish your modifications as AGPL. Self-hosting for internal use is fine |
+| [`webstudio-is/webstudio`](https://github.com/webstudio-is/webstudio) | Open-source visual web builder — drag-and-drop site builder alternative to Webflow (~8.9k★) | **AGPL v3** — same caveat as maxun above |
+| [`coollabsio/shoutrrr`](https://github.com/coollabsio/shoutrrr) | Social media scheduler / publisher — schedule and auto-post to multiple platforms | **Apache 2.0** — permissive but not MIT; attribution required, patent clause present |
+| [`plasmicapp/plasmic`](https://github.com/plasmicapp/plasmic) | Visual page builder and design tool — headless CMS + visual editor; CLAUDE.md and AGENTS.md ship in repo (~6,996★). Core LICENSE.md is MIT but LICENSE.platform.md is **AGPL v3** — the open-core split means the platform layer (the managed/cloud part) is copyleft while the SDK/core is MIT. Do not treat as fully MIT without confirming which layer you're depending on |
+| [`liquidslr/system-design-notes`](https://github.com/liquidslr/system-design-notes) | 28-chapter system design study guide (Scaling, Rate Limiter, Consistent Hashing, Key-Value Store, URL Shortener, Chat System, Google Maps, etc.) | **No license** — all-rights-reserved by default; cannot be redistributed or vendored without the author's explicit permission |
+| [`openai/skills`](https://github.com/openai/skills) | OpenAI's official Skills Catalog for Codex agents — per-skill LICENSE.txt files; each skill may carry a different license | **Per-skill** — check the `LICENSE.txt` in each individual skill directory before using or vendoring any single entry |
+| [`duongductrong/Snapzy`](https://github.com/duongductrong/Snapzy) | Screenshot / screen-capture tool | **BSD 3-Clause** — permissive but not MIT; "no endorsement" clause means you cannot use the copyright holder's name to promote derivatives |
+| [`0xsline/OpenChatCut`](https://github.com/0xsline/OpenChatCut) | Open-source ChatGPT client / chat UI | **AGPL v3** — copyleft; same networked-service caveat as maxun/webstudio above |
+| [`armory3d/armorpaint`](https://github.com/armory3d/armorpaint) | GPU-accelerated 3D texture-painting tool built on Kha/Haxe; used by 3D artists for PBR texture work | **zlib/libpng** — permissive but not MIT; "origin must not be misrepresented" clause; requires acknowledgment in product documentation if used commercially |
+| [`llvm/llvm-project`](https://github.com/llvm/llvm-project) | The LLVM compiler infrastructure (Clang, LLVM IR, LLD, etc.) — one of the most important open-source compiler projects | **Apache 2.0** — permissive, well-known; LLVM Exception added so it doesn't create linking issues with GPL software |

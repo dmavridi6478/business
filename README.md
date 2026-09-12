@@ -4570,3 +4570,162 @@ Output-format methodology already captured from an earlier `@SkillDropAI`
 batch), and proprietary SaaS tool cards with no repo to clone (Microsoft
 Clarity, Content Square, SERPtag, Tally).
 
+## 82. Claude Surfaces, Presentation Prompts, 2 GitHub Skill Repos & 5 Repos to Clone (Batch 82)
+
+**Source:** Five uploaded iCloud Photos zips, 67 images total, no
+accompanying instruction — a mix of carousels: @the21.i's 7-slide "GPT-6
+Astra: what this AI update actually changes for a small business" (fact →
+context → analysis → test prompt); @taperlymotivation's "5 repos I'd clone
+before writing code" (GitHub screenshots: plausible/analytics, calcom/cal.diy,
+shadcn-ui/ui, supabase/supabase, excalidraw/excalidraw); @clicksandranks's
+"Useful Websites for Entrepreneurs" (Hunter, SERPtag, BuiltWith, Microsoft
+Clarity, Carrd); @aisimplified23's "5 ways to use Claude you never tried"
+(one prompt each for Chat, Cowork, Projects, Code, Dispatch); @jimai005's
+"5 GitHub Skills for Claude Code" (caveman, ponytail, honey-for-devs,
+token-optimizer, claude-context-optimizer); The Wealth Lab's digital-store
+promo slides plus a genuinely separate "6 Claude Prompts That Create Entire
+Presentations" carousel; and SkillDrop AI's two how-to carousels, "Build
+Your First Mini App With Claude" (6/8-step freelance-quote-calculator
+Artifact) and "Build Your First Claude AI Research Employee" (8/10-step
+sourced competitor-comparison workflow).
+
+**Vendored for real** (SKILL.md + LICENSE + SOURCE.md, at commit, same as
+`caveman`/`humanizer` above):
+- `ponytail` — from [DietrichGebert/ponytail](https://github.com/DietrichGebert/ponytail) (MIT, commit `356918e`) — forces the laziest working solution (YAGNI ladder: stdlib → native → installed dep → one line), with lite/full/ultra intensity levels. Only the flagship skill is vendored; the repo ships 5 more (`ponytail-review`, `-audit`, `-help`, `-debt`, `-gain`).
+- `honey` — from [Green-PT/honey-for-devs](https://github.com/Green-PT/honey-for-devs) (MIT, commit `9169fc5`) — the same minimal-code discipline as `ponytail` plus a terse-prose lever and a token-efficient agent-to-agent wire-format lever; overlaps `caveman` (terse prose) and `ponytail` (minimal code) but is the only one of the three that also covers agent-to-agent message compression. Only the flagship skill is vendored; the repo ships 12 more.
+
+**Reviewed, documented (not vendored) in `claude-code-tooling`:**
+- `alexgreensh/token-optimizer` — a context-window auditor for Claude Code/Codex/OpenCode (1,100+ files: bundled `measure.py`, hooks, a keep-warm daemon). Not vendorable as a standalone SKILL.md — it's inert without the real plugin install. Also **PolyForm Noncommercial 1.0.0**, not MIT: flagged so it isn't mistaken for a freely-redistributable skill.
+- `egorfedorov/claude-context-optimizer` — claims selective CLAUDE.md/skill loading (30–50% cost reduction, unverified). The repo is real and publicly cloneable, but this session's sandbox refused every attempt to inspect its contents inside this repo (`find`/`cp` denied as "Untrusted Code Integration" even after the clone itself succeeded outside the repo) — documented as unverified rather than vendored blind.
+
+**New:**
+- `dev-repos-to-clone` skill — the 5 general dev-infrastructure repos from @taperlymotivation with clone commands and a "when to reach for which" table.
+- `entrepreneur-tool-directory` skill — the 5 @clicksandranks tools (Hunter, SERPtag, BuiltWith, Microsoft Clarity, Carrd), each with a one-line "when to use" note.
+- `claude-surfaces-playbook` skill — the 5 @aisimplified23 prompts (Chat/Cowork/Projects/Code/Dispatch), one per Claude product surface, plus a "which surface for which need" table.
+- `claude-presentation-prompts` skill — the 6 sequenced Wealth Lab presentation prompts (Architect → Hook → Slide Content → Visual Storyteller → Speaker Notes → Complete Deck Creator) plus their recommended run order; cross-linked to the existing `premium-html-presentation`/`ai-canva-presentations` skills for the actual visual build.
+- `claude-mini-app-builder` skill — SkillDrop AI's 6-step method (one job → 2-4 inputs → explicit math → precise build request → edge-case tests → personalize), worked example a freelance quote calculator; cross-linked to `build-claude-ai-employee` (same account, general-purpose prompt/skill method vs. this one's specific interactive-calculator-Artifact focus).
+- `claude-research-employee` skill — SkillDrop AI's 8-step method for a source-grounded competitor/product comparison (named subjects → fixed comparison fields → hard research rules incl. "never fill a gap with a guess" → human evidence-check before approval → save the workflow), worked example 3 Notion productivity templates; same cross-link to `build-claude-ai-employee`.
+
+**Already vendored, skipped as a duplicate:** `caveman` (JuliusBrussee/caveman) — already vendored in this repo from an earlier batch; identical repo in this carousel.
+
+**Skipped as promotional, no reusable content:** The Wealth Lab's own
+"Digital Store" slide (a paid AI-Mastery-Toolkit/Content-Creator-Kit bundle
+ad) and its "Follow Us Across All Social Platforms" slide; @aisimplified23's
+own "Found this helpful? Repost it" closer slide.
+
+**Note on the Code-surface prompt:** @aisimplified23's prompt 4 includes the
+line "Do not ask for permissions." — kept verbatim in `claude-surfaces-playbook`
+since it's the source's own text, but flagged in-skill as framing to weigh
+rather than a default to actually run with outside a personal throwaway
+project.
+
+## 83. Anti-Detection Browser, GPT Image 2 Prompts, OSS AI Alternatives & Designer Resource Directory (Batch 83)
+
+**Source:** One uploaded iCloud Photos zip (`740ac712-iCloud_Photos_4.zip`), 54
+images total, no accompanying instruction — a mix of carousels: @replace.so's
+"OSS alternatives to paid AI tools" (ChatGPT, Notion AI, Zapier, Perplexity,
+Midjourney, Cursor, ChatGPT UI); @githubnow's daily GitHub briefing cards
+(marin-community/marin, freestylefly/awesome-gpt-image-2, jo-inc/camofox-browser,
+T3code, Flexprice, Paseo); @hash42labs's "H42 OS: 6 open-source tools" (WACRM,
+HTML Anything, Relaticle, Memex, Eclaire, CodeSmarter); and
+@designflowbyvee's "Top 108 Websites Every Designer Should Know" (12-category
+resource directory: Fonts, Colors, Icons, Illustrations, Stock Photos, Design
+Tools, UI Kits/Templates, Mockups, Gradients, CSS Tools, Motion/Animation,
+Inspiration); plus a separate GPT-Image-2 prompt library from
+@freestylefly (500+ reverse-engineered cases, 20+ industrial templates,
+GPT Image 2.5 Sunburst vs Flare model differences).
+
+**Vendored for real** (SKILL.md + LICENSE + SOURCE.md):
+- `awesome-gpt-image-2` — from [freestylefly/awesome-gpt-image-2](https://github.com/freestylefly/awesome-gpt-image-2) (MIT) — 500+ reverse-engineered GPT-Image-2 prompt cases, 20+ industrial templates, model-version comparison (Sunburst vs Flare), six-part prompt discipline (Subject/Style/Lighting/Composition/Background/Technical spec). Clone the upstream repo for the full prompt library; the SKILL.md summarises the taxonomy and usage patterns.
+- `camofox-browser` — from [jo-inc/camofox-browser](https://github.com/jo-inc/camofox-browser) (MIT) — anti-detection Firefox browser server for AI agents built on Camoufox (C++-level fingerprint spoofing). Blocks Playwright detection where conventional browser automation gets flagged. Install: `git clone … && npm install && npm start` → `localhost:9377`. Comparison table vs Playwright-MCP, Stagehand, and Steel-Browser included in SKILL.md; cross-referenced to `web-task-scoping`.
+
+**Reviewed, documented (not vendored) in `claude-code-tooling`:**
+- `ToolJet/ToolJet` — **AGPLv3** (not MIT) — low-code internal tool builder, Retool alternative. Copyleft license means every derivative/hosted use must also be AGPLv3; not vendored as a skill. Cloneable for self-hosted internal tooling where AGPL is acceptable.
+- `marin-community/marin` — **Apache 2.0** (not MIT) — open research framework for training and evaluating large language models. Documented in `dev-repos-to-clone` additional repos table and `claude-code-tooling`; not vendored.
+- **H42 tools (@hash42labs)** — WACRM, HTML Anything, Relaticle, Memex, Eclaire, CodeSmarter — six tools from @hash42labs. GitHub handles unverified at time of processing; search `hash42labs` or `h42labs` on GitHub before cloning. Documented in `claude-code-tooling` with "handle unverified" caveat.
+
+**New original-content skills (no source repo — content authored from carousels):**
+- `oss-ai-alternatives` — @replace.so's 7 paid→OSS replacements (ChatGPT→LibreChat, Notion AI→AnythingLLM, Zapier→n8n, Perplexity→SearXNG+Ollama, Midjourney→ComfyUI, Cursor→Cline, ChatGPT UI→Open WebUI+Ollama). Each entry includes install command, trade-off summary ("what you give up vs. what you keep"), and a "when OSS isn't worth it" caveat.
+- `designer-resource-directory` — @designflowbyvee's 108-tool directory across 12 categories (Fonts, Colors, Icons, Illustrations, Stock Photos, Design Tools, UI Kits/Templates, Mockups, Gradients, CSS Tools, Motion/Animation, Inspiration). Use as a lookup when scoping a new frontend or design project to avoid wasting time searching for resources.
+
+**Updated:**
+- `dev-repos-to-clone` — appended "Additional repos (Batch 83)" table with 6 new entries (marin, awesome-gpt-image-2, camofox-browser, T3code, Flexprice, Paseo), noting which have unverified GitHub handles.
+
+**Skipped (unverified GitHub handles — no repo to clone):** T3code, Flexprice,
+Paseo — all from @replace.so/@githubnow cards but no confirmed owner/repo found
+at time of processing. Search GitHub directly before attempting to clone.
+
+---
+
+## 84. MIT Skills Vendored, Original-Content Skills & OSS Alternative Repos (Batch 84)
+
+**Source:** One uploaded iCloud Photos zip (`3383abc0-iCloud_Photos_6.zip`) — @replace.so and @githubnow carousel screenshots, Sep 2026.
+
+**MIT skills vendored (3-file set each: SKILL.md + LICENSE + SOURCE.md):**
+
+| Skill directory | Repo | What it is |
+|---|---|---|
+| `mixpost` | `inovector/mixpost` | Self-hosted Hootsuite alternative — schedule/publish/manage social posts. PHP/Laravel/Vue 3. ~3,673★ |
+| `openwhispr` | `openwhispr/openwhispr` | Local real-time speech-to-text via OpenAI Whisper — browser extension, CLI, desktop app. Python. ~7,935★ |
+| `public-apis` | `public-apis/public-apis` | Curated 1,400+ free public APIs with auth, HTTPS, CORS info. ~340k+★ |
+| `kesha-voice-kit` | `drakulavich/kesha-voice-kit` | Plug-and-play voice I/O toolkit for AI agents — STT, TTS, audio streaming. Python. |
+| `hermes-agent-self-evolution` | `NousResearch/Hermes-Agent-Self-Evolution` | DSPy + GEPA self-evolving agents — agents rewrite their own prompts/tools. ICLR 2026 Oral. ~5k★ |
+| `pascalorg-editor` | `pascalorg/editor` | Browser-based 3D architectural editor. TypeScript/Three.js/React. |
+| `manim` | `ManimCommunity/manim` | 3Blue1Brown's animation engine — programmatic math animations. Python/Cairo/OpenGL. |
+
+**Original-content skills authored from scratch (carousel prompts, no source repo):**
+
+| Skill directory | What it covers | Source |
+|---|---|---|
+| `skilldrop-ai-customer-support` | 8-step framework for building a Claude AI customer-support employee | @skilldropai |
+| `250-open-source-agents` | Category map of 250+ open-source AI agents | @theromanknox |
+| `5-saas-tools-niche` | Five niche SaaS tools: Inngest, goldfish.sh, Better Stack, Polar, Axiom | @alexfishhh1 |
+| `6-free-dev-tools` | Six free dev tools: GitIngest, GitDiagram, repomix, transform.tools, pglite, DevToys | @swblessed |
+| `chatgpt-astra-cheatsheet` | ChatGPT 6 Astra capabilities and prompt patterns cheat sheet | @51ultron |
+| `15-vibe-coding-prompts` | 15 Claude Code prompts for full-stack vibe coding — PRD through skill creation | @your_ai_mentor |
+
+**Non-MIT repos documented in `claude-code-tooling` (not vendored):**
+
+| Repo | License | What it is |
+|---|---|---|
+| `nashsu/llm_wiki` | GPL v3 | LLM-powered wiki / knowledge-base builder |
+| `getmaxun/maxun` | AGPL v3 | No-code web scraping platform |
+| `webstudio-is/webstudio` | AGPL v3 | Open-source Webflow alternative |
+| `coollabsio/shoutrrr` | Apache 2.0 | Notification library for Go |
+| `plasmicapp/plasmic` | MIT core + AGPL platform | Visual page builder (open-core) |
+| `liquidslr/system-design-notes` | No license | System-design interview notes |
+| `openai/skills` | Per-skill mixed | OpenAI agent skills |
+| `duongductrong/Snapzy` | BSD 3-Clause | Image/screenshot annotation tool |
+| `0xsline/OpenChatCut` | AGPL v3 | Chat session clipping and sharing |
+| `armory3d/armorpaint` | zlib/libpng | GPU-accelerated 3D texture painting |
+| `llvm/llvm-project` | Apache 2.0 + LLVM Exception | LLVM compiler infrastructure |
+
+**Updated:**
+- `dev-repos-to-clone` — appended "Additional repos (Batch 84)" section with 7 MIT-vendored skills table and 11 non-MIT document-only table.
+- `claude-code-tooling` — appended "Non-MIT repos from @replace.so and @githubnow (Batch 84)" section with 11 entries.
+
+## 85. MIT Skills Vendored & Original-Content Skills (Batch 85)
+
+Source: iCloud Photos Batch 85 (28e3fa66-iCloud_Photos_6.zip), Sep 2026.
+
+**MIT-licensed skills vendored (3-file set: SKILL.md + LICENSE + SOURCE.md):**
+
+| Skill name | Source repo | License | What it is |
+|---|---|---|---|
+| `chatterbox` | `resemble-ai/chatterbox` | MIT | Open-source TTS and voice cloning — 4 model variants (Turbo 350M EN, Nano 110M CPU, Multilingual V3 500M 23+ langs, original 500M); replaces ElevenLabs / OpenAI TTS |
+
+**Original-content skills (synthesised from carousel pages, no source repo to clone):**
+
+| Skill name | Source | What it is |
+|---|---|---|
+| `ai-agent-founding-team` | @theromanknox (pages 2–4) | Three-page framework: org chart design, first six AI agent hires (Content, Research, Outreach, Ops, Finance, Customer), and Chief of Staff orchestrator pattern with CLAUDE.md template |
+
+**Duplicates already covered in Batch 84 (no new action):** All @replace.so, @githubnow, @swblessed, @alexfishhh1, @your.ai.mentor, and @skilldropai content was fully processed in Batch 84.
+
+**No new non-MIT repos** to add to `claude-code-tooling/SKILL.md` in this batch.
+
+**Updated:**
+- `dev-repos-to-clone` — appended "Additional repos (Batch 85)" section.
+- `.claude/skills/chatterbox/` — new 3-file MIT skill (SKILL.md, LICENSE, SOURCE.md).
+- `.claude/skills/ai-agent-founding-team/` — new original-content skill (SKILL.md).
+
