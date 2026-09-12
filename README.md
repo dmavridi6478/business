@@ -4619,3 +4619,39 @@ since it's the source's own text, but flagged in-skill as framing to weigh
 rather than a default to actually run with outside a personal throwaway
 project.
 
+## 83. Anti-Detection Browser, GPT Image 2 Prompts, OSS AI Alternatives & Designer Resource Directory (Batch 83)
+
+**Source:** One uploaded iCloud Photos zip (`740ac712-iCloud_Photos_4.zip`), 54
+images total, no accompanying instruction — a mix of carousels: @replace.so's
+"OSS alternatives to paid AI tools" (ChatGPT, Notion AI, Zapier, Perplexity,
+Midjourney, Cursor, ChatGPT UI); @githubnow's daily GitHub briefing cards
+(marin-community/marin, freestylefly/awesome-gpt-image-2, jo-inc/camofox-browser,
+T3code, Flexprice, Paseo); @hash42labs's "H42 OS: 6 open-source tools" (WACRM,
+HTML Anything, Relaticle, Memex, Eclaire, CodeSmarter); and
+@designflowbyvee's "Top 108 Websites Every Designer Should Know" (12-category
+resource directory: Fonts, Colors, Icons, Illustrations, Stock Photos, Design
+Tools, UI Kits/Templates, Mockups, Gradients, CSS Tools, Motion/Animation,
+Inspiration); plus a separate GPT-Image-2 prompt library from
+@freestylefly (500+ reverse-engineered cases, 20+ industrial templates,
+GPT Image 2.5 Sunburst vs Flare model differences).
+
+**Vendored for real** (SKILL.md + LICENSE + SOURCE.md):
+- `awesome-gpt-image-2` — from [freestylefly/awesome-gpt-image-2](https://github.com/freestylefly/awesome-gpt-image-2) (MIT) — 500+ reverse-engineered GPT-Image-2 prompt cases, 20+ industrial templates, model-version comparison (Sunburst vs Flare), six-part prompt discipline (Subject/Style/Lighting/Composition/Background/Technical spec). Clone the upstream repo for the full prompt library; the SKILL.md summarises the taxonomy and usage patterns.
+- `camofox-browser` — from [jo-inc/camofox-browser](https://github.com/jo-inc/camofox-browser) (MIT) — anti-detection Firefox browser server for AI agents built on Camoufox (C++-level fingerprint spoofing). Blocks Playwright detection where conventional browser automation gets flagged. Install: `git clone … && npm install && npm start` → `localhost:9377`. Comparison table vs Playwright-MCP, Stagehand, and Steel-Browser included in SKILL.md; cross-referenced to `web-task-scoping`.
+
+**Reviewed, documented (not vendored) in `claude-code-tooling`:**
+- `ToolJet/ToolJet` — **AGPLv3** (not MIT) — low-code internal tool builder, Retool alternative. Copyleft license means every derivative/hosted use must also be AGPLv3; not vendored as a skill. Cloneable for self-hosted internal tooling where AGPL is acceptable.
+- `marin-community/marin` — **Apache 2.0** (not MIT) — open research framework for training and evaluating large language models. Documented in `dev-repos-to-clone` additional repos table and `claude-code-tooling`; not vendored.
+- **H42 tools (@hash42labs)** — WACRM, HTML Anything, Relaticle, Memex, Eclaire, CodeSmarter — six tools from @hash42labs. GitHub handles unverified at time of processing; search `hash42labs` or `h42labs` on GitHub before cloning. Documented in `claude-code-tooling` with "handle unverified" caveat.
+
+**New original-content skills (no source repo — content authored from carousels):**
+- `oss-ai-alternatives` — @replace.so's 7 paid→OSS replacements (ChatGPT→LibreChat, Notion AI→AnythingLLM, Zapier→n8n, Perplexity→SearXNG+Ollama, Midjourney→ComfyUI, Cursor→Cline, ChatGPT UI→Open WebUI+Ollama). Each entry includes install command, trade-off summary ("what you give up vs. what you keep"), and a "when OSS isn't worth it" caveat.
+- `designer-resource-directory` — @designflowbyvee's 108-tool directory across 12 categories (Fonts, Colors, Icons, Illustrations, Stock Photos, Design Tools, UI Kits/Templates, Mockups, Gradients, CSS Tools, Motion/Animation, Inspiration). Use as a lookup when scoping a new frontend or design project to avoid wasting time searching for resources.
+
+**Updated:**
+- `dev-repos-to-clone` — appended "Additional repos (Batch 83)" table with 6 new entries (marin, awesome-gpt-image-2, camofox-browser, T3code, Flexprice, Paseo), noting which have unverified GitHub handles.
+
+**Skipped (unverified GitHub handles — no repo to clone):** T3code, Flexprice,
+Paseo — all from @replace.so/@githubnow cards but no confirmed owner/repo found
+at time of processing. Search GitHub directly before attempting to clone.
+

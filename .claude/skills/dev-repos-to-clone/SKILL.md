@@ -26,6 +26,19 @@ numbers before quoting them, they move fast.
 - Need a Postgres database with auth and file storage wired together, fast, without standing up three separate services → `supabase/supabase` (self-host or their managed cloud).
 - Need users to sketch a flow, wireframe, or diagram together in the browser → `excalidraw/excalidraw` (also embeddable as a React component: `@excalidraw/excalidraw`).
 
+## Additional repos (Batch 83 — @replace.so and @githubnow, Sep 2026)
+
+Repos identified from a second @replace.so "open-source alternatives" carousel and @githubnow daily briefings. License and GitHub handle verified where possible — notes inline where a handle needs confirming before cloning.
+
+| Repo | Category | What it is | Notes |
+|---|---|---|---|
+| [`marin-community/marin`](https://github.com/marin-community/marin) | LLM training | Open research framework for training and evaluating large language models — from a community research group | Apache 2.0 (not MIT) |
+| [`freestylefly/awesome-gpt-image-2`](https://github.com/freestylefly/awesome-gpt-image-2) | AI image prompts | 500+ reverse-engineered GPT Image 2 prompt cases + 20+ industrial templates — see `awesome-gpt-image-2` skill | MIT — **vendored as a skill** |
+| [`jo-inc/camofox-browser`](https://github.com/jo-inc/camofox-browser) | Browser automation | Anti-detection browser server for AI agents (Firefox + C++-level fingerprint spoofing via Camoufox) — blocks Playwright detection | MIT — **vendored as a skill** |
+| T3code | AI coding scaffold | Claimed Cursor/IDE replacement from @replace.so carousel — **exact GitHub handle unverified**; search `t3-oss` org or `T3code` before cloning | License unverified |
+| Flexprice | Usage-based billing | Open-source usage-based billing and metering infrastructure — @replace.so alternative to Stripe Billing | **GitHub handle unverified**; search `flexprice` on GitHub |
+| Paseo | Polkadot wallet | Native Polkadot browser wallet — @replace.so "open source" entry | **GitHub handle unverified**; try `paseo-network` or `getpaseo` |
+
 ## Before adopting any of them
 
 Check current license terms and hosting costs (self-hosted vs. the vendor's

@@ -302,6 +302,30 @@ re-verified — re-check before quoting one):
 skill) both also appeared in this same carousel batch as separate
 "repo of the day" posts — not re-added here since they're already covered.
 
+## Open-source business tools (non-MIT — @replace.so batch)
+
+Two tools from an @replace.so "paid alternatives" carousel, confirmed to exist via clone. Neither is MIT — documented here rather than vendored:
+
+| Repo | What it's for | License caveat |
+|---|---|---|
+| [`ToolJet/ToolJet`](https://github.com/ToolJet/ToolJet) | Low-code internal tool builder (drag-and-drop dashboards, forms, CRUD apps) — open-source alternative to Retool | **AGPLv3** — copyleft; self-hosting for internal use is fine, but building a commercial SaaS on top requires a commercial license from ToolJet |
+| [`marin-community/marin`](https://github.com/marin-community/marin) | Open research framework for training and evaluating large language models | **Apache 2.0** — permissive but not MIT; attribution required |
+
+## H42 open-source tools (@hash42labs)
+
+Six tools from a 7-slide @hash42labs "H42 — Open Source" carousel. All were presented as open source, but exact GitHub handles were not visible in the source images — search `hash42labs` or `h42labs` on GitHub, or check h42.co, before cloning:
+
+| Tool | What it does | Status |
+|---|---|---|
+| **WACRM** | AI-powered CRM — customer relationship management with AI assistance | GitHub handle unverified |
+| **HTML Anything** | Turn any text description into a full website — AI-to-HTML generation | GitHub handle unverified |
+| **Relaticle** | Relationship/networking tool — connect, track, and manage professional relationships | GitHub handle unverified |
+| **Memex** | Second-brain notes + bookmarks + files tool — open-source personal knowledge base | GitHub handle unverified |
+| **Eclaire** | AI tool — exact function not captured clearly from source slides | GitHub handle unverified |
+| **CodeSmarter** | AI coding enhancement tool | GitHub handle unverified |
+
+Verify each on GitHub before installing — "open source" in a carousel doesn't confirm MIT or even permissive licensing.
+
 ## AI trading / crypto agent frameworks (niche — not needed by this business, documented for completeness)
 
 A batch of open-source multi-agent trading/research frameworks (@hash42labs "Open Source" series and @githubnow), confirmed to exist via `git ls-remote`. None of these fit this repo's actual business (Greek healthcare/general consulting) — documented only because they were reviewed, not because they're recommended for this business's stack:
