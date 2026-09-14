@@ -1,15 +1,1 @@
-{
-  "hooks": {
-    "PreToolUse": [
-      {
-        "matcher": "WebSearch|WebFetch",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "node \"/home/user/business/.hyperresearch/hook.js\""
-          }
-        ]
-      }
-    ]
-  }
-}
+{}
