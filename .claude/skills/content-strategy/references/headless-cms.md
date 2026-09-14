@@ -1,46 +1,194 @@
 # Headless CMS Guide
 
-*Authored directly for this repo — the parent skill's References section pointed here, but no source content shipped with the install. This fills that gap.*
+Reference for choosing, modeling, and implementing a headless CMS for marketing content.
 
-## When this decision comes up
+## When to Use This Reference
 
-Once a content strategy is producing enough content pillars/clusters to need real editorial workflow (multiple authors, review steps, scheduled publishing, content reused across channels), the question of *where the content lives* becomes a real infrastructure decision — not just "which blog platform."
+Use this when selecting a CMS for a new project, designing content models for marketing sites, setting up editorial workflows, or connecting CMS content to programmatic pages.
 
-## Headless vs. traditional CMS
+---
 
-| | Traditional CMS (e.g. WordPress default setup) | Headless CMS |
-|---|---|---|
-| Content + presentation | Coupled — the CMS renders the page | Decoupled — CMS stores content, a separate frontend renders it |
-| Best for | A single website, fast setup, non-technical editing | Content reused across multiple channels (web, app, marketing site, email) |
-| Frontend flexibility | Limited to the CMS's templating | Full control — frontend can be any framework |
-| Setup cost | Low | Higher — requires building/maintaining the frontend separately |
+## Headless vs Traditional CMS
 
-**Decision rule**: if content only ever needs to become one webpage, a traditional CMS is usually simpler and cheaper. Reach for headless when the same content needs to reach more than one surface (site + app, site + newsletter, site + partner syndication) or when the frontend needs to be something the CMS's own templating can't produce.
+A headless CMS separates content management from presentation. Content is stored in a structured backend and delivered via API to any frontend.
 
-## Platform comparison
+### When Headless Makes Sense
 
-| Platform | Strengths | Trade-offs | Best fit |
-|---|---|---|---|
-| **Sanity** | Highly customizable structured content (Portable Text), real-time collaborative editing, strong developer experience, generous free tier | Requires more setup/schema design work upfront than a turnkey CMS | Teams with developer resources who want deep content modeling flexibility |
-| **Contentful** | Mature enterprise features (roles/permissions, localization, workflow approvals), large ecosystem/integrations | Pricing scales up quickly past the free tier; less flexible content modeling than Sanity for complex nested content | Larger orgs needing enterprise governance, multi-locale content, and established integrations |
-| **Strapi** | Open-source, self-hostable (full control over data/infra), no vendor lock-in, free at the core | Self-hosting means you own uptime/scaling/security; hosted version (Strapi Cloud) trades that back for cost | Teams wanting to avoid per-record/per-seat SaaS pricing, or with existing infra to self-host on |
+- Multiple frontends consume the same content (web, mobile, email)
+- Developers want full control over the frontend stack
+- Content needs to be reused across channels
+- You're building with a modern framework (Next.js, Remix, Astro)
+- Marketing needs structured, reusable content blocks
 
-## Content modeling for marketing use
+### When Traditional Works Better
 
-When designing the content model (schema) in a headless CMS for a marketing content strategy specifically:
+- Small team with no dedicated developers
+- Simple blog or brochure site
+- WYSIWYG editing is a hard requirement
+- Budget is tight and WordPress/Webflow does the job
 
-- **Model by content type, not by page.** A "blog post" type, a "case study" type, a "landing page" type — each with fields matching what that content actually needs (a case study needs a "results" field structure; a blog post doesn't).
-- **Separate reusable content blocks from page-specific content** — a CTA block, an author bio, a related-posts block should be modeled once and referenced, not copy-pasted into every content type.
-- **Model for the content pillars/clusters structure**, not just flat posts — a "pillar" reference field on cluster content lets the CMS itself enforce and query the hub-and-spoke structure this skill's Content Pillars section describes, rather than relying on manual tagging discipline alone.
-- **Plan localization fields early** if any non-English output is anticipated (per this repo's Greek-language conventions elsewhere) — retrofitting localization into an existing content model is significantly more painful than designing for it from the start.
+### Decision Checklist
 
-## Editorial workflow patterns
+| Factor | Headless | Traditional |
+|--------|----------|-------------|
+| Multi-channel delivery | Yes | Limited |
+| Developer control | Full | Constrained |
+| Non-technical editing | Requires setup | Built-in |
+| Time to launch | Longer | Faster |
+| Content reuse | Native | Manual |
+| Hosting flexibility | Any frontend | Platform-dependent |
 
-- **Draft → Review → Scheduled → Published** as a minimum status pipeline — most headless CMS platforms support custom workflow states; use them rather than relying on a spreadsheet or Slack thread to track review status.
-- **Assign an explicit reviewer per content type**, not just "someone on the team" — unowned review steps are where publishing pipelines stall.
-- **Use scheduled publishing** for coordinated launches (aligning a blog post with a product announcement) rather than manual publish-day coordination.
+---
 
-## Related skills in this repo
+## Content Modeling for Marketing
 
-- **content-strategy**: This file is that skill's CMS/infrastructure companion — use once pillars and clusters exist and need a real home, not before.
-- **doc-coauthoring**: Drafting still happens there; this guide covers where the finished draft lives and how it moves through review to publish.
+### Core Principles
+
+1. **Think in types, not pages.** A "Landing Page" is a content type with fields — not an HTML file. This lets you reuse components across pages.
+2. **Separate content from presentation.** Store the headline text, not the styled headline. Presentation belongs in the frontend.
+3. **Design for reuse.** If testimonials appear on 5 pages, create a Testimonial type and reference it — don't duplicate.
+4. **Keep models flat.** Deeply nested structures are hard to query and maintain. Prefer references over nesting.
+
+### Common Marketing Content Types
+
+| Type | Key Fields | Notes |
+|------|-----------|-------|
+| **Landing Page** | title, slug, hero, sections[], seo | Modular sections for flexibility |
+| **Blog Post** | title, slug, body, author, category, tags, publishedAt, seo | Rich text or Portable Text body |
+| **Case Study** | title, customer, challenge, solution, results, metrics[], logo | Link to related products/features |
+| **Testimonial** | quote, author, role, company, avatar, rating | Reference from landing pages |
+| **FAQ** | question, answer, category | Group by category for programmatic pages |
+| **Author** | name, bio, avatar, social links | Reference from blog posts |
+| **CTA Block** | heading, body, buttonText, buttonUrl, variant | Reusable across pages |
+
+### SEO Fields Checklist
+
+Every page-level content type needs:
+
+- `metaTitle` — 50-60 characters
+- `metaDescription` — 150-160 characters
+- `ogImage` — 1200x630px social preview
+- `slug` — URL path segment
+- `canonicalUrl` — optional override
+- `noIndex` — boolean for excluding from search
+- `structuredData` — optional JSON-LD override
+
+---
+
+## Editorial Workflows
+
+### Draft → Review → Publish Cycle
+
+1. **Draft** — Author creates or edits content
+2. **Review** — Editor reviews for accuracy, brand voice, SEO
+3. **Approve** — Stakeholder signs off
+4. **Schedule** — Set publish date/time
+5. **Publish** — Content goes live via API
+
+### Preview APIs
+
+All major headless CMS platforms support draft previews:
+
+- **Sanity**: Real-time preview with `useLiveQuery` or Presentation tool
+- **Contentful**: Preview API (`preview.contentful.com`) with separate access token
+- **Strapi**: Draft & Publish system with `status=draft` query parameter (v5; replaces v4's `publicationState`)
+
+Set up a preview route in your frontend (e.g., `/api/preview`) that authenticates and renders draft content.
+
+### Roles and Permissions
+
+| Role | Can Create | Can Edit | Can Publish | Can Delete |
+|------|:----------:|:--------:|:-----------:|:----------:|
+| Author | Yes | Own | No | Own drafts |
+| Editor | Yes | All | Yes | Drafts |
+| Admin | Yes | All | Yes | All |
+
+Exact permission models vary by platform. Sanity uses role-based access. Contentful has space-level roles. Strapi has granular RBAC.
+
+---
+
+## Platform Comparison
+
+| Feature | Sanity | Contentful | Strapi |
+|---------|--------|------------|--------|
+| Hosting | Cloud (managed) | Cloud (managed) | Self-hosted or Cloud |
+| Query Language | GROQ | REST / GraphQL | REST / GraphQL |
+| Free Tier | Generous | Limited | Open source (free) |
+| Real-time Collab | Yes (built-in) | Limited | No |
+| Best For | Developer flexibility | Enterprise multi-locale | Budget / self-hosted |
+| Content Modeling | Schema-as-code | Web UI | Web UI or code |
+| Media Handling | Built-in DAM | Built-in | Plugin-based |
+
+### Sanity
+
+**Strengths**: GROQ query language is powerful and flexible. Schema defined in code (version-controlled). Real-time collaborative editing. Portable Text for rich content. Generous free tier.
+
+**Considerations**: Steeper learning curve for non-developers. Studio customization requires React knowledge. Vendor lock-in on GROQ queries.
+
+**Marketing fit**: Best when developers and marketers collaborate closely. Strong for content-heavy sites with complex models.
+
+### Contentful
+
+**Strengths**: Mature enterprise platform. Excellent multi-locale support. Strong ecosystem of integrations. Composable content with Studio. Well-documented APIs.
+
+**Considerations**: Pricing scales with content types and locales. Two separate APIs (Delivery and Management). Rate limits can be tight on lower plans.
+
+**Marketing fit**: Best for enterprises with multi-market content needs. Good when you need established vendor reliability.
+
+### Strapi
+
+**Strengths**: Open source, self-hosted option. Full control over data. No per-seat pricing. Customizable admin panel. Plugin ecosystem. REST by default, GraphQL via plugin.
+
+**Considerations**: Self-hosting means you handle infrastructure. Smaller ecosystem than Sanity/Contentful. V5 migration can be significant from V4.
+
+**Marketing fit**: Best for teams with DevOps capability who want full control and no vendor lock-in. Good for budget-conscious projects.
+
+### Others Worth Knowing
+
+- **Hygraph** — GraphQL-native, strong for federation and multi-source content
+- **Keystatic** — Git-based, good for developer-content hybrid workflows
+- **Payload** — TypeScript-first, self-hosted, code-configured like Sanity
+- **Builder.io** — Visual editor with headless backend, good for non-technical marketers
+- **Prismic** — Slice-based content modeling, strong Next.js integration
+
+---
+
+## Integration with Marketing Skills
+
+### Programmatic SEO
+
+Use CMS as the data source for programmatic pages. Store structured data (FAQs, comparisons, city pages) as content types and generate pages from queries. See **programmatic-seo** skill.
+
+### Copywriting
+
+CMS content models enforce consistent structure. Define fields that match your copy frameworks (headline, subheadline, social proof, CTA). See **copywriting** skill.
+
+### Site Architecture
+
+URL structure, navigation hierarchy, and internal linking all depend on how content is organized in the CMS. Plan your content model and site architecture together. See **site-architecture** skill.
+
+### Email Sequences
+
+Pull CMS content into email templates for consistent messaging across web and email. Case studies, testimonials, and blog posts can feed email nurture sequences. See **emails** skill.
+
+---
+
+## Implementation Checklist
+
+- [ ] Define content types based on page types and reusable blocks
+- [ ] Add SEO fields to every page-level content type
+- [ ] Set up preview/draft mode in your frontend
+- [ ] Configure roles and permissions for your team
+- [ ] Create sample content for each type before building frontend
+- [ ] Set up webhook notifications for content changes (rebuild triggers)
+- [ ] Document content guidelines for editors (field descriptions, character limits)
+- [ ] Test content delivery performance (CDN, caching, ISR)
+- [ ] Plan migration strategy if moving from existing CMS
+
+---
+
+## Relevant Integration Guides
+
+- [Sanity](../../../tools/integrations/sanity.md) — GROQ queries, mutations, CLI
+- [Contentful](../../../tools/integrations/contentful.md) — Delivery/Management APIs, publishing
+- [Strapi](../../../tools/integrations/strapi.md) — REST CRUD, filters, document API

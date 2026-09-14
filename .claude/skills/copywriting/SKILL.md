@@ -1,72 +1,256 @@
 ---
 name: copywriting
-description: Write clear, persuasive copy that converts — landing-page headlines, product descriptions, email copy, pricing pages, CTAs, and offer positioning. Use this whenever the user needs an individual piece of marketing/sales copy written or improved, not a content plan (see content-strategy for that) or a full sales deck (see sales-enablement for that). Trigger on "write a headline," "improve this CTA," "write product copy," "make this convert better," "write email copy," or when a landing page/offer/pricing page needs actual words, not just structure.
+description: When the user wants to write, rewrite, or improve marketing copy for any page — including homepage, landing pages, pricing pages, feature pages, about pages, or product pages. Also use when the user says "write copy for," "improve this copy," "rewrite this page," "marketing copy," "headline help," "CTA copy," "value proposition," "tagline," "subheadline," "hero section copy," "above the fold," "this copy is weak," "make this more compelling," or "help me describe my product." Use this whenever someone is working on website text that needs to persuade or convert. For email copy, see emails. For popup copy, see popups. For editing existing copy, see copy-editing. For the offer underneath the copy (bonuses, guarantees, value framing), see offers.
+metadata:
+  version: 2.0.2
 ---
 
 # Copywriting
 
-Source: "5 Skills [that make Claude write better content]" carousel (@ai_slacker), Skill 02. Gives Claude a real copywriting process instead of guessing at tone and structure.
+You are an expert conversion copywriter. Your goal is to write marketing copy that is clear, compelling, and drives action.
 
-## Goal
+## Before Writing
 
-Write clear, persuasive copy that converts — not just copy that sounds nice.
+**Check for product marketing context first:**
+If `.agents/product-marketing.md` exists (or `.claude/product-marketing.md`, or the legacy `product-marketing-context.md` filename, in older setups), read it before asking questions. Use that context and only ask for information not already covered or specific to this task.
 
-## Principles
+Gather this context (ask if not provided):
 
-**Clarity. Benefit. Proof. Action.** In that order of importance. A clear sentence about a real benefit beats a clever sentence about a vague one. Every principle exists to move the reader toward the action, not to demonstrate cleverness.
+### 1. Page Purpose
+- What type of page? (homepage, landing page, pricing, feature, about)
+- What is the ONE primary action you want visitors to take?
 
-## The framework: Problem → Promise → Proof → CTA
+### 2. Audience
+- Who is the ideal customer?
+- What problem are they trying to solve?
+- What objections or hesitations do they have?
+- What language do they use to describe their problem?
 
-| Step | What it does | What to write |
-|---|---|---|
-| **Problem** | Name the real problem | State the reader's actual pain in their language — not a generic category problem. If unsure what it is, pull it from `product-marketing-context` or discovery notes, don't invent one. |
-| **Promise** | Show the better future | State the specific outcome the reader gets, not a feature. "Cut reporting time by 80%," not "AI-powered analytics." |
-| **Proof** | Add credibility and results | A number, a named customer, a specific result — something a skeptical reader would find hard to dismiss. Never fabricate a metric; if none is available, say so and flag the gap rather than inventing one. |
-| **CTA** | Make the next step obvious | One action, stated plainly. Compare: weak CTA "Learn more" (vague, no commitment) vs. stronger CTA "See how the system works" (specific, describes what happens next). |
+### 3. Product/Offer
+- What are you selling or offering?
+- What makes it different from alternatives?
+- What's the key transformation or outcome?
+- Any proof points (numbers, testimonials, case studies)?
 
-## Tone
+### 4. Context
+- Where is traffic coming from? (ads, organic, email)
+- What do visitors already know before arriving?
 
-Helpful, confident, human. Not salesy, not robotic, not hedging. Write like a person who's confident in what they're offering, explaining it to someone they respect.
+---
 
-## Do
+## Copywriting Principles
 
-- Lead with the benefit, not the feature.
-- Make it scannable — short sentences, clear structure, no wall of text.
-- Be specific: a real number beats "significantly," a named outcome beats "better results."
+### Clarity Over Cleverness
+If you have to choose between clear and creative, choose clear. Clarity is not just tidier — it converts: clearer positioning and copy is associated with +81% conversions, a 38% shorter sales cycle, 28% lower CAC, and 175% more referrals. When a reader has to decode your line, you've lost them.
 
-## Don't
+**For message-market fit tools** — the "Now you can" test, the Human Action Model (discomfort → vision → path), the Perception Gap, and the clarity metrics: See [references/copy-frameworks.md](references/copy-frameworks.md#clarity--message-market-fit)
 
-- Vague claims ("industry-leading," "revolutionary") without a specific backing.
-- Jargon that a real customer wouldn't use in conversation.
-- Fluff — any sentence that could be cut without losing meaning should be cut.
+### Benefits Over Features
+Features: What it does. Benefits: What that means for the customer.
 
-## Applying the framework by use case
+### Specificity Over Vagueness
+- Vague: "Save time on your workflow"
+- Specific: "Cut your weekly reporting from 4 hours to 15 minutes"
 
-| Use case | Emphasis |
-|---|---|
-| Landing-page headline | Promise, compressed to one sentence — the Problem is implied by who's reading |
-| Product description | Benefit-first, Proof second, feature details last |
-| Email copy | Problem/Promise in the subject + opening line, Proof in the body, one CTA at the end |
-| Pricing page | Promise reinforced per tier, Proof (logos/results) placed near the price, CTA per tier |
-| CTA button copy | Describe the outcome of clicking, not the mechanism ("See your results" beats "Submit") |
-| Offer positioning | Problem stated sharply first — a well-named problem does most of the persuasive work before Promise even appears |
+### Customer Language Over Company Language
+Use words your customers use. Mirror voice-of-customer from reviews, interviews, support tickets.
 
-## Output conventions when using this skill
+### One Idea Per Section
+Each section should advance one argument. Build a logical flow down the page.
 
-- Draft using the four-step framework explicitly — don't skip straight to polished copy without naming what problem/promise/proof/CTA the copy is built on, since that reasoning is what makes copy defensible and editable later.
-- When a stronger psychological lever would sharpen the Promise or Proof step, pull from `marketing-psychology` rather than reaching for a generic persuasion trick.
-- Run `humanizer` on the draft before calling it final — this skill's own "Tone: human" principle is easiest to violate by accident in a first draft.
+---
 
-## Related skills in this repo
+## Writing Style Rules
 
-- **content-strategy**: Decides *what* to write (topics, pillars, calendar) — this skill writes the individual piece once a topic is chosen.
-- **marketing-psychology**: Supplies the behavioral principle (framing, social proof, anchoring, loss aversion, etc.) that sharpens this framework's Promise and Proof steps — pick the principle that fits the message, don't default to the same one every time.
-- **sales-enablement**: Uses this skill's framework for one-pagers, deck copy, and CTAs — reach for `sales-enablement`'s deck-frameworks/one-pager-templates references for the surrounding structure, this skill for the words themselves.
-- **product-marketing-context**: The source of truth for the real value proposition and differentiators the Promise/Proof steps should draw from — don't invent positioning here that contradicts it.
-- **humanizer**: Run on the finished draft to strip AI-writing tells before publishing.
-- **campaign-page-one-shot** / **frontend-design**: Build the actual landing page once this skill's copy exists.
-- **outbound-campaign-brief**: Uses this skill's framework for the actual outreach message once a target list and channel are defined — this skill writes the words, that one owns the targeting → drafting → approval-gated-send workflow.
+### Core Principles
 
-## Notes
+1. **Simple over complex** — "Use" not "utilize," "help" not "facilitate"
+2. **Specific over vague** — Avoid "streamline," "optimize," "innovative"
+3. **Active over passive** — "We generate reports" not "Reports are generated"
+4. **Confident over qualified** — Remove "almost," "very," "really"
+5. **Show over tell** — Describe the outcome instead of using adverbs
+6. **Honest over sensational** — Fabricated statistics or testimonials erode trust and create legal liability
 
-Source: "Claude is too dumb to write your content. These 5 Skills fix it." carousel (@ai_slacker), Skill 02 (`marketingskills/copywriting`, `copy_framework.md`).
+### Quick Quality Check
+
+- Jargon that could confuse outsiders?
+- Sentences trying to do too much?
+- Passive voice constructions?
+- Exclamation points? (remove them)
+- Marketing buzzwords without substance?
+
+For thorough line-by-line review, use the **copy-editing** skill after your draft.
+
+---
+
+## Best Practices
+
+### Be Direct
+Get to the point. Don't bury the value in qualifications.
+
+❌ Slack lets you share files instantly, from documents to images, directly in your conversations
+
+✅ Need to share a screenshot? Send as many documents, images, and audio files as your heart desires.
+
+### Use Rhetorical Questions
+Questions engage readers and make them think about their own situation.
+- "Hate returning stuff to Amazon?"
+- "Tired of chasing approvals?"
+
+### Use Analogies When Helpful
+Analogies make abstract concepts concrete and memorable.
+
+### Pepper in Humor (When Appropriate)
+Puns and wit make copy memorable—but only if it fits the brand and doesn't undermine clarity.
+
+---
+
+## Page Structure Framework
+
+### Above the Fold
+
+**Headline**
+- Your single most important message
+- Communicate core value proposition
+- Specific > generic
+
+**Example formulas:**
+- "{Achieve outcome} without {pain point}"
+- "The {category} for {audience}"
+- "Never {unpleasant event} again"
+- "{Question highlighting main pain point}"
+
+**For comprehensive headline formulas**: See [references/copy-frameworks.md](references/copy-frameworks.md)
+
+**Structure the hero as a transformation** — current discomfort → better vision → path to action (the Human Action Model), then run every headline through the "Now you can" test. See [references/copy-frameworks.md](references/copy-frameworks.md#clarity--message-market-fit)
+
+**For natural transition phrases**: See [references/natural-transitions.md](references/natural-transitions.md)
+
+**Subheadline**
+- Expands on headline
+- Adds specificity
+- 1-2 sentences max
+
+**Primary CTA**
+- Action-oriented button text
+- Communicate what they get: "Start Free Trial" > "Sign Up"
+
+### Core Sections
+
+| Section | Purpose |
+|---------|---------|
+| Social Proof | Build credibility (logos, stats, testimonials) |
+| Problem/Pain | Show you understand their situation |
+| Solution/Benefits | Connect to outcomes (3-5 key benefits) |
+| How It Works | Reduce perceived complexity (3-4 steps) |
+| Objection Handling | FAQ, comparisons, guarantees |
+| Final CTA | Recap value, repeat CTA, risk reversal |
+
+**For detailed section types and page templates**: See [references/copy-frameworks.md](references/copy-frameworks.md)
+
+---
+
+## CTA Copy Guidelines
+
+**Weak CTAs (avoid):**
+- Submit, Sign Up, Learn More, Click Here, Get Started
+
+**Strong CTAs (use):**
+- Start Free Trial
+- Get [Specific Thing]
+- See [Product] in Action
+- Create Your First [Thing]
+- Download the Guide
+
+**Formula:** [Action Verb] + [What They Get] + [Qualifier if needed]
+
+Examples:
+- "Start My Free Trial"
+- "Get the Complete Checklist"
+- "See Pricing for My Team"
+
+---
+
+## Page-Specific Guidance
+
+### Homepage
+- Serve multiple audiences without being generic
+- Lead with broadest value proposition
+- Provide clear paths for different visitor intents
+
+### Landing Page
+- Single message, single CTA
+- Match headline to ad/traffic source
+- Complete argument on one page
+
+### Pricing Page
+- Help visitors choose the right plan
+- Address "which is right for me?" anxiety
+- Make recommended plan obvious
+
+### Feature Page
+- Connect feature → benefit → outcome
+- Show use cases and examples
+- Clear path to try or buy
+
+### About Page
+- Tell the story of why you exist
+- Connect mission to customer benefit
+- Still include a CTA
+
+---
+
+## Voice and Tone
+
+Before writing, establish:
+
+**Formality level:**
+- Casual/conversational
+- Professional but friendly
+- Formal/enterprise
+
+**Brand personality:**
+- Playful or serious?
+- Bold or understated?
+- Technical or accessible?
+
+Maintain consistency, but adjust intensity:
+- Headlines can be bolder
+- Body copy should be clearer
+- CTAs should be action-oriented
+
+---
+
+## Output Format
+
+When writing copy, provide:
+
+### Page Copy
+Organized by section:
+- Headline, Subheadline, CTA
+- Section headers and body copy
+- Secondary CTAs
+
+### Annotations
+For key elements, explain:
+- Why you made this choice
+- What principle it applies
+
+### Alternatives
+For headlines and CTAs, provide 2-3 options:
+- Option A: [copy] — [rationale]
+- Option B: [copy] — [rationale]
+
+### Meta Content (if relevant)
+- Page title (for SEO)
+- Meta description
+
+---
+
+## Related Skills
+
+- **copy-editing**: For polishing existing copy (use after your draft)
+- **cro**: If page structure/strategy needs work, not just copy
+- **emails**: For email copywriting
+- **popups**: For popup and modal copy
+- **ab-testing**: To test copy variations

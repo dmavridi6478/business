@@ -1,8 +1,8 @@
 ---
 name: sales-enablement
-description: "When the user wants to create sales collateral, pitch decks, one-pagers, objection handling docs, demo scripts, or deal qualification frameworks (MEDDPICC, MEDDIC, BANT). Also use when the user mentions 'sales deck,' 'pitch deck,' 'one-pager,' 'leave-behind,' 'objection handling,' 'deal-specific ROI analysis,' 'demo script,' 'talk track,' 'sales playbook,' 'proposal template,' 'buyer persona card,' 'qualification criteria,' 'MEDDPICC,' 'help my sales team,' 'sales materials,' 'selling to the C-suite,' or 'what should I give my sales reps.' Includes a role-specific C-suite messaging table (CEO/CFO/COO/CRO/CMO/CHRO/CIO-CTO/CPO — what each cares about and the pitch shape that lands vs. the generic one that doesn't). Use this for any document or asset that helps a sales team close deals. For competitor comparison pages and battle cards, see competitor-alternatives. For marketing website copy, see copywriting. For cold outreach emails, see cold-email."
+description: "When the user wants to create sales collateral, pitch decks, one-pagers, objection handling docs, or demo scripts. Also use when the user mentions 'sales deck,' 'pitch deck,' 'one-pager,' 'leave-behind,' 'objection handling,' 'deal-specific ROI analysis,' 'demo script,' 'talk track,' 'sales playbook,' 'proposal template,' 'buyer persona card,' 'help my sales team,' 'sales materials,' or 'what should I give my sales reps.' Use this for any document or asset that helps a sales team close deals. For competitor comparison pages and battle cards, see competitors. For marketing website copy, see copywriting. For cold outreach emails, see cold-email. For the offer being sold (bonuses, guarantees, pricing structure), see offers."
 metadata:
-  version: 1.1.0
+  version: 2.0.1
 ---
 
 # Sales Enablement
@@ -12,7 +12,7 @@ You are an expert in B2B sales enablement. Your goal is to create sales collater
 ## Before Starting
 
 **Check for product marketing context first:**
-If `.agents/product-marketing-context.md` exists (or `.claude/product-marketing-context.md` in older setups), read it before asking questions. Use that context and only ask for information not already covered or specific to this task.
+If `.agents/product-marketing.md` exists (or `.claude/product-marketing.md`, or the legacy `product-marketing-context.md` filename, in older setups), read it before asking questions. Use that context and only ask for information not already covered or specific to this task.
 
 Gather this context (ask if not provided):
 
@@ -176,34 +176,6 @@ For each objection, document:
 | CFO | Total cost, payback period, risk | ROI, cost reduction, financial predictability |
 | End user | Ease of use, daily workflow, learning curve | Time saved, frustration eliminated |
 
-### Selling to the C-Suite (expanded)
-
-Source: reviewed from an uploaded infographic — "Selling to the C-Suite"
-(Haris Halkic, SalesDaily.co). A fuller, role-specific version of the
-table above — what each seat actually cares about, the generic pitch that
-falls flat with them, and the kind of proof-led line that lands instead.
-Use this when the deal actually involves one of these 8 specific seats;
-the shorter table above is still fine for a quick persona check.
-
-| Role | Cares about | Don't say | Say instead (shape of the line) |
-|---|---|---|---|
-| **CEO** | Growth + Risk | Don't pitch features | Show how you help them scale faster, cut risk, or hit strategic goals — e.g. "This helps teams like yours enter [market] 3x faster, with fewer moving parts." |
-| **CFO** | Cost + ROI | "This will improve productivity" (fluff, no number) | Quantify ROI in margins/efficiency/risk-reduction terms — e.g. "We reduced vendor cost 18% and freed 22 hours/month for [role]." |
-| **COO** | Efficiency + Execution | Don't say "streamline" without proving it | Show exactly how ops get simpler and faster — e.g. "We eliminate 4 handoffs in your process, cutting fulfillment time in half." |
-| **CRO** | Pipeline + Predictability | Don't pitch dashboards | Show how reps hit number faster with fewer surprises — e.g. "We help reps close 12% more deals without changing your CRM." |
-| **CMO** | Leads + Attribution | Don't promise "awareness" | Show how demand converts into real pipeline — e.g. "We cut cost per qualified lead by 38%, and proved it with real revenue impact." |
-| **CHRO** | Retention + Culture | Don't pitch "engagement" as an abstraction | Tie the solution to measurable rep retention/onboarding/performance — e.g. "Your reps ramp 30% faster and stay longer because the system supports them." |
-| **CIO / CTO** | Security + Scalability | Don't ignore technical friction | Preempt risk, show fit with their existing stack — e.g. "No extra infrastructure, fully SOC 2 compliant, deployed in 48 hours." |
-| **CPO** | Velocity + Adoption | Don't talk features to a feature owner | Focus on roadmap-outcome acceleration or user-growth impact — e.g. "Adoption jumped 44% in 3 months because we removed friction at the edge." |
-
-The pattern across all 8: lead with the specific, quantified outcome that
-seat is measured on, never the feature list — a pitch that would work
-verbatim for any of the 8 rows is a sign it's still feature-first, not
-persona-first. The example lines above are the infographic's own
-illustrations, not verified case-study numbers from this business — treat
-them as a *shape* to fill with real, honest figures, not a script to
-recite as-is.
-
 ### Implementation Options
 
 - **Spreadsheet** — Fastest to build, easy to customize per deal. Works for inside sales.
@@ -295,7 +267,7 @@ Organize case studies so reps can find the right one instantly:
 ### What Goes in a Playbook
 
 - **Buyer profile** — Who you're selling to, their goals and pains
-- **Qualification criteria** — BANT, MEDDPICC, or your framework (see [references/deal-qualification-frameworks.md](references/deal-qualification-frameworks.md) for the full MEDDPICC breakdown, scorecard approach, and when to use the lighter BANT instead)
+- **Qualification criteria** — BANT, MEDDIC, or your framework
 - **Discovery questions** — Organized by topic, not a script
 - **Objection handling** — Top 10 objections with responses
 - **Competitive positioning** — How you win against each competitor
@@ -379,16 +351,9 @@ For partner sales enablement, see the [tools registry](../../tools/REGISTRY.md):
 
 ## Related Skills
 
-Installed in this repo: **product-marketing-context**, **competitor-profiling**, **copywriting**, **marketing-psychology** (below). The rest are marketplace skills not currently installed here.
-
-- **competitor-alternatives**: For public-facing comparison and alternative pages
-- **copywriting** *(in this repo)*: For marketing website copy, and the words/CTAs inside sales collateral this skill structures
-- **marketing-psychology** *(in this repo)*: Apply its principles when a deck, one-pager, or CTA needs to be more persuasive, not just better organized
+- **competitors**: For public-facing comparison and alternative pages
+- **copywriting**: For marketing website copy
 - **cold-email**: For outbound prospecting emails
 - **revops**: For lead lifecycle, scoring, routing, and pipeline management
-- **pricing-strategy**: For pricing decisions and packaging
-- **product-marketing-context** *(in this repo)*: For foundational positioning and messaging
-- **competitor-profiling** *(in this repo)*: Source material for battle cards and objection handling
-- **premium-html-presentation** / **pptx** *(in this repo)*: Turn this skill's content into an actual pitch deck (HTML or editable PowerPoint)
-- **design-dev-resources** *(in this repo)*: Real icons/illustrations/logos for sales collateral instead of hand-drawn SVG
-- **content-repurposing-service** *(in this repo)*: A productized-service offer this skill can turn into a pitch/proposal for prospective clients
+- **pricing**: For pricing decisions and packaging
+- **product-marketing**: For foundational positioning and messaging
