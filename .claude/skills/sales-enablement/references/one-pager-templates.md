@@ -1,105 +1,208 @@
-# One-Pager Templates by Use Case
+# One-Pager Templates
 
-*Authored directly for this repo — the original `sales-enablement` skill's routing table pointed here, but no source content shipped with the install. This fills that gap.*
+Templates for different one-pager use cases, with layout guidance and copy prompts.
 
-Three ready-to-fill templates, one per use case named in the main skill, plus guidance on when each applies.
+## Product Overview One-Pager
 
-## Template 1: Post-Meeting Recap
+The default one-pager. Introduces your product to someone who knows nothing about you.
 
-**Use when**: sent within 24 hours of a discovery call or demo, to reinforce what was discussed and keep momentum.
-
-```
-[Logo]                                          [Date]
-
-We heard you on [specific pain point from the call]
-
-Today we discussed:
-- [Point 1 from the conversation, in their words]
-- [Point 2]
-- [Point 3]
-
-How [Product] helps:
-- [Capability tied directly to point 1]
-- [Capability tied directly to point 2]
-
-What [Customer name] achieved with the same challenge:
-"[One-sentence proof quote or metric]"
-
-Next step: [Specific action + proposed date]
-Questions? [Named rep], [email], [phone]
-```
-
-- Reference the call by specifics, not generically — proves you were listening.
-- Keep the "how we help" section to capabilities discussed on the call, not the full feature set.
-
-## Template 2: Champion Internal Selling
-
-**Use when**: your champion needs to sell internally to a committee or budget-holder you haven't met yet.
+### Structure
 
 ```
-[Logo]                                    For internal sharing
+[Logo]                                              [Tagline]
 
-The problem [Champion's team] is solving
+HEADLINE: One sentence describing what you do and who it's for.
 
-[2-3 sentences framing the problem in terms a budget-holder,
- not a practitioner, will immediately recognize — cost, risk,
- or competitive exposure, not workflow detail]
+THE PROBLEM
+2-3 sentences describing the pain your buyer faces.
 
-Why [Product]
+THE SOLUTION
+2-3 sentences describing how your product solves it.
 
-- [Differentiator 1 — framed as business impact]
-- [Differentiator 2]
-- [Differentiator 3]
+WHY [YOUR PRODUCT]
+• Differentiator 1 — One sentence explaining the benefit
+• Differentiator 2 — One sentence explaining the benefit
+• Differentiator 3 — One sentence explaining the benefit
 
-The numbers
+PROOF
+"Customer quote with specific result." — Name, Title, Company
+[Optional: 2-3 metric callouts: "X% improvement", "Y hours saved"]
 
-| Metric | Before | After |
-|---|---|---|
-| [metric 1] | [value] | [value] |
-| [metric 2] | [value] | [value] |
-
-What it costs / what it returns
-
-[Price framing + ROI/payback summary — the number the
- budget-holder will look for first]
-
-Proof: [1-2 customer logos/quotes from a comparable company]
-
-Contact: [Champion's contact, not the rep's — this doc is meant
-to travel inside their org]
+[CTA Button/Link]                    [Contact: name@company.com]
 ```
 
-- Write for a reader who has never spoken with you — no insider shorthand, no assumed context.
-- Put the price/ROI section on the front page; budget-holders skim for it first and judge the rest by whether it's there.
+### Copy Prompts
 
-## Template 3: Trade Show / Conference Handout
+- Headline: "What do you do, in one sentence, that makes someone say 'tell me more'?"
+- Problem: "What is your buyer struggling with before they find you?"
+- Differentiators: "If you could only tell them 3 things, what would make them choose you?"
 
-**Use when**: a quick intro handed out in a high-volume, low-context setting (booth, conference, event) — its only job is to drive a follow-up, not to close anything.
+---
+
+## Use-Case Specific One-Pager
+
+Tailored to a specific workflow, vertical, or problem. More targeted than the product overview.
+
+### Structure
 
 ```
-[Logo]                                        [Event name]
+[Logo]                                    [Use Case: e.g., "For Sales Teams"]
 
-[One-sentence hook — the problem, stated as a question or
- bold claim, not a company description]
+HEADLINE: How [your product] helps [persona] [achieve outcome].
 
-What we do: [1-2 sentences, plain language, no jargon]
+THE CHALLENGE
+When [persona] needs to [task], they face [specific pain].
+This leads to [consequence]: [time wasted / money lost / risk].
 
-Who it's for: [1 sentence — the reader should immediately
-know if this applies to them]
+HOW IT WORKS
+1. [Step 1] — What happens and why it matters
+2. [Step 2] — What happens and why it matters
+3. [Step 3] — What happens and why it matters
 
-Proof: [One strong stat or recognizable logo]
+RESULTS
+• [Metric 1]: Before → After
+• [Metric 2]: Before → After
+• [Metric 3]: Before → After
 
-Scan to see it live: [QR code linking to a 2-minute demo
-video or interactive product tour]
+CUSTOMER SPOTLIGHT
+"Quote about this specific use case." — Name, Title, Company
 
-[Booth number / contact / follow-up CTA]
+[CTA: "See it in action" or "Start a pilot"]       [Contact info]
 ```
 
-- Optimize for someone who will glance at this for 3 seconds while walking past a booth — the hook and the QR code do the real work.
-- Skip pricing, ROI math, and feature lists entirely — that's a follow-up conversation's job, not this handout's.
+### When to Use
 
-## Shared design rules (all three)
+- Different buyer personas need different one-pagers
+- Industry-specific versions (healthcare, fintech, e-commerce)
+- Use-case versions (reporting, onboarding, security)
 
-- One page, front only unless the use case explicitly calls for a back (rare).
-- Logo, real contact name, and a working link/QR code — never a generic `info@` address.
-- Match brand loosely but prioritize scannability over polish — this is a sales tool, not a brand centerpiece.
+---
+
+## Post-Meeting Leave-Behind
+
+Designed to reinforce a conversation that already happened. Summarizes what you discussed and proposes next steps.
+
+### Structure
+
+```
+[Logo]                                            [Date of Meeting]
+
+MEETING RECAP: [Company Name]
+
+WHAT WE DISCUSSED
+• [Pain point 1 they mentioned]
+• [Pain point 2 they mentioned]
+• [Goal they're trying to achieve]
+
+HOW [YOUR PRODUCT] HELPS
+• [Solution to pain 1] — [Specific capability or workflow]
+• [Solution to pain 2] — [Specific capability or workflow]
+• [How you help them reach their goal]
+
+RELEVANT PROOF
+"Quote from a similar customer." — Name, Title, Company
+[1-2 metrics from a similar customer]
+
+PROPOSED NEXT STEPS
+1. [Next step with date]
+2. [Follow-up action]
+3. [Decision timeline]
+
+[Your name]  |  [Your title]  |  [Email]  |  [Phone]
+```
+
+### Tips
+
+- Send within 24 hours of the meeting
+- Reference specific things they said (shows you listened)
+- Keep proposed next steps concrete and time-bound
+- This is the asset your champion forwards to their boss
+
+---
+
+## Champion Enablement One-Pager
+
+Designed specifically for your internal champion to share with their team and leadership. Written to make them look smart.
+
+### Structure
+
+```
+[Logo]
+
+WHY WE'RE EVALUATING [YOUR PRODUCT]
+
+THE SITUATION
+[2-3 sentences about the internal challenge, written as if the champion
+is explaining it to their team. Use "we" and "our" language.]
+
+WHAT [YOUR PRODUCT] DOES
+[1-2 sentences. Plain language, no jargon.]
+
+WHY THIS SOLUTION
+• [Reason 1] — How it solves our specific problem
+• [Reason 2] — How it compares to what we do today
+• [Reason 3] — How it compares to alternatives we evaluated
+
+EXPECTED IMPACT
+• [Metric]: Current state → Expected state
+• [Metric]: Current state → Expected state
+• [Time to value]: Live within [X weeks]
+
+WHO ELSE USES IT
+[2-3 recognizable company names in their industry]
+"Relevant customer quote." — Name, Title, Company
+
+NEXT STEPS
+• [What we're doing next]
+• [What we need from the team]
+• [Decision timeline]
+
+Questions? Talk to [Champion name] or [Your name at email].
+```
+
+### Why This Works
+
+- Written in the champion's voice, not yours
+- Answers the questions their boss will ask
+- Includes peer proof from companies they respect
+- Clear ask and timeline to drive internal momentum
+
+---
+
+## Layout Guidance
+
+### Visual Hierarchy
+
+1. **Headline** — Largest text, top of page, immediately communicates value
+2. **Section headers** — Bold, clear, act as scannable anchors
+3. **Body text** — Short sentences, bullet points preferred over paragraphs
+4. **Proof elements** — Metrics and quotes should visually stand out (larger font, color, or callout box)
+5. **CTA** — Prominent placement, bottom of page or bottom-right
+
+### Whitespace
+
+- Margins: at least 0.75" on all sides
+- Space between sections: enough to visually separate (don't cram)
+- If it feels crowded, cut content. Never shrink font below 9pt.
+
+### Font Sizing
+
+| Element | Suggested Size |
+|---------|---------------|
+| Headline | 18-24pt |
+| Section headers | 12-14pt bold |
+| Body text | 10-11pt |
+| Fine print / footer | 8-9pt |
+
+### Color
+
+- Use brand colors for headers and accents
+- Keep body text dark (black or near-black) on white
+- Limit accent colors to 1-2 for visual consistency
+- Use color to draw attention to metrics and CTAs
+
+### File Format
+
+- **PDF** for email attachments and leave-behinds
+- **Google Slides / PowerPoint** for editable versions reps can customize
+- Always include both — reps will customize, prospects want clean PDFs
