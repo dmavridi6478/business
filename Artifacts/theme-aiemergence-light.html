@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Emergence — Light Theme Template</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg:          #F5F0E4;
+    --surface:     #FDFAF2;
+    --surface2:    #EDE8D9;
+    --border:      #D8D1BE;
+    --border-dark: #B8AF99;
+    --gold:        #C9A84C;
+    --gold-light:  #E8D5A0;
+    --burgundy:    #722F37;
+    --burgundy-light: #F2E8E9;
+    --text:        #1A1612;
+    --text-muted:  #7A6F5E;
+    --text-light:  #A89F8C;
+    --radius:      12px;
+    --radius-lg:   20px;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Inter', sans-serif;
+    min-height: 100vh;
+    padding: 40px 16px;
+  }
+
+  /* ── SLIDE CONTAINER ── */
+  .slide {
+    width: 100%;
+    max-width: 480px;
+    margin: 0 auto 48px;
+    background: var(--surface);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border);
+    overflow: hidden;
+    box-shadow: 0 2px 12px rgba(26,22,18,0.08);
+  }
+
+  /* ── HEADER BAR ── */
+  .slide-header {
+    background: var(--text);
+    padding: 16px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .slide-header .brand {
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--gold);
+  }
+  .slide-header .tag {
+    background: rgba(201,168,76,0.15);
+    color: var(--gold);
+    font-size: 11px;
+    font-weight: 600;
+    padding: 4px 10px;
+    border-radius: 20px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    border: 1px solid rgba(201,168,76,0.3);
+  }
+
+  /* ── SLIDE BODY ── */
+  .slide-body { padding: 28px 24px 32px; }
+
+  .slide-number {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 8px;
+  }
+
+  .slide-title {
+    font-size: 28px;
+    font-weight: 900;
+    line-height: 1.15;
+    color: var(--text);
+    margin-bottom: 8px;
+  }
+  .slide-title .highlight-gold  { color: var(--gold); }
+  .slide-title .highlight-burg  { color: var(--burgundy); }
+
+  .slide-subtitle {
+    font-size: 14px;
+    color: var(--text-muted);
+    margin-bottom: 24px;
+    line-height: 1.6;
+  }
+
+  /* ── FORMULA BAR ── */
+  .formula {
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 14px 18px;
+    margin-bottom: 24px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+  .formula-step {
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--burgundy);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+  .formula-arrow { color: var(--text-light); font-size: 12px; }
+
+  /* ── NUMBERED SKILL CARDS ── */
+  .skill-list { display: flex; flex-direction: column; gap: 10px; margin-bottom: 24px; }
+  .skill-row {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 14px 16px;
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    transition: border-color 0.15s, box-shadow 0.15s;
+  }
+  .skill-row:hover {
+    border-color: var(--gold);
+    box-shadow: 0 2px 8px rgba(201,168,76,0.12);
+  }
+  .skill-num {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    background: var(--text);
+    color: var(--gold);
+    font-size: 12px;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    letter-spacing: 0.02em;
+  }
+  .skill-text { flex: 1; }
+  .skill-name {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 3px;
+  }
+  .skill-tagline {
+    font-size: 11px;
+    color: var(--text-muted);
+    line-height: 1.4;
+  }
+  .skill-badge {
+    font-size: 10px;
+    font-weight: 700;
+    padding: 3px 8px;
+    border-radius: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    background: var(--burgundy-light);
+    color: var(--burgundy);
+    white-space: nowrap;
+    align-self: flex-start;
+    margin-top: 2px;
+    border: 1px solid rgba(114,47,55,0.2);
+  }
+
+  /* ── DIVIDER WITH LABEL ── */
+  .divider {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+  }
+  .divider-line { flex: 1; height: 1px; background: var(--border); }
+  .divider-label {
+    font-size: 10px;
+    font-weight: 700;
+    color: var(--text-light);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    white-space: nowrap;
+  }
+
+  /* ── TOOL GRID ── */
+  .tool-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-bottom: 24px;
+  }
+  .tool-card {
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .tool-icon {
+    font-size: 22px;
+    line-height: 1;
+  }
+  .tool-name {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--text);
+  }
+  .tool-desc {
+    font-size: 11px;
+    color: var(--text-muted);
+    line-height: 1.4;
+  }
+
+  /* ── STAT ROW ── */
+  .stat-row {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 24px;
+  }
+  .stat-card {
+    flex: 1;
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 16px 12px;
+    text-align: center;
+  }
+  .stat-value {
+    font-size: 30px;
+    font-weight: 900;
+    color: var(--gold);
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+  .stat-label {
+    font-size: 10px;
+    color: var(--text-muted);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+
+  /* ── QUOTE / CALLOUT ── */
+  .callout {
+    background: var(--surface2);
+    border-left: 3px solid var(--gold);
+    border-radius: 0 var(--radius) var(--radius) 0;
+    padding: 14px 16px;
+    margin-bottom: 24px;
+  }
+  .callout-text {
+    font-size: 14px;
+    font-style: italic;
+    color: var(--text);
+    line-height: 1.6;
+    margin-bottom: 4px;
+  }
+  .callout-attr {
+    font-size: 11px;
+    color: var(--text-muted);
+    font-weight: 600;
+  }
+
+  /* ── CTA BUTTON ── */
+  .cta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: var(--text);
+    color: var(--gold);
+    border-radius: var(--radius);
+    padding: 14px 20px;
+    font-weight: 800;
+    font-size: 14px;
+    cursor: pointer;
+    letter-spacing: 0.02em;
+  }
+
+  .cta-outline {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: transparent;
+    color: var(--burgundy);
+    border: 1.5px solid var(--burgundy);
+    border-radius: var(--radius);
+    padding: 13px 20px;
+    font-weight: 700;
+    font-size: 14px;
+    cursor: pointer;
+  }
+
+  /* ── FOOTER ── */
+  .slide-footer {
+    padding: 14px 24px;
+    border-top: 1px solid var(--border);
+    background: var(--surface2);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .footer-brand {
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--text-light);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+  .footer-dots { display: flex; gap: 4px; }
+  .dot {
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: var(--border);
+  }
+  .dot.active { background: var(--gold); }
+
+  /* ── PAGE LABELS ── */
+  .template-label {
+    text-align: center;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 12px;
+  }
+
+  .demo-section {
+    max-width: 480px;
+    margin: 0 auto 16px;
+    padding: 0 4px;
+  }
+  .demo-section h2 {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--gold);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 8px;
+  }
+</style>
+</head>
+<body>
+
+<!-- ── DEMO SLIDES ── -->
+
+<div class="demo-section"><h2>Slide 1 — Title / Hook</h2></div>
+<div class="template-label">@aiemergence · Light Theme</div>
+
+<div class="slide">
+  <div class="slide-header">
+    <span class="brand">AI Emergence</span>
+    <span class="tag">2026 Series</span>
+  </div>
+  <div class="slide-body">
+    <div class="slide-number">Series Overview</div>
+    <h1 class="slide-title">12 AI Skills<br>That Will <span class="highlight-gold">Define</span><br>Your Career</h1>
+    <p class="slide-subtitle">The operators pulling ahead in 2026 aren't smarter. They just picked up these 12 capabilities first.</p>
+    <div class="stat-row">
+      <div class="stat-card">
+        <div class="stat-value">12</div>
+        <div class="stat-label">Skills</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value">4</div>
+        <div class="stat-label">Levels</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value">90</div>
+        <div class="stat-label">Day Plan</div>
+      </div>
+    </div>
+    <div class="callout">
+      <div class="callout-text">"The gap isn't intelligence. It's which tools you've chosen to master."</div>
+      <div class="callout-attr">— AI Emergence</div>
+    </div>
+    <div class="cta">
+      <span>Start with Skill #1</span>
+      <span>→</span>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span class="footer-brand">@aiemergence</span>
+    <div class="footer-dots">
+      <div class="dot active"></div>
+      <div class="dot"></div><div class="dot"></div>
+      <div class="dot"></div><div class="dot"></div>
+    </div>
+  </div>
+</div>
+
+<div class="demo-section"><h2>Slide 2 — Framework Breakdown</h2></div>
+
+<div class="slide">
+  <div class="slide-header">
+    <span class="brand">AI Emergence</span>
+    <span class="tag">Skill 03</span>
+  </div>
+  <div class="slide-body">
+    <div class="slide-number">Skill 03 / 12</div>
+    <h1 class="slide-title"><span class="highlight-burg">AI</span> <span class="highlight-gold">Agents</span></h1>
+    <p class="slide-subtitle">Autonomous systems that plan, reason, and execute multi-step tasks without your constant input.</p>
+    <div class="formula">
+      <span class="formula-step">Plan (A)</span>
+      <span class="formula-arrow">→</span>
+      <span class="formula-step">Reason (B)</span>
+      <span class="formula-arrow">→</span>
+      <span class="formula-step">Execute (C)</span>
+      <span class="formula-arrow">→</span>
+      <span class="formula-step">Result</span>
+    </div>
+    <div class="divider">
+      <div class="divider-line"></div>
+      <div class="divider-label">Tools to Learn</div>
+      <div class="divider-line"></div>
+    </div>
+    <div class="tool-grid">
+      <div class="tool-card">
+        <div class="tool-icon">⚙️</div>
+        <div class="tool-name">CrewAI</div>
+        <div class="tool-desc">Multi-agent teams, role-based</div>
+      </div>
+      <div class="tool-card">
+        <div class="tool-icon">🔗</div>
+        <div class="tool-name">LangGraph</div>
+        <div class="tool-desc">Stateful agent workflows</div>
+      </div>
+      <div class="tool-card">
+        <div class="tool-icon">🤝</div>
+        <div class="tool-name">AutoGen</div>
+        <div class="tool-desc">Conversational agent loops</div>
+      </div>
+      <div class="tool-card">
+        <div class="tool-icon">🛡️</div>
+        <div class="tool-name">Claude SDK</div>
+        <div class="tool-desc">Production-grade agents</div>
+      </div>
+    </div>
+    <div class="cta-outline">
+      <span>See the full agent prompt →</span>
+      <span>↓</span>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span class="footer-brand">@aiemergence</span>
+    <div class="footer-dots">
+      <div class="dot"></div>
+      <div class="dot active"></div>
+      <div class="dot"></div><div class="dot"></div><div class="dot"></div>
+    </div>
+  </div>
+</div>
+
+<div class="demo-section"><h2>Slide 3 — Full Skills Index</h2></div>
+
+<div class="slide">
+  <div class="slide-header">
+    <span class="brand">AI Emergence</span>
+    <span class="tag">All 12</span>
+  </div>
+  <div class="slide-body">
+    <div class="slide-number">Complete Index</div>
+    <h1 class="slide-title">The <span class="highlight-gold">Roadmap</span></h1>
+    <p class="slide-subtitle">In sequence. Each skill unlocks the next.</p>
+    <div class="skill-list">
+      <div class="skill-row">
+        <div class="skill-num">01</div>
+        <div class="skill-text">
+          <div class="skill-name">Prompt Engineering</div>
+          <div class="skill-tagline">Goal → Context → Format → Output</div>
+        </div>
+        <div class="skill-badge">Start here</div>
+      </div>
+      <div class="skill-row">
+        <div class="skill-num">02</div>
+        <div class="skill-text">
+          <div class="skill-name">AI Workflow Automation</div>
+          <div class="skill-tagline">Trigger → Action → Process → Result</div>
+        </div>
+      </div>
+      <div class="skill-row">
+        <div class="skill-num">03</div>
+        <div class="skill-text">
+          <div class="skill-name">AI Agents</div>
+          <div class="skill-tagline">Plan → Reason → Execute → Better Results</div>
+        </div>
+        <div class="skill-badge">2026 hot</div>
+      </div>
+      <div class="skill-row">
+        <div class="skill-num">04</div>
+        <div class="skill-text">
+          <div class="skill-name">RAG</div>
+          <div class="skill-tagline">Sources → Retrieve → Augment → Answer</div>
+        </div>
+      </div>
+      <div class="skill-row">
+        <div class="skill-num">05</div>
+        <div class="skill-text">
+          <div class="skill-name">Staying Updated</div>
+          <div class="skill-tagline">Curate → Synthesize → Apply → Share</div>
+        </div>
+      </div>
+      <div class="skill-row">
+        <div class="skill-num">06</div>
+        <div class="skill-text">
+          <div class="skill-name">Multimodal AI</div>
+          <div class="skill-tagline">Text + Image + Audio → ONE MODEL</div>
+        </div>
+      </div>
+    </div>
+    <div class="cta">
+      <span>Get the full 90-day plan</span>
+      <span>→</span>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span class="footer-brand">@aiemergence</span>
+    <div class="footer-dots">
+      <div class="dot"></div><div class="dot"></div>
+      <div class="dot active"></div>
+      <div class="dot"></div><div class="dot"></div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
