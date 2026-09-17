@@ -1,0 +1,522 @@
+<title>Design Reference Shelf</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap">
+<style>
+:root {
+  --bg:        #f7f7f4;
+  --bg2:       #ffffff;
+  --bg3:       #eeecea;
+  --text:      #1a1a1a;
+  --text-sub:  #55554e;
+  --text-muted:#8a8a80;
+  --rule:      #ddddd6;
+  --accent:    #5a40b0;
+  --accent-lt: #f2eeff;
+  --c-design:  #5a40b0;
+  --c-tool:    #1a6e9e;
+  --c-inspo:   #1a7a58;
+  --c-ai:      #8f2929;
+  --c-career:  #7a4e1a;
+  --tag-h:     #5a40b0;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg:        #0e0f14;
+    --bg2:       #161820;
+    --bg3:       #1e2028;
+    --text:      #e6e6e0;
+    --text-sub:  #9898a0;
+    --text-muted:#505060;
+    --rule:      #2a2c38;
+    --accent:    #8e70e8;
+    --accent-lt: #1a1430;
+    --c-design:  #8e70e8;
+    --c-tool:    #4fa8d4;
+    --c-inspo:   #3abf90;
+    --c-ai:      #e06060;
+    --c-career:  #d4943a;
+  }
+}
+:root[data-theme="dark"] {
+  --bg:        #0e0f14;
+  --bg2:       #161820;
+  --bg3:       #1e2028;
+  --text:      #e6e6e0;
+  --text-sub:  #9898a0;
+  --text-muted:#505060;
+  --rule:      #2a2c38;
+  --accent:    #8e70e8;
+  --accent-lt: #1a1430;
+  --c-design:  #8e70e8;
+  --c-tool:    #4fa8d4;
+  --c-inspo:   #3abf90;
+  --c-ai:      #e06060;
+  --c-career:  #d4943a;
+}
+*, *::before, *::after { box-sizing: border-box; }
+body {
+  font-family: 'Aptos', 'Plus Jakarta Sans', system-ui, sans-serif;
+  font-size: 11pt;
+  line-height: 1.65;
+  background: var(--bg);
+  color: var(--text);
+  margin: 0;
+  padding: 2.5rem 1rem 4rem;
+}
+.page { max-width: 820px; margin: 0 auto; }
+
+.header {
+  padding-bottom: 2rem;
+  border-bottom: 2px solid var(--rule);
+  margin-bottom: 2.5rem;
+}
+.eyebrow {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: .5rem;
+}
+h1 {
+  font-family: 'Aptos', 'Plus Jakarta Sans', system-ui, sans-serif;
+  font-size: 32pt;
+  font-weight: 700;
+  line-height: 1.1;
+  margin: 0 0 .6rem;
+  text-wrap: balance;
+}
+.header-sub {
+  color: var(--text-sub);
+  font-size: 10.5pt;
+  margin: 0;
+  max-width: 58ch;
+}
+
+h2 {
+  font-family: 'Aptos', 'Plus Jakarta Sans', system-ui, sans-serif;
+  font-size: 14pt;
+  font-weight: 700;
+  margin: 2.5rem 0 .8rem;
+  text-wrap: balance;
+}
+.section-sub {
+  color: var(--text-sub);
+  font-size: 10.5pt;
+  margin: 0 0 1.2rem;
+}
+
+/* Category badge */
+.cat-badge {
+  display: inline-block;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  padding: 2px 8px;
+  border-radius: 3px;
+  border: 1px solid;
+  margin-bottom: 1rem;
+}
+
+/* Tables */
+.table-wrap { overflow-x: auto; margin: .75rem 0 2rem; }
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 10.5pt;
+}
+th {
+  text-align: center;
+  vertical-align: top;
+  padding: .55rem .9rem;
+  font-size: 9.5pt;
+  font-weight: 700;
+  letter-spacing: .04em;
+  background: var(--bg3);
+  border-bottom: 2px solid var(--rule);
+  color: var(--text-sub);
+  text-transform: uppercase;
+}
+td {
+  text-align: center;
+  vertical-align: top;
+  padding: .6rem .9rem;
+  border-bottom: 1px solid var(--rule);
+  color: var(--text);
+}
+tr:last-child td { border-bottom: none; }
+td:first-child, th:first-child { text-align: left; }
+td a {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 500;
+}
+td a:hover { text-decoration: underline; }
+
+/* Callout */
+.callout {
+  background: var(--accent-lt);
+  border: 1px solid var(--accent);
+  border-radius: 6px;
+  padding: .9rem 1.2rem;
+  font-size: 10.5pt;
+  color: var(--text-sub);
+  margin: 1.5rem 0;
+}
+.callout strong { color: var(--accent); }
+
+/* Stat row */
+.stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .75rem;
+  margin: 1rem 0 2rem;
+}
+.stat-pill {
+  background: var(--bg2);
+  border: 1px solid var(--rule);
+  border-radius: 6px;
+  padding: .5rem 1rem;
+  font-size: 10pt;
+  color: var(--text-sub);
+}
+.stat-pill strong {
+  display: block;
+  font-size: 13pt;
+  font-weight: 700;
+  color: var(--accent);
+  line-height: 1.2;
+}
+
+/* Divider */
+.divider {
+  border: none;
+  border-top: 1px solid var(--rule);
+  margin: 2rem 0;
+}
+
+.source {
+  margin-top: 2.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--rule);
+  font-size: 9.5pt;
+  color: var(--text-muted);
+}
+</style>
+
+<div class="page">
+
+  <div class="header">
+    <div class="eyebrow">Design Reference &bull; Sep 2026</div>
+    <h1>Design Reference Shelf</h1>
+    <p class="header-sub">Curated tools, inspiration galleries, AI prompt libraries, and external AI design tools — organized for fast lookup, not discovery browsing.</p>
+  </div>
+
+  <div class="stats">
+    <div class="stat-pill"><strong>12</strong>Core tools</div>
+    <div class="stat-pill"><strong>10</strong>Niche tools</div>
+    <div class="stat-pill"><strong>5</strong>Inspiration galleries</div>
+    <div class="stat-pill"><strong>3</strong>AI prompt libraries</div>
+    <div class="stat-pill"><strong>7</strong>External AI tools</div>
+  </div>
+
+  <!-- Core Resources -->
+  <h2>Core Design Tools</h2>
+  <p class="section-sub">Reach for one of these instead of improvising when a task needs illustrations, logos, components, effects, or asset inspection.</p>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Site</th>
+          <th>What it's for</th>
+          <th>Link</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>unDraw</strong></td>
+          <td>Free, open-source SVG illustrations — no attribution required, constantly updated</td>
+          <td><a href="https://undraw.co">undraw.co</a></td>
+        </tr>
+        <tr>
+          <td><strong>SVGL</strong></td>
+          <td>~665 real product/brand logos as copy-pasteable SVG</td>
+          <td><a href="https://svgl.app">svgl.app</a></td>
+        </tr>
+        <tr>
+          <td><strong>Aceternity</strong></td>
+          <td>200+ production-ready UI blocks/templates (Tailwind + Framer Motion) for landing pages</td>
+          <td><a href="https://ui.aceternity.com">ui.aceternity.com</a></td>
+        </tr>
+        <tr>
+          <td><strong>Glassmorphism generator</strong></td>
+          <td>Generates CSS for glassmorphism (backdrop-filter, blur, refraction, border) — copy directly</td>
+          <td><a href="https://glassmorphism.com">glassmorphism.com</a></td>
+        </tr>
+        <tr>
+          <td><strong>JSON Crack</strong></td>
+          <td>Visualizes JSON as an interactive, explorable graph for debugging payloads</td>
+          <td><a href="https://jsoncrack.com">jsoncrack.com</a></td>
+        </tr>
+        <tr>
+          <td><strong>Mobbin</strong></td>
+          <td>Real iOS &amp; web app screens/flows from 1,000+ shipped products — study patterns before designing</td>
+          <td><a href="https://mobbin.com">mobbin.com</a></td>
+        </tr>
+        <tr>
+          <td><strong>Ecomm.Design</strong></td>
+          <td>Ecommerce sites filterable by platform/category — compare product-page UX patterns</td>
+          <td><a href="https://ecomm.design">ecomm.design</a></td>
+        </tr>
+        <tr>
+          <td><strong>UI.live</strong></td>
+          <td>Creator-shared UI snippets by component type (buttons, cards, dashboards, data viz)</td>
+          <td><a href="https://ui.live/components">ui.live/components</a></td>
+        </tr>
+        <tr>
+          <td><strong>Realtime Colors</strong></td>
+          <td>Preview color palette + font pairing on a real sample layout — 300K+ users, free</td>
+          <td><a href="https://realtimecolors.com">realtimecolors.com</a></td>
+        </tr>
+        <tr>
+          <td><strong>tweakcn</strong></td>
+          <td>Edit every shadcn design token against a live dashboard preview — 42 presets, no login</td>
+          <td><a href="https://tweakcn.com">tweakcn.com</a></td>
+        </tr>
+        <tr>
+          <td><strong>Smooth Shadows</strong></td>
+          <td>Build a realistic layered shadow from one light source — copy as CSS or Figma layer</td>
+          <td><a href="https://smoothshadows.com">smoothshadows.com</a></td>
+        </tr>
+        <tr>
+          <td><strong>lucide-animated</strong></td>
+          <td>Lucide icons animated with Motion — add via shadcn CLI, MIT licensed</td>
+          <td><a href="https://lucide-animated.com">lucide-animated.com</a></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <hr class="divider">
+
+  <!-- Niche Tools -->
+  <h2>More Niche Design Tools</h2>
+  <p class="section-sub">A second batch oriented around specific effects and workflows the mainstream lists skip.</p>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Site</th>
+          <th>What it's for</th>
+          <th>Link</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Ditther</strong></td>
+          <td>Turns any image/video into dithered, ASCII, or halftone pixel art in-browser — no account</td>
+          <td><a href="https://ditther.com">ditther.com</a></td>
+        </tr>
+        <tr>
+          <td><strong>Cooldock</strong></td>
+          <td>Second macOS Dock for live widgets (music, weather, todos, stats) — desktop utility</td>
+          <td><a href="https://dock.cool">dock.cool</a></td>
+        </tr>
+        <tr>
+          <td><strong>Selected</strong></td>
+          <td>Live leaderboard of ~8,800 Framer marketplace templates ranked by real marketplace position</td>
+          <td><a href="https://selected.site">selected.site</a></td>
+        </tr>
+        <tr>
+          <td><strong>Logo System</strong></td>
+          <td>1,300+ curated logos/wordmarks/animated marks, searchable by color/style with moodboard view</td>
+          <td><a href="https://logosystem.co">logosystem.co</a></td>
+        </tr>
+        <tr>
+          <td><strong>Ultramock</strong></td>
+          <td>Drop a product screenshot into a real 3D camera — tilt/zoom/keyframe, export with motion blur</td>
+          <td><a href="https://ultramock.io">ultramock.io</a></td>
+        </tr>
+        <tr>
+          <td><strong>Javii</strong></td>
+          <td>Tiny single-purpose apps for content visuals: iMessage/TikTok mockups, tags, stamps, overlays</td>
+          <td><a href="https://javii.tools">javii.tools</a></td>
+        </tr>
+        <tr>
+          <td><strong>Motion.ed</strong></td>
+          <td>Interactive examples of interface motion techniques — easing, delay, masking, parallax, zoom</td>
+          <td><a href="https://motion.zajno.com">motion.zajno.com</a></td>
+        </tr>
+        <tr>
+          <td><strong>Drawerrr</strong></td>
+          <td>Skill-building platform: real-world design challenges, peer collaboration, industry expert feedback</td>
+          <td><a href="https://drawerrr.com">drawerrr.com</a></td>
+        </tr>
+        <tr>
+          <td><strong>coolshapes</strong></td>
+          <td>100+ abstract grainy-gradient shapes as SVG, JSX, or PNG — MIT licensed, Figma file included</td>
+          <td><a href="https://coolshap.es">coolshap.es</a></td>
+        </tr>
+        <tr>
+          <td><strong>Wakamai Fondue</strong></td>
+          <td>Drop in a font file and read exactly what it supports: variable axes, glyph count, layout features</td>
+          <td><a href="https://wakamaifondue.com">wakamaifondue.com</a></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <hr class="divider">
+
+  <!-- Inspiration Galleries -->
+  <h2>Design Inspiration Galleries</h2>
+  <p class="section-sub">Reference sites for <em>taste</em>, not assets — browse before designing so a build doesn't default to the same template everyone else reaches for. Different galleries suit different jobs.</p>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Site</th>
+          <th>Best for</th>
+          <th>Link</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Awwwards</strong></td>
+          <td>Industry-standard award gallery, daily selections judged by a panel — high volume, current interaction trends, variable quality</td>
+          <td><a href="https://www.awwwards.com">awwwards.com</a></td>
+        </tr>
+        <tr>
+          <td><strong>Godly</strong></td>
+          <td>Smaller, higher bar — 3–5 new sites per week, no submissions or awards, pure curation. Open for high-end client work</td>
+          <td><a href="https://godly.website">godly.website</a></td>
+        </tr>
+        <tr>
+          <td><strong>SiteInspire</strong></td>
+          <td>Clean, restrained, European — 8,000+ sites filterable by style/type/subject. For whitespace and typography</td>
+          <td><a href="https://www.siteinspire.com">siteinspire.com</a></td>
+        </tr>
+        <tr>
+          <td><strong>Land-book</strong></td>
+          <td>Built for SaaS landing pages specifically — filter straight to the pricing table or comparison grid you're stuck on</td>
+          <td><a href="https://land-book.com">land-book.com</a></td>
+        </tr>
+        <tr>
+          <td><strong>Httpster</strong></td>
+          <td>Small studios, quiet design — typography-driven, independent, restraint over spectacle. For when loud isn't the answer</td>
+          <td><a href="https://httpster.net">httpster.net</a></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <hr class="divider">
+
+  <!-- AI Prompt Libraries -->
+  <h2>AI Prompt Discovery Libraries</h2>
+  <p class="section-sub">Browse other creators' actual AI image/video generation prompts — filterable by model, with one-click "use this prompt" flows. Adapt from real examples rather than writing from a blank page.</p>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Site</th>
+          <th>What it's for</th>
+          <th>Link</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Meigen.ai</strong></td>
+          <td>Gallery of AI-generated images/video, filterable by model (GPT Image, Seedance 2.0, Midjourney) — shows full prompt with "Use as Prompt" / "Use as Ref" buttons</td>
+          <td><a href="https://www.meigen.ai">meigen.ai</a></td>
+        </tr>
+        <tr>
+          <td><strong>Yesand.ai</strong></td>
+          <td>Prompt-attached image/video gallery browsable by category (Featured, Fashion, Collage, Video, Portrait) rather than by model</td>
+          <td><a href="https://yesand.ai">yesand.ai</a></td>
+        </tr>
+        <tr>
+          <td><strong>YouMind Prompts</strong></td>
+          <td>"World's largest free AI prompt library" — 20,000+ image/video/workflow prompts updated daily, in curated packs with "View full prompt" / "Try now"</td>
+          <td><a href="https://youmind.com/prompts">youmind.com/prompts</a></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="callout">
+    <strong>Attribution note:</strong> These are attribution-driven community galleries — prompts belong to individual creators who posted them, not the platforms. Browse and adapt directly rather than copying verbatim without crediting the source.
+  </div>
+
+  <hr class="divider">
+
+  <!-- External AI Tools -->
+  <h2>External AI Tools Worth Knowing</h2>
+  <p class="section-sub">Not Claude Code skills — external SaaS products. Mention as options when evaluating tooling; don't assume access or an account exists.</p>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Tool</th>
+          <th>What it's for</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Genspark</strong></td>
+          <td>Multi-agent AI workspace — one prompt fans out to research/writer/analyst/designer agents inside a shared project</td>
+        </tr>
+        <tr>
+          <td><strong>Google Stitch</strong></td>
+          <td>Text/voice-to-UI — describes a screen or flow in plain language, generates a working interface draft</td>
+        </tr>
+        <tr>
+          <td><strong>Google Flow</strong></td>
+          <td>AI video/scene-builder — storyboards and generates cinematic clips/scenes from text descriptions</td>
+        </tr>
+        <tr>
+          <td><strong>Gumloop</strong></td>
+          <td>Visual AI workflow automation — chains triggers/AI steps/actions without code</td>
+        </tr>
+        <tr>
+          <td><strong>Figma Make</strong></td>
+          <td>AI prototyping inside Figma — turns a design or idea into a clickable, interactive prototype fast</td>
+        </tr>
+        <tr>
+          <td><strong>Kombai</strong></td>
+          <td>AI design engineer — turns a prompt into production frontend that reads as hand-made, not AI-default</td>
+        </tr>
+        <tr>
+          <td><strong>Visily</strong></td>
+          <td>AI prototyping — turns a prompt, screenshot, or sketch into an editable UI concept</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <hr class="divider">
+
+  <!-- Career -->
+  <h2>Career Resources</h2>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Site</th>
+          <th>What it's for</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Design Engineer Jobs</strong></td>
+          <td>Curated job board for roles that blend design and code — lists salary/equity ranges up front. The natural next step once design-engineering portfolio and taste are built.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="source">
+    Sources: curated from six design/AI-tools carousels (@glorydotdev, @finitopotatoes, @webnailed &times;3, @riteshbiswas.in). Verify each site is still live and re-check licensing/attribution/pricing before relying on it in client-facing work.
+  </div>
+
+</div>
