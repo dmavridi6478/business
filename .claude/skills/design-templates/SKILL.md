@@ -1,6 +1,6 @@
 ---
 name: design-templates
-description: Ready-to-use, self-contained HTML/CSS templates for common content-visual needs — an iMessage chat mockup, a vertical social/story device frame, a 3D-tilted product screenshot mockup, a halftone/dithered image effect, a logo/reference moodboard grid, a brand board, a SaaS pricing table, a restrained editorial hero, a filterable design-reference dashboard, a light "Save For Later" social carousel (carousel-save-for-later), a dark neon agent info card (dark-neon-agent-card), a dark orange-gradient tutorial step-cards layout (dark-orange-agent-tutorial), and a GitHub-style dark trending repo card (github-trending-card). Use these instead of reaching for a paid single-purpose tool (or hand-rolling from scratch) when a design/frontend task needs any of the above layouts. Each template is copy-paste-ready with clear swap points marked in comments.
+description: Ready-to-use, self-contained HTML/CSS templates for common content-visual needs — an iMessage chat mockup, a vertical social/story device frame, a 3D-tilted product screenshot mockup, a halftone/dithered image effect, a logo/reference moodboard grid, a brand board, a SaaS pricing table, a restrained editorial hero, a filterable design-reference dashboard, a light "Save For Later" social carousel (carousel-save-for-later), a dark neon agent info card (dark-neon-agent-card), a dark orange-gradient tutorial step-cards layout (dark-orange-agent-tutorial), a GitHub-style dark trending repo card (github-trending-card), a bold red grunge AI-tools carousel (@ai.global.lee style, red-grunge-ai-tools), and a warm editorial carousel for thinking-partner / Claude workflow content (@parm.ai style, editorial-thinking-partner). Use these instead of reaching for a paid single-purpose tool (or hand-rolling from scratch) when a design/frontend task needs any of the above layouts. Each template is copy-paste-ready with clear swap points marked in comments.
 ---
 
 ## When to use this skill
@@ -20,6 +20,8 @@ Reach for a template here instead of improvising when a task needs:
 - **A SaaS pricing table or feature-comparison grid** → `templates/saas-pricing-table.html`
 - **A restrained, typography-led hero or section divider** (when "loud" is the wrong register) → `templates/editorial-hero.html`
 - **A bookmarkable, filterable reference dashboard** of curated design-inspiration sites → `templates/design-reference-shelf.html` (also published as an Artifact — see `design-dev-resources` for the live link and site notes)
+- **A bold red grunge AI-tools carousel** (@ai.global.lee style — red `#FF0000` bg, grunge texture, Impact-style white headline, yellow highlighted keywords, monospace body, B&W closing slide) → `templates/red-grunge-ai-tools.html`
+- **A warm editorial thinking-partner carousel** (@parm.ai style — beige `#F5F0E8` bg, Playfair Display italic in burnt orange, dark monospace prompt code blocks, clean numbered step layout) → `templates/editorial-thinking-partner.html`
 
 ## How to use a template
 
@@ -47,6 +49,8 @@ All are verified to render correctly with no console errors (checked via Playwri
 | `dark-neon-agent-card.html` | @aigenesis.official Hermes agent cards | Dark bg (#0A0A12), cyan/purple neon glow via absolute blurred circles, animated pulse dot, numbered steps, monospace code block — swap colours via CSS custom properties |
 | `dark-orange-agent-tutorial.html` | @skilldropai 7-step Claude agent carousel | Dark charcoal (#0F0F0F), orange gradient header + step-num badges, left-bar hover accent, autonomous loop diagram — duplicate `.step-card` for each step |
 | `github-trending-card.html` | @githubnow daily trending briefing | GitHub dark palette, green accent, monospace star/fork counts, language colour dots, topic pills, today-stars badge — duplicate `.repo-card` for each repo |
+| `red-grunge-ai-tools.html` | @ai.global.lee "5 AI tools worth saving" carousel | Red `#FF0000` bg, SVG fractalNoise grunge overlay, Impact-family display headline, yellow `#FFE600` `.highlight` spans, monospace body, `.slide--bw` closing variant — duplicate `.slide` for each tool |
+| `editorial-thinking-partner.html` | @parm.ai "Claude as thinking partner" carousel | Warm beige `#F5F0E8` bg, Playfair Display italic serif, burnt orange `#C4622D` accent, dark `#1E1E1E` `.prompt-block` with monospace syntax colouring, numbered `.step-row` layout, `.callout` blockquote — duplicate `.slide` for each step |
 
 ## Related skills in this repo
 
