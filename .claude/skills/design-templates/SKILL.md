@@ -1,12 +1,16 @@
 ---
 name: design-templates
-description: Ready-to-use, self-contained HTML/CSS templates for common content-visual needs — an iMessage chat mockup, a vertical social/story device frame, a 3D-tilted product screenshot mockup, a halftone/dithered image effect (both CSS-only and real canvas dithering), a logo/reference moodboard grid, a brand board (wordmark + palette + type pairing + app preview), a SaaS pricing table + comparison grid, a restrained editorial hero, and a filterable design-reference-site dashboard. Use these instead of reaching for a paid single-purpose tool (or hand-rolling from scratch) when a design/frontend task needs a device mockup, a stylized image effect, a moodboard layout, a brand-kit deliverable, a SaaS pricing section, a quiet typography-led hero, or a reusable reference dashboard. Each template is copy-paste-ready with clear swap points marked in comments.
+description: Ready-to-use, self-contained HTML/CSS templates for common content-visual needs — an iMessage chat mockup, a vertical social/story device frame, a 3D-tilted product screenshot mockup, a halftone/dithered image effect, a logo/reference moodboard grid, a brand board, a SaaS pricing table, a restrained editorial hero, a filterable design-reference dashboard, a light "Save For Later" social carousel (carousel-save-for-later), a dark neon agent info card (dark-neon-agent-card), a dark orange-gradient tutorial step-cards layout (dark-orange-agent-tutorial), and a GitHub-style dark trending repo card (github-trending-card). Use these instead of reaching for a paid single-purpose tool (or hand-rolling from scratch) when a design/frontend task needs any of the above layouts. Each template is copy-paste-ready with clear swap points marked in comments.
 ---
 
 ## When to use this skill
 
 Reach for a template here instead of improvising when a task needs:
 
+- **A light social carousel** in "Save For Later" style (paper texture, coral accent, numbered slides) → `templates/carousel-save-for-later.html`
+- **A dark neon agent/tool card** (cyan/purple glow, code block, step list, dark bg) → `templates/dark-neon-agent-card.html`
+- **A dark orange-gradient tutorial layout** (numbered step cards, agent loop diagram, charcoal bg) → `templates/dark-orange-agent-tutorial.html`
+- **A GitHub-style dark trending repo card** (green accent, star/fork stats, topic pills, monospace counts) → `templates/github-trending-card.html`
 - **A chat-app screenshot mockup** (testimonials, feature announcements, social proof) → `templates/imessage-mockup.html`
 - **A vertical social/story device frame** (TikTok/Reels/Stories content previews) → `templates/device-frame-social.html`
 - **A 3D-angled product/app screenshot** for marketing (hero images, feature cards) → `templates/product-3d-tilt.html`
@@ -39,6 +43,10 @@ All are verified to render correctly with no console errors (checked via Playwri
 | `saas-pricing-table.html` | Land-book (land-book.com) | 3-tier pricing table + feature-comparison table in one file, the two patterns Land-book names as what people actually go there to unstick themselves on |
 | `editorial-hero.html` | SiteInspire (siteinspire.com) / Httpster (httpster.net) | Oversized serif headline with one italic accent word, thin gradient rule under a category label, dotted-radial-gradient canvas — the "clean, restrained, European" register both sites curate for |
 | `design-reference-shelf.html` | The 5-site design-inspiration list itself | Card-catalog-style dashboard (Fraunces display + IBM Plex Mono utility faces, light/dark tokens, small JS tag filter) indexing Awwwards/Godly/SiteInspire/Land-book/Httpster by what each is for; built and verified as a Claude Artifact, not a plain copy-paste snippet like the rest of this table |
+| `carousel-save-for-later.html` | @clickandrank "Save For Later" social carousel | Light paper-texture bg, coral accent, slide counter badge, bookmark pill tag, progress dots — drop-in for any numbered carousel/listicle |
+| `dark-neon-agent-card.html` | @aigenesis.official Hermes agent cards | Dark bg (#0A0A12), cyan/purple neon glow via absolute blurred circles, animated pulse dot, numbered steps, monospace code block — swap colours via CSS custom properties |
+| `dark-orange-agent-tutorial.html` | @skilldropai 7-step Claude agent carousel | Dark charcoal (#0F0F0F), orange gradient header + step-num badges, left-bar hover accent, autonomous loop diagram — duplicate `.step-card` for each step |
+| `github-trending-card.html` | @githubnow daily trending briefing | GitHub dark palette, green accent, monospace star/fork counts, language colour dots, topic pills, today-stars badge — duplicate `.repo-card` for each repo |
 
 ## Related skills in this repo
 

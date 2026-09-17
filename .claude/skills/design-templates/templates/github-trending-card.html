@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<!--
+  Template: github-trending-card
+  Style: @githubnow dark GitHub trending card
+  Inspired by: GitHub dark UI — dark bg, green accent, monospace stats, repo cards with star/fork counts
+  Swap points:
+    --green: primary accent (default GitHub green #3FB950)
+    .repo-card items: repo name, description, language, stars, forks, today-stars
+    .daily-badge: date or series name
+    Custom properties at :root cover all colour swap points.
+-->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GitHub Trending Card</title>
+<style>
+  /* ── SWAP THESE ── */
+  :root {
+    --green:    #3FB950;
+    --green-bg: rgba(63, 185, 80, .1);
+    --bg:       #0D1117;
+    --surface:  #161B22;
+    --surface2: #21262D;
+    --border:   #30363D;
+    --text:     #C9D1D9;
+    --text-dim: #8B949E;
+    --blue:     #58A6FF;
+    --purple:   #BC8CFF;
+    --orange:   #F78166;
+    --yellow:   #E3B341;
+    --font:     "Inter", system-ui, sans-serif;
+    --mono:     "JetBrains Mono", "Fira Code", "Courier New", monospace;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--bg);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    font-family: var(--font);
+    padding: 40px 16px;
+    gap: 24px;
+  }
+
+  /* ── HEADER ── */
+  .header {
+    width: 100%;
+    max-width: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 0 4px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .header-left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  /* GitHub Octocat SVG (simplified) */
+  .octocat {
+    width: 24px;
+    height: 24px;
+    fill: var(--text-dim);
+  }
+
+  .header-title {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-dim);
+    letter-spacing: .02em;
+  }
+
+  .header-title strong {
+    color: var(--text);
+    font-weight: 700;
+  }
+
+  .daily-badge {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+    color: var(--green);
+    background: var(--green-bg);
+    border: 1px solid rgba(63, 185, 80, .3);
+    padding: 4px 12px;
+    border-radius: 100px;
+  }
+
+  /* ── REPO CARD ── */
+  .repo-card {
+    width: 100%;
+    max-width: 600px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 24px;
+    transition: border-color .15s;
+    position: relative;
+  }
+
+  .repo-card:hover { border-color: rgba(63, 185, 80, .4); }
+
+  .repo-rank {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    font-family: var(--mono);
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--text-dim);
+    opacity: .6;
+  }
+
+  .repo-name {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 8px;
+  }
+
+  .repo-icon {
+    width: 16px;
+    height: 16px;
+    fill: var(--text-dim);
+    flex-shrink: 0;
+  }
+
+  .repo-full-name {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--blue);
+    text-decoration: none;
+    line-height: 1;
+  }
+
+  .repo-full-name:hover { text-decoration: underline; }
+
+  .repo-owner { color: var(--text-dim); font-weight: 400; }
+
+  .repo-desc {
+    font-size: 13px;
+    line-height: 1.6;
+    color: var(--text-dim);
+    margin-bottom: 20px;
+    margin-left: 24px;
+  }
+
+  .repo-topics {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 20px;
+    margin-left: 24px;
+  }
+
+  .topic {
+    font-size: 11px;
+    font-weight: 500;
+    color: var(--blue);
+    background: rgba(88, 166, 255, .1);
+    border: 1px solid rgba(88, 166, 255, .2);
+    padding: 3px 10px;
+    border-radius: 100px;
+    letter-spacing: .02em;
+  }
+
+  .repo-stats {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-left: 24px;
+  }
+
+  .stat {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 12px;
+    color: var(--text-dim);
+    font-family: var(--mono);
+  }
+
+  .stat svg { width: 14px; height: 14px; fill: var(--text-dim); }
+
+  .lang-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  .today-stars {
+    margin-left: auto;
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--green);
+    background: var(--green-bg);
+    padding: 3px 10px;
+    border-radius: 100px;
+    font-family: var(--mono);
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    white-space: nowrap;
+  }
+
+  /* ── FOOTER ── */
+  .footer {
+    width: 100%;
+    max-width: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 16px;
+    border-top: 1px solid var(--border);
+  }
+
+  .handle {
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--text-dim);
+  }
+
+  .footer-link {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--blue);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+
+  /* language colours */
+  .lang-python     { background: #3572A5; }
+  .lang-ts         { background: #3178C6; }
+  .lang-go         { background: #00ADD8; }
+  .lang-rust       { background: #DEA584; }
+  .lang-js         { background: #F1E05A; }
+  .lang-shell      { background: #89E051; }
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════
+     HEADER
+═══════════════════════════════════════ -->
+<div class="header">
+  <div class="header-left">
+    <!-- GitHub logo mark -->
+    <svg class="octocat" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="M8 0C3.58 0 0 3.58 0 8a8 8 0 005.47 7.59c.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82a7.64 7.64 0 012 0c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+    <div class="header-title"><strong>GitHub Trending</strong> · Daily Briefing</div>
+  </div>
+  <div class="daily-badge">Today</div>
+</div>
+
+<!-- ═══════════════════════════════════════
+     REPO CARD 1 — duplicate for each repo
+     Swap: owner, repo name, description, topics, language, stars, forks, today-stars
+═══════════════════════════════════════ -->
+<div class="repo-card">
+  <div class="repo-rank">#1</div>
+  <div class="repo-name">
+    <!-- repo icon -->
+    <svg class="repo-icon" viewBox="0 0 16 16"><path d="M2 2.5A2.5 2.5 0 014.5 0h8.75a.75.75 0 01.75.75v12.5a.75.75 0 01-.75.75h-2.5a.75.75 0 010-1.5h1.75v-2h-8a1 1 0 000 2h.75a.75.75 0 010 1.5H4.5A2.5 2.5 0 012 13.5V2.5zm10.5-1V9h-8c-.356 0-.694.074-1 .208V2.5a1 1 0 011-1h8z"/></svg>
+    <a class="repo-full-name" href="https://github.com/home-assistant/core">
+      <span class="repo-owner">home-assistant /</span> core
+    </a>
+  </div>
+  <p class="repo-desc">Open source home automation that puts local control and privacy first. Powered by a worldwide community of tinkerers and DIY enthusiasts.</p>
+  <div class="repo-topics">
+    <span class="topic">home-automation</span>
+    <span class="topic">iot</span>
+    <span class="topic">python</span>
+    <span class="topic">local-first</span>
+  </div>
+  <div class="repo-stats">
+    <div class="stat">
+      <span class="lang-dot lang-python"></span>
+      Python
+    </div>
+    <div class="stat">
+      <!-- star icon -->
+      <svg viewBox="0 0 16 16"><path d="M8 .25a.75.75 0 01.673.418l1.882 3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75 0 01-1.088.791L8 12.347l-3.766 1.98a.75.75 0 01-1.088-.79l.72-4.194L.818 6.374a.75.75 0 01.416-1.28l4.21-.611L7.327.668A.75.75 0 018 .25z"/></svg>
+      74.1k
+    </div>
+    <div class="stat">
+      <!-- fork icon -->
+      <svg viewBox="0 0 16 16"><path d="M5 3.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm0 2.122a2.25 2.25 0 10-1.5 0v.878A2.25 2.25 0 005.75 8.5h1.5v2.128a2.251 2.251 0 101.5 0V8.5h1.5a2.25 2.25 0 002.25-2.25v-.878a2.25 2.25 0 10-1.5 0v.878a.75.75 0 01-.75.75h-4.5A.75.75 0 015 6.25v-.878zm3.75 7.378a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm3-8.75a.75.75 0 11-1.5 0 .75.75 0 011.5 0z"/></svg>
+      29.8k
+    </div>
+    <div class="today-stars">
+      <svg viewBox="0 0 16 16" width="10" fill="currentColor"><path d="M8 .25a.75.75 0 01.673.418l1.882 3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75 0 01-1.088.791L8 12.347l-3.766 1.98a.75.75 0 01-1.088-.79l.72-4.194L.818 6.374a.75.75 0 01.416-1.28l4.21-.611L7.327.668A.75.75 0 018 .25z"/></svg>
+      +142 today
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════
+     REPO CARD 2
+═══════════════════════════════════════ -->
+<div class="repo-card">
+  <div class="repo-rank">#2</div>
+  <div class="repo-name">
+    <svg class="repo-icon" viewBox="0 0 16 16"><path d="M2 2.5A2.5 2.5 0 014.5 0h8.75a.75.75 0 01.75.75v12.5a.75.75 0 01-.75.75h-2.5a.75.75 0 010-1.5h1.75v-2h-8a1 1 0 000 2h.75a.75.75 0 010 1.5H4.5A2.5 2.5 0 012 13.5V2.5zm10.5-1V9h-8c-.356 0-.694.074-1 .208V2.5a1 1 0 011-1h8z"/></svg>
+    <a class="repo-full-name" href="https://github.com/tashfeenahmed/freellmapi">
+      <span class="repo-owner">tashfeenahmed /</span> freellmapi
+    </a>
+  </div>
+  <p class="repo-desc">34 free LLM providers, one OpenAI-compatible endpoint. Drop in your existing code and switch models without changing your integration.</p>
+  <div class="repo-topics">
+    <span class="topic">llm</span>
+    <span class="topic">openai-compatible</span>
+    <span class="topic">free-api</span>
+    <span class="topic">aggregator</span>
+  </div>
+  <div class="repo-stats">
+    <div class="stat">
+      <span class="lang-dot lang-ts"></span>
+      TypeScript
+    </div>
+    <div class="stat">
+      <svg viewBox="0 0 16 16"><path d="M8 .25a.75.75 0 01.673.418l1.882 3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75 0 01-1.088.791L8 12.347l-3.766 1.98a.75.75 0 01-1.088-.79l.72-4.194L.818 6.374a.75.75 0 01.416-1.28l4.21-.611L7.327.668A.75.75 0 018 .25z"/></svg>
+      3.2k
+    </div>
+    <div class="stat">
+      <svg viewBox="0 0 16 16"><path d="M5 3.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm0 2.122a2.25 2.25 0 10-1.5 0v.878A2.25 2.25 0 005.75 8.5h1.5v2.128a2.251 2.251 0 101.5 0V8.5h1.5a2.25 2.25 0 002.25-2.25v-.878a2.25 2.25 0 10-1.5 0v.878a.75.75 0 01-.75.75h-4.5A.75.75 0 015 6.25v-.878zm3.75 7.378a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm3-8.75a.75.75 0 11-1.5 0 .75.75 0 011.5 0z"/></svg>
+      312
+    </div>
+    <div class="today-stars">
+      <svg viewBox="0 0 16 16" width="10" fill="currentColor"><path d="M8 .25a.75.75 0 01.673.418l1.882 3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75 0 01-1.088.791L8 12.347l-3.766 1.98a.75.75 0 01-1.088-.79l.72-4.194L.818 6.374a.75.75 0 01.416-1.28l4.21-.611L7.327.668A.75.75 0 018 .25z"/></svg>
+      +89 today
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════
+     REPO CARD 3
+═══════════════════════════════════════ -->
+<div class="repo-card">
+  <div class="repo-rank">#3</div>
+  <div class="repo-name">
+    <svg class="repo-icon" viewBox="0 0 16 16"><path d="M2 2.5A2.5 2.5 0 014.5 0h8.75a.75.75 0 01.75.75v12.5a.75.75 0 01-.75.75h-2.5a.75.75 0 010-1.5h1.75v-2h-8a1 1 0 000 2h.75a.75.75 0 010 1.5H4.5A2.5 2.5 0 012 13.5V2.5zm10.5-1V9h-8c-.356 0-.694.074-1 .208V2.5a1 1 0 011-1h8z"/></svg>
+    <a class="repo-full-name" href="https://github.com/cline/cline">
+      <span class="repo-owner">cline /</span> cline
+    </a>
+  </div>
+  <p class="repo-desc">Autonomous coding agent in your IDE. Creates and edits files, runs commands, uses the browser, and extends its own capabilities via a Model Context Protocol server.</p>
+  <div class="repo-topics">
+    <span class="topic">ai-agent</span>
+    <span class="topic">coding-assistant</span>
+    <span class="topic">vscode</span>
+    <span class="topic">mcp</span>
+  </div>
+  <div class="repo-stats">
+    <div class="stat">
+      <span class="lang-dot lang-ts"></span>
+      TypeScript
+    </div>
+    <div class="stat">
+      <svg viewBox="0 0 16 16"><path d="M8 .25a.75.75 0 01.673.418l1.882 3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75 0 01-1.088.791L8 12.347l-3.766 1.98a.75.75 0 01-1.088-.79l.72-4.194L.818 6.374a.75.75 0 01.416-1.28l4.21-.611L7.327.668A.75.75 0 018 .25z"/></svg>
+      48.3k
+    </div>
+    <div class="stat">
+      <svg viewBox="0 0 16 16"><path d="M5 3.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm0 2.122a2.25 2.25 0 10-1.5 0v.878A2.25 2.25 0 005.75 8.5h1.5v2.128a2.251 2.251 0 101.5 0V8.5h1.5a2.25 2.25 0 002.25-2.25v-.878a2.25 2.25 0 10-1.5 0v.878a.75.75 0 01-.75.75h-4.5A.75.75 0 015 6.25v-.878zm3.75 7.378a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm3-8.75a.75.75 0 11-1.5 0 .75.75 0 011.5 0z"/></svg>
+      5.1k
+    </div>
+    <div class="today-stars">
+      <svg viewBox="0 0 16 16" width="10" fill="currentColor"><path d="M8 .25a.75.75 0 01.673.418l1.882 3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75 0 01-1.088.791L8 12.347l-3.766 1.98a.75.75 0 01-1.088-.79l.72-4.194L.818 6.374a.75.75 0 01.416-1.28l4.21-.611L7.327.668A.75.75 0 018 .25z"/></svg>
+      +216 today
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════
+     FOOTER
+═══════════════════════════════════════ -->
+<div class="footer">
+  <div class="handle">@githubnow</div>
+  <a class="footer-link" href="https://github.com/trending">
+    View all trending repos ↗
+  </a>
+</div>
+
+</body>
+</html>
