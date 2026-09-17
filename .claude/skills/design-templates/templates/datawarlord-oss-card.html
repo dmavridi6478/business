@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<!--
+  Template: datawarlord-oss-card
+  Style: @datawarlord_official "Open Source Builds a Brighter Tomorrow" carousel
+  Inspired by: Dark space-themed bg, numbered cards, floating 3D icons, per-card neon gradient accent
+  Swap points:
+    --accent-start / --accent-end: gradient colours for the product name (change per card)
+    --card-num: "01" number top-left
+    .card-subtitle-tags: 3-line italic subtitle top-left (e.g. "OPEN SOURCE / GREAT PROJECTS / REAL IMPACT")
+    .watermark-tags: vertical stacked uppercase tags top-right (theme-specific words)
+    .tool-name: the giant gradient display name
+    .tool-subtitle: one-line subtitle below name
+    .tool-desc: body description paragraph
+    .repo-pill: the GitHub URL pill (replace href AND inner text)
+    .tag-pill: category tags at bottom (duplicate for more)
+    .side-tags: bottom-right mini stacked tags (context-specific)
+    Duplicate .card for each repo; swap --accent-start and --accent-end each time
+-->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DataWarlord OSS Cards</title>
+<style>
+  /* ── ACCENT PALETTE — swap per card ── */
+  /* Card 01 ESP32-BlueJammer: #4A90E2 → #9B59B6 */
+  /* Card 02 DSPy:             #4A90E2 → #E96FC4 */
+  /* Card 03 auto-editor:      #E96FC4 → #9B59B6 */
+  /* Card 04 OpenPanel:        #00C9B1 → #4A90E2 */
+  /* Card 05 Markdoc:          #F5A623 → #E8D44D */
+  /* Card 06 awesome-quant:    #27AE60 → #2ECC71 */
+  /* Card 07 Apache Cloudberry:#F5A623 → #E96FC4 */
+  /* Card 08 code-server:      #00C9FF → #4A90E2 */
+  /* Card 09 Open SaaS:        #4A90E2 → #E96FC4 */
+
+  :root {
+    --accent-start: #4A90E2;
+    --accent-end:   #9B59B6;
+    --bg:    #080B14;
+    --white: #FFFFFF;
+    --mono:  "Courier New", monospace;
+    --display: "Arial Black", "Arial Narrow", Impact, sans-serif;
+    --sans:  system-ui, -apple-system, sans-serif;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: #111;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    font-family: var(--sans);
+    padding: 40px 16px;
+    gap: 48px;
+  }
+
+  /* ── CARD ── */
+  .card {
+    width: 100%;
+    max-width: 580px;
+    aspect-ratio: 4 / 5;
+    background: var(--bg);
+    border-radius: 16px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    padding: 32px 36px 0;
+  }
+
+  /* grid dot texture */
+  .card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image:
+      radial-gradient(circle, rgba(255,255,255,.06) 1px, transparent 1px);
+    background-size: 28px 28px;
+    pointer-events: none;
+  }
+
+  /* ambient glow orb behind icon area */
+  .card::after {
+    content: "";
+    position: absolute;
+    right: -40px;
+    top: 30px;
+    width: 260px;
+    height: 260px;
+    background: radial-gradient(circle, var(--accent-start) 0%, transparent 70%);
+    opacity: .18;
+    pointer-events: none;
+    border-radius: 50%;
+  }
+
+  /* ── HEADER ROW ── */
+  .card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    position: relative;
+    z-index: 2;
+    margin-bottom: 20px;
+  }
+
+  .card-num-block {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .card-num {
+    width: 52px;
+    height: 52px;
+    border-radius: 10px;
+    border: 1.5px solid rgba(255,255,255,.25);
+    background: rgba(255,255,255,.05);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--display);
+    font-size: 22px;
+    font-weight: 900;
+    color: var(--white);
+    letter-spacing: -.01em;
+    margin-bottom: 8px;
+  }
+
+  .card-subtitle-tags {
+    font-family: var(--mono);
+    font-size: 10px;
+    font-weight: 700;
+    color: rgba(255,255,255,.45);
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    line-height: 1.8;
+  }
+
+  .watermark-tags {
+    font-family: var(--mono);
+    font-size: 10px;
+    font-weight: 700;
+    color: rgba(255,255,255,.25);
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    line-height: 2;
+    text-align: right;
+  }
+
+  /* ── FLOATING ICON ── */
+  .icon-area {
+    position: absolute;
+    right: 28px;
+    top: 90px;
+    width: 180px;
+    height: 180px;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .icon-placeholder {
+    width: 120px;
+    height: 120px;
+    border-radius: 22px;
+    background: linear-gradient(135deg, var(--accent-start), var(--accent-end));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 54px;
+    box-shadow:
+      0 0 40px rgba(74,144,226,.4),
+      0 20px 40px rgba(0,0,0,.6);
+    transform: rotate(-6deg);
+  }
+
+  /* ── TOOL NAME + SUBTITLE ── */
+  .tool-name {
+    font-family: var(--display);
+    font-size: clamp(42px, 10vw, 62px);
+    font-weight: 900;
+    line-height: .92;
+    letter-spacing: -.02em;
+    background: linear-gradient(90deg, var(--white) 30%, var(--accent-start), var(--accent-end));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    position: relative;
+    z-index: 2;
+    margin-bottom: 6px;
+    max-width: 60%;
+    word-break: break-word;
+  }
+
+  .tool-subtitle {
+    font-family: var(--sans);
+    font-size: 14px;
+    font-weight: 400;
+    color: rgba(255,255,255,.55);
+    letter-spacing: .01em;
+    position: relative;
+    z-index: 2;
+    margin-bottom: 16px;
+    max-width: 58%;
+  }
+
+  /* ── DESCRIPTION ── */
+  .tool-desc {
+    font-family: var(--sans);
+    font-size: 14px;
+    line-height: 1.65;
+    color: rgba(255,255,255,.75);
+    position: relative;
+    z-index: 2;
+    max-width: 62%;
+    margin-bottom: 24px;
+  }
+
+  /* ── GITHUB PILL ── */
+  .repo-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(255,255,255,.06);
+    border: 1px solid rgba(255,255,255,.18);
+    border-radius: 40px;
+    padding: 10px 16px 10px 14px;
+    text-decoration: none;
+    position: relative;
+    z-index: 2;
+    margin-bottom: 20px;
+    width: fit-content;
+    max-width: 95%;
+  }
+
+  .repo-pill svg {
+    width: 20px;
+    height: 20px;
+    fill: var(--white);
+    flex-shrink: 0;
+    opacity: .85;
+  }
+
+  .repo-pill-text {
+    font-family: var(--mono);
+    font-size: 13px;
+    color: var(--white);
+    opacity: .85;
+    letter-spacing: .01em;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .repo-pill-arrow {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    border: 1px solid rgba(255,255,255,.25);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: auto;
+    flex-shrink: 0;
+  }
+
+  .repo-pill-arrow svg {
+    width: 14px;
+    height: 14px;
+    fill: none;
+    stroke: white;
+    stroke-width: 2;
+    opacity: .8;
+  }
+
+  /* ── CATEGORY TAGS ── */
+  .tag-row {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    position: relative;
+    z-index: 2;
+    margin-bottom: 16px;
+  }
+
+  .tag-pill {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    border: 1px solid rgba(255,255,255,.2);
+    border-radius: 20px;
+    padding: 5px 14px;
+    font-family: var(--mono);
+    font-size: 11px;
+    font-weight: 700;
+    color: rgba(255,255,255,.7);
+    letter-spacing: .1em;
+    text-transform: uppercase;
+  }
+
+  .tag-pill svg {
+    width: 13px;
+    height: 13px;
+    fill: rgba(255,255,255,.5);
+  }
+
+  /* ── SIDE MINI TAGS (bottom-right) ── */
+  .side-tags {
+    position: absolute;
+    right: 28px;
+    bottom: 90px;
+    font-family: var(--mono);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,.25);
+    text-align: right;
+    line-height: 2;
+    z-index: 2;
+  }
+
+  /* ── DW FOOTER BAR ── */
+  .dw-footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 56px;
+    background: rgba(255,255,255,.04);
+    border-top: 1px solid rgba(255,255,255,.08);
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 0 24px;
+    z-index: 3;
+  }
+
+  .dw-badge {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--accent-start), var(--accent-end));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--display);
+    font-size: 13px;
+    font-weight: 900;
+    color: var(--white);
+    flex-shrink: 0;
+  }
+
+  .dw-divider {
+    width: 1px;
+    height: 24px;
+    background: rgba(255,255,255,.15);
+    flex-shrink: 0;
+  }
+
+  .dw-text {
+    font-family: var(--sans);
+    font-size: 12px;
+    color: rgba(255,255,255,.55);
+  }
+
+  .dw-text strong {
+    color: rgba(255,255,255,.8);
+    font-weight: 600;
+  }
+
+  .yt-pill {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background: #FF0000;
+    border-radius: 4px;
+    padding: 4px 8px;
+    flex-shrink: 0;
+  }
+
+  .yt-pill svg {
+    width: 14px;
+    height: 14px;
+    fill: white;
+  }
+
+  .yt-pill span {
+    font-family: var(--sans);
+    font-size: 10px;
+    font-weight: 700;
+    color: white;
+    letter-spacing: .02em;
+  }
+
+  .handle {
+    font-family: var(--mono);
+    font-size: 10px;
+    color: rgba(255,255,255,.3);
+    position: absolute;
+    bottom: 62px;
+    right: 28px;
+    z-index: 2;
+  }
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════
+     CARD 01 — ESP32-BlueJammer
+     Accent: blue → purple
+     Swap: --accent-start #4A90E2, --accent-end #9B59B6
+═══════════════════════════════════════════ -->
+<div class="card" style="--accent-start:#4A90E2;--accent-end:#9B59B6;">
+
+  <div class="card-header">
+    <div class="card-num-block">
+      <div class="card-num">01</div>
+      <div class="card-subtitle-tags">
+        OPEN SOURCE<br>GREAT PROJECTS<br>REAL IMPACT
+      </div>
+    </div>
+    <div class="watermark-tags">
+      HARDWARE<br>SECURITY<br>RESEARCH<br>LEARN<br>BUILD<br>EXPLORE
+    </div>
+  </div>
+
+  <div class="icon-area">
+    <div class="icon-placeholder">📡</div>
+  </div>
+
+  <div class="tool-name">ESP32-<br>BlueJammer</div>
+  <div class="tool-subtitle">Wireless Security Research</div>
+  <div class="tool-desc">
+    An ESP32 and nRF24-based wireless security research project for experimenting with interference across 2.4 GHz communications.
+  </div>
+
+  <a class="repo-pill" href="https://github.com/EmenstaNougat/ESP32-BlueJammer">
+    <svg viewBox="0 0 24 24"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+    <span class="repo-pill-text">github.com/EmenstaNougat/ESP32-BlueJammer</span>
+    <div class="repo-pill-arrow">
+      <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </div>
+  </a>
+
+  <div class="tag-row">
+    <div class="tag-pill">
+      <svg viewBox="0 0 24 24"><path d="M9 3H5a2 2 0 00-2 2v4m6-6h10a2 2 0 012 2v4M9 3v18m0 0h10a2 2 0 002-2V9M9 21H5a2 2 0 01-2-2V9m0 0h18"/></svg>
+      HARDWARE
+    </div>
+    <div class="tag-pill">
+      <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      SECURITY
+    </div>
+  </div>
+
+  <div class="side-tags">2.4 GHz<br>EXPLORE<br>ANALYZE<br>EXPERIMENT<br>LEARN</div>
+  <div class="handle">@datawarlord_official</div>
+
+  <div class="dw-footer">
+    <div class="dw-badge">DW</div>
+    <div class="dw-divider"></div>
+    <div class="dw-text">Follow <strong>Datawarlord Official</strong></div>
+    <div class="yt-pill">
+      <svg viewBox="0 0 24 24"><path d="M23 7s-.3-2-1.2-2.8c-1.1-1.2-2.4-1.2-3-1.3C16.4 2.8 12 2.8 12 2.8s-4.4 0-6.8.1C4.6 3 3.3 3 2.2 4.2 1.3 5 1 7 1 7S.7 9.2.7 11.5v2.1c0 2.3.3 4.5.3 4.5s.3 2 1.2 2.8c1.1 1.2 2.6 1.1 3.3 1.2C7.5 22.2 12 22.2 12 22.2s4.4 0 6.8-.2c.6-.1 1.9-.1 3-1.3.9-.8 1.2-2.8 1.2-2.8s.3-2.2.3-4.5v-2.1C23.3 9.2 23 7 23 7zm-13.7 8.5V8.5l8.1 3.5-8.1 3.5z"/></svg>
+      <span>Subscribe on YouTube</span>
+    </div>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════
+     CARD 02 — DSPy
+     Accent: blue → pink  (swap --accent-start and --accent-end)
+═══════════════════════════════════════════ -->
+<div class="card" style="--accent-start:#4A90E2;--accent-end:#E96FC4;">
+
+  <div class="card-header">
+    <div class="card-num-block">
+      <div class="card-num">02</div>
+      <div class="card-subtitle-tags">
+        OPEN SOURCE<br>TOOLS FOR A<br>BRIGHTER TOMORROW
+      </div>
+    </div>
+    <div class="watermark-tags">
+      BUILD<br>AUTOMATE<br>EXPERIMENT<br>SCALE<br>WITH AI
+    </div>
+  </div>
+
+  <div class="icon-area">
+    <div class="icon-placeholder">🧠</div>
+  </div>
+
+  <div class="tool-name">DSPy</div>
+  <div class="tool-subtitle">Prompt Engineering for AI Systems</div>
+  <div class="tool-desc">
+    A framework from Stanford NLP for programming and optimizing AI systems instead of manually refining prompts. Great for RAG pipelines, agents, and classifiers.
+  </div>
+
+  <a class="repo-pill" href="https://github.com/stanfordnlp/dspy">
+    <svg viewBox="0 0 24 24"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+    <span class="repo-pill-text">github.com/stanfordnlp/dspy</span>
+    <div class="repo-pill-arrow">
+      <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </div>
+  </a>
+
+  <div class="tag-row">
+    <div class="tag-pill">
+      <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 100 20A10 10 0 0012 2z"/></svg>
+      AI
+    </div>
+    <div class="tag-pill">
+      <svg viewBox="0 0 24 24"><path d="M3 3h18v18H3V3zm6 6v6m6-6v6"/></svg>
+      FRAMEWORK
+    </div>
+  </div>
+
+  <div class="side-tags">MODELS<br>PROMPTS<br>PIPELINES<br>AGENTS<br>REAL IMPACT</div>
+  <div class="handle">@datawarlord_official</div>
+
+  <div class="dw-footer">
+    <div class="dw-badge">DW</div>
+    <div class="dw-divider"></div>
+    <div class="dw-text">Follow <strong>Datawarlord Official</strong></div>
+    <div class="yt-pill">
+      <svg viewBox="0 0 24 24"><path d="M23 7s-.3-2-1.2-2.8c-1.1-1.2-2.4-1.2-3-1.3C16.4 2.8 12 2.8 12 2.8s-4.4 0-6.8.1C4.6 3 3.3 3 2.2 4.2 1.3 5 1 7 1 7S.7 9.2.7 11.5v2.1c0 2.3.3 4.5.3 4.5s.3 2 1.2 2.8c1.1 1.2 2.6 1.1 3.3 1.2C7.5 22.2 12 22.2 12 22.2s4.4 0 6.8-.2c.6-.1 1.9-.1 3-1.3.9-.8 1.2-2.8 1.2-2.8s.3-2.2.3-4.5v-2.1C23.3 9.2 23 7 23 7zm-13.7 8.5V8.5l8.1 3.5-8.1 3.5z"/></svg>
+      <span>Subscribe on YouTube</span>
+    </div>
+  </div>
+</div>
+
+<!-- Duplicate and customize .card above for cards 03–09.
+     Change: card number, --accent-start, --accent-end, subtitle-tags, watermark-tags,
+             icon emoji, tool-name, tool-subtitle, tool-desc, repo URL, tag pills, side-tags.
+     Accent palette guide:
+       03 auto-editor:      --accent-start:#E96FC4; --accent-end:#9B59B6;
+       04 OpenPanel:        --accent-start:#00C9B1; --accent-end:#4A90E2;
+       05 Markdoc:          --accent-start:#F5A623; --accent-end:#E8D44D;
+       06 awesome-quant:    --accent-start:#27AE60; --accent-end:#2ECC71;
+       07 Apache Cloudberry:--accent-start:#F5A623; --accent-end:#E96FC4;
+       08 code-server:      --accent-start:#00C9FF; --accent-end:#4A90E2;
+       09 Open SaaS:        --accent-start:#4A90E2; --accent-end:#E96FC4;
+-->
+
+</body>
+</html>
