@@ -27,7 +27,7 @@ To apply styling to a slide deck or other artifact:
 
 ## Themes Available
 
-The following 10 themes are available, each showcased in `theme-showcase.pdf`:
+The following 12 themes are available (1–10 showcased in `theme-showcase.pdf`; 11–12 added from uploaded reference images, previewed by the matching templates in `design-templates`):
 
 1. **Ocean Depths** - Professional and calming maritime theme
 2. **Sunset Boulevard** - Warm and vibrant sunset colors
@@ -39,6 +39,8 @@ The following 10 themes are available, each showcased in `theme-showcase.pdf`:
 8. **Tech Innovation** - Bold and modern tech aesthetic
 9. **Botanical Garden** - Fresh and organic garden colors
 10. **Midnight Galaxy** - Dramatic and cosmic deep tones
+11. **Warm Creator Carousel** - Cream canvas, cocoa-to-peach gradient headlines, numbered badges (template: `numbered-workflow-carousel.html`, `carousel-cover-dark.html`)
+12. **Governed Infographic** - Cream editorial page, heavy black headline, colour-coded layer bands (template: `layered-framework-infographic.html`)
 
 ## Theme Details
 
