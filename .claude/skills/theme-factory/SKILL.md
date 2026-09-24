@@ -27,7 +27,7 @@ To apply styling to a slide deck or other artifact:
 
 ## Themes Available
 
-The following 16 themes are available (1–10 showcased in `theme-showcase.pdf`; 11–16 added from uploaded reference images, previewed by the matching templates in `design-templates`):
+The following 17 themes are available (1–10 showcased in `theme-showcase.pdf`; 11–17 added from uploaded reference images, previewed by the matching templates in `design-templates`):
 
 1. **Ocean Depths** - Professional and calming maritime theme
 2. **Sunset Boulevard** - Warm and vibrant sunset colors
@@ -45,6 +45,7 @@ The following 16 themes are available (1–10 showcased in `theme-showcase.pdf`;
 14. **Concentric Rainbow** - Pastel concentric rings, white label pills, heavy headline (template: `concentric-rings-framework.html`)
 15. **Adaptive Pink** - Grey "traditional" vs pink/lilac "new way" columns, numbered pink/violet badges (template: `two-column-shift-comparison.html`)
 16. **Prosp Dark Grid** - Charcoal org-chart grid, cyan/orange outlined job cards, orange CTA bar
+17. **Workflow Grid Sunset** - Peach-to-coral gradient, dense pastel-tinted icon-tile grid for 50-100 items, orange/pink headline (template: `workflow-grid-catalog.html`)
 
 ## Theme Details
 
