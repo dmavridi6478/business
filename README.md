@@ -5538,6 +5538,26 @@ Source: iCloud Photos Batch 92 (28e3fa66-iCloud_Photos_6.zip), Sep 2026.
 
 ---
 
+## 93. LinkedIn Cold-Traffic Funnel, CONTENTmaxxing Tool Stack, Interview Cheat Sheet & Cold IQ Outbound Flow (Batch 93)
+
+Source: 5 direct image uploads (no zip), Sep 2026 — (1) "7 LinkedIn Strategies Worth Implementing" (ContentSmash), (2) "How to start CONTENTmaxxing?" (5-stage AI content tool workflow), (3) "Job Interview Cheat Sheet" (Anna Chernyshova), (4) "How to Create Infographics (FREE) in Seconds with AI" (Jonathan Parsons — Google Nano Banana Pro focus), (5) "Our full outbound flow" (Cold IQ / Soheil Saeidmehr, 18-tool outbound stack centered on Claude Code).
+
+**New:**
+
+| File | What it is |
+|---|---|
+| `.claude/commands/linkedin-cold-traffic-system.md` | ContentSmash's 7-strategy cold-traffic conversion funnel (profile → content calendar → DM follow-up → lead magnet → engagement → social proof → conversion), cross-referenced against this repo's existing single-topic LinkedIn commands |
+| `.claude/commands/contentmaxxing-workflow.md` | 5-stage content tool workflow (research → single brief via Claude Cowork → draft/edit/design/distribute), mapping Ahrefs/Perplexity/Granola/Apify/Figma/AirOps/Kit/Framer to this repo's own agents where no direct tool connector exists |
+| `.claude/commands/job-interview-cheat-sheet-12.md` | Anna Chernyshova's 12 fixed behavioral-interview Q&A with a specific answer strategy per question (4 of 12 explicitly call for STAR method) |
+| `.claude/commands/outbound-flow-6stage-18tools.md` | Cold IQ's second outbound graphic in this repo (a different 18-tool stack from `gtm-outbound-engine`'s 14-tool source, same vendor) — stages 1-4's icons were too small to identify with confidence and are recorded as unidentified counts rather than guessed; only Claude Code, likely-HeyReach, Google, Instantly.ai and lemlist were legible enough to name |
+
+**Edited (extended rather than duplicated):**
+- `.claude/commands/infographic-prompts.md` — image 4 was ~80% already covered by this existing file (same 5-step workflow, prompt anatomy formula, tool table, infographic types, mistakes to avoid). Added the net-new content only: the "why Google Nano Banana Pro" 7-reasons deep-dive, the "6–12 hours → 30–60 seconds" time-savings stat, platform-specific aspect ratios (LinkedIn 1200×627/1080×1080, Instagram Story 1080×1920), and Jonathan Parsons as a second source citation.
+
+**Cross-referenced rather than duplicated:** Image 5 (Cold IQ outbound flow) has substantial conceptual overlap with the already-vendored `gtm-outbound-engine` skill and `outbound-sales-system-5stage` command — both are Cold IQ marketing graphics arguing for Claude Code/Claude as the single outbound orchestration hub. Handled as a light addition with an explicit stage-to-skill mapping table rather than a full rebuild.
+
+**Follow-up, same session:** none required — PR #35 (which carried Batches 82–92) was merged directly by the user; this batch restarts the branch from latest `main` per the merged-PR-restart convention and opens a new PR.
+
 ### 65th addition — Claude Code visual/skill repos, a security scanner, and a new @ai_slacker learning-prompt skill
 
 **Batch:** 72 images from iCloud Photos (`596f7b78-iCloud_Photos_1.zip` + `660d1012-iCloud_Photos_2.zip`). Sources include @joshualevi.ai (two "7 skills/repos" carousels), @okaashish ("7 Biggest Claude Problems & How to Fix Them"), @buildwithneej (13-slide GitHub-trending roundup), @ai_slacker ("Infinite Private Tutor" 6-prompt learning series), @replace.so, @will.ai.m ("20 free tools" self-hosted alternatives), @brandarmor.ai ("The AI Growth Playbook" AEO/GEO series — overlaps existing `ai-search-visibility`, skipped), and @usetools_design (design-tool directory, informational). 19 candidate repos checked live via `git ls-remote` before listing; zero prior duplicates confirmed via full-text search against this README.
