@@ -17,6 +17,7 @@ A starter bundle of business-oriented Claude skills lives in `.claude/skills/`:
 - `content-strategy` — content planning, topic clusters, editorial calendars
 - `copywriting` — writes individual persuasive copy (headlines, product descriptions, email copy, CTAs) via a Problem → Promise → Proof → CTA framework, once `content-strategy` has picked the topic
 - `marketing-psychology` — 8 behavioral persuasion principles (framing, social proof, anchoring, curiosity, loss aversion, specificity, pricing context, decision friction) to pick the right lever for a message instead of stacking random tactics
+- **Corey Haines' 50-skill marketing pack** — vendored in full (Batch 82 follow-up) from [`coreyhaines31/marketingskills`](https://github.com/coreyhaines31/marketingskills) (MIT), covering SEO & content (`seo-audit`, `ai-seo`, `programmatic-seo`, `schema`, `aso`), CRO (`cro`, `signup`, `onboarding`, `popups`, `paywalls`), copy & content (`copy-editing`, `cold-email`, `emails`, `social`, `video`, `image`, `sms`), paid & measurement (`ads`, `ad-creative`, `ab-testing`, `analytics`, `attribution`), growth & retention (`referrals`, `free-tools`, `churn-prevention`, `community-marketing`, `co-marketing`, `lead-magnets`, `influencer-marketing`), sales & GTM (`revops`, `launch`, `pricing`, `competitors`, `directory-submissions`, `prospecting`, `events`, `public-relations`), and strategy (`marketing-ideas`, `marketing-loops`, `marketing-plan`, `marketing-council`, `product-marketing`, `customer-research`, `offers`, `site-architecture`). 5 skills that collided by name with the ones already listed above (`content-strategy`, `copywriting`, `marketing-psychology`, `sales-enablement`, `competitor-profiling`) were vendored under a `-corey-haines` suffix instead — use whichever version fits, they're independent, not duplicates of each other.
 - `internal-comms` — company newsletters, FAQs, general internal communications
 - `doc-coauthoring` — structured workflow for co-authoring docs, proposals, and specs
 - `attachment-intake` — how to handle uploaded files (zips, photo batches, docs) that arrive with no or mismatched instructions, instead of guessing at intent
@@ -4710,4 +4711,30 @@ were not transcribed or reviewed frame-by-frame — this session had no
 video-analysis step in scope and the still images already covered every
 carousel visible in the batch. Flag for a follow-up session if the videos
 turn out to carry content not present in the stills.
+
+**Follow-up, same session:** asked to actually vendor `coreyhaines31/
+marketingskills` rather than just document it. Cloned at commit
+`5b2c0007766c6a1cf1d53fd8fc73e979e0821022` (MIT). All **50 of 50** skills
+were copied into `.claude/skills/` — not a subset — each with its own
+`SKILL.md`, `references/` (45 of the 50 ship one), `evals/` (self-contained
+`evals.json` test fixtures, no repo-relative paths, so portable), plus a
+`LICENSE.txt` and `SOURCE.md` added per-directory matching this repo's
+existing vendoring convention.
+
+Before copying, cross-referenced against what's already installed and found
+something the earlier review in `claude-code-tooling` had flagged but not
+resolved: this repo's own pre-existing `copywriting` and `marketing-psychology`
+skills are themselves independently *derived* from this same pack (via a
+different carousel, @ai_slacker's "Claude is too dumb to write your content"
+series, per those skills' own `SOURCE.md`/attribution lines) — not literal
+copies, but close enough in scope to collide on name. 5 skills collided:
+`content-strategy`, `copywriting`, `marketing-psychology`, `sales-enablement`,
+`competitor-profiling`. Each was vendored under a `<name>-corey-haines`
+suffix — both the directory and the frontmatter `name:` field renamed, with
+a one-line note added to the description explaining why — rather than
+overwriting the pre-existing skill or silently dropping the upstream
+version. The other 45 kept their original names with no changes needed.
+`claude-code-tooling`'s marketing-bundle table row and this README's top
+skill-bundle list were both updated to reflect the pack is now fully
+vendored, not just reviewed.
 
