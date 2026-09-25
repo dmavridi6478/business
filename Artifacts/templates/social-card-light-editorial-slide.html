@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Light Editorial Slide Card</title>
+<style>
+  /* =====================================================
+     TEMPLATE B: Light Editorial Slide Card
+     Based on @unifybrowse Todofy-style TikTok carousel
+     Size: 1080×1920 (9:16 portrait)
+     Customise: slide number, headline, sub-copy, device mockup colour
+     ===================================================== */
+
+  :root {
+    --bg: #f5f0e8;
+    --surface: #ffffff;
+    --border: #e8e0d4;
+    --text-primary: #0a0a0a;
+    --text-secondary: #3a3a3a;
+    --text-muted: #8a8070;
+    --accent: #0a0a0a;
+    --accent-light: #f0ebe0;
+    --slide-num-color: #c8b99a;
+    --device-bg: #1a1a2e;
+    --device-accent: #7c3aed;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--bg);
+    font-family: 'Georgia', 'Times New Roman', serif;
+    width: 1080px;
+    height: 1920px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 80px 80px 100px;
+    position: relative;
+  }
+
+  /* Subtle grain texture overlay */
+  body::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* ---- Header ---- */
+  .header {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .brand-logo {
+    font-family: -apple-system, 'Inter', sans-serif;
+    font-size: 24px;
+    font-weight: 600;
+    color: var(--text-muted);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  /* Slide progress dots */
+  .slide-dots {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+  }
+
+  .dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--border);
+  }
+
+  .dot.active {
+    background: var(--accent);
+    width: 28px;
+    border-radius: 5px;
+  }
+
+  /* ---- Slide number ---- */
+  .slide-number {
+    position: relative;
+    z-index: 1;
+    font-family: -apple-system, 'Inter', sans-serif;
+    font-size: 200px;
+    font-weight: 900;
+    color: var(--slide-num-color);
+    line-height: 1;
+    letter-spacing: -0.06em;
+    align-self: flex-start;
+    margin-top: -20px;
+  }
+
+  /* ---- Main headline ---- */
+  .headline {
+    position: relative;
+    z-index: 1;
+    font-size: 96px;
+    font-weight: 700;
+    line-height: 1.0;
+    letter-spacing: -0.03em;
+    color: var(--text-primary);
+    width: 100%;
+  }
+
+  .headline em {
+    font-style: normal;
+    color: var(--text-muted);
+  }
+
+  /* ---- Sub copy ---- */
+  .sub-copy {
+    position: relative;
+    z-index: 1;
+    font-family: -apple-system, 'Inter', sans-serif;
+    font-size: 32px;
+    font-weight: 400;
+    line-height: 1.55;
+    color: var(--text-secondary);
+    max-width: 840px;
+    align-self: flex-start;
+  }
+
+  /* ---- Device mockup ---- */
+  .device-wrapper {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 24px 0;
+  }
+
+  .device {
+    width: 480px;
+    background: var(--device-bg);
+    border-radius: 44px;
+    padding: 28px;
+    border: 3px solid rgba(255,255,255,0.08);
+    box-shadow:
+      0 48px 120px rgba(0,0,0,0.35),
+      0 0 0 1px rgba(255,255,255,0.04);
+  }
+
+  .device-notch {
+    width: 140px;
+    height: 26px;
+    background: rgba(0,0,0,0.5);
+    border-radius: 13px;
+    margin: 0 auto 20px;
+  }
+
+  .device-screen {
+    background: #0f0f1a;
+    border-radius: 24px;
+    padding: 24px;
+    min-height: 600px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .task-item {
+    background: rgba(124, 58, 237, 0.12);
+    border: 1px solid rgba(124, 58, 237, 0.25);
+    border-radius: 12px;
+    padding: 14px 18px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    font-family: -apple-system, 'Inter', sans-serif;
+    font-size: 22px;
+    color: rgba(255,255,255,0.85);
+  }
+
+  .task-check {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 2px solid rgba(124,58,237,0.6);
+    flex-shrink: 0;
+  }
+
+  .task-check.done {
+    background: #7c3aed;
+    border-color: #7c3aed;
+  }
+
+  /* ---- Footer ---- */
+  .footer {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .slide-counter {
+    font-family: -apple-system, 'Inter', sans-serif;
+    font-size: 22px;
+    color: var(--text-muted);
+    letter-spacing: 0.04em;
+  }
+
+  .swipe-hint {
+    font-family: -apple-system, 'Inter', sans-serif;
+    font-size: 22px;
+    color: var(--text-muted);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+</style>
+</head>
+<body>
+  <!-- Header -->
+  <div class="header">
+    <span class="brand-logo" id="brand">Todofy</span>
+    <div class="slide-dots">
+      <div class="dot"></div>
+      <div class="dot active" id="active-dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+    </div>
+  </div>
+
+  <!-- Giant slide number -->
+  <div class="slide-number" id="slide-num">02</div>
+
+  <!-- Headline -->
+  <div class="headline" id="headline">
+    Capture Ideas<br><em>Fast.</em>
+  </div>
+
+  <!-- Sub copy -->
+  <div class="sub-copy" id="sub-copy">
+    A single tap opens Quick Add. Your thought is saved before you forget it — with due date, tags, and priority in one motion.
+  </div>
+
+  <!-- Device mockup -->
+  <div class="device-wrapper">
+    <div class="device">
+      <div class="device-notch"></div>
+      <div class="device-screen" id="device-screen">
+        <div class="task-item"><div class="task-check done"></div> Morning run</div>
+        <div class="task-item"><div class="task-check done"></div> Review pull requests</div>
+        <div class="task-item"><div class="task-check"></div> Write newsletter</div>
+        <div class="task-item"><div class="task-check"></div> Team stand-up at 3pm</div>
+        <div class="task-item"><div class="task-check"></div> Ship feature v2.4</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    <span class="slide-counter" id="counter">02 / 05</span>
+    <span class="swipe-hint">Swipe for next →</span>
+  </div>
+
+  <!-- ============================================================
+    USAGE GUIDE
+    ============================================================
+    To customise this slide for a different product/content:
+
+    1. Update #brand with your product/brand name
+    2. Update #slide-num (01–05)
+    3. Update #headline with the slide's main message
+    4. Update #sub-copy with the supporting copy
+    5. Update #device-screen with relevant UI items
+    6. Update #counter (e.g., "03 / 05")
+    7. Move the .dot.active class to match slide number
+
+    Recommended: Create one HTML file per slide (01–05),
+    screenshot each at 1080×1920, compile into carousel.
+
+    Rendering command (Playwright):
+    npx playwright screenshot --device="iPhone 14 Pro Max" slide.html slide.png
+    ============================================================ -->
+</body>
+</html>

@@ -1,0 +1,217 @@
+<!doctype html>
+<!--
+  Numbered infographic card grid — the layout behind nearly every
+  "13 Claude Skills," "10 GitHub Repos," "Top 12 Agent Skills" style
+  carousel/infographic sourced from GenAI Works, ByteByteGo, AIForLeaders.com,
+  and replace.so (see .claude/commands/claude-skills-13.md,
+  top-12-agent-skill-repos.md, claude-productivity-repos.md for the content
+  that inspired this). A numbered circular badge + icon + title + short
+  description, repeated in a responsive grid, with a source/brand footer.
+
+  Usage: swap --accent for your brand color, replace the .card blocks
+  (badge number, icon glyph or emoji, title, category tag, description),
+  and edit the header/footer text. Works as a poster image (screenshot at
+  fixed width) or a live HTML section on a page.
+
+  Two built-in variants — toggle by changing <body> class:
+    "light" (cream background, colored badges — GenAI Works style)
+    "dark"  (near-black background, mono-accent badges — ByteByteGo style)
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Infographic card grid</title>
+<style>
+  :root {
+    --accent: #d95f3b;       /* primary badge/accent color — swap per brand */
+    --accent-soft: #fbe4da;
+    --ink: #1a1a1a;
+    --muted: #6b6b6b;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    padding: 56px 32px 40px;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: var(--ink);
+  }
+  body.light { background: #f4efe8; }
+  body.dark  { background: #0c0e10; color: #f2f2f2; }
+  body.dark .card { background: #16181b; border-color: #2a2d31; }
+  body.dark .card p { color: #a3a7ad; }
+  body.dark .badge { background: #1c1e21; border: 1px solid #3a3d42; color: #fff; }
+
+  header {
+    text-align: center;
+    max-width: 760px;
+    margin: 0 auto 40px;
+  }
+  .eyebrow {
+    font-family: -apple-system, "Segoe UI", Roboto, sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 8px;
+  }
+  h1 {
+    font-size: 40px;
+    line-height: 1.15;
+    margin: 0 0 10px;
+  }
+  h1 .highlight { color: var(--accent); }
+  .subhead {
+    font-family: -apple-system, "Segoe UI", Roboto, sans-serif;
+    font-size: 15px;
+    color: var(--muted);
+    margin: 0;
+  }
+  body.dark .subhead { color: #9a9ea4; }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    max-width: 1080px;
+    margin: 0 auto;
+  }
+  @media (max-width: 900px) { .grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 520px) { .grid { grid-template-columns: 1fr; } }
+
+  .card {
+    background: #fff;
+    border: 1px solid #e7dfd3;
+    border-radius: 14px;
+    padding: 18px;
+    font-family: -apple-system, "Segoe UI", Roboto, sans-serif;
+  }
+  .card-top {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+  }
+  .badge {
+    width: 26px;
+    height: 26px;
+    border-radius: 999px;
+    background: var(--accent);
+    color: #fff;
+    font-size: 12px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  .icon {
+    width: 34px;
+    height: 34px;
+    border-radius: 8px;
+    background: var(--accent-soft);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+  }
+  .card h3 {
+    font-size: 15px;
+    margin: 0 0 4px;
+    font-family: Georgia, serif;
+  }
+  .card .tag {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: .04em;
+    text-transform: uppercase;
+    color: var(--accent);
+    background: var(--accent-soft);
+    border-radius: 4px;
+    padding: 2px 6px;
+    margin-bottom: 6px;
+  }
+  .card p {
+    font-size: 12.5px;
+    line-height: 1.5;
+    color: var(--muted);
+    margin: 0;
+  }
+
+  footer {
+    max-width: 1080px;
+    margin: 40px auto 0;
+    padding-top: 18px;
+    border-top: 1px solid #e7dfd3;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-family: -apple-system, "Segoe UI", Roboto, sans-serif;
+    font-size: 12px;
+    color: var(--muted);
+  }
+  body.dark footer { border-color: #2a2d31; }
+  footer .brand { font-weight: 700; color: var(--ink); }
+  body.dark footer .brand { color: #fff; }
+</style>
+</head>
+<body class="light">
+
+  <header>
+    <div class="eyebrow">One card each · Zero re-prompting</div>
+    <h1>12 <span class="highlight">Things</span> That Save You Hours Every Week</h1>
+    <p class="subhead">Install once. It fires on its own, no prompt needed.</p>
+  </header>
+
+  <div class="grid">
+
+    <div class="card">
+      <div class="card-top">
+        <div class="badge">01</div>
+        <div class="icon">🎯</div>
+      </div>
+      <div class="tag">Category</div>
+      <h3>Card title</h3>
+      <p>One or two lines describing what this does and why it matters. Keep it terse — this is a scan layout, not a paragraph.</p>
+    </div>
+
+    <div class="card">
+      <div class="card-top">
+        <div class="badge">02</div>
+        <div class="icon">🧠</div>
+      </div>
+      <div class="tag">Category</div>
+      <h3>Card title</h3>
+      <p>Duplicate this card block for each item. The grid auto-wraps to 4 → 2 → 1 columns by screen width.</p>
+    </div>
+
+    <div class="card">
+      <div class="card-top">
+        <div class="badge">03</div>
+        <div class="icon">📋</div>
+      </div>
+      <div class="tag">Category</div>
+      <h3>Card title</h3>
+      <p>Swap the emoji icon for an inline SVG or a Lucide icon (&lt;i data-lucide="..."&gt;) if the artifact platform supports it.</p>
+    </div>
+
+    <div class="card">
+      <div class="card-top">
+        <div class="badge">04</div>
+        <div class="icon">✍️</div>
+      </div>
+      <div class="tag">Category</div>
+      <h3>Card title</h3>
+      <p>The badge number and category tag are optional — delete both for a plainer icon-title-description card.</p>
+    </div>
+
+  </div>
+
+  <footer>
+    <span class="brand">Your Brand</span>
+    <span>Source line or date</span>
+  </footer>
+
+</body>
+</html>
