@@ -1,12 +1,16 @@
 ---
 name: design-templates
-description: Ready-to-use, self-contained HTML/CSS templates for common content-visual needs — an iMessage chat mockup, a vertical social/story device frame, a 3D-tilted product screenshot mockup, a halftone/dithered image effect (both CSS-only and real canvas dithering), a logo/reference moodboard grid, a brand board (wordmark + palette + type pairing + app preview), a SaaS pricing table + comparison grid, a restrained editorial hero, a numbered infographic card grid (light/dark variants), and a filterable design-reference-site dashboard. Use these instead of reaching for a paid single-purpose tool (or hand-rolling from scratch) when a design/frontend task needs a device mockup, a stylized image effect, a moodboard layout, a brand-kit deliverable, a SaaS pricing section, a quiet typography-led hero, a "N things you should know" carousel/infographic layout, or a reusable reference dashboard. Each template is copy-paste-ready with clear swap points marked in comments.
+description: Ready-to-use, self-contained HTML/CSS templates for common content-visual needs — an iMessage chat mockup, a vertical social/story device frame, a 3D-tilted product screenshot mockup, a halftone/dithered image effect (both CSS-only and real canvas dithering), a logo/reference moodboard grid, a brand board (wordmark + palette + type pairing + app preview), a SaaS pricing table + comparison grid, a restrained editorial hero, a numbered infographic card grid (light/dark variants), a filterable design-reference-site dashboard, a light "Save For Later" social carousel (carousel-save-for-later), a dark neon agent info card (dark-neon-agent-card), a dark orange-gradient tutorial step-cards layout (dark-orange-agent-tutorial), a GitHub-style dark trending repo card (github-trending-card), a bold red grunge AI-tools carousel (@ai.global.lee style, red-grunge-ai-tools), a warm editorial carousel for thinking-partner / Claude workflow content (@parm.ai style, editorial-thinking-partner), a dark space-themed OSS repo card (@datawarlord_official style, datawarlord-oss-card), and a nature photo background with glassmorphism panels carousel (@softgirlnocode AI video style, softgirlnocode-nature-glassmorphism). Use these instead of reaching for a paid single-purpose tool (or hand-rolling from scratch) when a design/frontend task needs a device mockup, a stylized image effect, a moodboard layout, a brand-kit deliverable, a SaaS pricing section, a quiet typography-led hero, a "N things you should know" carousel/infographic layout, a reusable reference dashboard, or any of the social-carousel/card layouts above. Each template is copy-paste-ready with clear swap points marked in comments.
 ---
 
 ## When to use this skill
 
 Reach for a template here instead of improvising when a task needs:
 
+- **A light social carousel** in "Save For Later" style (paper texture, coral accent, numbered slides) → `templates/carousel-save-for-later.html`
+- **A dark neon agent/tool card** (cyan/purple glow, code block, step list, dark bg) → `templates/dark-neon-agent-card.html`
+- **A dark orange-gradient tutorial layout** (numbered step cards, agent loop diagram, charcoal bg) → `templates/dark-orange-agent-tutorial.html`
+- **A GitHub-style dark trending repo card** (green accent, star/fork stats, topic pills, monospace counts) → `templates/github-trending-card.html`
 - **A chat-app screenshot mockup** (testimonials, feature announcements, social proof) → `templates/imessage-mockup.html`
 - **A vertical social/story device frame** (TikTok/Reels/Stories content previews) → `templates/device-frame-social.html`
 - **A 3D-angled product/app screenshot** for marketing (hero images, feature cards) → `templates/product-3d-tilt.html`
@@ -25,6 +29,10 @@ Reach for a template here instead of improvising when a task needs:
 - **A process of N steps under one control/orchestrator node** → `templates/control-plane-pipeline.html`
 - **A dense 50-100 item icon-tile catalog grid** → `templates/workflow-grid-catalog.html`
 - **A bookmarkable, filterable reference dashboard** of curated design-inspiration sites → `templates/design-reference-shelf.html` (also published as an Artifact — see `design-dev-resources` for the live link and site notes)
+- **A bold red grunge AI-tools carousel** (@ai.global.lee style — red `#FF0000` bg, grunge texture, Impact-style white headline, yellow highlighted keywords, monospace body, B&W closing slide) → `templates/red-grunge-ai-tools.html`
+- **A warm editorial thinking-partner carousel** (@parm.ai style — beige `#F5F0E8` bg, Playfair Display italic in burnt orange, dark monospace prompt code blocks, clean numbered step layout) → `templates/editorial-thinking-partner.html`
+- **A dark space-themed OSS repo card** (@datawarlord_official "Open Source Builds a Brighter Tomorrow" style — `#080B14` bg, dot-grid texture, per-card neon gradient glow, floating 3D icon area, GitHub pill, category tags, DW footer bar) → `templates/datawarlord-oss-card.html`
+- **A nature photo + glassmorphism panels carousel** (@softgirlnocode "How I edit Videos with AI" style — full-bleed outdoor photo bg, dark scrim overlay, large bold white headline, frosted-glass quote card, pill context labels, step-dot progress indicator) → `templates/softgirlnocode-nature-glassmorphism.html`
 
 ## How to use a template
 
@@ -57,6 +65,14 @@ All are verified to render correctly with no console errors (checked via Playwri
 | `control-plane-pipeline.html` | "The All-in-One Outbound Pipeline — inside Claude Code" | Dark control node + bracket connector + N pastel step columns with per-step `--bg-s`/`--c` tokens, collapses to one column on mobile |
 | `workflow-grid-catalog.html` | "The Complete Claude + n8n Sales System — 100 workflows" | Data-driven grid built from one `ITEMS` array (n, label, icon) so item count is an array edit, not hand-placed divs; pre-filled with all 100 from `sales-workflow-catalog`; theme `workflow-grid-sunset`; tile labels run below 11pt by necessity at this density |
 | `design-reference-shelf.html` | The 5-site design-inspiration list itself | Card-catalog-style dashboard (Fraunces display + IBM Plex Mono utility faces, light/dark tokens, small JS tag filter) indexing Awwwards/Godly/SiteInspire/Land-book/Httpster by what each is for; built and verified as a Claude Artifact, not a plain copy-paste snippet like the rest of this table |
+| `carousel-save-for-later.html` | @clickandrank "Save For Later" social carousel | Light paper-texture bg, coral accent, slide counter badge, bookmark pill tag, progress dots — drop-in for any numbered carousel/listicle |
+| `dark-neon-agent-card.html` | @aigenesis.official Hermes agent cards | Dark bg (#0A0A12), cyan/purple neon glow via absolute blurred circles, animated pulse dot, numbered steps, monospace code block — swap colours via CSS custom properties |
+| `dark-orange-agent-tutorial.html` | @skilldropai 7-step Claude agent carousel | Dark charcoal (#0F0F0F), orange gradient header + step-num badges, left-bar hover accent, autonomous loop diagram — duplicate `.step-card` for each step |
+| `github-trending-card.html` | @githubnow daily trending briefing | GitHub dark palette, green accent, monospace star/fork counts, language colour dots, topic pills, today-stars badge — duplicate `.repo-card` for each repo |
+| `red-grunge-ai-tools.html` | @ai.global.lee "5 AI tools worth saving" carousel | Red `#FF0000` bg, SVG fractalNoise grunge overlay, Impact-family display headline, yellow `#FFE600` `.highlight` spans, monospace body, `.slide--bw` closing variant — duplicate `.slide` for each tool |
+| `editorial-thinking-partner.html` | @parm.ai "Claude as thinking partner" carousel | Warm beige `#F5F0E8` bg, Playfair Display italic serif, burnt orange `#C4622D` accent, dark `#1E1E1E` `.prompt-block` with monospace syntax colouring, numbered `.step-row` layout, `.callout` blockquote — duplicate `.slide` for each step |
+| `datawarlord-oss-card.html` | @datawarlord_official "Open Source Builds a Brighter Tomorrow" | Dark `#080B14` bg, dot-grid radial texture, per-card `--accent-start`/`--accent-end` gradient glow via `::after` pseudo, floating icon area, gradient tool-name text, GitHub pill with octicon SVG, category tag pills, DW footer bar — includes 9-card accent palette comment |
+| `softgirlnocode-nature-glassmorphism.html` | @softgirlnocode "How I edit Videos with AI" carousel | Full-bleed outdoor photo bg via `background-image`, dark scrim via `linear-gradient` overlay, large `font-weight: 900` uppercase headline, `.glass-card` with `backdrop-filter: blur(20px)`, `.pill-row` context labels, `.step-dots` progress indicator — includes cover slide + 4 technique slides |
 
 ## Related skills in this repo
 

@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<!--
+  Template: red-grunge-ai-tools
+  Style: @ai.global.lee "5 AI tools worth saving" carousel
+  Inspired by: Bold red background, grunge texture overlay, Impact-style white headline,
+               yellow highlight on key phrases, monospace body text, B&W closing slide
+  Swap points:
+    --red: primary background colour (default #FF0000)
+    --yellow: highlight accent (default #FFE600)
+    .slide-num: "P1 — ToolName" label top-left
+    .stars-badge: GitHub star count top-right
+    .tool-name: the giant display headline
+    .tool-desc: monospace body description
+    .highlight: wrap key phrases in <span class="highlight">
+    .slide-num-counter: "01/05" bottom-left
+    Duplicate .slide for each tool; add .slide--bw for the closing slide
+-->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Red Grunge AI Tools</title>
+<style>
+  /* ── SWAP THESE ── */
+  :root {
+    --red:     #FF0000;
+    --yellow:  #FFE600;
+    --white:   #FFFFFF;
+    --black:   #000000;
+    --mono:    "Courier New", "Courier", monospace;
+    --display: Impact, "Arial Narrow", "Arial Black", sans-serif;
+    --body:    system-ui, sans-serif;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: #1a1a1a;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    font-family: var(--body);
+    padding: 40px 16px;
+    gap: 40px;
+  }
+
+  /* ── SLIDE ── */
+  .slide {
+    width: 100%;
+    max-width: 560px;
+    aspect-ratio: 3 / 4;
+    background: var(--red);
+    border-radius: 4px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    padding: 36px 32px 32px;
+  }
+
+  /* grunge texture overlay */
+  .slide::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image:
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23g)' opacity='0.18'/%3E%3C/svg%3E");
+    pointer-events: none;
+    mix-blend-mode: multiply;
+    opacity: 1;
+  }
+
+  /* subtle vignette */
+  .slide::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at center, transparent 40%, rgba(0,0,0,.35) 100%);
+    pointer-events: none;
+  }
+
+  /* ── HEADER ROW ── */
+  .slide-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    position: relative;
+    z-index: 1;
+    margin-bottom: 24px;
+  }
+
+  .slide-label {
+    font-family: var(--mono);
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--white);
+    letter-spacing: .04em;
+    opacity: .85;
+  }
+
+  .stars-badge {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-family: var(--mono);
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--white);
+    opacity: .85;
+  }
+
+  .stars-badge svg {
+    width: 14px;
+    height: 14px;
+    fill: var(--white);
+    opacity: .85;
+  }
+
+  /* ── TOOL NAME ── */
+  .tool-name {
+    font-family: var(--display);
+    font-size: clamp(72px, 18vw, 108px);
+    font-weight: 900;
+    color: var(--white);
+    line-height: .9;
+    letter-spacing: -.01em;
+    text-transform: uppercase;
+    position: relative;
+    z-index: 1;
+    word-break: break-word;
+  }
+
+  /* ── SCREENSHOT MOCKUP AREA ── */
+  .mockup {
+    flex: 1;
+    margin: 20px 0;
+    background: #111;
+    border-radius: 6px;
+    border: 1px solid rgba(255,255,255,.12);
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 160px;
+  }
+
+  .mockup-placeholder {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: rgba(255,255,255,.3);
+    text-align: center;
+    padding: 16px;
+    line-height: 1.6;
+  }
+
+  .mockup img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  /* ── DESCRIPTION ── */
+  .tool-desc {
+    font-family: var(--mono);
+    font-size: 13px;
+    line-height: 1.65;
+    color: var(--white);
+    position: relative;
+    z-index: 1;
+    margin-bottom: 12px;
+  }
+
+  .highlight {
+    background: var(--yellow);
+    color: var(--black);
+    padding: 1px 5px;
+    font-weight: 700;
+  }
+
+  /* ── FOOTER ── */
+  .slide-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    position: relative;
+    z-index: 1;
+    margin-top: auto;
+    padding-top: 16px;
+  }
+
+  .slide-counter {
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--white);
+    opacity: .6;
+    letter-spacing: .06em;
+  }
+
+  .handle {
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--white);
+    opacity: .7;
+    letter-spacing: .03em;
+  }
+
+  /* ── B&W CLOSING SLIDE VARIANT ── */
+  .slide--bw {
+    background: var(--white);
+  }
+
+  .slide--bw::before { display: none; }
+  .slide--bw::after  { display: none; }
+
+  .slide--bw .slide-label,
+  .slide--bw .stars-badge,
+  .slide--bw .tool-name,
+  .slide--bw .tool-desc,
+  .slide--bw .slide-counter,
+  .slide--bw .handle {
+    color: var(--black);
+    opacity: 1;
+  }
+
+  .slide--bw .stars-badge svg { fill: var(--black); }
+
+  .slide--bw .tool-name {
+    color: var(--black);
+    -webkit-text-stroke: 2px var(--black);
+  }
+
+  .slide--bw .highlight {
+    background: var(--black);
+    color: var(--white);
+  }
+
+  .slide--bw .mockup {
+    background: #f0f0f0;
+    border-color: rgba(0,0,0,.15);
+  }
+
+  .slide--bw .mockup-placeholder { color: rgba(0,0,0,.3); }
+
+  /* ── IDEAS/NODES/IMAGES tagline (ComfyUI style) ── */
+  .tagline-stack {
+    position: absolute;
+    right: 32px;
+    bottom: 80px;
+    font-family: var(--mono);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,.4);
+    text-align: right;
+    line-height: 1.8;
+    z-index: 1;
+  }
+
+  .tagline-stack hr {
+    border: none;
+    border-top: 1px solid rgba(255,255,255,.3);
+    margin-top: 6px;
+  }
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════
+     SLIDE 01 — Open WebUI
+     Swap: slide-label, stars-badge, tool-name, tool-desc, highlights, counter
+═══════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <div class="slide-label">P1 — Open WebUI</div>
+    <div class="stars-badge">
+      <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+      89.3k stars
+    </div>
+  </div>
+
+  <div class="tool-name">OPEN<br>WEBUI</div>
+
+  <div class="mockup">
+    <!-- replace src with actual screenshot: <img src="openwebui-screenshot.png" alt="Open WebUI interface"> -->
+    <div class="mockup-placeholder">[ Drop Open WebUI<br>screenshot here ]</div>
+  </div>
+
+  <div class="tool-desc">
+    <span class="highlight">single interface</span> for local + cloud AI models.<br>
+    Runs Ollama models locally. Connects to any OpenAI-compatible API.<br>
+    <span class="highlight">one UI to rule them all.</span>
+  </div>
+
+  <div class="slide-footer">
+    <div class="slide-counter">01/05</div>
+    <div class="handle">@ai.global.lee</div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════
+     SLIDE 02 — n8n
+═══════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <div class="slide-label">P2 — n8n</div>
+    <div class="stars-badge">
+      <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+      102k stars
+    </div>
+  </div>
+
+  <div class="tool-name">N8N</div>
+
+  <div class="mockup">
+    <div class="mockup-placeholder">[ Drop n8n<br>screenshot here ]</div>
+  </div>
+
+  <div class="tool-desc">
+    <span class="highlight">self-hostable</span> workflow automation.<br>
+    Visual node editor. 400+ integrations. Runs on your server.<br>
+    <span class="highlight">Zapier alternative</span> with no per-task fees.
+  </div>
+
+  <div class="slide-footer">
+    <div class="slide-counter">02/05</div>
+    <div class="handle">@ai.global.lee</div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════
+     SLIDE 03 — Perplexity
+═══════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <div class="slide-label">P3 — Perplexity</div>
+    <div class="stars-badge">
+      <!-- Perplexity is not open source; omit or use user count -->
+    </div>
+  </div>
+
+  <div class="tool-name">PERPLEXITY</div>
+
+  <div class="mockup">
+    <div class="mockup-placeholder">[ Drop Perplexity<br>screenshot here ]</div>
+  </div>
+
+  <div class="tool-desc">
+    <span class="highlight">AI search</span> with source-backed answers.<br>
+    Every answer cites its sources. Real-time web access.<br>
+    <span class="highlight">research without hallucinations.</span>
+  </div>
+
+  <div class="slide-footer">
+    <div class="slide-counter">03/05</div>
+    <div class="handle">@ai.global.lee</div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════
+     SLIDE 04 — Cursor
+═══════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <div class="slide-label">P4 — Cursor</div>
+    <div class="stars-badge">
+      <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+      92.1k stars
+    </div>
+  </div>
+
+  <div class="tool-name">CURSOR</div>
+
+  <div class="mockup">
+    <div class="mockup-placeholder">[ Drop Cursor<br>screenshot here ]</div>
+  </div>
+
+  <div class="tool-desc">
+    <span class="highlight">AI-first code editor.</span><br>
+    Understand, write, and modify code faster.<br>
+    Use natural language to work across files, debug problems,<br>
+    and make changes <span class="highlight">directly inside your codebase.</span>
+  </div>
+
+  <div class="slide-footer">
+    <div class="slide-counter">04/05</div>
+    <div class="handle">@ai.global.lee</div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════
+     SLIDE 05 — ComfyUI
+═══════════════════════════════════════ -->
+<div class="slide">
+  <div class="slide-header">
+    <div class="slide-label">P5 — ComfyUI</div>
+    <div class="stars-badge">
+      <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+      52.4k stars
+    </div>
+  </div>
+
+  <div class="tool-name">COMFYUI</div>
+
+  <div class="mockup">
+    <div class="mockup-placeholder">[ Drop ComfyUI<br>screenshot here ]</div>
+  </div>
+
+  <div class="tool-desc">
+    A <span class="highlight">node-based workflows</span> tool for building<br>
+    custom AI image generation workflows.<br>
+    Connect models, prompts, LoRAs, ControlNet however you want.<br>
+    <span class="highlight">full control</span> for <span class="highlight">custom image pipelines.</span>
+  </div>
+
+  <div class="tagline-stack">
+    IDEAS<br>NODES<br>IMAGES<br>YOUR WAY.
+    <hr>
+  </div>
+
+  <div class="slide-footer">
+    <div class="slide-counter">05/05</div>
+    <div class="handle">@ai.global.lee</div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════
+     CLOSING SLIDE (B&W variant)
+     Swap tool-name with your CTA or handle
+═══════════════════════════════════════ -->
+<div class="slide slide--bw">
+  <div class="slide-header">
+    <div class="slide-label">SAVE THIS</div>
+  </div>
+
+  <div class="tool-name" style="font-size: clamp(48px, 12vw, 72px); line-height: 1;">5 AI TOOLS WORTH SAVING</div>
+
+  <div class="mockup" style="min-height: 80px; flex: 0; margin-top: 24px;">
+    <div class="mockup-placeholder" style="color: rgba(0,0,0,.3);">
+      Open WebUI · n8n · Perplexity · Cursor · ComfyUI
+    </div>
+  </div>
+
+  <div class="tool-desc" style="margin-top: 24px; color: #000;">
+    Follow <span class="highlight">@ai.global.lee</span> for more tools that<br>
+    actually make a difference.
+  </div>
+
+  <div class="slide-footer">
+    <div class="slide-counter" style="opacity: .4;">swipe &lt;</div>
+    <div class="handle">@ai.global.lee</div>
+  </div>
+</div>
+
+</body>
+</html>
