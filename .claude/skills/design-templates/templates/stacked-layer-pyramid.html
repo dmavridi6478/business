@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<!--
+  Stacked Layer Pyramid — theme: Peach Stack
+  Inspired by: "The 5-layer GTM engine" (Cold IQ). Pre-filled with the gtm-outbound-engine layers.
+  Layout: brand pill + headline with accent word + subtitle; N slabs, each wider than the one above,
+  each with a tinted "top" strip (3D lid), icon, title, description, tool chips; tool-strip card below.
+
+  SWAP POINTS
+  - :root --top1..--top5 lid colours; add/remove .slab (width is set per slab via --w)
+  - .chips: short tool names (use real logos only where you have the right to)
+  - .strip: full tool list
+  House style: Aptos; title 32pt, headings 14pt, body 11pt.
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GTM Engine Layers</title>
+<style>
+  :root{--bg1:#F8F1E9;--bg2:#F3E3D6;--ink:#1C1917;--accent:#B8601A;--face:#F7F2EE;--edge:#E8DDD3;--muted:#6B635C;
+    --top1:#C3CAD2;--top2:#C7CEBC;--top3:#E9C4A9;--top4:#E5CEAC;--top5:#D0BFD1;
+    --font:Aptos,"Aptos Display","Segoe UI",Calibri,system-ui,sans-serif}
+  @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg1:#1d1915;--bg2:#2a211b;--ink:#f4ede6;--face:#2a2521;--edge:#3b332c;--muted:#bfb3a8}}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:var(--font);font-size:11pt;line-height:1.4;color:var(--ink);background:linear-gradient(180deg,var(--bg1),var(--bg2));min-height:100vh}
+  .page{max-width:880px;margin:0 auto;padding:36px 16px 40px;text-align:center}
+  .brand{display:inline-flex;gap:10px;align-items:center;font-weight:700;font-size:14pt}
+  .pill{border:1px solid var(--accent);color:var(--accent);border-radius:20px;padding:3px 12px;font-size:9pt;font-weight:600}
+  h1{font-size:32pt;font-weight:700;letter-spacing:-.03em;margin:8px 0 4px}
+  h1 em{font-style:normal;color:var(--accent)}
+  .sub{color:var(--muted);margin-bottom:30px}.sub b{color:var(--ink)}
+  .stack{display:grid;gap:16px;justify-items:center}
+  .slab{width:var(--w);background:var(--face);border:1px solid var(--edge);border-radius:4px 4px 10px 10px;position:relative;padding:22px 20px 16px;
+    box-shadow:0 18px 30px -22px rgba(80,50,30,.45)}
+  .slab::before{content:"";position:absolute;left:-1px;right:-1px;top:-14px;height:14px;background:var(--top);clip-path:polygon(2% 0,98% 0,100% 100%,0 100%);border-radius:3px 3px 0 0}
+  .slab h3{font-size:14pt;font-weight:700;display:flex;gap:8px;align-items:center;justify-content:center}
+  .slab h3 span{width:24px;height:24px;border-radius:6px;background:var(--top);display:grid;place-items:center;font-size:11pt}
+  .slab p{color:var(--muted);max-width:52ch;margin:6px auto 10px}
+  .chips{display:flex;gap:6px;justify-content:center;flex-wrap:wrap}
+  .chips b{background:#fff;border:1px solid var(--edge);border-radius:6px;padding:3px 8px;font-size:9pt;font-weight:600;color:#3b332c}
+  .strip{margin-top:28px;background:rgba(255,255,255,.55);border:1px solid var(--edge);border-radius:14px;padding:16px}
+  .strip h4{font-size:11pt;margin-bottom:10px}.strip h4 small{color:var(--accent);border:1px solid var(--accent);border-radius:6px;padding:1px 6px;margin-left:6px;font-size:8pt}
+  @media (max-width:640px){.slab{width:100%!important}}
+</style>
+</head>
+<body>
+<div class="page">
+  <div class="brand">⬢ Your Brand <span class="pill">Unified GTM stack</span></div>
+  <h1>The 5-layer <em>GTM engine</em></h1>
+  <p class="sub">From signal detection to a CRM record, <b>orchestrated from Claude Code</b></p>
+  <div class="stack">
+    <div class="slab" style="--w:52%;--top:var(--top1)"><h3><span>⛁</span>System of record</h3><p>Every signal, enrichment and reply writes back to one CRM, automatically.</p><div class="chips"><b>folk</b><b>HubSpot</b></div></div>
+    <div class="slab" style="--w:64%;--top:var(--top2)"><h3><span>➤</span>Action layer</h3><p>Route enriched contacts to the right channel: email on inbox infrastructure that lands, or LinkedIn sequences beside it.</p><div class="chips"><b>Instantly</b><b>Hypertide</b><b>Expandi</b></div></div>
+    <div class="slab" style="--w:76%;--top:var(--top3)"><h3><span>▽</span>Data layer</h3><p>Turn raw signals into verified emails, phones and firmographics with waterfall enrichment across every provider.</p><div class="chips"><b>Cold IQ</b><b>Apollo</b><b>Explorium</b><b>Openmart</b><b>Prospeo</b><b>FullEnrich</b><b>GetLeads</b></div></div>
+    <div class="slab" style="--w:88%;--top:var(--top4)"><h3><span>◎</span>Signal layer</h3><p>Detect hiring surges, tech adoption, funding rounds and LinkedIn engagement before your competitors see any of it.</p><div class="chips"><b>PredictLeads</b><b>LimaData</b><b>GetLeads</b></div></div>
+    <div class="slab" style="--w:100%;--top:var(--top5)"><h3><span>⟲</span>Orchestration layer</h3><p>Reads the API docs, wires the four layers together and retries through the errors, with a human approving every send.</p><div class="chips"><b>Claude</b><b>n8n</b><b>Clay</b></div></div>
+  </div>
+  <div class="strip"><h4>The stack behind the five layers <small>14 tools</small></h4>
+    <div class="chips"><b>Cold IQ</b><b>Apollo</b><b>Explorium</b><b>PredictLeads</b><b>LimaData</b><b>Prospeo</b><b>FullEnrich</b><b>GetLeads</b><b>Openmart</b><b>Instantly</b><b>Expandi</b><b>Hypertide</b><b>LeadMagic</b><b>folk</b></div>
+  </div>
+</div>
+</body>
+</html>

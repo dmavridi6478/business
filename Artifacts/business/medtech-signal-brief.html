@@ -1,0 +1,274 @@
+<title>MedTech Signal Brief</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap">
+<style>
+:root {
+  --bg:        #f7f7f5;
+  --bg2:       #ffffff;
+  --bg3:       #eeeceb;
+  --text:      #1a1a1a;
+  --text-sub:  #55554e;
+  --text-muted:#8a8a80;
+  --rule:      #ddddd6;
+  --accent:    #0b5e8a;
+  --accent-lt: #eaf4fb;
+  --t1:        #0b5e8a;
+  --t2:        #1a7a58;
+  --t3:        #7a4e1a;
+  --warn:      #8f2929;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg:        #0c0f14;
+    --bg2:       #141820;
+    --bg3:       #1c2028;
+    --text:      #e4e4de;
+    --text-sub:  #9898a0;
+    --text-muted:#50506a;
+    --rule:      #282c38;
+    --accent:    #4a9fc8;
+    --accent-lt: #0a1e2e;
+    --t1:        #4a9fc8;
+    --t2:        #3abf90;
+    --t3:        #d4943a;
+    --warn:      #e06060;
+  }
+}
+:root[data-theme="dark"] {
+  --bg:        #0c0f14;
+  --bg2:       #141820;
+  --bg3:       #1c2028;
+  --text:      #e4e4de;
+  --text-sub:  #9898a0;
+  --text-muted:#50506a;
+  --rule:      #282c38;
+  --accent:    #4a9fc8;
+  --accent-lt: #0a1e2e;
+  --t1:        #4a9fc8;
+  --t2:        #3abf90;
+  --t3:        #d4943a;
+  --warn:      #e06060;
+}
+*, *::before, *::after { box-sizing: border-box; }
+body {
+  font-family: 'Aptos', 'Plus Jakarta Sans', system-ui, sans-serif;
+  font-size: 11pt;
+  line-height: 1.65;
+  background: var(--bg);
+  color: var(--text);
+  margin: 0;
+  padding: 2.5rem 1rem 4rem;
+}
+.page { max-width: 760px; margin: 0 auto; }
+
+.header {
+  padding-bottom: 2rem;
+  border-bottom: 2px solid var(--rule);
+  margin-bottom: 2.5rem;
+}
+.eyebrow {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: .5rem;
+}
+h1 {
+  font-family: 'Aptos', 'Plus Jakarta Sans', system-ui, sans-serif;
+  font-size: 32pt;
+  font-weight: 700;
+  line-height: 1.1;
+  margin: 0 0 .6rem;
+  text-wrap: balance;
+}
+.header-sub {
+  color: var(--text-sub);
+  font-size: 10.5pt;
+  margin: 0;
+  max-width: 56ch;
+}
+h2 {
+  font-family: 'Aptos', 'Plus Jakarta Sans', system-ui, sans-serif;
+  font-size: 14pt;
+  font-weight: 700;
+  margin: 2.5rem 0 .8rem;
+  text-wrap: balance;
+}
+h3 {
+  font-size: 11pt;
+  font-weight: 600;
+  margin: 1.4rem 0 .4rem;
+}
+
+/* Tier cards */
+.tier-stack { display: flex; flex-direction: column; gap: 1rem; margin-bottom: 2rem; }
+.tier-card {
+  background: var(--bg2);
+  border: 1px solid var(--rule);
+  border-left: 4px solid var(--tier-color);
+  border-radius: 0 8px 8px 0;
+  padding: 1.2rem 1.4rem;
+}
+.tier-label {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--tier-color);
+  margin-bottom: .3rem;
+}
+.tier-name {
+  font-size: 12.5pt;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: .6rem;
+}
+.tier-items { padding-left: 1.3rem; margin: .3rem 0 .8rem; }
+.tier-items li { padding: .2rem 0 .2rem .3rem; color: var(--text); font-size: 10.5pt; }
+.tier-items li::marker { color: var(--tier-color); font-weight: 700; }
+.tier-risk {
+  background: var(--bg3);
+  border-radius: 4px;
+  padding: .5rem .8rem;
+  font-size: 10pt;
+  color: var(--text-sub);
+  margin-top: .5rem;
+}
+.tier-risk strong { color: var(--warn); }
+
+/* Comparison table */
+.table-wrap { overflow-x: auto; margin: 1rem 0 1.5rem; }
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 10.5pt;
+}
+th {
+  text-align: center;
+  vertical-align: top;
+  padding: .55rem .9rem;
+  font-size: 9.5pt;
+  font-weight: 700;
+  letter-spacing: .04em;
+  background: var(--bg3);
+  border-bottom: 2px solid var(--rule);
+  color: var(--text-sub);
+  text-transform: uppercase;
+}
+td {
+  text-align: center;
+  vertical-align: top;
+  padding: .6rem .9rem;
+  border-bottom: 1px solid var(--rule);
+  color: var(--text);
+}
+tr:last-child td { border-bottom: none; }
+td:first-child, th:first-child { text-align: left; }
+.avoid { color: var(--warn); font-size: 10pt; }
+.target { color: var(--t2); font-size: 10pt; }
+
+.source {
+  margin-top: 2.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--rule);
+  font-size: 9.5pt;
+  color: var(--text-muted);
+}
+</style>
+
+<div class="page">
+
+  <div class="header">
+    <div class="eyebrow">Strategy Framework &bull; MedTech Commercial</div>
+    <h1>MedTech Signal Brief</h1>
+    <p class="header-sub">3-Tier MedTech Commercial Architecture — from clinical brand foundation through market strategy to execution. Apply in strict top-down order.</p>
+  </div>
+
+  <p>Before any marketing or sales activity, the clinical foundation and market-economic strategy must be solid. Jumping to execution without Tiers 1 and 2 produces a commodity sale. Each tier has a distinct failure mode if skipped.</p>
+
+  <h2>The 3 Tiers</h2>
+  <div class="tier-stack">
+
+    <div class="tier-card" style="--tier-color: var(--t1)">
+      <div class="tier-label">Tier 1 &mdash; The Foundation</div>
+      <div class="tier-name">Clinical Brand Strategy</div>
+      <ol class="tier-items">
+        <li><strong>Vision &amp; Standard of Care</strong> — What procedural outcome or patient safety paradigm does this device shift? State the clinical before/after in one sentence.</li>
+        <li><strong>Clinical Integrity</strong> — What peer-reviewed evidence exists or is planned? List publications, registries, white papers, and identify gaps.</li>
+        <li><strong>Paradigm Positioning</strong> — Specific clinical differentiation vs. the current standard of care (not vs. competitors). Build a Defensible Clinical Positioning Matrix: efficacy, safety, procedural efficiency, learning curve.</li>
+        <li><strong>Core Value Proposition</strong> — One tailored value prop per medical specialty affected.</li>
+      </ol>
+      <div class="tier-risk"><strong>Risk of skipping:</strong> commoditization, physician skepticism, inability to justify premium pricing.</div>
+    </div>
+
+    <div class="tier-card" style="--tier-color: var(--t2)">
+      <div class="tier-label">Tier 2 &mdash; How We Compete</div>
+      <div class="tier-name">Market &amp; Economic Strategy</div>
+      <ol class="tier-items">
+        <li><strong>Stakeholder Ecosystem</strong> — Map every decision-maker in the hospital buying matrix: Surgeons/Users (procedural accuracy, ergonomic safety), Procurement/CFO (TCO, DRG optimization), OR Directors (turnover time, workflow integration), IT/BioMed (cyber compliance, PACS/EMR interoperability), VAC (evidence, economic dossier, formulary pathway).</li>
+        <li><strong>Economic Value Architecture</strong> — HEOR deliverables: length-of-stay reduction model, complication cost avoidance model, DRG/reimbursement mapping, TCO model (CapEx vs. lease-per-procedure vs. risk-share).</li>
+        <li><strong>Go-To-Market Route</strong> — Define the procurement pathway: capital placement, consumable model, or service SLA; tender strategy for public hospitals; risk-share or pay-per-use pilot to lower adoption barrier.</li>
+      </ol>
+      <div class="tier-risk"><strong>Risk of skipping:</strong> stalled tenders, blocked formulary approvals, prolonged sales cycles.</div>
+    </div>
+
+    <div class="tier-card" style="--tier-color: var(--t3)">
+      <div class="tier-label">Tier 3 &mdash; How We Show Up</div>
+      <div class="tier-name">Execution: Branding &amp; Marketing</div>
+      <ol class="tier-items">
+        <li><strong>White-Glove Clinical Support</strong> — Proctorship program, on-site OR specialist coverage, hands-on cadaveric/simulation workshops.</li>
+        <li><strong>Peer-to-Peer Medical Education</strong> — KOL masterclasses, CME symposia, multi-center registry case studies.</li>
+        <li><strong>Executive Hospital Partnerships</strong> — C-suite roundtables, partnership agreements, joint outcome registries.</li>
+        <li><strong>Commercial Marketing</strong> — Peer-reviewed content, health economics briefings, congress presence with post-congress digital nurture.</li>
+      </ol>
+      <div class="tier-risk"><strong>Risk of skipping:</strong> high churn, buyer remorse, underutilized capital equipment.</div>
+    </div>
+
+  </div>
+
+  <h2>Strategic Comparison Check</h2>
+  <p>Before finalizing, audit the approach against the two archetypes. Every dimension should map to the right-hand column.</p>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Dimension</th>
+          <th>Tactical Rep (Avoid)</th>
+          <th>Strategic Portfolio Leader (Target)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Opening move</td>
+          <td class="avoid">Booth presence &amp; feature pitch</td>
+          <td class="target">Clinical brand alignment</td>
+        </tr>
+        <tr>
+          <td>Hospital entry</td>
+          <td class="avoid">Price negotiation</td>
+          <td class="target">HEOR economic dossier</td>
+        </tr>
+        <tr>
+          <td>Physician engagement</td>
+          <td class="avoid">Feature demo to lead surgeon</td>
+          <td class="target">KOL proctorship &amp; buy-in</td>
+        </tr>
+        <tr>
+          <td>VAC outcome</td>
+          <td class="avoid">Price war / blocked</td>
+          <td class="target">Rapid formulary approval</td>
+        </tr>
+        <tr>
+          <td>Long-term result</td>
+          <td class="avoid">Churn &amp; underutilization</td>
+          <td class="target">Standard-of-care adoption</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="source">
+    Framework: MedTech 3-Tier Commercial Architecture. Apply per device/technology by substituting specific clinical evidence, stakeholder map, and market context for each engagement.
+  </div>
+
+</div>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<!--
+  Numbered Workflow Carousel Slide — 1080×1350 (4:5), theme: Warm Creator Carousel
+  Inspired by: "Best 8 AI Automation Tools" carousel (@theromanknox), pages 2–5.
+  Layout: two numbered items per slide; each = badge + gradient headline + ✱ subtitle + rule + workflow card.
+
+  SWAP POINTS
+  - Tokens in :root (colours, fonts)
+  - Each <section class="item">: .badge number, .title (wrap the accent words in <em>), .sub text
+  - Each .flow: one .node per step (icon emoji/letter, label, caption). Add .card--dark for a dark app screenshot look.
+  - Footer: handle, community link, page number
+  Export: open in Chromium at 1080×1350 and screenshot, or print to PDF per slide.
+  Font: Aptos per house style; falls back to Poppins (loaded) then system sans.
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Workflow Carousel Slide</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --canvas:#FDFBF8; --cocoa:#4B2A24; --mid:#8A4F38; --peach:#F2A15F;
+    --pill:#FBBF85; --badge:#FBE8D9; --badge-line:#E9B99A; --rule:#E1B29E; --ast:#F7A865;
+    --card:#F6F2EE; --card-dark:#1B1B1F; --muted:#8C7F78;
+    --font:Aptos,"Aptos Display",Poppins,"Segoe UI",system-ui,sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:#e9e4df;font-family:var(--font);color:var(--cocoa)}
+  .slide{width:1080px;height:1350px;margin:0 auto;position:relative;overflow:hidden;
+    background:
+      repeating-linear-gradient(60deg,rgba(75,42,36,.035) 0 2px,transparent 2px 38px),
+      repeating-linear-gradient(-60deg,rgba(75,42,36,.035) 0 2px,transparent 2px 38px),
+      var(--canvas);
+    padding:90px 90px 0}
+  .item{display:grid;grid-template-columns:96px 1fr;column-gap:24px;margin-bottom:56px}
+  .badge{align-self:start;margin-top:14px;width:78px;height:50px;border-radius:12px;background:var(--badge);
+    border:1.5px solid var(--badge-line);box-shadow:0 4px 0 rgba(233,185,154,.6);
+    display:grid;place-items:center;font-weight:800;font-size:30px;color:#2a1714}
+  .title{font-weight:800;font-size:72px;line-height:.98;letter-spacing:-.045em;
+    background:linear-gradient(90deg,var(--cocoa) 0%,var(--mid) 45%,var(--peach) 100%);
+    -webkit-background-clip:text;background-clip:text;color:transparent}
+  .title em{font-style:normal}
+  .sub{grid-column:1/-1;display:grid;grid-template-columns:96px 1fr;column-gap:24px;margin-top:18px;
+    font-weight:500;font-size:25px;line-height:1.25;letter-spacing:-.02em;color:#2a1714}
+  .sub b{font-weight:800}
+  .ast{color:var(--ast);font-size:46px;line-height:.8;text-align:center}
+  .rule{grid-column:2;height:3px;background:var(--rule);margin:20px 0 0;border-radius:2px}
+  .card{grid-column:2;background:var(--card);border-radius:4px;padding:26px 28px;
+    box-shadow:0 20px 40px -24px rgba(75,42,36,.35);display:flex;flex-direction:column;gap:18px}
+  .card h4{font-size:19px;font-weight:600;color:#222}
+  .card small{display:block;font-size:13px;color:var(--muted);font-weight:500;margin-top:4px}
+  .flow{display:flex;align-items:flex-start;justify-content:space-between;gap:6px}
+  .node{flex:1;text-align:center;font-size:14px;font-weight:600;color:#222;line-height:1.2}
+  .node i{display:grid;place-items:center;width:64px;height:64px;margin:0 auto 10px;border-radius:50%;
+    font-style:normal;font-size:28px;color:#fff;background:var(--c,#7c6cf0);box-shadow:0 8px 16px -8px var(--c,#7c6cf0)}
+  .node span{display:block;font-size:12px;font-weight:500;color:var(--muted);margin-top:3px}
+  .arrow{align-self:center;margin-top:-30px;color:#bbb;font-size:22px}
+  .card--dark{background:var(--card-dark)} .card--dark h4,.card--dark .node{color:#eee}
+  .footer{position:absolute;left:90px;right:90px;bottom:54px;display:flex;align-items:center;gap:28px}
+  .footer .col{font-size:21px;font-weight:800;line-height:1.1;color:#1b1b1b}
+  .footer .col span{display:block;font-weight:500;color:var(--peach);font-size:20px}
+  .footer .bar{width:2px;height:48px;background:var(--rule)}
+  .footer .page{margin-left:auto;background:var(--pill);border-radius:14px;padding:8px 20px;font-size:24px;font-weight:500}
+  .footer .swipe{border:2px solid #1b1b1b;border-radius:30px;padding:4px 6px 4px 18px;display:flex;align-items:center;gap:10px;font-size:24px;font-weight:600}
+  .footer .swipe b{background:var(--pill);border-radius:22px;padding:2px 14px;font-size:24px}
+</style>
+</head>
+<body>
+<div class="slide">
+
+  <section class="item">
+    <div class="badge">01</div>
+    <h2 class="title">AI voice call <em>agent</em></h2>
+    <p class="sub"><span class="ast">✱</span><span>Answers inbound calls, books appointments and escalates to a human</span></p>
+    <div class="rule"></div>
+    <div class="card">
+      <h4>Inbound Voice Agent<small>Webhook → Call agent → Route → Act</small></h4>
+      <div class="flow">
+        <div class="node"><i style="--c:#E6507A">☎</i>Webhook<span>Telephony</span></div><div class="arrow">→</div>
+        <div class="node"><i style="--c:#2F9E6A">◎</i>Call agent<span>Realtime LLM</span></div><div class="arrow">→</div>
+        <div class="node"><i style="--c:#3F6FE0">▦</i>Check slots<span>Calendar</span></div><div class="arrow">→</div>
+        <div class="node"><i style="--c:#8B5CF6">✉</i>Confirm<span>Email</span></div><div class="arrow">→</div>
+        <div class="node"><i style="--c:#F28C38">⇆</i>Escalate<span>CRM</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="item">
+    <div class="badge">02</div>
+    <h2 class="title">Lead generation <em>AI</em></h2>
+    <p class="sub"><span class="ast">✱</span><span><b>Semi-automated outreach:</b> research, qualify, draft — a human approves the send</span></p>
+    <div class="rule"></div>
+    <div class="card card--dark">
+      <h4>B2B Lead Generation<small>Scrape → Enrich → Qualify → Approve → Send</small></h4>
+      <div class="flow">
+        <div class="node"><i style="--c:#7C6CF0">◍</i>Source<span>Apify</span></div><div class="arrow">→</div>
+        <div class="node"><i style="--c:#2F9E6A">◎</i>Enrich<span>LLM</span></div><div class="arrow">→</div>
+        <div class="node"><i style="--c:#3F6FE0">▽</i>Qualify<span>Filter</span></div><div class="arrow">→</div>
+        <div class="node"><i style="--c:#F28C38">✓</i>Approve<span>Human</span></div><div class="arrow">→</div>
+        <div class="node"><i style="--c:#8B5CF6">✉</i>Send<span>Capped</span></div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="col"><span>Social media</span>@yourhandle</div>
+    <div class="bar"></div>
+    <div class="col"><span>Learn more</span>yoursite.com</div>
+    <div class="page">Page 2</div>
+    <div class="swipe">swipe <b>←</b></div>
+  </footer>
+</div>
+</body>
+</html>
