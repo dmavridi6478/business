@@ -16,6 +16,14 @@ Reach for a template here instead of improvising when a task needs:
 - **A SaaS pricing table or feature-comparison grid** → `templates/saas-pricing-table.html`
 - **A restrained, typography-led hero or section divider** (when "loud" is the wrong register) → `templates/editorial-hero.html`
 - **A "N things you should know" numbered card grid** (skill lists, tool roundups, GitHub-repo carousels — the layout behind most infographic-style social carousels) → `templates/infographic-card-grid.html`
+- **A numbered "Top N tools / workflows" social carousel slide** (two items per 4:5 slide, gradient headline, workflow node card) → `templates/numbered-workflow-carousel.html`
+- **A dark carousel cover** (label block, big headline, two tilted 3D app tiles) → `templates/carousel-cover-dark.html`
+- **A layered framework / operating-model infographic** (side columns + colour-coded layer bands + bottom flow strip) → `templates/layered-framework-infographic.html`
+- **A layered stack / N-layer architecture pyramid** (tinted 3D slabs, tool chips) → `templates/stacked-layer-pyramid.html`
+- **An inside-out maturity model as concentric rings** (data-driven label placement) → `templates/concentric-rings-framework.html`
+- **An old-way vs new-way comparison** (grey vs pink/lilac columns, numbered cards) → `templates/two-column-shift-comparison.html`
+- **A process of N steps under one control/orchestrator node** → `templates/control-plane-pipeline.html`
+- **A dense 50-100 item icon-tile catalog grid** → `templates/workflow-grid-catalog.html`
 - **A bookmarkable, filterable reference dashboard** of curated design-inspiration sites → `templates/design-reference-shelf.html` (also published as an Artifact — see `design-dev-resources` for the live link and site notes)
 
 ## How to use a template
@@ -40,6 +48,14 @@ All are verified to render correctly with no console errors (checked via Playwri
 | `saas-pricing-table.html` | Land-book (land-book.com) | 3-tier pricing table + feature-comparison table in one file, the two patterns Land-book names as what people actually go there to unstick themselves on |
 | `editorial-hero.html` | SiteInspire (siteinspire.com) / Httpster (httpster.net) | Oversized serif headline with one italic accent word, thin gradient rule under a category label, dotted-radial-gradient canvas — the "clean, restrained, European" register both sites curate for |
 | `infographic-card-grid.html` | GenAI Works / ByteByteGo / AIForLeaders.com / replace.so carousel infographics (see `.claude/commands/claude-skills-13.md`, `top-12-agent-skill-repos.md`) | Numbered circular badge + icon chip + title + short description, repeated in a responsive 4→2→1 CSS Grid, with an eyebrow/headline header and a source-attribution footer; ships both the cream/serif "light" variant and a near-black "dark" variant (toggle via `<body class="light\|dark">`), verified via Playwright screenshot in both modes |
+| `numbered-workflow-carousel.html` | "Best 8 AI Automation Tools" carousel (@theromanknox) | 1080×1350 slide, brown→peach `background-clip:text` headline, numbered badge, ✱ bullet, light/dark workflow node cards; theme `warm-creator-carousel` |
+| `carousel-cover-dark.html` | Same carousel, cover slide | Radial espresso glow + masked grid + ring, peach label block, rotated 3D tiles with inset shadows, SVG curved swipe arrow |
+| `layered-framework-infographic.html` | "The Governed Marketing Team" (prosp / Claude) | 3-column grid (who-talks-to-what · layer stack · what-it-prevents) with per-layer `--c`/`--t` colour tokens, 5-step flow strip; pre-filled with `governed-marketing-team`; Aptos 32/14/11 pt; responsive + dark mode; theme `governed-infographic` |
+| `stacked-layer-pyramid.html` | "The 5-layer GTM engine" (Cold IQ) | Slabs with per-slab `--w` width and `--top` lid colour drawn by a clipped `::before` trapezoid; pre-filled with `gtm-outbound-engine`; theme `peach-stack` |
+| `concentric-rings-framework.html` | "5 Layers of Operational Excellence" (Eric Partaker) | Nested CSS circles + JS that spreads each ring's label pills evenly around the band and staggers alternate rings; edit the `RINGS` array, not coordinates; pre-filled with `operational-excellence-layers`; theme `concentric-rainbow`. Keep ≤ 12 labels per ring or pills start to touch |
+| `two-column-shift-comparison.html` | "Very few measure adaptability" (Andrea Rubik) | 5/7 grid, alternating pink/violet `nth-child` badges and icon tiles; pre-filled with `marketing-adaptability-score`; theme `adaptive-pink` |
+| `control-plane-pipeline.html` | "The All-in-One Outbound Pipeline — inside Claude Code" | Dark control node + bracket connector + N pastel step columns with per-step `--bg-s`/`--c` tokens, collapses to one column on mobile |
+| `workflow-grid-catalog.html` | "The Complete Claude + n8n Sales System — 100 workflows" | Data-driven grid built from one `ITEMS` array (n, label, icon) so item count is an array edit, not hand-placed divs; pre-filled with all 100 from `sales-workflow-catalog`; theme `workflow-grid-sunset`; tile labels run below 11pt by necessity at this density |
 | `design-reference-shelf.html` | The 5-site design-inspiration list itself | Card-catalog-style dashboard (Fraunces display + IBM Plex Mono utility faces, light/dark tokens, small JS tag filter) indexing Awwwards/Godly/SiteInspire/Land-book/Httpster by what each is for; built and verified as a Claude Artifact, not a plain copy-paste snippet like the rest of this table |
 
 ## Related skills in this repo
