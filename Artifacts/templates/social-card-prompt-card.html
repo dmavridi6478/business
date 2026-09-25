@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Prompt Card</title>
+<style>
+  /* =====================================================
+     TEMPLATE D: AI Prompt Card
+     Based on Tech With Zia (@woodwchbp5j) prompt series style
+     Size: 1080×1920 (9:16 portrait)
+     Customise: prompt number, prompt name, prompt text, workflow stage
+     ===================================================== */
+
+  :root {
+    --bg-from: #f8f4ff;
+    --bg-to: #eff6ff;
+    --surface: #ffffff;
+    --border: #e8e0f0;
+    --shadow: rgba(100, 60, 180, 0.12);
+    --text-primary: #0a0a12;
+    --text-secondary: #3a3450;
+    --text-muted: #8a80a0;
+
+    /* Badge colours per prompt number */
+    --badge-1: #dc2626;  /* Prompt 01 — red */
+    --badge-2: #2563eb;  /* Prompt 02 — blue */
+    --badge-3: #059669;  /* Prompt 03 — green */
+    --badge-4: #7c3aed;  /* Prompt 04 — purple */
+
+    /* Current prompt badge colour (change per slide) */
+    --badge: var(--badge-1);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: linear-gradient(160deg, var(--bg-from) 0%, var(--bg-to) 100%);
+    font-family: -apple-system, 'Inter', 'Segoe UI', sans-serif;
+    width: 1080px;
+    height: 1920px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 80px;
+    gap: 40px;
+  }
+
+  /* ---- Top: series title ---- */
+  .series-header {
+    width: 100%;
+    text-align: center;
+  }
+
+  .series-title {
+    font-size: 28px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+    color: var(--text-muted);
+  }
+
+  /* ---- Workflow banner ---- */
+  .workflow-banner {
+    width: 100%;
+    background: rgba(255,255,255,0.5);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 28px 36px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+  }
+
+  .workflow-step {
+    font-size: 22px;
+    font-weight: 600;
+    color: var(--text-muted);
+    letter-spacing: 0.06em;
+  }
+
+  .workflow-step.active {
+    color: var(--badge);
+    font-size: 24px;
+  }
+
+  .workflow-arrow {
+    font-size: 20px;
+    color: var(--text-muted);
+    opacity: 0.5;
+  }
+
+  /* ---- Prompt badge ---- */
+  .prompt-badge {
+    background: var(--badge);
+    color: #ffffff;
+    font-size: 26px;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    padding: 16px 40px;
+    border-radius: 100px;
+    text-transform: uppercase;
+    box-shadow: 0 8px 32px rgba(220, 38, 38, 0.35);
+  }
+
+  /* ---- Prompt name headline ---- */
+  .prompt-name {
+    font-size: 84px;
+    font-weight: 900;
+    line-height: 1.0;
+    letter-spacing: -0.04em;
+    color: var(--text-primary);
+    text-align: center;
+    text-transform: uppercase;
+  }
+
+  /* ---- White prompt card ---- */
+  .prompt-card {
+    width: 100%;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 28px;
+    padding: 52px;
+    box-shadow:
+      0 20px 60px var(--shadow),
+      0 2px 0 rgba(255,255,255,0.8) inset;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+  }
+
+  .prompt-label {
+    font-size: 20px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--badge);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .prompt-label::before {
+    content: '';
+    display: block;
+    width: 20px;
+    height: 2px;
+    background: var(--badge);
+  }
+
+  .prompt-text {
+    font-size: 32px;
+    line-height: 1.6;
+    color: var(--text-secondary);
+    font-weight: 400;
+  }
+
+  .prompt-text strong {
+    color: var(--text-primary);
+    font-weight: 700;
+  }
+
+  /* Copy icon hint */
+  .copy-hint {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding-top: 8px;
+    border-top: 1px solid var(--border);
+    font-size: 22px;
+    color: var(--text-muted);
+  }
+
+  /* ---- Footer ---- */
+  .footer {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .footer-account {
+    font-size: 26px;
+    font-weight: 600;
+    color: var(--text-muted);
+  }
+
+  .footer-cta {
+    font-size: 26px;
+    color: var(--badge);
+    font-weight: 700;
+  }
+</style>
+</head>
+<body>
+
+  <!-- Series title -->
+  <div class="series-header">
+    <div class="series-title">4 Prompts to Build an AI Content Workflow</div>
+  </div>
+
+  <!-- Workflow banner -->
+  <div class="workflow-banner">
+    <span class="workflow-step active" id="step-1">IDEA</span>
+    <span class="workflow-arrow">→</span>
+    <span class="workflow-step" id="step-2">CREATE</span>
+    <span class="workflow-arrow">→</span>
+    <span class="workflow-step" id="step-3">PUBLISH</span>
+    <span class="workflow-arrow">→</span>
+    <span class="workflow-step" id="step-4">IMPROVE</span>
+  </div>
+
+  <!-- Prompt badge -->
+  <div class="prompt-badge" id="prompt-badge">PROMPT 01</div>
+
+  <!-- Prompt name -->
+  <div class="prompt-name" id="prompt-name">Workflow<br>Designer</div>
+
+  <!-- White prompt card -->
+  <div class="prompt-card">
+    <div class="prompt-label" id="prompt-label">The Prompt</div>
+    <div class="prompt-text" id="prompt-text">
+      You are an AI workflow architect. Help me design a complete content creation workflow. Ask me: <strong>What type of content do I create? Who is my audience? What are my goals?</strong> Then design a custom workflow: IDEA → RESEARCH → CREATE → REVIEW → PUBLISH → ANALYZE. For each phase, suggest specific AI tools and prompts to use.
+    </div>
+    <div class="copy-hint">📋 Copy this prompt → paste into Claude or ChatGPT</div>
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    <span class="footer-account">@your.creator.handle</span>
+    <span class="footer-cta">Slide 1 of 4 →</span>
+  </div>
+
+  <!-- ============================================================
+    USAGE GUIDE
+    ============================================================
+    To customise for each prompt (01–04):
+
+    1. #prompt-badge: "PROMPT 01" → "PROMPT 02" etc.
+    2. #prompt-name: Change headline text
+    3. #prompt-text: Paste the actual prompt (bold key phrases with <strong>)
+    4. #prompt-label: "The Prompt" (or "Paste This")
+    5. Workflow banner: add/remove .active class from the relevant step
+       - Prompt 01 → #step-1 (IDEA) is active
+       - Prompt 02 → #step-2 (CREATE) is active
+       - Prompt 03 → #step-3 (PUBLISH) is active
+       - Prompt 04 → #step-4 (IMPROVE) is active
+    6. Change --badge in :root to match the prompt number:
+       --badge: var(--badge-1);  ← Prompt 01 (red)
+       --badge: var(--badge-2);  ← Prompt 02 (blue)
+       --badge: var(--badge-3);  ← Prompt 03 (green)
+       --badge: var(--badge-4);  ← Prompt 04 (purple)
+    7. Update .footer-cta slide counter
+    ============================================================ -->
+</body>
+</html>

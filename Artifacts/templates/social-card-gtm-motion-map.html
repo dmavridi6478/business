@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GTM Motion Map Card</title>
+<style>
+  /* =====================================================
+     TEMPLATE F: Go-To-Market Motion Map
+     Based on "2026 Go-To-Market Motion Map" table style
+     Size: 1080×1350 (4:5 portrait)
+     Customise: title, subtitle, rows (motion / description / tools), footer chips
+     ===================================================== */
+
+  :root {
+    --bg: #ffffff;
+    --title-color: #0a0a0a;
+    --subtitle-color: #555;
+    --header-bg: #dce8fd;
+    --header-text: #1a1a1a;
+    --row-odd: #ffffff;
+    --row-even: #f9fafc;
+    --border: #e0e6ef;
+    --motion-text: #0a0a0a;
+    --desc-text: #333;
+    --chip-bg: #edf2ff;
+    --chip-text: #3355cc;
+    --tool-bg: #f0f4ff;
+    --tool-text: #2244bb;
+    --footer-bg: #edf2ff;
+    --footer-chip-bg: #ffffff;
+    --footer-chip-text: #3355cc;
+    --divider: #c8d8f5;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--bg);
+    font-family: -apple-system, 'Inter', 'Segoe UI', Arial, sans-serif;
+    width: 1080px;
+    min-height: 1350px;
+    padding: 56px 52px 48px;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  /* ---- Header ---- */
+  .header { margin-bottom: 32px; }
+
+  .main-title {
+    font-size: 66px;
+    font-weight: 900;
+    line-height: 1.05;
+    letter-spacing: -0.03em;
+    color: var(--title-color);
+  }
+
+  .main-subtitle {
+    font-size: 26px;
+    font-weight: 400;
+    color: var(--subtitle-color);
+    margin-top: 10px;
+  }
+
+  /* ---- Table ---- */
+  .table-wrap { flex: 1; border: 1.5px solid var(--border); border-radius: 16px; overflow: hidden; }
+
+  table { width: 100%; border-collapse: collapse; }
+
+  /* Header row */
+  thead tr th {
+    background: var(--header-bg);
+    padding: 18px 22px;
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--header-text);
+    text-align: left;
+    border-bottom: 2px solid var(--divider);
+  }
+
+  thead tr th:first-child { width: 190px; border-radius: 14px 0 0 0; }
+  thead tr th:nth-child(2) { width: 310px; }
+  thead tr th:last-child  { border-radius: 0 14px 0 0; }
+
+  /* Body rows */
+  tbody tr:nth-child(odd)  td { background: var(--row-odd); }
+  tbody tr:nth-child(even) td { background: var(--row-even); }
+
+  tbody tr td {
+    padding: 20px 22px;
+    vertical-align: top;
+    border-bottom: 1px solid var(--border);
+    font-size: 19px;
+  }
+
+  tbody tr:last-child td { border-bottom: none; }
+
+  .motion-name {
+    font-weight: 800;
+    font-size: 20px;
+    color: var(--motion-text);
+    line-height: 1.2;
+  }
+
+  .motion-desc {
+    color: var(--desc-text);
+    line-height: 1.45;
+  }
+
+  .motion-desc strong {
+    font-weight: 700;
+    color: var(--motion-text);
+  }
+
+  .tools-cell {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    align-items: flex-start;
+  }
+
+  .tool-chip {
+    background: var(--tool-bg);
+    color: var(--tool-text);
+    font-size: 16px;
+    font-weight: 600;
+    padding: 6px 14px;
+    border-radius: 100px;
+    white-space: nowrap;
+    border: 1px solid var(--divider);
+  }
+
+  /* ---- Footer channels bar ---- */
+  .footer {
+    margin-top: 20px;
+    background: var(--footer-bg);
+    border-radius: 14px;
+    padding: 18px 24px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+
+  .footer-label {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--subtitle-color);
+    flex-shrink: 0;
+  }
+
+  .footer-chip {
+    background: var(--footer-chip-bg);
+    color: var(--footer-chip-text);
+    font-size: 17px;
+    font-weight: 600;
+    padding: 8px 20px;
+    border-radius: 100px;
+    border: 1.5px solid var(--divider);
+  }
+</style>
+</head>
+<body>
+
+  <div class="header">
+    <div class="main-title" id="main-title">2026 Go-To-Market<br>Motion Map</div>
+    <div class="main-subtitle" id="main-subtitle">7 ways modern companies turn attention into revenue</div>
+  </div>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>GTM Motion</th>
+          <th>How it drives growth</th>
+          <th>Tools that support it</th>
+        </tr>
+      </thead>
+      <tbody>
+
+        <tr>
+          <td><div class="motion-name">Inbound-Led</div></td>
+          <td><div class="motion-desc"><strong>Earn demand</strong> through content, search and AI discovery.</div></td>
+          <td><div class="tools-cell">
+            <span class="tool-chip">Semrush</span>
+            <span class="tool-chip">Ahrefs</span>
+            <span class="tool-chip">HubSpot</span>
+          </div></td>
+        </tr>
+
+        <tr>
+          <td><div class="motion-name">Outbound-Led</div></td>
+          <td><div class="motion-desc"><strong>Create demand</strong> through targeted, signal-based outreach.</div></td>
+          <td><div class="tools-cell">
+            <span class="tool-chip">Apollo.io</span>
+            <span class="tool-chip">LinkedIn SN</span>
+            <span class="tool-chip">Clay</span>
+          </div></td>
+        </tr>
+
+        <tr>
+          <td><div class="motion-name">Product-Led</div></td>
+          <td><div class="motion-desc"><strong>Let users experience</strong> value before they buy.</div></td>
+          <td><div class="tools-cell">
+            <span class="tool-chip">TasteQ</span>
+            <span class="tool-chip">Amplitude</span>
+            <span class="tool-chip">Pendo</span>
+          </div></td>
+        </tr>
+
+        <tr>
+          <td><div class="motion-name">Partner-Led</div></td>
+          <td><div class="motion-desc"><strong>Grow through</strong> referrals, integrations and co-selling.</div></td>
+          <td><div class="tools-cell">
+            <span class="tool-chip">PartnerStack</span>
+            <span class="tool-chip">Crossbeam</span>
+            <span class="tool-chip">Impartner</span>
+          </div></td>
+        </tr>
+
+        <tr>
+          <td><div class="motion-name">Community-Led</div></td>
+          <td><div class="motion-desc"><strong>Build trust</strong> through peers, conversations and advocacy.</div></td>
+          <td><div class="tools-cell">
+            <span class="tool-chip">Slack</span>
+            <span class="tool-chip">Reddit</span>
+            <span class="tool-chip">Discord</span>
+          </div></td>
+        </tr>
+
+        <tr>
+          <td><div class="motion-name">Event-Led</div></td>
+          <td><div class="motion-desc"><strong>Create high-intent interactions</strong> through webinars, events &amp; shared experiences.</div></td>
+          <td><div class="tools-cell">
+            <span class="tool-chip">Riverside</span>
+            <span class="tool-chip">Luma</span>
+            <span class="tool-chip">Zoom</span>
+          </div></td>
+        </tr>
+
+        <tr>
+          <td><div class="motion-name">Account-Led</div></td>
+          <td><div class="motion-desc"><strong>Orchestrate marketing and sales</strong> around high-value accounts.</div></td>
+          <td><div class="tools-cell">
+            <span class="tool-chip">Clay</span>
+            <span class="tool-chip">6sense</span>
+            <span class="tool-chip">Demandbase</span>
+          </div></td>
+        </tr>
+
+      </tbody>
+    </table>
+  </div>
+
+  <div class="footer">
+    <span class="footer-label">Channels that amplify every motion:</span>
+    <span class="footer-chip">Search</span>
+    <span class="footer-chip">Social</span>
+    <span class="footer-chip">Creators</span>
+    <span class="footer-chip">AI Answers</span>
+    <span class="footer-chip">Paid</span>
+  </div>
+
+  <!-- ============================================================
+    USAGE GUIDE
+    ============================================================
+    Customise per post:
+    1. #main-title: change the headline
+    2. #main-subtitle: change the subtitle
+    3. Each <tr>: change motion name, growth description, tool chips
+    4. .tool-chip: add/remove tools per row
+    5. .footer-chip: change amplification channels
+    6. Add/remove rows as needed (keep max 8 for readability)
+    ============================================================ -->
+
+</body>
+</html>

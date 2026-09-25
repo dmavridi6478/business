@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<!--
+  Control-Plane Pipeline — pastel 5-column process under one dark "control plane" node
+  Inspired by: "The All-in-One Outbound Pipeline — inside Claude Code". Pre-filled with gtm-outbound-engine steps.
+  Layout: kicker pill + headline + subtitle; dark control node with elbow connectors to each column;
+  N pastel columns (number bubble, icon, title, two paragraphs) with → between; tagline card at the bottom.
+
+  SWAP POINTS
+  - STEPS in each .step: --bg tint, --c accent, number, icon glyph, title, text
+  - Control node label; tagline
+  House style: Aptos; title 32pt, headings 14pt, body 11pt.
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Outbound Pipeline</title>
+<style>
+  :root{--bg:#F8F7F3;--ink:#131A2E;--muted:#5d6273;--line:#9aa0ad;--dark:#1F1D2B;--accent:#D97745;
+    --font:Aptos,"Aptos Display","Segoe UI",Calibri,system-ui,sans-serif}
+  @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#12121a;--ink:#eef0f7;--muted:#a8adbd;--line:#555a68}}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--bg);color:var(--ink);font-family:var(--font);font-size:11pt;line-height:1.4}
+  .page{max-width:900px;margin:0 auto;padding:36px 16px;text-align:center}
+  .kick{display:inline-block;background:#ecebe6;border-radius:20px;padding:6px 18px;letter-spacing:.25em;font-size:9pt;font-weight:600}
+  h1{font-size:32pt;font-weight:800;letter-spacing:-.02em;margin:10px 0 6px}
+  .sub{color:var(--muted);margin-bottom:22px}.sub b{color:var(--ink)}
+  .ctrl{display:inline-block;background:var(--dark);color:#fff;border-radius:12px;padding:12px 24px;text-align:left;position:relative;z-index:1}
+  .ctrl b{font-size:14pt;display:block}.ctrl b::before{content:"✱ ";color:var(--accent)}
+  .ctrl small{color:#c9c9d6}
+  .wires{height:46px;position:relative;margin-top:-18px}
+  .wires::before{content:"";position:absolute;left:10%;right:10%;top:18px;height:18px;border:2px solid var(--line);border-bottom:none;border-radius:12px 12px 0 0}
+  .flow{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;position:relative}
+  .step{background:var(--bg-s);border-radius:14px;padding:16px 12px;position:relative;color:#1b2033}
+  .step+.step::before{content:"›";position:absolute;left:-12px;top:44%;color:var(--line);font-size:16pt}
+  .n{width:30px;height:30px;border-radius:50%;background:var(--c);color:#fff;font-weight:700;display:grid;place-items:center;margin:0 auto 10px}
+  .ic{font-size:28px;color:var(--c);margin-bottom:8px}
+  .step h3{font-size:12pt;margin-bottom:8px}
+  .step p{font-size:9.5pt;color:#4a5064;margin-bottom:6px}
+  .tag{display:inline-flex;gap:14px;align-items:center;margin-top:24px;background:#e9f3ee;border-radius:14px;padding:12px 22px;text-align:left;color:#1b2033}
+  .tag b{color:#1f6d4a;font-size:14pt;display:block}
+  @media (max-width:760px){.flow{grid-template-columns:1fr}.step+.step::before{display:none}.wires{display:none}}
+</style>
+</head>
+<body>
+<div class="page">
+  <div class="kick">THE ALL-IN-ONE</div>
+  <h1>Outbound Pipeline</h1>
+  <p class="sub">Everything you need to run high-converting outbound. Inside <b>Claude Code</b>.</p>
+  <div class="ctrl"><b>Claude Code</b><small>Your single control plane</small></div>
+  <div class="wires"></div>
+  <div class="flow">
+    <div class="step" style="--bg-s:#EDEBFB;--c:#8A7BE0"><div class="n">1</div><div class="ic">⛁</div><h3>Pull data &amp; waterfall enrichment</h3><p>Connect Clay, Vibe Prospecting or Apollo via MCP/APIs.</p><p>Multi-provider waterfall for verified email and phone.</p></div>
+    <div class="step" style="--bg-s:#E6F4EE;--c:#47A990"><div class="n">2</div><div class="ic">☑</div><h3>Clean, deduplicate &amp; normalise</h3><p>Run clean_leads.py inside Claude Code.</p><p>Standardise titles and domains, drop duplicates and free-mail.</p></div>
+    <div class="step" style="--bg-s:#FBEFE3;--c:#D98A4A"><div class="n">3</div><div class="ic">◎</div><h3>Extract signals &amp; score ICP</h3><p>Read live web updates, job posts and company news.</p><p>Score accounts against explicit ICP criteria.</p></div>
+    <div class="step" style="--bg-s:#E6F1FB;--c:#4A8FD9"><div class="n">4</div><div class="ic">✎</div><h3>Write 1:1 personalisation</h3><p>Combine intent signals with custom Claude prompts.</p><p>Every personal line cites its source signal.</p></div>
+    <div class="step" style="--bg-s:#F1ECFB;--c:#9A7BD8"><div class="n">5</div><div class="ic">✉</div><h3>Human approves, then push</h3><p>Format records for Instantly, Smartlead or Outreach.</p><p>Send cap and approval gate before anything goes out.</p></div>
+  </div>
+  <div class="tag"><span style="font-size:24px">📈</span><div><b>Fewer tools. Less friction. More revenue.</b>For founders, agencies and GTM engineers.</div></div>
+</div>
+</body>
+</html>

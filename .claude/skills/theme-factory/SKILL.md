@@ -27,7 +27,7 @@ To apply styling to a slide deck or other artifact:
 
 ## Themes Available
 
-The following 10 themes are available, each showcased in `theme-showcase.pdf`:
+The following 17 themes are available (1–10 showcased in `theme-showcase.pdf`; 11–17 added from uploaded reference images, previewed by the matching templates in `design-templates`):
 
 1. **Ocean Depths** - Professional and calming maritime theme
 2. **Sunset Boulevard** - Warm and vibrant sunset colors
@@ -39,6 +39,13 @@ The following 10 themes are available, each showcased in `theme-showcase.pdf`:
 8. **Tech Innovation** - Bold and modern tech aesthetic
 9. **Botanical Garden** - Fresh and organic garden colors
 10. **Midnight Galaxy** - Dramatic and cosmic deep tones
+11. **Warm Creator Carousel** - Cream canvas, cocoa-to-peach gradient headlines, numbered badges (template: `numbered-workflow-carousel.html`, `carousel-cover-dark.html`)
+12. **Governed Infographic** - Cream editorial page, heavy black headline, colour-coded layer bands (template: `layered-framework-infographic.html`)
+13. **Peach Stack** - Cream-to-peach gradient, tinted 3D slabs stacked as a pyramid (template: `stacked-layer-pyramid.html`)
+14. **Concentric Rainbow** - Pastel concentric rings, white label pills, heavy headline (template: `concentric-rings-framework.html`)
+15. **Adaptive Pink** - Grey "traditional" vs pink/lilac "new way" columns, numbered pink/violet badges (template: `two-column-shift-comparison.html`)
+16. **Prosp Dark Grid** - Charcoal org-chart grid, cyan/orange outlined job cards, orange CTA bar
+17. **Workflow Grid Sunset** - Peach-to-coral gradient, dense pastel-tinted icon-tile grid for 50-100 items, orange/pink headline (template: `workflow-grid-catalog.html`)
 
 ## Theme Details
 
