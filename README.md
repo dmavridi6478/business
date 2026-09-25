@@ -4738,3 +4738,78 @@ version. The other 45 kept their original names with no changes needed.
 skill-bundle list were both updated to reflect the pack is now fully
 vendored, not just reviewed.
 
+---
+
+## 83. Content-Workflow Skills, Operations Cheat Sheet & Sales-System Rebuild (Batch 83)
+
+**Source:** One uploaded zip, "The Marketing Umbrella," 7 images — a smaller,
+more varied batch than recent ones: a marketing-taxonomy infographic (The
+Marketing Umbrella, unattributed), Eric Partaker's dense "Operations Book in
+One Page" (16 mini-frameworks in one poster), Gav Blaxberg's "12
+Communication Skills of High Performers," Mo Bunnell's "What to Write When
+Someone Doesn't Reply" (a complete, ready-to-use follow-up system), a
+socialblueprint.ca "9 Essential Claude Skills" content-workflow carousel
+(9 named slash commands with real functional descriptions, not just names),
+and two sales-focused lead-magnet teasers — "The Ultimate Claude LinkedIn
+Sales Department" and "50+ Sales Skills Inside Fable 5" — both "comment to
+unlock" graphics that name dozens of agents/skills/prompts/playbooks but
+contain zero actual prompt or skill content in the image itself.
+
+This batch differs from prior ones in kind, not just source: the
+socialblueprint.ca carousel named 9 specific slash commands with real
+functional descriptions (not just a title), so — per this session's
+standing instruction to turn prompts into installed commands, not just
+document them — all 9 were built as actual working `.claude/commands/`
+files this time, not summarized into a reference doc.
+
+**New — built as real, usable commands (not just documented):**
+- `niche-research`, `hook-generator`, `post-writer`, `post-formatter`,
+  `voice-builder`, `newsletter-repurposer` (renamed from the source's
+  `/newsletter` to avoid colliding with the existing, differently-scoped
+  `ai-newsletter-system`), `post-scorer`, `notion-content-planner`,
+  `analytics-dashboard` — the full 9-command content-creation pipeline
+  from socialblueprint.ca's carousel, each cross-referenced against this
+  repo's deeper equivalents (`hook-writer`/`content-hook-writer`,
+  `content-script-writer`, `content-manager`, `content-analyst`) and
+  positioned as the fast single-turn version of those, not a replacement.
+- `follow-up-when-no-reply` — Mo Bunnell's complete 4-stage cadence (Day 3
+  light touch → Day 9 add value → Day 16 easy yes/no → Day 30 open door)
+  with the exact message templates and a relationship-value × past-interest
+  matrix for when to stop following up. Fully specified in the source, so
+  reproduced as a ready-to-use command rather than a summary.
+- `outbound-sales-system-5stage` — rebuilds the 5-stage taxonomy from both
+  sales-teaser graphics (prospecting → research → outreach → conversations
+  → pipeline) as an actually-working sequence, mapped to skills **already
+  vendored in this repo** (`prospecting`, `customer-research`, `cold-email`,
+  the new `follow-up-when-no-reply`, `sales-enablement-corey-haines`'s
+  objection library, `sales-enablement`, `revops`) — since neither source
+  graphic contained any real prompt/skill content to vendor, only category
+  names used as organizing structure, stated explicitly in the file rather
+  than implied.
+- `marketing-umbrella-framework` — the 5-branch taxonomy (Strategic/
+  Digital/Growth/Branding/CX), with each branch mapped to the specific
+  skill in this repo that already executes it.
+- `operations-book-one-page` — indexes Eric Partaker's 16 mini-frameworks
+  by title and structure; several panels' sub-bullet text was too small in
+  the source image to transcribe reliably, so this file says so rather than
+  guessing at illegible text. Cross-references this repo's existing
+  `c-suite-30-kpis` (different source/list, not a duplicate of panel 7's
+  "Top 18 KPIs for CEOs") and `quarterly-okr-architect`/
+  `business-decision-frameworks` (deeper implementations of panels 5-6).
+- `communication-skills-12` — Gav Blaxberg's 12-skill checklist, as a
+  self-audit prompt.
+
+**Already covered, cross-referenced rather than re-added:** SWOT/PESTEL
+(business-decision-frameworks), the individual OKR/KPI mechanics
+(quarterly-okr-architect, kpi-reference-handbook), objection handling
+(sales-enablement, sales-enablement-corey-haines).
+
+**Declined — no real content to vendor:** "The Ultimate Claude LinkedIn
+Sales Department" (60 agents / 50 skills / 100 prompts / 30 workflows / 10
+playbooks, all named, none with actual content in the source image) and the
+Fable 5 terminal screenshot's individual `.md` file contents (filenames and
+one-line descriptions only, no real prompt text) — both explicitly flagged
+in `outbound-sales-system-5stage` as naming inspiration only, not sourced
+content, rather than fabricating plausible-sounding prompt text to fill the
+gap.
+
