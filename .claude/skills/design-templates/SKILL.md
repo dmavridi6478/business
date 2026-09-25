@@ -1,6 +1,6 @@
 ---
 name: design-templates
-description: Ready-to-use, self-contained HTML/CSS templates for common content-visual needs — an iMessage chat mockup, a vertical social/story device frame, a 3D-tilted product screenshot mockup, a halftone/dithered image effect (both CSS-only and real canvas dithering), a logo/reference moodboard grid, a brand board (wordmark + palette + type pairing + app preview), a SaaS pricing table + comparison grid, a restrained editorial hero, and a filterable design-reference-site dashboard. Use these instead of reaching for a paid single-purpose tool (or hand-rolling from scratch) when a design/frontend task needs a device mockup, a stylized image effect, a moodboard layout, a brand-kit deliverable, a SaaS pricing section, a quiet typography-led hero, or a reusable reference dashboard. Each template is copy-paste-ready with clear swap points marked in comments.
+description: Ready-to-use, self-contained HTML/CSS templates for common content-visual needs — an iMessage chat mockup, a vertical social/story device frame, a 3D-tilted product screenshot mockup, a halftone/dithered image effect (both CSS-only and real canvas dithering), a logo/reference moodboard grid, a brand board (wordmark + palette + type pairing + app preview), a SaaS pricing table + comparison grid, a restrained editorial hero, a numbered infographic card grid (light/dark variants), and a filterable design-reference-site dashboard. Use these instead of reaching for a paid single-purpose tool (or hand-rolling from scratch) when a design/frontend task needs a device mockup, a stylized image effect, a moodboard layout, a brand-kit deliverable, a SaaS pricing section, a quiet typography-led hero, a "N things you should know" carousel/infographic layout, or a reusable reference dashboard. Each template is copy-paste-ready with clear swap points marked in comments.
 ---
 
 ## When to use this skill
@@ -15,6 +15,7 @@ Reach for a template here instead of improvising when a task needs:
 - **A brand board** (wordmark, palette, type pairing, app-preview mockup for a new brand direction) → `templates/brand-board.html`
 - **A SaaS pricing table or feature-comparison grid** → `templates/saas-pricing-table.html`
 - **A restrained, typography-led hero or section divider** (when "loud" is the wrong register) → `templates/editorial-hero.html`
+- **A "N things you should know" numbered card grid** (skill lists, tool roundups, GitHub-repo carousels — the layout behind most infographic-style social carousels) → `templates/infographic-card-grid.html`
 - **A numbered "Top N tools / workflows" social carousel slide** (two items per 4:5 slide, gradient headline, workflow node card) → `templates/numbered-workflow-carousel.html`
 - **A dark carousel cover** (label block, big headline, two tilted 3D app tiles) → `templates/carousel-cover-dark.html`
 - **A layered framework / operating-model infographic** (side columns + colour-coded layer bands + bottom flow strip) → `templates/layered-framework-infographic.html`
@@ -46,6 +47,7 @@ All are verified to render correctly with no console errors (checked via Playwri
 | `brand-board.html` | The `brandkit-generator` skill's output shape | CSS Grid board combining a wordmark card, named-role color swatches, a type-pairing sample, and a mock application preview into one shareable board |
 | `saas-pricing-table.html` | Land-book (land-book.com) | 3-tier pricing table + feature-comparison table in one file, the two patterns Land-book names as what people actually go there to unstick themselves on |
 | `editorial-hero.html` | SiteInspire (siteinspire.com) / Httpster (httpster.net) | Oversized serif headline with one italic accent word, thin gradient rule under a category label, dotted-radial-gradient canvas — the "clean, restrained, European" register both sites curate for |
+| `infographic-card-grid.html` | GenAI Works / ByteByteGo / AIForLeaders.com / replace.so carousel infographics (see `.claude/commands/claude-skills-13.md`, `top-12-agent-skill-repos.md`) | Numbered circular badge + icon chip + title + short description, repeated in a responsive 4→2→1 CSS Grid, with an eyebrow/headline header and a source-attribution footer; ships both the cream/serif "light" variant and a near-black "dark" variant (toggle via `<body class="light\|dark">`), verified via Playwright screenshot in both modes |
 | `numbered-workflow-carousel.html` | "Best 8 AI Automation Tools" carousel (@theromanknox) | 1080×1350 slide, brown→peach `background-clip:text` headline, numbered badge, ✱ bullet, light/dark workflow node cards; theme `warm-creator-carousel` |
 | `carousel-cover-dark.html` | Same carousel, cover slide | Radial espresso glow + masked grid + ring, peach label block, rotated 3D tiles with inset shadows, SVG curved swipe arrow |
 | `layered-framework-infographic.html` | "The Governed Marketing Team" (prosp / Claude) | 3-column grid (who-talks-to-what · layer stack · what-it-prevents) with per-layer `--c`/`--t` colour tokens, 5-step flow strip; pre-filled with `governed-marketing-team`; Aptos 32/14/11 pt; responsive + dark mode; theme `governed-infographic` |
@@ -70,3 +72,13 @@ All are verified to render correctly with no console errors (checked via Playwri
 Source: a "6 design tools that never make the lists" screenshot carousel (@webnailed) for the first five templates; `brand-board.html` was built for the `brandkit-generator` skill, sourced from a "Claude Replaces Designers" video (@vibes.codes). These templates are original CSS/HTML written to approximate each tool's visual output — not copies of the tools' code, which isn't open source.
 
 `saas-pricing-table.html`, `editorial-hero.html`, and `design-reference-shelf.html` were added after reviewing an uploaded photo batch — a "5 sites we actually check before designing" carousel (@goluda.ai) listing Awwwards, Godly, SiteInspire, Land-book, and Httpster. This session's network egress is blocked to all five of those domains (a general restriction, not specific to this list), so they weren't live-browsed; the two content templates and the dashboard's site notes are built from each site's own well-established, independently verifiable curation focus (and match what the carousel itself said), not from a live visit. Say so if asked whether these were actually browsed.
+
+`infographic-card-grid.html` (Batch 82) was extracted from a recurring visual
+pattern noticed across an uploaded photo batch — nearly every "N things you
+should know" carousel/infographic in that batch (GenAI Works' 13 Claude
+Skills, ByteByteGo's Top 12 Agent Skills, AIForLeaders.com's AI Industry
+Trends, replace.so's GitHub-repo carousels) used the same numbered-badge
+card grid, just with different colors. This is original CSS/HTML built to
+approximate that recurring layout, not a copy of any one source's actual
+code or assets. Verified in both light and dark variants via a headless
+Chromium screenshot with zero console errors before being added.
