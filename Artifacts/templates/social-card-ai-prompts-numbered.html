@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Prompts Numbered List Card</title>
+<style>
+  /* =====================================================
+     TEMPLATE G: AI Prompts Numbered List
+     Based on "25 AI Prompts Used by Top 1% Leaders" style
+     Size: 1080×1920 (9:16 portrait)
+     Customise: title, accent line, categories (color/label/prompts)
+     ===================================================== */
+
+  :root {
+    --bg: #faf6f0;
+    --title-color: #0a0a0a;
+    --accent-color: #2255cc;
+    --text-body: #1a1a1a;
+    --text-muted: #666;
+    --divider: #ddd;
+    --rule: #0a0a0a;
+
+    /* Category badge colors */
+    --cat1-bg: #2255cc;
+    --cat2-bg: #009688;
+    --cat3-bg: #e05c2a;
+    --cat4-bg: #7c4dcc;
+    --cat5-bg: #1a7fd4;
+    --cat-text: #ffffff;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--bg);
+    font-family: -apple-system, 'Inter', 'Segoe UI', Arial, sans-serif;
+    width: 1080px;
+    min-height: 1920px;
+    padding: 64px 56px 56px;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  /* ---- Header ---- */
+  .header {
+    border-bottom: 3px solid var(--rule);
+    padding-bottom: 22px;
+    margin-bottom: 38px;
+  }
+
+  .main-title {
+    font-size: 80px;
+    font-weight: 900;
+    line-height: 1.0;
+    letter-spacing: -0.03em;
+    color: var(--title-color);
+  }
+
+  .main-title .accent {
+    font-style: italic;
+    color: var(--accent-color);
+  }
+
+  .main-subtitle {
+    font-size: 28px;
+    font-weight: 400;
+    color: var(--text-muted);
+    margin-top: 10px;
+  }
+
+  /* ---- Category section ---- */
+  .category {
+    margin-bottom: 28px;
+  }
+
+  .category-header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 14px;
+  }
+
+  .cat-badge {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    font-weight: 800;
+    color: var(--cat-text);
+    flex-shrink: 0;
+  }
+
+  .cat-badge.c1 { background: var(--cat1-bg); }
+  .cat-badge.c2 { background: var(--cat2-bg); }
+  .cat-badge.c3 { background: var(--cat3-bg); }
+  .cat-badge.c4 { background: var(--cat4-bg); }
+  .cat-badge.c5 { background: var(--cat5-bg); }
+
+  .cat-title {
+    font-size: 26px;
+    font-weight: 800;
+    color: var(--title-color);
+    line-height: 1.2;
+  }
+
+  .cat-title .cat-label {
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--text-muted);
+    display: block;
+  }
+
+  /* ---- Prompt grid ---- */
+  .prompt-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px 20px;
+  }
+
+  .prompt-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 6px 0;
+    border-bottom: 1px solid var(--divider);
+  }
+
+  .prompt-num {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--text-muted);
+    flex-shrink: 0;
+    min-width: 26px;
+    padding-top: 2px;
+  }
+
+  .prompt-text {
+    font-size: 17px;
+    line-height: 1.4;
+    color: var(--text-body);
+  }
+
+  /* ---- Footer ---- */
+  .footer {
+    margin-top: auto;
+    padding-top: 24px;
+    border-top: 2px solid var(--rule);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 22px;
+    color: var(--text-muted);
+  }
+
+  .footer-tag {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--text-muted);
+    background: #ede8e0;
+    padding: 8px 20px;
+    border-radius: 100px;
+  }
+</style>
+</head>
+<body>
+
+  <div class="header">
+    <div class="main-title" id="main-title">25 AI Prompts<br>Used by <span class="accent">Top 1% Leaders</span></div>
+    <div class="main-subtitle" id="main-subtitle">Across 5 leadership categories</div>
+  </div>
+
+  <!-- Category 1 -->
+  <div class="category">
+    <div class="category-header">
+      <div class="cat-badge c1">01</div>
+      <div class="cat-title">
+        Strategic Thinking &amp; Vision
+        <span class="cat-label">Prompts 01–05</span>
+      </div>
+    </div>
+    <div class="prompt-grid">
+      <div class="prompt-item"><span class="prompt-num">01.</span><span class="prompt-text">Which three strategic risks are we underweighting or ignoring?</span></div>
+      <div class="prompt-item"><span class="prompt-num">02.</span><span class="prompt-text">How would a well-funded rival disrupt us in two years?</span></div>
+      <div class="prompt-item"><span class="prompt-num">03.</span><span class="prompt-text">Which decisions could look wrong in five years?</span></div>
+      <div class="prompt-item"><span class="prompt-num">04.</span><span class="prompt-text">Which assumptions need testing, and how would we validate them?</span></div>
+      <div class="prompt-item"><span class="prompt-num">05.</span><span class="prompt-text">How could we achieve three-year goals in 18 months?</span></div>
+    </div>
+  </div>
+
+  <!-- Category 2 -->
+  <div class="category">
+    <div class="category-header">
+      <div class="cat-badge c2">02</div>
+      <div class="cat-title">
+        Decision Making Under Pressure
+        <span class="cat-label">Prompts 06–10</span>
+      </div>
+    </div>
+    <div class="prompt-grid">
+      <div class="prompt-item"><span class="prompt-num">06.</span><span class="prompt-text">If this decision fails, why? How can I reduce that risk?</span></div>
+      <div class="prompt-item"><span class="prompt-num">07.</span><span class="prompt-text">What would I choose if the decision were irreversible — or easy to undo?</span></div>
+      <div class="prompt-item"><span class="prompt-num">08.</span><span class="prompt-text">What is the strongest argument against my preferred direction?</span></div>
+      <div class="prompt-item"><span class="prompt-num">09.</span><span class="prompt-text">With incomplete information, which questions must I answer or can I skip?</span></div>
+      <div class="prompt-item"><span class="prompt-num">10.</span><span class="prompt-text">What would I choose if I had to explain it publicly to my team?</span></div>
+    </div>
+  </div>
+
+  <!-- Category 3 -->
+  <div class="category">
+    <div class="category-header">
+      <div class="cat-badge c3">03</div>
+      <div class="cat-title">
+        Team Development &amp; Coaching
+        <span class="cat-label">Prompts 11–15</span>
+      </div>
+    </div>
+    <div class="prompt-grid">
+      <div class="prompt-item"><span class="prompt-num">11.</span><span class="prompt-text">What five root causes could explain this person's struggle?</span></div>
+      <div class="prompt-item"><span class="prompt-num">12.</span><span class="prompt-text">How can I give direct feedback while protecting trust and confidence?</span></div>
+      <div class="prompt-item"><span class="prompt-num">13.</span><span class="prompt-text">Which one-to-one questions would reveal what is really happening?</span></div>
+      <div class="prompt-item"><span class="prompt-num">14.</span><span class="prompt-text">Why might a high performer disengage, and how should I discuss it?</span></div>
+      <div class="prompt-item"><span class="prompt-num">15.</span><span class="prompt-text">Design a 30-day plan to improve this person's specific skill.</span></div>
+    </div>
+  </div>
+
+  <!-- Category 4 -->
+  <div class="category">
+    <div class="category-header">
+      <div class="cat-badge c4">04</div>
+      <div class="cat-title">
+        Communication &amp; Influence
+        <span class="cat-label">Prompts 16–20</span>
+      </div>
+    </div>
+    <div class="prompt-grid">
+      <div class="prompt-item"><span class="prompt-num">16.</span><span class="prompt-text">Rewrite this for a sceptical board member. What objections will they have?</span></div>
+      <div class="prompt-item"><span class="prompt-num">17.</span><span class="prompt-text">Help me deliver difficult news honestly, clearly and with trust.</span></div>
+      <div class="prompt-item"><span class="prompt-num">18.</span><span class="prompt-text">Explain this complex strategy so everyone understands why it matters.</span></div>
+      <div class="prompt-item"><span class="prompt-num">19.</span><span class="prompt-text">I have five minutes with executives. What three things must I communicate?</span></div>
+      <div class="prompt-item"><span class="prompt-num">20.</span><span class="prompt-text">How can I refuse this request firmly while preserving the relationship?</span></div>
+    </div>
+  </div>
+
+  <!-- Category 5 -->
+  <div class="category">
+    <div class="category-header">
+      <div class="cat-badge c5">05</div>
+      <div class="cat-title">
+        Execution &amp; Accountability
+        <span class="cat-label">Prompts 21–25</span>
+      </div>
+    </div>
+    <div class="prompt-grid">
+      <div class="prompt-item"><span class="prompt-num">21.</span><span class="prompt-text">Which five causes of delay could explain this project's slippage?</span></div>
+      <div class="prompt-item"><span class="prompt-num">22.</span><span class="prompt-text">What should I stop doing so my team can execute without bottlenecks?</span></div>
+      <div class="prompt-item"><span class="prompt-num">23.</span><span class="prompt-text">How could this strategy fail, and which checkpoints would catch it early?</span></div>
+      <div class="prompt-item"><span class="prompt-num">24.</span><span class="prompt-text">Which early warning signs should I watch weekly?</span></div>
+      <div class="prompt-item"><span class="prompt-num">25.</span><span class="prompt-text">Which two or three priorities matter most, and what should we pause?</span></div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <span id="footer-handle">@your.handle</span>
+    <span class="footer-tag">Save · Apply · Lead</span>
+  </div>
+
+  <!-- ============================================================
+    USAGE GUIDE
+    ============================================================
+    Customise per post:
+    1. #main-title: change headline (keep .accent span for italic blue)
+    2. #main-subtitle: change descriptor line
+    3. Each .category: change cat-badge class (c1–c5), cat-title, prompts
+    4. .cat-badge colors: edit --cat1-bg … --cat5-bg in :root
+    5. Add/remove .prompt-item rows as needed
+    6. #footer-handle: update attribution
+    ============================================================ -->
+
+</body>
+</html>

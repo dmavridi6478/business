@@ -1,0 +1,365 @@
+<title>MedTech Content Playbook</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap">
+<style>
+:root {
+  --bg:        #f6f7f5;
+  --bg2:       #ffffff;
+  --bg3:       #eceeed;
+  --text:      #1a1a1a;
+  --text-sub:  #55554e;
+  --text-muted:#8a8a80;
+  --rule:      #ddddd6;
+  --accent:    #1a5e3a;
+  --accent-lt: #eaf5ee;
+  --s1:        #1a5e8a;
+  --s2:        #7a4e1a;
+  --s3:        #1a5e3a;
+  --s4:        #5a3a8f;
+  --s5:        #8f2929;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg:        #0c0f12;
+    --bg2:       #141820;
+    --bg3:       #1a1e28;
+    --text:      #e4e4de;
+    --text-sub:  #9898a0;
+    --text-muted:#50506a;
+    --rule:      #282c38;
+    --accent:    #4abf80;
+    --accent-lt: #0a2018;
+    --s1:        #4a9fc8;
+    --s2:        #d4943a;
+    --s3:        #4abf80;
+    --s4:        #8e70e8;
+    --s5:        #e06060;
+  }
+}
+:root[data-theme="dark"] {
+  --bg:        #0c0f12;
+  --bg2:       #141820;
+  --bg3:       #1a1e28;
+  --text:      #e4e4de;
+  --text-sub:  #9898a0;
+  --text-muted:#50506a;
+  --rule:      #282c38;
+  --accent:    #4abf80;
+  --accent-lt: #0a2018;
+  --s1:        #4a9fc8;
+  --s2:        #d4943a;
+  --s3:        #4abf80;
+  --s4:        #8e70e8;
+  --s5:        #e06060;
+}
+*, *::before, *::after { box-sizing: border-box; }
+body {
+  font-family: 'Aptos', 'Plus Jakarta Sans', system-ui, sans-serif;
+  font-size: 11pt;
+  line-height: 1.65;
+  background: var(--bg);
+  color: var(--text);
+  margin: 0;
+  padding: 2.5rem 1rem 4rem;
+}
+.page { max-width: 800px; margin: 0 auto; }
+
+.header {
+  padding-bottom: 2rem;
+  border-bottom: 2px solid var(--rule);
+  margin-bottom: 2.5rem;
+}
+.eyebrow {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: .5rem;
+}
+h1 {
+  font-family: 'Aptos', 'Plus Jakarta Sans', system-ui, sans-serif;
+  font-size: 32pt;
+  font-weight: 700;
+  line-height: 1.1;
+  margin: 0 0 .6rem;
+  text-wrap: balance;
+}
+.header-sub {
+  color: var(--text-sub);
+  font-size: 10.5pt;
+  margin: 0;
+  max-width: 58ch;
+}
+h2 {
+  font-family: 'Aptos', 'Plus Jakarta Sans', system-ui, sans-serif;
+  font-size: 14pt;
+  font-weight: 700;
+  margin: 2.5rem 0 .8rem;
+  text-wrap: balance;
+}
+
+/* Context signals */
+.signals {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .6rem;
+  margin-bottom: 2rem;
+}
+.signal-pill {
+  background: var(--bg2);
+  border: 1px solid var(--rule);
+  border-radius: 4px;
+  padding: .4rem .9rem;
+  font-size: 10pt;
+  color: var(--text-sub);
+}
+.signal-pill strong {
+  color: var(--accent);
+  font-weight: 700;
+}
+
+/* Stage cards */
+.stages { display: flex; flex-direction: column; gap: 1rem; margin-bottom: 2rem; }
+.stage-card {
+  background: var(--bg2);
+  border: 1px solid var(--rule);
+  border-left: 4px solid var(--stage-color);
+  border-radius: 0 8px 8px 0;
+  padding: 1.2rem 1.4rem;
+}
+.stage-label {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--stage-color);
+  margin-bottom: .2rem;
+}
+.stage-name {
+  font-size: 12.5pt;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: .5rem;
+}
+.stage-body {
+  font-size: 10.5pt;
+  color: var(--text-sub);
+  margin-bottom: .6rem;
+}
+.stage-deliverable {
+  background: var(--bg3);
+  border-radius: 4px;
+  padding: .4rem .8rem;
+  font-size: 10pt;
+  color: var(--text-sub);
+}
+.stage-deliverable strong { color: var(--text); }
+
+/* Inner table (persona table) */
+.inner-table-wrap { overflow-x: auto; margin: .6rem 0; }
+.inner-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 10pt;
+}
+.inner-table th {
+  text-align: center;
+  vertical-align: top;
+  padding: .4rem .7rem;
+  font-size: 9pt;
+  font-weight: 700;
+  letter-spacing: .04em;
+  background: var(--bg3);
+  border-bottom: 1px solid var(--rule);
+  color: var(--text-sub);
+  text-transform: uppercase;
+}
+.inner-table td {
+  text-align: center;
+  vertical-align: top;
+  padding: .4rem .7rem;
+  border-bottom: 1px solid var(--rule);
+  color: var(--text);
+  font-size: 10pt;
+}
+.inner-table tr:last-child td { border-bottom: none; }
+.inner-table td:first-child, .inner-table th:first-child { text-align: left; }
+
+/* KPI dashboard table */
+.table-wrap { overflow-x: auto; margin: 1rem 0 1.5rem; }
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 10.5pt;
+}
+th {
+  text-align: center;
+  vertical-align: top;
+  padding: .55rem .9rem;
+  font-size: 9.5pt;
+  font-weight: 700;
+  letter-spacing: .04em;
+  background: var(--bg3);
+  border-bottom: 2px solid var(--rule);
+  color: var(--text-sub);
+  text-transform: uppercase;
+}
+td {
+  text-align: center;
+  vertical-align: top;
+  padding: .6rem .9rem;
+  border-bottom: 1px solid var(--rule);
+  color: var(--text);
+}
+tr:last-child td { border-bottom: none; }
+td:first-child, th:first-child { text-align: left; }
+
+.source {
+  margin-top: 2.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--rule);
+  font-size: 9.5pt;
+  color: var(--text-muted);
+}
+</style>
+
+<div class="page">
+
+  <div class="header">
+    <div class="eyebrow">Commercial Engine &bull; MedTech Digital Sales</div>
+    <h1>MedTech Content Playbook</h1>
+    <p class="header-sub">5-Stage SalesFlow Architecture for the modern digital MedTech commercial engine — Understand &rarr; Amplify &rarr; Verify &rarr; Expand &rarr; Nurture.</p>
+  </div>
+
+  <div class="signals">
+    <div class="signal-pill"><strong>81%</strong> of physicians use AI/LLMs in clinical practice</div>
+    <div class="signal-pill"><strong>90%</strong> of hospital decision-makers do ~12 online searches before contacting a rep</div>
+    <div class="signal-pill"><strong>68%</strong> of searches end in zero-clicks due to AI Overviews</div>
+    <div class="signal-pill"><strong>90%</strong> of addressable hospital buyers are currently out-of-market</div>
+  </div>
+
+  <h2>The 5 Stages</h2>
+  <div class="stages">
+
+    <div class="stage-card" style="--stage-color: var(--s1)">
+      <div class="stage-label">Stage 1</div>
+      <div class="stage-name">Understand &mdash; Hospital Buying Matrix &amp; Needs-Based Journeys</div>
+      <p class="stage-body">Create tailored one-page journey maps for each stakeholder persona. Do not pitch generic feature sheets.</p>
+      <div class="inner-table-wrap">
+        <table class="inner-table">
+          <thead>
+            <tr>
+              <th>Persona</th>
+              <th>Primary Decision Criteria</th>
+              <th>Content That Resonates</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Surgeon/User</td>
+              <td>Procedural accuracy, ergonomic safety, learning curve</td>
+              <td>Technique videos, outcomes data, peer comparisons</td>
+            </tr>
+            <tr>
+              <td>Procurement/CFO</td>
+              <td>TCO, DRG optimization, budget cycle</td>
+              <td>Cost models, ROI calculators, budget impact analysis</td>
+            </tr>
+            <tr>
+              <td>OR Director</td>
+              <td>Turnover time, workflow integration, staff training</td>
+              <td>Workflow diagrams, implementation timeline, training plan</td>
+            </tr>
+            <tr>
+              <td>IT/BioMed</td>
+              <td>Cyber compliance, PACS/EMR interoperability, uptime</td>
+              <td>Tech specs, compliance certs, integration documentation</td>
+            </tr>
+            <tr>
+              <td>VAC Committee</td>
+              <td>Clinical evidence, economic value, formulary pathway</td>
+              <td>HEOR dossier, RWE data, peer-reviewed publications</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="stage-deliverable"><strong>Deliverable:</strong> One-page journey map per persona — 3&ndash;5 content touchpoints from awareness to active evaluation.</div>
+    </div>
+
+    <div class="stage-card" style="--stage-color: var(--s2)">
+      <div class="stage-label">Stage 2</div>
+      <div class="stage-name">Amplify &mdash; Convert 3-Day Congress into 60-Day Digital Pipeline</div>
+      <p class="stage-body">Congress is a signal, not a strategy. Convert the 3-day window into a 60-day engine: Pre-congress paid search and LinkedIn targeting of registered attendees → During-congress hyper-local geo-targeting → Post-congress retargeting (Day 1–7: hot leads clinical data; Day 8–30: warm leads economic model; Day 31–57: all badge scans education content). Cost is 1/8th of live congress, CTR 10× higher than cold outreach.</p>
+      <div class="stage-deliverable"><strong>Trap to avoid:</strong> Packing up the booth Sunday and relying on reps to cold-call badge scans weeks later.</div>
+    </div>
+
+    <div class="stage-card" style="--stage-color: var(--s3)">
+      <div class="stage-label">Stage 3</div>
+      <div class="stage-name">Verify &mdash; Command Search &amp; Generative AI Citation Share</div>
+      <p class="stage-body">If your clinical content is not indexed and cited by AI Overviews and LLMs, you don't exist for 68% of searchers. Fix this with: structured data (Schema.org markup: MedicalProcedure, MedicalDevice, FAQPage) on all clinical landing pages; LinkedIn as AI training corpus (mirror peer-reviewed publications as long-form articles); authority citations (Wikipedia + peer-reviewed journals, the sources LLMs cite most); technical SEO (Core Web Vitals, mobile rendering, crawlability).</p>
+      <div class="stage-deliverable"><strong>Deliverable:</strong> Content audit identifying top 10 clinical queries where your device should appear in AI Overviews; gap analysis; schema implementation plan.</div>
+    </div>
+
+    <div class="stage-card" style="--stage-color: var(--s4)">
+      <div class="stage-label">Stage 4</div>
+      <div class="stage-name">Expand &mdash; Precision ICP Reach &amp; KOL Thought Leader Ads</div>
+      <p class="stage-body">Reach the 90% of addressable market that is out-of-market before they search. LinkedIn Boolean AND targeting by specialty, hospital seniority, institution type, and geography — avoid "Audience Expansion" (drains up to 95% of budget on bot traffic). Use matched audiences with hospital target lists, CRM contacts, conference attendee lists. For Thought Leader Ads (highest-trust format in MedTech): identify 3–5 KOL surgeons active on LinkedIn and sponsor their organic posts into specific hospital ICPs.</p>
+      <p class="stage-body">ICP segmentation: Tier 1 (named accounts, confirmed budget cycles, known VAC timelines) → Tier 2 (institutions matching Tier 1 profile) → Tier 3 (broad market, education only).</p>
+      <div class="stage-deliverable"><strong>Deliverable:</strong> LinkedIn campaign architecture per ICP tier; KOL shortlist with engagement brief; monthly spend allocation by tier.</div>
+    </div>
+
+    <div class="stage-card" style="--stage-color: var(--s5)">
+      <div class="stage-label">Stage 5</div>
+      <div class="stage-name">Nurture &mdash; 6&ndash;24 Month Multi-Stakeholder Automation</div>
+      <p class="stage-body">Capital medical device sales cycles run 6&ndash;24 months. Most teams abandon after 1&ndash;2 touches. Win by staying present. Persona-segmented streams: Surgeon (quarterly outcomes data, technique videos, peer case studies) → Economic buyer (updated TCO models, reimbursement news, health system benchmarks) → VAC (RWE registry updates, expanded indications, comparative effectiveness data). Trigger-based escalation: budget cycle signals, new procedure volume data, competitor activity.</p>
+      <p class="stage-body">RWE Engine: establish multi-center registry from first 10 implanting sites, publish interim data at 6, 12, 24 months, use hospital case studies as anchor content for all nurture streams.</p>
+      <div class="stage-deliverable"><strong>Deliverable:</strong> 24-month nurture calendar by persona; trigger logic map; RWE publication roadmap.</div>
+    </div>
+
+  </div>
+
+  <h2>Pipeline Health Dashboard</h2>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Stage</th>
+          <th>Leading Indicator</th>
+          <th>Lagging Indicator</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Understand</td>
+          <td>Journey maps complete per persona</td>
+          <td>Stakeholder engagement rate</td>
+        </tr>
+        <tr>
+          <td>Amplify</td>
+          <td>Congress pipeline generated (60-day)</td>
+          <td>Qualified leads from congress cycle</td>
+        </tr>
+        <tr>
+          <td>Verify</td>
+          <td>AI citation share for top 10 queries</td>
+          <td>Organic search-driven inbound requests</td>
+        </tr>
+        <tr>
+          <td>Expand</td>
+          <td>LinkedIn reach into Tier 1/2 ICPs</td>
+          <td>Demo requests from out-of-market accounts</td>
+        </tr>
+        <tr>
+          <td>Nurture</td>
+          <td>Nurture open/engagement rates by persona</td>
+          <td>VAC submissions and formulary approvals</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="source">
+    Framework: MedTech 5-Stage SalesFlow Commercial Engine. Apply per device/technology — substitute specific personas, ICPs, KOL shortlist, and content assets for each engagement.
+  </div>
+
+</div>

@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<!--
+  Template: carousel-save-for-later
+  Style: @clickandrank "Save For Later" light carousel
+  Inspired by: Light paper-texture social media carousel slides
+  Swap points:
+    - ACCENT_COLOR: primary brand colour (default coral #E8533A)
+    - SLIDE_COUNT: number in top-right (e.g. "01/05")
+    - HEADLINE: main tool/topic name
+    - BODY_TEXT: 1–2 sentence description
+    - CTA_URL: call-to-action URL
+    - HANDLE: @yourhandle in the footer
+    --custom properties at top of <style> cover all swap points.
+-->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Save For Later Carousel</title>
+<style>
+  /* ── SWAP THESE ── */
+  :root {
+    --accent:       #E8533A;
+    --accent-light: #FAEEE9;
+    --handle:       "@yourhandle";
+    --slide-count:  "01/05";
+    --font-body:    "Inter", system-ui, sans-serif;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: #F5F0EA;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-body);
+    padding: 24px 16px;
+    gap: 24px;
+  }
+
+  /* ── SLIDE CARD ── */
+  .slide {
+    width: 100%;
+    max-width: 560px;
+    aspect-ratio: 1 / 1;
+    background: #FEFCF9;
+    border-radius: 20px;
+    box-shadow:
+      0 2px 4px rgba(0,0,0,.04),
+      0 8px 24px rgba(0,0,0,.08);
+    display: flex;
+    flex-direction: column;
+    padding: 36px 40px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* paper grain texture */
+  .slide::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image:
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='0.06'/%3E%3C/svg%3E");
+    pointer-events: none;
+    opacity: 0.4;
+  }
+
+  /* ── HEADER ROW ── */
+  .slide-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 32px;
+    position: relative;
+  }
+
+  .save-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    color: var(--accent);
+    background: var(--accent-light);
+    padding: 6px 12px;
+    border-radius: 100px;
+  }
+
+  .save-tag svg { width: 12px; height: 12px; flex-shrink: 0; }
+
+  .slide-number {
+    font-size: 13px;
+    font-weight: 600;
+    color: #B0A898;
+    letter-spacing: .04em;
+  }
+
+  .slide-number::after { content: var(--slide-count); }
+
+  /* ── CONTENT ── */
+  .slide-number-big {
+    font-size: 72px;
+    font-weight: 900;
+    line-height: 1;
+    color: var(--accent-light);
+    position: absolute;
+    right: 40px;
+    bottom: 80px;
+    pointer-events: none;
+    user-select: none;
+  }
+
+  .slide-body {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
+  }
+
+  .tool-name {
+    font-size: 32px;
+    font-weight: 800;
+    color: #1A1410;
+    line-height: 1.1;
+    margin-bottom: 16px;
+  }
+
+  .tool-name em {
+    color: var(--accent);
+    font-style: normal;
+  }
+
+  .tool-desc {
+    font-size: 15px;
+    line-height: 1.65;
+    color: #5A504A;
+    max-width: 360px;
+  }
+
+  .tool-url {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 24px;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--accent);
+    text-decoration: none;
+    border-bottom: 1.5px solid var(--accent);
+    padding-bottom: 2px;
+    width: fit-content;
+  }
+
+  /* ── FOOTER ── */
+  .slide-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 20px;
+    border-top: 1px solid #EDE8E0;
+    position: relative;
+    z-index: 1;
+  }
+
+  .handle {
+    font-size: 12px;
+    font-weight: 600;
+    color: #9A9089;
+    letter-spacing: .02em;
+  }
+
+  .handle::after { content: var(--handle); }
+
+  .progress-dots {
+    display: flex;
+    gap: 6px;
+  }
+
+  .dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #D8D0C4;
+  }
+
+  .dot.active { background: var(--accent); width: 18px; border-radius: 100px; }
+
+  /* ── COVER SLIDE VARIANT ── */
+  .slide.cover .tool-name { font-size: 26px; }
+
+  .slide.cover .cover-eyebrow {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 12px;
+  }
+
+  .slide.cover .cover-count {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 56px;
+    height: 56px;
+    border-radius: 14px;
+    background: var(--accent);
+    color: #fff;
+    font-size: 22px;
+    font-weight: 900;
+    margin-bottom: 20px;
+  }
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════
+     COVER SLIDE — swap this block
+═══════════════════════════════════════ -->
+<div class="slide cover">
+  <div class="slide-header">
+    <div class="save-tag">
+      <!-- bookmark icon -->
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M5 4a2 2 0 012-2h10a2 2 0 012 2v16l-7-4-7 4V4z"/></svg>
+      Save For Later
+    </div>
+    <div class="slide-number" style="--slide-count: 'Cover'"></div>
+  </div>
+  <div class="slide-body">
+    <div class="cover-count">5</div>
+    <div class="cover-eyebrow">Every Small Business Needs</div>
+    <h2 class="tool-name">5 Websites That Every Small Business Should Know</h2>
+    <p class="tool-desc">Swipe through to see all five — each one saves you hours every week.</p>
+  </div>
+  <div class="slide-footer">
+    <div class="handle"></div>
+    <div class="progress-dots">
+      <div class="dot active"></div>
+      <div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════
+     CONTENT SLIDE — duplicate for each item
+     Swap: --slide-count, .tool-name, .tool-desc, .tool-url, active dot
+═══════════════════════════════════════ -->
+<div class="slide" style="--slide-count: '01/05'">
+  <div class="slide-header">
+    <div class="save-tag">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M5 4a2 2 0 012-2h10a2 2 0 012 2v16l-7-4-7 4V4z"/></svg>
+      Save For Later
+    </div>
+    <div class="slide-number"></div>
+  </div>
+  <div class="slide-body">
+    <h2 class="tool-name"><em>Hunter</em></h2>
+    <p class="tool-desc">Find professional email addresses and connect with potential customers. Search any company domain and get verified contacts in seconds.</p>
+    <a class="tool-url" href="https://hunter.io">
+      hunter.io ↗
+    </a>
+  </div>
+  <div class="slide-number-big">01</div>
+  <div class="slide-footer">
+    <div class="handle"></div>
+    <div class="progress-dots">
+      <div class="dot"></div>
+      <div class="dot active"></div>
+      <div class="dot"></div><div class="dot"></div><div class="dot"></div>
+    </div>
+  </div>
+</div>
+
+<!-- Repeat slide block above for slides 02–05 -->
+
+</body>
+</html>

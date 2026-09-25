@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<!--
+  Template: dark-neon-agent-card
+  Style: @aigenesis.official Hermes / dark neon glow
+  Inspired by: Dark background with glowing neon accent lines, purple/cyan palette
+  Swap points:
+    --neon: primary glow colour (default cyan #00F5D4)
+    --neon2: secondary glow (default purple #B845FF)
+    .card-title: headline text
+    .card-body: body paragraph
+    .card-tag items: feature tags
+    .step-items: numbered steps
+    Custom properties at :root cover all colour swap points.
+-->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dark Neon Agent Card</title>
+<style>
+  /* ── SWAP THESE ── */
+  :root {
+    --neon:    #00F5D4;
+    --neon2:   #B845FF;
+    --bg:      #0A0A12;
+    --surface: #111120;
+    --border:  rgba(0, 245, 212, .18);
+    --text:    #E8E8F0;
+    --muted:   #7878A0;
+    --font:    "Inter", system-ui, sans-serif;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--bg);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font);
+    padding: 40px 16px;
+    gap: 32px;
+  }
+
+  /* ── CARD ── */
+  .card {
+    width: 100%;
+    max-width: 600px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 40px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* glow corner */
+  .card::before {
+    content: "";
+    position: absolute;
+    top: -60px; left: -60px;
+    width: 220px; height: 220px;
+    border-radius: 50%;
+    background: var(--neon);
+    opacity: .08;
+    filter: blur(60px);
+    pointer-events: none;
+  }
+
+  .card::after {
+    content: "";
+    position: absolute;
+    bottom: -60px; right: -60px;
+    width: 200px; height: 200px;
+    border-radius: 50%;
+    background: var(--neon2);
+    opacity: .12;
+    filter: blur(70px);
+    pointer-events: none;
+  }
+
+  /* ── HEADER ── */
+  .card-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--neon);
+    margin-bottom: 16px;
+  }
+
+  .eyebrow-dot {
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: var(--neon);
+    box-shadow: 0 0 8px var(--neon);
+    animation: pulse 2s ease-in-out infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50%       { opacity: .4; }
+  }
+
+  .card-title {
+    font-size: 28px;
+    font-weight: 800;
+    color: var(--text);
+    line-height: 1.2;
+    margin-bottom: 16px;
+  }
+
+  .card-title span {
+    background: linear-gradient(90deg, var(--neon), var(--neon2));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .card-body {
+    font-size: 15px;
+    line-height: 1.7;
+    color: var(--muted);
+    margin-bottom: 32px;
+  }
+
+  /* ── TAGS ── */
+  .tag-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 32px;
+  }
+
+  .tag {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--neon);
+    background: rgba(0, 245, 212, .08);
+    border: 1px solid var(--border);
+    padding: 5px 12px;
+    border-radius: 100px;
+    letter-spacing: .03em;
+  }
+
+  .tag.purple {
+    color: var(--neon2);
+    background: rgba(184, 69, 255, .08);
+    border-color: rgba(184, 69, 255, .2);
+  }
+
+  /* ── STEPS ── */
+  .steps { display: flex; flex-direction: column; gap: 16px; }
+
+  .step {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+  }
+
+  .step-num {
+    flex-shrink: 0;
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--neon);
+    background: rgba(0, 245, 212, .05);
+  }
+
+  .step-text {
+    padding-top: 6px;
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--text);
+  }
+
+  .step-text strong { color: var(--neon); font-weight: 700; }
+
+  /* ── DIVIDER ── */
+  .neon-line {
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(90deg, var(--neon), var(--neon2), transparent);
+    margin: 32px 0;
+    opacity: .4;
+  }
+
+  /* ── CODE BLOCK ── */
+  .code-block {
+    background: rgba(0,0,0,.4);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 20px 24px;
+    font-family: "JetBrains Mono", "Fira Code", monospace;
+    font-size: 13px;
+    line-height: 1.8;
+    color: var(--text);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .code-block .keyword { color: var(--neon2); }
+  .code-block .string  { color: var(--neon); }
+  .code-block .comment { color: var(--muted); font-style: italic; }
+
+  /* ── FOOTER ── */
+  .card-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 32px;
+  }
+
+  .handle {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--muted);
+  }
+
+  .cta-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--bg);
+    background: var(--neon);
+    padding: 10px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: box-shadow .2s;
+  }
+
+  .cta-btn:hover {
+    box-shadow: 0 0 20px rgba(0, 245, 212, .4);
+  }
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════
+     AGENT INFO CARD — swap content inside
+═══════════════════════════════════════ -->
+<div class="card">
+  <div class="card-eyebrow">
+    <div class="eyebrow-dot"></div>
+    Open Source · MIT License
+  </div>
+  <h2 class="card-title">Meet <span>Hermes Agent</span> — Your Local AI Runtime</h2>
+  <p class="card-body">An open-source AI agent that runs locally on your machine. Connect to 300+ models, build reusable skills, and run multi-agent workflows — all without sending your data to the cloud.</p>
+
+  <div class="tag-row">
+    <span class="tag">300+ Models</span>
+    <span class="tag">Local-first</span>
+    <span class="tag purple">MIT License</span>
+    <span class="tag">Self-improving</span>
+    <span class="tag purple">Multi-agent</span>
+  </div>
+
+  <div class="neon-line"></div>
+
+  <!-- Install command -->
+  <div class="code-block">
+    <span class="comment"># Install in one line</span><br>
+    <span class="keyword">curl</span> <span class="string">-fsSL https://hermes-agent.nousresearch.com/install.sh</span> | bash
+  </div>
+
+  <div class="neon-line"></div>
+
+  <!-- Steps -->
+  <div class="steps">
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="step-text"><strong>Install</strong> · One curl command. Runs on Mac or Linux.</div>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <div class="step-text"><strong>Pick your model</strong> · <code>hermes model</code> — choose from 300+ options.</div>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <div class="step-text"><strong>Start the agent</strong> · <code>hermes start</code> — it's ready to take tasks.</div>
+    </div>
+    <div class="step">
+      <div class="step-num">4</div>
+      <div class="step-text"><strong>Browse skills</strong> · <code>hermes skills browse</code> — install community-built capabilities.</div>
+    </div>
+    <div class="step">
+      <div class="step-num">5</div>
+      <div class="step-text"><strong>Run multi-agent</strong> · Spawn parallel agents, synthesise outputs automatically.</div>
+    </div>
+  </div>
+
+  <div class="card-footer">
+    <div class="handle">@aigenesis.official</div>
+    <a class="cta-btn" href="https://hermes-agent.nousresearch.com">Get Hermes ↗</a>
+  </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dark Tool Showcase Card</title>
+<style>
+  /* =====================================================
+     TEMPLATE A: Dark Tool Showcase Card
+     Based on @replace.so TikTok content style
+     Size: 1080×1920 (9:16 portrait for TikTok/Reels)
+     Customise: --accent, --tool-name, --star-count, description
+     ===================================================== */
+
+  :root {
+    --bg: #0a0a0a;
+    --surface: #111111;
+    --border: #222222;
+    --accent: #ffffff;
+    --accent-dim: rgba(255,255,255,0.06);
+    --accent-mid: rgba(255,255,255,0.12);
+    --text-primary: #ffffff;
+    --text-secondary: rgba(255,255,255,0.55);
+    --text-muted: rgba(255,255,255,0.3);
+    --dot-color: rgba(255,255,255,0.04);
+    --star-color: #f5c518;
+    --badge-bg: #1a1a1a;
+
+    /* === EDIT THESE PER CARD === */
+    --tool-name: "DeepDiagram";
+    --star-count: "930 ⭐";
+    --repo-handle: "LingyiChen-AI / DeepDiagram";
+    --tag-color: #7c3aed;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--bg);
+    font-family: -apple-system, 'Inter', 'Segoe UI', sans-serif;
+    width: 1080px;
+    height: 1920px;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Dot-grid background pattern */
+  .dot-grid {
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(circle, var(--dot-color) 1px, transparent 1px);
+    background-size: 32px 32px;
+    z-index: 0;
+  }
+
+  /* Radial glow from centre */
+  .glow {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse 80% 60% at 50% 45%,
+      rgba(124, 58, 237, 0.18) 0%,
+      rgba(59, 130, 246, 0.06) 40%,
+      transparent 70%);
+    z-index: 1;
+  }
+
+  .card {
+    position: relative;
+    z-index: 2;
+    width: 900px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 32px;
+    padding: 72px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  /* Top: follow badge + account handle */
+  .top-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .account-handle {
+    font-size: 22px;
+    color: var(--text-muted);
+    letter-spacing: 0.02em;
+  }
+
+  .follow-pill {
+    background: var(--accent-mid);
+    border: 1px solid var(--border);
+    border-radius: 100px;
+    padding: 10px 24px;
+    font-size: 20px;
+    color: var(--text-secondary);
+    letter-spacing: 0.01em;
+  }
+
+  /* Repo handle in mono */
+  .repo-handle {
+    font-family: 'SF Mono', 'Fira Code', 'Cascadia Code', monospace;
+    font-size: 24px;
+    color: var(--text-muted);
+    letter-spacing: 0.04em;
+  }
+
+  /* Giant tool name */
+  .tool-name {
+    font-size: 112px;
+    font-weight: 800;
+    line-height: 0.95;
+    letter-spacing: -0.04em;
+    color: var(--text-primary);
+    word-break: break-word;
+  }
+
+  /* Tag line */
+  .tagline {
+    font-size: 36px;
+    font-weight: 400;
+    line-height: 1.4;
+    color: var(--text-secondary);
+    max-width: 700px;
+  }
+
+  /* Divider */
+  .divider {
+    height: 1px;
+    background: var(--border);
+  }
+
+  /* Stats row */
+  .stats-row {
+    display: flex;
+    gap: 48px;
+    align-items: center;
+  }
+
+  .stat {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .stat-value {
+    font-size: 44px;
+    font-weight: 700;
+    color: var(--text-primary);
+    letter-spacing: -0.02em;
+  }
+
+  .stat-label {
+    font-size: 20px;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+
+  /* 3D glossy object placeholder */
+  .object-container {
+    width: 280px;
+    height: 280px;
+    background: linear-gradient(135deg, var(--tag-color) 0%, #1e1b4b 100%);
+    border-radius: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 120px;
+    box-shadow:
+      0 0 80px rgba(124, 58, 237, 0.4),
+      inset 0 1px 0 rgba(255,255,255,0.1);
+    align-self: flex-end;
+  }
+
+  .tool-row {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 32px;
+  }
+
+  .tool-info { flex: 1; }
+
+  /* CTA tag */
+  .cta-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--accent-dim);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 14px 28px;
+    font-size: 22px;
+    color: var(--text-secondary);
+    margin-top: 28px;
+  }
+
+  .cta-tag::before {
+    content: "→";
+    font-size: 20px;
+  }
+</style>
+</head>
+<body>
+  <div class="dot-grid"></div>
+  <div class="glow"></div>
+
+  <div class="card">
+    <div class="top-row">
+      <span class="account-handle">@replace.so</span>
+      <span class="follow-pill">Follow for more →</span>
+    </div>
+
+    <div class="repo-handle"><!-- JS fills repo handle -->
+      <span id="repo">LingyiChen-AI / DeepDiagram</span>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="tool-row">
+      <div class="tool-info">
+        <div class="tool-name" id="tool-name">DeepDiagram</div>
+        <div class="tagline" id="tagline">
+          Turn any codebase into interactive architecture diagrams. No setup. Just answers.
+        </div>
+        <div class="cta-tag" id="cta">github.com/LingyiChen-AI/DeepDiagram</div>
+      </div>
+
+      <div class="object-container" id="emoji">🧠</div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="stats-row">
+      <div class="stat">
+        <span class="stat-value" id="stars">930</span>
+        <span class="stat-label">GitHub Stars</span>
+      </div>
+      <div class="stat">
+        <span class="stat-value" style="color: #22c55e;">Free</span>
+        <span class="stat-label">Pricing</span>
+      </div>
+      <div class="stat">
+        <span class="stat-value">Open</span>
+        <span class="stat-label">Source</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================
+    USAGE GUIDE
+    ============================================================
+    To customise this card for a different tool:
+
+    1. Change #tool-name inner text
+    2. Change #repo inner text
+    3. Change #tagline inner text
+    4. Change #cta inner text (GitHub URL)
+    5. Change #stars inner text
+    6. Change #emoji inner text (use any emoji or icon)
+    7. Update --tag-color in :root to match tool branding
+
+    Recommended stack for production:
+    - Render via Puppeteer / Playwright → PNG/MP4
+    - Use as TikTok / Instagram Reel cover card
+    ============================================================ -->
+</body>
+</html>

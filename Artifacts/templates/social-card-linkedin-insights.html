@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LinkedIn Algorithm Insights Card</title>
+<style>
+  /* =====================================================
+     TEMPLATE E: LinkedIn Insights Grid Card
+     Based on "The 2026 LinkedIn Algorithm" infographic style
+     Size: 1080×1350 (4:5 portrait — LinkedIn native)
+     Customise: title, subtitle, section boxes (color, number, heading, bullets)
+     ===================================================== */
+
+  :root {
+    --bg: #ffffff;
+    --title-color: #0a0a0a;
+    --subtitle-color: #3a3a3a;
+    --text-body: #1a1a1a;
+    --text-muted: #555;
+
+    /* Section box palette — assign one per section */
+    --box-blue:   #e8f4fd;
+    --box-green:  #e8f8e8;
+    --box-yellow: #fef9e7;
+    --box-pink:   #fdeef4;
+    --box-teal:   #e4f8f5;
+    --box-purple: #f0ecff;
+    --box-orange: #fff3e8;
+
+    --border-blue:   #b8d9f5;
+    --border-green:  #a8dea8;
+    --border-yellow: #f0d88a;
+    --border-pink:   #f0b8d4;
+    --border-teal:   #90d8d0;
+    --border-purple: #c4b8f5;
+    --border-orange: #f5c890;
+
+    --divider: #e0e0e0;
+    --rule: #0a0a0a;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--bg);
+    font-family: -apple-system, 'Inter', 'Segoe UI', Arial, sans-serif;
+    width: 1080px;
+    min-height: 1350px;
+    padding: 60px 56px 56px;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  /* ---- Header ---- */
+  .header {
+    border-bottom: 3px solid var(--rule);
+    padding-bottom: 20px;
+    margin-bottom: 36px;
+  }
+
+  .main-title {
+    font-size: 72px;
+    font-weight: 900;
+    line-height: 1.0;
+    letter-spacing: -0.03em;
+    color: var(--title-color);
+  }
+
+  .main-subtitle {
+    font-size: 30px;
+    font-style: italic;
+    font-weight: 400;
+    color: var(--subtitle-color);
+    margin-top: 10px;
+  }
+
+  /* ---- Grid ---- */
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+    flex: 1;
+  }
+
+  .box-full { grid-column: 1 / -1; }
+
+  /* ---- Section box ---- */
+  .box {
+    border-radius: 16px;
+    border: 1.5px solid var(--border-blue);
+    background: var(--box-blue);
+    padding: 28px 28px 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .box.green  { background: var(--box-green);  border-color: var(--border-green); }
+  .box.yellow { background: var(--box-yellow); border-color: var(--border-yellow); }
+  .box.pink   { background: var(--box-pink);   border-color: var(--border-pink); }
+  .box.teal   { background: var(--box-teal);   border-color: var(--border-teal); }
+  .box.purple { background: var(--box-purple); border-color: var(--border-purple); }
+  .box.orange { background: var(--box-orange); border-color: var(--border-orange); }
+
+  .box-heading {
+    font-size: 26px;
+    font-weight: 800;
+    line-height: 1.2;
+    color: var(--title-color);
+  }
+
+  .box-heading .num {
+    font-size: 22px;
+    font-weight: 600;
+    color: var(--text-muted);
+    display: block;
+    margin-bottom: 4px;
+  }
+
+  .box-body {
+    font-size: 20px;
+    line-height: 1.55;
+    color: var(--text-body);
+  }
+
+  .box-body p + p { margin-top: 10px; }
+
+  .box-body strong {
+    font-weight: 700;
+  }
+
+  /* ---- Footer ---- */
+  .footer {
+    margin-top: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 22px;
+    color: var(--text-muted);
+    border-top: 1px solid var(--divider);
+    padding-top: 20px;
+  }
+</style>
+</head>
+<body>
+
+  <div class="header">
+    <div class="main-title" id="main-title">The 2026 LinkedIn Algorithm</div>
+    <div class="main-subtitle" id="main-subtitle">What Actually Changed (And What To Do About It)</div>
+  </div>
+
+  <div class="grid">
+
+    <!-- Box 1 — Blue -->
+    <div class="box blue">
+      <div class="box-heading">
+        <span class="num">1.</span>Reach Got Redistributed
+      </div>
+      <div class="box-body">
+        <p>The median profile barely moved this year.</p>
+        <p>But virality got a lot harder for big, established creators.</p>
+        <p>Going viral used to be the goal. Now, <strong>consistent reach matters more.</strong></p>
+      </div>
+    </div>
+
+    <!-- Box 2 — Green -->
+    <div class="box green">
+      <div class="box-heading">
+        <span class="num">2.</span>The Follower Moat Is Gone
+      </div>
+      <div class="box-body">
+        <p>Accounts with 1–5K followers now see the highest engagement rates.</p>
+        <p>Accounts over 100K sit at just <strong>1.53%.</strong> Your size stopped protecting you.</p>
+        <p>Positioning does the work now.</p>
+      </div>
+    </div>
+
+    <!-- Box 3 — Yellow (full width) -->
+    <div class="box yellow box-full">
+      <div class="box-heading">
+        <span class="num">3.</span>LinkedIn Is Now Interest Media
+      </div>
+      <div class="box-body">
+        <p>LinkedIn confirmed its feed runs on LLMs. It builds a profile of what you post about, then matches you to strangers outside your network.</p>
+        <p><strong>Your topic matters more than your connections.</strong></p>
+      </div>
+    </div>
+
+    <!-- Box 4 — Pink -->
+    <div class="box pink">
+      <div class="box-heading">
+        <span class="num">4.</span>The AI Slop Penalty Is Real
+      </div>
+      <div class="box-body">
+        <p>LinkedIn confirmed it can detect generic, repetitive content.</p>
+        <p>That content gets throttled on purpose. Not banned, just buried.</p>
+        <p><strong>Original thinking beats recycled frameworks.</strong></p>
+      </div>
+    </div>
+
+    <!-- Box 5 — Teal -->
+    <div class="box teal">
+      <div class="box-heading">
+        <span class="num">5.</span>Hooks Matter, Formulas Don't
+      </div>
+      <div class="box-body">
+        <p>Posts that open in first person see <strong>20% higher engagement.</strong></p>
+        <p>No single post type or template wins on its own.</p>
+        <p>Real copywriting beats copy-paste formulas every time.</p>
+      </div>
+    </div>
+
+    <!-- Box 6 — Purple (full width) -->
+    <div class="box purple box-full">
+      <div class="box-heading">
+        <span class="num">6.</span>Four Myths Died This Year
+      </div>
+      <div class="box-body">
+        <p>1. Hashtags used to be a growth lever. Now they barely register in the algorithm.</p>
+        <p>2. Post length stopped predicting performance — short and long both work.</p>
+        <p>3. Nobody agrees on the best time to post.</p>
+        <p>4. Links used to hurt reach on principle. Now they're just a coin flip.</p>
+      </div>
+    </div>
+
+    <!-- Box 7 — Orange (full width) -->
+    <div class="box orange box-full">
+      <div class="box-heading">
+        <span class="num">7.</span>Impressions Aren't The Metric
+      </div>
+      <div class="box-body">
+        <p>A viral post can still bring in zero leads. Views and impressions don't pay the bills — they just feel good to look at.</p>
+        <p><strong>A million views means nothing if none of it turns into a conversation.</strong></p>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="footer">
+    <span id="footer-handle">@your.handle</span>
+    <span id="footer-note">Save this. Apply it this week.</span>
+  </div>
+
+  <!-- ============================================================
+    USAGE GUIDE
+    ============================================================
+    Customise per post:
+    1. #main-title: change the headline
+    2. #main-subtitle: change the subtitle
+    3. Each .box: change color class (blue/green/yellow/pink/teal/purple/orange)
+    4. .box-heading: change number and heading text
+    5. .box-body: change bullet content
+    6. .box-full: add/remove to span both columns
+    7. #footer-handle and #footer-note: update attribution
+    ============================================================ -->
+
+</body>
+</html>
