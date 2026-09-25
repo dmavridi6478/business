@@ -1,6 +1,13 @@
 ---
-description: Compare options
-argument-hint: [options to compare]
+description: Compare two skills head-to-head
+argument-hint: <skill-a> <skill-b>
 ---
 
-Compare the options in "$ARGUMENTS" side by side on the dimensions that actually matter for the decision.
+Run a pairwise comparison between two skills and report which is better on each quality dimension.
+
+## Running
+
+```bash
+cd plugins/plugin-eval
+uv run plugin-eval compare {argument}
+```
