@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<!--
+  Two-Column Shift Comparison — theme: Adaptive Pink
+  Inspired by: "Most marketing teams measure performance. Very few measure adaptability." (Andrea Rubik).
+  Pre-filled with marketing-adaptability-score.
+  Layout: two-line headline (navy + pink); left grey "traditional" column of icon cards;
+  right lilac "new way" column of numbered cards with alternating pink/violet badges and round icon tiles.
+
+  SWAP POINTS
+  - Headline lines, column labels/titles/intros
+  - .old cards (icon + label), .new cards (number, title, question, icon)
+  House style: Aptos; title 32pt, headings 14pt, body 11pt.
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Adaptability vs Performance</title>
+<style>
+  :root{--bg:#F8F9FE;--ink:#0F1633;--pink:#F0479A;--violet:#6C5CE0;--grey:#EEF1F8;--lil1:#FBEFFC;--lil2:#F3E9FD;--card:#fff;--slate:#5A6178;
+    --font:Aptos,"Aptos Display","Segoe UI",Calibri,system-ui,sans-serif}
+  @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0e1020;--ink:#eef0fb;--grey:#181b2e;--lil1:#24172e;--lil2:#1d1733;--card:#1f2236;--slate:#a9afc6}}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--bg);color:var(--ink);font-family:var(--font);font-size:11pt;line-height:1.35}
+  .page{max-width:820px;margin:0 auto;padding:40px 16px}
+  h1{font-size:32pt;font-weight:800;line-height:1.05;letter-spacing:-.02em;margin-bottom:28px}
+  h1 span{display:block;color:var(--pink)}
+  .cols{display:grid;grid-template-columns:5fr 7fr;gap:14px}
+  .col{border-radius:16px;padding:22px 18px}
+  .col.left{background:var(--grey)} .col.right{background:linear-gradient(160deg,var(--lil1),var(--lil2))}
+  .label{font-size:9pt;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--slate)}
+  .right .label{color:var(--violet)}
+  .col h2{font-size:14pt;font-weight:800;margin:6px 0 4px}
+  .intro{color:var(--slate);margin-bottom:16px}
+  .list{display:grid;gap:10px}
+  .card{background:var(--card);border-radius:12px;padding:14px 16px;display:flex;align-items:center;gap:14px}
+  .old i{font-style:normal;font-size:20px;color:var(--slate);width:32px;text-align:center}
+  .num{flex:none;width:30px;height:30px;border-radius:50%;background:var(--pink);color:#fff;font-weight:700;font-size:9pt;display:grid;place-items:center}
+  .new:nth-child(even) .num{background:var(--violet)}
+  .new b{display:block;font-size:11pt;letter-spacing:.03em;text-transform:uppercase}
+  .new p{color:var(--slate);font-size:10pt}
+  .new .ic{margin-left:auto;flex:none;width:46px;height:46px;border-radius:50%;background:#fdeaf4;color:var(--pink);display:grid;place-items:center;font-size:20px}
+  .new:nth-child(even) .ic{background:#ecebfc;color:var(--violet)}
+  .credit{text-align:right;color:var(--slate);font-size:9pt;margin-top:10px}
+  @media (max-width:640px){.cols{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="page">
+  <h1>Most marketing teams measure performance.<span>Very few measure adaptability.</span></h1>
+  <div class="cols">
+    <section class="col left">
+      <div class="label">Traditional focus</div><h2>Performance metrics</h2>
+      <p class="intro">Tells you how marketing is working today.</p>
+      <div class="list">
+        <div class="card old"><i>▮</i>Leads generated</div>
+        <div class="card old"><i>▽</i>Conversion rate</div>
+        <div class="card old"><i>◔</i>Market share</div>
+        <div class="card old"><i>☺</i>Traffic &amp; engagement</div>
+        <div class="card old"><i>↗</i>Pipeline revenue</div>
+      </div>
+    </section>
+    <section class="col right">
+      <div class="label">A broader focus</div><h2>The Marketing Adaptability Score</h2>
+      <p class="intro">Tells you whether marketing can keep working tomorrow.</p>
+      <div class="list">
+        <div class="card new"><div class="num">01</div><div><b>Signal</b><p>How quickly do we detect meaningful market change?</p></div><div class="ic">◎</div></div>
+        <div class="card new"><div class="num">02</div><div><b>Decision</b><p>How quickly can we decide what it means for us?</p></div><div class="ic">✦</div></div>
+        <div class="card new"><div class="num">03</div><div><b>Experiment</b><p>How quickly can we test a response?</p></div><div class="ic">⚗</div></div>
+        <div class="card new"><div class="num">04</div><div><b>Adoption</b><p>How quickly can the organisation change how it works?</p></div><div class="ic">☷</div></div>
+        <div class="card new"><div class="num">05</div><div><b>Learning</b><p>Does what we learn change the next decision?</p></div><div class="ic">⟳</div></div>
+      </div>
+    </section>
+  </div>
+  <p class="credit">Framework after Andrea Rubik · scored with /adaptability-score</p>
+</div>
+</body>
+</html>
