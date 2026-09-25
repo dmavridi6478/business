@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<!--
+  Concentric Rings Framework — theme: Concentric Rainbow
+  Inspired by: "5 Layers of Operational Excellence" (Eric Partaker). Pre-filled with operational-excellence-layers.
+  Technique: rings are nested CSS circles (no SVG paths); labels are absolutely positioned pills
+  placed by angle + radius in a small JS loop, so you edit data, not coordinates.
+
+  SWAP POINTS
+  - RINGS array in the <script>: name, colour, practice labels (any count; they are spread evenly)
+  - Headline, byline, footer bar text
+  House style: Aptos; title 32pt, headings 14pt, body 11pt.
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Operational Excellence Rings</title>
+<style>
+  :root{--paper:#F5F5F5;--ink:#111;--bar:#1C77E9;--font:Aptos,"Aptos Display","Segoe UI",Calibri,system-ui,sans-serif}
+  @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--paper:#151515;--ink:#f2f2f2}}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--paper);color:var(--ink);font-family:var(--font);font-size:11pt}
+  .page{max-width:860px;margin:0 auto;padding:32px 16px 0}
+  h1{text-align:center;font-size:32pt;font-weight:900;line-height:1.05;letter-spacing:-.01em}
+  .by{text-align:right;font-size:9pt;margin:4px 20px 14px}
+  .wrap{position:relative;width:min(820px,100%);aspect-ratio:1;margin:0 auto}
+  .ring{position:absolute;border-radius:50%;left:50%;top:50%;transform:translate(-50%,-50%)}
+  .title{position:absolute;transform:translate(-50%,-50%);z-index:1;font-size:13pt;font-weight:800;white-space:nowrap;text-align:center}
+  .pill{position:absolute;transform:translate(-50%,-50%);background:#fff;color:#111;border-radius:6px;padding:3px 7px;font-size:8pt;font-weight:600;line-height:1.15;
+    text-align:center;max-width:80px;box-shadow:0 1px 2px rgba(0,0,0,.18)}
+  .start{position:absolute;left:12%;top:4%;font-weight:800;font-size:14pt;line-height:1.05}
+  .footer{margin-top:18px;background:var(--bar);color:#fff;padding:12px 20px;display:flex;justify-content:space-between;font-size:11pt;font-weight:600}
+  @media (max-width:600px){.pill{font-size:6.5pt;max-width:60px;padding:2px 4px}.title{font-size:10pt}}
+</style>
+</head>
+<body>
+<div class="page">
+  <h1>5 Layers of<br>Operational Excellence</h1>
+  <div class="by">After Eric Partaker</div>
+  <div class="wrap" id="wrap"><div class="start">Start<br>Here ↘</div></div>
+</div>
+<div class="footer"><span>Audit one process with /opex-audit</span><span>Start at the centre</span></div>
+<script>
+const RINGS = [ // inside → out
+  {name:"Standardization", c:"#C9DDF8", items:["Write clear processes","Create checklists","Define roles","Document best practices","Train consistently"]},
+  {name:"Automation", c:"#D9F0DF", items:["Use smart tools","Connect your tools","Minimize manual errors","Automate recurring tasks","Eliminate manual steps","Set up triggers & workflows","Build repeatable systems"]},
+  {name:"Measurement", c:"#FFF1C2", items:["Define key metrics","Tie metrics to decisions","Share results with team","Compare results to goals","Run regular reviews","Set up dashboards","Track performance"]},
+  {name:"Continuous Improvement", c:"#FCDCC4", items:["Gather feedback","Align team on fixes","Run retrospectives","Improve weekly","Repeat what works","Document key learnings","Adjust systems","Run quick experiments","Spot bottlenecks"]},
+  {name:"Innovation", c:"#F6C9C6", items:["Host idea sessions","Recognize & reward progress","Share what you learn","Track ideas in motion","Protect time to explore","Scale what works","Learn from failures","Involve your customers","Run small pilots","Prioritize high-impact tests","Encourage bold thinking"]},
+];
+const wrap=document.getElementById('wrap'); const n=RINGS.length;
+const CORE=.15, BAND=(.5-CORE)/(n-1);            // radii as fraction of wrap width
+const outerR=i=>i===0?CORE:CORE+BAND*i;
+for(let i=n-1;i>=0;i--){                           // draw outer ring first
+  const el=document.createElement('div'); el.className='ring';
+  el.style.cssText=`width:${outerR(i)*200}%;height:${outerR(i)*200}%;background:${RINGS[i].c}`; wrap.appendChild(el);
+}
+RINGS.forEach((r,i)=>{
+  const h=document.createElement('h3'); h.className='title'; h.textContent=r.name; h.style.left='50%';
+  if(i===0){ h.style.top='41%'; wrap.appendChild(h);
+    r.items.forEach((t,k)=>{const col=k%2, row=Math.floor(k/2); const last=k===r.items.length-1&&r.items.length%2;
+      place(t, last?.5:.5+(col?.055:-.055), .475+row*.045);}); return; }
+  const rad=outerR(i)-BAND/2; h.style.top=((.5-rad)*100)+'%'; wrap.appendChild(h);
+  const gap=.34*Math.PI, span=2*Math.PI-gap, m=r.items.length, step=span/m;
+  const start=-Math.PI/2+gap/2+step/2+(i%2?step/2:0)*.5;  // stagger alternate rings
+  r.items.forEach((t,k)=>{const a=start+k*step; place(t,.5+Math.cos(a)*rad,.5+Math.sin(a)*rad);});
+});
+function place(t,x,y){const p=document.createElement('div');p.className='pill';p.textContent=t;p.style.left=(x*100)+'%';p.style.top=(y*100)+'%';wrap.appendChild(p);}
+</script>
+</body>
+</html>

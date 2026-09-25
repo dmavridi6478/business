@@ -1,0 +1,383 @@
+<title>Loop Engineering</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+:root {
+  --bg:       #f8f8f6;
+  --bg2:      #ffffff;
+  --bg3:      #eeeee9;
+  --text:     #1a1a1a;
+  --text-sub: #555550;
+  --text-muted: #888880;
+  --rule:     #d8d8d2;
+  --accent:   #2655a6;
+  --accent-lt:#eef2fb;
+  --code-bg:  #1e2432;
+  --code-fg:  #cdd3e0;
+  --stage1:   #2655a6;
+  --stage2:   #1a7a58;
+  --stage3:   #7a4e1a;
+  --stage4:   #8f2929;
+  --stage5:   #5a3a8f;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg:       #111215;
+    --bg2:      #191c22;
+    --bg3:      #222530;
+    --text:     #e8e8e2;
+    --text-sub: #9898a0;
+    --text-muted: #60606a;
+    --rule:     #2c2f38;
+    --accent:   #5e8de0;
+    --accent-lt:#1a2240;
+    --code-bg:  #0d0f14;
+    --code-fg:  #cdd3e0;
+  }
+}
+:root[data-theme="dark"] {
+  --bg:       #111215;
+  --bg2:      #191c22;
+  --bg3:      #222530;
+  --text:     #e8e8e2;
+  --text-sub: #9898a0;
+  --text-muted: #60606a;
+  --rule:     #2c2f38;
+  --accent:   #5e8de0;
+  --accent-lt:#1a2240;
+  --code-bg:  #0d0f14;
+  --code-fg:  #cdd3e0;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  font-family: 'Aptos', 'Plus Jakarta Sans', system-ui, sans-serif;
+  font-size: 11pt;
+  line-height: 1.65;
+  background: var(--bg);
+  color: var(--text);
+  margin: 0;
+  padding: 2.5rem 1rem 4rem;
+}
+
+.page { max-width: 760px; margin: 0 auto; }
+
+/* Header */
+.header {
+  padding-bottom: 2rem;
+  border-bottom: 2px solid var(--rule);
+  margin-bottom: 2.5rem;
+}
+.eyebrow {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: .5rem;
+}
+h1 {
+  font-family: 'Aptos', 'Plus Jakarta Sans', system-ui, sans-serif;
+  font-size: 32pt;
+  font-weight: 700;
+  line-height: 1.1;
+  margin: 0 0 .6rem;
+  text-wrap: balance;
+}
+.header-sub {
+  color: var(--text-sub);
+  font-size: 10.5pt;
+  margin: 0;
+  max-width: 55ch;
+}
+
+/* Section headings */
+h2 {
+  font-family: 'Aptos', 'Plus Jakarta Sans', system-ui, sans-serif;
+  font-size: 14pt;
+  font-weight: 700;
+  margin: 2.2rem 0 .9rem;
+  text-wrap: balance;
+}
+h3 {
+  font-size: 11pt;
+  font-weight: 600;
+  margin: 1.4rem 0 .4rem;
+}
+
+/* Stage cards */
+.stages { display: flex; flex-direction: column; gap: .75rem; margin-bottom: 2rem; }
+.stage-card {
+  background: var(--bg2);
+  border: 1px solid var(--rule);
+  border-left: 3px solid var(--stage-color);
+  border-radius: 0 6px 6px 0;
+  padding: 1rem 1.2rem;
+}
+.stage-number {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--stage-color);
+  margin-bottom: .25rem;
+}
+.stage-name {
+  font-size: 12pt;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: .3rem;
+}
+.stage-desc { font-size: 10.5pt; color: var(--text-sub); margin: 0; }
+
+/* Code block */
+.code-wrap {
+  background: var(--code-bg);
+  border-radius: 8px;
+  padding: 1.5rem;
+  overflow-x: auto;
+  margin: 1rem 0 1.5rem;
+}
+.code-header {
+  display: flex;
+  align-items: center;
+  gap: .6rem;
+  margin-bottom: 1rem;
+  padding-bottom: .75rem;
+  border-bottom: 1px solid rgba(255,255,255,.08);
+}
+.code-dot { width: 10px; height: 10px; border-radius: 50%; }
+.code-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 9px;
+  color: rgba(255,255,255,.3);
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  margin-left: auto;
+}
+pre {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 9.5pt;
+  line-height: 1.7;
+  color: var(--code-fg);
+  margin: 0;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+.kw  { color: #7ec8e3; }
+.cm  { color: #6a7a90; }
+.stage-label { color: #f5c96a; font-weight: 500; }
+
+/* Steps list */
+.steps { padding-left: 1.4rem; margin: .5rem 0 1.5rem; }
+.steps li { padding: .3rem 0 .3rem .4rem; color: var(--text); }
+.steps li::marker { color: var(--accent); font-weight: 700; }
+
+/* Callout */
+.callout {
+  background: var(--accent-lt);
+  border: 1px solid var(--accent);
+  border-radius: 6px;
+  padding: 1rem 1.2rem;
+  font-size: 10.5pt;
+  color: var(--text-sub);
+  margin: 1.5rem 0;
+}
+.callout strong { color: var(--accent); }
+
+/* Source */
+.source {
+  margin-top: 2.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--rule);
+  font-size: 9.5pt;
+  color: var(--text-muted);
+}
+
+/* Wide table */
+.table-wrap { overflow-x: auto; margin: 1rem 0 1.5rem; }
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 10.5pt;
+}
+th {
+  text-align: center;
+  vertical-align: top;
+  padding: .55rem .9rem;
+  font-size: 9.5pt;
+  font-weight: 700;
+  letter-spacing: .04em;
+  background: var(--bg3);
+  border-bottom: 2px solid var(--rule);
+  color: var(--text-sub);
+  text-transform: uppercase;
+}
+td {
+  text-align: center;
+  vertical-align: top;
+  padding: .6rem .9rem;
+  border-bottom: 1px solid var(--rule);
+  color: var(--text);
+}
+tr:last-child td { border-bottom: none; }
+td:first-child, th:first-child { text-align: left; }
+</style>
+
+<div class="page">
+
+  <div class="header">
+    <div class="eyebrow">Technical Reference &bull; Aug 2026</div>
+    <h1>Loop Engineering</h1>
+    <p class="header-sub">A 5-stage self-improving prompt loop — Inspect → Build → Verify → Red Team → Improve — for any AI task where a single pass isn't reliable enough.</p>
+  </div>
+
+  <!-- Context -->
+  <h2>When to use this</h2>
+  <p>Any task handed to an AI assistant where a single prompt-and-accept pass isn't reliable enough: drafting a deliverable against a brief, generating code against a spec, producing analysis that has to hold up to scrutiny. Tool-agnostic by design — nothing below depends on a specific product.</p>
+  <p>The shift this procedure encodes: stop treating a prompt as a one-shot question. Treat it as a loop that checks its own output and rewrites until the output clears a bar, then feeds what it learned back into the next run.</p>
+
+  <!-- Stage overview -->
+  <h2>The 5 Stages</h2>
+  <div class="stages">
+    <div class="stage-card" style="--stage-color: var(--stage1)">
+      <div class="stage-number">Stage 1</div>
+      <div class="stage-name">Inspect</div>
+      <p class="stage-desc">Before generating anything: pin the goal, constraints, source files, output format, and success criteria. A bad Stage 1 produces a correct answer to the wrong question — this is the step most commonly skipped.</p>
+    </div>
+    <div class="stage-card" style="--stage-color: var(--stage2)">
+      <div class="stage-number">Stage 2</div>
+      <div class="stage-name">Build</div>
+      <p class="stage-desc">Generate one full draft from the Stage 1 context. This is a draft, not a final answer. Resist the urge to negotiate over a partial answer.</p>
+    </div>
+    <div class="stage-card" style="--stage-color: var(--stage3)">
+      <div class="stage-number">Stage 3</div>
+      <div class="stage-name">Verify</div>
+      <p class="stage-desc">Check the draft against the brief: Did it follow instructions? Is the logic solid? Is the format correct? Compliance check, not a quality judgment.</p>
+    </div>
+    <div class="stage-card" style="--stage-color: var(--stage4)">
+      <div class="stage-number">Stage 4</div>
+      <div class="stage-name">Red Team</div>
+      <p class="stage-desc">Attack your own output before a critic does: what is weak, what could fail, what would an adversarial reader attack first? Run this as a separate pass from Verify — merging them produces a shallow pass that only catches easy problems.</p>
+    </div>
+    <div class="stage-card" style="--stage-color: var(--stage5)">
+      <div class="stage-number">Stage 5</div>
+      <div class="stage-name">Score, Rewrite, Repeat</div>
+      <p class="stage-desc">Score against the Stage 1 success criteria. If it doesn't clear the bar, rewrite with Stage 3/4 findings folded in. Cap at 3 passes — if there's no material improvement, surface what's unresolved rather than declaring success.</p>
+    </div>
+  </div>
+
+  <!-- Prompt template -->
+  <h2>The Portable Prompt Template</h2>
+  <p>Paste this as a system or instruction block ahead of the actual task. Works in any tool — no plugins, no code execution, no vendor dependency.</p>
+
+  <div class="code-wrap">
+    <div class="code-header">
+      <div class="code-dot" style="background:#f5654a"></div>
+      <div class="code-dot" style="background:#f5c84a"></div>
+      <div class="code-dot" style="background:#4ac74a"></div>
+      <span class="code-label">system prompt / instruction block</span>
+    </div>
+<pre><span class="cm">You are running a 5-stage loop on this task. Do not skip stages or merge</span>
+<span class="cm">them into one pass — complete each stage's checklist before moving to the</span>
+<span class="cm">next, and show your work at each stage rather than jumping straight to a</span>
+<span class="cm">final answer.</span>
+
+<span class="stage-label">STAGE 1 — INSPECT (before generating anything)</span>
+Read the brief/files/goal and state explicitly:
+- Goal: what does "done" mean here?
+- Constraints: what am I not allowed to change or assume?
+- Files/inputs: what source material actually exists?
+- Tone/format: what does the output need to look like?
+- Success criteria: how will this be judged?
+If any of these is missing or ambiguous, say so before proceeding.
+
+<span class="stage-label">STAGE 2 — BUILD</span>
+Generate the first full output from the Stage 1 context.
+This is a draft, not a final answer.
+
+<span class="stage-label">STAGE 3 — VERIFY</span>
+Check the Stage 2 output against the brief:
+- Did it follow the brief?
+- Is the logic/reasoning solid?
+- Is the format correct?
+
+<span class="stage-label">STAGE 4 — RED TEAM</span>
+Attack your own output before a critic does:
+- What is weak?
+- What could fail?
+- What would a critic attack first?
+
+<span class="stage-label">STAGE 5 — SCORE, REWRITE, REPEAT</span>
+- Score the output against the Stage 1 success criteria (1–10 or pass/fail).
+- If it doesn't clear the bar: rewrite, folding in Stage 3/4 findings.
+- Repeat Stages 3–5 until it clears the bar or you've made 3 passes without
+  material improvement — if the latter, stop and say explicitly what's still
+  unresolved rather than declaring success.
+
+Report at the end: the final output, the score, and what Stage 4 flagged
+that you did or didn't fix and why.</pre>
+  </div>
+
+  <!-- Manual steps -->
+  <h2>Running It Manually</h2>
+  <ol class="steps">
+    <li><strong>Inspect first, every time.</strong> Write down goal / constraints / files / format / success criteria even for a task that feels obvious.</li>
+    <li><strong>Build one full draft</strong>, not a partial answer to negotiate over.</li>
+    <li><strong>Verify and red-team as two separate passes.</strong> Verify checks compliance with the brief; red-teaming looks for what an adversarial reader would attack. Merging them produces a shallow pass.</li>
+    <li><strong>Score against the Stage 1 criteria specifically</strong> — not a vague sense of quality. If Stage 1 didn't produce concrete success criteria, fix Stage 1 first.</li>
+    <li><strong>Cap the rewrite loop.</strong> Three passes without material improvement is the signal to stop and surface what's unresolved, not to keep iterating silently.</li>
+    <li><strong>Improve the system, not just this output.</strong> After the loop closes, log what broke and fold the fix into whatever governs the next run — a checklist, a skill file, a saved prompt. The same failure shouldn't have to be red-teamed again next time.</li>
+  </ol>
+
+  <!-- Claude Code note -->
+  <div class="callout">
+    <strong>In Claude Code:</strong> The <code>task-loop-runner</code> agent already implements Stages 2–5 (act → evaluate → retry) for a single well-defined task with a checkable success condition. Stage 1 (Inspect) and Stage 6 (fold the fix into a durable skill) are still worth doing explicitly around it, since those are what prevent the same failure from recurring.
+  </div>
+
+  <!-- Reference table -->
+  <h2>What Each Stage Catches</h2>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Stage</th>
+          <th>What it catches</th>
+          <th>Common skip mistake</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1 &ndash; Inspect</td>
+          <td>Wrong framing, ambiguous brief, missing inputs</td>
+          <td>Jumping to Build with an unclear goal</td>
+        </tr>
+        <tr>
+          <td>2 &ndash; Build</td>
+          <td>First-pass gaps, structural issues</td>
+          <td>Partial draft treated as negotiation starter</td>
+        </tr>
+        <tr>
+          <td>3 &ndash; Verify</td>
+          <td>Failed instructions, format errors, logic breaks</td>
+          <td>Merged with Red Team into one shallow pass</td>
+        </tr>
+        <tr>
+          <td>4 &ndash; Red Team</td>
+          <td>Adversarial weaknesses, attack surface</td>
+          <td>Skipped because the draft "looks good"</td>
+        </tr>
+        <tr>
+          <td>5 &ndash; Score</td>
+          <td>Whether the output actually clears the bar</td>
+          <td>Unbounded rewrite loop with no exit condition</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="source">
+    Source: synthesized from a 9-slide "How I Build AI Loops That Improve Themselves" carousel (@finitopotatoes). The loop is tool-agnostic; Claude Code, Codex, Cursor Auto, and Grok Build are named as interchangeable engines.
+  </div>
+
+</div>
