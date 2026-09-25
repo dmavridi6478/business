@@ -17,6 +17,7 @@ A starter bundle of business-oriented Claude skills lives in `.claude/skills/`:
 - `content-strategy` — content planning, topic clusters, editorial calendars
 - `copywriting` — writes individual persuasive copy (headlines, product descriptions, email copy, CTAs) via a Problem → Promise → Proof → CTA framework, once `content-strategy` has picked the topic
 - `marketing-psychology` — 8 behavioral persuasion principles (framing, social proof, anchoring, curiosity, loss aversion, specificity, pricing context, decision friction) to pick the right lever for a message instead of stacking random tactics
+- **Corey Haines' 50-skill marketing pack** — vendored in full (Batch 82 follow-up) from [`coreyhaines31/marketingskills`](https://github.com/coreyhaines31/marketingskills) (MIT), covering SEO & content (`seo-audit`, `ai-seo`, `programmatic-seo`, `schema`, `aso`), CRO (`cro`, `signup`, `onboarding`, `popups`, `paywalls`), copy & content (`copy-editing`, `cold-email`, `emails`, `social`, `video`, `image`, `sms`), paid & measurement (`ads`, `ad-creative`, `ab-testing`, `analytics`, `attribution`), growth & retention (`referrals`, `free-tools`, `churn-prevention`, `community-marketing`, `co-marketing`, `lead-magnets`, `influencer-marketing`), sales & GTM (`revops`, `launch`, `pricing`, `competitors`, `directory-submissions`, `prospecting`, `events`, `public-relations`), and strategy (`marketing-ideas`, `marketing-loops`, `marketing-plan`, `marketing-council`, `product-marketing`, `customer-research`, `offers`, `site-architecture`). 5 skills that collided by name with the ones already listed above (`content-strategy`, `copywriting`, `marketing-psychology`, `sales-enablement`, `competitor-profiling`) were vendored under a `-corey-haines` suffix instead — use whichever version fits, they're independent, not duplicates of each other.
 - `internal-comms` — company newsletters, FAQs, general internal communications
 - `doc-coauthoring` — structured workflow for co-authoring docs, proposals, and specs
 - `attachment-intake` — how to handle uploaded files (zips, photo batches, docs) that arrive with no or mismatched instructions, instead of guessing at intent
@@ -27,6 +28,14 @@ A starter bundle of business-oriented Claude skills lives in `.claude/skills/`:
 - `outbound-campaign-brief` — turns a one-line plain-English brief into a B2B outbound campaign (derived target filters, drafted outreach via `copywriting`, real prospecting data instead of fabricated leads) gated behind explicit human approval and a stated send cap before anything sends
 - `inbound-content-playbook` — a 12-step compounding loop (visibility → trust → conversations → inbound → feedback) for generating inbound leads through content instead of cold outreach, ending in a 5-question self-check
 - `resume-prompt-kit` — 10 structured prompts covering a full resume build (positioning → intake → summary → experience → skills → certs → education → ATS proofread) plus JD-tailoring and a cover letter
+- `governed-marketing-team` — orchestrator + 6 draft-only specialists + `brand-reviewer` agent + 3 gates (human publish, proof-row claims, no-context-no-start) + versioned context files (scaffolded in `docs/marketing-context/`); run a job with `/governed-marketing`
+- `ai-automation-blueprints` — 8 Make.com/n8n blueprints (voice agent, lead gen, UGC ad spy, faceless video, content agent, multilingual FAQ bot, YouTube ideas, AI avatar) with node maps, AI-node prompts and EU compliance risks; build sheet via `/automation-blueprint`
+- `sales-workflow-catalog` — 100 named n8n sales-funnel workflows across 10 stages (prospecting → ops hygiene → reporting), each with a job, node sketch, [data]/[send] tags and a build-order rule; run via `/sales-workflow`
+- `gtm-outbound-engine` — 5-layer GTM stack (orchestration, signal, data, action, system of record) run as a 5-step Claude Code pipeline, mapped to the connected MCPs, with a tested `scripts/clean_leads.py` (dedupe, title/domain normalisation, free-mail flag) and GDPR/approval gates; run via `/outbound-pipeline`
+- `claude-marketing-jobs` — 50 named single-output marketing jobs across 10 functions under the 11-chapter "Complete Claude Marketing Guide 2026" structure (prompts reconstructed; the source guide is gated); run via `/marketing-job`
+- `operational-excellence-layers` — inside-out ops maturity model (standardization → automation → measurement → continuous improvement → innovation) with 0–3 scoring and a do-not-skip-a-ring rule; run via `/opex-audit`
+- `marketing-adaptability-score` — Signal/Decision/Experiment/Adoption/Learning turned into measurable latencies, scored 1–5, bottleneck stage named; run via `/adaptability-score`
+- `insight-to-deck-flow` — content + growth insights → on-brand decks (Gamma/Canva/pptx in place of Pitch MCP) → personalised decks at scale → results fed back
 - `contract-review` — reviews contracts (NDAs, employment agreements, SaaS terms, M&A documents) for unfavorable terms, suggests redlines, and benchmarks clauses against market standards; built on the CUAD dataset (41 risk categories), ContractEval, and LegalBench; vendored in full from [evolsb/claude-legal-skill](https://github.com/evolsb/claude-legal-skill) (MIT) — distinct from the already-installed `claude-for-legal` 12-plugin suite, which doesn't include a focused contract-review skill
 
 A design/output bundle sits alongside it, for turning business content into actual visual deliverables:
@@ -49,6 +58,9 @@ A design/output bundle sits alongside it, for turning business content into actu
 - `design-token-extractor` — extracts a reusable color/type/spacing token set from a reference site or screenshot
 - `image-to-code` — clones a reference screenshot into real code, then renders and compares before calling it done
 - `ai-video-image-prompt-structure` — a 6-part structural pattern (subject → action → setting → camera/shot direction → style/VFX → closing beat) for writing an AI image/video generation prompt that produces a specific result instead of a generic one
+- Second iCloud-batch addition: template `workflow-grid-catalog.html` (dense 100-item icon grid) and theme `workflow-grid-sunset`. Note: this batch's 8-automation carousel (re-shared by a different account) duplicated content already covered by `ai-automation-blueprints`, so it was not rebuilt; one video in the batch could not be processed (no ffmpeg/cv2 in this sandbox)
+- Desktop-batch additions: templates `stacked-layer-pyramid.html`, `concentric-rings-framework.html`, `two-column-shift-comparison.html`, `control-plane-pipeline.html`; themes `peach-stack`, `concentric-rainbow`, `adaptive-pink`, `prosp-dark-grid`; `/ai-tool-finder` gained Sales, Customer Success, Productivity, Copy/Marketing and GTM-stack sections
+- Photo-batch additions (governed marketing + automation carousel): `design-templates` gained `numbered-workflow-carousel.html`, `carousel-cover-dark.html` and `layered-framework-infographic.html`; `theme-factory` gained the `warm-creator-carousel` and `governed-infographic` themes
 - `hallmark` — "anti-AI-slop" design skill for greenfield builds, audits, redesigns, and DNA-extraction from a URL/screenshot (`audit`/`redesign`/`study` verbs); enforces structural variety across 21 named themes/21 macrostructures so builds don't converge on the same hero→3-feature→CTA→footer template; vendored in full (SKILL.md + its whole `references/` library — component cookbook, anti-patterns, typography/color/motion) from [nutlope/hallmark](https://github.com/nutlope/hallmark) (MIT)
 
 A third bundle covers **setting up a new business** — validating an idea and turning someone's own expertise into a sellable product/service before (or instead of) building a team-scale product:
@@ -4572,7 +4584,247 @@ Clarity, Content Square, SERPtag, Tally).
 
 ---
 
-## 82. LinkedIn Optimizer System, Agent-Task Prompt Pack & GitHub Trending Repos (Batch 82)
+## 82. Claude Skill Packs, Agent-Building Guides, Prompt-Injection Defense & Automation Stacks (Batch 82)
+
+**Source:** Three uploaded zips — one "6 stages of LinkedIn personal
+branding" bundle (8 images, mostly Claude/AI infographics despite the
+filename) and two "iCloud Photos" dumps (11 + 36 images, 2 short mp4s).
+55 images reviewed in full; the 2 videos were not transcribed/analyzed
+(flagged rather than skipped silently — likely duplicate demo footage of
+carousels already covered as stills, but not confirmed). A wide mix of
+creators: GenAI Works, SpeedChat.ai, workflows.io (Fivos Aresti),
+AIForLeaders.com, Bojan Radojicic (KPIs Handbook — already covered, see
+below), Gartner, ByteByteGo, @usamaakrm, @epic8244, @your.aimentor,
+@githubnow, @replace.so (second, different carousel from the one already in
+`github-repos-from-photos.md`), @qbuilder, Lucy Njuguna (@njugunalucy0, an
+n8n-basics glossary — trigger/node/workflow/execution/webhook/variables/
+credentials — not installed as its own file since `n8n-agent-builder`
+already covers this ground at a more actionable level), and
+@usama_gujjar_official.
+
+Every GitHub repo named below was checked for real existence via a live
+`git ls-remote` or GitHub API search before being written down. Several
+repos in the ByteByteGo "Top 12 Agent Skills" GIF and one "Obsidian Skills"
+entry had **no owner visible on screen** and share a name with dozens of
+similarly-named repos (`skills`, `ponytail`, `agent-skills`, `graphify`,
+`Understand-Anything`) — those are marked **unverified** rather than guessed
+at, consistent with this README's standing rule from Batch 79 onward.
+
+**New:**
+- `claude-skills-13` — GenAI Works' "13 Claude Skills That Save You Hours
+  Every Week," cross-checked against what's already installed (6 of the 13
+  already present: `doc-coauthoring`, `docx`/`pptx`/`xlsx`/`pdf`,
+  `frontend-design`, `humanizer`; a 7th, `/skill-creator`, already installed
+  as the "install first" tool) — the genuinely new ones are `grill-me`,
+  `brainstorming`, `writing-plans`, `systematic-debugging`,
+  `discernment-nudge`, `test-driven-development`.
+- `top-12-agent-skill-repos` — ByteByteGo's most-starred skill repos.
+  4 resolved to a confirmed repo (`obra/superpowers`,
+  `multica-ai/andrej-karpathy-skills`, `affaan-m/everything-claude-code`,
+  `nextlevelbuilder/ui-ux-pro-max-skill`); 2 were already covered
+  (`anthropics/skills`, `caveman`, `impeccable` — 3 actually, all
+  previously vendored/documented); the remaining ones had no visible owner
+  and are marked unverified rather than guessed.
+- `claude-sales-prompts-20` — SpeedChat.ai's 20 copy-paste Claude sales
+  prompts (lead qualification through forecast challenge), positioned as
+  quick single-turn prompts alongside the deeper `sales-enablement` skill.
+- `linkedin-branding-6-stages` — workflows.io's full-funnel framework
+  (Profile → Network → Content Strategy → Content Creation → Lead Capture →
+  Retargeting), with the named tool stack at each stage (Clay, HeyReach,
+  Apollo.io, Tally, Cal.com, Instantly, Nooks). Distinct value over this
+  repo's existing LinkedIn commands is stages 2, 5, and 6, which those don't
+  cover.
+- `claude-cowork-setup` — AIForLeaders.com's 10-step Claude Cowork
+  configuration guide, with two ready-to-paste prompts for the About-Me
+  files and onboarding interview (steps 4-5), and a note on which steps
+  can't be executed from inside this sandboxed environment.
+- `ai-industry-trends-skills-map` — a 6-category skill/tool map (LLMs, RAG,
+  Agentic AI, AI Agents, AI Engineer, ML Engineer) from a source image
+  mislabeled "plan hiring, training and project reviews" in the upload —
+  actual content had nothing to do with hiring.
+- `build-first-claude-agent` — @usamaakrm's genuine 3-level agent-building
+  guide (save a skill → put it on autopilot with Cowork → run it
+  unattended via Claude Code in the cloud, `npm install -g
+  @anthropic-ai/claude-code`), reproduced in full with two ready-to-paste
+  prompts for building the first skill right now.
+- `opensource-desktop-app-alternatives` — @epic8244's 5-app "paid software
+  I deleted" carousel: OpenCut (CapCut), AnythingLLM (ChatGPT/Claude UI),
+  Nuclear (Spotify), Cap (Loom — already referenced via
+  `self-hosted-docker-stack`), Handy (Wispr Flow). All confirmed real,
+  clone commands included, flagged as desktop apps to install on a real
+  machine rather than this sandbox.
+- `claude-productivity-repos` — @your.aimentor's "10 GitHub Repos That Turn
+  Claude Into a Productivity Beast." 4 of the 10 were already covered
+  (Dify, Flowise, `anthropics/skills`, `notebooklm-skill`) and flagged
+  rather than re-added; 6 net-new, including `yamadashy/repomix` and
+  `coreyhaines31/marketingskills` (a marketing skill pack worth actually
+  vendoring into `.claude/skills/` in a future session, similar to how
+  `contract-review` and the GSAP pack were vendored).
+- `github-trending-agent-repos-sep2026` — @githubnow's daily-briefing trio:
+  `K-Dense-AI/scientific-agent-skills` (166 skills + 100 scientific
+  databases, Agent Skills-standard format), `freestylefly/awesome-gpt-
+  image-2` (530+ prompt-as-code image examples), `HKUDS/CLI-Anything`
+  (agent-native CLI generator for any existing software).
+- `replace-so-dev-repos-2` — a **second, different** @replace.so carousel
+  from the one already in `github-repos-from-photos.md`: Mitosis,
+  LiveCharts2, Playwright (already referenced in `claude-code-tooling`),
+  Storefront-ui, Hono. Only 5 of the claimed 7 repos were present in the
+  source photos (title card and one repo slide missing) — documented as
+  5, not padded to 7.
+- **`prompt-injection-defense`** — @qbuilder's 6-slide security-awareness
+  carousel on prompt injection, turned into an actual pre-flight checklist
+  (not just a definition): the "model can't tell your orders from what it
+  reads" problem, the 3 boundary rules (never mix open-internet + sensitive
+  access in one session; anything that sends/deletes/spends needs human
+  approval first; a human reviews what the agent brings back before it
+  becomes real), and a 5-item checklist to run before shipping any new
+  agent that both reads external content and can take actions. Cross-linked
+  from `ai-governance-layers` and `claude-code-tooling`.
+- `ai-automation-tool-stack` — @usama_gujjar_official's personal 4-category
+  stack (Systems: Google Calendar/Obsidian/Fireflies/Notion; Growth:
+  Apify/Clay/HeyReach/Smartlead; The Engine: Claude Code/n8n/Cursor/
+  Lovable; Content: Claude/ElevenLabs/Wispr Flow/Gamma), cross-referenced
+  against the skills in this repo that already execute each row.
+- `gartner-brand-health-framework` — Gartner's 6-stage brand-health funnel
+  (Strategy → Reach → Perception → Consideration → Experience → Business
+  Outcomes), distinguished from the existing `atm-framework` (a narrower
+  audience-growth-to-monetization funnel) and flagged against `brand-brain`
+  for overlap.
+- **`design-templates`** — a new `infographic-card-grid.html` template
+  (light + dark variants), extracted not from one carousel but from the
+  visual pattern nearly all of this batch's carousels shared: a numbered
+  circular badge + icon + title + short description, repeated in a
+  responsive grid. Verified via a headless-Chromium screenshot in both
+  modes (zero console errors) before being added, matching this skill's
+  existing verification standard.
+
+**Already covered in earlier batches, skipped as duplicates:** the "KPIs
+Handbook" infographic (Bojan Radojicic) — this is the exact same source
+already fully reproduced as `kpi-reference-handbook`; `Cap`, `Dify`,
+`Flowise`, `anthropics/skills`, `notebooklm-skill`, `caveman`, `impeccable`,
+`Playwright` (all flagged inline above rather than re-documented); the
+Lucy Njuguna n8n-basics glossary (trigger/node/workflow/execution/webhook/
+variables/credentials — `n8n-agent-builder` already covers this at a more
+actionable level than a term-by-term glossary would add).
+
+**Not resolved — no confident owner found:** the "Top 12 Agent Skills" #2
+entry ("skills," 201k★, "makes your agent challenge its plan first"),
+`ponytail`, `agent-skills`, `graphify`, `Understand-Anything` (all from the
+same GIF), and "Repo: Obsidian Skills" (from the productivity-beast
+carousel) — none had an owner visible on screen, and none resolved to a
+single confident match in a live GitHub search among many similarly-named
+repos. Listed as unverified in their respective files rather than cited
+with an invented owner.
+
+**Not executed:** the two mp4 videos in the second iCloud Photos batch
+(`v12300gd0001daqjn97og65lkpssfgg0.mp4`, `v26044gc0000daqethnog65pc6e82do0.mp4`)
+were not transcribed or reviewed frame-by-frame — this session had no
+video-analysis step in scope and the still images already covered every
+carousel visible in the batch. Flag for a follow-up session if the videos
+turn out to carry content not present in the stills.
+
+**Follow-up, same session:** asked to actually vendor `coreyhaines31/
+marketingskills` rather than just document it. Cloned at commit
+`5b2c0007766c6a1cf1d53fd8fc73e979e0821022` (MIT). All **50 of 50** skills
+were copied into `.claude/skills/` — not a subset — each with its own
+`SKILL.md`, `references/` (45 of the 50 ship one), `evals/` (self-contained
+`evals.json` test fixtures, no repo-relative paths, so portable), plus a
+`LICENSE.txt` and `SOURCE.md` added per-directory matching this repo's
+existing vendoring convention.
+
+Before copying, cross-referenced against what's already installed and found
+something the earlier review in `claude-code-tooling` had flagged but not
+resolved: this repo's own pre-existing `copywriting` and `marketing-psychology`
+skills are themselves independently *derived* from this same pack (via a
+different carousel, @ai_slacker's "Claude is too dumb to write your content"
+series, per those skills' own `SOURCE.md`/attribution lines) — not literal
+copies, but close enough in scope to collide on name. 5 skills collided:
+`content-strategy`, `copywriting`, `marketing-psychology`, `sales-enablement`,
+`competitor-profiling`. Each was vendored under a `<name>-corey-haines`
+suffix — both the directory and the frontmatter `name:` field renamed, with
+a one-line note added to the description explaining why — rather than
+overwriting the pre-existing skill or silently dropping the upstream
+version. The other 45 kept their original names with no changes needed.
+`claude-code-tooling`'s marketing-bundle table row and this README's top
+skill-bundle list were both updated to reflect the pack is now fully
+vendored, not just reviewed.
+
+---
+
+## 83. Content-Workflow Skills, Operations Cheat Sheet & Sales-System Rebuild (Batch 83)
+
+**Source:** One uploaded zip, "The Marketing Umbrella," 7 images — a smaller,
+more varied batch than recent ones: a marketing-taxonomy infographic (The
+Marketing Umbrella, unattributed), Eric Partaker's dense "Operations Book in
+One Page" (16 mini-frameworks in one poster), Gav Blaxberg's "12
+Communication Skills of High Performers," Mo Bunnell's "What to Write When
+Someone Doesn't Reply" (a complete, ready-to-use follow-up system), a
+socialblueprint.ca "9 Essential Claude Skills" content-workflow carousel
+(9 named slash commands with real functional descriptions, not just names),
+and two sales-focused lead-magnet teasers — "The Ultimate Claude LinkedIn
+Sales Department" and "50+ Sales Skills Inside Fable 5" — both "comment to
+unlock" graphics that name dozens of agents/skills/prompts/playbooks but
+contain zero actual prompt or skill content in the image itself.
+
+This batch differs from prior ones in kind, not just source: the
+socialblueprint.ca carousel named 9 specific slash commands with real
+functional descriptions (not just a title), so — per this session's
+standing instruction to turn prompts into installed commands, not just
+document them — all 9 were built as actual working `.claude/commands/`
+files this time, not summarized into a reference doc.
+
+**New — built as real, usable commands (not just documented):**
+- `niche-research`, `hook-generator`, `post-writer`, `post-formatter`,
+  `voice-builder`, `newsletter-repurposer` (renamed from the source's
+  `/newsletter` to avoid colliding with the existing, differently-scoped
+  `ai-newsletter-system`), `post-scorer`, `notion-content-planner`,
+  `analytics-dashboard` — the full 9-command content-creation pipeline
+  from socialblueprint.ca's carousel, each cross-referenced against this
+  repo's deeper equivalents (`hook-writer`/`content-hook-writer`,
+  `content-script-writer`, `content-manager`, `content-analyst`) and
+  positioned as the fast single-turn version of those, not a replacement.
+- `follow-up-when-no-reply` — Mo Bunnell's complete 4-stage cadence (Day 3
+  light touch → Day 9 add value → Day 16 easy yes/no → Day 30 open door)
+  with the exact message templates and a relationship-value × past-interest
+  matrix for when to stop following up. Fully specified in the source, so
+  reproduced as a ready-to-use command rather than a summary.
+- `outbound-sales-system-5stage` — rebuilds the 5-stage taxonomy from both
+  sales-teaser graphics (prospecting → research → outreach → conversations
+  → pipeline) as an actually-working sequence, mapped to skills **already
+  vendored in this repo** (`prospecting`, `customer-research`, `cold-email`,
+  the new `follow-up-when-no-reply`, `sales-enablement-corey-haines`'s
+  objection library, `sales-enablement`, `revops`) — since neither source
+  graphic contained any real prompt/skill content to vendor, only category
+  names used as organizing structure, stated explicitly in the file rather
+  than implied.
+- `marketing-umbrella-framework` — the 5-branch taxonomy (Strategic/
+  Digital/Growth/Branding/CX), with each branch mapped to the specific
+  skill in this repo that already executes it.
+- `operations-book-one-page` — indexes Eric Partaker's 16 mini-frameworks
+  by title and structure; several panels' sub-bullet text was too small in
+  the source image to transcribe reliably, so this file says so rather than
+  guessing at illegible text. Cross-references this repo's existing
+  `c-suite-30-kpis` (different source/list, not a duplicate of panel 7's
+  "Top 18 KPIs for CEOs") and `quarterly-okr-architect`/
+  `business-decision-frameworks` (deeper implementations of panels 5-6).
+- `communication-skills-12` — Gav Blaxberg's 12-skill checklist, as a
+  self-audit prompt.
+
+**Already covered, cross-referenced rather than re-added:** SWOT/PESTEL
+(business-decision-frameworks), the individual OKR/KPI mechanics
+(quarterly-okr-architect, kpi-reference-handbook), objection handling
+(sales-enablement, sales-enablement-corey-haines).
+
+**Declined — no real content to vendor:** "The Ultimate Claude LinkedIn
+Sales Department" (60 agents / 50 skills / 100 prompts / 30 workflows / 10
+playbooks, all named, none with actual content in the source image) and the
+Fable 5 terminal screenshot's individual `.md` file contents (filenames and
+one-line descriptions only, no real prompt text) — both explicitly flagged
+in `outbound-sales-system-5stage` as naming inspiration only, not sourced
+content, rather than fabricating plausible-sounding prompt text to fill the
+gap.
+
+## 84. LinkedIn Optimizer System, Agent-Task Prompt Pack & GitHub Trending Repos (Batch 84)
 
 **Source:** Two uploaded iCloud Photos zips, 67 images total — carousels from
 @theromanknox ("Claude's Free Skillset"), @ai_slacker (11-slide "prompt.md"
@@ -4728,12 +4980,12 @@ command itself walks you through it):**
 
 ---
 
-## 83. Agent-Harness Trend, Context-Engineering Repos & Two Prompt Checklists (Batch 83)
+## 85. Agent-Harness Trend, Context-Engineering Repos & Two Prompt Checklists (Batch 85)
 
 **Source:** Three uploaded iCloud Photos zips (52 files: 51 images + 1
 unreadable video). Recurring series: @replace.so and @githubnow (GitHub
 repo showcases), @martiendejong_dev (a "0X/09" GitHub-repo countdown —
-mostly the same content already logged in batch 82's GitHub-Trending
+mostly the same content already logged in batch 84's GitHub-Trending
 section, plus new entries), @brandarmor.ai ("AI Agents Are Wasting
 Context: 6 Open-Source Projects Fixing It"), @build.dev (5-prompt coding
 checklist, all 5 slides present), @will.ai.m (4-prompt Monday-reset
@@ -4816,7 +5068,7 @@ swapped for this).
   likely a mislabel in the source carousel; not documented as a working
   link.
 - **@martiendejong_dev "0X/09" GitHub countdown** — largely the same
-  agent-harness trend already covered in batch 82 and above
+  agent-harness trend already covered in batch 84 and above
   (`deepseek-harness`, `omnigent`, `grok-build`, `qm`, `MiMo-Code`) plus
   the two new entries listed above (`dsh-desktop`, `opencodex`).
 - **@githubnow daily briefing (4 Sept 2026)** — named "Agent Workspace"
@@ -4854,7 +5106,7 @@ to pull 39 still frames, then reviewed those. Source: **@ivan.geoffreyy**,
 
 ---
 
-## 84. Portfolio-Site Brief, Local-LLM Harness Repos & the Full @ai.blueprint Series (Batch 84)
+## 86. Portfolio-Site Brief, Local-LLM Harness Repos & the Full @ai.blueprint Series (Batch 86)
 
 **Source:** One uploaded iCloud Photos zip, 67 images. Recurring series:
 @futurewithai.dev (two parallel tracks — a "build a portfolio site with
@@ -4902,7 +5154,7 @@ already logged in earlier batches).
   preconfigured Arch+Hyprland Linux distro shipped as a bootable ISO
   (`iso.omarchy.org`); v4.0 added a Claude Code menu-bar widget; niche
   (full-disk installer wipes the drive) — not business-tooling, flagged
-  for completeness only, same treatment as `Lakr233/vphone-cli` in batch 83
+  for completeness only, same treatment as `Lakr233/vphone-cli` in batch 85
 
 ### Local-LLM alternative stack (informational)
 
@@ -4910,7 +5162,7 @@ already logged in earlier batches).
 Claude: **Ollama** hosts the model (`qwen3.8:27b`, "32GB RAM = the local
 coding sweet spot"), **Qwen Code** is the CLI harness that gives it
 hands (read files / edit code / run commands), and the same
-`QWEN.md`/`AGENTS.md`/per-task `SKILL.md` pattern from batch 83 supplies
+`QWEN.md`/`AGENTS.md`/per-task `SKILL.md` pattern from batch 85 supplies
 persistent project memory. Core claim worth keeping: **"coding agent =
 model + harness + tools + memory + permissions + feedback loop" — a
 better model alone won't recreate what Claude Code already does.** Not
@@ -4948,7 +5200,7 @@ into commands:
 ### Informational only (no install action)
 
 - **@quadri_folo "10 Claude Code Tips"** (tips 1, 4–10 captured across
-  this and batch 83): auto-approve trusted actions, custom commands for
+  this and batch 85): auto-approve trusted actions, custom commands for
   repeated prompts, subagents for specialized work (testing/review/
   research/debugging), use Skills instead of one giant prompt, connect
   external tools via MCP, review Claude's own output before accepting
@@ -4968,21 +5220,21 @@ into commands:
 - **@mydlytracker "Collections" feature** (mydailyNotebook app) —
   already logged in batch 66; this batch's screenshots show the same
   product's Projects/Ideas/Learning/People use cases, no new information.
-- **`diagram-design`** — already vendored (batch 82); this batch's
+- **`diagram-design`** — already vendored (batch 84); this batch's
   screenshot additionally shows `/plugin install diagram-design` as an
   alternate install path (a Claude Code plugin marketplace install
   rather than `npx skills add`) — noted here, not a new item.
 
 ---
 
-## 85. Low-Yield Batch — Mostly Duplicates, Two New Repos Flagged (Batch 85)
+## 87. Low-Yield Batch — Mostly Duplicates, Two New Repos Flagged (Batch 87)
 
 **Source:** Two uploaded zips, 25 files total — a small "Νέος φάκελος"
 ("New folder," Greek) zip with 2 images + 2 videos, and a 21-image
 `iCloud_Photos.zip`. The 2 videos had no scene-detectable cuts in one
 case, so both were decoded with `ffmpeg` (1 fps fixed-interval sampling
 for the 14s video, scene-detection for the 49s one) and reviewed as
-still frames, same approach as batch 83.
+still frames, same approach as batch 85.
 
 **Result: this was the most duplicate-heavy batch yet.** Nearly every
 named tool/repo across all 25 files was already in this README —
