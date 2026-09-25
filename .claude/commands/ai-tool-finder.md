@@ -284,6 +284,56 @@ You are a productivity and AI tool advisor. When a use case or category is given
 
 ---
 
+## SALES AI
+| Tool | What it does |
+|------|-------------|
+| Sybill | Sales assistant for call analysis and coaching |
+| Humanlinker | Buyer-persona and personalisation for outbound |
+| Humantic AI | Personality insights for sales and relationship building |
+| Maverick | Personalised video messaging at scale |
+| Second Nature | Sales training through AI role-play simulations and feedback |
+
+## CUSTOMER SUCCESS & SUPPORT
+| Tool | What it does |
+|------|-------------|
+| Dante | Custom chatbot trained on your own data for support and knowledge retrieval |
+| Claude / ChatGPT | General assistants for drafting replies and FAQ answers (see `customer-faq-responder`) |
+
+## PRODUCTIVITY & MEETINGS
+| Tool | What it does |
+|------|-------------|
+| tl;dv | Meeting recorder and summariser for Zoom, Google Meet, Teams |
+| Audiopen | Voice notes into clean, structured text |
+| Notion AI | Writing, summarisation and ideation inside Notion |
+| Goblin Tools | Task breakdown aid, designed for neurodivergent users |
+| Scheduler AI | Scheduling, follow-ups and calendar coordination |
+
+## COPY, CONTENT & MARKETING (additions)
+| Tool | What it does |
+|------|-------------|
+| Hypotenuse AI | Blogs, product descriptions, marketing copy |
+| PaperPal | Academic writing: grammar, clarity, structure |
+| Surfer SEO | Content optimisation against search results |
+| Lavender AI | Sales-email writing assistant |
+| Vidyo | Repurposes long video into short-form clips |
+| Pebblely | AI product images for e-commerce listings |
+| EcomAds Panel | Ad-creative optimisation and performance tracking |
+| Sleeky AI | AI design and visual-asset generation |
+
+## GTM & REVOPS DATA STACK
+Layer model and use: see the `gtm-outbound-engine` skill.
+| Layer | Tools |
+|------|-------------|
+| Signal | PredictLeads, LimaData, GetLeads |
+| Data / enrichment | Cold IQ, Apollo, Explorium, Prospeo, FullEnrich, LeadMagic, Openmart |
+| Action / sending | Instantly, Hypertide (inbox infrastructure), Expandi (LinkedIn), Smartlead, Outreach |
+| System of record | folk, HubSpot |
+| Orchestration | Claude Code, n8n, Clay |
+
+> Sources: "The AI Tools Cheat Sheet" (smarterwithai.news) and "The 5-layer GTM engine" (Cold IQ), both uploaded infographics.
+> The cheat sheet's "ChatGPT top useful plugins" section (AI Diagrams, Prompt Perfect, Scholar AI, One Word Domains, ChatWithPDF, KAYAK) is **out of date**: OpenAI retired ChatGPT plugins in 2024 in favour of GPTs. Some of those names survive as GPTs; check before relying on any of them.
+
+
 ## SOLO ENTREPRENEUR RECOMMENDED STACK
 
 **Content Creator Stack (free/freemium):**
