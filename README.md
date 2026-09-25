@@ -4570,3 +4570,144 @@ Output-format methodology already captured from an earlier `@SkillDropAI`
 batch), and proprietary SaaS tool cards with no repo to clone (Microsoft
 Clarity, Content Square, SERPtag, Tally).
 
+---
+
+## 82. Claude Skill Packs, Agent-Building Guides, Prompt-Injection Defense & Automation Stacks (Batch 82)
+
+**Source:** Three uploaded zips — one "6 stages of LinkedIn personal
+branding" bundle (8 images, mostly Claude/AI infographics despite the
+filename) and two "iCloud Photos" dumps (11 + 36 images, 2 short mp4s).
+55 images reviewed in full; the 2 videos were not transcribed/analyzed
+(flagged rather than skipped silently — likely duplicate demo footage of
+carousels already covered as stills, but not confirmed). A wide mix of
+creators: GenAI Works, SpeedChat.ai, workflows.io (Fivos Aresti),
+AIForLeaders.com, Bojan Radojicic (KPIs Handbook — already covered, see
+below), Gartner, ByteByteGo, @usamaakrm, @epic8244, @your.aimentor,
+@githubnow, @replace.so (second, different carousel from the one already in
+`github-repos-from-photos.md`), @qbuilder, Lucy Njuguna (@njugunalucy0, an
+n8n-basics glossary — trigger/node/workflow/execution/webhook/variables/
+credentials — not installed as its own file since `n8n-agent-builder`
+already covers this ground at a more actionable level), and
+@usama_gujjar_official.
+
+Every GitHub repo named below was checked for real existence via a live
+`git ls-remote` or GitHub API search before being written down. Several
+repos in the ByteByteGo "Top 12 Agent Skills" GIF and one "Obsidian Skills"
+entry had **no owner visible on screen** and share a name with dozens of
+similarly-named repos (`skills`, `ponytail`, `agent-skills`, `graphify`,
+`Understand-Anything`) — those are marked **unverified** rather than guessed
+at, consistent with this README's standing rule from Batch 79 onward.
+
+**New:**
+- `claude-skills-13` — GenAI Works' "13 Claude Skills That Save You Hours
+  Every Week," cross-checked against what's already installed (6 of the 13
+  already present: `doc-coauthoring`, `docx`/`pptx`/`xlsx`/`pdf`,
+  `frontend-design`, `humanizer`; a 7th, `/skill-creator`, already installed
+  as the "install first" tool) — the genuinely new ones are `grill-me`,
+  `brainstorming`, `writing-plans`, `systematic-debugging`,
+  `discernment-nudge`, `test-driven-development`.
+- `top-12-agent-skill-repos` — ByteByteGo's most-starred skill repos.
+  4 resolved to a confirmed repo (`obra/superpowers`,
+  `multica-ai/andrej-karpathy-skills`, `affaan-m/everything-claude-code`,
+  `nextlevelbuilder/ui-ux-pro-max-skill`); 2 were already covered
+  (`anthropics/skills`, `caveman`, `impeccable` — 3 actually, all
+  previously vendored/documented); the remaining ones had no visible owner
+  and are marked unverified rather than guessed.
+- `claude-sales-prompts-20` — SpeedChat.ai's 20 copy-paste Claude sales
+  prompts (lead qualification through forecast challenge), positioned as
+  quick single-turn prompts alongside the deeper `sales-enablement` skill.
+- `linkedin-branding-6-stages` — workflows.io's full-funnel framework
+  (Profile → Network → Content Strategy → Content Creation → Lead Capture →
+  Retargeting), with the named tool stack at each stage (Clay, HeyReach,
+  Apollo.io, Tally, Cal.com, Instantly, Nooks). Distinct value over this
+  repo's existing LinkedIn commands is stages 2, 5, and 6, which those don't
+  cover.
+- `claude-cowork-setup` — AIForLeaders.com's 10-step Claude Cowork
+  configuration guide, with two ready-to-paste prompts for the About-Me
+  files and onboarding interview (steps 4-5), and a note on which steps
+  can't be executed from inside this sandboxed environment.
+- `ai-industry-trends-skills-map` — a 6-category skill/tool map (LLMs, RAG,
+  Agentic AI, AI Agents, AI Engineer, ML Engineer) from a source image
+  mislabeled "plan hiring, training and project reviews" in the upload —
+  actual content had nothing to do with hiring.
+- `build-first-claude-agent` — @usamaakrm's genuine 3-level agent-building
+  guide (save a skill → put it on autopilot with Cowork → run it
+  unattended via Claude Code in the cloud, `npm install -g
+  @anthropic-ai/claude-code`), reproduced in full with two ready-to-paste
+  prompts for building the first skill right now.
+- `opensource-desktop-app-alternatives` — @epic8244's 5-app "paid software
+  I deleted" carousel: OpenCut (CapCut), AnythingLLM (ChatGPT/Claude UI),
+  Nuclear (Spotify), Cap (Loom — already referenced via
+  `self-hosted-docker-stack`), Handy (Wispr Flow). All confirmed real,
+  clone commands included, flagged as desktop apps to install on a real
+  machine rather than this sandbox.
+- `claude-productivity-repos` — @your.aimentor's "10 GitHub Repos That Turn
+  Claude Into a Productivity Beast." 4 of the 10 were already covered
+  (Dify, Flowise, `anthropics/skills`, `notebooklm-skill`) and flagged
+  rather than re-added; 6 net-new, including `yamadashy/repomix` and
+  `coreyhaines31/marketingskills` (a marketing skill pack worth actually
+  vendoring into `.claude/skills/` in a future session, similar to how
+  `contract-review` and the GSAP pack were vendored).
+- `github-trending-agent-repos-sep2026` — @githubnow's daily-briefing trio:
+  `K-Dense-AI/scientific-agent-skills` (166 skills + 100 scientific
+  databases, Agent Skills-standard format), `freestylefly/awesome-gpt-
+  image-2` (530+ prompt-as-code image examples), `HKUDS/CLI-Anything`
+  (agent-native CLI generator for any existing software).
+- `replace-so-dev-repos-2` — a **second, different** @replace.so carousel
+  from the one already in `github-repos-from-photos.md`: Mitosis,
+  LiveCharts2, Playwright (already referenced in `claude-code-tooling`),
+  Storefront-ui, Hono. Only 5 of the claimed 7 repos were present in the
+  source photos (title card and one repo slide missing) — documented as
+  5, not padded to 7.
+- **`prompt-injection-defense`** — @qbuilder's 6-slide security-awareness
+  carousel on prompt injection, turned into an actual pre-flight checklist
+  (not just a definition): the "model can't tell your orders from what it
+  reads" problem, the 3 boundary rules (never mix open-internet + sensitive
+  access in one session; anything that sends/deletes/spends needs human
+  approval first; a human reviews what the agent brings back before it
+  becomes real), and a 5-item checklist to run before shipping any new
+  agent that both reads external content and can take actions. Cross-linked
+  from `ai-governance-layers` and `claude-code-tooling`.
+- `ai-automation-tool-stack` — @usama_gujjar_official's personal 4-category
+  stack (Systems: Google Calendar/Obsidian/Fireflies/Notion; Growth:
+  Apify/Clay/HeyReach/Smartlead; The Engine: Claude Code/n8n/Cursor/
+  Lovable; Content: Claude/ElevenLabs/Wispr Flow/Gamma), cross-referenced
+  against the skills in this repo that already execute each row.
+- `gartner-brand-health-framework` — Gartner's 6-stage brand-health funnel
+  (Strategy → Reach → Perception → Consideration → Experience → Business
+  Outcomes), distinguished from the existing `atm-framework` (a narrower
+  audience-growth-to-monetization funnel) and flagged against `brand-brain`
+  for overlap.
+- **`design-templates`** — a new `infographic-card-grid.html` template
+  (light + dark variants), extracted not from one carousel but from the
+  visual pattern nearly all of this batch's carousels shared: a numbered
+  circular badge + icon + title + short description, repeated in a
+  responsive grid. Verified via a headless-Chromium screenshot in both
+  modes (zero console errors) before being added, matching this skill's
+  existing verification standard.
+
+**Already covered in earlier batches, skipped as duplicates:** the "KPIs
+Handbook" infographic (Bojan Radojicic) — this is the exact same source
+already fully reproduced as `kpi-reference-handbook`; `Cap`, `Dify`,
+`Flowise`, `anthropics/skills`, `notebooklm-skill`, `caveman`, `impeccable`,
+`Playwright` (all flagged inline above rather than re-documented); the
+Lucy Njuguna n8n-basics glossary (trigger/node/workflow/execution/webhook/
+variables/credentials — `n8n-agent-builder` already covers this at a more
+actionable level than a term-by-term glossary would add).
+
+**Not resolved — no confident owner found:** the "Top 12 Agent Skills" #2
+entry ("skills," 201k★, "makes your agent challenge its plan first"),
+`ponytail`, `agent-skills`, `graphify`, `Understand-Anything` (all from the
+same GIF), and "Repo: Obsidian Skills" (from the productivity-beast
+carousel) — none had an owner visible on screen, and none resolved to a
+single confident match in a live GitHub search among many similarly-named
+repos. Listed as unverified in their respective files rather than cited
+with an invented owner.
+
+**Not executed:** the two mp4 videos in the second iCloud Photos batch
+(`v12300gd0001daqjn97og65lkpssfgg0.mp4`, `v26044gc0000daqethnog65pc6e82do0.mp4`)
+were not transcribed or reviewed frame-by-frame — this session had no
+video-analysis step in scope and the still images already covered every
+carousel visible in the batch. Flag for a follow-up session if the videos
+turn out to carry content not present in the stills.
+
