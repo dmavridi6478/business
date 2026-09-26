@@ -5538,6 +5538,115 @@ Source: iCloud Photos Batch 92 (28e3fa66-iCloud_Photos_6.zip), Sep 2026.
 
 ---
 
+## 93. LinkedIn Cold-Traffic Funnel, CONTENTmaxxing Tool Stack, Interview Cheat Sheet & Cold IQ Outbound Flow (Batch 93)
+
+Source: 5 direct image uploads (no zip), Sep 2026 — (1) "7 LinkedIn Strategies Worth Implementing" (ContentSmash), (2) "How to start CONTENTmaxxing?" (5-stage AI content tool workflow), (3) "Job Interview Cheat Sheet" (Anna Chernyshova), (4) "How to Create Infographics (FREE) in Seconds with AI" (Jonathan Parsons — Google Nano Banana Pro focus), (5) "Our full outbound flow" (Cold IQ / Soheil Saeidmehr, 18-tool outbound stack centered on Claude Code).
+
+**New:**
+
+| File | What it is |
+|---|---|
+| `.claude/commands/linkedin-cold-traffic-system.md` | ContentSmash's 7-strategy cold-traffic conversion funnel (profile → content calendar → DM follow-up → lead magnet → engagement → social proof → conversion), cross-referenced against this repo's existing single-topic LinkedIn commands |
+| `.claude/commands/contentmaxxing-workflow.md` | 5-stage content tool workflow (research → single brief via Claude Cowork → draft/edit/design/distribute), mapping Ahrefs/Perplexity/Granola/Apify/Figma/AirOps/Kit/Framer to this repo's own agents where no direct tool connector exists |
+| `.claude/commands/job-interview-cheat-sheet-12.md` | Anna Chernyshova's 12 fixed behavioral-interview Q&A with a specific answer strategy per question (4 of 12 explicitly call for STAR method) |
+| `.claude/commands/outbound-flow-6stage-18tools.md` | Cold IQ's second outbound graphic in this repo (a different 18-tool stack from `gtm-outbound-engine`'s 14-tool source, same vendor) — stages 1-4's icons were too small to identify with confidence and are recorded as unidentified counts rather than guessed; only Claude Code, likely-HeyReach, Google, Instantly.ai and lemlist were legible enough to name |
+
+**Edited (extended rather than duplicated):**
+- `.claude/commands/infographic-prompts.md` — image 4 was ~80% already covered by this existing file (same 5-step workflow, prompt anatomy formula, tool table, infographic types, mistakes to avoid). Added the net-new content only: the "why Google Nano Banana Pro" 7-reasons deep-dive, the "6–12 hours → 30–60 seconds" time-savings stat, platform-specific aspect ratios (LinkedIn 1200×627/1080×1080, Instagram Story 1080×1920), and Jonathan Parsons as a second source citation.
+
+**Cross-referenced rather than duplicated:** Image 5 (Cold IQ outbound flow) has substantial conceptual overlap with the already-vendored `gtm-outbound-engine` skill and `outbound-sales-system-5stage` command — both are Cold IQ marketing graphics arguing for Claude Code/Claude as the single outbound orchestration hub. Handled as a light addition with an explicit stage-to-skill mapping table rather than a full rebuild.
+
+**Follow-up, same session:** none required — PR #35 (which carried Batches 82–92) was merged directly by the user; this batch restarts the branch from latest `main` per the merged-PR-restart convention and opens a new PR.
+
+## 94. GitHub Repos for Agents, 10-Part Claude Prompt Formula, 71 Founder Prompts, YouTube & UI-Style References (Batch 94)
+
+Source: 48 images + 1 video from `94f36272-iCloud_Photos_2.zip`, Sep 2026. Sources include @aigenesis.official (2 GitHub-repo carousels: "7 GitHub repos built for AI agents" and a Hermes Agent narrative), @the.wealth.lab ("The Perfect Claude Prompt Structure," a 10-component formula, 10 slides), @aisimplified23 ("71 Claude Prompts For Founders," 9 prompt-card grids), @martiendejong_dev ("Millionaire Reveals 7 Blacklisted ChatGPT Prompts," a 5-step faceless-YouTube carousel — only 5 of the claimed 7 prompts were actually shown), @designwithbyy ("5 UI Design Styles You Should Know," 7 slides), and a "The Wealth Lab Digital Store" product-plug slide (informational only, no content to vendor). The video file (`v15025gf0000dag0v07og65imb3v2rpg.mp4`) could not be processed — this environment has no `ffmpeg`/`cv2` available for frame extraction, so its content is not represented here rather than guessed at.
+
+**New:**
+
+| File | What it is |
+|---|---|
+| `.claude/commands/agent-github-repos-4.md` | 4 of the 7 repos from @aigenesis.official's "GitHub repos for AI agents" carousel that weren't already covered elsewhere (Diagram Design, Awesome Harness Engineering, Anthropic Cybersecurity Skills, Browser Use) — all verified live via `git ls-remote`, with stale forks resolved to their canonical upstream repos |
+| `.claude/commands/claude-prompt-formula-10part.md` | The Wealth Lab 10-component prompt-assembly formula (Role → Objective → Context → Task → Constraints → Workflow → Validation → Stop Conditions → Output Format → Quality Control), with the carousel's full worked SaaS-launch-plan example and the XML-tags pro tip |
+| `.claude/commands/founder-prompts-71.md` | 70 of the 71 "Claude Prompts For Founders" (ads/video scripts, paid social/retargeting, sales page copy, LinkedIn posts/carousels, lead magnets, welcome-email sequences, founder story/positioning) — fill-in-the-blank and copy-paste ready |
+| `.claude/commands/faceless-youtube-prompts-5.md` | The 5 @martiendejong_dev prompts actually shown (niche finder, viral content blueprint, script writer, stock-footage/Sora-2 content generation, content calendar), with an explicit table cross-referencing which overlap this repo's existing `yt-niche`/`yt-script`/`yt-calendar` commands and which (2 of 5) are genuinely new |
+| `.claude/commands/ui-design-styles-5.md` | @designwithbyy's 5 UI design styles (Glassmorphism, Neumorphism, Neobrutalism, Flat Design, Minimalism) as a style-selection reference, each with a ready-to-use generation prompt — distinct from the `design-templates` skill's ready-made HTML layouts |
+
+**Edited (extended rather than duplicated):**
+- `.claude/skills/agent-memory-repos/SKILL.md` — the carousel's "Agent-Memory" repo filled the skill's long-standing empty row 7 placeholder, citing the canonical `rohitg00/agentmemory` upstream instead of the stale `Threesided-Studios/Agent-Memory` fork (94 commits behind) shown on screen; added its install command and a "Choosing the Right Repo" row.
+
+**Already covered, skipped as duplicate (no new action):**
+- `volcengine/OpenViking` (carousel Repo 1) — already row 2 of `agent-memory-repos`.
+- `K-Dense-AI/scientific-agent-skills` (carousel Repo 4) — already documented in more detail in `github-trending-agent-repos-sep2026.md`.
+- Hermes Agent (NousResearch) install/CLI/tips content, and the "Hermes House" self-evolving-agent narrative — fully covered by the existing `hermes-nousresearch` and `oh-my-hermes` skills (same source attribution, @aigenesis.official). The narrative posts' only novel content was a "comment HERMES for a free guide" lead-magnet tease with no real guide content included.
+- "I Built a Complete LinkedIn AI Agent System" (30 Claude Agents infographic) — a lead-magnet tease whose 9 category headings (Content Creation, Ideas & Planning, Voice & Profile, Lead Magnets & Offers, Outreach & Messaging, Follow-up & Retargeting, Objection Handling, Pipeline & Tracking, Sales Calls & Bookings) map one-to-one onto skills already vendored in this repo; no actual agent prompts were shown to add.
+- The Wealth Lab Digital Store slide — a product-store advertisement, no reusable content.
+
+**Follow-up, same session:** none required — restarts on the same freshly-reset `claude/epic-mccarthy-ux0133` branch as Batch 93, carried in the same open PR #36.
+
+## 95. AI-Draft-to-Shipped-Page Loop, PHP Abstraction, 2026 LLM Model Split, GTM Stack PDF (Batch 95)
+
+Source: 24 images + 4 videos from `ccf0373f-iCloud_Photos_3.zip`, plus a directly-attached `GTM_Stack.pdf` (converted via the `pdf-to-markdown` skill). Image sources include @designarchitect001 (a 7-slide "Bold Fonts" AI-generated brand-name/logotype showcase — Rokiest, Bolde, Headline, Rogbold, Mosafin, Confine), @alexxcodes ("OOP in PHP," the Abstraction chapter, 6 slides), @jimai005 ("Stop Shipping the First AI Draft," a 7-slide 6-step frontend workflow), and @51ultron ("Stop Using One LLM — The 2026 Model Split," 1 infographic). The PDF is Mo Sakr's (@theaibusiness.net) "GTM_Stack" — a 13-slide before/after tour of a 20-person B2B services company's go-to-market stack. The 4 video files (`v26044gc0000daqh23vog65i9chlbkog.mp4`, `v24044gl0000damk59nog65m08qsev9g.mp4`, `v24044gl0000dae8mufog65p89u30dc0.mp4`, `v26044gc0000dar7tu7og65gk2bfde00.mp4`) could not be processed — this environment still has no `ffmpeg`/`ffprobe`/`cv2` for frame extraction, so their content is not represented here rather than guessed at.
+
+**New:**
+
+| File | What it is |
+|---|---|
+| `.claude/commands/ai-draft-to-shipped-page-6step.md` | @jimai005's 6-step loop (Reference → Shape → Build → Render → Critique → Repair) for turning a rough AI-coded page into a shipped one, citing 4 tools per step — Mobbin MCP (new), shadcn MCP (cross-ref `dev-repos-to-clone`), Chrome DevTools MCP (cross-ref `explain-interface`), and `pbakaus/impeccable`'s individual subcommands `/impeccable shape`, `critique`, `audit`, `layout`, `typeset`, `polish` (first time this repo enumerates them individually — the repo already covered the tool generally) |
+| `.claude/commands/oop-php-abstraction.md` | @alexxcodes' "OOP in PHP" Abstraction chapter — interface-vs-abstract-class table, worked `Report`/`SalesReport` PHP code example, and a refactor prompt. The series' other 5 topics (Classes, Encapsulation, Inheritance, Polymorphism, Composition) are named but not detailed — only the Abstraction chapter's slides were in this source |
+| `.claude/commands/llm-2026-model-split.md` | @51ultron's 2026 production matrix for routing tasks across Claude, OpenAI, Gemini, and DeepSeek by superpower/skip-it/context-window |
+| `.claude/commands/gtm-stack-20person-b2b.md` | Mo Sakr's full GTM stack for a 20-person B2B services company — findability (G2/Clutch/Capterra), demand distribution, sales/conversion (Calendly/Cal.com, Fathom/Claap/Gong, Attio/folk/Pipedrive/HubSpot), reporting, a "4 things not to replace" downgrade list, and an AI-answer-engine bonus layer — cross-referenced against this repo's existing `gtm-api-stack`, `abm-gtm-layers`, and `outbound-flow-6stage-18tools` for the overlapping prospecting/enrichment/outbound tool names rather than re-documented |
+
+**Edited (extended rather than duplicated):**
+- `.claude/skills/design-dev-resources/SKILL.md` — the Mobbin row now also notes the official hosted Mobbin MCP server (`https://api.mobbin.com/mcp`), distinct from the existing website-resource listing, with a pointer to the new `ai-draft-to-shipped-page-6step` command for the workflow.
+
+**Already covered, skipped as duplicate (no new action):**
+- `pbakaus/impeccable` (the repo itself) and `shadcn-ui/ui` (the repo itself) — both already fully documented in `claude-code-tooling`, `web-design-taste-workflow`, and `dev-repos-to-clone`; only their specific subcommands/MCP usage from this batch's sources were net-new (see above).
+- The @designarchitect001 "Bold Fonts" carousel (Rokiest, Bolde, Headline, Rogbold, Mosafin, Confine) — 6 AI-generated wordmark/logotype mockups over stock photography, plus a "Bold Fonts — Pro Picks" cover slide. No actual font family name, generation prompt, or technique was shown (just finished word examples in one bold display style) — nothing to extract without fabricating, per this repo's standing rule against inventing unseen content.
+
+**Follow-up, same session:** none required — same branch (`claude/epic-mccarthy-ux0133`), same open PR #36.
+
+## 96. AI Agent Building Blocks, Prompt-Fix Framework, Claude Connectors Directory, Actual Budget App (Batch 96)
+
+Source: 24 images + 1 video from `2c9dd17a-iCloud_Photos_4.zip`, and 11 images from `9f25b2bf-iCloud_Photos_1.zip`. Sources include @dotdevs ("5 more open-source apps that replace paid subscriptions · pt 2" — Jellyfin, Nextcloud, Vaultwarden, Paperless-ngx, Actual), @mun_good ("How to Build an AI Agent," an 8-building-blocks + 7-step framework), @learnaiwithdoyin ("Why Your Prompts Keep Failing," 4 fixes), @your.aimentor (2 dense infographics: a Claude connectors directory, and "10 GitHub Repos That Turn Claude Into a Productivity Beast"), @usamaakrm ("How to Build your 1st Claude Agent," a 3-level save/autopilot/cloud carousel), and @epic8244 ("I deleted all Paid Softwares," 5 desktop-app alternatives). This batch turned up an unusually high duplicate rate — 3 of the 6 image sources were carousels this repo already has word-for-word from earlier batches. Both video files (`v1c044g50000darg7o7og65tnfv2r7a0.mp4` in zip 1) could not be processed — no `ffmpeg`/`ffprobe`/`cv2` in this environment.
+
+**New:**
+
+| File | What it is |
+|---|---|
+| `.claude/commands/ai-agent-8-building-blocks.md` | @mun_good's 8-building-blocks agent-architecture framework (Purpose, Prompt, LLM, Tools, Memory, Orchestration, Interface, Testing) plus a 7-step quick-build guide and a tool stack by use case — cross-referenced against this repo's other two agent-building frameworks (`build-ai-agent-10-minutes`, `build-claude-agent-7-steps`) rather than duplicated |
+| `.claude/commands/fix-vague-ai-prompts-4ways.md` | @learnaiwithdoyin's 4 fixes for prompts that keep failing (say what good looks like, give it missing context, specify output format, push back on the first answer), each with a copy-paste example |
+| `.claude/commands/claude-connectors-by-category.md` | @your.aimentor's directory of Claude connectors grouped by job (productivity, sales/marketing, data/analytics, design, finance, code/dev, engineering, communication, CRM, knowledge management, life sciences, payments, customer support, content/web) |
+
+**Edited (extended rather than duplicated):**
+- `.claude/skills/self-hosted-docker-stack/SKILL.md` — added a "Batch 4" table entry for Actual (actualbudget/actual, a self-hosted YNAB alternative), the one genuinely new app in @dotdevs' pt-2 carousel; the other 4 (Jellyfin, Nextcloud, Vaultwarden, Paperless-ngx) were already documented here or in `ms365-free-alternatives`.
+
+**Already covered, skipped as duplicate (no new action):**
+- @epic8244's "I deleted all Paid Softwares" carousel (OpenCut, AnythingLLM, Nuclear, Cap, Handy) — word-for-word the same 5 apps, same repos, already documented in `.claude/commands/opensource-desktop-app-alternatives.md`.
+- @your.aimentor's "10 GitHub Repos That Turn Claude Into a Productivity Beast" (Repomix, Everything Claude Code, Dify, Flowise, Onyx, Claude Skills by Anthropic, Awesome Claude Skills, Obsidian Skills, NotebookLM Skill, Marketing Skills by Corey Haines) — already documented in full in `.claude/commands/claude-productivity-repos.md`.
+- @usamaakrm's "How to Build your 1st Claude Agent" 3-level carousel (Save a skill → Autopilot → Run in the cloud) — already documented word-for-word in `.claude/commands/build-first-claude-agent.md`.
+
+**Follow-up, same session:** none required — same branch (`claude/epic-mccarthy-ux0133`), same open PR #36.
+
+## 97. LinkedIn DM Workflows, Claude Sales by Role, Old SEO vs New AEO, 2 Revenue-System Infographic GIFs (Batch 97)
+
+Source: `80c9789b-LinkedIn_Master_Guide_for_Claude.zip` — 4 static images (`.jfif`, re-saved as `.jpg` to read) and 2 animated GIFs (an 80-frame blur-to-focus reveal and a 123-frame scroll-reveal; both sampled at their stable plateaus via frame-diffing, since the Read tool can't play GIF animation directly). Sources: "Claude Workflows Library" (9-workflow LinkedIn DM guide), smarterwithai.news ("Top 11 Free AI Tools From Google"), @salesdaily.co ("How To Use Claude In Sales," role-based), Naqui Shaikh/@Pierview.ai ("Old SEO vs New AEO"), an uncredited "Claude Revenue System" 58-agent infographic (labeled `Claude B2B Sales System.gif` in the zip), and an uncredited "17 Fable 5 outbound skills" infographic (`Fable 5 Outbound System.gif`).
+
+**New:**
+
+| File | What it is |
+|---|---|
+| `.claude/commands/linkedin-dm-9-claude-workflows.md` | The 9-workflow LinkedIn DM sequence (ICP Targeting → Call Booking) behind 1,100+ calls booked from 17k DMs — cross-referenced against the existing `linkedin-dm-funnel` (a simpler 3-step version) and `linkedin-signal-outreach` |
+| `.claude/commands/claude-sales-by-role.md` | @salesdaily.co's role-based Claude-in-sales guide (SDR, BDR, AE, Sales Engineer, Sales Manager, VP of Sales, Sales Ops, RevOps), each with a prompt, a pro tip, and the common mistake for that role — distinct from the existing task-based `claude-sales-prompts-20` and the 100-workflow `sales-workflow-catalog` |
+| `.claude/commands/old-seo-vs-new-aeo.md` | The Old-SEO-vs-New-AEO comparison table (core belief, llms.txt, content strategy, observability, platform focus, content style, third-party platforms) — the quick gut-check version of what this repo's `ai-search-visibility` skill covers in full depth |
+| `.claude/commands/claude-revenue-system-58-agents.md` | A 58-named-role checklist for a full AI revenue org (Find Opportunities → Engage Prospects → Close Deals → Retain & Expand → Strategy/Ops), extracted frame-by-frame from the "Claude B2B Sales System.gif" reveal animation; cross-referenced against the existing `client-acquisition-skills` (50 full prompts, same territory) and `sales-workflow-catalog` |
+| `.claude/commands/fable5-outbound-17skills.md` | The 17-skill, 3-phase outbound chain (prospect research → outreach → pipeline management) extracted frame-by-frame from "Fable 5 Outbound System.gif" |
+
+**Already covered, skipped as duplicate (no new action):**
+- "Top 11 Free AI Tools From Google" (`Google AI Tools.jfif`) — word-for-word the same source, same 11 tools, same 4-part usage guide already documented in `.claude/skills/google-ai-toolkit/SKILL.md`.
+
+**Follow-up, same session:** none required — same branch (`claude/epic-mccarthy-ux0133`), same open PR #36.
+
 ### 65th addition — Claude Code visual/skill repos, a security scanner, and a new @ai_slacker learning-prompt skill
 
 **Batch:** 72 images from iCloud Photos (`596f7b78-iCloud_Photos_1.zip` + `660d1012-iCloud_Photos_2.zip`). Sources include @joshualevi.ai (two "7 skills/repos" carousels), @okaashish ("7 Biggest Claude Problems & How to Fix Them"), @buildwithneej (13-slide GitHub-trending roundup), @ai_slacker ("Infinite Private Tutor" 6-prompt learning series), @replace.so, @will.ai.m ("20 free tools" self-hosted alternatives), @brandarmor.ai ("The AI Growth Playbook" AEO/GEO series — overlaps existing `ai-search-visibility`, skipped), and @usetools_design (design-tool directory, informational). 19 candidate repos checked live via `git ls-remote` before listing; zero prior duplicates confirmed via full-text search against this README.

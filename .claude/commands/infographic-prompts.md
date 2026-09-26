@@ -67,4 +67,34 @@ Create professional infographics in seconds using AI tools: $ARGUMENTS
 
 ---
 
+**WHY GOOGLE NANO BANANA PRO SPECIFICALLY** (added from a second source — Jonathan Parsons, "How to Create Infographics (FREE) in Seconds with AI"; corroborates and extends the tool table above):
+
+Traditional infographic creation: 6–12 hours. AI-powered creation: 30–60 seconds.
+
+Nano Banana Pro is Google DeepMind's image generation/editing model, built on Gemini 3 Pro — it turns a single text prompt into a complete, context-rich infographic. 7 reasons it's relevant for infographic creators:
+
+1. **Real-world knowledge, baked in** — uses Gemini and Google Search to ground content in accurate, real-world data (a house-price prompt includes care, origin, and growth details automatically)
+2. **Legible, accurate in-image text** — generates correctly spelled text directly in visuals, from short lines to full paragraphs, across multiple languages — the historical weak point of AI image generation
+3. **Recipe, process, and step-by-step infographics** — give it a recipe or process and it converts it into a clean, structured step-by-step infographic automatically
+4. **Up to 4K resolution output** — supports 2K and 4K exports with multiple aspect ratios, making designs ready for print, social media, or large displays
+5. **Advanced creative controls** — adjust angles, lighting, depth, and colors, and even switch scenes (like day to night) without needing Photoshop
+6. **Consistent branding across multiple elements** — can combine up to 14 images while maintaining a consistent visual style, keeping branded and multilingual content on-message
+7. **Built-in transparency across every image** — includes Google's SynthID watermark, making it clear when content is AI-generated
+
+Where to access it: Gemini app (select "Create images" with the Thinking model), Google AI Studio, Google Ads, Google Slides, Vids, NotebookLM, and Vertex AI.
+
+**Correct aspect ratios by platform** (from the same source, more specific than "use correct ratios" above):
+- LinkedIn: 1200×627 or 1080×1080
+- Instagram Story: 1080×1920
+
+**Prompt example to try right now:**
+```
+Create an infographic about the 3 most common sleep disorders, including
+causes, symptoms, and one science-backed solution for each. Use a dark
+blue and teal color palette. Include data callouts and clear section
+headers.
+```
+
+---
+
 Usage: `/infographic-prompts [topic, audience, platform, style]`
