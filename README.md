@@ -5628,6 +5628,25 @@ Source: 24 images + 1 video from `2c9dd17a-iCloud_Photos_4.zip`, and 11 images f
 
 **Follow-up, same session:** none required — same branch (`claude/epic-mccarthy-ux0133`), same open PR #36.
 
+## 97. LinkedIn DM Workflows, Claude Sales by Role, Old SEO vs New AEO, 2 Revenue-System Infographic GIFs (Batch 97)
+
+Source: `80c9789b-LinkedIn_Master_Guide_for_Claude.zip` — 4 static images (`.jfif`, re-saved as `.jpg` to read) and 2 animated GIFs (an 80-frame blur-to-focus reveal and a 123-frame scroll-reveal; both sampled at their stable plateaus via frame-diffing, since the Read tool can't play GIF animation directly). Sources: "Claude Workflows Library" (9-workflow LinkedIn DM guide), smarterwithai.news ("Top 11 Free AI Tools From Google"), @salesdaily.co ("How To Use Claude In Sales," role-based), Naqui Shaikh/@Pierview.ai ("Old SEO vs New AEO"), an uncredited "Claude Revenue System" 58-agent infographic (labeled `Claude B2B Sales System.gif` in the zip), and an uncredited "17 Fable 5 outbound skills" infographic (`Fable 5 Outbound System.gif`).
+
+**New:**
+
+| File | What it is |
+|---|---|
+| `.claude/commands/linkedin-dm-9-claude-workflows.md` | The 9-workflow LinkedIn DM sequence (ICP Targeting → Call Booking) behind 1,100+ calls booked from 17k DMs — cross-referenced against the existing `linkedin-dm-funnel` (a simpler 3-step version) and `linkedin-signal-outreach` |
+| `.claude/commands/claude-sales-by-role.md` | @salesdaily.co's role-based Claude-in-sales guide (SDR, BDR, AE, Sales Engineer, Sales Manager, VP of Sales, Sales Ops, RevOps), each with a prompt, a pro tip, and the common mistake for that role — distinct from the existing task-based `claude-sales-prompts-20` and the 100-workflow `sales-workflow-catalog` |
+| `.claude/commands/old-seo-vs-new-aeo.md` | The Old-SEO-vs-New-AEO comparison table (core belief, llms.txt, content strategy, observability, platform focus, content style, third-party platforms) — the quick gut-check version of what this repo's `ai-search-visibility` skill covers in full depth |
+| `.claude/commands/claude-revenue-system-58-agents.md` | A 58-named-role checklist for a full AI revenue org (Find Opportunities → Engage Prospects → Close Deals → Retain & Expand → Strategy/Ops), extracted frame-by-frame from the "Claude B2B Sales System.gif" reveal animation; cross-referenced against the existing `client-acquisition-skills` (50 full prompts, same territory) and `sales-workflow-catalog` |
+| `.claude/commands/fable5-outbound-17skills.md` | The 17-skill, 3-phase outbound chain (prospect research → outreach → pipeline management) extracted frame-by-frame from "Fable 5 Outbound System.gif" |
+
+**Already covered, skipped as duplicate (no new action):**
+- "Top 11 Free AI Tools From Google" (`Google AI Tools.jfif`) — word-for-word the same source, same 11 tools, same 4-part usage guide already documented in `.claude/skills/google-ai-toolkit/SKILL.md`.
+
+**Follow-up, same session:** none required — same branch (`claude/epic-mccarthy-ux0133`), same open PR #36.
+
 ### 65th addition — Claude Code visual/skill repos, a security scanner, and a new @ai_slacker learning-prompt skill
 
 **Batch:** 72 images from iCloud Photos (`596f7b78-iCloud_Photos_1.zip` + `660d1012-iCloud_Photos_2.zip`). Sources include @joshualevi.ai (two "7 skills/repos" carousels), @okaashish ("7 Biggest Claude Problems & How to Fix Them"), @buildwithneej (13-slide GitHub-trending roundup), @ai_slacker ("Infinite Private Tutor" 6-prompt learning series), @replace.so, @will.ai.m ("20 free tools" self-hosted alternatives), @brandarmor.ai ("The AI Growth Playbook" AEO/GEO series — overlaps existing `ai-search-visibility`, skipped), and @usetools_design (design-tool directory, informational). 19 candidate repos checked live via `git ls-remote` before listing; zero prior duplicates confirmed via full-text search against this README.
