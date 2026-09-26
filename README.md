@@ -5558,6 +5558,32 @@ Source: 5 direct image uploads (no zip), Sep 2026 — (1) "7 LinkedIn Strategies
 
 **Follow-up, same session:** none required — PR #35 (which carried Batches 82–92) was merged directly by the user; this batch restarts the branch from latest `main` per the merged-PR-restart convention and opens a new PR.
 
+## 94. GitHub Repos for Agents, 10-Part Claude Prompt Formula, 71 Founder Prompts, YouTube & UI-Style References (Batch 94)
+
+Source: 48 images + 1 video from `94f36272-iCloud_Photos_2.zip`, Sep 2026. Sources include @aigenesis.official (2 GitHub-repo carousels: "7 GitHub repos built for AI agents" and a Hermes Agent narrative), @the.wealth.lab ("The Perfect Claude Prompt Structure," a 10-component formula, 10 slides), @aisimplified23 ("71 Claude Prompts For Founders," 9 prompt-card grids), @martiendejong_dev ("Millionaire Reveals 7 Blacklisted ChatGPT Prompts," a 5-step faceless-YouTube carousel — only 5 of the claimed 7 prompts were actually shown), @designwithbyy ("5 UI Design Styles You Should Know," 7 slides), and a "The Wealth Lab Digital Store" product-plug slide (informational only, no content to vendor). The video file (`v15025gf0000dag0v07og65imb3v2rpg.mp4`) could not be processed — this environment has no `ffmpeg`/`cv2` available for frame extraction, so its content is not represented here rather than guessed at.
+
+**New:**
+
+| File | What it is |
+|---|---|
+| `.claude/commands/agent-github-repos-4.md` | 4 of the 7 repos from @aigenesis.official's "GitHub repos for AI agents" carousel that weren't already covered elsewhere (Diagram Design, Awesome Harness Engineering, Anthropic Cybersecurity Skills, Browser Use) — all verified live via `git ls-remote`, with stale forks resolved to their canonical upstream repos |
+| `.claude/commands/claude-prompt-formula-10part.md` | The Wealth Lab 10-component prompt-assembly formula (Role → Objective → Context → Task → Constraints → Workflow → Validation → Stop Conditions → Output Format → Quality Control), with the carousel's full worked SaaS-launch-plan example and the XML-tags pro tip |
+| `.claude/commands/founder-prompts-71.md` | 70 of the 71 "Claude Prompts For Founders" (ads/video scripts, paid social/retargeting, sales page copy, LinkedIn posts/carousels, lead magnets, welcome-email sequences, founder story/positioning) — fill-in-the-blank and copy-paste ready |
+| `.claude/commands/faceless-youtube-prompts-5.md` | The 5 @martiendejong_dev prompts actually shown (niche finder, viral content blueprint, script writer, stock-footage/Sora-2 content generation, content calendar), with an explicit table cross-referencing which overlap this repo's existing `yt-niche`/`yt-script`/`yt-calendar` commands and which (2 of 5) are genuinely new |
+| `.claude/commands/ui-design-styles-5.md` | @designwithbyy's 5 UI design styles (Glassmorphism, Neumorphism, Neobrutalism, Flat Design, Minimalism) as a style-selection reference, each with a ready-to-use generation prompt — distinct from the `design-templates` skill's ready-made HTML layouts |
+
+**Edited (extended rather than duplicated):**
+- `.claude/skills/agent-memory-repos/SKILL.md` — the carousel's "Agent-Memory" repo filled the skill's long-standing empty row 7 placeholder, citing the canonical `rohitg00/agentmemory` upstream instead of the stale `Threesided-Studios/Agent-Memory` fork (94 commits behind) shown on screen; added its install command and a "Choosing the Right Repo" row.
+
+**Already covered, skipped as duplicate (no new action):**
+- `volcengine/OpenViking` (carousel Repo 1) — already row 2 of `agent-memory-repos`.
+- `K-Dense-AI/scientific-agent-skills` (carousel Repo 4) — already documented in more detail in `github-trending-agent-repos-sep2026.md`.
+- Hermes Agent (NousResearch) install/CLI/tips content, and the "Hermes House" self-evolving-agent narrative — fully covered by the existing `hermes-nousresearch` and `oh-my-hermes` skills (same source attribution, @aigenesis.official). The narrative posts' only novel content was a "comment HERMES for a free guide" lead-magnet tease with no real guide content included.
+- "I Built a Complete LinkedIn AI Agent System" (30 Claude Agents infographic) — a lead-magnet tease whose 9 category headings (Content Creation, Ideas & Planning, Voice & Profile, Lead Magnets & Offers, Outreach & Messaging, Follow-up & Retargeting, Objection Handling, Pipeline & Tracking, Sales Calls & Bookings) map one-to-one onto skills already vendored in this repo; no actual agent prompts were shown to add.
+- The Wealth Lab Digital Store slide — a product-store advertisement, no reusable content.
+
+**Follow-up, same session:** none required — restarts on the same freshly-reset `claude/epic-mccarthy-ux0133` branch as Batch 93, carried in the same open PR #36.
+
 ### 65th addition — Claude Code visual/skill repos, a security scanner, and a new @ai_slacker learning-prompt skill
 
 **Batch:** 72 images from iCloud Photos (`596f7b78-iCloud_Photos_1.zip` + `660d1012-iCloud_Photos_2.zip`). Sources include @joshualevi.ai (two "7 skills/repos" carousels), @okaashish ("7 Biggest Claude Problems & How to Fix Them"), @buildwithneej (13-slide GitHub-trending roundup), @ai_slacker ("Infinite Private Tutor" 6-prompt learning series), @replace.so, @will.ai.m ("20 free tools" self-hosted alternatives), @brandarmor.ai ("The AI Growth Playbook" AEO/GEO series — overlaps existing `ai-search-visibility`, skipped), and @usetools_design (design-tool directory, informational). 19 candidate repos checked live via `git ls-remote` before listing; zero prior duplicates confirmed via full-text search against this README.
