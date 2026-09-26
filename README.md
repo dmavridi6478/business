@@ -5584,6 +5584,28 @@ Source: 48 images + 1 video from `94f36272-iCloud_Photos_2.zip`, Sep 2026. Sourc
 
 **Follow-up, same session:** none required — restarts on the same freshly-reset `claude/epic-mccarthy-ux0133` branch as Batch 93, carried in the same open PR #36.
 
+## 95. AI-Draft-to-Shipped-Page Loop, PHP Abstraction, 2026 LLM Model Split, GTM Stack PDF (Batch 95)
+
+Source: 24 images + 4 videos from `ccf0373f-iCloud_Photos_3.zip`, plus a directly-attached `GTM_Stack.pdf` (converted via the `pdf-to-markdown` skill). Image sources include @designarchitect001 (a 7-slide "Bold Fonts" AI-generated brand-name/logotype showcase — Rokiest, Bolde, Headline, Rogbold, Mosafin, Confine), @alexxcodes ("OOP in PHP," the Abstraction chapter, 6 slides), @jimai005 ("Stop Shipping the First AI Draft," a 7-slide 6-step frontend workflow), and @51ultron ("Stop Using One LLM — The 2026 Model Split," 1 infographic). The PDF is Mo Sakr's (@theaibusiness.net) "GTM_Stack" — a 13-slide before/after tour of a 20-person B2B services company's go-to-market stack. The 4 video files (`v26044gc0000daqh23vog65i9chlbkog.mp4`, `v24044gl0000damk59nog65m08qsev9g.mp4`, `v24044gl0000dae8mufog65p89u30dc0.mp4`, `v26044gc0000dar7tu7og65gk2bfde00.mp4`) could not be processed — this environment still has no `ffmpeg`/`ffprobe`/`cv2` for frame extraction, so their content is not represented here rather than guessed at.
+
+**New:**
+
+| File | What it is |
+|---|---|
+| `.claude/commands/ai-draft-to-shipped-page-6step.md` | @jimai005's 6-step loop (Reference → Shape → Build → Render → Critique → Repair) for turning a rough AI-coded page into a shipped one, citing 4 tools per step — Mobbin MCP (new), shadcn MCP (cross-ref `dev-repos-to-clone`), Chrome DevTools MCP (cross-ref `explain-interface`), and `pbakaus/impeccable`'s individual subcommands `/impeccable shape`, `critique`, `audit`, `layout`, `typeset`, `polish` (first time this repo enumerates them individually — the repo already covered the tool generally) |
+| `.claude/commands/oop-php-abstraction.md` | @alexxcodes' "OOP in PHP" Abstraction chapter — interface-vs-abstract-class table, worked `Report`/`SalesReport` PHP code example, and a refactor prompt. The series' other 5 topics (Classes, Encapsulation, Inheritance, Polymorphism, Composition) are named but not detailed — only the Abstraction chapter's slides were in this source |
+| `.claude/commands/llm-2026-model-split.md` | @51ultron's 2026 production matrix for routing tasks across Claude, OpenAI, Gemini, and DeepSeek by superpower/skip-it/context-window |
+| `.claude/commands/gtm-stack-20person-b2b.md` | Mo Sakr's full GTM stack for a 20-person B2B services company — findability (G2/Clutch/Capterra), demand distribution, sales/conversion (Calendly/Cal.com, Fathom/Claap/Gong, Attio/folk/Pipedrive/HubSpot), reporting, a "4 things not to replace" downgrade list, and an AI-answer-engine bonus layer — cross-referenced against this repo's existing `gtm-api-stack`, `abm-gtm-layers`, and `outbound-flow-6stage-18tools` for the overlapping prospecting/enrichment/outbound tool names rather than re-documented |
+
+**Edited (extended rather than duplicated):**
+- `.claude/skills/design-dev-resources/SKILL.md` — the Mobbin row now also notes the official hosted Mobbin MCP server (`https://api.mobbin.com/mcp`), distinct from the existing website-resource listing, with a pointer to the new `ai-draft-to-shipped-page-6step` command for the workflow.
+
+**Already covered, skipped as duplicate (no new action):**
+- `pbakaus/impeccable` (the repo itself) and `shadcn-ui/ui` (the repo itself) — both already fully documented in `claude-code-tooling`, `web-design-taste-workflow`, and `dev-repos-to-clone`; only their specific subcommands/MCP usage from this batch's sources were net-new (see above).
+- The @designarchitect001 "Bold Fonts" carousel (Rokiest, Bolde, Headline, Rogbold, Mosafin, Confine) — 6 AI-generated wordmark/logotype mockups over stock photography, plus a "Bold Fonts — Pro Picks" cover slide. No actual font family name, generation prompt, or technique was shown (just finished word examples in one bold display style) — nothing to extract without fabricating, per this repo's standing rule against inventing unseen content.
+
+**Follow-up, same session:** none required — same branch (`claude/epic-mccarthy-ux0133`), same open PR #36.
+
 ### 65th addition — Claude Code visual/skill repos, a security scanner, and a new @ai_slacker learning-prompt skill
 
 **Batch:** 72 images from iCloud Photos (`596f7b78-iCloud_Photos_1.zip` + `660d1012-iCloud_Photos_2.zip`). Sources include @joshualevi.ai (two "7 skills/repos" carousels), @okaashish ("7 Biggest Claude Problems & How to Fix Them"), @buildwithneej (13-slide GitHub-trending roundup), @ai_slacker ("Infinite Private Tutor" 6-prompt learning series), @replace.so, @will.ai.m ("20 free tools" self-hosted alternatives), @brandarmor.ai ("The AI Growth Playbook" AEO/GEO series — overlaps existing `ai-search-visibility`, skipped), and @usetools_design (design-tool directory, informational). 19 candidate repos checked live via `git ls-remote` before listing; zero prior duplicates confirmed via full-text search against this README.
