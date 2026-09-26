@@ -5606,6 +5606,28 @@ Source: 24 images + 4 videos from `ccf0373f-iCloud_Photos_3.zip`, plus a directl
 
 **Follow-up, same session:** none required — same branch (`claude/epic-mccarthy-ux0133`), same open PR #36.
 
+## 96. AI Agent Building Blocks, Prompt-Fix Framework, Claude Connectors Directory, Actual Budget App (Batch 96)
+
+Source: 24 images + 1 video from `2c9dd17a-iCloud_Photos_4.zip`, and 11 images from `9f25b2bf-iCloud_Photos_1.zip`. Sources include @dotdevs ("5 more open-source apps that replace paid subscriptions · pt 2" — Jellyfin, Nextcloud, Vaultwarden, Paperless-ngx, Actual), @mun_good ("How to Build an AI Agent," an 8-building-blocks + 7-step framework), @learnaiwithdoyin ("Why Your Prompts Keep Failing," 4 fixes), @your.aimentor (2 dense infographics: a Claude connectors directory, and "10 GitHub Repos That Turn Claude Into a Productivity Beast"), @usamaakrm ("How to Build your 1st Claude Agent," a 3-level save/autopilot/cloud carousel), and @epic8244 ("I deleted all Paid Softwares," 5 desktop-app alternatives). This batch turned up an unusually high duplicate rate — 3 of the 6 image sources were carousels this repo already has word-for-word from earlier batches. Both video files (`v1c044g50000darg7o7og65tnfv2r7a0.mp4` in zip 1) could not be processed — no `ffmpeg`/`ffprobe`/`cv2` in this environment.
+
+**New:**
+
+| File | What it is |
+|---|---|
+| `.claude/commands/ai-agent-8-building-blocks.md` | @mun_good's 8-building-blocks agent-architecture framework (Purpose, Prompt, LLM, Tools, Memory, Orchestration, Interface, Testing) plus a 7-step quick-build guide and a tool stack by use case — cross-referenced against this repo's other two agent-building frameworks (`build-ai-agent-10-minutes`, `build-claude-agent-7-steps`) rather than duplicated |
+| `.claude/commands/fix-vague-ai-prompts-4ways.md` | @learnaiwithdoyin's 4 fixes for prompts that keep failing (say what good looks like, give it missing context, specify output format, push back on the first answer), each with a copy-paste example |
+| `.claude/commands/claude-connectors-by-category.md` | @your.aimentor's directory of Claude connectors grouped by job (productivity, sales/marketing, data/analytics, design, finance, code/dev, engineering, communication, CRM, knowledge management, life sciences, payments, customer support, content/web) |
+
+**Edited (extended rather than duplicated):**
+- `.claude/skills/self-hosted-docker-stack/SKILL.md` — added a "Batch 4" table entry for Actual (actualbudget/actual, a self-hosted YNAB alternative), the one genuinely new app in @dotdevs' pt-2 carousel; the other 4 (Jellyfin, Nextcloud, Vaultwarden, Paperless-ngx) were already documented here or in `ms365-free-alternatives`.
+
+**Already covered, skipped as duplicate (no new action):**
+- @epic8244's "I deleted all Paid Softwares" carousel (OpenCut, AnythingLLM, Nuclear, Cap, Handy) — word-for-word the same 5 apps, same repos, already documented in `.claude/commands/opensource-desktop-app-alternatives.md`.
+- @your.aimentor's "10 GitHub Repos That Turn Claude Into a Productivity Beast" (Repomix, Everything Claude Code, Dify, Flowise, Onyx, Claude Skills by Anthropic, Awesome Claude Skills, Obsidian Skills, NotebookLM Skill, Marketing Skills by Corey Haines) — already documented in full in `.claude/commands/claude-productivity-repos.md`.
+- @usamaakrm's "How to Build your 1st Claude Agent" 3-level carousel (Save a skill → Autopilot → Run in the cloud) — already documented word-for-word in `.claude/commands/build-first-claude-agent.md`.
+
+**Follow-up, same session:** none required — same branch (`claude/epic-mccarthy-ux0133`), same open PR #36.
+
 ### 65th addition — Claude Code visual/skill repos, a security scanner, and a new @ai_slacker learning-prompt skill
 
 **Batch:** 72 images from iCloud Photos (`596f7b78-iCloud_Photos_1.zip` + `660d1012-iCloud_Photos_2.zip`). Sources include @joshualevi.ai (two "7 skills/repos" carousels), @okaashish ("7 Biggest Claude Problems & How to Fix Them"), @buildwithneej (13-slide GitHub-trending roundup), @ai_slacker ("Infinite Private Tutor" 6-prompt learning series), @replace.so, @will.ai.m ("20 free tools" self-hosted alternatives), @brandarmor.ai ("The AI Growth Playbook" AEO/GEO series — overlaps existing `ai-search-visibility`, skipped), and @usetools_design (design-tool directory, informational). 19 candidate repos checked live via `git ls-remote` before listing; zero prior duplicates confirmed via full-text search against this README.

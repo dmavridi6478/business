@@ -1,6 +1,6 @@
 ---
 name: self-hosted-docker-stack
-description: Curated directory of self-hosted, Docker-deployable services — an original 10-app batch covering game-server hosting, AI-powered local CCTV, media streaming, Docker stack management, PDF tooling, self-hosted AI chat, network-wide ad/tracker blocking, uptime monitoring, a password manager, and self-hosted Git; plus a second batch covering a document-processing pipeline (searchable document archive, messy-document-to-Markdown, RAG document prep, plain-English structured extraction, OCR) and business-ops SaaS replacements (privacy-first analytics, newsletter/mailing-list manager, screen recorder, Markdown notes, project/task board, low-code internal-tools builder, visual database, AI customer-support chatbot); plus a third batch (heavier-weight product analytics, no-code web scraping, local dubbing/subtitles, link attribution) — each verified against its real GitHub/Codeberg repository. Use this when the user is planning a homelab, wants to self-host infrastructure instead of paying for a cloud/SaaS equivalent, asks "what should I run on my server," or is deciding between a hosted service and a self-hosted Docker alternative. Overlaps in part with lean-software-stack (both PDF tooling and password managers appear in both, as a desktop vs. server-hosted choice) — use that skill for desktop-app alternatives, this one for services meant to run continuously on a server/NAS.
+description: Curated directory of self-hosted, Docker-deployable services — an original 10-app batch covering game-server hosting, AI-powered local CCTV, media streaming, Docker stack management, PDF tooling, self-hosted AI chat, network-wide ad/tracker blocking, uptime monitoring, a password manager, and self-hosted Git; plus a second batch covering a document-processing pipeline (searchable document archive, messy-document-to-Markdown, RAG document prep, plain-English structured extraction, OCR) and business-ops SaaS replacements (privacy-first analytics, newsletter/mailing-list manager, screen recorder, Markdown notes, project/task board, low-code internal-tools builder, visual database, AI customer-support chatbot); plus a third batch (heavier-weight product analytics, no-code web scraping, local dubbing/subtitles, link attribution); plus a fourth batch (a personal finance / envelope-budgeting app) — each verified against its real GitHub/Codeberg repository. Use this when the user is planning a homelab, wants to self-host infrastructure instead of paying for a cloud/SaaS equivalent, asks "what should I run on my server," or is deciding between a hosted service and a self-hosted Docker alternative. Overlaps in part with lean-software-stack (both PDF tooling and password managers appear in both, as a desktop vs. server-hosted choice) — use that skill for desktop-app alternatives, this one for services meant to run continuously on a server/NAS.
 ---
 
 # Self-Hosted Docker Stack
@@ -53,6 +53,14 @@ data, mostly unattended:
 | **Appsmith** | Retool | Low-code platform for building internal dashboards/admin panels from a database or API | https://github.com/appsmithorg/appsmith |
 | **Apitable** | Airtable | Open-source visual database/low-code platform for CRMs, forms, dashboards | https://github.com/apitable/apitable |
 | **Botpress** | Intercom + a chatbot vendor | AI-native customer-support chatbot platform, TypeScript SDK/CLI | https://github.com/botpress/botpress |
+
+## Batch 4: personal finance ("5 more open-source apps that replace paid subscriptions · pt 2", @dotdevs)
+
+The other 4 apps in this source (Jellyfin, Nextcloud, Vaultwarden, Paperless-ngx) are already in the tables above; only this one is new:
+
+| App | Replaces | What it does | Repo |
+|---|---|---|---|
+| **Actual** | YNAB | Envelope budgeting, with the data on your own machine | https://github.com/actualbudget/actual |
 
 Not added to either table (reviewed, judged out of scope for this list):
 **DeerFlow** (bytedance/deer-flow — a general-purpose research/coding
