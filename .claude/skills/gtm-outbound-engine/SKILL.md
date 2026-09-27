@@ -9,8 +9,29 @@ Sources (uploaded infographics):
 - "The 5-layer GTM engine — from signal detection to a CRM record, fully automated with AI agents" (Cold IQ / Julien Lieben) — the layer model and 14-tool stack.
 - "The All-in-One Outbound Pipeline — Everything you need to run high-converting outbound. Inside Claude Code." — the 5-step execution flow.
 - "AI-Powered Lead Generation Machine — How I'd build a predictable B2B pipeline using AI" (Denis Panjuta) — a second, more granular 9-stage tool-stack map, see below. Same architecture (signal → data → outreach → CRM), different and largely non-overlapping tool names.
+- "21 Things to Install in Claude to Build a Lead Generation System" (Denis Panjuta) — a Plugins/Skills/MCP breakdown of the same system, see the connector-status note below.
 
-Both are vendor marketing (Cold IQ sells a unified GTM API). The architecture is sound; "fully automated" is not — see Gates.
+Both the first two are vendor marketing (Cold IQ sells a unified GTM API). The architecture is sound; "fully automated" is not — see Gates.
+
+## Connector status for the "21 Things to Install" list
+
+Of the 7 MCP servers that source names (Apollo, HubSpot, Clay, Common
+Room, Notion, Slack, Zapier), **6 are already connected and available in
+this Claude Code environment** — HubSpot, Clay, Common Room, Notion,
+Slack, and Zapier all appear in this session's own MCP tool list, nothing
+to install. Only **Apollo MCP** is not connected here; Apollo-style
+enrichment in this account currently runs through Clay/Vibe Prospecting
+instead (see the layer table above). The source's "Plugins" column
+(Revenoid, BetterCallClaudeGrowth, "Claude Marketing," Octave) names
+products not independently verified to a canonical repo/marketplace
+listing — don't install any of those from name alone; Windsor.ai and
+Apollo are real, established companies but their "plugin" packaging as
+shown wasn't confirmed. The source's "Skills" column (`prospect`,
+`enrich-lead`, `account-research`, `draft-outreach`, `call-prep`,
+`lead-triage`, `cold-email`) is exactly this skill's 5-step pipeline
+above broken into finer-grained stages — build against the pipeline
+already documented here rather than creating seven redundant micro-skills
+for the same jobs.
 
 ## The five layers (bottom-up = build order)
 
