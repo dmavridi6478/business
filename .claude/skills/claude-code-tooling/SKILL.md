@@ -352,6 +352,22 @@ GPT-Image-2, 530+ reverse-engineered examples) also appeared in this same
 source batch — already documented in this repo's README (65th Addition),
 not re-added here.
 
+### Two named plugins from that directory ("5 Claude installs" carousel, IMG batch)
+
+Both confirmed real via the live `anthropics/claude-plugins-official` repo
+listing (39 plugins total) before being added — the source carousel named
+these as "Anthropic's official project scanner" and "Anthropic's official
+vulnerability hunter":
+
+| Plugin ID | What it does | Install |
+|---|---|---|
+| `claude-code-setup` | Read-only: scans the project and recommends the top 1-2 automations per category (MCP servers, skills, hooks, subagents, slash commands) — doesn't modify files itself. Already vendored in full as this repo's `claude-code-setup-plugin` skill, not duplicated here. | `/plugin install claude-code-setup@claude-plugins-official` |
+| `claude-security` | Adds a `/claude-security` command that launches a team of Claude agents hunting for vulnerabilities in the open project. Distinct from the separate `security-guidance` plugin in the same marketplace (deterministic pattern-matching on every edit, no model call, catches `eval()`/`os.system()`/hardcoded-credential-style constructs) and from this repo's own generic `security-review` skill (a checklist, not an agent-driven hunt). Neither plugin blocks writes/commits — findings surface as follow-up work in the same session. | `/plugin install claude-security@claude-plugins-official` |
+
+The carousel's third name, "OmniRoute," is a different, unrelated project
+(not part of this official directory) — see the README's third-photo-batch
+note for why it's a confirmed do-not-install, not just unverified.
+
 ## Agent workspace / sandboxing platforms
 
 | Repo | What it's for | Install / link |
