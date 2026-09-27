@@ -8,6 +8,7 @@ description: Design and run a B2B outbound engine as five layers — orchestrati
 Sources (uploaded infographics):
 - "The 5-layer GTM engine — from signal detection to a CRM record, fully automated with AI agents" (Cold IQ / Julien Lieben) — the layer model and 14-tool stack.
 - "The All-in-One Outbound Pipeline — Everything you need to run high-converting outbound. Inside Claude Code." — the 5-step execution flow.
+- "AI-Powered Lead Generation Machine — How I'd build a predictable B2B pipeline using AI" (Denis Panjuta) — a second, more granular 9-stage tool-stack map, see below. Same architecture (signal → data → outreach → CRM), different and largely non-overlapping tool names.
 
 Both are vendor marketing (Cold IQ sells a unified GTM API). The architecture is sound; "fully automated" is not — see Gates.
 
@@ -22,6 +23,34 @@ Both are vendor marketing (Cold IQ sells a unified GTM API). The architecture is
 | 5 | System of record | Every signal, enrichment and reply writes back to one CRM | folk | HubSpot (`search_crm_objects`, `get_crm_objects`), Airtable |
 
 The full 14-tool stack from the source: Cold IQ, Apollo, Explorium, PredictLeads, LimaData, Prospeo, FullEnrich, GetLeads, Openmart, Instantly, Expandi, Hypertide, LeadMagic, folk. **[Certain]** these are the names on the graphic; **[Guessing]** on current pricing/availability — verify each before buying.
+
+## Alternate tool-stack map (9-stage pipeline, Denis Panjuta)
+
+A second source graphic breaks the same signal → data → outreach → CRM
+architecture into nine narrower stages with different named tools (some
+overlap with the 14-tool list above — Apollo appears in both; most don't).
+**[Certain]** these are the names on the graphic; **[Guessing]** on current
+pricing/availability/whether each is still the best-in-category pick —
+this is a snapshot of one creator's stack, not an endorsement:
+
+| Stage | Job | Tools named in source |
+|---|---|---|
+| Traffic sources | Get discovered | LinkedIn, Instantly, Webflow (SEO), Google Ads, YouTube, Eventbrite, Discord |
+| Lead capture | Collect leads | Phantombuster (LinkedIn followers), Leadfeeder (site visitors), Typeform (form fills), Shield (post engagers), Snov.io (email replies), beehiiv (newsletter subs) |
+| Data enrichment | Get full context | Clay, Apollo.io, Clearbit, Lusha, Pipl, People Data Labs |
+| AI research & insights | Understand prospects | ChatGPT, Claude, Perplexity, Gemini, Tavily, Exa |
+| Lead scoring & prioritization | Find best opportunities | MadKudu, 6sense, Bombora, Zoho SalesIQ, Calixa, Regie.ai |
+| Personalization engine | Create relevance at scale | Smartwriter.ai, Jasper, Tyle (dynamic images), ChatGPT (pain-point extraction), Lemlist AI (icebreakers), Clay (custom fields) |
+| Outreach | Multi-channel AI outreach | Lemlist, Expandi, Aircall, Zoko (WhatsApp), Meta Ads (retargeting), Outplay |
+| CRM & follow-up | Track, nurture, close | HubSpot, Salesforce, pipedrive, Make, Mixmax, ClickUp |
+| Sales process | Human-run close | Qualified lead → discovery call → needs assessment → solution proposal → negotiation → closed won |
+
+Reach for this map instead of the 14-tool stack above when the gap is
+specifically in an earlier stage the first map doesn't break out (traffic
+capture, AI-assisted personalization at the copy/image level, or a
+specific CRM/automation choice) — otherwise the 5-layer model and its
+Claude Code pipeline above is still the one to build against; this table
+is a tool reference, not a second architecture to implement in parallel.
 
 ## The 5-step pipeline (inside Claude Code)
 
