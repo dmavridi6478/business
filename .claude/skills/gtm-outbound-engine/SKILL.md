@@ -10,8 +10,34 @@ Sources (uploaded infographics):
 - "The All-in-One Outbound Pipeline — Everything you need to run high-converting outbound. Inside Claude Code." — the 5-step execution flow.
 - "AI-Powered Lead Generation Machine — How I'd build a predictable B2B pipeline using AI" (Denis Panjuta) — a second, more granular 9-stage tool-stack map, see below. Same architecture (signal → data → outreach → CRM), different and largely non-overlapping tool names.
 - "21 Things to Install in Claude to Build a Lead Generation System" (Denis Panjuta) — a Plugins/Skills/MCP breakdown of the same system, see the connector-status note below.
+- "The Role of a GTM Engineer" (Matteo Fois / Kinetyca.com) — a Venn diagram naming Claude itself as the "GTM Engineer" sitting at the center of three overlapping tool categories, see below.
 
 Both the first two are vendor marketing (Cold IQ sells a unified GTM API). The architecture is sound; "fully automated" is not — see Gates.
+
+## A fourth tool map: Claude as "GTM Engineer" (Matteo Fois)
+
+This source frames the same job differently — instead of a linear
+pipeline, three overlapping engines with Claude at the center resolving
+which one to route a task to:
+
+| Engine | Job | Tools named in source | Overlap zone |
+|---|---|---|---|
+| Growth Engine | Demand generation, campaign automation | Bombora (already listed above), RB2B, GoExtrovert, Apify, Common Room | → *Signal Routing* (Growth ∩ Ops) |
+| Ops Engine | CRM automation, pipeline management | Attio, n8n, Notion, Clay, Supabase | → *Signal Routing* (Growth ∩ Ops), *Pipeline Ops* (Ops ∩ Sales) |
+| Sales Engine | AI prospecting, personalized outbound | Apollo, Prospeo, HeyReach, Sales Navigator, Smartlead | → *Warm Outreach* (Growth ∩ Sales), *Pipeline Ops* (Ops ∩ Sales) |
+
+**[Certain]** these are the names on the graphic; **[Guessing]** on
+pricing/current availability. New names not in the tool tables above:
+**RB2B** (identifies anonymous website visitors by company/person — a
+top-of-funnel signal source), **GoExtrovert**, **Apify** (web-scraping
+platform, useful for building custom enrichment sources this account's
+connectors don't cover), **Attio** (CRM, an alternative to the
+HubSpot/Airtable system-of-record above), **Supabase** (already
+documented as a dev-infra pick in `dev-repos-to-clone`, shown here in a
+GTM-ops role instead), **HeyReach** (LinkedIn outreach automation),
+**Smartlead** (already named in the 5-step pipeline's step 5 above).
+Notion, Clay, Common Room, and Apollo are already connected/covered
+above — this map doesn't change their status.
 
 ## Connector status for the "21 Things to Install" list
 
