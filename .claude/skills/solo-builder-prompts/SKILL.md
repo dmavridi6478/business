@@ -1,6 +1,6 @@
 ---
 name: solo-builder-prompts
-description: Use when the user wants a ready-made prompt for a solo/indie product-marketing task — a landing page headline, App Store title/subtitle/keywords, a behavioral onboarding email sequence, launch-day comment replies, or a reply to a first user's message. Trigger phrases include "write my landing page headline", "help with App Store metadata", "onboarding emails", "launch day comments/replies", "reply to this user", or "/solo-builder-prompts". Also use when the user just wants the raw prompt text to paste elsewhere themselves.
+description: Use when the user wants a ready-made prompt for a solo/indie product-marketing task — a landing page headline, App Store title/subtitle/keywords, a behavioral onboarding email sequence, launch-day comment replies, a reply to a first user's message, rewriting rough notes into an email, making an email sound human, or building a 30-day content calendar from 5 content pillars. Trigger phrases include "write my landing page headline", "help with App Store metadata", "onboarding emails", "launch day comments/replies", "reply to this user", "content calendar", "content pillars", "30-day content plan", or "/solo-builder-prompts". Also use when the user just wants the raw prompt text to paste elsewhere themselves.
 ---
 
 # Solo Builder Prompts
@@ -111,6 +111,49 @@ Then highlight any sentence where the wording could be misunderstood or sounds m
 ```
 
 Mistake avoided: sending the first draft instead of catching overconfident or ambiguous wording.
+
+## 8. 30-day content calendar (two-step)
+
+> From @earchoe's "AI Playbook" carousel. The point isn't "use AI" — it's
+> removing the "what do I post today?" bottleneck by giving every post a job
+> instead of generating 30 random captions.
+
+Step 1 — build the strategy (5 content pillars):
+
+```
+My niche: [NICHE]
+Audience: [AUDIENCE]
+Offer: [OFFER]
+Goal for the next 30 days: [GOAL]
+Topics I already know well: [TOPICS]
+
+Build 5 content pillars: Teach, Demonstrate, Prove, Opinion/Story, Convert. Explain the job of each pillar.
+```
+
+Step 2 — build the calendar from those pillars:
+
+```
+Create a 30-day calendar using those pillars. For every day include:
+- Hook
+- Format
+- One useful takeaway
+- CTA
+- What I need to create it
+
+Avoid repeating the same idea with different wording. Prioritise practical posts people would save or send to someone.
+```
+
+Run Step 1 first, let the user review the 5 pillars, then run Step 2 in the
+same conversation so it can reference them. Attach any existing best-performing
+posts to Step 1 if the user has them — it visibly improves the pillars.
+
+Mistake avoided: treating a content calendar as 30 generated captions instead
+of a repeatable system where every post has a job.
+
+Monetization note (from the same source): this becomes a monthly
+content-planning service for professionals/small businesses when you add a
+review call and human editing on top — sell "a specific result for a specific
+customer with human quality control," not "I know how to prompt AI."
 
 ## Applying any output (companion checklist)
 
