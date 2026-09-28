@@ -96,3 +96,14 @@ vary a lot from a typical Node/Python app.
 | `ai-agent-founding-team` | @theromanknox (pages 2–4) | Org chart + first six AI agent hires + Chief of Staff orchestrator pattern |
 
 **Duplicates from Batch 84 (no new action):** All content from @replace.so, @githubnow, @swblessed, @alexfishhh1, @your.ai.mentor, and @skilldropai carousels was already processed in Batch 84.
+
+## Additional repos (Batch 86 — @replace.so "Open-source repos" video, week series)
+
+| Repo | Category | What it is | Clone |
+|---|---|---|---|
+| [`pocketbase/pocketbase`](https://github.com/pocketbase/pocketbase) | Backend (DB/auth/realtime) | Open-source realtime backend in a single Go file/binary — auth, a SQLite-backed DB with a built-in admin UI, realtime subscriptions, and file storage, embeddable as a Go library or run standalone. MIT. ~61K★, 3.7K forks | `git clone https://github.com/pocketbase/pocketbase` |
+| [`heyform/heyform`](https://github.com/heyform/heyform) | Forms / surveys | Open-source Typeform alternative — conversational forms, surveys and quizzes with conditional logic, picture-choice/date fields, webhook/Zapier/Make.com integrations, and brand theming. Self-hostable | `git clone https://github.com/heyform/heyform` |
+
+`openwhispr/openwhispr` (voice dictation) also appeared in this same video — already tracked above (Batch 84 row) and vendored as the `openwhispr` skill; no new action.
+
+Not a repo — skip: the same source zip also showed a `bytedance/seedance-2` AI video-ad generation demo via the paid `kie.ai` API (@imjonathanacuna, "Create ADs With Seedance 2.0"). It's a hosted model/API, not something to clone or self-host, so it's noted here for reference only.
