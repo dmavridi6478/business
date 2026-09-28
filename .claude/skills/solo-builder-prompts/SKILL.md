@@ -78,6 +78,40 @@ Here is a message from one of my first users: [paste]. Reply in under 80 words, 
 
 Mistake avoided: thanking them politely and learning nothing about your activation gap.
 
+## 6. Rewrite rough notes into an email
+
+> For any email, not just marketing ones — follow-ups, difficult
+> conversations, proposals, introductions, customer replies.
+
+```
+Rewrite my rough notes into an email.
+
+Recipient: [WHO]
+Relationship: [CLIENT / MANAGER / SUPPLIER]
+Goal: [WHAT I WANT TO HAPPEN]
+Tone: [WARM / DIRECT / DIPLOMATIC]
+Constraints: [DEADLINE / BUDGET / POLICY]
+
+ROUGH NOTES:
+[PASTE]
+```
+
+Mistake avoided: asking AI to "make this professional" instead of giving it the context it actually needs.
+
+## 7. Make an email sound human
+
+> Run as a second pass on the output of prompt 6, or on any AI-drafted email.
+
+```
+Give me 3 versions: concise, warm and firm.
+
+Keep only claims supported by my notes. Remove filler and corporate clichés.
+
+Then highlight any sentence where the wording could be misunderstood or sounds more certain than the evidence allows.
+```
+
+Mistake avoided: sending the first draft instead of catching overconfident or ambiguous wording.
+
 ## Applying any output (companion checklist)
 
 Whichever prompt is used, run the result through this before it ships:
