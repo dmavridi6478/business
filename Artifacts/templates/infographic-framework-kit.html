@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Framework Infographic Kit</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;700;900&display=swap" rel="stylesheet">
+<style>
+  /* =====================================================
+     TEMPLATE H: Framework Infographic Kit (3 blocks)
+     1) Radial 8-step cycle   — SalesDaily "8 Ps of Sales"
+     2) 5-level pyramid       — Kinetyca "5 Levels of AI in GTM"
+     3) 3-circle Venn + zones — Beloved Brands "Brand Positioning"
+     Size: each .board is 1080×1350. Edit the labels in the markup.
+     ===================================================== */
+  :root {
+    --ink: #0e2a2f; --paper: #f4f2ef; --muted: #56656a;
+    --b1:#7db2ff; --b2:#5c9be8; --b3:#3a7cc4; --b4:#2b5f9c; --b5:#5b6ad8; --b6:#3e4aa8; --b7:#2a3778; --b8:#83a9f0;
+    --l1:#e3e2fb; --l2:#dbe8fb; --l3:#fbdde3; --l4:#f4e9d2; --l5:#e2f0d4;
+    --win:#2f7d24; --risk:#666; --dumb:#0c0f87; --lose:#a30b0b; --brand:#a30b0b;
+    --font: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: #cfcfcf; display: flex; flex-direction: column; align-items: center; gap: 40px; padding: 40px 0; font-family: var(--font); }
+  .board { width: 1080px; height: 1350px; background: var(--paper); position: relative; overflow: hidden; color: var(--ink); }
+  .board h1 { text-align: center; font-weight: 900; }
+  .src { position: absolute; bottom: 34px; left: 0; right: 0; text-align: center; font-size: 22px; color: var(--muted); }
+
+  /* 1) RADIAL */
+  .radial h1 { font-size: 64px; letter-spacing: 2px; padding-top: 60px; text-transform: uppercase; white-space: nowrap; }
+  .hub { position: absolute; left: 50%; top: 700px; width: 380px; height: 380px; transform: translate(-50%,-50%); border-radius: 50%; border: 44px solid #2d86c9; background: var(--paper); display: grid; place-items: center; text-align: center; font-size: 46px; font-weight: 900; line-height: 1.05; }
+  .node { position: absolute; width: 128px; height: 128px; border-radius: 50%; display: grid; place-items: center; color: #fff; font-weight: 900; font-size: 44px; border: 8px solid #fff; box-shadow: 0 6px 18px rgba(0,0,0,.18); }
+  .lbl { position: absolute; width: 330px; font-size: 22px; line-height: 1.35; color: #2a2f33; }
+  .lbl b { display: block; font-size: 25px; }
+  /* positions: 8 nodes clockwise from top-left */
+  .n1{left:290px;top:250px;background:var(--b1)} .l1{left:40px;top:250px;width:230px}
+  .n2{left:150px;top:470px;background:var(--b2)} .l2{left:30px;top:390px;width:230px}
+  .n3{left:150px;top:850px;background:var(--b3)} .l3{left:30px;top:800px;width:230px}
+  .n4{left:290px;top:1060px;background:var(--b4)} .l4{left:60px;top:1200px;width:340px}
+  .n5{left:660px;top:1060px;background:var(--b5)} .l5{left:800px;top:1180px;width:260px}
+  .n6{left:800px;top:850px;background:var(--b6)} .l6{left:800px;top:780px;width:240px;text-align:left}
+  .n7{left:800px;top:470px;background:var(--b7)} .l7{left:800px;top:395px;width:240px}
+  .n8{left:660px;top:250px;background:var(--b8)} .l8{left:800px;top:260px;width:240px;text-align:left}
+
+  /* 2) PYRAMID */
+  .pyr { display: flex; flex-direction: column; align-items: center; gap: 10px; }
+  .pyr h1 { font-size: 72px; padding-top: 36px; margin-bottom: 6px; } .pyr h1 span { color: #8a1f47; }
+  .tier { text-align: center; border-radius: 36px; border: 2px solid rgba(0,0,0,.08); padding: 8px 24px; }
+  .tier small { display: block; font-size: 22px; font-weight: 700; margin-bottom: 4px; }
+  .tier b { font-size: 40px; font-weight: 900; display: block; line-height: 1.05; }
+  .tier i { display: inline-block; margin-top: 12px; background: #fff; border-radius: 12px; padding: 6px 18px; font-style: normal; font-size: 22px; font-weight: 700; }
+    .t5{width:400px;background:var(--l5);color:#3f7d1c} .t4{width:580px;background:var(--l4);color:#8a6a1c}
+  .t3{width:760px;background:var(--l3);color:#b3202f} .t2{width:940px;background:var(--l2);color:#2b62c8} .t1{width:1040px;background:var(--l1);color:#5b4bd8}
+  .tier em { display: block; font-style: normal; font-size: 24px; color: #2a2f33; margin-top: 10px; }
+  .tier span { display: block; font-size: 22px; font-weight: 700; color: #2a2f33; margin-top: 6px; }
+
+  /* 3) VENN */
+  .venn h1 { font-size: 120px; letter-spacing: -2px; color: var(--brand); padding-top: 50px; line-height: 1; }
+  .circle { position: absolute; width: 560px; height: 560px; border-radius: 50%; border: 3px solid #999; display: grid; place-items: center; font-size: 46px; font-weight: 900; text-align: center; }
+  .c1{left:70px;top:430px;padding-bottom:110px;padding-right:90px} .c2{left:450px;top:430px;padding-bottom:110px;padding-left:90px} .c3{left:260px;top:700px;padding-top:190px}
+  .zone { position: absolute; color: #fff; font-weight: 900; font-size: 38px; text-align: center; padding: 14px 30px; line-height: 1.1; }
+  .z-win{background:var(--win);right:60px;top:410px} .z-dumb{background:var(--dumb);right:60px;top:770px} .z-lose{background:var(--lose);left:40px;bottom:250px} .z-risk{background:var(--risk);right:180px;bottom:120px}
+  .brandline { position: absolute; bottom: 60px; left: 0; right: 0; text-align: center; letter-spacing: 14px; font-size: 26px; color: var(--brand); font-weight: 700; }
+</style>
+</head>
+<body>
+
+<!-- 1) RADIAL 8-STEP CYCLE -->
+<section class="board radial">
+  <h1>The [8] [Ps] of [Topic]</h1>
+  <div class="hub">[8Ps<br>of the<br>process]</div>
+  <div class="node n1">1</div><div class="lbl l1"><b>[Step 1]:</b> [Definition in one sentence.]</div>
+  <div class="node n2">2</div><div class="lbl l2"><b>[Step 2]:</b> [Definition.]</div>
+  <div class="node n3">3</div><div class="lbl l3"><b>[Step 3]:</b> [Definition.]</div>
+  <div class="node n4">4</div><div class="lbl l4"><b>[Step 4]:</b> [Definition.]</div>
+  <div class="node n5">5</div><div class="lbl l5"><b>[Step 5]:</b> [Definition.]</div>
+  <div class="node n6">6</div><div class="lbl l6"><b>[Step 6]:</b> [Definition.]</div>
+  <div class="node n7">7</div><div class="lbl l7"><b>[Step 7]:</b> [Definition.]</div>
+  <div class="node n8">8</div><div class="lbl l8"><b>[Step 8]:</b> [Definition.]</div>
+  <div class="src">Source: [name] — restyled template, replace all text</div>
+</section>
+
+<!-- 2) 5-LEVEL PYRAMID -->
+<section class="board pyr">
+  <h1>The <span>5 Levels</span> of [Topic]</h1>
+  <div class="tier t5"><small>Level 5</small><b>[Name]</b><i>[team shape]</i><em>[Defining sentence.]</em><span>[tool · tool]</span></div>
+  <div class="tier t4"><small>Level 4</small><b>[Name]</b><i>[team shape]</i><em>[Defining sentence.]</em><span>[tool · tool]</span></div>
+  <div class="tier t3"><small>Level 3</small><b>[Name]</b><i>[team shape]</i><em>[Defining sentence.]</em><span>[tool · tool]</span></div>
+  <div class="tier t2"><small>Level 2</small><b>[Name]</b><i>[team shape]</i><em>[Defining sentence.]</em><span>[tool · tool]</span></div>
+  <div class="tier t1"><small>Level 1</small><b>[Name]</b><i>[team shape]</i><em>[Defining sentence.]</em><span>[tool · tool]</span></div>
+  <div class="src">Source: [name] — restyled template, replace all text</div>
+</section>
+
+<!-- 3) VENN WITH ZONES -->
+<section class="board venn">
+  <h1>[TITLE IN<br>CAPS]</h1>
+  <div class="circle c1">[Circle A]</div><div class="circle c2">[Circle B]</div><div class="circle c3">[Circle C]</div>
+  <div class="zone z-win">Winning<br>Zone</div><div class="zone z-dumb">Dumb<br>Zone</div><div class="zone z-lose">Losing<br>Zone</div><div class="zone z-risk">Risky<br>Zone</div>
+  <div class="brandline">[B R A N D]</div>
+</section>
+
+</body>
+</html>

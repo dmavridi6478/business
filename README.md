@@ -5731,3 +5731,18 @@ Source: `80c9789b-LinkedIn_Master_Guide_for_Claude.zip` — 4 static images (`.j
 > **5 — Hidden Gap Detector:** I think I already master [SKILL]. I want you to prove me wrong. Ask me 5 questions that seem simple but expose the gaps of someone who has never really gone deep. For every answer I give, tell me: what does my answer reveal about what's still missing from my foundation. Don't go easy on me. If I'm shallow, say it straight.
 
 > **6 — Forced Feynman Method:** I just studied [TOPIC]. I'm going to explain to you what I understood as if you were a 10-year-old child. As I explain, stop me at every point where I use jargon without knowing what it means, where I skip a step in the reasoning, or where I oversimplify to the point of being wrong. At the end, tell me exactly what these mistakes reveal about what is still not solid in my head.
+
+
+## 98. 8 Ps of Sales, AI-in-GTM Levels, Brand Zones, Prompt Frameworks & Design Kit (Batch 98)
+
+Source: iCloud Photos (36 card screenshots) + "The 8 Ps of Sales" (5 infographics), Sep 2026. Full plan: `docs/batch-98-action-plan.md`; every prompt in plain text: `docs/batch-98-prompts.md`.
+
+- `eight-ps-of-sales` — audit a sales motion against Prospecting → Post-Sale, score 0–3 from evidence; `/8ps-audit`
+- `ai-gtm-maturity-levels` — Kinetyca's 5 Levels of AI in GTM (Tab → Brain) with a one-level-up rule; `/gtm-ai-level`
+- `brand-positioning-zones` — Winning / Risky / Dumb / Losing zone map from the Beloved Brands Venn; `/positioning-zones`
+- `prompting-frameworks-8` — TRACE, TAG, RTF, CLEAR, PACT, STAR, RISE, RASCEF with a selector; `/prompt-frame`
+- `linkedin-prospecting-8-systems` — 8-system operating model reconstructed from the guide's TOC only (its prompts are gated); `/linkedin-systems`
+- `competitor-price-watchlist` — weekly competitor price/offer brief with UNVERIFIED flags (@earchoe playbook); `/price-watchlist`
+- `/workflow-to-agent` — skill → agent team → autopilot in one pass; `build-ai-agent-10-minutes/references/wealth-lab-6-step.md` holds the 6-step variant
+- Design: templates `social-card-editorial-playbook`, `social-card-github-daily-briefing`, `social-card-repo-showcase-warm`, `infographic-framework-kit` in `Artifacts/templates/`; themes `theme-editorial-paper-red`, `theme-github-night-green` in `Artifacts/`
+- Not done (blocked by permission classifier, left for the user): registering four plugin marketplaces in `.claude/settings.json`, appending four repos to `setup-repos.sh`, vendoring `find-skills` — commands are in the action plan. Granola needs OAuth in claude.ai; Kondo is not in the connector registry.
