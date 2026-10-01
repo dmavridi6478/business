@@ -33,6 +33,10 @@ Reach for a template here instead of improvising when a task needs:
 - **A warm editorial thinking-partner carousel** (@parm.ai style — beige `#F5F0E8` bg, Playfair Display italic in burnt orange, dark monospace prompt code blocks, clean numbered step layout) → `templates/editorial-thinking-partner.html`
 - **A dark space-themed OSS repo card** (@datawarlord_official "Open Source Builds a Brighter Tomorrow" style — `#080B14` bg, dot-grid texture, per-card neon gradient glow, floating 3D icon area, GitHub pill, category tags, DW footer bar) → `templates/datawarlord-oss-card.html`
 - **A nature photo + glassmorphism panels carousel** (@softgirlnocode "How I edit Videos with AI" style — full-bleed outdoor photo bg, dark scrim overlay, large bold white headline, frosted-glass quote card, pill context labels, step-dot progress indicator) → `templates/softgirlnocode-nature-glassmorphism.html`
+- **A GitHubNow-style 9:16 repo briefing set** (navy→black gradient, green tag pill + amber outline stars pill, mono `owner/name` title, 4-step flow strip with one highlighted step, 3 feature cards, org footer; cover / repo / CTA slides) → `templates/repo-briefing-card.html`
+- **A glowing-numeral font specimen carousel** (@designarchitect001 "FONT 0N" style — giant dark numeral with coloured rim glow + grain, two rim-lit spheres, specimen name, "Save it for later / Swipe →"; one colour per slide) → `templates/font-showcase-glow.html`
+- **A black-and-red "fonts that look like a logo" wordmark carousel** (red gradient spheres, silver-gradient wordmark, `01 | NAME` index bar, cover and "Was this helpful?" end card) → `templates/wordmark-noir-card.html`
+- **A white tool-spotlight carousel** (@will.ai.m "free tools Big Tech doesn't want you to run" style — icon tile, giant title, REPLACES / DOWNLOAD / GITHUB rows, browser-frame screenshot, intro + follow slides) → `templates/tool-spotlight-light.html`
 
 ## How to use a template
 
@@ -98,3 +102,38 @@ card grid, just with different colors. This is original CSS/HTML built to
 approximate that recurring layout, not a copy of any one source's actual
 code or assets. Verified in both light and dark variants via a headless
 Chromium screenshot with zero console errors before being added.
+
+
+## Batch 98 additions — four social-card themes (rendered and checked in headless Chromium)
+
+| File | Theme tokens | Technique |
+|---|---|---|
+| `repo-briefing-card.html` | `--bg-top #14213f` → `--bg-bot #05070d`, `--green #3fb950`, `--amber #d9a93f`, mono `JetBrains Mono` | 1080×1920 slides generated from one `REPO` data object; flow strip highlights step `REPO.hi`; preview scale `--s`, export at `--s:1` |
+| `font-showcase-glow.html` | per-slide `--glow`: cyan `#2fd5e6`, green `#2fe08a`, violet `#8a6bff`, blue `#2f8bff`, orange `#ff9a5c`, yellow `#f5d63d`, pink `#ff5a78` on `#060608` | numeral = dark fill + `-webkit-text-stroke` + stacked `drop-shadow` glow via `color-mix()`; SVG `feTurbulence` grain overlay; rim-lit orbs |
+| `wordmark-noir-card.html` | `--bg #080808`, spheres `#2a0004 → #ff3b3f`, silver `#f6f6fa → #7d7d88` | `background-clip:text` gradient wordmark, 135°/315° sphere gradients, ruled index bar |
+| `tool-spotlight-light.html` | white, ink `#0a0a0a`, dim `#8b867f`, chrome `#ecebe8`, `Hanken Grotesk` | `**bold**` markup in the body string, browser frame with traffic lights bleeding off the slide |
+
+**Gotcha found while verifying:** a font name passed into an inline `style="font-family:…"` must use *single* quotes (`'Fredoka'`) — double quotes silently break the attribute and the card falls back to the default font.
+
+**Sandbox note:** Google Fonts is not reachable from the cloud sandbox, so screenshots taken there show fallback fonts; layouts are sized with headroom for that. Re-check in a normal browser before exporting.
+
+### Font substitutes (the specimens are mostly NOT on Google Fonts)
+
+The @designarchitect001 carousels captioned "google fonts", but checking the Google Fonts metadata endpoint (`fonts.google.com/metadata/fonts`, 2026-10-01) found only **Urbanist** and **Outfit** among the twelve names shown. Use the real files if you license them; otherwise these Google families are look-alike substitutes — **judgement calls, not matches**:
+
+| Specimen (as shown) | On Google Fonts? | Substitute used in templates | Character being approximated |
+|---|---|---|---|
+| Nura | no | Fredoka 600 | heavy rounded geometric caps |
+| Ancola | no | Sora 700 | wide geometric lowercase with cut strokes |
+| Urbanist | **yes** | Urbanist 500 | — |
+| Alro | no | Manrope 800 | bold geometric, stencil-like bar |
+| Outfit | **yes** | Outfit 800 | — |
+| Surgena | no | Comfortaa 700 | rounded display with quirky terminals |
+| Ourova / Qurova (first glyph unclear) | no | Quicksand 300 | monoline circular geometric |
+| Rigter | no | Gabarito 800 | heavy tight grotesk |
+| Malison | no | Saira Condensed 700 | tall condensed, techno |
+| Keratus | no | Syne 600 | calligraphic-geometric hybrid |
+| Sparling | no | Unbounded 800 | heavy rounded with sharp notches |
+| Badoga | no | Cormorant Garamond 400 | high-contrast display serif with swashes |
+
+Original-source files for the unlisted ones are probably commercial or free-for-personal-use foundry releases — **licence unverified**; check before commercial use.

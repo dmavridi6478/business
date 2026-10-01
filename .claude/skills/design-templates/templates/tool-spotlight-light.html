@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<!--
+  Template: tool-spotlight-light
+  Style: @will.ai.m "free tools Big Tech doesn't want you to run" — white 4:5 (1080 x 1350) single-tool spotlight
+         + intro slide with an icon row + closing follow slide.
+  Inspired by: Batch 98 iCloud photos (SearXNG, Home Assistant, Pi-hole, Vaultwarden, Nextcloud, intro, follow card)
+  Layout: icon tile → giant title → bold one-line promise → 3-line body (bold the payoff) →
+          meta rows (REPLACES / DOWNLOAD / GITHUB + stars · freshness) → browser-frame screenshot bleeding off the bottom.
+  Swap points: TOOLS array [name, promise, body, replaces, download, repo, stars, fresh, url, tint]; BY handle.
+  Rule: stars / "last updated" are a snapshot; re-verify live before publishing (README of the repo is the source).
+-->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tool Spotlight — Light</title>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;700;800&display=swap" rel="stylesheet">
+<style>
+  :root { --s: 0.36; --ink: #0a0a0a; --dim: #8b867f; --soft: #6f6a63; --chrome: #ecebe8; --pill: #dcdad6; --font: "Hanken Grotesk", "Helvetica Neue", Arial, sans-serif; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: #cfcfcf; padding: 24px; display: flex; flex-wrap: wrap; gap: 24px; font-family: var(--font); }
+  .frame { width: calc(1080px * var(--s)); height: calc(1350px * var(--s)); }
+  .slide { width: 1080px; height: 1350px; transform: scale(var(--s)); transform-origin: top left; position: relative; overflow: hidden; background: #fff; color: var(--ink); padding: 0 74px; }
+  .tile { position: absolute; top: 176px; left: 74px; width: 78px; height: 78px; border-radius: 20px; background: #fff; box-shadow: 0 6px 22px rgba(0,0,0,.14); display: grid; place-items: center; font-size: 40px; font-weight: 800; }
+  h1 { position: absolute; top: 280px; left: 74px; font-size: 118px; font-weight: 800; letter-spacing: -.045em; line-height: 1; }
+  .promise { position: absolute; top: 420px; left: 74px; right: 200px; font-size: 48px; font-weight: 700; letter-spacing: -.02em; line-height: 1.15; }
+  .body { position: absolute; top: 560px; left: 74px; right: 190px; font-size: 40px; line-height: 1.34; letter-spacing: -.01em; }
+  .body b { font-weight: 800; }
+  .meta { position: absolute; top: 730px; left: 74px; right: 74px; font-size: 30px; }
+  .row { display: flex; gap: 26px; align-items: baseline; margin-bottom: 18px; }
+  .row i { font-style: normal; width: 190px; letter-spacing: .14em; font-size: 22px; font-weight: 700; color: #a29d96; text-transform: uppercase; }
+  .row b { font-weight: 700; }
+  .stars { padding-left: 216px; color: var(--soft); font-size: 28px; margin-top: -6px; }
+  .browser { position: absolute; left: 40px; right: 40px; top: 990px; height: 700px; border-radius: 30px 30px 0 0; background: #fff; box-shadow: 0 0 0 1px #e1dfdb, 0 20px 50px rgba(0,0,0,.12); overflow: hidden; }
+  .bar { height: 66px; background: var(--chrome); display: flex; align-items: center; padding: 0 26px; gap: 14px; }
+  .bar span { width: 18px; height: 18px; border-radius: 50%; }
+  .url { margin: 0 auto; background: var(--pill); border-radius: 18px; padding: 8px 56px; font-size: 22px; color: var(--soft); transform: translateX(-40px); }
+  .shot { height: 100%; padding: 36px; background: var(--tint, #f4f6fb); }
+  .shot .sk { height: 26px; border-radius: 8px; background: rgba(0,0,0,.08); margin-bottom: 18px; }
+  .wm { position: absolute; right: 18px; top: 982px; font-size: 40px; color: rgba(0,0,0,.18); font-weight: 700; }
+  /* intro + follow */
+  .intro h2 { position: absolute; top: 190px; left: 74px; font-size: 116px; font-weight: 800; letter-spacing: -.045em; line-height: 1.02; }
+  .intro p { position: absolute; top: 560px; left: 74px; right: 190px; font-size: 44px; line-height: 1.34; color: var(--soft); }
+  .icons { position: absolute; top: 760px; left: 74px; display: flex; gap: 26px; }
+  .icons div { width: 112px; height: 112px; border-radius: 28px; box-shadow: 0 6px 24px rgba(0,0,0,.13); display: grid; place-items: center; font-size: 44px; font-weight: 800; }
+  .follow h2 { position: absolute; top: 190px; left: 74px; font-size: 104px; font-weight: 800; letter-spacing: -.045em; line-height: 1.02; }
+  .follow p { position: absolute; top: 440px; left: 74px; right: 200px; font-size: 40px; color: var(--soft); line-height: 1.35; }
+  .follow .btn { position: absolute; top: 640px; left: 74px; height: 134px; padding: 0 56px 0 36px; border-radius: 70px; background: #0f0f0f; color: #fff; font-size: 56px; font-weight: 800; display: flex; align-items: center; gap: 22px; letter-spacing: -.02em; }
+  .follow .handle { position: absolute; top: 800px; left: 74px; font-size: 40px; font-weight: 700; color: var(--soft); }
+</style>
+</head>
+<body>
+<div id="out" style="display:contents"></div>
+<script>
+/* ── SWAP THESE ── */
+const BY = "@yourhandle";
+const TOOLS = [
+  // [name, promise, body (use **bold**), replaces, download, repo, stars, fresh, url, tint, glyph]
+  ["SearXNG", "Search the web, without being tracked.", "Pulls results from dozens of engines at once and strips the tracking. **No profile, and no Google logging every search.**", "Google Search", "docs.searxng.org", "searxng/searxng", "38k stars", "last updated today", "docs.searxng.org", "#f4f6fb", "🔍"],
+  ["Home Assistant", "Run your smart home, offline.", "Connects thousands of smart devices and runs it all locally. **It keeps working when the internet doesn’t.**", "Google Home", "home-assistant.io", "home-assistant/core", "91k stars", "last updated today", "home-assistant.io", "#18b4f0", "⌂"],
+  ["Pi-hole", "Block ads on every device at once.", "Runs on a cheap Pi and filters ads and trackers for your whole network. **Phones, TVs, the lot, with no app on each one.**", "Ad blocker subscriptions", "pi-hole.net", "pi-hole/pi-hole", "61k stars", "last updated 2 days ago", "pi-hole.net", "#1b1017", "◍"],
+  ["Vaultwarden", "Every password, on your own server.", "A tiny Bitwarden-compatible server that syncs your logins to every device. **Your vault stays off their cloud.**", "1Password", "GitHub only", "dani-garcia/vaultwarden", "68k stars", "last updated 4 days ago", "github.com/dani-garcia/vaultwarden", "#ffffff", "V"],
+  ["Nextcloud", "All your files, off their cloud.", "Files, photos, calendar and contacts syncing across all your devices **from your own machine.**", "Google Drive", "nextcloud.com", "nextcloud/server", "37k stars", "last updated today", "nextcloud.com", "#1a9be8", "∞"]
+];
+const out = document.getElementById("out");
+const add = (h) => { const f = document.createElement("div"); f.className = "frame"; f.innerHTML = `<div class="slide">${h}</div>`; out.append(f); };
+const md = (t) => t.replace(/\*\*(.+?)\*\*/g, "<b>$1</b>");
+
+add(`<div class="intro"><h2>The free tools<br>Big Tech doesn’t<br>want you to run.</h2>
+  <p>Five apps that do what Big Tech charges you to rent. Host them yourself and keep them for good.</p>
+  <div class="icons">${TOOLS.map(t => `<div>${t[10]}</div>`).join("")}</div></div>`);
+TOOLS.forEach(t => add(`<div class="tile">${t[10]}</div><h1>${t[0]}</h1><div class="promise">${t[1]}</div>
+  <div class="body">${md(t[2])}</div>
+  <div class="meta"><div class="row"><i>Replaces</i><b>${t[3]}</b></div><div class="row"><i>Download</i><b>${t[4]}</b></div>
+   <div class="row"><i>GitHub</i><b>${t[5]}</b></div><div class="stars">★ ${t[6]} · ${t[7]}</div></div>
+  <div class="browser"><div class="bar"><span style="background:#ff5f57"></span><span style="background:#febc2e"></span><span style="background:#28c840"></span><div class="url">${t[8]}</div></div>
+   <div class="shot" style="--tint:${t[9]}"><div class="sk" style="width:46%"></div><div class="sk" style="width:80%"></div><div class="sk" style="width:64%"></div><div class="sk" style="width:72%"></div></div></div>`));
+add(`<div class="follow"><h2>If you’re new<br>around here…</h2><p>Do consider following. I post tech tips, news and free software.</p>
+  <div class="btn">⊕ FOLLOW ME</div><div class="handle">${BY}</div></div>`);
+</script>
+</body>
+</html>
