@@ -126,15 +126,41 @@ def integrity(root, now=None):
             if ev.get("event") == "deny":
                 if ev.get("ts", "")[:10] == day:
                     denials += 1
+            elif ev.get("event") == "tool" and ev.get("tool") in C.READ_TOOLS and \
+                    (ev.get("agent_type") or "") in C.WEB_AGENTS:
+                tgt = ev.get("target") or ""
+                if tgt.startswith("(default") or not C.read_allowed(ev["agent_type"], tgt):
+                    outside.append("%s %s READ %s" % (ev.get("ts"), ev["agent_type"], tgt))
+            elif ev.get("event") == "tool" and ev.get("tool") == "WebFetch" and \
+                    (ev.get("agent_type") or "").startswith(C.AGENT_PREFIX):
+                why = C.fetch_verdict(ev.get("target") or "", C.load_allowlist(root))
+                if why:
+                    outside.append("%s %s FETCH %s (%s)" % (ev.get("ts"), ev["agent_type"], (ev.get("target") or "")[:80], why))
+            elif ev.get("event") == "tool" and (ev.get("tool") or "").startswith("mcp__") and \
+                    (ev.get("agent_type") or "").startswith(C.AGENT_PREFIX):
+                outside.append("%s %s CONNECTOR %s" % (ev.get("ts"), ev["agent_type"], ev.get("tool")))
             elif ev.get("event") == "tool" and ev.get("tool") in C.WRITE_TOOLS and \
                     (ev.get("agent_type") or "").startswith(C.AGENT_PREFIX):
                 if not C.allowed_for(ev["agent_type"], ev.get("target")):
                     outside.append("%s %s -> %s" % (ev.get("ts"), ev["agent_type"], ev.get("target")))
     if outside:
-        crit.append("GATE BYPASS: %d os-* write(s) outside the allow-list got through (guard not enforcing?): %s"
+        crit.append("GATE BYPASS: %d os-* action(s) outside the policy got through (hooks not enforcing?): %s"
                     % (len(outside), "; ".join(outside[:5])))
     if denials:
         warn.append("%d write attempt(s) were blocked today - read data/ai-os/log/%s.jsonl, deny events" % (denials, day))
+    suspicious = []
+    ddir = os.path.join(root, "data", "ai-os", "drafts")
+    if os.path.isdir(ddir):
+        for fn in sorted(os.listdir(ddir)):
+            fp = os.path.join(ddir, fn)
+            if fn.endswith(".md") and now - os.path.getmtime(fp) < 48 * 3600:
+                with open(fp, encoding="utf-8", errors="replace") as fh:
+                    hits = C.untrusted_scan(fh.read())
+                if hits:
+                    suspicious.append("%s: %s" % (fn, "; ".join(hits[:3])))
+    if suspicious:
+        warn.append("instruction-like text OUTSIDE an ```untrusted fence in %d draft(s) (possible injection, heuristic): %s"
+                    % (len(suspicious), " | ".join(suspicious[:5])))
     ok, why = C.verify_chain(paths(root)["ledger"])
     if not ok:
         crit.append("APPROVALS TAMPERING: %s" % why)
@@ -146,7 +172,7 @@ def integrity(root, now=None):
     if voided:
         warn.append("approved cards edited after approval (approval void): %s" % ", ".join(voided))
     report = {"date": day, "log_files": len(files), "log_events_today": events_today, "log_chain_ok": chain_ok,
-              "denials_today": denials, "approvals_chain_ok": ok, "voided_items": voided,
+              "denials_today": denials, "approvals_chain_ok": ok, "voided_items": voided, "suspicious_drafts": suspicious,
               "CRITICAL": crit, "WARNINGS": warn, "verdict": "CRITICAL" if crit else ("WARN" if warn else "OK")}
     os.makedirs(paths(root)["watchdog"], exist_ok=True)
     with open(os.path.join(paths(root)["watchdog"], "integrity-%s.json" % day), "w", encoding="utf-8") as fh:

@@ -41,11 +41,29 @@
             "command": "python3 \"${CLAUDE_PROJECT_DIR}/.claude/hooks/os_guard.py\""
           }
         ]
+      },
+      {
+        "matcher": "Read|Grep|Glob",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 \"${CLAUDE_PROJECT_DIR}/.claude/hooks/os_readscope.py\""
+          }
+        ]
+      },
+      {
+        "matcher": "WebFetch|mcp__.*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 \"${CLAUDE_PROJECT_DIR}/.claude/hooks/os_outbound.py\""
+          }
+        ]
       }
     ],
     "PostToolUse": [
       {
-        "matcher": "Write|Edit|MultiEdit|NotebookEdit|WebFetch|WebSearch|Bash|Agent|Task|mcp__.*",
+        "matcher": "Write|Edit|MultiEdit|NotebookEdit|Read|Grep|Glob|WebFetch|WebSearch|Bash|Agent|Task|mcp__.*",
         "hooks": [
           {
             "type": "command",

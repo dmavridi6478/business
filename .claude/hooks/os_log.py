@@ -21,6 +21,10 @@ SENSITIVE_DIRS = ("data/ai-os/", "docs/ai-os/", ".claude/agents/", ".claude/comm
 def target_of(tool, ti):
     if tool in C.WRITE_TOOLS:
         return ti.get("file_path") or ti.get("notebook_path") or ""
+    if tool == "Read":
+        return ti.get("file_path") or ""
+    if tool in ("Grep", "Glob"):
+        return ti.get("path") or "(default: project root)"
     if tool == "WebFetch":
         return (ti.get("url") or "")[:300]
     if tool == "WebSearch":
@@ -43,9 +47,9 @@ def main():
     root = C.project_root(data)
     target = target_of(tool, ti)
     rel = None
-    if tool in C.WRITE_TOOLS and target:
+    if (tool in C.WRITE_TOOLS or tool in C.READ_TOOLS) and target and not target.startswith("(default"):
         rel = C.rel_path(root, target, data.get("cwd"))
-    sensitive = bool(rel) and any(rel.startswith(d) for d in SENSITIVE_DIRS)
+    sensitive = tool in C.WRITE_TOOLS and bool(rel) and any(rel.startswith(d) for d in SENSITIVE_DIRS)
     if not (agent.startswith(C.AGENT_PREFIX) or sensitive or tool.startswith("mcp__")):
         return
     resp = data.get("tool_response")

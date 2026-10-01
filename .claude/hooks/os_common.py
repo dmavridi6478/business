@@ -111,3 +111,138 @@ def log_event(root, event):
     ev = {"ts": utc_now_iso()}
     ev.update(event)
     return append_chained(path, ev)
+
+
+# ---------------------------------------------------------------------------------------------------------
+# Finding 3 (exfiltration): break the "lethal trifecta" (untrusted content + private data + outbound channel).
+# The web-capable agents may fetch from allow-listed hosts but may READ only non-private project docs.
+# Every other os-* agent reads private data but has no network tool at all (enforced by a test on frontmatter).
+# ---------------------------------------------------------------------------------------------------------
+READ_TOOLS = ("Read", "Grep", "Glob")
+WEB_AGENTS = ("os-seo", "os-market", "os-pain-point", "os-prospect")
+NETWORK_TOOLS = ("WebFetch", "WebSearch")
+WEB_READ_ROOTS = ("docs/ai-os/ops/", "docs/ai-os/rules/", "docs/marketing-context/", ".claude/skills/ai-entrepreneur-os/")
+FETCH_ALLOWLIST = "docs/ai-os/rules/fetch-allowlist.txt"
+MAX_URL_LEN = 300
+MAX_QUERY_LEN = 120
+MAX_TOKEN_RUN = 60  # a single path/query chunk this long of base64-ish characters looks like smuggled data
+
+
+def read_allowed(agent, rel):
+    """May os-* `agent` read project-relative `rel`? Only the web agents are restricted."""
+    if agent not in WEB_AGENTS:
+        return True
+    if rel is None:
+        return False
+    return any(rel.startswith(r) for r in WEB_READ_ROOTS)
+
+
+def load_allowlist(root):
+    path = os.path.join(root, *FETCH_ALLOWLIST.split("/"))
+    if not os.path.exists(path):
+        return []
+    out = []
+    with open(path, encoding="utf-8") as fh:
+        for line in fh:
+            line = line.split("#", 1)[0].strip().lower()
+            if line:
+                out.append(line)
+    return out
+
+
+def fetch_verdict(url, allowlist):
+    """Return None if an os-* agent may fetch `url`, otherwise a reason string."""
+    import ipaddress
+    import re
+    from urllib.parse import urlsplit
+    if not url or len(url) > MAX_URL_LEN:
+        return "URL empty or longer than %d characters" % MAX_URL_LEN
+    try:
+        u = urlsplit(url)
+        host = (u.hostname or "").lower()
+        port = u.port
+    except ValueError:
+        return "URL does not parse"
+    if u.scheme != "https":
+        return "only https is allowed"
+    if u.username or u.password or "@" in u.netloc:
+        return "credentials or '@' in the URL"
+    if port not in (None, 443):
+        return "non-default port"
+    if not host or "." not in host:
+        return "host has no dot (localhost/intranet)"
+    try:
+        ipaddress.ip_address(host)
+        return "IP-address hosts are not allowed"
+    except ValueError:
+        pass
+    if not allowlist:
+        return "allow-list %s is missing or empty (all fetches blocked)" % FETCH_ALLOWLIST
+    if not any(host == d or host.endswith("." + d) for d in allowlist):
+        return "host %s is not in %s" % (host, FETCH_ALLOWLIST)
+    if len(u.query) > MAX_QUERY_LEN:
+        return "query string longer than %d characters" % MAX_QUERY_LEN
+    for chunk in re.split(r"[/?&=;]", u.path + "?" + u.query):
+        if len(chunk) >= MAX_TOKEN_RUN and re.fullmatch(r"[A-Za-z0-9+_=%-]+", chunk):
+            return "a %d-character encoded-looking chunk (possible smuggled data)" % len(chunk)
+    return None
+
+
+# ---------------------------------------------------------------------------------------------------------
+# Finding 4 (outbound connectors in the main session). Connector tools that can send, change or spend are
+# put behind a human confirmation ("ask") for EVERY caller; os-* agents may not call connectors at all.
+# Unknown verbs fall on the cautious side. Owner can switch it off at launch: OS_OUTBOUND_MODE=off.
+# ---------------------------------------------------------------------------------------------------------
+WRITE_VERBS = set("""send reply forward post publish schedule delete trash remove update edit create add set share invite
+upload write merge transition execute run apply archive move copy import submit unsubscribe subscribe cancel respond
+save push deploy label unlabel resolve revoke suppress unsuppress disable enable activate start stop assign attach
+sync convert generate clone rename mark unmark restore retire register put patch void refund charge pay fire trigger
+invoke enrol enroll provision manage switch use login connect""".split())
+READ_VERBS = set("""get list search read query fetch find describe show lookup check view preview download whoami
+ping help discover inspect analyze count browse explore summarize compare validate verify estimate recommend render
+schema docs doc""".split())
+# Verbs that are ambiguous between read and write ("resolve_dhs_filters" vs "resolve_diff_thread") are left out of
+# BOTH sets on purpose: unknown verbs ask.
+
+
+def connector_verdict(tool_name):
+    """'allow' for clearly read-only connector tools, otherwise 'ask'. The FIRST verb token from the left decides,
+    so get_label / get_draft are reads while label_message / create_draft are writes."""
+    import re
+    parts = tool_name.split("__", 2)
+    action = parts[2] if len(parts) == 3 else tool_name
+    for t in (x for x in re.split(r"[_\-\s]+", action.lower()) if x):
+        if t in WRITE_VERBS:
+            return "ask"
+        if t in READ_VERBS:
+            return "allow"
+    return "ask"
+
+
+# ---------------------------------------------------------------------------------------------------------
+# Finding 4 (second-order injection): drafts must quote external text only inside ```untrusted fences.
+# The integrity report flags instruction-like text OUTSIDE such fences. Heuristic - a tripwire, not a proof.
+# ---------------------------------------------------------------------------------------------------------
+INJECTION_PATTERNS = [
+    r"ignore (all |any |the )?(previous|prior|above|earlier) (instructions|rules|messages)",
+    r"disregard .{0,40}(rules|instructions|policy)",
+    r"(^|\n)\s*(system|assistant|developer)\s*:",
+    r"you are now\b",
+    r"\b(post|send|forward|email|slack) (this|the following|it) (to|via|on)\b",
+    r"do not (tell|inform|mention to) (the )?(owner|user|human)",
+    r"reveal (your|the) (system |hidden )?(prompt|instructions|keys?|secrets?)",
+    r"\bcurl\s+https?://",
+    r"new instructions?:",
+]
+
+
+def untrusted_scan(text):
+    """Return the list of injection-pattern hits found OUTSIDE ```untrusted fenced blocks."""
+    import re
+    outside = re.sub(r"```untrusted.*?```", "", text, flags=re.S | re.I)
+    hits = []
+    for pat in INJECTION_PATTERNS:
+        m = re.search(pat, outside, flags=re.I)
+        if m:
+            hits.append(m.group(0).strip()[:60])
+    return hits
