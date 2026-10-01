@@ -1,0 +1,19 @@
+---
+description: Run one AI Entrepreneur OS module (marketing, sales, finance, research, success) end to end in draft-only mode and return the approval queue.
+argument-hint: <marketing|sales|finance|research|success> [task or inputs]
+---
+
+Run the **$1** module of the AI Entrepreneur OS in DRAFT mode. Task / inputs: $2
+
+Module → agents (run in this order, each as its own subagent):
+- **marketing**: `os-ads` → `os-seo` → `os-email-sms` → `os-lead-magnet`
+- **sales**: `os-response` → `os-followup` → `os-close` → `os-prospect`
+- **finance**: `os-bookkeeping` → `os-invoice` → `os-profit` → `os-cashflow`
+- **research**: `os-market` → `os-pain-point` → `os-offer-builder` → `os-pricing`
+- **success**: `os-onboarding` → `os-checkin` → `os-health` → `os-referral`
+
+Rules:
+1. Read `docs/ai-os/rules/*.md` first. If the module needs a value that is unset (OWNER MUST SET), stop and ask me for it.
+2. Skip any agent whose inputs do not exist; say "skipped — no input" rather than inventing input.
+3. Every agent writes to `data/ai-os/drafts/`. Nothing is sent, posted, spent or changed.
+4. Finish with `os-approval`: produce `data/ai-os/approval-queue.md` and show me the cards. Then stop and wait for my decision.

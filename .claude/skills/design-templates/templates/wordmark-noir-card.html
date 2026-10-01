@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<!--
+  Template: wordmark-noir-card
+  Style: @designarchitect001 "fonts that look like a logo" — black field, two red gradient spheres,
+         silver-gradient wordmark, numbered index bar (01 | NAME). Square-ish 1080 x 1080 slides + 1080 x 1350 cover.
+  Inspired by: Batch 98 iCloud photos (Rigter 01, Malison 02, Keratus 03, Sparling 04, Badoga 05, cover, "was this helpful" end card)
+  Swap points: WORDS array [index, display text, css font-family, weight, size px, letter-spacing em];
+               :root tokens --red-lo / --red-hi (sphere gradient) and --silver-hi / --silver-lo (wordmark gradient).
+  HONEST NOTE: the specimen faces (Rigter, Malison, Keratus, Sparling, Badoga) are NOT on Google Fonts despite the
+               "google fonts" cover claim (checked against fonts.google.com/metadata/fonts, Oct 2026). This file uses
+               look-alike Google families; swap in the real files if you license them.
+-->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wordmark Noir Card</title>
+<link href="https://fonts.googleapis.com/css2?family=Gabarito:wght@800&family=Saira+Condensed:wght@700&family=Syne:wght@600&family=Unbounded:wght@800&family=Cormorant+Garamond:wght@400&family=Inter:wght@500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --s: 0.36;
+    --bg: #080808;
+    --red-lo: #2a0004; --red-hi: #ff3b3f;
+    --silver-hi: #f6f6fa; --silver-lo: #7d7d88;
+    --line: #f1f1f1;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: #000; padding: 24px; display: flex; flex-wrap: wrap; gap: 24px; font-family: "Inter", Arial, sans-serif; }
+  .frame { width: calc(1080px * var(--s)); height: calc(var(--h) * var(--s)); }
+  .slide { width: 1080px; height: var(--h); transform: scale(var(--s)); transform-origin: top left; position: relative; overflow: hidden; background: var(--bg); color: #fff; }
+  .sphere { position: absolute; width: 210px; height: 210px; border-radius: 50%; background: linear-gradient(135deg, var(--red-lo) 8%, var(--red-hi) 92%); }
+  .sphere.tl { left: 36px; top: 24px; }
+  .sphere.br { right: 62px; bottom: 100px; background: linear-gradient(315deg, var(--red-lo) 8%, var(--red-hi) 92%); transform: scaleX(-1); }
+  .word {
+    position: absolute; left: 0; right: 0; top: 330px; text-align: center; line-height: 1;
+    background: linear-gradient(180deg, var(--silver-hi) 8%, var(--silver-lo) 100%); -webkit-background-clip: text; background-clip: text; color: transparent;
+  }
+  .idx { position: absolute; left: 50%; bottom: 280px; width: 520px; transform: translateX(-50%); border-top: 2px solid var(--line); border-bottom: 2px solid var(--line); display: flex; height: 64px; }
+  .idx b { width: 78px; border-right: 2px solid var(--line); display: grid; place-items: center; font-size: 25px; font-weight: 500; }
+  .idx span { flex: 1; display: grid; place-items: center; font-size: 27px; font-weight: 700; letter-spacing: .02em; }
+  .by { position: absolute; right: 26px; bottom: 20px; font-size: 22px; color: rgba(255,255,255,.7); }
+  /* cover + end card */
+  .cover .big { position: absolute; left: 150px; top: 250px; font-family: "Inter", Arial, sans-serif; font-weight: 700; font-size: 200px; line-height: .86; letter-spacing: -.06em; text-align: left;
+    background: linear-gradient(180deg, #fff 20%, #6e6e78 100%); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  .cover .pill { position: absolute; left: 160px; bottom: 150px; width: 700px; height: 112px; border-radius: 60px; display: flex; align-items: center; padding-left: 70px; font-size: 56px; letter-spacing: -.03em;
+    background: linear-gradient(90deg, #ff3b3f 0%, #7a0a12 70%, #1a0003 100%); }
+  .cover .arrow { position: absolute; right: 120px; bottom: 150px; width: 232px; height: 232px; border-radius: 50%; background: linear-gradient(135deg, var(--red-lo), var(--red-hi)); display: grid; place-items: center; font-size: 96px; }
+  .cover .sphere.top { left: 280px; top: 56px; width: 130px; height: 130px; }
+  .end .t1 { position: absolute; top: 90px; left: 0; right: 0; text-align: center; font-size: 56px; font-style: italic; font-family: "Cormorant Garamond", serif; }
+  .end .t2 { position: absolute; top: 150px; left: 0; right: 0; text-align: center; font-size: 120px; font-weight: 700; letter-spacing: -.03em; }
+  .end .t3 { position: absolute; top: 560px; left: 0; right: 0; text-align: center; font-size: 108px; font-weight: 700; line-height: 1.05; }
+  .end .t4 { position: absolute; top: 880px; left: 0; right: 0; text-align: center; font-size: 66px; line-height: 1.3; font-weight: 500; }
+  .end .sphere.br { width: 330px; height: 330px; right: -60px; bottom: -80px; }
+</style>
+</head>
+<body>
+<div id="out" style="display:contents"></div>
+<script>
+/* ── SWAP THESE ── [index, text, css font-family, weight, size px, letter-spacing em] ── */
+const BY = "@yourhandle";
+const WORDS = [
+  ["01", "Rigter",   "'Gabarito'",           800, 230, -0.02],
+  ["02", "MALISON",  "'Saira Condensed'",    700, 230, 0],
+  ["03", "Keratus",  "'Syne'",               600, 200, -0.01],
+  ["04", "Sparling", "'Unbounded'",          800, 160, -0.03],
+  ["05", "Badoga",   "'Cormorant Garamond'", 400, 270, 0]
+];
+const out = document.getElementById("out");
+const add = (cls, h, hgt) => { const f = document.createElement("div"); f.className = "frame"; f.style.setProperty("--h", hgt + "px"); f.innerHTML = `<div class="slide ${cls}">${h}</div>`; out.append(f); };
+
+add("cover", `<div class="sphere top"></div>
+  <div class="big">fonts<br>that<br>look like a<br>logo</div>
+  <div class="pill">google fonts</div><div class="arrow">→</div><div class="by">${BY}</div>`, 1350);
+WORDS.forEach(([i, t, fam, w, size, ls]) => add("", `<div class="sphere tl"></div><div class="sphere br"></div>
+  <div class="word" style="font-family:${fam};font-weight:${w};font-size:${size}px;letter-spacing:${ls}em">${t}</div>
+  <div class="idx"><b>${i}</b><span>${t.toUpperCase()}</span></div><div class="by">${BY}</div>`, 1080));
+add("end", `<div class="t1">Was This</div><div class="t2">HELPFUL?</div>
+  <div class="t3">BE SURE TO<br>SAVE IT</div><div class="t4">SO YOU CAN COME BACK<br>TO IT LATER!</div><div class="sphere br"></div>`, 1350);
+</script>
+</body>
+</html>

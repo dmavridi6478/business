@@ -107,3 +107,19 @@ vary a lot from a typical Node/Python app.
 `openwhispr/openwhispr` (voice dictation) also appeared in this same video — already tracked above (Batch 84 row) and vendored as the `openwhispr` skill; no new action.
 
 Not a repo — skip: the same source zip also showed a `bytedance/seedance-2` AI video-ad generation demo via the paid `kie.ai` API (@imjonathanacuna, "Create ADs With Seedance 2.0"). It's a hosted model/API, not something to clone or self-host, so it's noted here for reference only.
+
+
+## Additional repos (Batch 98 — @githubnow daily briefings, 29–30 Sep 2026)
+
+All six verified live with `git ls-remote` on 2026-10-01; the first five were also cloned shallowly for reading. Star figures on the source cards are "today/month" deltas and were not re-verified.
+
+| Repo | Category | What it is | Licence | Status here |
+|---|---|---|---|---|
+| [`VectifyAI/PageIndex`](https://github.com/VectifyAI/PageIndex) | Vectorless RAG | Tree-index + LLM-reasoning retrieval for long documents; `pip install -U pageindex` (0.2.20) | **MIT** | **vendored** as the `pageindex` skill + `/pageindex-ask` |
+| [`NVIDIA/OpenShell`](https://github.com/NVIDIA/OpenShell) | Agent sandbox | Kernel-level policy enforcement for autonomous agents; formally verified policy changes; CLI + gateway + SDKs; ships 4 agent skills (`npx skills add NVIDIA/OpenShell`) | Apache-2.0 | documented only; install in `scripts/batch98-install.sh` (needs Docker/Podman) |
+| [`t8y2/dbx`](https://github.com/t8y2/dbx) | Database client | 100+ databases in one small Tauri app, CLI, Docker web, built-in AI + MCP server (`@dbx-app/mcp-server`, npm 0.4.102); ships 1 agent skill | Apache-2.0 | documented only; MCP line in install script, **start read-only** |
+| [`rakyll/hey`](https://github.com/rakyll/hey) | Load testing | Tiny HTTP load generator with HTTP/2, CSV export (`go install github.com/rakyll/hey@latest`); last commit 2026-01-10 | Apache-2.0 | documented only; wrapped by `/loadtest` with an ownership gate |
+| [`longbridge/gpui-kit`](https://github.com/longbridge/gpui-kit) | Rust desktop UI | 75+ components on GPUI, 120 FPS, WASM, code editor, dock layout; ships 2 agent skills | Apache-2.0 (docs separate) | documented only — only relevant if you build a native Rust app |
+| [`firebase/firebase-ios-sdk`](https://github.com/firebase/firebase-ios-sdk) | Mobile SDK | Firebase for iOS/macOS/tvOS/watchOS (Auth, Firestore, Messaging, Crashlytics…) | not checked | **not cloned** — large, and irrelevant unless you ship an Apple app |
+
+**Already tracked (no new action):** SearXNG, Home Assistant, Pi-hole, Vaultwarden, Nextcloud — see `self-hosted-docker-stack`, `oss-ai-alternatives`, `homelab-*` skills and Batch 97.

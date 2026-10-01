@@ -4,3 +4,5 @@ __pycache__/
 imgtest.docx
 repos/
 .hyperresearch/
+data/ai-os/*
+!data/ai-os/README.md

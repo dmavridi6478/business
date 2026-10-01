@@ -5731,3 +5731,52 @@ Source: `80c9789b-LinkedIn_Master_Guide_for_Claude.zip` — 4 static images (`.j
 > **5 — Hidden Gap Detector:** I think I already master [SKILL]. I want you to prove me wrong. Ask me 5 questions that seem simple but expose the gaps of someone who has never really gone deep. For every answer I give, tell me: what does my answer reveal about what's still missing from my foundation. Don't go easy on me. If I'm shallow, say it straight.
 
 > **6 — Forced Feynman Method:** I just studied [TOPIC]. I'm going to explain to you what I understood as if you were a 10-year-old child. As I explain, stop me at every point where I use jargon without knowing what it means, where I skip a step in the reasoning, or where I oversimplify to the point of being wrong. At the end, tell me exactly what these mistakes reveal about what is still not solid in my head.
+
+## 98. Agent Sandbox, Vectorless RAG, AI Entrepreneur OS & Four Design Themes (Batch 98)
+
+**Source:** One uploaded iCloud Photos zip (`cf87e94a-iCloud_Photos.zip`, 16.9 MB): 32 JPEGs + 2 MP4s, with an instruction to extract repos/skills/prompts/designs/agent guides/connectors and act on them. Raw photos and videos were **not** committed (see `docs/procedures/attachment-intake.md` rule 6).
+
+| Content | Creator | What it was |
+|---|---|---|
+| 9 cards | @githubnow | Daily briefings 29–30 Sep 2026: VectifyAI/PageIndex, rakyll/hey, NVIDIA/OpenShell (29th); firebase/firebase-ios-sdk, t8y2/dbx, longbridge/gpui-kit (30th) |
+| 7 cards | @will.ai.m | "Free tools Big Tech doesn't want you to run": SearXNG, Home Assistant, Pi-hole, Vaultwarden, Nextcloud + intro + follow card |
+| 16 cards | @designarchitect001 | 12 typefaces (Nura, Ancola, Urbanist, Alro, Outfit, Surgena, Ourova + Rigter, Malison, Keratus, Sparling, Badoga), two covers, two end cards — black/red + glowing-numeral design language |
+| video 1 (57 s) | @imjonathanacuna | "Claude manages 50 agents": tool stack list + Claude-orchestrator / builder-agents pattern (on-screen captions only; audio not transcribed) |
+| video 2 (86 s) | @restructureai (ReStructure AI) | "The Entire AI Entrepreneur Operating System": 200-hour blueprint, 41 agents, 7 modules, knowledge layer, approval loop |
+
+**Verified live (2026-10-01):** all six new repos exist (`git ls-remote`); PageIndex, OpenShell, dbx, hey and gpui-kit cloned shallowly into the gitignored `repos/`. Licences read from the repos: PageIndex **MIT**; OpenShell, dbx, hey **Apache-2.0**; gpui-kit Apache-2.0 + separate docs licence. `pip download pageindex` → 0.2.20; npm `@dbx-app/mcp-server` 0.4.102 and `@dbx-app/cli` 0.4.102 exist.
+
+**Created and installed in the repo:**
+- **Skill `pageindex`** (SKILL.md + LICENSE + SOURCE.md, MIT) and command `/pageindex-ask`.
+- **Skill `ai-entrepreneur-os`**, **25 subagents `os-*`** (`.claude/agents/`), commands `/os-morning-page` and `/os-run-module`, and the knowledge layer `docs/ai-os/{README,ops/*,rules/*}`. Runtime folder `data/ai-os/` is gitignored. All agents start at **autonomy tier 0 (draft only)** behind an approval gate — a deliberate departure from the video, which shows auto-replies and auto-reminders.
+- **Commands** `/loadtest` (hey wrapper with an ownership gate) and `/theme-card` (themes below).
+- **Four design templates** in `design-templates/templates/`: `repo-briefing-card.html`, `font-showcase-glow.html`, `wordmark-noir-card.html`, `tool-spotlight-light.html` — rendered in headless Chromium; a quoting bug that broke inline font-family was found and fixed in that check.
+- **`scripts/batch98-install.sh`** — user-run installer for the third-party pieces (see below).
+- Appended Batch 98 sections to `dev-repos-to-clone` and `design-templates`.
+
+**Blocked — needs you:**
+- `npx skills add NVIDIA/OpenShell | longbridge/gpui-kit | t8y2/dbx` (7 third-party skills) was **denied by the session's auto-mode classifier** as untrusted code integration. It was not retried, re-routed or replaced by copying those skill files. Run `scripts/batch98-install.sh` yourself and read each SKILL.md afterwards.
+- Connectors need your OAuth in claude.ai: **Stripe, Wispr Flow, MailerLite, Meridian QuickBooks** (needs reconnect / incomplete); **Fathom, Granola, Pipedrive, Intuit QuickBooks** exist in the directory but are not installed. Already connected and used by the agents: Notion, Slack, Gmail, Google Calendar, Canva, Klaviyo, Semrush, Ahrefs, HubSpot, Clay, Vibe Prospecting, Motion, Supermetrics, Fireflies.
+- Nothing was installed *inside* the sandbox (ephemeral; no durable value).
+
+**Findings the source cards do not tell you:**
+- Only **Urbanist** and **Outfit** are on Google Fonts. The other ten specimens — despite the "google fonts" caption — are not (checked against `fonts.google.com/metadata/fonts`). Templates use look-alike Google families, listed in `design-templates/SKILL.md`; the licence of the originals is unverified.
+- ReStructure's "41 agents": only **25** are legible on screen. The remaining modules (Operations, Content & Design, Risk & Legal, Data & Observability) were **not invented**.
+- Customer Success agent names are inferred from the Day 0/7/30/90 steps, and "Jev" in the video is unexplained; both are marked as inference.
+- Self-hosted five (SearXNG, Home Assistant, Pi-hole, Vaultwarden, Nextcloud) were already covered in Batch 97 — no new action. `firebase-ios-sdk` and `gpui-kit` are irrelevant unless you ship an Apple or native Rust app.
+
+**Not done on purpose:** starring/forking repos and "follow me" CTAs (outward social actions on your account, no instruction from you); `.mcp.json` entry for dbx (it would make every future session run `npx` code; the one-line `claude mcp add` is in the install script instead).
+
+**Paste-ready prompts from this batch (plain text):**
+
+> **1 — Start the OS safely:** Read docs/ai-os/README.md and docs/ai-os/rules/*. List every line marked OWNER MUST SET and ask me for the values one at a time. Do not run any os-* agent until I have answered. Then run /os-morning-page using only the Brain agents and the Finance module, in draft mode, and show me every data gap.
+
+> **2 — Break my own OS:** Act as a hostile reviewer of .claude/agents/os-*.md. Find every way an agent could send, spend, publish or delete without a recorded approval, and every place text from an inbound email or web page could be treated as an instruction. For each hole give the exact line, an attack example, and a one-line fix. Do not edit anything.
+
+> **3 — Orchestrator with builders:** You are the orchestrator. Split [GOAL] into independent tasks, assign each to a builder subagent with the exact inputs, files it may touch, and a definition of done. Builders may not touch each other's files. When they return, verify each result against its definition of done yourself — run the checks, do not trust the summary — and list what failed before anything is merged.
+
+> **4 — Ask a long PDF:** /pageindex-ask <path/to/report.pdf> "<question>" — and before indexing, tell me whether this document may be sent to a third-party model.
+
+> **5 — Brand a card:** /theme-card glow "Seven Google Fonts for logos" — mark every font that is not really on Google Fonts, and leave any number or date you cannot verify as [verify].
+
+> **6 — Safe load test:** /loadtest https://staging.example.com 200 10 — I own this system; show me the exact hey command and wait for my go.

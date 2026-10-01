@@ -1,0 +1,26 @@
+---
+description: Build the one-page AI Entrepreneur OS morning briefing — money, leads and your top 3 — from the data that actually exists, with data gaps stated.
+argument-hint: [optional focus, e.g. "finance only" or a date]
+---
+
+You are running the Morning Page for the AI Entrepreneur OS (`.claude/skills/ai-entrepreneur-os/SKILL.md`). Arguments: $ARGUMENTS
+
+1. Read `docs/ai-os/rules/*.md` and `docs/ai-os/ops/tool-stack.md`. If `approval-limits.md` still has unset OWNER MUST SET values that you need, say which and continue without them.
+2. Delegate in this order, each to its subagent, passing only what it needs:
+   - `os-business-analyst` → money and lead numbers (source + as-of date on every number; list data gaps).
+   - `os-watchdog` → last 24h of `data/ai-os/log/` and drafts; any gate bypass first.
+   - `os-approval` → the pending approval queue.
+   - `os-priority` → the owner's top 3 from the above.
+3. Assemble ONE page, max 40 lines, in this exact shape, and save it to `data/ai-os/morning/<today>.md`:
+
+```
+MORNING PAGE — <date>
+MONEY      in: <€> · out: <€> · overdue invoices: <n / €> · cash: <€ or "data gap">
+LEADS      new: <n> · HOT: <n> · cost per real lead: <€ or "data gap">
+TOP 3      1) … 2) … 3) …   (each: why now · € at stake · deadline)
+NEEDS YOU  <n> approvals waiting → data/ai-os/approval-queue.md
+WATCHDOG   <one line; CRITICAL first if any>
+DATA GAPS  <what could not be read and why>
+```
+
+4. Do not send, post, spend or change any live record. Show me the page and stop.

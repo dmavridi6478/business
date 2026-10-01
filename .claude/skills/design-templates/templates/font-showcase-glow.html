@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<!--
+  Template: font-showcase-glow
+  Style: @designarchitect001 "FONT 0N" glowing-numeral type-specimen carousel (4:5, 1080 x 1350)
+  Inspired by: Batch 98 iCloud photos (Nura, Ancola, Urbanist, Alro, Outfit, Surgena, Ourova + "7 clean fonts" cover)
+  Technique: giant index numeral = dark fill + coloured rim (text-stroke + drop-shadow glow) + SVG grain;
+             two dark spheres with rim-lit edges bleed off the corners; specimen name in white.
+  Swap points: the FONTS array at the bottom — [index, name, css font-family, weight, glow colour].
+               Each slide gets --glow from its own colour; change the colour, the whole slide re-tints.
+  HONEST NOTE: only Urbanist and Outfit exist on Google Fonts (verified against the Google Fonts metadata
+               endpoint, Oct 2026). Rows using other Google families below are LOOK-ALIKE SUBSTITUTES for the
+               original specimens, which are not on Google Fonts — see SKILL.md "Font substitutes".
+-->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Font Showcase — Glow Numerals</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@500;700&family=Outfit:wght@600;800&family=Fredoka:wght@600&family=Sora:wght@700&family=Manrope:wght@800&family=Comfortaa:wght@300;700&family=Quicksand:wght@300&family=Inter:wght@500&display=swap" rel="stylesheet">
+<style>
+  :root { --s: 0.36; --bg: #060608; --ink: #fbfcfd; --muted: #c8ccd4; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: #000; padding: 24px; display: flex; flex-wrap: wrap; gap: 24px; font-family: "Inter", Arial, sans-serif; }
+  .frame { width: calc(1080px * var(--s)); height: calc(1350px * var(--s)); }
+  .slide { width: 1080px; height: 1350px; transform: scale(var(--s)); transform-origin: top left; position: relative; overflow: hidden; background: var(--bg); color: var(--ink); }
+  .slide::after { /* film grain */
+    content: ""; position: absolute; inset: 0; pointer-events: none; opacity: .5; mix-blend-mode: overlay;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='300' height='300'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/><feColorMatrix values='0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 .55 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+  }
+  .num {
+    position: absolute; left: 50%; top: 42%; transform: translate(-50%, -50%);
+    font-family: "Outfit", Arial, sans-serif; font-weight: 800; font-size: 1500px; line-height: 1; letter-spacing: -.04em;
+    color: color-mix(in srgb, var(--glow) 8%, #050507);
+    -webkit-text-stroke: 5px var(--glow);
+    filter: drop-shadow(0 0 22px color-mix(in srgb, var(--glow) 70%, transparent)) drop-shadow(0 0 70px color-mix(in srgb, var(--glow) 35%, transparent));
+    opacity: .92; user-select: none;
+  }
+  .orb { position: absolute; border-radius: 50%; background: radial-gradient(circle at 30% 30%, rgba(255,255,255,.04), #050507 62%); border: 3px solid color-mix(in srgb, var(--glow) 80%, #fff 10%); box-shadow: 0 0 40px color-mix(in srgb, var(--glow) 55%, transparent), inset 0 0 90px color-mix(in srgb, var(--glow) 25%, transparent); }
+  .orb.a { width: 900px; height: 900px; right: -430px; top: 60px; }
+  .orb.b { width: 760px; height: 760px; left: -330px; bottom: -330px; }
+  .label { position: absolute; left: 0; right: 0; top: 560px; text-align: center; letter-spacing: .32em; font-size: 26px; font-weight: 500; color: var(--muted); z-index: 2; }
+  .name { position: absolute; left: 0; right: 0; top: 600px; text-align: center; font-size: 190px; line-height: 1; color: #fff; z-index: 2; white-space: nowrap; }
+  .save { position: absolute; left: 76px; bottom: 72px; padding: 16px 34px; border: 2px solid rgba(255,255,255,.7); border-radius: 999px; font-size: 25px; letter-spacing: .12em; z-index: 2; }
+  .swipe { position: absolute; right: 90px; bottom: 82px; font-size: 27px; letter-spacing: .2em; z-index: 2; }
+  .by { position: absolute; right: 36px; bottom: 26px; font-size: 22px; color: rgba(255,255,255,.55); z-index: 2; }
+</style>
+</head>
+<body>
+<div id="out" style="display:contents"></div>
+<script>
+/* ── SWAP THESE ── [index, specimen name, css font-family, weight, glow colour] ── */
+const BY = "@yourhandle";
+const FONTS = [
+  [1, "NURA",     "'Fredoka'",      600, "#2fd5e6"],   // original specimen not on Google Fonts → look-alike
+  [2, "ancola",   "'Sora'",         700, "#2fe08a"],   // look-alike
+  [3, "urbanist", "'Urbanist'",     500, "#8a6bff"],   // REAL Google Font
+  [4, "alro",     "'Manrope'",      800, "#2f8bff"],   // look-alike
+  [5, "outfit",   "'Outfit'",       800, "#ff9a5c"],   // REAL Google Font
+  [6, "surgena",  "'Comfortaa'",    700, "#f5d63d"],   // look-alike
+  [7, "Qurova",   "'Quicksand'",    300, "#ff5a78"]    // look-alike
+];
+const out = document.getElementById("out");
+FONTS.forEach(([i, name, fam, w, glow]) => {
+  const f = document.createElement("div"); f.className = "frame";
+  f.innerHTML = `<div class="slide" style="--glow:${glow}">
+    <div class="orb a"></div><div class="orb b"></div>
+    <div class="num">${i}</div>
+    <div class="label">FONT 0${i}</div>
+    <div class="name" style="font-family:${fam};font-weight:${w}">${name}</div>
+    <div class="save">Save it for later</div><div class="swipe">Swipe →</div><div class="by">${BY}</div>
+  </div>`;
+  out.append(f);
+});
+</script>
+</body>
+</html>
