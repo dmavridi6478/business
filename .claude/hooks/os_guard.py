@@ -45,7 +45,7 @@ def main():
     if rel is not None and C.is_protected(rel):
         deny(root, data, rel, "%s is human/hook-only; agents and sessions may not write it" % rel)
     if is_os and not C.allowed_for(agent, rel):
-        allowed = ", ".join(C.ALLOW.get(agent, C.DEFAULT_ALLOW))
+        allowed = ", ".join(tuple(C.ALLOW.get(agent, C.DEFAULT_ALLOW)) + (C.FLAGS_DIR,))
         deny(root, data, rel, "%s may write only .md files under: %s" % (agent, allowed))
     if is_os and rel is not None and rel.startswith(C.FLAGS_DIR):
         fdir = os.path.join(root, *C.FLAGS_DIR.strip("/").split("/"))

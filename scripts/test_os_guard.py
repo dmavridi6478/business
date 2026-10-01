@@ -95,6 +95,14 @@ class GuardTests(Base):
         self.assertTrue(self.denied(self.write(self.p("data/ai-os/approval-queue.md"), "os-approval")))  # old single file is gone
         self.assertTrue(self.allowed(self.write(self.p("data/ai-os/watchdog/x.md"), "os-watchdog")))
 
+    def test_denial_message_names_every_allowed_location_including_flags(self):
+        # found by the live canary: the message said "only drafts/" while flags/ is also allowed
+        for agent, must in (("os-seo", ("data/ai-os/drafts/", "data/ai-os/flags/")), ("os-approval", ("data/ai-os/approval-queue/", "data/ai-os/flags/")),
+                            ("os-chief-of-staff", ("data/ai-os/morning/", "data/ai-os/flags/"))):
+            out = self.write(self.p(".claude/agents/x.md"), agent).stdout
+            for loc in must:
+                self.assertIn(loc, out, (agent, loc))
+
     def test_edit_and_multiedit_covered(self):
         for tool in ("Edit", "MultiEdit"):
             self.assertTrue(self.denied(self.write(self.p(".claude/agents/os-approval.md"), "os-response", tool)))
