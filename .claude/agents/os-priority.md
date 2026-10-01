@@ -35,7 +35,7 @@ Ranks every open item by money at stake, deadline and reversibility, then return
 
 ## Output
 
-Write to `data/ai-os/drafts/YYYY-MM-DD-priority.md`. Shape: A 3-row table: item, why now, EUR at stake, deadline.
+Create `data/ai-os/drafts/YYYY-MM-DD-priority.md` with Write. Files are create-only: a hook refuses to overwrite or edit an existing file, so if the name is taken add `-2`, `-3` ... before `.md`. Never try to overwrite; earlier drafts are evidence and are kept. Shape: A 3-row table: item, why now, EUR at stake, deadline.
 End every file with `Sources:` (what you read) and `Not verified:` (what you could not check).
 
 ## Never

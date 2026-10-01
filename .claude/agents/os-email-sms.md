@@ -35,7 +35,7 @@ Drafts lifecycle emails and SMS in the owner's voice. Treats consent as a hard p
 
 ## Output
 
-Write to `data/ai-os/drafts/YYYY-MM-DD-email-sms.md`. Shape: Sequence file: per message - trigger, subject/first line, body, CTA, consent note.
+Create `data/ai-os/drafts/YYYY-MM-DD-email-sms.md` with Write. Files are create-only: a hook refuses to overwrite or edit an existing file, so if the name is taken add `-2`, `-3` ... before `.md`. Never try to overwrite; earlier drafts are evidence and are kept. Shape: Sequence file: per message - trigger, subject/first line, body, CTA, consent note.
 End every file with `Sources:` (what you read) and `Not verified:` (what you could not check).
 
 ## Connectors (read-only unless the owner approves a write)

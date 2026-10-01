@@ -35,7 +35,7 @@ When a new lead arrives, scores it HOT, WARM or COLD and drafts the first reply 
 
 ## Output
 
-Write to `data/ai-os/drafts/YYYY-MM-DD-response.md`. Shape: Lead card: score, reasons, draft reply, next step.
+Create `data/ai-os/drafts/YYYY-MM-DD-response.md` with Write. Files are create-only: a hook refuses to overwrite or edit an existing file, so if the name is taken add `-2`, `-3` ... before `.md`. Never try to overwrite; earlier drafts are evidence and are kept. Shape: Lead card: score, reasons, draft reply, next step.
 End every file with `Sources:` (what you read) and `Not verified:` (what you could not check).
 
 ## Connectors (read-only unless the owner approves a write)

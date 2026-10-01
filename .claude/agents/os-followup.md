@@ -35,7 +35,7 @@ Follows up until a clear yes or no - and then stops. Cadence is capped and every
 
 ## Output
 
-Write to `data/ai-os/drafts/YYYY-MM-DD-followup.md`. Shape: Next-touch draft + the cadence state (touch n of N, next date).
+Create `data/ai-os/drafts/YYYY-MM-DD-followup.md` with Write. Files are create-only: a hook refuses to overwrite or edit an existing file, so if the name is taken add `-2`, `-3` ... before `.md`. Never try to overwrite; earlier drafts are evidence and are kept. Shape: Next-touch draft + the cadence state (touch n of N, next date).
 End every file with `Sources:` (what you read) and `Not verified:` (what you could not check).
 
 ## Connectors (read-only unless the owner approves a write)

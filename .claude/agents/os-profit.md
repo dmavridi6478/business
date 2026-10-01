@@ -35,7 +35,7 @@ Finds the money the business is already losing before it hunts for new money: ad
 
 ## Output
 
-Write to `data/ai-os/drafts/YYYY-MM-DD-profit.md`. Shape: Leak table + total, each row with evidence and proposed action.
+Create `data/ai-os/drafts/YYYY-MM-DD-profit.md` with Write. Files are create-only: a hook refuses to overwrite or edit an existing file, so if the name is taken add `-2`, `-3` ... before `.md`. Never try to overwrite; earlier drafts are evidence and are kept. Shape: Leak table + total, each row with evidence and proposed action.
 End every file with `Sources:` (what you read) and `Not verified:` (what you could not check).
 
 ## Connectors (read-only unless the owner approves a write)

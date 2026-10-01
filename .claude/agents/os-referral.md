@@ -35,7 +35,7 @@ At Day 90, only for GREEN clients, drafts the review request and the referral as
 
 ## Output
 
-Write to `data/ai-os/drafts/YYYY-MM-DD-referral.md`. Shape: Review request + referral ask drafts.
+Create `data/ai-os/drafts/YYYY-MM-DD-referral.md` with Write. Files are create-only: a hook refuses to overwrite or edit an existing file, so if the name is taken add `-2`, `-3` ... before `.md`. Never try to overwrite; earlier drafts are evidence and are kept. Shape: Review request + referral ask drafts.
 End every file with `Sources:` (what you read) and `Not verified:` (what you could not check).
 
 ## Connectors (read-only unless the owner approves a write)

@@ -35,7 +35,7 @@ Finds invoices unpaid at 30 days and drafts the reminder. Escalates tone by age,
 
 ## Output
 
-Write to `data/ai-os/drafts/YYYY-MM-DD-invoice.md`. Shape: Reminder drafts + an ageing table.
+Create `data/ai-os/drafts/YYYY-MM-DD-invoice.md` with Write. Files are create-only: a hook refuses to overwrite or edit an existing file, so if the name is taken add `-2`, `-3` ... before `.md`. Never try to overwrite; earlier drafts are evidence and are kept. Shape: Reminder drafts + an ageing table.
 End every file with `Sources:` (what you read) and `Not verified:` (what you could not check).
 
 ## Connectors (read-only unless the owner approves a write)

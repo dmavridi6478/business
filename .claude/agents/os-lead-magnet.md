@@ -35,7 +35,7 @@ Designs the lead magnet (checklist, template, mini-guide) that matches the #1 of
 
 ## Output
 
-Write to `data/ai-os/drafts/YYYY-MM-DD-lead-magnet.md`. Shape: Asset outline + landing copy + design brief.
+Create `data/ai-os/drafts/YYYY-MM-DD-lead-magnet.md` with Write. Files are create-only: a hook refuses to overwrite or edit an existing file, so if the name is taken add `-2`, `-3` ... before `.md`. Never try to overwrite; earlier drafts are evidence and are kept. Shape: Asset outline + landing copy + design brief.
 End every file with `Sources:` (what you read) and `Not verified:` (what you could not check).
 
 ## Connectors (read-only unless the owner approves a write)

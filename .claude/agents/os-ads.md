@@ -35,7 +35,7 @@ Scores each ad by real leads, not likes, and sorts it into SCALE IT, FIX THE HOO
 
 ## Output
 
-Write to `data/ai-os/drafts/YYYY-MM-DD-ads.md`. Shape: A table per campaign: ad, spend, real leads, cost per lead, verdict, proposed action.
+Create `data/ai-os/drafts/YYYY-MM-DD-ads.md` with Write. Files are create-only: a hook refuses to overwrite or edit an existing file, so if the name is taken add `-2`, `-3` ... before `.md`. Never try to overwrite; earlier drafts are evidence and are kept. Shape: A table per campaign: ad, spend, real leads, cost per lead, verdict, proposed action.
 End every file with `Sources:` (what you read) and `Not verified:` (what you could not check).
 
 ## Connectors (read-only unless the owner approves a write)

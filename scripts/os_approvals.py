@@ -11,7 +11,7 @@
 
 Cards live in data/ai-os/approval-queue.md as '## ITEM <id> ...' blocks (written by os-approval).
 An approval is bound to the sha256 of the exact card text: any edit voids it. Approvals expire after
-EXPIRY_HOURS (docs/ai-os/rules/approval-limits.md). approvals.md is a hash chain; editing, deleting or
+approval_expiry_hours (docs/ai-os/rules/limits.json). approvals.md is a hash chain; editing, deleting or
 re-ordering a line breaks it. LIMIT: the chain detects tampering, it does not authenticate WHO wrote a line -
 that guarantee comes from the guard hook plus the terminal requirement below.
 """
@@ -28,29 +28,47 @@ sys.path.insert(0, os.path.join(os.path.dirname(HERE), ".claude", "hooks"))
 import os_common as C  # noqa: E402
 import os_registry as R  # noqa: E402
 
-EXPIRY_HOURS = 24
 CARD_RE = re.compile(r"^## ITEM (\S+)", re.M)
 
 
 def paths(root):
     d = os.path.join(root, "data", "ai-os")
-    return {"queue": os.path.join(d, "approval-queue.md"), "ledger": os.path.join(d, "approvals.md"),
+    return {"queue": os.path.join(d, "approval-queue.md"), "queue_dir": os.path.join(d, "approval-queue"),
+            "ledger": os.path.join(d, "approvals.md"),
             "watchdog": os.path.join(d, "watchdog")}
 
 
-def read_cards(root):
-    """{item_id: card_text} from the approval queue."""
-    p = paths(root)["queue"]
-    if not os.path.exists(p):
-        return {}
-    with open(p, encoding="utf-8") as fh:
+def _cards_in(path):
+    with open(path, encoding="utf-8") as fh:
         text = fh.read()
     marks = [(m.start(), m.group(1)) for m in CARD_RE.finditer(text)]
-    cards = {}
+    out = {}
     for i, (start, iid) in enumerate(marks):
         end = marks[i + 1][0] if i + 1 < len(marks) else len(text)
-        cards[iid] = text[start:end].strip()
-    return cards
+        out[iid] = text[start:end].strip()
+    return out
+
+
+def read_cards_ex(root):
+    """({item_id: card_text}, {conflicting ids}). Cards come from the legacy approval-queue.md and every file in
+    approval-queue/ (agents create a NEW dated file each run; they cannot overwrite an old one). The same id with
+    different text in two files is a conflict: that approval is void until a human resolves it."""
+    p = paths(root)
+    files = [p["queue"]] if os.path.exists(p["queue"]) else []
+    if os.path.isdir(p["queue_dir"]):
+        files += [os.path.join(p["queue_dir"], f) for f in sorted(os.listdir(p["queue_dir"])) if f.endswith(".md")]
+    cards, conflicts = {}, set()
+    for f in files:
+        for iid, text in _cards_in(f).items():
+            if iid in cards and cards[iid] != text:
+                conflicts.add(iid)
+            cards[iid] = text
+    return cards, conflicts
+
+
+def read_cards(root):
+    """{item_id: card_text} from the approval queue (latest file wins; see read_cards_ex for conflicts)."""
+    return read_cards_ex(root)[0]
 
 
 def read_ledger(root):
@@ -64,9 +82,11 @@ def read_ledger(root):
 def status(root, item, now=None):
     """Return (state, detail). state in approved|rejected|pending|voided|expired|unknown-item."""
     now = now if now is not None else time.time()
-    cards = read_cards(root)
+    cards, conflicts = read_cards_ex(root)
     if item not in cards:
         return "unknown-item", "no card with that id in the queue"
+    if item in conflicts:
+        return "voided", "the same item id appears in several queue files with different text"
     last = None
     for rec in read_ledger(root):
         if rec.get("item") == item:
@@ -78,8 +98,11 @@ def status(root, item, now=None):
     if last.get("card_sha256") != C.sha256_text(cards[item]):
         return "voided", "card text changed after approval"
     age_h = (now - calendar.timegm(time.strptime(last["ts"], "%Y-%m-%dT%H:%M:%SZ"))) / 3600.0
-    if age_h > EXPIRY_HOURS:
-        return "expired", "approved %.1f h ago (limit %d h)" % (age_h, EXPIRY_HOURS)
+    expiry = C.load_limits(root).get("approval_expiry_hours")
+    if not isinstance(expiry, (int, float)) or isinstance(expiry, bool) or expiry <= 0:
+        return "expired", "limit approval_expiry_hours is not set to a positive number; nothing counts as fresh (fail closed)"
+    if age_h > expiry:
+        return "expired", "approved %.1f h ago (limit %s h)" % (age_h, expiry)
     return "approved", last["ts"]
 
 
@@ -108,7 +131,7 @@ def integrity(root, now=None):
         crit.append("NO EVIDENCE: data/ai-os/log/ is missing or empty. Either no agent ran, or the hooks are not "
                     "loaded - an empty log is NOT proof that nothing bad happened.")
     chain_ok = True
-    denials, outside = 0, []
+    denials, overwrites, outside = 0, 0, []
     for f in files:
         full = os.path.join(ldir, f)
         ok, why = C.verify_chain(full)
@@ -126,7 +149,10 @@ def integrity(root, now=None):
                 events_today += 1
             if ev.get("event") == "deny":
                 if ev.get("ts", "")[:10] == day:
-                    denials += 1
+                    if ev.get("kind") == "overwrite":
+                        overwrites += 1
+                    else:
+                        denials += 1
             elif ev.get("event") == "tool" and ev.get("tool") in C.READ_TOOLS and \
                     (ev.get("agent_type") or "") in C.WEB_AGENTS:
                 tgt = ev.get("target") or ""
@@ -149,6 +175,15 @@ def integrity(root, now=None):
                     % (len(outside), "; ".join(outside[:5])))
     if denials:
         warn.append("%d write attempt(s) were blocked today - read data/ai-os/log/%s.jsonl, deny events" % (denials, day))
+    gok, gwhy = C.verify_chain(os.path.join(root, "data", "ai-os", "gate-ledger.jsonl"))
+    if not gok:
+        crit.append("GATE LEDGER TAMPERING: %s" % gwhy)
+    import os_gate as G
+    unset_gated, unset_adv = G.unset_limits(root)
+    if unset_gated:
+        warn.append("limits not set (any action that needs them is BLOCKED): %s - edit docs/ai-os/rules/limits.json" % ", ".join(unset_gated))
+    if unset_adv:
+        warn.append("advisory limits not set (analyst agents work without them): %s" % ", ".join(unset_adv))
     suspicious = []
     ddir = os.path.join(root, "data", "ai-os", "drafts")
     if os.path.isdir(ddir):
@@ -182,10 +217,17 @@ def integrity(root, now=None):
     if price_n == 0:
         warn.append("price list has no rows (docs/ai-os/ops/price-list.md) - os-close refuses to draft proposals")
     report = {"date": day, "registry_ok": reg_ok, "price_rows": price_n, "log_files": len(files), "log_events_today": events_today, "log_chain_ok": chain_ok,
-              "denials_today": denials, "approvals_chain_ok": ok, "voided_items": voided, "suspicious_drafts": suspicious,
+              "denials_today": denials, "overwrite_refusals_today": overwrites, "gate_ledger_ok": gok, "unset_limits": unset_gated, "approvals_chain_ok": ok, "voided_items": voided, "suspicious_drafts": suspicious,
               "CRITICAL": crit, "WARNINGS": warn, "verdict": "CRITICAL" if crit else ("WARN" if warn else "OK")}
     os.makedirs(paths(root)["watchdog"], exist_ok=True)
-    with open(os.path.join(paths(root)["watchdog"], "integrity-%s.json" % day), "w", encoding="utf-8") as fh:
+    stamp = time.strftime("%Y-%m-%dT%H%M%SZ", time.gmtime(now))
+    base = os.path.join(paths(root)["watchdog"], "integrity-%s" % stamp)
+    n, target = 1, base + ".json"
+    while os.path.exists(target):  # never overwrite an earlier report: a later OK must not hide an earlier CRITICAL
+        n += 1
+        target = "%s-%d.json" % (base, n)
+    report["file"] = os.path.relpath(target, root)
+    with open(target, "w", encoding="utf-8") as fh:
         json.dump(report, fh, indent=2)
     return report
 
@@ -213,10 +255,17 @@ def main(argv):
         if item not in cards:
             sys.exit("No card with id %r in data/ai-os/approval-queue.md" % item)
         print(cards[item])
+        import os_gate as G
+        action, aerr = G.card_action(cards[item])
+        print("\n--- MACHINE-READ ACTION (this is what the gate will check; approve THIS, not just the prose above) ---")
+        print(json.dumps(action, indent=2, ensure_ascii=False) if action else "NONE: %s\n    This card cannot pass the gate; approving it will not let anything happen." % aerr)
+        if action:
+            allow, reasons, _ = G.evaluate(root, item, assume_approved=True)
+            print("gate preview if approved now: " + ("ALLOW" if allow else "BLOCK - " + "; ".join(reasons)))
         if input("\nType the item id (%s) to confirm you %s EXACTLY this text: " % (item, cmd)).strip() != item:
             sys.exit("Not confirmed. Nothing recorded.")
         rec = record_decision(root, item, cmd, getpass.getuser())
-        print("Recorded %s for %s at %s (expires in %d h, void if the card is edited)." % (cmd, item, rec["ts"], EXPIRY_HOURS))
+        print("Recorded %s for %s at %s (expires in %s h, void if the card is edited, single use at the gate)." % (cmd, item, rec["ts"], C.load_limits(root).get("approval_expiry_hours")))
         return 0
     if cmd == "check":
         st, det = status(root, argv[2])

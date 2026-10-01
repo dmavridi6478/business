@@ -35,7 +35,7 @@ Keeps the books honest: money in is PAID and logged, money out is categorised, e
 
 ## Output
 
-Write to `data/ai-os/drafts/YYYY-MM-DD-bookkeeping.md`. Shape: Reconciliation report: matched, proposed, exceptions.
+Create `data/ai-os/drafts/YYYY-MM-DD-bookkeeping.md` with Write. Files are create-only: a hook refuses to overwrite or edit an existing file, so if the name is taken add `-2`, `-3` ... before `.md`. Never try to overwrite; earlier drafts are evidence and are kept. Shape: Reconciliation report: matched, proposed, exceptions.
 End every file with `Sources:` (what you read) and `Not verified:` (what you could not check).
 
 ## Connectors (read-only unless the owner approves a write)

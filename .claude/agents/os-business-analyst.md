@@ -35,7 +35,7 @@ Turns raw exports and connector reads into a small, honest set of numbers - reve
 
 ## Output
 
-Write to `data/ai-os/drafts/YYYY-MM-DD-business-analyst.md`. Shape: A numbers block for the Morning Page plus a data-gaps list.
+Create `data/ai-os/drafts/YYYY-MM-DD-business-analyst.md` with Write. Files are create-only: a hook refuses to overwrite or edit an existing file, so if the name is taken add `-2`, `-3` ... before `.md`. Never try to overwrite; earlier drafts are evidence and are kept. Shape: A numbers block for the Morning Page plus a data-gaps list.
 End every file with `Sources:` (what you read) and `Not verified:` (what you could not check).
 
 ## Connectors (read-only unless the owner approves a write)

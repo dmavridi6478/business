@@ -90,8 +90,9 @@ class GuardTests(Base):
     def test_per_agent_scopes(self):
         self.assertTrue(self.allowed(self.write(self.p("data/ai-os/morning/2026-10-01.md"), "os-chief-of-staff")))
         self.assertTrue(self.denied(self.write(self.p("data/ai-os/morning/2026-10-01.md"), "os-response")))
-        self.assertTrue(self.allowed(self.write(self.p("data/ai-os/approval-queue.md"), "os-approval")))
-        self.assertTrue(self.denied(self.write(self.p("data/ai-os/approval-queue.md"), "os-seo")))
+        self.assertTrue(self.allowed(self.write(self.p("data/ai-os/approval-queue/2026-10-01-01.md"), "os-approval")))
+        self.assertTrue(self.denied(self.write(self.p("data/ai-os/approval-queue/2026-10-01-01.md"), "os-seo")))
+        self.assertTrue(self.denied(self.write(self.p("data/ai-os/approval-queue.md"), "os-approval")))  # old single file is gone
         self.assertTrue(self.allowed(self.write(self.p("data/ai-os/watchdog/x.md"), "os-watchdog")))
 
     def test_edit_and_multiedit_covered(self):
@@ -236,9 +237,10 @@ class IntegrityTests(Base):
         self.assertTrue(any("LOG TAMPERING" in c for c in rep["CRITICAL"]))
 
     def test_report_file_written(self):
-        A.integrity(self.root)
-        day = time.strftime("%Y-%m-%d", time.gmtime())
-        self.assertTrue(os.path.exists(os.path.join(self.root, "data/ai-os/watchdog", "integrity-%s.json" % day)))
+        r1 = A.integrity(self.root)
+        r2 = A.integrity(self.root)
+        self.assertNotEqual(r1["file"], r2["file"])  # never overwritten: a later OK must not hide an earlier CRITICAL
+        self.assertTrue(os.path.exists(os.path.join(self.root, r1["file"])) and os.path.exists(os.path.join(self.root, r2["file"])))
 
 
 if __name__ == "__main__":
@@ -517,7 +519,7 @@ class RegistryTests(RegistryBase):
         self.grant("alice@example.com"); self.grant("+30 691-234 5678", "sms")
         R.record_optout(self.root, "carol@example.com", "all", "optout")
         blob = rd(R.P(self.root)["consent"]) + rd(R.P(self.root)["optout"])
-        for raw in ("alice", "example.com", "6912345678", "691", "carol"):
+        for raw in ("alice", "example.com", "6912345678", "carol"):  # distinctive: a 3-digit string can occur by chance inside a hex hash
             self.assertNotIn(raw, blob)
 
     def test_grant_requires_basis_and_source(self):
@@ -758,3 +760,304 @@ class AgentOrchestrationLintTests(unittest.TestCase):
         m = rd(os.path.join(REPO, ".claude", "commands", "os-run-module.md"))
         self.assertIn("os_registry.py screen", m); self.assertIn("prices check", m)
         self.assertIn("Mode B", rd(os.path.join(REPO, ".claude", "commands", "os-morning-page.md")))
+
+
+# ---------------------------------------------------------------------------------------------------------
+# Finding 8: evidence cannot be erased
+# ---------------------------------------------------------------------------------------------------------
+class CreateOnlyTests(Base):
+    def test_agent_cannot_overwrite_existing_draft(self):
+        path = self.p("data/ai-os/drafts/2026-10-01-response.md")
+        self.assertTrue(self.allowed(self.write(path, "os-response")))       # first write: file does not exist yet
+        wr(path, "EVIDENCE")
+        p = self.write(path, "os-response")
+        self.assertTrue(self.denied(p))
+        self.assertIn("-2", p.stdout)                                          # tells the agent how to proceed
+        self.assertEqual(rd(path), "EVIDENCE")
+        self.assertTrue(self.allowed(self.write(self.p("data/ai-os/drafts/2026-10-01-response-2.md"), "os-response")))
+
+    def test_agents_cannot_edit_even_new_looking_paths(self):
+        path = self.p("data/ai-os/drafts/x.md"); wr(path, "x")
+        for tool in ("Edit", "MultiEdit"):
+            self.assertTrue(self.denied(self.write(path, "os-response", tool)), tool)
+
+    def test_symlink_alias_of_existing_file_is_refused(self):
+        real = self.p("data/ai-os/drafts/real.md"); wr(real, "EVIDENCE")
+        os.symlink(real, self.p("data/ai-os/drafts/alias.md"))
+        self.assertTrue(self.denied(self.write(self.p("data/ai-os/drafts/alias.md"), "os-response")))
+        self.assertEqual(rd(real), "EVIDENCE")
+
+    def test_dangling_symlink_is_not_a_way_in(self):
+        os.symlink(self.p("data/ai-os/drafts/ghost.md"), self.p("data/ai-os/drafts/dangling.md"))
+        self.assertTrue(self.denied(self.write(self.p("data/ai-os/drafts/dangling.md"), "os-response")))
+
+    def test_main_session_may_overwrite(self):
+        path = self.p("docs/notes.md"); wr(path, "old")
+        self.assertTrue(self.allowed(self.write(path, None)))
+
+    def test_overwrite_refusals_are_logged_and_counted_separately(self):
+        path = self.p("data/ai-os/drafts/a.md"); wr(path, "x")
+        self.write(path, "os-response"); self.write(path, "os-seo")
+        rep = A.integrity(self.root)
+        self.assertEqual(rep["overwrite_refusals_today"], 2)
+        self.assertEqual(rep["denials_today"], 0)  # benign refusals do not raise the breach warning
+        self.assertFalse(any("write attempt" in w for w in rep["WARNINGS"]))
+        self.write(self.p(".claude/agents/os-approval.md"), "os-response")  # a real breach attempt still warns
+        self.assertEqual(A.integrity(self.root)["denials_today"], 1)
+
+
+class QueueFolderTests(Base):
+    def put(self, name, text):
+        os.makedirs(self.p("data/ai-os/approval-queue"), exist_ok=True)
+        wr(self.p("data/ai-os/approval-queue/" + name), text)
+
+    def test_cards_from_several_dated_files(self):
+        self.put("2026-10-01-01.md", "## ITEM A1 first\nx\n")
+        self.put("2026-10-01-02.md", "## ITEM A2 second\ny\n")
+        self.assertEqual(sorted(A.read_cards(self.root)), ["A1", "A2"])
+
+    def test_same_id_different_text_voids_the_approval(self):
+        self.put("2026-10-01-01.md", "## ITEM A1 pay\nCost: EUR 10\n")
+        A.record_decision(self.root, "A1", "approve", "owner")
+        self.assertEqual(A.status(self.root, "A1")[0], "approved")
+        self.put("2026-10-01-02.md", "## ITEM A1 pay\nCost: EUR 10000\n")   # an agent re-issues the id with new text
+        st, why = A.status(self.root, "A1")
+        self.assertEqual(st, "voided"); self.assertIn("several queue files", why)
+
+    def test_identical_duplicate_is_harmless(self):
+        self.put("2026-10-01-01.md", "## ITEM A1 pay\nCost: EUR 10\n")
+        self.put("2026-10-01-02.md", "## ITEM A1 pay\nCost: EUR 10\n")
+        A.record_decision(self.root, "A1", "approve", "owner")
+        self.assertEqual(A.status(self.root, "A1")[0], "approved")
+
+    def test_legacy_single_file_still_read(self):
+        wr(self.p("data/ai-os/approval-queue.md"), "## ITEM L1 old\nz\n")
+        self.assertIn("L1", A.read_cards(self.root))
+
+
+# ---------------------------------------------------------------------------------------------------------
+# Finding 9: limits are code
+# ---------------------------------------------------------------------------------------------------------
+import calendar as _cal  # noqa: E402
+import os_gate as G  # noqa: E402
+
+try:
+    from zoneinfo import ZoneInfo as _ZI
+    _ZI("Europe/Athens")
+    HAVE_TZ = True
+except Exception:  # pragma: no cover
+    HAVE_TZ = False
+
+T = lambda s: _cal.timegm(time.strptime(s, "%Y-%m-%dT%H:%M:%SZ"))  # noqa: E731
+NOON = T("2026-10-01T09:00:00Z")        # 12:00 in Athens (EEST, UTC+3)
+NIGHT = T("2026-10-01T20:30:00Z")       # 23:30 in Athens
+EARLY = T("2026-10-01T03:00:00Z")       # 06:00 in Athens
+LIMITS = {"approval_expiry_hours": 24, "max_spend_per_approval_eur": 100, "max_budget_step_pct": 20, "max_touches_per_window": 2,
+          "touch_window_days": 14, "prospect_batch_size": 25, "invoice_first_reminder_days": 30, "invoice_escalate_days": 60,
+          "quiet_hours_local": {"start": "21:00", "end": "08:00"}, "ad_stop_loss_eur": None, "target_cost_per_lead_eur": None, "cash_buffer_eur": None}
+
+
+class GateBase(RegistryBase):
+    def setUp(self):
+        super().setUp()
+        self.set_limits({})
+        os.makedirs(self.p("data/ai-os/approval-queue"), exist_ok=True)
+        self.grant("alice@example.com", "email", "consent")
+
+    def set_limits(self, over):
+        lim = dict(LIMITS); lim.update(over)
+        os.makedirs(self.p("docs/ai-os/rules"), exist_ok=True)
+        wr(self.p("docs/ai-os/rules/limits.json"), json.dumps(lim))
+
+    def card(self, item, action, raw_block=None):
+        block = raw_block if raw_block is not None else "```action\n%s\n```" % json.dumps(action)
+        wr(self.p("data/ai-os/approval-queue/%s.md" % item), "## ITEM %s test\nprose\n%s\n" % (item, block))
+        return item
+
+    def approved(self, item, action, at=NOON):
+        self.card(item, action)
+        A.record_decision(self.root, item, "approve", "owner", now=at)
+        return item
+
+    def touch(self, **kw):
+        a = {"type": "outbound_touch", "channel": "email", "purpose": "marketing", "to": "alice@example.com", "tz": "Europe/Athens", "text": "Hello"}
+        a.update(kw); return a
+
+    def verdict(self, item, now=NOON):
+        return G.evaluate(self.root, item, now)
+
+    def preview(self, item):
+        return G.evaluate(self.root, item, NOON, assume_approved=True)
+
+
+@unittest.skipUnless(HAVE_TZ, "time-zone data unavailable")
+class GateCoreTests(GateBase):
+    def test_not_approved_blocks_then_approval_allows(self):
+        self.card("I1", self.touch())
+        ok, why, _ = self.verdict("I1"); self.assertFalse(ok); self.assertIn("pending", " ".join(why))
+        A.record_decision(self.root, "I1", "approve", "owner", now=NOON)
+        self.assertTrue(self.verdict("I1")[0])
+
+    def test_rejected_card_blocks(self):
+        self.card("I1", self.touch()); A.record_decision(self.root, "I1", "reject", "owner", now=NOON)
+        self.assertFalse(self.verdict("I1")[0])
+
+    def test_editing_the_card_after_approval_blocks(self):
+        self.approved("I1", self.touch())
+        wr(self.p("data/ai-os/approval-queue/I1.md"), "## ITEM I1 test\nprose\n```action\n%s\n```\n" % json.dumps(self.touch(to="other@example.com")))
+        ok, why, _ = self.verdict("I1"); self.assertFalse(ok); self.assertIn("voided", " ".join(why))
+
+    def test_expiry_is_enforced_and_fails_closed(self):
+        self.approved("I1", self.touch())
+        self.assertTrue(self.verdict("I1", NOON + 23 * 3600)[0])      # 11:00 local next day, 23 h old: still valid
+        ok, why, _ = self.verdict("I1", NOON + 25 * 3600); self.assertFalse(ok); self.assertIn("expired", " ".join(why))
+        self.set_limits({"approval_expiry_hours": None})                # unreadable limit: nothing is fresh enough
+        self.assertIn("expired", " ".join(self.verdict("I1")[1]))
+
+    def test_commit_is_single_use(self):
+        self.approved("I1", self.touch())
+        self.assertTrue(G.commit(self.root, "I1", NOON)[0])
+        ok, why, _ = G.commit(self.root, "I1", NOON); self.assertFalse(ok); self.assertIn("already used", " ".join(why))
+        self.assertFalse(G.evaluate(self.root, "I1", NOON)[0])
+
+    def test_touch_cap_in_window_and_window_expiry(self):
+        for i in (1, 2):
+            self.approved("T%d" % i, self.touch(text="msg %d" % i)); self.assertTrue(G.commit(self.root, "T%d" % i, NOON)[0])
+        self.approved("T3", self.touch(text="msg 3"))
+        ok, why, _ = self.verdict("T3"); self.assertFalse(ok); self.assertIn("touch cap reached", " ".join(why))
+        later = NOON + 15 * 86400          # outside the 14-day window: the old touches no longer count
+        A.record_decision(self.root, "T3", "approve", "owner", now=later)
+        self.assertTrue(G.evaluate(self.root, "T3", later)[0])
+
+    def test_touch_cap_is_per_lead(self):
+        self.grant("bob@example.com", "email", "consent")
+        for i in (1, 2):
+            self.approved("T%d" % i, self.touch(text="m%d" % i)); G.commit(self.root, "T%d" % i, NOON)
+        self.approved("B1", self.touch(to="bob@example.com")); self.assertTrue(self.verdict("B1")[0])
+
+    def test_quiet_hours(self):
+        self.approved("N", self.touch(), at=NIGHT); ok, why, _ = self.verdict("N", NIGHT)
+        self.assertFalse(ok); self.assertIn("quiet hours", " ".join(why))
+        self.approved("E", self.touch(), at=EARLY); self.assertFalse(self.verdict("E", EARLY)[0])
+        self.approved("D", self.touch(), at=NOON); self.assertTrue(self.verdict("D", NOON)[0])
+        # boundaries (Athens = UTC+3): 07:59 blocked, 08:00 allowed, 20:59 allowed, 21:00 blocked
+        for stamp, want in (("2026-10-01T04:59:00Z", False), ("2026-10-01T05:00:00Z", True), ("2026-10-01T17:59:00Z", True), ("2026-10-01T18:00:00Z", False)):
+            item = "B" + stamp[11:13] + stamp[14:16]
+            self.approved(item, self.touch(), at=T(stamp))
+            self.assertEqual(self.verdict(item, T(stamp))[0], want, stamp)
+
+    def test_quiet_hours_null_unknown_or_missing_tz_all_block(self):
+        self.set_limits({"quiet_hours_local": None}); self.approved("I1", self.touch())
+        self.assertIn("quiet_hours_local is not set", " ".join(self.verdict("I1")[1]))
+        self.set_limits({}); self.approved("I2", self.touch(tz="Mars/Olympus")); self.assertIn("timezone", " ".join(self.verdict("I2")[1]))
+        a = self.touch(); a.pop("tz"); self.approved("I3", a); self.assertFalse(self.verdict("I3")[0])
+
+    def test_recipient_must_be_cleared_by_the_registry(self):
+        self.approved("I1", self.touch(to="stranger@example.com")); self.assertIn("recipient not cleared", " ".join(self.verdict("I1")[1]))
+        R.record_optout(self.root, "alice@example.com", "all", "optout")
+        self.approved("I2", self.touch()); self.assertIn("OPTED-OUT", " ".join(self.verdict("I2")[1]))
+
+    def test_registry_missing_blocks_messages(self):
+        shutil.rmtree(self.p("data/ai-os")); os.makedirs(self.p("data/ai-os/approval-queue"))
+        self.card("I1", self.touch())
+        self.assertFalse(self.preview("I1")[0])
+
+    def test_message_fields_are_required(self):
+        for bad in ({"text": ""}, {"text": "  "}, {"to": ""}, {"channel": "fax"}, {"purpose": "spam"}):
+            self.card("X", self.touch(**bad)); self.assertFalse(self.preview("X")[0], bad)
+
+    def test_invoice_reminder_days(self):
+        self.grant("alice@example.com", "email", "contract")
+        for days, want in ((29, False), (30, True), (59, True), (60, False), (200, False)):
+            self.card("V%d" % days, self.touch(type="invoice_reminder", purpose="service", days_late=days))
+            self.assertEqual(self.preview("V%d" % days)[0], want, days)
+        self.card("VX", self.touch(type="invoice_reminder", purpose="service")); self.assertFalse(self.preview("VX")[0])
+
+    def test_spend_cap_and_validation(self):
+        for amt, want in ((0, True), (100, True), (100.01, False), (-1, False), ("100", False), (True, False), (float("nan"), False), (None, False)):
+            self.card("S", {"type": "spend", "amount_eur": amt, "what": "x"}); self.assertEqual(self.preview("S")[0], want, repr(amt))
+        self.card("S", {"type": "spend", "amount_eur": 10, "currency": "USD"}); self.assertFalse(self.preview("S")[0])
+        self.set_limits({"max_spend_per_approval_eur": None})
+        self.card("S", {"type": "spend", "amount_eur": 1}); self.assertIn("max_spend_per_approval_eur is not set", " ".join(self.preview("S")[1]))
+
+    def test_ad_budget_step(self):
+        cases = ((100, 120, True), (100, 120.1, False), (100, 80, True), (100, 79, False), (100, 100, True), (0, 10, False), (-5, 10, False), (100, -1, False))
+        for old, new, want in cases:
+            self.card("A", {"type": "ad_budget_change", "campaign": "c", "old_daily_eur": old, "new_daily_eur": new})
+            self.assertEqual(self.preview("A")[0], want, (old, new))
+        self.set_limits({"max_spend_per_approval_eur": 10})   # +20 EUR/day exceeds the cap even though the step is within 20 %
+        self.card("A", {"type": "ad_budget_change", "campaign": "c", "old_daily_eur": 100, "new_daily_eur": 120})
+        self.assertIn("per-approval cap", " ".join(self.preview("A")[1]))
+        self.set_limits({"max_budget_step_pct": None}); self.assertFalse(self.preview("A")[0])
+
+    def test_prospect_batch(self):
+        for n, want in ((1, True), (25, True), (26, False), (0, False), (-3, False), ("5", False)):
+            self.card("P", {"type": "prospect_batch", "count": n}); self.assertEqual(self.preview("P")[0], want, repr(n))
+
+    def test_card_shape_failures_all_block(self):
+        self.card("C1", None, raw_block="no block here"); self.assertIn("exactly one", " ".join(self.preview("C1")[1]))
+        self.card("C2", None, raw_block="```action\n{}\n```\n```action\n{}\n```"); self.assertFalse(self.preview("C2")[0])
+        self.card("C3", None, raw_block="```action\n{not json\n```"); self.assertIn("not valid JSON", " ".join(self.preview("C3")[1]))
+        self.card("C4", None, raw_block="```action\n[1,2]\n```"); self.assertFalse(self.preview("C4")[0])
+        self.card("C5", {"type": "launch_missiles"}); self.assertIn("unknown action type", " ".join(self.preview("C5")[1]))
+        self.assertFalse(G.evaluate(self.root, "NOPE", NOON)[0])
+
+    def test_ledger_tamper_blocks_everything_and_integrity_goes_critical(self):
+        for i in (1, 2):
+            self.approved("T%d" % i, self.touch(text="m%d" % i)); G.commit(self.root, "T%d" % i, NOON)
+        path = G.ledger_path(self.root); wr(path, rd(path).splitlines()[1] + "\n")
+        self.approved("T9", self.touch(text="m9")); ok, why, _ = G.evaluate(self.root, "T9", NOON)
+        self.assertFalse(ok); self.assertIn("gate ledger", " ".join(why))
+        C.log_event(self.root, {"event": "tool", "tool": "Write", "agent_type": "os-response", "target": "data/ai-os/drafts/x.md", "ok": True})
+        rep = A.integrity(self.root)
+        self.assertEqual(rep["verdict"], "CRITICAL"); self.assertTrue(any("GATE LEDGER TAMPERING" in c for c in rep["CRITICAL"]))
+
+    def test_ledger_holds_no_raw_recipient(self):
+        self.approved("I1", self.touch()); G.commit(self.root, "I1", NOON)
+        self.assertNotIn("alice", rd(G.ledger_path(self.root))); self.assertNotIn("example.com", rd(G.ledger_path(self.root)))
+
+    def test_preview_before_approval_and_unset_limits(self):
+        self.card("I1", self.touch())
+        self.assertTrue(self.preview("I1")[0])
+        self.assertFalse(G.evaluate(self.root, "I1", NOON)[0])
+        self.set_limits({"quiet_hours_local": None, "max_spend_per_approval_eur": None})
+        gated, adv = G.unset_limits(self.root)
+        self.assertEqual(set(gated), {"quiet_hours_local", "max_spend_per_approval_eur"})
+        self.assertEqual(set(adv), {"ad_stop_loss_eur", "target_cost_per_lead_eur", "cash_buffer_eur"})
+        rep = A.integrity(self.root); self.assertIn("quiet_hours_local", " ".join(rep["WARNINGS"]))
+
+    def test_cli_exit_codes(self):
+        self.approved("I1", self.touch())
+        run = lambda *a: subprocess.run([sys.executable, os.path.join(REPO, "scripts/os_gate.py")] + list(a), capture_output=True, text=True, env=self.env)
+        self.assertEqual(run("check", "NOPE").returncode, 1)
+        self.assertIn("NOT SET", run("limits").stdout)         # advisory limits are null in the fixture
+
+    def test_gate_ledger_unwritable_by_any_session(self):
+        for agent in ("os-response", "os-approval", None):
+            self.assertTrue(GuardProbe(self.root).write(self.p("data/ai-os/gate-ledger.jsonl"), agent), agent)
+
+    def test_shipped_limits_are_conservative(self):
+        lim = C.load_limits(REPO)
+        for k in ("max_spend_per_approval_eur", "quiet_hours_local"):
+            self.assertIsNone(lim[k], "%s must ship unset so the owner chooses" % k)
+        self.assertEqual(lim["approval_expiry_hours"], 24)
+
+
+class Finding89LintTests(AgentOrchestrationLintTests):
+    def test_all_agents_state_create_only(self):
+        for name, t in self.agents().items():
+            self.assertIn("create-only", t, name)
+            self.assertNotIn("approval-queue.md", t, name)
+
+    def test_approval_agent_writes_action_blocks_and_does_not_claim_limits(self):
+        t = self.agents()["os-approval"]
+        for token in ("approval-queue/", "```action", "outbound_touch", "invoice_reminder", "ad_budget_change", "prospect_batch", "os_gate.py commit", "Never write that an action is"):
+            self.assertIn(token, t)
+
+    def test_docs_point_at_limits_json_and_every_gated_key_exists(self):
+        doc = rd(os.path.join(REPO, "docs/ai-os/rules/approval-limits.md"))
+        lim = json.loads(rd(os.path.join(REPO, "docs/ai-os/rules/limits.json")))
+        for k in G.GATED_LIMITS + G.ADVISORY_LIMITS:
+            self.assertIn(k, lim, k)
+            self.assertIn(k, doc, k)
+        self.assertIn("limits.json", doc)

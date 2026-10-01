@@ -19,14 +19,14 @@ WRITE_TOOLS = ("Write", "Edit", "MultiEdit", "NotebookEdit")
 # approvals.md is written only by scripts/os_approvals.py on a real terminal; log/ only by the hooks;
 # the consent/opt-out registry and screened/ only by scripts/os_registry.py.
 PROTECTED_EXACT = ("data/ai-os/approvals.md", "data/ai-os/consent-ledger.jsonl", "data/ai-os/opt-outs.jsonl",
-                   "data/ai-os/.salt")
+                   "data/ai-os/.salt", "data/ai-os/gate-ledger.jsonl")
 PROTECTED_PREFIX = ("data/ai-os/log/", "data/ai-os/screened/")
 
 # Where each os-* agent may write (relative to the project root, lower-case). Anything else is denied.
 DEFAULT_ALLOW = ("data/ai-os/drafts/",)
 ALLOW = {
     "os-chief-of-staff": ("data/ai-os/drafts/", "data/ai-os/morning/"),
-    "os-approval": ("data/ai-os/drafts/", "data/ai-os/approval-queue.md"),
+    "os-approval": ("data/ai-os/drafts/", "data/ai-os/approval-queue/"),
     "os-watchdog": ("data/ai-os/drafts/", "data/ai-os/watchdog/"),
 }
 AGENT_PREFIX = "os-"
@@ -38,12 +38,16 @@ def project_root(data=None):
     return os.path.realpath(r)
 
 
+def real_path(root, raw, cwd=None):
+    """Absolute, symlink-resolved path for a tool's file argument."""
+    base = cwd or root
+    return os.path.realpath(raw if os.path.isabs(raw) else os.path.join(base, raw))
+
+
 def rel_path(root, raw, cwd=None):
     """Resolve raw (maybe relative, maybe via symlink or ..) to a project-relative lower-case posix path.
     Returns None if it resolves outside the project."""
-    base = cwd or root
-    p = raw if os.path.isabs(raw) else os.path.join(base, raw)
-    real = os.path.realpath(p)
+    real = real_path(root, raw, cwd)
     rel = os.path.relpath(real, root)
     if rel == ".." or rel.startswith(".." + os.sep):
         return None
@@ -248,3 +252,28 @@ def untrusted_scan(text):
         if m:
             hits.append(m.group(0).strip()[:60])
     return hits
+
+
+# ---------------------------------------------------------------------------------------------------------
+# Finding 8: evidence must not be erasable. os-* agents may CREATE files, never overwrite or edit them.
+# ---------------------------------------------------------------------------------------------------------
+AGENT_MAY_ONLY_CREATE = True
+
+
+# ---------------------------------------------------------------------------------------------------------
+# Finding 9: limits live in ONE machine-readable file and are enforced by code (scripts/os_gate.py), not by
+# an LLM reading a table. A limit that is null (OWNER MUST SET) makes every action that needs it BLOCK.
+# ---------------------------------------------------------------------------------------------------------
+LIMITS_FILE = "docs/ai-os/rules/limits.json"
+LIMIT_DEFAULTS = {"approval_expiry_hours": 24}
+
+
+def load_limits(root):
+    path = os.path.join(root, *LIMITS_FILE.split("/"))
+    limits = {}
+    if os.path.exists(path):
+        with open(path, encoding="utf-8") as fh:
+            limits = {k: v for k, v in json.load(fh).items() if not k.startswith("_")}
+    merged = dict(LIMIT_DEFAULTS)
+    merged.update(limits)
+    return merged

@@ -35,7 +35,7 @@ Prepares Day 0: welcome message, welcome video script and the first-week plan.
 
 ## Output
 
-Write to `data/ai-os/drafts/YYYY-MM-DD-onboarding.md`. Shape: Welcome pack drafts + client timeline.
+Create `data/ai-os/drafts/YYYY-MM-DD-onboarding.md` with Write. Files are create-only: a hook refuses to overwrite or edit an existing file, so if the name is taken add `-2`, `-3` ... before `.md`. Never try to overwrite; earlier drafts are evidence and are kept. Shape: Welcome pack drafts + client timeline.
 End every file with `Sources:` (what you read) and `Not verified:` (what you could not check).
 
 ## Connectors (read-only unless the owner approves a write)

@@ -35,7 +35,7 @@ Proposes pricing and a test. Rule of the loop - people pay: launch it; nobody pa
 
 ## Output
 
-Write to `data/ai-os/drafts/YYYY-MM-DD-pricing.md`. Shape: Pricing memo + test design + decision rule result.
+Create `data/ai-os/drafts/YYYY-MM-DD-pricing.md` with Write. Files are create-only: a hook refuses to overwrite or edit an existing file, so if the name is taken add `-2`, `-3` ... before `.md`. Never try to overwrite; earlier drafts are evidence and are kept. Shape: Pricing memo + test design + decision rule result.
 End every file with `Sources:` (what you read) and `Not verified:` (what you could not check).
 
 ## Never

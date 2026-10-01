@@ -35,7 +35,7 @@ Drafts the Day 7 check-in and surfaces early friction before it becomes churn.
 
 ## Output
 
-Write to `data/ai-os/drafts/YYYY-MM-DD-checkin.md`. Shape: Check-in draft + friction flags.
+Create `data/ai-os/drafts/YYYY-MM-DD-checkin.md` with Write. Files are create-only: a hook refuses to overwrite or edit an existing file, so if the name is taken add `-2`, `-3` ... before `.md`. Never try to overwrite; earlier drafts are evidence and are kept. Shape: Check-in draft + friction flags.
 End every file with `Sources:` (what you read) and `Not verified:` (what you could not check).
 
 ## Connectors (read-only unless the owner approves a write)

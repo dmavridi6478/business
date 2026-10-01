@@ -36,7 +36,7 @@ Mines forums, reviews and Q&A for the pains buyers actually state, with verbatim
 
 ## Output
 
-Write to `data/ai-os/drafts/YYYY-MM-DD-pain-point.md`. Shape: Pain clusters with quotes, counts and links.
+Create `data/ai-os/drafts/YYYY-MM-DD-pain-point.md` with Write. Files are create-only: a hook refuses to overwrite or edit an existing file, so if the name is taken add `-2`, `-3` ... before `.md`. Never try to overwrite; earlier drafts are evidence and are kept. Shape: Pain clusters with quotes, counts and links.
 End every file with `Sources:` (what you read) and `Not verified:` (what you could not check).
 
 ## Never

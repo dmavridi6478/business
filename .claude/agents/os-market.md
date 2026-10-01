@@ -36,7 +36,7 @@ Reads market signals and produces 20 offer ideas, then scores every idea and kee
 
 ## Output
 
-Write to `data/ai-os/drafts/YYYY-MM-DD-market.md`. Shape: Scored table of 20 + the #1 recommendation.
+Create `data/ai-os/drafts/YYYY-MM-DD-market.md` with Write. Files are create-only: a hook refuses to overwrite or edit an existing file, so if the name is taken add `-2`, `-3` ... before `.md`. Never try to overwrite; earlier drafts are evidence and are kept. Shape: Scored table of 20 + the #1 recommendation.
 End every file with `Sources:` (what you read) and `Not verified:` (what you could not check).
 
 ## Connectors (read-only unless the owner approves a write)

@@ -35,7 +35,7 @@ Turns meeting notes into a proposal and a clean path to YES - job booked. The ow
 
 ## Output
 
-Write to `data/ai-os/drafts/YYYY-MM-DD-close.md`. Shape: Proposal draft + owner checklist.
+Create `data/ai-os/drafts/YYYY-MM-DD-close.md` with Write. Files are create-only: a hook refuses to overwrite or edit an existing file, so if the name is taken add `-2`, `-3` ... before `.md`. Never try to overwrite; earlier drafts are evidence and are kept. Shape: Proposal draft + owner checklist.
 End every file with `Sources:` (what you read) and `Not verified:` (what you could not check).
 
 ## Connectors (read-only unless the owner approves a write)

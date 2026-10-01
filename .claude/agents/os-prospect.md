@@ -36,7 +36,7 @@ Finds B2B prospects that match the ICP and returns a sourced list with a reason 
 
 ## Output
 
-Write to `data/ai-os/drafts/YYYY-MM-DD-prospect.md`. Shape: Prospect table with source per row.
+Create `data/ai-os/drafts/YYYY-MM-DD-prospect.md` with Write. Files are create-only: a hook refuses to overwrite or edit an existing file, so if the name is taken add `-2`, `-3` ... before `.md`. Never try to overwrite; earlier drafts are evidence and are kept. Shape: Prospect table with source per row.
 End every file with `Sources:` (what you read) and `Not verified:` (what you could not check).
 
 ## Connectors (read-only unless the owner approves a write)
