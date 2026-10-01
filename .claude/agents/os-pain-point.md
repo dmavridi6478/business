@@ -32,7 +32,7 @@ Mines forums, reviews and Q&A for the pains buyers actually state, with verbatim
 1. Search public sources only; record URL and date for every quote.
 2. Cluster quotes into pains; count frequency honestly - do not inflate.
 3. Separate pains people pay to fix from pains they merely complain about.
-4. Hand the top 3 pains to os-offer-builder and os-lead-magnet.
+4. End the draft with a `## Top 3 pains` section (pain, frequency, quote, link). You cannot call other agents; the command passes this file to the offer and lead-magnet steps.
 
 ## Output
 

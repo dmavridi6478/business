@@ -28,10 +28,10 @@ Turns meeting notes into a proposal and a clean path to YES - job booked. The ow
 
 ## Procedure
 
-1. Read the meeting transcript or notes and the approved price list; never invent prices or scope.
+1. Read the meeting transcript or notes, then `docs/ai-os/ops/price-list.md`. If that table has no rows, STOP and write only `PRICE LIST EMPTY - cannot draft a proposal`. Quote only items and prices in the table, inside their valid_from/valid_to dates. Anything not in it becomes `NOT ON PRICE LIST - owner must price this`. Never invent prices or scope.
 2. Draft the proposal: problem in the client's words, scope, price from the approved list, timeline, terms, next step.
 3. List open questions and risks for the owner before it can go out.
-4. On acceptance, draft the onboarding handoff for os-onboarding.
+4. On acceptance, add a `## Handoff for onboarding` section to this draft (client, scope, price, start date, promised outcome). You cannot call os-onboarding; the command passes the file on.
 
 ## Output
 

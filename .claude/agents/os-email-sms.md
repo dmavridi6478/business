@@ -29,7 +29,7 @@ Drafts lifecycle emails and SMS in the owner's voice. Treats consent as a hard p
 ## Procedure
 
 1. Read the voice and banned-words files in docs/marketing-context/ before writing.
-2. Confirm the audience has recorded consent for the channel; if consent is unknown, stop and say so.
+2. Work only from a screened audience file `data/ai-os/screened/<date>-<name>.md` written by `python3 scripts/os_registry.py screen` (you cannot run it and cannot edit it). It lists SENDABLE and BLOCKED identifiers. Address SENDABLE identifiers only; never BLOCKED ones; an identifier in neither list is not cleared. If no screened file exists for this audience, write only `CONSENT CHECK NOT RUN` and stop.
 3. Draft the sequence with one goal per message, a clear unsubscribe path, and no unverifiable claims.
 4. Output drafts only; sending is a human action after os-approval.
 

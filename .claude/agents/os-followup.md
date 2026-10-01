@@ -30,7 +30,7 @@ Follows up until a clear yes or no - and then stops. Cadence is capped and every
 
 1. Read the thread and the lead card; identify the last real signal.
 2. Draft the next touch using a different angle from the previous one (value, proof, question, deadline, close-the-loop).
-3. Stop immediately on reply, opt-out, booking, or the touch cap in approval-limits.md.
+3. Stop immediately on reply, opt-out, booking, or the touch cap in approval-limits.md. Before every touch the lead must be SENDABLE in today's screened file `data/ai-os/screened/<date>-<name>.md` (written by `python3 scripts/os_registry.py screen`, which you cannot run or edit). BLOCKED means opted out or no consent: write no touch, only flag it. If no screened file exists, write only `OPT-OUT CHECK NOT RUN` and stop.
 4. End with a polite close-the-loop message that gives a clean 'no' option.
 
 ## Output

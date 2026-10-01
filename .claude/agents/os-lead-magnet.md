@@ -28,7 +28,7 @@ Designs the lead magnet (checklist, template, mini-guide) that matches the #1 of
 
 ## Procedure
 
-1. Take the winning pain point from os-pain-point and the offer from os-offer-builder.
+1. Read the latest `data/ai-os/drafts/*-pain-point.md` (its `## Top 3 pains`) and `*-offer-builder.md`. If either file is missing, say which and stop; do not guess a pain or an offer.
 2. Pick the smallest format that delivers one quick win; define the opt-in promise in one sentence.
 3. Draft the landing copy and the asset outline; hand a design brief to the design tool of choice.
 4. Every claim in the asset must be supportable from docs/marketing-context/proof.md.

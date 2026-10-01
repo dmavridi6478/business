@@ -31,7 +31,7 @@ At Day 90, only for GREEN clients, drafts the review request and the referral as
 1. Check the latest health score; stop if it is not GREEN.
 2. Draft a review request that makes it easy to say no.
 3. Draft a referral ask that names exactly who would be a good introduction.
-4. Record consent and never offer an incentive that breaches platform or advertising rules.
+4. Work only from a screened audience file `data/ai-os/screened/<date>-<name>.md` written by `python3 scripts/os_registry.py screen` (you cannot run it and cannot edit it). It lists SENDABLE and BLOCKED identifiers. Address SENDABLE identifiers only; never BLOCKED ones; an identifier in neither list is not cleared. If no screened file exists for this audience, write only `CONSENT CHECK NOT RUN` and stop. Never offer an incentive that breaches platform or advertising rules.
 
 ## Output
 

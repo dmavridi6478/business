@@ -16,9 +16,11 @@ ZERO = "0" * 64
 WRITE_TOOLS = ("Write", "Edit", "MultiEdit", "NotebookEdit")
 
 # Paths no agent may ever write, and no Claude Write/Edit call from ANY session may touch.
-# approvals.md is written only by scripts/os_approvals.py on a real terminal; log/ only by the hooks.
-PROTECTED_EXACT = ("data/ai-os/approvals.md",)
-PROTECTED_PREFIX = ("data/ai-os/log/",)
+# approvals.md is written only by scripts/os_approvals.py on a real terminal; log/ only by the hooks;
+# the consent/opt-out registry and screened/ only by scripts/os_registry.py.
+PROTECTED_EXACT = ("data/ai-os/approvals.md", "data/ai-os/consent-ledger.jsonl", "data/ai-os/opt-outs.jsonl",
+                   "data/ai-os/.salt")
+PROTECTED_PREFIX = ("data/ai-os/log/", "data/ai-os/screened/")
 
 # Where each os-* agent may write (relative to the project root, lower-case). Anything else is denied.
 DEFAULT_ALLOW = ("data/ai-os/drafts/",)

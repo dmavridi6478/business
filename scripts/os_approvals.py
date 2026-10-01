@@ -26,6 +26,7 @@ import time
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, os.path.join(os.path.dirname(HERE), ".claude", "hooks"))
 import os_common as C  # noqa: E402
+import os_registry as R  # noqa: E402
 
 EXPIRY_HOURS = 24
 CARD_RE = re.compile(r"^## ITEM (\S+)", re.M)
@@ -171,7 +172,16 @@ def integrity(root, now=None):
             voided.append(iid)
     if voided:
         warn.append("approved cards edited after approval (approval void): %s" % ", ".join(voided))
-    report = {"date": day, "log_files": len(files), "log_events_today": events_today, "log_chain_ok": chain_ok,
+    reg_ok, reg_why = R.health(root)
+    if not reg_ok:
+        if reg_why.startswith("TAMPERING"):
+            crit.append("REGISTRY %s" % reg_why)
+        else:
+            warn.append("consent/opt-out %s - outreach agents refuse to draft until it exists" % reg_why)
+    price_n = R.price_rows(root)
+    if price_n == 0:
+        warn.append("price list has no rows (docs/ai-os/ops/price-list.md) - os-close refuses to draft proposals")
+    report = {"date": day, "registry_ok": reg_ok, "price_rows": price_n, "log_files": len(files), "log_events_today": events_today, "log_chain_ok": chain_ok,
               "denials_today": denials, "approvals_chain_ok": ok, "voided_items": voided, "suspicious_drafts": suspicious,
               "CRITICAL": crit, "WARNINGS": warn, "verdict": "CRITICAL" if crit else ("WARN" if warn else "OK")}
     os.makedirs(paths(root)["watchdog"], exist_ok=True)

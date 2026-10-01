@@ -32,7 +32,7 @@ Finds B2B prospects that match the ICP and returns a sourced list with a reason 
 1. Restate the ICP and exclusions before searching.
 2. Search company and contact data; keep only business contacts with a lawful basis noted per compliance-rules.md.
 3. For each prospect give: why they fit, trigger event, source URL, suggested first message angle.
-4. Cap the batch at the size set in approval-limits.md.
+4. Cap the batch at the size set in approval-limits.md. You cannot see the opt-out registry; after you finish, the command screens your list against it with `python3 scripts/os_registry.py screen` and drops opted-out people. Do not guess who has opted out.
 
 ## Output
 

@@ -31,7 +31,7 @@ Scores each ad by real leads, not likes, and sorts it into SCALE IT, FIX THE HOO
 1. Pull yesterday's spend, clicks and leads per ad (connector or pasted export).
 2. A lead counts only if it replied, booked or submitted a qualified form - impressions, reactions and clicks do not count.
 3. SCALE IT - brings real leads below target cost. FIX THE HOOK - good clicks, no leads. PAUSE IT - spend with no leads past the stop-loss in approval-limits.md.
-4. Recommend, never change: output the exact budget edits as a proposal for os-approval.
+4. Recommend, never change: write the exact budget edits as a proposal inside this draft. You cannot call os-approval; the command passes this file to it.
 
 ## Output
 

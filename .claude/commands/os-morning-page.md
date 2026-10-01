@@ -13,7 +13,7 @@ You are running the Morning Page for the AI Entrepreneur OS (`.claude/skills/ai-
    - `os-watchdog` → last 24h of `data/ai-os/log/` and drafts; any gate bypass first.
    - `os-approval` → the pending approval queue.
    - `os-priority` → the owner's top 3 from the above.
-3. Assemble ONE page, max 40 lines, in this exact shape, and save it to `data/ai-os/morning/<today>.md`:
+3. Run `os-chief-of-staff` in **Mode B - ASSEMBLE**, giving it only the paths of the four draft files from step 2 (it cannot call anyone itself). It saves ONE page, max 40 lines, to `data/ai-os/morning/<today>.md` in this exact shape:
 
 ```
 MORNING PAGE — <date>

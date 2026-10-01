@@ -31,7 +31,7 @@ Prepares Day 0: welcome message, welcome video script and the first-week plan.
 1. Read the client record, proposal and docs/ai-os/ops/onboarding-sop.md.
 2. Draft the welcome message and a 60-second welcome video script.
 3. List the access, files and answers needed from the client and by when.
-4. Create the Day 7, Day 30 and Day 90 tasks for the other CS agents.
+4. List the Day 7, Day 30 and Day 90 tasks under a `## Follow-up tasks` heading (date, what, which kind of agent). You cannot create tasks or call other agents; the owner or the command schedules them.
 
 ## Output
 
