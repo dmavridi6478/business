@@ -1061,3 +1061,163 @@ class Finding89LintTests(AgentOrchestrationLintTests):
             self.assertIn(k, lim, k)
             self.assertIn(k, doc, k)
         self.assertIn("limits.json", doc)
+
+
+# ---------------------------------------------------------------------------------------------------------
+# Finding 10: connectors for agents are an exact, read-only, per-agent opt-in that ships empty
+# ---------------------------------------------------------------------------------------------------------
+class ConnectorAllowlistTests(Findings34Base):
+    def allow_file(self, mapping):
+        wr(self.p("docs/ai-os/rules/connector-allowlist.json"), json.dumps(mapping))
+
+    def conn(self, tool, agent, env=None):
+        return self.decision(self.hook("os_outbound.py", tool, {"x": 1}, agent, env))
+
+    def test_default_is_no_connector_for_any_agent(self):
+        self.assertEqual(C.load_connector_allowlist(REPO), {})            # the SHIPPED file really is empty
+        for a in ("os-response", "os-business-analyst", "os-seo"):
+            self.assertEqual(self.conn("mcp__Gmail__get_message", a), "deny", a)
+
+    def test_exact_read_only_tool_for_the_named_agent_only(self):
+        self.allow_file({"os-response": ["mcp__Gmail__get_message"]})
+        self.assertEqual(self.conn("mcp__Gmail__get_message", "os-response"), "allow")
+        self.assertEqual(self.conn("mcp__Gmail__get_message", "os-followup"), "deny")       # another agent
+        self.assertEqual(self.conn("mcp__Gmail__get_thread", "os-response"), "deny")        # a different tool
+        self.assertEqual(self.conn("mcp__Gmail__send_message", "os-response"), "deny")      # a write tool
+
+    def test_write_verbs_and_wildcards_are_dropped_even_if_listed(self):
+        self.allow_file({"os-response": ["mcp__Gmail__send_message", "mcp__Gmail__*", "mcp__Gmail__create_draft", "mcp__*", "*",
+                                         "Bash", "mcp__Gmail__get_message ", "mcp__Gmail__reply"]})
+        self.assertEqual(C.load_connector_allowlist(self.root), {})
+        for t in ("mcp__Gmail__send_message", "mcp__Gmail__create_draft", "mcp__Gmail__reply", "mcp__Gmail__get_message"):
+            self.assertEqual(self.conn(t, "os-response"), "deny", t)
+
+    def test_web_agents_never_get_connectors(self):
+        self.allow_file({a: ["mcp__Gmail__get_message"] for a in C.WEB_AGENTS})
+        for a in C.WEB_AGENTS:
+            self.assertEqual(self.conn("mcp__Gmail__get_message", a), "deny", a)
+            self.assertFalse(C.connector_allowed(self.root, a, "mcp__Gmail__get_message"))
+
+    def test_malformed_file_fails_closed(self):
+        for text in ("{not json", "[]", '"x"', '{"os-response": "mcp__Gmail__get_message"}', '{"bash": ["mcp__Gmail__get_message"]}'):
+            wr(self.p("docs/ai-os/rules/connector-allowlist.json"), text)
+            self.assertEqual(C.load_connector_allowlist(self.root), {}, text)
+        os.remove(self.p("docs/ai-os/rules/connector-allowlist.json"))
+        self.assertEqual(self.conn("mcp__Gmail__get_message", "os-response"), "deny")
+
+    def test_main_session_confirmation_is_unchanged_by_the_allowlist(self):
+        self.allow_file({"os-response": ["mcp__Gmail__get_message"]})
+        self.assertEqual(self.conn("mcp__Gmail__send_message", None), "ask")
+        self.assertEqual(self.conn("mcp__Gmail__get_message", None), "allow")
+
+    def test_integrity_flags_only_calls_that_were_not_allowlisted(self):
+        self.allow_file({"os-response": ["mcp__Gmail__get_message"]})
+        C.log_event(self.root, {"event": "tool", "tool": "mcp__Gmail__get_message", "agent_type": "os-response", "target": "args:x", "ok": True})
+        self.assertEqual(A.integrity(self.root)["CRITICAL"] and [c for c in A.integrity(self.root)["CRITICAL"] if "CONNECTOR" in c], [])
+        C.log_event(self.root, {"event": "tool", "tool": "mcp__Gmail__get_message", "agent_type": "os-followup", "target": "args:x", "ok": True})
+        crit = " ".join(A.integrity(self.root)["CRITICAL"])
+        self.assertIn("CONNECTOR", crit); self.assertIn("os-followup", crit); self.assertNotIn("os-response CONNECTOR", crit)
+
+
+class ConnectorConsistencyTests(unittest.TestCase):
+    """One source of truth: an agent's `tools:` line lists exactly the connector tools the allow-list grants it."""
+    def test_frontmatter_matches_allowlist_exactly(self):
+        raw = json.loads(rd(os.path.join(REPO, "docs/ai-os/rules/connector-allowlist.json")))
+        listed = {k: v for k, v in raw.items() if not k.startswith("_")}
+        agents = AgentInvariantTests().agents()
+        for a in listed:
+            self.assertIn(a, agents, "allow-list names unknown agent %s" % a)
+        for name, path in agents.items():
+            mcp = sorted(t for t in AgentInvariantTests.tools(path) if t.startswith("mcp__"))
+            self.assertEqual(mcp, sorted(listed.get(name, [])), "%s: tools line and connector-allowlist.json disagree" % name)
+
+    def test_allowlist_entries_are_exact_read_only_and_never_for_web_agents(self):
+        raw = json.loads(rd(os.path.join(REPO, "docs/ai-os/rules/connector-allowlist.json")))
+        for agent, tools in ((k, v) for k, v in raw.items() if not k.startswith("_")):
+            self.assertNotIn(agent, C.WEB_AGENTS)
+            for t in tools:
+                self.assertTrue(_re.fullmatch(C.CONNECTOR_NAME, t), t)
+                self.assertEqual(C.connector_verdict(t), "allow", "%s is not a read-only tool" % t)
+                self.assertNotIn("*", t)
+
+    def test_agent_files_no_longer_promise_connector_access(self):
+        for name, t in AgentOrchestrationLintTests.agents().items():
+            self.assertNotIn("read-only unless the owner approves a write", t, name)
+            if "## Connector sources" in t:
+                self.assertIn("you cannot call these", t, name)
+                self.assertIn("NO CONNECTOR DATA PROVIDED", t, name)
+                self.assertIn("connector-allowlist.json", t, name)
+            self.assertNotIn("create drafts - never send", t, name)
+            if "## Connector sources" in t:
+                section = t.split("## Connector sources", 1)[1].split("\n## ", 1)[0]
+                for line in (l for l in section.splitlines() if l.startswith("- **")):
+                    bad = _re.search(r"\b(create\w*|post\w*|draft\w*|build\w*|store\w*|mirror\w*|log|propose\w*|send\w*|write\w*|update\w*|publish\w*|schedule\w*|control)\b", line, _re.I)
+                    self.assertIsNone(bad, "%s: connector bullet implies a write: %r" % (name, line))
+
+
+# ---------------------------------------------------------------------------------------------------------
+# Finding 11: injection reports reach the watchdog through files
+# ---------------------------------------------------------------------------------------------------------
+class InjectionFlagTests(Base):
+    def flag(self, agent, name="2026-10-01-x.md", tool="Write"):
+        return self.write(self.p("data/ai-os/flags/" + name), agent, tool)
+
+    def test_every_os_agent_can_create_a_flag(self):
+        names = [n for n in AgentInvariantTests().agents()]
+        self.assertEqual(len(names), 25)
+        for n in names:
+            self.assertTrue(self.allowed(self.flag(n, "2026-10-01-%s.md" % n)), n)
+
+    def test_flags_are_create_only_markdown_and_traversal_safe(self):
+        os.makedirs(self.p("data/ai-os/flags"), exist_ok=True)
+        wr(self.p("data/ai-os/flags/2026-10-01-a.md"), "first report")
+        self.assertTrue(self.denied(self.flag("os-seo", "2026-10-01-a.md")))                 # cannot overwrite
+        self.assertTrue(self.denied(self.flag("os-seo", "2026-10-01-a.md", "Edit")))
+        self.assertEqual(rd(self.p("data/ai-os/flags/2026-10-01-a.md")), "first report")
+        self.assertTrue(self.denied(self.flag("os-seo", "x.sh")))
+        self.assertTrue(self.denied(self.write(self.p("data/ai-os/flags/../drafts/../../../.claude/agents/x.md"), "os-seo")))
+
+    def test_flood_cap(self):
+        os.makedirs(self.p("data/ai-os/flags"), exist_ok=True)
+        for i in range(C.MAX_FLAGS):
+            open(self.p("data/ai-os/flags/f%03d.md" % i), "w").close()
+        p = self.flag("os-response", "one-more.md")
+        self.assertTrue(self.denied(p)); self.assertIn("review and clear", p.stdout)
+
+    def test_only_agents_get_the_allowance_not_other_protected_paths(self):
+        self.assertTrue(self.denied(self.write(self.p("data/ai-os/log/x.md"), "os-seo")))
+        self.assertTrue(self.denied(self.write(self.p("data/ai-os/approvals.md"), "os-seo")))
+
+    def test_integrity_counts_and_names_recent_flags_and_flood_is_critical(self):
+        C.log_event(self.root, {"event": "tool", "tool": "Write", "agent_type": "os-response", "target": "data/ai-os/drafts/x.md", "ok": True})
+        os.makedirs(self.p("data/ai-os/flags"), exist_ok=True)
+        wr(self.p("data/ai-os/flags/2026-10-01-os-response.md"), "x")
+        rep = A.integrity(self.root)
+        self.assertEqual(rep["injection_flags_24h"], 1)
+        self.assertIn("2026-10-01-os-response.md", " ".join(rep["WARNINGS"]))
+        old = self.p("data/ai-os/flags/old.md"); wr(old, "x"); os.utime(old, (0, 0))          # older than 24 h: not counted
+        self.assertEqual(A.integrity(self.root)["injection_flags_24h"], 1)
+        for i in range(C.MAX_FLAGS):
+            wr(self.p("data/ai-os/flags/g%03d.md" % i), "x")
+        rep = A.integrity(self.root)
+        self.assertTrue(any("FLAG FLOOD" in c for c in rep["CRITICAL"]))
+
+    def test_no_flags_no_warning(self):
+        C.log_event(self.root, {"event": "tool", "tool": "Write", "agent_type": "os-response", "target": "data/ai-os/drafts/x.md", "ok": True})
+        rep = A.integrity(self.root)
+        self.assertEqual(rep["injection_flags_24h"], 0)
+        self.assertFalse(any("injection report" in w for w in rep["WARNINGS"]))
+
+
+class InjectionFlagLintTests(unittest.TestCase):
+    def test_every_agent_knows_how_to_flag_and_no_one_promises_messaging(self):
+        for name, t in AgentOrchestrationLintTests.agents().items():
+            self.assertIn("data/ai-os/flags/", t, name)
+            self.assertIn("You cannot message other agents", t, name)
+            self.assertNotIn("report it to os-watchdog", t, name)
+
+    def test_watchdog_reads_flags_and_morning_page_reports_them(self):
+        w = AgentOrchestrationLintTests.agents()["os-watchdog"]
+        for token in ("data/ai-os/flags/", "injection_flags_24h", "```untrusted"):
+            self.assertIn(token, w)
+        self.assertIn("injection reports", rd(os.path.join(REPO, ".claude/commands/os-morning-page.md")))

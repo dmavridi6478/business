@@ -24,6 +24,10 @@ PROTECTED_PREFIX = ("data/ai-os/log/", "data/ai-os/screened/")
 
 # Where each os-* agent may write (relative to the project root, lower-case). Anything else is denied.
 DEFAULT_ALLOW = ("data/ai-os/drafts/",)
+# Finding 11: every os-* agent may create injection reports here (create-only, capped), because agents cannot message
+# each other or the watchdog. The watchdog and the integrity report read this folder.
+FLAGS_DIR = "data/ai-os/flags/"
+MAX_FLAGS = 200
 ALLOW = {
     "os-chief-of-staff": ("data/ai-os/drafts/", "data/ai-os/morning/"),
     "os-approval": ("data/ai-os/drafts/", "data/ai-os/approval-queue/"),
@@ -64,7 +68,7 @@ def allowed_for(agent, rel):
         return False
     if not rel.endswith(AGENT_FILE_SUFFIX):
         return False
-    allow = ALLOW.get(agent, DEFAULT_ALLOW)
+    allow = tuple(ALLOW.get(agent, DEFAULT_ALLOW)) + (FLAGS_DIR,)
     return any(rel == a or (a.endswith("/") and rel.startswith(a)) for a in allow)
 
 
@@ -277,3 +281,43 @@ def load_limits(root):
     merged = dict(LIMIT_DEFAULTS)
     merged.update(limits)
     return merged
+
+
+# ---------------------------------------------------------------------------------------------------------
+# Finding 10: connectors for os-* agents are an EXACT, per-agent, READ-ONLY opt-in owned by the human.
+# docs/ai-os/rules/connector-allowlist.json  ->  {"os-response": ["mcp__Gmail__get_message", ...]}
+# It ships EMPTY. A tool is honoured only if: the agent is not a web agent (a connector that reads private data must
+# never sit beside a network tool), the name is exact (no wildcards), and it classifies as read-only. The agent's
+# frontmatter `tools:` must list exactly the same names (a test enforces this), so there is one source of truth.
+# ---------------------------------------------------------------------------------------------------------
+CONNECTOR_ALLOWLIST = "docs/ai-os/rules/connector-allowlist.json"
+CONNECTOR_NAME = r"mcp__[A-Za-z0-9_\-]+__[A-Za-z0-9_\-]+"
+
+
+def load_connector_allowlist(root):
+    """{agent: (exact tool names)}; anything malformed is dropped (fail closed)."""
+    import re
+    path = os.path.join(root, *CONNECTOR_ALLOWLIST.split("/"))
+    if not os.path.exists(path):
+        return {}
+    try:
+        with open(path, encoding="utf-8") as fh:
+            raw = json.load(fh)
+    except ValueError:
+        return {}
+    out = {}
+    if not isinstance(raw, dict):
+        return {}
+    for agent, tools in raw.items():
+        if agent.startswith("_") or not agent.startswith(AGENT_PREFIX) or not isinstance(tools, list):
+            continue
+        good = tuple(t for t in tools if isinstance(t, str) and re.fullmatch(CONNECTOR_NAME, t) and connector_verdict(t) == "allow")
+        if good:
+            out[agent] = good
+    return out
+
+
+def connector_allowed(root, agent, tool):
+    if agent in WEB_AGENTS:
+        return False
+    return tool in load_connector_allowlist(root).get(agent, ())

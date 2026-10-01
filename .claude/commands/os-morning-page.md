@@ -21,7 +21,7 @@ MONEY      in: <€> · out: <€> · overdue invoices: <n / €> · cash: <€ 
 LEADS      new: <n> · HOT: <n> · cost per real lead: <€ or "data gap">
 TOP 3      1) … 2) … 3) …   (each: why now · € at stake · deadline)
 NEEDS YOU  <n> approvals waiting → data/ai-os/approval-queue/ (approve in a terminal)
-WATCHDOG   <one line; CRITICAL first if any>
+WATCHDOG   <one line; CRITICAL first if any> · injection reports (24 h): <n>
 DATA GAPS  <what could not be read and why>
 ```
 

@@ -165,7 +165,8 @@ def integrity(root, now=None):
                     outside.append("%s %s FETCH %s (%s)" % (ev.get("ts"), ev["agent_type"], (ev.get("target") or "")[:80], why))
             elif ev.get("event") == "tool" and (ev.get("tool") or "").startswith("mcp__") and \
                     (ev.get("agent_type") or "").startswith(C.AGENT_PREFIX):
-                outside.append("%s %s CONNECTOR %s" % (ev.get("ts"), ev["agent_type"], ev.get("tool")))
+                if not C.connector_allowed(root, ev["agent_type"], ev.get("tool")):
+                    outside.append("%s %s CONNECTOR %s" % (ev.get("ts"), ev["agent_type"], ev.get("tool")))
             elif ev.get("event") == "tool" and ev.get("tool") in C.WRITE_TOOLS and \
                     (ev.get("agent_type") or "").startswith(C.AGENT_PREFIX):
                 if not C.allowed_for(ev["agent_type"], ev.get("target")):
@@ -184,6 +185,17 @@ def integrity(root, now=None):
         warn.append("limits not set (any action that needs them is BLOCKED): %s - edit docs/ai-os/rules/limits.json" % ", ".join(unset_gated))
     if unset_adv:
         warn.append("advisory limits not set (analyst agents work without them): %s" % ", ".join(unset_adv))
+    flags = []
+    fdir = os.path.join(root, *C.FLAGS_DIR.strip("/").split("/"))
+    if os.path.isdir(fdir):
+        for fn in sorted(os.listdir(fdir)):
+            fp = os.path.join(fdir, fn)
+            if fn.endswith(".md") and now - os.path.getmtime(fp) < 24 * 3600:
+                flags.append(fn)
+    if len(flags) >= C.MAX_FLAGS:
+        crit.append("FLAG FLOOD: %d injection reports in the last 24 h (folder cap %d); real ones may be buried" % (len(flags), C.MAX_FLAGS))
+    elif flags:
+        warn.append("%d injection report(s) raised by agents in the last 24 h - read data/ai-os/flags/: %s" % (len(flags), ", ".join(flags[:5])))
     suspicious = []
     ddir = os.path.join(root, "data", "ai-os", "drafts")
     if os.path.isdir(ddir):
@@ -217,7 +229,7 @@ def integrity(root, now=None):
     if price_n == 0:
         warn.append("price list has no rows (docs/ai-os/ops/price-list.md) - os-close refuses to draft proposals")
     report = {"date": day, "registry_ok": reg_ok, "price_rows": price_n, "log_files": len(files), "log_events_today": events_today, "log_chain_ok": chain_ok,
-              "denials_today": denials, "overwrite_refusals_today": overwrites, "gate_ledger_ok": gok, "unset_limits": unset_gated, "approvals_chain_ok": ok, "voided_items": voided, "suspicious_drafts": suspicious,
+              "denials_today": denials, "overwrite_refusals_today": overwrites, "gate_ledger_ok": gok, "unset_limits": unset_gated, "injection_flags_24h": len(flags), "approvals_chain_ok": ok, "voided_items": voided, "suspicious_drafts": suspicious,
               "CRITICAL": crit, "WARNINGS": warn, "verdict": "CRITICAL" if crit else ("WARN" if warn else "OK")}
     os.makedirs(paths(root)["watchdog"], exist_ok=True)
     stamp = time.strftime("%Y-%m-%dT%H%M%SZ", time.gmtime(now))

@@ -47,8 +47,11 @@ def main():
         return
     if tool.startswith("mcp__"):
         if is_os:
-            log("deny", tool, "os-* agents may not call connectors")
-            out("deny", "os-* agents may not call connector tools (%s)" % tool)
+            if C.connector_allowed(root, agent, tool):
+                return  # exact, read-only, owner-allow-listed for this agent; the logger records the call
+            log("deny", tool, "connector not allow-listed for this agent")
+            out("deny", "%s may not call %s. Connectors are off for agents unless the owner lists this exact read-only tool "
+                "for this agent in %s (never for web agents)" % (agent, tool, C.CONNECTOR_ALLOWLIST))
         if os.environ.get("OS_OUTBOUND_MODE", "ask").lower() == "off":
             return
         if C.connector_verdict(tool) == "ask":

@@ -47,6 +47,10 @@ def main():
     if is_os and not C.allowed_for(agent, rel):
         allowed = ", ".join(C.ALLOW.get(agent, C.DEFAULT_ALLOW))
         deny(root, data, rel, "%s may write only .md files under: %s" % (agent, allowed))
+    if is_os and rel is not None and rel.startswith(C.FLAGS_DIR):
+        fdir = os.path.join(root, *C.FLAGS_DIR.strip("/").split("/"))
+        if os.path.isdir(fdir) and len(os.listdir(fdir)) >= C.MAX_FLAGS:
+            deny(root, data, rel, "the flags folder already holds %d reports; the owner must review and clear it before more can be added" % C.MAX_FLAGS, "flood")
     if is_os:
         # Evidence must survive: agents create new files only. No Edit/MultiEdit, no overwriting an existing file.
         if data.get("tool_name") != "Write":
