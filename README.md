@@ -2631,7 +2631,7 @@ commercial SaaS, no repos to clone).
 **Repos cloned / registered:**
 
 **Open-source self-hosted tools (from @replace.so "5 GitHub repos so good they shouldn't be free" carousel):**
-- `Skyvern-AutoGPT/skyvern` — 22.7k★; Apache 2.0; AI browser automation using LLMs and computer vision; navigates websites by understanding their visual layout rather than brittle CSS selectors or XPaths
+- `Skyvern-AI/skyvern` — 22.7k★; Apache 2.0; AI browser automation using LLMs and computer vision; navigates websites by understanding their visual layout rather than brittle CSS selectors or XPaths
   `git clone https://github.com/Skyvern-AutoGPT/skyvern`
 - `alainm23/planify` — 5.6k★; GPL-3.0; open-source GNOME task manager for GNU/Linux; integrates with Todoist and Google Tasks; supports boards, timeline, and scheduling
   `git clone https://github.com/alainm23/planify`
@@ -3865,8 +3865,8 @@ Paste-ready prompts from this batch:
 - **[`pear-devs/pear-desktop`](https://github.com/pear-devs/pear-desktop)** (31.5k★) — Pear Desktop: open-source desktop client for YouTube Music; native-feeling app with offline support, playlist management, and no ads; Electron/TypeScript
   `git clone https://github.com/pear-devs/pear-desktop`
 
-- **[`stab1yai/orca`](https://github.com/stab1yai/orca)** (56k★, 3.8k forks) — Orca: Agent Development Environment (ADE) for running multiple coding agents in parallel side by side — Codex, Claude Code, OpenCode, and Pi in one workspace; resolves the incomplete ORCA entry from batch 34 ("from @lunktech, no GitHub slug captured") — this is the specific repo
-  `git clone https://github.com/stab1yai/orca`
+- **[`stablyai/orca`](https://github.com/stablyai/orca)** (56k★, 3.8k forks) — Orca: Agent Development Environment (ADE) for running multiple coding agents in parallel side by side — Codex, Claude Code, OpenCode, and Pi in one workspace; resolves the incomplete ORCA entry from batch 34 ("from @lunktech, no GitHub slug captured") — this is the specific repo
+  `git clone https://github.com/stablyai/orca`
 
 ### Informational only (no install action)
 
@@ -5792,3 +5792,22 @@ Source: `80c9789b-LinkedIn_Master_Guide_for_Claude.zip` — 4 static images (`.j
 **Batch 98 hardening, round 5 (review findings 10 and 11) — all eleven findings addressed:** connectors for agents are now an exact, read-only, per-agent opt-in in `docs/ai-os/rules/connector-allowlist.json` that ships **empty** (never for the four web agents; the agents' `tools:` lines must match it exactly; agent files no longer promise connector access). Agents report suspected injection by creating a new file in `data/ai-os/flags/` (create-only, capped at 200); the watchdog reads them and the integrity report counts them. 137 tests; 20/20 deliberate bugs caught across rounds 4 and 5. Not proof of safety: run the live canary in `docs/ai-os/README.md`, set the unset limits, fill the registry, and require any sender to call `os_gate.py commit` before promoting any agent.
 
 **Live canary, 2026-10-01:** a real `os-seo` subagent was run through six probes. Read of private data, fetch of a non-allow-listed host, write outside scope and overwrite of an existing draft were all blocked; a new draft and a flag report succeeded. Verified independently from disk and the hash-chained hook log (`agent_type: os-seo` recorded, chain valid); a main-session write to `approvals.md` was refused by the permission-deny rule. The canary found one defect, a guard message that omitted `flags/` from the allowed locations, now fixed with a test (138 tests). Not covered by the canary: connector denial, the main-session connector confirmation prompt, the flood cap, the gate, the registry and `/os-route`.
+
+---
+
+## Batch 99 — iCloud Photos batch 2 (80 images, 1 video; 1 October 2026)
+
+**Report:** [Batch 99 Intake Report](https://claude.ai/artifact/KHN6vu1scU5WQUNKeE2Cy6) (`Artifacts/business/batch-99-intake-report.html`).
+
+**Sources:** @joshualevi.ai, @replace.so, @dotdevs, @githubnow (repo cards); @ai_slacker (7 learning prompts); @StackFlo (research prompts); @ai.global.lee (5 chat agents); SkillDrop AI (event planning, 9 of 10 slides); @your.aimentor (GTM guide map, 12 things with Claude); @aicareersuite (11 ways to master Claude, 7 slides); @entrp0 (consulting tool stack); @tinrovicai (Skyvern video).
+
+**Added:**
+- 3 draft-only agents in the AI Entrepreneur OS: `os-qualify`, `os-booking`, `os-support` (28 agents total; 138 tests pass), plus `/os-chat-triage`, `docs/ai-os/ops/chat-channels-sop.md` and `docs/ai-os/ops/support-faq.md` (empty template; `os-support` answers only from it).
+- Skills: `learn-faster-7-prompts`, `research-skeptic`, `event-planner`, `gtm-guide-map`, `claude-11-ways`. Commands: `/learn-faster`, `/research-skeptic`, `/plain-human`, `/event-plan`, `/os-chat-triage`.
+- Design templates: `prompt-card-carousel`, `repo-card-grid`, `agent-flow-chat-card`, `mascot-tips-orange` (+ theme tokens in `design-templates/SKILL.md`).
+- Repo register in `dev-repos-to-clone` (18 repos verified with `git ls-remote`, Brigade with `npm view`; brigade, hindsight, codegraph and nanochat cloned shallowly into the git-ignored `repos/`, all MIT). `scripts/batch99-install.sh` is user-run and asks before each step.
+- Consulting tool stack section in `docs/ai-os/ops/tool-stack.md`.
+
+**Corrected:** `stab1yai/orca` → `stablyai/orca` and `Skyvern-AutoGPT/skyvern` → `Skyvern-AI/skyvern` in earlier README entries (the old names do not exist on GitHub).
+
+**Not done:** iFixAi, Magpie and fframes could not be identified from the cards (no owner, package or URL). Nothing was installed beyond the shallow clones. The new agents have not been run live; run the canary in `docs/ai-os/README.md` after restarting Claude Code. Price list and support FAQ are still empty, so qualification fit and support answers are blocked until you fill them.

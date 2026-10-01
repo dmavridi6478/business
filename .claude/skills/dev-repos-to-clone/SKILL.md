@@ -123,3 +123,30 @@ All six verified live with `git ls-remote` on 2026-10-01; the first five were al
 | [`firebase/firebase-ios-sdk`](https://github.com/firebase/firebase-ios-sdk) | Mobile SDK | Firebase for iOS/macOS/tvOS/watchOS (Auth, Firestore, Messaging, Crashlytics…) | not checked | **not cloned** — large, and irrelevant unless you ship an Apple app |
 
 **Already tracked (no new action):** SearXNG, Home Assistant, Pi-hole, Vaultwarden, Nextcloud — see `self-hosted-docker-stack`, `oss-ai-alternatives`, `homelab-*` skills and Batch 97.
+
+## Additional repos (Batch 99 - @joshualevi.ai, @replace.so, @dotdevs, @githubnow, 30 Sep - 1 Oct 2026)
+
+Verified live with `git ls-remote` (or `npm view`) on 2026-10-01. Four were also cloned shallowly into `repos/` (git-ignored) to read the licence and README: brigade, hindsight, codegraph, nanochat (all MIT). Star counts on the cards are screenshots, not re-verified.
+
+| Repo | Category | What it is | Licence | Status here |
+|---|---|---|---|---|
+| [`spinabot/brigade`](https://github.com/spinabot/brigade) | Agent ecosystem | Self-hosted crew of AI agents with shared memory, multiple model providers and messaging channels; `npm i -g @spinabot/brigade` (npm 1.39.0) | MIT | cloned for reading; **not installed** (run it only in a sandbox: it ships a gateway and tunnel features) |
+| [`vectorize-io/hindsight`](https://github.com/vectorize-io/hindsight) | Agent memory | retain / recall / reflect memory for agents; `pip install hindsight-api`, Docker image, Python and TS clients | MIT | cloned for reading; documented only |
+| [`colbymchenry/codegraph`](https://github.com/colbymchenry/codegraph) | Code index MCP | Local semantic code graph that agents query over MCP; installer auto-configures Claude Code and others | MIT | cloned for reading; **not installed**: the README installs with `curl ... | sh`, read it first |
+| [`karpathy/nanochat`](https://github.com/karpathy/nanochat) | LLM training | Minimal full pipeline to train a small ChatGPT-style model on one GPU node; `runs/speedrun.sh` | MIT | cloned for reading; needs a multi-GPU node, documented only |
+| [`rohitg00/ai-engineering-from-scratch`](https://github.com/rohitg00/ai-engineering-from-scratch) | Course | 523 lessons / 20 phases per the card; every lesson ends with a prompt, skill, agent or MCP server | MIT (card) | verified, not cloned |
+| [`microsoft/mcp-for-beginners`](https://github.com/microsoft/mcp-for-beginners) | Course | MCP curriculum with .NET, Java, TypeScript, JavaScript, Rust, Python code | not checked | verified, not cloned |
+| [`microsoft/generative-ai-for-beginners`](https://github.com/microsoft/generative-ai-for-beginners) | Course | 21 lessons, Python and TypeScript | not checked | verified, not cloned |
+| [`huggingface/agents-course`](https://github.com/huggingface/agents-course) | Course | 4 units: smolagents, LlamaIndex, LangGraph; free certificate | not checked | verified, not cloned |
+| [`anthropics/courses`](https://github.com/anthropics/courses) | Course | Anthropic's own courses (API, prompt engineering, evals, tool use) | not checked | verified; skill `anthropic-courses` already exists |
+| [`patchy631/ai-engineering-hub`](https://github.com/patchy631/ai-engineering-hub) | Projects | 93 projects across LLMs, RAG and agents | not checked | verified; already tracked in README |
+| [`stablyai/orca`](https://github.com/stablyai/orca) | Agent IDE | Parallel coding agents in isolated worktrees | not checked | verified; **README had it as `stab1yai/orca` (OCR typo) - corrected** |
+| [`Skyvern-AI/skyvern`](https://github.com/Skyvern-AI/skyvern) | Browser automation | AI browser agents; MCP integration for Claude Code, Cursor, Codex; free tier 5,000 credits per the video | not checked | verified; **README had it as `Skyvern-AutoGPT/skyvern` - corrected** |
+| [`n8n-io/n8n`](https://github.com/n8n-io/n8n) | Workflow automation | Fair-code platform; **check the licence before embedding or reselling** (the card says so) | fair-code | verified; many `n8n-*` skills already exist |
+| [`langfuse/langfuse`](https://github.com/langfuse/langfuse), [`ollama/ollama`](https://github.com/ollama/ollama), [`expo/expo`](https://github.com/expo/expo), [`supabase/supabase`](https://github.com/supabase/supabase) | App stack | the @dotdevs "start with one missing piece" set: mobile (Expo), backend (Supabase), AI quality (Langfuse), local models (Ollama), workflows (n8n) | MIT / Apache-2.0 / MIT / Apache-2.0 (check each) | verified; too large to clone, documented only |
+| `paperclipai/paperclip`, `ComposioHQ/awesome-claude-skills`, `alirezarezvani/claude-skills`, `public-apis/public-apis`, `VectifyAI/PageIndex` | various | seen again on these slides | - | already tracked in earlier batches; no new action |
+
+**Could not verify from the card alone (no repo, package or owner shown):** iFixAi ("audits AI agents for mistakes", 17k stars on the card), Magpie ("one local gateway for agents' models", 3.7k), fframes ("video vibe coding framework", Rust + SVG, 1.4k). The npm names `fframes`, `ifixai` and `magpie-ai` do not exist. Find the real repo from the source video before cloning.
+
+**Not a repo:** the SkillDrop AI and aicareersuite carousels (see `event-planner`, `claude-11-ways`), and the @entrp0 tool-stack video (see `docs/ai-os/ops/tool-stack.md`).
+

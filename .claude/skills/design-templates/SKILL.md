@@ -1,6 +1,6 @@
 ---
 name: design-templates
-description: Ready-to-use, self-contained HTML/CSS templates for common content-visual needs — an iMessage chat mockup, a vertical social/story device frame, a 3D-tilted product screenshot mockup, a halftone/dithered image effect (both CSS-only and real canvas dithering), a logo/reference moodboard grid, a brand board (wordmark + palette + type pairing + app preview), a SaaS pricing table + comparison grid, a restrained editorial hero, a numbered infographic card grid (light/dark variants), a filterable design-reference-site dashboard, a light "Save For Later" social carousel (carousel-save-for-later), a dark neon agent info card (dark-neon-agent-card), a dark orange-gradient tutorial step-cards layout (dark-orange-agent-tutorial), a GitHub-style dark trending repo card (github-trending-card), a bold red grunge AI-tools carousel (@ai.global.lee style, red-grunge-ai-tools), a warm editorial carousel for thinking-partner / Claude workflow content (@parm.ai style, editorial-thinking-partner), a dark space-themed OSS repo card (@datawarlord_official style, datawarlord-oss-card), and a nature photo background with glassmorphism panels carousel (@softgirlnocode AI video style, softgirlnocode-nature-glassmorphism). Use these instead of reaching for a paid single-purpose tool (or hand-rolling from scratch) when a design/frontend task needs a device mockup, a stylized image effect, a moodboard layout, a brand-kit deliverable, a SaaS pricing section, a quiet typography-led hero, a "N things you should know" carousel/infographic layout, a reusable reference dashboard, or any of the social-carousel/card layouts above. Each template is copy-paste-ready with clear swap points marked in comments.
+description: Ready-to-use, self-contained HTML/CSS templates for common content-visual needs — an iMessage chat mockup, a vertical social/story device frame, a 3D-tilted product screenshot mockup, a halftone/dithered image effect (both CSS-only and real canvas dithering), a logo/reference moodboard grid, a brand board (wordmark + palette + type pairing + app preview), a SaaS pricing table + comparison grid, a restrained editorial hero, a numbered infographic card grid (light/dark variants), a filterable design-reference-site dashboard, a light "Save For Later" social carousel (carousel-save-for-later), a dark neon agent info card (dark-neon-agent-card), a dark orange-gradient tutorial step-cards layout (dark-orange-agent-tutorial), a GitHub-style dark trending repo card (github-trending-card), a bold red grunge AI-tools carousel (@ai.global.lee style, red-grunge-ai-tools), a warm editorial carousel for thinking-partner / Claude workflow content (@parm.ai style, editorial-thinking-partner), a dark space-themed OSS repo card (@datawarlord_official style, datawarlord-oss-card), and a nature photo background with glassmorphism panels carousel (@softgirlnocode AI video style, softgirlnocode-nature-glassmorphism), a light/dark copy-this-prompt carousel (prompt-card-carousel), a repo-showcase card set (repo-card-grid), an agent explainer flow card (agent-flow-chat-card), and an orange mascot tips carousel (mascot-tips-orange). Use these instead of reaching for a paid single-purpose tool (or hand-rolling from scratch) when a design/frontend task needs a device mockup, a stylized image effect, a moodboard layout, a brand-kit deliverable, a SaaS pricing section, a quiet typography-led hero, a "N things you should know" carousel/infographic layout, a reusable reference dashboard, or any of the social-carousel/card layouts above. Each template is copy-paste-ready with clear swap points marked in comments.
 ---
 
 ## When to use this skill
@@ -37,6 +37,11 @@ Reach for a template here instead of improvising when a task needs:
 - **A glowing-numeral font specimen carousel** (@designarchitect001 "FONT 0N" style — giant dark numeral with coloured rim glow + grain, two rim-lit spheres, specimen name, "Save it for later / Swipe →"; one colour per slide) → `templates/font-showcase-glow.html`
 - **A black-and-red "fonts that look like a logo" wordmark carousel** (red gradient spheres, silver-gradient wordmark, `01 | NAME` index bar, cover and "Was this helpful?" end card) → `templates/wordmark-noir-card.html`
 - **A white tool-spotlight carousel** (@will.ai.m "free tools Big Tech doesn't want you to run" style — icon tile, giant title, REPLACES / DOWNLOAD / GITHUB rows, browser-frame screenshot, intro + follow slides) → `templates/tool-spotlight-light.html`
+
+- **A "copy this prompt" carousel** in two looks - light StackFlo (blue pill, light-blue quote box, `04 / 07` counter) or black ai_slacker (big white caps heading, plain prompt text) → `templates/prompt-card-carousel.html`
+- **A repo-showcase carousel** (@joshualevi.ai grey grid paper, glossy orange 3D asterisk, `#N` rank, white GitHub-style stat card; dark @replace.so variant via `THEME`) → `templates/repo-card-grid.html`
+- **An agent explainer card** (@ai.global.lee "5 AI agents" - numbered pill, accent-coloured headline word, chat mock-up, trigger → agent → 4 outputs → result flow panel) → `templates/agent-flow-chat-card.html`
+- **An orange mascot tips carousel** (@aicareersuite "11 Ways to Master Claude" - peach number tile, black + orange headline with underline, check pills, inline-SVG robot mascot, takeaway box, `n/8` CTA bar) → `templates/mascot-tips-orange.html`
 
 ## How to use a template
 
@@ -112,6 +117,10 @@ Chromium screenshot with zero console errors before being added.
 | `font-showcase-glow.html` | per-slide `--glow`: cyan `#2fd5e6`, green `#2fe08a`, violet `#8a6bff`, blue `#2f8bff`, orange `#ff9a5c`, yellow `#f5d63d`, pink `#ff5a78` on `#060608` | numeral = dark fill + `-webkit-text-stroke` + stacked `drop-shadow` glow via `color-mix()`; SVG `feTurbulence` grain overlay; rim-lit orbs |
 | `wordmark-noir-card.html` | `--bg #080808`, spheres `#2a0004 → #ff3b3f`, silver `#f6f6fa → #7d7d88` | `background-clip:text` gradient wordmark, 135°/315° sphere gradients, ruled index bar |
 | `tool-spotlight-light.html` | white, ink `#0a0a0a`, dim `#8b867f`, chrome `#ecebe8`, `Hanken Grotesk` | `**bold**` markup in the body string, browser frame with traffic lights bleeding off the slide |
+| `prompt-card-carousel.html` | @StackFlo / @ai_slacker (Batch 99) | One data array drives both a light and a dark card style; `[PLACEHOLDER]` words are auto-highlighted; flow layout so long prompts never overlap the footer |
+| `repo-card-grid.html` | @joshualevi.ai / @replace.so (Batch 99) | CSS-only 3D asterisk from four rotated gradient bars; stat card with a language colour bar; `THEME` switches to the dark pixel-grid variant |
+| `agent-flow-chat-card.html` | @ai.global.lee (Batch 99) | Per-agent `--accent` colour tints the pill, headline word, chat bubbles, tiles and bar via `color-mix()` |
+| `mascot-tips-orange.html` | @aicareersuite (Batch 99) | Inline-SVG mascot recoloured by one variable; headline size auto-fits the longest line |
 
 **Gotcha found while verifying:** a font name passed into an inline `style="font-family:…"` must use *single* quotes (`'Fredoka'`) — double quotes silently break the attribute and the card falls back to the default font.
 
@@ -137,3 +146,17 @@ The @designarchitect001 carousels captioned "google fonts", but checking the Goo
 | Badoga | no | Cormorant Garamond 400 | high-contrast display serif with swashes |
 
 Original-source files for the unlisted ones are probably commercial or free-for-personal-use foundry releases — **licence unverified**; check before commercial use.
+
+## Batch 99 theme tokens (colours and fonts read from the screenshots)
+
+| Theme | Colours | Fonts (look-alike, free) |
+|---|---|---|
+| StackFlo light | paper `#f6f8fd`, blue `#2f6fe0`, navy `#151c3a`, quote box `#eef3fd` | Poppins |
+| ai_slacker dark | `#000` on `#fff`, no accent | Inter (the original looks like a grotesque similar to Neue Montreal) |
+| joshualevi.ai | grid paper `#eeede9`, orange `#cf5a2e`, ink `#1d1d1d`, soft `#77736d` | Inter |
+| replace.so dark | `#111` with green pixel grid, white type | Inter |
+| ai.global.lee agent card | cream `#fbf6ef`, accents blue `#1f63e6` / orange `#f26a1b`, green `#1f9d55` | Inter 900 |
+| aicareersuite mascot | cream `#fdf8f3`, peach `#fbe6d2`, orange `#f26a1b`, ink `#111` | Inter 900 |
+
+The original specimens use proprietary or unidentified fonts; these are look-alikes, not matches.
+
