@@ -32,6 +32,20 @@ Built in Batch 98 from the ReStructure AI video "The Entire AI Entrepreneur Oper
 
 The video shows agents that reply to leads, send invoice reminders and shift ad budget. **Every agent here starts at autonomy tier 0 — draft only.** Nothing leaves the building without a recorded human approval. Promote an agent to a higher tier only by editing `rules/agent-permissions.md` after you have read 20+ of its drafts. See `rules/` for the tiers.
 
+### What is enforced by code, and what is still only an instruction
+
+A hostile review of the first build (`Artifacts/business/os-agents-hostile-review.html`) found that "draft-only" was a sentence, not a control. Status:
+
+| Control | Enforced by | Status |
+|---|---|---|
+| `os-*` agents write only their own `.md` paths (default `data/ai-os/drafts/`); no `.claude/**`, no `docs/**`, no symlink or `..` escape | `.claude/hooks/os_guard.py` (PreToolUse, fails closed) | **enforced** (26 tests) |
+| Nobody, agent or session, writes `approvals.md` or `log/**` | same hook + `permissions.deny` in `.claude/settings.json` | **enforced** |
+| Approvals are human-only, bound to the exact card text, expire after 24 h, tamper-evident | `scripts/os_approvals.py` (needs a real terminal) | **enforced** for anything that calls `check`; no sender calls it yet |
+| Evidence of what agents did, which they cannot erase | `.claude/hooks/os_log.py` (hash-chained log) + `integrity` report | **enforced**; absence of the log is reported as CRITICAL |
+| `WebFetch` exfiltration, second-order injection, main-session connectors, missing consent/price files, same-day overwrite, numeric limits, orchestrator cannot delegate | nothing yet | **OPEN** (review findings 3, 4, 5, 7, 8, 9) |
+
+Hooks load when a session starts: **restart Claude Code (or review `/hooks`) after pulling this change**, and run `python3 -m unittest scripts/test_os_guard.py` once. Until the hooks are live in your session none of the enforced rows apply.
+
 ## Folder map
 
 | Path | Purpose |

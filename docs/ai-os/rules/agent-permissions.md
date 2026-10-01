@@ -15,6 +15,14 @@
 |---|---|---|---|
 | all 25 `os-*` agents | T0 | 2026-10-01 | initial build |
 
+## How this is enforced
+
+- **`.claude/hooks/os_guard.py`** (PreToolUse on Write/Edit/MultiEdit/NotebookEdit): an `os-*` subagent may write only `.md` files in its own allow-list (default `data/ai-os/drafts/`; chief-of-staff also `morning/`, approval also `approval-queue.md`, watchdog also `watchdog/`). Symlinks, `..` and absolute paths are resolved before checking. Any error in the guard blocks the call.
+- **Nobody** (agent or session) may write `data/ai-os/approvals.md` or `data/ai-os/log/**`; `permissions.deny` repeats this as a backstop that does not depend on the hook knowing who is calling.
+- **`.claude/hooks/os_log.py`** writes the hash-chained log the agents cannot touch; **`scripts/os_approvals.py integrity`** turns it into the report `os-watchdog` reads.
+- To change the allow-list, edit `ALLOW` in `.claude/hooks/os_common.py` and add a test in `scripts/test_os_guard.py`.
+- Promoting a tier in the table below does nothing technical by itself; it is a record. Real promotion also needs the outbound tool to call `os_approvals.py check`.
+
 ## Always forbidden — no tier unlocks these
 
 1. Moving money, changing bank details, paying anyone.

@@ -5780,3 +5780,5 @@ Source: `80c9789b-LinkedIn_Master_Guide_for_Claude.zip` — 4 static images (`.j
 > **5 — Brand a card:** /theme-card glow "Seven Google Fonts for logos" — mark every font that is not really on Google Fonts, and leave any number or date you cannot verify as [verify].
 
 > **6 — Safe load test:** /loadtest https://staging.example.com 200 10 — I own this system; show me the exact hey command and wait for my go.
+
+**Batch 98 hardening (after the hostile review of the `os-*` agents):** review findings 1, 2 and 6 are fixed in code — `.claude/hooks/os_guard.py` (write scope, fails closed), `.claude/hooks/os_log.py` (hash-chained log agents cannot write), `scripts/os_approvals.py` (human-only, terminal-only, card-bound, 24 h, hash-chained approvals plus the `integrity` report), hooks and deny rules wired in `.claude/settings.json`, 26 tests in `scripts/test_os_guard.py`. Findings 3, 4, 5, 7, 8, 9, 10, 11 are still open and no agent should be promoted above draft-only until 3–5 are closed. Hooks load at session start: restart Claude Code, then run `python3 -m unittest scripts/test_os_guard.py`.

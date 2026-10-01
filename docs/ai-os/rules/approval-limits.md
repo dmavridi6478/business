@@ -18,4 +18,4 @@ Defaults are deliberately strict. Lines marked **OWNER MUST SET** have no safe d
 
 ## Approval record
 
-Approvals are recorded by a human in `data/ai-os/approvals.md`: date, item id, "approved / rejected", initials. An agent that acts without a matching line is a gate bypass — `os-watchdog` reports it as CRITICAL.
+Approvals are recorded only by you, in a terminal: `python3 scripts/os_approvals.py approve <item-id>` (it shows you the card and makes you retype the id). The line carries the sha256 of the exact card text, a timestamp and a hash-chain link, so an edited card voids the approval, a 24-hour-old approval expires, and an altered ledger fails `verify`. Senders must call `python3 scripts/os_approvals.py check <item-id>` and proceed only on exit 0. An agent that acts without it is a gate bypass — the integrity report flags it CRITICAL.

@@ -5,6 +5,7 @@ argument-hint: [optional focus, e.g. "finance only" or a date]
 
 You are running the Morning Page for the AI Entrepreneur OS (`.claude/skills/ai-entrepreneur-os/SKILL.md`). Arguments: $ARGUMENTS
 
+0. **Integrity first.** Run `python3 scripts/os_approvals.py integrity` (writes `data/ai-os/watchdog/integrity-<today>.json`). If it exits 1 or prints any CRITICAL, show me those lines and STOP; do not build the page on evidence that may be tampered with or missing. Also run `python3 scripts/os_approvals.py list` for the approval states.
 1. Read `docs/ai-os/rules/*.md` and `docs/ai-os/ops/tool-stack.md`. If `approval-limits.md` still has unset OWNER MUST SET values that you need, say which and continue without them.
 2. Delegate in this order, each to its subagent, passing only what it needs:
    - `os-business-analyst` → money and lead numbers (source + as-of date on every number; list data gaps).
