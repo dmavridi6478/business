@@ -1,0 +1,16 @@
+{
+  "_comment": "Machine-readable limits. ENFORCED in code by scripts/os_gate.py unless marked advisory. null = OWNER MUST SET: any action that needs a null limit is BLOCKED. Agents cannot edit this file (docs/** is write-protected for os-* agents).",
+  "approval_expiry_hours": 24,
+  "max_spend_per_approval_eur": null,
+  "max_budget_step_pct": 20,
+  "max_touches_per_window": 5,
+  "touch_window_days": 14,
+  "prospect_batch_size": 25,
+  "invoice_first_reminder_days": 30,
+  "invoice_escalate_days": 60,
+  "quiet_hours_local": null,
+  "_advisory_not_gated": "The next three feed analyst agents (verdicts, alerts); no action gate can enforce them.",
+  "ad_stop_loss_eur": null,
+  "target_cost_per_lead_eur": null,
+  "cash_buffer_eur": null
+}

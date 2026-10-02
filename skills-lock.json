@@ -1,18 +1,6 @@
 {
   "version": 1,
   "skills": {
-    "gpt-image-2-style-library": {
-      "source": "freestylefly/awesome-gpt-image-2",
-      "sourceType": "github",
-      "skillPath": "agents/skills/gpt-image-2-style-library/SKILL.md",
-      "computedHash": "63ea52ea699411d33fb4fdd97062322672550a303daf057e0b0ce9af1d621c2f"
-    },
-    "swiftui-design-skill": {
-      "source": "Wholiver/swiftui-design-skill",
-      "sourceType": "github",
-      "skillPath": "SKILL.md",
-      "computedHash": "e566cd9af70769555a866c11a8037f326a699f600de200a9dde8518122fb0b32"
-    },
     "academy-guide": {
       "source": "anthropics/skills",
       "sourceType": "github",
@@ -31,17 +19,65 @@
       "skillPath": "skills/claude-api/SKILL.md",
       "computedHash": "8227f0d1192594bfea04df6c9f1d9d727dd300c3f4b2c42d315dd9fe58b1a421"
     },
+    "dbx": {
+      "source": "t8y2/dbx",
+      "sourceType": "github",
+      "skillPath": "skills/dbx/SKILL.md",
+      "computedHash": "f9817d49b570c35d6cf3cb1c8ebda06dac7364dbbf0a2fbec30c29dc8305c338"
+    },
+    "debug-inference": {
+      "source": "NVIDIA/OpenShell",
+      "sourceType": "github",
+      "skillPath": "skills/debug-inference/SKILL.md",
+      "computedHash": "e294dfbe7e105d1b30730d0a42fef6115603a66e56a334dc42425f6c943f9df8"
+    },
+    "debug-openshell-cluster": {
+      "source": "NVIDIA/OpenShell",
+      "sourceType": "github",
+      "skillPath": "skills/debug-openshell-cluster/SKILL.md",
+      "computedHash": "a28c694165f5621545f417a3d033e00921e73b4e998d74bbd71427d4fc8731e3"
+    },
     "discernment-nudge": {
       "source": "anthropics/skills",
       "sourceType": "github",
       "skillPath": "skills/discernment-nudge/SKILL.md",
       "computedHash": "9191177c4a8ef11a20dace786d708506b22d43e748c71287bb823de0dc812dad"
     },
+    "generate-sandbox-policy": {
+      "source": "NVIDIA/OpenShell",
+      "sourceType": "github",
+      "skillPath": "skills/generate-sandbox-policy/SKILL.md",
+      "computedHash": "124c3a341af95e6caf262df206d3ed09ba6341d99b3d566e25064d7ee94c21cd"
+    },
+    "gpt-image-2-style-library": {
+      "source": "freestylefly/awesome-gpt-image-2",
+      "sourceType": "github",
+      "skillPath": "agents/skills/gpt-image-2-style-library/SKILL.md",
+      "computedHash": "63ea52ea699411d33fb4fdd97062322672550a303daf057e0b0ce9af1d621c2f"
+    },
+    "gpui-kit": {
+      "source": "longbridge/gpui-kit",
+      "sourceType": "github",
+      "skillPath": "skills/gpui-kit/SKILL.md",
+      "computedHash": "bde04bacda84032ea58092115dedf299360ba5ece48fd5b5af539ed2437a9282"
+    },
+    "gpui-kit-design-guides": {
+      "source": "longbridge/gpui-kit",
+      "sourceType": "github",
+      "skillPath": "skills/gpui-kit-design-guides/SKILL.md",
+      "computedHash": "f5e085823154439a093fbfb947d522213c40842e1d06ebc611e033a854127c0b"
+    },
     "mcp-builder": {
       "source": "anthropics/skills",
       "sourceType": "github",
       "skillPath": "skills/mcp-builder/SKILL.md",
       "computedHash": "0f4592dcb53cf2b5d6b7febee6b4152018b565551a1c29e3c612f57b218ab295"
+    },
+    "openshell-cli": {
+      "source": "NVIDIA/OpenShell",
+      "sourceType": "github",
+      "skillPath": "skills/openshell-cli/SKILL.md",
+      "computedHash": "0cf9ccdf974b6881b97a3c93a9e6e2cc1836126e3776838f4a1806579f635ab2"
     },
     "skill-creator": {
       "source": "anthropics/skills",
@@ -54,6 +90,12 @@
       "sourceType": "github",
       "skillPath": "skills/slack-gif-creator/SKILL.md",
       "computedHash": "2efca615ce55a3edd8fc05c779068a8085816617991987e446606403cd3abb22"
+    },
+    "swiftui-design-skill": {
+      "source": "Wholiver/swiftui-design-skill",
+      "sourceType": "github",
+      "skillPath": "SKILL.md",
+      "computedHash": "e566cd9af70769555a866c11a8037f326a699f600de200a9dde8518122fb0b32"
     },
     "webapp-testing": {
       "source": "anthropics/skills",
