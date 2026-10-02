@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Warm Repo Showcase Card</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  /* =====================================================
+     TEMPLATE G: Warm Repo / Resource Showcase
+     Based on @theromanknox "Top 4 GitHub Repos" carousel style
+     Size: 1080×1350 (4:5). Slide types: cover (dark) + resource (light)
+     Customise: title, description, stat chips, four feature tiles, page number
+     ===================================================== */
+  :root {
+    --bg: #fbfaf8;
+    --dark-1: #2a1610;
+    --dark-2: #0d0605;
+    --brown: #5c3326;
+    --orange: #e9964f;
+    --peach: #f8c791;
+    --tile-1: #fdf0e3;
+    --tile-2: #f5a765;
+    --ink: #1a0f0b;
+    --muted: #b98266;
+    --font: 'Poppins', 'Helvetica Neue', Arial, sans-serif;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: #222; display: flex; flex-direction: column; align-items: center; gap: 40px; padding: 40px 0; font-family: var(--font); }
+  .card { width: 1080px; height: 1350px; position: relative; overflow: hidden; padding: 90px 100px; }
+  .cover { background: radial-gradient(circle at 50% 45%, #6d4030 0%, var(--dark-1) 40%, var(--dark-2) 100%); color: var(--peach); }
+  .cover h1 { font-size: 116px; line-height: 1.02; font-weight: 700; letter-spacing: -3px; }
+  .cover h1 span { color: #fff; }
+  .cover .sub { position: absolute; bottom: 210px; left: 100px; right: 100px; font-size: 36px; color: #e2b699; }
+  .mascot { position: absolute; left: 50%; top: 560px; width: 380px; height: 380px; transform: translateX(-50%); border-radius: 50%; background: #0a0a0a; border: 6px solid #f5a765; display: grid; place-items: center; font-size: 26px; color: #f5a765; text-align: center; }
+  .light { background: var(--bg); background-image: repeating-linear-gradient(60deg, transparent 0 46px, rgba(0,0,0,0.025) 46px 47px); color: var(--ink); }
+  .logo-row { display: flex; align-items: center; gap: 30px; margin-bottom: 30px; }
+  .gh { width: 130px; height: 130px; border-radius: 50%; background: #0a0a0a; flex: none; }
+  .light h1 { font-size: 96px; line-height: 1.02; font-weight: 800; letter-spacing: -3px; background: linear-gradient(90deg, var(--brown), var(--orange)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  .light p.lede { font-size: 34px; line-height: 1.4; font-weight: 500; margin-bottom: 40px; }
+  .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 26px; }
+  .tile { display: flex; gap: 22px; align-items: flex-start; }
+  .ico { width: 96px; height: 96px; border-radius: 22px; background: linear-gradient(145deg, #a06f58, #5c3326); flex: none; }
+  .tile b { display: block; font-size: 32px; font-weight: 700; }
+  .tile span { font-size: 28px; line-height: 1.3; font-weight: 500; }
+  .stats { display: flex; gap: 26px; margin: 36px 0; }
+  .chip { flex: 1; background: linear-gradient(135deg, var(--tile-1), var(--tile-2)); border: 2px solid #8a5a3f; border-radius: 22px; padding: 22px 26px; }
+  .chip b { display: block; font-size: 58px; font-weight: 800; }
+  .chip span { font-size: 28px; font-weight: 500; }
+  .badges { position: absolute; left: 100px; bottom: 150px; display: grid; gap: 16px; }
+  .badge { background: #14100d; color: #fff; border-radius: 22px; padding: 16px 26px; font-size: 26px; font-weight: 700; border: 2px solid #3c7a3f; }
+  .foot { position: absolute; left: 100px; right: 100px; bottom: 60px; display: flex; justify-content: space-between; align-items: center; font-size: 26px; color: var(--muted); }
+  .foot b { color: var(--ink); display: block; }
+  .page { background: var(--peach); color: var(--ink); font-weight: 600; border-radius: 40px; padding: 14px 30px; }
+</style>
+</head>
+<body>
+
+<!-- COVER -->
+<section class="card cover">
+  <h1>Top [N] <span>[Category]</span><br>for [Audience]</h1>
+  <div class="mascot">[hero image / mascot]</div>
+  <div class="sub">[One-line promise.]</div>
+  <div class="foot"><div><b style="color:#e2b699">Social media</b><span style="color:#fff;font-weight:700">@[handle]</span></div><span class="page">→</span></div>
+</section>
+
+<!-- RESOURCE SLIDE -->
+<section class="card light">
+  <div class="logo-row"><div class="gh"></div><h1>[Resource<br>Name]</h1></div>
+  <p class="lede">[2–3 sentence description of what it is and who it is for.]</p>
+  <div class="grid">
+    <div class="tile"><div class="ico"></div><div><b>[Feature 1]:</b><span>[short line]</span></div></div>
+    <div class="tile"><div class="ico"></div><div><b>[Feature 2]:</b><span>[short line]</span></div></div>
+    <div class="tile"><div class="ico"></div><div><b>[Feature 3]:</b><span>[short line]</span></div></div>
+    <div class="tile"><div class="ico"></div><div><b>[Feature 4]:</b><span>[short line]</span></div></div>
+  </div>
+  <div class="stats"><div class="chip"><b>[60K+]</b><span>Stars</span></div><div class="chip"><b>[7K+]</b><span>Forks</span></div></div>
+  <div class="badges"><div class="badge">100% open source</div><div class="badge">Free to use</div></div>
+  <div class="foot"><div><b>Social media</b>@[handle]</div><span class="page">Page [N] · swipe →</span></div>
+</section>
+
+</body>
+</html>

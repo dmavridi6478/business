@@ -5792,3 +5792,17 @@ Source: `80c9789b-LinkedIn_Master_Guide_for_Claude.zip` — 4 static images (`.j
 **Batch 98 hardening, round 5 (review findings 10 and 11) — all eleven findings addressed:** connectors for agents are now an exact, read-only, per-agent opt-in in `docs/ai-os/rules/connector-allowlist.json` that ships **empty** (never for the four web agents; the agents' `tools:` lines must match it exactly; agent files no longer promise connector access). Agents report suspected injection by creating a new file in `data/ai-os/flags/` (create-only, capped at 200); the watchdog reads them and the integrity report counts them. 137 tests; 20/20 deliberate bugs caught across rounds 4 and 5. Not proof of safety: run the live canary in `docs/ai-os/README.md`, set the unset limits, fill the registry, and require any sender to call `os_gate.py commit` before promoting any agent.
 
 **Live canary, 2026-10-01:** a real `os-seo` subagent was run through six probes. Read of private data, fetch of a non-allow-listed host, write outside scope and overwrite of an existing draft were all blocked; a new draft and a flag report succeeded. Verified independently from disk and the hash-chained hook log (`agent_type: os-seo` recorded, chain valid); a main-session write to `approvals.md` was refused by the permission-deny rule. The canary found one defect, a guard message that omitted `flags/` from the allowed locations, now fixed with a test (138 tests). Not covered by the canary: connector denial, the main-session connector confirmation prompt, the flood cap, the gate, the registry and `/os-route`.
+
+## 98b. 8 Ps of Sales, AI-in-GTM Levels, Brand Zones, Prompt Frameworks & Design Kit (Batch 98, second photo batch)
+
+Source: iCloud Photos (36 card screenshots) + "The 8 Ps of Sales" (5 infographics), Sep 2026. Full plan: `docs/batch-98-action-plan.md`; every prompt in plain text: `docs/batch-98-prompts.md`.
+
+- `eight-ps-of-sales` — audit a sales motion against Prospecting → Post-Sale, score 0–3 from evidence; `/8ps-audit`
+- `ai-gtm-maturity-levels` — Kinetyca's 5 Levels of AI in GTM (Tab → Brain) with a one-level-up rule; `/gtm-ai-level`
+- `brand-positioning-zones` — Winning / Risky / Dumb / Losing zone map from the Beloved Brands Venn; `/positioning-zones`
+- `prompting-frameworks-8` — TRACE, TAG, RTF, CLEAR, PACT, STAR, RISE, RASCEF with a selector; `/prompt-frame`
+- `linkedin-prospecting-8-systems` — 8-system operating model reconstructed from the guide's TOC only (its prompts are gated); `/linkedin-systems`
+- `competitor-price-watchlist` — weekly competitor price/offer brief with UNVERIFIED flags (@earchoe playbook); `/price-watchlist`
+- `/workflow-to-agent` — skill → agent team → autopilot in one pass; `build-ai-agent-10-minutes/references/wealth-lab-6-step.md` holds the 6-step variant
+- Design: templates `social-card-editorial-playbook`, `social-card-github-daily-briefing`, `social-card-repo-showcase-warm`, `infographic-framework-kit` in `Artifacts/templates/`; themes `theme-editorial-paper-red`, `theme-github-night-green` in `Artifacts/`
+- Not done (blocked by permission classifier, left for the user): registering four plugin marketplaces in `.claude/settings.json`, appending four repos to `setup-repos.sh`, vendoring `find-skills` — commands are in the action plan. Granola needs OAuth in claude.ai; Kondo is not in the connector registry.
