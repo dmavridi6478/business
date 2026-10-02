@@ -5811,3 +5811,17 @@ Source: `80c9789b-LinkedIn_Master_Guide_for_Claude.zip` — 4 static images (`.j
 **Corrected:** `stab1yai/orca` → `stablyai/orca` and `Skyvern-AutoGPT/skyvern` → `Skyvern-AI/skyvern` in earlier README entries (the old names do not exist on GitHub).
 
 **Not done:** iFixAi, Magpie and fframes could not be identified from the cards (no owner, package or URL). Nothing was installed beyond the shallow clones. The new agents have not been run live; run the canary in `docs/ai-os/README.md` after restarting Claude Code. Price list and support FAQ are still empty, so qualification fit and support answers are blocked until you fill them.
+
+---
+
+## Batch 100 — iCloud Photos batch 3 (28 images; 2 October 2026)
+
+**Report:** [Batch 100 Intake Report](https://claude.ai/artifact/M6HVmPgnR6BPsTPjSreQSr) (`Artifacts/business/batch-100-intake-report.html`).
+
+**Sources:** @joshualevi.ai (7 scanners for what an agent shipped), @ai.easily (5 Claude skills), @replace.so and @githubnow (app and agent repos), 51ultron (21 AI roles).
+
+**Added:** skills `agent-output-scanners`, `claude-5-official-skills`, `ai-roles-map`; command `/scan-agent-work`; design templates `fine-print-skill-card` and `role-map-infographic`; a Batch 100 repo register in `dev-repos-to-clone` (15 repos verified with `git ls-remote`, licences read where a root LICENSE exists); user-run `scripts/batch100-install.sh`; `.gitleaksignore` (reviewed baseline).
+
+**Scanner results for this repo:** gitleaks (full history, 258 commits) 11 findings, all placeholders or upstream test fixtures, now baselined; osv-scanner 191 advisories in 11 manifests, all inside vendored skill folders (not fixed; do not install dependencies there without review). Install gotcha: `go install github.com/gitleaks/gitleaks/v8@latest` fails, use `github.com/zricethezav/gitleaks/v8@latest`.
+
+**Not done:** trufflehog, semgrep, garak, sops not installed; snyk agent-scan needs your Snyk token. Flowise's site screenshot shows "We're sunsetting Flowise", unconfirmed. yoinks (video downloader) documented only for terms-of-service reasons. No prompts or connectors in this upload.

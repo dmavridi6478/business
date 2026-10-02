@@ -150,3 +150,27 @@ Verified live with `git ls-remote` (or `npm view`) on 2026-10-01. Four were also
 
 **Not a repo:** the SkillDrop AI and aicareersuite carousels (see `event-planner`, `claude-11-ways`), and the @entrp0 tool-stack video (see `docs/ai-os/ops/tool-stack.md`).
 
+## Additional repos (Batch 100 - @joshualevi.ai security list, @replace.so, @githubnow, @ai.easily; 1-2 Oct 2026)
+
+All 15 verified live with `git ls-remote` on 2026-10-02. Licences were read from each repo's root LICENSE file where one exists. None were cloned: the scanners are installed or documented in `agent-output-scanners`, and the apps are large.
+
+| Repo | Category | What it is | Licence | Status here |
+|---|---|---|---|---|
+| [`gitleaks/gitleaks`](https://github.com/gitleaks/gitleaks) | Secret scanning | Keys and tokens in code and history; pre-commit hook | MIT | **installed and run** (`go install github.com/zricethezav/gitleaks/v8@latest`: the `gitleaks/` path fails) |
+| [`google/osv-scanner`](https://github.com/google/osv-scanner) | Dependency scanning | Checks lockfiles against OSV; guided remediation | Apache-2.0 | **installed and run** (v2.6.0) |
+| [`trufflesecurity/trufflehog`](https://github.com/trufflesecurity/trufflehog) | Secret scanning | Finds leaked credentials and verifies them against the provider | **AGPL-3.0** | documented; active verification sends credentials to providers |
+| [`semgrep/semgrep`](https://github.com/semgrep/semgrep) | Static analysis | ~30 languages, your own rules | LGPL-2.1 (rules separate) | documented |
+| [`snyk/agent-scan`](https://github.com/snyk/agent-scan) | Agent security | Scans agents, MCP servers and skills for injection; `uvx snyk-agent-scan`; needs `SNYK_TOKEN` | Apache-2.0 | documented; not run (needs your account) |
+| [`NVIDIA/garak`](https://github.com/NVIDIA/garak) | LLM red-teaming | Probes a model with jailbreaks and injection | Apache-2.0 | documented |
+| [`getsops/sops`](https://github.com/getsops/sops) | Secrets in git | Encrypted YAML/JSON/ENV files (KMS, age, PGP) | MPL-2.0 | documented |
+| [`FlowiseAI/Flowise`](https://github.com/FlowiseAI/Flowise) | Visual agent builder | Drag-and-drop AI agents and workflows; 55k stars on the card | no root LICENSE file found | verified. **The screenshot of its site shows a banner "We're sunsetting Flowise". I could not confirm it in the README, so check before building on it.** |
+| [`hexastack/hexabot`](https://github.com/hexastack/hexabot) | Chat automation | Self-hosted workflows for conversations, tasks and schedules, MCP support (v3) | no root LICENSE file found | verified |
+| [`lfnovo/open-notebook`](https://github.com/lfnovo/open-notebook) | Research notebook | Private NotebookLM-style tool with podcast generation | MIT | verified |
+| [`dyad-sh/dyad`](https://github.com/dyad-sh/dyad) | App builder | Local open-source AI app builder with your own API keys | mixed (the LICENSE says "portions" differ) | verified |
+| [`robbietilton/Compositor`](https://github.com/robbietilton/Compositor) | Mac image editor | Layers, masks, filters, PSD support | MIT | verified; macOS only |
+| [`pablostanley/yoinks`](https://github.com/pablostanley/yoinks) | Terminal video downloader | yt-dlp front end with an Ink UI | MIT | verified; **documented only**: downloading from most video sites breaks their terms or the owner's copyright unless you own or are licensed the content |
+| [`androoAGI/starnet`](https://github.com/androoAGI/starnet) | Agent desktop | Runs several agents at once in a pixel-art station; default branch `feat/harness-backend` | MIT | verified |
+| [`flutter/flutter`](https://github.com/flutter/flutter) | App SDK | One Dart codebase for iOS, Android, web and desktop | not checked | verified; too large to clone |
+
+Also seen, already covered: `anthropics/skills` (see `claude-5-official-skills`).
+

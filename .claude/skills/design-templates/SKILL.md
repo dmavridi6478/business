@@ -43,6 +43,9 @@ Reach for a template here instead of improvising when a task needs:
 - **An agent explainer card** (@ai.global.lee "5 AI agents" - numbered pill, accent-coloured headline word, chat mock-up, trigger → agent → 4 outputs → result flow panel) → `templates/agent-flow-chat-card.html`
 - **An orange mascot tips carousel** (@aicareersuite "11 Ways to Master Claude" - peach number tile, black + orange headline with underline, check pills, inline-SVG robot mascot, takeaway box, `n/8` CTA bar) → `templates/mascot-tips-orange.html`
 
+- **A teal-and-gold "fine print" skill carousel** (@ai.easily - radial teal gradient, giant gold numeral, gold-outlined THE FINE PRINT box, `AI EASILY - 03 / 07` footer) → `templates/fine-print-skill-card.html`
+- **A 21-role poster** (51ultron "Hottest AI Role" - serif title with blue italic, 21 : 1 badges, grid of coloured role cards) → `templates/role-map-infographic.html`
+
 ## How to use a template
 
 1. Open the relevant file in `templates/` and read its top comment — each documents what it's inspired by and exactly what to swap (background image, text, colors).
@@ -121,6 +124,8 @@ Chromium screenshot with zero console errors before being added.
 | `repo-card-grid.html` | @joshualevi.ai / @replace.so (Batch 99) | CSS-only 3D asterisk from four rotated gradient bars; stat card with a language colour bar; `THEME` switches to the dark pixel-grid variant |
 | `agent-flow-chat-card.html` | @ai.global.lee (Batch 99) | Per-agent `--accent` colour tints the pill, headline word, chat bubbles, tiles and bar via `color-mix()` |
 | `mascot-tips-orange.html` | @aicareersuite (Batch 99) | Inline-SVG mascot recoloured by one variable; headline size auto-fits the longest line |
+| `fine-print-skill-card.html` | @ai.easily (Batch 100) | One frame for cover, recap and skill slides; gold keywords via `<b>` in the headline string |
+| `role-map-infographic.html` | 51ultron (Batch 100) | Data-driven 3-column card grid; colours cycle through a palette array; tall 1080 x 2100 poster |
 
 **Gotcha found while verifying:** a font name passed into an inline `style="font-family:…"` must use *single* quotes (`'Fredoka'`) — double quotes silently break the attribute and the card falls back to the default font.
 
@@ -159,4 +164,9 @@ Original-source files for the unlisted ones are probably commercial or free-for-
 | aicareersuite mascot | cream `#fdf8f3`, peach `#fbe6d2`, orange `#f26a1b`, ink `#111` | Inter 900 |
 
 The original specimens use proprietary or unidentified fonts; these are look-alikes, not matches.
+
+| Batch 100 theme | Colours | Font (look-alike) |
+|---|---|---|
+| @ai.easily teal and gold | gold `#e3a72f`, cream `#f4efe6`, teal field `#16444f` to `#0b1519` | Plus Jakarta Sans |
+| 51ultron cream poster | paper `#f6efe4`, ink `#151b2d`, blue `#2a5fc0` | Playfair Display + Inter |
 
