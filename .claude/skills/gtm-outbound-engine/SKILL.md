@@ -8,8 +8,56 @@ description: Design and run a B2B outbound engine as five layers — orchestrati
 Sources (uploaded infographics):
 - "The 5-layer GTM engine — from signal detection to a CRM record, fully automated with AI agents" (Cold IQ / Julien Lieben) — the layer model and 14-tool stack.
 - "The All-in-One Outbound Pipeline — Everything you need to run high-converting outbound. Inside Claude Code." — the 5-step execution flow.
+- "AI-Powered Lead Generation Machine — How I'd build a predictable B2B pipeline using AI" (Denis Panjuta) — a second, more granular 9-stage tool-stack map, see below. Same architecture (signal → data → outreach → CRM), different and largely non-overlapping tool names.
+- "21 Things to Install in Claude to Build a Lead Generation System" (Denis Panjuta) — a Plugins/Skills/MCP breakdown of the same system, see the connector-status note below.
+- "The Role of a GTM Engineer" (Matteo Fois / Kinetyca.com) — a Venn diagram naming Claude itself as the "GTM Engineer" sitting at the center of three overlapping tool categories, see below.
 
-Both are vendor marketing (Cold IQ sells a unified GTM API). The architecture is sound; "fully automated" is not — see Gates.
+Both the first two are vendor marketing (Cold IQ sells a unified GTM API). The architecture is sound; "fully automated" is not — see Gates.
+
+## A fourth tool map: Claude as "GTM Engineer" (Matteo Fois)
+
+This source frames the same job differently — instead of a linear
+pipeline, three overlapping engines with Claude at the center resolving
+which one to route a task to:
+
+| Engine | Job | Tools named in source | Overlap zone |
+|---|---|---|---|
+| Growth Engine | Demand generation, campaign automation | Bombora (already listed above), RB2B, GoExtrovert, Apify, Common Room | → *Signal Routing* (Growth ∩ Ops) |
+| Ops Engine | CRM automation, pipeline management | Attio, n8n, Notion, Clay, Supabase | → *Signal Routing* (Growth ∩ Ops), *Pipeline Ops* (Ops ∩ Sales) |
+| Sales Engine | AI prospecting, personalized outbound | Apollo, Prospeo, HeyReach, Sales Navigator, Smartlead | → *Warm Outreach* (Growth ∩ Sales), *Pipeline Ops* (Ops ∩ Sales) |
+
+**[Certain]** these are the names on the graphic; **[Guessing]** on
+pricing/current availability. New names not in the tool tables above:
+**RB2B** (identifies anonymous website visitors by company/person — a
+top-of-funnel signal source), **GoExtrovert**, **Apify** (web-scraping
+platform, useful for building custom enrichment sources this account's
+connectors don't cover), **Attio** (CRM, an alternative to the
+HubSpot/Airtable system-of-record above), **Supabase** (already
+documented as a dev-infra pick in `dev-repos-to-clone`, shown here in a
+GTM-ops role instead), **HeyReach** (LinkedIn outreach automation),
+**Smartlead** (already named in the 5-step pipeline's step 5 above).
+Notion, Clay, Common Room, and Apollo are already connected/covered
+above — this map doesn't change their status.
+
+## Connector status for the "21 Things to Install" list
+
+Of the 7 MCP servers that source names (Apollo, HubSpot, Clay, Common
+Room, Notion, Slack, Zapier), **6 are already connected and available in
+this Claude Code environment** — HubSpot, Clay, Common Room, Notion,
+Slack, and Zapier all appear in this session's own MCP tool list, nothing
+to install. Only **Apollo MCP** is not connected here; Apollo-style
+enrichment in this account currently runs through Clay/Vibe Prospecting
+instead (see the layer table above). The source's "Plugins" column
+(Revenoid, BetterCallClaudeGrowth, "Claude Marketing," Octave) names
+products not independently verified to a canonical repo/marketplace
+listing — don't install any of those from name alone; Windsor.ai and
+Apollo are real, established companies but their "plugin" packaging as
+shown wasn't confirmed. The source's "Skills" column (`prospect`,
+`enrich-lead`, `account-research`, `draft-outreach`, `call-prep`,
+`lead-triage`, `cold-email`) is exactly this skill's 5-step pipeline
+above broken into finer-grained stages — build against the pipeline
+already documented here rather than creating seven redundant micro-skills
+for the same jobs.
 
 ## The five layers (bottom-up = build order)
 
@@ -22,6 +70,34 @@ Both are vendor marketing (Cold IQ sells a unified GTM API). The architecture is
 | 5 | System of record | Every signal, enrichment and reply writes back to one CRM | folk | HubSpot (`search_crm_objects`, `get_crm_objects`), Airtable |
 
 The full 14-tool stack from the source: Cold IQ, Apollo, Explorium, PredictLeads, LimaData, Prospeo, FullEnrich, GetLeads, Openmart, Instantly, Expandi, Hypertide, LeadMagic, folk. **[Certain]** these are the names on the graphic; **[Guessing]** on current pricing/availability — verify each before buying.
+
+## Alternate tool-stack map (9-stage pipeline, Denis Panjuta)
+
+A second source graphic breaks the same signal → data → outreach → CRM
+architecture into nine narrower stages with different named tools (some
+overlap with the 14-tool list above — Apollo appears in both; most don't).
+**[Certain]** these are the names on the graphic; **[Guessing]** on current
+pricing/availability/whether each is still the best-in-category pick —
+this is a snapshot of one creator's stack, not an endorsement:
+
+| Stage | Job | Tools named in source |
+|---|---|---|
+| Traffic sources | Get discovered | LinkedIn, Instantly, Webflow (SEO), Google Ads, YouTube, Eventbrite, Discord |
+| Lead capture | Collect leads | Phantombuster (LinkedIn followers), Leadfeeder (site visitors), Typeform (form fills), Shield (post engagers), Snov.io (email replies), beehiiv (newsletter subs) |
+| Data enrichment | Get full context | Clay, Apollo.io, Clearbit, Lusha, Pipl, People Data Labs |
+| AI research & insights | Understand prospects | ChatGPT, Claude, Perplexity, Gemini, Tavily, Exa |
+| Lead scoring & prioritization | Find best opportunities | MadKudu, 6sense, Bombora, Zoho SalesIQ, Calixa, Regie.ai |
+| Personalization engine | Create relevance at scale | Smartwriter.ai, Jasper, Tyle (dynamic images), ChatGPT (pain-point extraction), Lemlist AI (icebreakers), Clay (custom fields) |
+| Outreach | Multi-channel AI outreach | Lemlist, Expandi, Aircall, Zoko (WhatsApp), Meta Ads (retargeting), Outplay |
+| CRM & follow-up | Track, nurture, close | HubSpot, Salesforce, pipedrive, Make, Mixmax, ClickUp |
+| Sales process | Human-run close | Qualified lead → discovery call → needs assessment → solution proposal → negotiation → closed won |
+
+Reach for this map instead of the 14-tool stack above when the gap is
+specifically in an earlier stage the first map doesn't break out (traffic
+capture, AI-assisted personalization at the copy/image level, or a
+specific CRM/automation choice) — otherwise the 5-layer model and its
+Claude Code pipeline above is still the one to build against; this table
+is a tool reference, not a second architecture to implement in parallel.
 
 ## The 5-step pipeline (inside Claude Code)
 

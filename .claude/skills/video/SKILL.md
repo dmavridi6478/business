@@ -277,6 +277,49 @@ To replicate the *style* of a video edit you admire — the cut rhythm, caption 
 4. **Add platform-specific captions** via CapCut or Captions.ai
 5. **Schedule** across platforms
 
+### Keyframe-Anchored Narrative / Onboarding Tutorial Video
+
+A five-stage pipeline for a scripted drama or product-onboarding video,
+reconstructed from two creator workflows (@jeanbbttyct's AI-drama process
+and @monrodyxh71's onboarding-tutorial process — the two overlap enough to
+merge into one pipeline, with the tools each creator names as
+interchangeable options at each stage):
+
+1. **Write the story/script** — describe the idea, setting, characters (or
+   the tutorial's goal and structure) in plain language to Claude or
+   ChatGPT; ask for a full script with dialogue and clear shot directions.
+   Review and adjust until the storyline/outline is complete. Save it —
+   every later stage builds on this file.
+2. **Turn script lines into keyframes** — feed the script to an image
+   generator one shot at a time (GPT Image, FLUX, or Midjourney), asking
+   for a keyframe matching each scene's setting, character look, and
+   framing. Label keyframes by shot number. For a UI/product tutorial
+   specifically, a rough sketch pass first (tldraw or Figma AI, turning a
+   hand-drawn flow into polished screens) can anchor the keyframe prompts
+   instead of writing them from a blank page.
+3. **Animate frames with careful prompts** — upload each keyframe to
+   Dreamina (Seedance 2.5) and describe the motion for that shot. Generate,
+   compare against the reference keyframe, and refine the prompt until the
+   result stays close (roughly 80%) to the original image. Test at lower
+   resolution before spending on a full-resolution render.
+4. **Add voice and sound** — bring the script's dialogue/narration into
+   ElevenLabs for character voices or narration, matched to each scene's
+   tone and aligned carefully to clip timing. Layer in sound effects via
+   Adobe Firefly (described in plain text) gradually, so the mix doesn't
+   end up too busy. For a slide-based tutorial instead of live clips, Canva
+   AI can turn the keyframe screenshots into a cohesive presentation deck
+   at this stage instead of animating them.
+5. **Assemble, polish, export** — arrange finished clips on a timeline
+   (Dreamina Canvas, or Hyperframes/Remotion per this skill's other
+   sections) to match the story order, refine cuts and pacing, trim gaps,
+   review the full sequence once, then export.
+
+This is a heavier, more manual pipeline than the templated workflows
+above — reach for it when the deliverable is a one-off narrative or
+onboarding piece with custom characters/screens, not a batch of similar
+social clips (use Batch Social Clips for that) or a straight screen-record
+demo (use Product Demo Video for that).
+
 ---
 
 ## Agent-Native Video Pipeline
