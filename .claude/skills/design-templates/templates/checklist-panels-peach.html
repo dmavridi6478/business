@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<!--
+  Template: checklist-panels-peach
+  Style: @aisimplified23 "Claude Checklist" - 3 x 3 grid of peach panels, each with a black header tab and
+         checkbox rows; bold keywords inside items. Data-driven: edit PANELS (title, items). Use **bold** markers in items.
+  Canvas 1100 wide; collapses to 2 then 1 column. Heading uses a heavy serif stack.
+-->
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Checklist Panels</title>
+<style>
+:root{--bg:#F6E9E4;--panel:#E9B8A6;--panel-edge:#D8997F;--head:#17171A;--headfg:#FFFFFF;--ink:#241B18;--star:#E07A52;--box:#FFF5F1}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--ink);font-family:Aptos,"Segoe UI",Arial,sans-serif;padding:16px}
+.wrap{max-width:1100px;margin:0 auto}
+h1{font-family:"Playfair Display",Georgia,"Times New Roman",serif;font-weight:900;font-size:40px;text-align:center;margin:8px 0 18px;letter-spacing:.5px}
+h1 span{color:var(--star)}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.panel{background:var(--panel);border:2px solid var(--panel-edge);border-radius:8px;overflow:hidden;box-shadow:3px 3px 0 var(--panel-edge);min-width:0}
+.panel h2{background:var(--head);color:var(--headfg);font-family:Georgia,serif;font-size:17px;text-align:center;padding:9px 8px;letter-spacing:.5px;text-transform:uppercase}
+.panel ul{list-style:none;padding:12px 14px 14px;display:flex;flex-direction:column;gap:9px}
+.panel li{display:flex;gap:9px;font-size:13px;line-height:1.3}
+.panel li i{flex:none;width:13px;height:13px;border:2px solid var(--head);background:var(--box);margin-top:2px}
+.panel li b{font-weight:800}
+.note{text-align:center;font-size:11px;margin-top:14px;opacity:.75}
+@media (max-width:900px){.grid{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:560px){.grid{grid-template-columns:1fr}h1{font-size:30px}}
+@media (prefers-color-scheme:dark){:root:not([data-theme=light]){--bg:#1E1614;--panel:#4A332B;--panel-edge:#7A5242;--head:#0E0E10;--ink:#F4E6E0;--box:#2B1F1B;--star:#F59A74}.panel li i{border-color:#F4E6E0}}
+</style></head><body><div class="wrap">
+<h1>YOUR <span>CHECKLIST</span> TITLE</h1><div class="grid" id="grid"></div><p class="note">Replace the panels with your own sections. **bold** marks the keyword.</p></div>
+<script>
+const PANELS=[
+{t:'Setup',i:['Pay for **Pro** at $20/month','Download the **desktop app**','Turn off training in **Settings, Privacy**','Keep your **memory off** by default']},
+{t:'Prompting',i:['Give **goals**, not tasks','Never end a prompt with **"right?"**','**Three rules max** per prompt','**Edit** your message instead of sending a follow-up']},
+{t:'Token economy',i:['New chat every **30-50 turns**','**Point Claude at files**, don\'t paste walls','Ask for a **plan** before any big change','**Summarize, copy, restart** in a fresh session']}];
+const g=document.getElementById('grid');
+PANELS.forEach(p=>{const s=document.createElement('section');s.className='panel';const h=document.createElement('h2');h.textContent=p.t;const ul=document.createElement('ul');
+p.i.forEach(x=>{const li=document.createElement('li');const b=document.createElement('i');const sp=document.createElement('span');
+x.split('**').forEach((seg,k)=>{if(k%2){const bb=document.createElement('b');bb.textContent=seg;sp.appendChild(bb)}else sp.appendChild(document.createTextNode(seg))});
+li.appendChild(b);li.appendChild(sp);ul.appendChild(li)});s.appendChild(h);s.appendChild(ul);g.appendChild(s)});
+</script></body></html>

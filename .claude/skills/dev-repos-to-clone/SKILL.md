@@ -215,3 +215,48 @@ Verified live with `git ls-remote` on 2026-10-03. Licences read from the root li
 
 **Not repos:** the 7 photoshoot prompt cards (`photoshoot-prompts-7`), the SalesDaily, Cyberman, NipPro, Lever, Reno Perry and Partaker infographics (skills in this batch), and the 9-skills and 50-use-cases infographics (`prompt-writing-9-skills`, `claude-50-use-cases`). The Obsidian "Second Brain for All Your Agents" video is covered by the existing `ai-second-brain` skill; its narration was not legible in the frames, so no new claims were added.
 
+
+
+## Additional repos (Batch 103 - @replace.so, @dotdevs, @githubnow, @shiva.bytes; 3 Oct 2026)
+
+Verified live with `git clone --filter=blob:none --no-checkout` on 2026-10-03; licences read from the root file only (no install, no code run). Owners come from the URL bars visible on the cards where legible; the rest were matched by name and confirmed to exist. Star counts on the cards are the creators' screenshots and were not re-verified.
+
+| Repo | Category | What it is (card) | Licence (root file) | Status here |
+|---|---|---|---|---|
+| [`trycompai/comp`](https://github.com/trycompai/comp) | Compliance | Open-source SOC 2, ISO 27001, HIPAA evidence automation | AGPL-3.0 | already tracked |
+| [`steel-dev/steel-browser`](https://github.com/steel-dev/steel-browser) | Browser for agents | Open-source browser API: sessions, scraping, screenshots, PDFs | Apache-2.0 | not installed |
+| [`traefik/traefik`](https://github.com/traefik/traefik) | Reverse proxy | HTTP reverse proxy and load balancer for Docker, Kubernetes | MIT | not installed |
+| [`excalidraw/excalidraw`](https://github.com/excalidraw/excalidraw) | Whiteboard | Collaborative hand-drawn diagrams | MIT | already tracked |
+| [`pentacent/keila`](https://github.com/pentacent/keila) | Newsletters | Open-source newsletter tool, SMTP or provider delivery | AGPL-3.0 | not installed |
+| [`toeverything/AFFiNE`](https://github.com/toeverything/AFFiNE) | Workspace | Local-first docs, whiteboards, tables, knowledge base | custom (read it) | not installed |
+| [`browser-use/jev-ultrafast`](https://github.com/browser-use/jev-ultrafast) | Browser agent | Open-source browser agent using structured page state | MIT | not installed |
+| [`Infisical/infisical`](https://github.com/Infisical/infisical) | Secrets | Secrets, certificates, keys and privileged access | open core: root licence plus separately licensed parts | not installed |
+| [`CoreBunch/Instatic`](https://github.com/CoreBunch/Instatic) | Visual CMS | Self-hosted visual CMS publishing plain HTML and CSS | MIT | not installed |
+| [`refactoringhq/tolaria`](https://github.com/refactoringhq/tolaria) | Notes | Desktop Markdown knowledge bases, Git-first | AGPL-3.0 | not installed |
+| [`hunvreus/devpush`](https://github.com/hunvreus/devpush) | Deploy platform | Self-hostable deploy-on-git-push for Python, Node, PHP, Docker apps | MIT | not installed |
+| [`docmost/docmost`](https://github.com/docmost/docmost) | Wiki | Open-source collaborative documentation | AGPL-3.0 | not installed |
+| [`papermark/papermark`](https://github.com/papermark/papermark) | Document sharing | Share documents with custom links and analytics | open core: root licence plus separately licensed parts | not installed |
+| [`BuilderIO/builder`](https://github.com/BuilderIO/builder) | Visual dev | Visual editing and code generation from Figma designs | MIT | already tracked |
+| [`AutomaApp/automa`](https://github.com/AutomaApp/automa) | Browser automation | Browser extension that connects blocks to automate tasks | mixed licences by folder | already tracked |
+| [`saleor/saleor`](https://github.com/saleor/saleor) | Commerce | GraphQL-native headless commerce | BSD-3-Clause | not installed |
+| [`vuestorefront/vue-storefront`](https://github.com/vuestorefront/vue-storefront) | Commerce frontend | Frontend platform for composable commerce | none at root | not installed |
+| [`reflex-dev/reflex`](https://github.com/reflex-dev/reflex) | Python web | Full-stack web apps in pure Python | Apache-2.0 | not installed |
+| [`joschan21/contentport`](https://github.com/joschan21/contentport) | Content | Open-source content engine for growing on Twitter | AGPL-3.0 | not installed |
+| [`hexabot-ai/hexabot`](https://github.com/hexabot-ai/hexabot) | Agents | AI workflows with actions, agents, memory, channels in TypeScript | Fair Core (source-available) | already tracked |
+| [`directus/directus`](https://github.com/directus/directus) | Backend | SQL to instant REST and GraphQL APIs, visual studio | Monospace Sustainable Core (source-available) | not installed |
+| [`tursodatabase/libsql`](https://github.com/tursodatabase/libsql) | Database | Open-source SQLite fork with embedded replicas, remote access | MIT | not installed |
+| [`screenpipe/screenpipe`](https://github.com/screenpipe/screenpipe) | Screen memory | Continuous local capture of screen and audio as context for agents | commercial licence | not installed; licence is commercial |
+| [`louislam/uptime-kuma`](https://github.com/louislam/uptime-kuma) | Monitoring | Self-hosted uptime monitoring and alerts | MIT | not installed |
+| [`supabase/supabase`](https://github.com/supabase/supabase) | Backend | Postgres, auth, storage | Apache-2.0 | already tracked |
+| [`henrygd/beszel`](https://github.com/henrygd/beszel) | Monitoring | Server resource and Docker stats | MIT | not installed |
+| [`FreshRSS/FreshRSS`](https://github.com/FreshRSS/FreshRSS) | RSS reader | Self-hosted reading queue | AGPL-3.0 | not installed |
+| [`linkwarden/linkwarden`](https://github.com/linkwarden/linkwarden) | Bookmarks | Collaborative bookmark manager with archived pages | AGPL-3.0 | not installed |
+| [`odoo/odoo`](https://github.com/odoo/odoo) | ERP | Modular ERP: CRM, accounting, inventory, HR, e-commerce | see COPYRIGHT file | not installed |
+| [`DietrichGebert/ponytail`](https://github.com/DietrichGebert/ponytail) | Agent prompt skill | Makes AI agents write less code, safely | MIT | already installed (ponytail skills) |
+| [`derv82/wifit3`](https://github.com/derv82/wifit3) | Wi-Fi auditing | USB Wi-Fi auditor with handshake capture, WPS attacks, Evil Twin, exports for hashcat | GPL-2.0 | NOT installed; dual-use, see note |
+
+**Licence flags:** AGPL-3.0 (comp, keila, tolaria, docmost, contentport, FreshRSS, linkwarden) means network use of a modified copy requires offering your source. Source-available, not open source: hexabot (Fair Core), directus (Monospace Sustainable Core), screenpipe (commercial licence). AFFiNE, Infisical and papermark are open core: the root licence covers part of the tree and other folders are separately licensed. vue-storefront and several learning repos have no licence file at the root. Odoo's root file points to a COPYRIGHT file; read it before use.
+
+**wifit3 (derv82):** a Wi-Fi attack toolkit (WPA handshake capture, WPS PixieDust and brute force, Evil Twin). It is legitimate for testing networks you own or are authorised in writing to test, and illegal against anyone else's. Registered for reading only. Not cloned for use and not added to any install script.
+
+**Not repos:** Slothy (a paid task app, shown as the creator's own product); the 25-repo list is in `data-ai-github-25` (owners not on the card, matched by title). Skills added: see the Batch 103 README entry.

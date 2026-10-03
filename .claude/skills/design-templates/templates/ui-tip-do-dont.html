@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<!--
+  Template: ui-tip-do-dont
+  Style: @iqonicdesign "5 Tips To Help You In UI Design" - pale blue-white card, handle header, bold tip title,
+         grey wireframe pair (red X = don't, green check = do), "Save this for later" pill.
+  Swap points: :root colours; TIP {title, sub}; the two .wire blocks (edit the inner blocks) . 4:5 card, 540 x 675.
+-->
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>UI Tip Card</title>
+<style>
+:root{--bg1:#F4F7FF;--bg2:#E6EDFB;--ink:#1D2433;--mute:#6C7488;--ph:#C9CDD3;--ph2:#B3B8C1;--bad:#D63B3B;--good:#2DB45A;--card:#FFFFFF}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#b7c0d3;display:flex;justify-content:center;padding:16px;font-family:Aptos,"Plus Jakarta Sans","Segoe UI",Arial,sans-serif}
+.card{width:540px;height:675px;background:linear-gradient(180deg,var(--bg1),var(--bg2));color:var(--ink);border-radius:6px;padding:22px 26px;display:flex;flex-direction:column;position:relative}
+.hd{display:flex;justify-content:space-between;font-size:14px;border-bottom:1px solid #d5dbe8;padding-bottom:10px}
+.hd span:last-child{color:var(--mute)}
+h1{font-size:30px;text-align:center;margin-top:30px;font-weight:800}
+.sub{text-align:center;color:var(--ink);font-size:15px;line-height:1.35;margin:10px auto 0;max-width:380px}
+.pair{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:34px}
+.wire{position:relative;background:var(--card);border-radius:6px;padding:14px 14px 34px;box-shadow:0 1px 6px rgba(0,0,0,.08);min-height:260px;display:flex;flex-direction:column;gap:8px}
+.ph{background:var(--ph);border-radius:3px}.ln{height:6px;background:var(--ph2);border-radius:3px}
+.row{display:flex;gap:8px}.row .ph{flex:none}.col{display:flex;flex-direction:column;gap:6px;flex:1;padding-top:4px}
+.mark{position:absolute;left:50%;bottom:-18px;transform:translateX(-50%);width:36px;height:36px;border-radius:50%;display:grid;place-items:center;color:#fff;font-weight:900;font-size:20px}
+.bad .mark{background:var(--bad)}.good .mark{background:var(--good)}
+.save{margin:auto auto 0;background:var(--card);border-radius:20px;padding:7px 16px;font-size:13px;color:var(--ink);box-shadow:0 1px 4px rgba(0,0,0,.08)}
+@media (max-width:600px){.card{width:100%;height:auto;min-height:640px}}
+@media (prefers-color-scheme:dark){:root:not([data-theme=light]){--bg1:#171C2B;--bg2:#121726;--ink:#E8ECF7;--mute:#96A0BA;--ph:#3A4258;--ph2:#2E3548;--card:#1F2638}.hd{border-color:#2B3350}}
+</style></head><body>
+<section class="card">
+ <div class="hd"><span>@yourhandle</span><span>follow for more</span></div>
+ <h1>Split Images Into Columns</h1>
+ <p class="sub">Instead of wrapping text, sometimes it's a good idea to split the view into separate columns.</p>
+ <div class="pair">
+  <div class="wire bad"><div class="row"><div class="ph" style="width:70px;height:60px"></div><div class="col"><div class="ln"></div><div class="ln"></div><div class="ln"></div></div></div><div class="ln"></div><div class="ln"></div><div class="ln"></div><div class="ln"></div><div class="ln"></div><div class="mark">&#10005;</div></div>
+  <div class="wire good"><div class="row"><div class="col" style="flex:1.4"><div class="ln"></div><div class="ln"></div><div class="ln"></div><div class="ln"></div><div class="ln"></div><div class="ln"></div><div class="ln"></div></div><div class="ph" style="width:80px;height:150px"></div></div><div class="mark">&#10003;</div></div>
+ </div>
+ <div class="save">Save this for later</div>
+</section></body></html>
