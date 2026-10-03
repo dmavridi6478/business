@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<!--
+  Template: sales-method-grid-teal
+  Style: SalesDaily.co one-page infographic - teal title bar, white cards with teal headers,
+         grey "when to use it" box, bold "best for" line, teal footer bar.
+  Swap points: :root colours; the CARDS array (title, what, when, best) - count is an array edit.
+  Canvas 1000 x 1250 (4 columns x 5 rows = 20 cards). Fonts: Aptos stack, falls back to system sans.
+-->
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Sales Methodology Grid</title>
+<style>
+:root{--teal:#3F7F95;--teal-dark:#2C6478;--ink:#1F2A44;--paper:#FFFFFF;--grey:#E9E3E2;--bg:#F4F7F8;--accent:#D6453D}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#cfd8dc;font-family:Aptos,"Segoe UI",Helvetica,Arial,sans-serif;color:var(--ink);display:flex;justify-content:center;padding:16px}
+.poster{width:1000px;background:var(--bg);border-radius:14px;overflow:hidden;box-shadow:0 4px 18px rgba(0,0,0,.18)}
+.title{background:var(--teal);color:#fff;text-align:center;padding:26px 24px 22px;border-radius:0 0 40px 40px;position:relative}
+.title h1{font-size:32px;line-height:1.1;font-weight:800;letter-spacing:.5px;text-transform:uppercase}
+.title h1 span{display:block;font-weight:400;font-size:28px;margin-top:4px}
+.badge{position:absolute;right:26px;bottom:18px;font-size:11px;font-weight:700;opacity:.9}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;padding:16px 14px 14px}
+.card{background:var(--paper);border:1px solid var(--teal);border-radius:6px;overflow:hidden;display:flex;flex-direction:column;min-height:206px}
+.card h2{background:var(--teal);color:#fff;font-size:14px;text-align:center;padding:6px 4px;line-height:1.15}
+.card .what{font-size:11px;padding:7px 8px 4px;line-height:1.3}
+.card .when{background:var(--grey);margin:2px 8px;padding:5px 7px;font-size:10px;line-height:1.3;border-radius:3px;flex:1}
+.card .when b{display:block;font-size:10px}
+.card .best{font-size:10px;padding:5px 8px 8px;line-height:1.25;font-weight:700}
+.foot{background:var(--teal);color:#fff;text-align:center;padding:14px;font-size:15px;font-weight:700}
+@media (max-width:640px){.poster{width:100%}.grid{grid-template-columns:repeat(2,1fr)}}
+@media (prefers-color-scheme:dark){:root:not([data-theme=light]){--bg:#10181c;--paper:#18242a;--grey:#26343b;--ink:#E6EEF1}}
+</style></head><body>
+<div class="poster" id="poster">
+  <div class="title"><h1>20 Sales Methodologies<span>for B2B Selling</span></h1><div class="badge">source: SalesDaily.co</div></div>
+  <div class="grid" id="grid"></div>
+  <div class="foot">Replace this line with your own call to action</div>
+</div>
+<script>
+const CARDS=[
+["SPIN Selling","Question-based method that surfaces real buyer pain.","When you need to guide discovery through logic and insight.","SaaS, agencies, solution-led sellers"],
+["SNAP Selling","Speed-based approach for distracted buyers.","When buyers are overwhelmed and decisions stall from friction.","Inside sales or high-velocity SDR/AE teams"],
+["GAP Selling","Focuses on the gap between current state and desired outcome.","When you are selling ROI, outcomes or transformation.","SaaS, agencies, solution-led sellers"],
+["SPICED Framework","Uncovers urgency and qualification through 6 buyer-focused lenses.","During discovery to surface impact and timing early.","SaaS, outbound, multi-threaded deals"],
+["MEDDIC","Qualification system for complex sales with many stakeholders.","When deal risk is high and misalignment kills forecasts.","Enterprise AEs and deal desk teams"],
+["MEDDPICC","Adds Paper Process and Competition to MEDDIC for deeper control.","When legal, security or red tape blocks velocity.","Late-stage pipeline and large-deal operators"],
+["CHAMP","Qualifies on challenge and authority before budget.","When budget is unclear but urgency can be created.","SDRs, outbound AEs, early-stage discovery"],
+["NEAT Selling","Business pain and economic value.","When you need to tie discovery directly to impact.","SaaS reps handling large-volume outreach"],
+["Sandler Selling System","Psychology and control techniques to lead the process.","When buyers hold power and pressure needs to be reversed.","High-ticket closers, services, complex sales"],
+["Challenger Sale","Reframes buyer thinking with tailored insight and control.","When breaking status quo and positioning disruptive ideas.","Enterprise teams, competitive markets"],
+["Insight Selling","Leads buyers with tailored insight to define their needs.","When buyers are unsure what to prioritize or how to decide.","Advisory-style sales, consultants, B2B SaaS"],
+["Command of the Sale","Process-control system to drive deal momentum.","When too many deals stall or go dark after demo.","Sales teams needing discipline and follow-through"],
+["Strategic Selling","Maps influence, politics and power in multi-threaded deals.","When more than 4 stakeholders are in the decision.","Enterprise sellers, key account managers"],
+["Target Account Selling","Coordinates cross-functional effort toward named high-value accounts.","When deals require personalization, orchestration and patience.","ABM teams, enterprise AEs, field sales"],
+["Winning by Design","Scalable system around recurring revenue and data-driven sales.","When building repeatable, scientific sales workflows.","SDRs, outbound AEs, early-stage discovery"],
+["Buyer Facilitator Framework","Helps the buyer buy by reducing internal friction and confusion.","When deals stall due to buyer-side complexity.","Customer-centric AEs, consultants, advisory sales"],
+["Sales Acceleration Formula","Metrics-driven system for scalable sales hiring and process.","When building a team from zero or scaling inside sales.","Founders, VPs of Sales, RevOps"],
+["Buyer-Centric Selling","Builds trust by aligning the sales process to buyer psychology.","When consultative value matters more than pitch volume.","Long-cycle sales, renewals, retention-led orgs"],
+["The Science of Selling","Uses behavioral science to influence how buyers decide.","When logic alone is not enough and emotional trust matters.","Reps selling abstract, risky or unfamiliar solutions"],
+["Value Selling Framework","Links solution capabilities to measurable business outcomes.","When defending price or selling premium positioning.","Competitive SaaS, MarTech, FinTech, B2B tech vendors"]];
+const g=document.getElementById('grid');
+CARDS.forEach(c=>{const d=document.createElement('div');d.className='card';
+d.innerHTML='<h2></h2><p class="what"></p><div class="when"><b>When to use it:</b><span></span></div><p class="best"></p>';
+d.querySelector('h2').textContent=c[0];d.querySelector('.what').textContent=c[1];
+d.querySelector('.when span').textContent=c[2];d.querySelector('.best').textContent='Best for: '+c[3];g.appendChild(d);});
+</script></body></html>

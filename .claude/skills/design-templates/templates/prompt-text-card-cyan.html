@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<!--
+  Template: prompt-text-card-cyan
+  Style: @theaiguyhere "ChatGPT | LLM | Prompts" text cards - pale cyan background, round avatar + handle header,
+         numbered bold heading, one large bold prompt paragraph, faint corner watermark.
+  Swap points: :root colours; the CARD object (handle, title, number, heading, body); add more .card sections
+  for a set. 1080 x 1350 (4:5). Large text is deliberate: the card must be readable on a phone.
+-->
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Prompt Text Card</title>
+<style>
+:root{--bg:#CFFFFF;--ink:#1F2933;--mute:rgba(31,41,51,.55)}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#b6c2c6;display:flex;flex-direction:column;align-items:center;gap:16px;padding:16px;font-family:Aptos,"Nunito Sans","Segoe UI",Arial,sans-serif}
+.card{width:540px;height:675px;background:var(--bg);color:var(--ink);border-radius:8px;padding:54px 54px 40px;position:relative;overflow:hidden}
+.who{display:flex;align-items:center;gap:16px}
+.av{width:68px;height:68px;border-radius:50%;background:#fff;border:3px solid #111;display:grid;place-items:center;font-size:32px;flex:none}
+.who b{display:block;font-size:20px;line-height:1.2}.who span{font-size:15px;font-weight:700}
+h2{font-size:26px;margin:64px 0 22px;line-height:1.15}
+p{font-size:22px;line-height:1.35;font-weight:700}
+.wm{position:absolute;right:18px;bottom:14px;font-size:14px;color:var(--mute)}
+@media (max-width:600px){.card{width:100%;height:auto;min-height:620px}}
+@media (prefers-color-scheme:dark){:root:not([data-theme=light]){--bg:#0e2a2c;--ink:#e6fbfb;--mute:rgba(230,251,251,.5)}.av{background:#e6fbfb}}
+</style></head><body>
+<div id="cards"></div>
+<script>
+const SERIES={handle:'@yourhandle',title:'ChatGPT | LLM | Prompts',avatar:'\u{1F9D1}‍\u{1F4BC}'};
+const CARDS=[
+{h:'1. DSLR Photoshoot Mode',b:'Transform my uploaded photo into a professional DSLR photoshoot. Keep my identity, facial structure, skin tone, and natural features same without any alteration. Improve the composition, lighting, depth of field, pose, background, wardrobe, and overall atmosphere while keeping everything physically realistic.'},
+{h:'2. Change Your Location',b:'Use my uploaded photo as the identity reference and place me naturally in [LOCATION]. Do not simply replace the background. Reconstruct the entire photograph so my lighting, shadows, perspective, reflections, clothing, depth, and color temperature naturally match the environment.'}];
+const root=document.getElementById('cards');
+CARDS.forEach(c=>{const d=document.createElement('section');d.className='card';
+d.innerHTML='<div class="who"><div class="av"></div><div><b></b><span></span></div></div><h2></h2><p></p><div class="wm"></div>';
+d.querySelector('.av').textContent=SERIES.avatar;d.querySelector('b').textContent=SERIES.title;d.querySelector('span').textContent=SERIES.handle;
+d.querySelector('h2').textContent=c.h;d.querySelector('p').textContent=c.b;d.querySelector('.wm').textContent=SERIES.handle;root.appendChild(d);root.style.display='flex';root.style.flexDirection='column';root.style.gap='16px'});
+</script></body></html>
