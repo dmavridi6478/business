@@ -37,6 +37,10 @@ Reach for a template here instead of improvising when a task needs:
 - **A glowing-numeral font specimen carousel** (@designarchitect001 "FONT 0N" style — giant dark numeral with coloured rim glow + grain, two rim-lit spheres, specimen name, "Save it for later / Swipe →"; one colour per slide) → `templates/font-showcase-glow.html`
 - **A black-and-red "fonts that look like a logo" wordmark carousel** (red gradient spheres, silver-gradient wordmark, `01 | NAME` index bar, cover and "Was this helpful?" end card) → `templates/wordmark-noir-card.html`
 - **A white tool-spotlight carousel** (@will.ai.m "free tools Big Tech doesn't want you to run" style — icon tile, giant title, REPLACES / DOWNLOAD / GITHUB rows, browser-frame screenshot, intro + follow slides) → `templates/tool-spotlight-light.html`
+- **An engineering-lesson carousel card** (@jek.notes style — off-white paper, heavy condensed headline with one red line, red "The problem / What to do / Think" tags, arrow bullets, mini flow) → `templates/bug-lesson-card.html`
+- **A checklist panel grid** (@aisimplified23 "Claude Checklist" style — peach panels with black header tabs and checkbox rows, bold keywords; data-driven `PANELS`) → `templates/checklist-panels-peach.html`
+- **A KPI framework one-pager** (Oana Labes style — black title bar with a yellow keyword, cream lagging panel in 3 columns, three gold leading panels, checkbox KPIs with formulas) → `templates/kpi-framework-gold.html`
+- **A UI do / don't tip card** (@iqonicdesign style — pale blue-white card, wireframe pair with red X and green check, "Save this for later" pill) → `templates/ui-tip-do-dont.html`
 - **A SalesDaily-style 20-card methodology grid** (teal title bar, white cards with teal headers, grey "when to use it" box, "best for" line, teal footer; data-driven `CARDS` array) → `templates/sales-method-grid-teal.html`
 - **A three-level stepped pastel card poster** (NipPro "3 Levels" style — serif headline with grey highlight, pink / peach / lilac cards of rising height, big percentage, looks-like list, next move, two stat tiles) → `templates/level-cards-pastel.html`
 - **A pale-cyan prompt text card set** (@theaiguyhere style — avatar + handle header, numbered heading, one large bold prompt paragraph, corner watermark) → `templates/prompt-text-card-cyan.html`
@@ -143,6 +147,10 @@ Chromium screenshot with zero console errors before being added.
 | `sales-method-grid-teal.html` | SalesDaily.co "20 Sales Methodologies for B2B Selling" | 4 x 5 CSS grid built from a `CARDS` array (title, what, when, best); teal `--teal` tokens; collapses to 2 columns on mobile; pre-filled from `sales-methodologies-20`; theme `salesdaily-teal` |
 | `level-cards-pastel.html` | NipPro AI "The 3 Levels of Agentic Marketing" | Three cards of stepped min-heights from a `LEVELS` array with per-card `--c/--t/--k` pastel tokens, serif display numerals, two `STATS` tiles; pre-filled from `agentic-marketing-levels`; theme `pastel-levels` |
 | `prompt-text-card-cyan.html` | @theaiguyhere "ChatGPT / LLM / Prompts" cards | 540 x 675 (4:5) cards from a `CARDS` array under one `SERIES` header (avatar, handle); pale cyan `--bg`; large bold text kept legible on a phone; pre-filled with two prompts from `photoshoot-prompts-7`; theme `cyan-prompt-text` |
+| `bug-lesson-card.html` | @jek.notes "10 Developer Problems You Won't See Until Production" | 540 x 675 card from one `SLIDE` object (kicker, headline lines with one `<em>` red line, problem, flow chips, to-do list, think box, counter); Anton/Impact fallback; theme `engineering-red` |
+| `checklist-panels-peach.html` | @aisimplified23 "Claude Checklist" | 3-column panel grid built from a `PANELS` array with `**bold**` markers parsed safely (no innerHTML); collapses to 2 then 1 column; pre-filled with three panels from `claude-checklist`; theme `peach-checklist` |
+| `kpi-framework-gold.html` | Oana Labes "The CEO KPI Framework" | `LAG` and `LEAD` arrays render checkbox KPIs with formulas; three gold tints via `nth-child`; pre-filled with 18 of the 33 KPIs from `ceo-kpi-framework` (corrected churn formula); theme `kpi-gold` |
+| `ui-tip-do-dont.html` | @iqonicdesign "5 Tips To Help You In UI Design" | Wireframe pair from placeholder blocks, circular mark half-overlapping the card edge; pre-filled with tip 1 of `ui-image-layout-5-tips`; theme `soft-blue-tip` |
 
 **Gotcha found while verifying:** a font name passed into an inline `style="font-family:…"` must use *single* quotes (`'Fredoka'`) — double quotes silently break the attribute and the card falls back to the default font.
 
@@ -207,3 +215,14 @@ The original specimens use proprietary or unidentified fonts; these are look-ali
 | Reno Perry hacks | white, ink `#111`, orange highlight `#F5841F`, per-box accents pink/teal/blue/purple/amber | Inter |
 | Partaker mental models | pastel boxes: yellow `#FFF3C4`, pink `#FADBD8`, lilac `#E6DBFA`, green `#D9F2E1`, blue `#DCE6FA`; footer blue `#2B6FE0` | Playfair Display + Inter |
 | Lever analytics | mint `#DFF3E9`, olive `#EDE7C4`, ink `#17382E`, highlight `#F3F7B5` | Inter |
+
+## Batch 103 theme tokens (colours read from the screenshots)
+
+| Theme | Colours | Fonts (look-alike, free) |
+|---|---|---|
+| `engineering-red` | paper `#F1F0EE`, ink `#141414`, red `#C8202F` | Anton (headline), Inter |
+| `peach-checklist` | bg `#F6E9E4`, panel `#E9B8A6`, edge `#D8997F`, header `#17171A`, accent `#E07A52` | Playfair Display Black, Inter |
+| `kpi-gold` | black `#0B0B0B`, yellow `#F4C81D`, cream `#FBF4D6`, golds `#F1E2B4` `#E7D08A` `#D6B65A` | Inter ExtraBold |
+| `soft-blue-tip` | `#F4F7FF` to `#E6EDFB`, placeholders `#C9CDD3`, red `#D63B3B`, green `#2DB45A` | Plus Jakarta Sans |
+| itsaiguide thumbnail | red radial glow, white title, red underlined section number, black bold quote | Anton + Inter (photo not reproduced) |
+

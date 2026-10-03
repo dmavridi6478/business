@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<!--
+  Template: kpi-framework-gold
+  Style: Oana Labes "The CEO KPI Framework" - black title bar with a yellow keyword, a cream dashed "lagging" panel
+         in three columns, and three leading panels in deepening gold; checkbox rows (name bold, formula beneath).
+  Swap points: :root colours; LAG (array of [name, formula]); LEAD (array of {t, items}). Canvas 800 wide, scales.
+-->
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>KPI Framework</title>
+<style>
+:root{--black:#0B0B0B;--yellow:#F4C81D;--cream:#FBF4D6;--g1:#F1E2B4;--g2:#E7D08A;--g3:#D6B65A;--ink:#141414;--mute:#3C3A33;--line:#141414}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#c9c4b4;display:flex;justify-content:center;padding:16px;font-family:Aptos,"Segoe UI",Arial,sans-serif;color:var(--ink)}
+.poster{width:800px;background:#fff;border-radius:6px;overflow:hidden}
+.top{background:var(--black);color:#fff;padding:18px 24px 14px}
+.top h1{font-size:32px;line-height:1.05;font-weight:800;letter-spacing:.5px;text-transform:uppercase}
+.top h1 span{color:var(--yellow)}
+.top p{display:inline-block;background:#fff;color:var(--black);font-weight:700;font-size:15px;padding:4px 12px;margin-top:10px;border:2px solid var(--black);outline:2px solid #fff}
+.sec{padding:10px 14px 0}
+.lab{font-size:26px;font-weight:800;text-align:center;margin:8px 0 6px;letter-spacing:.5px}
+.lag{background:var(--cream);border:2px dashed var(--line);border-radius:14px;padding:12px 16px 14px}
+.lag h2,.lead h2{font-size:17px;font-weight:800;letter-spacing:.5px;margin-bottom:8px;text-transform:uppercase}
+.lagcols{display:grid;grid-template-columns:repeat(3,1fr);gap:8px 22px}
+.kpi{display:flex;gap:8px;font-size:11px;line-height:1.25;margin-bottom:9px;min-width:0}
+.kpi i{flex:none;width:13px;height:13px;border:2px solid var(--line);background:#fff;margin-top:1px}
+.kpi b{display:block;font-size:12px}
+.kpi span{color:var(--mute);display:block}
+.leads{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;padding:0 0 14px}
+.lead{border:2px dashed var(--line);border-radius:14px;padding:12px 12px 6px;min-width:0}
+.lead:nth-child(1){background:var(--g1)}.lead:nth-child(2){background:var(--g2)}.lead:nth-child(3){background:var(--g3)}
+.foot{background:var(--black);color:#fff;display:flex;justify-content:space-between;gap:12px;padding:10px 18px;font-size:12px;flex-wrap:wrap}
+.foot b{color:var(--yellow)}
+@media (max-width:700px){.poster{width:100%}.lagcols,.leads{grid-template-columns:1fr}}
+@media (prefers-color-scheme:dark){:root:not([data-theme=light]){--cream:#2A2614;--g1:#2F2A17;--g2:#3A3319;--g3:#4A3F1B;--ink:#F3EEDB;--mute:#CFC8AC;--line:#F3EEDB}.kpi i{background:#15130A}.poster{background:#15130A}.top p{background:#15130A;color:#F3EEDB;border-color:#F3EEDB;outline-color:#15130A}}
+</style></head><body>
+<div class="poster">
+ <div class="top"><h1>The <span>CEO KPI</span> Framework</h1><p>The strongest CEOs track all 4 perspectives</p></div>
+ <div class="sec"><div class="lab">LAGGING</div><div class="lag"><h2>Financial perspective</h2><div class="lagcols" id="lag"></div></div>
+ <div class="lab">LEADING</div><div class="leads" id="lead"></div></div>
+ <div class="foot"><span>@yourhandle</span><b>Your academy or brand</b></div>
+</div>
+<script>
+const LAG=[['Revenue Growth Rate','Revenue current period / revenue previous period - 1'],['Gross Margin','(Total revenue - COGS) / total revenue'],['Operating Profit Margin','Operating profit / total revenue'],['Net Profit Margin','Net profit / total revenue'],['Current Ratio','Current assets / current liabilities'],['Cash Conversion Cycle','DIO + DSO - DPO'],['Cash Conversion Ratio','Cash flow from operations / net income'],['Return on Assets','Net income / total assets'],['Return on Equity','Net income / shareholder\'s equity']];
+const LEAD=[{t:'Customers perspective',items:[['Customer Churn Rate','Customers lost / customers at start x 100'],['Net Promoter Score','% promoters - % detractors'],['Customer Retention Rate','(End - new) / start x 100']]},
+{t:'Employees perspective',items:[['Time to Hire','Days from posting to accepted offer'],['Employee NPS','% promoters - % detractors'],['Average Employee Tenure','Total years of service / employees']]},
+{t:'Skills & innovation',items:[['Training Participation Rate','In training / total employees x 100'],['Innovation Adoption Rate','Implemented / proposed x 100'],['Internal Mobility Rate','Promoted or moved / total x 100']]}];
+function kpi(k){const d=document.createElement('div');d.className='kpi';const i=document.createElement('i');const w=document.createElement('div');const b=document.createElement('b');b.textContent=k[0];const s=document.createElement('span');s.textContent=k[1];w.appendChild(b);w.appendChild(s);d.appendChild(i);d.appendChild(w);return d}
+LAG.forEach(k=>document.getElementById('lag').appendChild(kpi(k)));
+LEAD.forEach(l=>{const s=document.createElement('section');s.className='lead';const h=document.createElement('h2');h.textContent=l.t;s.appendChild(h);l.items.forEach(k=>s.appendChild(kpi(k)));document.getElementById('lead').appendChild(s)});
+</script></body></html>

@@ -1,0 +1,95 @@
+<title>Batch 103 Intake Report</title>
+<style>
+  /* Layout: single-column formal report, 880px measure, tables scroll inside their own wrappers.
+     Palette: ink-blue neutrals, one deep teal accent, semantic green/amber/red for status only.
+     Type: Aptos (user's house font) with system fallbacks; titles 32pt, headings 14pt, body 11pt. */
+  :root {
+    --bg: #f6f7f9; --surface: #ffffff; --fg: #1b2330; --muted: #5a6577; --line: #d9dee6;
+    --accent: #0f5d6b; --accent-soft: #e2f0f2;
+    --ok: #17703a; --ok-bg: #e3f3e8; --warn: #8a5a00; --warn-bg: #fbefd3; --bad: #a11d2a; --bad-bg: #fbe3e5;
+    --code-bg: #eef1f5;
+    --font: Aptos, "Segoe UI Variable Text", "Segoe UI", system-ui, -apple-system, Roboto, sans-serif;
+    --mono: ui-monospace, "SF Mono", Consolas, monospace;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #11161e; --surface: #181f2a; --fg: #e6eaf0; --muted: #9aa5b6; --line: #2c3646;
+      --accent: #6cc3d1; --accent-soft: #17323a;
+      --ok: #6fd18f; --ok-bg: #173824; --warn: #f0c261; --warn-bg: #3a2e12; --bad: #ff8d98; --bad-bg: #3d1a1f;
+      --code-bg: #0e131a; color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #11161e; --surface: #181f2a; --fg: #e6eaf0; --muted: #9aa5b6; --line: #2c3646;
+    --accent: #6cc3d1; --accent-soft: #17323a;
+    --ok: #6fd18f; --ok-bg: #173824; --warn: #f0c261; --warn-bg: #3a2e12; --bad: #ff8d98; --bad-bg: #3d1a1f;
+    --code-bg: #0e131a; color-scheme: dark;
+  }
+  * { box-sizing: border-box; }
+  body { background: var(--bg); color: var(--fg); font-family: var(--font); font-size: 11pt; line-height: 1.55; padding-inline: 16px; padding-block: 28px 64px; }
+  main { max-width: 880px; margin-inline: auto; display: flex; flex-direction: column; gap: 28px; }
+  header { display: flex; flex-direction: column; gap: 8px; border-bottom: 2px solid var(--accent); padding-bottom: 18px; }
+  .eyebrow { font-size: 9pt; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
+  h1 { font-size: 32pt; line-height: 1.1; margin: 0; font-weight: 700; text-wrap: balance; }
+  h2 { font-size: 14pt; margin: 0 0 10px; font-weight: 700; color: var(--accent); text-wrap: balance; }
+  h3 { font-size: 11pt; margin: 14px 0 6px; font-weight: 700; }
+  p { margin: 0 0 10px; max-width: 75ch; }
+  section { background: var(--surface); border: 1px solid var(--line); border-radius: 6px; padding: 20px 22px; min-width: 0; }
+  .lede { font-size: 11pt; color: var(--muted); max-width: 70ch; margin: 0; }
+  .truth { border-left: 4px solid var(--bad); background: var(--bad-bg); padding: 12px 16px; border-radius: 0 6px 6px 0; }
+  .truth p:last-child { margin-bottom: 0; }
+  .tag { font-family: var(--mono); font-size: 9pt; padding: 1px 6px; border-radius: 3px; background: var(--accent-soft); color: var(--accent); white-space: nowrap; }
+  .tw { overflow-x: auto; margin-block: 8px 4px; border: 1px solid var(--line); border-radius: 4px; }
+  table { border-collapse: collapse; width: 100%; min-width: 640px; font-size: 10pt; }
+  th, td { padding: 8px 10px; border-bottom: 1px solid var(--line); text-align: center; vertical-align: top; }
+  th { background: var(--accent-soft); color: var(--fg); font-weight: 700; font-size: 9.5pt; }
+  tr:last-child td { border-bottom: 0; }
+  td.l, th.l { text-align: left; }
+  .st { display: inline-block; padding: 1px 8px; border-radius: 10px; font-size: 9pt; font-weight: 700; white-space: nowrap; }
+  .st.ok { background: var(--ok-bg); color: var(--ok); } .st.warn { background: var(--warn-bg); color: var(--warn); } .st.bad { background: var(--bad-bg); color: var(--bad); }
+  .sw { display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 10px; margin-block: 8px; }
+  .sw div { border: 1px solid var(--line); border-radius: 4px; overflow: hidden; font-size: 9pt; text-align: center; }
+  .sw i { display: block; height: 44px; }
+  .sw span { display: block; padding: 4px 6px; font-family: var(--mono); }
+  .prompt { position: relative; margin-block: 10px; }
+  .prompt pre { margin: 0; white-space: pre-wrap; background: var(--code-bg); border: 1px solid var(--line); border-radius: 4px; padding: 12px 84px 12px 12px; font-family: var(--mono); font-size: 9.5pt; line-height: 1.5; }
+  .prompt b { display: block; font-family: var(--font); font-size: 10pt; margin-bottom: 4px; }
+  .prompt button { position: absolute; top: 8px; right: 8px; font: inherit; font-size: 9pt; padding: 4px 10px; border-radius: 4px; border: 1px solid var(--accent); background: var(--surface); color: var(--accent); cursor: pointer; }
+  .prompt button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  ul { margin: 0 0 10px; padding-left: 20px; } li { margin-bottom: 4px; max-width: 75ch; }
+  code { font-family: var(--mono); font-size: 9.5pt; background: var(--code-bg); padding: 1px 4px; border-radius: 3px; }
+  footer { color: var(--muted); font-size: 9.5pt; }
+</style><main>
+<header><span class="eyebrow">Intake report · iCloud Photos batch 8 and a CEO KPI infographic · 3 October 2026</span>
+<h1>Batch 103 Intake Report</h1>
+<p class="lede">64 images, 3 videos and 1 attached infographic turned into 8 skills, 4 commands, 4 design templates, a register of 31 repos and a user-run install script. Prepared for the owner of the business repository.</p></header>
+<section class="truth"><h2>What you should know first</h2>
+<p><b>The CEO KPI infographic has a wrong formula.</b> It prints customer churn as (customers at end minus customers at start) divided by customers at start. That is net customer growth, not churn. The skill uses customers lost divided by customers at start and lists the other loose formulas.</p>
+<p><b>Most of the repo cards are not plain open source.</b> Hexabot, Directus and Screenpipe are source-available or commercial, seven are AGPL-3.0, and four are open core. I read each root licence file and recorded it. Read the licence before you self-host or resell.</p>
+<p><b>wifit3 is a Wi-Fi attack toolkit.</b> I registered it for reading only. It is lawful on networks you own or are authorised in writing to test, and unlawful otherwise. It is not in any install script.</p>
+<p><b>Some source slides are incomplete or padded.</b> The jek.notes cover promises 10 problems but shows 5. Card 12 of the "12 workflows" video repeats card 11. The last item of the Claude Checklist is hidden by a watermark. The 25-repo card gives titles only, so I matched 17 by title, marked them Likely, and left 8 unidentified.</p>
+<p><b>I changed nothing outside this batch.</b> The three chat agents are still not run live, and the price list and FAQ are still empty.</p></section>
+<section><h2>1. Inventory of the upload</h2><div class="tw"><table><tr><th class="l">Content</th><th class="">Items</th><th class="l">Outcome</th></tr><tr><td class="l">@jek.notes: production bugs (7 slides)</td><td class="">7</td><td class="l">Skill <code>production-bugs-5</code>, command <code>/prod-bug-check</code>, template <code>bug-lesson-card</code></td></tr><tr><td class="l">@itsaiguide: 7 "superhuman" prompts + cover</td><td class="">8</td><td class="l">Skill <code>superhuman-prompts-7</code>, command <code>/superhuman</code></td></tr><tr><td class="l">@aisimplified23: Claude Checklist</td><td class="">1</td><td class="l">Skill <code>claude-checklist</code>, command <code>/claude-checklist</code>, template <code>checklist-panels-peach</code></td></tr><tr><td class="l">Oana Labes: CEO KPI Framework (attached)</td><td class="">1</td><td class="l">Skill <code>ceo-kpi-framework</code>, command <code>/kpi-scorecard</code>, template <code>kpi-framework-gold</code></td></tr><tr><td class="l">@iqonicdesign: UI image-layout tips</td><td class="">6</td><td class="l">Skill <code>ui-image-layout-5-tips</code>, template <code>ui-tip-do-dont</code></td></tr><tr><td class="l">@shiva.bytes video: 12 workflows</td><td class="">1</td><td class="l">Skill <code>claude-12-workflows</code></td></tr><tr><td class="l">@shiva.bytes video: 25 data and AI repos</td><td class="">1</td><td class="l">Skill <code>data-ai-github-25</code></td></tr><tr><td class="l">@restructureai video: One-Person Marketing Team</td><td class="">1</td><td class="l">Skill <code>one-person-marketing-team-map</code></td></tr><tr><td class="l">@replace.so, @dotdevs, @githubnow repo cards</td><td class="">33</td><td class="l">Register of 31 repos with licences; install script for you to run</td></tr><tr><td class="l">@itsaiguide "Claude OS" slide</td><td class="">1</td><td class="l">Advert for a paid product; not acted on</td></tr></table></div></section>
+<section><h2>2. Commands you can run after a restart</h2><div class="tw"><table><tr><th class="l">Command</th><th class="l">What it does</th></tr><tr><td class="l"><code>/prod-bug-check &lt;file or feature&gt;</code></td><td class="l">Reviews code against the 5 production-only bugs with evidence and tests</td></tr><tr><td class="l"><code>/superhuman &lt;1-7&gt;</code></td><td class="l">Runs one self-development prompt without inventing resources</td></tr><tr><td class="l"><code>/claude-checklist [section]</code></td><td class="l">Audits your Claude habits against the 9-section list</td></tr><tr><td class="l"><code>/kpi-scorecard &lt;company&gt;</code></td><td class="l">Builds a 3-to-5-per-perspective KPI scorecard with corrected formulas</td></tr></table></div></section>
+<section><h2>3. KPI formula corrections</h2><div class="tw"><table><tr><th class="l">KPI</th><th class="l">As printed</th><th class="l">Correction</th></tr><tr><td class="l">Customer Churn Rate</td><td class="l">(Customers at end - at start) / at start x 100</td><td class="l">Customers lost in period / customers at start x 100 (the printed formula is net growth)</td></tr><tr><td class="l">Turnover Ratio</td><td class="l">Net revenue / total assets</td><td class="l">Name it asset turnover</td></tr><tr><td class="l">Debt Coverage Ratio</td><td class="l">EBITDA / (principal + interest)</td><td class="l">State your definition; usual DSCR uses net operating income or cash flow available for debt service</td></tr><tr><td class="l">EPS</td><td class="l">Net income / outstanding shares</td><td class="l">Deduct preferred dividends first</td></tr><tr><td class="l">NPS vs eNPS</td><td class="l">NPS without x100, eNPS with x100</td><td class="l">Use one convention</td></tr></table></div><p>The other 28 KPIs on the infographic are correct as printed.</p></section>
+<section><h2>4. Repo licence flags</h2><div class="tw"><table><tr><th class="l">Repos</th><th class="">Flag</th><th class="l">What it means</th></tr><tr><td class="l">hexabot, directus</td><td class=""><span class="st warn">source-available</span></td><td class="l">Fair Core and Monospace Sustainable Core licences: not open source</td></tr><tr><td class="l">screenpipe</td><td class=""><span class="st warn">commercial</span></td><td class="l">Root licence is now a commercial licence</td></tr><tr><td class="l">comp, keila, tolaria, docmost, contentport, FreshRSS, linkwarden</td><td class=""><span class="st warn">AGPL-3.0</span></td><td class="l">Offering a modified copy over a network requires publishing your source</td></tr><tr><td class="l">AFFiNE, Infisical, papermark, automa</td><td class=""><span class="st warn">open core / mixed</span></td><td class="l">Parts of the tree carry other licences; read before use</td></tr><tr><td class="l">wifit3</td><td class=""><span class="st bad">dual-use</span></td><td class="l">Wi-Fi attack toolkit; for networks you own or have written permission to test; registered for reading only</td></tr><tr><td class="l">ponytail, supabase, excalidraw, builder, comp, hexabot</td><td class=""><span class="st ok">already tracked</span></td><td class="l">Not re-added</td></tr></table></div><p>The full table with 31 repos is in <code>dev-repos-to-clone</code>. Nothing was installed. <code>scripts/batch103-install.sh</code> clones a few repos for reading and asks before each step.</p></section>
+<section><h2>5. Connectors</h2><p>I installed none. The upload mentions Gmail, Gamma, Google Drive, Notion, Calendar and GitHub in the Claude Checklist; the first five are already connected here, and GitHub tools here are scoped to this one repo. Granola is not connected. Several repos expose an MCP server (Capd, ChatbotX and AlphAI from the last batch, Directus, Supabase); none was added to <code>.mcp.json</code>.</p></section>
+<section><h2>6. Design templates</h2><div class="tw"><table><tr><th class="l">Template</th><th class="l">Source style</th><th class="l">Notes</th></tr><tr><td class="l">bug-lesson-card</td><td class="l">@jek.notes carousel</td><td class="l">One SLIDE object; red tags; flow chips</td></tr><tr><td class="l">checklist-panels-peach</td><td class="l">Claude Checklist</td><td class="l">PANELS array; bold keywords parsed without innerHTML</td></tr><tr><td class="l">kpi-framework-gold</td><td class="l">CEO KPI Framework</td><td class="l">LAG and LEAD arrays; corrected formulas</td></tr><tr><td class="l">ui-tip-do-dont</td><td class="l">UI image tips</td><td class="l">Wireframe pair with X and check</td></tr></table></div><p>All four rendered in Chromium with no console errors and no clipped text. Fonts are look-alikes; the heavy condensed headline falls back to Impact or Arial Narrow without Anton. Theme tokens are in <code>design-templates/SKILL.md</code>.</p></section>
+<section><h2>7. Copy-paste prompts</h2><p>Replace the [BRACKETS]. Quoted from the slides. Treat them as goal-setting prompts, not therapy, and check any book or course the answer names.</p><div class="prompt"><b>1. Think like a billionaire</b><pre>You are a thinking coach trained on the minds of Elon Musk, Naval Ravikant, Jeff Bezos, and other top polymaths. Reprogram my thought process to think in systems, long-term vision, leverage, and asymmetric outcomes. Give me daily mental models to shift from an average thinker to a billionaire thinker.</pre><button type="button" class="cp">Copy</button></div><div class="prompt"><b>2. Superhuman learning</b><pre>You are a neuro-optimized tutor. I want to learn any complex skill 10x faster than the average person. Create a weekly learning blueprint based on spaced repetition, interleaving, the Feynman technique, and active recall. Apply it to [insert topic]. I want to be in the top 1% within 90 days.</pre><button type="button" class="cp">Copy</button></div><div class="prompt"><b>3. Expert-level knowledge</b><pre>You are a world-class expert in [insert any skill]. Train me as if I were your apprentice, guiding me from beginner to mastery. Break the journey into stages, tasks, uncommon resources, and effective shortcuts. Include simulations and real-world practice assignments to help me truly internalize each level.</pre><button type="button" class="cp">Copy</button></div><div class="prompt"><b>4. Upgrade mental software</b><pre>You are my cognitive OS upgrader. Audit my current thought patterns, habits, and beliefs based on this description: [describe how you think now]. Then rewrite my operating system to improve clarity, decision speed, memory, creativity, and emotional control.</pre><button type="button" class="cp">Copy</button></div><div class="prompt"><b>5. Design a god-tier life</b><pre>You are my high-performance architect. Help me design a god-tier life based on time freedom, health, wealth, relationships, and purpose. Create a daily system, the ideal environment, the people I must avoid, the habits I need to master, and the beliefs I need to rewire to become unstoppable.</pre><button type="button" class="cp">Copy</button></div><div class="prompt"><b>6. Compress decades into days</b><pre>You are a time-leverage strategist. I want to achieve in 1 year what most people take 10 years to accomplish. Based on my goal: [insert goal], create a high-leverage blueprint using shortcuts, tools, delegation, automation, and AI to help me leapfrog everyone else.</pre><button type="button" class="cp">Copy</button></div><div class="prompt"><b>7. Be your dream version</b><pre>You are a psychological reprogrammer. Based on my goal of becoming [insert ideal self], help me destroy my current limiting identity and install a new operating system: self-image, thought patterns, and behavior map that align with my highest version.</pre><button type="button" class="cp">Copy</button></div><div class="prompt"><b>Production bug review</b><pre>/prod-bug-check &lt;file path, endpoint or feature description&gt;</pre><button type="button" class="cp">Copy</button></div><div class="prompt"><b>KPI scorecard</b><pre>/kpi-scorecard &lt;company type, goals, and any figures&gt;</pre><button type="button" class="cp">Copy</button></div></section>
+<section><h2>8. Your next steps</h2><ul>
+<li>Restart Claude Code, then run <code>/prod-bug-check</code> on one real endpoint and <code>/claude-checklist setup</code> on your own settings.</li>
+<li>Use <code>/kpi-scorecard</code> with real figures; the skill never invents values.</li>
+<li>Decide which AGPL or source-available repos you can accept before cloning any of them for a project.</li>
+<li>The earlier items still stand: live canary on the three chat agents, the empty price list and FAQ, and the <code>.mcp.json</code> decision.</li></ul></section>
+<footer>Sources: 64 JPEGs, 3 MP4s in 31b794d1-iCloud_Photos_2.zip and one attached infographic. Licences read 3 October 2026 from root files; star counts come from screenshots. Video content was read from frames only; there was no narration.</footer>
+</main>
+<script>
+document.querySelectorAll('.cp').forEach(function (b) {
+  b.addEventListener('click', function () {
+    var t = b.parentNode.querySelector('pre');
+    function done() { b.textContent = 'Copied'; setTimeout(function () { b.textContent = 'Copy'; }, 1500); }
+    function fb() { var r = document.createRange(); r.selectNodeContents(t); var s = getSelection(); s.removeAllRanges(); s.addRange(r); b.textContent = 'Selected'; }
+    try { navigator.clipboard.writeText(t.textContent).then(done, fb); } catch (e) { fb(); }
+  });
+});
+</script>

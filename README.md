@@ -5856,3 +5856,17 @@ Source: `80c9789b-LinkedIn_Master_Guide_for_Claude.zip` — 4 static images (`.j
 
 **Not done:** no connector was installed (see `gtm-funnel-2026` for which GTM tools are already connected here and which are not); no repo was installed; Capd, ChatbotX and alphai-tui owners were found by web search and confirmed with `git ls-remote`. ChatbotX and cmux have custom licences you should read before use.
 
+## Batch 103 — iCloud Photos batch 8 (64 images, 3 videos) and a CEO KPI infographic (3 October 2026)
+
+**Report:** [Batch 103 Intake Report](https://claude.ai/artifact/D1A96pph3ZDuvuRPNtYLnH) (`Artifacts/business/batch-103-intake-report.html`).
+
+**Sources:** @jek.notes (production bugs, 7 slides), @itsaiguide (7 "superhuman" prompts), @aisimplified23 (Claude Checklist), Oana Labes (CEO KPI Framework, attached image), @iqonicdesign / @ux_dose (UI image-layout tips), @shiva.bytes (12 Claude workflows, 25 data and AI repos, both short videos), @restructureai (One-Person Marketing Team demo video), and @replace.so, @dotdevs and @githubnow repo cards.
+
+**Added:** skills `production-bugs-5`, `superhuman-prompts-7`, `claude-checklist`, `ceo-kpi-framework`, `ui-image-layout-5-tips`, `claude-12-workflows`, `data-ai-github-25`, `one-person-marketing-team-map`; commands `/prod-bug-check`, `/superhuman`, `/claude-checklist`, `/kpi-scorecard`; design templates `bug-lesson-card`, `checklist-panels-peach`, `kpi-framework-gold`, `ui-tip-do-dont` with theme tokens; Batch 103 repo register (31 repos, licences read); user-run `scripts/batch103-install.sh`.
+
+**Already existed, not duplicated:** the replace.so repo style and the Comp, Excalidraw, Builder, Automa, Hexabot and Supabase repos; the `ponytail` skills; `/c-suite-30-kpis` (this batch extends it with formulas and corrections).
+
+**Source problems:** the KPI infographic prints the customer churn formula as net customer growth (corrected in the skill); the jek.notes cover promises 10 problems but shows 5; the Claude Checklist's last Token Economy item is hidden by a watermark and was not reproduced; card 12 of the "12 workflows" video repeats card 11's steps; the "illegal to know" prompts are ordinary coaching prompts; the 25-repo card lists titles only, so 17 repos were matched by title and 8 could not be identified. Several repos are AGPL or source-available, and screenpipe is now commercial.
+
+**Not done:** wifit3 (a Wi-Fi attack toolkit) was registered for reading only; no repo was installed; the itsaiguide "Claude OS" slide is an advert for a paid product and was not acted on; the 25-repo card was not turned into clone steps beyond the study paths in `data-ai-github-25`.
+
