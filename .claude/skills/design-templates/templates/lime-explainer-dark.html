@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<!--
+  Template: lime-explainer-dark
+  Style: @tinrovicai "8 things Grok Bot can do" - near-black violet field, a lime-outlined section pill top-left, "05 / 08" counter top-right, a tight bold two-line headline
+         (white + lime), rounded dark cards with a lime-outlined highlight card, a footer with nine progress dots, a "next ->" label and the handle.
+  Inspired by: Batch 101 iCloud photos (shift, use cases, under the hood, setup, pick the right tool, beta, your move).
+  Swap points: SLIDES array [tag, white line, lime line, cards [[title, body, highlight?]], footnote, next label], HANDLE.   1080 x 1350 shown at 36 %.
+-->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lime Explainer Dark</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@500;600&display=swap" rel="stylesheet">
+<style>
+  :root { --s: 0.36; --bg: #08081a; --card: #0f1022; --line: #23243b; --lime: #c6f432; --ink: #f3f3fa; --mute: #8b8da6; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: #000; padding: 24px; display: flex; flex-wrap: wrap; gap: 24px; font-family: 'Inter', Arial, sans-serif; }
+  .frame { width: calc(1080px * var(--s)); height: calc(1350px * var(--s)); }
+  .slide { width: 1080px; height: 1350px; transform: scale(var(--s)); transform-origin: top left; position: relative; overflow: hidden; color: var(--ink);
+    background: radial-gradient(ellipse at 50% -10%, #23164f 0%, var(--bg) 55%), var(--bg); padding: 70px 56px; }
+  .top { display: flex; justify-content: space-between; align-items: center; }
+  .tag { border: 2px solid var(--line); background: rgba(255,255,255,.03); color: var(--lime); border-radius: 40px; padding: 14px 30px; font-family: 'Space Grotesk', Arial, sans-serif; font-weight: 700; font-size: 26px; letter-spacing: .1em; text-transform: uppercase; }
+  .count { color: var(--mute); font-size: 28px; font-weight: 600; letter-spacing: .06em; }
+  h1 { margin-top: 150px; text-align: center; font-family: 'Space Grotesk', Arial, sans-serif; font-weight: 700; font-size: 104px; line-height: .98; letter-spacing: -.04em; text-transform: uppercase; }
+  h1 b { color: var(--lime); display: block; }
+  .cards { margin-top: 70px; display: flex; flex-direction: column; gap: 26px; }
+  .card { background: var(--card); border: 2px solid var(--line); border-radius: 30px; padding: 34px 44px; }
+  .card.hi { border-color: var(--lime); box-shadow: 0 0 60px rgba(198,244,50,.14); }
+  .card b { display: block; font-family: 'Space Grotesk', Arial, sans-serif; font-size: 44px; font-weight: 700; letter-spacing: -.02em; }
+  .card span { display: block; margin-top: 8px; font-size: 32px; line-height: 1.3; color: var(--mute); font-weight: 500; }
+  .card.hi span { color: #cfd1e6; }
+  .note { margin-top: 44px; text-align: center; font-size: 34px; line-height: 1.35; color: var(--mute); }
+  .note b { color: var(--ink); }
+  .foot { position: absolute; left: 56px; right: 56px; bottom: 60px; display: flex; justify-content: space-between; align-items: center; font-size: 30px; font-weight: 600; }
+  .dots { display: flex; gap: 12px; } .dots i { width: 12px; height: 12px; border-radius: 50%; background: #34354f; } .dots i.on { width: 52px; border-radius: 8px; background: var(--lime); }
+  .nav { color: var(--ink); } .nav em { color: var(--lime); font-style: normal; }
+  .handle { color: var(--mute); }
+</style>
+</head>
+<body>
+<div id="out" style="display:contents"></div>
+<script>
+/* ── SWAP THESE ── */
+const HANDLE = "@yourhandle";
+const SLIDES = [
+  ["The shift", "Chat answers.", "Bot acts.", [["Chat", "You give it a text prompt. You get an answer. You are needed every turn."], ["Bot", "You give it a task to own. You get a finished action. You are needed only for approvals.", true]], "Not a chatbot. <b>A digital coworker you hand tasks to.</b>", "Use cases"],
+  ["Pick the right tool", "Rules or", "judgment?", [["Rule-based, repetitive", "Fixed triggers and actions. High-volume, predictable flows."], ["Judgment-heavy, adaptive", "Message it like a coworker. It makes calls mid-workflow.", true]], "n8n adds self-hosting. <b>An agent is faster to start for non-developers.</b>", "Reality check"],
+  ["Before you commit", "It's still", "in beta.", [["Task drift", "On complex, multi-branch workflows."], ["Login handover", "Raises security questions.", true]], "Wait if you are <b>heavily regulated</b> or need full audit logs.", "Your move"]
+];
+const out = document.getElementById("out");
+SLIDES.forEach(([tag, a, b, cards, note, next], i) => {
+  const f = document.createElement("div"); f.className = "frame";
+  f.innerHTML = `<div class="slide"><div class="top"><span class="tag">${tag}</span><span class="count">${String(i + 1).padStart(2, "0")} / ${String(SLIDES.length).padStart(2, "0")}</span></div>
+    <h1>${a}<b>${b}</b></h1><div class="cards">${cards.map(([t, d, h]) => `<div class="card${h ? " hi" : ""}"><b>${t}</b><span>${d}</span></div>`).join("")}</div>
+    <div class="note">${note}</div><div class="foot"><div class="dots">${SLIDES.map((_, j) => `<i class="${j === i ? "on" : ""}"></i>`).join("")}</div><span class="nav">${next} <em>&rarr;</em></span><span class="handle">${HANDLE}</span></div></div>`;
+  out.append(f);
+});
+</script>
+</body>
+</html>

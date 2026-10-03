@@ -46,6 +46,12 @@ Reach for a template here instead of improvising when a task needs:
 - **A teal-and-gold "fine print" skill carousel** (@ai.easily - radial teal gradient, giant gold numeral, gold-outlined THE FINE PRINT box, `AI EASILY - 03 / 07` footer) → `templates/fine-print-skill-card.html`
 - **A 21-role poster** (51ultron "Hottest AI Role" - serif title with blue italic, 21 : 1 badges, grid of coloured role cards) → `templates/role-map-infographic.html`
 
+- **A blue-violet gradient prompt card** (@ai.blueprint - orange corner glow, orange starburst, white/orange two-tone headline, prompt text, icon tile) → `templates/gradient-prompt-orange.html`
+- **A lime-on-black explainer carousel** (@tinrovicai - section pill, `01 / 08` counter, white + lime headline, outlined highlight card, progress dots) → `templates/lime-explainer-dark.html`
+- **A frosted-glass app-category card** (@jeanbbttyct - blurred photo background, big white title, glass panel of app tiles) → `templates/app-category-glass.html`
+- **A textured-paper "tool of the day" card** (@clicksandranks - heavy grotesque title, teal link, browser screenshot, `SAVE FOR LATER`) → `templates/paper-tool-card.html`
+- **A charcoal install card** (@the.wealth.lab - black logo band, yellow heading, `INSTALL` command) → `templates/dark-grey-install-card.html`
+
 ## How to use a template
 
 1. Open the relevant file in `templates/` and read its top comment — each documents what it's inspired by and exactly what to swap (background image, text, colors).
@@ -126,6 +132,11 @@ Chromium screenshot with zero console errors before being added.
 | `mascot-tips-orange.html` | @aicareersuite (Batch 99) | Inline-SVG mascot recoloured by one variable; headline size auto-fits the longest line |
 | `fine-print-skill-card.html` | @ai.easily (Batch 100) | One frame for cover, recap and skill slides; gold keywords via `<b>` in the headline string |
 | `role-map-infographic.html` | 51ultron (Batch 100) | Data-driven 3-column card grid; colours cycle through a palette array; tall 1080 x 2100 poster |
+| `gradient-prompt-orange.html` | @ai.blueprint (Batch 101) | Layered radial gradients plus a CSS-only 12-ray starburst from rotated bars |
+| `lime-explainer-dark.html` | @tinrovicai (Batch 101) | One slide builder drives cover, comparison and warning cards; highlight card gets a lime outline and glow |
+| `app-category-glass.html` | @jeanbbttyct (Batch 101) | `backdrop-filter` glass panel over a swappable background; app tiles are coloured initials, not vendor logos |
+| `paper-tool-card.html` | @clicksandranks (Batch 101) | SVG `feTurbulence` paper grain as a data-URI background; cover uses a yellow highlighter mark |
+| `dark-grey-install-card.html` | @the.wealth.lab (Batch 101) | Flat charcoal card; the install command is a data field so each card carries the right one |
 
 **Gotcha found while verifying:** a font name passed into an inline `style="font-family:…"` must use *single* quotes (`'Fredoka'`) — double quotes silently break the attribute and the card falls back to the default font.
 
@@ -169,4 +180,12 @@ The original specimens use proprietary or unidentified fonts; these are look-ali
 |---|---|---|
 | @ai.easily teal and gold | gold `#e3a72f`, cream `#f4efe6`, teal field `#16444f` to `#0b1519` | Plus Jakarta Sans |
 | 51ultron cream poster | paper `#f6efe4`, ink `#151b2d`, blue `#2a5fc0` | Playfair Display + Inter |
+
+| Batch 101 theme | Colours | Font (look-alike) |
+|---|---|---|
+| @ai.blueprint | deep `#0b1033`, violet `#2b1f9c`, sky `#1e6cf0`, orange `#ff6a2b` | Poppins |
+| @tinrovicai | field `#08081a`, card `#0f1022`, lime `#c6f432` | Space Grotesk + Inter |
+| @jeanbbttyct | glass `rgba(255,255,255,.14)` over a dark photo | Inter |
+| @clicksandranks | paper `#efebe4`, ink `#0c0c0c`, teal `#1596a8`, highlighter `#f8f0a4` | Archivo |
+| @the.wealth.lab | charcoal `#404044`, band `#000`, yellow `#ffe51f`, amber `#f2b705` | Oswald + Inter |
 

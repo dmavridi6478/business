@@ -5825,3 +5825,19 @@ Source: `80c9789b-LinkedIn_Master_Guide_for_Claude.zip` — 4 static images (`.j
 **Scanner results for this repo:** gitleaks (full history, 258 commits) 11 findings, all placeholders or upstream test fixtures, now baselined; osv-scanner 191 advisories in 11 manifests, all inside vendored skill folders (not fixed; do not install dependencies there without review). Install gotcha: `go install github.com/gitleaks/gitleaks/v8@latest` fails, use `github.com/zricethezav/gitleaks/v8@latest`.
 
 **Not done:** trufflehog, semgrep, garak, sops not installed; snyk agent-scan needs your Snyk token. Flowise's site screenshot shows "We're sunsetting Flowise", unconfirmed. yoinks (video downloader) documented only for terms-of-service reasons. No prompts or connectors in this upload.
+
+---
+
+## Batch 101 — iCloud Photos batches 4 to 6 (84 images, 1 video; 3 October 2026)
+
+**Report:** [Batch 101 Intake Report](https://claude.ai/artifact/3VRCp1fQpmK3yjgzqGMav8) (`Artifacts/business/batch-101-intake-report.html`).
+
+**Sources:** @the.wealth.lab (6 MCP servers), @tinrovicai (autonomous agent guide), @jeanbbttyct (AI app categories), @clicksandranks (5 websites), @shiva.bytes (4 loop types, video), 51ultron (16 motion effects), @ai.blueprint (vibe-coding prompts, already in `/vibe-coding-prompts`), @githubnow and @replace.so repo cards. About half the images repeat Batch 100 content.
+
+**Installed:** six skills from `humanlayer/skills` (MIT; scanned first) via `npx skills add`. Five MCP servers written to `.mcp.json`: exa, context7, sentry, supabase (read-only), playwright. Exa and Context7 answered a connection test; Sentry and Supabase returned 401 (login needed); none is authenticated.
+
+**Added:** skills `mcp-dev-team-6`, `grok-bot-guide`, `ai-app-stack-2026`, `five-websites-business`, `claude-code-4-loops`, `motion-16-effects`; command `/bot-task-test`; design templates `gradient-prompt-orange`, `lime-explainer-dark`, `app-category-glass`, `paper-tool-card`, `dark-grey-install-card`; Batch 101 repo register (OpenRig, Octop and others); user-run `scripts/batch101-install.sh`.
+
+**Errors in the sources:** the MCP carousel's Context7 slide shows the GitHub install command; the Manychat slide in the 5-websites carousel has the Google Business Profile caption.
+
+**Not done:** GitHub MCP (needs your login), OpenRig and Octop (not installed; Octop's installer pipes curl to bash), prompts 6 and 10 of the vibe-coding set (not in the upload). The Grok Bot product claims were not verified.

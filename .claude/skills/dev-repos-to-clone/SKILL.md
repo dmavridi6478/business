@@ -174,3 +174,20 @@ All 15 verified live with `git ls-remote` on 2026-10-02. Licences were read from
 
 Also seen, already covered: `anthropics/skills` (see `claude-5-official-skills`).
 
+## Additional repos (Batch 101 - @githubnow daily briefings 2-3 Oct 2026, @replace.so, @joshualevi.ai, @ai.easily)
+
+Verified live with `git ls-remote` on 2026-10-03. Licences read from the root LICENSE of the cloned copies. Star deltas on the cards ("+1,141 today") are the creator's screenshots and were not re-verified.
+
+| Repo | Category | What it is | Licence | Status here |
+|---|---|---|---|---|
+| [`humanlayer/skills`](https://github.com/humanlayer/skills) | Claude Code skills | Six skills: `show-me`, `visual-pr`, `improve-claude-md`, `narrow-react-prop-types`, `build-iterated-agentic-loop`, `design-control-loop` | MIT | **installed** with `npx skills add humanlayer/skills`; scanned first for risky patterns (none found) |
+| [`mvschwarz/openrig`](https://github.com/mvschwarz/openrig) | Agent teams | Define persistent agent teams in YAML and boot them with one command; Claude Code, Codex and Pi in one rig; `npm install -g @openrig/cli` (needs Node 22 or 24 and tmux) | Apache-2.0 | cloned for reading; **not installed** (it runs agents and needs tmux; try in a sandbox) |
+| [`TencentCloud/Octop`](https://github.com/TencentCloud/Octop) | Self-hosted agents | Private multi-agent assistant with web dashboard, CLI, knowledge base and IM channels; single-process deployment | MIT | cloned for reading; **not installed**: its documented installer is `curl ... install.sh | bash` from a Tencent COS bucket, so read the script first |
+| [`JuliusBrussee/caveman`](https://github.com/JuliusBrussee/caveman) | Token optimiser | Strips prose from agent output; the card claims 65% fewer tokens and a JetBrains test on 86 tasks (unverified) | MIT (card) | already tracked; skill `caveman` exists |
+| [`thedotmack/claude-mem`](https://github.com/thedotmack/claude-mem) | Agent memory | Captures tool use and context, compresses and re-injects it in later sessions | not checked | verified; already tracked |
+| [`cloudflare/cloudflare-os`](https://github.com/cloudflare/cloudflare-os) | Agent workspace | Per-user sandboxed "gadgets" behind capability-based gatekeepers with human approval; +9,562 stars this month per the card | not checked | verified; already tracked |
+
+The @replace.so repo cards in these zips (Flowise, Hexabot, Dyad, Open-notebook, Compositor) and the @joshualevi.ai scanners were registered in Batch 100. `Flowise`: its site screenshot again shows the banner "We're sunsetting Flowise"; still unconfirmed, check before building on it.
+
+**Not repos:** the @the.wealth.lab MCP carousel (see `mcp-dev-team-6`), @tinrovicai (`grok-bot-guide`), @jeanbbttyct (`ai-app-stack-2026`), @clicksandranks (`five-websites-business`), @shiva.bytes loops (`claude-code-4-loops`), 51ultron motion sheet (`motion-16-effects`).
+
