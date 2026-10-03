@@ -5841,3 +5841,18 @@ Source: `80c9789b-LinkedIn_Master_Guide_for_Claude.zip` — 4 static images (`.j
 **Errors in the sources:** the MCP carousel's Context7 slide shows the GitHub install command; the Manychat slide in the 5-websites carousel has the Google Business Profile caption.
 
 **Not done:** GitHub MCP (needs your login), OpenRig and Octop (not installed; Octop's installer pipes curl to bash), prompts 6 and 10 of the vibe-coding set (not in the upload). The Grok Bot product claims were not verified.
+
+## Batch 102 — iCloud Photos batch 7 (31 images, 1 video) and 11 sales and career infographics (3 October 2026)
+
+**Report:** [Batch 102 Intake Report](https://claude.ai/artifact/DmeDZS23Qs2ZpyTBKXaoGi) (`Artifacts/business/batch-102-intake-report.html`).
+
+**Sources:** SalesDaily.co (20 sales methodologies, Perplexity for sales research), Cyberman AI (10 dream-job prompts), NipPro AI (3 levels of agentic marketing), Reno Perry (LinkedIn job-search hacks), Eric Partaker (5 mental models), Nader Alnajjar / Lever (LinkedIn analytics), Swapan Kumar Manna (2026 GTM funnel), an SEO / AEO / AIO / GEO table, a "50+ Fable 5 sales skills" tree, appmillers (9 prompt-writing skills), 50 Claude use cases, "Everything you must know in Claude", @theaiguyhere (7 photoshoot prompts), @replace.so and @githubnow repo cards, and an Obsidian "second brain for agents" video.
+
+**Added:** skills `sales-methodologies-20`, `perplexity-sales-research-10`, `dream-job-10-prompts`, `linkedin-job-search-5-hacks`, `linkedin-analytics-reader`, `ceo-5-mental-models`, `agentic-marketing-levels`, `gtm-funnel-2026`, `search-optimization-4-way`, `fable5-outbound-5-stage-map`, `photoshoot-prompts-7`, `prompt-writing-9-skills`, `claude-50-use-cases`, `claude-six-levels`; commands `/sales-method`, `/sales-research`, `/dream-job`, `/linkedin-analytics`, `/impact-effort`, `/photoshoot`, `/prompt-master`, `/grill-me`, `/opus-polish`, `/fable-polish`, `/personal-voice`, `/anti-ai`, `/write-a-skill`; design templates `sales-method-grid-teal`, `level-cards-pastel`, `prompt-text-card-cyan` with theme tokens; Batch 102 repo register (15 repos, licences read); user-run `scripts/batch102-install.sh`.
+
+**Already existed, not duplicated:** the 6 CV and LinkedIn prompts (`/cv-linkedin-prompts`), the 17-skill Fable outbound chain, the "12 things" infographic (mapped in the Batch 99 report), `/premortem`, `/5whys`, `/swot-analysis`, `/decision-tree`, `/how-to`, `/handoff`, and the replace.so, githubnow and Compositor card styles and repos.
+
+**Source problems:** the "Opus 4.8" slide conflicts with the models named in this environment (Opus 5.5, Fable 5.1), so `/opus-polish` is version-agnostic. The agentic-marketing percentages do not reconcile (32% orchestrate vs 8% autonomous) and cite no source. The "50+ skills" tree shows only 15 of 50+ file names behind a comment-to-get-it gate; the rest were not invented. `claude run --all-skills` on that slide is not a documented Claude Code command. The llama.cpp card shows a pipe-to-shell installer.
+
+**Not done:** no connector was installed (see `gtm-funnel-2026` for which GTM tools are already connected here and which are not); no repo was installed; Capd, ChatbotX and alphai-tui owners were found by web search and confirmed with `git ls-remote`. ChatbotX and cmux have custom licences you should read before use.
+

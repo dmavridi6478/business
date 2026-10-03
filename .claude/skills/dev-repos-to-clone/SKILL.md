@@ -191,3 +191,27 @@ The @replace.so repo cards in these zips (Flowise, Hexabot, Dyad, Open-notebook,
 
 **Not repos:** the @the.wealth.lab MCP carousel (see `mcp-dev-team-6`), @tinrovicai (`grok-bot-guide`), @jeanbbttyct (`ai-app-stack-2026`), @clicksandranks (`five-websites-business`), @shiva.bytes loops (`claude-code-4-loops`), 51ultron motion sheet (`motion-16-effects`).
 
+## Additional repos (Batch 102 - @replace.so, @githubnow, Obsidian video; 3 Oct 2026)
+
+Verified live with `git ls-remote` on 2026-10-03. Licences read from the root licence file of a blobless shallow clone (no install, no code run). Star counts on the cards are the creator's screenshots and were not re-verified. Three repo owners were not on the slides and were found by web search, then confirmed with `git ls-remote`.
+
+| Repo | Category | What it is (card) | Licence | Status here |
+|---|---|---|---|---|
+| [`unslothai/unsloth`](https://github.com/unslothai/unsloth) | Local LLM studio | Run and fine-tune models on your machine; card claims 2x faster, 70% less VRAM | AGPL-3.0 (root COPYING; check per folder) | verified; **not installed** |
+| [`NousResearch/hermes-agent`](https://github.com/NousResearch/hermes-agent) | Self-improving agent | Learning loop that builds skills from use; Telegram/Discord/Slack/Signal gateway, cron | MIT | already tracked (`hermes-nousresearch`) |
+| [`coreyhaines31/marketingskills`](https://github.com/coreyhaines31/marketingskills) | Marketing skills | 100+ markdown skills (CRO, copy, SEO, analytics) | MIT | already installed (`*-corey-haines` skills) |
+| [`ggml-org/llama.cpp`](https://github.com/ggml-org/llama.cpp) | Local inference | C/C++ LLM and vision inference; card shows `irm https://llama.app/install.ps1 \| iex` | MIT | verified; the slide's installer pipes a script into the shell, so use a package manager or build from source |
+| [`CopilotKit/OpenBot`](https://github.com/CopilotKit/OpenBot) | Agent workplace | AI coworkers on your infrastructure with browser, files and tools; actions governed and recorded via AG-UI | MIT | verified; not installed |
+| [`makeev/alphai-tui`](https://github.com/makeev/alphai-tui) | Terminal dashboard | Rust TUI: quotes, candlesticks, AI-scored news, SEC Form 4; free AlphAI key for news (20 req/min, 100/day per its listing) | MIT | verified; not installed |
+| [`ChatbotXIO/ChatbotX`](https://github.com/ChatbotXIO/ChatbotX) | Chat marketing | Open-source omnichannel platform: flows, AI agents, inbox, CRM, broadcasts, CLI, MCP | **custom licence** (AhaChat LLC; read before self-hosting or reselling) | verified; not installed |
+| [`busabase/busabase`](https://github.com/busabase/busabase) | Agent workspace | Open-source database and workspace for AI agents; works with Claude Code, Codex, Cursor | MIT | verified; not installed |
+| [`jamiedavenport/capd`](https://github.com/jamiedavenport/capd) | Capture app (macOS 26+) | Local-first capture and full-text search, on-device OCR, CLI, read-only MCP | MIT | verified; macOS only; not installed |
+| [`svix/svix-webhooks`](https://github.com/svix/svix-webhooks) | Webhook service | Send webhooks through one API call with retries and signing handled | MIT | verified; not installed |
+| [`robbietilton/Compositor`](https://github.com/robbietilton/Compositor) | Image editor (macOS, Apple silicon) | Photoshop-style layers, masks, adjustments | MIT | already registered in Batch 100 |
+| [`owncloud/ocis`](https://github.com/owncloud/ocis) | File sync and sharing | ownCloud Infinite Scale: web, desktop and mobile clients, WebDAV, OpenID Connect | Apache-2.0 | verified; not installed |
+| [`athasdev/athas`](https://github.com/athasdev/athas) | Code editor | Lightweight cross-platform editor with agents, terminal, Git | AGPL-3.0 | verified; not installed |
+| [`uptimepage/uptimepage`](https://github.com/uptimepage/uptimepage) | Uptime monitoring | Multi-region checks, status pages, on-call alerts, REST API, Terraform | AGPL-3.0 | verified; not installed |
+| [`manaflow-ai/cmux`](https://github.com/manaflow-ai/cmux) | Terminal for agents (macOS) | Native terminal with attention rings and split panes for many agents (shown in the Obsidian video) | custom licence (read before use) | verified; not installed |
+
+**Not repos:** the 7 photoshoot prompt cards (`photoshoot-prompts-7`), the SalesDaily, Cyberman, NipPro, Lever, Reno Perry and Partaker infographics (skills in this batch), and the 9-skills and 50-use-cases infographics (`prompt-writing-9-skills`, `claude-50-use-cases`). The Obsidian "Second Brain for All Your Agents" video is covered by the existing `ai-second-brain` skill; its narration was not legible in the frames, so no new claims were added.
+

@@ -37,6 +37,9 @@ Reach for a template here instead of improvising when a task needs:
 - **A glowing-numeral font specimen carousel** (@designarchitect001 "FONT 0N" style — giant dark numeral with coloured rim glow + grain, two rim-lit spheres, specimen name, "Save it for later / Swipe →"; one colour per slide) → `templates/font-showcase-glow.html`
 - **A black-and-red "fonts that look like a logo" wordmark carousel** (red gradient spheres, silver-gradient wordmark, `01 | NAME` index bar, cover and "Was this helpful?" end card) → `templates/wordmark-noir-card.html`
 - **A white tool-spotlight carousel** (@will.ai.m "free tools Big Tech doesn't want you to run" style — icon tile, giant title, REPLACES / DOWNLOAD / GITHUB rows, browser-frame screenshot, intro + follow slides) → `templates/tool-spotlight-light.html`
+- **A SalesDaily-style 20-card methodology grid** (teal title bar, white cards with teal headers, grey "when to use it" box, "best for" line, teal footer; data-driven `CARDS` array) → `templates/sales-method-grid-teal.html`
+- **A three-level stepped pastel card poster** (NipPro "3 Levels" style — serif headline with grey highlight, pink / peach / lilac cards of rising height, big percentage, looks-like list, next move, two stat tiles) → `templates/level-cards-pastel.html`
+- **A pale-cyan prompt text card set** (@theaiguyhere style — avatar + handle header, numbered heading, one large bold prompt paragraph, corner watermark) → `templates/prompt-text-card-cyan.html`
 
 - **A "copy this prompt" carousel** in two looks - light StackFlo (blue pill, light-blue quote box, `04 / 07` counter) or black ai_slacker (big white caps heading, plain prompt text) → `templates/prompt-card-carousel.html`
 - **A repo-showcase carousel** (@joshualevi.ai grey grid paper, glossy orange 3D asterisk, `#N` rank, white GitHub-style stat card; dark @replace.so variant via `THEME`) → `templates/repo-card-grid.html`
@@ -137,6 +140,9 @@ Chromium screenshot with zero console errors before being added.
 | `app-category-glass.html` | @jeanbbttyct (Batch 101) | `backdrop-filter` glass panel over a swappable background; app tiles are coloured initials, not vendor logos |
 | `paper-tool-card.html` | @clicksandranks (Batch 101) | SVG `feTurbulence` paper grain as a data-URI background; cover uses a yellow highlighter mark |
 | `dark-grey-install-card.html` | @the.wealth.lab (Batch 101) | Flat charcoal card; the install command is a data field so each card carries the right one |
+| `sales-method-grid-teal.html` | SalesDaily.co "20 Sales Methodologies for B2B Selling" | 4 x 5 CSS grid built from a `CARDS` array (title, what, when, best); teal `--teal` tokens; collapses to 2 columns on mobile; pre-filled from `sales-methodologies-20`; theme `salesdaily-teal` |
+| `level-cards-pastel.html` | NipPro AI "The 3 Levels of Agentic Marketing" | Three cards of stepped min-heights from a `LEVELS` array with per-card `--c/--t/--k` pastel tokens, serif display numerals, two `STATS` tiles; pre-filled from `agentic-marketing-levels`; theme `pastel-levels` |
+| `prompt-text-card-cyan.html` | @theaiguyhere "ChatGPT / LLM / Prompts" cards | 540 x 675 (4:5) cards from a `CARDS` array under one `SERIES` header (avatar, handle); pale cyan `--bg`; large bold text kept legible on a phone; pre-filled with two prompts from `photoshoot-prompts-7`; theme `cyan-prompt-text` |
 
 **Gotcha found while verifying:** a font name passed into an inline `style="font-family:…"` must use *single* quotes (`'Fredoka'`) — double quotes silently break the attribute and the card falls back to the default font.
 
@@ -189,3 +195,15 @@ The original specimens use proprietary or unidentified fonts; these are look-ali
 | @clicksandranks | paper `#efebe4`, ink `#0c0c0c`, teal `#1596a8`, highlighter `#f8f0a4` | Archivo |
 | @the.wealth.lab | charcoal `#404044`, band `#000`, yellow `#ffe51f`, amber `#f2b705` | Oswald + Inter |
 
+
+## Batch 102 theme tokens (colours read from the screenshots)
+
+| Theme | Colours | Fonts (look-alike, free) |
+|---|---|---|
+| `salesdaily-teal` | teal `#3F7F95`, dark teal `#2C6478`, ink `#1F2A44`, warm grey `#E9E3E2`, accent red `#D6453D` | Poppins or Inter (bold uppercase title) |
+| `pastel-levels` | pink `#FBB0CC`, peach `#FFD791`, lilac `#CDB8FF`, ink `#111`, footer beige `#F7EFE9` | Playfair Display + Inter |
+| `cyan-prompt-text` | cyan `#CFFFFF`, ink `#1F2933` | Nunito Sans (bold) |
+| Cyberman AI dream-job card | cream `#FFF7F0`, orange-red `#E8420F`, ink `#111` | Archivo Black + Inter |
+| Reno Perry hacks | white, ink `#111`, orange highlight `#F5841F`, per-box accents pink/teal/blue/purple/amber | Inter |
+| Partaker mental models | pastel boxes: yellow `#FFF3C4`, pink `#FADBD8`, lilac `#E6DBFA`, green `#D9F2E1`, blue `#DCE6FA`; footer blue `#2B6FE0` | Playfair Display + Inter |
+| Lever analytics | mint `#DFF3E9`, olive `#EDE7C4`, ink `#17382E`, highlight `#F3F7B5` | Inter |
