@@ -17,6 +17,7 @@ Built in Batch 98 from the ReStructure AI video "The Entire AI Entrepreneur Oper
    Grow            │ Find       Protect│       Run
  os-ads            │ os-response       │ os-bookkeeping   os-onboarding  (Day 0)
  os-seo            │ os-followup       │ os-invoice       os-checkin     (Day 7)
+ os-qualify, os-booking (Sales, Batch 99)      os-support (Customer Success, Batch 99)
  os-email-sms      │ os-close          │ os-profit        os-health      (Day 30)
  os-lead-magnet    │ os-prospect       │ os-cashflow      os-referral    (Day 90)
                    │ + Research & Offer: os-market os-pain-point os-offer-builder os-pricing
@@ -70,7 +71,7 @@ Hooks load when a session starts: **restart Claude Code (or review `/hooks`) aft
 
 | Path | Purpose |
 |---|---|
-| `.claude/agents/os-*.md` | the 25 subagents |
+| `.claude/agents/os-*.md` | the 28 subagents (25 from Batch 98, +3 chat agents in Batch 99) |
 | `.claude/skills/ai-entrepreneur-os/SKILL.md` | how to run the OS, model tiering, build order |
 | `.claude/commands/os-morning-page.md`, `os-run-module.md` | the two entry commands |
 | `docs/ai-os/ops/` | SOPs and tool stack — **you must fill these in** |

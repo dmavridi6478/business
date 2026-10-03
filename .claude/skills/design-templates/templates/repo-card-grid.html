@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<!--
+  Template: repo-card-grid
+  Style: @joshualevi.ai "7 repos that teach what AI courses charge you for" - warm grey grid paper, a glossy orange 3D asterisk in the corner,
+         orange "#N" rank, bold repo name, grey one-paragraph pitch, a white GitHub-style card (owner/**repo**, avatar, five stats, language colour bar),
+         handle + "Swipe ->" footer.  Also supports the DARK variant (@replace.so: near-black with a green pixel grid, app name, browser-frame shot,
+         two-line caption) via THEME = "dark".
+  Inspired by: Batch 99 iCloud photos (ai-engineering-from-scratch, mcp-for-beginners, agents-course, ai-engineering-hub, nanochat, Hindsight, Paperclip...).
+  Swap points: THEME, HANDLE, REPOS array [rank, name, pitch, owner, contributors, issues, discussions, stars, forks, [language colour stops]].
+  Rule: stars / forks are a snapshot from a screenshot - re-verify live before publishing. 1080 x 1350 shown at 36 %.
+-->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Repo Card Grid</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root { --s: 0.36; --orange: #cf5a2e; --ink: #1d1d1d; --soft: #77736d; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: #bdbdbd; padding: 24px; display: flex; flex-wrap: wrap; gap: 24px; font-family: 'Inter', Arial, sans-serif; }
+  .frame { width: calc(1080px * var(--s)); height: calc(1350px * var(--s)); }
+  .slide { width: 1080px; height: 1350px; transform: scale(var(--s)); transform-origin: top left; position: relative; overflow: hidden; }
+  /* light */
+  .light { background-color: #eeede9; background-image: linear-gradient(#e2e0db 2px, transparent 2px), linear-gradient(90deg, #e2e0db 2px, transparent 2px); background-size: 60px 60px; color: var(--ink); }
+  .star { position: absolute; right: 60px; top: 36px; width: 190px; height: 190px; }
+  .star i { position: absolute; left: 50%; top: 50%; width: 46px; height: 190px; margin: -95px 0 0 -23px; border-radius: 24px; background: linear-gradient(135deg, #e98a5f, #a8401b 70%); box-shadow: inset 0 4px 10px rgba(255,255,255,.35), 0 8px 18px rgba(0,0,0,.25); }
+  .light .txt { position: absolute; left: 70px; right: 70px; top: 250px; }
+  .rank { font-size: 56px; font-weight: 800; color: var(--orange); }
+  .light h1 { margin-top: 10px; font-size: 66px; line-height: 1.05; font-weight: 800; letter-spacing: -.03em; word-break: break-word; }
+  .light .pitch { margin-top: 26px; padding-right: 20px; font-size: 38px; line-height: 1.38; color: var(--soft); }
+  .card { position: absolute; left: 70px; right: 70px; top: 800px; background: #fff; border-radius: 30px; box-shadow: 0 10px 40px rgba(0,0,0,.08); padding: 50px 60px 0; height: 400px; overflow: hidden; }
+  .card .repo { font-size: 46px; font-weight: 500; line-height: 1.1; max-width: 640px; word-break: break-word; }
+  .card .repo b { font-weight: 800; }
+  .card .av { position: absolute; right: 60px; top: 56px; width: 160px; height: 160px; border-radius: 34px; background: linear-gradient(135deg, #243b6b, #e8a34c); }
+  .stats { position: absolute; left: 60px; right: 60px; bottom: 50px; display: flex; gap: 38px; font-size: 24px; color: var(--soft); }
+  .stats div { text-align: left; } .stats b { display: block; font-size: 34px; color: var(--ink); font-weight: 600; }
+  .lang { position: absolute; left: 0; right: 0; bottom: 0; height: 16px; display: flex; }
+  .foot { position: absolute; left: 70px; right: 70px; bottom: 60px; display: flex; justify-content: space-between; align-items: center; font-size: 34px; font-weight: 600; }
+  .foot i { display: inline-block; width: 56px; height: 56px; border-radius: 50%; background: #3a3a3a; vertical-align: middle; margin-right: 18px; }
+  /* dark */
+  .dark { background: #111; color: #fff; background-image: linear-gradient(rgba(60,150,90,.14) 38px, transparent 38px), linear-gradient(90deg, rgba(60,150,90,.14) 38px, transparent 38px); background-size: 52px 52px; }
+  .dark .logo { position: absolute; left: 50%; top: 180px; width: 150px; height: 150px; margin-left: -75px; border-radius: 36px; background: #fff; }
+  .dark h1 { position: absolute; left: 0; right: 0; top: 380px; text-align: center; font-size: 120px; font-weight: 700; letter-spacing: -.04em; }
+  .dark .shot { position: absolute; left: 60px; right: 60px; top: 560px; height: 420px; border-radius: 26px 26px 0 0; background: #f4f4f4; }
+  .dark .shot:before { content: ''; display: block; height: 56px; background: #fff; border-radius: 26px 26px 0 0; }
+  .dark .cap { position: absolute; left: 140px; right: 140px; top: 1030px; text-align: center; font-size: 38px; line-height: 1.4; color: #cfcfcf; }
+  .dark .foot { color: #fff; justify-content: center; }
+</style>
+</head>
+<body>
+<div id="out" style="display:contents"></div>
+<script>
+/* ── SWAP THESE ── */
+const THEME = "light";                  // "light" (joshualevi) or "dark" (replace.so)
+const HANDLE = "@yourhandle";
+const REPOS = [
+  // [rank, name, pitch, owner, contributors, issues, discussions, stars, forks, language colour stops [[colour, %],...]]
+  [6, "ai-engineering-from-scratch", "The deep end. 523 lessons in 20 phases, MIT licensed. Every lesson leaves you with something reusable: a prompt, a skill, an agent or an MCP server.", "rohitg00", 17, 22, 7, "55k", "10k", [["#3572A5", 70], ["#f1e05a", 20], ["#e34c26", 10]]],
+  [4, "agents-course", "Four units from what an agent is to smolagents, LlamaIndex and LangGraph. The last unit is a project tested against a benchmark.", "huggingface", 193, 103, 0, "33k", "2k", [["#f6b73c", 100]]],
+  [3, "mcp-for-beginners", "The protocol that lets Claude Code reach your tools, taught from zero in several languages.", "microsoft", 69, 2, 0, "17k", "6k", [["#e0701c", 80], ["#3572A5", 20]]]
+];
+const out = document.getElementById("out");
+REPOS.forEach(([rank, name, pitch, owner, con, iss, dis, stars, forks, langs]) => {
+  const f = document.createElement("div"); f.className = "frame";
+  if (THEME === "dark") {
+    f.innerHTML = `<div class="slide dark"><div class="logo"></div><h1>${name.split("/").pop()}</h1><div class="shot"></div><div class="cap">${pitch}</div><div class="foot">Swipe &rarr;</div></div>`;
+  } else {
+    f.innerHTML = `<div class="slide light"><div class="star">${[0,45,90,135].map(a => `<i style="transform:rotate(${a}deg)"></i>`).join("")}</div>
+      <div class="txt"><div class="rank">#${rank}</div><h1>${name}</h1><div class="pitch">${pitch}</div></div>
+      <div class="card"><div class="repo">${owner}/<b>${name}</b></div><div class="av"></div>
+        <div class="stats"><div><b>${con}</b>Contributors</div><div><b>${iss}</b>Issues</div>${dis ? `<div><b>${dis}</b>Discussions</div>` : ""}<div><b>${stars}</b>Stars</div><div><b>${forks}</b>Forks</div></div>
+        <div class="lang">${langs.map(([c, w]) => `<span style="background:${c};width:${w}%"></span>`).join("")}</div></div>
+      <div class="foot"><div><i></i>${HANDLE}</div><span>Swipe &rarr;</span></div></div>`;
+  }
+  out.append(f);
+});
+</script>
+</body>
+</html>

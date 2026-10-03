@@ -13,7 +13,7 @@
 
 | Agent | Tier | Granted on | Reason / evidence |
 |---|---|---|---|
-| all 25 `os-*` agents | T0 | 2026-10-01 | initial build |
+| all 28 `os-*` agents | T0 | 2026-10-01 | initial build |
 
 ## How this is enforced
 

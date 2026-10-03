@@ -1,0 +1,170 @@
+<title>Batch 101 Intake Report</title>
+<style>
+  /* Layout: single-column formal report, 880px measure, tables scroll inside their own wrappers.
+     Palette: ink-blue neutrals, one deep teal accent, semantic green/amber/red for status only.
+     Type: Aptos (user's house font) with system fallbacks; titles 32pt, headings 14pt, body 11pt. */
+  :root {
+    --bg: #f6f7f9; --surface: #ffffff; --fg: #1b2330; --muted: #5a6577; --line: #d9dee6;
+    --accent: #0f5d6b; --accent-soft: #e2f0f2;
+    --ok: #17703a; --ok-bg: #e3f3e8; --warn: #8a5a00; --warn-bg: #fbefd3; --bad: #a11d2a; --bad-bg: #fbe3e5;
+    --code-bg: #eef1f5;
+    --font: Aptos, "Segoe UI Variable Text", "Segoe UI", system-ui, -apple-system, Roboto, sans-serif;
+    --mono: ui-monospace, "SF Mono", Consolas, monospace;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #11161e; --surface: #181f2a; --fg: #e6eaf0; --muted: #9aa5b6; --line: #2c3646;
+      --accent: #6cc3d1; --accent-soft: #17323a;
+      --ok: #6fd18f; --ok-bg: #173824; --warn: #f0c261; --warn-bg: #3a2e12; --bad: #ff8d98; --bad-bg: #3d1a1f;
+      --code-bg: #0e131a; color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #11161e; --surface: #181f2a; --fg: #e6eaf0; --muted: #9aa5b6; --line: #2c3646;
+    --accent: #6cc3d1; --accent-soft: #17323a;
+    --ok: #6fd18f; --ok-bg: #173824; --warn: #f0c261; --warn-bg: #3a2e12; --bad: #ff8d98; --bad-bg: #3d1a1f;
+    --code-bg: #0e131a; color-scheme: dark;
+  }
+  * { box-sizing: border-box; }
+  body { background: var(--bg); color: var(--fg); font-family: var(--font); font-size: 11pt; line-height: 1.55; padding-inline: 16px; padding-block: 28px 64px; }
+  main { max-width: 880px; margin-inline: auto; display: flex; flex-direction: column; gap: 28px; }
+  header { display: flex; flex-direction: column; gap: 8px; border-bottom: 2px solid var(--accent); padding-bottom: 18px; }
+  .eyebrow { font-size: 9pt; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
+  h1 { font-size: 32pt; line-height: 1.1; margin: 0; font-weight: 700; text-wrap: balance; }
+  h2 { font-size: 14pt; margin: 0 0 10px; font-weight: 700; color: var(--accent); text-wrap: balance; }
+  h3 { font-size: 11pt; margin: 14px 0 6px; font-weight: 700; }
+  p { margin: 0 0 10px; max-width: 75ch; }
+  section { background: var(--surface); border: 1px solid var(--line); border-radius: 6px; padding: 20px 22px; min-width: 0; }
+  .lede { font-size: 11pt; color: var(--muted); max-width: 70ch; margin: 0; }
+  .truth { border-left: 4px solid var(--bad); background: var(--bad-bg); padding: 12px 16px; border-radius: 0 6px 6px 0; }
+  .truth p:last-child { margin-bottom: 0; }
+  .tag { font-family: var(--mono); font-size: 9pt; padding: 1px 6px; border-radius: 3px; background: var(--accent-soft); color: var(--accent); white-space: nowrap; }
+  .tw { overflow-x: auto; margin-block: 8px 4px; border: 1px solid var(--line); border-radius: 4px; }
+  table { border-collapse: collapse; width: 100%; min-width: 640px; font-size: 10pt; }
+  th, td { padding: 8px 10px; border-bottom: 1px solid var(--line); text-align: center; vertical-align: top; }
+  th { background: var(--accent-soft); color: var(--fg); font-weight: 700; font-size: 9.5pt; }
+  tr:last-child td { border-bottom: 0; }
+  td.l, th.l { text-align: left; }
+  .st { display: inline-block; padding: 1px 8px; border-radius: 10px; font-size: 9pt; font-weight: 700; white-space: nowrap; }
+  .st.ok { background: var(--ok-bg); color: var(--ok); } .st.warn { background: var(--warn-bg); color: var(--warn); } .st.bad { background: var(--bad-bg); color: var(--bad); }
+  .sw { display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 10px; margin-block: 8px; }
+  .sw div { border: 1px solid var(--line); border-radius: 4px; overflow: hidden; font-size: 9pt; text-align: center; }
+  .sw i { display: block; height: 44px; }
+  .sw span { display: block; padding: 4px 6px; font-family: var(--mono); }
+  .prompt { position: relative; margin-block: 10px; }
+  .prompt pre { margin: 0; white-space: pre-wrap; background: var(--code-bg); border: 1px solid var(--line); border-radius: 4px; padding: 12px 84px 12px 12px; font-family: var(--mono); font-size: 9.5pt; line-height: 1.5; }
+  .prompt b { display: block; font-family: var(--font); font-size: 10pt; margin-bottom: 4px; }
+  .prompt button { position: absolute; top: 8px; right: 8px; font: inherit; font-size: 9pt; padding: 4px 10px; border-radius: 4px; border: 1px solid var(--accent); background: var(--surface); color: var(--accent); cursor: pointer; }
+  .prompt button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  ul { margin: 0 0 10px; padding-left: 20px; } li { margin-bottom: 4px; max-width: 75ch; }
+  code { font-family: var(--mono); font-size: 9.5pt; background: var(--code-bg); padding: 1px 4px; border-radius: 3px; }
+  footer { color: var(--muted); font-size: 9.5pt; }
+</style>
+<main>
+<header>
+  <span class="eyebrow">Intake report · iCloud Photos batches 4 to 6 · 3 October 2026</span>
+  <h1>Batch 101 Intake Report</h1>
+  <p class="lede">84 images and 1 video turned into 6 installed skills, 6 new skills, 1 command, 5 MCP servers, 5 design templates, a repo register and a user-run install script. Prepared for the owner of the business repository.</p>
+</header>
+
+<section class="truth">
+  <h2>What you should know first</h2>
+  <p><b>Most of the three zips repeat content you already have.</b> About half the images are the same carousels as the last upload (the @joshualevi.ai scanners, @ai.easily skills, @replace.so repos). The ten @ai.blueprint vibe-coding prompts already exist as <code>/vibe-coding-prompts</code>, so I did not duplicate them. The new material is the MCP carousel, the autonomous-agent guide, the AI app map, the loops infographic and three repos.</p>
+  <p><b>The MCP carousel has an error.</b> Its Context7 slide shows the GitHub install command. I used Context7's own address instead.</p>
+  <p><b>I registered five MCP servers, but none is logged in.</b> Exa and Context7 answered a connection test. Sentry and Supabase asked for a login, which is the normal response, and they need you. Supabase is set read-only on purpose.</p>
+</section>
+
+<section>
+  <h2>1. Inventory</h2>
+  <div class="tw"><table>
+    <tr><th class="l">Content</th><th>Items</th><th class="l">Outcome</th></tr>
+    <tr><td class="l">6 MCP servers (@the.wealth.lab)</td><td>6</td><td class="l">Skill <code>mcp-dev-team-6</code>; 5 registered in <code>.mcp.json</code>; GitHub left to you</td></tr>
+    <tr><td class="l">Autonomous agent carousel (@tinrovicai, 8 slides)</td><td>8</td><td class="l">Skill <code>grok-bot-guide</code> and command <code>/bot-task-test</code></td></tr>
+    <tr><td class="l">10 AI app categories (@jeanbbttyct)</td><td>10</td><td class="l">Skill <code>ai-app-stack-2026</code></td></tr>
+    <tr><td class="l">5 websites (@clicksandranks)</td><td>5</td><td class="l">Skill <code>five-websites-business</code></td></tr>
+    <tr><td class="l">4 types of loops (@shiva.bytes, video)</td><td>4</td><td class="l">Skill <code>claude-code-4-loops</code></td></tr>
+    <tr><td class="l">16 motion effects (51ultron)</td><td>16</td><td class="l">Skill <code>motion-16-effects</code></td></tr>
+    <tr><td class="l">GitHub trending cards (@githubnow)</td><td>6</td><td class="l">3 new repos registered, 3 already tracked</td></tr>
+    <tr><td class="l">@ai.blueprint vibe-coding prompts</td><td>8 of 10</td><td class="l">Already exist as <code>/vibe-coding-prompts</code>; prompts 6 and 10 were not in the upload</td></tr>
+    <tr><td class="l">Repeated from earlier zips</td><td>about 40</td><td class="l">Scanners, Claude skills, replace.so repos: no new action</td></tr>
+  </table></div>
+</section>
+
+<section>
+  <h2>2. MCP servers</h2>
+  <div class="tw"><table>
+    <tr><th class="l">Server</th><th class="l">Role</th><th>Registered</th><th>Connection test</th><th class="l">Needs</th></tr>
+    <tr><td class="l">Context7</td><td class="l">current library docs</td><td><span class="st ok">yes</span></td><td><span class="st ok">200</span></td><td class="l">nothing</td></tr>
+    <tr><td class="l">Exa</td><td class="l">live web research</td><td><span class="st ok">yes</span></td><td><span class="st ok">200</span></td><td class="l">nothing for the free tier</td></tr>
+    <tr><td class="l">Playwright</td><td class="l">browser testing</td><td><span class="st ok">yes</span></td><td><span class="st warn">not run</span></td><td class="l">Node; downloads a browser on first use</td></tr>
+    <tr><td class="l">Supabase</td><td class="l">backend and database</td><td><span class="st ok">yes, read-only</span></td><td><span class="st warn">401 login</span></td><td class="l">your login; scope to one project</td></tr>
+    <tr><td class="l">Sentry</td><td class="l">production errors</td><td><span class="st ok">yes</span></td><td><span class="st warn">401 login</span></td><td class="l">your login</td></tr>
+    <tr><td class="l">GitHub</td><td class="l">repos, issues, PRs</td><td><span class="st warn">no</span></td><td>n/a</td><td class="l">your token; this session already has GitHub tools</td></tr>
+  </table></div>
+  <ul>
+    <li>The servers are written to the repo's <code>.mcp.json</code>, so each person who opens the repo is asked to approve them before they run.</li>
+    <li>The <code>os-*</code> agents cannot call any of these. Their connector allowlist is empty on purpose.</li>
+    <li>Exa and Context7 send your search text to outside services. Keep client data out of those queries.</li>
+  </ul>
+</section>
+
+<section>
+  <h2>3. Installed skills and repos</h2>
+  <div class="tw"><table>
+    <tr><th class="l">Item</th><th class="l">What it is</th><th>Licence</th><th>Status</th></tr>
+    <tr><td class="l">humanlayer/skills</td><td class="l">show-me, visual-pr, improve-claude-md, narrow-react-prop-types, build-iterated-agentic-loop, design-control-loop</td><td>MIT</td><td><span class="st ok">installed</span></td></tr>
+    <tr><td class="l">mvschwarz/openrig</td><td class="l">YAML agent teams, one-command boot</td><td>Apache-2.0</td><td><span class="st warn">cloned, not installed</span></td></tr>
+    <tr><td class="l">TencentCloud/Octop</td><td class="l">self-hosted multi-agent assistant</td><td>MIT</td><td><span class="st warn">installer pipes curl to bash</span></td></tr>
+    <tr><td class="l">caveman, claude-mem, cloudflare-os</td><td class="l">token optimiser, memory, sandboxed agent workspace</td><td>MIT / n.c. / n.c.</td><td><span class="st ok">already tracked</span></td></tr>
+  </table></div>
+  <p>Before installing the six humanlayer skills I searched them for risky patterns and ran gitleaks on each folder: nothing found. One of them, <code>build-iterated-agentic-loop</code>, writes GitHub Actions workflows that use an <code>ANTHROPIC_API_KEY</code> secret when you use it; it does nothing until you call it. The card claims for caveman (65% fewer tokens, a JetBrains test) are unverified.</p>
+</section>
+
+<section>
+  <h2>4. Design templates</h2>
+  <div class="tw"><table>
+    <tr><th class="l">Template</th><th class="l">Style</th></tr>
+    <tr><td class="l"><code>gradient-prompt-orange</code></td><td class="l">@ai.blueprint blue-violet gradient, orange starburst</td></tr>
+    <tr><td class="l"><code>lime-explainer-dark</code></td><td class="l">@tinrovicai lime on near-black, outlined highlight card</td></tr>
+    <tr><td class="l"><code>app-category-glass</code></td><td class="l">@jeanbbttyct frosted glass panel of app tiles</td></tr>
+    <tr><td class="l"><code>paper-tool-card</code></td><td class="l">@clicksandranks textured paper, browser screenshot</td></tr>
+    <tr><td class="l"><code>dark-grey-install-card</code></td><td class="l">@the.wealth.lab charcoal card with an install command</td></tr>
+  </table></div>
+  <p>All five rendered without console errors. The first render of the gradient card had a headline overlapping its starburst and a blank icon, and the paper card's footer overlapped its screenshot; I fixed all three. Fonts are look-alikes, and the app tiles are plain initials rather than vendor logos.</p>
+</section>
+
+<section>
+  <h2>5. Commands and prompts to copy</h2>
+  <h3>Commands</h3>
+  <div class="prompt"><b>Register the five MCP servers (already done in this repo&#x27;s .mcp.json)</b><pre>claude mcp add --scope project --transport http exa https://mcp.exa.ai/mcp
+claude mcp add --scope project --transport http context7 https://mcp.context7.com/mcp
+claude mcp add --scope project --transport http sentry https://mcp.sentry.dev/mcp
+claude mcp add --scope project --transport http supabase &quot;https://mcp.supabase.com/mcp?read_only=true&quot;
+claude mcp add --scope project playwright -- npx @playwright/mcp@latest</pre><button type="button" class="cp">Copy</button></div><div class="prompt"><b>Add GitHub MCP (needs your login, so run it yourself)</b><pre>claude mcp add --transport http github https://api.githubcopilot.com/mcp/</pre><button type="button" class="cp">Copy</button></div><div class="prompt"><b>Install the six humanlayer skills (already done)</b><pre>npx skills add humanlayer/skills --skill SKILLNAME</pre><button type="button" class="cp">Copy</button></div><div class="prompt"><b>Decide if a task suits an agent</b><pre>/bot-task-test &lt;your recurring task&gt;</pre><button type="button" class="cp">Copy</button></div>
+  <h3>Vibe-coding prompts (@ai.blueprint, quoted from the slides)</h3>
+  <p>Replace the [BRACKETS]. Prompts 6 and 10 were not in the upload.</p>
+  <div class="prompt"><b>1. Build a full app</b><pre>Build a complete [app name] using [technology]. Create a modern, responsive UI, include all essential features, and make every feature fully functional. Use clean, reusable, well-structured code. Avoid placeholders unless absolutely necessary.</pre><button type="button" class="cp">Copy</button></div><div class="prompt"><b>2. Clone a website</b><pre>Recreate this website: [website URL]. Match the design, layout, colors, spacing, and overall user experience as closely as possible. Make it fully responsive for mobile and desktop, and ensure all visible buttons and interactions work properly.</pre><button type="button" class="cp">Copy</button></div><div class="prompt"><b>3. Fix bugs in my project</b><pre>Analyze my entire project and identify bugs, errors, broken functionality, and incorrect logic. Explain the root cause of each important issue, then fix it without breaking existing features. Also clean up any unnecessary or duplicate code you find.</pre><button type="button" class="cp">Copy</button></div><div class="prompt"><b>4. Improve my existing project</b><pre>Review my existing project and improve the code quality, UI/UX, performance, and project structure. Keep the original functionality intact, but refactor poorly written code, improve reusable components, and make the final result cleaner and more professional.</pre><button type="button" class="cp">Copy</button></div><div class="prompt"><b>5. Add a new feature</b><pre>Add [feature name] to my existing project. First understand how the current codebase works, then integrate the feature properly with the existing design and architecture. Make it fully functional, handle possible errors, and avoid breaking any existing functionality.</pre><button type="button" class="cp">Copy</button></div><div class="prompt"><b>7. Build an admin dashboard</b><pre>Create an admin dashboard for [business or app]. Include overview cards, charts, tables, filters, and key actions. Make it clean, intuitive, responsive, and easy to navigate.</pre><button type="button" class="cp">Copy</button></div><div class="prompt"><b>8. Refactor my codebase</b><pre>Refactor my codebase for readability, maintainability, and scalability. Remove duplication, simplify complex logic, improve file structure, and preserve all current functionality.</pre><button type="button" class="cp">Copy</button></div><div class="prompt"><b>9. Add tests and documentation</b><pre>Add meaningful tests and clear documentation to my project. Cover the critical user flows, explain setup and usage, and make the codebase easier for other developers to maintain and extend.</pre><button type="button" class="cp">Copy</button></div>
+</section>
+
+<section>
+  <h2>6. Your next steps</h2>
+  <ul>
+    <li>Start Claude Code in the repo, approve the project MCP servers, and run <code>/mcp</code> to log in to Sentry and Supabase.</li>
+    <li>Before pointing Supabase at real data, scope it to one project and keep it read-only.</li>
+    <li>Try <code>/bot-task-test</code> on one recurring task before you hand anything to an autonomous agent.</li>
+    <li>Run <code>scripts/batch101-install.sh</code> on your own machine for OpenRig and the GitHub server.</li>
+    <li>Send vibe-coding prompts 6 and 10 if you want them added.</li>
+  </ul>
+</section>
+<footer>Sources: 84 JPEGs, 1 MP4 and 1 JPG in three iCloud zips. Repo facts and licences read 3 October 2026; star counts come from screenshots.</footer>
+</main>
+<script>
+document.querySelectorAll('.cp').forEach(function (b) {
+  b.addEventListener('click', function () {
+    var t = b.parentNode.querySelector('pre');
+    function done() { b.textContent = 'Copied'; setTimeout(function () { b.textContent = 'Copy'; }, 1500); }
+    function fb() { var r = document.createRange(); r.selectNodeContents(t); var s = getSelection(); s.removeAllRanges(); s.addRange(r); b.textContent = 'Selected'; }
+    try { navigator.clipboard.writeText(t.textContent).then(done, fb); } catch (e) { fb(); }
+  });
+});
+</script>
