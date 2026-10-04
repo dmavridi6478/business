@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<!--
+  Template: ai-team-role-card
+  Style: near-white page with a faint grid, a glossy app-icon tile, a spaced terracotta role label, a huge black tool name,
+         a grey two-line job description and a rounded browser screenshot. Cover slide shows the tile cluster. Theme: org-chart-glossy
+  Inspired by: the "I replaced myself with 10 AIs" carousel (@aigenesis.official). Original CSS; no logos, screenshots or handles reused.
+  Canvas: 1080 x 1350. Two slides in one file: .slide--cover and .slide--role (duplicate per role).
+  Swap points:
+    :root tokens                 colours and fonts
+    .title / .byline             cover headline and your handle
+    .tile (letter or <img>)      the tool's own icon, placed by you
+    .role                        "HEAD OF ANALYTICS" style label
+    .name                        tool name
+    .job                         max two lines, first person ("Pulls reach, saves and comments...")
+    .shot                        put an <img> of the real product page inside
+-->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Team Role Card</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Space+Mono:wght@700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --page: #FDFDFD;        /* sampled */
+    --grid: #EEEEEE;        /* eyeballed: very faint */
+    --terra: #C9684A;       /* eyeballed from the role labels; the ribbon in the sibling carousel sampled #D77655 */
+    --ink: #0F0F0F;
+    --sub: #727272;
+    --tile-1: #FFFFFF; --tile-2: #DCDCDC;
+    --mock: #020202;        /* sampled: dark screenshot body */
+    --font: "Space Grotesk", Aptos, "Segoe UI", system-ui, sans-serif;
+    --mono: "Space Mono", ui-monospace, Consolas, monospace;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: #333; display: flex; flex-direction: column; align-items: center; gap: 32px; padding: 32px 0; overflow-x: auto; font-family: var(--font); }
+  .slide { position: relative; width: 1080px; height: 1350px; flex: none; overflow: hidden; padding: 100px 84px 0; background-color: var(--page); color: var(--ink);
+    background-image: linear-gradient(var(--grid) 1px, transparent 1px), linear-gradient(90deg, var(--grid) 1px, transparent 1px); background-size: 40px 40px; }
+  .tile { width: 130px; height: 130px; border-radius: 34px; display: grid; place-items: center; font-size: 62px; font-weight: 700; color: #111;
+    background: linear-gradient(160deg, var(--tile-1), var(--tile-2)); box-shadow: 0 18px 24px -10px rgba(0,0,0,.35), inset 0 3px 0 rgba(255,255,255,.9), inset 0 -6px 12px rgba(0,0,0,.12); overflow: hidden; }
+  .tile img { width: 100%; height: 100%; object-fit: cover; }
+  .role { margin-top: 56px; font: 700 28px var(--mono); letter-spacing: .2em; text-transform: uppercase; color: var(--terra); }
+  .name { margin-top: 10px; font-size: 128px; line-height: 1; font-weight: 700; letter-spacing: -.045em; }
+  .job { margin-top: 18px; font-size: 40px; line-height: 1.4; font-weight: 500; color: var(--sub); max-width: 800px; }
+  .shot { margin-top: 56px; height: 560px; border-radius: 34px; background: var(--mock); box-shadow: 0 30px 70px rgba(0,0,0,.22); overflow: hidden; display: grid; place-items: center; color: #6c6c6c; font-size: 26px; }
+  .shot img { width: 100%; height: 100%; object-fit: cover; object-position: top; }
+  .swipe { position: absolute; left: 0; right: 0; bottom: 60px; text-align: center; font: 700 34px var(--mono); letter-spacing: .08em; color: #8a8a8a; }
+  .title { margin-top: 70px; font-size: 112px; line-height: 1.02; font-weight: 700; letter-spacing: -.045em; }
+  .title em { font-style: normal; color: var(--terra); }
+  .lede { margin-top: 36px; font: 700 34px var(--mono); color: var(--sub); }
+  .cluster { margin-top: 70px; display: grid; grid-template-columns: repeat(5, 1fr); gap: 34px 26px; }
+  .cluster .tile { width: 150px; height: 150px; font-size: 64px; }
+  .cluster .tile:nth-child(odd) { transform: rotate(-8deg); } .cluster .tile:nth-child(even) { transform: rotate(7deg) translateY(16px); }
+  .byline { position: absolute; left: 84px; bottom: 60px; font: 700 32px var(--mono); color: #8a8a8a; }
+</style>
+</head>
+<body>
+
+<section class="slide">
+  <h1 class="title">I <em>(actually)</em> replaced myself with 10 AIs</h1>
+  <p class="lede">The exact org chart behind your numbers.</p>
+  <div class="cluster"><div class="tile">A</div><div class="tile">B</div><div class="tile">C</div><div class="tile">D</div><div class="tile">E</div><div class="tile">F</div><div class="tile">G</div><div class="tile">H</div><div class="tile">I</div><div class="tile">J</div></div>
+  <div class="byline">@yourhandle</div>
+</section>
+
+<section class="slide">
+  <div class="tile">A</div>
+  <div class="role">Head of analytics</div>
+  <div class="name">Apify</div>
+  <p class="job">Pulls reach, saves and comments, so the data picks the next idea.</p>
+  <div class="shot"><!-- <img src="screenshot.png" alt=""> -->product screenshot goes here</div>
+  <div class="swipe">Swipe →</div>
+</section>
+
+</body>
+</html>
