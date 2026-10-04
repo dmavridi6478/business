@@ -5870,3 +5870,15 @@ Source: `80c9789b-LinkedIn_Master_Guide_for_Claude.zip` — 4 static images (`.j
 
 **Not done:** wifit3 (a Wi-Fi attack toolkit) was registered for reading only; no repo was installed; the itsaiguide "Claude OS" slide is an advert for a paid product and was not acted on; the 25-repo card was not turned into clone steps beyond the study paths in `data-ai-github-25`.
 
+
+## Batch 104 — iCloud Photos, 2 archives (21 images, 1 video): open-source tool carousels and an ML code video (4 October 2026)
+
+**Report:** [Batch 104 Intake Report](https://claude.ai/artifact/NuFFMe2gyPYCn9k1hnG1KK) (`Artifacts/business/batch-104-intake-report.html`).
+
+**Sources:** two @replace.so "GitHub repos so good they shouldn't be free" carousels (5 and 6 repos shown), a @dotdevs "Open-source tools for your app business" carousel (5 tools and one advert), and a "Machine Learning from Scratch" part 23 video (@machinelearningtogo).
+
+**Added:** skills `replace-so-agent-repos`, `local-first-app-stack`, `ml-six-key-lines`; commands `/oss-stack-pick`, `/local-first-audit`, `/ml-six-lines`; design templates `repo-spotlight-browser-card`, `photo-overlay-tool-card`, `code-card-six-lines` with Batch 104 theme tokens; `scripts/ml_six_key_lines.py` (numpy; all six checks pass); a register of 15 repos with licences read from the repos; user-run `scripts/batch104-install.sh`.
+
+**Source problems:** the carousels promise 6 and 7 repos and show 5 and 6; star counts are from slides and unverified (Busabase's slide and a search result disagree); AutoGPT's `autogpt_platform` folder is Polyform Shield, not open source; Whitebophir, DeepDiagram, Notra and Joplin are AGPL; Goose's README now points at the `aaif-goose` organisation; the video's six lines are fragments that need context to run, and its k-means needs restarts to be reliable.
+
+**Not done:** no repo or app was installed and no `curl | sh` installer was run; Krita's licence was not checked; the OpenFlowKit MCP server was verified (MIT, no install scripts, pinned 0.1.2) but its `.mcp.json` entry was refused by the permission system, so run the one-line `claude mcp add` command in the report yourself; no prompts, connector setup steps or agent-building guide existed in the files.
