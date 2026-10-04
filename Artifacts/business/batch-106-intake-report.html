@@ -1,0 +1,165 @@
+<title>Batch 106 Intake Report</title>
+<style>
+  /* Layout: single-column formal report, 880px measure; tables scroll inside their own wrappers.
+     Palette: ink-blue neutrals, one deep teal accent, semantic green/amber/red for status only.
+     Type: Aptos (the owner's house font) with system fallbacks; title 32pt, headings 14pt, body 11pt. */
+  :root {
+    --bg: #f6f7f9; --surface: #ffffff; --fg: #1b2330; --muted: #5a6577; --line: #d9dee6;
+    --accent: #0f5d6b; --accent-soft: #e2f0f2;
+    --ok: #17703a; --ok-bg: #e3f3e8; --warn: #8a5a00; --warn-bg: #fbefd3; --bad: #a11d2a; --bad-bg: #fbe3e5;
+    --code-bg: #eef1f5;
+    --font: Aptos, "Segoe UI Variable Text", "Segoe UI", system-ui, -apple-system, Roboto, sans-serif;
+    --mono: ui-monospace, "SF Mono", Consolas, monospace;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #11161e; --surface: #181f2a; --fg: #e6eaf0; --muted: #9aa5b6; --line: #2c3646;
+      --accent: #6cc3d1; --accent-soft: #17323a;
+      --ok: #6fd18f; --ok-bg: #173824; --warn: #f0c261; --warn-bg: #3a2e12; --bad: #ff8d98; --bad-bg: #3d1a1f;
+      --code-bg: #0e131a; color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #11161e; --surface: #181f2a; --fg: #e6eaf0; --muted: #9aa5b6; --line: #2c3646;
+    --accent: #6cc3d1; --accent-soft: #17323a;
+    --ok: #6fd18f; --ok-bg: #173824; --warn: #f0c261; --warn-bg: #3a2e12; --bad: #ff8d98; --bad-bg: #3d1a1f;
+    --code-bg: #0e131a; color-scheme: dark;
+  }
+  * { box-sizing: border-box; }
+  body { background: var(--bg); color: var(--fg); font-family: var(--font); font-size: 11pt; line-height: 1.55; padding-inline: 16px; padding-block: 28px 64px; }
+  main { max-width: 880px; margin-inline: auto; display: flex; flex-direction: column; gap: 28px; }
+  header { display: flex; flex-direction: column; gap: 8px; border-bottom: 2px solid var(--accent); padding-bottom: 18px; }
+  .eyebrow { font-size: 9pt; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
+  h1 { font-size: 32pt; line-height: 1.1; margin: 0; font-weight: 700; text-wrap: balance; }
+  h2 { font-size: 14pt; margin: 0 0 10px; font-weight: 700; color: var(--accent); text-wrap: balance; }
+  p { margin: 0 0 10px; max-width: 75ch; }
+  section { background: var(--surface); border: 1px solid var(--line); border-radius: 6px; padding: 20px 22px; min-width: 0; }
+  .lede { font-size: 11pt; color: var(--muted); max-width: 70ch; margin: 0; }
+  .truth { border-left: 4px solid var(--bad); background: var(--bad-bg); padding: 12px 16px; border-radius: 0 6px 6px 0; }
+  .truth p:last-child { margin-bottom: 0; }
+  .tw { overflow-x: auto; margin-block: 8px 4px; border: 1px solid var(--line); border-radius: 4px; }
+  table { border-collapse: collapse; width: 100%; min-width: 720px; font-size: 10pt; }
+  th, td { padding: 8px 10px; border-bottom: 1px solid var(--line); text-align: center; vertical-align: top; }
+  th { background: var(--accent-soft); color: var(--fg); font-weight: 700; font-size: 9.5pt; }
+  tr:last-child td { border-bottom: 0; }
+  td.l, th.l { text-align: center; } /* house rule: table content aligned top and centre */
+  .st { display: inline-block; padding: 1px 8px; border-radius: 10px; font-size: 9pt; font-weight: 700; white-space: nowrap; }
+  .st.ok { background: var(--ok-bg); color: var(--ok); } .st.warn { background: var(--warn-bg); color: var(--warn); } .st.bad { background: var(--bad-bg); color: var(--bad); }
+  .sw { display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 10px; margin-block: 8px; }
+  .sw div { border: 1px solid var(--line); border-radius: 4px; overflow: hidden; font-size: 9pt; text-align: center; }
+  .sw i { display: block; height: 44px; }
+  .sw span { display: block; padding: 4px 6px; font-family: var(--mono); }
+  .prompt { position: relative; margin-block: 10px; }
+  .prompt pre { margin: 0; white-space: pre-wrap; background: var(--code-bg); border: 1px solid var(--line); border-radius: 4px; padding: 12px 84px 12px 12px; font-family: var(--mono); font-size: 9.5pt; line-height: 1.5; }
+  .prompt b { display: block; font-family: var(--font); font-size: 10pt; margin-bottom: 4px; }
+  .prompt button { position: absolute; top: 30px; right: 8px; font: inherit; font-size: 9pt; padding: 4px 10px; border-radius: 4px; border: 1px solid var(--accent); background: var(--surface); color: var(--accent); cursor: pointer; }
+  .prompt button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  ul { margin: 0 0 10px; padding-left: 20px; } li { margin-bottom: 4px; max-width: 75ch; }
+  code { font-family: var(--mono); font-size: 9.5pt; background: var(--code-bg); padding: 1px 4px; border-radius: 3px; }
+  footer { color: var(--muted); font-size: 9.5pt; }
+</style><main>
+<header><span class="eyebrow">Intake report · iCloud Photos, 1 archive (53 images, 3 videos) · 4 October 2026</span>
+<h1>Batch 106 Intake Report</h1>
+<p class="lede">Eight creators' carousels and videos turned into 9 skills, 4 commands, 5 design templates, ten repos cloned and read, and a user-run install script. Prepared for the owner of the business repository.</p></header>
+
+<section class="truth"><h2>What you should know first</h2>
+<p><b>The Claude Code "mods" carousel is mostly unverified, and it describes software that runs inside your terminal.</b> Two web articles confirm the mechanism (plugins that run code on Claude Code events) and that users are not warned at install time. I could not find the three "Anthropic sample mods" it names, the version number, or the <code>--safe-mode</code> flag. Treat any mod like code from a stranger: read it and run <code>claude plugin validate</code> first. Nothing was installed. [Certain] for the mechanism and the risk, [Guessing] for the specifics.</p>
+<p><b>Open WebUI is not under a standard open-source licence.</b> Its custom licence forbids removing or replacing its branding above 50 end users in 30 days without written permission. Maxun is AGPL-3.0, PocketBase is pre-1.0 and its README says backward compatibility is not guaranteed, and Google's AX is alpha and needs Kubernetes with Agent Substrate. I read each licence file. [Certain]</p>
+<p><b>Two carousels promise more than they show.</b> The "6 best GitHub repositories" cover shows five, and the cream-card series' "which ones I would use" slide gives the carousel's own verdict, which I checked. Star counts are as printed on slides; the GitHub API is blocked here. Laya's slide says it appeared the same day as Jev, while a web article gives 18 September; I could not resolve the difference. [Certain]</p>
+<p><b>"Suprascribe" is not what "open source apps" suggests without a check.</b> Web sources describe a free email-scanning subscription tracker with a one-time €5 Pro purchase and open code. I did not read its licence, and it reads your mailbox, so read what it stores before connecting an account. [Likely]</p>
+<p><b>The free "LinkedIn Skills" pack for Hermes has no link.</b> It is offered by commenting a keyword. I did not try to obtain it and nothing here installs it. [Certain]</p>
+<p><b>Nothing was installed and no connector was changed.</b> The batch 104 OpenFlowKit <code>.mcp.json</code> entry is still unapplied. Laya offers an MCP server and Apify and Paperclip are connector candidates, but I attempted no edits. [Certain]</p></section>
+
+<section><h2>1. Inventory of the upload</h2><div class="tw"><table>
+<tr><th class="l">Source</th><th>Items</th><th class="l">Content</th><th class="l">Outcome</th></tr>
+<tr><td class="l">@taha_pathionai, "Redesign Claude Code yourself"</td><td>8 images</td><td class="l">Mods vs skills vs MCP, what a mod can do, the security catch</td><td class="l">Skill <code>claude-code-mods-guide</code>, command <code>/mod-review</code></td></tr>
+<tr><td class="l">@aiclawbots and a cream repo-card series (promoted as "5 GitHub repos that caught fire")</td><td>17 images</td><td class="l">Laya, Jev Ultrafast, Hindsight, AX, Paperclip, the verdict table, Hermes and LinkedIn slides</td><td class="l">Skills <code>laya-jev-ultrafast</code>, <code>agent-repos-week-5</code></td></tr>
+<tr><td class="l">@earchoe, micro-app prompts</td><td>9 images</td><td class="l">Two prompts, rules, a four-question check</td><td class="l">Skill <code>micro-app-prompts-earchoe</code>, command <code>/micro-app</code></td></tr>
+<tr><td class="l">@replace.so, "6 best GitHub repositories"</td><td>6 images</td><td class="l">Cover and Maxun, PocketBase, OpenWhispr, Open WebUI, Jan</td><td class="l">Skill <code>replace-so-dev-repos-6</code></td></tr>
+<tr><td class="l">@penny.blanco6, open-source apps</td><td>6 images</td><td class="l">Suprascribe, Syncthing, GnuCash, KeePassXC</td><td class="l">Skill <code>open-source-apps-penny-4</code></td></tr>
+<tr><td class="l">@amirabanal, "Top 5 dashboard design"</td><td>6 images</td><td class="l">Cover and five dashboards (Worktail, Smart Home, SentinelAI, Turbine, Finance Management)</td><td class="l">Design template and tokens only; no tool to install</td></tr>
+<tr><td class="l">@hackproduct9 video</td><td>1 video</td><td class="l">LLM, RAG, agent, agentic ladder</td><td class="l">Skill <code>llm-rag-agent-agentic-ladder</code>, command <code>/agent-ladder</code></td></tr>
+<tr><td class="l">@shiva.bytes videos</td><td>2 videos</td><td class="l">How to stop AI hallucinating; data to AI governance</td><td class="l">Skills <code>hallucination-guardrails-6</code>, <code>data-to-ai-governance-10</code>, command <code>/hallucination-audit</code></td></tr>
+</table></div></section>
+
+<section><h2>2. Your instructions against what the files contained</h2><div class="tw"><table>
+<tr><th class="l">Instruction</th><th>Found</th><th class="l">What I did</th></tr>
+<tr><td class="l">Identify repos, skills, tools to clone and install</td><td><span class="st ok">yes, 10 repos</span></td><td class="l">Cloned shallowly to a scratch folder, read licences and READMEs; installs recorded, none run</td></tr>
+<tr><td class="l">Turn prompts into commands or skills</td><td><span class="st ok">yes, finally</span></td><td class="l">The @earchoe prompts became <code>/micro-app</code> and a skill; the four-question check is included. Three further commands cover mods, hallucination and the agent ladder</td></tr>
+<tr><td class="l">Execute instructed actions</td><td><span class="st warn">installs only</span></td><td class="l">The only instructions are install commands; I did not run them</td></tr>
+<tr><td class="l">Prompts in plain text</td><td><span class="st ok">yes</span></td><td class="l">Section 6</td></tr>
+<tr><td class="l">Design content, templates, themes</td><td><span class="st ok">yes</span></td><td class="l">5 templates with sampled-colour tokens; two layout bugs found by eye and fixed</td></tr>
+<tr><td class="l">Guide to build agents</td><td><span class="st warn">partial</span></td><td class="l">The agent ladder and Paperclip, Hindsight and AX are the nearest; no step-by-step build guide was in the files</td></tr>
+<tr><td class="l">Connectors referenced</td><td><span class="st warn">candidates only</span></td><td class="l">Laya has an optional MCP server; none installed</td></tr>
+</table></div></section>
+
+<section><h2>3. Repo register (read 4 October 2026)</h2><div class="tw"><table>
+<tr><th class="l">Repo</th><th>Licence</th><th>Last commit</th><th class="l">Flag</th></tr>
+<tr><td class="l"><code>NandhaKishorM/laya</code></td><td>Apache-2.0</td><td>2026-10-05</td><td class="l"><span class="st warn">accuracy varies</span> 8 to 17 of 20 beyond about 4k tokens on its own test; fine-tune</td></tr>
+<tr><td class="l"><code>browser-use/jev-ultrafast</code></td><td>MIT</td><td>2026-09-18</td><td class="l"><span class="st warn">needs keys</span> TypeSafe key plus a text-model key; drives your real Chrome</td></tr>
+<tr><td class="l"><code>vectorize-io/hindsight</code></td><td>MIT</td><td>2026-10-02</td><td class="l"><span class="st warn">needs LLM key</span> Docker route recommended</td></tr>
+<tr><td class="l"><code>paperclipai/paperclip</code></td><td>MIT</td><td>2026-10-04</td><td class="l"><span class="st ok">checked</span> Node 24.11 or newer per the slide</td></tr>
+<tr><td class="l"><code>google/ax</code></td><td>Apache-2.0</td><td>2026-09-27</td><td class="l"><span class="st bad">alpha</span> breaking changes expected; needs Kubernetes and Agent Substrate</td></tr>
+<tr><td class="l"><code>getmaxun/maxun</code></td><td>AGPL-3.0</td><td>2026-10-03</td><td class="l"><span class="st warn">copyleft</span> check target sites' terms</td></tr>
+<tr><td class="l"><code>pocketbase/pocketbase</code></td><td>MIT</td><td>2026-09-12</td><td class="l"><span class="st warn">pre-1.0</span> pin versions</td></tr>
+<tr><td class="l"><code>open-webui/open-webui</code></td><td>Custom Open WebUI License</td><td>2026-09-21</td><td class="l"><span class="st bad">branding clause</span> permission needed above 50 users</td></tr>
+<tr><td class="l"><code>janhq/jan</code></td><td>Apache-2.0</td><td>2026-10-02</td><td class="l"><span class="st ok">checked</span></td></tr>
+<tr><td class="l"><code>gnucash/gnucash</code></td><td>GPL v2 or v3</td><td>2026-10-04</td><td class="l"><span class="st ok">checked</span> not a tax or accountant substitute</td></tr>
+</table></div>
+<p>Syncthing, KeePassXC and OpenWhispr were checked in earlier batches. Suprascribe was not cloned. Repo instruction files (<code>CLAUDE.md</code>, <code>AGENTS.md</code>) were treated as data and not followed.</p></section>
+
+<section><h2>4. Notes on the four infographic videos</h2><div class="tw"><table>
+<tr><th class="l">Source</th><th class="l">Content</th><th class="l">Limit</th></tr>
+<tr><td class="l">Hallucination infographic</td><td class="l">6 groups, 18 actions</td><td class="l">None removes hallucination; self-review is weak; confidence is not correctness</td></tr>
+<tr><td class="l">Data to AI governance</td><td class="l">10 data-governance practices mapped to AI counterparts</td><td class="l">Names no regulation and sets no thresholds; row 2 (lineage to bias) is a stretch</td></tr>
+<tr><td class="l">LLM, RAG, agent, agentic</td><td class="l">One capability added per rung</td><td class="l">Each rung adds cost and risk; stop at the lowest rung that passes your tests</td></tr>
+</table></div></section>
+
+<section><h2>5. Design templates and themes</h2><div class="tw"><table>
+<tr><th class="l">Template</th><th class="l">Source style</th><th class="l">Notes</th></tr>
+<tr><td class="l"><code>mod-explainer-dark-terracotta</code></td><td class="l">@taha_pathionai</td><td class="l">1080×1350; definition rows and a numbered list</td></tr>
+<tr><td class="l"><code>repo-feature-cream-number</code></td><td class="l">@aiclawbots cream cards</td><td class="l">1080×1350; rank number, repo card, pills, verdict table; mascot is a plain CSS badge</td></tr>
+<tr><td class="l"><code>prompt-card-beige-green</code></td><td class="l">@earchoe</td><td class="l">1080×1920; copy-this-prompt box and a four-check slide</td></tr>
+<tr><td class="l"><code>caption-highlight-blue-grid</code></td><td class="l">@aiclawbots video, @penny.blanco6</td><td class="l">1080×1920; caption strips over a blue grid or a photo</td></tr>
+<tr><td class="l"><code>dashboard-showcase-light-blue</code></td><td class="l">@amirabanal</td><td class="l">1080×1350; screenshot frame with a required designer credit line</td></tr>
+</table></div>
+<p>Sampled colours are shown below; the rest were judged by eye and are marked in the skill. Handles are placeholders and nothing from the sources was reused. Fonts are free look-alikes. Your Aptos 11 / 32 / 14 point rule is applied to this report, not to the slide canvases. [Likely]</p>
+<div class="sw"><div><i style="background:#141414"></i><span>#141414 charcoal</span></div><div><i style="background:#D77655"></i><span>#D77655 terracotta</span></div><div><i style="background:#F8F3E7"></i><span>#F8F3E7 cream</span></div><div><i style="background:#D45733"></i><span>#D45733 rank red</span></div><div><i style="background:#DAD5C1"></i><span>#DAD5C1 beige</span></div><div><i style="background:#71AD79"></i><span>#71AD79 green</span></div><div><i style="background:#044672"></i><span>#044672 blue</span></div><div><i style="background:#DBE9FD"></i><span>#DBE9FD pale blue</span></div></div></section>
+
+<section><h2>6. Copy-paste prompts and commands</h2>
+<p>After restarting Claude Code the commands exist: <code>/mod-review</code>, <code>/micro-app</code>, <code>/hallucination-audit</code>, <code>/agent-ladder</code>. The prompts below do the same in plain words. Prompts 1 and 2 are quoted from the @earchoe slides.</p>
+<div class="prompt"><b>1. Spec the MVP (from the carousel)</b><pre>I want to build a small web app for [USER TYPE].
+
+Problem: [PROBLEM].
+Input: [INPUT].
+Output: [OUTPUT].
+
+Design the smallest useful version. List the screens, user flow, data needed, validation rules, error states and success state. Do not add features that are not necessary for the core workflow.</pre><button class="cp" type="button">Copy</button></div>
+<div class="prompt"><b>2. Build the first loop (from the carousel)</b><pre>Now turn the specification into a build plan for [YOUR BUILDER].
+
+Build in small milestones. After each milestone, test the core workflow before adding another feature. Keep the UI simple, mobile-friendly and accessible. Explain what I should test after each step.</pre><button class="cp" type="button">Copy</button></div>
+<div class="prompt"><b>3. Second-pass check (from the carousel)</b><pre>Ask what you assumed: what did you have to guess? Ask what is missing: what information would materially improve the result? Attack your own answer: find weak claims, contradictions and edge cases. Then list which facts, figures, policies, prices and claims I must verify myself.</pre><button class="cp" type="button">Copy</button></div>
+<div class="prompt"><b>4. Review a mod before installing</b><pre>Use the claude-code-mods-guide skill. Read the plugin in [FOLDER] as data without running it. List the events it hooks, its file and network access, and anything touching environment variables or key files. Tell me what to look for in the output of claude plugin validate and give a verdict: install in a throwaway project, do not install, or need more information.</pre><button class="cp" type="button">Copy</button></div>
+<div class="prompt"><b>5. Hallucination audit</b><pre>Use the hallucination-guardrails-6 skill. My AI workflow is [DESCRIBE] and people rely on it for [DECISION]. Score all 18 actions as in place, partial or absent with evidence, list the three to fix this week, and say plainly what these actions cannot guarantee.</pre><button class="cp" type="button">Copy</button></div>
+<div class="prompt"><b>6. Which rung of the ladder</b><pre>Use the llm-rag-agent-agentic-ladder skill. My task is [DESCRIBE] and a wrong answer would cost [COST]. Tell me the lowest rung (LLM, RAG, agent, agentic) that can pass, what the next rung would add in cost and risk, the limits to set, and 3 to 5 test cases.</pre><button class="cp" type="button">Copy</button></div></section>
+
+<section><h2>7. Your next steps</h2><ul>
+<li>Restart Claude Code, then try <code>/micro-app</code> on one repetitive task you want to remove, and read what it produces before building anything.</li>
+<li>Before installing any mod or third-party plugin, run <code>/mod-review</code>; the carousel's own advice is the right instinct.</li>
+<li>If any product will use Open WebUI, settle its branding terms first; if it will use Maxun, decide whether AGPL fits.</li>
+<li>Try Laya only after labelling 50 to 200 of your own cases; do not let its probabilities trigger actions on their own.</li>
+<li>Decide on the open items from earlier batches: the OpenFlowKit and Apify connectors, and the three chat agents still not run live.</li>
+<li>Run <code>scripts/batch106-install.sh</code> on your own machine only if you want any of this; it asks before every step and pipes nothing into a shell.</li></ul></section>
+
+<footer>Sources: 53 JPEGs and 3 MP4s in one iCloud Photos archive. Licences, dates and install routes read from shallow clones on 4 October 2026; mods and decision-model facts from published articles; Suprascribe from web search only. Videos were read from frames; there was no narration. Star counts are as printed on the slides.</footer>
+</main>
+<script>
+document.querySelectorAll('.cp').forEach(function (b) {
+  b.addEventListener('click', function () {
+    var t = b.parentNode.querySelector('pre');
+    function done() { b.textContent = 'Copied'; setTimeout(function () { b.textContent = 'Copy'; }, 1500); }
+    function fb() { var r = document.createRange(); r.selectNodeContents(t); var s = getSelection(); s.removeAllRanges(); s.addRange(r); b.textContent = 'Selected'; }
+    try { navigator.clipboard.writeText(t.textContent).then(done, fb); } catch (e) { fb(); }
+  });
+});
+</script>

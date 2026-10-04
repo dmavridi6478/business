@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<!--
+  Template: repo-feature-cream-number
+  Style: cream page, a huge terracotta rank number beside a repo path, a heavy two-line headline, a short paragraph,
+         a CSS-drawn square mascot, a white GitHub-style repo card with three stats, a blue accent rule and three info pills. Theme: cream-terracotta
+  Inspired by: the weekly trending-repos carousel (@aiclawbots). Original CSS; the mascot here is a plain CSS badge, not the source character.
+  Canvas: 1080 x 1350. Two slides in one file: .slide--repo (duplicate per repo) and .slide--verdict (a small table "which ones I would use").
+  Swap points:
+    :root tokens                      colours and fonts
+    .num / .path                      rank number and owner/repo
+    h1                                headline (max two lines)
+    .body                             two to three sentences that match the repo's real README
+    .card h3 / .card p / .stats       repo name, description, issues, stars, forks (quote real figures with a date)
+    .pills                            REPO stars / THIS WEEK / one-line note
+    .verdict rows                     repo and your own verdict
+    .mascot                           replace with your own illustration
+-->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Repo Feature Cream Number</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..100,600;75..100,800&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #F8F3E7;       /* sampled */
+    --terra: #D45733;       /* sampled: rank number */
+    --ink: #121212;
+    --body: #3B3935;
+    --card: #FFFFFF;
+    --rule: #3B82F6;        /* eyeballed: accent rule under the card */
+    --pill: #EFE8D8;
+    --font: "Archivo", Aptos, "Segoe UI", system-ui, sans-serif;
+    --mono: "IBM Plex Mono", ui-monospace, Consolas, monospace;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: #222; display: flex; flex-direction: column; align-items: center; gap: 32px; padding: 32px 0; overflow-x: auto; font-family: var(--font); }
+  .slide { position: relative; width: 1080px; height: 1350px; flex: none; background: var(--cream); color: var(--ink); padding: 70px 76px 0; overflow: hidden; }
+  .top { display: flex; align-items: flex-end; gap: 26px; }
+  .num { font-size: 190px; line-height: .8; font-weight: 800; color: var(--terra); letter-spacing: -.05em; }
+  .path { padding-bottom: 14px; font: 500 28px var(--mono); color: var(--body); }
+  h1 { margin-top: 28px; font-size: 94px; line-height: .96; font-weight: 800; letter-spacing: -.05em; }
+  .body { margin-top: 28px; font-size: 32px; line-height: 1.38; color: var(--body); max-width: 900px; }
+  .mascot { margin: 38px 0 0 100px; width: 120px; height: 104px; background: var(--terra); border-radius: 30px 30px 18px 18px; position: relative; box-shadow: 0 10px 0 rgba(0,0,0,.08); }
+  .mascot::before, .mascot::after { content: ""; position: absolute; top: 34px; width: 16px; height: 16px; background: #121212; border-radius: 50%; }
+  .mascot::before { left: 34px; } .mascot::after { right: 34px; }
+  .card { position: absolute; left: 76px; right: 76px; top: 800px; background: var(--card); border-radius: 22px; padding: 34px 40px 40px; box-shadow: 0 8px 30px rgba(60,40,10,.10); }
+  .card h3 { font-size: 46px; font-weight: 600; letter-spacing: -.03em; }
+  .card p { margin-top: 10px; font-size: 28px; color: #6a665f; }
+  .stats { margin-top: 26px; display: flex; gap: 46px; font: 600 28px var(--mono); color: var(--body); }
+  .stats small { display: block; font: 500 20px var(--mono); color: #8a857b; margin-top: 2px; }
+  .card::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 10px; background: var(--rule); border-radius: 0 0 22px 22px; }
+  .pills { position: absolute; left: 76px; right: 76px; top: 1130px; display: grid; grid-template-columns: 1fr 1fr 1.5fr; gap: 18px; }
+  .pills span { background: var(--pill); border-radius: 16px; padding: 22px 26px; font: 600 25px/1.25 var(--mono); }
+  .pills b { color: var(--terra); font-weight: 600; }
+  .verdict h2 { margin-top: 110px; font-size: 118px; line-height: .95; font-weight: 800; letter-spacing: -.05em; }
+  .vt { margin-top: 70px; background: var(--card); border-radius: 22px; padding: 12px 40px; box-shadow: 0 8px 30px rgba(60,40,10,.10); }
+  .vt div { display: grid; grid-template-columns: 1fr 1.2fr; gap: 20px; padding: 26px 0; border-bottom: 1px solid #ece6d8; font: 500 34px var(--mono); }
+  .vt div:last-child { border-bottom: 0; } .vt b { font-weight: 600; } .vt span { color: var(--terra); font-weight: 600; }
+</style>
+</head>
+<body>
+
+<section class="slide">
+  <div class="top"><div class="num">02</div><div class="path">owner / repo</div></div>
+  <h1>Your headline in two lines</h1>
+  <p class="body">Two or three sentences that match what the repository's own README says. Add a date to any figure you quote.</p>
+  <div class="mascot" aria-hidden="true"></div>
+  <div class="card"><h3>owner/repo</h3><p>One-line description from the repository page.</p>
+    <div class="stats"><div>105<small>Issues</small></div><div>24,091<small>Stars</small></div><div>2,072<small>Forks</small></div></div></div>
+  <div class="pills"><span>REPO <b>24,091★</b></span><span>THIS WEEK <b>+20.1k★</b></span><span>one-line note on what it does</span></div>
+</section>
+
+<section class="slide verdict"><h2>Which ones I would use.</h2>
+  <div class="vt"><div><b>repo-one</b><span>installing it</span></div><div><b>repo-two</b><span>trying it in a sandbox</span></div><div><b>repo-three</b><span>watching it</span></div><div><b>repo-four</b><span>needs a key</span></div><div><b>repo-five</b><span>needs Kubernetes</span></div></div></section>
+
+</body>
+</html>

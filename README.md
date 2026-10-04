@@ -5896,3 +5896,17 @@ Source: `80c9789b-LinkedIn_Master_Guide_for_Claude.zip` — 4 static images (`.j
 **Source problems:** Jaaz is under a dual Community/Commercial licence, not open source (team use, modification and redistribution need the paid licence); OpenDraft drafts research papers and InteraOne appears to be an embeddable support assistant, so neither matches its slide; the coreclasseducation product screenshots look like generated mockups and its cover icons are unrelated products; the awayfromlovable install commands for UI UX Pro Max and frontend-design skip the `/plugin marketplace add` step; Octop's installer is a piped script from a cloud-storage URL; the ChatGPT cheatsheet's temperature values are API settings; the 10-AI chart shows seven of its ten roles and its follower and outcome claims are unverifiable; star counts are from slides and unverified.
 
 **Not done:** no skill, repo, connector or app was installed and no installer was run; the `.mcp.json` entry for OpenFlowKit from batch 104 is still unapplied and no new connector entries were attempted; InteraOne's repo was not found; Krita and several licences outside these 15 were not checked.
+
+## Batch 106 — iCloud Photos, one archive (53 images, 3 videos) (4 October 2026)
+
+**Report:** [Batch 106 Intake Report](https://claude.ai/artifact/QpGqNhyznDqGTWe6MXxHAK) (`Artifacts/business/batch-106-intake-report.html`).
+
+**Sources:** @taha_pathionai (Claude Code mods, 8 slides), @aiclawbots and a cream repo-card series (Laya, Jev Ultrafast, Hindsight, Google AX, Paperclip, Hermes-LinkedIn slides), @earchoe (micro-app prompts, 9 slides), @replace.so (5 dev repos), @penny.blanco6 (4 open-source apps), @amirabanal (5 dashboard designs), @hackproduct9 (LLM to agentic ladder video), @shiva.bytes (hallucination and data-to-AI-governance infographic videos).
+
+**Added:** skills `claude-code-mods-guide`, `laya-jev-ultrafast`, `agent-repos-week-5`, `replace-so-dev-repos-6`, `open-source-apps-penny-4`, `micro-app-prompts-earchoe`, `hallucination-guardrails-6`, `data-to-ai-governance-10`, `llm-rag-agent-agentic-ladder`; commands `/mod-review`, `/micro-app`, `/hallucination-audit`, `/agent-ladder`; design templates `mod-explainer-dark-terracotta`, `repo-feature-cream-number`, `prompt-card-beige-green`, `caption-highlight-blue-grid`, `dashboard-showcase-light-blue` with Batch 106 theme tokens; ten repos cloned and read; user-run `scripts/batch106-install.sh`.
+
+**Already existed, not duplicated:** `local-first-app-stack` (Syncthing and KeePassXC), `openwhispr`, `jev-vs-llm`, `ai-governance-15-concepts`, `ai-governance-layers`, the `hermes-*` and LinkedIn skills.
+
+**Source problems:** the Claude Code mods carousel names sample mods, a version and a `--safe-mode` flag that could not be verified; Open WebUI uses a custom licence with a branding clause above 50 users; Maxun is AGPL-3.0; PocketBase is pre-1.0; Google AX is alpha and needs Kubernetes; Jev Ultrafast needs two vendor keys and drives a real browser; the "6 best repos" cover shows five; the "LinkedIn Skills" pack for Hermes was offered with no link; Suprascribe's licence was not read; star counts are from slides and unverified.
+
+**Not done:** nothing installed or run; no connector changed (the OpenFlowKit `.mcp.json` entry from batch 104 is still unapplied); the LinkedIn Skills pack, Suprascribe's repo and the unnamed sixth repo were not found; no step-by-step agent-building guide was in the files.
