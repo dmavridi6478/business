@@ -1,0 +1,116 @@
+<title>Batch 110 Intake Report</title>
+<style>
+  /* Layout: single-column formal report, 880px measure; tables scroll inside their own wrappers.
+     Palette: ink-blue neutrals, one deep teal accent, semantic green/amber/red for status only.
+     Type: Aptos (the owner's house font) with system fallbacks; title 32pt, headings 14pt, body 11pt. */
+  :root {
+    --bg: #f6f7f9; --surface: #ffffff; --fg: #1b2330; --muted: #5a6577; --line: #d9dee6;
+    --accent: #0f5d6b; --accent-soft: #e2f0f2;
+    --ok: #17703a; --ok-bg: #e3f3e8; --warn: #8a5a00; --warn-bg: #fbefd3; --bad: #a11d2a; --bad-bg: #fbe3e5;
+    --code-bg: #eef1f5;
+    --font: Aptos, "Segoe UI Variable Text", "Segoe UI", system-ui, -apple-system, Roboto, sans-serif;
+    --mono: ui-monospace, "SF Mono", Consolas, monospace;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #11161e; --surface: #181f2a; --fg: #e6eaf0; --muted: #9aa5b6; --line: #2c3646;
+      --accent: #6cc3d1; --accent-soft: #17323a;
+      --ok: #6fd18f; --ok-bg: #173824; --warn: #f0c261; --warn-bg: #3a2e12; --bad: #ff8d98; --bad-bg: #3d1a1f;
+      --code-bg: #0e131a; color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #11161e; --surface: #181f2a; --fg: #e6eaf0; --muted: #9aa5b6; --line: #2c3646;
+    --accent: #6cc3d1; --accent-soft: #17323a;
+    --ok: #6fd18f; --ok-bg: #173824; --warn: #f0c261; --warn-bg: #3a2e12; --bad: #ff8d98; --bad-bg: #3d1a1f;
+    --code-bg: #0e131a; color-scheme: dark;
+  }
+  * { box-sizing: border-box; }
+  body { background: var(--bg); color: var(--fg); font-family: var(--font); font-size: 11pt; line-height: 1.55; padding-inline: 16px; padding-block: 28px 64px; }
+  main { max-width: 880px; margin-inline: auto; display: flex; flex-direction: column; gap: 28px; }
+  header { display: flex; flex-direction: column; gap: 8px; border-bottom: 2px solid var(--accent); padding-bottom: 18px; }
+  .eyebrow { font-size: 9pt; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
+  h1 { font-size: 32pt; line-height: 1.1; margin: 0; font-weight: 700; text-wrap: balance; }
+  h2 { font-size: 14pt; margin: 0 0 10px; font-weight: 700; color: var(--accent); text-wrap: balance; }
+  p { margin: 0 0 10px; max-width: 75ch; }
+  section { background: var(--surface); border: 1px solid var(--line); border-radius: 6px; padding: 20px 22px; min-width: 0; }
+  .lede { font-size: 11pt; color: var(--muted); max-width: 70ch; margin: 0; }
+  .truth { border-left: 4px solid var(--bad); background: var(--bad-bg); padding: 12px 16px; border-radius: 0 6px 6px 0; }
+  .truth p:last-child { margin-bottom: 0; }
+  .tw { overflow-x: auto; margin-block: 8px 4px; border: 1px solid var(--line); border-radius: 4px; }
+  table { border-collapse: collapse; width: 100%; min-width: 720px; font-size: 10pt; }
+  th, td { padding: 8px 10px; border-bottom: 1px solid var(--line); text-align: center; vertical-align: top; }
+  th { background: var(--accent-soft); color: var(--fg); font-weight: 700; font-size: 9.5pt; }
+  tr:last-child td { border-bottom: 0; }
+  td.l, th.l { text-align: center; } /* house rule: table content aligned top and centre */
+  .st { display: inline-block; padding: 1px 8px; border-radius: 10px; font-size: 9pt; font-weight: 700; white-space: nowrap; }
+  .st.ok { background: var(--ok-bg); color: var(--ok); } .st.warn { background: var(--warn-bg); color: var(--warn); } .st.bad { background: var(--bad-bg); color: var(--bad); }
+  .sw { display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 10px; margin-block: 8px; }
+  .sw div { border: 1px solid var(--line); border-radius: 4px; overflow: hidden; font-size: 9pt; text-align: center; }
+  .sw i { display: block; height: 44px; }
+  .sw span { display: block; padding: 4px 6px; font-family: var(--mono); }
+  .prompt { position: relative; margin-block: 10px; }
+  .prompt pre { margin: 0; white-space: pre-wrap; background: var(--code-bg); border: 1px solid var(--line); border-radius: 4px; padding: 12px 84px 12px 12px; font-family: var(--mono); font-size: 9.5pt; line-height: 1.5; }
+  .prompt b { display: block; font-family: var(--font); font-size: 10pt; margin-bottom: 4px; }
+  .prompt button { position: absolute; top: 30px; right: 8px; font: inherit; font-size: 9pt; padding: 4px 10px; border-radius: 4px; border: 1px solid var(--accent); background: var(--surface); color: var(--accent); cursor: pointer; }
+  .prompt button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  ul { margin: 0 0 10px; padding-left: 20px; } li { margin-bottom: 4px; max-width: 75ch; }
+  code { font-family: var(--mono); font-size: 9.5pt; background: var(--code-bg); padding: 1px 4px; border-radius: 3px; }
+  footer { color: var(--muted); font-size: 9.5pt; }
+</style><main>
+<header><span class="eyebrow">Intake report · three infographics attached in chat · 5 October 2026</span>
+<h1>Batch 110 Intake Report</h1>
+<p class="lede">Three infographics turned into 3 skills, 3 commands and 1 design template. There was no zip, no repo and no code this time, so there is no install script. Prepared for the owner of the business repository.</p></header>
+
+<section class="truth"><h2>What you should know first</h2>
+<p><b>Nothing here is installable, and none of it is evidence.</b> All three images are advice or lists: a go-to-market roadmap, ten interview mistakes and a list of agent job titles. No repo, plugin or connector was named, so nothing was cloned or installed. [Certain]</p>
+<p><b>The Claude Revenue System image is a different layout from the one already in the repo, and its own list repeats itself.</b> It shows 45 numbered roles in six columns, ending "Comment CLAUDE for free access". Six roles (Account Health Monitor, Churn Risk Identifier, Expansion Revenue Identifier, QBR Preparation Agent, Renewal Preparation Agent, Executive Relationship Builder) appear twice, so there are fewer than 45 distinct ones. The repo's <code>claude-revenue-system-58-agents</code> command is a different version with different role names. The text was read at small size and is approximate. [Certain]</p>
+<p><b>The interview replacement lines are templates, and reading them out is a risk.</b> They contain placeholders such as "[specific skill]". Claiming a skill, tool or company initiative you do not have is worse than the weak answer it replaces. Salary talk in particular varies by country. [Likely]</p>
+<p><b>The GTM stages are guideposts, as the author says.</b> Customer-count thresholds (0 to 10, 10 to 50, 50 to 100) fit low-priced products; an expensive B2B product may never reach 100 customers. Use the "working when" tests, not the numbers. [Likely]</p>
+<p><b>Nothing was installed and no connector was changed.</b> The batch 104 OpenFlowKit <code>.mcp.json</code> entry is unapplied. Midpage Legal Research, Sentry and Supabase still need your authorisation in a session that can run the sign-in. [Certain]</p></section>
+
+<section><h2>1. Inventory</h2><div class="tw"><table>
+<tr><th class="l">Source</th><th>Items</th><th class="l">Content</th><th class="l">Outcome</th></tr>
+<tr><td class="l">"How to Unlock GTM" (Megha Sharma, OneGTMLab)</td><td>1 image</td><td class="l">Roadmap to the first 100 customers in four stages</td><td class="l">Skill <code>gtm-first-100-customers</code>, command <code>/first-100-customers</code></td></tr>
+<tr><td class="l">"10 Things NOT to Say in a Job Interview" (Dr. Christian Poensgen)</td><td>1 image</td><td class="l">Ten phrases to avoid, reasons and replacement lines</td><td class="l">Skill <code>job-interview-10-donts</code>, command <code>/interview-donts</code>, template <code>avoid-reason-say-grid</code></td></tr>
+<tr><td class="l">"Claude Revenue System"</td><td>1 image</td><td class="l">45 numbered agent roles in six columns</td><td class="l">Skill <code>claude-revenue-system-45-agents</code>, command <code>/revenue-agent-pick</code></td></tr></table></div></section>
+
+<section><h2>2. Your instructions against what the files contained</h2><div class="tw"><table>
+<tr><th class="l">Instruction</th><th class="l">Found</th><th>Status</th></tr>
+<tr><td class="l">Repos, skills, procedures, commands, tools</td><td class="l">No repos or tools; 3 skills and 3 commands created</td><td><span class="st ok">Done</span></td></tr>
+<tr><td class="l">Prompts into commands or skills</td><td class="l">One prompt-like list (agent roles); the three prompts below are mine</td><td><span class="st ok">Done</span></td></tr>
+<tr><td class="l">Design content into templates and themes</td><td class="l">The interview graphic's avoid / reason / say grid</td><td><span class="st ok">1 template, 1 theme row</span></td></tr>
+<tr><td class="l">Guide to build agents</td><td class="l">Only role names, no build guide</td><td><span class="st warn">Not present</span></td></tr>
+<tr><td class="l">References to connectors</td><td class="l">None</td><td><span class="st warn">None found</span></td></tr></table></div></section>
+
+<section><h2>3. Design template</h2><div class="tw"><table>
+<tr><th class="l">Template</th><th class="l">Canvas</th><th class="l">Theme colours</th></tr>
+<tr><td class="l"><code>avoid-reason-say-grid</code></td><td>1080×1350</td><td class="l">bg #E7E5E4 and line #CEE4DF (sampled); navy #0F2D3A and teal #8CC1B5 (eyeballed)</td></tr></table></div>
+<div class="sw"><div><i style="background:#E7E5E4"></i><span>#E7E5E4</span></div><div><i style="background:#CEE4DF"></i><span>#CEE4DF</span></div><div><i style="background:#0F2D3A"></i><span>#0F2D3A</span></div><div><i style="background:#8CC1B5"></i><span>#8CC1B5</span></div><div><i style="background:#60369E"></i><span>#60369E</span></div><div><i style="background:#F0EF4B"></i><span>#F0EF4B</span></div></div>
+<p>Placeholder handle only; no source illustration, name or wording reused. Rendered in headless Chromium with overlap and containment checks.</p></section>
+
+<section><h2>4. Copy-paste prompts and commands</h2>
+<p>After restarting Claude Code the commands exist: <code>/first-100-customers</code>, <code>/interview-donts</code>, <code>/revenue-agent-pick</code>. The three prompts below are mine.</p>
+<div class="prompt"><b>1. Place us on the first-100-customers roadmap (mine)</b><pre>Use the gtm-first-100-customers skill. We have [N] customers, our offer is [OFFER] at [PRICE], and our channels are [LIST]. Say which stage fits, give the goal, lead generation, channels, build list and the 'working when' test for it, name one thing to stop doing and one risk of moving on too early. Remind me the stages are guideposts.</pre><button class="cp" type="button">Copy</button></div>
+<div class="prompt"><b>2. Rewrite my interview answers (mine)</b><pre>Use the job-interview-10-donts skill. I am applying for [ROLE]. My three real achievements are [A], [B], [C]. For each of the ten situations write a short answer using only these achievements and leave a placeholder where I have no evidence. Flag anything that would claim something I have not told you.</pre><button class="cp" type="button">Copy</button></div>
+<div class="prompt"><b>3. Pick a revenue role and write its prompt (mine)</b><pre>Use the claude-revenue-system-45-agents skill. My task is [TASK] and I have [DATA]. Choose one or two roles, note if a role is duplicated in the list, write the prompt, and list what a person must verify before any message is sent. Do not contact anyone.</pre><button class="cp" type="button">Copy</button></div>
+</section>
+
+<section><h2>5. Your next steps</h2><ul>
+<li>For go-to-market, write the "working when" test for your current stage on one line and check it against real customers this week.</li>
+<li>For interviews, fill the placeholders with real evidence before you rehearse; do not memorise the template lines.</li>
+<li>For the agent roles, pick one real task and run <code>/revenue-agent-pick</code>; judge the output before you add a second role.</li>
+<li>Open items: the OpenFlowKit <code>.mcp.json</code> entry, and authorising the Midpage, Sentry and Supabase connectors.</li></ul></section>
+
+<footer>Sources: three JPEGs attached in chat (800 px wide); small text on the revenue-system image was read approximately. Nothing was fetched or installed for this batch.</footer>
+</main>
+<script>
+document.querySelectorAll('.cp').forEach(function (b) {
+  b.addEventListener('click', function () {
+    var t = b.parentNode.querySelector('pre');
+    function done() { b.textContent = 'Copied'; setTimeout(function () { b.textContent = 'Copy'; }, 1500); }
+    function fb() { var r = document.createRange(); r.selectNodeContents(t); var s = getSelection(); s.removeAllRanges(); s.addRange(r); b.textContent = 'Selected'; }
+    try { navigator.clipboard.writeText(t.textContent).then(done, fb); } catch (e) { fb(); }
+  });
+});
+</script>
