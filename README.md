@@ -5910,3 +5910,17 @@ Source: `80c9789b-LinkedIn_Master_Guide_for_Claude.zip` — 4 static images (`.j
 **Source problems:** the Claude Code mods carousel names sample mods, a version and a `--safe-mode` flag that could not be verified; Open WebUI uses a custom licence with a branding clause above 50 users; Maxun is AGPL-3.0; PocketBase is pre-1.0; Google AX is alpha and needs Kubernetes; Jev Ultrafast needs two vendor keys and drives a real browser; the "6 best repos" cover shows five; the "LinkedIn Skills" pack for Hermes was offered with no link; Suprascribe's licence was not read; star counts are from slides and unverified.
 
 **Not done:** nothing installed or run; no connector changed (the OpenFlowKit `.mcp.json` entry from batch 104 is still unapplied); the LinkedIn Skills pack, Suprascribe's repo and the unnamed sixth repo were not found; no step-by-step agent-building guide was in the files.
+
+## Batch 107 — iCloud Photos, one archive (28 images, 3 videos) (5 October 2026)
+
+**Report:** Batch 107 Intake Report (`Artifacts/business/batch-107-intake-report.html`; the published link is in the pull request).
+
+**Sources:** @ai.am.claude (8-step Claude prompt workflow, 9 of 10 slides), @awayfromlovable (Top 5 Claude Code plugins that catch bugs, 7 slides), a "5 open-source tools that shouldn't be free, Part 3" carousel, a "5 tools in 2027" card series, two code videos (@quantfinancetogo bell curve; @machinelearningtogo attention) and a @githubnow top-10 video.
+
+**Added:** skills `claude-workflow-8-steps`, `claude-bug-plugins-5`, `oss-tools-part3-checked`, `github-trending-top10-oct5`, `quant-bell-curve-part4`, `ml-attention-part21`; commands `/claude-workflow`, `/bug-plugin-pick`, `/trending-pick`, `/attention-explain`, `/bell-curve`; scripts `bell_curve_from_scratch.py` and `attention_from_scratch.py` (transcribed from the videos, run, with checks added); design templates `prompt-step-red-cream`, `trending-top10-leaderboard`, `quant-code-pane-dark` with theme tokens; user-run `scripts/batch107-install.sh`.
+
+**Already existed, not duplicated:** `ponytail*` skills, impeccable coverage in `claude-design-skills-top5`, context7 and sentry entries in `.mcp.json`.
+
+**Source problems:** slide 2 of the workflow carousel was missing; `calcom/cal.com` is now Cal.diy (MIT, enterprise features removed, personal non-production use); Dify, n8n, Sentry's MCP server, OpenMontage and Open WebUI are not plain open source; star, install and today-star counts are as printed and unverified; SERPtag was not found; the "80% confidence" Code Review setting was not found in code.
+
+**Not done:** nothing installed or run beyond the two numpy scripts; no connector changed (OpenFlowKit `.mcp.json` entry from batch 104 still unapplied; Midpage, Sentry and Supabase connectors still need your authorisation); no agent-building guide was in the files.

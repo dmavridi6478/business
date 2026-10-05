@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<!--
+  Template: trending-top10-leaderboard
+  Style: near-black page, a green "today" pill, a ten-row leaderboard (rank, owner/repo, one-line purpose, +stars today) with the top row lit,
+         and a footer line that says the numbers are unverified. Theme: night-leaderboard
+  Inspired by: the "10 hottest GitHub repos today" video (@githubnow). Original CSS; no source logo, caption or handle reused.
+  Canvas: 1080 x 1920. One slide; the first three rows are filled with placeholders - duplicate .row up to ten.
+  Swap points:
+    :root tokens                  colours and fonts
+    .date                         the date label
+    .row .rank / .name / .what / .stars   one row each; add class "top" to the lit row
+    .note                         keep the "unverified" line unless you checked the numbers
+    .handle                       your own handle (placeholder: @yourhandle)
+-->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Trending Top 10 Leaderboard</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;700;900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0D1117;
+    --row: #161B22;
+    --line: #30363D;
+    --green: #3FB950;
+    --ink: #F0F6FC;
+    --muted: #8B949E;
+    --font: "Inter", Aptos, "Segoe UI", system-ui, sans-serif;
+    --mono: "JetBrains Mono", ui-monospace, Consolas, monospace;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: #000; display: flex; justify-content: center; padding: 32px 0; overflow-x: auto; font-family: var(--font); }
+  .slide { position: relative; width: 1080px; height: 1920px; flex: none; background: var(--bg); color: var(--ink); padding: 120px 64px 0; overflow: hidden; }
+  .date { display: inline-block; font: 700 26px var(--mono); color: var(--green); border: 2px solid var(--green); border-radius: 999px; padding: 8px 24px; }
+  h1 { margin-top: 36px; font-size: 104px; line-height: .98; font-weight: 900; letter-spacing: -.045em; }
+  h1 em { font-style: normal; color: var(--green); }
+  .list { margin-top: 70px; display: flex; flex-direction: column; gap: 12px; }
+  .row { display: grid; grid-template-columns: 90px 1fr 190px; align-items: center; height: 126px; background: var(--row); border: 1px solid var(--line); border-radius: 22px; padding: 0 30px; }
+  .row.top { border-color: var(--green); background: #12261B; }
+  .rank { font: 700 40px var(--mono); color: var(--muted); }
+  .top .rank { color: var(--green); }
+  .name { font-size: 34px; font-weight: 700; letter-spacing: -.02em; }
+  .what { margin-top: 6px; font-size: 24px; font-weight: 500; color: var(--muted); }
+  .stars { text-align: right; font: 700 32px var(--mono); color: var(--green); }
+  .stars small { display: block; font: 400 18px var(--mono); color: var(--muted); }
+  .note { position: absolute; left: 64px; right: 64px; bottom: 120px; font-size: 22px; line-height: 1.4; color: var(--muted); border-top: 1px solid var(--line); padding-top: 22px; }
+  .handle { position: absolute; right: 64px; bottom: 54px; font-size: 28px; font-weight: 700; }
+</style>
+</head>
+<body>
+<section class="slide">
+  <span class="date">DD MONTH YYYY</span>
+  <h1>10 hottest<br><em>repos today.</em></h1>
+  <div class="list">
+    <div class="row top"><div class="rank">01</div><div><div class="name">owner/repo-one</div><div class="what">One plain line on what it does</div></div><div class="stars">+0,000<small>today</small></div></div>
+    <div class="row"><div class="rank">02</div><div><div class="name">owner/repo-two</div><div class="what">One plain line on what it does</div></div><div class="stars">+0,000<small>today</small></div></div>
+    <div class="row"><div class="rank">03</div><div><div class="name">owner/repo-three</div><div class="what">One plain line on what it does</div></div><div class="stars">+0,000<small>today</small></div></div>
+  </div>
+  <p class="note">Star counts are the source's own and were not verified. Check each licence before you use a repo.</p>
+  <div class="handle">@yourhandle</div>
+</section>
+</body>
+</html>

@@ -1,0 +1,174 @@
+<title>Batch 107 Intake Report</title>
+<style>
+  /* Layout: single-column formal report, 880px measure; tables scroll inside their own wrappers.
+     Palette: ink-blue neutrals, one deep teal accent, semantic green/amber/red for status only.
+     Type: Aptos (the owner's house font) with system fallbacks; title 32pt, headings 14pt, body 11pt. */
+  :root {
+    --bg: #f6f7f9; --surface: #ffffff; --fg: #1b2330; --muted: #5a6577; --line: #d9dee6;
+    --accent: #0f5d6b; --accent-soft: #e2f0f2;
+    --ok: #17703a; --ok-bg: #e3f3e8; --warn: #8a5a00; --warn-bg: #fbefd3; --bad: #a11d2a; --bad-bg: #fbe3e5;
+    --code-bg: #eef1f5;
+    --font: Aptos, "Segoe UI Variable Text", "Segoe UI", system-ui, -apple-system, Roboto, sans-serif;
+    --mono: ui-monospace, "SF Mono", Consolas, monospace;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #11161e; --surface: #181f2a; --fg: #e6eaf0; --muted: #9aa5b6; --line: #2c3646;
+      --accent: #6cc3d1; --accent-soft: #17323a;
+      --ok: #6fd18f; --ok-bg: #173824; --warn: #f0c261; --warn-bg: #3a2e12; --bad: #ff8d98; --bad-bg: #3d1a1f;
+      --code-bg: #0e131a; color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #11161e; --surface: #181f2a; --fg: #e6eaf0; --muted: #9aa5b6; --line: #2c3646;
+    --accent: #6cc3d1; --accent-soft: #17323a;
+    --ok: #6fd18f; --ok-bg: #173824; --warn: #f0c261; --warn-bg: #3a2e12; --bad: #ff8d98; --bad-bg: #3d1a1f;
+    --code-bg: #0e131a; color-scheme: dark;
+  }
+  * { box-sizing: border-box; }
+  body { background: var(--bg); color: var(--fg); font-family: var(--font); font-size: 11pt; line-height: 1.55; padding-inline: 16px; padding-block: 28px 64px; }
+  main { max-width: 880px; margin-inline: auto; display: flex; flex-direction: column; gap: 28px; }
+  header { display: flex; flex-direction: column; gap: 8px; border-bottom: 2px solid var(--accent); padding-bottom: 18px; }
+  .eyebrow { font-size: 9pt; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
+  h1 { font-size: 32pt; line-height: 1.1; margin: 0; font-weight: 700; text-wrap: balance; }
+  h2 { font-size: 14pt; margin: 0 0 10px; font-weight: 700; color: var(--accent); text-wrap: balance; }
+  p { margin: 0 0 10px; max-width: 75ch; }
+  section { background: var(--surface); border: 1px solid var(--line); border-radius: 6px; padding: 20px 22px; min-width: 0; }
+  .lede { font-size: 11pt; color: var(--muted); max-width: 70ch; margin: 0; }
+  .truth { border-left: 4px solid var(--bad); background: var(--bad-bg); padding: 12px 16px; border-radius: 0 6px 6px 0; }
+  .truth p:last-child { margin-bottom: 0; }
+  .tw { overflow-x: auto; margin-block: 8px 4px; border: 1px solid var(--line); border-radius: 4px; }
+  table { border-collapse: collapse; width: 100%; min-width: 720px; font-size: 10pt; }
+  th, td { padding: 8px 10px; border-bottom: 1px solid var(--line); text-align: center; vertical-align: top; }
+  th { background: var(--accent-soft); color: var(--fg); font-weight: 700; font-size: 9.5pt; }
+  tr:last-child td { border-bottom: 0; }
+  td.l, th.l { text-align: center; } /* house rule: table content aligned top and centre */
+  .st { display: inline-block; padding: 1px 8px; border-radius: 10px; font-size: 9pt; font-weight: 700; white-space: nowrap; }
+  .st.ok { background: var(--ok-bg); color: var(--ok); } .st.warn { background: var(--warn-bg); color: var(--warn); } .st.bad { background: var(--bad-bg); color: var(--bad); }
+  .sw { display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 10px; margin-block: 8px; }
+  .sw div { border: 1px solid var(--line); border-radius: 4px; overflow: hidden; font-size: 9pt; text-align: center; }
+  .sw i { display: block; height: 44px; }
+  .sw span { display: block; padding: 4px 6px; font-family: var(--mono); }
+  .prompt { position: relative; margin-block: 10px; }
+  .prompt pre { margin: 0; white-space: pre-wrap; background: var(--code-bg); border: 1px solid var(--line); border-radius: 4px; padding: 12px 84px 12px 12px; font-family: var(--mono); font-size: 9.5pt; line-height: 1.5; }
+  .prompt b { display: block; font-family: var(--font); font-size: 10pt; margin-bottom: 4px; }
+  .prompt button { position: absolute; top: 30px; right: 8px; font: inherit; font-size: 9pt; padding: 4px 10px; border-radius: 4px; border: 1px solid var(--accent); background: var(--surface); color: var(--accent); cursor: pointer; }
+  .prompt button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  ul { margin: 0 0 10px; padding-left: 20px; } li { margin-bottom: 4px; max-width: 75ch; }
+  code { font-family: var(--mono); font-size: 9.5pt; background: var(--code-bg); padding: 1px 4px; border-radius: 3px; }
+  footer { color: var(--muted); font-size: 9.5pt; }
+</style><main>
+<header><span class="eyebrow">Intake report · iCloud Photos, 1 archive (28 images, 3 videos) · 5 October 2026</span>
+<h1>Batch 107 Intake Report</h1>
+<p class="lede">Seven creators' carousels and videos turned into 6 skills, 5 commands, 2 runnable scripts, 3 design templates, eighteen repos cloned and read, and a user-run install script. Prepared for the owner of the business repository.</p></header>
+
+<section class="truth"><h2>What you should know first</h2>
+<p><b>The "workflow, not one prompt" carousel is advice, not evidence, and one slide is missing.</b> Slide 2 of 10 was not in the upload. The eight steps are sensible, but nothing on the slides shows the chain beats a single well-written prompt, and asking a model to critique its own output shares its blind spots, so step 07's "check for accuracy" is not verification. [Certain]</p>
+<p><b>The Cal.com tool on the "open-source" slide is a different product from the one you probably mean.</b> The <code>calcom/cal.com</code> repository I cloned now describes itself as Cal.diy: MIT-licensed, enterprise features (Teams, Organizations, Insights, Workflows, SSO) removed, and "strictly recommended for personal, non-production use". Businesses are pointed to the paid Cal.com. Dify is not plain open source (no multi-tenant service, no logo removal without a licence), n8n uses the Sustainable Use License, Sentry's MCP server is FSL-1.1-Apache-2.0, OpenMontage is AGPL-3.0 and Open WebUI has a branding clause. I read each licence file. [Certain]</p>
+<p><b>The bug-catching plugins exist, but the install counts and star counts are the creator's.</b> Superpowers, Context7, Security Guidance, Sentry and Code Review are all in the <code>claude-plugins-official</code> marketplace file I read. The "294.9k stars", "241,800 installs" and "438,525 installs" could not be checked because the GitHub API is blocked here, and the slide's "only 80%+ confident issues" setting for Code Review was not found in code. Two of them (Context7, Sentry) are already in your <code>.mcp.json</code>. [Certain]</p>
+<p><b>"5 tools everyone will be using in 2027" is a prediction, not a finding.</b> SERPtag was not found; Cursor, Claude and ManyChat are paid products. [Likely]</p>
+<p><b>The two code videos were transcribed and run.</b> Both 16-line numpy scripts are in <code>scripts/</code> with my own checks added; they reproduce the videos' figures (attention weight for "it": animal 0.85, street 0.05; bell curve 68-95-99.7). They are teaching toys: real returns have fat tails, and real attention uses learned matrices. [Certain]</p>
+<p><b>Nothing was installed and no connector was changed.</b> The batch 104 OpenFlowKit <code>.mcp.json</code> entry is still unapplied (your decision). Midpage Legal Research, Sentry and Supabase connectors still need authorisation by you in a session that can run the sign-in. [Certain]</p></section>
+
+<section><h2>1. Inventory of the upload</h2><div class="tw"><table>
+<tr><th class="l">Source</th><th>Items</th><th class="l">Content</th><th class="l">Outcome</th></tr>
+<tr><td class="l">@ai.am.claude, "Stop using Claude one prompt at a time"</td><td>9 images (slide 2 of 10 missing)</td><td class="l">Eight-step prompt workflow with an example prompt per step</td><td class="l">Skill <code>claude-workflow-8-steps</code>, command <code>/claude-workflow</code>, template <code>prompt-step-red-cream</code></td></tr>
+<tr><td class="l">@awayfromlovable, "Top 5 Claude Code plugins that catch bugs"</td><td>7 images</td><td class="l">Superpowers, Context7, Security Guidance, Sentry, Code Review</td><td class="l">Skill <code>claude-bug-plugins-5</code>, command <code>/bug-plugin-pick</code></td></tr>
+<tr><td class="l">"5 open-source tools that shouldn't be free, Part 3"</td><td>6 images</td><td class="l">Penpot, Cal.com, Open WebUI, Browser Use, Dify</td><td class="l">Skill <code>oss-tools-part3-checked</code></td></tr>
+<tr><td class="l">"5 tools everyone will be using in 2027"</td><td>remaining images</td><td class="l">n8n, SERPtag, Cursor, Claude, ManyChat (save cards)</td><td class="l">Covered in the same skill</td></tr>
+<tr><td class="l">@quantfinancetogo, "The Bell Curve" (part 4)</td><td>1 video, 144 s</td><td class="l">Simulated Plinko board, random walks, 68-95-99.7, fat tails; 16 lines of numpy</td><td class="l">Skill <code>quant-bell-curve-part4</code>, script, command <code>/bell-curve</code>, template <code>quant-code-pane-dark</code></td></tr>
+<tr><td class="l">@machinelearningtogo, "Attention" (part 21)</td><td>1 video, 103 s</td><td class="l">Query, key, value, match, mix; 16 lines of numpy</td><td class="l">Skill <code>ml-attention-part21</code>, script, command <code>/attention-explain</code></td></tr>
+<tr><td class="l">@githubnow, "10 hottest GitHub repos today"</td><td>1 video, 73 s</td><td class="l">Ten trending repos with today's stars</td><td class="l">Skill <code>github-trending-top10-oct5</code>, command <code>/trending-pick</code>, template <code>trending-top10-leaderboard</code></td></tr></table></div></section>
+
+<section><h2>2. Your instructions against what the files contained</h2><div class="tw"><table>
+<tr><th class="l">Instruction</th><th class="l">Found</th><th>Status</th></tr>
+<tr><td class="l">Repos, skills, procedures, commands, tools to clone, create, install</td><td class="l">18 repos cloned shallowly and read; 6 skills and 5 commands created; plugin install lines written for you to run</td><td><span class="st warn">Created, not installed</span></td></tr>
+<tr><td class="l">Prompts into commands or skills</td><td class="l">Eight quoted prompts turned into one skill and one command; nine copy-paste prompts below</td><td><span class="st ok">Done</span></td></tr>
+<tr><td class="l">Instructions for actions to execute</td><td class="l">Plugin installs (run inside Claude Code) and per-repo installers</td><td><span class="st warn">Handed to you; installing in a cloud session would not persist</span></td></tr>
+<tr><td class="l">Design content into templates and themes</td><td class="l">Red-cream workflow, night leaderboard, night amber code</td><td><span class="st ok">3 templates, 3 theme tables</span></td></tr>
+<tr><td class="l">Guide to build agents</td><td class="l">None; the workflow carousel is prompting advice and the videos teach statistics and attention</td><td><span class="st warn">Not present</span></td></tr>
+<tr><td class="l">References to connectors</td><td class="l">Context7 and Sentry (already in <code>.mcp.json</code>); no edit attempted since the earlier denial</td><td><span class="st warn">No change</span></td></tr></table></div></section>
+
+<section><h2>3. Repo register (read 5 October 2026)</h2><div class="tw"><table>
+<tr><th class="l">Repo</th><th>Licence</th><th class="l">Install route in README</th><th class="l">Flag</th></tr>
+<tr><td class="l">obra/superpowers</td><td>MIT</td><td class="l">/plugin install superpowers@claude-plugins-official</td><td class="l">In the official marketplace file</td></tr>
+<tr><td class="l">upstash/context7</td><td>MIT</td><td class="l">Hosted MCP server; plugin in marketplace</td><td class="l">Already in .mcp.json</td></tr>
+<tr><td class="l">getsentry/sentry-mcp</td><td>FSL-1.1-Apache-2.0</td><td class="l">Marketplace plugin; Sentry account</td><td class="l">Source-available, not open source yet</td></tr>
+<tr><td class="l">anthropics/claude-plugins-official</td><td>Apache-2.0</td><td class="l">Marketplace; holds security-guidance and code-review</td><td class="l">Slide attributes them to anthropics/claude-code</td></tr>
+<tr><td class="l">penpot/penpot</td><td>MPL-2.0</td><td class="l">Docker self-host</td><td class="l">Weak copyleft</td></tr>
+<tr><td class="l">calcom/cal.com</td><td>MIT</td><td class="l">Self-host</td><td class="l">Now Cal.diy; personal use; no enterprise features</td></tr>
+<tr><td class="l">browser-use/browser-use</td><td>MIT</td><td class="l">pip package</td><td class="l">Drives a real browser</td></tr>
+<tr><td class="l">langgenius/dify</td><td>Modified Apache-2.0</td><td class="l">Docker</td><td class="l">No multi-tenant; keep logo</td></tr>
+<tr><td class="l">n8n-io/n8n</td><td>Sustainable Use + Enterprise</td><td class="l">npm or Docker</td><td class="l">Source-available</td></tr>
+<tr><td class="l">DietrichGebert/ponytail</td><td>MIT</td><td class="l">/plugin marketplace add, then install</td><td class="l">Benchmark is the author's (n=4)</td></tr>
+<tr><td class="l">Panniantong/Agent-Reach</td><td>MIT</td><td class="l">agent-reach install (dry-run available)</td><td class="l">README in Chinese</td></tr>
+<tr><td class="l">thedotmack/claude-mem</td><td>Apache-2.0</td><td class="l">npx claude-mem install</td><td class="l">Read what it stores</td></tr>
+<tr><td class="l">OpenCut-app/OpenCut</td><td>MIT</td><td class="l">Build from source</td><td class="l"></td></tr>
+<tr><td class="l">pingdotgg/t3code</td><td>MIT</td><td class="l">brew cask</td><td class="l">README shows a curl-to-shell line: not used</td></tr>
+<tr><td class="l">calesthio/OpenMontage</td><td>AGPL-3.0</td><td class="l">git clone</td><td class="l">Network copyleft</td></tr>
+<tr><td class="l">tester-army/e2e</td><td>Apache-2.0</td><td class="l">npx e2e init</td><td class="l"></td></tr>
+<tr><td class="l">addyosmani/agent-skills</td><td>MIT</td><td class="l">npx skills add</td><td class="l">25 skills</td></tr>
+<tr><td class="l">coreyhaines31/marketingskills</td><td>MIT</td><td class="l">npx skills add</td><td class="l"></td></tr></table></div>
+<p>Not re-read this batch: pbakaus/impeccable (covered in an earlier batch) and Open WebUI (licence recorded in batch 106).</p></section>
+
+<section><h2>4. Notes on the three videos</h2><div class="tw"><table>
+<tr><th class="l">Video</th><th class="l">What I verified</th><th class="l">Not verified</th></tr>
+<tr><td class="l">Bell curve</td><td class="l">Transcribed the final-frame code, ran it: counts pile near 6, walk spread 19.9, shares 0.682 / 0.955 / 0.997, 16 / 32 / 48% a year, about 1 in 360 beyond 3 sigma</td><td class="l">The animation, and the video's claim about fat tails (shown, not tested)</td></tr>
+<tr><td class="l">Attention</td><td class="l">Transcribed the code, ran it: "it" attends to animal 0.85 and street 0.05</td><td class="l">The narration; I read frames only</td></tr>
+<tr><td class="l">GitHub top 10</td><td class="l">Repo names and ranks from frames; licences and install routes from the clones</td><td class="l">Today-stars and totals; voiceover captions were only partly legible</td></tr></table></div></section>
+
+<section><h2>5. Design templates and themes</h2><div class="tw"><table>
+<tr><th class="l">Template</th><th class="l">Canvas</th><th class="l">Theme colours</th></tr>
+<tr><td class="l"><code>prompt-step-red-cream</code></td><td>1080×1080</td><td class="l">cream #FAF7EF, red #DE2918, dark red #5F0904, stone #E5E0D4 (all sampled)</td></tr>
+<tr><td class="l"><code>trending-top10-leaderboard</code></td><td>1080×1920</td><td class="l">bg #0D1117, green #3FB950 (eyeballed)</td></tr>
+<tr><td class="l"><code>quant-code-pane-dark</code></td><td>1080×1920</td><td class="l">bg #08090E, panel #0C0F16 (sampled), amber #F2A93B (eyeballed)</td></tr></table></div>
+<div class="sw"><div><i style="background:#FAF7EF"></i><span>#FAF7EF</span></div><div><i style="background:#DE2918"></i><span>#DE2918</span></div><div><i style="background:#5F0904"></i><span>#5F0904</span></div><div><i style="background:#0D1117"></i><span>#0D1117</span></div><div><i style="background:#3FB950"></i><span>#3FB950</span></div><div><i style="background:#08090E"></i><span>#08090E</span></div><div><i style="background:#F2A93B"></i><span>#F2A93B</span></div></div>
+<p>All use placeholder handles. No source illustration, animation or caption copy was reused. Rendered in headless Chromium with overlap and containment checks; two layout bugs on the first render were fixed.</p></section>
+
+<section><h2>6. Copy-paste prompts and commands</h2>
+<p>After restarting Claude Code the commands exist: <code>/claude-workflow</code>, <code>/bug-plugin-pick</code>, <code>/trending-pick</code>, <code>/attention-explain</code>, <code>/bell-curve</code>. Prompts 1 to 6 are quoted from the carousel slides; 7 to 9 are mine.</p>
+<div class="prompt"><b>1. Step 01 to 02: raw material, then signal (quoted from slides 3 and 4)</b><pre>I'm going to give you raw information. First analyze it. Don't create the final output yet.
+
+[PASTE NOTES, EMAILS, DATA]
+
+Analyze this first. What matters most, what is missing, and what requires my attention?</pre><button class="cp" type="button">Copy</button></div>
+<div class="prompt"><b>2. Step 03: analysis into action (slide 5)</b><pre>Turn your analysis into an actionable plan. Prioritize the next steps and flag anything that requires a decision.</pre><button class="cp" type="button">Copy</button></div>
+<div class="prompt"><b>3. Step 04: the deliverable (slide 6)</b><pre>Using the approved action plan, create a concise follow-up email for the team.</pre><button class="cp" type="button">Copy</button></div>
+<div class="prompt"><b>4. Step 05: do not accept version one (slide 7)</b><pre>Critique this output before I use it. What is unclear, missing, repetitive or potentially misleading?
+
+Then improve it based on your critique.</pre><button class="cp" type="button">Copy</button></div>
+<div class="prompt"><b>5. Step 06: structure the prompt (slide 8)</b><pre>Create a step-by-step plan to [TASK].
+Goal: ...
+Context: ...
+Requirements: ...
+Format: ...
+Examples: ...
+Constraints: ...</pre><button class="cp" type="button">Copy</button></div>
+<div class="prompt"><b>6. Steps 07 and 08: review, then final (slides 9 and 10)</b><pre>Review this text and suggest improvements. Make it clearer, more professional and concise. Highlight what could be added, removed or rephrased.
+
+Then: Using the refined version, create a final document/presentation/report in [format]. Make it ready to use, with clear structure and key takeaways. Also suggest next steps.</pre><button class="cp" type="button">Copy</button></div>
+<div class="prompt"><b>7. Choose bug-catching plugins (mine)</b><pre>Use the claude-bug-plugins-5 skill. My project is [DESCRIBE] and it [does / does not] handle customer data. Recommend at most three of the five plugins, say what each sends where and what account it needs, flag Sentry as source-available, and give the install lines for me to run myself. Install nothing.</pre><button class="cp" type="button">Copy</button></div>
+<div class="prompt"><b>8. Check a licence before building on a tool (mine)</b><pre>Use the oss-tools-part3-checked skill. I want to use [TOOL] to [PURPOSE]. My use is [internal only / hosted for customers / resold]. Read its licence, tell me whether my use is allowed, and name what would require a commercial licence.</pre><button class="cp" type="button">Copy</button></div>
+<div class="prompt"><b>9. Learn attention (mine)</b><pre>Use the ml-attention-part21 skill. Run scripts/attention_from_scratch.py and explain query, key, value, match and mix to [AUDIENCE] using its output, then say what real models do differently.</pre><button class="cp" type="button">Copy</button></div>
+</section>
+
+<section><h2>7. Your next steps</h2><ul>
+<li>Restart Claude Code and run <code>/claude-workflow</code> on one real pile of notes. Judge whether steps 02 and 05 changed the result; that is the only evidence that matters.</li>
+<li>If you want bug-catching plugins, start with <code>code-review</code> and <code>security-guidance</code> on a repo you can afford to experiment on, and read each plugin first.</li>
+<li>Before any product relies on Dify, n8n, Cal.diy, Open WebUI or OpenMontage, decide whether its licence fits your use (internal, hosted for customers, or resold).</li>
+<li>Run <code>python scripts/attention_from_scratch.py</code> and <code>python scripts/bell_curve_from_scratch.py</code> if you want to learn the two ideas; both need only numpy.</li>
+<li>Open items from earlier batches: the OpenFlowKit <code>.mcp.json</code> entry, and authorising the Midpage, Sentry and Supabase connectors.</li>
+<li>Run <code>scripts/batch107-install.sh</code> on your own machine only if you want any of this; it asks before every step and pipes nothing into a shell.</li></ul></section>
+
+<footer>Sources: 28 JPEGs and 3 MP4s in one iCloud Photos archive. Licences, plugin names and install routes read from shallow clones on 5 October 2026. Videos were read from frames; there was no narration. Star, install and today-star counts are as printed on the slides and were not verified.</footer>
+</main>
+<script>
+document.querySelectorAll('.cp').forEach(function (b) {
+  b.addEventListener('click', function () {
+    var t = b.parentNode.querySelector('pre');
+    function done() { b.textContent = 'Copied'; setTimeout(function () { b.textContent = 'Copy'; }, 1500); }
+    function fb() { var r = document.createRange(); r.selectNodeContents(t); var s = getSelection(); s.removeAllRanges(); s.addRange(r); b.textContent = 'Selected'; }
+    try { navigator.clipboard.writeText(t.textContent).then(done, fb); } catch (e) { fb(); }
+  });
+});
+</script>
