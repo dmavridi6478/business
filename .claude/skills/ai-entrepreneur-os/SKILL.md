@@ -1,11 +1,11 @@
 ---
 name: ai-entrepreneur-os
-description: Run and extend the AI Entrepreneur OS — a Claude Code operating system of 25 draft-only subagents (os-*) organised as a Brain (chief of staff, priority, approval, business analyst, watchdog) plus five modules (Marketing, Sales, Finance, Research & Offer, Customer Success), a knowledge layer (docs/ai-os/ops and rules) and a human approval gate. Use when asked to run the morning page, route a business task to the right agent, add or promote an OS agent, set approval limits, or decide which model tier an agent should run on. Built from the ReStructure AI "Entire AI Entrepreneur Operating System" video plus the "Claude manages 50 agents" orchestrator stack video (Batch 98).
+description: Run and extend the AI Entrepreneur OS — a Claude Code operating system of 28 draft-only subagents (os-*) organised as a Brain (chief of staff, priority, approval, business analyst, watchdog) plus five modules (Marketing, Sales, Finance, Research & Offer, Customer Success), a knowledge layer (docs/ai-os/ops and rules) and a human approval gate. Use when asked to run the morning page, route a business task to the right agent, add or promote an OS agent, set approval limits, or decide which model tier an agent should run on. Built from the ReStructure AI "Entire AI Entrepreneur Operating System" video plus the "Claude manages 50 agents" orchestrator stack video (Batch 98).
 ---
 
 # AI Entrepreneur OS
 
-**What it is:** 25 draft-only specialists run by commands in the main session (`/os-route`, `/os-run-module`, `/os-morning-page`). Agents never call agents: handoffs are files, and the commands do the calling. `os-chief-of-staff` writes a validated routing plan or assembles the one-page **money, leads, your top 3** briefing. Specialists draft; a human approves; nothing leaves the building otherwise.
+**What it is:** 28 draft-only specialists run by commands in the main session (`/os-route`, `/os-run-module`, `/os-morning-page`). Agents never call agents: handoffs are files, and the commands do the calling. `os-chief-of-staff` writes a validated routing plan or assembles the one-page **money, leads, your top 3** briefing. Specialists draft; a human approves; nothing leaves the building otherwise.
 
 **Read first:** `docs/ai-os/README.md` (architecture + build order) and `docs/ai-os/rules/*` (permissions, limits, compliance).
 
@@ -15,10 +15,10 @@ description: Run and extend the AI Entrepreneur OS — a Claude Code operating s
 |---|---|
 | **Brain** | `os-chief-of-staff` · `os-priority` · `os-approval` · `os-business-analyst` · `os-watchdog` |
 | **Marketing — Grow** | `os-ads` (SCALE IT / FIX THE HOOK / PAUSE IT) · `os-seo` · `os-email-sms` · `os-lead-magnet` |
-| **Sales — Find** | `os-response` (HOT/WARM/COLD) · `os-followup` · `os-close` · `os-prospect` |
+| **Sales — Find** | `os-response` (HOT/WARM/COLD) · `os-qualify` (budget/need/timeline/use case) · `os-booking` · `os-followup` · `os-close` · `os-prospect` |
 | **Finance — Protect** | `os-bookkeeping` · `os-invoice` · `os-profit` · `os-cashflow` |
 | **Research & Offer — Find** | `os-market` · `os-pain-point` · `os-offer-builder` · `os-pricing` |
-| **Customer Success — Run** | `os-onboarding` (Day 0) · `os-checkin` (Day 7) · `os-health` (Day 30) · `os-referral` (Day 90) |
+| **Customer Success — Run** | `os-onboarding` (Day 0) · `os-checkin` (Day 7) · `os-health` (Day 30) · `os-referral` (Day 90) · `os-support` (common customer questions, from `ops/support-faq.md`) |
 
 Names for the Customer Success agents are inferred from the Day 0/7/30/90 steps on screen (the agent labels were not legible). The Operations, Content & Design, Risk & Legal and Data & Observability modules are **not built** — their contents were unreadable in the source frames.
 

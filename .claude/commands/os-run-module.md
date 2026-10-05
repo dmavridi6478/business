@@ -8,13 +8,13 @@ Run the **$1** module of the AI Entrepreneur OS in DRAFT mode. Task / inputs: $2
 
 Module → agents (run in this order, each as its own subagent):
 - **marketing**: `os-ads` → `os-seo` → `os-email-sms` → `os-lead-magnet`
-- **sales**: `os-response` → `os-followup` → `os-close` → `os-prospect`
+- **sales**: `os-response` → `os-qualify` → `os-booking` → `os-followup` → `os-close` → `os-prospect`
 - **finance**: `os-bookkeeping` → `os-invoice` → `os-profit` → `os-cashflow`
 - **research**: `os-market` → `os-pain-point` → `os-offer-builder` → `os-pricing`
-- **success**: `os-onboarding` → `os-checkin` → `os-health` → `os-referral`
+- **success**: `os-onboarding` → `os-support` → `os-checkin` → `os-health` → `os-referral`
 
 Rules:
-0. Before any agent that drafts a message to a person (`os-response`, `os-followup`, `os-email-sms`, `os-referral`), run `python3 scripts/os_registry.py screen --in <audience file> --channel <email|sms|phone> --name <module>` and pass the screened file's path to that agent. After `os-prospect`, screen its list the same way. Before `os-close`, run `python3 scripts/os_registry.py prices check`; if it exits 1, skip `os-close` and say the price list is empty. Pass files between agents by path; agents cannot call each other.
+0. Before any agent that drafts a message to a person (`os-response`, `os-qualify`, `os-booking`, `os-support`, `os-followup`, `os-email-sms`, `os-referral`), run `python3 scripts/os_registry.py screen --in <audience file> --channel <email|sms|phone> --name <module>` and pass the screened file's path to that agent. After `os-prospect`, screen its list the same way. Before `os-close`, run `python3 scripts/os_registry.py prices check`; if it exits 1, skip `os-close` and say the price list is empty. Pass files between agents by path; agents cannot call each other.
 1. Read `docs/ai-os/rules/*.md` first. If the module needs a value that is unset (OWNER MUST SET), stop and ask me for it.
 2. Skip any agent whose inputs do not exist; say "skipped — no input" rather than inventing input.
 3. Every agent writes to `data/ai-os/drafts/`. Nothing is sent, posted, spent or changed.

@@ -425,7 +425,7 @@ class AgentInvariantTests(unittest.TestCase):
 
     def test_count_and_forbidden_tools(self):
         ag = self.agents()
-        self.assertEqual(len(ag), 25)
+        self.assertEqual(len(ag), 28)
         for name, path in ag.items():
             tools = self.tools(path)
             for t in tools:
@@ -1172,7 +1172,7 @@ class InjectionFlagTests(Base):
 
     def test_every_os_agent_can_create_a_flag(self):
         names = [n for n in AgentInvariantTests().agents()]
-        self.assertEqual(len(names), 25)
+        self.assertEqual(len(names), 28)
         for n in names:
             self.assertTrue(self.allowed(self.flag(n, "2026-10-01-%s.md" % n)), n)
 

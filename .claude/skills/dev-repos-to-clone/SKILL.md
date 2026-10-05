@@ -123,3 +123,140 @@ All six verified live with `git ls-remote` on 2026-10-01; the first five were al
 | [`firebase/firebase-ios-sdk`](https://github.com/firebase/firebase-ios-sdk) | Mobile SDK | Firebase for iOS/macOS/tvOS/watchOS (Auth, Firestore, Messaging, Crashlytics…) | not checked | **not cloned** — large, and irrelevant unless you ship an Apple app |
 
 **Already tracked (no new action):** SearXNG, Home Assistant, Pi-hole, Vaultwarden, Nextcloud — see `self-hosted-docker-stack`, `oss-ai-alternatives`, `homelab-*` skills and Batch 97.
+
+## Additional repos (Batch 99 - @joshualevi.ai, @replace.so, @dotdevs, @githubnow, 30 Sep - 1 Oct 2026)
+
+Verified live with `git ls-remote` (or `npm view`) on 2026-10-01. Four were also cloned shallowly into `repos/` (git-ignored) to read the licence and README: brigade, hindsight, codegraph, nanochat (all MIT). Star counts on the cards are screenshots, not re-verified.
+
+| Repo | Category | What it is | Licence | Status here |
+|---|---|---|---|---|
+| [`spinabot/brigade`](https://github.com/spinabot/brigade) | Agent ecosystem | Self-hosted crew of AI agents with shared memory, multiple model providers and messaging channels; `npm i -g @spinabot/brigade` (npm 1.39.0) | MIT | cloned for reading; **not installed** (run it only in a sandbox: it ships a gateway and tunnel features) |
+| [`vectorize-io/hindsight`](https://github.com/vectorize-io/hindsight) | Agent memory | retain / recall / reflect memory for agents; `pip install hindsight-api`, Docker image, Python and TS clients | MIT | cloned for reading; documented only |
+| [`colbymchenry/codegraph`](https://github.com/colbymchenry/codegraph) | Code index MCP | Local semantic code graph that agents query over MCP; installer auto-configures Claude Code and others | MIT | cloned for reading; **not installed**: the README installs with `curl ... | sh`, read it first |
+| [`karpathy/nanochat`](https://github.com/karpathy/nanochat) | LLM training | Minimal full pipeline to train a small ChatGPT-style model on one GPU node; `runs/speedrun.sh` | MIT | cloned for reading; needs a multi-GPU node, documented only |
+| [`rohitg00/ai-engineering-from-scratch`](https://github.com/rohitg00/ai-engineering-from-scratch) | Course | 523 lessons / 20 phases per the card; every lesson ends with a prompt, skill, agent or MCP server | MIT (card) | verified, not cloned |
+| [`microsoft/mcp-for-beginners`](https://github.com/microsoft/mcp-for-beginners) | Course | MCP curriculum with .NET, Java, TypeScript, JavaScript, Rust, Python code | not checked | verified, not cloned |
+| [`microsoft/generative-ai-for-beginners`](https://github.com/microsoft/generative-ai-for-beginners) | Course | 21 lessons, Python and TypeScript | not checked | verified, not cloned |
+| [`huggingface/agents-course`](https://github.com/huggingface/agents-course) | Course | 4 units: smolagents, LlamaIndex, LangGraph; free certificate | not checked | verified, not cloned |
+| [`anthropics/courses`](https://github.com/anthropics/courses) | Course | Anthropic's own courses (API, prompt engineering, evals, tool use) | not checked | verified; skill `anthropic-courses` already exists |
+| [`patchy631/ai-engineering-hub`](https://github.com/patchy631/ai-engineering-hub) | Projects | 93 projects across LLMs, RAG and agents | not checked | verified; already tracked in README |
+| [`stablyai/orca`](https://github.com/stablyai/orca) | Agent IDE | Parallel coding agents in isolated worktrees | not checked | verified; **README had it as `stab1yai/orca` (OCR typo) - corrected** |
+| [`Skyvern-AI/skyvern`](https://github.com/Skyvern-AI/skyvern) | Browser automation | AI browser agents; MCP integration for Claude Code, Cursor, Codex; free tier 5,000 credits per the video | not checked | verified; **README had it as `Skyvern-AutoGPT/skyvern` - corrected** |
+| [`n8n-io/n8n`](https://github.com/n8n-io/n8n) | Workflow automation | Fair-code platform; **check the licence before embedding or reselling** (the card says so) | fair-code | verified; many `n8n-*` skills already exist |
+| [`langfuse/langfuse`](https://github.com/langfuse/langfuse), [`ollama/ollama`](https://github.com/ollama/ollama), [`expo/expo`](https://github.com/expo/expo), [`supabase/supabase`](https://github.com/supabase/supabase) | App stack | the @dotdevs "start with one missing piece" set: mobile (Expo), backend (Supabase), AI quality (Langfuse), local models (Ollama), workflows (n8n) | MIT / Apache-2.0 / MIT / Apache-2.0 (check each) | verified; too large to clone, documented only |
+| `paperclipai/paperclip`, `ComposioHQ/awesome-claude-skills`, `alirezarezvani/claude-skills`, `public-apis/public-apis`, `VectifyAI/PageIndex` | various | seen again on these slides | - | already tracked in earlier batches; no new action |
+
+**Could not verify from the card alone (no repo, package or owner shown):** iFixAi ("audits AI agents for mistakes", 17k stars on the card), Magpie ("one local gateway for agents' models", 3.7k), fframes ("video vibe coding framework", Rust + SVG, 1.4k). The npm names `fframes`, `ifixai` and `magpie-ai` do not exist. Find the real repo from the source video before cloning.
+
+**Not a repo:** the SkillDrop AI and aicareersuite carousels (see `event-planner`, `claude-11-ways`), and the @entrp0 tool-stack video (see `docs/ai-os/ops/tool-stack.md`).
+
+## Additional repos (Batch 100 - @joshualevi.ai security list, @replace.so, @githubnow, @ai.easily; 1-2 Oct 2026)
+
+All 15 verified live with `git ls-remote` on 2026-10-02. Licences were read from each repo's root LICENSE file where one exists. None were cloned: the scanners are installed or documented in `agent-output-scanners`, and the apps are large.
+
+| Repo | Category | What it is | Licence | Status here |
+|---|---|---|---|---|
+| [`gitleaks/gitleaks`](https://github.com/gitleaks/gitleaks) | Secret scanning | Keys and tokens in code and history; pre-commit hook | MIT | **installed and run** (`go install github.com/zricethezav/gitleaks/v8@latest`: the `gitleaks/` path fails) |
+| [`google/osv-scanner`](https://github.com/google/osv-scanner) | Dependency scanning | Checks lockfiles against OSV; guided remediation | Apache-2.0 | **installed and run** (v2.6.0) |
+| [`trufflesecurity/trufflehog`](https://github.com/trufflesecurity/trufflehog) | Secret scanning | Finds leaked credentials and verifies them against the provider | **AGPL-3.0** | documented; active verification sends credentials to providers |
+| [`semgrep/semgrep`](https://github.com/semgrep/semgrep) | Static analysis | ~30 languages, your own rules | LGPL-2.1 (rules separate) | documented |
+| [`snyk/agent-scan`](https://github.com/snyk/agent-scan) | Agent security | Scans agents, MCP servers and skills for injection; `uvx snyk-agent-scan`; needs `SNYK_TOKEN` | Apache-2.0 | documented; not run (needs your account) |
+| [`NVIDIA/garak`](https://github.com/NVIDIA/garak) | LLM red-teaming | Probes a model with jailbreaks and injection | Apache-2.0 | documented |
+| [`getsops/sops`](https://github.com/getsops/sops) | Secrets in git | Encrypted YAML/JSON/ENV files (KMS, age, PGP) | MPL-2.0 | documented |
+| [`FlowiseAI/Flowise`](https://github.com/FlowiseAI/Flowise) | Visual agent builder | Drag-and-drop AI agents and workflows; 55k stars on the card | no root LICENSE file found | verified. **The screenshot of its site shows a banner "We're sunsetting Flowise". I could not confirm it in the README, so check before building on it.** |
+| [`hexastack/hexabot`](https://github.com/hexastack/hexabot) | Chat automation | Self-hosted workflows for conversations, tasks and schedules, MCP support (v3) | no root LICENSE file found | verified |
+| [`lfnovo/open-notebook`](https://github.com/lfnovo/open-notebook) | Research notebook | Private NotebookLM-style tool with podcast generation | MIT | verified |
+| [`dyad-sh/dyad`](https://github.com/dyad-sh/dyad) | App builder | Local open-source AI app builder with your own API keys | mixed (the LICENSE says "portions" differ) | verified |
+| [`robbietilton/Compositor`](https://github.com/robbietilton/Compositor) | Mac image editor | Layers, masks, filters, PSD support | MIT | verified; macOS only |
+| [`pablostanley/yoinks`](https://github.com/pablostanley/yoinks) | Terminal video downloader | yt-dlp front end with an Ink UI | MIT | verified; **documented only**: downloading from most video sites breaks their terms or the owner's copyright unless you own or are licensed the content |
+| [`androoAGI/starnet`](https://github.com/androoAGI/starnet) | Agent desktop | Runs several agents at once in a pixel-art station; default branch `feat/harness-backend` | MIT | verified |
+| [`flutter/flutter`](https://github.com/flutter/flutter) | App SDK | One Dart codebase for iOS, Android, web and desktop | not checked | verified; too large to clone |
+
+Also seen, already covered: `anthropics/skills` (see `claude-5-official-skills`).
+
+## Additional repos (Batch 101 - @githubnow daily briefings 2-3 Oct 2026, @replace.so, @joshualevi.ai, @ai.easily)
+
+Verified live with `git ls-remote` on 2026-10-03. Licences read from the root LICENSE of the cloned copies. Star deltas on the cards ("+1,141 today") are the creator's screenshots and were not re-verified.
+
+| Repo | Category | What it is | Licence | Status here |
+|---|---|---|---|---|
+| [`humanlayer/skills`](https://github.com/humanlayer/skills) | Claude Code skills | Six skills: `show-me`, `visual-pr`, `improve-claude-md`, `narrow-react-prop-types`, `build-iterated-agentic-loop`, `design-control-loop` | MIT | **installed** with `npx skills add humanlayer/skills`; scanned first for risky patterns (none found) |
+| [`mvschwarz/openrig`](https://github.com/mvschwarz/openrig) | Agent teams | Define persistent agent teams in YAML and boot them with one command; Claude Code, Codex and Pi in one rig; `npm install -g @openrig/cli` (needs Node 22 or 24 and tmux) | Apache-2.0 | cloned for reading; **not installed** (it runs agents and needs tmux; try in a sandbox) |
+| [`TencentCloud/Octop`](https://github.com/TencentCloud/Octop) | Self-hosted agents | Private multi-agent assistant with web dashboard, CLI, knowledge base and IM channels; single-process deployment | MIT | cloned for reading; **not installed**: its documented installer is `curl ... install.sh | bash` from a Tencent COS bucket, so read the script first |
+| [`JuliusBrussee/caveman`](https://github.com/JuliusBrussee/caveman) | Token optimiser | Strips prose from agent output; the card claims 65% fewer tokens and a JetBrains test on 86 tasks (unverified) | MIT (card) | already tracked; skill `caveman` exists |
+| [`thedotmack/claude-mem`](https://github.com/thedotmack/claude-mem) | Agent memory | Captures tool use and context, compresses and re-injects it in later sessions | not checked | verified; already tracked |
+| [`cloudflare/cloudflare-os`](https://github.com/cloudflare/cloudflare-os) | Agent workspace | Per-user sandboxed "gadgets" behind capability-based gatekeepers with human approval; +9,562 stars this month per the card | not checked | verified; already tracked |
+
+The @replace.so repo cards in these zips (Flowise, Hexabot, Dyad, Open-notebook, Compositor) and the @joshualevi.ai scanners were registered in Batch 100. `Flowise`: its site screenshot again shows the banner "We're sunsetting Flowise"; still unconfirmed, check before building on it.
+
+**Not repos:** the @the.wealth.lab MCP carousel (see `mcp-dev-team-6`), @tinrovicai (`grok-bot-guide`), @jeanbbttyct (`ai-app-stack-2026`), @clicksandranks (`five-websites-business`), @shiva.bytes loops (`claude-code-4-loops`), 51ultron motion sheet (`motion-16-effects`).
+
+## Additional repos (Batch 102 - @replace.so, @githubnow, Obsidian video; 3 Oct 2026)
+
+Verified live with `git ls-remote` on 2026-10-03. Licences read from the root licence file of a blobless shallow clone (no install, no code run). Star counts on the cards are the creator's screenshots and were not re-verified. Three repo owners were not on the slides and were found by web search, then confirmed with `git ls-remote`.
+
+| Repo | Category | What it is (card) | Licence | Status here |
+|---|---|---|---|---|
+| [`unslothai/unsloth`](https://github.com/unslothai/unsloth) | Local LLM studio | Run and fine-tune models on your machine; card claims 2x faster, 70% less VRAM | AGPL-3.0 (root COPYING; check per folder) | verified; **not installed** |
+| [`NousResearch/hermes-agent`](https://github.com/NousResearch/hermes-agent) | Self-improving agent | Learning loop that builds skills from use; Telegram/Discord/Slack/Signal gateway, cron | MIT | already tracked (`hermes-nousresearch`) |
+| [`coreyhaines31/marketingskills`](https://github.com/coreyhaines31/marketingskills) | Marketing skills | 100+ markdown skills (CRO, copy, SEO, analytics) | MIT | already installed (`*-corey-haines` skills) |
+| [`ggml-org/llama.cpp`](https://github.com/ggml-org/llama.cpp) | Local inference | C/C++ LLM and vision inference; card shows `irm https://llama.app/install.ps1 \| iex` | MIT | verified; the slide's installer pipes a script into the shell, so use a package manager or build from source |
+| [`CopilotKit/OpenBot`](https://github.com/CopilotKit/OpenBot) | Agent workplace | AI coworkers on your infrastructure with browser, files and tools; actions governed and recorded via AG-UI | MIT | verified; not installed |
+| [`makeev/alphai-tui`](https://github.com/makeev/alphai-tui) | Terminal dashboard | Rust TUI: quotes, candlesticks, AI-scored news, SEC Form 4; free AlphAI key for news (20 req/min, 100/day per its listing) | MIT | verified; not installed |
+| [`ChatbotXIO/ChatbotX`](https://github.com/ChatbotXIO/ChatbotX) | Chat marketing | Open-source omnichannel platform: flows, AI agents, inbox, CRM, broadcasts, CLI, MCP | **custom licence** (AhaChat LLC; read before self-hosting or reselling) | verified; not installed |
+| [`busabase/busabase`](https://github.com/busabase/busabase) | Agent workspace | Open-source database and workspace for AI agents; works with Claude Code, Codex, Cursor | MIT | verified; not installed |
+| [`jamiedavenport/capd`](https://github.com/jamiedavenport/capd) | Capture app (macOS 26+) | Local-first capture and full-text search, on-device OCR, CLI, read-only MCP | MIT | verified; macOS only; not installed |
+| [`svix/svix-webhooks`](https://github.com/svix/svix-webhooks) | Webhook service | Send webhooks through one API call with retries and signing handled | MIT | verified; not installed |
+| [`robbietilton/Compositor`](https://github.com/robbietilton/Compositor) | Image editor (macOS, Apple silicon) | Photoshop-style layers, masks, adjustments | MIT | already registered in Batch 100 |
+| [`owncloud/ocis`](https://github.com/owncloud/ocis) | File sync and sharing | ownCloud Infinite Scale: web, desktop and mobile clients, WebDAV, OpenID Connect | Apache-2.0 | verified; not installed |
+| [`athasdev/athas`](https://github.com/athasdev/athas) | Code editor | Lightweight cross-platform editor with agents, terminal, Git | AGPL-3.0 | verified; not installed |
+| [`uptimepage/uptimepage`](https://github.com/uptimepage/uptimepage) | Uptime monitoring | Multi-region checks, status pages, on-call alerts, REST API, Terraform | AGPL-3.0 | verified; not installed |
+| [`manaflow-ai/cmux`](https://github.com/manaflow-ai/cmux) | Terminal for agents (macOS) | Native terminal with attention rings and split panes for many agents (shown in the Obsidian video) | custom licence (read before use) | verified; not installed |
+
+**Not repos:** the 7 photoshoot prompt cards (`photoshoot-prompts-7`), the SalesDaily, Cyberman, NipPro, Lever, Reno Perry and Partaker infographics (skills in this batch), and the 9-skills and 50-use-cases infographics (`prompt-writing-9-skills`, `claude-50-use-cases`). The Obsidian "Second Brain for All Your Agents" video is covered by the existing `ai-second-brain` skill; its narration was not legible in the frames, so no new claims were added.
+
+
+
+## Additional repos (Batch 103 - @replace.so, @dotdevs, @githubnow, @shiva.bytes; 3 Oct 2026)
+
+Verified live with `git clone --filter=blob:none --no-checkout` on 2026-10-03; licences read from the root file only (no install, no code run). Owners come from the URL bars visible on the cards where legible; the rest were matched by name and confirmed to exist. Star counts on the cards are the creators' screenshots and were not re-verified.
+
+| Repo | Category | What it is (card) | Licence (root file) | Status here |
+|---|---|---|---|---|
+| [`trycompai/comp`](https://github.com/trycompai/comp) | Compliance | Open-source SOC 2, ISO 27001, HIPAA evidence automation | AGPL-3.0 | already tracked |
+| [`steel-dev/steel-browser`](https://github.com/steel-dev/steel-browser) | Browser for agents | Open-source browser API: sessions, scraping, screenshots, PDFs | Apache-2.0 | not installed |
+| [`traefik/traefik`](https://github.com/traefik/traefik) | Reverse proxy | HTTP reverse proxy and load balancer for Docker, Kubernetes | MIT | not installed |
+| [`excalidraw/excalidraw`](https://github.com/excalidraw/excalidraw) | Whiteboard | Collaborative hand-drawn diagrams | MIT | already tracked |
+| [`pentacent/keila`](https://github.com/pentacent/keila) | Newsletters | Open-source newsletter tool, SMTP or provider delivery | AGPL-3.0 | not installed |
+| [`toeverything/AFFiNE`](https://github.com/toeverything/AFFiNE) | Workspace | Local-first docs, whiteboards, tables, knowledge base | custom (read it) | not installed |
+| [`browser-use/jev-ultrafast`](https://github.com/browser-use/jev-ultrafast) | Browser agent | Open-source browser agent using structured page state | MIT | not installed |
+| [`Infisical/infisical`](https://github.com/Infisical/infisical) | Secrets | Secrets, certificates, keys and privileged access | open core: root licence plus separately licensed parts | not installed |
+| [`CoreBunch/Instatic`](https://github.com/CoreBunch/Instatic) | Visual CMS | Self-hosted visual CMS publishing plain HTML and CSS | MIT | not installed |
+| [`refactoringhq/tolaria`](https://github.com/refactoringhq/tolaria) | Notes | Desktop Markdown knowledge bases, Git-first | AGPL-3.0 | not installed |
+| [`hunvreus/devpush`](https://github.com/hunvreus/devpush) | Deploy platform | Self-hostable deploy-on-git-push for Python, Node, PHP, Docker apps | MIT | not installed |
+| [`docmost/docmost`](https://github.com/docmost/docmost) | Wiki | Open-source collaborative documentation | AGPL-3.0 | not installed |
+| [`papermark/papermark`](https://github.com/papermark/papermark) | Document sharing | Share documents with custom links and analytics | open core: root licence plus separately licensed parts | not installed |
+| [`BuilderIO/builder`](https://github.com/BuilderIO/builder) | Visual dev | Visual editing and code generation from Figma designs | MIT | already tracked |
+| [`AutomaApp/automa`](https://github.com/AutomaApp/automa) | Browser automation | Browser extension that connects blocks to automate tasks | mixed licences by folder | already tracked |
+| [`saleor/saleor`](https://github.com/saleor/saleor) | Commerce | GraphQL-native headless commerce | BSD-3-Clause | not installed |
+| [`vuestorefront/vue-storefront`](https://github.com/vuestorefront/vue-storefront) | Commerce frontend | Frontend platform for composable commerce | none at root | not installed |
+| [`reflex-dev/reflex`](https://github.com/reflex-dev/reflex) | Python web | Full-stack web apps in pure Python | Apache-2.0 | not installed |
+| [`joschan21/contentport`](https://github.com/joschan21/contentport) | Content | Open-source content engine for growing on Twitter | AGPL-3.0 | not installed |
+| [`hexabot-ai/hexabot`](https://github.com/hexabot-ai/hexabot) | Agents | AI workflows with actions, agents, memory, channels in TypeScript | Fair Core (source-available) | already tracked |
+| [`directus/directus`](https://github.com/directus/directus) | Backend | SQL to instant REST and GraphQL APIs, visual studio | Monospace Sustainable Core (source-available) | not installed |
+| [`tursodatabase/libsql`](https://github.com/tursodatabase/libsql) | Database | Open-source SQLite fork with embedded replicas, remote access | MIT | not installed |
+| [`screenpipe/screenpipe`](https://github.com/screenpipe/screenpipe) | Screen memory | Continuous local capture of screen and audio as context for agents | commercial licence | not installed; licence is commercial |
+| [`louislam/uptime-kuma`](https://github.com/louislam/uptime-kuma) | Monitoring | Self-hosted uptime monitoring and alerts | MIT | not installed |
+| [`supabase/supabase`](https://github.com/supabase/supabase) | Backend | Postgres, auth, storage | Apache-2.0 | already tracked |
+| [`henrygd/beszel`](https://github.com/henrygd/beszel) | Monitoring | Server resource and Docker stats | MIT | not installed |
+| [`FreshRSS/FreshRSS`](https://github.com/FreshRSS/FreshRSS) | RSS reader | Self-hosted reading queue | AGPL-3.0 | not installed |
+| [`linkwarden/linkwarden`](https://github.com/linkwarden/linkwarden) | Bookmarks | Collaborative bookmark manager with archived pages | AGPL-3.0 | not installed |
+| [`odoo/odoo`](https://github.com/odoo/odoo) | ERP | Modular ERP: CRM, accounting, inventory, HR, e-commerce | see COPYRIGHT file | not installed |
+| [`DietrichGebert/ponytail`](https://github.com/DietrichGebert/ponytail) | Agent prompt skill | Makes AI agents write less code, safely | MIT | already installed (ponytail skills) |
+| [`derv82/wifit3`](https://github.com/derv82/wifit3) | Wi-Fi auditing | USB Wi-Fi auditor with handshake capture, WPS attacks, Evil Twin, exports for hashcat | GPL-2.0 | NOT installed; dual-use, see note |
+
+**Licence flags:** AGPL-3.0 (comp, keila, tolaria, docmost, contentport, FreshRSS, linkwarden) means network use of a modified copy requires offering your source. Source-available, not open source: hexabot (Fair Core), directus (Monospace Sustainable Core), screenpipe (commercial licence). AFFiNE, Infisical and papermark are open core: the root licence covers part of the tree and other folders are separately licensed. vue-storefront and several learning repos have no licence file at the root. Odoo's root file points to a COPYRIGHT file; read it before use.
+
+**wifit3 (derv82):** a Wi-Fi attack toolkit (WPA handshake capture, WPS PixieDust and brute force, Evil Twin). It is legitimate for testing networks you own or are authorised in writing to test, and illegal against anyone else's. Registered for reading only. Not cloned for use and not added to any install script.
+
+**Not repos:** Slothy (a paid task app, shown as the creator's own product); the 25-repo list is in `data-ai-github-25` (owners not on the card, matched by title). Skills added: see the Batch 103 README entry.

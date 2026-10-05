@@ -13,6 +13,12 @@
       "skillPath": "skills/algorithmic-art/SKILL.md",
       "computedHash": "3bc4092c09804853186524c826bc0621b940bb6122c05b84496dff95388e6eef"
     },
+    "build-iterated-agentic-loop": {
+      "source": "humanlayer/skills",
+      "sourceType": "github",
+      "skillPath": "plugins/build-iterated-agentic-loop/skills/build-iterated-agentic-loop/SKILL.md",
+      "computedHash": "2a46b55d2e1ccfaae0a07dc8e8e96cc128f8bed175671d6840a616541840da9c"
+    },
     "claude-api": {
       "source": "anthropics/skills",
       "sourceType": "github",
@@ -36,6 +42,12 @@
       "sourceType": "github",
       "skillPath": "skills/debug-openshell-cluster/SKILL.md",
       "computedHash": "a28c694165f5621545f417a3d033e00921e73b4e998d74bbd71427d4fc8731e3"
+    },
+    "design-control-loop": {
+      "source": "humanlayer/skills",
+      "sourceType": "github",
+      "skillPath": "plugins/design-control-loop/skills/design-control-loop/SKILL.md",
+      "computedHash": "b71362e3506b6d44308feb0391a0c7ad982eba578201ca3c8aa414c912724c8a"
     },
     "discernment-nudge": {
       "source": "anthropics/skills",
@@ -67,17 +79,35 @@
       "skillPath": "skills/gpui-kit-design-guides/SKILL.md",
       "computedHash": "f5e085823154439a093fbfb947d522213c40842e1d06ebc611e033a854127c0b"
     },
+    "improve-claude-md": {
+      "source": "humanlayer/skills",
+      "sourceType": "github",
+      "skillPath": "plugins/improve-claude-md/skills/improve-claude-md/SKILL.md",
+      "computedHash": "a93226f53ffa6a2599c89fb983f3aed00c843c04071a7aa59ee3365141619d25"
+    },
     "mcp-builder": {
       "source": "anthropics/skills",
       "sourceType": "github",
       "skillPath": "skills/mcp-builder/SKILL.md",
       "computedHash": "0f4592dcb53cf2b5d6b7febee6b4152018b565551a1c29e3c612f57b218ab295"
     },
+    "narrow-react-prop-types": {
+      "source": "humanlayer/skills",
+      "sourceType": "github",
+      "skillPath": "plugins/narrow-react-prop-types/skills/narrow-react-prop-types/SKILL.md",
+      "computedHash": "f1fee2b6c197780aa61594b2019a1b8d8e3ec9d8818f62f024af54af8e879259"
+    },
     "openshell-cli": {
       "source": "NVIDIA/OpenShell",
       "sourceType": "github",
       "skillPath": "skills/openshell-cli/SKILL.md",
       "computedHash": "0cf9ccdf974b6881b97a3c93a9e6e2cc1836126e3776838f4a1806579f635ab2"
+    },
+    "show-me": {
+      "source": "humanlayer/skills",
+      "sourceType": "github",
+      "skillPath": "plugins/show-me/skills/show-me/SKILL.md",
+      "computedHash": "43766f53afe7eb9feba0bb7716590c35cbb8d39d4a91eddef50e9566a6f6ae19"
     },
     "skill-creator": {
       "source": "anthropics/skills",
@@ -96,6 +126,12 @@
       "sourceType": "github",
       "skillPath": "SKILL.md",
       "computedHash": "e566cd9af70769555a866c11a8037f326a699f600de200a9dde8518122fb0b32"
+    },
+    "visual-pr": {
+      "source": "humanlayer/skills",
+      "sourceType": "github",
+      "skillPath": "plugins/visual-pr/skills/visual-pr/SKILL.md",
+      "computedHash": "197904ade976018d9ce28e706323f969a6a87947994f46e3ffad78c46e70a716"
     },
     "webapp-testing": {
       "source": "anthropics/skills",

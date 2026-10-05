@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<!--
+  Template: gradient-prompt-orange
+  Style: @ai.blueprint "10 Claude prompts for vibe coding" - deep blue to violet gradient with an orange glow in the top-left corner and light-blue waves at the bottom,
+         a big "N." numeral in white or orange, a two-tone headline, the prompt in plain white text, an orange 12-ray starburst and a small icon (window, wrench, checklist).
+  Inspired by: Batch 101 iCloud photos (prompts 1, 2, 3, 4, 5, 7, 8, 9 and the cover).
+  Swap points: CARDS array [number, white part, orange part, prompt text, glyph], HANDLE.   1080 x 1080 shown at 36 %.
+-->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gradient Prompt Orange</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;800&display=swap" rel="stylesheet">
+<style>
+  :root { --s: 0.36; --orange: #ff6a2b; --ink: #ffffff; --deep: #0b1033; --mid: #2b1f9c; --sky: #1e6cf0; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: #0a0a16; padding: 24px; display: flex; flex-wrap: wrap; gap: 24px; font-family: 'Poppins', Arial, sans-serif; }
+  .frame { width: calc(1080px * var(--s)); height: calc(1080px * var(--s)); }
+  .slide { width: 1080px; height: 1080px; transform: scale(var(--s)); transform-origin: top left; position: relative; overflow: hidden; color: var(--ink);
+    background: radial-gradient(circle at 0% 0%, #ff9a3c 0%, #d14a5a 8%, transparent 32%), radial-gradient(circle at 50% 120%, var(--sky) 0%, transparent 55%), linear-gradient(160deg, var(--deep) 0%, var(--mid) 70%, #4a2bd0 100%); padding: 90px 80px; }
+  .slide:after { content: ''; position: absolute; left: -10%; right: -10%; bottom: -14%; height: 40%; border-radius: 50% 50% 0 0; background: radial-gradient(circle at 50% 0%, rgba(30,108,240,.9), rgba(30,108,240,0) 70%); }
+  h1 { position: relative; z-index: 2; font-size: 104px; line-height: .98; font-weight: 800; letter-spacing: -.045em; max-width: 720px; }
+  h1 b { color: var(--orange); font-weight: 800; }
+  p.prompt { position: relative; z-index: 2; margin-top: 44px; font-size: 40px; line-height: 1.32; font-weight: 400; max-width: 800px; }
+  .star { position: absolute; z-index: 1; right: -30px; top: -40px; width: 260px; height: 260px; opacity: .95; }
+  .star i { position: absolute; left: 50%; top: 50%; width: 30px; height: 260px; margin: -130px 0 0 -15px; border-radius: 20px; background: var(--orange); }
+  .glyph { position: absolute; z-index: 2; right: 90px; bottom: 150px; width: 190px; height: 190px; border-radius: 40px; background: linear-gradient(135deg, #fff, #ffe3d3); color: var(--orange); font-size: 100px; font-weight: 800; display: grid; place-items: center; box-shadow: 0 20px 50px rgba(0,0,0,.35); }
+  .by { position: absolute; z-index: 3; right: 50px; bottom: 36px; font-size: 34px; font-weight: 500; opacity: .9; }
+</style>
+</head>
+<body>
+<div id="out" style="display:contents"></div>
+<script>
+/* ── SWAP THESE ── */
+const HANDLE = "@yourhandle";
+const CARDS = [
+  ["8.", "Refactor My", "Codebase", "Refactor my codebase for readability, maintainability, and scalability. Remove duplication, simplify complex logic, improve file structure, and preserve all current functionality.", "&lt;/&gt;"],
+  ["3.", "Fix Bugs in", "My Project", "Analyze my entire project and identify bugs, errors, broken functionality, and incorrect logic. Explain the root cause of each important issue, then fix it without breaking existing features.", "🔧"],
+  ["9.", "Add Tests &", "Documentation", "Add meaningful tests and clear documentation to my project. Cover the critical user flows, explain setup and usage, and make the codebase easier for other developers to maintain and extend.", "✔"]
+];
+const out = document.getElementById("out");
+CARDS.forEach(([n, a, b, text, g]) => {
+  const f = document.createElement("div"); f.className = "frame";
+  f.innerHTML = `<div class="slide"><div class="star">${Array.from({length: 6}, (_, i) => `<i style="transform:rotate(${i * 30}deg)"></i>`).join("")}</div>
+    <h1>${n} ${a} <b>${b}</b></h1><p class="prompt">${text}</p><div class="glyph">${g}</div><div class="by">${HANDLE}</div></div>`;
+  out.append(f);
+});
+</script>
+</body>
+</html>

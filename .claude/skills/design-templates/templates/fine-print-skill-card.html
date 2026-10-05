@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<!--
+  Template: fine-print-skill-card
+  Style: @ai.easily "5 Claude skills" - deep teal radial-gradient field, gold letter-spaced kicker ("SKILL 2 - DESIGN"), a huge gold numeral or word with a small
+         white label beside it, a white headline with gold keywords, a gold-outlined "THE FINE PRINT" box with three gold-square bullets, a grey source line
+         and an "AI EASILY - 03 / 07" footer. Cover, recap and 5 skill slides share the same frame.
+  Inspired by: Batch 100 iCloud photos (ELI5, Frontend Design, Document skills, Skill Creator, Doc Co-authoring, recap).
+  Swap points: BRAND, HANDLE, CARDS array [kicker, big, bigLabel, headline (use <b>gold words</b>), [3 bullets], source], and :root tokens.
+  Rule: keep the fine print factual; the original's "checked <date>" source lines are the creator's, so replace them with your own check.
+  1080 x 1350 shown at 36 %.
+-->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fine Print Skill Card</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root { --s: 0.36; --gold: #e3a72f; --cream: #f4efe6; --mute: #8e9aa1; --bg1: #16444f; --bg2: #0e1d26; --bg3: #0b1519; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: #05090b; padding: 24px; display: flex; flex-wrap: wrap; gap: 24px; font-family: 'Plus Jakarta Sans', Arial, sans-serif; }
+  .frame { width: calc(1080px * var(--s)); height: calc(1350px * var(--s)); }
+  .slide { width: 1080px; height: 1350px; transform: scale(var(--s)); transform-origin: top left; position: relative; overflow: hidden; color: var(--cream);
+    background: radial-gradient(circle at 72% 14%, var(--bg1) 0%, var(--bg2) 46%, var(--bg3) 100%); padding: 100px 80px; }
+  .kick { font-size: 30px; font-weight: 800; letter-spacing: .24em; color: var(--gold); text-transform: uppercase; }
+  .bigrow { margin-top: 80px; display: flex; align-items: flex-end; gap: 28px; }
+  .big { font-size: 240px; line-height: .8; font-weight: 800; letter-spacing: -.06em; color: var(--gold); }
+  .biglabel { font-size: 52px; font-weight: 800; letter-spacing: -.01em; padding-bottom: 14px; }
+  h1 { margin-top: 44px; font-size: 72px; line-height: 1.06; font-weight: 800; letter-spacing: -.035em; }
+  h1 b { color: var(--gold); font-weight: 800; }
+  .box { margin-top: 44px; border: 3px solid var(--gold); border-radius: 34px; padding: 42px 50px; background: rgba(255,255,255,.03); }
+  .box h2 { font-size: 30px; letter-spacing: .22em; color: var(--gold); font-weight: 800; margin-bottom: 26px; }
+  .box li { list-style: none; font-size: 40px; font-weight: 500; line-height: 1.2; margin-bottom: 22px; padding-left: 52px; position: relative; letter-spacing: -.02em; }
+  .box li:before { content: ''; position: absolute; left: 0; top: 15px; width: 22px; height: 22px; border-radius: 6px; background: var(--gold); }
+  .src { position: absolute; left: 80px; right: 80px; bottom: 160px; font-size: 28px; color: var(--mute); letter-spacing: .06em; line-height: 1.4; }
+  .foot { position: absolute; left: 80px; bottom: 80px; font-size: 30px; letter-spacing: .1em; color: var(--mute); }
+  .handle { position: absolute; right: 70px; bottom: 60px; font-size: 56px; font-weight: 500; }
+</style>
+</head>
+<body>
+<div id="out" style="display:contents"></div>
+<script>
+/* ── SWAP THESE ── */
+const BRAND = "AI EASILY", HANDLE = "@yourhandle";
+const CARDS = [
+  ["Skill 2 · Design", "02", "DESIGN", "<b>Frontend Design</b> stops Claude from making generic-looking pages.", ["Official skill from Anthropic", "Avoids overused fonts", "Picks one bold look and commits"], "Source: github.com/anthropics/skills"],
+  ["Skill 3 · Files", "4", "FILE TYPES", "<b>Document skills</b> make real Word, PowerPoint, Excel and PDF files.", ["Official skills from Anthropic", "Create and edit, not just read", "Free on GitHub"], "Source: github.com/anthropics/skills"],
+  ["Skill 5 · Writing", "05", "WRITING", "<b>Doc Co-authoring</b> plans a document with you before writing it.", ["Starts by gathering your context", "Agrees on an outline first", "Then drafts section by section"], "Source: github.com/anthropics/skills"]
+];
+const out = document.getElementById("out");
+CARDS.forEach(([kick, big, label, head, bullets, src], i) => {
+  const f = document.createElement("div"); f.className = "frame";
+  f.innerHTML = `<div class="slide"><div class="kick">${kick}</div><div class="bigrow"><div class="big">${big}</div><div class="biglabel">${label}</div></div>
+    <h1>${head}</h1><div class="box"><h2>THE FINE PRINT</h2><ul>${bullets.map(b => `<li>${b}</li>`).join("")}</ul></div><div class="src">${src}</div>
+    <div class="foot">${BRAND} · ${String(i + 1).padStart(2, "0")} / ${String(CARDS.length).padStart(2, "0")}</div><div class="handle">${HANDLE}</div></div>`;
+  out.append(f);
+});
+</script>
+</body>
+</html>

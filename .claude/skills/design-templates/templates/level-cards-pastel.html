@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<!--
+  Template: level-cards-pastel
+  Style: NipPro AI "3 Levels of Agentic Marketing" - serif headline with a grey highlight, three stepped pastel
+         cards (pink / peach / lilac) with a big percentage, a "looks like" list and a "next move" line,
+         two stat tiles, and a beige footer strip.
+  Swap points: :root colours; the LEVELS array (n, pct, name, tag, bullets, next); the two STATS.
+  Canvas 800 wide, scales down. Serif stack falls back to Georgia.
+-->
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Level Cards</title>
+<style>
+:root{--ink:#111;--paper:#fff;--hl:#ECECEC;--foot:#F7EFE9;--l1:#FBB0CC;--l1t:#FDE3EE;--l2:#FFD791;--l2t:#FFF0D2;--l3:#CDB8FF;--l3t:#E7DDFF;--l1c:#C23A74;--l2c:#C77A00;--l3c:#6B3FD4}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#ddd;display:flex;justify-content:center;padding:16px;font-family:Aptos,"Segoe UI",Arial,sans-serif;color:var(--ink)}
+.poster{width:800px;background:var(--paper);border-radius:14px;overflow:hidden}
+.head{text-align:center;padding:30px 30px 10px}
+.head h1{font-family:"Playfair Display",Georgia,"Times New Roman",serif;font-size:32px;line-height:1.1;font-weight:700}
+.head h1 em{font-style:normal;background:var(--hl);padding:0 10px;display:inline-block}
+.head p{font-size:14px;margin-top:12px}
+.rule{border:0;border-top:1px dotted #aaa;margin:14px 30px 0}
+.levels{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;padding:22px 30px 0;align-items:end}
+.lv{border:1px solid #e5e5e5;border-radius:12px;overflow:hidden;background:#fff;display:flex;flex-direction:column}
+.lv .top{padding:14px 14px 12px}
+.lv .tag{display:inline-block;font-size:10px;font-weight:700;letter-spacing:.8px;background:#fff;padding:3px 7px;border-radius:3px}
+.lv .pct{font-family:Georgia,serif;font-size:42px;line-height:1;margin-top:8px}
+.lv .pct small{font-size:14px;font-family:inherit;margin-left:4px}
+.lv .name{font-family:Georgia,serif;font-size:22px;font-weight:700}
+.lv .sub{font-style:italic;font-size:12px;margin-top:2px}
+.lv .body{padding:12px 14px 10px;font-size:12px;flex:1}
+.lv .lk{display:inline-block;font-size:10px;font-weight:700;padding:2px 6px;margin-bottom:6px;border-radius:3px}
+.lv ul{list-style:none}.lv li{margin:4px 0;padding-left:14px;position:relative;line-height:1.3}
+.lv li::before{content:"\25B6";position:absolute;left:0;font-size:8px;top:3px}
+.lv .next{border-top:1px dotted #bbb;margin:8px 14px 14px;padding-top:8px;font-size:11px}
+.lv .next b{display:block;font-size:10px;letter-spacing:.5px}.lv .next i{font-size:12px}
+.lv.a{--c:var(--l1);--t:var(--l1t);--k:var(--l1c);margin-bottom:0;min-height:430px}
+.lv.b{--c:var(--l2);--t:var(--l2t);--k:var(--l2c);min-height:470px}
+.lv.c{--c:var(--l3);--t:var(--l3t);--k:var(--l3c);min-height:520px}
+.lv .top{background:var(--c)}.lv .lk{background:var(--t);color:var(--k)}.lv li::before{color:var(--k)}
+.stats{display:grid;grid-template-columns:1fr 1fr;gap:12px;padding:16px 30px 20px}
+.st{border-radius:10px;padding:12px 16px;display:flex;align-items:center;gap:12px;font-size:13px;line-height:1.25}
+.st .n{font-family:Georgia,serif;font-size:40px;line-height:1}
+.st.dark{background:#000;color:#fff}.st.light{border:1px solid #ddd}
+.foot{background:var(--foot);padding:12px 30px;font-size:11px;display:flex;justify-content:space-between;letter-spacing:.6px}
+@media (max-width:700px){.poster{width:100%}.levels{grid-template-columns:1fr}.lv{min-height:0!important}}
+@media (prefers-color-scheme:dark){:root:not([data-theme=light]){--paper:#15151a;--ink:#f2f2f5;--hl:#2a2a33;--foot:#201c1a}.lv{background:#1d1d24;border-color:#33333d}.lv .tag{color:#111}.st.light{border-color:#444}}
+</style></head><body>
+<div class="poster">
+  <div class="head"><h1>The 3 Levels of<br><em>Agentic Marketing</em></h1><p>Where marketing teams really stand with AI agents</p></div>
+  <hr class="rule">
+  <div class="levels" id="levels"></div>
+  <div class="stats" id="stats"></div>
+  <div class="foot"><span>YOUR NAME</span><span>SOURCE / TOPIC TAGS</span></div>
+</div>
+<script>
+const LEVELS=[
+{c:'a',n:1,pct:'42%',name:'Assist',sub:'AI writes. Humans do the rest.',bul:['Copy on demand','One task at a time','Pilots that stall'],next:'Take one workflow end to end.'},
+{c:'b',n:2,pct:'26%',name:'Scale',sub:'AI inside the workflow.',bul:['Content at scale','Pilots in production','Same old workflows'],next:'Redesign the workflow, not the task.'},
+{c:'c',n:3,pct:'32%',name:'Orchestrate',sub:'Agents run it. Humans steer.',bul:['Agents across workflows','Human oversight built in','Workflows rebuilt','Multi-agent campaigns'],next:'Give agents your brand rules.'}];
+const STATS=[{cls:'dark',n:'96%',t:'of CMOs claim a full AI transformation'},{cls:'light',n:'8%',t:'run campaigns where agents work on their own'}];
+const L=document.getElementById('levels');
+LEVELS.forEach(l=>{const d=document.createElement('div');d.className='lv '+l.c;
+d.innerHTML='<div class="top"><span class="tag"></span><div class="pct"></div><div class="name"></div><div class="sub"></div></div><div class="body"><span class="lk">LOOKS LIKE:</span><ul></ul></div><div class="next"><b>NEXT MOVE:</b><i></i></div>';
+d.querySelector('.tag').textContent='LEVEL '+l.n;d.querySelector('.pct').innerHTML=l.pct+'<small>of teams</small>';
+d.querySelector('.name').textContent=l.name;d.querySelector('.sub').textContent=l.sub;
+l.bul.forEach(b=>{const li=document.createElement('li');li.textContent=b;d.querySelector('ul').appendChild(li)});
+d.querySelector('.next i').textContent=l.next;L.appendChild(d)});
+const S=document.getElementById('stats');
+STATS.forEach(s=>{const d=document.createElement('div');d.className='st '+s.cls;d.innerHTML='<span class="n"></span><span></span>';
+d.querySelector('.n').textContent=s.n;d.lastChild.textContent=s.t;S.appendChild(d)});
+</script></body></html>

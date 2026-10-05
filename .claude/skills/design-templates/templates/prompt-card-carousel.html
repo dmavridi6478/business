@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<!--
+  Template: prompt-card-carousel
+  Style: two "copy this prompt" carousel looks in one file.
+    LIGHT  = @StackFlo "Claude Prompts": pale blue-white card, small blue CLAUDE PROMPTS label + 04 / 07 counter, big navy title,
+             blue COPY THIS pill, light-blue quote box with a blue left rule, grey one-line takeaway, StackFlo footer.
+    DARK   = @ai_slacker: pure black card, big white caps heading, plain white prompt text with the [PLACEHOLDERS] in bold.
+  Inspired by: Batch 99 iCloud photos (StackFlo research prompts 1-7, ai_slacker "7 prompts to learn 10x faster").
+  Swap points: STYLE ("light" | "dark"), BRAND, HANDLE, LABEL, and the PROMPTS array [title, [lines], takeaway]. A [WORD] inside a line is
+               rendered bold (dark) or blue (light). 1080 x 1350 (4:5), shown at 36 %.
+-->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Prompt Card Carousel</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@500;700;800&display=swap" rel="stylesheet">
+<style>
+  :root { --s: 0.36; --blue: #2f6fe0; --navy: #151c3a; --paper: #f6f8fd; --box: #eef3fd; --muted: #6b7388; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: #c9cdd6; padding: 24px; display: flex; flex-wrap: wrap; gap: 24px; font-family: 'Poppins', Arial, sans-serif; }
+  .frame { width: calc(1080px * var(--s)); height: calc(1350px * var(--s)); }
+  .slide { width: 1080px; height: 1350px; transform: scale(var(--s)); transform-origin: top left; position: relative; overflow: hidden; }
+  /* LIGHT */
+  .light { background: var(--paper); color: var(--navy); padding: 90px 80px 200px; }
+  .light .top { display: flex; justify-content: space-between; font-size: 26px; letter-spacing: .22em; font-weight: 600; color: var(--blue); }
+  .light .top b { color: var(--navy); letter-spacing: .1em; }
+  .light h1 { margin-top: 110px; font-size: 72px; line-height: 1.12; font-weight: 800; letter-spacing: -.02em; }
+  .light .pill { display: inline-block; margin-top: 44px; background: var(--blue); color: #fff; font-size: 24px; letter-spacing: .2em; font-weight: 700; padding: 18px 34px; border-radius: 999px; }
+  .light .box { margin-top: 28px; background: var(--box); border: 2px solid #dbe5fa; border-left: 12px solid var(--blue); border-radius: 26px; padding: 40px 46px; font-size: 34px; line-height: 1.45; }
+  .light .box p + p { margin-top: 20px; }
+  .light .box em { font-style: normal; color: var(--blue); font-weight: 600; }
+  .light .take { margin-top: 36px; padding-right: 40px; font-size: 38px; line-height: 1.4; color: var(--muted); }
+  .light .foot { position: absolute; left: 80px; right: 80px; bottom: 80px; border-top: 2px solid #dfe5f2; padding-top: 34px; display: flex; justify-content: space-between; align-items: center; font-size: 30px; font-weight: 600; }
+  .light .foot i { font-style: normal; width: 52px; height: 52px; border-radius: 14px; background: var(--blue); display: inline-block; vertical-align: middle; margin-right: 18px; }
+  .light .foot span { color: #98a0b4; font-weight: 500; }
+  /* DARK */
+  .dark { background: #000; color: #fff; padding: 0 70px; font-family: 'Inter', Arial, sans-serif; }
+  .dark h1 { position: absolute; left: 70px; right: 70px; top: 200px; font-size: 86px; line-height: 1.08; font-weight: 800; text-transform: uppercase; letter-spacing: -.01em; }
+  .dark .body { position: absolute; left: 70px; right: 70px; top: 480px; font-size: 50px; line-height: 1.32; font-weight: 500; }
+  .dark .body p + p { margin-top: 38px; }
+  .dark .body b { font-weight: 800; }
+  .dark .by { position: absolute; right: 50px; bottom: 60px; font-size: 34px; color: rgba(255,255,255,.7); }
+</style>
+</head>
+<body>
+<div id="out" style="display:contents"></div>
+<script>
+/* ── SWAP THESE ── */
+const STYLE = "light";                // "light" or "dark"
+const BRAND = "StackFlo", HANDLE = "@yourhandle", LABEL = "CLAUDE PROMPTS";
+const PROMPTS = [
+  ["1. Find Where Sources Agree", ["“I’m researching: [TOPIC]", "Compare the information I’ve collected below.", "What do multiple independent sources agree on? What appears in only one source? Where do the sources contradict each other?", "Don’t treat something as true just because it’s repeated.”"], "Consensus is useful, but only if the sources are actually independent."],
+  ["3. Look for Evidence Against It", ["“Here’s the conclusion my research currently points towards: [CONCLUSION]", "Actively look for credible evidence that challenges it.", "Show me the strongest counter-evidence and explain whether it genuinely weakens my conclusion.”"], "Don’t only research the answer you want to find."],
+  ["4. Turn Learning Into Active Recall", ["“Teach me [TOPIC] at [LEVEL], but keep the initial explanation short.", "After explaining the essentials, stop teaching and start testing me from memory. Ask one question at a time without showing the answer first.”"], ""]
+];
+const hl = (t, light) => t.replace(/\[([^\]]+)\]/g, (m) => light ? `<em>${m}</em>` : `<b>${m}</b>`);
+const out = document.getElementById("out");
+PROMPTS.forEach(([title, lines, take], i) => {
+  const f = document.createElement("div"); f.className = "frame";
+  const n = String(i + 1).padStart(2, "0"), tot = String(PROMPTS.length).padStart(2, "0");
+  f.innerHTML = STYLE === "light"
+    ? `<div class="slide light"><div class="top"><span>${LABEL}</span><b>${n} / ${tot}</b></div><h1>${title}</h1><div class="pill">COPY THIS</div>
+       <div class="box">${lines.map(l => `<p>${hl(l, true)}</p>`).join("")}</div><div class="take">${take}</div>
+       <div class="foot"><div><i></i>${BRAND}</div><span>${HANDLE}</span></div></div>`
+    : `<div class="slide dark"><h1>${title.replace(/^\d+\.\s*/, (m) => m)}</h1><div class="body">${lines.map(l => `<p>${hl(l, false)}</p>`).join("")}</div><div class="by">${HANDLE}</div></div>`;
+  out.append(f);
+});
+</script>
+</body>
+</html>

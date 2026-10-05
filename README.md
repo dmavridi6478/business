@@ -2631,7 +2631,7 @@ commercial SaaS, no repos to clone).
 **Repos cloned / registered:**
 
 **Open-source self-hosted tools (from @replace.so "5 GitHub repos so good they shouldn't be free" carousel):**
-- `Skyvern-AutoGPT/skyvern` — 22.7k★; Apache 2.0; AI browser automation using LLMs and computer vision; navigates websites by understanding their visual layout rather than brittle CSS selectors or XPaths
+- `Skyvern-AI/skyvern` — 22.7k★; Apache 2.0; AI browser automation using LLMs and computer vision; navigates websites by understanding their visual layout rather than brittle CSS selectors or XPaths
   `git clone https://github.com/Skyvern-AutoGPT/skyvern`
 - `alainm23/planify` — 5.6k★; GPL-3.0; open-source GNOME task manager for GNU/Linux; integrates with Todoist and Google Tasks; supports boards, timeline, and scheduling
   `git clone https://github.com/alainm23/planify`
@@ -3865,8 +3865,8 @@ Paste-ready prompts from this batch:
 - **[`pear-devs/pear-desktop`](https://github.com/pear-devs/pear-desktop)** (31.5k★) — Pear Desktop: open-source desktop client for YouTube Music; native-feeling app with offline support, playlist management, and no ads; Electron/TypeScript
   `git clone https://github.com/pear-devs/pear-desktop`
 
-- **[`stab1yai/orca`](https://github.com/stab1yai/orca)** (56k★, 3.8k forks) — Orca: Agent Development Environment (ADE) for running multiple coding agents in parallel side by side — Codex, Claude Code, OpenCode, and Pi in one workspace; resolves the incomplete ORCA entry from batch 34 ("from @lunktech, no GitHub slug captured") — this is the specific repo
-  `git clone https://github.com/stab1yai/orca`
+- **[`stablyai/orca`](https://github.com/stablyai/orca)** (56k★, 3.8k forks) — Orca: Agent Development Environment (ADE) for running multiple coding agents in parallel side by side — Codex, Claude Code, OpenCode, and Pi in one workspace; resolves the incomplete ORCA entry from batch 34 ("from @lunktech, no GitHub slug captured") — this is the specific repo
+  `git clone https://github.com/stablyai/orca`
 
 ### Informational only (no install action)
 
@@ -5792,6 +5792,83 @@ Source: `80c9789b-LinkedIn_Master_Guide_for_Claude.zip` — 4 static images (`.j
 **Batch 98 hardening, round 5 (review findings 10 and 11) — all eleven findings addressed:** connectors for agents are now an exact, read-only, per-agent opt-in in `docs/ai-os/rules/connector-allowlist.json` that ships **empty** (never for the four web agents; the agents' `tools:` lines must match it exactly; agent files no longer promise connector access). Agents report suspected injection by creating a new file in `data/ai-os/flags/` (create-only, capped at 200); the watchdog reads them and the integrity report counts them. 137 tests; 20/20 deliberate bugs caught across rounds 4 and 5. Not proof of safety: run the live canary in `docs/ai-os/README.md`, set the unset limits, fill the registry, and require any sender to call `os_gate.py commit` before promoting any agent.
 
 **Live canary, 2026-10-01:** a real `os-seo` subagent was run through six probes. Read of private data, fetch of a non-allow-listed host, write outside scope and overwrite of an existing draft were all blocked; a new draft and a flag report succeeded. Verified independently from disk and the hash-chained hook log (`agent_type: os-seo` recorded, chain valid); a main-session write to `approvals.md` was refused by the permission-deny rule. The canary found one defect, a guard message that omitted `flags/` from the allowed locations, now fixed with a test (138 tests). Not covered by the canary: connector denial, the main-session connector confirmation prompt, the flood cap, the gate, the registry and `/os-route`.
+
+---
+
+## Batch 99 — iCloud Photos batch 2 (80 images, 1 video; 1 October 2026)
+
+**Report:** [Batch 99 Intake Report](https://claude.ai/artifact/KHN6vu1scU5WQUNKeE2Cy6) (`Artifacts/business/batch-99-intake-report.html`).
+
+**Sources:** @joshualevi.ai, @replace.so, @dotdevs, @githubnow (repo cards); @ai_slacker (7 learning prompts); @StackFlo (research prompts); @ai.global.lee (5 chat agents); SkillDrop AI (event planning, 9 of 10 slides); @your.aimentor (GTM guide map, 12 things with Claude); @aicareersuite (11 ways to master Claude, 7 slides); @entrp0 (consulting tool stack); @tinrovicai (Skyvern video).
+
+**Added:**
+- 3 draft-only agents in the AI Entrepreneur OS: `os-qualify`, `os-booking`, `os-support` (28 agents total; 138 tests pass), plus `/os-chat-triage`, `docs/ai-os/ops/chat-channels-sop.md` and `docs/ai-os/ops/support-faq.md` (empty template; `os-support` answers only from it).
+- Skills: `learn-faster-7-prompts`, `research-skeptic`, `event-planner`, `gtm-guide-map`, `claude-11-ways`. Commands: `/learn-faster`, `/research-skeptic`, `/plain-human`, `/event-plan`, `/os-chat-triage`.
+- Design templates: `prompt-card-carousel`, `repo-card-grid`, `agent-flow-chat-card`, `mascot-tips-orange` (+ theme tokens in `design-templates/SKILL.md`).
+- Repo register in `dev-repos-to-clone` (18 repos verified with `git ls-remote`, Brigade with `npm view`; brigade, hindsight, codegraph and nanochat cloned shallowly into the git-ignored `repos/`, all MIT). `scripts/batch99-install.sh` is user-run and asks before each step.
+- Consulting tool stack section in `docs/ai-os/ops/tool-stack.md`.
+
+**Corrected:** `stab1yai/orca` → `stablyai/orca` and `Skyvern-AutoGPT/skyvern` → `Skyvern-AI/skyvern` in earlier README entries (the old names do not exist on GitHub).
+
+**Not done:** iFixAi, Magpie and fframes could not be identified from the cards (no owner, package or URL). Nothing was installed beyond the shallow clones. The new agents have not been run live; run the canary in `docs/ai-os/README.md` after restarting Claude Code. Price list and support FAQ are still empty, so qualification fit and support answers are blocked until you fill them.
+
+---
+
+## Batch 100 — iCloud Photos batch 3 (28 images; 2 October 2026)
+
+**Report:** [Batch 100 Intake Report](https://claude.ai/artifact/M6HVmPgnR6BPsTPjSreQSr) (`Artifacts/business/batch-100-intake-report.html`).
+
+**Sources:** @joshualevi.ai (7 scanners for what an agent shipped), @ai.easily (5 Claude skills), @replace.so and @githubnow (app and agent repos), 51ultron (21 AI roles).
+
+**Added:** skills `agent-output-scanners`, `claude-5-official-skills`, `ai-roles-map`; command `/scan-agent-work`; design templates `fine-print-skill-card` and `role-map-infographic`; a Batch 100 repo register in `dev-repos-to-clone` (15 repos verified with `git ls-remote`, licences read where a root LICENSE exists); user-run `scripts/batch100-install.sh`; `.gitleaksignore` (reviewed baseline).
+
+**Scanner results for this repo:** gitleaks (full history, 258 commits) 11 findings, all placeholders or upstream test fixtures, now baselined; osv-scanner 191 advisories in 11 manifests, all inside vendored skill folders (not fixed; do not install dependencies there without review). Install gotcha: `go install github.com/gitleaks/gitleaks/v8@latest` fails, use `github.com/zricethezav/gitleaks/v8@latest`.
+
+**Not done:** trufflehog, semgrep, garak, sops not installed; snyk agent-scan needs your Snyk token. Flowise's site screenshot shows "We're sunsetting Flowise", unconfirmed. yoinks (video downloader) documented only for terms-of-service reasons. No prompts or connectors in this upload.
+
+---
+
+## Batch 101 — iCloud Photos batches 4 to 6 (84 images, 1 video; 3 October 2026)
+
+**Report:** [Batch 101 Intake Report](https://claude.ai/artifact/3VRCp1fQpmK3yjgzqGMav8) (`Artifacts/business/batch-101-intake-report.html`).
+
+**Sources:** @the.wealth.lab (6 MCP servers), @tinrovicai (autonomous agent guide), @jeanbbttyct (AI app categories), @clicksandranks (5 websites), @shiva.bytes (4 loop types, video), 51ultron (16 motion effects), @ai.blueprint (vibe-coding prompts, already in `/vibe-coding-prompts`), @githubnow and @replace.so repo cards. About half the images repeat Batch 100 content.
+
+**Installed:** six skills from `humanlayer/skills` (MIT; scanned first) via `npx skills add`. Five MCP servers written to `.mcp.json`: exa, context7, sentry, supabase (read-only), playwright. Exa and Context7 answered a connection test; Sentry and Supabase returned 401 (login needed); none is authenticated.
+
+**Added:** skills `mcp-dev-team-6`, `grok-bot-guide`, `ai-app-stack-2026`, `five-websites-business`, `claude-code-4-loops`, `motion-16-effects`; command `/bot-task-test`; design templates `gradient-prompt-orange`, `lime-explainer-dark`, `app-category-glass`, `paper-tool-card`, `dark-grey-install-card`; Batch 101 repo register (OpenRig, Octop and others); user-run `scripts/batch101-install.sh`.
+
+**Errors in the sources:** the MCP carousel's Context7 slide shows the GitHub install command; the Manychat slide in the 5-websites carousel has the Google Business Profile caption.
+
+**Not done:** GitHub MCP (needs your login), OpenRig and Octop (not installed; Octop's installer pipes curl to bash), prompts 6 and 10 of the vibe-coding set (not in the upload). The Grok Bot product claims were not verified.
+
+## Batch 102 — iCloud Photos batch 7 (31 images, 1 video) and 11 sales and career infographics (3 October 2026)
+
+**Report:** [Batch 102 Intake Report](https://claude.ai/artifact/DmeDZS23Qs2ZpyTBKXaoGi) (`Artifacts/business/batch-102-intake-report.html`).
+
+**Sources:** SalesDaily.co (20 sales methodologies, Perplexity for sales research), Cyberman AI (10 dream-job prompts), NipPro AI (3 levels of agentic marketing), Reno Perry (LinkedIn job-search hacks), Eric Partaker (5 mental models), Nader Alnajjar / Lever (LinkedIn analytics), Swapan Kumar Manna (2026 GTM funnel), an SEO / AEO / AIO / GEO table, a "50+ Fable 5 sales skills" tree, appmillers (9 prompt-writing skills), 50 Claude use cases, "Everything you must know in Claude", @theaiguyhere (7 photoshoot prompts), @replace.so and @githubnow repo cards, and an Obsidian "second brain for agents" video.
+
+**Added:** skills `sales-methodologies-20`, `perplexity-sales-research-10`, `dream-job-10-prompts`, `linkedin-job-search-5-hacks`, `linkedin-analytics-reader`, `ceo-5-mental-models`, `agentic-marketing-levels`, `gtm-funnel-2026`, `search-optimization-4-way`, `fable5-outbound-5-stage-map`, `photoshoot-prompts-7`, `prompt-writing-9-skills`, `claude-50-use-cases`, `claude-six-levels`; commands `/sales-method`, `/sales-research`, `/dream-job`, `/linkedin-analytics`, `/impact-effort`, `/photoshoot`, `/prompt-master`, `/grill-me`, `/opus-polish`, `/fable-polish`, `/personal-voice`, `/anti-ai`, `/write-a-skill`; design templates `sales-method-grid-teal`, `level-cards-pastel`, `prompt-text-card-cyan` with theme tokens; Batch 102 repo register (15 repos, licences read); user-run `scripts/batch102-install.sh`.
+
+**Already existed, not duplicated:** the 6 CV and LinkedIn prompts (`/cv-linkedin-prompts`), the 17-skill Fable outbound chain, the "12 things" infographic (mapped in the Batch 99 report), `/premortem`, `/5whys`, `/swot-analysis`, `/decision-tree`, `/how-to`, `/handoff`, and the replace.so, githubnow and Compositor card styles and repos.
+
+**Source problems:** the "Opus 4.8" slide conflicts with the models named in this environment (Opus 5.5, Fable 5.1), so `/opus-polish` is version-agnostic. The agentic-marketing percentages do not reconcile (32% orchestrate vs 8% autonomous) and cite no source. The "50+ skills" tree shows only 15 of 50+ file names behind a comment-to-get-it gate; the rest were not invented. `claude run --all-skills` on that slide is not a documented Claude Code command. The llama.cpp card shows a pipe-to-shell installer.
+
+**Not done:** no connector was installed (see `gtm-funnel-2026` for which GTM tools are already connected here and which are not); no repo was installed; Capd, ChatbotX and alphai-tui owners were found by web search and confirmed with `git ls-remote`. ChatbotX and cmux have custom licences you should read before use.
+
+## Batch 103 — iCloud Photos batch 8 (64 images, 3 videos) and a CEO KPI infographic (3 October 2026)
+
+**Report:** [Batch 103 Intake Report](https://claude.ai/artifact/D1A96pph3ZDuvuRPNtYLnH) (`Artifacts/business/batch-103-intake-report.html`).
+
+**Sources:** @jek.notes (production bugs, 7 slides), @itsaiguide (7 "superhuman" prompts), @aisimplified23 (Claude Checklist), Oana Labes (CEO KPI Framework, attached image), @iqonicdesign / @ux_dose (UI image-layout tips), @shiva.bytes (12 Claude workflows, 25 data and AI repos, both short videos), @restructureai (One-Person Marketing Team demo video), and @replace.so, @dotdevs and @githubnow repo cards.
+
+**Added:** skills `production-bugs-5`, `superhuman-prompts-7`, `claude-checklist`, `ceo-kpi-framework`, `ui-image-layout-5-tips`, `claude-12-workflows`, `data-ai-github-25`, `one-person-marketing-team-map`; commands `/prod-bug-check`, `/superhuman`, `/claude-checklist`, `/kpi-scorecard`; design templates `bug-lesson-card`, `checklist-panels-peach`, `kpi-framework-gold`, `ui-tip-do-dont` with theme tokens; Batch 103 repo register (31 repos, licences read); user-run `scripts/batch103-install.sh`.
+
+**Already existed, not duplicated:** the replace.so repo style and the Comp, Excalidraw, Builder, Automa, Hexabot and Supabase repos; the `ponytail` skills; `/c-suite-30-kpis` (this batch extends it with formulas and corrections).
+
+**Source problems:** the KPI infographic prints the customer churn formula as net customer growth (corrected in the skill); the jek.notes cover promises 10 problems but shows 5; the Claude Checklist's last Token Economy item is hidden by a watermark and was not reproduced; card 12 of the "12 workflows" video repeats card 11's steps; the "illegal to know" prompts are ordinary coaching prompts; the 25-repo card lists titles only, so 17 repos were matched by title and 8 could not be identified. Several repos are AGPL or source-available, and screenpipe is now commercial.
+
+**Not done:** wifit3 (a Wi-Fi attack toolkit) was registered for reading only; no repo was installed; the itsaiguide "Claude OS" slide is an advert for a paid product and was not acted on; the 25-repo card was not turned into clone steps beyond the study paths in `data-ai-github-25`.
 
 ## 98b. 8 Ps of Sales, AI-in-GTM Levels, Brand Zones, Prompt Frameworks & Design Kit (Batch 98, second photo batch)
 
