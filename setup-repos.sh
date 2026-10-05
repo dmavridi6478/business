@@ -21,6 +21,10 @@ repos=(
   "node-red/node-red"
   "windmill-labs/windmill"
   "NousResearch/hermes-agent"
+  "ahujasid/blender-mcp"
+  "PrismML-Eng/Bonsai-demo"
+  "oblien/openship"
+  "public-apis/public-apis"
 )
 for r in "${repos[@]}"; do
   name="${r##*/}"
