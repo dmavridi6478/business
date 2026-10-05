@@ -5938,3 +5938,17 @@ Source: `80c9789b-LinkedIn_Master_Guide_for_Claude.zip` — 4 static images (`.j
 **Source problems:** the "replace your startup stack" headline overstates; HydraDB and Open-kritt are AGPL-3.0, Remotion needs a company licence above 3 employees, RedInk is non-commercial, Echo-Music is an unofficial YouTube Music client, PersonaLive can impersonate people; the "Editor" repo, Img2threejs's licence and AutoClip were not identified; only five of nine GTM graphics were previewed; star counts unverified.
 
 **Not done:** nothing installed or run; no connector changed (OpenFlowKit entry still unapplied; Midpage, Sentry and Supabase need your authorisation); the tenth @replace.so repo was not in the upload; no agent-building guide was in the files.
+
+## Batch 109 — iCloud Photos, two archives (one duplicate; 15 new images) (5 October 2026)
+
+**Report:** Batch 109 Intake Report (`Artifacts/business/batch-109-intake-report.html`; the published link is in the pull request).
+
+**Sources:** @dotdevs ("5 open source apps that replace paid subscriptions") and @replace.so ("7 GitHub repos so good they shouldn't be free", six seen). `dbdbd955-iCloud_Photos.zip` was byte-identical to the batch 108 archive and was skipped.
+
+**Added:** skills `swap-5-dotdevs-subscriptions`, `replace-so-repos-7-jev-edition`; commands `/self-host-swap`, `/jev-supervisor`; design template `swap-card-photo-github`; user-run `scripts/batch109-install.sh`.
+
+**Already existed, not duplicated:** `open-source-swap-stack-8`, `self-hosted-docker-stack`, `laya-jev-ultrafast`, `jev-vs-llm`.
+
+**Source problems:** four of the five "replace" tools are AGPL or GPL; Vaultwarden is an unofficial Bitwarden server; `497974/foreman` is a different project from `thruwire/foreman`; Aria-Icons' icon count differs from the slide; the seventh repo was not in the upload; star counts unverified.
+
+**Not done:** nothing installed or run; no connector changed (OpenFlowKit entry still unapplied; Midpage, Sentry and Supabase need your authorisation).
