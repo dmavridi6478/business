@@ -5924,3 +5924,17 @@ Source: `80c9789b-LinkedIn_Master_Guide_for_Claude.zip` — 4 static images (`.j
 **Source problems:** slide 2 of the workflow carousel was missing; `calcom/cal.com` is now Cal.diy (MIT, enterprise features removed, personal non-production use); Dify, n8n, Sentry's MCP server, OpenMontage and Open WebUI are not plain open source; star, install and today-star counts are as printed and unverified; SERPtag was not found; the "80% confidence" Code Review setting was not found in code.
 
 **Not done:** nothing installed or run beyond the two numpy scripts; no connector changed (OpenFlowKit `.mcp.json` entry from batch 104 still unapplied; Midpage, Sentry and Supabase connectors still need your authorisation); no agent-building guide was in the files.
+
+## Batch 108 — iCloud Photos, one archive (23 images, 1 video) plus 2 attached images (5 October 2026)
+
+**Report:** Batch 108 Intake Report (`Artifacts/business/batch-108-intake-report.html`; the published link is in the pull request).
+
+**Sources:** @dolorstca2h (7-step app-building method, 8 slides), @replace.so ("10 repos so good they shouldn't be free", 9 repo slides), @githubnow (4 October briefing, 3 repos), @valeridoesai (5 GitHub repos, video), a "9 GTM Infographics" cover and a JEV vs LLM infographic (already covered in batch 105).
+
+**Added:** skills `app-building-method-7-steps`, `replace-so-oss-repos-10`, `github-briefing-oct4-three`, `github-5-repos-video-oct`, `gtm-infographics-9-cover`; commands `/app-method`, `/repo-licence-check`, `/gtm-stage`; design templates `photo-step-tools-caption` and `gtm-stage-three-column` with theme tokens; user-run `scripts/batch108-install.sh`.
+
+**Already existed, not duplicated:** the `gstack` skill, `jev-vs-llm`, the `gtm-*` skills.
+
+**Source problems:** the "replace your startup stack" headline overstates; HydraDB and Open-kritt are AGPL-3.0, Remotion needs a company licence above 3 employees, RedInk is non-commercial, Echo-Music is an unofficial YouTube Music client, PersonaLive can impersonate people; the "Editor" repo, Img2threejs's licence and AutoClip were not identified; only five of nine GTM graphics were previewed; star counts unverified.
+
+**Not done:** nothing installed or run; no connector changed (OpenFlowKit entry still unapplied; Midpage, Sentry and Supabase need your authorisation); the tenth @replace.so repo was not in the upload; no agent-building guide was in the files.
