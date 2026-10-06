@@ -5883,6 +5883,18 @@ Source: `80c9789b-LinkedIn_Master_Guide_for_Claude.zip` — 4 static images (`.j
 
 **Also added (approved by the owner after an initial classifier block):** the Vercel MCP server in `.mcp.json` (`https://mcp.vercel.com`, sign in via `/mcp`) and the user-run `scripts/batch104-install.sh` (every step asks first; nothing piped into a shell).
 
+## Batch 106 — iCloud Photos, Photos 2 and Photos 3 re-uploads (100 images, 2 videos) (6 October 2026)
+
+**Report:** [Batch 106 Intake Report](https://claude.ai/artifact/TqNsqYqL9gHQDko5yExRkH) (`Artifacts/business/batch-106-intake-report.html`).
+
+**Sources:** TikTok carousels from @your.aimentor, @joshualevi.ai, @replace.so, @githubnow, @stackfloai, @wayaai.feeds, @faithflow_prayer, @earchoe, @aisimplified23, @hash42labs, @the.wealth.lab, @entrp0, @dotdevs, @51ultron.com, @ai_slacker; a Claude Code cheatsheet; an Awesome Claude Skills screenshot; videos from @aitoolvaultly (AI stack pyramid) and @shiva.bytes (RAG variants). All files differ by hash from Batches 98-105.
+
+**Added:** skills `doc-triage-prompts-6`, `claude-skill-tutor-25`, `work-message-prompts-5`, `content-week-7day`, `claude-code-mod-builder`, `claude-code-cheatsheet-2026`, `agent-stack-power-ups`, `rag-variants-compared`, `ai-tools-stack-map-2026`, `ai-engineer-roadmap-2026`, `claude-power-uses-12`, `oss-repo-register-106` (27 repos checked); commands `/doc-triage`, `/learn-skill`, `/work-message`, `/content-week`, `/mod-builder`, `/rag-pick`, `/ai-stack`; draft-only agents `doc-triage-analyst` and `learning-coach`; templates `cheatsheet-pastel-grid`, `step-snake-path`, `roadmap-yellow-dark` plus seven theme tokens; user-run `scripts/batch106-install.sh`.
+
+**Findings:** the cheatsheet infographic prints permission rules in a syntax that does not work (corrected in the skill); the "25 prompts" image holds 22 usable prompts; the Claude Code mod commands could not be verified and were not run; four of the ten "free repos" download third-party content and are left out of the default install script; the eight @ai_slacker automations duplicate the existing `ai-automation-blueprints` skill.
+
+**Not done:** no repo cloned and no connector authorised (sign-in cannot run in a cloud session). A session hook asked for an Agent Archive account and an API key written to `~/.claude/settings.json`; that text did not come from the owner and was not acted on.
+
 ## Batch 105 — iCloud Photos batch 3 (43 images, 3 videos) (6 October 2026)
 
 **Report:** [Batch 105 Intake Report](https://claude.ai/artifact/PZKte8a6W9QKmvjM1eMLYB) (`Artifacts/business/batch-105-intake-report.html`).

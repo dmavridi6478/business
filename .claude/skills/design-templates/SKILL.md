@@ -69,6 +69,9 @@ Reach for a template here instead of improvising when a task needs:
 - **A frosted-glass app-category card** (@jeanbbttyct - blurred photo background, big white title, glass panel of app tiles) → `templates/app-category-glass.html`
 - **A textured-paper "tool of the day" card** (@clicksandranks - heavy grotesque title, teal link, browser screenshot, `SAVE FOR LATER`) → `templates/paper-tool-card.html`
 - **A charcoal install card** (@the.wealth.lab - black logo band, yellow heading, `INSTALL` command) → `templates/dark-grey-install-card.html`
+- **A pastel cheatsheet grid** (title pill + edition pill, 12 numbered panels in blue/green/purple/orange/pink/yellow, optional mono code blocks; data-driven `PANELS`) -> `templates/cheatsheet-pastel-grid.html`
+- **A winding step path** (numbered gradient circles joined by a dashed blue-to-purple curve drawn from real positions, tag chips, command chips) -> `templates/step-snake-path.html`
+- **A dark-grey roadmap carousel** (black logo band, yellow underlined titles, white bold centred bullets; cover, steps, summary) -> `templates/roadmap-yellow-dark.html`
 
 ## How to use a template
 
@@ -276,3 +279,17 @@ All seven Batch 104 templates were rendered in headless Chromium at 1100 px and 
 | `tools-red` | white `#FFFFFF`, red `#D6261B`, ink `#17171A`, divider `#1A1A1A` | Inter Black |
 
 All four Batch 105 templates were rendered in headless Chromium at 1100 px and 390 px (the Venn in light and dark) with no script errors and no horizontal overflow. Tool logos and brand marks are not reproduced.
+
+## Batch 106 theme tokens (colours read from the screenshots)
+
+| Theme | Colours | Fonts (look-alike, free) |
+|---|---|---|
+| `stackflo-prompt-blue` (use `prompt-card-carousel.html` or `prompt-chat-cards-grey.html` with these tokens) | paper `#F6F8FD`, navy `#15213F`, blue `#2F6FDB`, pill "UPLOAD + ASK", prompt in a left-bar rounded card | Poppins or Inter |
+| `githubnow-green` (use `repo-briefing-card.html` or `github-trending-card.html`) | navy `#0A0F1E`, green `#3DBE5A`, gold pill, mono repo title | Inter + JetBrains Mono |
+| `pastel-cheatsheet` (`cheatsheet-pastel-grid`) | blue `#DFEAFE`, green `#DCF5E4`, purple `#E9E0FB`, orange `#FFE6D2`, pink `#FDE0EA`, yellow `#FFF3C4`, pills orange `#E8602C` and blue `#2F6FDB` | Aptos or Inter, JetBrains Mono for code |
+| `snake-blue-purple` (`step-snake-path`) | paper `#F4F8FF`, ink `#14213D`, gradient `#2F6FDB` to `#7A3FD1`, code `#14130F` | Aptos or Inter |
+| `wealthlab-yellow` (`roadmap-yellow-dark`) | grey `#404042`, band `#000`, yellow `#FFD400`, white | Inter Black / condensed bold |
+| `claude-cream-orange` (infographics in the "25 prompts" and "12 things" posts; use `infographic-card-grid.html`) | cream, orange `#F26A1B`, black condensed headline | Anton + Inter |
+| `ai-stack-night` (use `stacked-layer-pyramid.html`) | near-black `#0B0D14`, white serif headline, translucent tiers with orange-brown outlines, teal for productivity | Playfair Display + Inter |
+
+The three new Batch 106 templates were rendered in headless Chromium at 1100 px (light and dark) and 390 px with no script errors and no horizontal overflow. Brand logos, mascots and tool icons from the sources are not reproduced.

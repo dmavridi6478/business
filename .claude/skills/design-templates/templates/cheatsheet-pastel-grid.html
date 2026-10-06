@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<!--
+  Template: cheatsheet-pastel-grid
+  Style: one-page cheatsheet of numbered pastel panels (blue/green/purple/orange/pink) with a title pill, an edition pill
+         and optional mono code blocks - the "Claude Code Workflow Cheatsheet" look.
+  Swap points: TITLE, EDITION, SUBTITLE, PANELS = [{n, title, tone, lines[], code}] (tone: blue|green|purple|orange|pink|yellow).
+  Rule: every panel must state something true; mark outdated or unverified items in the line itself.
+  Built with createElementNS-free DOM and textContent only (no innerHTML).
+-->
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Cheatsheet pastel grid</title>
+<style>
+:root{--bg:#f7f6fb;--ink:#1c1b22;--mute:#5b5a66;--card:#fff;--blue:#dfeafe;--green:#dcf5e4;--purple:#e9e0fb;--orange:#ffe6d2;--pink:#fde0ea;--yellow:#fff3c4;--pill:#e8602c;--pill2:#2f6fdb}
+@media (prefers-color-scheme:dark){:root{--bg:#15141b;--ink:#f2f1f7;--mute:#b7b5c4;--card:#1e1d27;--blue:#1f2c4a;--green:#1d3a2b;--purple:#31264f;--orange:#4a2f1c;--pink:#4a2233;--yellow:#4a3f1a}}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--ink);font-family:Aptos,"Segoe UI",Inter,Arial,sans-serif;padding:20px 16px 32px}
+.wrap{max-width:1100px;margin:0 auto}
+header{text-align:center;margin-bottom:18px}
+h1{font-size:32px;line-height:1.15}
+.pills{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin:10px 0 6px}
+.pill{color:#fff;font-weight:700;font-size:13px;border-radius:999px;padding:5px 14px}
+.p1{background:var(--pill)}.p2{background:var(--pill2)}
+.sub{color:var(--mute);font-size:14px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+@media (max-width:860px){.grid{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:560px){.grid{grid-template-columns:1fr}h1{font-size:26px}}
+.panel{border-radius:12px;padding:14px;border:1px solid #0000001a;min-width:0}
+.panel h2{font-size:14px;margin-bottom:8px;display:flex;gap:8px;align-items:center}
+.num{background:var(--ink);color:var(--bg);border-radius:50%;width:22px;height:22px;display:inline-flex;align-items:center;justify-content:center;font-size:12px;flex:none}
+.panel ul{list-style:none;font-size:11.5px;line-height:1.45;display:flex;flex-direction:column;gap:4px}
+.panel li::before{content:"\2022\00a0";color:var(--mute)}
+pre{margin-top:8px;background:#14130f;color:#f4f1e6;border-radius:8px;padding:8px 10px;font:11px/1.45 "JetBrains Mono",Consolas,monospace;white-space:pre-wrap;overflow-wrap:anywhere}
+.tone-blue{background:var(--blue)}.tone-green{background:var(--green)}.tone-purple{background:var(--purple)}
+.tone-orange{background:var(--orange)}.tone-pink{background:var(--pink)}.tone-yellow{background:var(--yellow)}
+</style></head><body><div class="wrap"><header id="hd"></header><div class="grid" id="g"></div></div>
+<script>
+const TITLE="Claude Code Workflow Cheatsheet", EDITION="2026 Edition", SUBTITLE="Getting started • Project setup • Skills • Hooks • Memory • Workflows";
+const PANELS=[
+ {n:1,title:"Getting started",tone:"blue",lines:["Install Claude Code","cd your-project, then run claude","/init writes a starter CLAUDE.md"],code:"claude\n/init"},
+ {n:2,title:"CLAUDE.md",tone:"green",lines:["Persistent project memory, loaded every session","What: stack, directory map, architecture","How: build, test, lint commands and gotchas"]},
+ {n:3,title:"Memory hierarchy",tone:"purple",lines:["~/.claude/CLAUDE.md - global","./CLAUDE.md - project, in git","./frontend/CLAUDE.md - scoped","Keep each file short"]},
+ {n:4,title:"Best practices",tone:"orange",lines:["Run /init first, then refine","Add gotchas Claude cannot infer","Reference docs with @filename","Commit it for the team"]},
+ {n:5,title:"File structure",tone:"pink",lines:["CLAUDE.md at the root",".claude/settings.json (settings.local.json stays private)",".claude/skills, commands, agents"],code:".claude/\n  skills/<name>/SKILL.md\n  commands/deploy.md\n  agents/reviewer.md"},
+ {n:6,title:"Skills",tone:"yellow",lines:["Markdown guides invoked by description","The description drives activation","Project or personal location"]},
+ {n:7,title:"Hooks",tone:"blue",lines:["PreToolUse, PostToolUse, Notification","Exit 0 allows, exit 2 blocks"]},
+ {n:8,title:"Permissions",tone:"green",lines:["Rules use Tool(specifier)","Deny secrets and sudo explicitly"],code:"Bash(git status:*)\nRead(./.env)"},
+ {n:9,title:"Four layers",tone:"purple",lines:["CLAUDE.md - context","Skills - knowledge","Hooks - gates","Agents - own context"]},
+ {n:10,title:"Daily workflow",tone:"orange",lines:["Plan mode, describe intent","Review before auto-accept","/compact when context grows","New session per feature"]},
+ {n:11,title:"Quick reference",tone:"pink",lines:["/init - generate CLAUDE.md","/doctor - check install","/compact - shrink context","Esc Esc - rewind menu"]},
+ {n:12,title:"Check your version",tone:"yellow",lines:["Key bindings change between releases","Run /help for the current list"]}
+];
+const hd=document.getElementById("hd"),g=document.getElementById("g");
+function el(t,c,x){const e=document.createElement(t);if(c)e.className=c;if(x!==undefined)e.textContent=x;return e}
+hd.appendChild(el("h1",null,TITLE));
+const pl=el("div","pills");pl.appendChild(el("span","pill p1",EDITION));pl.appendChild(el("span","pill p2","Cheatsheet"));hd.appendChild(pl);
+hd.appendChild(el("div","sub",SUBTITLE));
+PANELS.forEach(p=>{const d=el("div","panel tone-"+p.tone);const h=el("h2");h.appendChild(el("span","num",String(p.n)));h.appendChild(el("span",null,p.title));d.appendChild(h);
+ const ul=el("ul");p.lines.forEach(l=>ul.appendChild(el("li",null,l)));d.appendChild(ul);if(p.code)d.appendChild(el("pre",null,p.code));g.appendChild(d)});
+</script></body></html>
