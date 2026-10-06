@@ -1,3 +1,7 @@
+---
+description: 'Monday routine with web search on: turn niche news into content ideas and drafts.'
+---
+
 # News-to-Content Workflow (@earchoe)
 
 Run every Monday morning with web search ON to turn niche news into content: $ARGUMENTS

@@ -1,3 +1,8 @@
+---
+description: 'Run a brand visibility audit using the ATM Framework (Audience Growth → Trust & Engagement → Monetization).'
+argument-hint: '[brand or organization name] [optional: paste available metrics]'
+---
+
 # /atm-audit
 
 Run a brand visibility audit using the ATM Framework (Audience Growth → Trust & Engagement → Monetization).

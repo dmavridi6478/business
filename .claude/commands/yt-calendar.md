@@ -1,3 +1,8 @@
+---
+description: 'Build a 30-day content calendar for your faceless YouTube channel.'
+argument-hint: '[your niche] [videos per week]'
+---
+
 # /yt-calendar
 
 Build a 30-day content calendar for your faceless YouTube channel.

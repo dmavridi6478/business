@@ -1,3 +1,7 @@
+---
+description: 'A five-branch taxonomy of what marketing covers, for scoping a hire or auditing neglected branches.'
+---
+
 # The Marketing Umbrella
 
 A 5-branch taxonomy of what "marketing" actually covers — useful for

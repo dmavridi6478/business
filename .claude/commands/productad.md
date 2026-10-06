@@ -1,3 +1,8 @@
+---
+description: 'Generate an AI image prompt for a commercial product advertisement hero shot.'
+argument-hint: '[product name] [optional: surface, mood, color grade]'
+---
+
 # /productad
 
 Generate an AI image prompt for a **commercial product advertisement hero shot**.

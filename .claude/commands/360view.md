@@ -1,3 +1,8 @@
+---
+description: 'Generate an AI image prompt for a 360-degree product turntable showcase.'
+argument-hint: '[product name] [optional: colorway, finish, background]'
+---
+
 # /360view
 
 Generate an AI image prompt for a **360-degree product turntable showcase**.

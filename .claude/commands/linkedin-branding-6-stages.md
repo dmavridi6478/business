@@ -1,3 +1,7 @@
+---
+description: 'Six stages of LinkedIn personal branding, from profile to booked meeting, with a tool named at each stage.'
+---
+
 # 6 Stages of LinkedIn Personal Branding
 
 Source: workflows.io infographic (Fivos Aresti).

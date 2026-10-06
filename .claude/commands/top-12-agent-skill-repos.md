@@ -1,3 +1,7 @@
+---
+description: 'The 12 most-starred agent-skill repos on GitHub (August 2026, ByteByteGo), each checked with a live search.'
+---
+
 # Top 12 Agent Skills You Should Know
 
 Source: ByteByteGo, "The most-starred skill repos on GitHub (August 2026)."

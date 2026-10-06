@@ -1,3 +1,7 @@
+---
+description: 'Audit or build an enterprise AI governance program across all 6 layers.'
+---
+
 # /ai-governance
 
 Audit or build an enterprise AI governance program across all 6 layers.

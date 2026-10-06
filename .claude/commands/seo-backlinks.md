@@ -1,3 +1,7 @@
+---
+description: 'Run the full SEO backlink strategy system — competitor intelligence, gap analysis, outreach, digital PR, local links, and verification.'
+---
+
 # /seo-backlinks
 
 Run the full SEO backlink strategy system — competitor intelligence, gap analysis, outreach, digital PR, local links, and verification.

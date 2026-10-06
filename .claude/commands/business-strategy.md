@@ -1,3 +1,7 @@
+---
+description: 'Analyse a business idea as a startup strategist: market, positioning, risks and next steps for the idea you give.'
+---
+
 # Business Strategy Builder
 
 Act as a startup strategist. Analyze the following business idea: $ARGUMENTS

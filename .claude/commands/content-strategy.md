@@ -1,3 +1,7 @@
+---
+description: 'Design a content strategy as a senior content strategist for the business or topic you give.'
+---
+
 # Content Strategy Architect
 
 Act as a senior content strategist. Design a content strategy for: $ARGUMENTS

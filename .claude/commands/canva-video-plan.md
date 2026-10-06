@@ -1,3 +1,7 @@
+---
+description: 'Recommend which AI Canva video format to use for the content need you describe (platform, goal, footage or presenter available).'
+---
+
 Recommend which AI Canva video format to use for "$ARGUMENTS" (the content
 need — describe the platform, goal, and whether footage/a presenter
 already exists), using `docs/procedures/canva-ai-video.md`.

@@ -1,3 +1,7 @@
+---
+description: 'Eighteen things to set up in your Claude account (Projects, preferences, connectors and more) to get better results.'
+---
+
 # 18 Things to Set Up in Your Claude
 
 Source: @waelmando.ai

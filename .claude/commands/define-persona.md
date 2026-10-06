@@ -1,3 +1,7 @@
+---
+description: 'Build your AI content persona in five minutes.'
+---
+
 # Define Your Expert Content Persona (@earchoe)
 
 Build your AI content persona in 5 minutes: $ARGUMENTS

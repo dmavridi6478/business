@@ -1,3 +1,8 @@
+---
+description: 'Draft a Quarterly Business Review (QBR) outline for a customer account.'
+argument-hint: '[account name] [quarter] [key metrics or context]'
+---
+
 # /cs-qbr
 
 Draft a Quarterly Business Review (QBR) outline for a customer account.

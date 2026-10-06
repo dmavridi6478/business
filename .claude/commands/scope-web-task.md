@@ -1,3 +1,7 @@
+---
+description: 'Scope a browser-automation or web-agent task before running it (Target, Limit, Run, Review).'
+---
+
 Scope a browser-automation/web-agent task before running it, using the `web-task-scoping` skill's Target/Limit/Run/Review discipline.
 
 Given the task described in "$ARGUMENTS" (or, if empty, ask the user what web task they want automated):

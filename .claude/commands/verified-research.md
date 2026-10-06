@@ -1,3 +1,7 @@
+---
+description: 'Research a topic and cite a source for every claim.'
+---
+
 # Verified Research (PromptBuilder.cc)
 
 Research $ARGUMENTS for me.

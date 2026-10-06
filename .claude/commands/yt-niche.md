@@ -1,3 +1,8 @@
+---
+description: 'Find and validate the ideal faceless YouTube niche for your profile.'
+argument-hint: '[your interests/skills] [hours per week] [budget]'
+---
+
 # /yt-niche
 
 Find and validate the ideal faceless YouTube niche for your profile.

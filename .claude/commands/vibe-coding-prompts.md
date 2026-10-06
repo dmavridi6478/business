@@ -1,3 +1,7 @@
+---
+description: 'Ten Claude prompts for building apps faster with AI (@datawarlord_official).'
+---
+
 # 10 Claude Prompts for Vibe Coding
 
 Save-worthy prompts for building faster with AI. Source: @datawarlord_official

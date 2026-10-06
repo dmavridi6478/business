@@ -1,3 +1,7 @@
+---
+description: 'Twelve frameworks for business and partnership problems; applied to the problem you give.'
+---
+
 # 12 Problem-Solving Techniques
 
 Apply these 12 frameworks to solve business and partnership problems: $ARGUMENTS

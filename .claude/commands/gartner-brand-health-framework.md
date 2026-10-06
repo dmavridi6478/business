@@ -1,3 +1,7 @@
+---
+description: 'Gartner six-stage funnel for measuring brand health from strategic differentiation through to business outcomes.'
+---
+
 # Brand Health Framework
 
 Source: Gartner infographic (© 2026 Gartner, Inc.). A 6-stage funnel for

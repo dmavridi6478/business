@@ -1,3 +1,7 @@
+---
+description: 'Seven GitHub repos from a second @replace.so carousel that replace paid software, separate from github-repos-from-photos.'
+---
+
 # 7 GitHub Repos So Good They Shouldn't Be Free (Replace.so, Carousel 2)
 
 Source: @replace.so (TikTok/Instagram). This repo already has one

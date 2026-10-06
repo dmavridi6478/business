@@ -1,3 +1,7 @@
+---
+description: 'How to build authority on LinkedIn by owning one specific lane (Chris Donnelly framework).'
+---
+
 # How to Build Authority on LinkedIn
 
 Source: @theromanknox / Chris Donnelly framework

@@ -1,3 +1,7 @@
+---
+description: 'Ask targeted clarifying questions with AskUserQuestion before producing any output.'
+---
+
 Use the AskUserQuestion tool to ask targeted clarifying questions about the task described in $ARGUMENTS before producing any output.
 
 Ask only questions that would meaningfully change what you produce — not generic questions, but specific gaps in your understanding. If the task is already clear enough, proceed without asking.

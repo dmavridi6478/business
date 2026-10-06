@@ -1,3 +1,7 @@
+---
+description: 'Thirteen Claude skills that save hours every week; install once and Claude fires them on its own.'
+---
+
 # 13 Claude Skills That Save You Hours Every Week
 
 Source: GenAI Works infographic, "verified September 2026." One file each,

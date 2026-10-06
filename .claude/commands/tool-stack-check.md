@@ -1,3 +1,7 @@
+---
+description: 'Audit a described software stack for paid tools with a viable free or open-source alternative and recommend whether to switch.'
+---
+
 Audit a described software stack for paid tools that have a viable free/open-source alternative from the `lean-software-stack` skill or the `open-source-devtools-2026` skill, and recommend whether to switch using the `free-vs-paid-tool-decision` procedure.
 
 Given the stack described in "$ARGUMENTS" (a list of paid tools/subscriptions currently in use, or a description of the business's current tooling — ask the user for this if not provided):

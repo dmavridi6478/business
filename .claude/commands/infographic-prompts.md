@@ -1,3 +1,7 @@
+---
+description: 'Create professional infographics quickly with AI tools, using prompts for the topic you give.'
+---
+
 # AI Infographic Creation Guide
 
 Create professional infographics in seconds using AI tools: $ARGUMENTS

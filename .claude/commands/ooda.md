@@ -1,3 +1,8 @@
+---
+description: 'Apply the OODA Loop (Observe → Orient → Decide → Act) to a business crisis or fast-moving situation.'
+argument-hint: '[situation or crisis description]'
+---
+
 # /ooda
 
 Apply the OODA Loop (Observe → Orient → Decide → Act) to a business crisis or fast-moving situation.

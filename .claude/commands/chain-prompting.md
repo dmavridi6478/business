@@ -1,3 +1,7 @@
+---
+description: 'Turn a single draft into polished, publish-ready content with four chained prompts.'
+---
+
 # The Chain Prompting Method (@earchoe)
 
 Turn a single draft into polished, publish-ready content with 4 chained prompts: $ARGUMENTS

@@ -1,3 +1,8 @@
+---
+description: 'Write a complete YouTube video script using the proven faceless channel formula.'
+argument-hint: '[video title] [niche] [target length] [tone]'
+---
+
 # /yt-script
 
 Write a complete YouTube video script using the proven faceless channel formula.

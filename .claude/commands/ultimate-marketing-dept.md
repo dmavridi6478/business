@@ -1,3 +1,7 @@
+---
+description: 'A Claude-powered marketing department: 42 skills, 35 agents, 28 systems and 86 prompts, from outreach to analytics.'
+---
+
 # The Ultimate Marketing Department (Claude-Powered)
 *Source: Claude marketing framework infographic — 42 Skills · 35 Agents · 28 Systems · 86 Prompts*
 

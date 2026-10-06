@@ -1,3 +1,8 @@
+---
+description: 'Apply Six Thinking Hats to unlock balanced team decisions and prevent groupthink.'
+argument-hint: '[decision or topic]'
+---
+
 # /six-hats
 
 Apply Six Thinking Hats to unlock balanced team decisions and prevent groupthink.

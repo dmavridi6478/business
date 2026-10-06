@@ -1,3 +1,7 @@
+---
+description: 'Nine AI learning techniques as prompts to master any topic faster; run them on the topic you give.'
+---
+
 # 9 Ways to Use AI to Learn Anything Faster
 
 Use these 9 AI learning techniques to master any topic faster: $ARGUMENTS

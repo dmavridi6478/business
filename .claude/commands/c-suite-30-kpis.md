@@ -1,3 +1,7 @@
+---
+description: 'Thirty KPIs for VP and C-suite leaders that measure how the business itself is performing, beyond the P&L.'
+---
+
 # 30 KPIs for VP / C-Suite Leaders
 *Source: Cicely Simpson — "What actually needs measuring, beyond the P&L"*
 

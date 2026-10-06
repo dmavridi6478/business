@@ -1,3 +1,7 @@
+---
+description: 'Six prompts to run in sequence to position yourself strongly for a role, across CV and LinkedIn.'
+---
+
 # 6 Claude Prompts to Fix Your CV and LinkedIn
 
 Use these 6 prompts in sequence to position yourself strongly for any role: $ARGUMENTS

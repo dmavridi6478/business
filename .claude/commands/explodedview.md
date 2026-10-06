@@ -1,3 +1,8 @@
+---
+description: 'Generate an AI image prompt for an exploded-view parts diagram product visualization.'
+argument-hint: '[product name] [optional: detail level, background]'
+---
+
 # /explodedview
 
 Generate an AI image prompt for an **exploded-view parts diagram** product visualization.

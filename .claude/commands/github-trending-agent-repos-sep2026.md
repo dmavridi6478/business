@@ -1,3 +1,7 @@
+---
+description: 'Three fast-rising agent and research skill repos from the 23 September 2026 GitHub trending briefing, each confirmed live.'
+---
+
 # GitHub Trending — Agent & Research Skill Repos (Sept 2026)
 
 Source: @githubnow (TikTok), "Daily Briefing · Open Source · 23 September

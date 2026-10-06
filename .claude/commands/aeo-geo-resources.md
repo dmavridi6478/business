@@ -1,3 +1,7 @@
+---
+description: 'Free starter pack of 12 resources for AEO (answer-engine) and GEO (generative-search) optimisation, with links.'
+---
+
 # AEO / GEO Free Resource Starter Pack
 *Source: Searchable.com — Answer Engine Optimisation / Generative Engine Optimisation*
 

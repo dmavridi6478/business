@@ -1,3 +1,8 @@
+---
+description: 'Drill down 5× with "Why?" to find the true root cause of a recurring problem.'
+argument-hint: '[problem statement]'
+---
+
 # /5whys
 
 Drill down 5× with "Why?" to find the true root cause of a recurring problem.

@@ -1,3 +1,7 @@
+---
+description: 'Five open-source alternatives to paid desktop software, each confirmed live on GitHub.'
+---
+
 # Open-Source Alternatives to Paid Desktop Software
 
 Source: @epic8244 (TikTok), "I deleted all Paid Softwares for these

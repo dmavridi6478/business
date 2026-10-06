@@ -1,3 +1,7 @@
+---
+description: 'Strategic thinking as five distinct skills, to assess which ones you use and which you neglect.'
+---
+
 # The 5 Dimensions of Strategic Thinking
 *Source: Cicely Simpson — Leadership Systems*
 

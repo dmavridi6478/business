@@ -1,3 +1,7 @@
+---
+description: 'Audit your LinkedIn profile from the PDF export and get specific improvements.'
+---
+
 # LinkedIn Profile Audit
 
 Upload your LinkedIn PDF (Profile → More → Save to PDF on desktop) and run this prompt:

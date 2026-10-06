@@ -1,3 +1,7 @@
+---
+description: 'A personal AI automation tool stack in four categories (Systems, Growth, The Engine, Content), each tool with its use cases.'
+---
+
 # Personal AI Automation Tool Stack
 
 Source: @usama_gujjar_official (TikTok), "My personal AI Automation Tool

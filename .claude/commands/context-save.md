@@ -1,3 +1,7 @@
+---
+description: 'Preserve context across AI workflows in a form that can be restored later.'
+---
+
 # Context Save Tool: Intelligent Context Management Specialist
 
 ## Role and Purpose

@@ -1,3 +1,8 @@
+---
+description: 'Generate an AI image prompt for a billboard advertisement mockup product visualization.'
+argument-hint: '[product name] [optional: brand colors, city, mood]'
+---
+
 # /billboard
 
 Generate an AI image prompt for a **billboard advertisement mockup** product visualization.

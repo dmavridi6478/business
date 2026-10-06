@@ -1,3 +1,8 @@
+---
+description: 'Write a renewal email for a customer account.'
+argument-hint: '[account name] [renewal date] [context: wins, issues, upsell opportunity]'
+---
+
 # /cs-renewal
 
 Write a renewal email for a customer account.

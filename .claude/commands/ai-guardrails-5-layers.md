@@ -1,3 +1,7 @@
+---
+description: 'A complete framework for responsible AI deployment in organisations. Work bottom-up: System → Process → Operating Model → Governance → Culture.'
+---
+
 # 5 Layers of AI Guardrails
 *Source: AIForLeaders.com — "Deploy AI Responsibly. All 5 Layers Matter."*
 

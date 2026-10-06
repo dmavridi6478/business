@@ -1,3 +1,8 @@
+---
+description: 'Build a 90-day onboarding plan for a new customer.'
+argument-hint: '[customer name] [company type] [product] [use case]'
+---
+
 # /cs-onboarding
 
 Build a 90-day onboarding plan for a new customer.

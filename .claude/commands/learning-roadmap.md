@@ -1,3 +1,7 @@
+---
+description: 'Build a learning roadmap for a topic you want to learn, as an expert teacher would.'
+---
+
 # Learning Accelerator
 
 Act as an expert teacher. I want to learn: $ARGUMENTS

@@ -1,3 +1,8 @@
+---
+description: 'Invoke the scroll-world skill to build an immersive, scrollable 3D brand website.'
+argument-hint: '[brand name] [optional: tagline, colors, vibe]'
+---
+
 # /scroll-world
 
 Invoke the `scroll-world` skill to build an immersive, scrollable 3D brand website.

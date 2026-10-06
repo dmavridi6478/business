@@ -1,3 +1,8 @@
+---
+description: 'Audit your current AI capability level against the 12 AI Skills for 2026 framework and produce a prioritised gap analysis with a 90-day action plan.'
+argument-hint: '[role] [optional: context about current stack or constraints]'
+---
+
 # /ai-skill-audit
 
 Audit your current AI capability level against the 12 AI Skills for 2026 framework and produce a prioritised gap analysis with a 90-day action plan.

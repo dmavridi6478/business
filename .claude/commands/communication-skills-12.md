@@ -1,3 +1,7 @@
+---
+description: 'Twelve-point checklist of what separates high-performer communication from average, for self-audit or coaching.'
+---
+
 # 12 Communication Skills of High Performers
 
 Source: Gav Blaxberg (@WOLF_Financial).
