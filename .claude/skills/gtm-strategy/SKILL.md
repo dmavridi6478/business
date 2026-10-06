@@ -1,3 +1,8 @@
+---
+name: gtm-strategy
+description: '2026 go-to-market framework for choosing a motion, deciding the tool stack and finding the weakest link in the growth engine. Use when planning or auditing a GTM strategy.'
+---
+
 # GTM Strategy Framework 2026
 
 **Invoke:** `/gtm-strategy`

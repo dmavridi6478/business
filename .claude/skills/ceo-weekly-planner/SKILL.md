@@ -1,3 +1,8 @@
+---
+name: ceo-weekly-planner
+description: 'Act as chief of staff: take projects, deadlines, meetings and open decisions, pick the three priorities of the week and build a day-by-day plan. Use at the start of a working week.'
+---
+
 # CEO Weekly Planner
 
 Act as chief of staff to prioritize the week and build a day-by-day action plan.

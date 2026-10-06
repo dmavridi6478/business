@@ -1,3 +1,8 @@
+---
+name: ai-persona-builder
+description: 'Build a distinctive content persona so AI-assisted writing sounds like you rather than generic AI. Use before drafting content in your own voice.'
+---
+
 # AI Persona Builder
 
 Build a distinctive content persona that makes AI-assisted writing sound like you, not like generic AI.

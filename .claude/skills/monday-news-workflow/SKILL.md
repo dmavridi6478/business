@@ -1,3 +1,8 @@
+---
+name: monday-news-workflow
+description: 'Weekly ritual: search the week''s top news in a niche and turn the best three stories into ready-to-post carousel content. Use on Monday mornings for content planning.'
+---
+
 # Monday Morning News-to-Content Workflow
 
 Weekly ritual: search for the top AI or niche news from the past 7 days and turn the best 3 stories into ready-to-post TikTok carousel content.

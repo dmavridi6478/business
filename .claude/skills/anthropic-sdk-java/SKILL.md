@@ -1,3 +1,8 @@
+---
+name: anthropic-sdk-java
+description: 'Reference for the official Anthropic Java SDK (com.anthropic:anthropic-java): sync and async clients, streaming, tool use, structured outputs, batches and managed agents. Use when writing Java code that calls Claude.'
+---
+
 # anthropic-sdk-java
 
 Use the Anthropic Java SDK (`com.anthropic:anthropic-java`) to build Java applications on top of the Claude API.

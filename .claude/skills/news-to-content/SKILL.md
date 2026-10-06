@@ -1,3 +1,8 @@
+---
+name: news-to-content
+description: 'Search this week''s top three developments in a niche and turn each into a content angle. Use for quick news-led content ideas.'
+---
+
 # News to Content
 
 Search for this week's top 3 developments in a niche and turn each into a TikTok content angle.

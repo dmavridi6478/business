@@ -1,3 +1,8 @@
+---
+name: bottleneck-finder
+description: 'Interview the user about a recurring business process, map the workflow and identify its top three bottlenecks. Use when a process is slow, error-prone or stuck.'
+---
+
 # Bottleneck Finder
 
 Act as operations consultant to map a business process and identify its top 3 bottlenecks.

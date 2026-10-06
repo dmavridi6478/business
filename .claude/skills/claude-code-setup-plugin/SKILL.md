@@ -1,3 +1,8 @@
+---
+name: claude-code-setup-plugin
+description: 'Official claude-code-setup plugin that scans a project and recommends which hooks, skills, MCP servers and subagents to configure. Use when setting up Claude Code on a project and unsure what to add.'
+---
+
 # claude-code-setup Plugin
 
 Official Claude plugin that scans your project and recommends exactly which hooks, skills, MCPs, and subagents to configure — so you don't have to figure it out manually. By @codenameposhan.

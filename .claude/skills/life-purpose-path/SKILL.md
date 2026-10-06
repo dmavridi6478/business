@@ -1,3 +1,8 @@
+---
+name: life-purpose-path
+description: 'Prompt that proposes three life paths from a birth date, framed as personality and growth reflection. Entertainment and self-reflection only, not career or psychological advice. Use when the user asks for this exercise.'
+---
+
 # Life Purpose Path
 
 Analyze a birth date to propose 3 life paths aligned with deep personality needs and growth environments.

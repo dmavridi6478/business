@@ -1,3 +1,8 @@
+---
+name: agent-memory-repos
+description: 'Seven open-source repos that give AI agents persistent memory, with stars and what each does. Use when choosing a memory layer for an agent or to stop re-explaining a project every session.'
+---
+
 # Agent Memory Repos
 
 7 open-source repos for giving AI agents persistent memory — so you never re-explain your project again. Rows 1, 3, 4, 5 curated by @joshualevi.ai; rows 2 and 6 added from a later @githubnow "daily briefing" batch; row 7 added from an @aigenesis.official "GitHub repos for AI agents" carousel (each confirmed live via GitHub search before being added — see stars/description).

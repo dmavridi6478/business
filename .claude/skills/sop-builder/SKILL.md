@@ -1,3 +1,8 @@
+---
+name: sop-builder
+description: 'Interview the user about a repeated task and turn it into a complete Standard Operating Procedure with automation opportunities. Use when documenting a process so someone else can run it.'
+---
+
 # SOP Builder
 
 Turn any repeated task into a complete Standard Operating Procedure with automation opportunities.

@@ -1,3 +1,8 @@
+---
+name: anthropic-sdk-python
+description: 'Reference for the official Anthropic Python SDK: Messages, Batches, Files, Skills and the Beta platform (Managed Agents, Sessions, MemoryStores and more). Use when writing Python code that calls Claude.'
+---
+
 # Anthropic SDK (Python) — Reference Guide
 
 Official Python SDK for the Anthropic API. Full-featured client for Claude models — Messages, Batches, Files, Skills, and the Beta platform (Managed Agents, Sessions, Dreams, MemoryStores, Vaults, and more).

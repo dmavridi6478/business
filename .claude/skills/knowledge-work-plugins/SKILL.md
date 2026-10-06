@@ -1,3 +1,8 @@
+---
+name: knowledge-work-plugins
+description: 'Reference to anthropics/knowledge-work-plugins: role-specific Claude plugins for job functions, built for Cowork and compatible with Claude Code. Use when choosing or explaining which role plugin to enable.'
+---
+
 # Knowledge Work Plugins — Role-Specific Claude Plugin Library
 
 Open-source plugin collection that turns Claude into a specialist for specific job functions. Built for [Claude Cowork](https://claude.com/product/cowork), also compatible with Claude Code.

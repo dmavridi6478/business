@@ -1,3 +1,8 @@
+---
+name: jarvis-os
+description: 'Build a personal AI operating system with Claude Code as the engine (design by @zoout), with a layered stack. Use when setting up a personal command centre for tasks, memory and automation.'
+---
+
 # JARVIS OS
 
 Build a personal AI operating system using Claude Code as the engine. Designed by @zoout.

@@ -1,3 +1,8 @@
+---
+name: claude-cookbooks
+description: 'Reference to the claude-cookbooks repo: copy-paste snippets and notebooks for capabilities, tool use, multimodal, evals, agent patterns, extended thinking and cost optimisation. Use to find a worked example for Claude API code; needs ANTHROPIC_API_KEY.'
+---
+
 # Claude Cookbooks — Developer Recipe Library
 
 Copy-paste code snippets and Jupyter notebooks for building with the Claude API. Covers capabilities, tool use, multimodal, evals, agent patterns, extended thinking, cost optimization, managed agents, and the Claude Agent SDK.

@@ -1,3 +1,8 @@
+---
+name: ai-productivity-map
+description: 'The nine-stage AI workflow used by high performers: capture, research, think, create, communicate, automate, execute, learn, improve (Mindstream). Use when mapping which AI tool or habit belongs at each stage of your work.'
+---
+
 # Ultimate AI Productivity Map
 
 The complete AI workflow every high performer uses. By Mindstream (mindstream.news).

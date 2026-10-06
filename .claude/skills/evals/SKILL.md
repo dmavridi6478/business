@@ -1,3 +1,8 @@
+---
+name: evals
+description: 'Reference to Anthropic''s model-written evaluation datasets (Perez et al. 2022, arXiv 2212.09251): four collections of JSONL datasets for probing model behaviours. Use when studying or running behavioural evals.'
+---
+
 # Anthropic Model-Written Evaluation Datasets
 
 Research datasets from the paper **"Discovering Language Model Behaviors with Model-Written Evaluations"** (Perez et al., 2022 — [arXiv:2212.09251](https://arxiv.org/abs/2212.09251)). Four collections of JSONL datasets for evaluating language model behavior: persona, sycophancy, advanced AI risk, and gender bias.

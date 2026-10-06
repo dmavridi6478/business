@@ -1,3 +1,8 @@
+---
+name: client-research-web
+description: 'Research a prospective client before a meeting with live web search: their business, recent news, industry challenges and a specific opener. Use before a sales or discovery call.'
+---
+
 # Client Research (Web Search)
 
 Research a prospective client before a meeting — their business, recent news, industry challenges, and a specific reference point to open the call with.

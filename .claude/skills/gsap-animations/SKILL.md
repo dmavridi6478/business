@@ -1,3 +1,8 @@
+---
+name: gsap-animations
+description: 'Official GreenSock (GSAP) skill: timeline animations, ScrollTrigger, text reveals and React integration. Use when building professional web animations.'
+---
+
 # GSAP Animations (GreenSock Animation Platform)
 
 Official GreenSock skill for Claude Code. Build professional, timeline-based animations with ScrollTrigger, text reveals, and React integration.

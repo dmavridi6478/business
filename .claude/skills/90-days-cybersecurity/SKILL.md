@@ -1,3 +1,8 @@
+---
+name: 90-days-cybersecurity
+description: 'Structured 90-day cybersecurity learning plan from Network+ foundations to active penetration testing (farhanashrafdev/90DaysOfCybersecurity). Use when building a study roadmap for a security career; practise only on systems you are authorised to test.'
+---
+
 # 90 Days of Cybersecurity
 
 Structured 90-day cybersecurity learning plan — from Network+ foundations to active penetration testing.

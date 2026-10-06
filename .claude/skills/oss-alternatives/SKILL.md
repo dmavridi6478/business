@@ -1,3 +1,8 @@
+---
+name: oss-alternatives
+description: 'Open-source replacements for paid AI SaaS tools that run locally, with install commands. Use when asked for a free alternative to a paid AI tool.'
+---
+
 # OSS Alternatives Guide
 
 Open-source replacements for paid AI SaaS tools — run locally, no subscription.

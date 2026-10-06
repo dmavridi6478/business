@@ -1,3 +1,8 @@
+---
+name: ai-workflow-designer
+description: 'Design a repeatable AI content workflow (idea, research, create, review, publish, analyse) tailored to your niche, audience and output goals. Use when setting up how content gets made end to end.'
+---
+
 # AI Content Workflow Designer
 
 **Invoke with:** `/ai-workflow-designer` or ask Claude to "design my content workflow"

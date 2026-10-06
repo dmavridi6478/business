@@ -1,3 +1,8 @@
+---
+name: atm-framework
+description: 'ATM framework (Audience Growth, Trust and Engagement, Monetization; Lisa Cole) to audit brand visibility and link it to business impact. Use when assessing whether visibility is turning into revenue.'
+---
+
 # ATM Framework — Brand Visibility to Business Impact
 
 Use the ATM framework (Audience Growth → Trust & Engagement → Monetization) to audit brand visibility and connect it directly to business impact. Developed by Lisa Cole / The Limitless CMO.

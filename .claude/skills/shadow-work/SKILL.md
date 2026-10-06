@@ -1,3 +1,8 @@
+---
+name: shadow-work
+description: 'Prompt that uses a birth date to explore blind spots, defence mechanisms and self-sabotaging patterns. Reflection only, not therapy. Use when the user asks for this exercise.'
+---
+
 # Shadow Work
 
 Use a birth date to explore blind spots, defense mechanisms, and self-sabotaging patterns.

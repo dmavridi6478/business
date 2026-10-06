@@ -1,3 +1,8 @@
+---
+name: ai-leader-prompts
+description: '25 AIForLeaders.com prompts across five leadership categories, from strategic thinking and vision onward. Use when a leader wants sharp questions for strategy, people or decisions.'
+---
+
 # AI Prompts for Top 1% Leaders
 
 **Invoke:** `/ai-leader-prompts`

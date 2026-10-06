@@ -1,3 +1,8 @@
+---
+name: 30-days-of-python
+description: 'Structured 30-day Python learning plan (Asabeneh Yetayeh) with three difficulty levels per day, ending in web scraping, APIs and databases. Use when planning or coaching a beginner-to-intermediate Python study path.'
+---
+
 # 30 Days of Python
 
 Structured 30-day Python learning plan by Asabeneh Yetayeh. 3 difficulty levels per day, ending with web scraping, APIs, and databases.

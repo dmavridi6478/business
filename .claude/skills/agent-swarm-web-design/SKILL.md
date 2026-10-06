@@ -1,3 +1,8 @@
+---
+name: agent-swarm-web-design
+description: 'Build production-quality websites with a swarm of Claude agents that research real design references first (workflow by @ai.with.andrew). Use when you want a researched, multi-agent web design process rather than a single prompt.'
+---
+
 # Agent Swarm Web Design
 
 Use Claude's Agent Swarm to build production-quality websites — Claude does the design research and heavy lifting. Workflow by @ai.with.andrew.

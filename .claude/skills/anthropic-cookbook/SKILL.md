@@ -1,3 +1,8 @@
+---
+name: anthropic-cookbook
+description: 'Reference to the Anthropic Cookbook: code guides and notebooks for Claude capabilities, tool use, multimodal input, agent patterns, Managed Agents, the Agent SDK and evals. Use to find a worked recipe before writing Claude API code; needs ANTHROPIC_API_KEY.'
+---
+
 # Anthropic Cookbook — Recipe Library
 
 Production-quality code guides and Jupyter notebooks for building with Claude. Covers capabilities, tool use, multimodal input, agentic patterns, Managed Agents, Claude Agent SDK, evals, skills, and third-party integrations.

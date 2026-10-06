@@ -1,3 +1,8 @@
+---
+name: design-dna
+description: 'Reverse-engineer a website''s visual design (typography, colour palette, layout, spacing) from a screenshot or URL and replicate or adapt the style (zanwei/design-dna). Use when you want to understand or borrow a design system''s look; respect the source''s copyright.'
+---
+
 # Design DNA
 
 Reverse-engineer any website's visual design — typography, color palette, layout patterns, and spacing — then replicate or adapt the style with precision.

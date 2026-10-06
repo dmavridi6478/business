@@ -1,3 +1,8 @@
+---
+name: uplifting-biomolecular-modeling
+description: 'Reference to anthropics/uplifting-biomolecular-modeling (not maintained): 36 inference-optimisation kits for open protein and genomics ML tools. Use when studying inference speed-ups for structure prediction or protein language models.'
+---
+
 # Uplifting Biomolecular Modeling — Inference Optimization Kits
 
 36 drop-in optimization kits for open protein- and genomics-ML tools. Each kit accelerates a pinned upstream release (structure prediction, cofolding, binder/sequence design, protein/genomic language models) under a named **mode** without changing how you call the tool.

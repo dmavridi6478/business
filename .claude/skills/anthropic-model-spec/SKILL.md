@@ -1,3 +1,8 @@
+---
+name: anthropic-model-spec
+description: 'Reference guide to Claude''s published model spec: values, priorities and behavioural guidelines. Use when asked how Claude is meant to behave or to reason about a request against the spec.'
+---
+
 # Claude Model Spec — Reference Guide
 
 The authoritative document describing Claude's values, priorities, and behavioral guidelines. Published by Anthropic; not available as a GitHub repository.

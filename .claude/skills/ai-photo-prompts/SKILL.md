@@ -1,3 +1,8 @@
+---
+name: ai-photo-prompts
+description: 'Nine professional AI photo prompts (@simplydigital) where you upload your photo and swap bracketed placeholders. Use when generating studio-style portraits with an image tool; only use photos of people who consent.'
+---
+
 # AI Photo Prompts
 
 9 professional AI photo prompts by @simplydigital. Upload your photo and swap the bracketed placeholders to generate studio-quality images with any AI image tool.

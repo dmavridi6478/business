@@ -1,3 +1,8 @@
+---
+name: ai-communicator
+description: 'Seven ways to use AI to sharpen clarity, confidence and delivery: interview practice, feedback, analysis and rehearsal (SmarterWithAI). Use when preparing for an interview, presentation, difficult conversation or any communication that needs practice.'
+---
+
 # AI Powerful Communicator
 
 Use AI for feedback, analysis, and practice to sharpen clarity, confidence, and delivery. By SmarterWithAI (smarterwithai.news).

@@ -1,3 +1,8 @@
+---
+name: anthropic-courses
+description: 'Reference to Anthropic''s five-course notebook curriculum on Claude API development, from basics to production tool use. Use when learning or teaching the Claude API step by step; needs ANTHROPIC_API_KEY.'
+---
+
 # Anthropic Courses — Educational Curriculum
 
 Five sequential courses teaching Claude API development from first principles through production-grade tool use. Jupyter notebooks with hands-on exercises.
