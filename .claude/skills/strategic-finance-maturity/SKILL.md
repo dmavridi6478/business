@@ -1,6 +1,6 @@
 ---
 name: strategic-finance-maturity
-description: Diagnose where a company's finance function sits on Oana Labes' 5-layer maturity model — from Layer 1 (Trusted Financials) through Layer 5 (Value Creation) — and distinguish Strategic Finance behaviors (engineers the future) from FP&A behaviors (reports what happened). Use when auditing a finance function, identifying where the CFO or finance team is leaving strategic value on the table, building a finance transformation roadmap, or assessing a company pre-investment/pre-acquisition. Source: Oana Labes MBA, CPA / CEO Financial Intelligence Academy.
+description: 'Diagnose where a company''s finance function sits on Oana Labes'' 5-layer maturity model — from Layer 1 (Trusted Financials) through Layer 5 (Value Creation) — and distinguish Strategic Finance behaviors (engineers the future) from FP&A behaviors (reports what happened). Use when auditing a finance function, identifying where the CFO or finance team is leaving strategic value on the table, building a finance transformation roadmap, or assessing a company pre-investment/pre-acquisition. Source: Oana Labes MBA, CPA / CEO Financial Intelligence Academy.'
 ---
 
 # Strategic Finance Maturity Model

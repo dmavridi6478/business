@@ -1,3 +1,8 @@
+---
+description: 'Analyze churn risk for an account and build a 30-day save plan.'
+argument-hint: '[account name] [paste health signals, usage data, or situation description]'
+---
+
 # /cs-churn
 
 Analyze churn risk for an account and build a 30-day save plan.

@@ -1,6 +1,6 @@
 ---
 name: design-templates
-description: Ready-to-use, self-contained HTML/CSS templates for common content-visual needs — an iMessage chat mockup, a vertical social/story device frame, a 3D-tilted product screenshot mockup, a halftone/dithered image effect (both CSS-only and real canvas dithering), a logo/reference moodboard grid, a brand board (wordmark + palette + type pairing + app preview), a SaaS pricing table + comparison grid, a restrained editorial hero, a numbered infographic card grid (light/dark variants), a filterable design-reference-site dashboard, a light "Save For Later" social carousel (carousel-save-for-later), a dark neon agent info card (dark-neon-agent-card), a dark orange-gradient tutorial step-cards layout (dark-orange-agent-tutorial), a GitHub-style dark trending repo card (github-trending-card), a bold red grunge AI-tools carousel (@ai.global.lee style, red-grunge-ai-tools), a warm editorial carousel for thinking-partner / Claude workflow content (@parm.ai style, editorial-thinking-partner), a dark space-themed OSS repo card (@datawarlord_official style, datawarlord-oss-card), and a nature photo background with glassmorphism panels carousel (@softgirlnocode AI video style, softgirlnocode-nature-glassmorphism), a light/dark copy-this-prompt carousel (prompt-card-carousel), a repo-showcase card set (repo-card-grid), an agent explainer flow card (agent-flow-chat-card), and an orange mascot tips carousel (mascot-tips-orange). Use these instead of reaching for a paid single-purpose tool (or hand-rolling from scratch) when a design/frontend task needs a device mockup, a stylized image effect, a moodboard layout, a brand-kit deliverable, a SaaS pricing section, a quiet typography-led hero, a "N things you should know" carousel/infographic layout, a reusable reference dashboard, or any of the social-carousel/card layouts above. Each template is copy-paste-ready with clear swap points marked in comments.
+description: 'Ready-to-use, self-contained HTML/CSS templates for common content-visual needs — an iMessage chat mockup, a vertical social/story device frame, a 3D-tilted product screenshot mockup, a halftone/dithered image effect (both CSS-only and real canvas dithering), a logo/reference moodboard grid, a brand board (wordmark + palette + type pairing + app preview), a SaaS pricing table + comparison grid, a restrained editorial hero, a numbered infographic card grid (light/dark variants), a filterable design-reference-site dashboard, a light "Save For Later" social carousel (carousel-save-for-later), a dark neon agent info card (dark-neon-agent-card), a dark orange-gradient tutorial step-cards layout (dark-orange-agent-tutorial), a GitHub-style dark trending repo card (github-trending-card), a bold red grunge AI-tools carousel (@ai.global.lee style, red-grunge-ai-tools), a warm editorial carousel for thinking-partner / Claude workflow content (@parm.ai style, editorial-thinking-partner), a dark space-themed OSS repo card (@datawarlord_official style, datawarlord-oss-card), and a nature photo background with glassmorphism panels carousel (@softgirlnocode AI video style, softgirlnocode-nature-glassmorphism), a light/dark copy-this-prompt carousel (prompt-card-carousel), a repo-showcase card set (repo-card-grid), an agent explainer flow card (agent-flow-chat-card), and an orange mascot tips carousel (mascot-tips-orange), plus seven Batch 104 templates: a navy GTM diagnostic heatmap (gtm-heatmap-navy), an agent-roster department grid (agent-roster-grid), a first-100-customers staircase (stage-roadmap-steps), a radial 60-tool wheel (tool-wheel-radial), a four-theme repo-of-the-day slide (repo-card-slide), an avoid/say-instead list (avoid-say-instead) and feed/ask/output cards (feed-ask-output-cards). Use these instead of reaching for a paid single-purpose tool (or hand-rolling from scratch) when a design/frontend task needs a device mockup, a stylized image effect, a moodboard layout, a brand-kit deliverable, a SaaS pricing section, a quiet typography-led hero, a "N things you should know" carousel/infographic layout, a reusable reference dashboard, or any of the social-carousel/card layouts above. Each template is copy-paste-ready with clear swap points marked in comments.'
 ---
 
 ## When to use this skill
@@ -40,6 +40,17 @@ Reach for a template here instead of improvising when a task needs:
 - **An engineering-lesson carousel card** (@jek.notes style — off-white paper, heavy condensed headline with one red line, red "The problem / What to do / Think" tags, arrow bullets, mini flow) → `templates/bug-lesson-card.html`
 - **A checklist panel grid** (@aisimplified23 "Claude Checklist" style — peach panels with black header tabs and checkbox rows, bold keywords; data-driven `PANELS`) → `templates/checklist-panels-peach.html`
 - **A KPI framework one-pager** (Oana Labes style — black title bar with a yellow keyword, cream lagging panel in 3 columns, three gold leading panels, checkbox KPIs with formulas) → `templates/kpi-framework-gold.html`
+- **A GTM diagnostic heatmap** (Union Square style - dark navy, pink sub-headline, rows = GTM areas, columns = maturity levels, G/Y/R cells with computed dashed danger zones) → `templates/gtm-heatmap-navy.html`
+- **An agent-roster infographic** ("N best agents to run your X" - numbered coloured department cards with agent chips and a CTA bar; themes `claude` and `navy`) → `templates/agent-roster-grid.html`
+- **A staged roadmap** ("first 100 customers" - rising black/green/yellow/purple blocks over one column per stage with goal, lead generation, channels, build, working-when) → `templates/stage-roadmap-steps.html`
+- **A radial tool wheel** (12 wedges x 5 tools, outer category ring, text only) → `templates/tool-wheel-radial.html`
+- **A repo-of-the-day carousel slide** in four looks selected with `?theme=grid-light|pixel-dark|blueprint|cyber-red` (rank, name, what it really does, real stats) → `templates/repo-card-slide.html`
+- **A "things not to say" list** (avoid / reason / say instead rows, meaning carried by symbols as well as colour) → `templates/avoid-say-instead.html`
+- **Feed / ask / output cards** (six numbered cards + input pack + rules; SalesDaily "AI Sales Prep" look) → `templates/feed-ask-output-cards.html`
+- **A Venn diagram** (two translucent circles, lilac and amber, with a collaboration panel in the overlap; ruled-paper background) → `templates/venn-two-circles.html`
+- **An AI-playbook slide** (beige paper, serif headline, four-box input/AI/output/check chain, black copy-this-prompt block, numbered checks; accents indigo or pink via `data-accent`, dark via `data-mode`) → `templates/playbook-workflow-beige.html`
+- **A grid of prompt cards in Greek or English** (@ai_with_dr.t style: grey paper, italic serif title, white cards with a mock chat input) → `templates/prompt-chat-cards-grey.html`
+- **A numbered tool list** (big red numbers, initials tile, bold red name, divider, job) → `templates/tool-list-red-numbers.html`
 - **A UI do / don't tip card** (@iqonicdesign style — pale blue-white card, wireframe pair with red X and green check, "Save this for later" pill) → `templates/ui-tip-do-dont.html`
 - **A SalesDaily-style 20-card methodology grid** (teal title bar, white cards with teal headers, grey "when to use it" box, "best for" line, teal footer; data-driven `CARDS` array) → `templates/sales-method-grid-teal.html`
 - **A three-level stepped pastel card poster** (NipPro "3 Levels" style — serif headline with grey highlight, pink / peach / lilac cards of rising height, big percentage, looks-like list, next move, two stat tiles) → `templates/level-cards-pastel.html`
@@ -58,6 +69,9 @@ Reach for a template here instead of improvising when a task needs:
 - **A frosted-glass app-category card** (@jeanbbttyct - blurred photo background, big white title, glass panel of app tiles) → `templates/app-category-glass.html`
 - **A textured-paper "tool of the day" card** (@clicksandranks - heavy grotesque title, teal link, browser screenshot, `SAVE FOR LATER`) → `templates/paper-tool-card.html`
 - **A charcoal install card** (@the.wealth.lab - black logo band, yellow heading, `INSTALL` command) → `templates/dark-grey-install-card.html`
+- **A pastel cheatsheet grid** (title pill + edition pill, 12 numbered panels in blue/green/purple/orange/pink/yellow, optional mono code blocks; data-driven `PANELS`) -> `templates/cheatsheet-pastel-grid.html`
+- **A winding step path** (numbered gradient circles joined by a dashed blue-to-purple curve drawn from real positions, tag chips, command chips) -> `templates/step-snake-path.html`
+- **A dark-grey roadmap carousel** (black logo band, yellow underlined titles, white bold centred bullets; cover, steps, summary) -> `templates/roadmap-yellow-dark.html`
 
 ## How to use a template
 
@@ -150,6 +164,17 @@ Chromium screenshot with zero console errors before being added.
 | `bug-lesson-card.html` | @jek.notes "10 Developer Problems You Won't See Until Production" | 540 x 675 card from one `SLIDE` object (kicker, headline lines with one `<em>` red line, problem, flow chips, to-do list, think box, counter); Anton/Impact fallback; theme `engineering-red` |
 | `checklist-panels-peach.html` | @aisimplified23 "Claude Checklist" | 3-column panel grid built from a `PANELS` array with `**bold**` markers parsed safely (no innerHTML); collapses to 2 then 1 column; pre-filled with three panels from `claude-checklist`; theme `peach-checklist` |
 | `kpi-framework-gold.html` | Oana Labes "The CEO KPI Framework" | `LAG` and `LEAD` arrays render checkbox KPIs with formulas; three gold tints via `nth-child`; pre-filled with 18 of the 33 KPIs from `ceo-kpi-framework` (corrected churn formula); theme `kpi-gold` |
+| `gtm-heatmap-navy.html` | Union Square "GTM Ops Diagnostic Framework" | `ROWS` of `[area, 'GGYR']`; danger zone = Optimization/Amplification scored G/Y on a red or yellow Fundamentals/Adoption; letters inside cells so colour is never the only signal; theme `gtm-navy` |
+| `agent-roster-grid.html` | "100 Best Claude Agents" / "200 Claude Agents To Run Your Entire GTM" | `DEPTS` strings `Dept|agent|agent...`; auto-fit grid; `data-theme` `claude` (warm white + orange) or `navy` (dark + blue/mint CTA) |
+| `stage-roadmap-steps.html` | "How to Unlock GTM" (OneGTM Lab) | `STAGES` array drives both the staircase and the columns; channels rendered as text chips; theme `stairs-pastel` |
+| `tool-wheel-radial.html` | "60 AI Marketing + Sales Tools" | SVG built with `createElementNS`; right-half labels run outward, left-half labels are flipped so they read upright; theme `wheel-navy-orange` |
+| `repo-card-slide.html` | @joshualevi.ai, @replace.so, @aiclawbots, @martiendejong_dev carousels | 4:5 slide in container-query units (`cqw`) so it scales; four themes; mascot slot is a dashed placeholder, not a reproduction |
+| `avoid-say-instead.html` | Dr. Christian Poensgen "10 Things NOT to Say in a Job Interview" | `ROWS` of `[avoid, reason, say]`; symbols X ? tick; theme `teal-paper` |
+| `feed-ask-output-cards.html` | SalesDaily.co "AI Sales Prep" | `STEPS` of `[title, feed, ask, output]` + `PACK` and `RULES`; theme `salesdaily-cards` |
+| `venn-two-circles.html` | "Where AI And Sales Meet" | Circles are CSS, overlap panel absolutely centred; stacks to one column under 760 px; theme `venn-lilac-amber` |
+| `playbook-workflow-beige.html` | @earchoe AI playbook slides | Everything from constants; `data-accent` and `data-mode` switch palette; serif and mono fall back to Georgia and ui-monospace; theme `playbook-beige` |
+| `prompt-chat-cards-grey.html` | @ai_with_dr.t prompt carousels | `PROMPTS` strings split on blank lines; mock input drawn with text glyphs, no icons; no Greek word in capitals; theme `drt-grey` |
+| `tool-list-red-numbers.html` | @ai_slacker "50 AI tools" | `TOOLS` rows with initials tiles (logos are not reproduced); collapses to two columns under 520 px; theme `tools-red` |
 | `ui-tip-do-dont.html` | @iqonicdesign "5 Tips To Help You In UI Design" | Wireframe pair from placeholder blocks, circular mark half-overlapping the card edge; pre-filled with tip 1 of `ui-image-layout-5-tips`; theme `soft-blue-tip` |
 
 **Gotcha found while verifying:** a font name passed into an inline `style="font-family:…"` must use *single* quotes (`'Fredoka'`) — double quotes silently break the attribute and the card falls back to the default font.
@@ -226,3 +251,45 @@ The original specimens use proprietary or unidentified fonts; these are look-ali
 | `soft-blue-tip` | `#F4F7FF` to `#E6EDFB`, placeholders `#C9CDD3`, red `#D63B3B`, green `#2DB45A` | Plus Jakarta Sans |
 | itsaiguide thumbnail | red radial glow, white title, red underlined section number, black bold quote | Anton + Inter (photo not reproduced) |
 
+## Batch 104 theme tokens (colours read from the screenshots)
+
+| Theme | Colours | Fonts (look-alike, free) |
+|---|---|---|
+| `gtm-navy` | navy `#0A1130`, panel `#101A44`, pink-red `#FF2D75`, green `#2F9E5B`, amber `#E8B92F`, red `#D6405A` | Inter or Aptos (bold uppercase title) |
+| `claude-agent-roster` | white `#FFFFFF`, ink `#16181D`, Claude orange `#E8602C`, department colours blue `#2F6FDB` green `#2F9E5B` purple `#7A3FD1` red `#D6405A` amber `#E6951C` teal `#0F8F9F` | Inter |
+| `linkedin-navy-roster` | navy `#0B1533`, card `#0F1D45`, line `#2A4287`, orange `#FF8A3D`, CTA gradient mint `#5FE0C4` to sky `#7AD0FF` | Inter |
+| `stairs-pastel` | black `#111`, mint `#A8EF9A`, butter `#FFD873`, purple `#5B2F9E`, highlight `#D8FFD0` | Inter |
+| `wheel-navy-orange` | field `#07123D` to `#173A9C`, wedge orange `#FF8A1F`, navy `#16276B`, pale `#E9EDF8`, ring `#0F1C55` | Inter |
+| `repo-grid-light` | paper `#EFEFE9`, ink `#141414`, orange `#D9582B` (3D asterisk motif) | Archivo Black + Inter |
+| `repo-pixel-dark` | near-black `#101011`, green pixels `#1E3A24`, accent `#7EE08F` | Inter |
+| `repo-blueprint` | blueprint blue `#0B4A7D`, grid `#FFFFFF22`, label white, accent `#3B82F6` | Inter ExtraBold |
+| `repo-cyber-red` | black `#0A0606`, neon red `#FF2B2B`, panel `#150B0B` | Anton + Inter |
+| `teal-paper` | paper `#E9E9E6`, ink `#14323D`, teal `#8EC5BD`, cross `#C0262D`, query `#E39A1B`, tick `#1F8A3E` | Inter |
+| `salesdaily-cards` | paper `#F1F1EE`, card `#FFFFFF`, teal `#1B8A94`, navy `#10243A` | Inter |
+
+All seven Batch 104 templates were rendered in headless Chromium at 1100 px and 390 px in light and dark (no script errors, no horizontal overflow). The mascot art, brand logos and tool logos in the sources are deliberately not reproduced.
+
+## Batch 105 theme tokens (colours read from the screenshots)
+
+| Theme | Colours | Fonts (look-alike, free) |
+|---|---|---|
+| `venn-lilac-amber` | paper `#F4F3EF`, rule `#E4E2DC`, lilac `#CDBCF6`, amber `#F2C36B`, overlap `#CF9F9D`, label blue `#3B4FD1` | Inter ExtraBold |
+| `playbook-beige` | beige `#DDD6C1`, panel `#CFC7AE`, code `#14120E`, ink `#16140F`, indigo `#4B3FD6` or pink `#D63A7A`, dark page `#14120E` | Playfair Display Black + JetBrains Mono |
+| `drt-grey` | paper `#ECEBE8`, card `#F7F7F6`, ink `#1D1D20`, send button `#8E8E93`, accent `#6B8FD6` | Georgia italic bold (Greek-capable) |
+| `tools-red` | white `#FFFFFF`, red `#D6261B`, ink `#17171A`, divider `#1A1A1A` | Inter Black |
+
+All four Batch 105 templates were rendered in headless Chromium at 1100 px and 390 px (the Venn in light and dark) with no script errors and no horizontal overflow. Tool logos and brand marks are not reproduced.
+
+## Batch 106 theme tokens (colours read from the screenshots)
+
+| Theme | Colours | Fonts (look-alike, free) |
+|---|---|---|
+| `stackflo-prompt-blue` (use `prompt-card-carousel.html` or `prompt-chat-cards-grey.html` with these tokens) | paper `#F6F8FD`, navy `#15213F`, blue `#2F6FDB`, pill "UPLOAD + ASK", prompt in a left-bar rounded card | Poppins or Inter |
+| `githubnow-green` (use `repo-briefing-card.html` or `github-trending-card.html`) | navy `#0A0F1E`, green `#3DBE5A`, gold pill, mono repo title | Inter + JetBrains Mono |
+| `pastel-cheatsheet` (`cheatsheet-pastel-grid`) | blue `#DFEAFE`, green `#DCF5E4`, purple `#E9E0FB`, orange `#FFE6D2`, pink `#FDE0EA`, yellow `#FFF3C4`, pills orange `#E8602C` and blue `#2F6FDB` | Aptos or Inter, JetBrains Mono for code |
+| `snake-blue-purple` (`step-snake-path`) | paper `#F4F8FF`, ink `#14213D`, gradient `#2F6FDB` to `#7A3FD1`, code `#14130F` | Aptos or Inter |
+| `wealthlab-yellow` (`roadmap-yellow-dark`) | grey `#404042`, band `#000`, yellow `#FFD400`, white | Inter Black / condensed bold |
+| `claude-cream-orange` (infographics in the "25 prompts" and "12 things" posts; use `infographic-card-grid.html`) | cream, orange `#F26A1B`, black condensed headline | Anton + Inter |
+| `ai-stack-night` (use `stacked-layer-pyramid.html`) | near-black `#0B0D14`, white serif headline, translucent tiers with orange-brown outlines, teal for productivity | Playfair Display + Inter |
+
+The three new Batch 106 templates were rendered in headless Chromium at 1100 px (light and dark) and 390 px with no script errors and no horizontal overflow. Brand logos, mascots and tool icons from the sources are not reproduced.

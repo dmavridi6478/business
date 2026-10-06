@@ -1,6 +1,6 @@
 ---
 description: Get a build sheet for one workflow from the 100-item sales-workflow-catalog, or list a stage's 10 workflows
-argument-hint: [number 1-100, or workflow name, or a stage name] [platform: n8n | make]
+argument-hint: '[number 1-100, or workflow name, or a stage name] [platform: n8n | make]'
 ---
 
 Use the `sales-workflow-catalog` skill. Request: "$ARGUMENTS"

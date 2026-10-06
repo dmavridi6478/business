@@ -1,6 +1,6 @@
 ---
 name: org-transformation-radar
-description: Diagnostic tool based on McKinsey's 9 organizational shifts across three forces — Technology Disruption (AI readiness, human-AI collaboration, shared services), Economic Disruption (geopolitical adaptation, structural simplification, resource reallocation), and Workforce Shifts (performance ambition, D&I reinvestment, leadership adaptability). Use when auditing an organization's transformation readiness, stress-testing a strategic plan against real market forces, assessing AI adoption maturity, or identifying where an organization is lagging vs. leading peers. Source: McKinsey & Company "Nine Shifts Reshaping Organizations Today."
+description: 'Diagnostic tool based on McKinsey''s 9 organizational shifts across three forces — Technology Disruption (AI readiness, human-AI collaboration, shared services), Economic Disruption (geopolitical adaptation, structural simplification, resource reallocation), and Workforce Shifts (performance ambition, D&I reinvestment, leadership adaptability). Use when auditing an organization''s transformation readiness, stress-testing a strategic plan against real market forces, assessing AI adoption maturity, or identifying where an organization is lagging vs. leading peers. Source: McKinsey & Company "Nine Shifts Reshaping Organizations Today."'
 ---
 
 # Org Transformation Radar

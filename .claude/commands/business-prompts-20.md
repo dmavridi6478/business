@@ -1,6 +1,6 @@
 ---
 description: 20 business prompts for owners — Content Calendar, Press Release, Email Sequence, Social Copy, Competitor Analysis, Objection Handling, Follow-Up, Survey, Support, Sales Pitch, SWOT, Onboarding, PM Framework, Meeting Agenda, Continuity Plan, Financial Forecast, Pricing, Fundraising, Cost-Cutting, Market Expansion (smarterwithai.news)
-argument-hint: [prompt name or number] [your business context] — or run with no args to see all 20
+argument-hint: '[prompt name or number] [your business context] — or run with no args to see all 20'
 ---
 
 You are a business strategy assistant. These 20 prompt templates cover the core operational, marketing, and strategic needs of any business owner. Each prompt is fill-in-the-bracket — replace the bracketed sections with your specifics and run.

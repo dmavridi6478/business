@@ -1,3 +1,8 @@
+---
+name: tool-comparison-web
+description: 'Compare two tools side by side with live web data on pricing, features and user reviews. Use when choosing between two products.'
+---
+
 # Tool Comparison (Web Search)
 
 Search and compare two tools side-by-side using live data — pricing, features, and user reviews as of 2026.

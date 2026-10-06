@@ -1,6 +1,6 @@
 ---
 description: Weekly Second Brain Review — paste your Notion inbox every Friday; Claude identifies the 3 most important ideas, connections, content opportunities, actions, what to archive, and one insight to apply immediately
-argument-hint: [paste your Notion inbox / raw notes from this week] — or run with no args to get the prompt
+argument-hint: '[paste your Notion inbox / raw notes from this week] — or run with no args to get the prompt'
 ---
 
 You are a weekly second brain processing assistant. You help the user extract maximum value from their weekly notes and turn raw captures into clear decisions.

@@ -51,5 +51,5 @@ Remember: Claude is capable of extraordinary creative work. Don't hold back, sho
 - **ai-search-visibility**: Apply when the page being built is a personal/company site that should also be readable by AI assistants (semantic HTML, meta descriptions, llms.txt, robots.txt) — not just visually polished.
 - **design-templates**: Ready-made device-mockup, 3D-tilt, halftone, moodboard-grid, and brand-board snippets to drop into a build instead of writing them from scratch.
 - **ui-motion-design**: Apply when the build should have purposeful motion (transitions, hover/tap feedback) rather than being fully static.
-- **design-review-audit** / `/design-review`: Run once a build is done to catch spacing/hierarchy/contrast/consistency issues before delivery.
+- **design-review-audit** / `/biz-design-review`: Run once a build is done to catch spacing/hierarchy/contrast/consistency issues before delivery.
 - **image-to-code**: Use instead when the goal is matching a specific reference screenshot closely, not inventing a new design.

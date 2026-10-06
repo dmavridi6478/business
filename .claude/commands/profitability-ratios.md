@@ -1,3 +1,8 @@
+---
+description: 'Calculate and interpret the 12 key profitability ratios for any business.'
+argument-hint: '[company name or paste P&L + balance sheet data]'
+---
+
 # /profitability-ratios
 
 Calculate and interpret the 12 key profitability ratios for any business.

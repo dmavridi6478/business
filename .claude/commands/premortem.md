@@ -1,3 +1,8 @@
+---
+description: 'Assume failure. Work backward to prevent it before a launch or initiative.'
+argument-hint: '[initiative, launch, or decision]'
+---
+
 # /premortem
 
 Assume failure. Work backward to prevent it before a launch or initiative.

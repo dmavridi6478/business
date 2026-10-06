@@ -1,3 +1,7 @@
+---
+description: 'Turn a question into a full, actionable step-by-step plan rather than a direct answer to the literal question.'
+---
+
 Turn "$ARGUMENTS" into a full, actionable step-by-step plan — not just a
 direct answer to the literal question asked.
 

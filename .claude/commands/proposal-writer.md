@@ -1,3 +1,7 @@
+---
+description: 'Write a tailored business proposal as a senior sales consultant.'
+---
+
 # Proposal & Offer Writer (SkillDrop AI)
 
 Act as a senior sales consultant. Write a tailored business proposal for: $ARGUMENTS

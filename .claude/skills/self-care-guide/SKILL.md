@@ -1,3 +1,8 @@
+---
+name: self-care-guide
+description: 'Prompt that builds a personalised self-care plan from a birth date (daily, weekly, monthly and crisis protocol). Reflection only, not medical or mental-health advice. Use when the user asks for this exercise.'
+---
+
 # Self-Care Guide
 
 Generate a personalized self-care plan from a birth date — daily, weekly, monthly, and crisis protocol.

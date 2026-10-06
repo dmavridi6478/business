@@ -1,3 +1,8 @@
+---
+name: life-map
+description: 'Prompt that generates a reflective personality map from a birth date. Entertainment and self-reflection only, not a psychological assessment. Use when the user asks for this kind of exercise.'
+---
+
 # Life Map
 
 Generate an in-depth psychological and personality map from a birth date.

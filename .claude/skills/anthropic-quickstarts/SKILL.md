@@ -1,3 +1,8 @@
+---
+name: anthropic-quickstarts
+description: 'Reference to Anthropic''s quickstart apps: complete runnable Claude-powered projects, each showing one integration pattern. Use when starting a Claude application and wanting a working base to adapt.'
+---
+
 # Anthropic Quickstarts — Reference Implementation Library
 
 Production-ready starter projects for building Claude-powered applications. Each quickstart is a complete, runnable app demonstrating a specific integration pattern.

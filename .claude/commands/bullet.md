@@ -1,5 +1,5 @@
 ---
-description: Bullet format
+description: 'Reformat text as bullet points.'
 argument-hint: [text to reformat]
 ---
 

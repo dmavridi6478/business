@@ -1,6 +1,6 @@
 ---
 name: ai-search-visibility
-description: Plan, audit, or improve marketing and search visibility in the AI-search era (2026+) — covering the five-discipline SEO wheel (SEO / SXO / AEO / GEO / AIO), the modern marketing taxonomy, the five board-level exec questions (cohort revenue, marginal CAC, payback period, contribution margin, channel concentration), a sequenced 15-day action plan for improving AI search visibility, and a 20-source ecosystem map with live connector check. Also covers the tactical page-level implementation that makes a site readable by AI assistants: semantic HTML, meta descriptions on every page, llms.txt AI guide, robots.txt, and an optional "Ask AI about me" block. Use whenever auditing search/AI visibility, building a marketing plan or content calendar, structuring a CEO/board marketing report, evaluating marketing KPIs, discussing AEO/GEO/AI citations, wanting a day-by-day plan to get cited by AI, or building/auditing any personal or business site where AI discoverability is a goal.
+description: 'Plan, audit, or improve marketing and search visibility in the AI-search era (2026+) — covering the five-discipline SEO wheel (SEO / SXO / AEO / GEO / AIO), the modern marketing taxonomy, the five board-level exec questions (cohort revenue, marginal CAC, payback period, contribution margin, channel concentration), a sequenced 15-day action plan for improving AI search visibility, and a 20-source ecosystem map with live connector check. Also covers the tactical page-level implementation that makes a site readable by AI assistants: semantic HTML, meta descriptions on every page, llms.txt AI guide, robots.txt, and an optional "Ask AI about me" block. Use whenever auditing search/AI visibility, building a marketing plan or content calendar, structuring a CEO/board marketing report, evaluating marketing KPIs, discussing AEO/GEO/AI citations, wanting a day-by-day plan to get cited by AI, or building/auditing any personal or business site where AI discoverability is a goal.'
 ---
 
 # AI Search Visibility
@@ -84,7 +84,7 @@ Implementation notes:
 
 ## Related skills in this repo
 
-- **claude-seo**: Full technical SEO with 24 sub-skills, Python runtime (`claude-seo` command), and `/seo` slash commands — use for deep on-page/technical SEO work rather than the strategic/reporting layer here.
+- **claude-seo**: Full technical SEO with 24 sub-skills, Python runtime (`claude-seo` command), and `/claude-seo` slash commands — use for deep on-page/technical SEO work rather than the strategic/reporting layer here.
 - **content-strategy**: Use the marketing taxonomy's "Content Strategy" branch and the AEO "lead with the answer" pattern to shape what gets written, not just how it's structured technically.
 - **business-intelligence-report** / **ceo-reporting-skill**: Run the five exec questions (`exec-ai-questions.md`) against any marketing section of these reports before they go to a CEO or board.
 - **quarterly-okr-architect**: The 15-day action plan's Day 15 "next 30-day plan" is a natural input to a quarterly goal cascade for marketing/growth.

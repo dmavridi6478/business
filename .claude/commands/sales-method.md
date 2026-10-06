@@ -1,6 +1,6 @@
 ---
 description: Pick the best-fit B2B sales methodology (from 20) for a deal, team or stage, and show how to apply it
-argument-hint: <your situation: deal size, stage, number of stakeholders, what is going wrong>
+argument-hint: '<your situation: deal size, stage, number of stakeholders, what is going wrong>'
 ---
 
 Use the skill `sales-methodologies-20`. Situation: "$ARGUMENTS".

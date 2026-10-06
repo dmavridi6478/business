@@ -1,6 +1,6 @@
 ---
 description: Organize a voice memo or rough notes into clean, structured copy for a specific social platform (Claude content-workflow skill 4/9, socialblueprint.ca)
-argument-hint: [platform] [raw voice memo or notes]
+argument-hint: '[platform] [raw voice memo or notes]'
 ---
 
 # /post-formatter

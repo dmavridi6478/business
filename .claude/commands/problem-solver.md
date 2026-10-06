@@ -1,3 +1,7 @@
+---
+description: 'Act as a senior expert in a field and work a complex problem through root causes, options and an implementation plan.'
+---
+
 # Expert Problem Solver
 
 Act as a senior expert in $ARGUMENTS. I need help solving the following complex problem: [Describe the problem].

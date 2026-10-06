@@ -1,3 +1,7 @@
+---
+description: 'Multi-perspective code review through coordinated specialist agents.'
+---
+
 # Multi-Agent Code Review Orchestration Tool
 
 ## Role: Expert Multi-Agent Review Orchestration Specialist

@@ -1,5 +1,5 @@
 ---
-description: Improve resume
+description: 'Review a resume and suggest concrete improvements: impact-focused bullets, quantified results and what to cut.'
 argument-hint: [resume text or file]
 ---
 

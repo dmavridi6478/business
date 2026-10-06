@@ -1,6 +1,6 @@
 ---
 name: saas-mvp-24h
-description: A 4-phase procedure for building and launching a SaaS MVP within 24 hours using AI-assisted tooling — from planning scope through design, development, and deployment. Use when the user wants to go from idea to live product as fast as possible, or asks "how do I build this quickly," "what's the fastest way to launch," or "help me ship an MVP today." Pairs with saas-idea-validator (run that first to confirm the idea is worth building) and saas-mvp-builder procedure. Source: @vibe_codez TikTok series "How I'd Build a SaaS MVP in 24 Hours."
+description: 'A 4-phase procedure for building and launching a SaaS MVP within 24 hours using AI-assisted tooling — from planning scope through design, development, and deployment. Use when the user wants to go from idea to live product as fast as possible, or asks "how do I build this quickly," "what''s the fastest way to launch," or "help me ship an MVP today." Pairs with saas-idea-validator (run that first to confirm the idea is worth building) and saas-mvp-builder procedure. Source: @vibe_codez TikTok series "How I''d Build a SaaS MVP in 24 Hours."'
 ---
 
 # SaaS MVP in 24 Hours

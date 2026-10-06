@@ -1,3 +1,8 @@
+---
+name: ai-content-production-engine
+description: 'Turn one content idea into a handoff-ready production brief covering hook, narrative, talking points, visuals, CTA and repurposing. Use when briefing a creator or AI tool to produce a piece of content.'
+---
+
 # AI Content Production Engine
 
 **Invoke with:** `/ai-content-production-engine` or ask Claude to "build a content production brief"

@@ -2,13 +2,13 @@
 description: Extract reusable patterns from the current session and save them as candidate skills or guidance.
 ---
 
-# /learn - Extract Reusable Patterns
+# /biz-learn - Extract Reusable Patterns
 
 Analyze the current session and extract any patterns worth saving as skills.
 
 ## Trigger
 
-Run `/learn` at any point during a session when you've solved a non-trivial problem.
+Run `/biz-learn` at any point during a session when you've solved a non-trivial problem.
 
 ## What to Extract
 

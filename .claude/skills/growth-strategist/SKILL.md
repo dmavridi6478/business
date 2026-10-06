@@ -1,3 +1,8 @@
+---
+name: growth-strategist
+description: 'Act as growth strategist: analyse the business, find the five strongest revenue or retention opportunities and build a 30-day plan for the top one. Use when looking for the next growth move.'
+---
+
 # Growth Strategist
 
 Act as growth strategist to identify the 5 strongest revenue or retention opportunities and build a 30-day action plan for the top one.

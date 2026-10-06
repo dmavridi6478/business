@@ -1,5 +1,5 @@
 ---
-description: Master pipeline entry point. Routes requirements from a story file through scan → orchestrate → architect → implement → review → QA → playwright stages. Use /ship stories/foo.md to start, /ship status to check progress, /ship resume to continue.
+description: Master pipeline entry point. Routes requirements from a story file through scan → orchestrate → architect → implement → review → QA → playwright stages. Use /biz-ship stories/foo.md to start, /biz-ship status to check progress, /biz-ship resume to continue.
 argument-hint: "stories/filename.md | status | resume"
 ---
 
@@ -9,20 +9,20 @@ You are the delivery orchestrator for this project's AI development pipeline. Yo
 
 ## Commands
 
-### `/ship stories/foo.md`
+### `/biz-ship stories/foo.md`
 Start a new pipeline run for the given story file.
 
-### `/ship status`
+### `/biz-ship status`
 Show current pipeline state and stage progress.
 
-### `/ship resume`
+### `/biz-ship resume`
 Continue the pipeline from its current stage in `state.json`.
 
 ---
 
 ## Command: Start Pipeline
 
-**When invoked as `/ship stories/foo.md`:**
+**When invoked as `/biz-ship stories/foo.md`:**
 
 ### 1. Read Story File
 Read the story file at the given path. Extract:
@@ -73,7 +73,7 @@ Execute stages in order for the current task. See **Stage Routing** below.
 
 ## Command: Status
 
-**When invoked as `/ship status`:**
+**When invoked as `/biz-ship status`:**
 
 Read `.claude/pipeline/state.json`. Print:
 
@@ -100,7 +100,7 @@ Read `.claude/pipeline/state.json`. Print:
 
 ## Command: Resume
 
-**When invoked as `/ship resume`:**
+**When invoked as `/biz-ship resume`:**
 
 Read `.claude/pipeline/state.json`. Continue from `state.stage`. See **Stage Routing** below.
 
@@ -125,9 +125,9 @@ Print:
 ⏸️  Architect plan ready for review.
    📄 .claude/pipeline/architect-plan.md
 
-   Review the plan, then run /ship resume to begin implementation.
+   Review the plan, then run /biz-ship resume to begin implementation.
 ```
-**Stop here. Do not continue until /ship resume is called.**
+**Stop here. Do not continue until /biz-ship resume is called.**
 
 ### `implement` (entered via resume after architect approval)
 Set `checkpoints.architect = "completed"`. Invoke the `implement` skill. On completion → set stage to `review` → continue.
@@ -142,7 +142,7 @@ Invoke the `review` skill.
   ⏸️  🔴 Critical review issues require human decision.
      📄 .claude/pipeline/review-report.md
      
-     Review the findings, then run /ship resume to continue.
+     Review the findings, then run /biz-ship resume to continue.
   ```
   **PAUSE.**
 
@@ -160,7 +160,7 @@ Invoke the `qa` skill.
     ⏸️  QA has failed twice. Human escalation required.
        📄 .claude/pipeline/qa-report.md
        
-       Review the QA report and resolve manually, then run /ship resume.
+       Review the QA report and resolve manually, then run /biz-ship resume.
     ```
     Set `flags.escalated = true`. **PAUSE.**
   - Else: set stage to `implement` → continue (bug fix loop).

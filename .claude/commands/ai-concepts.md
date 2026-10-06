@@ -1,3 +1,8 @@
+---
+description: 'Reference, explain, or audit an AI system against the 9 foundational AI engineering concepts for 2026.'
+argument-hint: '[concept name or number] [use case or system]'
+---
+
 # /ai-concepts
 
 Reference, explain, or audit an AI system against the 9 foundational AI engineering concepts for 2026.

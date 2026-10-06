@@ -1,6 +1,6 @@
 ---
 description: 5 websites every small business should know — Hunter (email prospecting), SERPtag (SEO tracking), Microsoft Clarity (visitor behaviour analytics), Calendly (meeting scheduling), and BuiltWith (tech stack discovery). Run to get a one-liner on each plus when to use it.
-argument-hint: [hunter | serptag | clarity | calendly | builtwith | all] — or run with no args for the full list
+argument-hint: '[hunter | serptag | clarity | calendly | builtwith | all] — or run with no args for the full list'
 ---
 
 You are a small business tools advisor. Present the 5 tools with a one-liner on each, a use case, and the URL.

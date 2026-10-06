@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<!--
+  Template: roadmap-yellow-dark
+  Style: 4:5 carousel slides on dark grey with a black logo band, yellow underlined titles and white bold centred bullets -
+         the "AI Engineer Roadmap" look. First slide is a cover; the last is a "why this works" summary.
+  Swap points: BRAND, COVER = [line1, highlight, line2], SLIDES = [{n, title, why, bullets[]}], CLOSE = {title, text}.
+  Rule: bullets must be what the step really covers; never add course or provider names you have not checked.
+-->
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Roadmap yellow dark</title>
+<style>
+:root{--bg:#404042;--band:#000;--ink:#fff;--acc:#ffd400;--mute:#d8d8dc}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#1b1b1d;font-family:Aptos,"Segoe UI",Inter,Arial,sans-serif;padding:16px;display:flex;flex-wrap:wrap;gap:16px;justify-content:center}
+.s{width:min(420px,100%);aspect-ratio:4/5;background:var(--bg);color:var(--ink);border-radius:8px;overflow:hidden;display:flex;flex-direction:column;container-type:inline-size}
+.band{background:var(--band);padding:3.5cqw 5cqw;font-weight:800;font-size:4.2cqw;letter-spacing:.04em}
+.band b{color:var(--acc)}
+.body{flex:1;padding:6cqw 7cqw;display:flex;flex-direction:column;justify-content:center;text-align:center}
+.cover h1{font-size:11cqw;line-height:1.05;font-weight:900;text-transform:uppercase}
+.cover h1 em{font-style:normal;color:var(--acc)}
+h2{font-size:7.6cqw;line-height:1.15;color:var(--acc);text-decoration:underline;text-decoration-thickness:.5cqw;text-underline-offset:1.4cqw;margin-bottom:4cqw}
+.why{font-size:4.4cqw;font-weight:700;margin-bottom:3.5cqw;color:var(--mute)}
+ul{list-style:none;display:flex;flex-direction:column;gap:3cqw}
+li{font-size:4.6cqw;font-weight:700;line-height:1.35}
+p{font-size:5cqw;font-weight:700;line-height:1.45}
+</style></head><body id="b">
+<script>
+const BRAND=["Wealth","Lab"];
+const COVER=["The complete","AI Engineer","roadmap for 2026"];
+const SLIDES=[
+ {n:1,title:"AI Python for Beginners",why:"Why it matters: Python is the foundation of modern AI development.",bullets:["Learn fundamentals, data structures, functions and OOP.","Use AI coding assistants for instant feedback.","Build simple automation scripts and beginner AI projects."]},
+ {n:2,title:"Master the Math Behind AI",why:"Why it matters: maths explains how models learn and predict.",bullets:["Linear algebra, calculus and probability.","Vectors, matrices, gradients, optimisation.","The base for machine learning and deep learning."]},
+ {n:6,title:"Retrieval-Augmented Generation",why:"Why it matters: RAG lets AI use private and current knowledge.",bullets:["Build pipelines from ingestion to deployment.","Embeddings, vector databases, retrieval, evaluation.","Assistants that answer from your own knowledge base."]}
+];
+const CLOSE={title:"Why this roadmap works",text:"Python, then AI maths, machine learning, generative AI, LLMs, RAG, agents and multi-agent systems: skills for building modern AI applications, not just theory."};
+const b=document.getElementById("b");
+function el(t,c,x){const e=document.createElement(t);if(c)e.className=c;if(x!==undefined)e.textContent=x;return e}
+function slide(inner,cls){const s=el("div","s");const band=el("div","band");const sp=el("b",null,BRAND[0]);band.appendChild(sp);band.appendChild(document.createTextNode(" "+BRAND[1]));s.appendChild(band);const body=el("div","body "+(cls||""));inner(body);s.appendChild(body);b.appendChild(s)}
+slide(bd=>{const h=el("h1");h.appendChild(document.createTextNode(COVER[0]+" "));h.appendChild(el("em",null,COVER[1]));h.appendChild(document.createTextNode(" "+COVER[2]));bd.appendChild(h)},"cover");
+SLIDES.forEach(s=>slide(bd=>{bd.appendChild(el("h2",null,s.n+". "+s.title));bd.appendChild(el("div","why",s.why));const ul=el("ul");s.bullets.forEach(x=>ul.appendChild(el("li",null,x)));bd.appendChild(ul)}));
+slide(bd=>{bd.appendChild(el("h2",null,CLOSE.title));bd.appendChild(el("p",null,CLOSE.text))});
+</script></body></html>

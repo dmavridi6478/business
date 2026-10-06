@@ -1,6 +1,6 @@
 ---
 name: multi-agent-debate
-description: Run a structured three-agent debate system (Researcher, Critic, Synthesizer) to produce higher-quality analysis than a single-pass response can achieve. Use when the question is important enough to warrant adversarial checking — a business decision, investment thesis, strategy choice, research question, or any claim where a wrong answer has real cost. Source: @ai_slacker "25 Powerful AI Skills, Agents & Automations You Can Build Today."
+description: 'Run a structured three-agent debate system (Researcher, Critic, Synthesizer) to produce higher-quality analysis than a single-pass response can achieve. Use when the question is important enough to warrant adversarial checking — a business decision, investment thesis, strategy choice, research question, or any claim where a wrong answer has real cost. Source: @ai_slacker "25 Powerful AI Skills, Agents & Automations You Can Build Today."'
 ---
 
 # Multi-Agent Debate System

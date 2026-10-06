@@ -1,5 +1,5 @@
 ---
-description: Weekly plan
+description: 'Build a weekly plan from your goals and context.'
 argument-hint: [goals or context for the week]
 ---
 

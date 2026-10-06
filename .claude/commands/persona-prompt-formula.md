@@ -1,3 +1,7 @@
+---
+description: 'A formula for every piece of AI content, so output stays in your persona; applied to the content you give.'
+---
+
 # The Persona Prompt Formula (@earchoe)
 
 Use this formula for every single piece of content you create with AI: $ARGUMENTS

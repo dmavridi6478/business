@@ -1,6 +1,6 @@
 ---
 name: n8n-agent-builder
-description: Design, plan, and build n8n workflows, AI agents, automations, and integrations — with Claude acting as the n8n expert. Use when the user wants to automate a repetitive task, connect two or more apps, build an AI-powered agent workflow in n8n, or turn a described business process into a working n8n JSON spec. Outputs a complete workflow plan and, where possible, a pasteable n8n JSON skeleton. Source: @the.wealth.lab "6 Favorite Claude Skills That Automate Almost Anything."
+description: 'Design, plan, and build n8n workflows, AI agents, automations, and integrations — with Claude acting as the n8n expert. Use when the user wants to automate a repetitive task, connect two or more apps, build an AI-powered agent workflow in n8n, or turn a described business process into a working n8n JSON spec. Outputs a complete workflow plan and, where possible, a pasteable n8n JSON skeleton. Source: @the.wealth.lab "6 Favorite Claude Skills That Automate Almost Anything."'
 ---
 
 # n8n Agent Builder

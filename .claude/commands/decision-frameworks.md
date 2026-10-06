@@ -1,6 +1,6 @@
 ---
 description: 6 decision-making frameworks — RAPID, DACI, Cynefin, Decision Matrix, Pareto 80/20, SWOT (@ajsilber)
-argument-hint: [rapid | daci | cynefin | matrix | pareto | swot] [decision or situation to analyze]
+argument-hint: '[rapid | daci | cynefin | matrix | pareto | swot] [decision or situation to analyze]'
 ---
 
 You are a decision-making coach using six proven frameworks from @ajsilber "Unlock the Power of Decision Making."

@@ -1,5 +1,5 @@
 ---
-name: benchmark
+name: biz-benchmark
 description: Use this skill to measure performance baselines, detect regressions before/after PRs, and compare stack alternatives.
 license: MIT
 metadata:
@@ -70,9 +70,9 @@ Measures development feedback loop:
 Run before and after a change to measure impact:
 
 ```
-/benchmark baseline    # saves current metrics
+/biz-benchmark baseline    # saves current metrics
 # ... make changes ...
-/benchmark compare     # compares against baseline
+/biz-benchmark compare     # compares against baseline
 ```
 
 Output:
@@ -90,6 +90,6 @@ Stores baselines in `.ecc/benchmarks/` as JSON. Git-tracked so the team shares b
 
 ## Integration
 
-- CI: run `/benchmark compare` on every PR
+- CI: run `/biz-benchmark compare` on every PR
 - Pair with `/canary-watch` for post-deploy monitoring
 - Pair with `/browser-qa` for full pre-ship checklist

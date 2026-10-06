@@ -1,3 +1,7 @@
+---
+description: 'Use this command to generate a production-ready n8n workflow JSON using Claude as your workflow architect.'
+---
+
 # Build n8n Workflows with Claude
 *Source: @epic8244 on TikTok — "How to Build AI Agents with Claude"*
 

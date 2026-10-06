@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<!--
+  Template: gtm-heatmap-navy
+  Style: dark-navy diagnostic poster (Union Square GTM Ops Diagnostic look): pink-red sub-headline, rows = areas, columns = maturity levels,
+         green / yellow / red cells, dashed outline on "danger zone" cells, traffic-light legend.
+  Swap points: :root colours; TITLE, SUB; LEVELS; ROWS (area, then 4 scores G|Y|R). Danger zones are computed: Optimization or
+         Amplification scored G/Y while Fundamentals or Adoption is R/Y. Canvas scales; colour is never the only signal (cells carry a letter).
+-->
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>GTM Heatmap</title>
+<style>
+:root{--bg:#0a1130;--panel:#101a44;--line:#2b3a85;--ink:#ffffff;--mute:#aab4e6;--pink:#ff2d75;--g:#2f9e5b;--y:#e8b92f;--r:#d6405a;--gi:#fff;--yi:#1b1500;--ri:#fff}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--ink);font-family:Aptos,"Segoe UI",Arial,sans-serif;padding:20px 16px;display:flex;justify-content:center}
+.poster{width:min(920px,100%);display:flex;flex-direction:column;gap:18px}
+h1{font-size:32px;line-height:1.1;text-align:center;letter-spacing:.5px;text-transform:uppercase}
+.sub{color:var(--pink);font-weight:700;text-align:center;font-size:14px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:14px;overflow-x:auto}
+table{border-collapse:separate;border-spacing:6px;width:100%;min-width:560px}
+th{font-size:12px;color:var(--mute);text-transform:uppercase;letter-spacing:.08em;padding:4px}
+td.a{font-weight:700;font-size:13px;text-transform:uppercase;text-align:left;padding-right:8px;color:var(--mute)}
+td.c{height:44px;border-radius:6px;text-align:center;vertical-align:middle;font-weight:700;font-size:13px}
+td.G{background:var(--g);color:var(--gi)}td.Y{background:var(--y);color:var(--yi)}td.R{background:var(--r);color:var(--ri)}
+td.danger{outline:2px dashed #fff;outline-offset:-4px}
+.legend{display:flex;flex-wrap:wrap;gap:10px 18px;font-size:12px;color:var(--mute)}
+.legend i{display:inline-block;width:12px;height:12px;border-radius:3px;margin-right:6px;vertical-align:-1px}
+#notes{font-size:13px;color:var(--mute);line-height:1.5}#notes b{color:var(--ink)}
+@media (prefers-color-scheme:light){:root:not([data-theme=dark]){--bg:#eef1fb;--panel:#fff;--line:#c9d1f0;--ink:#0a1130;--mute:#4a557f}}
+</style></head><body>
+<div class="poster">
+ <h1 id="t"></h1><div class="sub" id="s"></div>
+ <div class="card"><table id="grid"></table></div>
+ <div class="legend"><span><i style="background:var(--g)"></i>G strong yes</span><span><i style="background:var(--y)"></i>Y somewhat</span><span><i style="background:var(--r)"></i>R no</span><span><i style="outline:2px dashed currentColor;outline-offset:-2px"></i>danger zone: optimising/amplifying on a weak base</span></div>
+ <div id="notes"></div>
+</div>
+<script>
+const TITLE='GTM Ops Diagnostic',SUB='Fix the Fundamentals first';
+const LEVELS=['Fundamentals','Adoption','Optimization','Amplification'];
+const ROWS=[['Pipeline','GGYY'],['Inbound','GGYR'],['Outbound','GRRR'],['ABM / Allbound','YYRR'],['Partners / Channel','GYYR'],['Renewals','RYRR'],['Expansion','YGYR']];
+document.getElementById('t').textContent=TITLE;document.getElementById('s').textContent=SUB;
+const g=document.getElementById('grid'),hr=g.insertRow();hr.appendChild(document.createElement('th'));
+LEVELS.forEach(l=>{const th=document.createElement('th');th.textContent=l;hr.appendChild(th)});
+const danger=[];
+ROWS.forEach(([a,s])=>{const r=g.insertRow(),td=r.insertCell();td.className='a';td.textContent=a;
+ const weak=s[0]!=='G'||s[1]!=='G',base=s[0]==='R'||s[1]==='R'||s[0]==='Y';
+ [...s].forEach((v,i)=>{const c=r.insertCell();c.className='c '+v+((i>=2&&v!=='R'&&base)?' danger':'');c.textContent=v;if(i>=2&&v!=='R'&&base)danger.push(a+' / '+LEVELS[i])});});
+const n=document.getElementById('notes'),b=document.createElement('b');b.textContent='Danger zones: ';n.appendChild(b);
+n.appendChild(document.createTextNode(danger.length?danger.join('; ')+'. Fix the red or yellow base before investing here.':'none.'));
+</script></body></html>

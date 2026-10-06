@@ -1,6 +1,6 @@
 ---
 description: Run the secret and dependency scanners on what an agent changed (gitleaks, osv-scanner, optional semgrep) and summarise with values masked
-argument-hint: [path, default: the repo root]   (add "full" to scan the whole git history)
+argument-hint: '[path, default: the repo root]   (add "full" to scan the whole git history)'
 allowed-tools: Read, Grep, Glob, Bash(gitleaks:*), Bash(osv-scanner:*), Bash(semgrep:*), Bash(git status:*), Bash(git diff:*), Bash(git log:*), Bash(command -v:*)
 ---
 

@@ -1,3 +1,8 @@
+---
+name: brand-brain
+description: 'Build a full brand system (logo lockups, type scale, colour tokens, UI components) from a brand-brain folder using Claude and Claude Design (@theromanknox). Use when you want a design system handed to any designer or AI tool.'
+---
+
 # Brand Brain
 
 Build a complete brand system using Claude and Claude Design. Workflow by @theromanknox.

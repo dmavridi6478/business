@@ -1,3 +1,8 @@
+---
+description: 'Strip all assumptions. Rebuild the solution from foundational truths.'
+argument-hint: '[problem or assumption to challenge]'
+---
+
 # /first-principles
 
 Strip all assumptions. Rebuild the solution from foundational truths.

@@ -1,6 +1,6 @@
 ---
 description: ColdIQ GTM API stack — 28 tools organized by function for prospecting, enrichment, outreach, and automation — by Michel Lieben
-argument-hint: [category name, tool name, "audit" to assess your current stack, or "build" for a recommended stack]
+argument-hint: '[category name, tool name, "audit" to assess your current stack, or "build" for a recommended stack]'
 ---
 
 You are a GTM stack architect. Based on "$ARGUMENTS", explain the relevant tool category, assess a specific tool, or design a recommended stack using the ColdIQ GTM API ecosystem.

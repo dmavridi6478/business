@@ -1,0 +1,218 @@
+<title>Batch 104 Intake Report</title>
+<style>
+  /* Layout: single-column formal report, 900px measure; tables scroll inside their own wrappers.
+     Palette: ink-slate neutrals, one deep indigo accent, semantic green/amber/red for status only.
+     Type: Aptos (house font) with system fallbacks; title 32pt, headings 14pt, body 11pt. */
+  :root {
+    --bg: #f5f6f9; --surface: #ffffff; --fg: #1a2030; --muted: #596277; --line: #d8dde8;
+    --accent: #2c3e8f; --accent-soft: #e6eaf8;
+    --ok: #17703a; --ok-bg: #e3f3e8; --warn: #8a5a00; --warn-bg: #fbefd3; --bad: #a11d2a; --bad-bg: #fbe3e5;
+    --code-bg: #eef0f6;
+    --font: Aptos, "Segoe UI Variable Text", "Segoe UI", system-ui, -apple-system, Roboto, sans-serif;
+    --mono: ui-monospace, "SF Mono", Consolas, monospace;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #10131c; --surface: #171b27; --fg: #e6e9f2; --muted: #9aa3b8; --line: #2a3144;
+      --accent: #8ea2f0; --accent-soft: #1d2542;
+      --ok: #6fd18f; --ok-bg: #173824; --warn: #f0c261; --warn-bg: #3a2e12; --bad: #ff8d98; --bad-bg: #3d1a1f;
+      --code-bg: #0d1017; color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #10131c; --surface: #171b27; --fg: #e6e9f2; --muted: #9aa3b8; --line: #2a3144;
+    --accent: #8ea2f0; --accent-soft: #1d2542;
+    --ok: #6fd18f; --ok-bg: #173824; --warn: #f0c261; --warn-bg: #3a2e12; --bad: #ff8d98; --bad-bg: #3d1a1f;
+    --code-bg: #0d1017; color-scheme: dark;
+  }
+  * { box-sizing: border-box; }
+  body { background: var(--bg); color: var(--fg); font-family: var(--font); font-size: 11pt; line-height: 1.55; padding-inline: 16px; padding-block: 28px 64px; }
+  main { max-width: 900px; margin-inline: auto; display: flex; flex-direction: column; gap: 24px; }
+  header { display: flex; flex-direction: column; gap: 8px; border-bottom: 2px solid var(--accent); padding-bottom: 18px; }
+  .eyebrow { font-size: 9pt; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
+  h1 { font-size: 32pt; line-height: 1.1; margin: 0; font-weight: 700; text-wrap: balance; }
+  h2 { font-size: 14pt; margin: 0 0 10px; font-weight: 700; color: var(--accent); text-wrap: balance; }
+  h3 { font-size: 11pt; margin: 14px 0 6px; font-weight: 700; }
+  p { margin: 0 0 10px; max-width: 75ch; }
+  section { background: var(--surface); border: 1px solid var(--line); border-radius: 6px; padding: 20px 22px; min-width: 0; }
+  .lede { color: var(--muted); max-width: 70ch; margin: 0; }
+  .truth { border-left: 4px solid var(--bad); background: var(--bad-bg); padding: 12px 16px; border-radius: 0 6px 6px 0; }
+  .truth p:last-child, .truth ul:last-child { margin-bottom: 0; }
+  .conf { font-family: var(--mono); font-size: 9pt; padding: 1px 6px; border-radius: 3px; background: var(--accent-soft); color: var(--accent); white-space: nowrap; }
+  .tw { overflow-x: auto; margin-block: 8px 4px; border: 1px solid var(--line); border-radius: 4px; }
+  table { border-collapse: collapse; width: 100%; min-width: 680px; font-size: 10pt; }
+  th, td { padding: 8px 10px; border-bottom: 1px solid var(--line); text-align: center; vertical-align: top; }
+  th { background: var(--accent-soft); font-weight: 700; font-size: 9.5pt; }
+  tr:last-child td { border-bottom: 0; }
+  .st { display: inline-block; padding: 1px 8px; border-radius: 10px; font-size: 9pt; font-weight: 700; white-space: nowrap; }
+  .st.ok { background: var(--ok-bg); color: var(--ok); } .st.warn { background: var(--warn-bg); color: var(--warn); } .st.bad { background: var(--bad-bg); color: var(--bad); }
+  .sw { display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 10px; margin-block: 8px; }
+  .sw div { border: 1px solid var(--line); border-radius: 4px; overflow: hidden; font-size: 9pt; text-align: center; min-width: 0; }
+  .sw i { display: block; height: 40px; }
+  .sw span { display: block; padding: 4px 6px; font-family: var(--mono); }
+  .sw b { display: block; padding: 4px 6px 0; font-size: 9.5pt; }
+  .prompt { position: relative; margin-block: 10px; }
+  .prompt b { display: block; font-size: 10.5pt; margin-bottom: 4px; }
+  .prompt pre { margin: 0; white-space: pre-wrap; overflow-wrap: anywhere; background: var(--code-bg); border: 1px solid var(--line); border-radius: 4px; padding: 12px 84px 12px 12px; font-family: var(--mono); font-size: 9.5pt; line-height: 1.5; }
+  .prompt button { position: absolute; bottom: 8px; right: 8px; font: inherit; font-size: 9pt; padding: 4px 10px; border-radius: 4px; border: 1px solid var(--accent); background: var(--surface); color: var(--accent); cursor: pointer; }
+  .prompt button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  ul { margin: 0 0 10px; padding-left: 20px; } li { margin-bottom: 4px; max-width: 75ch; }
+  code { font-family: var(--mono); font-size: 9.5pt; background: var(--code-bg); padding: 1px 4px; border-radius: 3px; overflow-wrap: anywhere; }
+  .foot { font-size: 9pt; color: var(--muted); }
+</style>
+
+<main>
+<header>
+  <div class="eyebrow">Intake report &middot; 6 October 2026 &middot; Branch claude/bold-noether-gofvpz</div>
+  <h1>Batch 105 Intake Report</h1>
+  <p class="lede">The third archive (iCloud Photos 3) held 43 images and 3 videos. This report sets out what they contained, what was built, what was verified, and what is left for you to approve.</p>
+</header>
+
+<section aria-labelledby="h1">
+  <h2 id="h1">1. Findings you should read first</h2>
+  <div class="truth"><ul>
+    <li><span class="conf">Certain</span> This batch is mostly prompts, not tools. 60 Greek marketing prompts (59 distinct) and six English playbook prompts were turned into skills and commands. The repos are the smaller part, and four cards name repos I could not identify: Elm-simple-server, runs-on.dev, Liquid-glass-screens and a seventh (the title says 7, six cards were uploaded).</li>
+    <li><span class="conf">Certain</span> Nothing third-party was installed. Agency Agents (230+ personas), Papermorph and Open Reality each fetch third-party code or run a third-party package. They are listed as user-run steps with the reasons in section 5.</li>
+    <li><span class="conf">Likely</span> The Greek prompts ask for results with numbers and proof. If you give no real data, the model will invent it. Every skill I wrote tells Claude to write [NEEDS PROOF] instead.</li>
+    <li><span class="conf">Certain</span> Pre-existing issue, not mine: the front matter of <code>design-templates/SKILL.md</code> already fails strict YAML parsing at the previous commit. Claude still lists the skill, so I left it alone.</li>
+    <li><span class="conf">Certain</span> No connector needed authorising this time. The Vercel connector added in Batch 104 still needs your sign-in through <code>/mcp</code>.</li>
+  </ul></div>
+</section>
+
+<section aria-labelledby="h2">
+  <h2 id="h2">2. Inventory</h2>
+  <div class="tw"><table><thead><tr><th>Source</th><th>Items</th><th>Content</th><th>Outcome</th></tr></thead><tbody>
+    <tr><td>@ai_with_dr.t</td><td>11 slides</td><td>60 Greek marketing prompts in 10 categories, plus the cover</td><td><span class="st ok">Skill and command</span></td></tr>
+    <tr><td>@earchoe</td><td>17 slides</td><td>AI playbook: brand-language prompt, layouts, Canva AI check, review mining, second pass</td><td><span class="st ok">Two skills, two commands, one agent</span></td></tr>
+    <tr><td>Where AI And Sales Meet</td><td>1 image</td><td>Venn: AI, human and six collaboration patterns</td><td><span class="st ok">Skill and template</span></td></tr>
+    <tr><td>@ai_slacker</td><td>6 images</td><td>50 AI tools in five lists of 10 (the cover and lists 1, 11, 21, 31, 41)</td><td><span class="st ok">Skill mapped to connectors</span></td></tr>
+    <tr><td>@replace.so</td><td>8 cards</td><td>Mural, Elm-simple-server, runs-on.dev, Openreality, Liquid-glass-screens, SoL-Pi, cover</td><td><span class="st warn">3 verified, 4 unresolved</span></td></tr>
+    <tr><td>@repo.drop video</td><td>39 s</td><td>Colibri, an inference engine for very large models</td><td><span class="st ok">Verified and registered</span></td></tr>
+    <tr><td>@leosynthes video</td><td>54 s</td><td>Agency Agents, a persona collection for Claude Code</td><td><span class="st ok">Verified, not installed</span></td></tr>
+    <tr><td>@github.signals video</td><td>45 s</td><td>Papermorph, a PDF-to-web-book skill</td><td><span class="st ok">Verified, not installed</span></td></tr>
+  </tbody></table></div>
+</section>
+
+<section aria-labelledby="h3">
+  <h2 id="h3">3. What was built</h2>
+  <div class="tw"><table><thead><tr><th>Type</th><th>Name</th><th>Purpose</th></tr></thead><tbody>
+    <tr><td>Skills (6)</td><td><code>greek-marketing-prompts-60</code>, <code>review-miner</code>, <code>brand-prompt-system</code>, <code>ai-sales-human-split</code>, <code>ai-tools-50-map</code>, <code>oss-repo-register-105</code></td><td>Prompts, methods, a connector reach map and a verified repo register</td></tr>
+    <tr><td>Commands (3)</td><td><code>/greek-prompt</code>, <code>/review-miner</code>, <code>/brand-prompt</code></td><td>One-line entry points</td></tr>
+    <tr><td>Agent (1)</td><td><code>review-miner</code></td><td>Draft-only voice-of-customer analyst; treats review text as data; writes to <code>data/agent-drafts/</code></td></tr>
+    <tr><td>Design templates (4)</td><td><code>venn-two-circles</code>, <code>playbook-workflow-beige</code>, <code>prompt-chat-cards-grey</code>, <code>tool-list-red-numbers</code></td><td>Rendered in a browser at 1100 and 390 px with no script errors or sideways scroll; theme tokens recorded</td></tr>
+    <tr><td>Script</td><td><code>scripts/batch105-install.sh</code></td><td>Asks before every step; nothing is piped into a shell</td></tr>
+  </tbody></table></div>
+  <p>Greek rules applied: original English terms kept (hook, CTA, ICP, VSL, lead magnet, case study, subject lines), no Greek word in capitals and no accents on capital letters.</p>
+</section>
+
+<section aria-labelledby="h4">
+  <h2 id="h4">4. Repository register (checked 6 October 2026)</h2>
+  <div class="tw"><table><thead><tr><th>Repository</th><th>What it is</th><th>Licence</th><th>Stars</th><th>Warning</th></tr></thead><tbody>
+    <tr><td><code>msitarzewski/agency-agents</code></td><td>230+ agent personas in 12 divisions</td><td>MIT</td><td>~158k</td><td>Installing all dilutes agent routing; install one division</td></tr>
+    <tr><td><code>DozenTwelve/Papermorph</code></td><td>Skill: PDF to animated interactive web book</td><td>MIT</td><td>~385</td><td>README says it needs Opus 5.5; respect PDF rights</td></tr>
+    <tr><td><code>JustVugg/colibri</code></td><td>Pure-C engine that streams 744B-2.8T models on consumer hardware</td><td>Apache-2.0</td><td>~39.9k</td><td>16 GB RAM and about 372 GB disk minimum</td></tr>
+    <tr><td><code>reality-opened/openreality</code></td><td>Phone video to AI-queryable 3D scenes (41 MCP tools)</td><td>BSD-2-Clause</td><td>~231</td><td>Browser sign-in; uploads video unless self-hosted</td></tr>
+    <tr><td><code>Chuloo/mural</code></td><td>Voice language-practice app, iOS and Android</td><td>MIT</td><td>~1.6k</td><td>Needs an OpenAI API key</td></tr>
+    <tr><td>SoL-Pi (arXiv 2609.20519)</td><td>Paper: 44.7-49.0% less token traffic, about one third lower cost</td><td>n/a</td><td>n/a</td><td>No code repo confirmed</td></tr>
+  </tbody></table></div>
+</section>
+
+<section aria-labelledby="h5">
+  <h2 id="h5">5. Connectors and why some installs are left to you</h2>
+  <ul>
+    <li><strong>Connected and used by the new skills:</strong> Canva, Figma, Gamma, Fireflies, HubSpot, Linear, Slack, Notion, Zapier, Ahrefs, Semrush, Clay, Vibe Prospecting.</li>
+    <li><strong>Vercel:</strong> registered in <code>.mcp.json</code> in Batch 104; sign in with <code>/mcp</code>.</li>
+    <li><strong>Open Reality (MCP):</strong> I did not add it to <code>.mcp.json</code>. That file would run a third-party npm package at the start of every session, and the service needs a browser sign-in. The plugin command is in section 8.</li>
+    <li><strong>Agency Agents and Papermorph:</strong> they copy third-party files into your agent folders. Read them first; the script asks before each step.</li>
+  </ul>
+</section>
+
+<section aria-labelledby="h6">
+  <h2 id="h6">6. Design elements and themes</h2>
+  <div class="sw">
+    <div><b>venn-lilac-amber</b><i style="background:#CDBCF6"></i><i style="background:#F2C36B"></i><i style="background:#CF9F9D"></i><span>#CDBCF6 / #F2C36B</span></div>
+    <div><b>playbook-beige</b><i style="background:#DDD6C1"></i><i style="background:#14120E"></i><i style="background:#4B3FD6"></i><span>#DDD6C1 / #4B3FD6</span></div>
+    <div><b>drt-grey</b><i style="background:#ECEBE8"></i><i style="background:#F7F7F6"></i><i style="background:#8E8E93"></i><span>#ECEBE8 / #8E8E93</span></div>
+    <div><b>tools-red</b><i style="background:#FFFFFF"></i><i style="background:#D6261B"></i><i style="background:#17171A"></i><span>#D6261B / #17171A</span></div>
+  </div>
+</section>
+
+<section aria-labelledby="h7">
+  <h2 id="h7">7. Prompts in plain text</h2>
+  <p>All 60 Greek prompts are in <code>.claude/skills/greek-marketing-prompts-60/SKILL.md</code>. Ten are reproduced here.</p>
+  <div class="prompt"><b>Brand-language prompt (skill brand-prompt-system; command /brand-prompt)</b>
+<pre id="p1">Create a [ASSET] for [AUDIENCE].
+
+Brand rules: [COLOURS / FONTS / TONE / STYLE].
+Goal: [OUTCOME].
+Content: [TEXT / OFFER / DATA].
+
+Use a clear hierarchy, strong spacing and one primary call to action. Keep every generated element editable. Do not add claims or statistics that I did not provide.</pre><button type="button" data-copy="p1">Copy</button></div>
+<div class="prompt"><b>Three layout directions</b>
+<pre id="p2">Give me 3 layout directions: editorial, bold graphic and minimal. For each, explain the hierarchy and where the viewer's eye should go first. Then recommend the layout that best serves the information, not the one that merely looks decorative.</pre><button type="button" data-copy="p2">Copy</button></div>
+<div class="prompt"><b>Pattern mining (skill review-miner; command /review-miner)</b>
+<pre id="p3">Analyse these customer reviews:
+[PASTE REVIEWS]
+
+Cluster the feedback into themes. For each theme show: frequency, representative evidence, customer impact, likely root cause, and confidence level. Do not treat one unusual comment as a trend.</pre><button type="button" data-copy="p3">Copy</button></div>
+<div class="prompt"><b>Prioritise the fixes</b>
+<pre id="p4">Create a product improvement map with four buckets: fix now, investigate, explain better, and ignore for now. Give the evidence behind each recommendation and identify what extra data would change the recommendation.</pre><button type="button" data-copy="p4">Copy</button></div>
+<div class="prompt"><b>Second pass on any AI answer</b>
+<pre id="p5">Review your previous answer. 1) What did you assume or have to guess? 2) What information is missing that would materially improve the result? 3) Attack your own answer: find weak claims, contradictions and edge cases. 4) List the facts, figures, policies, prices and claims I must verify before use.</pre><button type="button" data-copy="p5">Copy</button></div>
+<div class="prompt"><b>AI or human, step by step (skill ai-sales-human-split)</b>
+<pre id="p6">Here is my sales process, step by step: [LIST STEPS]. For each step classify it as AI-led, human-led or collaborate, using this rule: AI does research, enrichment, logging, prep briefs, drafting at scale and reporting; humans do discovery, reading the room, live objections, presenting and negotiating. For collaborate steps say what the AI produces and what the human must check. Flag any step where I am automating something that needs trust. Give me the three steps where AI would free the most selling time.</pre><button type="button" data-copy="p6">Copy</button></div>
+<div class="prompt"><b>Greek: cold LinkedIn DMs (skill greek-marketing-prompts-60; command /greek-prompt)</b>
+<pre id="p7">Γράψε πέντε cold LinkedIn DMs (κάτω από 100 λέξεις το καθένα). Προσάρμοσε το καθένα με κάτι συγκεκριμένο για τον υποψήφιο πελάτη, κράτα το φυσικό και χωρίς ύφος πωλήσεων, με στόχο να ξεκινήσει μια ουσιαστική συζήτηση.</pre><button type="button" data-copy="p7">Copy</button></div>
+<div class="prompt"><b>Greek: positioning statement</b>
+<pre id="p8">Γράψε ένα positioning statement 70–90 λέξεων, σε πρώτο πρόσωπο: ποιους βοηθάς (συγκεκριμένη κατάσταση), το αποτέλεσμα που προσφέρεις (με μετρική/χρονικό πλαίσιο), πώς το κάνεις (μέθοδος) και γιατί εσύ (απόδειξη). Κάν' το σαφές, συγκεκριμένο και αμέσως αναγνωρίσιμο για τον ιδανικό σου πελάτη.</pre><button type="button" data-copy="p8">Copy</button></div>
+<div class="prompt"><b>Greek: voice profile</b>
+<pre id="p9">Ανάλυσε τα δείγματα γραφής μου και φτιάξε ένα voice profile: δομή προτάσεων, λεξιλόγιο, ύφος, ανοίγματα/κλεισίματα και χρήση παραδειγμάτων ή ιστοριών. Μετά μετάτρεψέ το σε σαφείς οδηγίες σε δεύτερο πρόσωπο, ώστε ένας άλλος συντάκτης να μπορεί να αναπαράγει με ακρίβεια το ύφος μου.</pre><button type="button" data-copy="p9">Copy</button></div>
+<div class="prompt"><b>Greek: email series, welcome email 1</b>
+<pre id="p10">Γράψε το πρώτο welcome email (κάτω από 220 λέξεις): βάλε το download link, μία φράση για το πώς να το χρησιμοποιήσουν και μια σύντομη εισαγωγή που χτίζει αξιοπιστία. Κράτα το προσωπικό, όχι γενικόλογο, και απόφυγε τα «Καλώς ήρθες» ή «Συγχαρητήρια». Πρόσθεσε τρία subject lines.</pre><button type="button" data-copy="p10">Copy</button></div>
+
+</section>
+
+<section aria-labelledby="h8">
+  <h2 id="h8">8. Steps for your machine</h2>
+  <div class="prompt"><b>Install steps for your own machine (script scripts/batch105-install.sh asks before every step)</b>
+<pre id="p11">mkdir -p ~/src &amp;&amp; cd ~/src
+for r in msitarzewski/agency-agents DozenTwelve/Papermorph JustVugg/colibri reality-opened/openreality Chuloo/mural; do
+  git clone --depth 1 "https://github.com/$r.git"
+done
+# read each README and install script first, then:
+npx skills add DozenTwelve/Papermorph --skill papermorph --agent claude-code
+claude plugin marketplace add reality-opened/openreality</pre><button type="button" data-copy="p11">Copy</button></div>
+
+  <p>Read each licence first. Colibri is not automated: it needs a large disk and is not a cloud-session tool.</p>
+</section>
+
+<section aria-labelledby="h9">
+  <h2 id="h9">9. Verification and limits</h2>
+  <ul>
+    <li><span class="conf">Certain</span> New Markdown files parse as valid front matter; the existing guard tests pass (27 of 27).</li>
+    <li><span class="conf">Likely</span> Greek text was transcribed from screenshots; a word may differ from the original. One prompt appears twice in the source.</li>
+    <li><span class="conf">Likely</span> Repo facts come from a summarising fetch tool and web search. The pages for Mural, Open Reality, Papermorph, Colibri and Agency Agents were read; SoL-Pi was found only as a paper, and runs-on.dev, Elm-simple-server and Liquid-glass-screens were not found.</li>
+    <li><span class="conf">Guessing</span> The "7th repo" is the llama-icon card (Liquid-glass-screens uses the same icon), but the cover shows three different icons, so I did not assume.</li>
+    <li>Personal photos were not committed to the repository.</li>
+  </ul>
+  <p class="foot">Sources: GitHub pages for the repos in section 4; arXiv 2609.20519; claude.ai connector list and registry, 6 October 2026.</p>
+</section>
+</main>
+
+<script>
+(function () {
+  function fallback(el) {
+    var r = document.createRange(); r.selectNodeContents(el);
+    var s = window.getSelection(); s.removeAllRanges(); s.addRange(r);
+  }
+  document.querySelectorAll('button[data-copy]').forEach(function (b) {
+    b.addEventListener('click', function () {
+      var el = document.getElementById(b.getAttribute('data-copy'));
+      var done = function () { b.textContent = 'Copied'; setTimeout(function () { b.textContent = 'Copy'; }, 1500); };
+      try {
+        navigator.clipboard.writeText(el.textContent).then(done, function () { fallback(el); b.textContent = 'Selected'; });
+      } catch (e) { fallback(el); b.textContent = 'Selected'; }
+    });
+  });
+})();
+</script>

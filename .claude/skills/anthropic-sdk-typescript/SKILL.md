@@ -1,3 +1,8 @@
+---
+name: anthropic-sdk-typescript
+description: 'Reference for the official Anthropic TypeScript SDK (@anthropic-ai/sdk): streaming, structured outputs, tool use and the Managed Agents surface. Use when writing TypeScript or JavaScript that calls Claude.'
+---
+
 # Anthropic SDK for TypeScript — Reference
 
 Official TypeScript/JavaScript client for the Claude API. Full async/await support with streaming, structured outputs, tool use, and the complete Managed Agents / Claude Agent SDK surface.

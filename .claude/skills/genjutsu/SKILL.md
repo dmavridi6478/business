@@ -1,3 +1,8 @@
+---
+name: genjutsu
+description: 'UI skill for Claude Code (AThevon/genjutsu) for premium, polished interfaces with strong creative direction and structured layouts. Use when you want distinctive, high-craft interface design rather than generic output.'
+---
+
 # Genjutsu
 
 Award-winning UI skill for Claude Code. Build premium, polished interfaces with strong creative direction and structured layouts.

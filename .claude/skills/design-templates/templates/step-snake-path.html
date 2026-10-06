@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<!--
+  Template: step-snake-path
+  Style: numbered steps on a winding blue-to-purple path (left, right, left...) with a tag chip (SET UP / BUILD / KEEP / SHARE),
+         a short description and an optional mono command chip - the "Claude Code mod in 5 steps" look.
+  Swap points: TITLE, LEAD, STEPS = [{n, tag, title, desc, code}], FOOT.
+  The path is drawn by script from the real positions of the number circles, so it follows any text length and screen width.
+  Rule: put only commands you have verified in `code`; mark others "unverified" in desc.
+-->
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Step snake path</title>
+<style>
+:root{--bg:#f4f8ff;--ink:#14213d;--mute:#52607a;--card:#fff;--a:#2f6fdb;--b:#7a3fd1;--line:#dbe4f5}
+@media (prefers-color-scheme:dark){:root{--bg:#0f1526;--ink:#eef2ff;--mute:#a9b4d0;--card:#18213a;--line:#2a3658}}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--ink);font-family:Aptos,"Segoe UI",Inter,Arial,sans-serif;padding:24px 16px 40px}
+.wrap{max-width:760px;margin:0 auto;position:relative}
+h1{font-size:32px;line-height:1.15;text-align:center}
+h1 em{font-style:normal;color:var(--a)}
+.lead{text-align:center;color:var(--mute);font-size:14px;margin:8px 0 22px}
+#path{position:absolute;left:0;top:0;width:100%;height:100%;pointer-events:none;z-index:0}
+.row{display:flex;position:relative;z-index:1;margin-bottom:26px}
+.row.r{flex-direction:row-reverse}
+.dot{flex:none;width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,var(--a),var(--b));color:#fff;font-weight:800;font-size:18px;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 12px #2f6fdb55}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 14px;margin:0 14px;max-width:calc(100% - 100px)}
+.tag{font-size:11px;font-weight:800;letter-spacing:.06em;color:var(--b)}
+.card h2{font-size:14px;margin:2px 0 4px}
+.card p{font-size:12.5px;line-height:1.45;color:var(--mute)}
+code{display:block;margin-top:8px;background:#14130f;color:#f4f1e6;border-radius:8px;padding:6px 9px;font:11px/1.4 "JetBrains Mono",Consolas,monospace;overflow-wrap:anywhere}
+.foot{text-align:center;color:var(--mute);font-size:12.5px;margin-top:6px}
+@media (max-width:520px){h1{font-size:26px}.card{max-width:calc(100% - 70px);margin:0 8px}.dot{width:36px;height:36px;font-size:15px}}
+</style></head><body><div class="wrap" id="w"><svg id="path" xmlns="http://www.w3.org/2000/svg"></svg></div>
+<script>
+const TITLE=["Build your first","mod","in about 3 minutes"], LEAD="Five steps, two prompts to paste.";
+const STEPS=[
+ {n:1,tag:"SET UP",title:"Switch one on",desc:"Check that plugins work in your version. The built-in plugin name in the source is unverified.",code:"/plugin"},
+ {n:2,tag:"SET UP",title:"Run the audit",desc:"Ask Claude to read your recent sessions and list what you repeat most. Session history can hold secrets."},
+ {n:3,tag:"BUILD",title:"Build it",desc:"Pick one repeat. Claude builds and tests the fix; you read it before keeping it."},
+ {n:4,tag:"KEEP",title:"Keep it",desc:"A mod disappears when the chat closes. Save it as a plugin so it loads every session."},
+ {n:5,tag:"SHARE",title:"Share it",desc:"Put it on GitHub; teammates add it with one line.",code:"claude plugin marketplace add you/your-mod"}
+];
+const FOOT="Five yeses to build it. Any no, skip it.";
+const w=document.getElementById("w"),svg=document.getElementById("path");
+function el(t,c,x){const e=document.createElement(t);if(c)e.className=c;if(x!==undefined)e.textContent=x;return e}
+const h=el("h1");h.appendChild(document.createTextNode(TITLE[0]+" "));h.appendChild(el("em",null,TITLE[1]));h.appendChild(document.createTextNode(" "+TITLE[2]));w.appendChild(h);w.appendChild(el("div","lead",LEAD));
+const dots=[];
+STEPS.forEach((s,i)=>{const r=el("div","row"+(i%2?" r":""));const d=el("div","dot",String(s.n));const c=el("div","card");
+ c.appendChild(el("div","tag",s.tag));c.appendChild(el("h2",null,s.title));c.appendChild(el("p",null,s.desc));if(s.code)c.appendChild(el("code",null,s.code));
+ r.appendChild(d);r.appendChild(c);w.appendChild(r);dots.push(d)});
+w.appendChild(el("div","foot",FOOT));
+function draw(){const NS="http://www.w3.org/2000/svg";while(svg.firstChild)svg.removeChild(svg.firstChild);
+ const wr=w.getBoundingClientRect();svg.setAttribute("viewBox","0 0 "+wr.width+" "+wr.height);
+ const defs=document.createElementNS(NS,"defs"),lg=document.createElementNS(NS,"linearGradient");lg.setAttribute("id","gr");lg.setAttribute("x1","0");lg.setAttribute("x2","1");
+ [["0","#2f6fdb"],["1","#7a3fd1"]].forEach(([o,c])=>{const s=document.createElementNS(NS,"stop");s.setAttribute("offset",o);s.setAttribute("stop-color",c);lg.appendChild(s)});defs.appendChild(lg);svg.appendChild(defs);
+ const pts=dots.map(d=>{const r=d.getBoundingClientRect();return [r.left-wr.left+r.width/2,r.top-wr.top+r.height/2]});
+ for(let i=0;i<pts.length-1;i++){const [x1,y1]=pts[i],[x2,y2]=pts[i+1],my=(y1+y2)/2;const p=document.createElementNS(NS,"path");
+  p.setAttribute("d","M"+x1+" "+y1+" C"+x1+" "+my+" "+x2+" "+my+" "+x2+" "+y2);p.setAttribute("fill","none");p.setAttribute("stroke","url(#gr)");p.setAttribute("stroke-width","4");p.setAttribute("stroke-dasharray","2 9");p.setAttribute("stroke-linecap","round");svg.appendChild(p)}}
+draw();addEventListener("resize",draw);if(document.fonts&&document.fonts.ready)document.fonts.ready.then(draw);
+</script></body></html>

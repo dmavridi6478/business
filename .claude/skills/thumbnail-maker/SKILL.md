@@ -1,6 +1,6 @@
 ---
 name: thumbnail-maker
-description: Generate high-CTR YouTube and social media thumbnail concepts — layout directions, visual hierarchy, facial expression cues, color combinations, text overlay copy, and image generation prompts optimized to stop the scroll. Use when the user needs thumbnail ideas for a video, wants to brief a designer, or needs prompts to feed into an AI image generator (Midjourney, DALL-E, Stable Diffusion, Firefly). Source: @the.wealth.lab "6 Favorite Claude Skills That Automate Almost Anything."
+description: 'Generate high-CTR YouTube and social media thumbnail concepts — layout directions, visual hierarchy, facial expression cues, color combinations, text overlay copy, and image generation prompts optimized to stop the scroll. Use when the user needs thumbnail ideas for a video, wants to brief a designer, or needs prompts to feed into an AI image generator (Midjourney, DALL-E, Stable Diffusion, Firefly). Source: @the.wealth.lab "6 Favorite Claude Skills That Automate Almost Anything."'
 ---
 
 # Thumbnail Maker

@@ -1,3 +1,8 @@
+---
+description: 'Generate an AI image prompt for a bird''s-eye aerial perspective visualization.'
+argument-hint: '[subject/scene] [optional: time of day, style]'
+---
+
 # /aerialview
 
 Generate an AI image prompt for a **bird's-eye aerial perspective** visualization.

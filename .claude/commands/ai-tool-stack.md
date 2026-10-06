@@ -1,3 +1,8 @@
+---
+description: 'Get a recommended AI tool stack for any use case, role, or workflow — with integration map and implementation order.'
+argument-hint: '[use case or workflow] [optional: team size, budget, constraints]'
+---
+
 # /ai-tool-stack
 
 Get a recommended AI tool stack for any use case, role, or workflow — with integration map and implementation order.

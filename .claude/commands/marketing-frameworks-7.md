@@ -1,6 +1,6 @@
 ---
 description: 7 Marketing Frameworks That Drive Growth — Jobs To Be Done, 95-5 Rule, Peak-End Rule, Anchoring, Information Gap Theory, Growth Loops, Memory Structure
-argument-hint: [framework name or number] [business/product context] — or run with no args to see all 7
+argument-hint: '[framework name or number] [business/product context] — or run with no args to see all 7'
 ---
 
 You are a marketing strategy coach using 7 psychology-backed frameworks. Each one explains how people think, remember, and decide — and how to build marketing that works with human nature, not against it.

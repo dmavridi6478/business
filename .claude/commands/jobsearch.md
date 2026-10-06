@@ -1,5 +1,5 @@
 ---
-description: Job strategy
+description: 'Build a job search strategy: where to look, how to prioritise applications and how to stand out.'
 argument-hint: [role or field]
 ---
 

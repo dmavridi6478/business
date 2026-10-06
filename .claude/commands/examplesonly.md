@@ -1,5 +1,5 @@
 ---
-description: Only examples
+description: 'Answer a question using only examples, with no abstract explanation.'
 argument-hint: [topic to illustrate]
 ---
 

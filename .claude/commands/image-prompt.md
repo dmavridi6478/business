@@ -1,3 +1,7 @@
+---
+description: 'Generate a detailed AI image prompt for the subject you give.'
+---
+
 # AI Image Prompt Generator (99 Slash Commands — @sdv_stm)
 
 Generate a detailed AI image prompt for: $ARGUMENTS

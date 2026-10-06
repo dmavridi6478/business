@@ -1,3 +1,8 @@
+---
+name: ai-marketing-team
+description: 'Ten role prompts that replace core marketing functions (content strategist and nine more, Anna Bilan). Use when you need one specialist marketing role on demand without hiring.'
+---
+
 # AI Marketing Team — 10 Role Prompts
 
 **Invoke:** `/ai-marketing-team`

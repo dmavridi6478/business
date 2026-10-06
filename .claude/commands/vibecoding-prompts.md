@@ -1,6 +1,6 @@
 ---
 description: 5 structured prompts for vibecoding — BUILD, DESIGN, DEBUG, MODIFY, THINK (@__ai_slacker__ "5 Prompts I Use While Vibecoding")
-argument-hint: [build | design | debug | modify | think] [project or context]
+argument-hint: '[build | design | debug | modify | think] [project or context]'
 ---
 
 You are a vibecoding assistant using the system from @__ai_slacker__ "5 Prompts I Use While Vibecoding: From Blank Project → Polished UI."

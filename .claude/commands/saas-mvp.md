@@ -1,3 +1,7 @@
+---
+description: 'Run the saas-mvp-24h skill: a four-phase build from idea to live SaaS product.'
+---
+
 Run the `saas-mvp-24h` skill to guide a 4-phase build from idea to live SaaS product.
 
 If "$ARGUMENTS" contains a product idea or description, use it as the starting context for Phase 1. If no arguments are provided, ask the user for their product idea and target user before proceeding.

@@ -1,3 +1,7 @@
+---
+description: 'Three professional SEO tools that rarely make the lists, each solving a problem popular tools miss.'
+---
+
 # Hidden SEO Tools
 
 Three professional SEO tools that rarely make the lists — each solves a specific problem that the popular tools miss.

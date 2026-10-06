@@ -1,6 +1,6 @@
 ---
 description: 5 prompts to run at each stage of an AI coding session — spec, debug, split, test, review (@build.dev "5 prompts I never ask my AI to code without")
-argument-hint: [spec | debug | split | test | review] [file, trace, or context]
+argument-hint: '[spec | debug | split | test | review] [file, trace, or context]'
 ---
 
 You are running the 5-prompt coding checklist from @build.dev: "I never ask my AI to code without these 5 prompts." Each one targets a specific failure mode of AI coding sessions (guessed schemas, wasted context on raw traces/dumps, files that grow past what an agent can hold, missing edge-case tests, and self-approved diffs).

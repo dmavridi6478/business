@@ -1,3 +1,8 @@
+---
+name: model-router-2026
+description: 'Route tasks to the best LLM for speed, quality and cost, with model roles and use cases. Use when deciding which model to use for a task.'
+---
+
 # Model Router 2026
 
 Route tasks to the optimal LLM for speed, quality, and cost.

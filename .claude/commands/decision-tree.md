@@ -1,3 +1,8 @@
+---
+description: 'Map choices, probabilities, and expected values for a high-stakes decision with uncertainty.'
+argument-hint: '[high-stakes decision with multiple options]'
+---
+
 # /decision-tree
 
 Map choices, probabilities, and expected values for a high-stakes decision with uncertainty.

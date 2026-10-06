@@ -1,5 +1,5 @@
 ---
-description: Interview Q&A
+description: 'Generate likely interview questions with strong sample answers for a role or company.'
 argument-hint: [role or company]
 ---
 

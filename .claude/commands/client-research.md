@@ -1,3 +1,7 @@
+---
+description: 'Research a client before a meeting and summarise what matters for the conversation.'
+---
+
 # Client Research Assistant (@earchoe)
 
 Research a client before a meeting: $ARGUMENTS

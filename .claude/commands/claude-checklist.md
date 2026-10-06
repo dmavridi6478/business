@@ -1,6 +1,6 @@
 ---
 description: Audit your Claude workflow against the 9-section checklist (setup, skills, prompting, connectors, Cowork, projects, design and code, writing, token economy)
-argument-hint: [section name or "all"] [describe your current habits, or paste your instructions]
+argument-hint: '[section name or "all"] [describe your current habits, or paste your instructions]'
 ---
 
 Use the skill `claude-checklist`. Input: "$ARGUMENTS".

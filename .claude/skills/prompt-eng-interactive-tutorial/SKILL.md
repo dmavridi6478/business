@@ -1,3 +1,8 @@
+---
+name: prompt-eng-interactive-tutorial
+description: 'Reference to Anthropic''s interactive prompt engineering tutorial: nine chapters plus an appendix with exercises and a playground. Use when teaching or learning prompt engineering for Claude.'
+---
+
 # Prompt Engineering Interactive Tutorial
 
 Anthropic's comprehensive step-by-step course on engineering optimal prompts for Claude. 9 chapters + appendix, each with a lesson, exercises, and a live playground. Available in two variants: Anthropic 1P (direct API) and Amazon Bedrock.

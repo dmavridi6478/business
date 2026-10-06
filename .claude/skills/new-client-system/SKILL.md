@@ -1,6 +1,6 @@
 ---
 name: new-client-system
-description: Build a complete client acquisition system — outreach strategies, follow-up sequences, sales pipeline structure, proposal templates, and onboarding SOPs — for a service business, agency, or freelancer. Use when the user is starting or scaling a client-based business and needs a systematic way to find, pitch, convert, and onboard clients rather than relying on random referrals. Source: @the.wealth.lab "6 Favorite Claude Skills That Automate Almost Anything."
+description: 'Build a complete client acquisition system — outreach strategies, follow-up sequences, sales pipeline structure, proposal templates, and onboarding SOPs — for a service business, agency, or freelancer. Use when the user is starting or scaling a client-based business and needs a systematic way to find, pitch, convert, and onboard clients rather than relying on random referrals. Source: @the.wealth.lab "6 Favorite Claude Skills That Automate Almost Anything."'
 ---
 
 # New Client System

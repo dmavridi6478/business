@@ -1,3 +1,7 @@
+---
+description: 'Repurpose one content idea or existing piece into multiple formats.'
+---
+
 # Content Repurposing Engine (SkillDrop AI)
 
 Take the following content idea or existing piece and repurpose it into multiple formats: $ARGUMENTS

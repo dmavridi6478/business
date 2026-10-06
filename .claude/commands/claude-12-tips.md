@@ -1,3 +1,7 @@
+---
+description: 'Twelve ways to use Claude without hitting usage limits, such as editing a prompt instead of stacking messages.'
+---
+
 # 12 Ways to Use Claude Without Hitting Usage Limits
 *Source: @your.aimentor on TikTok*
 

@@ -1,6 +1,6 @@
 ---
 name: gtm-guide-map
-description: Index and run-order for "The GTM Guide to Claude, Fully Mapped" - 3 chapters and 40 files (37 skills + 3 templates) from who you go after (ICP, lists, signals, intent), through personalisation, qualification and discovery, to the pipeline, CRM and send layer with a weekly read. Use when the user does outbound or go-to-market work and wants the right skill for ICP-from-closed-won, list quality, signal finding, opener writing, call prep, pipeline diagnosis, reply classification or a weekly GTM report. Source @your.aimentor tree diagram (Batch 99): only the file names and one-line purposes were visible, not the skill bodies.
+description: 'Index and run-order for "The GTM Guide to Claude, Fully Mapped" - 3 chapters and 40 files (37 skills + 3 templates) from who you go after (ICP, lists, signals, intent), through personalisation, qualification and discovery, to the pipeline, CRM and send layer with a weekly read. Use when the user does outbound or go-to-market work and wants the right skill for ICP-from-closed-won, list quality, signal finding, opener writing, call prep, pipeline diagnosis, reply classification or a weekly GTM report. Source @your.aimentor tree diagram (Batch 99): only the file names and one-line purposes were visible, not the skill bodies.'
 ---
 
 # GTM guide to Claude - mapped

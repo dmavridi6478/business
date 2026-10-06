@@ -1,6 +1,6 @@
 ---
 description: Have a fresh subagent grade output against a standard, loop until it clears the bar
-argument-hint: [OUTPUT], [STANDARD]
+argument-hint: '[OUTPUT], [STANDARD]'
 ---
 
 Make [OUTPUT], have a fresh subagent grade it against [STANDARD], rewrite, and repeat until it clears the bar. Show me the final plus what each pass fixed.

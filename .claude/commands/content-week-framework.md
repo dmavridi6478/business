@@ -1,3 +1,7 @@
+---
+description: 'One strong idea repurposed across seven formats over seven days, each fitting a different audience behaviour and platform moment.'
+---
+
 # 1 Idea → A Week of Content
 
 Source: Josh S. (LinkedIn)

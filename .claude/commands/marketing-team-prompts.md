@@ -1,3 +1,7 @@
+---
+description: 'Standalone prompts that cover every marketing function, to run one at a time.'
+---
+
 # 10 Prompts That Replace Your Marketing Team
 
 Use these standalone prompts (one at a time) to handle every marketing function: $ARGUMENTS

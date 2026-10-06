@@ -1,3 +1,8 @@
+---
+name: market-research-web
+description: 'Live web search for the current state of a niche market: statistics, trends and growth areas, by country or region. Use when you need current market numbers with sources.'
+---
+
 # Market Research (Web Search)
 
 Run a live web search to get the current state of a niche market — stats, trends, and growth areas.

@@ -1,5 +1,5 @@
 ---
-description: Polish a prompt for the Fable-tier model on genuinely difficult tasks: state the hard part, the evidence standard, and the stopping rule
+description: 'Polish a prompt for the Fable-tier model on genuinely difficult tasks: state the hard part, the evidence standard, and the stopping rule'
 argument-hint: <paste the prompt to polish>
 ---
 

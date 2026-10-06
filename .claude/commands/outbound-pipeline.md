@@ -1,6 +1,6 @@
 ---
 description: Run the 5-step outbound pipeline inside Claude Code — enrich, clean, score ICP on signals, personalise 1:1, prepare for sender — with GDPR and human-approval gates
-argument-hint: [ICP / target description] or [path to a lead CSV]
+argument-hint: '[ICP / target description] or [path to a lead CSV]'
 ---
 
 Use the `gtm-outbound-engine` skill. Target: "$ARGUMENTS"

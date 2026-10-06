@@ -1,3 +1,7 @@
+---
+description: 'Seven types of LinkedIn posts for a balanced content mix, from awareness to conversion.'
+---
+
 # 7 Types of LinkedIn Posts
 
 Source: Chris Donnelly's $100M personal brand content mix

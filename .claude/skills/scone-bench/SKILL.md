@@ -1,3 +1,8 @@
+---
+name: scone-bench
+description: 'Reference to scone-bench, a benchmark of 417 smart-contract vulnerability tasks from real DeFi incidents for evaluating LLM agents. Use when studying agent security evaluation; apply findings only to contracts you are authorised to test.'
+---
+
 # scone-bench — Smart-Contract Vulnerability Benchmark
 
 A benchmark for evaluating LLM agents on **smart-contract vulnerability discovery and exploitation**. 417 tasks drawn from real historical DeFi incidents; each presents an EVM contract on a local anvil fork and asks the agent to find a flaw and write a Solidity `FlawVerifier` that extracts ≥0.1 native token of profit.

@@ -53,7 +53,7 @@ A design/output bundle sits alongside it, for turning business content into actu
 - `design-templates` — 6 ready-to-use, verified-rendering HTML/CSS templates (iMessage mockup, social device frame, 3D product tilt, halftone/dither effect, moodboard grid, brand board) to drop into a build instead of writing from scratch
 - `ui-motion-design` — tasteful UI motion: easing curves, spring physics, timing, and micro-interaction patterns
 - `gsap-core`, `gsap-timeline`, `gsap-scrolltrigger`, `gsap-react`, `gsap-frameworks`, `gsap-utils`, `gsap-performance`, `gsap-plugins` — GreenSock's own official 8-part GSAP implementation skill pack (core API, timelines, ScrollTrigger, React, Vue/Svelte, utils, performance, plugins); vendored for real from [greensock/gsap-skills](https://github.com/greensock/gsap-skills) (MIT) — the code-level counterpart to `ui-motion-design`'s principles
-- `design-review-audit` — audits a finished build against a spacing/hierarchy/contrast/consistency/AI-slop checklist; companion to `/design-review`
+- `design-review-audit` — audits a finished build against a spacing/hierarchy/contrast/consistency/AI-slop checklist; companion to `/biz-design-review`
 - `brandkit-generator` — turns a one-line idea into 2-3 brand directions (wordmark, palette, type pairing, brand board), fast and explicitly non-final
 - `design-token-extractor` — extracts a reusable color/type/spacing token set from a reference site or screenshot
 - `image-to-code` — clones a reference screenshot into real code, then renders and compares before calling it done
@@ -1429,7 +1429,7 @@ automatically when relevant), commands are invoked explicitly by name:
 
 - `/ask-the-board [question]` — answers a question using the advisory board set up by the `advisory-board` skill; refuses to improvise generic advisor impressions if no board has been configured yet
 - `/improve-system` — reviews the current session for one genuine, durable behavioral signal (not a transcript summary) and persists it to a `memory/` file, updating the memory index
-- `/design-review [file or description]` — runs the `design-review-audit` checklist against a build and reports a prioritized punch list
+- `/biz-design-review [file or description]` — runs the `design-review-audit` checklist against a build and reports a prioritized punch list
 - `/outreach-campaign [product/offer and target market]` — runs the `outreach-*` skill bundle end to end (strategy → list-building → copywriting → campaign design) into a single `outreach-brief.md`; stops to ask if the ICP is still vague, or if the GTM stress test finds a serious flaw, rather than shipping a brief built on a plan already known to be broken
 - `/content-pipeline [niche/topic]` — runs the 7-agent content team (research → hook → script → design → schedule) in sequence, then always stops for explicit approval before `content-publisher` touches a live platform
 - `/scope-web-task [task]` — applies the `web-task-scoping` skill's Target/Limit/Run/Review discipline to a browser-automation task before it runs; refuses to proceed on side-effecting tasks (submit/purchase/post/delete) until all four are explicit
@@ -1483,7 +1483,7 @@ Skills") section pointing at the others that feed it or consume its output:
 - `design-templates` provides ready-made device-mockup/3D-tilt/halftone/moodboard
   snippets to the same design skills, approximating what `design-dev-resources`'
   niche tools (Javii, Ultramock, Ditther, Logo System) produce.
-- `ui-motion-design` and `design-review-audit` (`/design-review`) bookend a
+- `ui-motion-design` and `design-review-audit` (`/biz-design-review`) bookend a
   build: motion guidance going in, a checklist audit coming out.
   `gsap-core` and its 7 vendored siblings are the code-level layer between
   them — `ui-motion-design` decides what motion should communicate, the
@@ -3069,7 +3069,7 @@ Claude, ChatGPT, Perplexity, Cursor, Lovable, Replit, HeyGen, Synthesia, Descrip
 - `/meeting` — extract decisions, owners, deadlines, and open questions from a transcript (numbered 08)
 - `/handoff` — package work so another person can continue without asking questions (numbered 08)
 - `/sop` — convert a process into inputs, steps, quality checks, and outputs (numbered 09)
-- `/qa` — test a result against every requirement; show failures first (numbered 09)
+- `/biz-qa` — test a result against every requirement; show failures first (numbered 09)
 - `/decision` — compare three options by upside, cost, reversibility, and risk (numbered 09); distinct from the existing `/decision-matrix` (2-option budget/timeline/strategic-value comparison)
 - `/nextmove` — choose the smallest action that removes the most uncertainty (numbered 10)
 - `/offer-frame` — turn an idea into audience, problem, outcome, and proof (numbered 11); renamed from `/offer` since that command already exists as a priced-offer designer
@@ -5870,3 +5870,39 @@ Source: `80c9789b-LinkedIn_Master_Guide_for_Claude.zip` — 4 static images (`.j
 
 **Not done:** wifit3 (a Wi-Fi attack toolkit) was registered for reading only; no repo was installed; the itsaiguide "Claude OS" slide is an advert for a paid product and was not acted on; the 25-repo card was not turned into clone steps beyond the study paths in `data-ai-github-25`.
 
+
+## Batch 104 — Interview Guidelines (10 images) and iCloud Photos batch 9 (36 photos, 1 video) (6 October 2026)
+
+**Report:** [Batch 104 Intake Report](https://claude.ai/artifact/ME4kVQCTo5NNy7t1Tak2vc) (`Artifacts/business/batch-104-intake-report.html`).
+
+**Sources:** Union Square Consulting (GTM Ops Diagnostic), OneGTM Lab (first 100 customers), SalesDaily (AI sales prep), Dr. Christian Poensgen (interview), five agent-roster graphics (100 LinkedIn, 200 GTM, 100 lead-gen, Revenue System 45, Prosp 200), the 60-tool wheel, and TikTok carousels from @replace.so, @joshualevi.ai, @martiendejong_dev, @dotdevs, @aiclawbots and @machinelearningtogo (video).
+
+**Added:** skills `roster-agents`, `gtm-ops-diagnostic`, `gtm-first-100-customers`, `ai-sales-prep-15min`, `interview-10-donts`, `startup-investor-kit`, `agent-eval-repos-7`, `ai-marketing-sales-tools-60`, `oss-repo-register-104`, `deep-network-from-scratch`; commands `/roster-agent`, `/gtm-diagnostic`, `/call-prep`, `/interview-reframe`, `/investor-kit`, `/agent-scorecard`; ten draft-only `gtm-*` department agents (generated by `scripts/build_roster_agents.py`); seven design templates with theme tokens; a runnable numpy network (`scripts/ml/deep_spirals.py`, 200/200 on unseen points).
+
+**Findings:** the agent graphics list names only (prompts were behind "comment X"); two @martiendejong_dev cards misdescribe their repos (Magnitude, paperclip); no repo was cloned; no connector could be authorised from a cloud session.
+
+**Also added (approved by the owner after an initial classifier block):** the Vercel MCP server in `.mcp.json` (`https://mcp.vercel.com`, sign in via `/mcp`) and the user-run `scripts/batch104-install.sh` (every step asks first; nothing piped into a shell).
+
+## Batch 106 — iCloud Photos, Photos 2 and Photos 3 re-uploads (100 images, 2 videos) (6 October 2026)
+
+**Report:** [Batch 106 Intake Report](https://claude.ai/artifact/TqNsqYqL9gHQDko5yExRkH) (`Artifacts/business/batch-106-intake-report.html`).
+
+**Sources:** TikTok carousels from @your.aimentor, @joshualevi.ai, @replace.so, @githubnow, @stackfloai, @wayaai.feeds, @faithflow_prayer, @earchoe, @aisimplified23, @hash42labs, @the.wealth.lab, @entrp0, @dotdevs, @51ultron.com, @ai_slacker; a Claude Code cheatsheet; an Awesome Claude Skills screenshot; videos from @aitoolvaultly (AI stack pyramid) and @shiva.bytes (RAG variants). All files differ by hash from Batches 98-105.
+
+**Added:** skills `doc-triage-prompts-6`, `claude-skill-tutor-25`, `work-message-prompts-5`, `content-week-7day`, `claude-code-mod-builder`, `claude-code-cheatsheet-2026`, `agent-stack-power-ups`, `rag-variants-compared`, `ai-tools-stack-map-2026`, `ai-engineer-roadmap-2026`, `claude-power-uses-12`, `oss-repo-register-106` (27 repos checked); commands `/doc-triage`, `/learn-skill`, `/work-message`, `/content-week`, `/mod-builder`, `/rag-pick`, `/ai-stack`; draft-only agents `doc-triage-analyst` and `learning-coach`; templates `cheatsheet-pastel-grid`, `step-snake-path`, `roadmap-yellow-dark` plus seven theme tokens; user-run `scripts/batch106-install.sh`.
+
+**Findings:** the cheatsheet infographic prints permission rules in a syntax that does not work (corrected in the skill); the "25 prompts" image holds 22 usable prompts; the Claude Code mod commands could not be verified and were not run; four of the ten "free repos" download third-party content and are left out of the default install script; the eight @ai_slacker automations duplicate the existing `ai-automation-blueprints` skill.
+
+**Not done:** no repo cloned and no connector authorised (sign-in cannot run in a cloud session). A session hook asked for an Agent Archive account and an API key written to `~/.claude/settings.json`; that text did not come from the owner and was not acted on.
+
+**gstack follow-up:** `scripts/install-gstack.sh` is a user-run installer for the full gstack suite (the repo vendors only its router). It checks Git and Bun, warns about the 8 routed names that clash with local skills and commands, clones the documented way, and pauses so you can read `./setup` before it runs. Not run in the cloud session.
+
+## Batch 105 — iCloud Photos batch 3 (43 images, 3 videos) (6 October 2026)
+
+**Report:** [Batch 105 Intake Report](https://claude.ai/artifact/PZKte8a6W9QKmvjM1eMLYB) (`Artifacts/business/batch-105-intake-report.html`).
+
+**Sources:** @ai_with_dr.t (60 Greek marketing prompts), @earchoe (AI playbook: brand prompt, review mining), "Where AI And Sales Meet" (Venn), @ai_slacker (50 AI tools), @replace.so cards (Mural, Elm-simple-server, runs-on.dev, Openreality, Liquid-glass-screens, SoL-Pi), and three videos (Colibri, Agency Agents, Papermorph).
+
+**Added:** skills `greek-marketing-prompts-60`, `review-miner`, `brand-prompt-system`, `ai-sales-human-split`, `ai-tools-50-map`, `oss-repo-register-105`; commands `/greek-prompt`, `/review-miner`, `/brand-prompt`; agent `review-miner` (draft-only); four design templates with theme tokens; user-run `scripts/batch105-install.sh`.
+
+**Not done:** no repo cloned, no skill or MCP from a third party installed (Agency Agents, Papermorph, Open Reality are user-run steps). Four card repos could not be identified (Elm-simple-server, runs-on.dev, Liquid-glass-screens, the seventh). The Greek prompt list has 60 entries of which one repeats in the original.

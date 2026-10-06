@@ -1,6 +1,6 @@
 ---
 name: personal-finance-analyzer
-description: Categorize bank transactions from a CSV export, identify spending patterns, flag anomalies, and generate a monthly financial summary with actionable observations. Use when the user exports their bank or credit card transactions and wants insight into their spending without uploading data to a third-party app. Runs entirely in Claude — no external service required. Source: @ai_slacker "25 Powerful AI Skills, Agents & Automations You Can Build Today."
+description: 'Categorize bank transactions from a CSV export, identify spending patterns, flag anomalies, and generate a monthly financial summary with actionable observations. Use when the user exports their bank or credit card transactions and wants insight into their spending without uploading data to a third-party app. Runs entirely in Claude — no external service required. Source: @ai_slacker "25 Powerful AI Skills, Agents & Automations You Can Build Today."'
 ---
 
 # Personal Finance Analyzer

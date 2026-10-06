@@ -1,3 +1,7 @@
+---
+description: 'Plan a project as an experienced project manager: scope, milestones, risks and owners.'
+---
+
 # Complex Project Planner
 
 Act as an experienced project manager. Help me plan the following project: $ARGUMENTS

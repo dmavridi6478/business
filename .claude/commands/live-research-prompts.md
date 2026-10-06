@@ -1,3 +1,7 @@
+---
+description: 'Prompts for real-time research with web search on; run them on the topic you give.'
+---
+
 # Live Research Prompts (@earchoe)
 
 Use these prompts with Claude web search ON for real-time research: $ARGUMENTS

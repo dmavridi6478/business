@@ -1,6 +1,6 @@
 ---
 description: Give an agent a goal and let it plan/execute/check its own steps, capped
-argument-hint: [GOAL], [N]
+argument-hint: '[GOAL], [N]'
 ---
 
 Give an agent this goal: [GOAL]. Let it plan its own steps, work through them, check its own output, and surface only when it's done or genuinely stuck. Cap it at [N] steps.

@@ -1,3 +1,7 @@
+---
+description: 'Draft professional follow-up messages for a client situation you describe.'
+---
+
 # Client Follow-Up Drafter (SkillDrop AI)
 
 You are handling client communications for a business. Draft professional follow-up messages for: $ARGUMENTS

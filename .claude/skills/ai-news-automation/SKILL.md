@@ -1,3 +1,8 @@
+---
+name: ai-news-automation
+description: 'Prompt for a daily AI morning-brief automation in Codex or Claude Routines that searches news, launches, papers and funding. Use when setting up a recurring news digest.'
+---
+
 # AI News Automation
 
 Prompt for creating a daily AI morning brief automation in Codex or Claude Routines.

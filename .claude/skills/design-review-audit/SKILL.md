@@ -1,6 +1,6 @@
 ---
 name: design-review-audit
-description: Audit a built UI, page, deck, or artifact against a concrete design-guidelines checklist — spacing/rhythm, type hierarchy, contrast/accessibility, consistency, and generic-AI-slop patterns — and produce a prioritized punch list of specific fixes. Use after frontend-design/web-artifacts-builder/canvas-design/premium-html-presentation produce a build, or whenever asked to review, critique, or audit a design. Companion to the /design-review command, which runs this checklist on demand.
+description: Audit a built UI, page, deck, or artifact against a concrete design-guidelines checklist — spacing/rhythm, type hierarchy, contrast/accessibility, consistency, and generic-AI-slop patterns — and produce a prioritized punch list of specific fixes. Use after frontend-design/web-artifacts-builder/canvas-design/premium-html-presentation produce a build, or whenever asked to review, critique, or audit a design. Companion to the /biz-design-review command, which runs this checklist on demand.
 ---
 
 ## Purpose
@@ -52,4 +52,4 @@ A prioritized list: **blocking** (breaks usability/accessibility/looks broken) �
 
 ## Notes
 
-Source: a "Claude Replaces Designers" screenshot-carousel video (@vibes.codes) describing a "Web Design Guidelines" audit skill ("design that reviews itself"). Companion command: `/design-review` in `.claude/commands/`.
+Source: a "Claude Replaces Designers" screenshot-carousel video (@vibes.codes) describing a "Web Design Guidelines" audit skill ("design that reviews itself"). Companion command: `/biz-design-review` in `.claude/commands/`.

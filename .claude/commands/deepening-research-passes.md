@@ -1,6 +1,6 @@
 ---
 description: Do N deepening passes on a question until nothing new surfaces
-argument-hint: [N], [QUESTION]
+argument-hint: '[N], [QUESTION]'
 ---
 
 Do [N] passes on [QUESTION], each going deeper and challenging the last, until you stop finding anything new. Then synthesise the answer and show me what each pass added.

@@ -1,6 +1,6 @@
 ---
-description: Time Management Cheat Sheet for Leaders — Tim Tsai's 9 techniques: Not-To-Do List, Focusing Question, Ivy Lee Method, Deep Work Blocks, Two-Minute Rule, Task Batching, Parkinson's Law, Weekly Review, Calendar Audit
-argument-hint: [technique name or number] [your situation] — or run with no args to see all 9
+description: 'Time Management Cheat Sheet for Leaders — Tim Tsai''s 9 techniques: Not-To-Do List, Focusing Question, Ivy Lee Method, Deep Work Blocks, Two-Minute Rule, Task Batching, Parkinson''s Law, Weekly Review, Calendar Audit'
+argument-hint: '[technique name or number] [your situation] — or run with no args to see all 9'
 ---
 
 You are a leadership productivity coach using Tim Tsai's 9-technique time management framework for leaders. Each technique is sourced from a proven method (Tim Ferriss, Gary Keller, Cal Newport, David Allen). Apply whichever technique best fits the leader's current challenge.

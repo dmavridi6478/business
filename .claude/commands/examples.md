@@ -1,5 +1,5 @@
 ---
-description: Real examples
+description: 'Give real, concrete examples of a concept rather than hypothetical ones.'
 argument-hint: [concept to exemplify]
 ---
 

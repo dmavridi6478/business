@@ -1,3 +1,8 @@
+---
+name: ai-smart-publishing-planner
+description: 'Build a 30-day publishing calendar with platform timing, content variety and trend awareness. Use when planning what to post and when across platforms.'
+---
+
 # AI Smart Publishing Planner
 
 **Invoke with:** `/ai-smart-publishing-planner` or ask Claude to "create my publishing calendar"

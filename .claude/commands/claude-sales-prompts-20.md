@@ -1,3 +1,7 @@
+---
+description: 'Twenty Claude prompts that turn Claude into a sales thinking partner.'
+---
+
 # 20 Claude Prompts for Sales
 
 Source: SpeedChat.ai infographic, "Turn Claude into your sales thinking

@@ -1,3 +1,8 @@
+---
+name: anthropic-sdk-go
+description: 'Reference for the official Anthropic Go SDK (github.com/anthropics/anthropic-sdk-go). Use when writing Go code that calls the Claude API.'
+---
+
 # anthropic-sdk-go
 
 Claude SDK for Go — official Go client for the Anthropic API.

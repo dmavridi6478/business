@@ -1,3 +1,7 @@
+---
+description: 'Analyse a workflow as a productivity consultant and recommend improvements.'
+---
+
 # Workflow Optimization Expert
 
 Act as a productivity consultant. Analyze the following workflow: $ARGUMENTS

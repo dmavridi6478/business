@@ -16,7 +16,7 @@ description: Convert a reference UI screenshot or mockup into matching frontend 
 
 - **design-token-extractor**: Run first to ground colors/type/spacing in named tokens instead of guessed values.
 - **frontend-design**: General aesthetic/code-quality guidance that still applies even when the goal is matching a specific reference rather than inventing a design.
-- **design-review-audit** / `/design-review`: Run after the comparison pass to catch anything the side-by-side check missed (contrast, responsiveness).
+- **design-review-audit** / `/biz-design-review`: Run after the comparison pass to catch anything the side-by-side check missed (contrast, responsiveness).
 - **web-artifacts-builder**: Use for complex multi-component references (React/Tailwind/shadcn) rather than a single static page.
 
 ## Notes

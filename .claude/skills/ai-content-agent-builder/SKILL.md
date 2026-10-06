@@ -1,3 +1,8 @@
+---
+name: ai-content-agent-builder
+description: 'Nine-step process to build a first AI content agent in ten minutes that drafts and repurposes LinkedIn content (Josh Sanders). Use when automating one repeatable content task with an agent.'
+---
+
 # AI Content Agent Builder
 
 Build your first AI content agent in 10 minutes — the system that writes, drafts, and repurposes your LinkedIn content so you don't have to. By Josh Sanders.

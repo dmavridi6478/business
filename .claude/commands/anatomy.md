@@ -1,3 +1,8 @@
+---
+description: 'Generate an AI image prompt for a cross-section cutaway product visualization.'
+argument-hint: '[product name] [optional: style notes]'
+---
+
 # /anatomy
 
 Generate an AI image prompt for a **cross-section cutaway** product visualization.

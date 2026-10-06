@@ -1,6 +1,6 @@
 ---
 description: Build a watch-and-act automation with a dry run first
-argument-hint: [SOURCE], [CONDITION]
+argument-hint: '[SOURCE], [CONDITION]'
 ---
 
 Build an automation that watches [SOURCE] and acts when [CONDITION] hits: the trigger, what it does, the safeguard so it never fires wrongly. Then dry-run it on last month's data.

@@ -1,3 +1,8 @@
+---
+name: claude-prompt-tips
+description: 'Six-tip framework for better Claude results: goal, context, role, questions, format, refinement (@the.wealth.lab). Use when a prompt gives vague output or needs restructuring.'
+---
+
 # Claude Prompt Tips
 
 6-tip framework by @the.wealth.lab for getting the best possible results from Claude.

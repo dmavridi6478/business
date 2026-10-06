@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<!--
+  Template: playbook-workflow-beige
+  Style: @earchoe "AI playbook" slide - warm beige paper, high-contrast serif headline, mono labels, a four-box INPUT > AI > OUTPUT > CHECK chain,
+         a black "copy this prompt" block, a coloured instruction bar, numbered check rows. Two accents via <body data-accent="indigo|pink">. Dark cover variant via data-mode="dark".
+  Swap points: :root colours; KICKER, PAGE, HEADLINE; STEPS (4 labels); BAR; PROMPT (multi-line string); CHECKS (list); RULE. Canvas 540 wide, 9:16 friendly, scales.
+  Fonts: serif headline (Playfair Display / Georgia fallback) + mono (JetBrains Mono / ui-monospace fallback) - set via local fallbacks, no network needed.
+-->
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Playbook workflow slide</title>
+<style>
+:root{--bg:#ddd6c1;--panel:#cfc7ae;--ink:#16140f;--mute:#5d5846;--code:#14120e;--code-ink:#cfc9b6;--accent:#4b3fd6;--line:#8a83bf}
+body[data-accent=pink]{--accent:#d63a7a;--line:#d98aaa}
+body[data-mode=dark]{--bg:#14120e;--panel:#211e17;--ink:#f3efe3;--mute:#a49d86;--code:#0c0b08;--code-ink:#cfc9b6}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#777;display:flex;justify-content:center;padding:12px;font-family:"JetBrains Mono",ui-monospace,Consolas,monospace;color:var(--ink)}
+.s{width:min(540px,100%);min-height:760px;background:var(--bg);border-radius:10px;padding:26px 24px;display:flex;flex-direction:column;gap:16px;container-type:inline-size}
+.top{display:flex;justify-content:space-between;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--mute)}
+.rule{width:44px;height:3px;background:var(--accent)}
+h1{font-family:"Playfair Display",Georgia,"Times New Roman",serif;font-size:clamp(26px,8cqw,40px);line-height:1.08;font-weight:900;text-wrap:balance}
+.chain{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;align-items:center;border:1px solid var(--line);border-radius:8px;padding:8px}
+.chain div{border:1px solid var(--line);border-radius:6px;text-align:center;padding:8px 2px;font-family:Georgia,serif;font-weight:800;font-size:13px}
+.chain small{display:block;font-family:inherit;color:var(--accent);font-size:9px;font-weight:400}
+.bar{background:var(--accent);color:#fff;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;padding:9px 12px;border-radius:6px}
+.code{background:var(--code);color:var(--code-ink);border-radius:8px;padding:16px;font-size:13.5px;line-height:1.6;white-space:pre-wrap}
+.code b{display:block;color:var(--accent);font-size:10px;letter-spacing:.16em;text-transform:uppercase;margin-bottom:8px}
+.checks{display:flex;flex-direction:column;gap:7px}.checks div{background:var(--panel);border-radius:6px;padding:10px 12px;font-size:13px;display:flex;gap:10px}
+.checks i{font-style:normal;color:var(--accent);font-size:10px;padding-top:2px}
+.rulebox{background:var(--panel);border-radius:6px;padding:12px;font-size:13px;line-height:1.5}.rulebox b{color:var(--accent);display:block;font-size:10px;letter-spacing:.16em;margin-bottom:5px}
+.foot{margin-top:auto;font-size:10px;letter-spacing:.14em;color:var(--mute);text-transform:uppercase}
+</style></head><body data-accent="indigo">
+<div class="s">
+ <div class="top"><span id="k"></span><span id="p"></span></div><div class="rule"></div>
+ <h1 id="h"></h1><div class="chain" id="ch"></div><div class="bar" id="bar"></div><div class="code" id="code"></div>
+ <div class="checks" id="cks"></div><div class="rulebox" id="rb"></div><div class="foot" id="ft"></div>
+</div>
+<script>
+const KICKER='// Prompt 01 - cluster the signal',PAGE='04/09',HEADLINE='Start with the pattern-mining prompt';
+const STEPS=['Input','AI','Output','Check'],BAR='Open ChatGPT / Claude > copy > replace [brackets] > send';
+const PROMPT='Analyse these customer reviews:\n[PASTE REVIEWS]\n\nCluster the feedback into themes. For each theme show: frequency, representative evidence, customer impact, likely root cause, and confidence level. Do not treat one unusual comment as a trend.';
+const CHECKS=['Replace every [BRACKET]','Attach the source if needed','Read + verify before use'];
+const RULE=['The rule','AI is the accelerator. Your source judgement and verification create the value.'],FOOT='// save this slide - use it when you do the workflow';
+const $=id=>document.getElementById(id);$('k').textContent=KICKER;$('p').textContent=PAGE;$('h').textContent=HEADLINE;$('bar').textContent=BAR;$('ft').textContent=FOOT;
+STEPS.forEach((s,i)=>{const d=document.createElement('div');const sm=document.createElement('small');sm.textContent='0'+(i+1);d.appendChild(sm);d.appendChild(document.createTextNode(s));$('ch').appendChild(d)});
+const c=$('code'),b=document.createElement('b');b.textContent='// copy this prompt';c.appendChild(b);c.appendChild(document.createTextNode(PROMPT));
+CHECKS.forEach((x,i)=>{const d=document.createElement('div'),n=document.createElement('i');n.textContent='0'+(i+1);d.appendChild(n);d.appendChild(document.createTextNode(x));$('cks').appendChild(d)});
+const rb=$('rb'),rt=document.createElement('b');rt.textContent=RULE[0].toUpperCase();rb.appendChild(rt);rb.appendChild(document.createTextNode(RULE[1]));
+</script></body></html>

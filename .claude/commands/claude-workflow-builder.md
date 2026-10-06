@@ -1,3 +1,7 @@
+---
+description: 'Use one prompt structure for every Claude request to get better results; applies it to the task you give.'
+---
+
 # Build Your Claude Workflow in 5 Minutes
 
 Use this structure for every Claude prompt to get better results every time: $ARGUMENTS

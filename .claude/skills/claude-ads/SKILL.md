@@ -1,5 +1,5 @@
 ---
-name: ads
+name: claude-ads
 description: "Operate professional paid advertising across Google, Meta, YouTube, LinkedIn, TikTok, Microsoft, Apple, Amazon, Reddit, Pinterest, Snapchat, and X. Use for account intake, source-grounded audits, strategy, budget and measurement planning, creative production, experiments, reporting, monitoring, and explicitly approved campaign changes. Also trigger on PPC, paid social, retail media, attribution, tracking, landing pages, cross-platform conversion totals, negative keywords or search terms, beta-feature scoring, stale platform claims, API-token or credential setup, campaign deletion, and safe Claude Ads installation or uninstall."
 ---
 
@@ -48,29 +48,29 @@ diagnosis or mutation unsafe.
 
 | Intent | Route |
 | --- | --- |
-| Set up a client, brand, account, or guardrails | `/ads setup` |
-| Full or scoped account review | `/ads audit [all|platform|scope]` |
-| Campaign, channel, budget, competitor, or measurement plan | `/ads plan` |
-| Copy, image, video, or product-photo production | `/ads create` |
-| Draft or execute a campaign launch | `/ads launch [--draft|--apply]` |
-| Pacing, performance, fatigue, tracking, or policy monitoring | `/ads monitor` |
-| Draft or execute optimizations | `/ads optimize [--draft|--apply]` |
-| Hypothesis, power, duration, setup, or readout | `/ads experiment` |
-| Render a prior run | `/ads report` |
-| Refresh platform knowledge and evidence | `/ads research refresh` |
-| Validate repository or run integrity | `/ads validate` |
-| Install, update, or uninstall Claude Ads safely | `/ads setup` for install; `/ads validate` for uninstall |
-| Inspect maturity, capabilities, or the next blocker | `/ads status`, `/ads next` |
+| Set up a client, brand, account, or guardrails | `/claude-ads setup` |
+| Full or scoped account review | `/claude-ads audit [all|platform|scope]` |
+| Campaign, channel, budget, competitor, or measurement plan | `/claude-ads plan` |
+| Copy, image, video, or product-photo production | `/claude-ads create` |
+| Draft or execute a campaign launch | `/claude-ads launch [--draft|--apply]` |
+| Pacing, performance, fatigue, tracking, or policy monitoring | `/claude-ads monitor` |
+| Draft or execute optimizations | `/claude-ads optimize [--draft|--apply]` |
+| Hypothesis, power, duration, setup, or readout | `/claude-ads experiment` |
+| Render a prior run | `/claude-ads report` |
+| Refresh platform knowledge and evidence | `/claude-ads research refresh` |
+| Validate repository or run integrity | `/claude-ads validate` |
+| Install, update, or uninstall Claude Ads safely | `/claude-ads setup` for install; `/claude-ads validate` for uninstall |
+| Inspect maturity, capabilities, or the next blocker | `/claude-ads status`, `/claude-ads next` |
 
 Natural-language requests route to the same workflows. Existing shortcuts remain
 valid when their meaning is unambiguous:
 
-- `/ads google`, `meta`, `youtube`, `linkedin`, `tiktok`, `microsoft`,
+- `/claude-ads google`, `meta`, `youtube`, `linkedin`, `tiktok`, `microsoft`,
   `apple`, `amazon`, `reddit`, `pinterest`, `snapchat`, `x` -> platform audit.
-- `/ads attribution`, `tracking`, `creative`, `landing` -> scoped audit.
-- `/ads budget`, `competitor`, `math` -> scoped plan or financial model.
-- `/ads test` -> experiment; `/ads dna` -> setup; `/ads generate` and
-  `/ads photoshoot` -> create.
+- `/claude-ads attribution`, `tracking`, `creative`, `landing` -> scoped audit.
+- `/claude-ads budget`, `competitor`, `math` -> scoped plan or financial model.
+- `/claude-ads test` -> experiment; `/claude-ads dna` -> setup; `/claude-ads generate` and
+  `/claude-ads photoshoot` -> create.
 - A stale or expired platform claim -> research refresh, then validation.
 - Credential or token storage -> setup; install safety -> setup; uninstall safety
   and ownership checks -> validate.
@@ -304,7 +304,7 @@ never hardcode `~/.claude`. Load only what the request needs:
 - `references/additional-platforms.md`: evidence gates for channels outside the
   twelve-platform product contract; load only for adjacent-channel planning.
 - `references/automation-tier-classifier.md`: account automation maturity.
-- `references/status-contract.md`: deterministic `/ads status` and `/ads next` evidence and priority rules.
+- `references/status-contract.md`: deterministic `/claude-ads status` and `/claude-ads next` evidence and priority rules.
 - `references/prompt-patterns.md`: worked routing, worker, evidence, mutation, and
   partial-failure examples for subtle cases.
 - `claude_ads_core/schemas/v1/`: strict workflow and orchestration contracts;

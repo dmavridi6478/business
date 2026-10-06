@@ -1,6 +1,6 @@
 ---
 name: invoice-receipt-processor
-description: Extract structured data from invoices and receipts (vendor, amount, date, category, line items), flag policy violations, and produce submission-ready expense reports. Use when the user has a batch of receipts or invoices to process, wants to automate expense reporting, or needs to extract clean data from unstructured financial documents. Covers both single-document extraction (#12) and smart expense report building (#18) from the @ai_slacker automation series. Source: @ai_slacker "25 Powerful AI Skills, Agents & Automations You Can Build Today."
+description: 'Extract structured data from invoices and receipts (vendor, amount, date, category, line items), flag policy violations, and produce submission-ready expense reports. Use when the user has a batch of receipts or invoices to process, wants to automate expense reporting, or needs to extract clean data from unstructured financial documents. Covers both single-document extraction (#12) and smart expense report building (#18) from the @ai_slacker automation series. Source: @ai_slacker "25 Powerful AI Skills, Agents & Automations You Can Build Today."'
 ---
 
 # Invoice & Receipt Processor

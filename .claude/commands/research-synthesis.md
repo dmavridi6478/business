@@ -1,3 +1,7 @@
+---
+description: 'Run the six-stage research synthesis procedure on sources you paste or reference.'
+---
+
 Run the `docs/procedures/research-synthesis.md` six-stage synthesis against
 the sources in "$ARGUMENTS" (paste the papers/abstracts/sources directly,
 reference files already in this conversation, or reference a URL/dataset

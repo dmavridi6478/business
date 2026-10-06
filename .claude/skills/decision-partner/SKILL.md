@@ -1,3 +1,8 @@
+---
+name: decision-partner
+description: 'Act as an executive decision partner: ask about goals and constraints, challenge assumptions and biases, compare options and recommend a course. Use when facing a decision with real stakes.'
+---
+
 # Decision Partner
 
 Act as executive decision partner to challenge assumptions, compare options, and recommend a course of action.

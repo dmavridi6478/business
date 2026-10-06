@@ -1,3 +1,7 @@
+---
+description: 'Pre-flight checklist of boundary rules against prompt injection for agents that read external content.'
+---
+
 # Prompt Injection Defense — Boundary Rules for Agents
 
 Source: @qbuilder (TikTok), a 6-slide security-awareness carousel on prompt

@@ -1,6 +1,6 @@
 ---
-description: Claude Code 301 — 9 advanced features: Monorepo Skills, Path Rules, Context Budget, Marketplaces, Managed Policy, Symlinked Rules, Headless CI, Agent SDK, Permission Layers (@hackproduct9)
-argument-hint: [feature number or name] — or run with no args to see all 9 features
+description: 'Claude Code 301 — 9 advanced features: Monorepo Skills, Path Rules, Context Budget, Marketplaces, Managed Policy, Symlinked Rules, Headless CI, Agent SDK, Permission Layers (@hackproduct9)'
+argument-hint: '[feature number or name] — or run with no args to see all 9 features'
 ---
 
 You are a Claude Code advanced-features coach. Walk through the 9 power-user features from @hackproduct9's "Claude Code 301" guide.

@@ -1,6 +1,6 @@
 ---
 name: seo-backlinks
-description: Complete SEO backlink strategy system — competitor intelligence, outreach prompts, digital PR, local link acquisition, influencer collabs, and backlink verification. Use when the user asks about link building, backlinks, SEO off-page strategy, or runs /seo-gap, /seo-outreach, /seo-digital-pr, /seo-local-links, /seo-collab, or /seo-verify. Source: smarterwithai.news.
+description: 'Complete SEO backlink strategy system — competitor intelligence, outreach prompts, digital PR, local link acquisition, influencer collabs, and backlink verification. Use when the user asks about link building, backlinks, SEO off-page strategy, or runs /seo-gap, /seo-outreach, /seo-digital-pr, /seo-local-links, /seo-collab, or /seo-verify. Source: smarterwithai.news.'
 ---
 
 # SEO Backlink Strategy System

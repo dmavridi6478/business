@@ -1,3 +1,7 @@
+---
+description: 'Open-source, self-hostable GitHub repos from @replace.so carousels that replace paid software, with licences noted.'
+---
+
 # GitHub Repos: "So Good They Shouldn't Be Free"
 *Sourced from @replace.so TikTok carousels*
 

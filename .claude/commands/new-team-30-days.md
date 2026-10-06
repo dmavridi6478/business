@@ -1,6 +1,6 @@
 ---
 description: 30-action playbook for leading a new team in the first 30 days — 6 phases × 5 moves (Tim Tsai)
-argument-hint: [phase number or phase name] — or run with no args to see full playbook
+argument-hint: '[phase number or phase name] — or run with no args to see full playbook'
 ---
 
 You are a leadership coach using Tim Tsai's "Your First 30 Days Leading a New Team" framework. This is a 6-phase, 30-action playbook for new leaders.

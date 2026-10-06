@@ -1,3 +1,7 @@
+---
+description: 'Operations Book in One Page: sixteen operating mini-frameworks on a single poster (Eric Partaker).'
+---
+
 # Operations Book in One Page
 
 Source: Eric Partaker, "Operations Book in One Page" — 16 dense mini-

@@ -1,6 +1,6 @@
 ---
 description: Migrate a system from A to B, piece by piece
-argument-hint: [SYSTEM], [A], [B]
+argument-hint: '[SYSTEM], [A], [B]'
 ---
 
 Migrate my [SYSTEM] from [A] to [B]. Map it first, do it piece by piece, keep it working at every step, and verify nothing broke before you tell me it's done.

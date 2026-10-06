@@ -1,3 +1,8 @@
+---
+description: 'Build a complete YouTube SEO and growth strategy for your channel.'
+argument-hint: '[your niche] [current subscribers] [avg views per video]'
+---
+
 # /yt-seo
 
 Build a complete YouTube SEO and growth strategy for your channel.

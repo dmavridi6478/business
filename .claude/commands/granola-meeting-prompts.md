@@ -1,3 +1,7 @@
+---
+description: 'Six Claude prompts for use with the Granola MCP server, pulling from your recorded meetings.'
+---
+
 # Granola MCP — Meeting Prompts
 
 Source: 51ultron.com

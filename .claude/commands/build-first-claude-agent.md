@@ -1,3 +1,7 @@
+---
+description: 'A three-level guide to building your first Claude agent: save a skill, put it on autopilot, run it in the cloud.'
+---
+
 # How to Build Your First Claude Agent (3-Level Guide)
 
 Source: @usamaakrm (TikTok), a 3-part "Save skill → Autopilot → Run in the

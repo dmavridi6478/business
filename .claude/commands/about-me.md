@@ -1,3 +1,7 @@
+---
+description: 'Load your saved personal and working context from docs/about-me.md and apply it to the rest of the conversation.'
+---
+
 Load the user's saved personal/working context from `docs/about-me.md` and
 apply it to the rest of this conversation.
 

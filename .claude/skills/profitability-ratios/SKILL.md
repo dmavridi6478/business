@@ -1,6 +1,6 @@
 ---
 name: profitability-ratios
-description: Calculate, explain, and benchmark the 12 key profitability ratios for any business. Use when the user asks about profit margins, ROA, ROE, ROI, ROCE, EPS, P/E ratio, dividend yield/payout, or asks to analyze business profitability. Runs /profitability-ratios or answers questions like "what is my EBIT margin?" Source: Financiario.il / Oana Labes MBA CPA.
+description: 'Calculate, explain, and benchmark the 12 key profitability ratios for any business. Use when the user asks about profit margins, ROA, ROE, ROI, ROCE, EPS, P/E ratio, dividend yield/payout, or asks to analyze business profitability. Runs /profitability-ratios or answers questions like "what is my EBIT margin?" Source: Financiario.il / Oana Labes MBA CPA.'
 ---
 
 # 12 Profitability Ratios — Calculator & Interpreter

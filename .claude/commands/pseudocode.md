@@ -1,5 +1,5 @@
 ---
-description: Logic only
+description: 'Express logic as pseudocode only, with no language-specific syntax, just the algorithmic steps.'
 argument-hint: [logic to express]
 ---
 

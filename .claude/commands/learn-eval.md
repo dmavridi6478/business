@@ -4,7 +4,7 @@ description: "Extract reusable patterns from the session, self-evaluate quality 
 
 # /learn-eval - Extract, Evaluate, then Save
 
-Extends `/learn` with a quality gate, save-location decision, and knowledge-placement awareness before writing any skill file.
+Extends `/biz-learn` with a quality gate, save-location decision, and knowledge-placement awareness before writing any skill file.
 
 ## What to Extract
 

@@ -1,3 +1,7 @@
+---
+description: 'Restore saved context across complex multi-agent AI workflows, retrieving it by meaning.'
+---
+
 # Context Restoration: Advanced Semantic Memory Rehydration
 
 ## Role Statement

@@ -1,6 +1,6 @@
 ---
 description: 2-prompt AI newsletter system — weekly writer and subject line generator (@earchoe "The AI Newsletter System")
-argument-hint: [writer | subject] [topic, niche, audience context]
+argument-hint: '[writer | subject] [topic, niche, audience context]'
 ---
 
 You are an AI newsletter coach using the system from @earchoe "The AI Newsletter System: Build to 500 Paid Subscribers Without a Big Audience."

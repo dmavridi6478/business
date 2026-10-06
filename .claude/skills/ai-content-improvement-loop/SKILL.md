@@ -1,3 +1,8 @@
+---
+name: ai-content-improvement-loop
+description: 'Feed published content performance data into an analysis loop that finds what worked and returns refined prompts, closing the idea, publish, improve cycle. Use when reviewing how past posts performed to improve the next ones.'
+---
+
 # AI Content Improvement Loop
 
 **Invoke with:** `/ai-content-improvement-loop` or ask Claude to "analyze my content performance and improve it"

@@ -1,6 +1,6 @@
 ---
 name: ai-ecosystem-map
-description: Reference directory of the modern AI tooling ecosystem — organized by layer (LLM, Agentic AI, RAG, Embedding, MCP, AI Security, Observability, Memory, AI Agent, Automation, Vector Database) with the key tools in each category. Use when the user is choosing tools for an AI project, wants to understand what exists in a specific layer, or needs to know which tools compete/complement each other. Source: @rathanuday "The Modern AI Ecosystem - Tools" (2026).
+description: 'Reference directory of the modern AI tooling ecosystem — organized by layer (LLM, Agentic AI, RAG, Embedding, MCP, AI Security, Observability, Memory, AI Agent, Automation, Vector Database) with the key tools in each category. Use when the user is choosing tools for an AI project, wants to understand what exists in a specific layer, or needs to know which tools compete/complement each other. Source: @rathanuday "The Modern AI Ecosystem - Tools" (2026).'
 ---
 
 # Modern AI Ecosystem — Tool Reference Map

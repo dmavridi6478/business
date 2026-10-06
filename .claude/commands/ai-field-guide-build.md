@@ -1,3 +1,7 @@
+---
+description: 'The eight BUILD habits of people who build seriously with AI, from The AI Field Guide carousel.'
+---
+
 # AI Field Guide — BUILD Habits
 
 Source: @thesocialalpha (The AI Field Guide / BUILD carousel)

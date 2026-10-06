@@ -1,3 +1,8 @@
+---
+name: defending-code-reference-harness
+description: 'Reference harness (not maintained) for autonomous vulnerability discovery and remediation with Claude: recon, find, verify, dedupe, report, patch, plus a detection-and-response track. Use when studying defensive code-security pipelines; run only on code you own or are authorised to test.'
+---
+
 # Defending Code Reference Harness
 
 Reference implementation for autonomous vulnerability discovery and remediation with Claude. Covers the full recon → find → verify → dedupe → report → patch pipeline, plus a detection & response (D&R) track for hunting attackers already in logs.

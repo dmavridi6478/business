@@ -1,3 +1,7 @@
+---
+description: 'Ten practical steps to configure Claude Cowork in about two hours so it is ready and organised.'
+---
+
 # How to Configure Claude Cowork in 2 Hours
 
 Source: AIForLeaders.com infographic, "10 practical steps to get your Claude

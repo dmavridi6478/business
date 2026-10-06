@@ -1,3 +1,7 @@
+---
+description: 'Five GitHub repos for trading and prediction markets (@theromanknox), with language and licence.'
+---
+
 # 5 Trading Power GitHub Repos
 
 Source: @theromanknox (skool.com/knox)

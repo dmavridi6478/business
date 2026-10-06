@@ -1,3 +1,8 @@
+---
+name: competitor-research-web
+description: 'Live web search for a named competitor''s current pricing, services, positioning and customer sentiment. Use when you need up-to-date competitor facts.'
+---
+
 # Competitor Research (Web Search)
 
 Run a live web search to pull current pricing, services, positioning, and customer sentiment for a named competitor.

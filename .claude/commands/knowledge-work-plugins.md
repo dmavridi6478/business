@@ -1,3 +1,7 @@
+---
+description: 'The 17 official Claude knowledge-work plugins (141 skills) from anthropics/knowledge-work-plugins, with what each covers.'
+---
+
 # 17 Official Claude Plugins — Knowledge Work Suite
 
 141 skills. Your whole AI staff, one install.

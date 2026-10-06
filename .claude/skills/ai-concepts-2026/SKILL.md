@@ -1,3 +1,8 @@
+---
+name: ai-concepts-2026
+description: 'Reference and architecture guide to nine AI engineering concepts for 2026, starting with agentic loops. Use to explain, evaluate or design an AI system around these concepts.'
+---
+
 # 9 AI Concepts for 2026 — Reference & Architecture Guide
 
 Master the 9 AI engineering concepts that separate builders from observers in 2026. Use this skill to explain, evaluate, or architect AI systems around each concept.

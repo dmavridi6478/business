@@ -1,3 +1,8 @@
+---
+name: linkedin-strategy
+description: '2026 LinkedIn strategy built on seven confirmed algorithm shifts, for content planning, post audits and engagement. Use when planning or auditing LinkedIn content.'
+---
+
 # LinkedIn Strategy 2026
 
 **Invoke:** `/linkedin-strategy`

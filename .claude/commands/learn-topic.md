@@ -1,5 +1,5 @@
 ---
-description: Explain topic
+description: 'Explain a topic clearly, building from what is already understood rather than assuming background.'
 argument-hint: [topic to learn]
 ---
 

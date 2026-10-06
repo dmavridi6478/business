@@ -1,6 +1,6 @@
 ---
 name: lead-scraper
-description: Build a targeted lead list — define the ideal prospect profile, identify the best free and paid sources to find them, produce a structured list format, and provide outreach-ready data organization. Use when the user needs to find potential clients, customers, or partners for outreach: defines who to target, where to find them, what data to collect, and how to organize it for use in a CRM or outreach sequence. Source: @the.wealth.lab "6 Favorite Claude Skills That Automate Almost Anything."
+description: 'Build a targeted lead list — define the ideal prospect profile, identify the best free and paid sources to find them, produce a structured list format, and provide outreach-ready data organization. Use when the user needs to find potential clients, customers, or partners for outreach: defines who to target, where to find them, what data to collect, and how to organize it for use in a CRM or outreach sequence. Source: @the.wealth.lab "6 Favorite Claude Skills That Automate Almost Anything."'
 ---
 
 # Lead Scraper

@@ -1,3 +1,8 @@
+---
+description: 'Build a detailed, week-by-week learning plan for one of the 12 AI Skills for 2026, tailored to your role and current level.'
+argument-hint: '[skill name] [optional: role and current level]'
+---
+
 # /ai-skill-plan
 
 Build a detailed, week-by-week learning plan for one of the 12 AI Skills for 2026, tailored to your role and current level.

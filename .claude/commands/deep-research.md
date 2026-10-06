@@ -1,3 +1,7 @@
+---
+description: 'Research a topic as a professional research analyst and report findings with sources.'
+---
+
 # Deep Research Assistant
 
 Act as a professional research analyst. Research the following topic: $ARGUMENTS

@@ -1,5 +1,5 @@
 ---
-description: Clean code
+description: 'Refactor code for readability and maintainability without changing behaviour, then confirm existing tests still pass.'
 argument-hint: [code or file to refactor]
 ---
 

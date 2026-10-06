@@ -1,3 +1,8 @@
+---
+name: marketing-team-prompts
+description: 'Ten prompts that replace specific marketing roles (content strategist and more); swap in your product details. Use when you need one marketing function done on demand.'
+---
+
 # Marketing Team Prompts
 
 10 prompts that replace specific marketing roles. Swap in your product/service details.

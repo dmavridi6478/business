@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<!--
+  Template: repo-card-slide
+  Style: one 4:5 "repo of the day" carousel slide in four looks, chosen by <body data-theme>:
+         grid-light (light squared paper + orange 3D asterisk, "#N repo" + stats row - @joshualevi style),
+         pixel-dark (near-black + green pixel grid, icon + stars + browser frame - @replace.so style),
+         blueprint (navy blueprint grid, white label highlights - @aiclawbots style),
+         cyber-red (black + red neon, mascot panel, bottom icon row - @martiendejong style; mascot slot is a plain placeholder).
+  Swap points: THEME, RANK, NAME, OWNER_REPO, BLURB, STATS ([value,label] pairs; use REAL numbers you checked), HANDLE.
+  Rule: the card must say what the repo really does - check the README before writing BLURB.
+-->
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Repo card slide</title>
+<style>
+:root{--bg:#efefe9;--ink:#141414;--mute:#585c63;--acc:#d9582b;--card:#fff;--line:#e2e2dc}
+body[data-theme=pixel-dark]{--bg:#101011;--ink:#fff;--mute:#b9bcc2;--acc:#7ee08f;--card:#17181a;--line:#2a2c30}
+body[data-theme=blueprint]{--bg:#0b4a7d;--ink:#0a2036;--mute:#e6f1fb;--acc:#3b82f6;--card:#f6faff;--line:#9fc4e8}
+body[data-theme=cyber-red]{--bg:#0a0606;--ink:#fff;--mute:#d6c9c9;--acc:#ff2b2b;--card:#150b0b;--line:#5b1515}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#888;display:flex;justify-content:center;padding:12px;font-family:Aptos,"Segoe UI",Arial,sans-serif}
+.s{width:min(540px,100%);aspect-ratio:4/5;background:var(--bg);color:var(--ink);border-radius:8px;padding:6.5% 7%;display:flex;flex-direction:column;position:relative;overflow:hidden;container-type:inline-size}
+body[data-theme=grid-light] .s,body:not([data-theme]) .s{background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:8% 6.4%}
+body[data-theme=blueprint] .s{background-image:linear-gradient(#ffffff22 1px,transparent 1px),linear-gradient(90deg,#ffffff22 1px,transparent 1px);background-size:8% 6.4%}
+body[data-theme=pixel-dark] .s{background-image:radial-gradient(#1e3a24 35%,transparent 36%);background-size:6% 4.8%}
+.rank{font-size:9cqw;font-weight:800;color:var(--acc)}
+.name{font-size:11cqw;font-weight:800;line-height:1.05;margin:2% 0 3%}
+.blurb{font-size:4.6cqw;line-height:1.35;color:var(--mute);max-width:88%}
+body[data-theme=blueprint] .name,body[data-theme=blueprint] .rank{color:#fff}body[data-theme=blueprint] .blurb{color:#fff}
+.card{margin-top:auto;background:var(--card);border:1px solid var(--line);border-radius:3cqw;padding:5cqw;color:var(--ink)}
+body[data-theme=cyber-red] .card{border-color:var(--acc);box-shadow:0 0 18px #ff2b2b66}
+.or{font-size:7cqw;font-weight:300}.or b{font-weight:800}
+.stats{display:flex;gap:6cqw;margin-top:4cqw;flex-wrap:wrap}.stats div{font-size:3.4cqw;color:var(--mute)}.stats b{display:block;font-size:4.6cqw;color:var(--ink)}
+.h{margin-top:4%;font-size:3.6cqw;color:var(--mute);display:flex;justify-content:space-between}
+.mascot{position:absolute;right:6%;top:6%;width:22cqw;height:22cqw;border:2px dashed var(--acc);border-radius:50%;display:none;align-items:center;justify-content:center;font-size:3cqw;color:var(--acc);text-align:center}
+body[data-theme=cyber-red] .mascot{display:flex}
+</style></head><body data-theme="grid-light">
+<div class="s"><div class="mascot">your mascot / screenshot</div>
+ <div class="rank" id="r"></div><div class="name" id="n"></div><div class="blurb" id="b"></div>
+ <div class="card"><div class="or" id="o"></div><div class="stats" id="st"></div></div>
+ <div class="h"><span id="hd"></span><span>swipe &rarr;</span></div></div>
+<script>
+const THEME=new URLSearchParams(location.search).get('theme')||document.body.dataset.theme;document.body.dataset.theme=THEME;
+const RANK='#1',NAME='opik',OWNER_REPO='comet-ml/opik',HANDLE='@yourhandle';
+const BLURB='Full trace trees for multi-step agents, including every tool call, plus LLM-as-a-judge scoring. From the first trace in development to production monitoring.';
+const STATS=[['22k','stars'],['2k','forks'],['Apache-2.0','licence']]; // replace with numbers you checked
+document.getElementById('r').textContent=RANK;document.getElementById('n').textContent=NAME;document.getElementById('b').textContent=BLURB;document.getElementById('hd').textContent=HANDLE;
+const o=document.getElementById('o'),[ow,rp]=OWNER_REPO.split('/');o.appendChild(document.createTextNode(ow+'/'));const b=document.createElement('b');b.textContent=rp;o.appendChild(b);
+STATS.forEach(([v,l])=>{const d=document.createElement('div'),x=document.createElement('b');x.textContent=v;d.appendChild(x);d.appendChild(document.createTextNode(l));document.getElementById('st').appendChild(d)});
+</script></body></html>

@@ -1,3 +1,8 @@
+---
+description: 'Build a realistic YouTube monetization roadmap from 0 subscribers to income.'
+argument-hint: '[your niche]'
+---
+
 # /yt-monetize
 
 Build a realistic YouTube monetization roadmap from 0 subscribers to income.

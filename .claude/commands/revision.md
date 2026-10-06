@@ -1,5 +1,5 @@
 ---
-description: Quick revision
+description: 'Give a quick revision summary of a topic for review right before it is needed.'
 argument-hint: [topic to revise]
 ---
 

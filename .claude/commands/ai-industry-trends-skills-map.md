@@ -1,3 +1,7 @@
+---
+description: 'A six-category map of AI industry trends, skills and tools by role, for planning hiring, training and project reviews.'
+---
+
 # AI Industry Trends — Skill Map by Role
 
 Source: AIForLeaders.com infographic (mislabeled in the source photo batch

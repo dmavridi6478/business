@@ -1,3 +1,8 @@
+---
+name: ai-skills-roadmap-2026
+description: 'Roadmap of 12 AI skills for 2026, with executable prompts for each. Use when advising on learning priorities, designing AI workflows, evaluating tool stacks or building competency plans.'
+---
+
 # 12 AI Skills Roadmap 2026
 
 The 12 AI capabilities that separate operators from spectators in 2026. Use this skill to advise on learning priorities, design AI-powered workflows, evaluate tool stacks, and build competency plans for any of the 12 domains.

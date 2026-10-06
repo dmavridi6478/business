@@ -1,6 +1,6 @@
 ---
 name: ai-engineering-portfolio
-description: Five structured AI engineering project briefs for a 2026 portfolio — RAG Knowledge Assistant, AI Agent Workflow, AI Evaluation Dashboard, Multimodal Document AI, and Secure AI System — each with a build checklist, a "best for" skill tag, and a copy-paste kickoff prompt. Use when the user wants project ideas that demonstrate real AI engineering skill beyond a basic chatbot, is building a portfolio for AI/ML engineering job applications, or asks what to build next to prove they can do retrieval, tool-use, evaluation, multimodal input, and security — not just call an LLM API. Source: @ksk_data "5 AI Engineering Projects to Build in 2026."
+description: 'Five structured AI engineering project briefs for a 2026 portfolio — RAG Knowledge Assistant, AI Agent Workflow, AI Evaluation Dashboard, Multimodal Document AI, and Secure AI System — each with a build checklist, a "best for" skill tag, and a copy-paste kickoff prompt. Use when the user wants project ideas that demonstrate real AI engineering skill beyond a basic chatbot, is building a portfolio for AI/ML engineering job applications, or asks what to build next to prove they can do retrieval, tool-use, evaluation, multimodal input, and security — not just call an LLM API. Source: @ksk_data "5 AI Engineering Projects to Build in 2026."'
 ---
 
 # 5 AI Engineering Projects to Build in 2026

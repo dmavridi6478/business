@@ -1,3 +1,7 @@
+---
+description: 'Analyse a document, notes or feedback and extract the key takeaways.'
+---
+
 # Research & Document Summarizer (SkillDrop AI)
 
 Analyze the following document, notes, or feedback and extract the key takeaways: $ARGUMENTS

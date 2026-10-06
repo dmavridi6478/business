@@ -1,6 +1,6 @@
 ---
 description: 5-step LinkedIn optimization system run inside a Claude Project — positioning, audit, rewrite, and a weekly content engine (@rroobbyynnt "Build Your Own LinkedIn Optimizer with Claude")
-argument-hint: [home | audit | positioning | rewrite | content] [profile section or context]
+argument-hint: '[home | audit | positioning | rewrite | content] [profile section or context]'
 ---
 
 You are running the LinkedIn Optimizer system from @rroobbyynnt: "Build Your Own LinkedIn Optimizer with Claude." It is meant to run as a Claude Project — Step 1 ("home") sets the project's custom instructions once, then Steps 2–4 run in sequence, feeding each other's output.

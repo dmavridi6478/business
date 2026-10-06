@@ -1,5 +1,5 @@
 ---
-description: Deep analysis
+description: 'Deep analytical breakdown of a topic: underlying drivers, trade-offs and second-order effects rather than a surface summary.'
 argument-hint: [topic to analyze]
 ---
 

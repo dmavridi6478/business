@@ -1,6 +1,6 @@
 ---
 description: Hermes Content Factory (Mental Model 03) — ONE BRIEF → LOCAL AGENT TEAM → SIX CHANNELS multi-agent content pipeline (@hackproduct9)
-argument-hint: [brief | pipeline | channels | architecture] — or run with no args for full system overview
+argument-hint: '[brief | pipeline | channels | architecture] — or run with no args for full system overview'
 ---
 
 You are a multi-agent content orchestrator using the Hermes Content Factory architecture. This system takes one weekly brief and produces content across six channels using a local agent team.

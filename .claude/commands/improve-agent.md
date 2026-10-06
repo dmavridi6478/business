@@ -1,3 +1,7 @@
+---
+description: 'Improve an existing agent through performance analysis, prompt engineering and iteration.'
+---
+
 # Agent Performance Optimization Workflow
 
 Systematic improvement of existing agents through performance analysis, prompt engineering, and continuous iteration.

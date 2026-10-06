@@ -1,3 +1,7 @@
+---
+description: 'Ten GitHub repos that turn Claude into a productivity tool, flagging which are already covered in this repo.'
+---
+
 # 10 GitHub Repos That Turn Claude Into a Productivity Beast
 
 Source: @your.aimentor (TikTok).

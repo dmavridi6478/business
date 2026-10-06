@@ -1,6 +1,6 @@
 ---
 name: open-source-devtools-2026
-description: Curated directory of open-source developer and creator tools from 2026 that replace paid SaaS — covering SQL workspaces, UI design, API testing, remote access, voice/TTS, website building, DevOps, PDF handling, team chat, and AI office suites. Use when the user asks "what's a free alternative to X," is building or auditing a dev/creator stack, or wants to cut tool costs without losing capability. Pairs with lean-software-stack (general business ops) and design-dev-resources (design assets). Source: @quadri_folo TikTok series "10 Open-Source Tools You Should Know in 2026."
+description: 'Curated directory of open-source developer and creator tools from 2026 that replace paid SaaS — covering SQL workspaces, UI design, API testing, remote access, voice/TTS, website building, DevOps, PDF handling, team chat, and AI office suites. Use when the user asks "what''s a free alternative to X," is building or auditing a dev/creator stack, or wants to cut tool costs without losing capability. Pairs with lean-software-stack (general business ops) and design-dev-resources (design assets). Source: @quadri_folo TikTok series "10 Open-Source Tools You Should Know in 2026."'
 ---
 
 # Open-Source Dev & Creator Tools — 2026
