@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<!--
+  Template: prompt-chat-cards-grey
+  Style: @ai_with_dr.t "copy-this-prompt" slide - light-grey paper, large italic serif title (Greek-safe), a 2 x 3 grid of white cards each showing a prompt
+         above a mock chat input (placeholder, plus icon, mic, round send button), footer handle in bold italic.
+  Swap points: :root colours; TITLE (use <br> via two strings); PROMPTS (up to 6 strings, paragraphs split with \n\n); PLACEHOLDER; HANDLE, SUB.
+  Greek note: no Greek word is set in capitals and no capital carries a tonos; keep English marketing terms as written.
+-->
+<html lang="el"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Prompt chat cards</title>
+<style>
+:root{--bg:#ecebe8;--card:#f7f7f6;--ink:#1d1d20;--mute:#8a8a90;--btn:#8e8e93;--blue:#6b8fd6}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--ink);font-family:Georgia,"Times New Roman",serif;padding:20px 16px;display:flex;justify-content:center}
+.wrap{width:min(900px,100%)}
+h1{font-size:34px;line-height:1.15;text-align:center;font-style:italic;font-weight:700;margin:6px 0 22px;text-wrap:balance}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px}
+.card{background:var(--card);border-radius:12px;box-shadow:0 2px 8px #0002;padding:18px 18px 12px;display:flex;flex-direction:column;gap:12px;min-width:0}
+.card p{font-size:15px;line-height:1.5;margin-bottom:10px}.card p:last-child{margin-bottom:0}
+.txt{flex:1}
+.in{border-top:0;display:flex;flex-direction:column;gap:8px;font-family:Arial,sans-serif}
+.ph{font-size:11px;color:var(--mute)}
+.row{display:flex;align-items:center;gap:12px;color:var(--mute)}.row .sp{flex:1}
+.send{width:34px;height:34px;border-radius:50%;background:var(--btn);color:#fff;display:grid;place-items:center;font-size:16px}
+.sq{width:11px;height:11px;border:2px solid var(--blue);border-radius:3px}
+.foot{text-align:center;margin-top:22px}.foot b{font-style:italic;font-size:22px}.foot span{display:block;color:var(--mute);font-family:Arial,sans-serif;font-size:13px;margin-top:2px}
+@media (prefers-color-scheme:dark){:root:not([data-theme=light]){--bg:#17171a;--card:#202024;--ink:#f1f1f3;--mute:#9a9aa4;--btn:#55555c}}
+</style></head><body>
+<div class="wrap"><h1 id="t"></h1><div class="grid" id="g"></div><div class="foot"><b id="h"></b><span id="s"></span></div></div>
+<script>
+const TITLE=['DM Scripts','& Προσέγγιση Πελατών'],PLACEHOLDER='Απάντηση...',HANDLE='AI_with_Dr.T',SUB='@ai_with_dr.t';
+const PROMPTS=[
+'Γράψε πέντε LinkedIn DMs (κάτω από 80 λέξεις το καθένα) για να ξεκινήσεις μια ουσιαστική συζήτηση.\n\nΑναφέρσου στην αλληλεπίδραση τους, κάνε μία στοχευμένη ερώτηση και κράτα το φυσικό, χωρίς ύφος πωλήσεων.',
+'Γράψε πέντε cold LinkedIn DMs (κάτω από 100 λέξεις το καθένα).\n\nΠροσάρμοσε το καθένα με κάτι συγκεκριμένο για τον υποψήφιο πελάτη, κράτα το φυσικό και χωρίς ύφος πωλήσεων.',
+'Γράψε πέντε LinkedIn DMs (κάτω από 110 λέξεις το καθένα) που ξεκινούν προσφέροντας πραγματική αξία.\n\nΜοιράσου μια σαφή παρατήρηση ή ένα χρήσιμο resource και άφησε την πόρτα ανοιχτή για συζήτηση.',
+'Γράψε πέντε LinkedIn DMs (κάτω από 100 λέξεις το καθένα) για όσους παρακολούθησαν ένα training.\n\nΑναφέρσου σε κάτι συγκεκριμένο από τη συνεδρία και οδήγησε προς το επόμενο βήμα χωρίς να πουλάς άμεσα.',
+'Γράψε πέντε LinkedIn DMs (κάτω από 80 λέξεις το καθένα) για να οδηγήσεις έναν warm υποψήφιο πελάτη σε discovery call.\n\nΚράτα το αίτημα χαλαρό και παρουσίασέ το ως το λογικό επόμενο βήμα.',
+'Γράψε πέντε απαντήσεις σε DM (κάτω από 100 λέξεις η καθεμία) σε μια συνηθισμένη ένσταση.\n\nΑπόφυγε την αμυντική ή απορριπτική στάση.'];
+const t=document.getElementById('t');TITLE.forEach((x,i)=>{if(i)t.appendChild(document.createElement('br'));t.appendChild(document.createTextNode(x))});
+document.getElementById('h').textContent=HANDLE;document.getElementById('s').textContent=SUB;
+PROMPTS.forEach(p=>{const c=document.createElement('div');c.className='card';const tx=document.createElement('div');tx.className='txt';p.split('\n\n').forEach(x=>{const e=document.createElement('p');e.textContent=x;tx.appendChild(e)});c.appendChild(tx);
+ const i=document.createElement('div');i.className='in';const ph=document.createElement('div');ph.className='ph';ph.textContent=PLACEHOLDER;const r=document.createElement('div');r.className='row';
+ const pl=document.createElement('span');pl.textContent='+';const sq=document.createElement('span');sq.className='sq';const sp=document.createElement('span');sp.className='sp';const mic=document.createElement('span');mic.textContent='♪';const sd=document.createElement('span');sd.className='send';sd.textContent='↑';
+ [pl,sq,sp,mic,sd].forEach(e=>r.appendChild(e));i.appendChild(ph);i.appendChild(r);c.appendChild(i);document.getElementById('g').appendChild(c)});
+</script></body></html>

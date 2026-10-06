@@ -5882,3 +5882,13 @@ Source: `80c9789b-LinkedIn_Master_Guide_for_Claude.zip` — 4 static images (`.j
 **Findings:** the agent graphics list names only (prompts were behind "comment X"); two @martiendejong_dev cards misdescribe their repos (Magnitude, paperclip); no repo was cloned; no connector could be authorised from a cloud session.
 
 **Also added (approved by the owner after an initial classifier block):** the Vercel MCP server in `.mcp.json` (`https://mcp.vercel.com`, sign in via `/mcp`) and the user-run `scripts/batch104-install.sh` (every step asks first; nothing piped into a shell).
+
+## Batch 105 — iCloud Photos batch 3 (43 images, 3 videos) (6 October 2026)
+
+**Report:** [Batch 105 Intake Report](https://claude.ai/artifact/PZKte8a6W9QKmvjM1eMLYB) (`Artifacts/business/batch-105-intake-report.html`).
+
+**Sources:** @ai_with_dr.t (60 Greek marketing prompts), @earchoe (AI playbook: brand prompt, review mining), "Where AI And Sales Meet" (Venn), @ai_slacker (50 AI tools), @replace.so cards (Mural, Elm-simple-server, runs-on.dev, Openreality, Liquid-glass-screens, SoL-Pi), and three videos (Colibri, Agency Agents, Papermorph).
+
+**Added:** skills `greek-marketing-prompts-60`, `review-miner`, `brand-prompt-system`, `ai-sales-human-split`, `ai-tools-50-map`, `oss-repo-register-105`; commands `/greek-prompt`, `/review-miner`, `/brand-prompt`; agent `review-miner` (draft-only); four design templates with theme tokens; user-run `scripts/batch105-install.sh`.
+
+**Not done:** no repo cloned, no skill or MCP from a third party installed (Agency Agents, Papermorph, Open Reality are user-run steps). Four card repos could not be identified (Elm-simple-server, runs-on.dev, Liquid-glass-screens, the seventh). The Greek prompt list has 60 entries of which one repeats in the original.

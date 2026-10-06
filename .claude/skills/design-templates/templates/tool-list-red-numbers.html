@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<!--
+  Template: tool-list-red-numbers
+  Style: @ai_slacker "N AI tools" list slide - white page with faint floral watermark, big red numbers, a rounded tool tile, bold red tool name, a thin
+         vertical divider, then the job in plain dark type. 10 rows per slide.
+  Swap points: :root colours; START (first number); TOOLS ([name, job, tileBg, tileInk, initials]). Logos are NOT reproduced: tiles carry initials only.
+-->
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Tool list</title>
+<style>
+:root{--bg:#ffffff;--num:#d6261b;--name:#d6261b;--ink:#17171a;--rule:#1a1a1a;--mark:#00000006}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#8a8a8a;display:flex;justify-content:center;padding:12px;font-family:Aptos,"Segoe UI",Arial,sans-serif}
+.s{width:min(720px,100%);background:var(--bg);background-image:radial-gradient(circle at 20% 25%,var(--mark) 0 70px,transparent 71px),radial-gradient(circle at 85% 70%,var(--mark) 0 90px,transparent 91px);border-radius:8px;padding:34px 22px;display:flex;flex-direction:column;gap:11px}
+.r{display:grid;grid-template-columns:40px 44px minmax(0,1.1fr) 2px minmax(0,1.2fr);gap:12px;align-items:center}
+.n{font-weight:900;font-size:22px;color:var(--num);text-align:right}
+.tile{width:44px;height:44px;border-radius:10px;display:grid;place-items:center;font-weight:800;font-size:13px}
+.nm{font-weight:900;font-size:20px;color:var(--name);letter-spacing:-.01em;overflow-wrap:anywhere}
+.v{height:30px;background:var(--rule)}
+.j{font-size:17px;color:var(--ink);overflow-wrap:anywhere}
+@media (max-width:520px){.r{grid-template-columns:30px 36px minmax(0,1fr);row-gap:0}.v{display:none}.j{grid-column:3;font-size:14px}.nm{font-size:16px}.tile{width:36px;height:36px}.n{font-size:17px}}
+@media (prefers-color-scheme:dark){:root:not([data-theme=light]){--bg:#17171a;--ink:#f1f1f3;--num:#ff6a5e;--name:#ff6a5e;--rule:#f1f1f3;--mark:#ffffff08}}
+</style></head><body>
+<div class="s" id="s"></div>
+<script>
+const START=1;
+const TOOLS=[['Claude','Writing & document drafting','#e0734b','#fff','C'],['ChatGPT','Brainstorming & first drafts','#13a37f','#fff','G'],['Gemini','Research & analysis','#1d1f24','#7fb0ff','Ge'],['Perplexity','Real-time web research','#13706f','#fff','P'],['Canva','Graphic design & carousels','#20b9d0','#fff','Cv'],['CapCut','Reel/video editing','#111','#fff','Cc'],['GitHub Copilot','Code autocomplete','#2430c9','#fff','Co'],['Cursor','AI-assisted coding','#8a8a8a','#fff','Cu'],['Replit','Build & deploy apps','#f4511e','#fff','R'],['Notion AI','Notes & knowledge base','#2a1a6e','#fff','N']];
+const s=document.getElementById('s');
+TOOLS.forEach((t,i)=>{const r=document.createElement('div');r.className='r';
+ const n=document.createElement('div');n.className='n';n.textContent=(START+i)+'.';
+ const tl=document.createElement('div');tl.className='tile';tl.style.background=t[2];tl.style.color=t[3];tl.textContent=t[4];
+ const nm=document.createElement('div');nm.className='nm';nm.textContent=t[0];
+ const v=document.createElement('div');v.className='v';
+ const j=document.createElement('div');j.className='j';j.textContent=t[1];
+ [n,tl,nm,v,j].forEach(e=>r.appendChild(e));s.appendChild(r)});
+</script></body></html>

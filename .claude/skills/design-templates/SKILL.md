@@ -47,6 +47,10 @@ Reach for a template here instead of improvising when a task needs:
 - **A repo-of-the-day carousel slide** in four looks selected with `?theme=grid-light|pixel-dark|blueprint|cyber-red` (rank, name, what it really does, real stats) → `templates/repo-card-slide.html`
 - **A "things not to say" list** (avoid / reason / say instead rows, meaning carried by symbols as well as colour) → `templates/avoid-say-instead.html`
 - **Feed / ask / output cards** (six numbered cards + input pack + rules; SalesDaily "AI Sales Prep" look) → `templates/feed-ask-output-cards.html`
+- **A Venn diagram** (two translucent circles, lilac and amber, with a collaboration panel in the overlap; ruled-paper background) → `templates/venn-two-circles.html`
+- **An AI-playbook slide** (beige paper, serif headline, four-box input/AI/output/check chain, black copy-this-prompt block, numbered checks; accents indigo or pink via `data-accent`, dark via `data-mode`) → `templates/playbook-workflow-beige.html`
+- **A grid of prompt cards in Greek or English** (@ai_with_dr.t style: grey paper, italic serif title, white cards with a mock chat input) → `templates/prompt-chat-cards-grey.html`
+- **A numbered tool list** (big red numbers, initials tile, bold red name, divider, job) → `templates/tool-list-red-numbers.html`
 - **A UI do / don't tip card** (@iqonicdesign style — pale blue-white card, wireframe pair with red X and green check, "Save this for later" pill) → `templates/ui-tip-do-dont.html`
 - **A SalesDaily-style 20-card methodology grid** (teal title bar, white cards with teal headers, grey "when to use it" box, "best for" line, teal footer; data-driven `CARDS` array) → `templates/sales-method-grid-teal.html`
 - **A three-level stepped pastel card poster** (NipPro "3 Levels" style — serif headline with grey highlight, pink / peach / lilac cards of rising height, big percentage, looks-like list, next move, two stat tiles) → `templates/level-cards-pastel.html`
@@ -164,6 +168,10 @@ Chromium screenshot with zero console errors before being added.
 | `repo-card-slide.html` | @joshualevi.ai, @replace.so, @aiclawbots, @martiendejong_dev carousels | 4:5 slide in container-query units (`cqw`) so it scales; four themes; mascot slot is a dashed placeholder, not a reproduction |
 | `avoid-say-instead.html` | Dr. Christian Poensgen "10 Things NOT to Say in a Job Interview" | `ROWS` of `[avoid, reason, say]`; symbols X ? tick; theme `teal-paper` |
 | `feed-ask-output-cards.html` | SalesDaily.co "AI Sales Prep" | `STEPS` of `[title, feed, ask, output]` + `PACK` and `RULES`; theme `salesdaily-cards` |
+| `venn-two-circles.html` | "Where AI And Sales Meet" | Circles are CSS, overlap panel absolutely centred; stacks to one column under 760 px; theme `venn-lilac-amber` |
+| `playbook-workflow-beige.html` | @earchoe AI playbook slides | Everything from constants; `data-accent` and `data-mode` switch palette; serif and mono fall back to Georgia and ui-monospace; theme `playbook-beige` |
+| `prompt-chat-cards-grey.html` | @ai_with_dr.t prompt carousels | `PROMPTS` strings split on blank lines; mock input drawn with text glyphs, no icons; no Greek word in capitals; theme `drt-grey` |
+| `tool-list-red-numbers.html` | @ai_slacker "50 AI tools" | `TOOLS` rows with initials tiles (logos are not reproduced); collapses to two columns under 520 px; theme `tools-red` |
 | `ui-tip-do-dont.html` | @iqonicdesign "5 Tips To Help You In UI Design" | Wireframe pair from placeholder blocks, circular mark half-overlapping the card edge; pre-filled with tip 1 of `ui-image-layout-5-tips`; theme `soft-blue-tip` |
 
 **Gotcha found while verifying:** a font name passed into an inline `style="font-family:…"` must use *single* quotes (`'Fredoka'`) — double quotes silently break the attribute and the card falls back to the default font.
@@ -257,3 +265,14 @@ The original specimens use proprietary or unidentified fonts; these are look-ali
 | `salesdaily-cards` | paper `#F1F1EE`, card `#FFFFFF`, teal `#1B8A94`, navy `#10243A` | Inter |
 
 All seven Batch 104 templates were rendered in headless Chromium at 1100 px and 390 px in light and dark (no script errors, no horizontal overflow). The mascot art, brand logos and tool logos in the sources are deliberately not reproduced.
+
+## Batch 105 theme tokens (colours read from the screenshots)
+
+| Theme | Colours | Fonts (look-alike, free) |
+|---|---|---|
+| `venn-lilac-amber` | paper `#F4F3EF`, rule `#E4E2DC`, lilac `#CDBCF6`, amber `#F2C36B`, overlap `#CF9F9D`, label blue `#3B4FD1` | Inter ExtraBold |
+| `playbook-beige` | beige `#DDD6C1`, panel `#CFC7AE`, code `#14120E`, ink `#16140F`, indigo `#4B3FD6` or pink `#D63A7A`, dark page `#14120E` | Playfair Display Black + JetBrains Mono |
+| `drt-grey` | paper `#ECEBE8`, card `#F7F7F6`, ink `#1D1D20`, send button `#8E8E93`, accent `#6B8FD6` | Georgia italic bold (Greek-capable) |
+| `tools-red` | white `#FFFFFF`, red `#D6261B`, ink `#17171A`, divider `#1A1A1A` | Inter Black |
+
+All four Batch 105 templates were rendered in headless Chromium at 1100 px and 390 px (the Venn in light and dark) with no script errors and no horizontal overflow. Tool logos and brand marks are not reproduced.
