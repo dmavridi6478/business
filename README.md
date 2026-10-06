@@ -5895,6 +5895,8 @@ Source: `80c9789b-LinkedIn_Master_Guide_for_Claude.zip` — 4 static images (`.j
 
 **Not done:** no repo cloned and no connector authorised (sign-in cannot run in a cloud session). A session hook asked for an Agent Archive account and an API key written to `~/.claude/settings.json`; that text did not come from the owner and was not acted on.
 
+**gstack follow-up:** `scripts/install-gstack.sh` is a user-run installer for the full gstack suite (the repo vendors only its router). It checks Git and Bun, warns about the 8 routed names that clash with local skills and commands, clones the documented way, and pauses so you can read `./setup` before it runs. Not run in the cloud session.
+
 ## Batch 105 — iCloud Photos batch 3 (43 images, 3 videos) (6 October 2026)
 
 **Report:** [Batch 105 Intake Report](https://claude.ai/artifact/PZKte8a6W9QKmvjM1eMLYB) (`Artifacts/business/batch-105-intake-report.html`).

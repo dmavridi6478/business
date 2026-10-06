@@ -14,3 +14,5 @@ as a side effect of cloning this repo):
 
   git clone --single-branch --depth 1 https://github.com/garrytan/gstack.git ~/.claude/skills/gstack
   cd ~/.claude/skills/gstack && ./setup
+
+User-run installer with checks and a read-before-run pause: scripts/install-gstack.sh (run on your own machine).
