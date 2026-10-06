@@ -1,5 +1,5 @@
 ---
-name: notebooklm-research
+name: notebooklm-skill
 description: >
   Automate source-grounded research with Google NotebookLM. Create notebooks from
   URLs, text, or local files; ask cited questions; run fast or deep web research;
