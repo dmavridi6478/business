@@ -84,7 +84,7 @@ Implementation notes:
 
 ## Related skills in this repo
 
-- **claude-seo**: Full technical SEO with 24 sub-skills, Python runtime (`claude-seo` command), and `/seo` slash commands — use for deep on-page/technical SEO work rather than the strategic/reporting layer here.
+- **claude-seo**: Full technical SEO with 24 sub-skills, Python runtime (`claude-seo` command), and `/claude-seo` slash commands — use for deep on-page/technical SEO work rather than the strategic/reporting layer here.
 - **content-strategy**: Use the marketing taxonomy's "Content Strategy" branch and the AEO "lead with the answer" pattern to shape what gets written, not just how it's structured technically.
 - **business-intelligence-report** / **ceo-reporting-skill**: Run the five exec questions (`exec-ai-questions.md`) against any marketing section of these reports before they go to a CEO or board.
 - **quarterly-okr-architect**: The 15-day action plan's Day 15 "next 30-day plan" is a natural input to a quarterly goal cascade for marketing/growth.
