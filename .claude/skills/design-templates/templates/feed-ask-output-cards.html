@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<!--
+  Template: feed-ask-output-cards
+  Style: six numbered cards on a paper-textured white page; each card has a teal numbered disc, a title, and three labelled blocks
+         WHAT TO FEED AI / WHAT TO ASK FOR / OUTPUT YOU WANT, then a two-box footer (input pack + rules). (SalesDaily "AI Sales Prep" look.)
+  Swap points: :root colours; TITLE, LEDE; STEPS ([title, feed, ask, output]); PACK (list); RULES (list); BRAND.
+-->
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Feed / ask / output cards</title>
+<style>
+:root{--bg:#f1f1ee;--card:#fff;--ink:#12212b;--mute:#4f5f69;--teal:#1b8a94;--line:#dde3e6;--navy:#10243a}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--ink);font-family:Aptos,"Segoe UI",Arial,sans-serif;padding:20px 16px;display:flex;justify-content:center}
+.wrap{width:min(1000px,100%)}
+h1{font-size:32px;line-height:1.05}h1 b{color:var(--teal)}
+.lede{color:var(--mute);margin:8px 0 16px;max-width:60ch}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:14px}
+.c{background:var(--card);border-radius:12px;padding:16px;box-shadow:0 1px 4px #0001;min-width:0}
+.c h2{font-size:16px;display:flex;gap:10px;align-items:center;border-bottom:1px solid var(--line);padding-bottom:8px;margin-bottom:8px}
+.c h2 i{font-style:normal;flex:none;width:28px;height:28px;border-radius:50%;background:var(--navy);color:#fff;display:grid;place-items:center;font-size:13px}
+.c h3{font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--teal);margin:8px 0 2px}
+.c p{font-size:12.5px;line-height:1.4}
+.foot{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px;margin-top:14px}
+.box{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px}
+.box h2{font-size:14px;margin-bottom:6px}.box li{font-size:12.5px;margin:0 0 3px 16px}
+.brand{margin-top:14px;text-align:center;font-size:12px;color:var(--mute)}
+@media (prefers-color-scheme:dark){:root:not([data-theme=light]){--bg:#10171c;--card:#18222a;--ink:#e8eff2;--mute:#9db0b8;--line:#2b3a43;--teal:#58c4cf;--navy:#2b4966}}
+</style></head><body>
+<div class="wrap"><h1 id="t"></h1><p class="lede" id="l"></p><div class="grid" id="g"></div><div class="foot" id="f"></div><div class="brand" id="b"></div></div>
+<script>
+const LEDE='A 15-minute system to walk into every call with sharper context, better questions and a stronger point of view.',BRAND='your newsletter or brand';
+const STEPS=[
+['Account Snapshot','Company site and product pages, recent news, the buyer\'s profile text, latest earnings notes if public.','Summarise what changed recently, what the company cares about now, and 3 possible business priorities.','A 1-page account brief with priorities, trigger events, likely initiatives and 3 tailored opening angles.'],
+['Likely Pain Points','Role title, team structure, company size, industry, growth stage, known challenges.','List the 5 most likely pain points for this buyer right now. Separate strategic from day-to-day pain.','A prioritised list with symptoms, impact and how each issue would show up in conversation.'],
+['Stakeholder Map','Org-chart clues, titles of people involved, who joined the last call, buying-committee hints.','Map the likely stakeholders, what each cares about, and what objections each may raise.','A mini map with priorities, likely influence level and a messaging angle per person.'],
+['Discovery Plan','Deal stage, past emails, call notes, MEDDICC fields, pain hypotheses, open questions.','Build 10 sharp discovery questions, 3 hypotheses to test and 3 red flags.','A call-ready plan in sequence: opener, diagnosis, impact, decision process, next step.'],
+['Objection Prep','Value drivers, proof points, competitor context, pricing model, case studies.','Concise responses for price, timing, no-priority, competitor and "send me something".','Talk tracks with follow-up questions, proof points, and when to push vs slow down.'],
+['Final Call Brief','Everything above plus meeting goal, type, attendees and desired next step.','Build a final brief I can review in 2 minutes before the call.','Account summary, buyer goals, likely pain, discovery questions, objection prep, next step.']];
+const PACK=['Recent company news','Website and product pages','Attendee profiles as text','The past email thread','CRM notes and deal stage','Call transcript or notes','Case studies or proof points'];
+const RULES=['Feed AI source material, not vague prompts.','Ask for outputs in sales format, not essays.','Use AI to synthesise, diagnose and draft - not to invent facts.','Verify names, numbers and claims before the call.'];
+const t=document.getElementById('t');const a=document.createElement('b');a.textContent='AI';t.appendChild(a);t.appendChild(document.createTextNode(' Sales Prep'));
+document.getElementById('l').textContent=LEDE;document.getElementById('b').textContent=BRAND;
+const g=document.getElementById('g');STEPS.forEach((s,i)=>{const c=document.createElement('div');c.className='c';const h=document.createElement('h2'),n=document.createElement('i');n.textContent=i+1;h.appendChild(n);h.appendChild(document.createTextNode(s[0]));c.appendChild(h);
+ ['What to feed AI','What to ask for','Output you want'].forEach((l,k)=>{const h3=document.createElement('h3');h3.textContent=l;const p=document.createElement('p');p.textContent=s[k+1];c.appendChild(h3);c.appendChild(p)});g.appendChild(c)});
+[['Best input pack',PACK],['4 rules that matter',RULES]].forEach(([n,l])=>{const b=document.createElement('div');b.className='box';const h=document.createElement('h2');h.textContent=n;b.appendChild(h);const u=document.createElement('ul');l.forEach(x=>{const li=document.createElement('li');li.textContent=x;u.appendChild(li)});b.appendChild(u);document.getElementById('f').appendChild(b)});
+</script></body></html>

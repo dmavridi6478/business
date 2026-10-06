@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<!--
+  Template: stage-roadmap-steps
+  Style: "roadmap to your first N customers" - rising stair blocks (black, green, yellow, purple) over a column per stage with labelled rows
+         (Goal, Lead generation, Channels, Build this, Working when) and a footer author strip.
+  Swap points: :root colours; TITLE, SUB, STAGES (name, range, colour, rows), FOOT. Channels are plain text chips (no logos).
+-->
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Stage roadmap</title>
+<style>
+:root{--bg:#ffffff;--ink:#14171c;--mute:#5a6270;--line:#d9dde4;--k:#111;--g:#a8ef9a;--y:#ffd873;--p:#5b2f9e}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--ink);font-family:Aptos,"Segoe UI",Arial,sans-serif;padding:20px 16px;display:flex;justify-content:center}
+.wrap{width:min(960px,100%)}
+h1{font-size:32px;text-align:center;line-height:1.1}h1 mark{background:#d8ffd0;padding:0 8px}
+.sub{text-align:center;color:var(--mute);margin:8px 0 18px}
+.stairs{display:flex;align-items:flex-end;gap:6px;height:190px}
+.stairs div{flex:1;padding:12px;font-weight:800;line-height:1.15;border-radius:4px 4px 0 0;min-width:0}
+.stairs small{display:block;font-weight:600;font-size:12px;margin-top:6px}
+.cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:22px;margin-top:18px}
+.col{border-top:5px solid;padding-top:10px;min-width:0}
+.col h2{font-size:18px}.col h2 span{display:block;font-weight:400;font-size:14px;color:var(--mute)}
+.row{border-top:1px solid var(--line);padding:8px 0;font-size:13px}
+.row b{display:block;font-size:11px;letter-spacing:.08em;text-transform:uppercase;margin-bottom:3px}
+.chip{display:inline-block;border:1px solid var(--line);border-radius:999px;padding:1px 8px;margin:2px 4px 2px 0;font-size:12px}
+.foot{margin-top:18px;border:1px solid var(--line);border-radius:10px;padding:10px 14px;font-size:13px;color:var(--mute)}
+@media (prefers-color-scheme:dark){:root:not([data-theme=light]){--bg:#12141a;--ink:#f1f2f5;--mute:#a4abb8;--line:#2d323d;--k:#2b2f38}h1 mark{background:#244c1f}}
+@media (max-width:640px){.stairs{height:auto;flex-direction:column;align-items:stretch}}
+</style></head><body>
+<div class="wrap"><h1 id="t"></h1><div class="sub" id="s"></div><div class="stairs" id="st"></div><div class="cols" id="cols"></div><div class="foot" id="f"></div></div>
+<script>
+const SUB='A practical roadmap to your first 100 customers. Stages are guideposts, not guarantees.',FOOT='Your name - what you build';
+const STAGES=[
+{n:'Understand customers',r:'',col:'--k',ink:'#fff',h:110,rows:null},
+{n:'Sell it yourself',r:'0-10 customers',col:'--g',ink:'#111',h:140,rows:[['Goal','Prove someone will pay for the problem you solve.'],['Lead generation','Personal outreach and real buyer conversations.'],['Channels','LinkedIn|Gmail|Reddit'],['Build this','Clear offer + simple one-page. First customer proof.'],['Working when','Buyers pay and get the promised result.']]},
+{n:'Repeat what works',r:'10-50 customers',col:'--y',ink:'#111',h:160,rows:[['Goal','Make your best customer-winning play repeatable.'],['Lead generation','Repeat the winning offer and follow-up. Track conversations > offers > sales.'],['Channels','LinkedIn|X|Gmail|Reddit|LinkedIn Ads'],['Build this','Simple CRM + follow-up playbook. Case studies + consistent content.'],['Working when','Similar buyers convert for similar reasons.']]},
+{n:'Scale what holds up',r:'50-100 customers',col:'--p',ink:'#fff',h:190,rows:[['Goal','Grow without weakening delivery or margins.'],['Lead generation','Scale the strongest channel gradually. Test paid ads with a capped budget.'],['Channels','Google Ads|LinkedIn|X|Gmail|Reddit|Meta|Referrals'],['Build this','Landing page + conversion tracking. Reliable onboarding + referral process.'],['Working when','Customer results and margins hold as volume grows.']]}];
+const t=document.getElementById('t');t.appendChild(document.createTextNode('How to unlock '));const m=document.createElement('mark');m.textContent='GTM';t.appendChild(m);
+document.getElementById('s').textContent=SUB;document.getElementById('f').textContent=FOOT;
+const st=document.getElementById('st'),cols=document.getElementById('cols');
+STAGES.forEach(s=>{const d=document.createElement('div');d.style.cssText='background:var('+s.col+');color:'+s.ink+';height:'+s.h+'px';d.textContent=s.n;if(s.r){const x=document.createElement('small');x.textContent=s.r;d.appendChild(x)}st.appendChild(d);
+ if(!s.rows)return;const c=document.createElement('div');c.className='col';c.style.borderTopColor='var('+s.col+')';
+ const h=document.createElement('h2');h.textContent=s.r;const sp=document.createElement('span');sp.textContent=s.n;h.appendChild(sp);c.appendChild(h);
+ s.rows.forEach(([k,v])=>{const r=document.createElement('div');r.className='row';const b=document.createElement('b');b.textContent=k;r.appendChild(b);
+  if(k==='Channels')v.split('|').forEach(x=>{const e=document.createElement('span');e.className='chip';e.textContent=x;r.appendChild(e)});else r.appendChild(document.createTextNode(v));c.appendChild(r)});cols.appendChild(c)});
+</script></body></html>

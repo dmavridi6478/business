@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<!--
+  Template: avoid-say-instead
+  Style: "N things NOT to say" list - big two-tone title, numbered rows with a red cross "Avoid this", an amber question mark "Reason" and a green tick "Say".
+         Meaning is carried by the words and symbols, never by colour alone.
+  Swap points: :root colours; TITLE (two lines), BY; ROWS ([avoid, reason, say]). Works for interviews, sales calls, customer emails, anything with a bad/better pair.
+-->
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Avoid / say instead</title>
+<style>
+:root{--bg:#e9e9e6;--ink:#14323d;--mute:#4b5a61;--teal:#8ec5bd;--bad:#c0262d;--q:#e39a1b;--ok:#1f8a3e;--line:#b7c3c6}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--ink);font-family:Aptos,"Segoe UI",Arial,sans-serif;padding:20px 16px;display:flex;justify-content:center}
+.wrap{width:min(980px,100%)}
+h1{font-size:32px;line-height:1.05;text-align:center;font-weight:800;text-wrap:balance}h1 em{font-style:normal;background:var(--teal);padding:0 10px}
+.by{text-align:center;color:var(--mute);font-size:13px;margin:8px 0 18px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px 26px}
+.r{border-top:2px solid var(--line);padding-top:6px;font-size:13.5px;line-height:1.35;min-width:0}
+.n{display:inline-block;background:var(--teal);font-weight:800;padding:0 8px;margin-bottom:4px}
+.r p{display:flex;gap:7px;margin-bottom:4px}.r p span:first-child{flex:none;font-weight:800;width:1.2em}
+.a span:first-child{color:var(--bad)}.q span:first-child{color:var(--q)}.s span:first-child{color:var(--ok)}
+@media (prefers-color-scheme:dark){:root:not([data-theme=light]){--bg:#12191c;--ink:#e8f1f3;--mute:#9fb2b8;--teal:#2c5a55;--line:#2e4044;--bad:#ff7a80;--q:#f2b44e;--ok:#63d487}}
+</style></head><body>
+<div class="wrap"><h1 id="t"></h1><div class="by" id="by"></div><div class="grid" id="g"></div></div>
+<script>
+const BY='By Your Name';
+const ROWS=[
+["I'm open to anything.","Makes you seem unfocused and unsure of what you want.","I'm particularly interested in this role because it aligns with my expertise in [specific skill or industry]."],
+["I don't know much about your company.","Signals a lack of preparation and curiosity.","I was impressed by [specific company initiative] and I'd love to learn how this role contributes."],
+["I don't have any weaknesses.","Seems arrogant or lacking self-awareness.","One area I've been developing is [skill]. Steps like [specific action] have made a big difference."],
+["How soon can I get promoted?","Impatient rather than focused on adding value first.","What does growth typically look like in this role, and how does success get measured?"]];
+const t=document.getElementById('t');t.appendChild(document.createTextNode('Things '));const e=document.createElement('em');e.textContent='NOT';t.appendChild(e);t.appendChild(document.createTextNode(' to say (and what to say instead)'));
+document.getElementById('by').textContent=BY;
+ROWS.forEach((x,i)=>{const d=document.createElement('div');d.className='r';const n=document.createElement('span');n.className='n';n.textContent=String(i+1);d.appendChild(n);
+ [['a','✗','Avoid this: '],['q','?','Reason: '],['s','✓','Say: ']].forEach(([c,m,l],k)=>{const p=document.createElement('p');p.className=c;const s1=document.createElement('span');s1.textContent=m;const s2=document.createElement('span');const b=document.createElement('b');b.textContent=l;s2.appendChild(b);s2.appendChild(document.createTextNode(x[k]));p.appendChild(s1);p.appendChild(s2);d.appendChild(p)});
+ document.getElementById('g').appendChild(d)});
+</script></body></html>

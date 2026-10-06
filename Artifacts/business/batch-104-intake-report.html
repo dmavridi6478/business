@@ -1,0 +1,261 @@
+<title>Batch 104 Intake Report</title>
+<style>
+  /* Layout: single-column formal report, 900px measure; tables scroll inside their own wrappers.
+     Palette: ink-slate neutrals, one deep indigo accent, semantic green/amber/red for status only.
+     Type: Aptos (house font) with system fallbacks; title 32pt, headings 14pt, body 11pt. */
+  :root {
+    --bg: #f5f6f9; --surface: #ffffff; --fg: #1a2030; --muted: #596277; --line: #d8dde8;
+    --accent: #2c3e8f; --accent-soft: #e6eaf8;
+    --ok: #17703a; --ok-bg: #e3f3e8; --warn: #8a5a00; --warn-bg: #fbefd3; --bad: #a11d2a; --bad-bg: #fbe3e5;
+    --code-bg: #eef0f6;
+    --font: Aptos, "Segoe UI Variable Text", "Segoe UI", system-ui, -apple-system, Roboto, sans-serif;
+    --mono: ui-monospace, "SF Mono", Consolas, monospace;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #10131c; --surface: #171b27; --fg: #e6e9f2; --muted: #9aa3b8; --line: #2a3144;
+      --accent: #8ea2f0; --accent-soft: #1d2542;
+      --ok: #6fd18f; --ok-bg: #173824; --warn: #f0c261; --warn-bg: #3a2e12; --bad: #ff8d98; --bad-bg: #3d1a1f;
+      --code-bg: #0d1017; color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #10131c; --surface: #171b27; --fg: #e6e9f2; --muted: #9aa3b8; --line: #2a3144;
+    --accent: #8ea2f0; --accent-soft: #1d2542;
+    --ok: #6fd18f; --ok-bg: #173824; --warn: #f0c261; --warn-bg: #3a2e12; --bad: #ff8d98; --bad-bg: #3d1a1f;
+    --code-bg: #0d1017; color-scheme: dark;
+  }
+  * { box-sizing: border-box; }
+  body { background: var(--bg); color: var(--fg); font-family: var(--font); font-size: 11pt; line-height: 1.55; padding-inline: 16px; padding-block: 28px 64px; }
+  main { max-width: 900px; margin-inline: auto; display: flex; flex-direction: column; gap: 24px; }
+  header { display: flex; flex-direction: column; gap: 8px; border-bottom: 2px solid var(--accent); padding-bottom: 18px; }
+  .eyebrow { font-size: 9pt; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
+  h1 { font-size: 32pt; line-height: 1.1; margin: 0; font-weight: 700; text-wrap: balance; }
+  h2 { font-size: 14pt; margin: 0 0 10px; font-weight: 700; color: var(--accent); text-wrap: balance; }
+  h3 { font-size: 11pt; margin: 14px 0 6px; font-weight: 700; }
+  p { margin: 0 0 10px; max-width: 75ch; }
+  section { background: var(--surface); border: 1px solid var(--line); border-radius: 6px; padding: 20px 22px; min-width: 0; }
+  .lede { color: var(--muted); max-width: 70ch; margin: 0; }
+  .truth { border-left: 4px solid var(--bad); background: var(--bad-bg); padding: 12px 16px; border-radius: 0 6px 6px 0; }
+  .truth p:last-child, .truth ul:last-child { margin-bottom: 0; }
+  .conf { font-family: var(--mono); font-size: 9pt; padding: 1px 6px; border-radius: 3px; background: var(--accent-soft); color: var(--accent); white-space: nowrap; }
+  .tw { overflow-x: auto; margin-block: 8px 4px; border: 1px solid var(--line); border-radius: 4px; }
+  table { border-collapse: collapse; width: 100%; min-width: 680px; font-size: 10pt; }
+  th, td { padding: 8px 10px; border-bottom: 1px solid var(--line); text-align: center; vertical-align: top; }
+  th { background: var(--accent-soft); font-weight: 700; font-size: 9.5pt; }
+  tr:last-child td { border-bottom: 0; }
+  .st { display: inline-block; padding: 1px 8px; border-radius: 10px; font-size: 9pt; font-weight: 700; white-space: nowrap; }
+  .st.ok { background: var(--ok-bg); color: var(--ok); } .st.warn { background: var(--warn-bg); color: var(--warn); } .st.bad { background: var(--bad-bg); color: var(--bad); }
+  .sw { display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 10px; margin-block: 8px; }
+  .sw div { border: 1px solid var(--line); border-radius: 4px; overflow: hidden; font-size: 9pt; text-align: center; min-width: 0; }
+  .sw i { display: block; height: 40px; }
+  .sw span { display: block; padding: 4px 6px; font-family: var(--mono); }
+  .sw b { display: block; padding: 4px 6px 0; font-size: 9.5pt; }
+  .prompt { position: relative; margin-block: 10px; }
+  .prompt b { display: block; font-size: 10.5pt; margin-bottom: 4px; }
+  .prompt pre { margin: 0; white-space: pre-wrap; overflow-wrap: anywhere; background: var(--code-bg); border: 1px solid var(--line); border-radius: 4px; padding: 12px 84px 12px 12px; font-family: var(--mono); font-size: 9.5pt; line-height: 1.5; }
+  .prompt button { position: absolute; bottom: 8px; right: 8px; font: inherit; font-size: 9pt; padding: 4px 10px; border-radius: 4px; border: 1px solid var(--accent); background: var(--surface); color: var(--accent); cursor: pointer; }
+  .prompt button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  ul { margin: 0 0 10px; padding-left: 20px; } li { margin-bottom: 4px; max-width: 75ch; }
+  code { font-family: var(--mono); font-size: 9.5pt; background: var(--code-bg); padding: 1px 4px; border-radius: 3px; overflow-wrap: anywhere; }
+  .foot { font-size: 9pt; color: var(--muted); }
+</style>
+
+<main>
+<header>
+  <div class="eyebrow">Intake report &middot; 6 October 2026 &middot; Branch claude/bold-noether-gofvpz</div>
+  <h1>Batch 104 Intake Report</h1>
+  <p class="lede">Two archives were supplied: Interview Guidelines (10 images) and iCloud Photos (36 photos and one video). This report sets out what they contained, what was built from them, what was verified, and what remains for you to approve.</p>
+</header>
+
+<section aria-labelledby="h-truth">
+  <h2 id="h-truth">1. Findings you should read first</h2>
+  <div class="truth">
+    <ul>
+      <li><span class="conf">Certain</span> The archives contain no installable agents, no prompt files and no connector configuration. They are 46 screenshots and one video. The five agent graphics (100 LinkedIn, 200 GTM, 100 lead generation, Revenue System 45, Prosp 200) list <em>names only</em>; each ends with &ldquo;comment X for free access&rdquo;, and the prompts sit behind that gate. Every prompt in this repository for those agents was written here.</li>
+      <li><span class="conf">Certain</span> Two repository cards misdescribe their repositories. The card for Magnitude calls it a time-series database; its GitHub page describes an inference engine. The card for paperclip calls it a chat-with-documents tool; the repository is an agent-orchestration platform. Card star counts are also stale (open-seo: 3.7k on the card, about 22.5k now).</li>
+      <li><span class="conf">Likely</span> A catalogue of 200 agents is a marketing format, not a capability. Most tasks need one or two roles, which is why this batch builds ten department agents and one lookup skill instead of 400 near-empty agent files.</li>
+      <li><span class="conf">Certain</span> Two actions were blocked by the session&rsquo;s auto-mode classifier and are not done: registering the Vercel MCP server in <code>.mcp.json</code>, and writing <code>scripts/batch104-install.sh</code>. Both are reproduced in section 8 for your approval.</li>
+      <li><span class="conf">Certain</span> No connector could be authorised. OAuth cannot run in a non-interactive cloud session. Section 5 lists what is connected and what you must reconnect.</li>
+    </ul>
+  </div>
+</section>
+
+<section aria-labelledby="h-inv">
+  <h2 id="h-inv">2. Inventory</h2>
+  <div class="tw"><table>
+    <thead><tr><th>Source</th><th>Items</th><th>Content</th><th>Actionable?</th></tr></thead>
+    <tbody>
+      <tr><td>GTM Ops Diagnostic Framework (Union Square Consulting)</td><td>1 image</td><td>7-step method, pyramid, 28-cell heatmap, danger zones</td><td><span class="st ok">Built</span></td></tr>
+      <tr><td>100 Best Claude Agents (LinkedIn)</td><td>1 image</td><td>10 departments x 10 names</td><td><span class="st warn">Names only</span></td></tr>
+      <tr><td>200 Claude Agents for GTM</td><td>1 image</td><td>10 categories; 199 names legible</td><td><span class="st warn">Names only</span></td></tr>
+      <tr><td>200 LinkedIn agents (Prosp), animated</td><td>1 GIF</td><td>5 verticals x 4 divisions; agent names illegible</td><td><span class="st warn">Structure only</span></td></tr>
+      <tr><td>100 AI Lead Generation Agents</td><td>1 image</td><td>100 names</td><td><span class="st warn">Names only</span></td></tr>
+      <tr><td>Claude Revenue System</td><td>1 image</td><td>45 names in 6 groups, some repeated</td><td><span class="st warn">Names only</span></td></tr>
+      <tr><td>60 AI Marketing + Sales Tools</td><td>1 image</td><td>12 categories x 5 tools</td><td><span class="st ok">Built, mapped to connectors</span></td></tr>
+      <tr><td>How to Unlock GTM (OneGTM Lab)</td><td>1 image</td><td>First-100-customers roadmap</td><td><span class="st ok">Built</span></td></tr>
+      <tr><td>AI Sales Prep (SalesDaily)</td><td>1 image</td><td>Six-step call-prep system</td><td><span class="st ok">Built</span></td></tr>
+      <tr><td>10 Things Not to Say in a Job Interview</td><td>1 image</td><td>Ten avoid / reason / say rows</td><td><span class="st ok">Built</span></td></tr>
+      <tr><td>@replace.so carousel</td><td>6 photos</td><td>Mem0, Rivet, Paseo, Better-auth, Rallly (sixth missing)</td><td><span class="st ok">Verified</span></td></tr>
+      <tr><td>@joshualevi.ai carousel</td><td>9 photos</td><td>7 agent eval and observability repos</td><td><span class="st ok">Built</span></td></tr>
+      <tr><td>@martiendejong_dev carousel</td><td>8 photos</td><td>7 repos; two descriptions wrong</td><td><span class="st warn">Verified, corrected</span></td></tr>
+      <tr><td>@aiclawbots carousel</td><td>6 photos</td><td>Idea to investor kit; repo not identified</td><td><span class="st ok">Rebuilt natively</span></td></tr>
+      <tr><td>@dotdevs carousel</td><td>8 photos</td><td>Vercel, Supabase, Figma, Canva, GitHub Student Pack</td><td><span class="st warn">Already covered</span></td></tr>
+      <tr><td>@machinelearningtogo video</td><td>1 video, 116 s</td><td>Deep network in 16 lines of numpy</td><td><span class="st ok">Built and run</span></td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<section aria-labelledby="h-built">
+  <h2 id="h-built">3. What was built</h2>
+  <div class="tw"><table>
+    <thead><tr><th>Type</th><th>Name</th><th>Purpose</th></tr></thead>
+    <tbody>
+      <tr><td>Skill</td><td><code>roster-agents</code></td><td>All five agent catalogues as data (<code>catalogs.json</code>), routing table, role-to-prompt template</td></tr>
+      <tr><td>Agents (10)</td><td><code>gtm-icp-research</code>, <code>gtm-content-distribution</code>, <code>gtm-demand-generation</code>, <code>gtm-sales-conversion</code>, <code>gtm-retention-expansion</code>, <code>gtm-signals-triggers</code>, <code>gtm-profile-authority</code>, <code>gtm-dm-conversations</code>, <code>gtm-engagement-network</code>, <code>gtm-pipeline-analytics</code></td><td>Draft-only department agents; tools Read, Grep, Glob, Write; no connectors; prompt-injection baseline; claims must trace to <code>proof.md</code></td></tr>
+      <tr><td>Skills</td><td><code>gtm-ops-diagnostic</code>, <code>gtm-first-100-customers</code>, <code>ai-sales-prep-15min</code>, <code>interview-10-donts</code>, <code>startup-investor-kit</code>, <code>agent-eval-repos-7</code>, <code>ai-marketing-sales-tools-60</code>, <code>oss-repo-register-104</code>, <code>deep-network-from-scratch</code></td><td>Frameworks, verified repo guidance, tool-to-connector map, runnable ML lesson</td></tr>
+      <tr><td>Commands (6)</td><td><code>/roster-agent</code>, <code>/gtm-diagnostic</code>, <code>/call-prep</code>, <code>/interview-reframe</code>, <code>/investor-kit</code>, <code>/agent-scorecard</code></td><td>One-line entry points to the skills above</td></tr>
+      <tr><td>Design templates (7)</td><td><code>gtm-heatmap-navy</code>, <code>agent-roster-grid</code>, <code>stage-roadmap-steps</code>, <code>tool-wheel-radial</code>, <code>repo-card-slide</code> (4 themes), <code>avoid-say-instead</code>, <code>feed-ask-output-cards</code></td><td>Self-contained, data-driven HTML; registered in <code>design-templates</code> with theme tokens</td></tr>
+      <tr><td>Scripts</td><td><code>scripts/build_roster_agents.py</code>, <code>scripts/ml/deep_spirals.py</code>, <code>scripts/ml/spirals.py</code></td><td>Regenerates catalogue and agents; runs the video&rsquo;s network</td></tr>
+    </tbody>
+  </table></div>
+  <p>The startup investor-kit skill begins with a viability gate (five criteria, stop below 6 of 10), because one carousel slide makes the point that a well-formatted bad idea is still a bad idea.</p>
+</section>
+
+<section aria-labelledby="h-repos">
+  <h2 id="h-repos">4. Repository register (checked against GitHub pages, 6 October 2026)</h2>
+  <p>Nothing was cloned. A container that is discarded at session end is the wrong place to clone; the commands in section 8 are for your machine.</p>
+  <div class="tw"><table>
+    <thead><tr><th>Repository</th><th>What it is</th><th>Licence</th><th>Stars</th><th>Note</th></tr></thead>
+    <tbody>
+      <tr><td><code>mem0ai/mem0</code></td><td>Memory layer for agents</td><td>Apache-2.0</td><td>~66.7k</td><td>Ships Claude skills (<code>npx skills add ... --skill mem0</code>)</td></tr>
+      <tr><td><code>rivet-dev/rivet</code></td><td>Orchestrator for durable agent Actors</td><td>Apache-2.0</td><td>~6.2k</td><td><code>npx skills add rivet-dev/skills</code></td></tr>
+      <tr><td><code>getpaseo/paseo</code></td><td>Control plane for coding agents</td><td>AGPL-3.0</td><td>~19.6k (card)</td><td>Licence from web search, not the repo page</td></tr>
+      <tr><td><code>better-auth/better-auth</code></td><td>TypeScript auth framework</td><td>MIT</td><td>~30.2k</td><td><code>npx auth init</code></td></tr>
+      <tr><td><code>lukevella/rallly</code></td><td>Meeting-time polls</td><td>AGPL-3.0+</td><td>~5.3k</td><td>Self-host with Docker</td></tr>
+      <tr><td><code>comet-ml/opik</code></td><td>Tracing and evals</td><td>Apache-2.0</td><td>~22.4k</td><td>Eval repo 1 of 7</td></tr>
+      <tr><td><code>confident-ai/deepeval</code></td><td>Pytest-style LLM evals</td><td>Apache-2.0</td><td>~18.7k</td><td>Eval repo 2 of 7</td></tr>
+      <tr><td><code>Arize-ai/phoenix</code></td><td>Tracing, datasets, replay</td><td>Elastic-2.0</td><td>~11.7k</td><td>Source-available, not OSI open source</td></tr>
+      <tr><td><code>UKGovernmentBEIS/inspect_ai</code></td><td>Evaluation framework</td><td>MIT</td><td>~2.9k</td><td>200+ pre-built evals</td></tr>
+      <tr><td><code>Giskard-AI/giskard-oss</code></td><td>Red teaming for agents</td><td>Apache-2.0</td><td>~5.9k</td><td>Entry point not verified</td></tr>
+      <tr><td><code>lmnr-ai/lmnr</code></td><td>Agent observability</td><td>Apache-2.0</td><td>~3.3k</td><td>Plain-English &ldquo;signals&rdquo;</td></tr>
+      <tr><td><code>traceloop/openllmetry</code></td><td>OpenTelemetry for LLM apps</td><td>Apache-2.0</td><td>~7.5k</td><td><code>pip install traceloop-sdk</code></td></tr>
+      <tr><td><code>magnitudedev/magnitude</code></td><td>Inference engine</td><td>Apache-2.0</td><td>~6.5k</td><td><span class="st bad">Card is wrong</span></td></tr>
+      <tr><td><code>paperclipai/paperclip</code></td><td>Agent-orchestration platform</td><td>MIT</td><td>~97.9k</td><td><span class="st bad">Card is wrong</span></td></tr>
+      <tr><td><code>debpalash/VoiceStudio</code></td><td>Local voice cloning and dubbing</td><td>AGPL-3.0</td><td>~54k</td><td>Installer is <code>curl | sh</code>; read it first; consent for any cloned voice</td></tr>
+      <tr><td><code>THU-MAIC/OpenMAIC</code></td><td>Interactive multi-agent classroom</td><td>MIT</td><td>~40k</td><td>Needs PostgreSQL and API keys</td></tr>
+      <tr><td><code>bilawalsidhu/gods-eye-view</code></td><td>3D globe, live aircraft and ships</td><td>MIT</td><td>~48.1k</td><td>Node 24 or 26</td></tr>
+      <tr><td><code>HKUDS/Vibe-Trading</code></td><td>Trading-agent framework</td><td>MIT</td><td>~34.8k</td><td>No risk disclaimer on the page; backtests are not predictions</td></tr>
+      <tr><td><code>every-app/open-seo</code></td><td>Open alternative to Semrush and Ahrefs</td><td>MIT</td><td>~22.5k</td><td>Needs a paid DataForSEO key</td></tr>
+    </tbody>
+  </table></div>
+  <p><strong>Unresolved.</strong> &ldquo;hermes-startup-architect&rdquo; could not be found by that name (a different project, <code>33hodl/hermes-startup</code>, appeared but was not confirmed). The @replace.so title says six repositories; five are in the upload.</p>
+</section>
+
+<section aria-labelledby="h-conn">
+  <h2 id="h-conn">5. Connectors</h2>
+  <div class="tw"><table>
+    <thead><tr><th>Tool named in the images</th><th>Status in your workspace</th><th>Action</th></tr></thead>
+    <tbody>
+      <tr><td>Ahrefs, Semrush, Clay, Consensus, Fireflies, Typefully, Canva, Figma, Zapier</td><td><span class="st ok">Connected</span></td><td>None. Used by the new skills.</td></tr>
+      <tr><td>Vibe Prospecting, Common Room, OpenFunnel, Socialgpt</td><td><span class="st ok">Connected</span></td><td>None (not on the wheel; useful for prospecting)</td></tr>
+      <tr><td>Taplio MCP LinkedIn, Supabase, Sentry, Stripe, MailerLite, Proshort, monday.com</td><td><span class="st warn">Needs reconnect</span></td><td>Reconnect in claude.ai connector settings</td></tr>
+      <tr><td>Vercel, Fathom, tl;dv, Outreach, Grain</td><td><span class="st warn">In registry, not connected</span></td><td>Connect in claude.ai; Vercel also needs the command in section 8</td></tr>
+      <tr><td>Smartlead, Lemlist, Instantly, Salesloft, Loom (own connector)</td><td><span class="st bad">No listing found</span></td><td>Try Zapier actions; absence of a search hit is not proof none exists</td></tr>
+    </tbody>
+  </table></div>
+  <p>The connector allowlist for agents (<code>docs/ai-os/rules/connector-allowlist.json</code>) was left empty on purpose. It is a security control and was not widened.</p>
+</section>
+
+<section aria-labelledby="h-design">
+  <h2 id="h-design">6. Design elements and themes extracted</h2>
+  <p>Layout systems were read from the infographics and carousels and rebuilt as data-driven templates. Logos and mascot art were not reproduced. All seven render without script errors or horizontal overflow at 1100 and 390 pixels, in light and dark.</p>
+  <div class="sw">
+    <div><b>gtm-navy</b><i style="background:#0A1130"></i><i style="background:#FF2D75"></i><i style="background:#2F9E5B"></i><span>#0A1130 / #FF2D75</span></div>
+    <div><b>claude-agent-roster</b><i style="background:#E8602C"></i><i style="background:#2F6FDB"></i><i style="background:#7A3FD1"></i><span>#E8602C / #2F6FDB</span></div>
+    <div><b>stairs-pastel</b><i style="background:#A8EF9A"></i><i style="background:#FFD873"></i><i style="background:#5B2F9E"></i><span>#A8EF9A / #5B2F9E</span></div>
+    <div><b>wheel-navy-orange</b><i style="background:#16276B"></i><i style="background:#FF8A1F"></i><i style="background:#E9EDF8"></i><span>#16276B / #FF8A1F</span></div>
+    <div><b>repo-blueprint</b><i style="background:#0B4A7D"></i><i style="background:#3B82F6"></i><span>#0B4A7D / #3B82F6</span></div>
+    <div><b>repo-cyber-red</b><i style="background:#0A0606"></i><i style="background:#FF2B2B"></i><span>#0A0606 / #FF2B2B</span></div>
+    <div><b>teal-paper</b><i style="background:#E9E9E6"></i><i style="background:#8EC5BD"></i><i style="background:#14323D"></i><span>#8EC5BD / #14323D</span></div>
+    <div><b>salesdaily-cards</b><i style="background:#F1F1EE"></i><i style="background:#1B8A94"></i><span>#F1F1EE / #1B8A94</span></div>
+  </div>
+  <p>Full token tables, including fonts, are in <code>.claude/skills/design-templates/SKILL.md</code> under &ldquo;Batch 104 theme tokens&rdquo;.</p>
+</section>
+
+<section aria-labelledby="h-prompts">
+  <h2 id="h-prompts">7. Prompts in plain text</h2>
+  <p>Each prompt is ready to paste into any Claude session. Brackets mark what you supply. The matching skill or command is named under each title.</p>
+
+  <div class="prompt"><b>1. Role prompt for any named agent (skill roster-agents; command /roster-agent)</b>
+<pre id="p1">Act as the [ROLE NAME] from the [LinkedIn-100 | GTM-200 | Lead-Gen-100 | Revenue-45] roster. Context: my business is [WHAT YOU SELL], my buyer is [ICP], my offer is [OFFER], my proof is [CASE STUDIES OR NUMBERS, or "none yet"]. Task: [WHAT YOU NEED]. Rules: use only facts I gave you; write [NEEDS PROOF] where a claim has no evidence; output a draft I can review in two minutes, not an essay; nothing is sent or posted by you. End with a list of what you assumed.</pre><button type="button" data-copy="p1">Copy</button></div>
+
+  <div class="prompt"><b>2. Build a list for a role (the Prosp 200 entry prompt, extended)</b>
+<pre id="p2">Build me a list of the 10 specialist agent roles that a [ROLE, e.g. recruiter, coach, agency owner, B2B seller] would use on LinkedIn, grouped into 4 divisions. For each role give a one-line job, the input it needs, and the draft it produces. Do not invent tools or results.</pre><button type="button" data-copy="p2">Copy</button></div>
+
+  <div class="prompt"><b>3. GTM Ops Diagnostic (skill gtm-ops-diagnostic; command /gtm-diagnostic)</b>
+<pre id="p3">Run the GTM Ops Diagnostic for [COMPANY]. Areas I run: [Pipeline Management / Inbound / Outbound / ABM / Partners / Renewals / Expansion]. For each area and each level (Fundamentals, Adoption, Optimization, Amplification) ask me for one line of evidence and score GREEN, YELLOW or RED; no evidence scores red. Then give me the heatmap as a table, the danger zones (optimising or amplifying on a weak base), the fix order with Fundamentals first, and a one-quarter roadmap with owner, metric and due date. List what you could not score.</pre><button type="button" data-copy="p3">Copy</button></div>
+
+  <div class="prompt"><b>4. First 100 customers (skill gtm-first-100-customers)</b>
+<pre id="p4">I have [N] paying customers (not leads). I sell [PRODUCT] to [BUYER]. Using the four-stage first-100-customers roadmap (understand, 0-10 sell it yourself, 10-50 repeat what works, 50-100 scale what holds up), tell me which stage I am really in, what I must NOT do yet, my next two actions, the one metric that proves this stage is working, and the most likely way I am fooling myself. Ask me questions first if my answer would otherwise be a guess.</pre><button type="button" data-copy="p4">Copy</button></div>
+
+  <div class="prompt"><b>5. Sales call prep (skill ai-sales-prep-15min; command /call-prep)</b>
+<pre id="p5">You are my sales-call prep analyst. Meeting: [GOAL, TYPE, ATTENDEES, DESIRED NEXT STEP]. Material below: [PASTE: company news, website text, attendee profiles, email thread, CRM notes, case studies]. Do six things in order and label each: (1) account snapshot: what changed, what they care about, 3 business priorities, 3 opening angles; (2) the 5 most likely pain points, strategic vs day-to-day, with symptoms and impact; (3) stakeholder map with priorities, likely influence and a messaging angle each; (4) a discovery plan: 10 questions, 3 hypotheses to test, 3 red flags; (5) objection talk tracks for price, timing, no-priority, competitor and "send me something"; (6) a final brief I can read in 2 minutes. Use only my material. Tag each claim [from input] or [hypothesis]. List anything I must verify before the call.</pre><button type="button" data-copy="p5">Copy</button></div>
+
+  <div class="prompt"><b>6. Interview answer rewrite (skill interview-10-donts; command /interview-reframe)</b>
+<pre id="p6">I am interviewing for [ROLE] at [COMPANY]. Here is my planned answer: [PASTE]. Tell me which of these traps it matches: open to anything; knows little about the company; no weaknesses; asks about promotion; perfectionist; criticises a past boss; prefers to work alone; salary as the first question; time management as a weakness; no questions. Give the risk in one sentence, ask me for the true specifics you need, then rewrite it in my own voice using only those facts, and tell me how an interviewer might push back.</pre><button type="button" data-copy="p6">Copy</button></div>
+
+  <div class="prompt"><b>7. Idea to investor kit (skill startup-investor-kit; command /investor-kit)</b>
+<pre id="p7">I want to build [IDEA IN ONE SENTENCE] for [BUYER]. First run a viability gate: score (0-2 each) named buyer, painful frequent problem with a current workaround, a way to reach 10 buyers this month without ads, a believable reason it beats the workaround, and workable unit economics. If the total is under 6/10, tell me why and stop. If it passes, research the market and competitors, then write: market_analysis, competitor_map, product_spec, business_model, product_roadmap, pitch_deck, investor_pitch and a one-file landing_page.html. Label every number [user], [sourced: URL] or [assumption]. Do not invent traction, customers or quotes.</pre><button type="button" data-copy="p7">Copy</button></div>
+
+  <div class="prompt"><b>8. Score the agent you shipped last (skill agent-eval-repos-7; command /agent-scorecard)</b>
+<pre id="p8">Score my agent [NAME / PATH] from 0 to 3 on each line, citing evidence (file, trace or test): traces for every tool call; a golden set of 20+ cases; an automated hallucination or groundedness check; an adversarial or red-team pass; a production alert on a named bad behaviour; cost and latency tracking; weekly human review of a sample. No evidence scores 0. Give the total out of 21, my two weakest lines, and the smallest next step for each, naming which of opik, deepeval, phoenix, inspect_ai, giskard-oss, laminar or openllmetry fits and its install command.</pre><button type="button" data-copy="p8">Copy</button></div>
+</section>
+
+<section aria-labelledby="h-pending">
+  <h2 id="h-pending">8. Awaiting your approval</h2>
+  <p>These two actions were blocked by the session classifier, which gave no reason. They were not retried by another route. You can run them yourself or tell me to proceed.</p>
+  <h3>Register the Vercel MCP server (official endpoint, OAuth on first use)</h3>
+  <div class="prompt"><pre id="c1">claude mcp add --transport http vercel https://mcp.vercel.com</pre><button type="button" data-copy="c1">Copy</button></div>
+  <h3>Clone for reading and install the repositories&rsquo; own skills (run on your machine; shallow clones, nothing piped into a shell)</h3>
+  <div class="prompt"><pre id="c2">mkdir -p ~/src && cd ~/src
+for r in comet-ml/opik confident-ai/deepeval Arize-ai/phoenix UKGovernmentBEIS/inspect_ai Giskard-AI/giskard-oss lmnr-ai/lmnr traceloop/openllmetry mem0ai/mem0 rivet-dev/rivet getpaseo/paseo better-auth/better-auth lukevella/rallly THU-MAIC/OpenMAIC HKUDS/Vibe-Trading bilawalsidhu/gods-eye-view paperclipai/paperclip magnitudedev/magnitude; do
+  git clone --depth 1 "https://github.com/$r.git"
+done
+npx skills add rivet-dev/skills
+npx skills add https://github.com/mem0ai/mem0 --skill mem0
+python3 scripts/ml/deep_spirals.py</pre><button type="button" data-copy="c2">Copy</button></div>
+  <p>Read the licence of each repository before use: AGPL-3.0 (Paseo, Rallly, VoiceStudio) and Elastic-2.0 (Phoenix) restrict how you may offer them as a service. Clone VoiceStudio only after reading its installer, and clone a real person&rsquo;s voice only with their consent.</p>
+</section>
+
+<section aria-labelledby="h-verify">
+  <h2 id="h-verify">9. Verification and limits</h2>
+  <ul>
+    <li><span class="conf">Certain</span> All 26 new Markdown files parse as valid front matter. The existing guard tests pass (27 of 27).</li>
+    <li><span class="conf">Certain</span> The 16-line network from the video, run on a spiral dataset written for this repository, classified 200 of 200 unseen points and 400 of 400 training points in about 1.5 seconds. The video&rsquo;s own dataset module was not shown, so the dataset is not the original.</li>
+    <li><span class="conf">Likely</span> Agent names were read from images of about 800 pixels. A word may differ from the original. GTM-200 has 199 names (one missing in category 09). The Prosp 200 agent names were too small to read.</li>
+    <li><span class="conf">Likely</span> Repository facts come from GitHub pages read through a summarising fetch tool. Stars change daily. Giskard&rsquo;s entry point and Paseo&rsquo;s licence were not read from the repository itself.</li>
+    <li><span class="conf">Guessing</span> That the classifier objected to the <code>.mcp.json</code> change rather than the script. It gave no reason.</li>
+    <li>Personal photos were not committed to the repository, following the attachment-intake procedure.</li>
+  </ul>
+  <p class="foot">Sources: GitHub repository pages named in section 4; Vercel documentation (vercel.com/docs/agent-resources/vercel-mcp); claude.ai connector registry searches run 6 October 2026.</p>
+</section>
+</main>
+
+<script>
+(function () {
+  function fallback(el) {
+    var r = document.createRange(); r.selectNodeContents(el);
+    var s = window.getSelection(); s.removeAllRanges(); s.addRange(r);
+  }
+  document.querySelectorAll('button[data-copy]').forEach(function (b) {
+    b.addEventListener('click', function () {
+      var el = document.getElementById(b.getAttribute('data-copy'));
+      var done = function () { b.textContent = 'Copied'; setTimeout(function () { b.textContent = 'Copy'; }, 1500); };
+      try {
+        navigator.clipboard.writeText(el.textContent).then(done, function () { fallback(el); b.textContent = 'Selected'; });
+      } catch (e) { fallback(el); b.textContent = 'Selected'; }
+    });
+  });
+})();
+</script>

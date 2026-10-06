@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<!--
+  Template: agent-roster-grid
+  Style: "N best agents to run your X" infographic - department cards with numbered, coloured headers and agent chips, a bold call-to-action bar.
+         Two themes via <body data-theme="claude|navy">: claude = warm white with Claude orange; navy = dark navy with LinkedIn blue + orange (the 200-agent GTM look).
+  Swap points: THEME (body attribute), TITLE, SUB, CTA, DEPTS ("Department|agent1|agent2|..."; up to ~12 depts, 5-20 agents each). Text is set with textContent.
+-->
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Agent roster</title>
+<style>
+:root{--bg:#ffffff;--ink:#16181d;--mute:#5b6270;--card:#fbfbfd;--line:#dfe3ea;--cta:#161616;--ctaink:#fff;--accent:#e8602c}
+body[data-theme=navy]{--bg:#0b1533;--ink:#f1f4ff;--mute:#9fb0e6;--card:#0f1d45;--line:#2a4287;--cta:linear-gradient(90deg,#5fe0c4,#7ad0ff);--ctaink:#08122e;--accent:#ff8a3d}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--ink);font-family:Aptos,"Segoe UI",Arial,sans-serif;padding:20px 16px;display:flex;justify-content:center}
+.wrap{width:min(1000px,100%)}
+h1{font-size:32px;line-height:1.1;text-align:center;font-weight:800;text-wrap:balance}h1 b{color:var(--accent)}
+.sub{text-align:center;color:var(--mute);font-size:14px;margin:8px 0 18px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px}
+.dep{background:var(--card);border:1px solid var(--line);border-radius:10px;overflow:hidden;min-width:0}
+.dep h2{font-size:14px;padding:8px 12px;color:#fff;display:flex;gap:8px;align-items:baseline}
+.dep h2 span{opacity:.8;font-weight:600}
+.chips{display:flex;flex-wrap:wrap;gap:5px;padding:10px}
+.chips i{font-style:normal;font-size:11px;border:1px solid var(--line);border-radius:999px;padding:3px 8px;color:var(--ink)}
+.cta{margin-top:16px;border-radius:12px;background:var(--cta);color:var(--ctaink);text-align:center;font-weight:800;font-size:18px;padding:16px;text-transform:uppercase;letter-spacing:.03em}
+@media (prefers-color-scheme:dark){body:not([data-theme]){--bg:#12141a;--ink:#f1f2f5;--mute:#a4abb8;--card:#1a1d25;--line:#2b303b}}
+</style></head><body data-theme="claude">
+<div class="wrap"><h1 id="t"></h1><div class="sub" id="s"></div><div class="grid" id="g"></div><div class="cta" id="c"></div></div>
+<script>
+/* sample shows 5 of the 10 departments */
+const TITLE=['LinkedIn ','agents',' by department'],SUB='Paste a prompt. Run it like an operation.',CTA='Comment "AGENTS" for the list';
+const COLORS=['#e8602c','#2f6fdb','#2f9e5b','#7a3fd1','#d6405a','#e6951c','#0f8f9f','#c23a8a','#5d6b82','#3b7d2a'];
+const DEPTS=[
+'Profile & Positioning|Headline Optimizer|About Writer|Value Proposition|Profile Auditor|Experience Enhancer|Skills Optimizer|Featured Builder|Banner Creator|Social Proof Booster|Profile Score',
+'Content Strategy|Content Planner|Pillar Strategy|Content Ideator|Topic Researcher|Content Calendar|Audience Insights|Trend Spotter|Competitor Analyzer|Angle Finder|Hook Generator',
+'Post Writing|Hook Writer|Story Writer|List Writer|How-To Writer|Case Study Writer|Insight Writer|Question Post|Poll Creator|CTA Writer|Post Optimizer',
+'Engagement & Comments|Comment Responder|Engagement Booster|Conversation Starter|Comment Writer|Thought Leader|Active Listener|Community Builder|Like Strategist|Engagement Tracker|Comment Analyzer',
+'Outreach & DMs|Connection Requester|DM Opener|Follow Up Sender|Nurture Sequence|Icebreaker Finder|Value Sender|Meeting Setter|Referral Asker|Reactivation DM|DM Optimizer'];
+const t=document.getElementById('t');TITLE.forEach((x,i)=>{if(i===1){const b=document.createElement('b');b.textContent=x;t.appendChild(b)}else t.appendChild(document.createTextNode(x))});
+document.getElementById('s').textContent=SUB;document.getElementById('c').textContent=CTA;
+const g=document.getElementById('g');
+DEPTS.forEach((d,i)=>{const p=d.split('|'),s=document.createElement('section');s.className='dep';
+ const h=document.createElement('h2');h.style.background=COLORS[i%COLORS.length];const n=document.createElement('span');n.textContent=String(i+1).padStart(2,'0');h.appendChild(n);h.appendChild(document.createTextNode(p[0]));s.appendChild(h);
+ const c=document.createElement('div');c.className='chips';p.slice(1).forEach(a=>{const e=document.createElement('i');e.textContent=a;c.appendChild(e)});s.appendChild(c);g.appendChild(s)});
+</script></body></html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<!--
+  Template: tool-wheel-radial
+  Style: radial "N tools" wheel - twelve wedges around a centre, category label on the outer ring, five tool names running outward along each wedge,
+         alternating orange / navy / pale wedges on a deep-blue field (the "60 AI Marketing + Sales Tools" look). Text only: no logos.
+  Swap points: :root colours; TITLE; WEDGES ("Category|tool1|tool2|..."; 8-16 wedges, 3-6 tools each). Everything is built with createElementNS + textContent.
+-->
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Tool wheel</title>
+<style>
+:root{--bg:#07123d;--o:#ff8a1f;--n:#16276b;--p:#e9edf8;--ink:#fff;--dark:#0a1230}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:radial-gradient(circle at 50% 40%,#173a9c,var(--bg) 70%);color:var(--ink);font-family:Aptos,"Segoe UI",Arial,sans-serif;padding:20px 12px;display:flex;flex-direction:column;align-items:center;gap:8px;min-height:100vh}
+h1{font-size:32px;text-align:center;line-height:1.1}h1 b{color:var(--o)}
+svg{width:min(820px,100%);height:auto}
+.cat{font-size:15px;font-weight:800;letter-spacing:.14em;text-transform:uppercase}
+.tool{font-size:12.5px;font-weight:600}
+</style></head><body>
+<h1 id="t"></h1><svg id="w" viewBox="0 0 800 800" role="img" aria-label="Tool wheel"></svg>
+<script>
+const TITLE=['60 ','AI',' Marketing + Sales Tools'];
+const WEDGES=['Copy|ChatGPT|Claude|Meta AI|Perplexity|Gemini','SEO|Ahrefs|Also Asked|SurferSEO|AIPRM|SEMrush','All-in-one|Crono|Outreach|ZELIQ|Salesloft|Amplemarket','Enablement|trumpet|Dock|Aligned|Allego|Flowla','Video|Pika Labs|Synthesia|Runway|Luma|Veed.IO','Social|EasyGen|AuthoredUp|Taplio|MagicPost|SuperGrow','Prospecting|Sendler|Sendspark|Loom|HourOne|Hippovideo','AI Agent|11x|Clay|Bardeen|AiSDR|Topo','Research|Glimpse|Humata|Perplexity|Consensus|AnswerThePublic','Image Gen|Midjourney|ChatGPT Plus|Ideogram|Meta AI|Flux.1','Meetings|Sybill|tl;dv|Substrata|Fathom|Winn','Email|Smartlead|Lemlist|Instantly|Reply|La Growth Machine'];
+const t=document.getElementById('t');TITLE.forEach((x,i)=>{if(i===0||i===1){const b=document.createElement('b');b.textContent=x;t.appendChild(b)}else t.appendChild(document.createTextNode(x))});
+const NS='http://www.w3.org/2000/svg',svg=document.getElementById('w'),C=400,R0=95,R1=318,R2=392,N=WEDGES.length,A=2*Math.PI/N;
+const mk=(n,a,p)=>{const e=document.createElementNS(NS,n);for(const k in a)e.setAttribute(k,a[k]);if(p)p.appendChild(e);return e};
+const pt=(r,a)=>[C+r*Math.sin(a),C-r*Math.cos(a)];
+const fills=['var(--n)','var(--o)','var(--p)'],inks=['#fff','#1a1100','#0a1230'];
+WEDGES.forEach((w,i)=>{const p=w.split('|'),a0=i*A,a1=(i+1)*A,am=(a0+a1)/2,f=i%3;
+ const [x0,y0]=pt(R1,a0),[x1,y1]=pt(R1,a1),[x2,y2]=pt(R0,a1),[x3,y3]=pt(R0,a0);
+ mk('path',{d:`M${x0} ${y0}A${R1} ${R1} 0 0 1 ${x1} ${y1}L${x2} ${y2}A${R0} ${R0} 0 0 0 ${x3} ${y3}Z`,fill:fills[f],stroke:'#0a1230','stroke-width':2},svg);
+ const [ox0,oy0]=pt(R2,a0),[ox1,oy1]=pt(R2,a1),[ix1,iy1]=pt(R1,a1),[ix0,iy0]=pt(R1,a0);
+ mk('path',{d:`M${ix0} ${iy0}A${R1} ${R1} 0 0 1 ${ix1} ${iy1}L${ox1} ${oy1}A${R2} ${R2} 0 0 0 ${ox0} ${oy0}Z`,fill:'#0f1c55',stroke:'#0a1230','stroke-width':2},svg);
+ const deg=am*180/Math.PI,lab=deg>90&&deg<270,flip=deg>180,[cx,cy]=pt((R1+R2)/2,am);
+ const ct=mk('text',{x:cx,y:cy,'text-anchor':'middle','dominant-baseline':'middle',transform:`rotate(${lab?deg+180:deg} ${cx} ${cy})`,fill:'#fff',class:'cat'},svg);ct.textContent=p[0];
+ const tools=p.slice(1),span=A*0.72;
+ tools.forEach((tn,j)=>{const ta=am+(j-(tools.length-1)/2)*(span/(tools.length-1||1)),[tx,ty]=pt(flip?R1-10:185,ta),d=ta*180/Math.PI-90+(flip?180:0);
+  const e=mk('text',{x:tx,y:ty,'text-anchor':'start','dominant-baseline':'middle',transform:`rotate(${d} ${tx} ${ty})`,fill:inks[f],class:'tool'},svg);e.textContent=tn});});
+mk('circle',{cx:C,cy:C,r:R0-8,fill:'#0a1230',stroke:'var(--o)','stroke-width':3},svg);
+</script></body></html>
