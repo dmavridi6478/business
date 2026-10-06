@@ -5881,4 +5881,4 @@ Source: `80c9789b-LinkedIn_Master_Guide_for_Claude.zip` — 4 static images (`.j
 
 **Findings:** the agent graphics list names only (prompts were behind "comment X"); two @martiendejong_dev cards misdescribe their repos (Magnitude, paperclip); no repo was cloned; no connector could be authorised from a cloud session.
 
-**Not done (blocked by the session classifier, left for the owner):** registering the Vercel MCP server (`claude mcp add --transport http vercel https://mcp.vercel.com`) and the user-run install script; both are reproduced in the report, section 8.
+**Also added (approved by the owner after an initial classifier block):** the Vercel MCP server in `.mcp.json` (`https://mcp.vercel.com`, sign in via `/mcp`) and the user-run `scripts/batch104-install.sh` (every step asks first; nothing piped into a shell).
