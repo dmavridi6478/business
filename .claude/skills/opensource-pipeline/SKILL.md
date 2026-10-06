@@ -14,17 +14,17 @@ Safely open-source any project through a 3-stage pipeline: **Fork** (strip secre
 - User says "open source this project" or "make this public"
 - User wants to prepare a private repo for public release
 - User needs to strip secrets before pushing to GitHub
-- User invokes `/opensource fork`, `/opensource verify`, or `/opensource package`
+- User invokes `/opensource-pipeline fork`, `/opensource-pipeline verify`, or `/opensource-pipeline package`
 
 ## Commands
 
 | Command | Action |
 |---------|--------|
-| `/opensource fork PROJECT` | Full pipeline: fork + sanitize + package |
-| `/opensource verify PROJECT` | Run sanitizer on existing repo |
-| `/opensource package PROJECT` | Generate CLAUDE.md + setup.sh + README |
-| `/opensource list` | Show all staged projects |
-| `/opensource status PROJECT` | Show reports for a staged project |
+| `/opensource-pipeline fork PROJECT` | Full pipeline: fork + sanitize + package |
+| `/opensource-pipeline verify PROJECT` | Run sanitizer on existing repo |
+| `/opensource-pipeline package PROJECT` | Generate CLAUDE.md + setup.sh + README |
+| `/opensource-pipeline list` | Show all staged projects |
+| `/opensource-pipeline status PROJECT` | Show reports for a staged project |
 
 ## Protocol
 
