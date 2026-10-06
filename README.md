@@ -53,7 +53,7 @@ A design/output bundle sits alongside it, for turning business content into actu
 - `design-templates` — 6 ready-to-use, verified-rendering HTML/CSS templates (iMessage mockup, social device frame, 3D product tilt, halftone/dither effect, moodboard grid, brand board) to drop into a build instead of writing from scratch
 - `ui-motion-design` — tasteful UI motion: easing curves, spring physics, timing, and micro-interaction patterns
 - `gsap-core`, `gsap-timeline`, `gsap-scrolltrigger`, `gsap-react`, `gsap-frameworks`, `gsap-utils`, `gsap-performance`, `gsap-plugins` — GreenSock's own official 8-part GSAP implementation skill pack (core API, timelines, ScrollTrigger, React, Vue/Svelte, utils, performance, plugins); vendored for real from [greensock/gsap-skills](https://github.com/greensock/gsap-skills) (MIT) — the code-level counterpart to `ui-motion-design`'s principles
-- `design-review-audit` — audits a finished build against a spacing/hierarchy/contrast/consistency/AI-slop checklist; companion to `/design-review`
+- `design-review-audit` — audits a finished build against a spacing/hierarchy/contrast/consistency/AI-slop checklist; companion to `/biz-design-review`
 - `brandkit-generator` — turns a one-line idea into 2-3 brand directions (wordmark, palette, type pairing, brand board), fast and explicitly non-final
 - `design-token-extractor` — extracts a reusable color/type/spacing token set from a reference site or screenshot
 - `image-to-code` — clones a reference screenshot into real code, then renders and compares before calling it done
@@ -1429,7 +1429,7 @@ automatically when relevant), commands are invoked explicitly by name:
 
 - `/ask-the-board [question]` — answers a question using the advisory board set up by the `advisory-board` skill; refuses to improvise generic advisor impressions if no board has been configured yet
 - `/improve-system` — reviews the current session for one genuine, durable behavioral signal (not a transcript summary) and persists it to a `memory/` file, updating the memory index
-- `/design-review [file or description]` — runs the `design-review-audit` checklist against a build and reports a prioritized punch list
+- `/biz-design-review [file or description]` — runs the `design-review-audit` checklist against a build and reports a prioritized punch list
 - `/outreach-campaign [product/offer and target market]` — runs the `outreach-*` skill bundle end to end (strategy → list-building → copywriting → campaign design) into a single `outreach-brief.md`; stops to ask if the ICP is still vague, or if the GTM stress test finds a serious flaw, rather than shipping a brief built on a plan already known to be broken
 - `/content-pipeline [niche/topic]` — runs the 7-agent content team (research → hook → script → design → schedule) in sequence, then always stops for explicit approval before `content-publisher` touches a live platform
 - `/scope-web-task [task]` — applies the `web-task-scoping` skill's Target/Limit/Run/Review discipline to a browser-automation task before it runs; refuses to proceed on side-effecting tasks (submit/purchase/post/delete) until all four are explicit
@@ -1483,7 +1483,7 @@ Skills") section pointing at the others that feed it or consume its output:
 - `design-templates` provides ready-made device-mockup/3D-tilt/halftone/moodboard
   snippets to the same design skills, approximating what `design-dev-resources`'
   niche tools (Javii, Ultramock, Ditther, Logo System) produce.
-- `ui-motion-design` and `design-review-audit` (`/design-review`) bookend a
+- `ui-motion-design` and `design-review-audit` (`/biz-design-review`) bookend a
   build: motion guidance going in, a checklist audit coming out.
   `gsap-core` and its 7 vendored siblings are the code-level layer between
   them — `ui-motion-design` decides what motion should communicate, the
@@ -3069,7 +3069,7 @@ Claude, ChatGPT, Perplexity, Cursor, Lovable, Replit, HeyGen, Synthesia, Descrip
 - `/meeting` — extract decisions, owners, deadlines, and open questions from a transcript (numbered 08)
 - `/handoff` — package work so another person can continue without asking questions (numbered 08)
 - `/sop` — convert a process into inputs, steps, quality checks, and outputs (numbered 09)
-- `/qa` — test a result against every requirement; show failures first (numbered 09)
+- `/biz-qa` — test a result against every requirement; show failures first (numbered 09)
 - `/decision` — compare three options by upside, cost, reversibility, and risk (numbered 09); distinct from the existing `/decision-matrix` (2-option budget/timeline/strategic-value comparison)
 - `/nextmove` — choose the smallest action that removes the most uncertainty (numbered 10)
 - `/offer-frame` — turn an idea into audience, problem, outcome, and proof (numbered 11); renamed from `/offer` since that command already exists as a priced-offer designer

@@ -14,9 +14,9 @@ command -v git >/dev/null || { echo "git is required"; exit 1; }
 if command -v bun >/dev/null; then echo "   bun $(bun --version)  (need 1.4.2 or newer)"; else echo "   bun not found. Install it from bun.sh by your own method, then re-run."; exit 1; fi
 
 echo "== 1. Name clashes =="
-echo "   gstack's router also routes to: benchmark, context-save, context-restore, design-review, learn, qa, review, ship."
-echo "   This repo already has local skills or commands with those names (.claude/commands/{qa,review,ship,learn,context-save,context-restore,design-review}.md, .claude/skills/benchmark)."
-echo "   After install, 'invoke /review' may reach either one. Decide which you want before relying on the router."
+echo "   gstack's router routes to: benchmark, context-save, context-restore, design-review, learn, qa, review, ship."
+echo "   The 7 local commands with those names were renamed with a biz- prefix (/biz-qa, /biz-review, /biz-ship, /biz-learn, /biz-context-save, /biz-context-restore, /biz-design-review)."
+echo "   One clash remains: the local skill .claude/skills/benchmark. Rename it before relying on gstack's /benchmark."
 echo "   The router is proactive by default; to stop that, set PROACTIVE=false with gstack-config after install."
 ask "Continue?" || exit 0
 

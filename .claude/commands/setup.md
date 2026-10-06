@@ -121,13 +121,13 @@ Print the completion summary:
      One task = one pipeline run. Keep tasks focused.
 
   3. Start the pipeline
-     /ship stories/your-story.md
+     /biz-ship stories/your-story.md
 
   4. Check progress anytime
-     /ship status
+     /biz-ship status
 
   5. Resume after a human checkpoint
-     /ship resume
+     /biz-ship resume
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
   HUMAN CHECKPOINTS
@@ -137,9 +137,9 @@ Print the completion summary:
   produces the implementation plan. Review the plan at:
   .claude/pipeline/architect-plan.md
 
-  Run /ship resume when ready to start implementation.
+  Run /biz-ship resume when ready to start implementation.
 
   The pipeline also pauses if a 🔴 Critical review issue
   is found. Check .claude/pipeline/review-report.md and
-  run /ship resume after resolving.
+  run /biz-ship resume after resolving.
 ```
