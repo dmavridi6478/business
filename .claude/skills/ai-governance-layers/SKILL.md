@@ -1,6 +1,6 @@
 ---
 name: ai-governance-layers
-description: Audit or build an enterprise AI governance program across 6 layers — Inventory, Responsible Deployment, Security & Access, Testing & Monitoring, Human Oversight, and Compliance & Audit. Use when the user asks to set up AI governance, audit their AI program, create AI policy, or assess readiness for enterprise AI at scale. Three postures: ADOPT (build responsibly), DEFEND (test and protect), GOVERN (authorize and oversee).
+description: 'Audit or build an enterprise AI governance program across 6 layers — Inventory, Responsible Deployment, Security & Access, Testing & Monitoring, Human Oversight, and Compliance & Audit. Use when the user asks to set up AI governance, audit their AI program, create AI policy, or assess readiness for enterprise AI at scale. Three postures: ADOPT (build responsibly), DEFEND (test and protect), GOVERN (authorize and oversee).'
 ---
 
 # 6 Layers for Enterprise AI Governance

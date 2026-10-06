@@ -1,6 +1,6 @@
 ---
 description: Do a task, then have a fresh subagent verify and flag holes, loop to clean
-argument-hint: [TASK], [GOAL]
+argument-hint: '[TASK], [GOAL]'
 ---
 
 Do [TASK], then spin up a fresh subagent to verify it against [GOAL] and flag every hole. Fix them and re-verify. Repeat until it passes clean, then show what changed.

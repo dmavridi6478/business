@@ -1,6 +1,6 @@
 ---
 name: 6-free-dev-tools
-description: Six free developer productivity tools — GitIngest (repo→AI context), GitDiagram (repo→architecture diagram), repomix (pack repo for LLM), transform.tools (code/data format converter), pglite (in-browser Postgres), and DevToys (offline Swiss Army knife for developers). Use when building LLM coding workflows, doing codebase analysis, or outfitting a dev environment. Source: @swblessed carousel.
+description: 'Six free developer productivity tools — GitIngest (repo→AI context), GitDiagram (repo→architecture diagram), repomix (pack repo for LLM), transform.tools (code/data format converter), pglite (in-browser Postgres), and DevToys (offline Swiss Army knife for developers). Use when building LLM coding workflows, doing codebase analysis, or outfitting a dev environment. Source: @swblessed carousel.'
 ---
 
 # 6 Free Developer Tools

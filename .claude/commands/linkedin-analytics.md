@@ -1,6 +1,6 @@
 ---
 description: Diagnose pasted LinkedIn analytics (profile or post level) with the 12-metric reading guide and give next-week content moves
-argument-hint: <paste metrics or attach a screenshot; say your goal: followers, leads, job search>
+argument-hint: '<paste metrics or attach a screenshot; say your goal: followers, leads, job search>'
 ---
 
 Use the skill `linkedin-analytics-reader`. Input: "$ARGUMENTS".

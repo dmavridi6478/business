@@ -1,6 +1,6 @@
 ---
 description: Produce a build sheet for one of the 8 AI automation blueprints (voice agent, lead gen, UGC spy, faceless video, content agent, FAQ bot, YouTube ideas, avatar) on n8n or Make.com
-argument-hint: [blueprint number or name] [n8n | make]
+argument-hint: '[blueprint number or name] [n8n | make]'
 ---
 
 Use the `ai-automation-blueprints` skill. Build target: "$ARGUMENTS".

@@ -1,6 +1,6 @@
 ---
 name: customer-faq-responder
-description: Build a grounded customer FAQ responder that answers support questions strictly from provided documentation — no hallucination, no guessing. Use when the user wants to create a support bot prompt, draft FAQ answers from product docs, or build a Claude-powered customer support workflow that stays within the boundaries of what's documented. Source: @ai_slacker "25 Powerful AI Skills, Agents & Automations You Can Build Today."
+description: 'Build a grounded customer FAQ responder that answers support questions strictly from provided documentation — no hallucination, no guessing. Use when the user wants to create a support bot prompt, draft FAQ answers from product docs, or build a Claude-powered customer support workflow that stays within the boundaries of what''s documented. Source: @ai_slacker "25 Powerful AI Skills, Agents & Automations You Can Build Today."'
 ---
 
 # Customer FAQ Auto-Responder

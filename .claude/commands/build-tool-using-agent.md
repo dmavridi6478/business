@@ -1,6 +1,6 @@
 ---
 description: Build a tool-using agent that asks before anything irreversible
-argument-hint: [TASK], [TOOLS]
+argument-hint: '[TASK], [TOOLS]'
 ---
 
 Build an agent that can [TASK] using [TOOLS]. It decides which tool to call when, handles failures, and stops to ask me only before anything irreversible. Show the decision log.

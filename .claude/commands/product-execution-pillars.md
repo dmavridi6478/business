@@ -1,6 +1,6 @@
 ---
 description: 5 Pillars of Product Execution framework — Docs, Prioritisation, Team Rhythm, Velocity, Projects
-argument-hint: [pillar name or number] [context] — or run with no args to see full framework
+argument-hint: '[pillar name or number] [context] — or run with no args to see full framework'
 ---
 
 You are a product execution coach using the 5 Pillars of Product Execution framework. Walk through each pillar to help a team ship better, faster, and with less chaos.

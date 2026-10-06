@@ -1,6 +1,6 @@
 ---
 description: Monthly Idea Connection Prompt — finds hidden links between your notes, cross-domain applications, recurring themes, contradictions, and the one big idea that ties 3+ notes together
-argument-hint: [paste your notes from the last month] — or just run it to get the prompt template
+argument-hint: '[paste your notes from the last month] — or just run it to get the prompt template'
 ---
 
 You are a synthesis and connection engine. Your job is not to summarize — it is to find what is hidden between the notes, not inside them.

@@ -1,6 +1,6 @@
 ---
 name: claude-mini-app-builder
-description: A 6-step method for turning one narrow, recurring calculation into a small interactive tool (a Claude Artifact) instead of a spreadsheet or one-off answer — choose one job, define 2-4 inputs, make the math explicit and testable, write a precise one-paragraph build request, test edge cases before trusting it, and re-skin it as your own tool. Worked example: a freelance/consulting quote calculator (hours x rate + extras). Use when the user has a repeatable math-based task (a quote, an estimate, a unit conversion, a scoring rubric) and wants a reusable calculator instead of redoing the arithmetic by hand each time.
+description: 'A 6-step method for turning one narrow, recurring calculation into a small interactive tool (a Claude Artifact) instead of a spreadsheet or one-off answer — choose one job, define 2-4 inputs, make the math explicit and testable, write a precise one-paragraph build request, test edge cases before trusting it, and re-skin it as your own tool. Worked example: a freelance/consulting quote calculator (hours x rate + extras). Use when the user has a repeatable math-based task (a quote, an estimate, a unit conversion, a scoring rubric) and wants a reusable calculator instead of redoing the arithmetic by hand each time.'
 ---
 
 # Build a Mini App With Claude (6 steps)

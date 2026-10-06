@@ -1,6 +1,6 @@
 ---
 name: 250-open-source-agents
-description: Curated map of 250+ open-source AI agents organised by category — coding, research, web browsing, data, DevOps, finance, and more. Use when scoping which agent framework or reference implementation to study before building a new autonomous agent, or to discover existing agents that already solve the problem at hand. Source: @theromanknox.
+description: 'Curated map of 250+ open-source AI agents organised by category — coding, research, web browsing, data, DevOps, finance, and more. Use when scoping which agent framework or reference implementation to study before building a new autonomous agent, or to discover existing agents that already solve the problem at hand. Source: @theromanknox.'
 ---
 
 # 250 Open Source Agents — Category Map

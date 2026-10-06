@@ -1,6 +1,6 @@
 ---
 description: Build a pipeline from input to destination with retries and logging
-argument-hint: [INPUT], [STEPS], [DESTINATION]
+argument-hint: '[INPUT], [STEPS], [DESTINATION]'
 ---
 
 Build a pipeline that takes [INPUT], runs it through [STEPS], and drops the result in [DESTINATION] with no hand-holding. Handle edge cases, retry failures, log each run.

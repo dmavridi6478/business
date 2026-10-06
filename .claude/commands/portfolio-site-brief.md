@@ -1,6 +1,6 @@
 ---
 description: Turn "build me a portfolio" into a real Claude Code brief — purpose, content, design, stack, function, constraints (@futurewithai.dev)
-argument-hint: [who the site is for] [what you do]
+argument-hint: '[who the site is for] [what you do]'
 ---
 
 "Build me a portfolio" is not a good prompt. Before writing any code, fill in this 6-part brief with the user — ask for whichever fields aren't given in "$ARGUMENTS" rather than inventing them — then hand the completed brief to Claude Code as the actual build instruction.

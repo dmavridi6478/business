@@ -1,6 +1,6 @@
 ---
 description: Compare options for a goal, pressure-testing every marketing claim
-argument-hint: [OPTIONS], [GOAL]
+argument-hint: '[OPTIONS], [GOAL]'
 ---
 
 Compare [OPTIONS] for [GOAL], but pressure-test every marketing claim against real evidence. Score them on what actually matters to me, name the pick, and the condition that flips it.

@@ -1,6 +1,6 @@
 ---
 name: meeting-notes-processor
-description: Turn raw meeting transcripts, voice notes, or messy bullet-point notes into structured meeting summaries with decisions, action items, owners, and deadlines. Use when the user pastes a call transcript, meeting notes, or audio transcription and needs a clean, shareable summary. Source: @ai_slacker "25 Powerful AI Skills, Agents & Automations You Can Build Today."
+description: 'Turn raw meeting transcripts, voice notes, or messy bullet-point notes into structured meeting summaries with decisions, action items, owners, and deadlines. Use when the user pastes a call transcript, meeting notes, or audio transcription and needs a clean, shareable summary. Source: @ai_slacker "25 Powerful AI Skills, Agents & Automations You Can Build Today."'
 ---
 
 # Meeting Notes Processor

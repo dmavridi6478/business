@@ -1,6 +1,6 @@
 ---
 description: Set up an unattended scheduled routine with a stop condition
-argument-hint: [TASK], [SCHEDULE]
+argument-hint: '[TASK], [SCHEDULE]'
 ---
 
 Set up a routine that runs [TASK] on [SCHEDULE] without me: what it checks, what it produces, where it saves, and the one condition that makes it stop and ping me.

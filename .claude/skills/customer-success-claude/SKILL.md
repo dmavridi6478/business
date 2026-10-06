@@ -1,6 +1,6 @@
 ---
 name: customer-success-claude
-description: Claude prompt library for Customer Success Managers — QBRs, churn analysis, onboarding, escalations, renewal emails, health scoring, and success plans. Use when the user is a CSM or works in customer success, asks to draft customer-facing content, or runs /cs-qbr, /cs-churn, /cs-onboarding, /cs-escalation, /cs-renewal, /cs-health, /cs-upsell. Source: Stan Mykhalchuk / Jason AI by Reply.
+description: 'Claude prompt library for Customer Success Managers — QBRs, churn analysis, onboarding, escalations, renewal emails, health scoring, and success plans. Use when the user is a CSM or works in customer success, asks to draft customer-facing content, or runs /cs-qbr, /cs-churn, /cs-onboarding, /cs-escalation, /cs-renewal, /cs-health, /cs-upsell. Source: Stan Mykhalchuk / Jason AI by Reply.'
 ---
 
 # Customer Success × Claude — Prompt Library

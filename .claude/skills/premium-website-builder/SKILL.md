@@ -1,6 +1,6 @@
 ---
 name: premium-website-builder
-description: Design and spec modern, conversion-focused landing pages and business websites — including copy, section structure, visual hierarchy, CTA placement, and social proof strategy. Use when the user wants to build or redesign a website, needs a landing page for a product/service/offer, or wants a complete page brief to hand to a developer or feed into a no-code builder (Webflow, Framer, Instatic, Carrd). Outputs a full page spec with copy and design direction, not raw HTML. Source: @the.wealth.lab "6 Favorite Claude Skills That Automate Almost Anything."
+description: 'Design and spec modern, conversion-focused landing pages and business websites — including copy, section structure, visual hierarchy, CTA placement, and social proof strategy. Use when the user wants to build or redesign a website, needs a landing page for a product/service/offer, or wants a complete page brief to hand to a developer or feed into a no-code builder (Webflow, Framer, Instatic, Carrd). Outputs a full page spec with copy and design direction, not raw HTML. Source: @the.wealth.lab "6 Favorite Claude Skills That Automate Almost Anything."'
 ---
 
 # Premium Website Builder

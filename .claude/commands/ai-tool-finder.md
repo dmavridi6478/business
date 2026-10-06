@@ -1,6 +1,6 @@
 ---
-description: Curated AI & productivity tool finder — 250+ tools organized by use case: video, images, website builders, PDFs, infographics, writing, learning, automation, voice, data viz, and more. Run with a category or task to get the best options.
-argument-hint: [use case or category] — e.g. "video creation", "website builder", "infographics", "PDF tools", "learning" — or run with no args for the full directory
+description: 'Curated AI & productivity tool finder — 250+ tools organized by use case: video, images, website builders, PDFs, infographics, writing, learning, automation, voice, data viz, and more. Run with a category or task to get the best options.'
+argument-hint: '[use case or category] — e.g. "video creation", "website builder", "infographics", "PDF tools", "learning" — or run with no args for the full directory'
 ---
 
 You are a productivity and AI tool advisor. When a use case or category is given, return the best 3–5 tools for it with a one-line description of each. When no argument is given, display the full categorized directory.

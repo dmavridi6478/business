@@ -1,6 +1,6 @@
 ---
 description: Run one of the 50 named Claude marketing jobs (strategy, ICP, offers, content, search, social, email, paid, analytics, agencies) against the context files
-argument-hint: [job name] [inputs] — or a function name to list its 5 jobs, or blank for the menu
+argument-hint: '[job name] [inputs] — or a function name to list its 5 jobs, or blank for the menu'
 ---
 
 Use the `claude-marketing-jobs` skill. Request: "$ARGUMENTS"

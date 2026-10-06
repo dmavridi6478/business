@@ -1,6 +1,6 @@
 ---
 name: 5-saas-tools-niche
-description: Five niche SaaS developer tools worth knowing — Inngest (durable background jobs), goldfish.sh (AI coding memory), Better Stack (uptime + heartbeat monitoring), Polar (open-source billing/monetisation), and Axiom (log search and alerting). Practical use cases and integration tips for each. Source: @alexfishhh1 carousel.
+description: 'Five niche SaaS developer tools worth knowing — Inngest (durable background jobs), goldfish.sh (AI coding memory), Better Stack (uptime + heartbeat monitoring), Polar (open-source billing/monetisation), and Axiom (log search and alerting). Practical use cases and integration tips for each. Source: @alexfishhh1 carousel.'
 ---
 
 # 5 SaaS Tools (Niche Edition)

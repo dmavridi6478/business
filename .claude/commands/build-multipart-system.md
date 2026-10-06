@@ -1,6 +1,6 @@
 ---
 description: Build a system with N connected parts for a goal
-argument-hint: [N], [GOAL]
+argument-hint: '[N], [GOAL]'
 ---
 
 Build a system with [N] connected parts for [GOAL]. Hold the whole thing in your head, build each part so they fit, and wire them together without losing the plot halfway.

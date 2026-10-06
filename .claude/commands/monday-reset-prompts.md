@@ -1,6 +1,6 @@
 ---
 description: 4 prompts to reset before the week gets away from you — triage last week, break down the task you're avoiding, prep every meeting, read relationship signals (@will.ai.m)
-argument-hint: [triage | unstick | meeting-prep | relationship-read] [context]
+argument-hint: '[triage | unstick | meeting-prep | relationship-read] [context]'
 ---
 
 You are running @will.ai.m's "4 prompts to make Monday morning actually manageable." Each one uses a fixed persona and a strict output format — don't soften the rules when running these.

@@ -1,6 +1,6 @@
 ---
 name: chatgpt-astra-cheatsheet
-description: Cheat sheet for ChatGPT 6 Astra — key capabilities, prompt patterns, and use cases for the multimodal, agentic version of ChatGPT. Use when onboarding to Astra's real-time voice, vision, and computer-use features, or when designing prompts that leverage live context from camera/screen. Source: @51ultron.
+description: 'Cheat sheet for ChatGPT 6 Astra — key capabilities, prompt patterns, and use cases for the multimodal, agentic version of ChatGPT. Use when onboarding to Astra''s real-time voice, vision, and computer-use features, or when designing prompts that leverage live context from camera/screen. Source: @51ultron.'
 ---
 
 # ChatGPT 6 Astra — Cheat Sheet

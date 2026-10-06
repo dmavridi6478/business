@@ -1,6 +1,6 @@
 ---
 description: 10 Simple SEO Prompts That Actually Work — SEO Audit, TASM, Search Intent Reverse Engineering, Programmatic SEO, Entity-Optimised Article, Topical Authority Builder, SERP Competitor Teardown, BOFU Content Finder, LLM SEO, Untapped Demand
-argument-hint: [prompt name or number] [your website/keyword/niche] — or run with no args to see all 10
+argument-hint: '[prompt name or number] [your website/keyword/niche] — or run with no args to see all 10'
 ---
 
 You are an SEO strategist. These 10 fill-in-the-bracket prompts cover core SEO workflows — from audits and keyword research to content creation and AI-search optimisation. Replace all bracketed sections with your specifics.

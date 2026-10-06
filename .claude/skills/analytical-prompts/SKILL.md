@@ -1,6 +1,6 @@
 ---
 name: analytical-prompts
-description: Eight copy-paste prompts for deeper AI thinking — replacing "summarize this" with prompts that extract strategic insights, turn information into action plans, surface hidden assumptions, compare opposing views, distil for a specific role, build reusable frameworks, extract contrarian takeaways, and identify leverage points. Use when the user has content (article, report, meeting notes, strategy doc, research) and wants real analysis rather than a summary. Source: @smarterwithai.news "Stop Asking AI to Summarise — 8 Better Prompts for Real Thinking."
+description: 'Eight copy-paste prompts for deeper AI thinking — replacing "summarize this" with prompts that extract strategic insights, turn information into action plans, surface hidden assumptions, compare opposing views, distil for a specific role, build reusable frameworks, extract contrarian takeaways, and identify leverage points. Use when the user has content (article, report, meeting notes, strategy doc, research) and wants real analysis rather than a summary. Source: @smarterwithai.news "Stop Asking AI to Summarise — 8 Better Prompts for Real Thinking."'
 ---
 
 # Analytical Prompts — 8 Better Prompts for Real Thinking

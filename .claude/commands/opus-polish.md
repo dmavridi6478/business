@@ -1,5 +1,5 @@
 ---
-description: Polish a prompt for the current Opus model: explicit goal, context, constraints, output format, and how to check the work
+description: 'Polish a prompt for the current Opus model: explicit goal, context, constraints, output format, and how to check the work'
 argument-hint: <paste the prompt to polish>
 ---
 

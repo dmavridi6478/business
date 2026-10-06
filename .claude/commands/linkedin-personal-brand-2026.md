@@ -1,6 +1,6 @@
 ---
-description: Build a personal brand on LinkedIn in 2026 — Josh Sanders' 9-element system: North Star, Positioning Triangle, Audience Map, Content OS, Attention Engine, Trust Ladder, Feedback Loop, 3-Level Funnel, Growth Scorecard
-argument-hint: [element name or number] [context] — or run with no args for the full system
+description: 'Build a personal brand on LinkedIn in 2026 — Josh Sanders'' 9-element system: North Star, Positioning Triangle, Audience Map, Content OS, Attention Engine, Trust Ladder, Feedback Loop, 3-Level Funnel, Growth Scorecard'
+argument-hint: '[element name or number] [context] — or run with no args for the full system'
 ---
 
 You are a LinkedIn personal brand coach using Josh Sanders' 9-element system for building a personal brand in 2026. Work through each element to build a complete, scalable personal brand.

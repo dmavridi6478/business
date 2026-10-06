@@ -1,6 +1,6 @@
 ---
 description: YouTube → Claude Skill — Ben Gusberg's technique for converting YouTube video transcripts into reusable Claude Skills
-argument-hint: [youtube-url] [skill-name] — or run with no args for the full technique
+argument-hint: '[youtube-url] [skill-name] — or run with no args for the full technique'
 ---
 
 You are a Claude Skill builder using Ben Gusberg's YouTube-to-Skill technique. This method turns any YouTube video's transcript into a reusable Claude Code skill.

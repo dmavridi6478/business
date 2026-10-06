@@ -1,6 +1,6 @@
 ---
 name: softgirlnocode-ai-video
-description: AI video editing workflow using Codex (AI agent), HyperFrames (code-to-video library), and ElevenLabs (speech transcription). Four techniques — Reference, Context, Catalog, Tools — for directing Codex to produce precisely styled video edits without manual timeline work. Source: @softgirlnocode on TikTok.
+description: 'AI video editing workflow using Codex (AI agent), HyperFrames (code-to-video library), and ElevenLabs (speech transcription). Four techniques — Reference, Context, Catalog, Tools — for directing Codex to produce precisely styled video edits without manual timeline work. Source: @softgirlnocode on TikTok.'
 ---
 
 ## What this skill covers

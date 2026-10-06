@@ -1,6 +1,6 @@
 ---
 description: Score marketing adaptability across Signal, Decision, Experiment, Adoption and Learning, find the bottleneck stage, and propose one mechanism to fix it
-argument-hint: [period, e.g. "Q3 2026"] [optional: team or market]
+argument-hint: '[period, e.g. "Q3 2026"] [optional: team or market]'
 ---
 
 Use the `marketing-adaptability-score` skill. Period: "$ARGUMENTS"

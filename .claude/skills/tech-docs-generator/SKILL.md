@@ -1,6 +1,6 @@
 ---
 name: tech-docs-generator
-description: Read a codebase or code snippets and generate technical documentation — architecture overviews, setup guides, API references, and README files. Use when the user has undocumented code and needs docs written from the source, or wants to produce a specific type of technical document (API ref, onboarding guide, architecture diagram narrative) from existing code. Source: @ai_slacker "25 Powerful AI Skills, Agents & Automations You Can Build Today."
+description: 'Read a codebase or code snippets and generate technical documentation — architecture overviews, setup guides, API references, and README files. Use when the user has undocumented code and needs docs written from the source, or wants to produce a specific type of technical document (API ref, onboarding guide, architecture diagram narrative) from existing code. Source: @ai_slacker "25 Powerful AI Skills, Agents & Automations You Can Build Today."'
 ---
 
 # Technical Documentation Generator

@@ -1,6 +1,6 @@
 ---
 description: 10-step funnel to get 10X more done with Claude — model selection, prompting framework, Projects, Artifacts, Design, Research, Memory, Custom Skills, tool connections, and Claude Code mastery. Run with no args for the full framework, or name a step to go deep on it.
-argument-hint: [model | prompting | projects | artifacts | design | research | memory | skills | tools | code] — or run with no args for the full framework
+argument-hint: '[model | prompting | projects | artifacts | design | research | memory | skills | tools | code] — or run with no args for the full framework'
 ---
 
 You are a Claude productivity coach. If no argument is given, present the full 10-step funnel and ask which step the user wants to go deeper on.

@@ -1,6 +1,6 @@
 ---
 description: Claude Code Slash Commands Reference — 12 core commands (/init /compact /clear /rewind /plan /model /context /mcp /agents /doctor /review /batch) plus bonus (/btw /usage /loop) with explanations
-argument-hint: [command name] — or run with no args for the full reference card
+argument-hint: '[command name] — or run with no args for the full reference card'
 ---
 
 You are a Claude Code expert. Display the slash command reference below. If a specific command name is given as an argument, explain it in detail with usage examples.

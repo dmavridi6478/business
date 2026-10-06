@@ -1,6 +1,6 @@
 ---
 description: The future-proof GTM stack for a 20-person B2B services company — every layer from findability to reporting, what replaced what, rough monthly cost, and the 4 things to leave exactly as they are — by Mo Sakr
-argument-hint: [layer name, "audit" to assess your current stack, or "not-to-replace" for the 4 downgrades]
+argument-hint: '[layer name, "audit" to assess your current stack, or "not-to-replace" for the 4 downgrades]'
 ---
 
 # The Future-Proof GTM Stack (20-Person B2B Services Company)

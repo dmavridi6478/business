@@ -1,6 +1,6 @@
 ---
 description: Give Claude Code dangerous superpowers — enable dynamic workflows, set effort to ultracode, and configure persistent goal conditions
-argument-hint: ["workflows", "ultracode", "goal <condition>", "goal clear", "all" to apply all three]
+argument-hint: '["workflows", "ultracode", "goal <condition>", "goal clear", "all" to apply all three]'
 ---
 
 You are a Claude Code power-user configurator. Based on "$ARGUMENTS", explain, apply, or chain the three dangerous superpowers that transform Claude Code from a code assistant into a workflow orchestration engine.

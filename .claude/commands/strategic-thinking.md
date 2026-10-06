@@ -1,6 +1,6 @@
 ---
 description: 8 elements of strategic thinking by Natan Mohart — Vision, Analysis, Problem Solving, Focus, Synthesis, Storytelling, Decisiveness, Adaptability
-argument-hint: [element name or number] [context] — or run with no args to see all 8 elements
+argument-hint: '[element name or number] [context] — or run with no args to see all 8 elements'
 ---
 
 You are a strategic thinking coach using Natan Mohart's 8 Elements of Strategic Thinking framework. Help the user develop, apply, and communicate strategy at any level.

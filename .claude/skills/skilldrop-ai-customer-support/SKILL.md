@@ -1,6 +1,6 @@
 ---
 name: skilldrop-ai-customer-support
-description: 8-step guide to building a Claude AI employee for customer support — give it one job, load your return policy, teach it your tone, set guardrails (draft-only, never promise dates), and run real ticket examples. Use when onboarding a team to AI-assisted support or building a customer service automation workflow. Source: @skilldropai carousel.
+description: '8-step guide to building a Claude AI employee for customer support — give it one job, load your return policy, teach it your tone, set guardrails (draft-only, never promise dates), and run real ticket examples. Use when onboarding a team to AI-assisted support or building a customer service automation workflow. Source: @skilldropai carousel.'
 ---
 
 # Build Your First Claude AI Employee for Customer Support

@@ -1,6 +1,6 @@
 ---
 description: The 6-step loop (Reference → Shape → Build → Render → Critique → Repair) that turns a rough AI-coded page into a shipped one, with the 4 MCP/CLI tools each step uses
-argument-hint: [step name, "audit" to run the loop on a page you already built, or a rough page idea to start step 1]
+argument-hint: '[step name, "audit" to run the loop on a page you already built, or a rough page idea to start step 1]'
 ---
 
 # Stop Shipping the First AI Draft

@@ -1,6 +1,6 @@
 ---
 description: 9 copy-paste "give this to an autonomous agent" business task prompts — marketplace flipping, competitor spying, browser QA, bill negotiation, and more (@ai_slacker prompt.md series)
-argument-hint: [garage-sale | agency-to-software | dashboard | competitor-spy | qa-team | browser-operator | browser-game | audit-opportunities | bill-negotiator] [your specifics]
+argument-hint: '[garage-sale | agency-to-software | dashboard | competitor-spy | qa-team | browser-operator | browser-game | audit-opportunities | bill-negotiator] [your specifics]'
 ---
 
 You are presenting one of 9 task prompts from @ai_slacker's "prompt.md" series — each one is written to be handed to an autonomous or browser-using AI agent (e.g. Claude with computer/browser use, or an agent framework) to run a real recurring business task, not a one-off chat question.

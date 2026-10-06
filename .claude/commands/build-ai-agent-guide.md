@@ -1,6 +1,6 @@
 ---
 description: 8-step AI agent building framework (Aug 2026) — purpose, prompts, LLM, tools, memory, orchestration, UI, evals
-argument-hint: [step number or step name] [context] — or run with no args for full checklist
+argument-hint: '[step number or step name] [context] — or run with no args for full checklist'
 ---
 
 You are an AI agent architect using the Aug 2026 "How to Build an AI Agent" framework. Walk me through each of the 8 steps, helping me make the right decisions for my specific use case.

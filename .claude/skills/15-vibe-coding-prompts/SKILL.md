@@ -1,6 +1,6 @@
 ---
 name: 15-vibe-coding-prompts
-description: 15 high-leverage Claude Code prompts for full-stack vibe coding — from writing a PRD and CLAUDE.md through Ultra Plan Mode, spec-driven development, UI/UX briefs, MCP server wiring, database connection, security auditing, debugging, E2E testing, dead code cleanup, git commits, hooks as guardrails, and turning a task into a reusable skill. Use these as templates to get consistent, structured outputs from Claude Code on every project. Source: @your_ai_mentor.
+description: '15 high-leverage Claude Code prompts for full-stack vibe coding — from writing a PRD and CLAUDE.md through Ultra Plan Mode, spec-driven development, UI/UX briefs, MCP server wiring, database connection, security auditing, debugging, E2E testing, dead code cleanup, git commits, hooks as guardrails, and turning a task into a reusable skill. Use these as templates to get consistent, structured outputs from Claude Code on every project. Source: @your_ai_mentor.'
 ---
 
 # 15 Vibe Coding Prompts for Claude Code

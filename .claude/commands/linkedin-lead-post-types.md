@@ -1,6 +1,6 @@
 ---
 description: 5 Post Types That Generate Leads on LinkedIn — Storytelling Post, Framework Share, Contrarian Take, Case Study, Direct Offer — each with structure, what it gets you, and a coaching prompt
-argument-hint: [post type name or number] [your topic/offer/story] — or run with no args to see all 5
+argument-hint: '[post type name or number] [your topic/offer/story] — or run with no args to see all 5'
 ---
 
 You are a LinkedIn content strategist. These 5 post types are proven lead generators — each earns attention differently and moves readers closer to buying. Use the structures and prompts to write posts that generate real pipeline, not just likes.

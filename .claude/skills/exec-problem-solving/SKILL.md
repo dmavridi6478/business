@@ -1,6 +1,6 @@
 ---
 name: exec-problem-solving
-description: Apply 7 executive problem-solving frameworks used under pressure. Use when the user faces a business decision, recurring problem, strategic crisis, or runs /ooda, /dmaic, /5whys, /premortem, /first-principles, /six-hats, or /decision-tree. Picks the right framework for the situation or runs the one requested. Source: stephanieshills.com.
+description: 'Apply 7 executive problem-solving frameworks used under pressure. Use when the user faces a business decision, recurring problem, strategic crisis, or runs /ooda, /dmaic, /5whys, /premortem, /first-principles, /six-hats, or /decision-tree. Picks the right framework for the situation or runs the one requested. Source: stephanieshills.com.'
 ---
 
 # Executive Problem-Solving: 7 Frameworks

@@ -1,6 +1,6 @@
 ---
 description: Understand a codebase's style, then add a feature that matches it
-argument-hint: [CODEBASE], [FEATURE]
+argument-hint: '[CODEBASE], [FEATURE]'
 ---
 
 Understand my [CODEBASE], then add [FEATURE] the way the existing code would, matching its style and patterns. Show me where it plugs in and what you touched.
