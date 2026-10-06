@@ -1,5 +1,5 @@
 ---
-description: Find bugs
+description: 'Review code for bugs such as incorrect logic, off-by-one errors, unhandled edge cases and race conditions, with the specific failure scenario for each.'
 argument-hint: [code or file to review]
 ---
 

@@ -1,5 +1,5 @@
 ---
-description: LinkedIn post
+description: 'Write a quick LinkedIn post on a topic or draft. For thought-leadership or reach-focused posts, use the linkedin-post-engine or linkedin-virality-playbook skill instead.'
 argument-hint: [topic or draft]
 ---
 

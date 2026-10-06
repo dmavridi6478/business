@@ -1,5 +1,5 @@
 ---
-description: Weekly review
+description: 'Run a weekly review: what worked, what did not and what changes next week.'
 argument-hint: [week's context]
 ---
 

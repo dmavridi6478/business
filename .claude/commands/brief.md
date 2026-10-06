@@ -1,5 +1,5 @@
 ---
-description: 3-5 lines max
+description: 'Answer a question or task in 3 to 5 lines at most.'
 argument-hint: [question or task]
 ---
 

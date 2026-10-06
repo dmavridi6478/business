@@ -1,5 +1,5 @@
 ---
-description: Time blocking
+description: 'Build a time-blocked schedule for your goals or tasks.'
 argument-hint: [goals or tasks]
 ---
 

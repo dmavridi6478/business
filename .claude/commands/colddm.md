@@ -1,5 +1,5 @@
 ---
-description: Cold outreach
+description: 'Write a cold outreach message for an offer and target. For a full sequence with follow-ups, use the outreach-execution skill instead.'
 argument-hint: [offer and target]
 ---
 

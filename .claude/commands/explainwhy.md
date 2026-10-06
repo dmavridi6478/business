@@ -1,5 +1,5 @@
 ---
-description: Reasoning
+description: 'Explain the reasoning behind a claim or concept: why it is true or works that way, not just what it is.'
 argument-hint: [claim or concept]
 ---
 

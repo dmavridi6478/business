@@ -1,5 +1,5 @@
 ---
-description: Revenue ideas
+description: 'Generate monetisation and revenue ideas for an asset or audience.'
 argument-hint: [asset or audience]
 ---
 

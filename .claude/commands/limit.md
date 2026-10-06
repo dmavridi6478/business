@@ -1,5 +1,5 @@
 ---
-description: Limit words
+description: 'Answer within a specific word limit, asking for the limit if none was given.'
 argument-hint: [text and word limit]
 ---
 

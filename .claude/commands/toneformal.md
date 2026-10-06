@@ -1,5 +1,5 @@
 ---
-description: Formal tone
+description: 'Rewrite text in a formal tone.'
 argument-hint: [text to rewrite]
 ---
 

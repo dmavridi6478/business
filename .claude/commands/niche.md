@@ -1,5 +1,5 @@
 ---
-description: Niche clarity
+description: 'Clarify a specific, ownable niche from your interests or expertise.'
 argument-hint: [interests or expertise]
 ---
 

@@ -1,5 +1,5 @@
 ---
-description: Project ideas
+description: 'Suggest portfolio project ideas that demonstrate the skills needed for a role.'
 argument-hint: [role or skill to demonstrate]
 ---
 

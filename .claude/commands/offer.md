@@ -1,5 +1,5 @@
 ---
-description: Offer creation
+description: 'Design a priced offer for a skill or product that sells an outcome, not a list of deliverables.'
 argument-hint: [skill or product]
 ---
 

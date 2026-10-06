@@ -1,5 +1,5 @@
 ---
-description: Habit building
+description: 'Design a habit-building plan with trigger, routine, reward and a way to track it.'
 argument-hint: [habit to build]
 ---
 

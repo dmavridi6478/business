@@ -1,5 +1,5 @@
 ---
-description: Sales pitch
+description: 'Write a sales pitch for a product or offer.'
 argument-hint: [product or offer]
 ---
 

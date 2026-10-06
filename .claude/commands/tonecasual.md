@@ -1,5 +1,5 @@
 ---
-description: Casual tone
+description: 'Rewrite text in a casual tone.'
 argument-hint: [text to rewrite]
 ---
 

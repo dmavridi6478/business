@@ -1,5 +1,5 @@
 ---
-description: Expert tone
+description: 'Rewrite text in an expert, authoritative tone backed by specifics rather than generic confidence.'
 argument-hint: [content to rewrite]
 ---
 
