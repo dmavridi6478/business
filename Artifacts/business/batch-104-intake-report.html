@@ -75,7 +75,7 @@
       <li><span class="conf">Certain</span> The archives contain no installable agents, no prompt files and no connector configuration. They are 46 screenshots and one video. The five agent graphics (100 LinkedIn, 200 GTM, 100 lead generation, Revenue System 45, Prosp 200) list <em>names only</em>; each ends with &ldquo;comment X for free access&rdquo;, and the prompts sit behind that gate. Every prompt in this repository for those agents was written here.</li>
       <li><span class="conf">Certain</span> Two repository cards misdescribe their repositories. The card for Magnitude calls it a time-series database; its GitHub page describes an inference engine. The card for paperclip calls it a chat-with-documents tool; the repository is an agent-orchestration platform. Card star counts are also stale (open-seo: 3.7k on the card, about 22.5k now).</li>
       <li><span class="conf">Likely</span> A catalogue of 200 agents is a marketing format, not a capability. Most tasks need one or two roles, which is why this batch builds ten department agents and one lookup skill instead of 400 near-empty agent files.</li>
-      <li><span class="conf">Certain</span> Two actions were blocked by the session&rsquo;s auto-mode classifier and are not done: registering the Vercel MCP server in <code>.mcp.json</code>, and writing <code>scripts/batch104-install.sh</code>. Both are reproduced in section 8 for your approval.</li>
+      <li><span class="conf">Certain</span> Two actions were first blocked by the session&rsquo;s auto-mode classifier, then approved by you and completed: the Vercel MCP entry in <code>.mcp.json</code> and <code>scripts/batch104-install.sh</code>. Section 8 shows how to use them.</li>
       <li><span class="conf">Certain</span> No connector could be authorised. OAuth cannot run in a non-interactive cloud session. Section 5 lists what is connected and what you must reconnect.</li>
     </ul>
   </div>
@@ -213,8 +213,8 @@
 </section>
 
 <section aria-labelledby="h-pending">
-  <h2 id="h-pending">8. Awaiting your approval</h2>
-  <p>These two actions were blocked by the session classifier, which gave no reason. They were not retried by another route. You can run them yourself or tell me to proceed.</p>
+  <h2 id="h-pending">8. Vercel sign-in and install steps</h2>
+  <p>Vercel is registered in <code>.mcp.json</code>; run <code>/mcp</code> in Claude Code and sign in (the command below is only needed outside this repository). The install script asks before every step and is run on your machine.</p>
   <h3>Register the Vercel MCP server (official endpoint, OAuth on first use)</h3>
   <div class="prompt"><pre id="c1">claude mcp add --transport http vercel https://mcp.vercel.com</pre><button type="button" data-copy="c1">Copy</button></div>
   <h3>Clone for reading and install the repositories&rsquo; own skills (run on your machine; shallow clones, nothing piped into a shell)</h3>
@@ -235,7 +235,7 @@ python3 scripts/ml/deep_spirals.py</pre><button type="button" data-copy="c2">Cop
     <li><span class="conf">Certain</span> The 16-line network from the video, run on a spiral dataset written for this repository, classified 200 of 200 unseen points and 400 of 400 training points in about 1.5 seconds. The video&rsquo;s own dataset module was not shown, so the dataset is not the original.</li>
     <li><span class="conf">Likely</span> Agent names were read from images of about 800 pixels. A word may differ from the original. GTM-200 has 199 names (one missing in category 09). The Prosp 200 agent names were too small to read.</li>
     <li><span class="conf">Likely</span> Repository facts come from GitHub pages read through a summarising fetch tool. Stars change daily. Giskard&rsquo;s entry point and Paseo&rsquo;s licence were not read from the repository itself.</li>
-    <li><span class="conf">Guessing</span> That the classifier objected to the <code>.mcp.json</code> change rather than the script. It gave no reason.</li>
+    
     <li>Personal photos were not committed to the repository, following the attachment-intake procedure.</li>
   </ul>
   <p class="foot">Sources: GitHub repository pages named in section 4; Vercel documentation (vercel.com/docs/agent-resources/vercel-mcp); claude.ai connector registry searches run 6 October 2026.</p>
