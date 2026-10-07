@@ -5906,7 +5906,7 @@ Already in the repo, not duplicated: the @jeanbbttyct 10 app categories (`ai-app
 
 **Sources:** Taplio `claude-skills-for-linkedin.zip` (26 skills); @the.wealth.lab (9 Claude commands), @stackfloai (6 prompts), @earchoe (spreadsheet-to-brief), @aisimplified23 (50 Claude hacks), @usamaakrm (AI Coach, 9 steps), Thomas Krypas (AI systems for SMEs), @will.ai.m (5 free coding agents).
 
-**Staged, not installed** (the cloud session was blocked from writing `.claude/` and `.mcp.json`): 26 LinkedIn skills, 7 new skills, 11 commands, 5 agents in `docs/batch104/install-pack/`; run `scripts/batch104-install.sh` on your machine. **Done:** design themes and cards (`Artifacts/templates/batch104-*`), AI Coach vault scaffold and SQL (`docs/ai-coach/`), `docs/batch104/prompt-pack.md`.
+**Installed** (originally staged in `docs/batch104/install-pack/` because the session could not write `.claude/`; copied into `.claude/` after you authorised it, and Taplio added to `.mcp.json`): 26 LinkedIn skills, 7 new skills, 11 commands, 5 agents. `scripts/batch104-install.sh` remains as an optional installer for another machine. **Done:** design themes and cards (`Artifacts/templates/batch104-*`), AI Coach vault scaffold and SQL (`docs/ai-coach/`), `docs/batch104/prompt-pack.md`.
 
 **Verified:** `anomalyco/opencode` and `sst/opencode` have the identical HEAD commit (same project). Continue's README says 2.0.0 was its final release. OpenHands now installs via `@openhands/agent-canvas`. Taplio MCP is already in the claude.ai org and needs reconnecting.
 
