@@ -23,6 +23,10 @@
         "@playwright/mcp@latest"
       ],
       "env": {}
+    },
+    "taplio": {
+      "type": "http",
+      "url": "https://mcp.taplio.com"
     }
   }
 }
