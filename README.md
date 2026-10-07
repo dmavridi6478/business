@@ -5856,6 +5856,14 @@ Source: `80c9789b-LinkedIn_Master_Guide_for_Claude.zip` — 4 static images (`.j
 
 **Not done:** no connector was installed (see `gtm-funnel-2026` for which GTM tools are already connected here and which are not); no repo was installed; Capd, ChatbotX and alphai-tui owners were found by web search and confirmed with `git ls-remote`. ChatbotX and cmux have custom licences you should read before use.
 
+## Batch 105 - iCloud Photos batch 10 (15 images, 1 video) and 3 inline images (7 October 2026)
+
+**Sources:** @ai_slacker (60 carousels in 60 minutes), @code_debug (5 GitHub profile tools), Sivasankar Natarajan (50+ Claude Code connectors, the video is a still), Eric Partaker (C-level leaders), Chris Donnelly (LinkedIn DM Specialist prompt), a "50 Hormozi Skills for LinkedIn" README card.
+
+**Installed in `.claude/`:** skills `linkedin-dm-specialist`, `carousel-batch-60`, `github-profile-toolkit`, `c-level-roles`, `hormozi-linkedin-50` (catalogue only), `claude-connectors-50`; commands `/dm-specialist`, `/carousel-batch`; agent `linkedin-dm-specialist`; templates `Artifacts/templates/batch105-cards.html`.
+
+**Not done:** the 50 Hormozi skill bodies and the repo are not in the image and a web search did not find the library, so nothing was cloned. Connectors that need sign-in (Supabase, Stripe, Sentry, monday.com, Microsoft 365) must be authorised by you. Taplio now shows as connected.
+
 ## Batch 104 - Taplio LinkedIn skills zip and iCloud Photos batch 9 (58 images) (7 October 2026)
 
 **Report:** [Batch 104 Intake Report](https://claude.ai/artifact/74K99x9wQigzErPSQXuWGW) (`Artifacts/business/batch-104-intake-report.html`).
