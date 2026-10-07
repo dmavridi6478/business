@@ -1,0 +1,66 @@
+<title>Batch 107 Intake Report</title>
+<style>
+/* Layout: single readable column; tables centred and top-aligned per owner preference. Palette: ink on paper, one blue accent. */
+:root{--bg:#f7f7f4;--fg:#1c2230;--muted:#586075;--line:#d9dbe0;--accent:#1f4fd8;--card:#fff;--warn:#9a5b00;--code:#eceef3;--font:Aptos,"Segoe UI",system-ui,sans-serif}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#14171f;--fg:#e8eaf0;--muted:#9aa3b8;--line:#2c3140;--accent:#7da2ff;--card:#1b1f2a;--warn:#e0a54a;--code:#232838;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#14171f;--fg:#e8eaf0;--muted:#9aa3b8;--line:#2c3140;--accent:#7da2ff;--card:#1b1f2a;--warn:#e0a54a;--code:#232838;color-scheme:dark}
+body{background:var(--bg);color:var(--fg);font:11pt/1.5 var(--font);padding-inline:16px;padding-block:24px}
+main{max-width:860px;margin:0 auto;min-width:0}
+h1{font-size:32pt;line-height:1.1;margin:0 0 8px;text-wrap:balance}
+h2{font-size:14pt;margin:28px 0 8px;border-bottom:1px solid var(--line);padding-bottom:4px}
+p,li{max-width:70ch}.muted{color:var(--muted)}.warn{color:var(--warn);font-weight:600}
+.scroll{overflow-x:auto}
+table{border-collapse:collapse;width:100%;font-size:11pt}
+th,td{border:1px solid var(--line);padding:6px 8px;text-align:center;vertical-align:top}
+th{background:var(--code)}
+.prompt{background:var(--card);border:1px solid var(--line);border-radius:6px;padding:10px 12px;margin:8px 0;display:flex;gap:10px;align-items:flex-start}
+.prompt p{margin:0;flex:1;min-width:0;white-space:pre-wrap}
+button{font:inherit;font-size:10pt;border:1px solid var(--accent);background:transparent;color:var(--accent);border-radius:4px;padding:2px 10px;cursor:pointer}
+button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+code{background:var(--code);padding:1px 4px;border-radius:3px;font-size:10pt}
+</style>
+<main>
+<h1>Batch 107 Intake Report</h1>
+<p class="muted">7 October 2026. Source: one inline image, "The 2026 GTM Cheat Sheet" (Jani Vrancsik, Growth Today). Task repeated from Batches 104 to 106.</p>
+<h2>What was in the file</h2>
+<p>Seven panels: SaaS GTM motions, the GTM iceberg, a clear-ICP method, a four-stage AI GTM strategy, five Claude prompts for GTM teams with connectors, AI-first headcount planning, and ten LinkedIn experts to follow.</p>
+<h2>Installed in .claude/</h2>
+<div class="scroll"><table>
+<tr><th>Type</th><th>Name</th><th>Purpose</th></tr>
+<tr><td>Skill</td><td>gtm-cheat-sheet-2026</td><td>Motions, iceberg, headcount, experts</td></tr>
+<tr><td>Skill</td><td>icp-clear-8-blocks</td><td>Eight-block ICP method</td></tr>
+<tr><td>Skill</td><td>ai-gtm-strategy-4-stages</td><td>Four stages, weekly AI rhythm, feedback loop</td></tr>
+<tr><td>Skill</td><td>claude-gtm-team-prompts-5</td><td>Five prompts, connectors, status</td></tr>
+<tr><td>Commands (7)</td><td>/icp-sharpen, /ai-gtm-stage, /gtm-icp-lead-list, /gtm-account-brief, /gtm-pipeline-followup, /gtm-pitch-demo, /gtm-sequence-digest</td><td>Run each step; the last five ask approval before any write</td></tr>
+<tr><td>Agents</td><td>icp-analyst-agent, gtm-weekly-loop-agent</td><td>Analysis and weekly review only</td></tr>
+<tr><td>Template</td><td>Artifacts/templates/batch107-cards.html</td><td>Growth Today look: grid paper, blue highlight</td></tr>
+</table></div>
+<h2>Flags</h2>
+<ul>
+<li>Headcount figures (5.7-month ramp, 45% SDR and 30% AE turnover) are printed on the card without a source.</li>
+<li>Expert handles are too small to read reliably, so only names and focus areas are recorded.</li>
+<li>The five prompts update HubSpot, post to Slack and create calendar links; the commands require approval before each write and never send email.</li>
+<li>Overlaps existing skills (gtm-strategy, gtm-funnel-2026, /icp); new names were used and cross-linked.</li>
+</ul>
+<h2>Connectors the prompts need</h2>
+<div class="scroll"><table>
+<tr><th>State</th><th>Tools</th></tr>
+<tr><td>Connected</td><td>HubSpot, Clay, Notion, Fireflies, Slack, Calendly, Gmail</td></tr>
+<tr><td>You must sign in</td><td>Gong</td></tr>
+</table></div>
+<h2>Prompt (copy)</h2>
+<div id="prompts"></div>
+</main>
+<script>
+const P=[
+"Pull my closed-won companies from HubSpot and find the shared pattern: industry, size, tech stack, triggers. Use Clay to find 300 lookalike accounts with 2-3 verified contacts each, score them against that ICP, and save the list to Notion sorted by fit.",
+"Write a one-page brief on [company]. Pull recent call notes from Fireflies, summarize priorities, pains and objections, add hiring and tech-stack signals, and finish with the 3 best angles to open with. Save to the Notion account page and post the TL;DR in Slack.",
+"Review my open pipeline in HubSpot. Pull the latest Gong call for each deal, flag anything stalled over 14 days, draft a next-step follow-up for each, and update the deal stage in HubSpot. Post a summary of at-risk deals in Slack.",
+"Build a pitch deck for [company] using their HubSpot record and my template: their pain, our fit, pricing, proposal. Create a Calendly link for the demo and draft the cover email with the deck and link.",
+"Pull last week's sequence data from HubSpot. Show open, reply and meeting rates by sequence and step, flag the worst steps, and suggest one fix per sequence. Save the digest to Notion and post the TL;DR in Slack."
+];
+const host=document.getElementById('prompts');
+P.forEach(t=>{const d=document.createElement('div');d.className='prompt';const p=document.createElement('p');p.textContent=t;const b=document.createElement('button');b.textContent='Copy';
+b.onclick=async()=>{try{await navigator.clipboard.writeText(t);b.textContent='Copied'}catch(e){const r=document.createRange();r.selectNodeContents(p);const s=getSelection();s.removeAllRanges();s.addRange(r);b.textContent='Selected'}setTimeout(()=>b.textContent='Copy',1500)};
+d.append(p,b);host.append(d)});
+</script>

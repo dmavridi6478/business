@@ -5856,6 +5856,16 @@ Source: `80c9789b-LinkedIn_Master_Guide_for_Claude.zip` — 4 static images (`.j
 
 **Not done:** no connector was installed (see `gtm-funnel-2026` for which GTM tools are already connected here and which are not); no repo was installed; Capd, ChatbotX and alphai-tui owners were found by web search and confirmed with `git ls-remote`. ChatbotX and cmux have custom licences you should read before use.
 
+## Batch 107 - The 2026 GTM Cheat Sheet (1 inline image) (7 October 2026)
+
+**Report:** [Batch 107 Intake Report](https://claude.ai/artifact/TkF3vXTZUscuYYTBY2J8TQ) (`Artifacts/business/batch-107-intake-report.html`).
+
+**Source:** Jani Vrancsik / Growth Today.
+
+**Installed in `.claude/`:** skills `gtm-cheat-sheet-2026`, `icp-clear-8-blocks`, `ai-gtm-strategy-4-stages`, `claude-gtm-team-prompts-5`; commands `/icp-sharpen`, `/ai-gtm-stage`, `/gtm-icp-lead-list`, `/gtm-account-brief`, `/gtm-pipeline-followup`, `/gtm-pitch-demo`, `/gtm-sequence-digest`; agents `icp-analyst-agent`, `gtm-weekly-loop-agent`; template `Artifacts/templates/batch107-cards.html`.
+
+**Flags:** headcount statistics are unsourced on the card; expert handles unreadable; prompt commands ask approval before any CRM, Slack or calendar write. Gong needs sign-in.
+
 ## Batch 106 - iCloud Photos batch 11 (54 new images) and a duplicate zip (7 October 2026)
 
 **Report:** [Batch 106 Intake Report](https://claude.ai/artifact/LHK7DHAcnqfNy9sCyfPqgM) (`Artifacts/business/batch-106-intake-report.html`).
