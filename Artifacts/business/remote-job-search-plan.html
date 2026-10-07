@@ -1,0 +1,70 @@
+<title>Remote Job Search Plan</title>
+<style>
+/* Layout: single readable column; tables centred and top-aligned per owner preference. Palette: ink on paper, one blue accent. */
+:root{--bg:#f7f7f4;--fg:#1c2230;--muted:#586075;--line:#d9dbe0;--accent:#1f4fd8;--card:#fff;--warn:#9a5b00;--code:#eceef3;--font:Aptos,"Segoe UI",system-ui,sans-serif}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#14171f;--fg:#e8eaf0;--muted:#9aa3b8;--line:#2c3140;--accent:#7da2ff;--card:#1b1f2a;--warn:#e0a54a;--code:#232838;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#14171f;--fg:#e8eaf0;--muted:#9aa3b8;--line:#2c3140;--accent:#7da2ff;--card:#1b1f2a;--warn:#e0a54a;--code:#232838;color-scheme:dark}
+body{background:var(--bg);color:var(--fg);font:11pt/1.5 var(--font);padding-inline:16px;padding-block:24px}
+main{max-width:860px;margin:0 auto;min-width:0}
+h1{font-size:32pt;line-height:1.1;margin:0 0 8px;text-wrap:balance}
+h2{font-size:14pt;margin:28px 0 8px;border-bottom:1px solid var(--line);padding-bottom:4px}
+p,li{max-width:70ch}.muted{color:var(--muted)}.warn{color:var(--warn);font-weight:600}
+.scroll{overflow-x:auto}
+table{border-collapse:collapse;width:100%;font-size:11pt}
+th,td{border:1px solid var(--line);padding:6px 8px;text-align:center;vertical-align:top}
+th{background:var(--code)}
+.prompt{background:var(--card);border:1px solid var(--line);border-radius:6px;padding:10px 12px;margin:8px 0;display:flex;gap:10px;align-items:flex-start}
+.prompt p{margin:0;flex:1;min-width:0;white-space:pre-wrap}
+button{font:inherit;font-size:10pt;border:1px solid var(--accent);background:transparent;color:var(--accent);border-radius:4px;padding:2px 10px;cursor:pointer}
+button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+code{background:var(--code);padding:1px 4px;border-radius:3px;font-size:10pt}
+</style>
+<main>
+<h1>Remote Job Search Plan</h1>
+<p class="muted">7 October 2026. Role: AI automation / GTM consultant. Produced by the <code>remote-job-scout</code> agent. Draft only: nothing was applied to and no one was contacted.</p>
+<p class="warn">Unverified: no board was opened. Board details come from one-line descriptions read off a low-resolution card. Open each site before relying on it.</p>
+
+<h2>Assumptions to confirm</h2>
+<ul><li>Seniority: mid-to-senior or lead.</li><li>Location: worldwide remote. Add your country or time zone, since many remote roles restrict by region.</li><li>Type: full-time and contract.</li></ul>
+
+<h2>Five chosen boards</h2>
+<div class="scroll"><table><tr><th>Board</th><th>Why it fits</th><th>Caveat</th></tr><tr><td>Wellfound</td><td>Startups with salary transparency; AI automation and GTM roles are common early on.</td><td>Contract filter unverified</td></tr><tr><td>Remotive</td><td>Listed as vetted; covers tech, marketing and sales, the GTM and automation overlap.</td><td>Check whether it charges job seekers</td></tr><tr><td>Himalayas</td><td>Remote jobs at startups and tech companies worldwide.</td><td>Region and contract filters unverified</td></tr><tr><td>WeWorkRemotely</td><td>Tech, design and marketing; often has contract listings.</td><td>Quality varies, screen each listing</td></tr><tr><td>LinkedIn</td><td>Network-driven; best for contract leads and widest volume.</td><td>Many 'remote' roles are hybrid; use the Remote filter</td></tr></table></div>
+<p>Reserve: Working Nomads; JobBoardSearch (points to niche boards); FlexJobs only after reading independent reviews, because it charges. Skipped: FreelanceWriting, SkipTheDrive.</p>
+
+<h2>Saved-search keywords</h2>
+<div class="scroll"><table>
+<tr><th>Group</th><th>Terms</th></tr>
+<tr><td>Core titles</td><td>AI automation consultant; automation specialist; GTM engineer; go-to-market engineer; revenue operations with automation; RevOps automation; AI solutions consultant; AI implementation</td></tr>
+<tr><td>Tools and skills</td><td>n8n; Zapier; Make; Clay; HubSpot; Salesforce; workflow automation; LLM; AI agents; outbound automation; lead enrichment; sales automation; marketing operations</td></tr>
+<tr><td>Contract variants</td><td>fractional GTM or RevOps; contract AI automation; freelance automation consultant</td></tr>
+<tr><td>Negative terms</td><td>unpaid; commission only; data entry; entry level</td></tr>
+</table></div>
+
+<h2>Tracking sheet (row 1)</h2>
+<div class="prompt"><p id="hdr">Date found | Board | Role title | Company | Link | Type (FT/Contract) | Location limits | Salary or rate | Verified? (Y/N/partial) | Scam flags (payment or bank details asked?) | Fit (1-5) | Tailored CV done | Cover note drafted | Status (shortlist/applied by me/reply/closed) | Follow-up date | Notes</p><button id="cp">Copy</button></div>
+
+<h2>Two-week routine</h2>
+<div class="scroll"><table>
+<tr><th>When</th><th>Task</th></tr>
+<tr><td>Week 1, day 1 (60 min)</td><td>Open all five boards, set filters, save searches and alerts, create the sheet</td></tr>
+<tr><td>Week 1, Tue</td><td>Wellfound and Remotive, 20 min each; log relevant roles</td></tr>
+<tr><td>Week 1, Thu</td><td>Himalayas, WeWorkRemotely, LinkedIn, 20 min each</td></tr>
+<tr><td>Week 1, Fri (30 min)</td><td>Shortlist at most 10; mark verified status; scam-check each</td></tr>
+<tr><td>Week 1, weekend</td><td>Draft two CV variants: full-time and contract or fractional</td></tr>
+<tr><td>Week 2, Mon and Tue</td><td>Repeat the board passes; log new roles only</td></tr>
+<tr><td>Week 2, Wed (45 min)</td><td>Tailor CV and draft cover notes for the top 3 to 5 roles</td></tr>
+<tr><td>Week 2, Thu (30 min)</td><td>You review and submit the ones you approve; try reserve boards if volume is low</td></tr>
+<tr><td>Week 2, Fri (30 min)</td><td>Review the sheet; drop dead boards; adjust keywords</td></tr>
+</table></div>
+
+<h2>Scam and verification rules</h2>
+<ul><li>Skip any role asking for payment, a starter-kit fee, equipment purchase, or bank or card details.</li>
+<li>Be wary of offers without an interview, immediate moves to Telegram or WhatsApp, and companies with no verifiable site or team.</li>
+<li>Check each listing against the company's own careers page; otherwise mark it unverified.</li>
+<li>Do not pay any board without independent reviews.</li></ul>
+<p class="muted">Next: send a specific listing and the agent will draft a cover note (draft only).</p>
+</main>
+<script>
+const b=document.getElementById('cp'),p=document.getElementById('hdr');
+b.onclick=async()=>{try{await navigator.clipboard.writeText(p.textContent);b.textContent='Copied'}catch(e){const r=document.createRange();r.selectNodeContents(p);const s=getSelection();s.removeAllRanges();s.addRange(r);b.textContent='Selected'}setTimeout(()=>b.textContent='Copy',1500)};
+</script>

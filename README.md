@@ -5856,6 +5856,60 @@ Source: `80c9789b-LinkedIn_Master_Guide_for_Claude.zip` — 4 static images (`.j
 
 **Not done:** no connector was installed (see `gtm-funnel-2026` for which GTM tools are already connected here and which are not); no repo was installed; Capd, ChatbotX and alphai-tui owners were found by web search and confirmed with `git ls-remote`. ChatbotX and cmux have custom licences you should read before use.
 
+## Batch 108
+
+Source: `iCloud Photos.zip` (73 new images, 1 video still) and one inline card ("20 Websites to Find a Remote Job in 2026"). A second inline image (GTM cheat sheet) duplicated Batch 107 and was skipped.
+
+| Type | Added |
+|---|---|
+| Skills (9) | `remote-job-sites-20`, `presentation-system-7`, `copy-rewrite-workflow`, `app-in-24-hours`, `codedex-5-repos`, `github-trending-agents-oct-2026`, `oss-self-host-picks`, `claude-plugins-top5`, `learning-prompts-brain` |
+| Commands (6) | `/presentation-system`, `/rewrite-copy`, `/job-sites`, `/learn-skill-free`, `/app-24h`, `/plugins-top5` |
+| Agents (2) | `remote-job-scout`, `presentation-director` |
+| Template | `Artifacts/templates/batch108-cards.html` (gold prompt card, paper workflow card, neon repo card) |
+| Report | `Artifacts/business/batch-108-intake-report.html` - [published](https://claude.ai/artifact/1Bk8bWvXcKSNNKCWisr7jr) |
+
+Already in the repo, not duplicated: the @jeanbbttyct 10 app categories (`ai-app-stack-2026`), `hookify` and `dev-repos-to-clone`. Flags: OpenShip and DeepDiagram owners not shown on the cards (unverified); prompts 1 and 5 of the "Brain" learning set were not in the upload; the fifth @replace.so repo card was unreadable. Verified by shallow clone: agent-substrate/substrate (Apache-2.0), morluto/rea (MIT).
+
+## Batch 107 - The 2026 GTM Cheat Sheet (1 inline image) (7 October 2026)
+
+**Report:** [Batch 107 Intake Report](https://claude.ai/artifact/TkF3vXTZUscuYYTBY2J8TQ) (`Artifacts/business/batch-107-intake-report.html`).
+
+**Source:** Jani Vrancsik / Growth Today.
+
+**Installed in `.claude/`:** skills `gtm-cheat-sheet-2026`, `icp-clear-8-blocks`, `ai-gtm-strategy-4-stages`, `claude-gtm-team-prompts-5`; commands `/icp-sharpen`, `/ai-gtm-stage`, `/gtm-icp-lead-list`, `/gtm-account-brief`, `/gtm-pipeline-followup`, `/gtm-pitch-demo`, `/gtm-sequence-digest`; agents `icp-analyst-agent`, `gtm-weekly-loop-agent`; template `Artifacts/templates/batch107-cards.html`.
+
+**Flags:** headcount statistics are unsourced on the card; expert handles unreadable; prompt commands ask approval before any CRM, Slack or calendar write. Gong needs sign-in.
+
+## Batch 106 - iCloud Photos batch 11 (54 new images) and a duplicate zip (7 October 2026)
+
+**Report:** [Batch 106 Intake Report](https://claude.ai/artifact/LHK7DHAcnqfNy9sCyfPqgM) (`Artifacts/business/batch-106-intake-report.html`).
+
+**Sources:** @aiemergence (LLM council), @aiclawbots (5 Hermes agent projects), @ruby.creates1 and @dotdevs (developer tools), @codenameposhan (EmbeddingGemma 2 cards), @earchoe (knowledge to digital product), @aigenesis.official (40 AI tools), @wavaai.feeds (idea to workflow). The second zip was byte-identical to the Batch 105 zip (15 of 15 images and the video) and was skipped.
+
+**Installed in `.claude/`:** skills `llm-council-5-advisors`, `hermes-agent-projects-5`, `ai-idea-to-workflow-8-steps`, `ai-product-from-knowledge`, `dev-builder-tools-11`, `embeddinggemma-2-briefing` (unverified), `ai-tools-40-directory`; commands `/advisors`, `/workflow-from-idea`, `/knowledge-product`; agents `inbox-calendar-agent`, `voice-content-agent`, `topic-research-agent`, `lead-research-agent`; templates `Artifacts/templates/batch106-cards.html`.
+
+**Verified/flagged:** a web search did not confirm "EmbeddingGemma 2" or its sizes and benchmarks; the 40-tool card lists teleporthq.io under "Bing AI". Supabase, Sentry need sign-in; PostHog and Newly have no connector.
+
+## Batch 105 - iCloud Photos batch 10 (15 images, 1 video) and 3 inline images (7 October 2026)
+
+**Report:** [Batch 105 Intake Report](https://claude.ai/artifact/28wUZDcpWgfKqewkk95Xjp) (`Artifacts/business/batch-105-intake-report.html`).
+
+**Sources:** @ai_slacker (60 carousels in 60 minutes), @code_debug (5 GitHub profile tools), Sivasankar Natarajan (50+ Claude Code connectors, the video is a still), Eric Partaker (C-level leaders), Chris Donnelly (LinkedIn DM Specialist prompt), a "50 Hormozi Skills for LinkedIn" README card.
+
+**Installed in `.claude/`:** skills `linkedin-dm-specialist`, `carousel-batch-60`, `github-profile-toolkit`, `c-level-roles`, `hormozi-linkedin-50` (catalogue only), `claude-connectors-50`; commands `/dm-specialist`, `/carousel-batch`; agent `linkedin-dm-specialist`; templates `Artifacts/templates/batch105-cards.html`.
+
+**Not done:** the 50 Hormozi skill bodies and the repo are not in the image and a web search did not find the library, so nothing was cloned. Connectors that need sign-in (Supabase, Stripe, Sentry, monday.com, Microsoft 365) must be authorised by you. Taplio now shows as connected.
+
+## Batch 104 - Taplio LinkedIn skills zip and iCloud Photos batch 9 (58 images) (7 October 2026)
+
+**Report:** [Batch 104 Intake Report](https://claude.ai/artifact/74K99x9wQigzErPSQXuWGW) (`Artifacts/business/batch-104-intake-report.html`).
+
+**Sources:** Taplio `claude-skills-for-linkedin.zip` (26 skills); @the.wealth.lab (9 Claude commands), @stackfloai (6 prompts), @earchoe (spreadsheet-to-brief), @aisimplified23 (50 Claude hacks), @usamaakrm (AI Coach, 9 steps), Thomas Krypas (AI systems for SMEs), @will.ai.m (5 free coding agents).
+
+**Installed** (originally staged in `docs/batch104/install-pack/` because the session could not write `.claude/`; copied into `.claude/` after you authorised it, and Taplio added to `.mcp.json`): 26 LinkedIn skills, 7 new skills, 11 commands, 5 agents. `scripts/batch104-install.sh` remains as an optional installer for another machine. **Done:** design themes and cards (`Artifacts/templates/batch104-*`), AI Coach vault scaffold and SQL (`docs/ai-coach/`), `docs/batch104/prompt-pack.md`.
+
+**Verified:** `anomalyco/opencode` and `sst/opencode` have the identical HEAD commit (same project). Continue's README says 2.0.0 was its final release. OpenHands now installs via `@openhands/agent-canvas`. Taplio MCP is already in the claude.ai org and needs reconnecting.
+
 ## Batch 103 — iCloud Photos batch 8 (64 images, 3 videos) and a CEO KPI infographic (3 October 2026)
 
 **Report:** [Batch 103 Intake Report](https://claude.ai/artifact/D1A96pph3ZDuvuRPNtYLnH) (`Artifacts/business/batch-103-intake-report.html`).

@@ -1,0 +1,8 @@
+/* Batch 104 design themes - tokens only. Use: <body data-theme="wealthlab|executive|cream|parchment|coach">.
+   Fonts follow the owner's rule (Aptos); the source posts used a serif on "cream" and monospace on "parchment" - set --font-display to restore. */
+:root{--font-body:Aptos,"Segoe UI",system-ui,sans-serif;--font-display:var(--font-body);--font-mono:ui-monospace,Consolas,monospace}
+[data-theme=wealthlab]{--bg:#3b3b3b;--band:#000;--ink:#fff;--accent:#ffe600;--muted:#cfcfcf;--card:#4a4a4a}   /* @the.wealth.lab */
+[data-theme=executive]{--bg:#fff;--band:#eef3ff;--ink:#0b1b3a;--accent:#1a56ff;--muted:#5b6b8c;--card:#f5f8ff}  /* Thomas Krypas */
+[data-theme=cream]{--bg:#f1ece0;--band:#e8dfcc;--ink:#1b1b1b;--accent:#e4572e;--muted:#6b6358;--card:#fffaf0}   /* @will.ai.m */
+[data-theme=parchment]{--bg:#d9d0b4;--band:#14120e;--ink:#14120e;--accent:#1f7a3d;--muted:#5d5640;--card:#cfc5a5}  /* @earchoe */
+[data-theme=coach]{--bg:#fff;--band:#fdecec;--ink:#111;--accent:#e11d1d;--muted:#666;--card:#fff5f5}          /* AI Coach step guide */

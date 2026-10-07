@@ -1,0 +1,67 @@
+<title>Batch 106 Intake Report</title>
+<style>
+/* Layout: single readable column; tables centred and top-aligned per owner preference. Palette: ink on paper, one blue accent. */
+:root{--bg:#f7f7f4;--fg:#1c2230;--muted:#586075;--line:#d9dbe0;--accent:#1f4fd8;--card:#fff;--warn:#9a5b00;--code:#eceef3;--font:Aptos,"Segoe UI",system-ui,sans-serif}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#14171f;--fg:#e8eaf0;--muted:#9aa3b8;--line:#2c3140;--accent:#7da2ff;--card:#1b1f2a;--warn:#e0a54a;--code:#232838;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#14171f;--fg:#e8eaf0;--muted:#9aa3b8;--line:#2c3140;--accent:#7da2ff;--card:#1b1f2a;--warn:#e0a54a;--code:#232838;color-scheme:dark}
+body{background:var(--bg);color:var(--fg);font:11pt/1.5 var(--font);padding-inline:16px;padding-block:24px}
+main{max-width:860px;margin:0 auto;min-width:0}
+h1{font-size:32pt;line-height:1.1;margin:0 0 8px;text-wrap:balance}
+h2{font-size:14pt;margin:28px 0 8px;border-bottom:1px solid var(--line);padding-bottom:4px}
+p,li{max-width:70ch}.muted{color:var(--muted)}.warn{color:var(--warn);font-weight:600}
+.scroll{overflow-x:auto}
+table{border-collapse:collapse;width:100%;font-size:11pt}
+th,td{border:1px solid var(--line);padding:6px 8px;text-align:center;vertical-align:top}
+th{background:var(--code)}
+.prompt{background:var(--card);border:1px solid var(--line);border-radius:6px;padding:10px 12px;margin:8px 0;display:flex;gap:10px;align-items:flex-start}
+.prompt p{margin:0;flex:1;min-width:0;white-space:pre-wrap}
+button{font:inherit;font-size:10pt;border:1px solid var(--accent);background:transparent;color:var(--accent);border-radius:4px;padding:2px 10px;cursor:pointer}
+button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+code{background:var(--code);padding:1px 4px;border-radius:3px;font-size:10pt}
+</style>
+<main>
+<h1>Batch 106 Intake Report</h1>
+<p class="muted">7 October 2026. Sources: two zips. Pushed to PR #50, commit <code>c4ccedc</code>.</p>
+<h2>What was in the files</h2>
+<div class="scroll"><table>
+<tr><th>Zip</th><th>Result</th></tr>
+<tr><td>a38224d7 (54 images)</td><td>New. Cards from @aiemergence, @aiclawbots, @ruby.creates1, @dotdevs, @codenameposhan, @earchoe, @aigenesis.official, @wavaai.feeds, plus 8 slides repeating the Batch 105 carousel.</td></tr>
+<tr><td>d5f47209 (15 images, 1 video)</td><td><span class="warn">Duplicate:</span> byte-identical to the Batch 105 zip. Skipped.</td></tr>
+</table></div>
+<h2>Installed in .claude/</h2>
+<div class="scroll"><table>
+<tr><th>Type</th><th>Name</th></tr>
+<tr><td>Skills</td><td>llm-council-5-advisors, hermes-agent-projects-5, ai-idea-to-workflow-8-steps, ai-product-from-knowledge, dev-builder-tools-11, ai-tools-40-directory, embeddinggemma-2-briefing (unverified)</td></tr>
+<tr><td>Commands</td><td>/advisors, /workflow-from-idea, /knowledge-product</td></tr>
+<tr><td>Agents (draft or research only)</td><td>inbox-calendar-agent, voice-content-agent, topic-research-agent, lead-research-agent</td></tr>
+<tr><td>Templates</td><td>Artifacts/templates/batch106-cards.html (council gold, blueprint, dark stats, white tool grid)</td></tr>
+</table></div>
+<h2>Flags</h2>
+<ul>
+<li><span class="warn">EmbeddingGemma 2:</span> a web search did not confirm the model, its 740M/270M sizes or the benchmarks. It found EmbeddingGemma (308M) and Gemini Embedding 2. The skill is marked unverified.</li>
+<li>The 40-tool card shows teleporthq.io under "Bing AI"; the label is probably wrong. URLs are as printed, not checked.</li>
+<li>Personal Jarvis (Telegram/Slack, ElevenLabs voice, memory) was not built: it needs accounts and tokens only you can create.</li>
+<li>"Comment COUNCIL" and "Comment HERMES" are lead magnets; the authors' guides are not in the files and were not reproduced.</li>
+</ul>
+<h2>Connectors</h2>
+<div class="scroll"><table>
+<tr><th>State</th><th>Tools</th></tr>
+<tr><td>Connected</td><td>Linear, Slack, Zapier, Canva, Gamma, Adobe for creativity, Taplio</td></tr>
+<tr><td>You must sign in</td><td>Supabase (incomplete), Sentry (needs reconnect)</td></tr>
+<tr><td>No connector found</td><td>PostHog, Newly, ElevenLabs (as a connector), Telegram</td></tr>
+</table></div>
+<h2>Prompts (copy)</h2>
+<div id="prompts"></div>
+</main>
+<script>
+const P=[
+"My knowledge/experience: [KNOWLEDGE].\nBuyer: [BUYER].\nProblem: [PROBLEM].\n\nGenerate 5 small digital product ideas. Each must have: one clear defined audience, a short delivery format, what is included, what is excluded, and how the buyer can use it in under one week.",
+"Take this product: [PRODUCT]. Create the structure, worksheet/checklist components, examples, and a simple 7-day implementation plan. Avoid filler. Mark any claim that needs evidence from me.",
+"Run a five-advisor council on this decision: [DECISION]. Advisors: The Contrarian (finds what will fail), The First Principles Thinker (starts from the facts), The Expansionist (finds what else is possible), The Outsider (sees what you missed), The Executor (turns it into a plan). Give each 3-5 lines, then a verdict with the cheapest test to run first. State the decision neutrally.",
+"Check these repos are legit, then install them: anomalyco/opencode, cline/cline, OpenHands/OpenHands, Aider-AI/aider, continuedev/continue."
+];
+const host=document.getElementById('prompts');
+P.forEach(t=>{const d=document.createElement('div');d.className='prompt';const p=document.createElement('p');p.textContent=t;const b=document.createElement('button');b.textContent='Copy';
+b.onclick=async()=>{try{await navigator.clipboard.writeText(t);b.textContent='Copied'}catch(e){const r=document.createRange();r.selectNodeContents(p);const s=getSelection();s.removeAllRanges();s.addRange(r);b.textContent='Selected'}setTimeout(()=>b.textContent='Copy',1500)};
+d.append(p,b);host.append(d)});
+</script>

@@ -1,0 +1,101 @@
+<title>Batch 108 Intake Report</title>
+<style>
+/* Layout: single readable column; tables centred and top-aligned per owner preference. Palette: ink on paper, one blue accent. */
+:root{--bg:#f7f7f4;--fg:#1c2230;--muted:#586075;--line:#d9dbe0;--accent:#1f4fd8;--card:#fff;--warn:#9a5b00;--code:#eceef3;--font:Aptos,"Segoe UI",system-ui,sans-serif}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#14171f;--fg:#e8eaf0;--muted:#9aa3b8;--line:#2c3140;--accent:#7da2ff;--card:#1b1f2a;--warn:#e0a54a;--code:#232838;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#14171f;--fg:#e8eaf0;--muted:#9aa3b8;--line:#2c3140;--accent:#7da2ff;--card:#1b1f2a;--warn:#e0a54a;--code:#232838;color-scheme:dark}
+body{background:var(--bg);color:var(--fg);font:11pt/1.5 var(--font);padding-inline:16px;padding-block:24px}
+main{max-width:860px;margin:0 auto;min-width:0}
+h1{font-size:32pt;line-height:1.1;margin:0 0 8px;text-wrap:balance}
+h2{font-size:14pt;margin:28px 0 8px;border-bottom:1px solid var(--line);padding-bottom:4px}
+p,li{max-width:70ch}.muted{color:var(--muted)}.warn{color:var(--warn);font-weight:600}
+.scroll{overflow-x:auto}
+table{border-collapse:collapse;width:100%;font-size:11pt}
+th,td{border:1px solid var(--line);padding:6px 8px;text-align:center;vertical-align:top}
+th{background:var(--code)}
+.prompt{background:var(--card);border:1px solid var(--line);border-radius:6px;padding:10px 12px;margin:8px 0;display:flex;gap:10px;align-items:flex-start}
+.prompt p{margin:0;flex:1;min-width:0;white-space:pre-wrap}
+button{font:inherit;font-size:10pt;border:1px solid var(--accent);background:transparent;color:var(--accent);border-radius:4px;padding:2px 10px;cursor:pointer}
+button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+code{background:var(--code);padding:1px 4px;border-radius:3px;font-size:10pt}
+</style>
+<main>
+<h1>Batch 108 Intake Report</h1>
+<p class="muted">7 October 2026. Sources: <code>iCloud Photos.zip</code> (73 images, 1 video still) and one inline card. A second inline image (GTM cheat sheet) was a duplicate of Batch 107 and was skipped.</p>
+
+<h2>What was in the files</h2>
+<div class="scroll"><table>
+<tr><th>Source</th><th>Content</th><th>Handled as</th></tr>
+<tr><td>Inline card</td><td>20 Websites to Find a Remote Job in 2026</td><td>Skill, command, agent</td></tr>
+<tr><td>@the.wealth.lab</td><td>7 ChatGPT prompts to build a complete presentation</td><td>Skill, command, agent</td></tr>
+<tr><td>@earchoe</td><td>Rewrite boring business copy: Input, Think, Output, Verify</td><td>Skill, command</td></tr>
+<tr><td>@dotdevs</td><td>Build an app in 24 hours; 5 repos (shadcn/ui, Drizzle, tRPC, Better Auth, PostHog)</td><td>Skill, command</td></tr>
+<tr><td>@hash42labs</td><td>CODEDEX: Polar, Appwrite, OpenShip, PocketBase, DeepDiagram</td><td>Skill</td></tr>
+<tr><td>@githubnow</td><td>Agent Substrate, Impeccable, REA (6 Oct 2026)</td><td>Skill, verified by clone</td></tr>
+<tr><td>@replace.so</td><td>RustDesk, Listmonk, Dify, Tolgee</td><td>Skill</td></tr>
+<tr><td>@awayfromlovable</td><td>Top 5 Claude Code plugins</td><td>Skill, command</td></tr>
+<tr><td>"Brain in Claude" set</td><td>Learning prompts 2, 3 and 4</td><td>Skill, command</td></tr>
+<tr><td>@jeanbbttyct</td><td>10 AI app categories</td><td>Already in the repo (<code>ai-app-stack-2026</code>)</td></tr>
+</table></div>
+
+<h2>Installed in .claude/</h2>
+<div class="scroll"><table>
+<tr><th>Type</th><th>Name</th><th>Purpose</th></tr>
+<tr><td>Skill</td><td>remote-job-sites-20</td><td>20 boards grouped by goal and a weekly routine</td></tr>
+<tr><td>Skill</td><td>presentation-system-7</td><td>Seven-prompt presentation workflow</td></tr>
+<tr><td>Skill</td><td>copy-rewrite-workflow</td><td>Four-step copy rewrite with verification</td></tr>
+<tr><td>Skill</td><td>app-in-24-hours</td><td>Timetable, stack and checklist</td></tr>
+<tr><td>Skill</td><td>codedex-5-repos</td><td>Five CODEDEX repos with verification status</td></tr>
+<tr><td>Skill</td><td>github-trending-agents-oct-2026</td><td>Substrate, Impeccable, REA</td></tr>
+<tr><td>Skill</td><td>oss-self-host-picks</td><td>RustDesk, Listmonk, Dify, Tolgee</td></tr>
+<tr><td>Skill</td><td>claude-plugins-top5</td><td>Plugin list with install lines</td></tr>
+<tr><td>Skill</td><td>learning-prompts-brain</td><td>Three learning prompts</td></tr>
+<tr><td>Commands</td><td>/presentation-system, /rewrite-copy, /job-sites, /learn-skill-free, /app-24h, /plugins-top5</td><td>Run each workflow</td></tr>
+<tr><td>Agents</td><td>remote-job-scout, presentation-director</td><td>Draft-only; never apply, send or publish</td></tr>
+<tr><td>Template</td><td>Artifacts/templates/batch108-cards.html</td><td>Gold prompt card, paper workflow card, neon repo card</td></tr>
+</table></div>
+
+<h2>Repos checked</h2>
+<div class="scroll"><table>
+<tr><th>Repo</th><th>Result</th></tr>
+<tr><td>agent-substrate/substrate</td><td>Cloned shallow, README read. Apache-2.0. Needs Kubernetes.</td></tr>
+<tr><td>morluto/rea</td><td>Cloned shallow, README read. MIT. Dual-use reverse-engineering MCP: own or licensed software only.</td></tr>
+<tr><td>pbakaus, polarsource, appwrite, pocketbase, rustdesk, listmonk, dify, tolgee, better-auth, drizzle, trpc, posthog</td><td>Existence confirmed with <code>git ls-remote</code>. Licences not read.</td></tr>
+</table></div>
+<p class="muted">Clones live outside the repo and nothing was installed or run.</p>
+
+<h2>Not done or unverified</h2>
+<ul>
+<li><span class="warn">OpenShip and DeepDiagram:</span> the CODEDEX cards give no GitHub owner. Not cloned.</li>
+<li><span class="warn">Learning prompts 1 and 5:</span> missing from the upload. Send them to finish the set.</li>
+<li>The fifth @replace.so repo card was unreadable. Star counts, install counts and "stars today" figures are the posts' own and were not re-checked.</li>
+<li>Plugin installs (<code>/plugin install ...</code>) are interactive: run them in your terminal. Hookify is already in the repo.</li>
+<li>Remote job site names were read from a 480 px image; open each site before use. The promotion at the bottom of the card was ignored.</li>
+<li>Agent Archive account: still not created (see earlier batches).</li>
+<li>No connectors were referenced in this batch; no <code>.mcp.json</code> changes.</li>
+</ul>
+
+<h2>Prompts (copy)</h2>
+<div id="prompts"></div>
+</main>
+<script>
+const P=[
+"Act as a professional presentation consultant. Create a complete blueprint for a presentation about [TOPIC]. Define the main goal, target audience, core message, ideal number of slides, and overall narrative. Make sure the structure is logical, engaging, and designed to achieve the presentation's objective.",
+"Turn [TOPIC] into a compelling slide-by-slide presentation using a strong storytelling structure: Hook -> Problem -> Insight -> Solution -> Conclusion. For each slide, provide a clear title, its purpose, and the key message it should communicate. Ensure the presentation flows naturally from beginning to end.",
+"Create presentation-ready content for every slide based on the structure above. Keep each slide concise and focused on one clear idea. Use strong headlines, short bullet points, relevant examples, statistics, or key takeaways where appropriate. Audience: [DESCRIBE AUDIENCE].",
+"Review the following presentation content as an expert presentation editor. Remove unnecessary text, simplify complex ideas, strengthen weak points, and rewrite each slide for maximum clarity and impact. Make sure every slide communicates one clear idea without becoming overcrowded. Content: [PASTE CONTENT].",
+"Act as a professional presentation designer. Create a visual direction guide for every slide in a presentation about [TOPIC]. For each slide, recommend the ideal layout, visual hierarchy, charts, diagrams, icons, images, and other visuals. Keep the design clean, modern, professional, and visually engaging while ensuring every visual supports the message.",
+"Create concise speaker notes for every slide. Make them conversational, informative, and engaging without simply repeating the slide text. Add useful explanations, examples, transitions, and emphasis points that help the presenter deliver the presentation confidently.",
+"Act as a senior presentation editor and quality reviewer. Review the complete presentation for logical flow, clarity, storytelling, repetition, unsupported claims, slide overcrowding, visual consistency, and audience engagement. Identify anything that weakens the presentation and provide specific improvements. Then present the final recommended slide order and key revisions.",
+"Rewrite this copy for [AUDIENCE]: [PASTE COPY]. First identify: what is unclear, what is unsupported, what is repetitive, what the reader still needs to know. Then rewrite it in plain language while preserving every factual claim.",
+"Create three versions: concise, conversational and more formal. Keep the meaning consistent. Then list any sentence that should be verified before publishing.",
+"Assume you're a master of [insert skill] with 20+ years of experience. Reverse engineer the process that got you there, and build me a day-by-day plan to reach that level as fast as humanly possible using only free or low-cost resources.",
+"I've been struggling with [insert personal issue: procrastination, burnout, fear, etc.]. Analyze it like a cognitive scientist. Identify the root causes, the behavioural patterns behind it, and design a habit loop to eliminate it.",
+"I don't understand [insert complex concept]. Break it down step-by-step using metaphors, visual imagery, and real-world examples. Then create a mental shortcut or framework I can use to remember it forever.",
+"/hookify Warn me when I use rm -rf commands"
+];
+const host=document.getElementById('prompts');
+P.forEach(t=>{const d=document.createElement('div');d.className='prompt';const p=document.createElement('p');p.textContent=t;const b=document.createElement('button');b.textContent='Copy';
+b.onclick=async()=>{try{await navigator.clipboard.writeText(t);b.textContent='Copied'}catch(e){const r=document.createRange();r.selectNodeContents(p);const s=getSelection();s.removeAllRanges();s.addRange(r);b.textContent='Selected'}setTimeout(()=>b.textContent='Copy',1500)};
+d.append(p,b);host.append(d)});
+</script>

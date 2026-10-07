@@ -1,0 +1,23 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Batch 106 card templates</title>
+<!-- Four themes: council (@aiemergence gold on near-black), blueprint (@aiclawbots navy grid), stat (@codenameposhan dark blue stats), directory (@aigenesis white tool grid). Edit text; change data-theme to restyle. Fonts follow the Aptos rule. -->
+<style>
+:root{--font:Aptos,"Segoe UI",system-ui,sans-serif}
+[data-theme=council]{--bg:#14110c;--ink:#f3ead6;--accent:#d4a73a;--muted:#a79a7e;--card:#221c12}
+[data-theme=blueprint]{--bg:#0f4a8a;--ink:#fff;--accent:#ffd84d;--muted:#cfe0f5;--card:#fff;--cardink:#0b2a52}
+[data-theme=stat]{--bg:#070b16;--ink:#eef2fb;--accent:#4f83f5;--muted:#8d98b3;--card:#111a30}
+[data-theme=directory]{--bg:#fff;--ink:#111;--accent:#111;--muted:#666;--card:#fff}
+body{margin:0;padding:16px;background:#e9e9e9;font-family:var(--font);display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:16px}
+.card{aspect-ratio:4/5;background:var(--bg);color:var(--ink);border-radius:8px;padding:20px;display:flex;flex-direction:column;gap:12px;font-size:14px;overflow:hidden}
+h2{font-size:28px;line-height:1.1;margin:0}.acc{color:var(--accent)}.muted{color:var(--muted)}
+.box{background:var(--card);border:1px solid color-mix(in srgb,var(--ink) 18%,transparent);border-radius:8px;padding:12px}
+.stat{font-size:36px;font-weight:800;color:var(--accent)}.row{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.bp{background:var(--card);color:var(--cardink);font-weight:700;padding:6px 10px;border-radius:4px;text-align:center}
+.tile{border:1px solid #111;padding:8px;font-size:12px;text-align:center}
+.adv{display:flex;justify-content:space-between;border-bottom:1px solid color-mix(in srgb,var(--ink) 20%,transparent);padding:6px 0}
+</style></head><body>
+<section class="card" data-theme="council"><h2>The 5 advisors. <span class="acc">Give each one a job.</span></h2><div><div class="adv"><b>The Contrarian</b><span class="muted">Finds what will fail</span></div><div class="adv"><b>First Principles</b><span class="muted">Starts from the facts</span></div><div class="adv"><b>The Expansionist</b><span class="muted">Finds what else is possible</span></div><div class="adv"><b>The Outsider</b><span class="muted">Sees what you missed</span></div><div class="adv"><b>The Executor</b><span class="muted">Turns it into a plan</span></div></div><p class="muted" style="margin-top:auto">Question - Debate - Verdict</p></section>
+<section class="card" data-theme="blueprint"><div class="box" style="color:var(--cardink)"><b>Inbox, sorted</b><br>2 emails actually need you today</div><div class="bp">EMAIL + CALENDAR AGENT</div><div class="bp" style="font-weight:600">Connect it to your inbox and calendar so it organises the boring parts of your day.</div><div class="bp">Pick ONE repetitive job first.</div></section>
+<section class="card" data-theme="stat"><h2>Small enough for a phone.</h2><div class="row"><div class="box"><div class="stat">~191MB</div><span class="muted">active RAM, text-only (claimed)</span></div><div class="box"><div class="stat">~567MB</div><span class="muted">full multimodal (claimed)</span></div><div class="box"><div class="stat">6x</div><span class="muted">smaller vectors</span></div><div class="box"><div class="stat">8K</div><span class="muted">token context</span></div></div></section>
+<section class="card" data-theme="directory"><h2 style="font-size:22px">AI CHATBOT</h2><div class="row"><div class="tile"><b>ChatGPT</b><br>chatgpt.com</div><div class="tile"><b>Gemini</b><br>gemini.google.com</div><div class="tile"><b>Claude AI</b><br>claude.ai</div><div class="tile"><b>Bing AI</b><br>bing.com</div></div><h2 style="font-size:22px">DESIGN</h2><div class="row"><div class="tile"><b>Midjourney</b></div><div class="tile"><b>Ideogram</b></div><div class="tile"><b>Leonardo</b></div><div class="tile"><b>Everart</b></div></div></section>
+</body></html>
