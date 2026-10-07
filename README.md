@@ -5856,6 +5856,16 @@ Source: `80c9789b-LinkedIn_Master_Guide_for_Claude.zip` — 4 static images (`.j
 
 **Not done:** no connector was installed (see `gtm-funnel-2026` for which GTM tools are already connected here and which are not); no repo was installed; Capd, ChatbotX and alphai-tui owners were found by web search and confirmed with `git ls-remote`. ChatbotX and cmux have custom licences you should read before use.
 
+## Batch 106 - iCloud Photos batch 11 (54 new images) and a duplicate zip (7 October 2026)
+
+**Report:** pending (see `Artifacts/business/batch-106-intake-report.html`).
+
+**Sources:** @aiemergence (LLM council), @aiclawbots (5 Hermes agent projects), @ruby.creates1 and @dotdevs (developer tools), @codenameposhan (EmbeddingGemma 2 cards), @earchoe (knowledge to digital product), @aigenesis.official (40 AI tools), @wavaai.feeds (idea to workflow). The second zip was byte-identical to the Batch 105 zip (15 of 15 images and the video) and was skipped.
+
+**Installed in `.claude/`:** skills `llm-council-5-advisors`, `hermes-agent-projects-5`, `ai-idea-to-workflow-8-steps`, `ai-product-from-knowledge`, `dev-builder-tools-11`, `embeddinggemma-2-briefing` (unverified), `ai-tools-40-directory`; commands `/advisors`, `/workflow-from-idea`, `/knowledge-product`; agents `inbox-calendar-agent`, `voice-content-agent`, `topic-research-agent`, `lead-research-agent`; templates `Artifacts/templates/batch106-cards.html`.
+
+**Verified/flagged:** a web search did not confirm "EmbeddingGemma 2" or its sizes and benchmarks; the 40-tool card lists teleporthq.io under "Bing AI". Supabase, Sentry need sign-in; PostHog and Newly have no connector.
+
 ## Batch 105 - iCloud Photos batch 10 (15 images, 1 video) and 3 inline images (7 October 2026)
 
 **Report:** [Batch 105 Intake Report](https://claude.ai/artifact/28wUZDcpWgfKqewkk95Xjp) (`Artifacts/business/batch-105-intake-report.html`).
