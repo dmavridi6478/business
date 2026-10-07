@@ -5858,6 +5858,8 @@ Source: `80c9789b-LinkedIn_Master_Guide_for_Claude.zip` — 4 static images (`.j
 
 ## Batch 105 - iCloud Photos batch 10 (15 images, 1 video) and 3 inline images (7 October 2026)
 
+**Report:** [Batch 105 Intake Report](https://claude.ai/artifact/28wUZDcpWgfKqewkk95Xjp) (`Artifacts/business/batch-105-intake-report.html`).
+
 **Sources:** @ai_slacker (60 carousels in 60 minutes), @code_debug (5 GitHub profile tools), Sivasankar Natarajan (50+ Claude Code connectors, the video is a still), Eric Partaker (C-level leaders), Chris Donnelly (LinkedIn DM Specialist prompt), a "50 Hormozi Skills for LinkedIn" README card.
 
 **Installed in `.claude/`:** skills `linkedin-dm-specialist`, `carousel-batch-60`, `github-profile-toolkit`, `c-level-roles`, `hormozi-linkedin-50` (catalogue only), `claude-connectors-50`; commands `/dm-specialist`, `/carousel-batch`; agent `linkedin-dm-specialist`; templates `Artifacts/templates/batch105-cards.html`.

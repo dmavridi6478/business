@@ -1,0 +1,101 @@
+<title>Batch 105 Intake Report</title>
+<style>
+/* Layout: single readable column; tables centred and top-aligned per owner preference. Palette: ink on paper, one blue accent. */
+:root{--bg:#f7f7f4;--fg:#1c2230;--muted:#586075;--line:#d9dbe0;--accent:#1f4fd8;--card:#fff;--warn:#9a5b00;--code:#eceef3;--font:Aptos,"Segoe UI",system-ui,sans-serif}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#14171f;--fg:#e8eaf0;--muted:#9aa3b8;--line:#2c3140;--accent:#7da2ff;--card:#1b1f2a;--warn:#e0a54a;--code:#232838;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#14171f;--fg:#e8eaf0;--muted:#9aa3b8;--line:#2c3140;--accent:#7da2ff;--card:#1b1f2a;--warn:#e0a54a;--code:#232838;color-scheme:dark}
+body{background:var(--bg);color:var(--fg);font:11pt/1.5 var(--font);padding-inline:16px;padding-block:24px}
+main{max-width:860px;margin:0 auto;min-width:0}
+h1{font-size:32pt;line-height:1.1;margin:0 0 8px;text-wrap:balance}
+h2{font-size:14pt;margin:28px 0 8px;border-bottom:1px solid var(--line);padding-bottom:4px}
+p,li{max-width:70ch}.muted{color:var(--muted)}.warn{color:var(--warn);font-weight:600}
+.scroll{overflow-x:auto}
+table{border-collapse:collapse;width:100%;font-size:11pt}
+th,td{border:1px solid var(--line);padding:6px 8px;text-align:center;vertical-align:top}
+th{background:var(--code)}
+.prompt{background:var(--card);border:1px solid var(--line);border-radius:6px;padding:10px 12px;margin:8px 0;display:flex;gap:10px;align-items:flex-start}
+.prompt p{margin:0;flex:1;min-width:0;white-space:pre-wrap}
+button{font:inherit;font-size:10pt;border:1px solid var(--accent);background:transparent;color:var(--accent);border-radius:4px;padding:2px 10px;cursor:pointer}
+button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+code{background:var(--code);padding:1px 4px;border-radius:3px;font-size:10pt}
+</style>
+<main>
+<h1>Batch 105 Intake Report</h1>
+<p class="muted">7 October 2026. Sources: <code>iCloud Photos.zip</code> (15 images, 1 video) and three inline images. Pushed to PR #50, commit <code>7353cf2</code>.</p>
+
+<h2>What was in the files</h2>
+<div class="scroll"><table>
+<tr><th>Source</th><th>Content</th></tr>
+<tr><td>@ai_slacker (7 slides)</td><td>60 carousels in 60 minutes: batch hooks, slide copy, lock a template, render all, queue the month.</td></tr>
+<tr><td>@code_debug (5 slides)</td><td>GitHub profile tools: Skill Icons, readme.so, ProfileMe.dev, Shields.io, OctoProfile.</td></tr>
+<tr><td>Video (Sivasankar Natarajan)</td><td>A still image, "50+ Claude Code Connectors to Simplify Development".</td></tr>
+<tr><td>Inline image 1</td><td>"50 Hormozi Skills for LinkedIn": 25 content and 25 outreach skill names with key features.</td></tr>
+<tr><td>Inline image 2</td><td>"C-Level Leaders" (Eric Partaker): 8 roles, 5 duties each.</td></tr>
+<tr><td>Inline image 3</td><td>"The LinkedIn DM Specialist Prompt" (Chris Donnelly).</td></tr>
+</table></div>
+
+<h2>Installed in .claude/</h2>
+<div class="scroll"><table>
+<tr><th>Type</th><th>Name</th><th>Purpose</th></tr>
+<tr><td>Skill</td><td>linkedin-dm-specialist</td><td>Ten opening-DM variants, top three ranked</td></tr>
+<tr><td>Skill</td><td>carousel-batch-60</td><td>The 60-in-60 batching system and its four rules</td></tr>
+<tr><td>Skill</td><td>github-profile-toolkit</td><td>Five profile README tools</td></tr>
+<tr><td>Skill</td><td>c-level-roles</td><td>Eight C-level role cards</td></tr>
+<tr><td>Skill</td><td>hormozi-linkedin-50</td><td>Catalogue only (see below)</td></tr>
+<tr><td>Skill</td><td>claude-connectors-50</td><td>Connector list with this account's status</td></tr>
+<tr><td>Commands</td><td>/dm-specialist, /carousel-batch</td><td>Run the two workflows</td></tr>
+<tr><td>Agent</td><td>linkedin-dm-specialist</td><td>Drafts only; never sends</td></tr>
+<tr><td>Templates</td><td>Artifacts/templates/batch105-cards.html</td><td>Cream timeline, pastel role cards, dark GitHub table</td></tr>
+</table></div>
+
+<h2>Not done</h2>
+<ul>
+<li><span class="warn">Hormozi skills:</span> the image shows names and key features only. The skill bodies, fail-closed rules, repo and licence are not shown, and a web search did not find this library. Nothing was cloned.</li>
+<li>GitHub toolkit: only skillicons.dev is named on its slide; URLs for readme.so, ProfileMe.dev and OctoProfile are unverified.</li>
+<li>Agent Archive account: not created (blocked earlier; waiting for you to run the sign-up or supply a key).</li>
+</ul>
+
+<h2>Connector status (7 Oct 2026)</h2>
+<div class="scroll"><table>
+<tr><th>State</th><th>Connectors</th></tr>
+<tr><td>Connected</td><td>Gmail, Slack, Fireflies, Linear, Figma, ClickUp, Airtable, Ahrefs, Consensus, Zapier, Google Drive, Google Calendar, Notion, Miro, Canva, Hugging Face, Shopify, Atlassian (Jira), Taplio</td></tr>
+<tr><td>You must sign in</td><td>Supabase (incomplete), Stripe, Sentry, monday.com, Microsoft 365 (incomplete)</td></tr>
+<tr><td>Not in your connector list</td><td>Asana, Excalidraw, Webflow, Square, Cloudflare, Snowflake, Vercel, Make, Salesforce, Intercom, Wix, PayPal, Mercury, BigQuery, Netlify, GitHub, Twilio, Fellow.ai, WordPress.com, Razorpay, AWS Marketplace, Databricks, PlanetScale, PostHog, Similarweb, n8n, WordPress</td></tr>
+</table></div>
+<p class="muted">Taplio now shows as connected, which supersedes the "needs reconnect" note in the Batch 104 report.</p>
+
+<h2>Prompt (copy)</h2>
+<div id="prompts"></div>
+</main>
+<script>
+const P=[
+`You are a LinkedIn outreach specialist who helps founders write opening messages that start genuine conversations with ideal prospects.
+
+I want to reach out to a specific type of prospect and I need an opening message that feels personal, relevant, and worth replying to.
+
+Target prospect: [describe them in detail, including their role, business stage, what they are actively working on, and the situation they are most likely in right now].
+
+What I know or can observe about this person before reaching out: [describe any signals, profile details, recent activity, or shared context you have available].
+
+My offer: [one sentence, for context only - do not include this in the message itself].
+
+Write ten opening message variants for reaching out to this type of prospect. Each message must do the following.
+
+Reference something specific and real about the person or their situation in the opening line, making it clear the message was written for them and not copied from a template.
+
+Feel like genuine curiosity from one peer to another, not a qualifying question or a setup for a pitch.
+
+End with one question that is directly relevant to their situation and worth taking 30 seconds to answer.
+
+Vary the angle across the ten options. Write three that lead with something observed about their recent content or activity. Write three that open from a shared context, industry observation, or relevant experience. Write two that reference a specific detail from their profile or company. Write two that open with a direct and honest statement of why you wanted to connect, with no pitch attached.
+
+Each message should be under 80 words. Write as natural spoken language. Do not use openers such as "I came across your profile," "I hope this message finds you well," or "I noticed we share an interest in."
+
+After the 10 variants, identify the three most likely to get a reply and explain in one sentence each why those specific angles work for this type of prospect.`,
+"Give me 60 carousel hooks for [AUDIENCE], grouped by angle. Mark the 20 weakest so I can delete them and keep 40."
+];
+const host=document.getElementById('prompts');
+P.forEach(t=>{const d=document.createElement('div');d.className='prompt';const p=document.createElement('p');p.textContent=t;const b=document.createElement('button');b.textContent='Copy';
+b.onclick=async()=>{try{await navigator.clipboard.writeText(t);b.textContent='Copied'}catch(e){const r=document.createRange();r.selectNodeContents(p);const s=getSelection();s.removeAllRanges();s.addRange(r);b.textContent='Selected'}setTimeout(()=>b.textContent='Copy',1500)};
+d.append(p,b);host.append(d)});
+</script>
