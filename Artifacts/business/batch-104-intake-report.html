@@ -1,0 +1,96 @@
+<title>Batch 104 Intake Report</title>
+<style>
+/* Layout: single readable column; tables centred and top-aligned per owner preference. Palette: ink on paper, one blue accent. */
+:root{--bg:#f7f7f4;--fg:#1c2230;--muted:#586075;--line:#d9dbe0;--accent:#1f4fd8;--card:#fff;--warn:#9a5b00;--code:#eceef3;--font:Aptos,"Segoe UI",system-ui,sans-serif}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#14171f;--fg:#e8eaf0;--muted:#9aa3b8;--line:#2c3140;--accent:#7da2ff;--card:#1b1f2a;--warn:#e0a54a;--code:#232838;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#14171f;--fg:#e8eaf0;--muted:#9aa3b8;--line:#2c3140;--accent:#7da2ff;--card:#1b1f2a;--warn:#e0a54a;--code:#232838;color-scheme:dark}
+body{background:var(--bg);color:var(--fg);font:11pt/1.5 var(--font);padding-inline:16px;padding-block:24px}
+main{max-width:860px;margin:0 auto;min-width:0}
+h1{font-size:32pt;line-height:1.1;margin:0 0 8px;text-wrap:balance}
+h2{font-size:14pt;margin:28px 0 8px;border-bottom:1px solid var(--line);padding-bottom:4px}
+p,li{max-width:70ch}.muted{color:var(--muted)}
+.scroll{overflow-x:auto}
+table{border-collapse:collapse;width:100%;font-size:11pt}
+th,td{border:1px solid var(--line);padding:6px 8px;text-align:center;vertical-align:top}
+th{background:var(--code)}
+.warn{color:var(--warn);font-weight:600}
+.prompt{background:var(--card);border:1px solid var(--line);border-radius:6px;padding:10px 12px;margin:8px 0;display:flex;gap:10px;align-items:flex-start}
+.prompt p{margin:0;flex:1;min-width:0;white-space:pre-wrap}
+button{font:inherit;font-size:10pt;border:1px solid var(--accent);background:transparent;color:var(--accent);border-radius:4px;padding:2px 10px;cursor:pointer}
+button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+code{background:var(--code);padding:1px 4px;border-radius:3px;font-size:10pt}
+</style>
+<main>
+<h1>Batch 104 Intake Report</h1>
+<p class="muted">7 October 2026. Sources: <code>claude-skills-for-linkedin.zip</code> (26 skills, README, licence) and <code>iCloud Photos</code> (58 images).</p>
+
+<h2>Status</h2>
+<p><span class="warn">Skills, commands and agents are staged, not installed.</span> The session was blocked from writing <code>.claude/</code> and <code>.mcp.json</code>. Everything is in <code>docs/batch104/install-pack/</code>; run <code>scripts/batch104-install.sh</code> on your machine (it asks before each step).</p>
+<div class="scroll"><table>
+<tr><th>Item</th><th>Count</th><th>State</th></tr>
+<tr><td>LinkedIn skills (Taplio)</td><td>26</td><td>Staged. Read in full: only Taplio links, no hidden commands. All require the Taplio MCP.</td></tr>
+<tr><td>New skills from the photos</td><td>7</td><td>Staged: claude-9-commands, stackflo-6-prompts, spreadsheet-to-management-brief, claude-50-hacks, free-ai-coding-agents, sme-ai-systems, build-ai-coach</td></tr>
+<tr><td>New commands</td><td>11</td><td>Staged: expert-mode, keep-going, find-bottleneck, compare-options, rewrite-sharper, read-5-things, reply-email, research-80-20, sheet-brief, ai-coach-daily, hack-audit</td></tr>
+<tr><td>New agents</td><td>5</td><td>Staged: ai-coach, sme-knowledge-assistant, sme-meeting-intelligence, sme-executive-copilot, sme-growth-execution</td></tr>
+<tr><td>Design themes and cards</td><td>5</td><td>Done: <code>Artifacts/templates/batch104-themes.css</code> and <code>batch104-cards.html</code></td></tr>
+<tr><td>AI Coach scaffold</td><td>vault + SQL</td><td>Done: <code>docs/ai-coach/</code> (SQL not run anywhere)</td></tr>
+</table></div>
+<p>Already in the repo, so not duplicated: <code>/clarify-first</code>, <code>/redteam</code>, <code>/examples</code>, <code>/simplify-explain</code>, <code>/action-plan-from-notes</code>, <code>/grade-and-rewrite-loop</code>, and the agents <code>os-prospect</code>, <code>os-qualify</code>, <code>os-followup</code>, <code>os-support</code>, <code>os-business-analyst</code>.</p>
+
+<h2>Connectors</h2>
+<div class="scroll"><table>
+<tr><th>Connector</th><th>Finding</th><th>Action for you</th></tr>
+<tr><td>Taplio MCP</td><td>Already in your claude.ai org, state "needs reconnect". The script adds it to the project too.</td><td>Reconnect in claude.ai connector settings, then <code>/mcp</code>.</td></tr>
+<tr><td>Supabase</td><td>In <code>.mcp.json</code> (read-only). Org connector shows "connect incomplete".</td><td>Finish authorising. Create the FITNESS DATA project yourself.</td></tr>
+<tr><td>Telegram</td><td>No dedicated connector. AnythingMCP lists Telegram.</td><td>Optional. Bot token via BotFather stays with you.</td></tr>
+<tr><td>Obsidian, Intervals.icu, Garmin, WHOOP</td><td>No connector found in the registry.</td><td>Use file upload or exports.</td></tr>
+</table></div>
+
+<h2>Repo register (cloned shallow and read, 7 Oct 2026)</h2>
+<div class="scroll"><table>
+<tr><th>Repo</th><th>Licence</th><th>Install (from README)</th><th>Caveat</th></tr>
+<tr><td>cline/cline</td><td>Apache-2.0</td><td><code>npm i -g cline</code></td><td>Model tokens are extra.</td></tr>
+<tr><td>anomalyco/opencode</td><td>MIT</td><td><code>npm i -g opencode-ai@latest</code></td><td>Same project as sst/opencode: identical HEAD commit. Earlier README notes called this unverified.</td></tr>
+<tr><td>OpenHands/OpenHands</td><td>MIT</td><td><code>npm install -g @openhands/agent-canvas</code></td><td>Unsandboxed mode has full filesystem access. Use Docker.</td></tr>
+<tr><td>Aider-AI/aider</td><td>Apache-2.0</td><td><code>python -m pip install aider-install</code></td><td>Last commit 22 May 2026.</td></tr>
+<tr><td>continuedev/continue</td><td>Apache-2.0</td><td>VS Code extension or <code>@continuedev/cli</code></td><td class="warn">README says 2.0.0 was the final release. Skip.</td></tr>
+</table></div>
+<p class="muted">The clones live outside the repo and were not installed. "Free" covers the software only.</p>
+
+<h2>Source problems</h2>
+<ul>
+<li>"8 AI Systems" shows 10 slides; "5 ChatGPT prompts" shows 6; "50 Claude hacks" is partly obscured by a watermark at items 49-50 (text recovered).</li>
+<li>The Step 8 Supabase schema image is garbled. Only <code>daily_metrics</code> is exact; the other five tables are reconstructed.</li>
+<li>The coach's "Connect Obsidian" menu is shown in a mock-up; I could not confirm it exists.</li>
+<li>Slides 44 and 55 are shop and follow promotions, ignored. Stars are the posts' figures.</li>
+</ul>
+
+<h2>Prompts (copy)</h2>
+<div id="prompts"></div>
+<p class="muted">Full set with the coach and spreadsheet prompts: <code>docs/batch104/prompt-pack.md</code>.</p>
+</main>
+<script>
+const P=[
+"Before you answer, ask me the most important questions you need to give me the best possible result.",
+"Red-team this idea. Identify the weaknesses, risks, blind spots, and assumptions. Then suggest how to strengthen it.",
+"Compare these options in a table. Include the pros, cons, risks, and your recommendation based on my goal.",
+"Give me 3 strong, realistic examples so I can clearly see what a good result looks like.",
+"Approach this like a top [FIELD] expert with 20 years of experience. Give me practical, strategic advice and explain your reasoning.",
+"Explain this in simple, plain language, as if you were teaching a 12-year-old. Use one clear example.",
+"Rewrite this to sound sharper, clearer, and more persuasive while keeping my original meaning and voice.",
+"Keep going until the task is fully complete. Review your work, fix any gaps, and don't stop after the first pass.",
+"Analyze this project or process and identify the biggest bottleneck. Explain why it's limiting progress and give me the simplest high-impact solution.",
+"Summarise this into the 5 things I actually need to know. Remove repetition and background information. End with any actions I need to take.",
+"Write a reply to this email. Keep it professional but natural. Be concise and avoid corporate language. Ask me for any missing information first.",
+"I need to understand [TOPIC]. Give me the 20% of information that covers 80% of it. Explain it simply, then tell me what to research next.",
+"Critique this draft before rewriting it. Tell me: What's unclear / What's unnecessary / What's missing / What could be stronger. Then rewrite it.",
+"Analyse this spreadsheet for the question: [BUSINESS QUESTION]. First describe the columns and identify missing, duplicated or suspicious values. Then calculate the metrics that answer the question. Show the formulas or logic used. Do not silently change the data.",
+"Create a one-page management brief: headline finding -> supporting numbers -> trend or comparison -> possible explanations -> risks -> recommended next checks. Label correlation as correlation. Do not claim causation unless the data supports it.",
+"You are my personal fitness coach. Use my workout, sleep, recovery and training data before giving advice. Track my goals, training history and progress. Every day tell me what I should do and why. Never invent missing health data.",
+"Interview me to build my athlete profile. Ask my goal, race date, current fitness, injuries, weekly training style. Ask one question at a time."
+];
+const host=document.getElementById('prompts');
+P.forEach(t=>{const d=document.createElement('div');d.className='prompt';const p=document.createElement('p');p.textContent=t;const b=document.createElement('button');b.textContent='Copy';
+b.onclick=async()=>{try{await navigator.clipboard.writeText(t);b.textContent='Copied'}catch(e){const r=document.createRange();r.selectNodeContents(p);const s=getSelection();s.removeAllRanges();s.addRange(r);b.textContent='Selected'}setTimeout(()=>b.textContent='Copy',1500)};
+d.append(p,b);host.append(d)});
+</script>

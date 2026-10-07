@@ -5856,6 +5856,16 @@ Source: `80c9789b-LinkedIn_Master_Guide_for_Claude.zip` — 4 static images (`.j
 
 **Not done:** no connector was installed (see `gtm-funnel-2026` for which GTM tools are already connected here and which are not); no repo was installed; Capd, ChatbotX and alphai-tui owners were found by web search and confirmed with `git ls-remote`. ChatbotX and cmux have custom licences you should read before use.
 
+## Batch 104 - Taplio LinkedIn skills zip and iCloud Photos batch 9 (58 images) (7 October 2026)
+
+**Report:** [Batch 104 Intake Report](https://claude.ai/artifact/74K99x9wQigzErPSQXuWGW) (`Artifacts/business/batch-104-intake-report.html`).
+
+**Sources:** Taplio `claude-skills-for-linkedin.zip` (26 skills); @the.wealth.lab (9 Claude commands), @stackfloai (6 prompts), @earchoe (spreadsheet-to-brief), @aisimplified23 (50 Claude hacks), @usamaakrm (AI Coach, 9 steps), Thomas Krypas (AI systems for SMEs), @will.ai.m (5 free coding agents).
+
+**Staged, not installed** (the cloud session was blocked from writing `.claude/` and `.mcp.json`): 26 LinkedIn skills, 7 new skills, 11 commands, 5 agents in `docs/batch104/install-pack/`; run `scripts/batch104-install.sh` on your machine. **Done:** design themes and cards (`Artifacts/templates/batch104-*`), AI Coach vault scaffold and SQL (`docs/ai-coach/`), `docs/batch104/prompt-pack.md`.
+
+**Verified:** `anomalyco/opencode` and `sst/opencode` have the identical HEAD commit (same project). Continue's README says 2.0.0 was its final release. OpenHands now installs via `@openhands/agent-canvas`. Taplio MCP is already in the claude.ai org and needs reconnecting.
+
 ## Batch 103 — iCloud Photos batch 8 (64 images, 3 videos) and a CEO KPI infographic (3 October 2026)
 
 **Report:** [Batch 103 Intake Report](https://claude.ai/artifact/D1A96pph3ZDuvuRPNtYLnH) (`Artifacts/business/batch-103-intake-report.html`).
