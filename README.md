@@ -5866,7 +5866,7 @@ Source: `iCloud Photos.zip` (73 new images, 1 video still) and one inline card (
 | Commands (6) | `/presentation-system`, `/rewrite-copy`, `/job-sites`, `/learn-skill-free`, `/app-24h`, `/plugins-top5` |
 | Agents (2) | `remote-job-scout`, `presentation-director` |
 | Template | `Artifacts/templates/batch108-cards.html` (gold prompt card, paper workflow card, neon repo card) |
-| Report | `Artifacts/business/batch-108-intake-report.html` |
+| Report | `Artifacts/business/batch-108-intake-report.html` - [published](https://claude.ai/artifact/1Bk8bWvXcKSNNKCWisr7jr) |
 
 Already in the repo, not duplicated: the @jeanbbttyct 10 app categories (`ai-app-stack-2026`), `hookify` and `dev-repos-to-clone`. Flags: OpenShip and DeepDiagram owners not shown on the cards (unverified); prompts 1 and 5 of the "Brain" learning set were not in the upload; the fifth @replace.so repo card was unreadable. Verified by shallow clone: agent-substrate/substrate (Apache-2.0), morluto/rea (MIT).
 
