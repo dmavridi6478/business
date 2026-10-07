@@ -5858,7 +5858,7 @@ Source: `80c9789b-LinkedIn_Master_Guide_for_Claude.zip` — 4 static images (`.j
 
 ## Batch 106 - iCloud Photos batch 11 (54 new images) and a duplicate zip (7 October 2026)
 
-**Report:** pending (see `Artifacts/business/batch-106-intake-report.html`).
+**Report:** [Batch 106 Intake Report](https://claude.ai/artifact/LHK7DHAcnqfNy9sCyfPqgM) (`Artifacts/business/batch-106-intake-report.html`).
 
 **Sources:** @aiemergence (LLM council), @aiclawbots (5 Hermes agent projects), @ruby.creates1 and @dotdevs (developer tools), @codenameposhan (EmbeddingGemma 2 cards), @earchoe (knowledge to digital product), @aigenesis.official (40 AI tools), @wavaai.feeds (idea to workflow). The second zip was byte-identical to the Batch 105 zip (15 of 15 images and the video) and was skipped.
 
