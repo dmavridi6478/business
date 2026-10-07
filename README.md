@@ -5856,6 +5856,20 @@ Source: `80c9789b-LinkedIn_Master_Guide_for_Claude.zip` — 4 static images (`.j
 
 **Not done:** no connector was installed (see `gtm-funnel-2026` for which GTM tools are already connected here and which are not); no repo was installed; Capd, ChatbotX and alphai-tui owners were found by web search and confirmed with `git ls-remote`. ChatbotX and cmux have custom licences you should read before use.
 
+## Batch 108
+
+Source: `iCloud Photos.zip` (73 new images, 1 video still) and one inline card ("20 Websites to Find a Remote Job in 2026"). A second inline image (GTM cheat sheet) duplicated Batch 107 and was skipped.
+
+| Type | Added |
+|---|---|
+| Skills (9) | `remote-job-sites-20`, `presentation-system-7`, `copy-rewrite-workflow`, `app-in-24-hours`, `codedex-5-repos`, `github-trending-agents-oct-2026`, `oss-self-host-picks`, `claude-plugins-top5`, `learning-prompts-brain` |
+| Commands (6) | `/presentation-system`, `/rewrite-copy`, `/job-sites`, `/learn-skill-free`, `/app-24h`, `/plugins-top5` |
+| Agents (2) | `remote-job-scout`, `presentation-director` |
+| Template | `Artifacts/templates/batch108-cards.html` (gold prompt card, paper workflow card, neon repo card) |
+| Report | `Artifacts/business/batch-108-intake-report.html` |
+
+Already in the repo, not duplicated: the @jeanbbttyct 10 app categories (`ai-app-stack-2026`), `hookify` and `dev-repos-to-clone`. Flags: OpenShip and DeepDiagram owners not shown on the cards (unverified); prompts 1 and 5 of the "Brain" learning set were not in the upload; the fifth @replace.so repo card was unreadable. Verified by shallow clone: agent-substrate/substrate (Apache-2.0), morluto/rea (MIT).
+
 ## Batch 107 - The 2026 GTM Cheat Sheet (1 inline image) (7 October 2026)
 
 **Report:** [Batch 107 Intake Report](https://claude.ai/artifact/TkF3vXTZUscuYYTBY2J8TQ) (`Artifacts/business/batch-107-intake-report.html`).
