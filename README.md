@@ -5883,3 +5883,20 @@ Source: iCloud Photos (36 card screenshots) + "The 8 Ps of Sales" (5 infographic
 - `/workflow-to-agent` — skill → agent team → autopilot in one pass; `build-ai-agent-10-minutes/references/wealth-lab-6-step.md` holds the 6-step variant
 - Design: templates `social-card-editorial-playbook`, `social-card-github-daily-briefing`, `social-card-repo-showcase-warm`, `infographic-framework-kit` in `Artifacts/templates/`; themes `theme-editorial-paper-red`, `theme-github-night-green` in `Artifacts/`
 - Not done (blocked by permission classifier, left for the user): registering four plugin marketplaces in `.claude/settings.json`, appending four repos to `setup-repos.sh`, vendoring `find-skills` — commands are in the action plan. Granola needs OAuth in claude.ai; Kondo is not in the connector registry.
+
+## 99. Executive Presence, CMO Cadence, AEO Metrics, 7S Model, Token Rules, Connector Stacks & Design Kit (Batch 99)
+
+Source: 5 infographics + 28 carousel slides (iCloud Photos). Details, verification results and unverified claims: `docs/batch-99-action-plan.md`; copy-paste prompts: `docs/batch-99-prompts.md`.
+
+| Skill | Command | From |
+|---|---|---|
+| executive-presence-8 | /exec-presence | Dora Vanourek, 8 ways to build executive presence |
+| cmo-operating-cadence (+ cmo-plan-reviewer, cmo-monthly-review, cmo-brief-writer) | /cmo-cadence | The CMO's ChatGPT Playbook, translated to Claude |
+| aeo-diagnostic-metrics | /aeo-score | Gartner AEO diagnostic metrics |
+| mckinsey-7s-model | /7s-audit | McKinsey 7S + 6 tips (Eric Partaker) |
+| claude-token-rules-22 | /token-audit | 22 Claude rules for token limits |
+| connector-starter-stacks | /connector-stack | 5 MCPs for life, 5 connectors for content, plugin vetting |
+
+Design: templates `Artifacts/templates/infographic-8-ways-grid.html`, `infographic-cadence-playbook-dark.html`, `infographic-7s-hexagon.html`, `infographic-rules-and-metrics.html`; themes `Artifacts/theme-playbook-night-lime.html`, `theme-dark-cream-carousel.html`, `theme-grid-paper-terracotta.html`.
+
+Not done (needs you): plugin installs (`/plugin install paypal@claude-plugins-official` etc.), five repos in `setup-repos.sh` (blocked), Fathom OAuth, recurring CMO schedules. See the action plan.
