@@ -1,6 +1,6 @@
 ---
 name: design-templates
-description: Ready-to-use, self-contained HTML/CSS templates for common content-visual needs — an iMessage chat mockup, a vertical social/story device frame, a 3D-tilted product screenshot mockup, a halftone/dithered image effect (both CSS-only and real canvas dithering), a logo/reference moodboard grid, a brand board (wordmark + palette + type pairing + app preview), a SaaS pricing table + comparison grid, a restrained editorial hero, a numbered infographic card grid (light/dark variants), a filterable design-reference-site dashboard, a light "Save For Later" social carousel (carousel-save-for-later), a dark neon agent info card (dark-neon-agent-card), a dark orange-gradient tutorial step-cards layout (dark-orange-agent-tutorial), a GitHub-style dark trending repo card (github-trending-card), a bold red grunge AI-tools carousel (@ai.global.lee style, red-grunge-ai-tools), a warm editorial carousel for thinking-partner / Claude workflow content (@parm.ai style, editorial-thinking-partner), a dark space-themed OSS repo card (@datawarlord_official style, datawarlord-oss-card), and a nature photo background with glassmorphism panels carousel (@softgirlnocode AI video style, softgirlnocode-nature-glassmorphism), a light/dark copy-this-prompt carousel (prompt-card-carousel), a repo-showcase card set (repo-card-grid), an agent explainer flow card (agent-flow-chat-card), and an orange mascot tips carousel (mascot-tips-orange). Use these instead of reaching for a paid single-purpose tool (or hand-rolling from scratch) when a design/frontend task needs a device mockup, a stylized image effect, a moodboard layout, a brand-kit deliverable, a SaaS pricing section, a quiet typography-led hero, a "N things you should know" carousel/infographic layout, a reusable reference dashboard, or any of the social-carousel/card layouts above. Each template is copy-paste-ready with clear swap points marked in comments.
+description: Ready-to-use, self-contained HTML/CSS templates for common content-visual needs — an iMessage chat mockup, a vertical social/story device frame, a 3D-tilted product screenshot mockup, a halftone/dithered image effect (both CSS-only and real canvas dithering), a logo/reference moodboard grid, a brand board (wordmark + palette + type pairing + app preview), a SaaS pricing table + comparison grid, a restrained editorial hero, a numbered infographic card grid (light/dark variants), a filterable design-reference-site dashboard, a light "Save For Later" social carousel (carousel-save-for-later), a dark neon agent info card (dark-neon-agent-card), a dark orange-gradient tutorial step-cards layout (dark-orange-agent-tutorial), a GitHub-style dark trending repo card (github-trending-card), a bold red grunge AI-tools carousel (@ai.global.lee style, red-grunge-ai-tools), a warm editorial carousel for thinking-partner / Claude workflow content (@parm.ai style, editorial-thinking-partner), a dark space-themed OSS repo card (@datawarlord_official style, datawarlord-oss-card), and a nature photo background with glassmorphism panels carousel (@softgirlnocode AI video style, softgirlnocode-nature-glassmorphism), a light/dark copy-this-prompt carousel (prompt-card-carousel), a repo-showcase card set (repo-card-grid), an agent explainer flow card (agent-flow-chat-card), and an orange mascot tips carousel (mascot-tips-orange), plus three Batch 104 templates: a near-black navy-grid repo spotlight with a browser mockup (repo-spotlight-browser-card), a full-bleed photo-under-scrim tool card (photo-overlay-tool-card) and a six-step highlightable code card (code-card-six-lines), plus five Batch 105 templates: a teal-and-gold skill spotlight (skill-spotlight-teal-gold), a grid-paper repo and command card (grid-paper-repo-command-card), a glossy AI-team role card (ai-team-role-card), a lavender "try this instead" tool card (swap-tool-lavender-card) and a two-approach comparison infographic (compare-two-approaches-cream), plus five Batch 106 templates: a charcoal-and-terracotta explainer table and list (mod-explainer-dark-terracotta), a cream repo-feature card with rank number and stats (repo-feature-cream-number), a beige prompt card with a dark copy box (prompt-card-beige-green), caption strips on a blue grid or photo (caption-highlight-blue-grid) and a pale-blue dashboard showcase (dashboard-showcase-light-blue). Use these instead of reaching for a paid single-purpose tool (or hand-rolling from scratch) when a design/frontend task needs a device mockup, a stylized image effect, a moodboard layout, a brand-kit deliverable, a SaaS pricing section, a quiet typography-led hero, a "N things you should know" carousel/infographic layout, a reusable reference dashboard, or any of the social-carousel/card layouts above. Batch 107 adds a red-cream numbered prompt-step carousel (prompt-step-red-cream), a night GitHub leaderboard (trending-top10-leaderboard) and a dark amber code-pane explainer (quant-code-pane-dark). Batch 108 adds a photo-scrim step carousel with tool rows (photo-step-tools-caption) and a periwinkle three-stage GTM chart (gtm-stage-three-column). Batch 109 adds a photo-scrim GitHub swap card (swap-card-photo-github). Batch 110 adds a grey-teal avoid / reason / say grid (avoid-reason-say-grid). Each template is copy-paste-ready with clear swap points marked in comments.
 ---
 
 ## When to use this skill
@@ -226,3 +226,129 @@ The original specimens use proprietary or unidentified fonts; these are look-ali
 | `soft-blue-tip` | `#F4F7FF` to `#E6EDFB`, placeholders `#C9CDD3`, red `#D63B3B`, green `#2DB45A` | Plus Jakarta Sans |
 | itsaiguide thumbnail | red radial glow, white title, red underlined section number, black bold quote | Anton + Inter (photo not reproduced) |
 
+
+## Batch 104 additions — three templates (rendered and checked in headless Chromium)
+
+| File | Inspired by | Technique |
+|---|---|---|
+| `repo-spotlight-browser-card.html` | "6 / 7 GitHub repos so good they shouldn't be free" carousels (@replace.so) | 1080×1350 slides; fading navy square grid built from two `repeating-linear-gradient` layers and a `mask-image`; app tile + star row; light browser window with a URL bar and a `.shot` slot; cover and repo slide in one file |
+| `photo-overlay-tool-card.html` | "Open-source tools for your app business" carousel (@dotdevs) | 1080×1920 slides; `--photo` custom property under a `--scrim` gradient (default is a CSS dusk scene, so it works with no image); centred wordmark, framed screenshot slot, three-line caption |
+| `code-card-six-lines.html` | "6 ML Algorithms" code video (@machinelearningtogo) | Editor window with numbered lines and syntax spans; six colour-coded chips (click or press 1-6) highlight one line range each and update the caption; pre-filled with the six lines in `scripts/ml_six_key_lines.py` |
+
+All three use a placeholder handle (`@yourhandle`). No source photo, logo, screenshot or watermark was reused. Pre-filled text is the carousel text or the video's code; swap it before publishing as your own.
+
+## Batch 104 theme tokens
+
+Colours marked **sampled** were read from pixels in the screenshots; the rest were judged by eye.
+
+| Theme | Colours | Fonts (look-alike, free) |
+|---|---|---|
+| `navy-repo-spotlight` | bg `#121214` (sampled `#151314`), grid navy `rgba(48,76,140,.40)`, title `#F3F1F2` (sampled), browser bar `#F3F2F4` (sampled), browser body `#FEFEFE` (sampled), caption `#A9ADBA`, star `#F5B72D` | Inter 800 with tight tracking (the specimen is a heavy grotesk; the match is a judgement) |
+| `porch-photo-scrim` | sky `#4A5359`, foliage `#13180E`, table `#292929` (all sampled after the scrim), white text, scrim 55% black | Outfit (on Google Fonts; a close match to the specimen) |
+| `ml-code-card` | page `#0A0F17` and window `#0A0E1B` (sampled), keyword `#5AA2FF`, number `#F6B93B`, function `#4DD0E1`, comment `#7080A0`, step chips yellow `#F6C445`, blue `#4FA3FF`, green `#4ADE80`, orange `#FB923C`, violet `#A78BFA`, pink `#F472B6` | JetBrains Mono + Inter |
+
+## Batch 105 additions — five templates (rendered and geometry-checked in headless Chromium)
+
+| File | Inspired by | Technique |
+|---|---|---|
+| `skill-spotlight-teal-gold.html` | "4 Claude skills for people who don't code" (@ai.easily) | 1080×1350; radial teal gradient, oversized gold counter, gold-outlined "fine print" panel; cover, skill and recap slides in one file |
+| `grid-paper-repo-command-card.html` | "Top 5 Claude Code design skills" (@awayfromlovable) | 1080×1920; CSS-grid paper background, terracotta rank over a heavy headline, screenshot slot, GitHub-style repo card, monospace command line, and a save/share/follow slide with a clipped ribbon |
+| `ai-team-role-card.html` | "I replaced myself with 10 AIs" (@aigenesis.official) | 1080×1350; faint grid, glossy tile built from gradients and inset shadows, spaced role label, huge tool name, dark screenshot slot, tile-cluster cover |
+| `swap-tool-lavender-card.html` | "8 underrated open source tools" (@coreclasseducation) | 1080×1296; layered radial blooms on lavender, dark app tile, "If you're paying for X, try this instead", dark window with placeholder rows. The window says to replace it with a real screenshot: the source carousel used generated mockups |
+| `compare-two-approaches-cream.html` | "JEV vs LLM" infographic (AIForLeaders.com) | 1080×1350; cream page, two flow cards around a shared-context node, two "use when" lists, caution line, dark footer bar. Geometry checks confirm no node leaves its card and the caution line clears the bar |
+
+All five use placeholder handles (`@yourhandle`, `Your brand`). No source logo, photo, screenshot, copy or watermark was reused; pre-filled text is the carousel's own wording or neutral filler, so swap it before publishing as your own.
+
+## Batch 105 theme tokens
+
+Colours marked **sampled** were read from pixels in the screenshots; the rest were judged by eye.
+
+| Theme | Colours | Fonts (look-alike, free) |
+|---|---|---|
+| `teal-gold-skill` | gradient `#173D49` to `#122E37` to `#0E1922` (all sampled), panel `#202F33` (sampled), gold `#E8A92E`, ink `#F4F1EA`, muted `#8A98A1` | Plus Jakarta Sans 800 (a close match; not confirmed) |
+| `grid-paper-terracotta` | paper `#F5EEE8` (sampled), terracotta `#D77655` (sampled), ink `#121212`, repo link blue `#0B63D6`, grid `#E6DCD3` | Inter 900 with tight tracking, JetBrains Mono for commands |
+| `org-chart-glossy` | page `#FDFDFD` (sampled), dark screenshot body `#020202` (sampled), role label `#C9684A`, ink `#0F0F0F`, sub `#727272` | Space Grotesk 700, Space Mono for the label |
+| `lavender-swap` | indigo `#4D23D8` (sampled), window `#222631` (sampled), window button `#A282F9` (sampled), page `#FAF9FF`, bloom `rgba(139,92,246,.22)` | Plus Jakarta Sans 800 |
+| `cream-compare` | cream `#F6F0E9` (sampled), card `#FBF8F1` (sampled), navy `#16294D`, teal `#0B9C86`, blue `#2450D8`, caution `#E5543A` | Source Serif 4 800 for titles, Inter for body |
+
+## Batch 106 additions — five templates (rendered; element overlap and containment checked in headless Chromium)
+
+| File | Inspired by | Technique |
+|---|---|---|
+| `mod-explainer-dark-terracotta.html` | "Redesign Claude Code yourself" (@taha_pathionai) | 1080×1350; charcoal page, heavy tight headline with a terracotta last line, definition rows with one lit row, hairline numbered list, counter and handle |
+| `repo-feature-cream-number.html` | weekly trending-repos carousel (@aiclawbots) | 1080×1350; huge terracotta rank number, GitHub-style white card with stats and a blue accent rule, three info pills, and a "which ones I would use" table slide; the mascot is a plain CSS badge |
+| `prompt-card-beige-green.html` | micro-app prompt carousel (@earchoe) | 1080×1920; beige page, serif all-caps headline, green instruction bar, dark monospaced prompt box, three step tiles; second slide for a quote and four numbered checks |
+| `caption-highlight-blue-grid.html` | Hermes LinkedIn series (@aiclawbots), money-photo captions (@penny.blanco6) | 1080×1920; graph-paper blue page with a white diagram card, and captions as individual white highlighter strips; second slide puts the same strips over a photo through one `--photo` property |
+| `dashboard-showcase-light-blue.html` | "Top 5 dashboard design of the month" (@amirabanal) | 1080×1350; pale blue page, "01 — Name" title, industry line, feature bullets, counter pill, large screenshot frame and a designer credit line; cover with a tilted device frame. The credit line is there on purpose: show the designer's name when the design is not yours |
+
+All five use placeholder handles (`@yourhandle`). No source logo, mascot, screenshot, photo or caption copy was reused. Two layout bugs (a footer sentence colliding with the fourth row; a feature list too close to the title) were found on first render and fixed.
+
+## Batch 106 theme tokens
+
+Colours marked **sampled** were read from pixels in the screenshots; the rest were judged by eye.
+
+| Theme | Colours | Fonts (look-alike, free) |
+|---|---|---|
+| `charcoal-terracotta` | bg `#141414` (sampled), row `#1F1D1C` (sampled), terracotta `#D77655` (sampled), ink `#F1EEE6`, muted `#9A958C` | Red Hat Display 900 plus Red Hat Mono (the specimen looks like Red Hat Display; not confirmed) |
+| `cream-terracotta` | cream `#F8F3E7` (sampled), rank number `#D45733` (sampled), card white, rule blue `#3B82F6` | Archivo 800, IBM Plex Mono |
+| `beige-green-prompt` | beige `#DAD5C1` (sampled), tile `#CEC7B1` (sampled), green bar `#71AD79` (sampled; label green `#2FA054` eyeballed), code box `#151310` | Playfair Display 900, JetBrains Mono |
+| `blueprint-captions` | blue `#044672` (sampled), white strip, accent `#3AA0FF` | Montserrat 700 |
+| `pale-blue-showcase` | pale blue `#DBE9FD` (sampled), ink `#0E1A2B`, pill `#8C97A6` | Inter, Instrument Serif for the cover |
+
+## Batch 107 additions — three templates (rendered; element overlap and containment checked in headless Chromium)
+
+| File | Inspired by | Technique |
+|---|---|---|
+| `prompt-step-red-cream.html` | "Stop using Claude one prompt at a time" (@ai.am.claude) | 1080×1080; cream page, huge red step number, heavy two-tone headline, red-dot bullets, rounded "prompt example" box, small-caps tagline and counter, flat red/slate/stone block art on the right; cover and step slides |
+| `trending-top10-leaderboard.html` | "10 hottest GitHub repos today" (@githubnow) | 1080×1920; near-black page, green date pill, ten-row leaderboard (rank, repo, purpose, stars today) with a lit top row, and an "unverified" note |
+| `quant-code-pane-dark.html` | "Quant finance from scratch" and "Machine Learning from Scratch" (@quantfinancetogo, @machinelearningtogo) | 1080×1920; near-black page, amber part label, centred title, chart card with a CSS bell-curve placeholder, caption, numbered code pane with one lit line and muted comments, disclaimer footer |
+
+All three use placeholder handles (`@yourhandle`). No source illustration, figure, animation, logo or caption copy was reused. A cover headline running under the art blocks and a headline overlapping its lead line were found on first render and fixed.
+
+## Batch 107 theme tokens
+
+Colours marked **sampled** were read from pixels in the screenshots or video frames; the rest were judged by eye.
+
+| Theme | Colours | Fonts (look-alike, free) |
+|---|---|---|
+| `red-cream-workflow` | cream `#FAF7EF` (sampled), red `#DE2918` (sampled), dark red `#5F0904` (sampled), stone `#E5E0D4` (sampled), prompt box `#F8F6F5` (sampled), slate `#3B4A52` | Inter 900 with tight tracking (the specimen looks like a heavy grotesque; not confirmed) |
+| `night-leaderboard` | bg `#0D1117`, row `#161B22`, green `#3FB950`, muted `#8B949E` (GitHub-dark look, eyeballed) | Inter 900, JetBrains Mono |
+| `night-amber-code` | bg `#08090E` (sampled), panel `#0C0F16` (sampled), amber `#F2A93B` (eyeballed), muted `#6B7385`; the Attention video uses bg `#0A0F17` (sampled) | Inter 800, JetBrains Mono |
+
+## Batch 108 additions — two templates (rendered; element overlap and containment checked in headless Chromium)
+
+| File | Inspired by | Technique |
+|---|---|---|
+| `photo-step-tools-caption.html` | "The exact app-building method" (@dolorstca2h) | 1080×1920; full-bleed photo (CSS gradient fallback) under a dark scrim, numbered step title, one or two tool rows with icon tile, "Tool — Role" label and caption, handle bottom right; cover, one-tool and two-tool slides |
+| `gtm-stage-three-column.html` | "9 GTM Infographics" cover | 1080×1350; periwinkle page, centred title with arrow, three-step rising chart and three stage cards (name, ARR pill, goal, bullets) |
+
+Both use placeholder handles (`@yourhandle`). No source photo, logo, graphic or caption copy was reused.
+
+## Batch 108 theme tokens
+
+| Theme | Colours | Fonts (look-alike, free) |
+|---|---|---|
+| `photo-scrim-white` | scrim `rgba(8,8,10,.52)` over a photo, white ink, tile white, accent `#2F6BFF` (eyeballed) | Inter 600 |
+| `periwinkle-stages` | bg `#D4DFFE` (sampled), card `#F2F9FF` (sampled), stage 3 `#A4E7FF` (sampled), stage 1 `#FFE9A8` and stage 2 `#FFC9A8` (eyeballed), ink `#0E1A2B` | Inter 800 |
+| `night-briefing-green` (reference only, existing template `github-trending-card` is close) | bg `#111526` (sampled), green `#4EAE5E` (sampled), gold stars pill (eyeballed) | Inter, JetBrains Mono |
+
+## Batch 109 additions — one template (rendered; element overlap and containment checked in headless Chromium)
+
+| File | Inspired by | Technique |
+|---|---|---|
+| `swap-card-photo-github.html` | "5 open source apps that replace paid subscriptions" (@dotdevs) | 1080×1920; dark photo (CSS gradient fallback) under a scrim, round-corner app icon, tool name, "replaces ..." line, white GitHub-style repo card with stat chips, link line and handle; cover slide with an icon row |
+
+Uses the existing `photo-scrim-white` theme; placeholder handle `@yourhandle`; no source photo, icon or caption copy reused.
+
+## Batch 110 additions — one template (rendered; element overlap and containment checked in headless Chromium)
+
+| File | Inspired by | Technique |
+|---|---|---|
+| `avoid-reason-say-grid.html` | "10 Things NOT to Say in a Job Interview" (Dr. Christian Poensgen) | 1080×1350; warm grey page, big condensed navy title with teal tag, three-column grid of numbered cards each with Avoid (red cross), Reason (amber question mark) and Say (green tick), footer bar |
+
+## Batch 110 theme tokens
+
+| Theme | Colours | Fonts (look-alike, free) |
+|---|---|---|
+| `grey-teal-guide` | bg `#E7E5E4` (sampled), number line `#CEE4DF` (sampled), navy `#0F2D3A` and teal `#8CC1B5` (eyeballed), red `#D8342C`, amber `#F2A93B`, green `#2E9D4F` | Oswald 700 for the title, Inter for body |
+| GTM roadmap (reference only; existing template `gtm-stage-three-column` is close) | black `#0A0A0A` (sampled), purple `#60369E` (sampled), yellow `#F0EF4B` (nearly sampled), green block `#B8F56A` (eyeballed) | Inter 800 |

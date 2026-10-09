@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<!--
+  Template: mod-explainer-dark-terracotta
+  Style: charcoal page, tight heavy white headline with a terracotta last line, a definition table with one highlighted row,
+         a numbered list with hairlines, a footer line and a slide counter. Theme: charcoal-terracotta
+  Inspired by: the "Redesign Claude Code yourself" carousel (@taha_pathionai). Original CSS; no source brand, handle or copy reused.
+  Canvas: 1080 x 1350. Two slides in one file: .slide--table (term / meaning rows) and .slide--list (numbered points). Duplicate either.
+  Swap points:
+    :root tokens                  colours and fonts
+    .eyebrow                      small terracotta label
+    h1 / h1 em                    headline; em is the terracotta part
+    .row (.hl for the lit row)    term and meaning; keep 4 rows
+    .list li                      up to 5 numbered points
+    .foot / .count                one-line takeaway and "06/08" style counter
+    .handle                       your own handle (placeholder: @yourhandle)
+-->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mod Explainer Dark Terracotta</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@500;700;900&family=Red+Hat+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #141414;          /* sampled */
+    --row: #1F1D1C;         /* sampled: dark row */
+    --accent: #D77655;      /* sampled: terracotta */
+    --ink: #F1EEE6;
+    --muted: #9A958C;
+    --line: #2C2A28;
+    --font: "Red Hat Display", Aptos, "Segoe UI", system-ui, sans-serif;
+    --mono: "Red Hat Mono", ui-monospace, Consolas, monospace;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: #000; display: flex; flex-direction: column; align-items: center; gap: 32px; padding: 32px 0; overflow-x: auto; font-family: var(--font); }
+  .slide { position: relative; width: 1080px; height: 1350px; flex: none; background: var(--bg); color: var(--ink); padding: 100px 88px 0; overflow: hidden; }
+  .eyebrow { font-size: 24px; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; color: var(--accent); }
+  h1 { margin-top: 70px; font-size: 118px; line-height: .98; font-weight: 900; letter-spacing: -.055em; }
+  h1 em { font-style: normal; color: var(--accent); display: block; }
+  .rows { margin-top: 70px; display: flex; flex-direction: column; gap: 14px; }
+  .row { display: grid; grid-template-columns: 230px 1fr; align-items: center; gap: 24px; background: var(--row); border-radius: 26px; padding: 0 32px; height: 100px; font-size: 32px; font-weight: 500; }
+  .row b { font-size: 36px; font-weight: 900; letter-spacing: -.03em; }
+  .row.hl { background: var(--accent); color: #141414; }
+  .list { margin-top: 110px; list-style: none; border-top: 1px solid var(--line); }
+  .list li { display: grid; grid-template-columns: 112px 1fr; align-items: center; height: 93px; border-bottom: 1px solid var(--line); font-size: 37px; font-weight: 700; letter-spacing: -.02em; }
+  .list li i { font: 400 25px var(--mono); font-style: normal; color: var(--accent); }
+  .foot { position: absolute; left: 88px; right: 88px; bottom: 150px; padding-top: 28px; border-top: 1px solid var(--line); font-size: 29px; line-height: 1.35; color: var(--muted); max-width: 800px; }
+  .count { position: absolute; right: 88px; bottom: 100px; font: 400 25px var(--mono); color: var(--muted); }
+  .handle { position: absolute; right: 88px; bottom: 44px; font-size: 28px; font-weight: 700; }
+</style>
+</head>
+<body>
+
+<section class="slide slide--table">
+  <div class="eyebrow">Don't mix them up</div>
+  <h1>Term A,<br>term B<em>or term C?</em></h1>
+  <div class="rows">
+    <div class="row hl"><b>Term A</b><span>What it is, in one short line</span></div>
+    <div class="row"><b>Term B</b><span>What it is, in one short line</span></div>
+    <div class="row"><b>Term C</b><span>What it is, in one short line</span></div>
+    <div class="row"><b>Term D</b><span>What it is, in one short line</span></div>
+  </div>
+  <p class="foot">One sentence that separates the first term from the others.</p>
+  <div class="count">02/08</div><div class="handle">@yourhandle</div>
+</section>
+
+<section class="slide slide--list">
+  <div class="eyebrow">What it can do</div>
+  <h1>Watch it.<br>Change it.<em>Take it over.</em></h1>
+  <ol class="list">
+    <li><i>01</i>First capability in plain words</li>
+    <li><i>02</i>Second capability in plain words</li>
+    <li><i>03</i>Third capability in plain words</li>
+    <li><i>04</i>Fourth capability in plain words</li>
+    <li><i>05</i>Fifth capability in plain words</li>
+  </ol>
+  <div class="count">03/08</div><div class="handle">@yourhandle</div>
+</section>
+
+</body>
+</html>

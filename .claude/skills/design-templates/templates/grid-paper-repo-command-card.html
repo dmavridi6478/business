@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<!--
+  Template: grid-paper-repo-command-card
+  Style: warm paper background with a fine grid, a terracotta rank plus heavy black headline, a rounded website screenshot,
+         a GitHub-style white repo card, a monospace install command and a one-line outcome. Theme: grid-paper-terracotta
+  Inspired by: the "Top 5 Claude Code design skills" carousel (@awayfromlovable). Original CSS; no source photo, handle or screenshots reused.
+  Canvas: 1080 x 1920 (9:16). Two slides in one file: .slide--tool (duplicate per tool) and .slide--cta (save / share / follow).
+  Swap points:
+    :root tokens                      colours and fonts
+    .rank                             "#2:" and .lead the rest of the headline
+    .shot                             put an <img> inside for the real website screenshot
+    .repo a / .repo p / .repo .meta   owner/repo, description, language and stars (quote a real count and its date)
+    .cmd                              the exact install command from the README (check it, including any marketplace step)
+    .outcome                          one bold sentence on what changes for the user
+    .pill                             your own handle
+-->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Grid Paper Repo Command Card</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;800;900&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #F5EEE8;       /* sampled */
+    --grid: #E6DCD3;        /* eyeballed; the grid is very faint */
+    --terra: #D77655;       /* sampled from the ribbon */
+    --ink: #121212;
+    --card: #FFFFFF;
+    --link: #0B63D6;        /* eyeballed: repo-card link blue */
+    --meta: #5C5C5C;
+    --font: "Inter", Aptos, "Segoe UI", system-ui, sans-serif;
+    --mono: "JetBrains Mono", ui-monospace, Consolas, monospace;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: #222; display: flex; flex-direction: column; align-items: center; gap: 32px; padding: 32px 0; overflow-x: auto; font-family: var(--font); }
+  .slide { position: relative; width: 1080px; height: 1920px; flex: none; overflow: hidden; padding: 290px 72px 0; color: var(--ink);
+    background-color: var(--paper);
+    background-image: linear-gradient(var(--grid) 1px, transparent 1px), linear-gradient(90deg, var(--grid) 1px, transparent 1px); background-size: 60px 60px; }
+  h1 { font-size: 92px; line-height: .98; font-weight: 900; letter-spacing: -.045em; }
+  h1 .rank { color: var(--terra); display: block; }
+  .shot { margin-top: 56px; height: 470px; border-radius: 34px; background: linear-gradient(180deg, #fbfaf8, #ece6df); box-shadow: 0 24px 60px rgba(60,40,25,.18); overflow: hidden; display: grid; place-items: center; color: #9b928a; font-size: 26px; }
+  .shot img { width: 100%; height: 100%; object-fit: cover; object-position: top; }
+  .repo { margin-top: 30px; background: var(--card); border-radius: 30px; padding: 30px 36px; box-shadow: 0 10px 30px rgba(60,40,25,.10); }
+  .repo a { font-size: 44px; font-weight: 800; color: var(--link); text-decoration: none; letter-spacing: -.02em; }
+  .repo p { margin-top: 8px; font-size: 38px; line-height: 1.22; color: var(--meta); font-weight: 500; }
+  .repo .meta { margin-top: 12px; font-size: 36px; font-weight: 600; color: var(--meta); display: flex; align-items: center; gap: 14px; }
+  .repo .meta i { width: 26px; height: 26px; border-radius: 50%; background: #55504b; display: inline-block; }
+  .cmd { margin-top: 36px; font: 700 37px/1.25 var(--mono); color: var(--terra); word-break: break-word; }
+  .cmd::before { content: "$ "; }
+  .outcome { margin-top: 14px; font-size: 44px; line-height: 1.12; font-weight: 800; letter-spacing: -.025em; max-width: 900px; }
+
+  .slide--cta { padding-top: 0; }
+  .ribbon { position: absolute; left: 72px; top: 0; width: 100px; height: 200px; background: var(--terra); clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 78%, 0 100%); }
+  .cta { position: absolute; left: 72px; top: 690px; display: flex; flex-direction: column; gap: 14px; }
+  .cta div { display: flex; align-items: center; gap: 28px; font-size: 150px; line-height: 1; font-weight: 900; letter-spacing: -.045em; }
+  .cta div::before { content: "→"; color: var(--terra); font-size: 110px; font-weight: 800; }
+  .pill { position: absolute; left: 72px; top: 1330px; background: var(--ink); color: #fff; font-size: 52px; font-weight: 800; letter-spacing: -.02em; padding: 28px 58px; border-radius: 999px; }
+</style>
+</head>
+<body>
+
+<section class="slide">
+  <h1><span class="rank">#2:</span> Impeccable gives your agent a design vocabulary</h1>
+  <div class="shot"><!-- <img src="screenshot.png" alt=""> -->website screenshot goes here</div>
+  <div class="repo"><a href="#">owner / repo</a><p>One-line description from the repository page.</p><div class="meta"><i></i>JavaScript · 74.6k stars</div></div>
+  <div class="cmd">npx impeccable install</div>
+  <p class="outcome">24 commands like /polish, /bolder and /quieter: fix a page in plain words</p>
+</section>
+
+<section class="slide slide--cta"><div class="ribbon"></div>
+  <div class="cta"><div>SAVE</div><div>SHARE</div><div>FOLLOW</div></div>
+  <div class="pill">@yourhandle →</div>
+</section>
+
+</body>
+</html>

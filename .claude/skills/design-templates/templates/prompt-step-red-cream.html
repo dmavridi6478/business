@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<!--
+  Template: prompt-step-red-cream
+  Style: warm cream square slide, huge red step number with a heavy black headline, a bullet list with red dots, a rounded "PROMPT EXAMPLE" box,
+         a small-caps tagline, a corner label and a slide counter, and a flat red/slate block art area on the right. Theme: red-cream-workflow
+  Inspired by: the "Stop using Claude one prompt at a time" carousel (@ai.am.claude). Original CSS and shapes; no source illustration, figure or handle reused.
+  Canvas: 1080 x 1080. Two slides in one file: .slide--cover and .slide--step (duplicate per step).
+  Swap points:
+    :root tokens                  colours and fonts
+    .count / .corner              "03/10" counter and the top-right small-caps label
+    .num / h1 / h1 em             step number, headline, and the red part of the headline
+    .list li                      3 to 6 bullets
+    .prompt                       the example prompt (keep to about 3 lines)
+    .tag                          closing small-caps line
+    .art                          replace the CSS blocks with your own artwork
+    .handle                       your own handle (placeholder: @yourhandle)
+-->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Prompt Step Red Cream</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #FAF7EF;          /* sampled */
+    --red: #DE2918;         /* sampled */
+    --dark-red: #5F0904;    /* sampled */
+    --slate: #3B4A52;
+    --stone: #E5E0D4;       /* sampled */
+    --box: #F8F6F5;         /* sampled */
+    --ink: #0B0B0F;
+    --muted: #4B4B50;
+    --font: "Inter", Aptos, "Segoe UI", system-ui, sans-serif;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: #222; display: flex; flex-direction: column; align-items: center; gap: 32px; padding: 32px 0; overflow-x: auto; font-family: var(--font); }
+  .slide { position: relative; width: 1080px; height: 1080px; flex: none; background: var(--bg); color: var(--ink); overflow: hidden; }
+  .count { position: absolute; left: 54px; top: 44px; font-size: 38px; font-weight: 300; }
+  .corner { position: absolute; right: 54px; top: 46px; width: 260px; text-align: left; font-size: 18px; letter-spacing: .22em; text-transform: uppercase; line-height: 1.55; color: var(--muted); }
+  .num { position: absolute; left: 54px; top: 110px; font-size: 190px; line-height: .8; font-weight: 900; letter-spacing: -.06em; color: var(--red); }
+  h1 { position: absolute; left: 54px; top: 300px; width: 760px; font-size: 76px; line-height: .94; font-weight: 900; letter-spacing: -.06em; }
+  h1 em { font-style: normal; color: var(--red); display: block; }
+  .lead { position: absolute; left: 58px; top: 488px; width: 380px; font-size: 27px; line-height: 1.3; font-weight: 400; }
+  .list { position: absolute; left: 58px; top: 580px; list-style: none; font-size: 27px; line-height: 1.42; }
+  .list li::before { content: ""; display: inline-block; width: 13px; height: 13px; border-radius: 50%; background: var(--red); margin-right: 26px; vertical-align: middle; }
+  .prompt { position: absolute; left: 54px; top: 820px; width: 540px; background: var(--box); border: 1px solid #E3DED6; border-radius: 22px; padding: 22px 28px; font-size: 21px; line-height: 1.32; }
+  .prompt small { display: block; font-size: 15px; letter-spacing: .2em; text-transform: uppercase; color: var(--muted); margin-bottom: 10px; }
+  .tag { position: absolute; left: 54px; bottom: 36px; font-size: 18px; letter-spacing: .24em; text-transform: uppercase; line-height: 1.6; border-top: 2px solid var(--ink); padding-top: 12px; width: 300px; }
+  .art { position: absolute; right: 0; bottom: 0; width: 470px; height: 640px; }
+  .art i { position: absolute; display: block; }
+  .art .a { right: 0; top: 0; width: 330px; height: 150px; background: var(--stone); }
+  .art .b { right: 0; top: 150px; width: 330px; height: 150px; background: var(--slate); }
+  .art .c { right: 0; top: 300px; width: 330px; height: 150px; background: var(--stone); }
+  .art .d { right: 0; top: 450px; width: 330px; height: 190px; background: var(--red); }
+  .art .e { left: 60px; top: 330px; width: 150px; height: 150px; background: var(--red); box-shadow: 14px 14px 0 var(--dark-red); }
+  .handle { position: absolute; right: 54px; bottom: 30px; font-size: 24px; font-weight: 500; color: #fff; }
+  .cover h1 { top: 170px; width: 700px; font-size: 96px; }
+  .cover .lead { top: 700px; width: 520px; font-size: 36px; }
+  .cover .list { top: 800px; font-size: 30px; line-height: 1.4; }
+  .cover .list li::before { display: none; }
+</style>
+</head>
+<body>
+
+<section class="slide cover">
+  <div class="count">01/10</div><div class="corner">From<br>prompt<br>to process.</div>
+  <h1>Stop using<br>Tool name<em>one prompt<br>at a time.</em></h1>
+  <p class="lead">Build a workflow instead.</p>
+  <ul class="list"><li>One task.</li><li>Multiple steps.</li><li>Better result.</li></ul>
+  <div class="art"><i class="a"></i><i class="b"></i><i class="c"></i><i class="d"></i><i class="e"></i></div>
+  <div class="handle">@yourhandle</div>
+</section>
+
+<section class="slide">
+  <div class="count">03/10</div><div class="corner">Give it<br>the right<br>material.</div>
+  <div class="num">01.</div>
+  <h1>Give the tool<em>the raw material.</em></h1>
+  <p class="lead">Then explain what you are trying to achieve.</p>
+  <ul class="list" style="top:600px"><li>notes</li><li>documents</li><li>emails</li></ul>
+  <div class="prompt"><small>Prompt example</small>"First analyse this. Do not write the final output yet."</div>
+  <div class="art"><i class="a"></i><i class="b"></i><i class="c"></i><i class="d"></i><i class="e"></i></div>
+  <div class="handle">@yourhandle</div>
+</section>
+
+</body>
+</html>

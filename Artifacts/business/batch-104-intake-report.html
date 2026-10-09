@@ -1,0 +1,165 @@
+<title>Batch 104 Intake Report</title>
+<style>
+  /* Layout: single-column formal report, 880px measure; tables scroll inside their own wrappers.
+     Palette: ink-blue neutrals, one deep teal accent, semantic green/amber/red for status only.
+     Type: Aptos (the owner's house font) with system fallbacks; title 32pt, headings 14pt, body 11pt. */
+  :root {
+    --bg: #f6f7f9; --surface: #ffffff; --fg: #1b2330; --muted: #5a6577; --line: #d9dee6;
+    --accent: #0f5d6b; --accent-soft: #e2f0f2;
+    --ok: #17703a; --ok-bg: #e3f3e8; --warn: #8a5a00; --warn-bg: #fbefd3; --bad: #a11d2a; --bad-bg: #fbe3e5;
+    --code-bg: #eef1f5;
+    --font: Aptos, "Segoe UI Variable Text", "Segoe UI", system-ui, -apple-system, Roboto, sans-serif;
+    --mono: ui-monospace, "SF Mono", Consolas, monospace;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #11161e; --surface: #181f2a; --fg: #e6eaf0; --muted: #9aa5b6; --line: #2c3646;
+      --accent: #6cc3d1; --accent-soft: #17323a;
+      --ok: #6fd18f; --ok-bg: #173824; --warn: #f0c261; --warn-bg: #3a2e12; --bad: #ff8d98; --bad-bg: #3d1a1f;
+      --code-bg: #0e131a; color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #11161e; --surface: #181f2a; --fg: #e6eaf0; --muted: #9aa5b6; --line: #2c3646;
+    --accent: #6cc3d1; --accent-soft: #17323a;
+    --ok: #6fd18f; --ok-bg: #173824; --warn: #f0c261; --warn-bg: #3a2e12; --bad: #ff8d98; --bad-bg: #3d1a1f;
+    --code-bg: #0e131a; color-scheme: dark;
+  }
+  * { box-sizing: border-box; }
+  body { background: var(--bg); color: var(--fg); font-family: var(--font); font-size: 11pt; line-height: 1.55; padding-inline: 16px; padding-block: 28px 64px; }
+  main { max-width: 880px; margin-inline: auto; display: flex; flex-direction: column; gap: 28px; }
+  header { display: flex; flex-direction: column; gap: 8px; border-bottom: 2px solid var(--accent); padding-bottom: 18px; }
+  .eyebrow { font-size: 9pt; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
+  h1 { font-size: 32pt; line-height: 1.1; margin: 0; font-weight: 700; text-wrap: balance; }
+  h2 { font-size: 14pt; margin: 0 0 10px; font-weight: 700; color: var(--accent); text-wrap: balance; }
+  h3 { font-size: 11pt; margin: 14px 0 6px; font-weight: 700; }
+  p { margin: 0 0 10px; max-width: 75ch; }
+  section { background: var(--surface); border: 1px solid var(--line); border-radius: 6px; padding: 20px 22px; min-width: 0; }
+  .lede { font-size: 11pt; color: var(--muted); max-width: 70ch; margin: 0; }
+  .truth { border-left: 4px solid var(--bad); background: var(--bad-bg); padding: 12px 16px; border-radius: 0 6px 6px 0; }
+  .truth p:last-child { margin-bottom: 0; }
+  .tag { font-family: var(--mono); font-size: 9pt; padding: 1px 6px; border-radius: 3px; background: var(--accent-soft); color: var(--accent); white-space: nowrap; }
+  .tw { overflow-x: auto; margin-block: 8px 4px; border: 1px solid var(--line); border-radius: 4px; }
+  table { border-collapse: collapse; width: 100%; min-width: 680px; font-size: 10pt; }
+  th, td { padding: 8px 10px; border-bottom: 1px solid var(--line); text-align: center; vertical-align: top; }
+  th { background: var(--accent-soft); color: var(--fg); font-weight: 700; font-size: 9.5pt; }
+  tr:last-child td { border-bottom: 0; }
+  td.l, th.l { text-align: center; } /* house rule: table content aligned top and centre */
+  .st { display: inline-block; padding: 1px 8px; border-radius: 10px; font-size: 9pt; font-weight: 700; white-space: nowrap; }
+  .st.ok { background: var(--ok-bg); color: var(--ok); } .st.warn { background: var(--warn-bg); color: var(--warn); } .st.bad { background: var(--bad-bg); color: var(--bad); }
+  .sw { display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 10px; margin-block: 8px; }
+  .sw div { border: 1px solid var(--line); border-radius: 4px; overflow: hidden; font-size: 9pt; text-align: center; }
+  .sw i { display: block; height: 44px; }
+  .sw span { display: block; padding: 4px 6px; font-family: var(--mono); }
+  .prompt { position: relative; margin-block: 10px; }
+  .prompt pre { margin: 0; white-space: pre-wrap; background: var(--code-bg); border: 1px solid var(--line); border-radius: 4px; padding: 12px 84px 12px 12px; font-family: var(--mono); font-size: 9.5pt; line-height: 1.5; }
+  .prompt b { display: block; font-family: var(--font); font-size: 10pt; margin-bottom: 4px; }
+  .prompt button { position: absolute; top: 30px; right: 8px; font: inherit; font-size: 9pt; padding: 4px 10px; border-radius: 4px; border: 1px solid var(--accent); background: var(--surface); color: var(--accent); cursor: pointer; }
+  .prompt button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  ul { margin: 0 0 10px; padding-left: 20px; } li { margin-bottom: 4px; max-width: 75ch; }
+  code { font-family: var(--mono); font-size: 9.5pt; background: var(--code-bg); padding: 1px 4px; border-radius: 3px; }
+  footer { color: var(--muted); font-size: 9.5pt; }
+</style><main>
+<header><span class="eyebrow">Intake report · iCloud Photos, 2 archives (21 images, 1 video) · 4 October 2026</span>
+<h1>Batch 104 Intake Report</h1>
+<p class="lede">Two TikTok carousels of open-source tools, one carousel of local-first apps and one machine-learning video, turned into 3 skills, 3 commands, 3 design templates, a verified register of 15 repos, a runnable script and a user-run install script. Prepared for the owner of the business repository.</p></header>
+
+<section class="truth"><h2>What you should know first</h2>
+<p><b>Most of your instruction list has nothing to act on.</b> The two archives contain no prompts, no connector setup steps, no agent-building guide and no design brief. They are tool roundups: 16 tools and one advert, plus a short video of ML code. I did the parts that exist and say below which parts do not. [Certain]</p>
+<p><b>"Free and open source" is not true of everything on the slides.</b> AutoGPT's <code>autogpt_platform</code> folder is under the Polyform Shield licence (source-available, restricts competing use), and the slide shows a paid Pro plan. Three repos are AGPL-3.0 and Joplin is AGPL-3.0-or-later, so modifying and hosting them for others carries obligations. I read each licence file. [Certain]</p>
+<p><b>The carousels are incomplete.</b> One promises 6 repos and shows 5; the other promises 7 and shows 6, and its cover has a blue "n" icon with no slide. Star counts are copied from the slides and could not be verified (the GitHub API is blocked here); Busabase shows 313 on its slide and 224 in a search result. [Certain]</p>
+<p><b>I installed nothing and ran no installer.</b> The session runs in a disposable cloud container, so an install there would give you nothing, and Open Interpreter, Goose and nanobot offer <code>curl | sh</code> installers that I will not run on the strength of a screenshot. Repos were cloned shallowly into a scratch folder only to read licences and READMEs. [Certain]</p>
+<p><b>The one connector I verified was not installed, because the edit was refused.</b> OpenFlowKit publishes an MCP server (<code>@vrun-design/openflowkit-mcp</code>). I checked the npm package and prepared a pinned entry, but the permission system blocked the change to <code>.mcp.json</code>. I did not try another route. The one-line command is in section 6. [Certain]</p>
+<p><b>The ML video is a set of fragments, not a program.</b> The six lines use names the video never defines. I wrapped each in working context and ran it; k-means failed from a bad random start until I added restarts. The accuracy figures describe toy data. [Certain]</p></section>
+
+<section><h2>1. Inventory of the upload</h2><div class="tw"><table>
+<tr><th class="l">Source</th><th>Items</th><th class="l">Content</th><th class="l">Outcome</th></tr>
+<tr><td class="l">@replace.so, "6 GitHub repos" (archive 1)</td><td>6 images</td><td class="l">Cover and 5 repo slides: Whitebophir, DeepDiagram, Lorien, Nanobot, OpenFlowKit</td><td class="l">All 5 resolved and cloned; skill <code>replace-so-agent-repos</code></td></tr>
+<tr><td class="l">@replace.so, "7 GitHub repos" (archive 2)</td><td>7 images</td><td class="l">Cover and 6 repo slides: Notra, AutoGPT, Busabase, Open Interpreter, Cline, Goose</td><td class="l">All 6 resolved and cloned; same skill</td></tr>
+<tr><td class="l">@dotdevs, "Open-source tools for your app business" (archive 2)</td><td>8 images</td><td class="l">Opening question, 5 picks (Syncthing, Krita, KeePassXC, Joplin, LocalSend), one advert for the author's own paid app</td><td class="l">4 of 5 cloned for licences; skill <code>local-first-app-stack</code>; the advert was excluded</td></tr>
+<tr><td class="l">"Machine Learning from Scratch", part 23 (archive 1)</td><td>1 video, 88 s</td><td class="l">Six algorithms with one code line each; no narration I could read</td><td class="l">Skill <code>ml-six-key-lines</code> and <code>scripts/ml_six_key_lines.py</code>, run and passing</td></tr>
+</table></div></section>
+
+<section><h2>2. Your instructions against what the files contained</h2><div class="tw"><table>
+<tr><th class="l">Instruction</th><th>Found in the files</th><th class="l">What I did</th></tr>
+<tr><td class="l">Identify repos to clone</td><td><span class="st ok">yes, 15</span></td><td class="l">Resolved every repo, cloned shallowly to a scratch folder, read licences and installs. Clone commands are in the install script for your machine</td></tr>
+<tr><td class="l">Identify tools, commands to install</td><td><span class="st ok">yes</span></td><td class="l">Recorded each repo's own install route. Nothing installed; no piped installer run</td></tr>
+<tr><td class="l">Turn prompts into commands or skills</td><td><span class="st bad">none</span></td><td class="l">No prompts exist in the files. I wrote 3 commands for the new skills instead</td></tr>
+<tr><td class="l">Execute instructed actions or tasks</td><td><span class="st warn">one</span></td><td class="l">The only executable content is the ML code. Ran it, fixed two faults in my own wrapper, all six checks pass</td></tr>
+<tr><td class="l">Give prompts in plain text</td><td><span class="st warn">n/a</span></td><td class="l">Ready-to-paste prompts for the new commands are in section 6</td></tr>
+<tr><td class="l">Design content, templates, themes</td><td><span class="st ok">yes</span></td><td class="l">3 templates and 3 theme token sets, rendered and tested</td></tr>
+<tr><td class="l">Guide to build agents</td><td><span class="st bad">none</span></td><td class="l">Nanobot, Goose and AutoGPT are agent platforms, not guides. This repo already has the <code>os-*</code> agent set</td></tr>
+<tr><td class="l">Connectors referenced</td><td><span class="st warn">one real</span></td><td class="l">Nanobot, Goose and Busabase mention MCP in general terms. OpenFlowKit ships a real server; verified, not installed (section 5)</td></tr>
+</table></div></section>
+
+<section><h2>3. Repo register (licence files read on 4 October 2026)</h2><div class="tw"><table>
+<tr><th class="l">Repo</th><th>Licence</th><th>Last commit</th><th class="l">Flag</th></tr>
+<tr><td class="l"><code>lovasoa/whitebophir</code></td><td>AGPL-3.0</td><td>2026-09-12</td><td class="l"><span class="st warn">copyleft</span> Docker one-liner in README</td></tr>
+<tr><td class="l"><code>LingyiChen-AI/DeepDiagram</code></td><td>AGPL-3.0</td><td>2026-06-01</td><td class="l"><span class="st warn">copyleft</span> needs your own LLM key in <code>.env</code></td></tr>
+<tr><td class="l"><code>mbrlabs/Lorien</code></td><td>MIT</td><td>2025-09-22</td><td class="l"><span class="st warn">quiet</span> a year without commits</td></tr>
+<tr><td class="l"><code>HKUDS/nanobot</code></td><td>MIT</td><td>2026-10-04</td><td class="l"><span class="st ok">clean</span> <code>uv tool install nanobot-ai</code></td></tr>
+<tr><td class="l"><code>Vrun-design/openflowkit</code></td><td>MIT</td><td>2026-10-03</td><td class="l"><span class="st ok">clean</span> ships an MCP server</td></tr>
+<tr><td class="l"><code>usenotra/notra</code></td><td>AGPL-3.0</td><td>2026-10-04</td><td class="l"><span class="st warn">copyleft</span> hosted product, free tier; README matches the slide</td></tr>
+<tr><td class="l"><code>Significant-Gravitas/AutoGPT</code></td><td>Polyform Shield + MIT</td><td>2026-10-02</td><td class="l"><span class="st bad">not all open source</span> platform folder is Polyform Shield</td></tr>
+<tr><td class="l"><code>busabase/busabase</code></td><td>MIT</td><td>2026-09-28</td><td class="l"><span class="st ok">clean</span> <code>npx busabase server</code>; star count disputed</td></tr>
+<tr><td class="l"><code>openinterpreter/open-interpreter</code></td><td>Apache-2.0</td><td>2026-10-02</td><td class="l"><span class="st warn">fork</span> of OpenAI Codex; <code>curl | sh</code> installer</td></tr>
+<tr><td class="l"><code>cline/cline</code></td><td>Apache-2.0</td><td>2026-10-03</td><td class="l"><span class="st ok">clean</span></td></tr>
+<tr><td class="l"><code>block/goose</code></td><td>Apache-2.0</td><td>2026-10-02</td><td class="l"><span class="st warn">moved</span> README points to <code>aaif-goose</code>; <code>curl | bash</code> installer</td></tr>
+<tr><td class="l"><code>syncthing/syncthing</code></td><td>MPL-2.0</td><td>2026-10-04</td><td class="l"><span class="st warn">sync is not backup</span> deletions propagate</td></tr>
+<tr><td class="l"><code>keepassxreboot/keepassxc</code></td><td>GPL family, several files</td><td>2026-09-22</td><td class="l"><span class="st warn">read COPYING</span> back up the database and master password</td></tr>
+<tr><td class="l"><code>laurent22/joplin</code></td><td>AGPL-3.0-or-later</td><td>2026-10-04</td><td class="l"><span class="st warn">copyleft</span> fine for personal notes</td></tr>
+<tr><td class="l"><code>localsend/localsend</code></td><td>Apache-2.0</td><td>2026-10-03</td><td class="l"><span class="st ok">clean</span> Homebrew cask linked from README</td></tr>
+</table></div>
+<p>Krita was not cloned, so its licence is not checked here. Several of these repos ship a <code>CLAUDE.md</code> or <code>AGENTS.md</code>; I read them as data and followed none.</p></section>
+
+<section><h2>4. ML script results</h2><p><code>scripts/ml_six_key_lines.py</code> needs only numpy. The trees are single-split stumps to keep each section short, so the accuracies say nothing about real-world performance.</p><div class="tw"><table>
+<tr><th class="l">Algorithm</th><th class="l">Check</th><th>Result</th></tr>
+<tr><td class="l">Linear regression</td><td class="l">Recover slope 2.5 and offset 1.0</td><td>2.51 and 0.92</td></tr>
+<tr><td class="l">Decision tree</td><td class="l">One yes/no question on a 2-feature set</td><td>0.73 accuracy</td></tr>
+<tr><td class="l">Random forest</td><td class="l">100 stumps, majority vote</td><td>0.82 accuracy</td></tr>
+<tr><td class="l">Gradient boosting</td><td class="l">200 rounds at 0.01</td><td>0.86 accuracy</td></tr>
+<tr><td class="l">K-means</td><td class="l">Find three known blobs (10 restarts)</td><td>centres within 0.5</td></tr>
+<tr><td class="l">Neural network</td><td class="l">Learn XOR with 2 hidden neurons</td><td>0.01, 0.99, 0.99, 0.01</td></tr>
+</table></div>
+<p>My own faults, fixed before this report: the first accuracy check mis-scored a split that points the other way (0.27 became 0.73), and one random k-means start put two centres in one blob.</p></section>
+
+<section><h2>5. Connector: OpenFlowKit MCP</h2><p>Package <code>@vrun-design/openflowkit-mcp</code> version 0.1.2: MIT, no install scripts, three dependencies (<code>@modelcontextprotocol/sdk</code>, <code>pako</code>, <code>zod</code>), published 6 June 2026, maintainer and repository match the GitHub project. It runs locally over stdio with no API key. A pinned entry was prepared for <code>.mcp.json</code> and blocked by the permission system, so it is not installed. Other connectors named in the files (Nanobot, Goose, Busabase) are general MCP claims with nothing specific to install. [Certain]</p></section>
+
+<section><h2>6. Copy-paste prompts and commands</h2>
+<p>After restarting Claude Code the three commands exist. The prompts below do the same in plain words.</p>
+<div class="prompt"><b>1. Pick a repo</b><pre>Use the replace-so-agent-repos skill. I need [A SHARED WHITEBOARD / A CODING AGENT / A DIAGRAM TOOL]. I will [KEEP IT PRIVATE / MODIFY IT AND OFFER IT TO OTHERS]. Give me one pick and one alternative, with the real licence, last commit, install route from its own README and the known trap. Do not run any installer.</pre><button class="cp" type="button">Copy</button></div>
+<div class="prompt"><b>2. Local-first audit</b><pre>Use the local-first-app-stack skill. My demo videos live in [WHERE], my notes in [WHERE], my credentials in [WHERE] and my artwork in [WHERE]. For each, say whether it is only in a cloud account, local and backed up, or local and not backed up. Recommend the single first move and the backup it needs. Do not ask me to paste passwords or read credential files.</pre><button class="cp" type="button">Copy</button></div>
+<div class="prompt"><b>3. Explain an ML line</b><pre>Use the ml-six-key-lines skill. Explain [LINEAR / TREE / FOREST / BOOSTING / KMEANS / NETWORK] in plain words through its one key line, show the matching section of scripts/ml_six_key_lines.py, and tell me what the video leaves out.</pre><button class="cp" type="button">Copy</button></div>
+<div class="prompt"><b>4. Install the OpenFlowKit connector yourself</b><pre>claude mcp add --scope project openflowkit -- npx -y @vrun-design/openflowkit-mcp@0.1.2</pre><button class="cp" type="button">Copy</button></div>
+<p>Slash forms: <code>/oss-stack-pick</code>, <code>/local-first-audit</code>, <code>/ml-six-lines</code>.</p></section>
+
+<section><h2>7. Design templates and themes</h2><div class="tw"><table>
+<tr><th class="l">Template</th><th class="l">Source style</th><th class="l">Notes</th></tr>
+<tr><td class="l"><code>repo-spotlight-browser-card</code></td><td class="l">@replace.so repo carousels</td><td class="l">1080×1350; fading navy square grid, app tile and star row, browser mockup, cover plus repo slide</td></tr>
+<tr><td class="l"><code>photo-overlay-tool-card</code></td><td class="l">@dotdevs tool carousel</td><td class="l">1080×1920; your photo through one custom property under a dark scrim; works with no image</td></tr>
+<tr><td class="l"><code>code-card-six-lines</code></td><td class="l">ML code video</td><td class="l">Six colour-coded chips highlight one line range each; click or press 1 to 6. Tested: ranges and captions correct, no errors</td></tr>
+</table></div>
+<p>Colours below were read from pixels in the screenshots; the rest of each theme was judged by eye and is marked in the skill. Handles are placeholders; no creator photo, logo or watermark was reused. Fonts are free look-alikes (Inter, Outfit, JetBrains Mono); the exact specimens were not identified. [Likely]</p>
+<div class="sw"><div><i style="background:#121214"></i><span>#121214 bg</span></div><div><i style="background:#F3F1F2"></i><span>#F3F1F2 title</span></div><div><i style="background:#F3F2F4"></i><span>#F3F2F4 bar</span></div><div><i style="background:#4A5359"></i><span>#4A5359 sky</span></div><div><i style="background:#13180E"></i><span>#13180E foliage</span></div><div><i style="background:#292929"></i><span>#292929 table</span></div><div><i style="background:#0A0F17"></i><span>#0A0F17 page</span></div><div><i style="background:#0A0E1B"></i><span>#0A0E1B window</span></div></div>
+<p>Your Aptos 11 / 32 / 14 point rule is applied to this report. It is not applied to the slide templates: 11 point text on a 1080 pixel canvas would be unreadable, so they use canvas-scaled sizes.</p></section>
+
+<section><h2>8. Your next steps</h2><ul>
+<li>Run <code>python3 scripts/ml_six_key_lines.py</code> on your machine (needs numpy) and read the k-means section; the restart is the lesson.</li>
+<li>Decide whether to add the OpenFlowKit connector with the command in section 6. The repo's earlier reports also left the <code>.mcp.json</code> decision open.</li>
+<li>Before using Whitebophir, DeepDiagram, Notra or Joplin in a product, decide whether you can accept AGPL-3.0. Before using AutoGPT's platform code, read the Polyform Shield terms.</li>
+<li>Look up current star counts on GitHub and the Krita licence yourself; I could not.</li>
+<li>If you have the missing carousel slides (the sixth repo of the first set, the seventh of the second), send them and I will add them.</li>
+<li>Run <code>scripts/batch104-install.sh</code> on your own machine if you want any of this installed; it asks before every step and pipes nothing into a shell.</li></ul></section>
+
+<footer>Sources: 21 JPEGs and 1 MP4 in two iCloud Photos archives. Licences, dates and install routes read from shallow clones on 4 October 2026; npm metadata read from the registry; Busabase's disputed star count from one web search. The video was read from frames only. Star counts are as printed on the slides.</footer>
+</main>
+<script>
+document.querySelectorAll('.cp').forEach(function (b) {
+  b.addEventListener('click', function () {
+    var t = b.parentNode.querySelector('pre');
+    function done() { b.textContent = 'Copied'; setTimeout(function () { b.textContent = 'Copy'; }, 1500); }
+    function fb() { var r = document.createRange(); r.selectNodeContents(t); var s = getSelection(); s.removeAllRanges(); s.addRange(r); b.textContent = 'Selected'; }
+    try { navigator.clipboard.writeText(t.textContent).then(done, fb); } catch (e) { fb(); }
+  });
+});
+</script>

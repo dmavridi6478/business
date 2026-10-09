@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<!--
+  Template: swap-tool-lavender-card
+  Style: pale lavender page with soft purple blooms, a dark rounded app tile, a huge black tool name, the line
+         "If you're paying for X, try this instead.", a grey description and a dark product window with purple controls. Theme: lavender-swap
+  Inspired by: the "8 underrated open source tools" carousel (@coreclasseducation). Original CSS; no source logos, mockups, photo or handle reused.
+  Canvas: 1080 x 1296 (the source ratio is 5:6). Two slides in one file: .slide--cover (big number) and .slide--tool (duplicate per tool).
+  Swap points:
+    :root tokens                 colours and fonts
+    .brand / .handle             your own mark and handle
+    .tile + .name                tool icon (letter or <img>) and name
+    .swap strong / .swap em      the paid tool being replaced, and the highlighted "try this instead"
+    .desc                        two short lines; must match the tool's real README
+    .window                      replace the placeholder rows with a REAL screenshot; do not publish a generated mockup as the product
+    .count                       slide number, e.g. 04 / 10
+-->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Swap Tool Lavender Card</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;700;800&family=Inter:wght@500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --page: #FAF9FF;
+    --bloom: rgba(139, 92, 246, .22);
+    --ink: #0B0B14;
+    --indigo: #4D23D8;      /* sampled: arrow button */
+    --body: #5A5A6E;
+    --win: #222631;         /* sampled: product window panel */
+    --btn: #A282F9;         /* sampled: window button */
+    --font: "Plus Jakarta Sans", Aptos, "Segoe UI", system-ui, sans-serif;
+    --ui: "Inter", system-ui, sans-serif;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: #444; display: flex; flex-direction: column; align-items: center; gap: 32px; padding: 32px 0; overflow-x: auto; font-family: var(--font); }
+  .slide { position: relative; width: 1080px; height: 1296px; flex: none; overflow: hidden; padding: 150px 70px 0; text-align: center; color: var(--ink);
+    background: radial-gradient(ellipse 60% 30% at 10% 42%, var(--bloom), transparent 70%), radial-gradient(ellipse 55% 30% at 95% 40%, var(--bloom), transparent 70%), radial-gradient(ellipse 70% 25% at 50% 96%, var(--bloom), transparent 70%), var(--page); }
+  .brand { position: absolute; left: 56px; top: 44px; font-size: 24px; font-weight: 800; line-height: 1.2; text-align: center; letter-spacing: .02em; }
+  .handle { position: absolute; right: 56px; top: 56px; font-size: 32px; font-weight: 800; padding-bottom: 12px; border-bottom: 3px solid #A78BFA; }
+  .head { display: flex; align-items: center; justify-content: center; gap: 28px; }
+  .tile { width: 160px; height: 160px; border-radius: 40px; background: linear-gradient(150deg, #1c1a2e, #0a0a14); display: grid; place-items: center; font-size: 84px; font-weight: 800; color: #B79CFF; box-shadow: 0 14px 30px rgba(77,35,216,.25); overflow: hidden; }
+  .tile img { width: 100%; height: 100%; object-fit: cover; }
+  .name { font-size: 120px; line-height: .95; font-weight: 800; letter-spacing: -.055em; text-align: left; }
+  .swap { margin-top: 44px; font-size: 54px; line-height: 1.05; font-weight: 800; letter-spacing: -.045em; }
+  .swap em { display: block; font-style: normal; color: var(--indigo); }
+  .desc { margin: 20px auto 0; max-width: 830px; font-size: 31px; line-height: 1.3; font-weight: 500; color: var(--body); }
+  .window { margin: 34px auto 0; width: 940px; height: 430px; border-radius: 34px; background: var(--win); box-shadow: 0 0 0 10px rgba(110,80,200,.35), 0 40px 70px rgba(77,35,216,.28); padding: 22px; display: grid; grid-template-columns: 200px 1fr; gap: 20px; text-align: left; font-family: var(--ui); color: #E8E8F2; }
+  .side { display: flex; flex-direction: column; gap: 12px; font-size: 20px; }
+  .side b { background: var(--btn); color: #fff; border-radius: 12px; padding: 12px 14px; font-weight: 600; }
+  .side span { padding: 10px 14px; opacity: .8; }
+  .main { background: #1a1d27; border-radius: 22px; padding: 22px; display: flex; flex-direction: column; gap: 14px; }
+  .row { height: 54px; border-radius: 14px; background: #2a2f3d; display: flex; align-items: center; padding: 0 18px; font-size: 20px; opacity: .9; }
+  .row.b { background: var(--btn); color: #fff; width: 190px; justify-content: center; font-weight: 600; margin-top: auto; }
+  .count { position: absolute; left: 70px; bottom: 56px; font: 700 26px var(--ui); letter-spacing: .24em; color: #666680; }
+  .chips { position: absolute; left: 50%; bottom: 40px; transform: translateX(-50%); display: flex; gap: 28px; }
+  .chips i { width: 74px; height: 74px; border-radius: 22px; background: linear-gradient(150deg, #C4B5FD, #8B5CF6); box-shadow: 0 10px 20px rgba(109,40,217,.3); }
+  .next { position: absolute; right: 60px; bottom: 36px; width: 96px; height: 96px; border-radius: 50%; background: var(--indigo); color: #fff; display: grid; place-items: center; font-size: 48px; box-shadow: 0 12px 24px rgba(77,35,216,.4); }
+  .cover h1 { margin-top: 120px; font-size: 360px; line-height: .85; font-weight: 800; letter-spacing: -.07em; color: var(--indigo); }
+  .cover h2 { margin-top: 20px; font-size: 96px; line-height: 1; font-weight: 800; letter-spacing: -.05em; }
+  .cover p { margin-top: 36px; font-size: 44px; font-weight: 500; color: var(--body); }
+</style>
+</head>
+<body>
+
+<section class="slide cover"><div class="brand">YOUR<br>BRAND</div><div class="handle">@yourhandle</div>
+  <h1>8</h1><h2>open source tools worth checking</h2><p>Each one verified against its repository.</p>
+  <div class="chips"><i></i><i></i><i></i></div><div class="next">→</div></section>
+
+<section class="slide"><div class="brand">YOUR<br>BRAND</div><div class="handle">@yourhandle</div>
+  <div class="head"><div class="tile">M</div><div class="name">Meetily</div></div>
+  <p class="swap">If you're paying for Otter or Fireflies, <em>try this instead.</em></p>
+  <p class="desc">Records, transcribes and summarises meetings on your own machine. Check the licence and the paid tier first.</p>
+  <div class="window" role="img" aria-label="Placeholder for a real product screenshot">
+    <div class="side"><b>New meeting</b><span>Home</span><span>Meetings</span><span>Calendar</span><span>Settings</span></div>
+    <div class="main"><div class="row">Replace this window with a real screenshot</div><div class="row">Transcript row</div><div class="row">Summary row</div><div class="row b">Share</div></div>
+  </div>
+  <div class="count">04 / 10</div><div class="chips"><i></i><i></i><i></i></div><div class="next">→</div></section>
+
+</body>
+</html>

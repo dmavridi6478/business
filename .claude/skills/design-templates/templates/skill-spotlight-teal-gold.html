@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<!--
+  Template: skill-spotlight-teal-gold
+  Style: deep teal radial gradient, a large gold counter, a white headline with the product name in gold,
+         a gold-outlined "fine print" panel with three bullets, a grey source line and a slide counter. Theme: teal-gold-skill
+  Inspired by: the "4 Claude skills for people who don't code" carousel (@ai.easily). Original CSS; no source assets or handle reused.
+  Canvas: 1080 x 1350. Three slides in one file: .slide--cover, .slide--skill (duplicate per skill), .slide--recap.
+  Swap points:
+    :root tokens                   colours and fonts
+    .kicker                        "SKILL 3 · GIFS" style label
+    .count b / .count span         big number and its unit word
+    .headline strong               the product name (gold part of the headline)
+    .fine li                       exactly three short bullets
+    .source                        where you checked it, with the date
+    .counter                       your brand and the slide number
+-->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Skill Spotlight Teal Gold</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg-hi: #173D49;     /* sampled: top-right of the gradient */
+    --bg-mid: #122E37;    /* sampled */
+    --bg-lo: #0E1922;     /* sampled: bottom-left */
+    --gold: #E8A92E;      /* eyeballed; the numeral pixel sample missed the glyph */
+    --ink: #F4F1EA;
+    --muted: #8A98A1;     /* eyeballed */
+    --panel: #202F33;     /* sampled: fine-print panel fill */
+    --font: "Plus Jakarta Sans", Aptos, "Segoe UI", system-ui, sans-serif;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: #000; display: flex; flex-direction: column; align-items: center; gap: 32px; padding: 32px 0; overflow-x: auto; font-family: var(--font); }
+  .slide { position: relative; width: 1080px; height: 1350px; flex: none; overflow: hidden; padding: 100px 80px 70px; color: var(--ink);
+    background: radial-gradient(circle at 82% 22%, var(--bg-hi) 0%, var(--bg-mid) 38%, var(--bg-lo) 100%); display: flex; flex-direction: column; }
+  .kicker { font-size: 30px; font-weight: 800; letter-spacing: .22em; text-transform: uppercase; color: var(--gold); }
+  .count { margin-top: 110px; display: flex; align-items: flex-end; gap: 22px; }
+  .count b { font-size: 250px; line-height: .8; font-weight: 800; letter-spacing: -.04em; color: var(--gold); }
+  .count span { font-size: 44px; font-weight: 800; letter-spacing: .02em; padding-bottom: 14px; text-transform: uppercase; }
+  .headline { margin-top: 56px; font-size: 76px; line-height: 1.08; font-weight: 800; letter-spacing: -.03em; text-wrap: balance; }
+  .headline strong { color: var(--gold); font-weight: 800; }
+  .fine { margin-top: 48px; padding: 38px 44px; border: 2px solid var(--gold); border-radius: 26px; background: linear-gradient(135deg, rgba(255,255,255,.05), rgba(255,255,255,.01)), var(--panel); }
+  .fine h3 { font-size: 27px; font-weight: 800; letter-spacing: .2em; text-transform: uppercase; color: var(--gold); margin-bottom: 22px; }
+  .fine ul { list-style: none; display: flex; flex-direction: column; gap: 16px; }
+  .fine li { font-size: 40px; font-weight: 500; display: flex; gap: 22px; align-items: center; }
+  .fine li::before { content: ""; width: 16px; height: 16px; border-radius: 4px; background: var(--gold); flex: none; }
+  .source { margin-top: 28px; font-size: 25px; letter-spacing: .06em; color: var(--muted); }
+  .counter { margin-top: auto; font-size: 26px; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
+  .cover .count { margin-top: 220px; } .cover .headline { font-size: 90px; margin-top: 40px; }
+  .recap h2 { margin-top: 130px; font-size: 92px; line-height: 1.05; font-weight: 800; letter-spacing: -.03em; }
+  .recap h2 strong { color: var(--gold); }
+  .recap ol { margin-top: 64px; list-style: none; display: flex; flex-direction: column; gap: 18px; }
+  .recap li { font-size: 52px; font-weight: 600; display: flex; gap: 26px; }
+  .recap li b { color: var(--gold); font-weight: 800; min-width: 70px; }
+  .follow { margin-top: 90px; font-size: 44px; font-weight: 700; }
+  .follow em { font-style: normal; color: var(--gold); }
+</style>
+</head>
+<body>
+
+<section class="slide cover"><div class="kicker">Claude skills · no code</div>
+  <div class="count"><b>4</b><span>Claude skills</span></div>
+  <h1 class="headline">For people who <strong>don't code.</strong></h1>
+  <div class="counter">Your brand · 01 / 06</div></section>
+
+<section class="slide"><div class="kicker">Skill 3 · GIFs</div>
+  <div class="count"><b>03</b><span>GIFs</span></div>
+  <h2 class="headline"><strong>Slack GIF Creator</strong> turns a one-line description into an animated GIF.</h2>
+  <div class="fine"><h3>The fine print</h3><ul><li>Official skill from Anthropic</li><li>Sized to fit Slack's limits</li><li>Just describe the motion you want</li></ul></div>
+  <div class="source">Source: github.com/anthropics/skills, checked 2026-10-04</div>
+  <div class="counter">Your brand · 04 / 06</div></section>
+
+<section class="slide recap"><div class="kicker">The recap</div>
+  <h2>Find all 4 in <strong>Anthropic's skills repo.</strong></h2>
+  <ol><li><b>01</b>Canvas Design</li><li><b>02</b>Theme Factory</li><li><b>03</b>Slack GIF Creator</li><li><b>04</b>Algorithmic Art</li></ol>
+  <div class="follow">Follow <em>@yourhandle</em> for more</div>
+  <div class="counter">Your brand · 06 / 06</div></section>
+
+</body>
+</html>

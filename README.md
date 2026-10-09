@@ -5921,3 +5921,99 @@ Source: 5 infographics + 28 carousel slides (iCloud Photos). Details, verificati
 Design: templates `Artifacts/templates/infographic-8-ways-grid.html`, `infographic-cadence-playbook-dark.html`, `infographic-7s-hexagon.html`, `infographic-rules-and-metrics.html`; themes `Artifacts/theme-playbook-night-lime.html`, `theme-dark-cream-carousel.html`, `theme-grid-paper-terracotta.html`.
 
 Not done (needs you): plugin installs (`/plugin install paypal@claude-plugins-official` etc.), five repos in `setup-repos.sh` (blocked), Fathom OAuth, recurring CMO schedules. See the action plan.
+
+## Batch 100 — iCloud Photos, 2 archives (21 images, 1 video): open-source tool carousels and an ML code video (4 October 2026)
+
+**Report:** [Batch 100 Intake Report](https://claude.ai/artifact/NuFFMe2gyPYCn9k1hnG1KK) (`Artifacts/business/batch-104-intake-report.html`).
+
+**Sources:** two @replace.so "GitHub repos so good they shouldn't be free" carousels (5 and 6 repos shown), a @dotdevs "Open-source tools for your app business" carousel (5 tools and one advert), and a "Machine Learning from Scratch" part 23 video (@machinelearningtogo).
+
+**Added:** skills `replace-so-agent-repos`, `local-first-app-stack`, `ml-six-key-lines`; commands `/oss-stack-pick`, `/local-first-audit`, `/ml-six-lines`; design templates `repo-spotlight-browser-card`, `photo-overlay-tool-card`, `code-card-six-lines` with Batch 100 theme tokens; `scripts/ml_six_key_lines.py` (numpy; all six checks pass); a register of 15 repos with licences read from the repos; user-run `scripts/batch104-install.sh`.
+
+**Source problems:** the carousels promise 6 and 7 repos and show 5 and 6; star counts are from slides and unverified (Busabase's slide and a search result disagree); AutoGPT's `autogpt_platform` folder is Polyform Shield, not open source; Whitebophir, DeepDiagram, Notra and Joplin are AGPL; Goose's README now points at the `aaif-goose` organisation; the video's six lines are fragments that need context to run, and its k-means needs restarts to be reliable.
+
+**Not done:** no repo or app was installed and no `curl | sh` installer was run; Krita's licence was not checked; the OpenFlowKit MCP server was verified (MIT, no install scripts, pinned 0.1.2) but its `.mcp.json` entry was refused by the permission system, so run the one-line `claude mcp add` command in the report yourself; no prompts, connector setup steps or agent-building guide existed in the files.
+
+## Batch 101 — iCloud Photos, one archive (32 images, 2 videos) and 2 attached images (4 October 2026)
+
+**Report:** [Batch 101 Intake Report](https://claude.ai/artifact/VRW8rxdGiRkGLPwLS8PDzn) (`Artifacts/business/batch-105-intake-report.html`).
+
+**Sources:** @ai.easily (4 Anthropic skills, 6 slides), @awayfromlovable (Top 5 Claude Code design skills, 7 slides), @aigenesis.official (10-AI org chart, 8 slides), @coreclasseducation (8 "try this instead" open-source tools, 10 slides), a ChatGPT cheatsheet image, a @skip_ci video on Octop, a @shiva.bytes video of an AI governance infographic, and two attached images (AIForLeaders "JEV vs LLM"; the CEO KPI Framework, already in the repo from batch 103).
+
+**Added:** skills `jev-vs-llm`, `claude-design-skills-top5`, `open-source-swap-stack-8`, `ai-team-org-chart-10`, `octop-self-hosted-agents`, `ai-governance-15-concepts`, `chatgpt-indepth-cheatsheet`; commands `/jev-or-llm`, `/design-skills-pick`, `/swap-stack-check`, `/governance-15`; design templates `skill-spotlight-teal-gold`, `grid-paper-repo-command-card`, `ai-team-role-card`, `swap-tool-lavender-card`, `compare-two-approaches-cream` with Batch 101 theme tokens; 15 repos cloned and read for licences, installs and claims; user-run `scripts/batch105-install.sh`.
+
+**Already existed, not duplicated:** the `ceo-kpi-framework` skill (the attached KPI image, with its churn formula corrected); `frontend-design`, `canvas-design`, `theme-factory`, `slack-gif-creator`, `algorithmic-art`, the `openwhispr` skill and Playwright in `.mcp.json`; `ai-governance-layers` and `/ai-governance` (the 15 concepts are mapped onto them).
+
+**Source problems:** Jaaz is under a dual Community/Commercial licence, not open source (team use, modification and redistribution need the paid licence); OpenDraft drafts research papers and InteraOne appears to be an embeddable support assistant, so neither matches its slide; the coreclasseducation product screenshots look like generated mockups and its cover icons are unrelated products; the awayfromlovable install commands for UI UX Pro Max and frontend-design skip the `/plugin marketplace add` step; Octop's installer is a piped script from a cloud-storage URL; the ChatGPT cheatsheet's temperature values are API settings; the 10-AI chart shows seven of its ten roles and its follower and outcome claims are unverifiable; star counts are from slides and unverified.
+
+**Not done:** no skill, repo, connector or app was installed and no installer was run; the `.mcp.json` entry for OpenFlowKit from batch 100 is still unapplied and no new connector entries were attempted; InteraOne's repo was not found; Krita and several licences outside these 15 were not checked.
+
+## Batch 102 — iCloud Photos, one archive (53 images, 3 videos) (4 October 2026)
+
+**Report:** [Batch 102 Intake Report](https://claude.ai/artifact/QpGqNhyznDqGTWe6MXxHAK) (`Artifacts/business/batch-106-intake-report.html`).
+
+**Sources:** @taha_pathionai (Claude Code mods, 8 slides), @aiclawbots and a cream repo-card series (Laya, Jev Ultrafast, Hindsight, Google AX, Paperclip, Hermes-LinkedIn slides), @earchoe (micro-app prompts, 9 slides), @replace.so (5 dev repos), @penny.blanco6 (4 open-source apps), @amirabanal (5 dashboard designs), @hackproduct9 (LLM to agentic ladder video), @shiva.bytes (hallucination and data-to-AI-governance infographic videos).
+
+**Added:** skills `claude-code-mods-guide`, `laya-jev-ultrafast`, `agent-repos-week-5`, `replace-so-dev-repos-6`, `open-source-apps-penny-4`, `micro-app-prompts-earchoe`, `hallucination-guardrails-6`, `data-to-ai-governance-10`, `llm-rag-agent-agentic-ladder`; commands `/mod-review`, `/micro-app`, `/hallucination-audit`, `/agent-ladder`; design templates `mod-explainer-dark-terracotta`, `repo-feature-cream-number`, `prompt-card-beige-green`, `caption-highlight-blue-grid`, `dashboard-showcase-light-blue` with Batch 102 theme tokens; ten repos cloned and read; user-run `scripts/batch106-install.sh`.
+
+**Already existed, not duplicated:** `local-first-app-stack` (Syncthing and KeePassXC), `openwhispr`, `jev-vs-llm`, `ai-governance-15-concepts`, `ai-governance-layers`, the `hermes-*` and LinkedIn skills.
+
+**Source problems:** the Claude Code mods carousel names sample mods, a version and a `--safe-mode` flag that could not be verified; Open WebUI uses a custom licence with a branding clause above 50 users; Maxun is AGPL-3.0; PocketBase is pre-1.0; Google AX is alpha and needs Kubernetes; Jev Ultrafast needs two vendor keys and drives a real browser; the "6 best repos" cover shows five; the "LinkedIn Skills" pack for Hermes was offered with no link; Suprascribe's licence was not read; star counts are from slides and unverified.
+
+**Not done:** nothing installed or run; no connector changed (the OpenFlowKit `.mcp.json` entry from batch 100 is still unapplied); the LinkedIn Skills pack, Suprascribe's repo and the unnamed sixth repo were not found; no step-by-step agent-building guide was in the files.
+
+## Batch 103 — iCloud Photos, one archive (28 images, 3 videos) (5 October 2026)
+
+**Report:** Batch 103 Intake Report (`Artifacts/business/batch-107-intake-report.html`; the published link is in the pull request).
+
+**Sources:** @ai.am.claude (8-step Claude prompt workflow, 9 of 10 slides), @awayfromlovable (Top 5 Claude Code plugins that catch bugs, 7 slides), a "5 open-source tools that shouldn't be free, Part 3" carousel, a "5 tools in 2027" card series, two code videos (@quantfinancetogo bell curve; @machinelearningtogo attention) and a @githubnow top-10 video.
+
+**Added:** skills `claude-workflow-8-steps`, `claude-bug-plugins-5`, `oss-tools-part3-checked`, `github-trending-top10-oct5`, `quant-bell-curve-part4`, `ml-attention-part21`; commands `/claude-workflow`, `/bug-plugin-pick`, `/trending-pick`, `/attention-explain`, `/bell-curve`; scripts `bell_curve_from_scratch.py` and `attention_from_scratch.py` (transcribed from the videos, run, with checks added); design templates `prompt-step-red-cream`, `trending-top10-leaderboard`, `quant-code-pane-dark` with theme tokens; user-run `scripts/batch107-install.sh`.
+
+**Already existed, not duplicated:** `ponytail*` skills, impeccable coverage in `claude-design-skills-top5`, context7 and sentry entries in `.mcp.json`.
+
+**Source problems:** slide 2 of the workflow carousel was missing; `calcom/cal.com` is now Cal.diy (MIT, enterprise features removed, personal non-production use); Dify, n8n, Sentry's MCP server, OpenMontage and Open WebUI are not plain open source; star, install and today-star counts are as printed and unverified; SERPtag was not found; the "80% confidence" Code Review setting was not found in code.
+
+**Not done:** nothing installed or run beyond the two numpy scripts; no connector changed (OpenFlowKit `.mcp.json` entry from batch 100 still unapplied; Midpage, Sentry and Supabase connectors still need your authorisation); no agent-building guide was in the files.
+
+## Batch 104 — iCloud Photos, one archive (23 images, 1 video) plus 2 attached images (5 October 2026)
+
+**Report:** Batch 104 Intake Report (`Artifacts/business/batch-108-intake-report.html`; the published link is in the pull request).
+
+**Sources:** @dolorstca2h (7-step app-building method, 8 slides), @replace.so ("10 repos so good they shouldn't be free", 9 repo slides), @githubnow (4 October briefing, 3 repos), @valeridoesai (5 GitHub repos, video), a "9 GTM Infographics" cover and a JEV vs LLM infographic (already covered in batch 101).
+
+**Added:** skills `app-building-method-7-steps`, `replace-so-oss-repos-10`, `github-briefing-oct4-three`, `github-5-repos-video-oct`, `gtm-infographics-9-cover`; commands `/app-method`, `/repo-licence-check`, `/gtm-stage`; design templates `photo-step-tools-caption` and `gtm-stage-three-column` with theme tokens; user-run `scripts/batch108-install.sh`.
+
+**Already existed, not duplicated:** the `gstack` skill, `jev-vs-llm`, the `gtm-*` skills.
+
+**Source problems:** the "replace your startup stack" headline overstates; HydraDB and Open-kritt are AGPL-3.0, Remotion needs a company licence above 3 employees, RedInk is non-commercial, Echo-Music is an unofficial YouTube Music client, PersonaLive can impersonate people; the "Editor" repo, Img2threejs's licence and AutoClip were not identified; only five of nine GTM graphics were previewed; star counts unverified.
+
+**Not done:** nothing installed or run; no connector changed (OpenFlowKit entry still unapplied; Midpage, Sentry and Supabase need your authorisation); the tenth @replace.so repo was not in the upload; no agent-building guide was in the files.
+
+## Batch 105 — iCloud Photos, two archives (one duplicate; 15 new images) (5 October 2026)
+
+**Report:** Batch 105 Intake Report (`Artifacts/business/batch-109-intake-report.html`; the published link is in the pull request).
+
+**Sources:** @dotdevs ("5 open source apps that replace paid subscriptions") and @replace.so ("7 GitHub repos so good they shouldn't be free", six seen). `dbdbd955-iCloud_Photos.zip` was byte-identical to the batch 104 archive and was skipped.
+
+**Added:** skills `swap-5-dotdevs-subscriptions`, `replace-so-repos-7-jev-edition`; commands `/self-host-swap`, `/jev-supervisor`; design template `swap-card-photo-github`; user-run `scripts/batch109-install.sh`.
+
+**Already existed, not duplicated:** `open-source-swap-stack-8`, `self-hosted-docker-stack`, `laya-jev-ultrafast`, `jev-vs-llm`.
+
+**Source problems:** four of the five "replace" tools are AGPL or GPL; Vaultwarden is an unofficial Bitwarden server; `497974/foreman` is a different project from `thruwire/foreman`; Aria-Icons' icon count differs from the slide; the seventh repo was not in the upload; star counts unverified.
+
+**Not done:** nothing installed or run; no connector changed (OpenFlowKit entry still unapplied; Midpage, Sentry and Supabase need your authorisation).
+
+## Batch 106 — three infographics attached in chat (5 October 2026)
+
+**Report:** Batch 106 Intake Report (`Artifacts/business/batch-110-intake-report.html`; the published link is in the pull request).
+
+**Sources:** "How to Unlock GTM" (Megha Sharma, OneGTMLab), "10 Things NOT to Say in a Job Interview" (Dr. Christian Poensgen) and a "Claude Revenue System" infographic (45 roles).
+
+**Added:** skills `gtm-first-100-customers`, `job-interview-10-donts`, `claude-revenue-system-45-agents`; commands `/first-100-customers`, `/interview-donts`, `/revenue-agent-pick`; design template `avoid-reason-say-grid`. No install script: there was nothing to install.
+
+**Already existed, not duplicated:** the `claude-revenue-system-58-agents` command (a different version of the infographic), `job-interview-cheat-sheet-12`, `mockinterview`, `gtm-infographics-9-cover`.
+
+**Source problems:** the revenue-system list repeats six roles; interview replacement lines are templates that must not claim things you have not done; GTM customer-count thresholds are rules of thumb.
+
+**Not done:** nothing installed; no connector changed (OpenFlowKit entry still unapplied; Midpage, Sentry and Supabase need your authorisation).

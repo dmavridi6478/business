@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<!--
+  Template: gtm-stage-three-column
+  Style: pale periwinkle page, a bold centred title with an arrow, a subtitle, a rising three-step chart area with ARR labels,
+         and three stage cards (stage name, ARR band, one-line goal). Theme: periwinkle-stages
+  Inspired by: the "9 GTM Infographics" series cover (@alexestner-style infographics). Original CSS; no source graphic, name or branding reused.
+  Canvas: 1080 x 1350. One slide.
+  Swap points:
+    :root tokens                  colours and fonts
+    h1 / .sub                     title and one-line subtitle
+    .step (three)                 bar heights and labels in the chart
+    .card (three)                 stage name, ARR band, goal, three bullets
+    .credit                       your own credit line (placeholder: @yourhandle)
+-->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GTM Stage Three Column</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #D4DFFE;          /* sampled */
+    --card: #F2F9FF;        /* sampled */
+    --blue: #A4E7FF;        /* sampled: expansion fill */
+    --stage1: #FFE9A8;
+    --stage2: #FFC9A8;
+    --stage3: #A4E7FF;
+    --ink: #0E1A2B;
+    --muted: #4A5B73;
+    --font: "Inter", Aptos, "Segoe UI", system-ui, sans-serif;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: #333; display: flex; justify-content: center; padding: 32px 0; overflow-x: auto; font-family: var(--font); }
+  .slide { position: relative; width: 1080px; height: 1350px; flex: none; background: var(--bg); color: var(--ink); padding: 80px 64px 0; overflow: hidden; }
+  h1 { text-align: center; font-size: 76px; line-height: 1.04; font-weight: 800; letter-spacing: -.03em; }
+  .sub { margin-top: 22px; text-align: center; font-size: 30px; color: var(--muted); }
+  .chart { position: relative; margin: 54px 0 0; height: 400px; background: var(--card); border-radius: 24px; display: flex; align-items: flex-end; justify-content: space-around; padding: 0 40px 0; overflow: hidden; }
+  .step { width: 270px; border-radius: 16px 16px 0 0; display: grid; place-items: center; font-size: 28px; font-weight: 700; }
+  .s1 { height: 120px; background: var(--stage1); } .s2 { height: 230px; background: var(--stage2); } .s3 { height: 340px; background: var(--stage3); }
+  .cards { margin-top: 36px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .card { background: var(--card); border-radius: 22px; padding: 26px 24px; min-height: 420px; }
+  .card h3 { font-size: 32px; font-weight: 800; letter-spacing: -.02em; }
+  .card .arr { display: inline-block; margin-top: 12px; padding: 6px 16px; border-radius: 999px; background: var(--ink); color: #fff; font-size: 22px; font-weight: 700; }
+  .card .goal { margin-top: 18px; font-size: 24px; font-weight: 700; }
+  .card ul { margin-top: 14px; list-style: none; font-size: 22px; line-height: 1.4; color: var(--muted); }
+  .card li::before { content: "•"; margin-right: 10px; color: var(--ink); }
+  .credit { position: absolute; right: 64px; bottom: 36px; font-size: 24px; color: var(--muted); }
+</style>
+</head>
+<body>
+<section class="slide">
+  <h1>The 3 stages<br>from €0 → €1M ARR</h1>
+  <p class="sub">One line on what the stages change</p>
+  <div class="chart" role="img" aria-label="Placeholder chart with three rising steps">
+    <div class="step s1">Stage 1</div><div class="step s2">Stage 2</div><div class="step s3">Stage 3</div>
+  </div>
+  <div class="cards">
+    <div class="card"><h3>Stage one</h3><span class="arr">€0 – €100k</span><p class="goal">Goal: learn.</p><ul><li>First point</li><li>Second point</li><li>Third point</li></ul></div>
+    <div class="card"><h3>Stage two</h3><span class="arr">€100k – €1M</span><p class="goal">Goal: repeat.</p><ul><li>First point</li><li>Second point</li><li>Third point</li></ul></div>
+    <div class="card"><h3>Stage three</h3><span class="arr">€1M+</span><p class="goal">Goal: scale.</p><ul><li>First point</li><li>Second point</li><li>Third point</li></ul></div>
+  </div>
+  <div class="credit">@yourhandle</div>
+</section>
+</body>
+</html>
