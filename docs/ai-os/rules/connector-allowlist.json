@@ -1,0 +1,3 @@
+{
+  "_comment": "Which EXACT read-only connector tools each os-* agent may call. Ships empty: agents get NO connector access by default; the command that runs them reads connectors and passes results as files. To enable one: add the exact tool name here AND the same name to that agent's `tools:` line in .claude/agents/<agent>.md (a test fails if they differ). Rules enforced in code: exact names only (no wildcards), read-only verbs only (get/list/search/read/query...), never for the web agents os-seo, os-market, os-pain-point, os-prospect. Example (NOT active): {\"os-response\": [\"mcp__Gmail__get_message\"]}. Agents cannot edit this file."
+}

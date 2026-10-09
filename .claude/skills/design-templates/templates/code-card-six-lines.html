@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<!--
+  Template: code-card-six-lines
+  Style: dark editor window (traffic-light dots, file name, language tag, numbered lines, comment headers), a stepper of six
+         colour-coded chips, and one highlighted block of lines per step. Theme: ml-code-card
+  Inspired by: the "6 ML Algorithms" code video (@machinelearningtogo). Original CSS and JS; the code is the one shown in the video,
+         wrapped in working context in scripts/ml_six_key_lines.py. No handle or watermark reused.
+  Canvas: 1080 x 1350. Click a chip (or press 1-6) to highlight that algorithm's lines.
+  Swap points:
+    .title / .sub          card heading
+    .chip[data-lines]      "from-to" line range per step; border colour comes from --c on the chip
+    .code .l               one div per line; .k keyword, .n number, .f function, .c comment, .o operator
+    .cap-l / .cap-r        left label (step name) and right label (source part); both update on click
+-->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Code Card Six Lines</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=JetBrains+Mono:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --page: #0A0F17;          /* sampled from the video */
+    --win: #0A0E1B;           /* sampled: editor window */
+    --line: #1B2438;
+    --ink: #E8ECF5;
+    --muted: #8A94AB;
+    --comment: #7080A0;       /* eyeballed; lifted for contrast on the dark window */
+    --kw: #5AA2FF; --num: #F6B93B; --fn: #4DD0E1; --op: #9AA6C2;   /* syntax colours eyeballed */
+    --hl: rgba(80, 130, 255, .17);
+    --font: "Inter", Aptos, "Segoe UI", system-ui, sans-serif;
+    --mono: "JetBrains Mono", ui-monospace, "SF Mono", Consolas, monospace;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: #000; display: flex; justify-content: center; padding: 32px 0; overflow-x: auto; font-family: var(--font); }
+  .card { width: 1080px; height: 1350px; flex: none; background: var(--page); color: var(--ink); padding: 70px 60px; display: flex; flex-direction: column; align-items: center; }
+  .title { font-size: 64px; font-weight: 800; letter-spacing: -.03em; }
+  .sub { margin-top: 10px; font-size: 24px; color: var(--muted); }
+  .chips { margin-top: 36px; display: grid; grid-template-columns: repeat(6, 1fr); gap: 10px; width: 100%; }
+  .chip { font: 600 20px/1 var(--font); color: var(--muted); background: transparent; border: 2px solid var(--c); border-radius: 12px; padding: 14px 6px; cursor: pointer; opacity: .55; }
+  .chip[aria-pressed="true"] { opacity: 1; color: var(--ink); background: color-mix(in srgb, var(--c) 18%, transparent); }
+  .chip:focus-visible { outline: 3px solid #fff; outline-offset: 3px; }
+  .win { margin-top: 34px; width: 100%; background: var(--win); border: 1px solid var(--line); border-radius: 26px; overflow: hidden; }
+  .bar { display: flex; align-items: center; gap: 12px; padding: 20px 26px; font: 400 22px var(--mono); color: var(--muted); }
+  .bar i { width: 15px; height: 15px; border-radius: 50%; }
+  .bar i:nth-child(1) { background: #FF5F57; } .bar i:nth-child(2) { background: #FEBC2E; } .bar i:nth-child(3) { background: #28C840; }
+  .bar span { margin-left: 14px; } .bar em { margin-left: auto; font-style: normal; }
+  .code { padding: 6px 0 24px; font: 400 25px/1.62 var(--mono); }
+  .l { display: flex; padding: 0 26px 0 0; border-left: 4px solid transparent; opacity: .6; white-space: pre; }
+  .l.on { opacity: 1; background: var(--hl); border-left-color: #5082FF; }
+  .l b { flex: none; width: 74px; text-align: right; padding-right: 26px; font-weight: 400; color: var(--comment); }
+  .k { color: var(--kw); } .n { color: var(--num); } .f { color: var(--fn); } .o { color: var(--op); } .c { color: var(--comment); font-style: italic; }
+  .cap { margin-top: auto; width: 100%; display: flex; justify-content: space-between; font: 400 24px var(--mono); }
+  .cap-l { color: var(--fn); } .cap-r { color: var(--muted); }
+</style>
+</head>
+<body>
+<main class="card">
+  <h1 class="title">6 ML Algorithms</h1>
+  <p class="sub">you should know, each on real data</p>
+
+  <div class="chips" role="group" aria-label="Algorithm steps">
+    <button class="chip" style="--c:#F6C445" data-lines="1-2"   data-name="linear regression" data-part="part 1"  aria-pressed="true">1 Linear</button>
+    <button class="chip" style="--c:#4FA3FF" data-lines="3-4"   data-name="decision tree"     data-part="part 18" aria-pressed="false">2 Tree</button>
+    <button class="chip" style="--c:#4ADE80" data-lines="5-7"   data-name="random forest"     data-part="part 20" aria-pressed="false">3 Forest</button>
+    <button class="chip" style="--c:#FB923C" data-lines="8-9"   data-name="gradient boosting" data-part="part 22" aria-pressed="false">4 Boost</button>
+    <button class="chip" style="--c:#A78BFA" data-lines="10-12" data-name="k-means"           data-part="part 17" aria-pressed="false">5 K-means</button>
+    <button class="chip" style="--c:#F472B6" data-lines="13-16" data-name="neural network"    data-part="part 3"  aria-pressed="false">6 Network</button>
+  </div>
+
+  <div class="win" aria-label="six_key_lines.py">
+    <div class="bar"><i></i><i></i><i></i><span>six_key_lines</span><em>python</em></div>
+    <div class="code">
+      <div class="l"><b>1</b><span class="c"># part 1: linear regression</span></div>
+      <div class="l"><b>2</b><span>pred <span class="o">=</span> w <span class="o">*</span> x <span class="o">+</span> b</span></div>
+      <div class="l"><b>3</b><span class="c"># part 18: decision tree</span></div>
+      <div class="l"><b>4</b><span>L <span class="o">=</span> X[i, f] <span class="o">&gt;</span> t     <span class="c"># answer is yes</span></span></div>
+      <div class="l"><b>5</b><span class="c"># part 20: random forest</span></div>
+      <div class="l"><b>6</b><span>V <span class="o">=</span> np.<span class="f">sum</span>([[<span class="o">*</span><span class="f">map</span>(<span class="f">grow</span>(rng.<span class="f">choice</span>(<span class="n">400</span>, <span class="n">400</span>)), X)]</span></div>
+      <div class="l"><b>7</b><span>            <span class="k">for</span> _ <span class="k">in</span> <span class="f">range</span>(<span class="n">100</span>)], <span class="n">0</span>)  <span class="c"># 100 trees</span></span></div>
+      <div class="l"><b>8</b><span class="c"># part 22: gradient boosting</span></div>
+      <div class="l"><b>9</b><span><span class="k">for</span> k <span class="k">in</span> <span class="f">range</span>(<span class="n">200</span>): p <span class="o">+=</span> <span class="n">.01</span> <span class="o">*</span> <span class="f">grow</span>()  <span class="c"># 200 trees</span></span></div>
+      <div class="l"><b>10</b><span class="c"># part 17: k-means</span></div>
+      <div class="l"><b>11</b><span>g <span class="o">=</span> d.<span class="f">argmin</span>(<span class="n">1</span>)        <span class="c"># nearest center</span></span></div>
+      <div class="l"><b>12</b><span><span class="k">for</span> j <span class="k">in</span> <span class="f">range</span>(k): C[j] <span class="o">=</span> X[g <span class="o">==</span> j].<span class="f">mean</span>(<span class="n">0</span>)</span></div>
+      <div class="l"><b>13</b><span class="c"># part 3: neural network</span></div>
+      <div class="l"><b>14</b><span>a <span class="o">=</span> <span class="f">sig</span>(w[<span class="n">0</span>]<span class="o">*</span>x0 <span class="o">+</span> w[<span class="n">1</span>]<span class="o">*</span>x1 <span class="o">+</span> w[<span class="n">2</span>])</span></div>
+      <div class="l"><b>15</b><span>b <span class="o">=</span> <span class="f">sig</span>(w[<span class="n">3</span>]<span class="o">*</span>x0 <span class="o">+</span> w[<span class="n">4</span>]<span class="o">*</span>x1 <span class="o">+</span> w[<span class="n">5</span>])</span></div>
+      <div class="l"><b>16</b><span>p <span class="o">=</span> <span class="f">sig</span>(w[<span class="n">6</span>]<span class="o">*</span>a <span class="o">+</span> w[<span class="n">7</span>]<span class="o">*</span>b <span class="o">+</span> w[<span class="n">8</span>])</span></div>
+    </div>
+  </div>
+
+  <div class="cap"><span class="cap-l">linear regression</span><span class="cap-r">part 1</span></div>
+</main>
+
+<script>
+(function () {
+  var chips = Array.prototype.slice.call(document.querySelectorAll('.chip'));
+  var lines = Array.prototype.slice.call(document.querySelectorAll('.l'));
+  var capL = document.querySelector('.cap-l'), capR = document.querySelector('.cap-r');
+  function show(chip) {
+    var r = chip.getAttribute('data-lines').split('-'), from = +r[0], to = +r[1];
+    chips.forEach(function (c) { c.setAttribute('aria-pressed', c === chip ? 'true' : 'false'); });
+    lines.forEach(function (l, i) { l.classList.toggle('on', i + 1 >= from && i + 1 <= to); });
+    capL.textContent = chip.getAttribute('data-name'); capR.textContent = chip.getAttribute('data-part');
+  }
+  chips.forEach(function (c) { c.addEventListener('click', function () { show(c); }); });
+  document.addEventListener('keydown', function (e) { var i = +e.key; if (i >= 1 && i <= 6) show(chips[i - 1]); });
+  show(chips[0]);
+})();
+</script>
+</body>
+</html>

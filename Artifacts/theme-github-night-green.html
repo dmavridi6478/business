@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GitHub Night &amp; Green — Theme</title>
+<style>
+  /* THEME: GitHub Night & Green (derived from @githubnow daily-briefing slides)
+     Use for: repo roundups, dev-tool briefings, changelog and release pages.
+     Dark default; light variant on [data-theme="light"] or prefers-color-scheme. */
+  :root {
+    --bg: #06080f; --bg-glow: #101a33; --surface: #0d111a; --border: #232a38;
+    --text: #ffffff; --text-dim: #d4d9e2; --muted: #8b93a3; --accent: #3fb950; --accent-text: #46c15a; --gold: #d9a23a;
+    --radius: 20px; --font: 'Helvetica Neue', Arial, sans-serif; --mono: 'SFMono-Regular', Consolas, monospace;
+  }
+  @media (prefers-color-scheme: light) { :root:not([data-theme="dark"]) { --bg:#f6f8fa; --bg-glow:#e8f0ff; --surface:#fff; --border:#d0d7de; --text:#0d1117; --text-dim:#30363d; --muted:#57606a; --accent-text:#1a7f37; } }
+  :root[data-theme="light"] { --bg:#f6f8fa; --bg-glow:#e8f0ff; --surface:#fff; --border:#d0d7de; --text:#0d1117; --text-dim:#30363d; --muted:#57606a; --accent-text:#1a7f37; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: radial-gradient(ellipse at 50% 0, var(--bg-glow), var(--bg) 55%); background-color: var(--bg); color: var(--text); font-family: var(--font); padding: 48px 20px; min-height: 100vh; }
+  main { max-width: 720px; margin: 0 auto; display: grid; gap: 28px; }
+  .kicker { font-size: 12px; font-weight: 700; letter-spacing: .3em; text-transform: uppercase; color: var(--muted); }
+  .kicker.g { color: var(--accent-text); }
+  .bar { width: 48px; height: 5px; border-radius: 3px; background: var(--accent); margin: 14px 0 22px; }
+  h1 { font-size: clamp(34px, 6vw, 56px); line-height: 1.05; font-weight: 800; }
+  h1 .g { color: var(--accent-text); }
+  .pills { display: flex; gap: 10px; flex-wrap: wrap; }
+  .pill { font-size: 13px; font-weight: 700; padding: 8px 16px; border-radius: 30px; }
+  .pill.solid { background: var(--accent); color: #05230d; } .pill.ghost { border: 2px solid var(--gold); color: var(--gold); }
+  .repo { font-family: var(--mono); font-size: clamp(24px, 5vw, 38px); font-weight: 700; word-break: break-all; }
+  .repo span { color: var(--accent-text); }
+  p { color: var(--text-dim); font-size: 16px; line-height: 1.6; }
+  .tiles { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 12px; }
+  .tile { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 18px; }
+  .tile b { display: block; margin-bottom: 6px; } .tile span { font-size: 13px; color: var(--muted); }
+  a { color: var(--accent-text); }
+  a:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+</style>
+</head>
+<body>
+<main>
+  <div><div class="kicker">GitHub Trending</div><div class="kicker g" style="margin-top:8px">Open source · [date]</div><div class="bar"></div>
+    <h1>Tools you’ll wish you <span class="g">knew sooner</span></h1></div>
+  <div class="pills"><span class="pill solid">Blender LLM Integration</span><span class="pill ghost">+3,209 stars this month</span></div>
+  <div class="repo"><span>ahujasid/</span>blender-mcp</div>
+  <p>Sample content using the GitHub Night &amp; Green tokens. Repo facts are vendor-claimed until verified.</p>
+  <div class="tiles"><div class="tile"><b>Python Execution</b><span>Run code in Blender</span></div><div class="tile"><b>Object Manipulation</b><span>Create and modify objects</span></div><div class="tile"><b>Material Control</b><span>Colors and materials</span></div></div>
+  <p><a href="https://github.com/ahujasid/blender-mcp">github.com/ahujasid/blender-mcp</a></p>
+</main>
+</body>
+</html>

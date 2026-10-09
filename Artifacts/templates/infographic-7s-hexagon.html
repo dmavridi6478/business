@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hexagon Framework Infographic (7S style)</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@900&family=Inter:wght@500;700&display=swap" rel="stylesheet">
+<style>
+/* TEMPLATE K: 6-node hexagon + centre (style of the McKinsey 7S card). Board 1080x1350.
+   Six outer nodes (top, upper-right, lower-right, bottom, lower-left, upper-left) + centre node. Edit [brackets]; tips panel at bottom. */
+:root{--cream:#fbf6e4;--ink:#161616;--blue-bg:#e5eefb;--blue:#2f6fe0;--font:'Inter','Helvetica Neue',Arial,sans-serif}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#bbb;display:flex;justify-content:center;padding:40px 0;font-family:var(--font)}
+.board{width:1080px;height:1350px;background:#fff;position:relative;overflow:hidden;color:var(--ink)}
+h1{font-family:'Playfair Display',Georgia,serif;font-size:84px;text-align:center;padding-top:30px;line-height:1;letter-spacing:-1px;font-weight:900}
+.sub{text-align:center;font-size:25px;font-weight:700;margin-top:8px}.by{text-align:right;padding-right:50px;font-size:17px;font-weight:700}
+.stage{position:absolute;left:30px;right:30px;top:170px;height:690px;background:var(--cream);border:2px solid #eadfa8;border-radius:14px}
+.n{position:absolute;width:300px;font-size:17px;line-height:1.35;text-align:center;color:#333}
+.pill{display:inline-block;font-size:24px;font-weight:700;border:2px solid;border-radius:30px;padding:2px 24px;margin-bottom:6px;background:#fff}
+.dot{position:absolute;width:62px;height:62px;border-radius:50%;border:3px solid #222;display:grid;place-items:center;font-weight:800;font-size:22px}
+.line{position:absolute;left:0;top:0;width:100%;height:100%}
+.n.t{left:390px;top:20px}.dot.t{left:509px;top:150px;background:#fbd1d1}
+.n.ur{left:700px;top:90px;width:270px}.dot.ur{left:772px;top:200px;background:#d6f2e4}
+.n.lr{left:700px;top:440px;width:270px}.dot.lr{left:772px;top:350px;background:#d3eef2}
+.n.b{left:390px;top:560px}.dot.b{left:509px;top:480px;background:#dcd6fa}
+.n.ll{left:50px;top:440px;width:270px}.dot.ll{left:200px;top:350px;background:#d7e4fb}
+.n.ul{left:50px;top:90px;width:270px}.dot.ul{left:200px;top:200px;background:#fbe0cf}
+.core{position:absolute;left:340px;top:300px;width:400px;background:#fff1c4;border:3px solid #333;border-radius:14px;padding:16px 18px;text-align:center;font-size:17px;line-height:1.35}
+.core b{display:block;font-size:26px;margin-bottom:6px}
+.tips{position:absolute;left:30px;right:30px;top:880px;height:380px;background:var(--blue-bg);border:2px solid #b8cdf0;border-radius:14px;padding:20px 26px}
+.tips h2{text-align:center;font-size:25px;margin-bottom:14px}
+.tg{display:grid;grid-template-columns:1fr 1fr;gap:24px 30px}.tip{display:flex;gap:14px;font-size:17px;line-height:1.32}.tip i{flex:none;width:30px;height:30px;border-radius:50%;background:var(--blue);color:#fff;font-style:normal;font-weight:800;display:grid;place-items:center}.tip b{display:block;font-size:20px;margin-bottom:2px}
+.bar{position:absolute;left:0;right:0;bottom:0;height:70px;background:var(--blue);color:#fff;display:flex;align-items:center;justify-content:space-between;padding:0 40px;font-size:20px;font-weight:700}
+</style></head><body>
+<section class="board">
+  <h1>[MODEL NAME]</h1><div class="sub">[The N Strategic Levers of High-Performance Companies]</div><div class="by">by [Author]</div>
+  <div class="stage">
+    <svg class="line" viewBox="0 0 1020 690"><g stroke="#222" stroke-width="2.5" fill="none"><polygon points="540,181 803,231 803,381 540,511 231,381 231,231"/><line x1="540" y1="181" x2="803" y2="381"/><line x1="540" y1="181" x2="231" y2="381"/><line x1="803" y1="231" x2="540" y2="511"/><line x1="231" y1="231" x2="540" y2="511"/><line x1="231" y1="231" x2="803" y2="231"/><line x1="231" y1="381" x2="803" y2="381"/></g></svg>
+    <div class="n t"><span class="pill" style="border-color:#e0707a;color:#a93030">[Node 1]</span><br>[One-sentence definition.]</div><div class="dot t">1</div>
+    <div class="n ur"><span class="pill" style="border-color:#33b27c;color:#16805a">[Node 2]</span><br>[Definition.]</div><div class="dot ur">2</div>
+    <div class="n lr"><span class="pill" style="border-color:#33a8b8;color:#1b7b8a">[Node 3]</span><br>[Definition.]</div><div class="dot lr">3</div>
+    <div class="n b"><span class="pill" style="border-color:#8c7be0;color:#5848b8">[Node 4]</span><br>[Definition.]</div><div class="dot b">4</div>
+    <div class="n ll"><span class="pill" style="border-color:#5c8fe0;color:#2d5ab0">[Node 5]</span><br>[Definition.]</div><div class="dot ll">5</div>
+    <div class="n ul"><span class="pill" style="border-color:#e8935c;color:#b25a1f">[Node 6]</span><br>[Definition.]</div><div class="dot ul">6</div>
+    <div class="core"><b>[Centre]</b>[Definition of the shared core that drives the rest.]</div>
+  </div>
+  <div class="tips"><h2>[6] Actionable Tips for Implementing [Model]</h2><div class="tg">
+    <div class="tip"><i>1</i><div><b>[Tip 1]</b>[Two-line explanation.]</div></div><div class="tip"><i>4</i><div><b>[Tip 4]</b>[Explanation.]</div></div>
+    <div class="tip"><i>2</i><div><b>[Tip 2]</b>[Explanation.]</div></div><div class="tip"><i>5</i><div><b>[Tip 5]</b>[Explanation.]</div></div>
+    <div class="tip"><i>3</i><div><b>[Tip 3]</b>[Explanation.]</div></div><div class="tip"><i>6</i><div><b>[Tip 6]</b>[Explanation.]</div></div>
+  </div></div>
+  <div class="bar"><span>[Call to action]</span><span>Follow [Author]</span></div>
+</section>
+</body></html>

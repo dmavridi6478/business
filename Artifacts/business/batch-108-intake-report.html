@@ -1,0 +1,143 @@
+<title>Batch 108 Intake Report</title>
+<style>
+  /* Layout: single-column formal report, 880px measure; tables scroll inside their own wrappers.
+     Palette: ink-blue neutrals, one deep teal accent, semantic green/amber/red for status only.
+     Type: Aptos (the owner's house font) with system fallbacks; title 32pt, headings 14pt, body 11pt. */
+  :root {
+    --bg: #f6f7f9; --surface: #ffffff; --fg: #1b2330; --muted: #5a6577; --line: #d9dee6;
+    --accent: #0f5d6b; --accent-soft: #e2f0f2;
+    --ok: #17703a; --ok-bg: #e3f3e8; --warn: #8a5a00; --warn-bg: #fbefd3; --bad: #a11d2a; --bad-bg: #fbe3e5;
+    --code-bg: #eef1f5;
+    --font: Aptos, "Segoe UI Variable Text", "Segoe UI", system-ui, -apple-system, Roboto, sans-serif;
+    --mono: ui-monospace, "SF Mono", Consolas, monospace;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #11161e; --surface: #181f2a; --fg: #e6eaf0; --muted: #9aa5b6; --line: #2c3646;
+      --accent: #6cc3d1; --accent-soft: #17323a;
+      --ok: #6fd18f; --ok-bg: #173824; --warn: #f0c261; --warn-bg: #3a2e12; --bad: #ff8d98; --bad-bg: #3d1a1f;
+      --code-bg: #0e131a; color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #11161e; --surface: #181f2a; --fg: #e6eaf0; --muted: #9aa5b6; --line: #2c3646;
+    --accent: #6cc3d1; --accent-soft: #17323a;
+    --ok: #6fd18f; --ok-bg: #173824; --warn: #f0c261; --warn-bg: #3a2e12; --bad: #ff8d98; --bad-bg: #3d1a1f;
+    --code-bg: #0e131a; color-scheme: dark;
+  }
+  * { box-sizing: border-box; }
+  body { background: var(--bg); color: var(--fg); font-family: var(--font); font-size: 11pt; line-height: 1.55; padding-inline: 16px; padding-block: 28px 64px; }
+  main { max-width: 880px; margin-inline: auto; display: flex; flex-direction: column; gap: 28px; }
+  header { display: flex; flex-direction: column; gap: 8px; border-bottom: 2px solid var(--accent); padding-bottom: 18px; }
+  .eyebrow { font-size: 9pt; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
+  h1 { font-size: 32pt; line-height: 1.1; margin: 0; font-weight: 700; text-wrap: balance; }
+  h2 { font-size: 14pt; margin: 0 0 10px; font-weight: 700; color: var(--accent); text-wrap: balance; }
+  p { margin: 0 0 10px; max-width: 75ch; }
+  section { background: var(--surface); border: 1px solid var(--line); border-radius: 6px; padding: 20px 22px; min-width: 0; }
+  .lede { font-size: 11pt; color: var(--muted); max-width: 70ch; margin: 0; }
+  .truth { border-left: 4px solid var(--bad); background: var(--bad-bg); padding: 12px 16px; border-radius: 0 6px 6px 0; }
+  .truth p:last-child { margin-bottom: 0; }
+  .tw { overflow-x: auto; margin-block: 8px 4px; border: 1px solid var(--line); border-radius: 4px; }
+  table { border-collapse: collapse; width: 100%; min-width: 720px; font-size: 10pt; }
+  th, td { padding: 8px 10px; border-bottom: 1px solid var(--line); text-align: center; vertical-align: top; }
+  th { background: var(--accent-soft); color: var(--fg); font-weight: 700; font-size: 9.5pt; }
+  tr:last-child td { border-bottom: 0; }
+  td.l, th.l { text-align: center; } /* house rule: table content aligned top and centre */
+  .st { display: inline-block; padding: 1px 8px; border-radius: 10px; font-size: 9pt; font-weight: 700; white-space: nowrap; }
+  .st.ok { background: var(--ok-bg); color: var(--ok); } .st.warn { background: var(--warn-bg); color: var(--warn); } .st.bad { background: var(--bad-bg); color: var(--bad); }
+  .sw { display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 10px; margin-block: 8px; }
+  .sw div { border: 1px solid var(--line); border-radius: 4px; overflow: hidden; font-size: 9pt; text-align: center; }
+  .sw i { display: block; height: 44px; }
+  .sw span { display: block; padding: 4px 6px; font-family: var(--mono); }
+  .prompt { position: relative; margin-block: 10px; }
+  .prompt pre { margin: 0; white-space: pre-wrap; background: var(--code-bg); border: 1px solid var(--line); border-radius: 4px; padding: 12px 84px 12px 12px; font-family: var(--mono); font-size: 9.5pt; line-height: 1.5; }
+  .prompt b { display: block; font-family: var(--font); font-size: 10pt; margin-bottom: 4px; }
+  .prompt button { position: absolute; top: 30px; right: 8px; font: inherit; font-size: 9pt; padding: 4px 10px; border-radius: 4px; border: 1px solid var(--accent); background: var(--surface); color: var(--accent); cursor: pointer; }
+  .prompt button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  ul { margin: 0 0 10px; padding-left: 20px; } li { margin-bottom: 4px; max-width: 75ch; }
+  code { font-family: var(--mono); font-size: 9.5pt; background: var(--code-bg); padding: 1px 4px; border-radius: 3px; }
+  footer { color: var(--muted); font-size: 9.5pt; }
+</style><main>
+<header><span class="eyebrow">Intake report · iCloud Photos, 1 archive (23 images, 1 video) plus 2 attached images · 5 October 2026</span>
+<h1>Batch 108 Intake Report</h1>
+<p class="lede">Five creators' carousels and a video turned into 5 skills, 3 commands, 2 design templates, sixteen repos cloned and read, and a user-run install script. Prepared for the owner of the business repository.</p></header>
+
+<section class="truth"><h2>What you should know first</h2>
+<p><b>"These 3 will replace your entire startup stack" is a headline, not a finding.</b> gstack is a set of prompts for Claude Code, ds4 runs one model family on Macs with 96 GB or more (or a DGX Spark), and gods-eye-view is a 3D globe of public data. None replaces a stack. All three are MIT-licensed; I read each licence. [Certain]</p>
+<p><b>Several repos on these slides are not free to use the way the slides imply.</b> HydraDB and Open-kritt are AGPL-3.0. Remotion's template depends on Remotion's own licence: free for individuals and companies of up to three employees, a paid company licence above that. RedInk is CC BY-NC-SA 4.0, non-commercial only. Echo-Music is GPL-3.0 and is an unofficial client that strips ads from YouTube Music, which is probably against YouTube's terms. [Certain for the licences; Likely for the terms]</p>
+<p><b>PersonaLive can impersonate people.</b> It animates one portrait photo in real time for live streaming. Its own README disclaims misuse. Use it only with the person's consent. [Certain]</p>
+<p><b>Parts of the upload could not be identified.</b> The "Editor" repo on the @replace.so slides names no owner, Img2threejs has several forks and I did not read a licence, AutoClip appears in the video only as a name, and the tenth @replace.so repo was not in the upload. I did not guess. [Certain]</p>
+<p><b>The GTM infographics are one cover image.</b> It previews five of nine graphics and most of the text is too small to read. The stage model (Hustle, Focus, Expansion) is the author's own framing, not a standard, and its ARR bands are unverified. The other attached image, JEV vs LLM, is already covered by the <code>jev-vs-llm</code> skill from batch 105. [Certain]</p>
+<p><b>Nothing was installed and no connector was changed.</b> The batch 104 OpenFlowKit <code>.mcp.json</code> entry is still unapplied. Midpage Legal Research, Sentry and Supabase still need your authorisation in a session that can run the sign-in. Star and today-star counts on the slides were not verified (GitHub API blocked). [Certain]</p></section>
+
+<section><h2>1. Inventory of the upload</h2><div class="tw"><table>
+<tr><th class="l">Source</th><th>Items</th><th class="l">Content</th><th class="l">Outcome</th></tr>
+<tr><td class="l">@dolorstca2h, "The exact app-building method"</td><td>8 images</td><td class="l">Seven steps, tools named for each (Reddit, Tally, Claude, Cursor, Framer, Appwrite, Dreamina, Instagram, Buffer, Amplitude, Sentry)</td><td class="l">Skill <code>app-building-method-7-steps</code>, command <code>/app-method</code>, template <code>photo-step-tools-caption</code></td></tr>
+<tr><td class="l">@replace.so, "10 GitHub repos so good they shouldn't be free"</td><td>10 images (cover + 9 repos)</td><td class="l">Echo-Music, Graft, HydraDB, Anydoc, Img2threejs, Openworker, Open-kritt, Crm, Editor</td><td class="l">Skill <code>replace-so-oss-repos-10</code>, command <code>/repo-licence-check</code></td></tr>
+<tr><td class="l">@githubnow daily briefing, 4 October 2026</td><td>4 images</td><td class="l">gstack, ds4, gods-eye-view</td><td class="l">Skill <code>github-briefing-oct4-three</code></td></tr>
+<tr><td class="l">@valeridoesai, "5 GitHub repos"</td><td>1 video, 48 s</td><td class="l">Remotion template, PersonaLive, RedInk, AutoClip, OpenHands</td><td class="l">Skill <code>github-5-repos-video-oct</code></td></tr>
+<tr><td class="l">"9 GTM Infographics" cover</td><td>1 attached image</td><td class="l">Five previews of nine; stage model</td><td class="l">Skill <code>gtm-infographics-9-cover</code>, command <code>/gtm-stage</code>, template <code>gtm-stage-three-column</code></td></tr>
+<tr><td class="l">JEV vs LLM infographic</td><td>1 attached image</td><td class="l">Already covered in batch 105</td><td class="l">No new work</td></tr></table></div></section>
+
+<section><h2>2. Your instructions against what the files contained</h2><div class="tw"><table>
+<tr><th class="l">Instruction</th><th class="l">Found</th><th>Status</th></tr>
+<tr><td class="l">Repos, skills, procedures, commands, tools to clone, create, install</td><td class="l">16 repos cloned shallowly and read; 5 skills and 3 commands created; install routes written for you to run</td><td><span class="st warn">Created, not installed</span></td></tr>
+<tr><td class="l">Prompts into commands or skills</td><td class="l">The slides held no prompts; four copy-paste prompts below are mine</td><td><span class="st ok">Done</span></td></tr>
+<tr><td class="l">Instructions for actions to execute</td><td class="l">gstack install and per-repo routes</td><td><span class="st warn">Handed to you</span></td></tr>
+<tr><td class="l">Design content into templates and themes</td><td class="l">Photo-scrim step slides, periwinkle three-stage chart</td><td><span class="st ok">2 templates, 3 theme rows</span></td></tr>
+<tr><td class="l">Guide to build agents</td><td class="l">None; the 7-step carousel is an app workflow, not an agent guide</td><td><span class="st warn">Not present</span></td></tr>
+<tr><td class="l">References to connectors</td><td class="l">Sentry, Appwrite and Amplitude named as app tools; no edit attempted since the earlier denial</td><td><span class="st warn">No change</span></td></tr></table></div></section>
+
+<section><h2>3. Repo register (read 5 October 2026)</h2><div class="tw"><table>
+<tr><th class="l">Repo</th><th>Licence</th><th class="l">Flag</th></tr>
+<tr><td class="l">garrytan/gstack</td><td>MIT</td><td class="l">Needs Bun; read ./setup; team mode commits to your repo</td></tr>
+<tr><td class="l">antirez/ds4</td><td>MIT</td><td class="l">96 GB Macs; own GGUF files only</td></tr>
+<tr><td class="l">bilawalsidhu/gods-eye-view</td><td>MIT</td><td class="l">Pinokio or terminal; public data</td></tr>
+<tr><td class="l">EchoMusicApp/Echo-Music</td><td>GPL-3.0</td><td class="l">Unofficial YouTube Music client</td></tr>
+<tr><td class="l">NanoNets/Graft</td><td>MIT</td><td class="l">Model key for summaries</td></tr>
+<tr><td class="l">hydra-db/hydradb</td><td>AGPL-3.0</td><td class="l">Network copyleft</td></tr>
+<tr><td class="l">firecrawl/anydoc</td><td>MIT</td><td class="l"></td></tr>
+<tr><td class="l">andrewyng/openworker</td><td>MIT</td><td class="l">Holds tokens locally</td></tr>
+<tr><td class="l">Kritt-ai/open-kritt</td><td>AGPL-3.0</td><td class="l">Authorised targets only</td></tr>
+<tr><td class="l">trycompai/crm</td><td>MIT</td><td class="l">Personal data enrichment</td></tr>
+<tr><td class="l">remotion-dev/remotion and template-prompt-to-video</td><td>Remotion licence</td><td class="l">Paid above 3 employees</td></tr>
+<tr><td class="l">GVCLab/PersonaLive</td><td>Apache-2.0</td><td class="l">Impersonation risk</td></tr>
+<tr><td class="l">HisMax/RedInk</td><td>CC BY-NC-SA 4.0</td><td class="l">Non-commercial</td></tr>
+<tr><td class="l">OpenHands/OpenHands</td><td>MIT</td><td class="l">Sandbox first</td></tr>
+<tr><td class="l">0xsline/OpenChatCut</td><td>AGPL-3.0</td><td class="l">Candidate for "Editor", not confirmed</td></tr></table></div></section>
+
+<section><h2>4. Design templates and themes</h2><div class="tw"><table>
+<tr><th class="l">Template</th><th class="l">Canvas</th><th class="l">Theme colours</th></tr>
+<tr><td class="l"><code>photo-step-tools-caption</code></td><td>1080×1920</td><td class="l">dark scrim over a photo, white ink, accent #2F6BFF (eyeballed)</td></tr>
+<tr><td class="l"><code>gtm-stage-three-column</code></td><td>1080×1350</td><td class="l">bg #D4DFFE, card #F2F9FF, stage 3 #A4E7FF (sampled)</td></tr></table></div>
+<div class="sw"><div><i style="background:#D4DFFE"></i><span>#D4DFFE</span></div><div><i style="background:#F2F9FF"></i><span>#F2F9FF</span></div><div><i style="background:#A4E7FF"></i><span>#A4E7FF</span></div><div><i style="background:#FFE9A8"></i><span>#FFE9A8</span></div><div><i style="background:#FFC9A8"></i><span>#FFC9A8</span></div><div><i style="background:#111526"></i><span>#111526</span></div><div><i style="background:#4EAE5E"></i><span>#4EAE5E</span></div></div>
+<p>Placeholder handles only; no source photo, logo or graphic reused. Rendered in headless Chromium with overlap and containment checks.</p></section>
+
+<section><h2>5. Copy-paste prompts and commands</h2>
+<p>After restarting Claude Code the commands exist: <code>/app-method</code>, <code>/repo-licence-check</code>, <code>/gtm-stage</code>. The slides held no prompts, so all four below are mine.</p>
+<div class="prompt"><b>1. Plan a small app (mine, from the 7-step carousel)</b><pre>Use the app-building-method-7-steps skill. My app idea is [IDEA] for [USER]. For each of the seven steps give the one action to take this week, the named tool and a free alternative, and flag the data-protection, consent and testing gaps the carousel leaves out. Do not build anything.</pre><button class="cp" type="button">Copy</button></div>
+<div class="prompt"><b>2. Check licences before using a repo (mine)</b><pre>Use the repo-licence-check command. Repos: [LIST]. My use is [internal only / hosted for customers / resold]. For each repo, read its licence, say whether my use is allowed, and name what needs a commercial licence or legal review (AGPL, Remotion company licence, CC BY-NC-SA, GPL). Say what you could not verify.</pre><button class="cp" type="button">Copy</button></div>
+<div class="prompt"><b>3. Place a company on a GTM stage (mine)</b><pre>Use the gtm-infographics-9-cover skill. Our ARR is [X], customers [N], team [N], pricing [DESCRIBE], channels [LIST]. Say whether we are in Hustle, Focus or Expansion mode and why, then the pricing job, demo goal and channel count for that stage and one thing to stop doing. State that the stage bands come from a cover preview and are not a standard.</pre><button class="cp" type="button">Copy</button></div>
+<div class="prompt"><b>4. Triage today's trending repos (mine)</b><pre>Use the github-briefing-oct4-three and github-5-repos-video-oct skills. I want to [GOAL]. Pick at most one repo from the two lists or say none fits. Give licence, install route from the README (never a piped download), what to read first, how to try it in a throwaway project, and what would make you reject it.</pre><button class="cp" type="button">Copy</button></div>
+</section>
+
+<section><h2>6. Your next steps</h2><ul>
+<li>Before using any repo commercially, run <code>/repo-licence-check</code> with your use stated; the AGPL, Remotion and CC BY-NC-SA items are the ones that can bite.</li>
+<li>If you want gstack, read its <code>setup</code> script and the existing <code>gstack</code> skill in this repo first; do not run team mode blindly.</li>
+<li>For the app method, start with a spreadsheet and a free form before any paid tool, and add a privacy notice before analytics.</li>
+<li>If you want the full GTM series, get the author's own graphics; the cover only previews five of nine.</li>
+<li>Open items: the OpenFlowKit <code>.mcp.json</code> entry, and authorising the Midpage, Sentry and Supabase connectors.</li>
+<li>Run <code>scripts/batch108-install.sh</code> on your own machine only if you want any of this; it asks before every step and pipes nothing into a shell.</li></ul></section>
+
+<footer>Sources: 23 JPEGs and 1 MP4 in one iCloud Photos archive, plus two attached images. Owners of repos not named on the slides were found by web search; licences read from shallow clones on 5 October 2026. Video read from frames; there was no narration text beyond captions. Star and today-star counts are as printed and were not verified.</footer>
+</main>
+<script>
+document.querySelectorAll('.cp').forEach(function (b) {
+  b.addEventListener('click', function () {
+    var t = b.parentNode.querySelector('pre');
+    function done() { b.textContent = 'Copied'; setTimeout(function () { b.textContent = 'Copy'; }, 1500); }
+    function fb() { var r = document.createRange(); r.selectNodeContents(t); var s = getSelection(); s.removeAllRanges(); s.addRange(r); b.textContent = 'Selected'; }
+    try { navigator.clipboard.writeText(t.textContent).then(done, fb); } catch (e) { fb(); }
+  });
+});
+</script>

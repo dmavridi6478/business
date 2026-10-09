@@ -1,1 +1,86 @@
-{}
+{
+  "enabledPlugins": {
+    "productivity@knowledge-work-plugins": true,
+    "sales@knowledge-work-plugins": true,
+    "customer-support@knowledge-work-plugins": true,
+    "product-management@knowledge-work-plugins": true,
+    "marketing@knowledge-work-plugins": true,
+    "legal@knowledge-work-plugins": true,
+    "finance@knowledge-work-plugins": true,
+    "data@knowledge-work-plugins": true,
+    "enterprise-search@knowledge-work-plugins": true,
+    "bio-research@knowledge-work-plugins": true,
+    "cowork-plugin-management@knowledge-work-plugins": true,
+    "engineering@knowledge-work-plugins": true,
+    "human-resources@knowledge-work-plugins": true,
+    "design@knowledge-work-plugins": true,
+    "operations@knowledge-work-plugins": true,
+    "small-business@knowledge-work-plugins": true
+  },
+  "extraKnownMarketplaces": {
+    "knowledge-work-plugins": {
+      "source": {
+        "source": "github",
+        "repo": "anthropics/knowledge-work-plugins"
+      }
+    },
+    "claude-plugins-official": {
+      "source": {
+        "source": "github",
+        "repo": "anthropics/claude-plugins-official"
+      }
+    }
+  },
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Write|Edit|MultiEdit|NotebookEdit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 \"${CLAUDE_PROJECT_DIR}/.claude/hooks/os_guard.py\""
+          }
+        ]
+      },
+      {
+        "matcher": "Read|Grep|Glob",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 \"${CLAUDE_PROJECT_DIR}/.claude/hooks/os_readscope.py\""
+          }
+        ]
+      },
+      {
+        "matcher": "WebFetch|mcp__.*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 \"${CLAUDE_PROJECT_DIR}/.claude/hooks/os_outbound.py\""
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "Write|Edit|MultiEdit|NotebookEdit|Read|Grep|Glob|WebFetch|WebSearch|Bash|Agent|Task|mcp__.*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 \"${CLAUDE_PROJECT_DIR}/.claude/hooks/os_log.py\""
+          }
+        ]
+      }
+    ]
+  },
+  "permissions": {
+    "deny": [
+      "Edit(/data/ai-os/approvals.md)",
+      "Edit(/data/ai-os/log/**)",
+      "Edit(/data/ai-os/consent-ledger.jsonl)",
+      "Edit(/data/ai-os/opt-outs.jsonl)",
+      "Edit(/data/ai-os/.salt)",
+      "Edit(/data/ai-os/screened/**)"
+    ]
+  }
+}

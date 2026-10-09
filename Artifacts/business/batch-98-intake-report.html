@@ -1,0 +1,255 @@
+<title>Batch 98 Intake Report</title>
+<style>
+  /* Layout: single-column formal report, 880px measure, tables scroll inside their own wrappers.
+     Palette: ink-blue neutrals, one deep teal accent, semantic green/amber/red for status only.
+     Type: Aptos (user's house font) with system fallbacks; titles 32pt, headings 14pt, body 11pt. */
+  :root {
+    --bg: #f6f7f9; --surface: #ffffff; --fg: #1b2330; --muted: #5a6577; --line: #d9dee6;
+    --accent: #0f5d6b; --accent-soft: #e2f0f2;
+    --ok: #17703a; --ok-bg: #e3f3e8; --warn: #8a5a00; --warn-bg: #fbefd3; --bad: #a11d2a; --bad-bg: #fbe3e5;
+    --code-bg: #eef1f5;
+    --font: Aptos, "Segoe UI Variable Text", "Segoe UI", system-ui, -apple-system, Roboto, sans-serif;
+    --mono: ui-monospace, "SF Mono", Consolas, monospace;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #11161e; --surface: #181f2a; --fg: #e6eaf0; --muted: #9aa5b6; --line: #2c3646;
+      --accent: #6cc3d1; --accent-soft: #17323a;
+      --ok: #6fd18f; --ok-bg: #173824; --warn: #f0c261; --warn-bg: #3a2e12; --bad: #ff8d98; --bad-bg: #3d1a1f;
+      --code-bg: #0e131a; color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #11161e; --surface: #181f2a; --fg: #e6eaf0; --muted: #9aa5b6; --line: #2c3646;
+    --accent: #6cc3d1; --accent-soft: #17323a;
+    --ok: #6fd18f; --ok-bg: #173824; --warn: #f0c261; --warn-bg: #3a2e12; --bad: #ff8d98; --bad-bg: #3d1a1f;
+    --code-bg: #0e131a; color-scheme: dark;
+  }
+  * { box-sizing: border-box; }
+  body { background: var(--bg); color: var(--fg); font-family: var(--font); font-size: 11pt; line-height: 1.55; padding-inline: 16px; padding-block: 28px 64px; }
+  main { max-width: 880px; margin-inline: auto; display: flex; flex-direction: column; gap: 28px; }
+  header { display: flex; flex-direction: column; gap: 8px; border-bottom: 2px solid var(--accent); padding-bottom: 18px; }
+  .eyebrow { font-size: 9pt; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
+  h1 { font-size: 32pt; line-height: 1.1; margin: 0; font-weight: 700; text-wrap: balance; }
+  h2 { font-size: 14pt; margin: 0 0 10px; font-weight: 700; color: var(--accent); text-wrap: balance; }
+  h3 { font-size: 11pt; margin: 14px 0 6px; font-weight: 700; }
+  p { margin: 0 0 10px; max-width: 75ch; }
+  section { background: var(--surface); border: 1px solid var(--line); border-radius: 6px; padding: 20px 22px; min-width: 0; }
+  .lede { font-size: 11pt; color: var(--muted); max-width: 70ch; margin: 0; }
+  .truth { border-left: 4px solid var(--bad); background: var(--bad-bg); padding: 12px 16px; border-radius: 0 6px 6px 0; }
+  .truth p:last-child { margin-bottom: 0; }
+  .tag { font-family: var(--mono); font-size: 9pt; padding: 1px 6px; border-radius: 3px; background: var(--accent-soft); color: var(--accent); white-space: nowrap; }
+  .tw { overflow-x: auto; margin-block: 8px 4px; border: 1px solid var(--line); border-radius: 4px; }
+  table { border-collapse: collapse; width: 100%; min-width: 640px; font-size: 10pt; }
+  th, td { padding: 8px 10px; border-bottom: 1px solid var(--line); text-align: center; vertical-align: top; }
+  th { background: var(--accent-soft); color: var(--fg); font-weight: 700; font-size: 9.5pt; }
+  tr:last-child td { border-bottom: 0; }
+  td.l, th.l { text-align: left; }
+  .st { display: inline-block; padding: 1px 8px; border-radius: 10px; font-size: 9pt; font-weight: 700; white-space: nowrap; }
+  .st.ok { background: var(--ok-bg); color: var(--ok); } .st.warn { background: var(--warn-bg); color: var(--warn); } .st.bad { background: var(--bad-bg); color: var(--bad); }
+  .sw { display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 10px; margin-block: 8px; }
+  .sw div { border: 1px solid var(--line); border-radius: 4px; overflow: hidden; font-size: 9pt; text-align: center; }
+  .sw i { display: block; height: 44px; }
+  .sw span { display: block; padding: 4px 6px; font-family: var(--mono); }
+  .prompt { position: relative; margin-block: 10px; }
+  .prompt pre { margin: 0; white-space: pre-wrap; background: var(--code-bg); border: 1px solid var(--line); border-radius: 4px; padding: 12px 84px 12px 12px; font-family: var(--mono); font-size: 9.5pt; line-height: 1.5; }
+  .prompt b { display: block; font-family: var(--font); font-size: 10pt; margin-bottom: 4px; }
+  .prompt button { position: absolute; top: 8px; right: 8px; font: inherit; font-size: 9pt; padding: 4px 10px; border-radius: 4px; border: 1px solid var(--accent); background: var(--surface); color: var(--accent); cursor: pointer; }
+  .prompt button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  ul { margin: 0 0 10px; padding-left: 20px; } li { margin-bottom: 4px; max-width: 75ch; }
+  code { font-family: var(--mono); font-size: 9.5pt; background: var(--code-bg); padding: 1px 4px; border-radius: 3px; }
+  footer { color: var(--muted); font-size: 9.5pt; }
+</style>
+
+<main>
+<header>
+  <span class="eyebrow">Intake report · iCloud Photos batch · 1 October 2026</span>
+  <h1>Batch 98 Intake Report</h1>
+  <p class="lede">34 files (32 images, 2 videos) converted into 3 skills, 25 subagents, 5 commands, 4 design templates and a user-run install script. Prepared for the owner of the business repository.</p>
+</header>
+
+<section>
+  <h2>1. Executive summary</h2>
+  <div class="truth">
+    <p><b>The uncomfortable part first.</b> <span class="tag">Certain</span> Roughly 70 percent of this batch is promotional carousel content that contains no instruction to execute. The two assets with real operating value are the ReStructure AI video and the PageIndex card. The rest is a repository list, and five of its entries were already catalogued in Batch 97.</p>
+    <p><span class="tag">Certain</span> Three claims in the source material do not survive checking. Only 2 of the 12 fonts captioned "google fonts" exist on Google Fonts. The video's "41 agents" shows only 25 agents legibly. And its auto-reply and auto-reminder behaviour is a promotion decision, not a safe default.</p>
+    <p><span class="tag">Certain</span> The session's auto-mode classifier blocked installation of seven third-party skills from NVIDIA/OpenShell, longbridge/gpui-kit and t8y2/dbx. That block was respected and not circumvented. You must run the install script yourself.</p>
+  </div>
+  <h3>What was delivered</h3>
+  <ul>
+    <li><b>Skills:</b> <code>pageindex</code> (MIT, three-file vendoring set) and <code>ai-entrepreneur-os</code>.</li>
+    <li><b>Subagents:</b> 25 <code>os-*</code> agents, all draft-only, behind an approval gate.</li>
+    <li><b>Commands:</b> <code>/os-morning-page</code>, <code>/os-run-module</code>, <code>/pageindex-ask</code>, <code>/loadtest</code>, <code>/theme-card</code>.</li>
+    <li><b>Design:</b> four rendered, checked templates and a tokenised theme set; a verified font-substitution table.</li>
+    <li><b>Operations:</b> <code>scripts/batch98-install.sh</code> for the third-party installs and connector reconnection steps.</li>
+  </ul>
+</section>
+
+<section>
+  <h2>2. Inventory and method</h2>
+  <div class="tw"><table>
+    <thead><tr><th class="l">Source</th><th>Items</th><th class="l">Content</th><th>Actionable?</th></tr></thead>
+    <tbody>
+      <tr><td class="l">@githubnow</td><td>9 images</td><td class="l">Daily briefings, 29–30 Sep 2026: PageIndex, hey, OpenShell, firebase-ios-sdk, dbx, gpui-kit</td><td><span class="st ok">Yes</span></td></tr>
+      <tr><td class="l">@will.ai.m</td><td>7 images</td><td class="l">SearXNG, Home Assistant, Pi-hole, Vaultwarden, Nextcloud, intro and follow cards</td><td><span class="st warn">Already covered</span></td></tr>
+      <tr><td class="l">@designarchitect001</td><td>16 images</td><td class="l">12 typefaces, covers, end cards; black, red and glowing-numeral design language</td><td><span class="st ok">Design only</span></td></tr>
+      <tr><td class="l">@imjonathanacuna</td><td>1 video, 57 s</td><td class="l">Claude orchestrator with builder agents; tool stack list</td><td><span class="st warn">Partial</span></td></tr>
+      <tr><td class="l">@restructureai</td><td>1 video, 86 s</td><td class="l">AI Entrepreneur Operating System: modules, agents, knowledge layer</td><td><span class="st ok">Yes</span></td></tr>
+    </tbody>
+  </table></div>
+  <p><b>Method.</b> Every image was read. Each video was sampled every 2 seconds (29 and 31 frames) and read from on-screen captions. <span class="tag">Certain</span> Audio was not transcribed, so spoken content not shown as captions is missing. <span class="tag">Likely</span> Some nuance in the orchestrator video is lost.</p>
+</section>
+
+<section>
+  <h2>3. Action register</h2>
+  <div class="tw"><table>
+    <thead><tr><th class="l">Action requested</th><th>Status</th><th class="l">Result and evidence</th></tr></thead>
+    <tbody>
+      <tr><td class="l">Identify and verify repositories</td><td><span class="st ok">Done</span></td><td class="l">6 of 6 exist (<code>git ls-remote</code>); 5 cloned shallowly; licences read from each repo</td></tr>
+      <tr><td class="l">Clone repositories</td><td><span class="st ok">Done</span></td><td class="l">PageIndex, OpenShell, dbx, hey, gpui-kit into the gitignored <code>repos/</code>. firebase-ios-sdk deliberately not cloned (large, irrelevant)</td></tr>
+      <tr><td class="l">Create skills from content</td><td><span class="st ok">Done</span></td><td class="l"><code>pageindex</code>, <code>ai-entrepreneur-os</code>; existing <code>design-templates</code> and <code>dev-repos-to-clone</code> extended</td></tr>
+      <tr><td class="l">Build agents from the guide</td><td><span class="st ok">Done</span></td><td class="l">25 <code>os-*</code> subagents; knowledge layer in <code>docs/ai-os/</code></td></tr>
+      <tr><td class="l">Create commands from prompts</td><td><span class="st warn">Adapted</span></td><td class="l">The files contain no verbatim prompts. Five commands were authored from the procedures instead</td></tr>
+      <tr><td class="l">Design templates and themes</td><td><span class="st ok">Done</span></td><td class="l">4 templates rendered in headless Chromium; a quoting defect found and fixed</td></tr>
+      <tr><td class="l">Install third-party skills</td><td><span class="st bad">Blocked</span></td><td class="l"><code>npx skills add</code> for 3 repos denied as untrusted code integration; not retried or re-routed</td></tr>
+      <tr><td class="l">Install tools in the sandbox</td><td><span class="st warn">Not done</span></td><td class="l">The sandbox is ephemeral; the install script targets your machine instead</td></tr>
+      <tr><td class="l">Install connectors</td><td><span class="st bad">Needs you</span></td><td class="l">OAuth cannot be completed non-interactively; see section 5</td></tr>
+      <tr><td class="l">Star repos, follow creators</td><td><span class="st warn">Declined</span></td><td class="l">Outward social actions on your accounts that you did not request</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<section>
+  <h2>4. Repository register</h2>
+  <div class="tw"><table>
+    <thead><tr><th class="l">Repository</th><th>Licence</th><th class="l">What it is</th><th class="l">Disposition</th></tr></thead>
+    <tbody>
+      <tr><td class="l"><code>VectifyAI/PageIndex</code></td><td>MIT</td><td class="l">Vectorless RAG; tree index plus LLM reasoning; <code>pip install -U pageindex</code> (0.2.20)</td><td class="l">Vendored as a skill and <code>/pageindex-ask</code></td></tr>
+      <tr><td class="l"><code>NVIDIA/OpenShell</code></td><td>Apache-2.0</td><td class="l">Kernel-enforced agent sandbox; 4 agent skills; needs Docker or Podman</td><td class="l">Documented; install via script</td></tr>
+      <tr><td class="l"><code>t8y2/dbx</code></td><td>Apache-2.0</td><td class="l">100+ database client with MCP server (npm 0.4.102) and 1 skill</td><td class="l">Documented; MCP line in script, read-only first</td></tr>
+      <tr><td class="l"><code>rakyll/hey</code></td><td>Apache-2.0</td><td class="l">HTTP load generator, HTTP/2; last commit 2026-01-10</td><td class="l">Wrapped by <code>/loadtest</code> with an ownership gate</td></tr>
+      <tr><td class="l"><code>longbridge/gpui-kit</code></td><td>Apache-2.0</td><td class="l">Rust desktop UI, 75+ components; 2 skills</td><td class="l">Documented only</td></tr>
+      <tr><td class="l"><code>firebase/firebase-ios-sdk</code></td><td>Not checked</td><td class="l">Firebase for Apple platforms</td><td class="l">Documented only; not cloned</td></tr>
+    </tbody>
+  </table></div>
+  <p>Star counts on the source cards are daily or monthly deltas and were not independently verified. <span class="tag">Certain</span></p>
+</section>
+
+<section>
+  <h2>5. AI Entrepreneur OS: build, gaps and connector status</h2>
+  <p>Architecture: one orchestrator (<code>os-chief-of-staff</code>, the only <code>opus</code> agent) routes to five Brain agents and five modules. Every agent starts at autonomy tier 0 and writes drafts only. Nothing is sent, spent, published or deleted without a human approval recorded in <code>data/ai-os/approvals.md</code>.</p>
+  <div class="tw"><table>
+    <thead><tr><th class="l">Layer</th><th>Agents</th><th class="l">Built</th></tr></thead>
+    <tbody>
+      <tr><td class="l">Brain</td><td>5</td><td class="l">chief-of-staff, priority, approval, business-analyst, watchdog</td></tr>
+      <tr><td class="l">Marketing</td><td>4</td><td class="l">ads, seo, email-sms, lead-magnet</td></tr>
+      <tr><td class="l">Sales</td><td>4</td><td class="l">response, followup, close, prospect</td></tr>
+      <tr><td class="l">Finance</td><td>4</td><td class="l">bookkeeping, invoice, profit, cashflow</td></tr>
+      <tr><td class="l">Research and Offer</td><td>4</td><td class="l">market, pain-point, offer-builder, pricing</td></tr>
+      <tr><td class="l">Customer Success</td><td>4</td><td class="l">onboarding, checkin, health, referral (names inferred from Day 0/7/30/90)</td></tr>
+    </tbody>
+  </table></div>
+  <p><span class="tag">Certain</span> The video claims 41 agents. Twenty-five are legible. Operations, Content and Design, Risk and Legal, and Data and Observability were not readable and were not invented.</p>
+  <h3>Connector status, checked against this workspace</h3>
+  <div class="tw"><table>
+    <thead><tr><th class="l">Tool in the videos</th><th>Status</th><th class="l">What you do</th></tr></thead>
+    <tbody>
+      <tr><td class="l">Notion, Slack, Gmail, Google Calendar, Canva</td><td><span class="st ok">Connected</span></td><td class="l">Nothing</td></tr>
+      <tr><td class="l">Klaviyo, Semrush, Ahrefs, HubSpot, Clay, Vibe Prospecting, Motion, Supermetrics, Fireflies</td><td><span class="st ok">Connected</span></td><td class="l">Nothing; Fireflies stands in for Fathom and Granola, HubSpot for Pipedrive</td></tr>
+      <tr><td class="l">Stripe, MailerLite</td><td><span class="st bad">Needs reconnect</span></td><td class="l">Reauthorise in claude.ai connector settings</td></tr>
+      <tr><td class="l">Wispr Flow, Meridian QuickBooks</td><td><span class="st warn">Connect incomplete</span></td><td class="l">Finish the OAuth flow</td></tr>
+      <tr><td class="l">Fathom, Granola, Pipedrive, Intuit QuickBooks</td><td><span class="st warn">Not installed</span></td><td class="l">Add from the connector directory if you use them</td></tr>
+      <tr><td class="l">1Password, Spark Email, Orca, Codex, Grok</td><td><span class="st warn">No connector</span></td><td class="l">None needed; never give agents secrets</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<section>
+  <h2>6. Design themes</h2>
+  <p>The source design language is black fields, red gradient spheres, silver-gradient wordmarks, and one saturated glow colour per numbered slide. Four templates implement it, plus the GitHubNow dark-navy briefing and the white tool-spotlight layout.</p>
+  <h3>Glow-numeral palette (one per slide)</h3>
+  <div class="sw">
+    <div><i style="background:#2fd5e6"></i><span>#2fd5e6</span></div><div><i style="background:#2fe08a"></i><span>#2fe08a</span></div>
+    <div><i style="background:#8a6bff"></i><span>#8a6bff</span></div><div><i style="background:#2f8bff"></i><span>#2f8bff</span></div>
+    <div><i style="background:#ff9a5c"></i><span>#ff9a5c</span></div><div><i style="background:#f5d63d"></i><span>#f5d63d</span></div>
+    <div><i style="background:#ff5a78"></i><span>#ff5a78</span></div>
+  </div>
+  <h3>Noir and briefing tokens</h3>
+  <div class="sw">
+    <div><i style="background:#080808"></i><span>noir #080808</span></div><div><i style="background:linear-gradient(135deg,#2a0004,#ff3b3f)"></i><span>sphere gradient</span></div>
+    <div><i style="background:linear-gradient(180deg,#f6f6fa,#7d7d88)"></i><span>silver gradient</span></div><div><i style="background:#14213f"></i><span>briefing top #14213f</span></div>
+    <div><i style="background:#3fb950"></i><span>green #3fb950</span></div><div><i style="background:#d9a93f"></i><span>amber #d9a93f</span></div>
+  </div>
+  <h3>Font substitutes</h3>
+  <p><span class="tag">Certain</span> Only Urbanist and Outfit are on Google Fonts (checked against the Google Fonts metadata endpoint). <span class="tag">Guessing</span> The substitutes below approximate each specimen's character and are not matches. Licences for the originals are unverified.</p>
+  <div class="tw"><table>
+    <thead><tr><th class="l">Specimen</th><th>On Google Fonts</th><th class="l">Substitute</th></tr></thead>
+    <tbody>
+      <tr><td class="l">Urbanist, Outfit</td><td><span class="st ok">Yes</span></td><td class="l">Use as is</td></tr>
+      <tr><td class="l">Nura</td><td><span class="st bad">No</span></td><td class="l">Fredoka 600</td></tr>
+      <tr><td class="l">Ancola</td><td><span class="st bad">No</span></td><td class="l">Sora 700</td></tr>
+      <tr><td class="l">Alro</td><td><span class="st bad">No</span></td><td class="l">Manrope 800</td></tr>
+      <tr><td class="l">Surgena</td><td><span class="st bad">No</span></td><td class="l">Comfortaa 700</td></tr>
+      <tr><td class="l">Ourova / Qurova</td><td><span class="st bad">No</span></td><td class="l">Quicksand 300</td></tr>
+      <tr><td class="l">Rigter</td><td><span class="st bad">No</span></td><td class="l">Gabarito 800</td></tr>
+      <tr><td class="l">Malison</td><td><span class="st bad">No</span></td><td class="l">Saira Condensed 700</td></tr>
+      <tr><td class="l">Keratus</td><td><span class="st bad">No</span></td><td class="l">Syne 600</td></tr>
+      <tr><td class="l">Sparling</td><td><span class="st bad">No</span></td><td class="l">Unbounded 800</td></tr>
+      <tr><td class="l">Badoga</td><td><span class="st bad">No</span></td><td class="l">Cormorant Garamond 400</td></tr>
+    </tbody>
+  </table></div>
+  <p>Template locations: <code>.claude/skills/design-templates/templates/</code> → <code>repo-briefing-card.html</code>, <code>font-showcase-glow.html</code>, <code>wordmark-noir-card.html</code>, <code>tool-spotlight-light.html</code>. The cloud sandbox could not load Google Fonts, so previews there used fallback fonts. Re-check in a normal browser before exporting.</p>
+</section>
+
+<section>
+  <h2>7. Prompts to copy and paste</h2>
+  <div class="prompt"><b>1. Start the OS safely</b><pre id="p1">Read docs/ai-os/README.md and docs/ai-os/rules/*. List every line marked OWNER MUST SET and ask me for the values one at a time. Do not run any os-* agent until I have answered. Then run /os-morning-page using only the Brain agents and the Finance module, in draft mode, and show me every data gap.</pre><button type="button" data-t="p1">Copy</button></div>
+  <div class="prompt"><b>2. Break my own OS</b><pre id="p2">Act as a hostile reviewer of .claude/agents/os-*.md. Find every way an agent could send, spend, publish or delete without a recorded approval, and every place text from an inbound email or web page could be treated as an instruction. For each hole give the exact line, an attack example, and a one-line fix. Do not edit anything.</pre><button type="button" data-t="p2">Copy</button></div>
+  <div class="prompt"><b>3. Orchestrator with builders</b><pre id="p3">You are the orchestrator. Split [GOAL] into independent tasks, assign each to a builder subagent with the exact inputs, files it may touch, and a definition of done. Builders may not touch each other's files. When they return, verify each result against its definition of done yourself. Run the checks, do not trust the summary, and list what failed before anything is merged.</pre><button type="button" data-t="p3">Copy</button></div>
+  <div class="prompt"><b>4. Ask a long PDF</b><pre id="p4">/pageindex-ask path/to/report.pdf "What was the 2023 operating margin?"
+Before indexing, tell me whether this document may be sent to a third-party model.</pre><button type="button" data-t="p4">Copy</button></div>
+  <div class="prompt"><b>5. Brand a card</b><pre id="p5">/theme-card glow "Seven Google Fonts for logos"
+Mark every font that is not really on Google Fonts, and leave any number or date you cannot verify as [verify].</pre><button type="button" data-t="p5">Copy</button></div>
+  <div class="prompt"><b>6. Safe load test</b><pre id="p6">/loadtest https://staging.example.com 200 10
+I own this system. Show me the exact hey command and wait for my go.</pre><button type="button" data-t="p6">Copy</button></div>
+  <div class="prompt"><b>7. Run the installs on your machine</b><pre id="p7">cd to the repo root, read scripts/batch98-install.sh, then run: bash scripts/batch98-install.sh
+Answer n to anything you do not need. After the skill installs, open each new SKILL.md and read it before using it.</pre><button type="button" data-t="p7">Copy</button></div>
+</section>
+
+<section>
+  <h2>8. Risks and recommendations</h2>
+  <p><b>I disagree with the video's default of auto-replying to leads in 60 seconds and auto-sending invoice reminders.</b> Here is what I would do instead: keep every agent at draft-only for at least 20 reviewed drafts, then promote one agent at a time with the reason written in <code>rules/agent-permissions.md</code>. The risk in the video's approach is a wrong, unconsented or regulated-claim message sent to a real person under your name, which no later fix can recall. <span class="tag">Likely</span></p>
+  <div class="tw"><table>
+    <thead><tr><th class="l">Risk</th><th>Likelihood</th><th class="l">Mitigation in place</th></tr></thead>
+    <tbody>
+      <tr><td class="l">Prompt injection through inbound leads or web pages</td><td>High</td><td class="l">Defense baseline in every agent; watchdog flags suspicious content</td></tr>
+      <tr><td class="l">Regulated or health claims in marketing drafts</td><td>Medium</td><td class="l">Always human-reviewed; claims must map to <code>proof.md</code></td></tr>
+      <tr><td class="l">Confidential documents sent to a third-party model via PageIndex</td><td>Medium</td><td class="l">Data gate in <code>/pageindex-ask</code> before indexing</td></tr>
+      <tr><td class="l">Load testing a system you do not own</td><td>Low</td><td class="l">Ownership gate and caps in <code>/loadtest</code></td></tr>
+      <tr><td class="l">Vendor benchmark claims taken as fact (98.7 percent FinanceBench)</td><td>Medium</td><td class="l">Labelled as vendor-reported in the skill</td></tr>
+      <tr><td class="l">Third-party skill content steering your agent</td><td>Medium</td><td class="l">Install is manual; read each SKILL.md after install</td></tr>
+    </tbody>
+  </table></div>
+  <h3>Next three steps</h3>
+  <ul>
+    <li>Run the install script, then reauthorise Stripe, Wispr Flow, MailerLite and Meridian QuickBooks.</li>
+    <li>Fill the OWNER MUST SET lines in <code>approval-limits.md</code> and <code>tool-stack.md</code>. Agents refuse to guess them.</li>
+    <li>Run the Finance module read-only for five days before enabling any other module.</li>
+  </ul>
+</section>
+
+<footer>Sources: 34 uploaded files; repositories verified 2026-10-01 by <code>git ls-remote</code> and shallow clone; Google Fonts metadata endpoint; the workspace connector directory. Not verified: star counts, vendor benchmarks, audio content of both videos, licences of the original font files.</footer>
+</main>
+
+<script>
+document.querySelectorAll('.prompt button').forEach(function (b) {
+  b.addEventListener('click', function () {
+    var el = document.getElementById(b.getAttribute('data-t'));
+    var text = el.textContent;
+    function sel() { var r = document.createRange(); r.selectNodeContents(el); var s = getSelection(); s.removeAllRanges(); s.addRange(r); b.textContent = 'Selected'; }
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(function () { b.textContent = 'Copied'; setTimeout(function () { b.textContent = 'Copy'; }, 1500); }, sel);
+    } else { sel(); }
+  });
+});
+</script>

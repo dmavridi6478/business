@@ -32,7 +32,7 @@ Reach for one of these instead of improvising when a task needs:
 | Aceternity | 200+ production-ready UI components/blocks/templates (Tailwind + Framer Motion) for landing pages | https://ui.aceternity.com |
 | Glassmorphism generator | Generates the CSS (`backdrop-filter`, blur, refraction, border) for a glassmorphism effect and lets you copy it directly | https://glassmorphism.com |
 | JSON Crack | Visualizes JSON as an interactive, explorable graph | https://jsoncrack.com |
-| Mobbin | Library of real iOS & web app screens/flows from 1,000+ shipped products — study patterns screen-by-screen instead of designing from a blank canvas | https://mobbin.com |
+| Mobbin | Library of real iOS & web app screens/flows from 1,000+ shipped products — study patterns screen-by-screen instead of designing from a blank canvas. Also available as an official hosted MCP server (`https://api.mobbin.com/mcp`, OAuth sign-in, nothing to install) so a coding agent can pull references mid-build instead of you pasting screenshots in — see `ai-draft-to-shipped-page-6step` for the workflow. | https://mobbin.com |
 | Ecomm.Design | Ecommerce sites filterable by platform and category, for comparing product-page and shopping-UX patterns specifically | https://ecomm.design |
 | UI.live | Creator-shared interface snippets browsable by component (buttons, cards, dashboards, data viz, etc.) for a sharper starting point than a blank canvas | https://ui.live/components |
 | Realtime Colors | Preview a color palette and font pairing directly on a real sample layout before committing to a hex value; 300K+ users, free | https://realtimecolors.com |

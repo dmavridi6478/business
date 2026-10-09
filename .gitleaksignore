@@ -1,0 +1,17 @@
+# gitleaks baseline - reviewed 2026-10-02 (Batch 100)
+# All 11 findings from the first full-history scan were checked with values masked:
+#   - 9 are documentation placeholders in vendored skills and the README (curl examples, X-API-Key: <placeholder>, "imageKey" samples);
+#   - 3 are upstream Sylius test fixtures (private-test.pem, test config) that exist only in old history (commit 4ff5eee3).
+# Reviewed as false positives [Likely]; the two curl -u lines were not traced to their upstream source.
+# Anything gitleaks reports that is NOT listed here is new: treat it as a real leak until proven otherwise.
+4ff5eee394676bdf6f2c0e4c77eb14d1d01faedc:free-dropshipping-automation-software/config/jwt/private-test.pem:private-key:1
+4ff5eee394676bdf6f2c0e4c77eb14d1d01faedc:free-dropshipping-automation-software/src/Sylius/Bundle/ApiBundle/test/config/config.yaml:generic-api-key:27
+4ff5eee394676bdf6f2c0e4c77eb14d1d01faedc:free-dropshipping-automation-software/src/Sylius/Bundle/ApiBundle/test/config/jwt/private-test.pem:private-key:1
+b669980aea0996de78ea1572aeef1c1872952c88:.claude/commands/doc-generate.md:curl-auth-header:559
+b669980aea0996de78ea1572aeef1c1872952c88:.claude/skills/api-design/SKILL.md:generic-api-key:307
+c84bb40fed55715cd0d0a3986a6564523168efb9:README.md:linkedin-client-id:5541
+d8dc38314a024849741e6c694944da7ec563ac91:.claude/skills/appium-skill/SKILL.md:curl-auth-user:236
+d8dc38314a024849741e6c694944da7ec563ac91:.claude/skills/xcuitest-skill/reference/playbook.md:curl-auth-user:396
+eaf418deb6d5f39055ced03105f1584b6b5644aa:.claude/skills/google-ads-api-quickstart/references/rest.md:curl-auth-header:74
+fbd53255818823e343437774b92981baddfaf48c:.claude/skills/n8n-binary-and-data/AGENT_TOOL_BINARY.md:generic-api-key:153
+fbd53255818823e343437774b92981baddfaf48c:.claude/skills/n8n-binary-and-data/AGENT_TOOL_BINARY.md:generic-api-key:51

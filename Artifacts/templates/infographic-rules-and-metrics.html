@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Numbered Rules and Metrics Table Infographic</title>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:wght@400;700&family=Inter:wght@500;700&display=swap" rel="stylesheet">
+<style>
+/* TEMPLATE L: two boards in one file.
+   Board 1 = "N rules" serif poster: two columns, black numbered tiles, section headings (style of "22 Claude Rules").
+   Board 2 = blue-header metrics table with icon column (style of the Gartner AEO diagnostic metrics table). Both 1080 wide. */
+:root{--ink:#111;--navy:#0b2a6b;--blue:#0a52c9;--font:'Inter',Arial,sans-serif;--serif:'Libre Caslon Text',Georgia,serif}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#bbb;display:flex;flex-direction:column;align-items:center;gap:40px;padding:40px 0}
+.b1{width:1080px;height:1350px;background:#fff;padding:52px 56px;color:var(--ink);font-family:var(--serif);position:relative;overflow:hidden}
+.b1 h1{font-weight:400;font-size:84px;text-align:center;line-height:1}
+.b1 .sub{text-align:center;font-size:30px;margin:6px 0 26px}
+.sec{border-top:2px solid #222;padding:8px 0 6px;font-size:21px;font-weight:700;letter-spacing:.5px}.sec i{font-weight:400;font-size:17px;margin-left:12px}
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:0 34px;margin-bottom:16px}
+.r{display:flex;gap:14px;padding:15px 0;border-bottom:1px solid #ccc}.r em{flex:none;width:52px;height:52px;background:#222;color:#fff;font-style:normal;font-size:28px;display:grid;place-items:center}
+.r b{display:block;font-size:21px;line-height:1.15;margin-bottom:3px}.r span{display:block;font-size:16px;line-height:1.3;color:#555}.r span i{font-size:14px}
+.b1 .foot{position:absolute;left:56px;right:56px;bottom:30px;display:flex;justify-content:space-between;font-size:15px;font-family:var(--font)}
+.b2{width:1080px;height:760px;background:#e9eef8;padding:50px 60px;font-family:var(--font);position:relative}
+.b2 h1{font-size:34px;color:var(--navy);margin-bottom:22px}
+table{width:100%;border-collapse:collapse;background:#fff}
+th{background:var(--blue);color:#fff;text-align:left;font-size:20px;padding:16px 20px}
+td{padding:20px;font-size:19px;line-height:1.35;border-bottom:1px solid #cfd8e8;vertical-align:top}
+td:first-child{width:300px;font-weight:700;color:var(--navy)}td:first-child:before{content:"";display:inline-block;width:34px;height:34px;border:3px solid var(--blue);border-radius:8px;vertical-align:middle;margin-right:14px}
+.src{position:absolute;left:60px;bottom:30px;font-size:14px;color:#444}.logo{position:absolute;right:60px;bottom:26px;font-size:34px;font-weight:700;color:var(--navy)}
+</style></head><body>
+<section class="b1">
+  <h1>[N] [Subject] Rules</h1><div class="sub">To (actually) [achieve the outcome]</div>
+  <div class="sec">I. [SECTION ONE] <i>[one-line instruction]</i></div>
+  <div class="cols">
+    <div><div class="r"><em>1</em><div><b>[Rule one, imperative.]</b><span>[Short reason.] <i>[Tip in italics.]</i></span></div></div>
+    <div class="r"><em>2</em><div><b>[Rule two.]</b><span>[Reason.] <i>[Tip.]</i></span></div></div>
+    <div class="r"><em>3</em><div><b>[Rule three.]</b><span>[Reason.] <i>[Tip.]</i></span></div></div>
+    <div class="r"><em>4</em><div><b>[Rule four.]</b><span>[Reason.] <i>[Tip.]</i></span></div></div>
+    <div class="r"><em>5</em><div><b>[Rule five.]</b><span>[Reason.] <i>[Tip.]</i></span></div></div>
+    <div class="r"><em>6</em><div><b>[Rule six.]</b><span>[Reason.] <i>[Tip.]</i></span></div></div></div>
+    <div><div class="r"><em>7</em><div><b>[Rule seven.]</b><span>[Reason.] <i>[Tip.]</i></span></div></div>
+    <div class="r"><em>8</em><div><b>[Rule eight.]</b><span>[Reason.] <i>[Tip.]</i></span></div></div>
+    <div class="r"><em>9</em><div><b>[Rule nine.]</b><span>[Reason.] <i>[Tip.]</i></span></div></div>
+    <div class="r"><em>10</em><div><b>[Rule ten.]</b><span>[Reason.] <i>[Tip.]</i></span></div></div>
+    <div class="r"><em>11</em><div><b>[Rule eleven.]</b><span>[Reason.] <i>[Tip.]</i></span></div></div>
+    <div class="r"><em>12</em><div><b>[Rule twelve.]</b><span>[Reason.] <i>[Tip.]</i></span></div></div></div>
+  </div>
+  <div class="sec">II. [SECTION TWO] <i>[one-line instruction]</i></div>
+  <div class="cols">
+    <div><div class="r"><em>13</em><div><b>[Rule 13.]</b><span>[Reason.]</span></div></div><div class="r"><em>14</em><div><b>[Rule 14.]</b><span>[Reason.]</span></div></div><div class="r"><em>15</em><div><b>[Rule 15.]</b><span>[Reason.]</span></div></div><div class="r"><em>16</em><div><b>[Rule 16.]</b><span>[Reason.]</span></div></div></div>
+    <div><div class="r"><em>17</em><div><b>[Rule 17.]</b><span>[Reason.]</span></div></div><div class="r"><em>18</em><div><b>[Rule 18.]</b><span>[Reason.]</span></div></div><div class="r"><em>19</em><div><b>[Rule 19.]</b><span>[Reason.]</span></div></div><div class="r"><em>20</em><div><b>[Rule 20.]</b><span>[Reason.]</span></div></div></div>
+  </div>
+  <div class="foot"><span>[Disclaimer line]</span><span>[newsletter.url]</span></div>
+</section>
+<section class="b2">
+  <h1>[Metric family] metrics for [topic]</h1>
+  <table><tr><th>Metric</th><th>What it is</th></tr>
+    <tr><td>[Metric one]</td><td>[Definition in one or two sentences.]</td></tr>
+    <tr><td>[Metric two]</td><td>[Definition.]</td></tr>
+    <tr><td>[Metric three]</td><td>[Definition.]</td></tr>
+    <tr><td>[Metric four]</td><td>[Definition.]</td></tr></table>
+  <div class="src">Source: [name] · © [owner]</div><div class="logo">[Brand]</div>
+</section>
+</body></html>

@@ -1,6 +1,6 @@
 ---
 name: linkedin-signal-outreach
-description: Prioritize and message LinkedIn prospects by type (warm/cold/dream) and by real engagement signal (profile views, thoughtful comments, recent role/funding moves, public problems, connection requests), following a 3-step spot-signal → match-message → send-within-24-hours flow. Use when doing LinkedIn outreach specifically, deciding who to message first from a list of prospects, or when generic connection-request messages aren't getting replies.
+description: Prioritize and message LinkedIn prospects by type (warm/cold/dream) and by real engagement signal (profile views, thoughtful comments, recent role/funding moves, public problems, connection requests), following a 3-step spot-signal → match-message → send-within-24-hours flow, plus 12 tactics for generating that signal volume in the first place (Sales Navigator Engagement Lists, InMail rationing, first-hour commenting, mining post analytics for warm leads, trigger-alert follow-ups). Use when doing LinkedIn outreach specifically, deciding who to message first from a list of prospects, building a LinkedIn networking/relationship pipeline, or when generic connection-request messages aren't getting replies.
 ---
 
 # LinkedIn Signal Outreach
@@ -77,6 +77,48 @@ Every message follows the same sequence: **spot the signal** → **match
 the message to the type** (warm/cold/dream, per sections 2-4) → **send
 within 24 hours** — signals go cold fast, so speed matters as much as
 the message itself.
+
+## 8. Twelve tactics that feed the signal flow (Sales Navigator edition)
+
+Source: "12 Ways To Level Up Your Networking (LinkedIn Edition)" (Nader
+Alnajjar). These operationalize sections 5-7 above — where signals
+actually come from and how to build a pipeline of them, rather than
+waiting for one to appear:
+
+- **Warm the profile before connecting.** Comment on 2-3 of their posts
+  across a couple weeks first, so the connection request lands on an
+  already-familiar name — turns a cold prospect warm before message one.
+- **Build an Engagement List in Sales Navigator**, filtered by seniority,
+  industry, and region, so the feed fills with the actual ICP instead of
+  unrelated creators — this is where most of section 6's "watch the
+  notifications tab" signal volume should come from.
+- **Ration InMails.** The monthly quota is limited — spend them only on
+  prospects who'd meaningfully change the year, with a real proposal or a
+  few sharp questions, not a generic pitch.
+- **Comment inside the first hour** on a target account's post — early
+  comments get seen by everyone who arrives after, borrowed reach for the
+  cost of two minutes.
+- **Write comments that could stand alone as a post** — add a point they
+  didn't make. "Great share" generates no signal and gets buried.
+- **Reply to every comment with a question**, not a thank-you — a thank-you
+  ends the thread, a question keeps it (and its reach) alive.
+- **Mine your own post analytics for warm leads** — repeat engagers across
+  a month are already-warm prospects hiding in plain sight, cheaper to
+  reach than any cold list.
+- **Open the DM with their work, not yours** — reference the specific post
+  and what it gave you; a pitch has no business in message one (same rule
+  as sections 2-4 above).
+- **Give before asking for time** — send the resource, make the
+  introduction, share the relevant example before asking for a call.
+- **Own 3-5 phrases and repeat them everywhere** (headline, About, posts)
+  — consistent wording is how people describe the sender accurately when
+  they're not in the room, which is what drives warm introductions.
+- **Turn conversations into content** — publish the insight from a good
+  call (with credit), which strengthens that relationship in public and
+  creates new signal from everyone who engages with it.
+- **Follow up on trigger alerts** (new role, funding round, press
+  mention) — Sales Navigator surfaces these directly; a message tied to
+  real news reads as relevant, never as outreach.
 
 ## Related skills in this repo
 

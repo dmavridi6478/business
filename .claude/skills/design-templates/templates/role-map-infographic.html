@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<!--
+  Template: role-map-infographic
+  Style: 51ultron "The Hottest AI Role in 2026 - 21 AI Specialisms vs 1 Capability Integrator" - warm cream poster, a bold serif title with blue italic words,
+         a navy "21 : 1" badge, and a grid of rounded role cards, each with a coloured icon disc, a numbered role name and a one-line description.
+         The original links the cards to a central figure-eight with coloured lines; this template uses a plain 3-column grid so it stays legible and editable.
+  Inspired by: Batch 100 iCloud photos (21 AI specialisms + 1 Capability Integrator).
+  Swap points: TITLE parts, BADGES, FOOT, and the ROLES array [name, description]; colours cycle through PALETTE.
+  Honest note: the "hottest role" claim is the source's marketing, not a measured fact; keep your own claims checkable. 1080 x 2100 shown at 36 %.
+-->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Role Map Infographic</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,800;1,800&family=Inter:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root { --s: 0.36; --paper: #f6efe4; --ink: #151b2d; --blue: #2a5fc0; --card: #ffffff; --line: #e7dccb; --mute: #4a5163; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: #c9c2b6; padding: 24px; font-family: 'Inter', Arial, sans-serif; }
+  .frame { width: calc(1080px * var(--s)); height: calc(2100px * var(--s)); }
+  .slide { width: 1080px; height: 2100px; transform: scale(var(--s)); transform-origin: top left; position: relative; overflow: hidden; background: var(--paper); color: var(--ink); padding: 56px 40px; }
+  h1 { font-family: 'Playfair Display', Georgia, serif; font-size: 84px; line-height: 1.05; font-weight: 800; text-align: center; letter-spacing: -.02em; }
+  h1 i { color: var(--blue); }
+  .sub { text-align: center; font-size: 36px; font-weight: 600; margin-top: 14px; }
+  .badges { display: flex; justify-content: center; gap: 26px; margin: 30px 0 28px; }
+  .badge { width: 300px; height: 300px; border-radius: 50%; border: 16px solid var(--ink); background: #fff; display: grid; place-content: center; text-align: center; }
+  .badge b { font-size: 96px; line-height: .9; font-weight: 700; } .badge span { font-size: 21px; font-weight: 700; letter-spacing: .02em; line-height: 1.15; }
+  .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+  .card { background: var(--card); border: 2px solid var(--line); border-radius: 22px; padding: 18px 16px 16px 100px; position: relative; min-height: 150px; }
+  .card i { position: absolute; left: 18px; top: 20px; width: 64px; height: 64px; border-radius: 50%; background: var(--c); opacity: .9; }
+  .card b { display: block; font-size: 25px; line-height: 1.1; font-weight: 700; }
+  .card span { display: block; margin-top: 6px; font-size: 19px; line-height: 1.25; color: var(--mute); font-weight: 500; }
+  .foot { position: absolute; left: 40px; right: 40px; bottom: 40px; border-top: 2px solid var(--line); padding-top: 22px; display: flex; justify-content: space-between; font-size: 26px; font-weight: 700; }
+</style>
+</head>
+<body>
+<div class="frame"><div class="slide" id="s"></div></div>
+<script>
+/* ── SWAP THESE ── */
+const FOOT = ["yourdomain.com", "Save this post", "Follow for more"];
+const PALETTE = ["#3b78d8", "#f08a3c", "#3da86a", "#e04a4a", "#8a5cd6", "#17a2a2", "#d6a21e"];
+const ROLES = [
+  ["AI Solutions Architect", "Designs scalable systems and integrates models into real applications."],
+  ["AI Trainer / Annotator", "Prepares and labels data to improve model performance."],
+  ["AI/ML Engineer", "Builds, trains and deploys machine-learning models in production."],
+  ["Prompt Engineer", "Crafts prompts that improve output quality and reliability."],
+  ["MLOps Engineer", "Manages deployment, monitoring and model lifecycle."],
+  ["AI Ethics Specialist", "Keeps AI fair, transparent and compliant."],
+  ["AI Research Scientist", "Develops algorithms that advance AI capabilities."],
+  ["AI Product Manager", "Defines strategy, use cases and business impact."],
+  ["Data Scientist (AI Focused)", "Extracts insights and builds predictive models."],
+  ["Computer Vision Engineer", "Builds systems that understand images and video."],
+  ["Robotics AI Engineer", "Creates intelligent robots for automation and control."],
+  ["NLP Engineer", "Builds systems that understand and generate language."],
+  ["AI Security Specialist", "Protects AI from attacks, misuse and vulnerabilities."],
+  ["Speech Recognition Engineer", "Converts speech into text and commands."],
+  ["Reinforcement Learning Engineer", "Builds models that learn through rewards and decisions."],
+  ["AI Cost Optimization Engineer", "Reduces inference cost while maintaining performance."],
+  ["AI Agent Engineer", "Builds agents that plan, act and use tools."],
+  ["AI Integration Engineer", "Connects models with APIs, tools and enterprise systems."],
+  ["LLM Engineer", "Fine-tunes, optimizes and deploys large language models."],
+  ["AI Data Engineer", "Builds pipelines for clean, AI-ready data."],
+  ["AI Knowledge Engineer", "Structures knowledge bases using RAG and embeddings."]
+];
+document.getElementById("s").innerHTML = `<h1>The Hottest <i>AI Role</i> in 2026</h1><div class="sub">21 AI Specialisms vs 1 Capability Integrator</div>
+  <div class="badges"><div class="badge"><b>21</b><span>AI SPECIALISMS</span></div><div class="badge"><b>1</b><span>CAPABILITY<br>INTEGRATOR<br><small style="font-weight:500;font-size:17px">Connects disciplines<br>to business outcomes</small></span></div></div>
+  <div class="grid">${ROLES.map(([n, d], i) => `<div class="card" style="--c:${PALETTE[i % PALETTE.length]}"><i></i><b>${i + 1}. ${n}</b><span>${d}</span></div>`).join("")}</div>
+  <div class="foot">${FOOT.map(x => `<span>${x}</span>`).join("")}</div>`;
+</script>
+</body>
+</html>

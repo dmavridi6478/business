@@ -1,0 +1,131 @@
+<title>Batch 109 Intake Report</title>
+<style>
+  /* Layout: single-column formal report, 880px measure; tables scroll inside their own wrappers.
+     Palette: ink-blue neutrals, one deep teal accent, semantic green/amber/red for status only.
+     Type: Aptos (the owner's house font) with system fallbacks; title 32pt, headings 14pt, body 11pt. */
+  :root {
+    --bg: #f6f7f9; --surface: #ffffff; --fg: #1b2330; --muted: #5a6577; --line: #d9dee6;
+    --accent: #0f5d6b; --accent-soft: #e2f0f2;
+    --ok: #17703a; --ok-bg: #e3f3e8; --warn: #8a5a00; --warn-bg: #fbefd3; --bad: #a11d2a; --bad-bg: #fbe3e5;
+    --code-bg: #eef1f5;
+    --font: Aptos, "Segoe UI Variable Text", "Segoe UI", system-ui, -apple-system, Roboto, sans-serif;
+    --mono: ui-monospace, "SF Mono", Consolas, monospace;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #11161e; --surface: #181f2a; --fg: #e6eaf0; --muted: #9aa5b6; --line: #2c3646;
+      --accent: #6cc3d1; --accent-soft: #17323a;
+      --ok: #6fd18f; --ok-bg: #173824; --warn: #f0c261; --warn-bg: #3a2e12; --bad: #ff8d98; --bad-bg: #3d1a1f;
+      --code-bg: #0e131a; color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #11161e; --surface: #181f2a; --fg: #e6eaf0; --muted: #9aa5b6; --line: #2c3646;
+    --accent: #6cc3d1; --accent-soft: #17323a;
+    --ok: #6fd18f; --ok-bg: #173824; --warn: #f0c261; --warn-bg: #3a2e12; --bad: #ff8d98; --bad-bg: #3d1a1f;
+    --code-bg: #0e131a; color-scheme: dark;
+  }
+  * { box-sizing: border-box; }
+  body { background: var(--bg); color: var(--fg); font-family: var(--font); font-size: 11pt; line-height: 1.55; padding-inline: 16px; padding-block: 28px 64px; }
+  main { max-width: 880px; margin-inline: auto; display: flex; flex-direction: column; gap: 28px; }
+  header { display: flex; flex-direction: column; gap: 8px; border-bottom: 2px solid var(--accent); padding-bottom: 18px; }
+  .eyebrow { font-size: 9pt; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
+  h1 { font-size: 32pt; line-height: 1.1; margin: 0; font-weight: 700; text-wrap: balance; }
+  h2 { font-size: 14pt; margin: 0 0 10px; font-weight: 700; color: var(--accent); text-wrap: balance; }
+  p { margin: 0 0 10px; max-width: 75ch; }
+  section { background: var(--surface); border: 1px solid var(--line); border-radius: 6px; padding: 20px 22px; min-width: 0; }
+  .lede { font-size: 11pt; color: var(--muted); max-width: 70ch; margin: 0; }
+  .truth { border-left: 4px solid var(--bad); background: var(--bad-bg); padding: 12px 16px; border-radius: 0 6px 6px 0; }
+  .truth p:last-child { margin-bottom: 0; }
+  .tw { overflow-x: auto; margin-block: 8px 4px; border: 1px solid var(--line); border-radius: 4px; }
+  table { border-collapse: collapse; width: 100%; min-width: 720px; font-size: 10pt; }
+  th, td { padding: 8px 10px; border-bottom: 1px solid var(--line); text-align: center; vertical-align: top; }
+  th { background: var(--accent-soft); color: var(--fg); font-weight: 700; font-size: 9.5pt; }
+  tr:last-child td { border-bottom: 0; }
+  td.l, th.l { text-align: center; } /* house rule: table content aligned top and centre */
+  .st { display: inline-block; padding: 1px 8px; border-radius: 10px; font-size: 9pt; font-weight: 700; white-space: nowrap; }
+  .st.ok { background: var(--ok-bg); color: var(--ok); } .st.warn { background: var(--warn-bg); color: var(--warn); } .st.bad { background: var(--bad-bg); color: var(--bad); }
+  .sw { display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 10px; margin-block: 8px; }
+  .sw div { border: 1px solid var(--line); border-radius: 4px; overflow: hidden; font-size: 9pt; text-align: center; }
+  .sw i { display: block; height: 44px; }
+  .sw span { display: block; padding: 4px 6px; font-family: var(--mono); }
+  .prompt { position: relative; margin-block: 10px; }
+  .prompt pre { margin: 0; white-space: pre-wrap; background: var(--code-bg); border: 1px solid var(--line); border-radius: 4px; padding: 12px 84px 12px 12px; font-family: var(--mono); font-size: 9.5pt; line-height: 1.5; }
+  .prompt b { display: block; font-family: var(--font); font-size: 10pt; margin-bottom: 4px; }
+  .prompt button { position: absolute; top: 30px; right: 8px; font: inherit; font-size: 9pt; padding: 4px 10px; border-radius: 4px; border: 1px solid var(--accent); background: var(--surface); color: var(--accent); cursor: pointer; }
+  .prompt button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  ul { margin: 0 0 10px; padding-left: 20px; } li { margin-bottom: 4px; max-width: 75ch; }
+  code { font-family: var(--mono); font-size: 9.5pt; background: var(--code-bg); padding: 1px 4px; border-radius: 3px; }
+  footer { color: var(--muted); font-size: 9.5pt; }
+</style><main>
+<header><span class="eyebrow">Intake report · iCloud Photos, 2 archives (1 duplicate; 15 new images) · 5 October 2026</span>
+<h1>Batch 109 Intake Report</h1>
+<p class="lede">Two @replace.so and @dotdevs carousels turned into 2 skills, 2 commands, 1 design template, eleven repos cloned and read, and a user-run install script. Prepared for the owner of the business repository.</p></header>
+
+<section class="truth"><h2>What you should know first</h2>
+<p><b>One of the two zips was a repeat.</b> <code>dbdbd955-iCloud_Photos.zip</code> is byte-identical to the batch 108 archive (all 24 files match by checksum), so I did not process it again. The second zip held 15 new images. [Certain]</p>
+<p><b>"Replace your subscriptions" tools are mostly copyleft, and you become the operator.</b> Linkwarden, Plausible and Vaultwarden are AGPL-3.0; Paperless-ngx is GPL-3.0; only Uptime Kuma is MIT. Vaultwarden is an unofficial Bitwarden-compatible server, not a 1Password replacement as such: if you self-host a password vault, its security and backups are yours. [Certain]</p>
+<p><b>Name collisions caught.</b> A repo named <code>497974/foreman</code> exists but is a different project from the Jev-supervising Foreman on the slide, which is <code>thruwire/foreman</code> (MIT, found through an article and confirmed from its README, which names TypeSafe's Jev). Aria-Icons' README says 340,000+ icons where the slide says 380,000+. [Certain]</p>
+<p><b>Hardware and data caveats.</b> Openjev needs an NVIDIA GPU or Apple silicon. Open-glean connects to Slack, Notion, GitHub and Gmail data. Repolyze sends repository code to a model. Aria-Icons' README offers a <code>curl | bash</code> install, which I did not use. [Certain]</p>
+<p><b>The seventh repo on the @replace.so slides was not in the upload.</b> Star counts shown (Foreman 505, Openjev 306, Open-glean 832) were not verified. [Certain]</p>
+<p><b>Nothing was installed and no connector was changed.</b> The batch 104 OpenFlowKit <code>.mcp.json</code> entry is unapplied. Midpage Legal Research, Sentry and Supabase still need your authorisation in a session that can run the sign-in. [Certain]</p></section>
+
+<section><h2>1. Inventory of the upload</h2><div class="tw"><table>
+<tr><th class="l">Source</th><th>Items</th><th class="l">Content</th><th class="l">Outcome</th></tr>
+<tr><td class="l">dbdbd955-iCloud_Photos.zip</td><td>24 files</td><td class="l">Identical to the batch 108 archive</td><td class="l">Skipped</td></tr>
+<tr><td class="l">@dotdevs, "5 open source apps that replace paid subscriptions"</td><td>7 images</td><td class="l">Uptime Kuma, Linkwarden, Plausible, Paperless-ngx, Vaultwarden</td><td class="l">Skill <code>swap-5-dotdevs-subscriptions</code>, command <code>/self-host-swap</code>, template <code>swap-card-photo-github</code></td></tr>
+<tr><td class="l">@replace.so, "7 GitHub repos so good they shouldn't be free"</td><td>8 images</td><td class="l">Nhost, Foreman, Aria-Icons, Open-glean, Repolyze, Openjev (seventh missing)</td><td class="l">Skill <code>replace-so-repos-7-jev-edition</code>, command <code>/jev-supervisor</code></td></tr></table></div></section>
+
+<section><h2>2. Your instructions against what the files contained</h2><div class="tw"><table>
+<tr><th class="l">Instruction</th><th class="l">Found</th><th>Status</th></tr>
+<tr><td class="l">Repos, skills, procedures, commands, tools to clone, create, install</td><td class="l">11 repos cloned and read; 2 skills, 2 commands created; install routes written for you to run</td><td><span class="st warn">Created, not installed</span></td></tr>
+<tr><td class="l">Prompts into commands or skills</td><td class="l">The slides held no prompts; three prompts below are mine</td><td><span class="st ok">Done</span></td></tr>
+<tr><td class="l">Design content into templates and themes</td><td class="l">Photo-scrim GitHub swap card</td><td><span class="st ok">1 template, existing theme</span></td></tr>
+<tr><td class="l">Guide to build agents</td><td class="l">Foreman and Openjev show a supervised-agent pattern; no build guide</td><td><span class="st warn">Pattern only</span></td></tr>
+<tr><td class="l">References to connectors</td><td class="l">Open-glean's connectors (Slack, Notion, GitHub, Gmail) are its own, not Claude connectors; no edit attempted</td><td><span class="st warn">No change</span></td></tr></table></div></section>
+
+<section><h2>3. Repo register (read 5 October 2026)</h2><div class="tw"><table>
+<tr><th class="l">Repo</th><th>Licence</th><th class="l">Flag</th></tr>
+<tr><td class="l">louislam/uptime-kuma</td><td>MIT</td><td class="l">Host it away from what it monitors</td></tr>
+<tr><td class="l">linkwarden/linkwarden</td><td>AGPL-3.0</td><td class="l">Cloud plan; SSO for enterprise or self-hosted</td></tr>
+<tr><td class="l">plausible/analytics</td><td>AGPL-3.0</td><td class="l">Needs Postgres and ClickHouse</td></tr>
+<tr><td class="l">paperless-ngx/paperless-ngx</td><td>GPL-3.0</td><td class="l">Docker Compose; your documents, your backups</td></tr>
+<tr><td class="l">dani-garcia/vaultwarden</td><td>AGPL-3.0</td><td class="l">Unofficial Bitwarden server</td></tr>
+<tr><td class="l">nhost/nhost</td><td>MIT</td><td class="l">Self-hosting is real work</td></tr>
+<tr><td class="l">thruwire/foreman</td><td>MIT</td><td class="l">Needs a Jev endpoint for real runs; demo mode needs none</td></tr>
+<tr><td class="l">razorback16/openjev</td><td>Apache-2.0</td><td class="l">GPU or Apple silicon</td></tr>
+<tr><td class="l">LeulAria/Aria-Icons</td><td>MIT (tool)</td><td class="l">Icon collections have their own licences</td></tr>
+<tr><td class="l">hydra-db/open-glean</td><td>Apache-2.0</td><td class="l">Needs Hydra DB (AGPL-3.0)</td></tr>
+<tr><td class="l">OssiumOfficial/Repolyze</td><td>MIT</td><td class="l">Code goes to a model</td></tr></table></div></section>
+
+<section><h2>4. Design template</h2><div class="tw"><table>
+<tr><th class="l">Template</th><th class="l">Canvas</th><th class="l">Theme</th></tr>
+<tr><td class="l"><code>swap-card-photo-github</code></td><td>1080×1920</td><td class="l">existing <code>photo-scrim-white</code>: dark scrim, white card</td></tr></table></div>
+<p>Placeholder handle only; no source photo, icon or caption copy reused. Rendered in headless Chromium with overlap and containment checks.</p></section>
+
+<section><h2>5. Copy-paste prompts and commands</h2>
+<p>After restarting Claude Code the commands exist: <code>/self-host-swap</code> and <code>/jev-supervisor</code>. The slides held no prompts, so the three below are mine.</p>
+<div class="prompt"><b>1. Should I self-host this? (mine)</b><pre>Use the swap-5-dotdevs-subscriptions skill. We pay for [PAID TOOL]; the team is [SIZE]; [PERSON] would maintain a replacement. Name the replacement and its licence, list what we take on (hosting, updates, backups, security, uptime) with an honest hours-per-month estimate, recommend self-host, hosted plan or stay, and give a one-week trial plan with a stop condition. Install nothing.</pre><button class="cp" type="button">Copy</button></div>
+<div class="prompt"><b>2. Plan a supervised coding-agent run (mine)</b><pre>Use the replace-so-repos-7-jev-edition and laya-jev-ultrafast skills. The task is [TASK]; a wrong action would cost [COST]. Propose the worker, the supervisor's yes/no questions (stuck, tests passing, requirements met, needs verification, needs a human) and the action each score triggers. State what hardware or key each piece needs and what data leaves the machine. Give 5 demo-mode test cases and a rule for when a human must approve.</pre><button class="cp" type="button">Copy</button></div>
+<div class="prompt"><b>3. Licence check (mine)</b><pre>Use the repo-licence-check command. Repos: [LIST]. My use is [internal only / hosted for customers / resold]. For each, read the licence, say whether my use is allowed and name what needs a commercial licence or legal review. Say what you could not verify.</pre><button class="cp" type="button">Copy</button></div>
+</section>
+
+<section><h2>6. Your next steps</h2><ul>
+<li>Before cancelling any subscription, run <code>/self-host-swap</code> and trial the replacement for a week; the saving only exists if the upkeep is cheaper than the fee.</li>
+<li>If you want to try Foreman, use its demo mode first and measure any Jev-style supervisor on 50 to 200 of your own cases, as in the earlier Laya notes.</li>
+<li>Do not self-host a password vault without a backup and recovery plan you have tested.</li>
+<li>Open items: the OpenFlowKit <code>.mcp.json</code> entry, and authorising the Midpage, Sentry and Supabase connectors.</li>
+<li>Run <code>scripts/batch109-install.sh</code> on your own machine only if you want any of this; it asks before every step and pipes nothing into a shell.</li></ul></section>
+
+<footer>Sources: 15 new JPEGs in one iCloud Photos archive (the other archive duplicated batch 108). Owners not named on the slides were found by web search and one article; licences read from shallow clones on 5 October 2026. Star counts are as printed and were not verified.</footer>
+</main>
+<script>
+document.querySelectorAll('.cp').forEach(function (b) {
+  b.addEventListener('click', function () {
+    var t = b.parentNode.querySelector('pre');
+    function done() { b.textContent = 'Copied'; setTimeout(function () { b.textContent = 'Copy'; }, 1500); }
+    function fb() { var r = document.createRange(); r.selectNodeContents(t); var s = getSelection(); s.removeAllRanges(); s.addRange(r); b.textContent = 'Selected'; }
+    try { navigator.clipboard.writeText(t.textContent).then(done, fb); } catch (e) { fb(); }
+  });
+});
+</script>

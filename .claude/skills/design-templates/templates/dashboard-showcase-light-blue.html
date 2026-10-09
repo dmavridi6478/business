@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<!--
+  Template: dashboard-showcase-light-blue
+  Style: pale blue page, a "05 - Name" title with an industry line, a bullet list of features on the right, a grey slide counter pill,
+         and a large screenshot frame at the bottom. A cover slide shows a big serif number with a device frame. Theme: pale-blue-showcase
+  Inspired by: the "Top 5 dashboard design of the month" carousel (@amirabanal). Original CSS; no source screenshots, brand or handle reused.
+  Canvas: 1080 x 1350. Two slides in one file: .slide--cover and .slide--item (duplicate per dashboard).
+  Swap points:
+    :root tokens                  colours and fonts
+    .title / .industry            "04 — Name" and "Industry: SaaS & Tech"
+    .feat li                      five feature bullets
+    .pill                         "5/6" style counter
+    .shot                         put an <img> of the dashboard inside; credit the designer in .credit
+    .credit                       the designer's name or handle (required if the design is not yours)
+-->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dashboard Showcase Light Blue</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #DBE9FD;          /* sampled */
+    --ink: #0E1A2B;
+    --muted: #4A5B73;
+    --pill: #8C97A6;
+    --frame: #FFFFFF;
+    --shadow: rgba(30,60,110,.25);
+    --font: "Inter", Aptos, "Segoe UI", system-ui, sans-serif;
+    --serif: "Instrument Serif", Georgia, serif;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: #333; display: flex; flex-direction: column; align-items: center; gap: 32px; padding: 32px 0; overflow-x: auto; font-family: var(--font); }
+  .slide { position: relative; width: 1080px; height: 1350px; flex: none; background: var(--bg); color: var(--ink); padding: 84px 70px 0; overflow: hidden; }
+  .title { font-size: 56px; font-weight: 500; letter-spacing: -.02em; max-width: 760px; }
+  .industry { margin-top: 12px; font-size: 34px; color: var(--muted); }
+  .feat { position: absolute; right: 70px; top: 230px; width: 430px; list-style: none; font-size: 22px; line-height: 1.7; color: var(--ink); }
+  .feat::before { content: "Features:"; display: block; font-size: 28px; font-weight: 600; margin-bottom: 8px; }
+  .feat li::before { content: "•"; margin-right: 12px; }
+  .pill { position: absolute; right: 70px; top: 60px; background: var(--pill); color: #fff; font-size: 26px; font-weight: 600; padding: 8px 22px; border-radius: 999px; }
+  .shot { position: absolute; left: 70px; right: 70px; top: 470px; height: 700px; background: var(--frame); border-radius: 14px; box-shadow: 0 30px 60px var(--shadow); overflow: hidden; display: grid; place-items: center; color: #9aa7ba; font-size: 28px; }
+  .shot img { width: 100%; height: 100%; object-fit: cover; object-position: top; }
+  .credit { position: absolute; right: 70px; bottom: 50px; font-size: 26px; color: var(--muted); }
+  .cover h1 { margin-top: 130px; font: 400 230px/.8 var(--serif); letter-spacing: -.03em; }
+  .cover h2 { margin-top: 30px; font: 400 130px/.95 var(--serif); letter-spacing: -.02em; }
+  .cover .dev { position: absolute; left: 300px; right: 80px; top: 800px; height: 430px; background: var(--frame); border-radius: 36px; box-shadow: 0 30px 70px var(--shadow); transform: rotate(-6deg); display: grid; place-items: center; color: #9aa7ba; font-size: 28px; }
+</style>
+</head>
+<body>
+
+<section class="slide cover">
+  <h1>Top 5</h1><h2>Dashboard design<br>of the month</h2>
+  <div class="dev" role="img" aria-label="Placeholder for a device mockup">device or screenshot goes here</div>
+  <div class="credit">@yourhandle</div>
+</section>
+
+<section class="slide">
+  <div class="pill">2/6</div>
+  <div class="title">01 — Dashboard name</div>
+  <div class="industry">Industry: Your industry</div>
+  <ul class="feat"><li>First feature</li><li>Second feature</li><li>Third feature</li><li>Fourth feature</li><li>Fifth feature</li></ul>
+  <div class="shot"><!-- <img src="dashboard.png" alt=""> -->dashboard screenshot goes here</div>
+  <div class="credit">Design by [designer]</div>
+</section>
+
+</body>
+</html>

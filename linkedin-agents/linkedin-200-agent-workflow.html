@@ -1,0 +1,698 @@
+<title>LinkedIn 200 Agents</title>
+<style>
+/* Layout: one reading column with a section nav, setup prompts as copyable blocks, and a filterable 10-department agent library in a two-column card grid */
+:root {
+  --font: Aptos, "Segoe UI", Calibri, "Helvetica Neue", Arial, sans-serif;
+  --bg: #f4f7fa;
+  --surface: #ffffff;
+  --fg: #17232f;
+  --muted: #52616f;
+  --line: #d3dce4;
+  --accent: #0a5a8c;
+  --accent-soft: #e3eff8;
+  --warn: #7a4b00;
+  --warn-soft: #fdf1d8;
+  --ok: #17603a;
+  --ok-soft: #e1f3e8;
+  --code: #eef2f6;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0f1a24; --surface: #16232f; --fg: #e6edf3; --muted: #9db0c0; --line: #2b3d4d;
+    --accent: #6bb6e8; --accent-soft: #1b3447; --warn: #f0c36b; --warn-soft: #3a2f14;
+    --ok: #7fd3a1; --ok-soft: #153325; --code: #1c2c3a; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0f1a24; --surface: #16232f; --fg: #e6edf3; --muted: #9db0c0; --line: #2b3d4d;
+  --accent: #6bb6e8; --accent-soft: #1b3447; --warn: #f0c36b; --warn-soft: #3a2f14;
+  --ok: #7fd3a1; --ok-soft: #153325; --code: #1c2c3a; color-scheme: dark;
+}
+body { background: var(--bg); color: var(--fg); font-family: var(--font); font-size: 11pt; line-height: 1.55; }
+.wrap { max-width: 66rem; margin: 0 auto; padding-inline: 16px; padding-block: 28px 64px; }
+h1 { font-size: 32pt; line-height: 1.12; margin: 0 0 .4rem; font-weight: 700; text-wrap: balance; }
+h2 { font-size: 14pt; margin: 2.6rem 0 .8rem; padding-bottom: .4rem; border-bottom: 2px solid var(--accent); font-weight: 700; text-wrap: balance; }
+h3 { font-size: 11pt; margin: 1.4rem 0 .4rem; font-weight: 700; }
+p { margin: 0 0 .8rem; max-width: 72ch; }
+.sub { color: var(--muted); max-width: 72ch; margin-bottom: 1rem; }
+.meta { color: var(--muted); font-size: 11pt; margin-bottom: 1rem; }
+nav.toc { display: flex; flex-wrap: wrap; gap: .4rem .5rem; margin: 1rem 0 0; }
+nav.toc a { color: var(--accent); text-decoration: none; border: 1px solid var(--line); background: var(--surface); padding: .25rem .65rem; border-radius: 4px; }
+nav.toc a:hover { border-color: var(--accent); }
+a:focus-visible, button:focus-visible, summary:focus-visible, input:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.pill { display: inline-block; font-size: 11pt; font-weight: 700; padding: 0 .5rem; border-radius: 4px; margin-right: .35rem; white-space: nowrap; }
+.c-certain { background: var(--ok-soft); color: var(--ok); }
+.c-likely { background: var(--accent-soft); color: var(--accent); }
+.c-guess { background: var(--warn-soft); color: var(--warn); }
+.finding { display: grid; grid-template-columns: 1fr; gap: .3rem; background: var(--surface); border: 1px solid var(--line); border-radius: 6px; padding: .9rem 1rem; margin-bottom: .7rem; }
+.finding b.t { display: block; }
+.finding p { margin: 0; }
+.tw { overflow-x: auto; margin: .6rem 0 1rem; border: 1px solid var(--line); border-radius: 6px; background: var(--surface); }
+table { width: 100%; border-collapse: collapse; }
+th, td { padding: .55rem .7rem; border-bottom: 1px solid var(--line); border-right: 1px solid var(--line); text-align: center; vertical-align: top; }
+th:last-child, td:last-child { border-right: 0; }
+tr:last-child td { border-bottom: 0; }
+th { background: var(--accent-soft); font-weight: 700; }
+td { min-width: 7rem; }
+.prompt { background: var(--surface); border: 1px solid var(--line); border-radius: 6px; margin: .8rem 0 1.2rem; }
+.prompt header { display: flex; flex-wrap: wrap; gap: .5rem; align-items: center; justify-content: space-between; padding: .6rem .9rem; border-bottom: 1px solid var(--line); }
+.prompt header b { min-width: 0; }
+pre { margin: 0; padding: .9rem; background: var(--code); font-family: var(--font); font-size: 11pt; line-height: 1.5; white-space: pre-wrap; overflow-wrap: anywhere; border-radius: 0 0 6px 6px; }
+.btn { font-family: var(--font); font-size: 11pt; color: var(--accent); background: transparent; border: 1px solid var(--accent); border-radius: 4px; padding: .25rem .75rem; cursor: pointer; }
+.btn:hover { background: var(--accent-soft); }
+.btn.solid { background: var(--accent); color: var(--surface); }
+.tools { display: flex; flex-wrap: wrap; gap: .6rem; align-items: center; margin: .6rem 0 1rem; }
+.tools input[type="search"] { flex: 1 1 16rem; min-width: 0; font-family: var(--font); font-size: 11pt; padding: .4rem .6rem; border: 1px solid var(--line); border-radius: 4px; background: var(--surface); color: var(--fg); }
+.chip { font-family: var(--font); font-size: 11pt; padding: .25rem .65rem; border: 1px solid var(--line); background: var(--surface); color: var(--fg); border-radius: 4px; cursor: pointer; }
+.chip[aria-pressed="true"] { background: var(--accent); color: var(--surface); border-color: var(--accent); }
+.dept-head { display: flex; flex-wrap: wrap; gap: .5rem; align-items: center; justify-content: space-between; margin: 2rem 0 .6rem; }
+.dept-head h3 { margin: 0; font-size: 14pt; }
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 24rem), 1fr)); gap: .8rem; }
+.agent { background: var(--surface); border: 1px solid var(--line); border-radius: 6px; padding: .85rem .95rem; display: flex; flex-direction: column; gap: .5rem; min-width: 0; }
+.agent h4 { margin: 0; font-size: 11pt; font-weight: 700; }
+.agent p { margin: 0; max-width: none; }
+.agent .row { display: flex; flex-wrap: wrap; gap: .4rem; align-items: center; }
+.tag { font-size: 11pt; padding: 0 .4rem; border-radius: 4px; border: 1px solid var(--line); color: var(--muted); }
+.tag.core { background: var(--accent); color: var(--surface); border-color: var(--accent); font-weight: 700; }
+.tag.risk { background: var(--warn-soft); color: var(--warn); border-color: transparent; }
+details summary { cursor: pointer; color: var(--accent); }
+details pre { margin-top: .5rem; border-radius: 4px; }
+.toast { position: fixed; left: 50%; bottom: calc(1.2rem + env(safe-area-inset-bottom, 0px)); transform: translateX(-50%); background: var(--fg); color: var(--bg); padding: .5rem 1rem; border-radius: 4px; z-index: 9; }
+.note { background: var(--warn-soft); color: var(--fg); border: 1px solid var(--line); border-radius: 6px; padding: .8rem 1rem; margin: .8rem 0 1rem; }
+ul { margin: 0 0 .8rem; padding-left: 1.2rem; max-width: 72ch; }
+li { margin-bottom: .25rem; }
+@media (max-width: 520px) { h1 { font-size: 26pt; } }
+@media (prefers-reduced-motion: no-preference) { .btn, .chip { transition: background .15s; } }
+</style>
+<style>
+.tabs { display: flex; flex-wrap: wrap; gap: .5rem; margin: .6rem 0; }
+.count { color: var(--muted); margin: 0 0 .6rem; }
+.vert-intro { background: var(--surface); border: 1px solid var(--line); border-radius: 6px; padding: .8rem 1rem; margin: .6rem 0 1rem; }
+.vert-intro p { margin: 0; }
+</style>
+
+<div class="wrap">
+<h1>LinkedIn 200 Agents</h1>
+<p class="sub">A build plan and a ready-to-paste library of 200 agent prompts in 5 verticals and 20 divisions, rebuilt from the agent names in your second infographic.</p>
+<p class="meta">Prepared for: D. Mavridi &nbsp;|&nbsp; Source: “200 LinkedIn agents” (agent names only) &nbsp;|&nbsp; Date: 5 October 2026 &nbsp;|&nbsp; Companion to the 100-agent LinkedIn Agent Workflow</p>
+<nav class="toc" aria-label="Sections">
+  <a href="#assessment">1. Assessment</a>
+  <a href="#architecture">2. Architecture</a>
+  <a href="#setup">3. Setup workflow</a>
+  <a href="#prompts">4. Master prompts</a>
+  <a href="#cadence">5. Operating cadence</a>
+  <a href="#library">6. Agent library</a>
+  <a href="#governance">7. Governance</a>
+  <a href="#rollout">8. 30-day rollout</a>
+</nav>
+
+<h2 id="assessment">1. Assessment before you build</h2>
+<p>Read this first. It changes what you deploy.</p>
+
+<div class="finding"><b class="t">You need one vertical, not 200 agents.</b>
+<p><span class="pill c-certain">Certain</span>The infographic’s own button reads “Build me a list for this role”. The five verticals (Coaches, Recruitment, Agencies, GTM Teams, B2B Sales) are five separate products for five different jobs. One person occupies one of them. Deploy the 40 agents for your role, and inside that start with the 8 marked Core. <span class="pill c-guess">Guessing</span>I do not know which role is yours, so the library opens on Coaches only because it comes first. Pick yours with the tabs.</p></div>
+
+<div class="finding"><b class="t">The count is 200 slots, not 200 different agents.</b>
+<p><span class="pill c-certain">Certain</span>By my reading of the image there are <span id="uniq">about 189</span> distinct names in 200 slots. For example, objection-handler appears three times, and engagement-session-runner, borrowed-reach-finder and margin-tracker appear twice. Where a name repeats, I wrote a separate prompt for each vertical because the job differs. <span class="pill c-likely">Likely</span>A few names are ambiguous at this resolution. I read “client-calling-recorder” as an agent that records the terms a client uses for their offer, category and customers. Correct me if it means something else.</p></div>
+
+<div class="finding"><b class="t">The strongest idea in the design is the diagnostician, and it only works if you run it.</b>
+<p><span class="pill c-likely">Likely</span>Every division ends with a diagnostician agent. That is a weekly feedback loop: find the biggest drop in the division, name a cause as a hypothesis, test one change. Most agent packs have no equivalent. Run all four of your diagnosticians every week and ignore the rest if you must.</p></div>
+
+<div class="finding"><b class="t">The “keeper” and “tracker” agents cannot keep anything unless you give them a place to store it.</b>
+<p><span class="pill c-certain">Certain</span>Claude does not remember between separate chats. A calendar-keeper, off-limits-keeper or crm-hygienist works only if the register lives in project knowledge, a spreadsheet, your CRM or your ATS, and you paste it back in each run. Every prompt here returns the full updated table so you can save it. Name the system of record in the Context Pack.</p></div>
+
+<div class="finding"><b class="t">The infographic caps sends at 20 a day, account-wide. Treat that as a ceiling you earn, not a safe number.</b>
+<p><span class="pill c-certain">Certain</span>The cap is printed on the image, and I use it as the default send budget in the Context Pack. <span class="pill c-guess">Guessing</span>Whether 20 a day is safe for your account, I cannot know, since LinkedIn does not publish its limits. Start lower, watch for warnings, and raise it slowly. The agents draft; you send.</p></div>
+
+<div class="finding"><b class="t">Several agents are built around actions LinkedIn prohibits when automated.</b>
+<p><span class="pill c-certain">Certain</span>LinkedIn’s User Agreement prohibits scraping, bots and sharing account access. post-engager-harvester, competitor-engager-harvester, client-list-builder, unified-inbox-router and account-provisioner sit exactly there. Here they work from names and posts you review and paste manually, and for client accounts they use native admin roles and client-approved drafts, never shared passwords.</p></div>
+
+<div class="finding"><b class="t">Recruitment and Agencies carry legal exposure that Coaches and Sales do not.</b>
+<p><span class="pill c-likely">Likely</span>In the EU, AI used to filter or evaluate job candidates is treated as high-risk under the AI Act. Check the current application dates, which have been under revision. Candidate data also falls under GDPR and anti-discrimination law, and pay-transparency rules differ by country. The candidate-screener prompt recommends against job-related criteria only and never rejects automatically. Agencies handle several clients’ confidential data, so each client gets a separate Project and the cross-client-deduper works from IDs only. None of this replaces advice from a qualified professional.</p></div>
+
+<div class="finding"><b class="t">This looks like vendor marketing, and the original prompts are not in it.</b>
+<p><span class="pill c-certain">Certain</span>The footer carries a “Prosp” logo and a “comment AGENTS” call to action, and the image lists names only. I wrote every prompt from scratch to one standard and did not reproduce anyone’s pack.</p></div>
+
+<h2 id="architecture">2. Architecture</h2>
+<p>Five layers. The infographic supplies layer 2. Layers 0, 1 and 4 are what make it work.</p>
+<div class="tw"><table>
+<thead><tr><th>Layer</th><th>Component</th><th>Purpose</th><th>Where it lives</th></tr></thead>
+<tbody>
+<tr><td>0</td><td>Role Context Pack</td><td>Goal, ICP, offer, proof, voice, ban list, send budget, compliance rules and systems of record. Agencies add one pack per client.</td><td>Project knowledge or <code>linkedin/context-pack.md</code></td></tr>
+<tr><td>1</td><td>Agent Factory</td><td>Meta-prompt that turns an agent spec and the pack into a tested agent</td><td>Run once per agent</td></tr>
+<tr><td>2</td><td>Agent Library</td><td>200 prompts: 5 verticals, 20 divisions, 10 agents each</td><td>Section 6</td></tr>
+<tr><td>3</td><td>Orchestration</td><td>Division chains, a weekly diagnostician run and a send budget</td><td>Section 5</td></tr>
+<tr><td>4</td><td>Governance</td><td>Human approval gate, platform and data rules, monthly review</td><td>Section 7</td></tr>
+</tbody></table></div>
+<h3>The five verticals</h3>
+<div class="tw"><table>
+<thead><tr><th>Vertical</th><th>For</th><th>Divisions</th><th>Highest risk</th></tr></thead>
+<tbody>
+<tr><td>Coaches</td><td>Coaches and consultants selling programmes</td><td>Positioning, Content, Conversation, Delivery</td><td>Client notes can be sensitive; testimonial claims</td></tr>
+<tr><td>Recruitment</td><td>Recruiters and search firms</td><td>Business Dev, Sourcing, Content &amp; Reach, Operations</td><td>Candidate screening, candidate data, pay transparency</td></tr>
+<tr><td>Agencies</td><td>Agencies running LinkedIn for clients</td><td>Client Context, Client Content, Client Outreach, Agency Ops</td><td>Client confidentiality, account access, approvals</td></tr>
+<tr><td>GTM Teams</td><td>Go-to-market and SDR teams</td><td>Targeting, Signals &amp; Lists, Messaging, Pipeline</td><td>Scraping, list data, send volume</td></tr>
+<tr><td>B2B Sales</td><td>Account executives</td><td>Qualification, Discovery &amp; Demo, Close, Expansion</td><td>Forecast claims, pricing, legal and security hand-offs</td></tr>
+</tbody></table></div>
+<h3>Deployment recommendation</h3>
+<p><span class="pill c-likely">Likely</span>Use <b>4 Claude Projects per vertical, one per division</b>, with the Context Pack in each project’s knowledge. For Agencies, add <b>one Project per client</b> holding that client’s pack and the Client Content and Client Outreach prompts, so client data cannot mix. Invoke an agent by typing “Run: hook-writer” with the inputs. Each card also copies as a Claude Code subagent file.</p>
+
+<h2 id="setup">3. Setup workflow</h2>
+<div class="tw"><table>
+<thead><tr><th>Step</th><th>Action</th><th>Prompt or tool</th><th>Output</th><th>Gate</th></tr></thead>
+<tbody>
+<tr><td>0</td><td>Choose your vertical. Gather raw material: profile text, 10 best and 10 weakest posts, closed-won or placement history, call notes, a list of your current tools</td><td>Your files</td><td>Input folder</td><td>You confirm it is complete</td></tr>
+<tr><td>1</td><td>Interview and build the Role Context Pack (one per client for Agencies)</td><td>Prompt 0: Context Pack Builder</td><td>Pack, 1,500 words maximum</td><td>You sign off every line</td></tr>
+<tr><td>2</td><td>Create the system of record for keeper and tracker agents: a sheet, CRM or ATS tab per register</td><td>Your tools</td><td>Named registers</td><td>Every register has an owner</td></tr>
+<tr><td>3</td><td>Tailor each agent if needed</td><td>Prompt 1: Agent Factory</td><td>Tested agent and 3 test cases</td><td>All test cases behave as expected</td></tr>
+<tr><td>4</td><td>Install 4 Projects for your vertical, pack in knowledge</td><td>Claude Projects or <code>.claude/agents/</code></td><td>4 working divisions</td><td>One dry run per division</td></tr>
+<tr><td>5</td><td>Pilot the 8 Core agents and the four diagnosticians for two weeks</td><td>Section 5</td><td>Drafts, logs, first metrics</td><td>You send and post everything manually, within the send budget</td></tr>
+<tr><td>6</td><td>Review and extend: add agents only for stages that are the biggest drop</td><td>Diagnostician output</td><td>Keep, tune or add list</td><td>Monthly review</td></tr>
+</tbody></table></div>
+
+<h2 id="prompts">4. Master prompts</h2>
+<div id="master"></div>
+
+<h2 id="cadence">5. Operating cadence by vertical</h2>
+<p>Agents draft. You decide, send and post. Diagnosticians run weekly, before you plan the next week.</p>
+<div class="tw"><table>
+<thead><tr><th>Vertical</th><th>Daily, 20 minutes</th><th>Weekly chain</th><th>Weekly diagnostic</th><th>Human gate</th></tr></thead>
+<tbody>
+<tr><td>Coaches</td><td>engagement-session-runner, comment-scorer, reply-classifier</td><td>situation-post-writer, hook-writer, humaniser, calendar-keeper. For leads: conversation-opener, discovery-prepper, follow-up-writer</td><td>practice-diagnostician</td><td>You verify every client story and permission, then post and send</td></tr>
+<tr><td>Recruitment</td><td>engagement-session-runner, candidate-reply-router</td><td>job-post-scanner, hiring-pain-reader, client-opener. For candidates: boolean-builder, candidate-opener, candidate-screener, shortlist-writer. Content: market-insight-poster</td><td>bd-diagnostician, sourcing-diagnostician, content-diagnostician</td><td>You decide every screen outcome; compliance-checker runs before anything leaves</td></tr>
+<tr><td>Agencies</td><td>client-approval-router queue, client-reply-classifier</td><td>Per client: client-context-auditor, client-post-writer, client-humaniser, client-approval-router. Outreach: client-list-builder, client-fit-filter, client-list-grader, client-opener-writer</td><td>campaign-diagnostician, growth-diagnostician, then client-reporter</td><td>The client approves every post and message; you work one client at a time</td></tr>
+<tr><td>GTM Teams</td><td>reply-classifier, objection-handler</td><td>signal-finder, fit-filter, list-grader, intent-scorer, tier-opener-writer, sequence-builder, message-self-check</td><td>pipeline-diagnostician; monthly icp-drift-auditor</td><td>You send manually within the send budget</td></tr>
+<tr><td>B2B Sales</td><td>reply handling, next-step-closer</td><td>Per opportunity: methodology-implementer, champion-identifier, deal-reviewer, multi-threader. Per call: question-designer, call-notes-extractor, discovery-gap-checker. Close: proposal-writer</td><td>qualification-diagnostician, close-diagnostician; monthly win-loss-analyst</td><td>You own forecasts, pricing, and every legal or security hand-off</td></tr>
+</tbody></table></div>
+
+<h2 id="library">6. Agent library: 200 prompts</h2>
+<p>Every prompt uses one template: role, context, mission, inputs, process, output format, rules. Choose a vertical, then copy a prompt, a division pack or the whole vertical. Typing in the search box searches all 200.</p>
+<div class="tabs" id="tabs" role="group" aria-label="Vertical"></div>
+<div class="tools">
+  <input type="search" id="q" placeholder="Search all 200, for example objection, boolean, QBR" aria-label="Search agents">
+  <button class="chip" id="f-core" aria-pressed="false">Core 8</button>
+  <button class="chip" id="f-L" aria-pressed="false">Platform risk</button>
+  <button class="chip" id="f-P" aria-pressed="false">Personal data</button>
+  <button class="chip" id="f-R" aria-pressed="false">Regulated or sensitive</button>
+  <button class="chip" id="f-X" aria-pressed="false">Needs data or web</button>
+  <button class="chip" id="f-C" aria-pressed="false">Client confidential</button>
+</div>
+<p class="count" id="count"></p>
+<div id="vintro" class="vert-intro"></div>
+<div id="lib"></div>
+
+<h2 id="governance">7. Governance</h2>
+<ul>
+<li><b>Draft only.</b> No agent posts, sends, connects, scrapes or logs in anywhere. You perform every action.</li>
+<li><b>Send budget.</b> One account-wide daily cap in the Context Pack, default 20 as printed on the infographic. Every outbound agent counts against it and refuses to draft beyond it.</li>
+<li><b>Agencies.</b> The client approves every post and message before it goes out. One Project per client. No shared passwords; use native admin roles.</li>
+<li><b>Recruitment.</b> Agents recommend and you decide. Job-related criteria only. Record purpose and retention for candidate data.</li>
+<li><b>Fact gate.</b> You check every number, quote and case study against a source before publishing.</li>
+<li><b>Personal data.</b> Record source, purpose and lawful basis for every prospect or candidate. Honour opt-outs. Delete on request.</li>
+</ul>
+<h3>Flag register</h3>
+<div class="tw"><table id="flagtable"><thead><tr><th>Tag</th><th>Meaning</th><th>Agents</th><th>Control</th></tr></thead><tbody></tbody></table></div>
+
+<h2 id="rollout">8. 30-day rollout and measures</h2>
+<div class="tw"><table>
+<thead><tr><th>Week</th><th>Focus</th><th>Agents active</th><th>Exit test</th></tr></thead>
+<tbody>
+<tr><td>1</td><td>Context Pack, registers, baseline</td><td>The first Core agents of the Positioning or Client Context division</td><td>Pack signed off; baseline numbers recorded in the registers</td></tr>
+<tr><td>2</td><td>Content and engagement</td><td>The Core content agents plus engagement-session-runner</td><td>3 posts published; daily routine kept</td></tr>
+<tr><td>3</td><td>Outbound pilot at low volume</td><td>The Core outreach agents, the send budget set well under the cap</td><td>Reply rate recorded; no platform warnings</td></tr>
+<tr><td>4</td><td>Diagnose and decide</td><td>All four diagnosticians</td><td>One change chosen for month 2; agents to add or retire</td></tr>
+</tbody></table></div>
+<p>Set targets from your own week-1 baseline. The measures that matter are qualified conversations per week, meetings or briefs booked, and the share of engagers who match your ICP. Impressions and follower count are secondary.</p>
+<p class="note"><b>The risk in this plan:</b> 200 agents make it easy to mistake activity for progress. Add an agent only when a diagnostician shows that stage is your biggest drop.</p>
+</div>
+
+<div class="toast" id="toast" hidden>Copied</div>
+
+<script>
+const V = [
+{k:"Coaches", role:"a coach or consultant who sells coaching programmes", risk:"Client notes can be sensitive. Keep health details out of session notes and verify every testimonial claim.", core:["situation-namer","profile-optimiser","offer-definer","situation-post-writer","hook-writer","conversation-opener","discovery-prepper","practice-diagnostician"], divs:[
+{n:"Positioning", a:[
+["situation-namer","Name the specific situation my ideal client is in when they need me, in their own words.","Last 5 client conversations or intake notes (anonymised), current positioning line.","Extract recurring triggers and moments of pain|Write 5 candidate situation names of 8 words or fewer|Test each: would a stranger recognise themselves?|Recommend one and the headline form it feeds","Ranked situation names, one recommendation, headline draft.","P"],
+["repel-definer","Define who my positioning should repel so the right people self-select.","Past poor-fit clients, current profile copy.","Identify traits and expectations of poor-fit clients|Write 5 'this is not for you if' lines, direct but respectful|Check each for discrimination and conduct risk|Place them in About and posts","Repel statements and a placement map.",""],
+["profile-optimiser","Rewrite the headline, About and Featured around the named situation and offer.","Profile text, situation name, offer.","Audit the profile against the situation and offer|Rewrite headline, About opening and Featured titles|Check keyword fit for search|Show before and after","Before and after copy with character counts.",""],
+["offer-definer","Turn my coaching into one bounded offer: who, outcome, format, duration, price band.","Current services, client results, capacity.","List the outcomes clients actually bought|Define one offer with entry criteria and boundaries|State what is excluded|Draft a one-paragraph summary","Offer one-pager.",""],
+["proof-librarian","Build and maintain a library of proof with permission status and approved uses.","Client results, testimonials, permission status.","Catalogue each item with source and date|Record permission and anonymisation status|Tag by situation and offer|Flag claims that need substantiation","Proof register.","P"],
+["qualification-recorder","Record the qualification criteria that surface in real conversations.","Notes from enquiry conversations.","Extract criteria prospects mentioned or lacked|Group into must-have, nice-to-have and disqualifier|Count frequency|Propose updates to intake questions","Criteria register with frequencies.","P"],
+["price-positioner","Position my price against alternatives and the value delivered.","Price, alternatives clients considered, outcomes.","Map alternatives, including doing nothing|Frame price against outcome and cost of delay|Draft price-conversation language|Flag where I may be under-pricing","Price positioning note and 3 talk tracks.",""],
+["category-differentiator","State how my approach differs from named coaching categories without disparaging them.","My method, 3 comparable categories or peers.","Describe each category fairly|Identify my distinct mechanism or stance|Write 3 differentiation statements|Check each can be evidenced","Differentiation statements with evidence.",""],
+["niche-tester","Design a low-cost test of whether a niche responds before I commit to it.","Candidate niches, capacity, channels.","Define a hypothesis and success threshold per niche|Design 2 weeks of posts and conversations|Set stop rules|State which result changes the decision","Test plan with thresholds.",""],
+["positioning-auditor","Audit consistency of positioning across profile, posts and conversations.","Profile, last 10 posts, 3 DMs.","Extract the positioning claims in each place|Find contradictions and drift|Score consistency 1-5|List fixes by impact","Consistency audit and fix list.",""]]},
+{n:"Content", a:[
+["situation-post-writer","Write a post that describes the named situation so precisely the reader recognises themselves.","Situation name, 2 real client moments (anonymised), voice rules.","Open with the moment, not the label|Add the cost of staying stuck|Offer one useful reframe, not the pitch|End with a low-friction invitation","Post draft and 2 alternative openings.","P"],
+["client-language-miner","Mine client language from calls, messages and reviews for phrases to use in content.","Anonymised transcripts, DMs, reviews.","Extract verbatim phrases about pain, goals and doubts|Cluster by theme|Rank by frequency and vividness|Suggest where each fits","Phrase bank by theme.","P"],
+["hook-writer","Write opening lines for a post that earn the 'see more' click honestly.","Post idea or draft, situation name.","Find the real payoff|Write 10 hooks across patterns|Remove clickbait the post cannot pay off|Rank the top 3","10 hooks, top 3 flagged.",""],
+["humaniser","Edit a draft so it sounds like me: remove generic AI phrasing and restore my voice without changing facts.","Draft, 3 voice samples, ban list.","Compare the draft with my samples|Remove generic phrasing and stacked adjectives|Restore my sentence length and vocabulary|Report any change that touched a fact","Edited draft and change log.",""],
+["story-writer","Write a story post from a real experience with a single lesson.","Raw story, lesson, permission status.","Confirm permission and anonymise|Structure: scene, tension, turn, lesson|Mark gaps [DETAIL NEEDED]|Close with a question","Story post.","P"],
+["carousel-builder","Write slide-by-slide copy for a PDF carousel that teaches one framework.","Framework, key points, brand notes.","Plan 8-10 slides: hook, steps, example, takeaway|Limit each slide to 30 words|Specify visual hierarchy for the designer|Write the caption","Slide script and caption.",""],
+["lead-magnet-writer","Write a short lead magnet that matches the offer.","Offer, situation, an existing asset if any.","Choose a format that solves one narrow problem|Outline 5 sections|Write at a 10-minute read or less|Add a soft next step and an email consent line","Lead magnet draft and landing blurb.","P"],
+["pillar-keeper","Keep content on the agreed pillars and report drift.","Pillars, last 20 posts.","Classify posts by pillar|Compare with target ratios|Flag drift and gaps|Recommend the next 5 topics","Pillar balance report.",""],
+["repurposer","Convert one strong piece into 5 formats without repeating it verbatim.","Source post, call or article.","Extract the core ideas|Map to post, carousel, comment, newsletter and short script|Vary hook and angle|Space across the calendar","5 variants with a schedule suggestion.",""],
+["calendar-keeper","Maintain the content calendar and flag gaps and clashes.","Plan, drafts, events.","Place approved drafts by date|Flag empty slots and clashes|Check pillar ratio|Output a spreadsheet-ready table","Calendar table.",""]]},
+{n:"Conversation", a:[
+["engagement-session-runner","Run a 20-minute engagement session: choose which posts to comment on and draft comments for me to post.","Target account list, topics, posts I paste.","Rank the posts I pasted by relevance and recency|Draft one distinct comment per post|Mark any that need my judgement|Log what I posted","Session sheet with comment drafts and log.","LP"],
+["comment-scorer","Score a draft comment for value, specificity and tone before I post it.","Post text and draft comment.","Rate value, specificity and relevance 1-5|Flag flattery and generic praise|Rewrite if the total is below 12 of 15|Explain the change","Score and revised comment.",""],
+["borrowed-reach-finder","Find people and posts whose audience matches mine where a good comment earns visibility.","ICP, accounts I follow, pasted posts with engagement.","Identify accounts whose audience overlaps my ICP|Rank by fit and engagement pattern|Suggest 5 to follow and engage with|Note the risk of looking opportunistic","Ranked account list.","X"],
+["engager-router","Sort people who engage with my posts into next actions.","Engagers and profile summaries I paste.","Classify: ideal client, peer, referrer, other|Assign a next action per class|Prioritise by fit|Respect the send budget","Routing table.","LP"],
+["conversation-opener","Write a first message to someone who engaged, referencing what they actually said.","Their comment or reaction, their profile summary.","Quote or paraphrase their point|Ask one open question|No pitch and no link|Keep it under 60 words","3 openers.","LP"],
+["reply-classifier","Classify incoming replies by intent so I respond appropriately.","Reply texts.","Label: interested, curious, not now, not a fit, objection, referral, spam|Give a confidence level|Recommend a response type|Flag emotional or sensitive replies for me","Classification table.","P"],
+["discovery-prepper","Prepare me for a discovery call with a prospective client.","Prospect profile summary, thread, my offer.","Summarise what I know and cite it|Draft 8 questions tied to their situation|Identify what would disqualify|Prepare a next step for the end of the call","One-page call brief.","P"],
+["objection-handler","Draft responses to common coaching objections: price, time, trust, 'I need to think'.","Objection text, prospect context, offer.","Identify the real concern behind the objection|Acknowledge it without pressure|Respond with proof or a question|Offer a graceful exit","2 response options.","P"],
+["follow-up-writer","Write follow-ups to prospects who went quiet after a call or message.","Thread, days elapsed.","Add something useful or new|Make a low-friction ask|Cap at two follow-ups|Provide a closing message","Follow-up 1 and 2.","LP"],
+["referral-router","Identify who in my network could refer or be referred, and draft the right request.","Contact list with notes.","Classify contacts as referrer, referral or peer|Match a specific ask to each|Draft a forwardable intro text|Log consent and outcome","Referral action list.","P"]]},
+{n:"Delivery", a:[
+["session-notes-writer","Turn my session notes into a clean client summary with actions.","My raw notes, without health details.","Structure: agenda, insights, commitments, next step|Remove sensitive details that are not needed|Mark actions with owner and date|Draft a 150-word client message","Summary and action list.","PR"],
+["renewal-reader","Read signals that a client is likely to renew, pause or leave.","Attendance, progress notes, messages.","List positive and negative signals with evidence|Estimate renewal likelihood qualitatively|Suggest a conversation plan|State what is uncertain","Renewal read and plan.","P"],
+["referral-asker","Ask satisfied clients for referrals at the right moment.","Client milestones, relationship tone.","Identify the moment of peak value|Describe specifically who to introduce|Make forwarding easy|Offer a no-pressure out","Request message.","P"],
+["intake-screener","Screen new enquiries against my criteria and flag mismatches before a call.","Intake form answers, criteria.","Compare answers with must-haves and disqualifiers|Flag clinical or out-of-scope needs for referral|Recommend accept, clarify or decline|Draft the reply","Screen result and reply.","PR"],
+["waitlist-keeper","Maintain the waitlist and prepare timely updates.","Waitlist entries, capacity dates.","Record entries with consent and date|Prioritise by fit and wait time|Draft update messages|Remove people who opted out","Waitlist table and messages.","P"],
+["cohort-designer","Design a group cohort programme: structure, schedule, outcomes, size cap.","Offer, audience, duration, capacity.","Define outcomes and the weekly arc|Set session formats and cohort size|Plan between-session support|Draft the outline and success measures","Cohort design.",""],
+["testimonial-collector","Request and structure client testimonials that are specific and permissioned.","Client, outcome, permission.","Draft questions that elicit before and after|Request written permission for named use|Edit for clarity without changing meaning|Log the approved version","Request, questions and approved testimonial.","P"],
+["capacity-planner","Plan delivery capacity against sales so I do not overbook.","Hours per week, client commitments, pipeline.","Compute committed and available hours|Project 8 weeks forward|Flag overload and gaps|Recommend when to open or close intake","Capacity table.",""],
+["rate-reviewer","Review my rates against delivery cost, outcomes and the market.","Rates, hours, outcomes, peers' public rates.","Compute effective hourly yield|Compare with cited public benchmarks|Identify under- or over-pricing|Propose a change with a rollout plan","Rate review.","X"],
+["practice-diagnostician","Diagnose the weakest point in my coaching pipeline and name one change.","Last 4 weeks: posts, conversations, calls, clients, revenue.","Compute stage-to-stage conversion|Find the biggest drop|List 3 likely causes labelled as hypotheses|Recommend one change and how to test it","Diagnosis and a single test.",""]]}
+]},
+{k:"Recruitment", role:"a recruiter or search firm placing candidates with clients", risk:"Screening, candidate data and pay transparency. Agents recommend; you decide on job-related criteria only.", core:["hiring-pain-reader","client-opener","spec-sizer","boolean-builder","candidate-opener","shortlist-writer","market-insight-poster","compliance-checker"], divs:[
+{n:"Business Dev", a:[
+["job-post-scanner","Review job postings I paste to find roles worth approaching the hiring company about.","Pasted job posts, my niche.","Filter by niche, seniority and location|Note posting age and repost signals|Rank by likelihood of agency need|Name the hiring-manager role to approach","Ranked role list.","X"],
+["hiring-pain-reader","Infer the likely hiring pain behind a posting without overclaiming.","Job post, company context.","Extract stated and implied needs|Hypothesise the pain: time-to-fill, scarce skill, new team|Label hypotheses as hypotheses|Draft one question to test each","Pain hypotheses and questions.","X"],
+["spec-sizer","Decide whether a speculative candidate send is worth it for a client and role.","Client, role, anonymised candidate profile, relationship.","Score fit, client receptiveness and exclusivity risk|Check client terms and preferred-supplier rules|Recommend send, hold or skip|Draft the anonymised teaser","Decision and teaser.","PR"],
+["client-opener","Write a first message to a hiring manager that offers something relevant, not a generic agency pitch.","Hiring-manager role, vacancy, relevant placements with permission.","Reference the specific vacancy|Offer one useful insight about the talent market|Ask one question|Keep it under 80 words","3 openers.","LP"],
+["market-mapper","Map the talent and client market in my niche.","Niche, region, company list I supply.","Segment companies by size and hiring pattern|Identify hot and cold segments|Note competitors present|Recommend a priority order","Market map.","X"],
+["psl-navigator","Work through preferred-supplier-list requirements and routes onto a list.","Client criteria, my credentials.","List the requirements and evidence needed|Identify gaps|Draft the application points|Plan follow-up with procurement","PSL checklist and draft.",""],
+["brief-taker","Prepare a structured call to take a vacancy brief properly.","Role, client, notes.","Prepare 12 questions: must-haves, culture, process, timeline, budget|Add fee and terms prompts|Create a write-up template|Draft the recap email","Call guide and recap.",""],
+["fee-defender","Prepare evidence-based responses when a client pushes back on fees.","Fee, client pushback, my track record.","Identify the underlying concern|Frame value with my real data such as time-to-fill and retention|Offer structure options within my limits|Define my walk-away point","Response options.",""],
+["placement-proof-writer","Write placement proof points: the role, what I did, the result.","Placement details, permissions.","Confirm client and candidate permission|Anonymise by default|Use only verified facts|Write a post version and a proposal version","Proof statements.","PR"],
+["bd-diagnostician","Diagnose where business development stalls and name one fix.","Last 4 weeks of outreach, replies, briefs, signed terms.","Compute funnel conversion|Locate the biggest drop|Hypothesise causes|Recommend one test","Diagnosis and test.",""]]},
+{n:"Sourcing", a:[
+["talent-mapper","Map the talent pool for a role: companies, titles and adjacent roles.","Role brief.","List target companies and adjacent titles|Segment by seniority|Note availability signals from public information I supply|Prioritise","Talent map.","X"],
+["boolean-builder","Build boolean search strings from a brief for LinkedIn search or Recruiter.","Role brief, must-have skills, location.","Extract synonyms and title variants|Build 3 strings: broad, balanced, tight|Add exclusions|Explain the expected result volume","3 boolean strings.",""],
+["agency-side-finder","Spot candidates on the agency side who may move in-house, and the reverse, from lists I supply.","Pasted profiles or lists, role.","Identify agency to in-house patterns|Rank by plausibility|Flag conflicts of interest and non-solicit terms|List the next step","Ranked candidates.","PR"],
+["candidate-opener","Write a first approach that is specific, honest about the role and respects the candidate's time.","Candidate profile summary, role, pay band if permitted.","Reference something specific and relevant|State the role plainly, with the pay band where available|Ask a low-pressure question|Include an opt-out","3 approaches.","LP"],
+["candidate-screener","Structure an initial screen against job-related criteria only. It recommends; I decide.","Job-related criteria, candidate CV or notes.","Map evidence to each criterion|Ignore protected characteristics and proxies for them|List gaps and questions|Output a structured recommendation, never an automatic rejection","Screen sheet with evidence.","PR"],
+["candidate-reply-router","Route candidate replies to the right next action.","Reply texts.","Classify: interested, curious, not now, not interested, wrong fit, unsubscribe|Draft the response|Flag unsubscribe and data requests for immediate action|Update the status log","Routing table and drafts.","PR"],
+["shortlist-writer","Write a client-ready shortlist summary for each candidate with evidence.","Candidate notes, brief, consent.","Map each candidate to the brief|Write 5-line summaries with evidence only|Note risks and open questions|Confirm consent to share","Shortlist pack.","PR"],
+["interview-prepper","Prepare candidate and client for interviews.","Role, candidate, client process.","Brief the candidate on company, panel and format|Brief the client on candidate highlights and motivations|Suggest structured, job-related questions|Draft the logistics note","Two briefing notes.","P"],
+["ats-handoff","Prepare a clean hand-off record for the applicant tracking system.","Candidate notes.","Map fields to the ATS schema I supply|Remove unnecessary personal data|Flag missing consent|Output an import-ready table","ATS-ready table.","PR"],
+["sourcing-diagnostician","Diagnose sourcing performance and name one fix.","Approaches, replies, screens, shortlists, placements for 4 weeks.","Compute stage conversion|Find the biggest drop|Hypothesise causes|Recommend one test","Diagnosis and test.",""]]},
+{n:"Content & Reach", a:[
+["market-insight-poster","Write posts that share verified hiring-market insights from my niche.","Data points I can cite, niche.","Verify each statistic and cite source and date|Pick one insight and its implication|Write for a hiring manager|End with a question","Post and source list.","X"],
+["salary-transparency-poster","Write pay-band posts that follow the pay-transparency rules where I operate.","Role, band, jurisdiction, client approval.","Confirm the client approved publishing the band|List the local pay-transparency requirements for legal verification|Write a neutral post with the band|Avoid gender-coded language","Post and a compliance checklist.","R"],
+["role-spotlight-writer","Write a role spotlight that attracts the right candidates honestly.","Role details, client approval.","Lead with the problem the role solves|State real requirements and the pay band where allowed|Remove inflated claims and discriminatory wording|Add how to apply","Role post.","R"],
+["candidate-advice-writer","Write practical career advice posts for candidates in my niche.","Niche, common candidate questions.","Pick one question candidates really ask|Answer with a clear, specific method|Add an example|Close with an invitation","Post.",""],
+["hiring-manager-educator","Write posts that teach hiring managers how to run a better process.","Common client mistakes, anonymised.","Pick one costly mistake|Explain the cost and the fix|Use an anonymised example|End with a checklist","Post.",""],
+["engagement-session-runner","Run a 20-minute engagement session on posts by hiring managers and talent leaders and draft comments for me to post.","Target accounts, posts I paste.","Rank the posts by relevance and recency|Draft one distinct comment per post|Mark any that need my judgement|Log what I posted","Session sheet and log.","LP"],
+["borrowed-reach-finder","Find talent communities and hiring-manager posts where a useful comment earns visibility.","Niche, accounts I follow, posts I paste.","Identify accounts with audiences of hiring managers or candidates in my niche|Rank by fit|Suggest 5 to engage with|Note opportunism risks","Ranked list.","X"],
+["placement-announcer","Announce a placement respectfully, with consent from both sides.","Placement, consent.","Confirm written consent from client and candidate|Write a post that centres the candidate|Omit salary and confidential details|Add a call to action for similar roles","Announcement and consent checklist.","PR"],
+["talent-pool-nurturer","Plan light-touch nurture for candidates in my talent pool.","Pool segments, consent status.","Segment by skill and seniority|Define touch types: market update, role alert, check-in|Cap frequency|Honour opt-outs","Nurture plan.","PR"],
+["content-diagnostician","Diagnose which content drives conversations with hiring managers and candidates and name one change.","4 weeks of posts with metrics and conversations started.","Compare formats and topics by conversations, not impressions|Find the biggest gap|Hypothesise causes|Recommend one test","Diagnosis and test.","X"]]},
+{n:"Operations", a:[
+["account-splitter","Split work across client accounts and recruiters so nobody collides.","Accounts, owners, roles.","List accounts and owners|Detect overlap|Propose a split rule|Output an assignment table","Assignment table.",""],
+["role-status-keeper","Keep an accurate status for each open role.","Updates from notes.","Record stage, date and next step|Flag stale roles|Summarise weekly|Output a status board","Status board.","P"],
+["off-limits-keeper","Maintain the off-limits list of clients and candidates I must not approach.","Contracts, non-solicit terms.","Record the restriction, party and end date|Check proposed approaches against the list|Block and flag conflicts|Alert on expiries","Off-limits register and checks.","PR"],
+["fill-rate-tracker","Track fill rate and time-to-fill by client and role.","Roles with dates and outcomes.","Compute fill rate and time-to-fill|Segment by client|Compare with the previous period|Note sample sizes","Metrics table.",""],
+["duplicate-checker","Check for duplicate candidates and duplicate client approaches.","Lists.","Match on name, company, role and email I supply|Flag likely duplicates|Recommend merge or keep|Output a clean list","Duplicate report.","P"],
+["compliance-checker","Check recruitment messages and records against my checklist: consent, discrimination, data protection, agency regulations.","Message or record, checklist.","Compare against each checklist item|Flag risks with the rule referenced|Suggest compliant wording|Escalate unclear cases to a qualified professional","Compliance report.","PR"],
+["candidate-data-keeper","Manage the candidate data lifecycle: purpose, retention, deletion.","Candidate record metadata.","Record purpose and legal basis|Calculate retention dates|List records due for review or deletion|Draft deletion confirmations","Retention schedule.","PR"],
+["client-reporter","Produce the weekly client report on search progress.","Pipeline numbers, role status.","Summarise the pipeline by stage|Highlight blockers and decisions needed|Keep candidate data minimal and consented|Draft the cover email","Client report.","PR"],
+["margin-tracker","Track margin on contract and permanent placements.","Fees, costs, pay rates.","Compute gross margin by placement and client|Flag low-margin work|Project the quarter|Note assumptions","Margin table.",""],
+["account-health-checker","Check the health of each client account.","Activity, responses, roles, feedback.","Score responsiveness, volume and feedback|Flag at-risk accounts|Suggest the next touch|Output a health table","Health table.",""]]}
+]},
+{k:"Agencies", role:"an agency running LinkedIn for clients", risk:"Confidential multi-client data, account access and client approval. One Project per client.", core:["client-icp-deriver","client-voice-builder","client-post-writer","client-approval-router","client-list-builder","client-opener-writer","client-reporter","client-context-auditor"], divs:[
+{n:"Client Context", a:[
+["client-icp-deriver","Derive a client's ICP from their closed deals and conversations.","Client customer list, closed-won data, call notes.","Find attributes shared by the best customers|Identify disqualifiers|Write the ICP and anti-ICP|State the sample size and confidence","Client ICP document.","CP"],
+["client-voice-builder","Build a voice guide for one client from their own writing and speech.","Samples: posts, emails, transcripts.","Analyse sentence length, vocabulary, stance and humour|Write do and don't rules|Add 5 before and after examples|Ask the client to confirm","Voice guide.","C"],
+["client-proof-librarian","Maintain a client's proof library with permission status.","Client results and testimonials.","Catalogue by claim and source|Record permission and anonymisation|Tag by offer|Flag unsubstantiated claims","Proof register.","CP"],
+["client-calling-recorder","Record the terms a client uses for their offer, category and customers.","Call notes, client documents.","Extract their own terminology|Note terms they avoid|Build a glossary|Check drafts for off-vocabulary wording","Client glossary.","C"],
+["client-objection-recorder","Record the objections prospects raise to a client.","Call notes, replies.","Log objection, context and outcome|Cluster by theme|Flag those content or messaging could pre-empt|Update monthly","Objection log.","CP"],
+["client-banned-keeper","Maintain a client's banned list: words, topics, competitors, people and claims never to mention.","Client instructions.","Record each ban with reason and date|Check every draft against the list|Block and flag violations|Reconfirm quarterly","Banned register and check results.","C"],
+["client-permission-keeper","Track what a client has approved: names, logos, numbers, case studies, tagging.","Client approvals.","Record approval, scope and expiry|Check drafts against approvals|Flag anything unapproved|Remind on expiry","Permission register.","CP"],
+["cross-client-deduper","Prevent one client's content, lists or targets colliding with another's without exposing either.","Per-client target lists and topics as anonymised IDs.","Compare targets and topics using IDs only|Flag collisions and conflicts of interest|Recommend a sequencing or exclusion rule|Never reveal one client's data to another","Collision report.","CPR"],
+["client-context-auditor","Audit a client's context pack for gaps and staleness.","Client context documents.","Check required sections|Flag missing items and anything older than 90 days|Test the pack against 3 recent drafts|List fixes","Audit and fix list.","C"],
+["onboarding-sequencer","Sequence onboarding for a new client from contract to first posts.","Client scope, start date.","List tasks, owners and dates|Include access, permissions and approvals|Set week 1-4 milestones|Draft the kickoff agenda","Onboarding plan.","C"]]},
+{n:"Client Content", a:[
+["client-profile-optimiser","Optimise a client's profile using their ICP and voice guide.","Client profile, ICP, voice guide.","Audit against ICP and offer|Rewrite headline, About and Featured in the client's voice|Check the banned list|Show before and after for approval","Profile copy for approval.","C"],
+["client-pillar-setter","Set content pillars for a client.","ICP, offer, proof, topics to avoid.","List candidate themes|Test for credibility and demand|Select 3-4 with ratios|Write a stance per pillar","Pillar sheet.","C"],
+["client-post-writer","Draft posts in a client's voice for their approval.","Client pack, topic, raw material.","Use only facts the client supplied|Write in the voice guide|Check banned list and permissions|Mark gaps [CLIENT TO CONFIRM]","Post draft for approval.","C"],
+["client-humaniser","Edit a client draft to match their voice guide without changing facts.","Draft, client voice guide.","Compare the draft with the guide|Remove generic phrasing|Restore the client's rhythm|Report any change touching a fact","Edited draft and change log.","C"],
+["client-hook-writer","Write hooks for a client's posts in their voice.","Post idea, client voice.","Find the real payoff|Write 10 hooks|Remove clickbait|Rank the top 3","10 hooks.","C"],
+["client-pov-extractor","Extract a client's point of view from an interview or voice note into raw material.","Interview transcript or notes.","Identify strong opinions and stories|Quote verbatim lines|Separate claims that need proof|Propose 5 post topics","POV extract and topics.","CP"],
+["client-lead-magnet-writer","Write a lead magnet for a client's offer.","Offer, ICP, existing assets.","Choose a narrow problem|Outline 5 sections|Write in the client's voice|Add consent wording","Lead magnet draft.","CP"],
+["client-carousel-builder","Write carousel slide copy for a client.","Framework, client voice.","Plan 8-10 slides|Limit 30 words each|Specify hierarchy for the designer|Write the caption","Slide script.","C"],
+["client-calendar-keeper","Maintain a client's content calendar and approval status.","Plan, drafts, approvals.","Place drafts by date|Show approval status|Flag gaps and clashes|Output a table","Calendar table.","C"],
+["client-approval-router","Route drafts to the right approver and track status. Nothing is published without approval.","Draft, approver list, banned and permission registers.","Run the banned and permission checks|Identify the approver|Draft the approval request with deadline|Log status and any requested edits","Approval request and status log.","C"]]},
+{n:"Client Outreach", a:[
+["client-list-builder","Build a target list for one client from criteria and sources I supply.","ICP, public sources I supply.","Translate the ICP into criteria|List prospects only from the sources supplied, with the source for each|Remove those on the client's banned or competitor list|Record the lawful basis","Target list with sources.","CPX"],
+["competitor-engager-harvester","Define a manual process for noting who engages with a client's competitors; it works only from names I paste.","Competitor posts I review, names I paste.","Record names and context from my notes|Match to the ICP|Flag people who are existing customers or contacts|Warn that automated scraping is not allowed","Prospect notes and a manual routine.","CPL"],
+["client-signal-finder","Find buying signals for a client's targets from data supplied.","Target list, news or job posts supplied.","Match signals to the client's trigger list|Rate relevance and recency|Cite each source|Suggest the angle","Signals table.","CX"],
+["client-fit-filter","Filter a list against a client's ICP.","List, ICP.","Check each row against must-haves|Apply disqualifiers|Mark fit, maybe, no|Show the reason","Filtered list.","CP"],
+["client-list-grader","Grade list entries A, B or C by fit and signal.","Filtered list.","Score fit and signal with shown weights|Assign grades|List missing data|Order by grade","Graded list.","CP"],
+["client-opener-writer","Write first messages in the client's voice, for the client to approve and send.","Prospect summary, client voice, approved angles.","Reference one specific point|Use the client's voice and approved claims|Keep under 60 words|Count against the send budget","3 openers for approval.","CPL"],
+["client-sequence-builder","Build a short message sequence for a client's segment.","Segment, offer, approved assets.","Define the goal per touch|Draft each message under 80 words|Set spacing and stop rules|Define reply branches","Sequence table.","CPL"],
+["client-merge-prompt-writer","Write merge-field prompts that personalise messages from list fields without inventing facts.","List columns, client voice.","Map fields to sentence slots|Write fallback text for empty fields|Forbid invention|Test on 3 sample rows","Merge prompt and test output.","CP"],
+["client-reply-classifier","Classify replies to a client's outreach.","Reply texts.","Label intent|Give confidence|Recommend the next response|Flag complaints and opt-outs for immediate action","Classification table.","CP"],
+["client-template-picker","Pick the right approved template for a target and reply type.","Approved templates, target, reply.","Match context to template|Check the banned list|Fill the template without inventing facts|Explain the choice","Chosen template and filled draft.","C"]]},
+{n:"Agency Ops", a:[
+["account-provisioner","Plan compliant access to a client's LinkedIn presence through admin roles and client-approved drafts, never shared passwords.","Client setup, roles needed.","List what access is needed and why|Map to native admin roles or client-sent drafts|Document who holds what|Write the access-removal steps","Access plan.","LC"],
+["unified-inbox-router","Route client inbox messages, which the client or team pastes in, to the right person.","Messages pasted by the client or team.","Classify by type and urgency|Assign an owner|Draft acknowledgements|Never log in to an account or read it automatically","Routing table.","LCP"],
+["campaign-diagnostician","Diagnose a client's outreach campaign and name one fix.","Sends, replies, meetings for 4 weeks.","Compute stage conversion|Find the biggest drop|Hypothesise causes|Recommend one test","Diagnosis and test.","C"],
+["growth-diagnostician","Diagnose a client's content and audience growth and name one fix.","Posts, metrics, follower data.","Compare formats and topics|Check audience fit with the ICP|Hypothesise causes|Recommend one test","Diagnosis and test.","CX"],
+["client-reporter","Produce the monthly client report.","Metrics, activity, results.","Summarise results against agreed goals|Explain drivers and caveats|List next-month actions|Write a one-page executive summary","Client report.","C"],
+["objection-ranker","Rank objections across a client's replies by frequency and cost.","Objection log, reply data.","Count by theme|Estimate lost opportunities qualitatively|Rank|Suggest content or messaging responses","Ranked objections.","CP"],
+["signal-attributor","Attribute pipeline to signals, content and outreach honestly, with uncertainty stated.","Pipeline records and touch logs.","Map each opportunity to touches|Apply a stated attribution rule|State where attribution is unreliable|Report by source","Attribution table with caveats.","CX"],
+["margin-tracker","Track margin per client for the agency.","Fees, hours, costs.","Compute margin per client|Flag unprofitable accounts|Project the quarter|Note assumptions","Margin table.",""],
+["account-health-checker","Check the health of each client relationship.","Activity, approvals turnaround, feedback.","Score responsiveness and results|Flag risk of churn|Suggest the next touch|Output a health table","Health table.","C"],
+["offboarding-handler","Handle client offboarding: hand-over, access removal, data return and deletion.","Contract terms, assets held.","List assets and data held|Plan hand-over and access removal|Draft the data return and deletion confirmation|Set a final-report date","Offboarding checklist.","CP"]]}
+]},
+{k:"GTM Teams", role:"a go-to-market or SDR team prospecting on LinkedIn", risk:"Scraping, list data and send volume. Everything works from lists you compile and review.", core:["buyer-type-selector","icp-from-closed-won","signal-finder","fit-filter","connection-note-writer","sequence-builder","reply-classifier","pipeline-diagnostician"], divs:[
+{n:"Targeting", a:[
+["buyer-type-selector","Choose which buyer types to target first.","Product, customers, deal data.","List candidate buyer types|Score by pain, authority and reachability|Recommend the first two|State evidence gaps","Buyer type ranking.",""],
+["icp-from-closed-won","Derive the ICP from closed-won deals.","Closed-won export, anonymised.","Find attributes shared by the best wins|Compare with closed-lost|Write the ICP|State sample size and confidence","ICP document.","X"],
+["title-mapper","Map titles to roles in the buying group, including title variants.","Product, target accounts.","List the roles involved|Map title variants and seniority|Mark influencer, user, approver|Output a search-ready list","Title map.",""],
+["account-tierer","Tier accounts 1, 2 and 3 with transparent criteria.","Account list, ICP.","Define tier criteria|Score each account|Assign tiers and effort levels|Show reasons","Tiered list.","X"],
+["tam-sanity-checker","Sanity-check total addressable market claims.","TAM claim, sources.","Recompute bottom-up from counts and prices I supply|Compare with the claim|Cite sources|State the range","TAM check.","X"],
+["disqualifier-writer","Write the disqualifier rules that stop wasted outreach.","Lost deals, ICP.","Extract reasons deals failed on fit|Write explicit rules|Test against 10 past accounts|Rank by impact","Disqualifier rule set.",""],
+["committee-mapper","Map the buying committee for a target account.","Account, roles, public information I supply.","List likely committee roles|Match to known names|Mark gaps|Suggest an order of approach","Committee map.","PX"],
+["segment-splitter","Split the market into segments that each deserve their own message.","ICP, customer data.","Cluster by problem and context|Name each segment|Check segment size|Draft a message theme per segment","Segment sheet.",""],
+["lost-deal-reader","Read lost-deal notes for targeting lessons.","Anonymised lost-deal notes.","Code reasons for loss|Separate fit from execution|Count patterns|Recommend targeting changes","Lessons table.","P"],
+["icp-drift-auditor","Check whether recent wins and pipeline drift from the ICP.","ICP, last 90 days of opportunities.","Compare attributes with the ICP|Quantify drift|Explain likely causes|Recommend update or correction","Drift report.","X"]]},
+{n:"Signals & Lists", a:[
+["signal-finder","Define buying signals and find them in data I supply or public sources.","ICP, trigger ideas, sources.","List signal types and why each matters|Search the supplied data or cited public sources|Rate recency and strength|Record the source","Signal list with sources.","X"],
+["job-post-tracker","Track job postings that signal a need for my product.","Postings I paste, signal rules.","Match postings to rules|Date and rank|Note the hiring team|Output a tracker","Posting tracker.","X"],
+["funding-tracker","Track funding and growth events among target accounts.","News items I supply, accounts.","Match events to accounts|Cite source and date|Rate relevance|Suggest the angle","Funding tracker.","X"],
+["post-engager-harvester","Define a manual routine for noting who engages with relevant public posts; it works only from names I paste.","Posts I review, names I paste.","Record names and context from my notes|Match to ICP|Flag existing contacts|Warn that automated scraping is not allowed","Prospect notes and routine.","LP"],
+["fit-filter","Filter a list against the ICP.","List, ICP.","Check each row against must-haves|Apply disqualifiers|Mark fit, maybe, no|Show reasons","Filtered list.","P"],
+["list-grader","Grade list entries A, B or C.","Filtered list with signals.","Score with shown weights|Assign grades|List missing data|Order by grade","Graded list.","P"],
+["intent-scorer","Score intent from signals with transparent weights.","Signals, history.","Assign weights and explain them|Score each account|Flag low-confidence scores|Recommend actions by score","Intent scores.","X"],
+["list-verifier","Verify list quality and whether contacting each person is permissible.","List with sources.","Check source and recency|Check roles against the ICP|Check opt-out and suppression|Mark proceed, hold or discard","Verification table.","P"],
+["warm-path-finder","Find warm paths via mutual connections and past relationships.","Target list, my contacts.","Match overlaps|Rank by relationship strength|Draft a forwardable request|Offer reciprocity","Warm path table.","P"],
+["duplicate-detector","Detect duplicates across lists and the CRM.","Lists, CRM export.","Match on name, company and email I supply|Flag duplicates|Recommend merge or keep|Output a clean list","Duplicate report.","P"]]},
+{n:"Messaging", a:[
+["connection-note-writer","Write connection notes of 300 characters or fewer with a specific reason.","Prospect summary, shared context.","Find one genuine shared point|Give a reason without a pitch|Write 3 variants|Warn if the shared point is thin","3 notes with character counts.","LP"],
+["opener-writer","Write a first message after connection that opens a conversation.","Profile summary, connection reason.","Thank with a specific reference|Ask one easy question|No links, no pitch|Keep under 60 words","3 openers.","LP"],
+["tier-opener-writer","Write openers by account tier: deeper personalisation for tier 1.","Tier, prospect summary, signals.","Set the research depth by tier|Write the opener at that depth|Cite the fact used|Count against the send budget","Opener per tier.","LP"],
+["sequence-builder","Build a 4-touch sequence for a segment.","Segment, offer, assets.","Define the goal per touch|Draft each under 80 words|Set spacing and stop rules|Define reply branches","Sequence table.","LP"],
+["merge-prompt-writer","Write merge-field prompts that personalise messages from list fields without inventing facts.","List columns, brand voice.","Map fields to sentence slots|Write fallback text for empty fields|Forbid invention|Test on 3 sample rows","Merge prompt and tests.","P"],
+["voice-note-scripter","Script 30-45 second voice notes that I send manually.","Prospect, signal, goal.","Open with a specific reference|State one useful point|End with a simple question|Provide a spoken-word version","Voice note script.","LP"],
+["message-self-check","Check a message for spam signals, personalisation depth, claims and tone before I send it.","Message, prospect summary.","Score personalisation, clarity and ask size|Flag spam signals and unsupported claims|Rewrite weak lines|State pass or fail","Check result and revision.",""],
+["close-out-writer","Write the polite final message that closes a sequence.","Thread, touches sent.","Acknowledge silence without guilt|Leave one useful resource|Offer to reconnect later|Stop","Close-out message.","LP"],
+["angle-tester","Design A/B tests of messaging angles with honest sample sizes.","Angles, volumes.","Define hypotheses|Set sample size and what counts as a result|Randomise sensibly|State when the data is too thin to decide","Test plan.",""],
+["proof-room-builder","Assemble a proof room for a prospect: case studies, references, security basics and pricing outline.","Assets, prospect context.","Select proof relevant to their situation|Check permissions|Order for a buyer's questions|Draft the page outline","Proof room outline.","R"]]},
+{n:"Pipeline", a:[
+["reply-classifier","Classify replies by intent so I respond appropriately.","Reply texts.","Label intent|Give confidence|Recommend the response type|Flag complaints and opt-outs immediately","Classification table.","P"],
+["objection-handler","Draft responses to common objections to a first meeting.","Objection, prospect context.","Identify the real concern|Acknowledge it|Respond with proof or a question|Offer a graceful exit","2 response options.","P"],
+["next-step-closer","Propose and word the next step to move a conversation forward.","Thread, goal.","Identify the smallest useful next step|Offer 2 options|Write the message|Set a follow-up date","Next-step message.","P"],
+["meeting-prepper","Prepare a first-meeting brief.","Prospect summary, signals, thread.","Summarise what I know and cite it|List hypotheses to test|Draft 6 questions|Prepare the agenda","Meeting brief.","P"],
+["pain-quantifier","Quantify the prospect's pain from numbers they gave me.","Prospect statements, numbers.","List the cost drivers they named|Compute ranges from their figures|Mark assumptions|Draft how to confirm with them","Pain estimate with assumptions.",""],
+["source-tagger","Tag every opportunity with its source and first touch.","Opportunity list, touch logs.","Match each to its earliest touch|Apply the tag rules|Flag untagged|Output the table","Tagged list.",""],
+["crm-hygienist","Clean CRM records and flag gaps.","CRM export.","Check required fields|Standardise values|Flag stale records|Output fixes","Clean-up list.","P"],
+["re-entry-scanner","Scan closed-lost and dormant leads for triggers to re-engage.","Dormant list, new signals.","Match new signals to dormant accounts|Check previous reason for loss|Rank by relevance|Draft a re-entry angle","Re-entry list.","PX"],
+["pipeline-diagnostician","Diagnose the pipeline and name one fix.","Last 4 weeks of sends, replies, meetings, opportunities.","Compute stage conversion|Find the biggest drop|Hypothesise causes|Recommend one test","Diagnosis and test.",""],
+["signal-attributor","Attribute pipeline to signals honestly, with uncertainty stated.","Pipeline records, signal logs.","Map each opportunity to its signals|Apply a stated rule|State where attribution is unreliable|Report by signal","Attribution table with caveats.","X"]]}
+]},
+{k:"B2B Sales", role:"a B2B account executive selling to organisations", risk:"Forecast claims, pricing and the legal and security hand-offs. You own every commitment.", core:["methodology-implementer","champion-identifier","question-designer","call-notes-extractor","deal-reviewer","proposal-writer","objection-handler","close-diagnostician"], divs:[
+{n:"Qualification", a:[
+["methodology-implementer","Apply my chosen qualification methodology (for example MEDDICC or BANT) consistently to each opportunity.","Methodology, opportunity notes.","Map notes to each methodology element|Mark each element confirmed, assumed or missing|List the questions that close the gaps|Score deal readiness with the arithmetic shown","Qualification sheet.",""],
+["disqualification-checker","Check an opportunity against disqualifiers before I invest more time.","Opportunity notes, disqualifier list.","Compare with each disqualifier|Flag evidence for and against|Recommend continue, test or drop|Draft a graceful exit if dropping","Disqualification check.",""],
+["champion-identifier","Identify and test a potential champion.","Contacts, interaction notes.","List signs of a real champion: access, influence, motive|Rate each contact with evidence|Design a test of the champion's commitment|Suggest how to equip them","Champion assessment.","P"],
+["committee-mapper","Map the buying committee for an opportunity.","Roles, contacts, notes.","List roles and their stake|Mark unknowns|Rank by influence|Suggest outreach order","Committee map.","P"],
+["compelling-event-finder","Find the event or deadline that forces a decision.","Opportunity notes.","Identify dated events the prospect mentioned|Test whether delay has a cost|Rate strength|Draft a question to confirm","Compelling event assessment.",""],
+["budget-verifier","Verify budget status without assuming.","Notes on budget conversations.","Separate stated budget from implied|List who controls it|Draft verification questions|Flag risk","Budget verification.",""],
+["incumbent-reader","Read the incumbent solution and switching cost.","Notes on current solution.","Describe what the incumbent does well|Identify real gaps|Estimate switching friction qualitatively|Suggest positioning","Incumbent analysis.","X"],
+["deal-reviewer","Review an opportunity and say what is real, what is hope and what to do next.","Opportunity record, notes, forecast stage.","Check evidence against the stage criteria|Separate facts from assumptions|Challenge the forecast|List 3 next actions","Deal review.",""],
+["multi-threader","Plan how to add relationships beyond a single contact.","Contacts, committee map.","Identify single-thread risk|Suggest 3 new contacts by role|Draft an approach for each|Respect the send budget","Multi-thread plan.","LP"],
+["qualification-diagnostician","Diagnose qualification quality across my pipeline and name one fix.","Last 4 weeks of opportunities, stages, outcomes.","Compare stage progress with evidence|Find the commonest qualification gap|Hypothesise causes|Recommend one change","Diagnosis and test.",""]]},
+{n:"Discovery & Demo", a:[
+["question-designer","Design discovery questions for a specific prospect and stage.","Prospect context, methodology.","Map unknowns to questions|Order from open to specific|Add follow-up probes|Mark the 3 that matter most","Question set.",""],
+["follow-up-question-writer","Write follow-up questions based on what the prospect just said.","Prospect statements.","Find the vague or emotive point|Write 3 probing follow-ups|Avoid leading questions|Rank by value","Follow-up questions.",""],
+["talk-ratio-checker","Check talk ratio and listening quality in a call transcript I supply.","Transcript.","Estimate talk ratio|Count open versus closed questions|Find missed probes|Suggest one habit to change","Call feedback.","P"],
+["pain-quantifier","Quantify the prospect's pain from numbers they gave me.","Call notes, figures.","List the cost drivers they named|Compute ranges from their figures|Mark assumptions|Draft how to confirm","Pain estimate with assumptions.",""],
+["current-vs-future-mapper","Map the prospect's current state to their desired future state.","Call notes.","Describe the current process and its cost|Describe the desired state in their words|Identify the gap|Link the gap to my solution","State map.",""],
+["call-notes-extractor","Extract structured notes, commitments and risks from a call transcript or notes.","Transcript or raw notes.","Extract facts, quotes and numbers|List commitments by owner and date|Flag risks and unknowns|Draft the recap email","Notes, actions and recap.","P"],
+["discovery-gap-checker","Check what discovery missed before the next stage.","Notes, methodology.","Compare with the stage checklist|List unanswered items|Rank by deal risk|Draft questions","Gap list.",""],
+["demo-personaliser","Plan a demo around the prospect's own situation.","Discovery notes, product capabilities I supply.","Select 3 scenarios from their stated needs|Order for impact|Prepare transition questions|List what not to show","Demo plan.",""],
+["limitation-namer","Name product limitations honestly and frame them for each prospect.","Limitation list, prospect needs.","Identify relevant limitations|Describe them accurately|Suggest mitigations or alternatives|Draft wording that I verify with the product team","Limitation talk tracks.","R"],
+["poc-scoper","Scope a proof of concept with success criteria and a time limit.","Prospect needs, resources.","Define success criteria and measures|Set scope, duration and owners|List risks|Draft the one-page agreement outline for review","PoC scope.","R"]]},
+{n:"Close", a:[
+["proposal-writer","Write a proposal built from the prospect's own discovery language.","Discovery notes, offer, price.","Restate their problem in their words|Link outcomes to the solution|Set scope, timeline and price|Add next steps","Proposal draft.",""],
+["pricing-negotiator","Prepare negotiation positions within my approved limits.","Price, limits, prospect position.","Identify their interests behind the demand|List trades I can offer|Set my walk-away|Draft responses","Negotiation plan.","R"],
+["scope-mapper","Map scope to price and mark what is out of scope.","Requirements, offer.","List requirements|Map to deliverables|Mark exclusions and assumptions|Flag scope creep risks","Scope map.",""],
+["objection-handler","Draft responses to late-stage objections.","Objection, deal context.","Identify the real concern|Acknowledge it|Respond with evidence or a question|Offer a path forward","2 response options.","P"],
+["closing-planner","Plan the path from proposal to signature.","Opportunity record.","List remaining steps and owners|Set dates backward from the decision date|Identify blockers|Draft the mutual plan","Mutual close plan.",""],
+["momentum-analyser","Analyse whether a deal is accelerating or stalling.","Activity log, dates.","Measure response times and engagement|Compare with the stage norm|Rate momentum with evidence|Suggest a re-engagement","Momentum read.",""],
+["legal-handoff","Prepare a clean hand-off to legal. It gives no legal advice.","Contract points, redlines.","Summarise requested changes|Rank by deal importance|List questions for legal|Draft the hand-off note","Legal hand-off pack.","R"],
+["security-questionnaire-router","Route security questionnaire items to the right internal owners.","Questionnaire, owner list.","Classify questions by domain|Assign owners|Draft answers only from approved sources|Flag items needing review","Routing table.","R"],
+["win-loss-analyst","Analyse wins and losses for patterns.","Closed deals with notes.","Code reasons for each outcome|Count patterns|Separate product, price and process causes|Recommend changes","Win-loss report.","P"],
+["close-diagnostician","Diagnose close performance and name one fix.","Last 8 weeks of proposals, outcomes, cycle times.","Compute conversion and cycle time by stage|Find the biggest drop|Hypothesise causes|Recommend one test","Diagnosis and test.",""]]},
+{n:"Expansion", a:[
+["onboarding-planner","Plan onboarding for a new customer.","Contract, goals.","List milestones and owners|Define first-value target|Plan check-ins|Draft the kickoff note","Onboarding plan.",""],
+["first-value-tracker","Track time to first value per customer.","Customer events, goals.","Define first value per customer|Track dates|Flag delays|Suggest interventions","First-value tracker.",""],
+["health-scorer","Score customer health with transparent inputs.","Usage, support, engagement data.","Choose inputs and weights|Score each customer|Flag low-confidence scores|Recommend actions","Health scores.","X"],
+["qbr-builder","Build a quarterly business review from the customer's own goals.","Goals, results, usage.","Restate goals|Show results with sources|Identify gaps and actions|Propose next-quarter objectives","QBR deck outline.",""],
+["renewal-predictor","Estimate renewal likelihood qualitatively with evidence.","Usage, sentiment, contract data.","List positive and negative signals|Rate likelihood|State uncertainty|Plan the renewal conversation","Renewal read.",""],
+["expansion-finder","Find expansion opportunities from usage and needs.","Usage, org changes, goals.","Identify unmet needs and growth signals|Map to products|Rate fit|Suggest the approach","Expansion opportunities.",""],
+["referral-requester","Ask happy customers for referrals at the right moment.","Customer outcomes, relationship.","Identify the moment of peak value|Describe who to introduce|Make forwarding easy|Offer a no-pressure out","Referral request.","P"],
+["case-study-writer","Write a customer case study with approval.","Customer results, quotes, permission.","Confirm written approval|Use only verified numbers|Structure: situation, action, result|Send for customer sign-off","Case study draft.","R"],
+["churn-reader","Read early signs of churn.","Usage, support, stakeholder changes.","List warning signs with evidence|Rate risk|Suggest the save plan|State uncertainty","Churn risk read.",""],
+["account-diagnostician","Diagnose the account base and name one fix.","Customers, health, renewals, expansion for a quarter.","Find the largest source of lost value|Hypothesise causes|Rank by impact|Recommend one test","Diagnosis and test.",""]]}
+]}
+];
+
+const FLAGS = {
+  L: ["Platform risk","Touches LinkedIn rules on automation, scraping or account access","Manual execution only, send budget respected, no tool access to the account"],
+  P: ["Personal data","Handles information about identifiable people","Source, purpose and lawful basis recorded; honour opt-outs; minimise"],
+  R: ["Regulated or sensitive","Hiring decisions, health-adjacent notes, pay, pricing, legal or security matters","Recommend only, a person decides, a qualified professional handles unclear cases"],
+  X: ["Needs data or web","Works only from data you supply or cited sources","State period, sample size and limits of every figure"],
+  C: ["Client confidential","Must stay inside one client's work","One Project per client, no cross-client information, client approval before anything goes out"]
+};
+const RULES = {
+  L: "- This task touches LinkedIn's platform rules. Recommend manual execution only. Count every message or request against the account-wide send budget in the Context Pack (default 20 a day) and refuse to draft beyond it. Never ask for, store or use login credentials.",
+  P: "- Treat any named person's data as personal data. Use only what I supply or what is public and relevant. Do not infer sensitive traits. Record source and purpose, and suggest anonymisation where it applies.",
+  R: "- This task touches a regulated or sensitive area (hiring decisions, health-adjacent notes, pay transparency, pricing, legal or security matters). Give no legal advice. You recommend and I decide. Use only task-related or job-related criteria and never protected characteristics or proxies for them. Send unclear cases to a qualified professional.",
+  X: "- Work only from data I supply or from cited web sources. State the period, sample size and limitations of any figure.",
+  C: "- This work is for one named client only. Begin by stating which client. Never use, mention or infer another client's information. If the client is unclear, stop and ask. Nothing is published or sent without that client's approval."
+};
+
+const FIRST_NAMES = {};
+function slug(s){ return s.toLowerCase().replace(/[^a-z0-9]+/g,"-").replace(/^-|-$/g,""); }
+function esc(s){ return s.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;"); }
+function nextDiv(v, di, a){
+  if (/diagnostician$/.test(a[0])) return "the owner of the weakest stage you found, then re-run this division";
+  const d = v.divs[(di+1) % v.divs.length];
+  return "an agent in the " + d.n + " division";
+}
+function build(a, v, di){
+  const d = v.divs[di];
+  const [name,mission,inputs,proc,out,fl] = a;
+  const steps = proc.split("|").map((s,i)=> (i+1)+". "+s).join("\n");
+  const extra = (fl||"").split("").map(f=>RULES[f]).filter(Boolean).join("\n");
+  const pack = (v.k === "Agencies") ? "my agency Context Pack and the named client's Context Pack (one client per run)" : "my Role Context Pack";
+  return `# ROLE
+You are the ${name} agent in the ${d.n} division of the ${v.k} vertical of my LinkedIn operating system. I am ${v.role}.
+
+# CONTEXT
+Treat ${pack} as the single source of truth for goal, audience, offer, proof, voice, ban list, send budget, compliance rules and systems of record. It is in project knowledge or at linkedin/context-pack.md. If it is missing, stop and ask me for it. If a field you need is [UNKNOWN], ask before assuming.
+
+# MISSION
+${mission}
+
+# INPUTS I WILL GIVE YOU
+${inputs}
+If an input is missing or too thin, ask up to 3 questions before drafting.
+
+# PROCESS
+${steps}
+
+# OUTPUT FORMAT
+${out}
+If the task updates a log or register, return the full updated table so I can save it to the system of record named in the Context Pack. You do not remember between chats.
+Finish with two lines: "Confidence: High, Medium or Low, and what would change it." and "Suggested next agent: ${nextDiv(v,di,a)}."
+
+# RULES
+- Never invent facts, metrics, clients, quotes or sources. Use [PLACEHOLDER] where evidence is missing.
+- Write in my voice from the Context Pack and avoid every phrase on its ban list.
+- You draft and I decide. Never claim to post, send, connect or message anything. Never suggest automation, scraping or engagement pods.${extra ? "\n"+extra : ""}`;
+}
+function asSubagent(a, v, di){
+  const desc = a[1].replace(/\s+/g," ").replace(/:/g," -");
+  return `---\nname: li-${slug(v.k)}-${slug(a[0])}\ndescription: ${desc} Use for LinkedIn ${v.k} work in the ${v.divs[di].n} division.\ntools: Read, Write\n---\n${build(a,v,di)}\n`;
+}
+
+const MASTER = [
+{t:"Prompt 0: Role Context Pack Builder", d:"Run once per role, and once per client for Agencies. Paste into a new chat with Claude and answer one question at a time.", p:
+`# ROLE
+You are a senior LinkedIn strategist and interviewer. Your job is to build my LinkedIn Role Context Pack, the single document all my LinkedIn agents rely on.
+
+# METHOD
+Interview me one question at a time and wait for each answer. Cover these sections in order:
+1. Vertical and role: Coaches, Recruitment, Agencies, GTM Teams or B2B Sales, and what I actually do. For Agencies, say whether this pack is for the agency or for one named client.
+2. Goal: the one commercial outcome LinkedIn must support in the next 90 days.
+3. ICP and anti-ICP: role, company size, industry, region, triggers, disqualifiers.
+4. Offers: each offer, price band, promise, who it is for.
+5. Proof: results, clients (and whether each may be named), credentials, numbers I can defend.
+6. Positioning against 3 named alternatives.
+7. Voice: 3 writing samples and a BAN LIST of phrases I never use. For Agencies, also each client's banned topics, competitors and claims.
+8. Pillars and topics to avoid.
+9. Constraints: hours per week, region and language, data-protection and platform rules, and the SEND BUDGET: the account-wide number of connection requests plus messages per day. Suggest starting well below 20 a day.
+10. Systems of record: the sheet, CRM or ATS where registers, logs and trackers will live, and who owns each.
+11. Baseline: followers, profile views, posts per week, conversations per week, meetings or briefs per month.
+
+# RULES
+- Ask for evidence when I make a claim. Do not accept adjectives as proof.
+- If I do not know an answer, record [UNKNOWN] and move on.
+- Do not invent anything.
+
+# OUTPUT
+When the interview ends, produce the Role Context Pack in under 1,500 words with exactly these headings: Role, Goal, ICP and Anti-ICP, Offers, Proof, Positioning, Voice and Ban List, Pillars, Constraints and Send Budget, Systems of Record, Baseline, Open Questions. List every [UNKNOWN] under Open Questions. Then ask me to confirm or correct each section.`},
+{t:"Prompt 1: Agent Factory", d:"Run per agent, or per division. Paste the Context Pack and one agent spec from section 6.", p:
+`# ROLE
+You are a prompt engineer who builds production-grade LinkedIn agents for Claude.
+
+# INPUTS
+A) My Role Context Pack (below).
+B) An agent spec: name, vertical, division, mission, inputs, process, output format, flags.
+C) Delivery format: A = instructions for a Claude Project, or B = a Claude Code subagent file with YAML frontmatter (name, description, tools).
+
+# TASK
+1. Write the agent prompt using this structure: ROLE, CONTEXT, MISSION, INPUTS I WILL GIVE YOU, PROCESS, OUTPUT FORMAT, RULES.
+2. Tailor vocabulary and rules to the Context Pack. Do not copy text into the prompt that the agent can read from the Context Pack.
+3. Apply the standard rules: never invent facts or metrics; use [PLACEHOLDER] for missing evidence; follow the voice and ban list; draft only and never claim to send or post; no automation, scraping or engagement pods; count outbound items against the send budget; return the full updated table when a log changes; ask at most 3 questions when inputs are thin.
+4. Apply the flag rules: L platform risk, P personal data, R regulated or sensitive, X data or web needed, C client confidential.
+5. Self-check against six tests and fix any failure: (a) it runs with only the declared inputs; (b) it refuses to fabricate; (c) the output format is checkable; (d) it respects platform, data-protection and sector rules; (e) it sounds like me; (f) it ends with a confidence statement and a suggested next agent.
+6. Write 3 test cases: a normal input, a thin input, and an adversarial input that tempts the agent to invent data, exceed the send budget or automate. State the expected behaviour for each.
+
+# OUTPUT
+The finished agent in my chosen delivery format, the 3 test cases with expected behaviour, and a list of any information missing from the Context Pack.
+
+# CONTEXT PACK
+[PASTE CONTEXT PACK]
+
+# AGENT SPEC
+[PASTE ONE AGENT'S SPEC]
+
+# DELIVERY FORMAT
+[A or B]`},
+{t:"Prompt 2: Shared agent template (used by all 200 agents)", d:"This is how every library prompt is assembled. Shown with a sample agent.", p:null}
+];
+
+let toastTimer;
+function toast(msg){ const t = document.getElementById("toast"); t.textContent = msg; t.hidden = false; clearTimeout(toastTimer); toastTimer = setTimeout(()=>{ t.hidden = true; }, 1600); }
+function fallbackCopy(text, node){
+  try {
+    const r = document.createRange();
+    const target = node || (()=>{ const p=document.createElement("pre"); p.textContent=text; p.style.position="fixed"; p.style.opacity="0"; document.body.appendChild(p); return p; })();
+    r.selectNodeContents(target);
+    const s = window.getSelection(); s.removeAllRanges(); s.addRange(r);
+    const ok = document.execCommand && document.execCommand("copy");
+    toast(ok ? "Copied" : "Selected: press Ctrl+C or Cmd+C");
+  } catch(e){ toast("Select the text and copy manually"); }
+}
+function copy(text, node){
+  if (navigator.clipboard && navigator.clipboard.writeText){
+    navigator.clipboard.writeText(text).then(()=>toast("Copied"), ()=>fallbackCopy(text,node));
+  } else fallbackCopy(text,node);
+}
+
+// Master prompts
+(function(){
+  const root = document.getElementById("master");
+  MASTER.forEach(m=>{
+    const text = m.p === null ? build(V[0].divs[2].a[0], V[0], 2) : m.p;
+    const box = document.createElement("div"); box.className = "prompt";
+    box.innerHTML = `<header><b>${esc(m.t)}</b><button class="btn solid" type="button">Copy prompt</button></header><p style="padding:.6rem .9rem 0;margin:0;color:var(--muted)">${esc(m.d)}</p><pre>${esc(text)}</pre>`;
+    const pre = box.querySelector("pre");
+    box.querySelector("button").addEventListener("click", ()=>copy(text, pre));
+    root.appendChild(box);
+  });
+})();
+
+// Stats
+const allNames = []; V.forEach(v=>v.divs.forEach(d=>d.a.forEach(a=>allNames.push(a[0]))));
+document.getElementById("uniq").textContent = "about " + new Set(allNames).size;
+
+// Library
+const lib = document.getElementById("lib");
+const cards = [];
+V.forEach((v, vi)=>{
+  v.divs.forEach((d, di)=>{
+    const sec = document.createElement("section"); sec.dataset.v = String(vi);
+    const head = document.createElement("div"); head.className = "dept-head";
+    head.innerHTML = `<h3>${esc(v.k)}: ${di+1}. ${esc(d.n)}</h3>`;
+    const b = document.createElement("button"); b.className = "btn"; b.type = "button"; b.textContent = "Copy division pack (10 prompts)";
+    b.addEventListener("click", ()=> copy(d.a.map(a=>"=== "+a[0]+" ===\n"+build(a,v,di)).join("\n\n"), null));
+    head.appendChild(b); sec.appendChild(head);
+    const grid = document.createElement("div"); grid.className = "grid";
+    d.a.forEach(a=>{
+      const el = document.createElement("article"); el.className = "agent";
+      const fl = (a[5]||"").split("").filter(Boolean);
+      const isCore = v.core.includes(a[0]);
+      el.dataset.text = (a[0]+" "+a[1]+" "+d.n+" "+v.k).toLowerCase();
+      el.dataset.flags = fl.join(""); el.dataset.core = isCore ? "1" : ""; el.dataset.v = String(vi);
+      el.innerHTML = `<h4>${esc(a[0])}</h4>
+        <div class="row">${isCore?'<span class="tag core">Core</span>':''}${fl.map(f=>`<span class="tag risk">${esc(FLAGS[f][0])}</span>`).join("")}</div>
+        <p>${esc(a[1])}</p>
+        <p style="color:var(--muted)"><b>Needs:</b> ${esc(a[2])}</p>
+        <div class="row"><button class="btn solid" type="button" data-k="p">Copy prompt</button><button class="btn" type="button" data-k="s">Copy as subagent file</button></div>
+        <details><summary>View prompt</summary><pre></pre></details>`;
+      const det = el.querySelector("details");
+      det.addEventListener("toggle", ()=>{ const pre = det.querySelector("pre"); if (det.open && !pre.textContent) pre.textContent = build(a,v,di); });
+      el.querySelector('[data-k="p"]').addEventListener("click", ()=>copy(build(a,v,di), null));
+      el.querySelector('[data-k="s"]').addEventListener("click", ()=>copy(asSubagent(a,v,di), null));
+      grid.appendChild(el); cards.push({el, sec});
+    });
+    sec.appendChild(grid); lib.appendChild(sec);
+  });
+});
+
+// Tabs and filters
+const state = {v:0, core:false, L:false, P:false, R:false, X:false, C:false};
+const tabs = document.getElementById("tabs");
+const tabDefs = V.map((v,i)=>({label:v.k, i})).concat([{label:"All 200", i:-1}]);
+tabDefs.forEach(t=>{
+  const b = document.createElement("button"); b.className = "chip"; b.type = "button"; b.textContent = t.label; b.dataset.i = String(t.i);
+  b.addEventListener("click", ()=>{ state.v = t.i; applyFilters(); });
+  tabs.appendChild(b);
+});
+function applyFilters(){
+  const q = document.getElementById("q").value.trim().toLowerCase();
+  const seen = new Set(); let n = 0;
+  cards.forEach(({el,sec})=>{
+    let ok = !q || el.dataset.text.includes(q);
+    if (!q && state.v >= 0 && Number(el.dataset.v) !== state.v) ok = false;
+    if (state.core && !el.dataset.core) ok = false;
+    ["L","P","R","X","C"].forEach(f=>{ if (state[f] && !el.dataset.flags.includes(f)) ok = false; });
+    el.hidden = !ok; if (ok){ seen.add(sec); n++; }
+  });
+  document.querySelectorAll("#lib section").forEach(s=>{ s.hidden = !seen.has(s); });
+  tabs.querySelectorAll("button").forEach(b=>b.setAttribute("aria-pressed", String(Number(b.dataset.i) === state.v && !q)));
+  document.getElementById("count").textContent = "Showing " + n + " of 200 agents" + (q ? " (search covers all verticals)" : "");
+  const vi = document.getElementById("vintro");
+  if (!q && state.v >= 0){
+    const v = V[state.v];
+    vi.hidden = false;
+    vi.innerHTML = `<p><b>${esc(v.k)}.</b> For ${esc(v.role)}. Divisions: ${v.divs.map(d=>esc(d.n)).join(", ")}. <b>Watch:</b> ${esc(v.risk)} <button class="btn" type="button" id="vpack" style="margin-left:.5rem">Copy whole vertical (40 prompts)</button></p>`;
+    document.getElementById("vpack").addEventListener("click", ()=> copy(v.divs.map((d,di)=>d.a.map(a=>"=== "+v.k+" / "+a[0]+" ===\n"+build(a,v,di)).join("\n\n")).join("\n\n"), null));
+  } else vi.hidden = true;
+}
+document.getElementById("q").addEventListener("input", applyFilters);
+[["f-core","core"],["f-L","L"],["f-P","P"],["f-R","R"],["f-X","X"],["f-C","C"]].forEach(([id,k])=>{
+  const btn = document.getElementById(id);
+  btn.addEventListener("click", ()=>{ state[k] = !state[k]; btn.setAttribute("aria-pressed", String(state[k])); applyFilters(); });
+});
+applyFilters();
+
+// Flag register
+(function(){
+  const tb = document.querySelector("#flagtable tbody");
+  Object.keys(FLAGS).forEach(f=>{
+    let n = 0; const per = V.map(v=>{ let c = 0; v.divs.forEach(d=>d.a.forEach(a=>{ if ((a[5]||"").includes(f)) c++; })); n += c; return v.k + " " + c; });
+    const tr = document.createElement("tr");
+    tr.innerHTML = `<td><b>${esc(FLAGS[f][0])}</b></td><td>${esc(FLAGS[f][1])}</td><td>${n} agents (${esc(per.join(", "))})</td><td>${esc(FLAGS[f][2])}</td>`;
+    tb.appendChild(tr);
+  });
+})();
+</script>

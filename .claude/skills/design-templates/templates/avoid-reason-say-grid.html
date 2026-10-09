@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<!--
+  Template: avoid-reason-say-grid
+  Style: warm grey page, a big condensed navy title with a teal tag line, and a three-column grid of numbered cards; each card has an "Avoid" line with a red cross,
+         a "Reason" line with an amber question mark and a "Say" line with a green tick, plus a footer bar. Theme: grey-teal-guide
+  Inspired by: the "10 Things NOT to Say in a Job Interview" infographic (Dr. Christian Poensgen). Original CSS; no source illustration, name or wording reused.
+  Canvas: 1080 x 1350. One slide with six cards; duplicate .card for more (three per row).
+  Swap points:
+    :root tokens                  colours and fonts
+    h1 / .tag                     title and the teal tag line
+    .card (.num, .avoid, .reason, .say)   one item each
+    .foot                         footer line; .handle your own handle (placeholder: @yourhandle)
+-->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Avoid Reason Say Grid</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700;800&family=Oswald:wght@600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #E7E5E4;          /* sampled */
+    --navy: #0F2D3A;
+    --teal: #8CC1B5;
+    --line: #CEE4DF;        /* sampled */
+    --red: #D8342C;
+    --amber: #F2A93B;
+    --green: #2E9D4F;
+    --ink: #1B1B1B;
+    --font: "Inter", Aptos, "Segoe UI", system-ui, sans-serif;
+    --display: "Oswald", "Arial Narrow", Impact, sans-serif;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: #333; display: flex; justify-content: center; padding: 32px 0; overflow-x: auto; font-family: var(--font); }
+  .slide { position: relative; width: 1080px; height: 1350px; flex: none; background: var(--bg); color: var(--ink); padding: 60px 56px 0; overflow: hidden; }
+  h1 { text-align: center; font: 700 112px/.95 var(--display); color: var(--navy); letter-spacing: -.01em; text-transform: uppercase; }
+  .tag { display: block; width: max-content; margin: 18px auto 0; background: var(--teal); color: var(--navy); font-size: 26px; font-weight: 700; padding: 6px 22px; }
+  .grid { margin-top: 44px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px 26px; }
+  .card { border-top: 3px solid var(--teal); padding-top: 12px; font-size: 19px; line-height: 1.32; min-height: 360px; }
+  .num { display: inline-block; background: var(--teal); color: var(--navy); font-weight: 800; font-size: 20px; padding: 2px 12px; margin-bottom: 10px; }
+  .card p { margin-bottom: 10px; padding-left: 28px; position: relative; }
+  .card p::before { position: absolute; left: 0; top: 0; font-weight: 800; }
+  .avoid::before { content: "✕"; color: var(--red); } .reason::before { content: "?"; color: var(--amber); } .say::before { content: "✓"; color: var(--green); }
+  .card b { font-weight: 800; }
+  .foot { position: absolute; left: 0; right: 0; bottom: 0; height: 80px; background: var(--navy); color: #fff; display: flex; align-items: center; justify-content: space-between; padding: 0 56px; font-size: 24px; }
+  .handle { font-weight: 700; }
+</style>
+</head>
+<body>
+<section class="slide">
+  <h1>10 things not<br>to say</h1><span class="tag">(and what to say instead)</span>
+  <div class="grid">
+    <div class="card"><span class="num">1</span><p class="avoid"><b>Avoid:</b> "A phrase to avoid."</p><p class="reason"><b>Reason:</b> One short line on why it hurts.</p><p class="say"><b>Say:</b> "A better line, with [your own evidence]."</p></div>
+    <div class="card"><span class="num">2</span><p class="avoid"><b>Avoid:</b> "A phrase to avoid."</p><p class="reason"><b>Reason:</b> One short line on why it hurts.</p><p class="say"><b>Say:</b> "A better line, with [your own evidence]."</p></div>
+    <div class="card"><span class="num">3</span><p class="avoid"><b>Avoid:</b> "A phrase to avoid."</p><p class="reason"><b>Reason:</b> One short line on why it hurts.</p><p class="say"><b>Say:</b> "A better line, with [your own evidence]."</p></div>
+    <div class="card"><span class="num">4</span><p class="avoid"><b>Avoid:</b> "A phrase to avoid."</p><p class="reason"><b>Reason:</b> One short line on why it hurts.</p><p class="say"><b>Say:</b> "A better line, with [your own evidence]."</p></div>
+    <div class="card"><span class="num">5</span><p class="avoid"><b>Avoid:</b> "A phrase to avoid."</p><p class="reason"><b>Reason:</b> One short line on why it hurts.</p><p class="say"><b>Say:</b> "A better line, with [your own evidence]."</p></div>
+    <div class="card"><span class="num">6</span><p class="avoid"><b>Avoid:</b> "A phrase to avoid."</p><p class="reason"><b>Reason:</b> One short line on why it hurts.</p><p class="say"><b>Say:</b> "A better line, with [your own evidence]."</p></div>
+  </div>
+  <div class="foot"><span>If you found this helpful, follow for more</span><span class="handle">@yourhandle</span></div>
+</section>
+</body>
+</html>

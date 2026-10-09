@@ -1,6 +1,6 @@
 # Agent Memory Repos
 
-7 open-source repos for giving AI agents persistent memory — so you never re-explain your project again. Rows 1, 3, 4, 5 curated by @joshualevi.ai; rows 2 and 6 added from a later @githubnow "daily briefing" batch (each confirmed live via GitHub search before being added — see stars/description).
+7 open-source repos for giving AI agents persistent memory — so you never re-explain your project again. Rows 1, 3, 4, 5 curated by @joshualevi.ai; rows 2 and 6 added from a later @githubnow "daily briefing" batch; row 7 added from an @aigenesis.official "GitHub repos for AI agents" carousel (each confirmed live via GitHub search before being added — see stars/description).
 
 ## Repos
 
@@ -12,7 +12,7 @@
 | 4 | [Gentleman-Programming/engram](https://github.com/Gentleman-Programming/engram) | 6k | MCP + SQLite persistent memory — plug-and-play memory server for Claude Code |
 | 5 | [eugeniughelbur/obsidian-second-brain](https://github.com/eugeniughelbur/obsidian-second-brain) | 4k | Obsidian markdown memory for Claude Code — vault-based persistent context |
 | 6 | [mksglu/context-mode](https://github.com/mksglu/context-mode) | 21k | Sandboxes MCP tool output (98% size reduction — a 315 KB response shrinks to 5.4 KB), tracks file edits/tasks/decisions in SQLite with FTS5 search to survive context compaction, and routes code execution across 17 platforms instead of dumping raw tool output through context |
-| 7 | *(see notes below)* | — | — |
+| 7 | [rohitg00/agentmemory](https://github.com/rohitg00/agentmemory) | — | Persistent memory for coding agents — stores patterns, outcomes, and past decisions so the agent improves with every run instead of resetting to zero each session. The source carousel showed a `Threesided-Studios/Agent-Memory` fork of this repo that was 94 commits behind upstream; cited here by the canonical upstream repo instead. |
 
 ## Quick Install
 
@@ -54,6 +54,12 @@ cd ~/repos/context-mode && npm install
 # the hook config (it edits your existing hooks, so review the diff first).
 ```
 
+### agentmemory (coding-agent persistent memory)
+```bash
+git clone --depth 1 https://github.com/rohitg00/agentmemory ~/repos/agentmemory
+cd ~/repos/agentmemory && pip install -e .
+```
+
 ## Claude Code Memory Prompt
 
 ```
@@ -78,6 +84,7 @@ After completing a task, save:
 | Obsidian-based personal knowledge | obsidian-second-brain |
 | Unified memory + RAG + skills, tiered/token-efficient loading | OpenViking |
 | Cutting raw MCP tool-output bloat specifically (not memory per se) | context-mode |
+| Coding agent that remembers patterns/outcomes/decisions across separate tasks | agentmemory |
 
 ## Batch 2 addition — not vendored here, documented for completeness
 

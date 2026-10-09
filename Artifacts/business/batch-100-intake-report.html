@@ -1,0 +1,170 @@
+<title>Batch 100 Intake Report</title>
+<style>
+  /* Layout: single-column formal report, 880px measure, tables scroll inside their own wrappers.
+     Palette: ink-blue neutrals, one deep teal accent, semantic green/amber/red for status only.
+     Type: Aptos (user's house font) with system fallbacks; titles 32pt, headings 14pt, body 11pt. */
+  :root {
+    --bg: #f6f7f9; --surface: #ffffff; --fg: #1b2330; --muted: #5a6577; --line: #d9dee6;
+    --accent: #0f5d6b; --accent-soft: #e2f0f2;
+    --ok: #17703a; --ok-bg: #e3f3e8; --warn: #8a5a00; --warn-bg: #fbefd3; --bad: #a11d2a; --bad-bg: #fbe3e5;
+    --code-bg: #eef1f5;
+    --font: Aptos, "Segoe UI Variable Text", "Segoe UI", system-ui, -apple-system, Roboto, sans-serif;
+    --mono: ui-monospace, "SF Mono", Consolas, monospace;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #11161e; --surface: #181f2a; --fg: #e6eaf0; --muted: #9aa5b6; --line: #2c3646;
+      --accent: #6cc3d1; --accent-soft: #17323a;
+      --ok: #6fd18f; --ok-bg: #173824; --warn: #f0c261; --warn-bg: #3a2e12; --bad: #ff8d98; --bad-bg: #3d1a1f;
+      --code-bg: #0e131a; color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #11161e; --surface: #181f2a; --fg: #e6eaf0; --muted: #9aa5b6; --line: #2c3646;
+    --accent: #6cc3d1; --accent-soft: #17323a;
+    --ok: #6fd18f; --ok-bg: #173824; --warn: #f0c261; --warn-bg: #3a2e12; --bad: #ff8d98; --bad-bg: #3d1a1f;
+    --code-bg: #0e131a; color-scheme: dark;
+  }
+  * { box-sizing: border-box; }
+  body { background: var(--bg); color: var(--fg); font-family: var(--font); font-size: 11pt; line-height: 1.55; padding-inline: 16px; padding-block: 28px 64px; }
+  main { max-width: 880px; margin-inline: auto; display: flex; flex-direction: column; gap: 28px; }
+  header { display: flex; flex-direction: column; gap: 8px; border-bottom: 2px solid var(--accent); padding-bottom: 18px; }
+  .eyebrow { font-size: 9pt; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
+  h1 { font-size: 32pt; line-height: 1.1; margin: 0; font-weight: 700; text-wrap: balance; }
+  h2 { font-size: 14pt; margin: 0 0 10px; font-weight: 700; color: var(--accent); text-wrap: balance; }
+  h3 { font-size: 11pt; margin: 14px 0 6px; font-weight: 700; }
+  p { margin: 0 0 10px; max-width: 75ch; }
+  section { background: var(--surface); border: 1px solid var(--line); border-radius: 6px; padding: 20px 22px; min-width: 0; }
+  .lede { font-size: 11pt; color: var(--muted); max-width: 70ch; margin: 0; }
+  .truth { border-left: 4px solid var(--bad); background: var(--bad-bg); padding: 12px 16px; border-radius: 0 6px 6px 0; }
+  .truth p:last-child { margin-bottom: 0; }
+  .tag { font-family: var(--mono); font-size: 9pt; padding: 1px 6px; border-radius: 3px; background: var(--accent-soft); color: var(--accent); white-space: nowrap; }
+  .tw { overflow-x: auto; margin-block: 8px 4px; border: 1px solid var(--line); border-radius: 4px; }
+  table { border-collapse: collapse; width: 100%; min-width: 640px; font-size: 10pt; }
+  th, td { padding: 8px 10px; border-bottom: 1px solid var(--line); text-align: center; vertical-align: top; }
+  th { background: var(--accent-soft); color: var(--fg); font-weight: 700; font-size: 9.5pt; }
+  tr:last-child td { border-bottom: 0; }
+  td.l, th.l { text-align: left; }
+  .st { display: inline-block; padding: 1px 8px; border-radius: 10px; font-size: 9pt; font-weight: 700; white-space: nowrap; }
+  .st.ok { background: var(--ok-bg); color: var(--ok); } .st.warn { background: var(--warn-bg); color: var(--warn); } .st.bad { background: var(--bad-bg); color: var(--bad); }
+  .sw { display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 10px; margin-block: 8px; }
+  .sw div { border: 1px solid var(--line); border-radius: 4px; overflow: hidden; font-size: 9pt; text-align: center; }
+  .sw i { display: block; height: 44px; }
+  .sw span { display: block; padding: 4px 6px; font-family: var(--mono); }
+  .prompt { position: relative; margin-block: 10px; }
+  .prompt pre { margin: 0; white-space: pre-wrap; background: var(--code-bg); border: 1px solid var(--line); border-radius: 4px; padding: 12px 84px 12px 12px; font-family: var(--mono); font-size: 9.5pt; line-height: 1.5; }
+  .prompt b { display: block; font-family: var(--font); font-size: 10pt; margin-bottom: 4px; }
+  .prompt button { position: absolute; top: 8px; right: 8px; font: inherit; font-size: 9pt; padding: 4px 10px; border-radius: 4px; border: 1px solid var(--accent); background: var(--surface); color: var(--accent); cursor: pointer; }
+  .prompt button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  ul { margin: 0 0 10px; padding-left: 20px; } li { margin-bottom: 4px; max-width: 75ch; }
+  code { font-family: var(--mono); font-size: 9.5pt; background: var(--code-bg); padding: 1px 4px; border-radius: 3px; }
+  footer { color: var(--muted); font-size: 9.5pt; }
+</style>
+<main>
+<header>
+  <span class="eyebrow">Intake report · iCloud Photos batch 3 · 2 October 2026</span>
+  <h1>Batch 100 Intake Report</h1>
+  <p class="lede">28 images turned into 3 skills, 1 command, 2 design templates, a repo register, a scanner baseline for this repository and a user-run install script. Prepared for the owner of the business repository.</p>
+</header>
+
+<section class="truth">
+  <h2>What you should know first</h2>
+  <p><b>The useful result is a security baseline of your own repo.</b> I installed gitleaks and osv-scanner and ran them here. gitleaks found 11 hits across 258 commits and all look like placeholders or upstream test fixtures. osv-scanner found 191 known advisories in 11 dependency manifests, all inside vendored skill folders.</p>
+  <p><b>Do not install dependencies inside those skill folders without reviewing them.</b> The largest are <code>cookie-sync</code> (81 advisories), <code>agent-platform-tuning</code> (80) and the <code>safe-browser</code> template (45). They matter only if someone runs <code>npm install</code> or <code>pip install</code> there. I did not change them because they are upstream copies.</p>
+  <p><b>The Flowise site screenshot shows a banner "We're sunsetting Flowise".</b> I could not confirm it from the README, so check before building on it. Flowise and Hexabot also show no LICENSE file at the repo root.</p>
+</section>
+
+<section>
+  <h2>1. Inventory of the upload</h2>
+  <div class="tw"><table>
+    <tr><th class="l">Content</th><th>Items</th><th class="l">Outcome</th></tr>
+    <tr><td class="l">Security scanners (@joshualevi.ai, 7 repos)</td><td>7</td><td class="l">Skill <code>agent-output-scanners</code>, command <code>/scan-agent-work</code>; 2 installed and run, 5 documented</td></tr>
+    <tr><td class="l">5 Claude skills (@ai.easily, 7 slides)</td><td>5</td><td class="l">All five already installed; mapped in <code>claude-5-official-skills</code></td></tr>
+    <tr><td class="l">21 AI roles infographic (51ultron)</td><td>21 + 1</td><td class="l">Skill <code>ai-roles-map</code></td></tr>
+    <tr><td class="l">App and agent repos (@replace.so, @githubnow)</td><td>8</td><td class="l">Verified and registered in <code>dev-repos-to-clone</code></td></tr>
+    <tr><td class="l">Design styles</td><td>2 new</td><td class="l">Templates <code>fine-print-skill-card</code> and <code>role-map-infographic</code></td></tr>
+    <tr><td class="l">Prompts to copy</td><td>0 new</td><td class="l">This batch has none; trigger prompts for the five skills are below</td></tr>
+    <tr><td class="l">Connectors</td><td>0</td><td class="l">None referenced</td></tr>
+  </table></div>
+</section>
+
+<section>
+  <h2>2. Scanner results for this repository</h2>
+  <div class="tw"><table>
+    <tr><th class="l">Tool</th><th class="l">Scope</th><th>Result</th><th class="l">Verdict</th></tr>
+    <tr><td class="l">gitleaks 8.30.1</td><td class="l">258 commits, 118 MB</td><td>11 findings</td><td class="l"><span class="st ok">false positives</span> recorded in <code>.gitleaksignore</code>; rescan reports none</td></tr>
+    <tr><td class="l">osv-scanner 2.6.0</td><td class="l">whole tree</td><td>191 advisories, 11 manifests</td><td class="l"><span class="st warn">vendored, not fixed</span></td></tr>
+    <tr><td class="l">trufflehog, semgrep, garak, sops</td><td class="l">not installed</td><td>not run</td><td class="l"><span class="st warn">in install script</span></td></tr>
+    <tr><td class="l">snyk agent-scan</td><td class="l">needs your Snyk token</td><td>not run</td><td class="l"><span class="st warn">your account</span></td></tr>
+  </table></div>
+  <h3>The 11 gitleaks findings, values masked</h3>
+  <ul>
+    <li>9 are documentation placeholders: curl examples, an X-API-Key sample, <code>imageKey</code> samples, one false match on a README heading.</li>
+    <li>3 are upstream Sylius test fixtures (<code>private-test.pem</code>, a test config) that exist only in old history. The files are no longer in the working tree.</li>
+    <li>Two <code>curl -u</code> lines were judged placeholders from context and not traced to their upstream source.</li>
+  </ul>
+  <h3>Largest dependency findings</h3>
+  <div class="tw"><table>
+    <tr><th class="l">Manifest</th><th>Advisories</th></tr>
+    <tr><td class="l">.claude/skills/cookie-sync/package-lock.json</td><td>81</td></tr>
+    <tr><td class="l">.claude/skills/agent-platform-tuning/references/requirements.txt</td><td>80</td></tr>
+    <tr><td class="l">.claude/skills/safe-browser/templates/claude-agent-sdk/package-lock.json</td><td>45</td></tr>
+    <tr><td class="l">.claude/skills/webmcp-gen/pnpm-lock.yaml</td><td>33</td></tr>
+    <tr><td class="l">.claude/skills/mcp-builder/scripts/requirements.txt</td><td>27</td></tr>
+  </table></div>
+  <p>One install gotcha worth knowing: the command on the card's repo, <code>go install github.com/gitleaks/gitleaks/v8@latest</code>, fails because the module still declares <code>github.com/zricethezav/gitleaks/v8</code>. Use that path.</p>
+</section>
+
+<section>
+  <h2>3. Repos</h2>
+  <div class="tw"><table>
+    <tr><th class="l">Repo</th><th class="l">What it is</th><th>Licence</th><th>Status</th></tr>
+    <tr><td class="l">gitleaks/gitleaks</td><td class="l">Secret scanner</td><td>MIT</td><td><span class="st ok">installed, run</span></td></tr>
+    <tr><td class="l">google/osv-scanner</td><td class="l">Dependency scanner</td><td>Apache-2.0</td><td><span class="st ok">installed, run</span></td></tr>
+    <tr><td class="l">trufflesecurity/trufflehog</td><td class="l">Secret scanner that verifies credentials</td><td>AGPL-3.0</td><td><span class="st warn">own repos only</span></td></tr>
+    <tr><td class="l">semgrep, garak, sops, snyk/agent-scan</td><td class="l">Static analysis, LLM probes, encrypted secrets, agent scan</td><td>LGPL / Apache / MPL / Apache</td><td><span class="st ok">documented</span></td></tr>
+    <tr><td class="l">lfnovo/open-notebook, robbietilton/Compositor, androoAGI/starnet, pablostanley/yoinks</td><td class="l">Notebook, Mac editor, agent desktop, video downloader</td><td>MIT</td><td><span class="st ok">verified</span></td></tr>
+    <tr><td class="l">FlowiseAI/Flowise, hexastack/hexabot, dyad-sh/dyad</td><td class="l">Agent builder, chat automation, app builder</td><td>none found / mixed</td><td><span class="st warn">check licence</span></td></tr>
+  </table></div>
+  <p>yoinks is documented only: downloading from most video sites breaks their terms or the owner's copyright unless you own or are licensed the content. Nothing here was cloned.</p>
+</section>
+
+<section>
+  <h2>4. Design templates</h2>
+  <div class="tw"><table>
+    <tr><th class="l">Template</th><th class="l">Style</th></tr>
+    <tr><td class="l"><code>fine-print-skill-card</code></td><td class="l">@ai.easily teal gradient, gold numeral, "The fine print" box</td></tr>
+    <tr><td class="l"><code>role-map-infographic</code></td><td class="l">51ultron cream poster, 21 role cards, 21 : 1 badges</td></tr>
+  </table></div>
+  <p>Both rendered without console errors. The first render of each had overlapping text; I fixed both. The original role poster links its cards to a central figure-eight; the template uses a plain grid.</p>
+</section>
+
+<section>
+  <h2>5. Copy-paste commands and prompts</h2>
+  <h3>Scanners</h3>
+  <div class="prompt"><b>Scan this repo for leaked secrets (values redacted)</b><pre>gitleaks detect --source . --redact --no-banner</pre><button type="button" class="cp">Copy</button></div><div class="prompt"><b>Install gitleaks (the gitleaks/ module path fails)</b><pre>go install github.com/zricethezav/gitleaks/v8@latest</pre><button type="button" class="cp">Copy</button></div><div class="prompt"><b>Scan every lockfile for known vulnerable dependencies</b><pre>osv-scanner scan source -r .</pre><button type="button" class="cp">Copy</button></div><div class="prompt"><b>Run both through Claude Code</b><pre>/scan-agent-work</pre><button type="button" class="cp">Copy</button></div>
+  <h3>The five Claude skills (all installed)</h3>
+  <div class="prompt"><b>Frontend Design</b><pre>Build a landing page for [X] with the frontend-design skill; pick one bold direction and commit.</pre><button type="button" class="cp">Copy</button></div><div class="prompt"><b>Document skills</b><pre>Make a 6-slide deck from this outline as a .pptx.</pre><button type="button" class="cp">Copy</button></div><div class="prompt"><b>Skill Creator</b><pre>Use skill-creator to turn my weekly client report process into a skill.</pre><button type="button" class="cp">Copy</button></div><div class="prompt"><b>Doc Co-authoring</b><pre>Use doc-coauthoring to write [document]. Start by asking what you need.</pre><button type="button" class="cp">Copy</button></div><div class="prompt"><b>ELI5</b><pre>/eli5 how a vector database works</pre><button type="button" class="cp">Copy</button></div>
+</section>
+
+<section>
+  <h2>6. Your next steps</h2>
+  <ul>
+    <li>Run <code>/scan-agent-work</code> before each push, and install the gitleaks pre-commit hook on your own machine.</li>
+    <li>Decide whether to drop or upgrade the vendored skills with the most advisories (<code>cookie-sync</code>, <code>agent-platform-tuning</code>, <code>safe-browser</code>).</li>
+    <li>Run <code>scripts/batch100-install.sh</code> if you want semgrep, garak or the other scanners; use trufflehog only on repos you own.</li>
+    <li>Confirm the Flowise status from its own site before building on it.</li>
+  </ul>
+</section>
+<footer>Sources: 28 JPEGs in df3b0002-iCloud_Photos.zip. Repo facts and licences read 2 October 2026; star counts come from screenshots.</footer>
+</main>
+<script>
+document.querySelectorAll('.cp').forEach(function (b) {
+  b.addEventListener('click', function () {
+    var t = b.parentNode.querySelector('pre');
+    function done() { b.textContent = 'Copied'; setTimeout(function () { b.textContent = 'Copy'; }, 1500); }
+    function fb() { var r = document.createRange(); r.selectNodeContents(t); var s = getSelection(); s.removeAllRanges(); s.addRange(r); b.textContent = 'Selected'; }
+    try { navigator.clipboard.writeText(t.textContent).then(done, fb); } catch (e) { fb(); }
+  });
+});
+</script>

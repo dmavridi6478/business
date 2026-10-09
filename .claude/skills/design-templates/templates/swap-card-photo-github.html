@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<!--
+  Template: swap-card-photo-github
+  Style: dark desk photo under a scrim, a round-corner app icon, tool name, a "replaces ..." line, a white GitHub-style card with the repo path,
+         a one-line description and stat chips, a link line and a handle. Theme: photo-scrim-white
+  Inspired by: the "5 open source apps that replace paid subscriptions" carousel (@dotdevs). Original CSS; no source photo, logo, icon or handle reused.
+  Canvas: 1080 x 1920. Two slides in one file: .slide--cover (title and icon row) and .slide--tool (duplicate per tool).
+  Swap points:
+    --photo                       your own photo (default is a CSS gradient so the file works with no image)
+    .ico                          your own tool icon (placeholder initial)
+    h2 / .rep                     tool name and "replaces ..." line
+    .gh                           repo path, description and three stat chips
+    .link                         repo link line; .handle your own handle (placeholder: @yourhandle)
+-->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Swap Card Photo GitHub</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --photo: linear-gradient(165deg, #5a5a5e 0%, #2e2e31 45%, #121214 100%);
+    --scrim: rgba(8,8,10,.5);
+    --ink: #FFFFFF;
+    --card: #FFFFFF;
+    --card-ink: #1F2328;
+    --muted: #656D76;
+    --font: "Inter", Aptos, "Segoe UI", system-ui, sans-serif;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: #000; display: flex; flex-direction: column; align-items: center; gap: 32px; padding: 32px 0; overflow-x: auto; font-family: var(--font); }
+  .slide { position: relative; width: 1080px; height: 1920px; flex: none; color: var(--ink); overflow: hidden; text-align: center;
+    background: linear-gradient(var(--scrim), var(--scrim)), var(--photo); background-size: cover; background-position: center; padding: 330px 90px 0; }
+  .ico { width: 150px; height: 150px; margin: 0 auto; border-radius: 34px; background: #fff; color: #2F6BFF; display: grid; place-items: center; font-size: 76px; font-weight: 700; }
+  h2 { margin-top: 28px; font-size: 76px; font-weight: 700; letter-spacing: -.02em; }
+  .rep { margin-top: 12px; font-size: 38px; font-weight: 500; color: rgba(255,255,255,.88); }
+  .gh { margin: 60px auto 0; width: 800px; background: var(--card); color: var(--card-ink); border-radius: 16px; padding: 40px 44px; text-align: left; box-shadow: 0 24px 60px rgba(0,0,0,.45); }
+  .gh b { display: block; font-size: 46px; font-weight: 600; line-height: 1.2; }
+  .gh p { margin-top: 14px; font-size: 26px; color: var(--muted); line-height: 1.4; }
+  .chips { margin-top: 26px; display: flex; gap: 14px; flex-wrap: wrap; }
+  .chips span { font-size: 22px; font-weight: 600; padding: 6px 16px; border-radius: 999px; background: #F2F4F7; color: var(--muted); }
+  .link { margin-top: 26px; font-size: 28px; color: rgba(255,255,255,.88); }
+  .handle { position: absolute; right: 54px; bottom: 80px; font-size: 38px; font-weight: 600; }
+  .cover h2 { font-size: 92px; max-width: 880px; margin-left: auto; margin-right: auto; line-height: 1.1; }
+  .row { margin-top: 70px; display: flex; justify-content: center; gap: 28px; }
+  .row .ico { margin: 0; width: 120px; height: 120px; border-radius: 28px; font-size: 60px; }
+</style>
+</head>
+<body>
+<section class="slide cover"><h2>5 open source apps that replace paid subscriptions</h2><div class="row"><div class="ico">A</div><div class="ico">B</div><div class="ico">C</div><div class="ico">D</div><div class="ico">E</div></div><div class="handle">@yourhandle</div></section>
+
+<section class="slide">
+  <div class="ico">A</div><h2>Tool name</h2><p class="rep">replaces a paid tool</p>
+  <div class="gh"><b>owner/repo-name</b><p>One plain line on what the project does and who runs it.</p><div class="chips"><span>★ 0k stars</span><span>0k forks</span><span>Licence</span></div></div>
+  <p class="link">github.com/owner/repo-name</p>
+  <div class="handle">@yourhandle</div>
+</section>
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<!--
+  Template: prompt-card-beige-green
+  Style: warm beige page, a mono header line, a heavy serif all-caps headline, a green instruction bar, a dark "copy this prompt" box
+         with monospaced text and three numbered step tiles. A second slide holds a quote with a green rule and four numbered checks. Theme: beige-green-prompt
+  Inspired by: the micro-app prompt carousel (@earchoe). Original CSS; no source copy beyond neutral placeholders, no handle or mark reused.
+  Canvas: 1080 x 1920. Two slides in one file: .slide--prompt and .slide--checks.
+  Swap points:
+    :root tokens                  colours and fonts
+    .hdr (left) / .hdr (right)    "// PROMPT 01 · SPEC THE MVP" and "04/09"
+    h1                            serif headline, upper case
+    .bar                          the green instruction line
+    .prompt                       prompt text; [BRACKETS] mark what the reader fills in
+    .tiles                        three short reminders
+    .quote / .checks              italic quote and four numbered checks
+-->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Prompt Card Beige Green</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,800;0,900;1,400&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #DAD5C1;          /* sampled */
+    --bar: #71AD79;         /* sampled: green bar (eyeballed brighter on the slide) */
+    --green: #2FA054;       /* eyeballed: label green */
+    --box: #151310;
+    --ink: #151310;
+    --tile: #CEC7B1;        /* sampled */
+    --muted: #7E7A6B;
+    --serif: "Playfair Display", Georgia, serif;
+    --mono: "JetBrains Mono", ui-monospace, Consolas, monospace;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: #333; display: flex; flex-direction: column; align-items: center; gap: 32px; padding: 32px 0; overflow-x: auto; }
+  .slide { position: relative; width: 1080px; height: 1920px; flex: none; background: var(--bg); color: var(--ink); padding: 130px 96px 0; overflow: hidden; }
+  .hdr { display: flex; justify-content: space-between; font: 500 24px var(--mono); letter-spacing: .12em; color: var(--muted); text-transform: uppercase; }
+  .rule { margin-top: 90px; width: 90px; height: 4px; background: var(--green); }
+  h1 { margin-top: 36px; font: 900 78px/1.0 var(--serif); letter-spacing: -.02em; text-transform: uppercase; }
+  .bar { margin-top: 38px; background: var(--green); color: #fff; font: 700 21px var(--mono); letter-spacing: .1em; text-transform: uppercase; padding: 18px 22px; border-radius: 8px; }
+  .prompt { margin-top: 20px; background: var(--box); border-radius: 18px; padding: 38px 40px 44px; }
+  .prompt small { display: block; font: 700 20px var(--mono); letter-spacing: .14em; color: var(--green); text-transform: uppercase; margin-bottom: 22px; }
+  .prompt p { font: 400 33px/1.58 var(--mono); color: #CFCABB; white-space: pre-wrap; }
+  .tiles { margin-top: 20px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+  .tiles div { background: var(--tile); border-radius: 12px; padding: 22px 22px 28px; font: 400 25px/1.4 var(--mono); }
+  .tiles b { display: block; color: var(--green); font-weight: 500; margin-bottom: 6px; }
+  .quote { margin-top: 250px; border-left: 8px solid var(--green); padding-left: 38px; font: italic 400 50px/1.35 var(--serif); }
+  .checks { margin-top: 28px; display: flex; flex-direction: column; gap: 16px; }
+  .checks div { background: var(--tile); border-radius: 12px; padding: 24px 28px; font: 400 29px/1.5 var(--mono); }
+  .checks b { font-weight: 700; } .checks i { font-style: normal; color: var(--green); margin-right: 14px; font-size: 22px; }
+  .handle { position: absolute; right: 70px; bottom: 140px; font: 500 38px var(--mono); color: #fff; opacity: .9; }
+</style>
+</head>
+<body>
+
+<section class="slide">
+  <div class="hdr"><span>// Prompt 01 · Spec the MVP</span><span>04/09</span></div>
+  <div class="rule"></div>
+  <h1>Start with the MVP spec prompt</h1>
+  <div class="bar">Open your AI → copy → replace [brackets] → send</div>
+  <div class="prompt"><small>// Copy this prompt</small><p>I want to build a small web app for [USER TYPE].
+
+Problem: [PROBLEM].
+Input: [INPUT].
+Output: [OUTPUT].
+
+Design the smallest useful version. List the screens, user flow, data needed, validation rules, error states and success state.</p></div>
+  <div class="tiles"><div><b>01</b>Replace every [BRACKET]</div><div><b>02</b>Attach the source if needed</div><div><b>03</b>Read and verify before use</div></div>
+  <div class="handle">@yourhandle</div>
+</section>
+
+<section class="slide">
+  <div class="hdr"><span>// Test the user path</span><span>06/09</span></div>
+  <div class="quote">"The first answer is a draft. The second pass is where the useful work begins."</div>
+  <div class="checks">
+    <div><i>01</i><b>Ask what it assumed.</b> What did the model have to guess?</div>
+    <div><i>02</i><b>Ask what is missing.</b> What would materially improve the result?</div>
+    <div><i>03</i><b>Ask it to attack its own answer.</b> Find weak claims and edge cases.</div>
+    <div><i>04</i><b>Verify what matters.</b> Facts, figures, policies and prices.</div>
+  </div>
+  <div class="handle">@yourhandle</div>
+</section>
+
+</body>
+</html>

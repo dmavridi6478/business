@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GitHub Daily Briefing Card</title>
+<style>
+  /* =====================================================
+     TEMPLATE F: GitHub Daily Briefing
+     Based on @githubnow "GitHub Trending" carousel style
+     Size: 1080×1920. Slide types: intro, repo (×N), outro
+     Customise: date, repo owner/name, tagline, description, 3 feature tiles, star delta
+     ===================================================== */
+  :root {
+    --bg-top: #101a33;
+    --bg-bottom: #05070d;
+    --surface: #0d111a;
+    --border: #232a38;
+    --green: #3fb950;
+    --green-text: #46c15a;
+    --gold: #d9a23a;
+    --text: #ffffff;
+    --text-dim: #d4d9e2;
+    --muted: #8b93a3;
+    --mono: 'SFMono-Regular', 'JetBrains Mono', Consolas, monospace;
+    --sans: 'Helvetica Neue', Arial, sans-serif;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: #000; display: flex; flex-direction: column; align-items: center; gap: 40px; padding: 40px 0; font-family: var(--sans); }
+  .card { width: 1080px; height: 1920px; padding: 110px 76px; position: relative; color: var(--text); background: radial-gradient(ellipse at 50% 0%, var(--bg-top) 0%, var(--bg-bottom) 55%); overflow: hidden; }
+  .count { position: absolute; top: 120px; left: 76px; font-size: 26px; font-weight: 700; color: var(--muted); letter-spacing: 2px; }
+  .badge { position: absolute; top: 100px; right: 76px; width: 96px; height: 96px; border-radius: 50%; border: 3px solid var(--green); display: grid; place-items: center; font-size: 20px; font-weight: 700; color: var(--green); text-align: center; }
+  .kicker { font-size: 28px; font-weight: 700; letter-spacing: 7px; text-transform: uppercase; color: var(--muted); }
+  .kicker.green { color: var(--green-text); }
+  .bar { width: 92px; height: 8px; border-radius: 4px; background: var(--green); margin: 26px 0 44px; }
+  h1 { font-size: 92px; line-height: 1.05; font-weight: 800; letter-spacing: -1px; }
+  h1 .g { color: var(--green-text); }
+  .lede { font-size: 40px; line-height: 1.5; color: var(--text-dim); margin-top: 44px; }
+  .cta { color: var(--green-text); font-size: 38px; font-weight: 700; line-height: 1.5; margin-top: 50px; }
+  .pills { display: flex; gap: 18px; margin-bottom: 26px; flex-wrap: wrap; }
+  .pill { font-size: 27px; font-weight: 700; padding: 18px 30px; border-radius: 40px; }
+  .pill.solid { background: var(--green); color: #05230d; }
+  .pill.ghost { border: 2px solid var(--gold); color: var(--gold); }
+  .repo { font-family: var(--mono); font-size: 74px; font-weight: 700; line-height: 1.1; word-break: break-all; }
+  .repo .owner { color: var(--green-text); }
+  .tagline { font-size: 50px; font-weight: 800; margin: 26px 0 22px; line-height: 1.2; }
+  .desc { font-size: 34px; line-height: 1.5; color: var(--text-dim); }
+  .flow { text-align: center; color: var(--muted); font-size: 34px; margin: 34px 0; font-weight: 600; }
+  .tiles { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+  .tile { background: var(--surface); border: 1px solid var(--border); border-radius: 22px; padding: 30px 26px; min-height: 240px; }
+  .tile b { display: block; font-size: 34px; margin-bottom: 14px; line-height: 1.2; }
+  .tile span { font-size: 27px; color: var(--muted); line-height: 1.4; }
+  .foot { position: absolute; left: 76px; right: 76px; bottom: 150px; border-top: 1px solid var(--border); padding-top: 36px; display: flex; gap: 26px; align-items: center; }
+  .avatar { width: 84px; height: 84px; border-radius: 50%; background: #222a3a; border: 2px solid var(--border); }
+  .foot b { display: block; font-size: 36px; }
+  .foot span { font-size: 30px; color: var(--muted); }
+  .mono-shot { border-radius: 24px; background: #f2efe9; height: 300px; display: grid; place-items: center; color: #777; font-size: 28px; }
+</style>
+</head>
+<body>
+
+<!-- SLIDE 1: intro -->
+<section class="card">
+  <div class="badge">GitHub<br>NOW</div>
+  <div style="position:absolute;left:76px;right:76px;top:620px">
+    <div class="kicker">GitHub Trending</div>
+    <div class="kicker green" style="margin-top:22px">Open source · [DD MONTH YYYY]</div>
+    <div class="bar"></div>
+    <h1>Tools you’ll wish you <span class="g">knew sooner</span></h1>
+    <p class="lede">[Repo A], [Repo B], [Repo C] — 3 repos gaining mass today.</p>
+  </div>
+</section>
+
+<!-- SLIDE 2: repo -->
+<section class="card">
+  <div class="count">1 / 3</div><div class="badge">GitHub<br>NOW</div>
+  <div style="position:absolute;left:76px;right:76px;top:440px">
+    <div class="pills"><span class="pill solid">[Category]</span><span class="pill ghost">+[N] stars this month</span></div>
+    <div class="repo"><span class="owner">[owner]/</span>[repo-name]</div>
+    <div class="tagline">[One-line promise.]</div>
+    <p class="desc">[2–4 sentence description in plain language.]</p>
+    <div class="mono-shot" style="margin-top:40px">[screenshot / UI placeholder]</div>
+    <div class="flow">[input] → [process] → [output]</div>
+    <div class="tiles">
+      <div class="tile"><b>[Feature 1]</b><span>[Short line]</span></div>
+      <div class="tile"><b>[Feature 2]</b><span>[Short line]</span></div>
+      <div class="tile"><b>[Feature 3]</b><span>[Short line]</span></div>
+    </div>
+  </div>
+  <div class="foot"><div class="avatar"></div><div><b>[owner]</b><span>[Org / author descriptor]</span></div></div>
+</section>
+
+<!-- SLIDE 3: outro -->
+<section class="card">
+  <div style="position:absolute;left:76px;right:76px;top:560px">
+    <div class="kicker">Daily briefing</div><div class="bar"></div>
+    <h1>Tomorrow’s drop lands at the <span class="g">same time</span></h1>
+    <p class="lede">Star the ones that fit your stack. Fork the one you would have built yourself.</p>
+    <p class="cta">→ Start with [repo] — the README gets you running in ten minutes.</p>
+  </div>
+</section>
+
+</body>
+</html>

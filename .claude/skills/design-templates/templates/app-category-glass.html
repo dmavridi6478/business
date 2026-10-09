@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<!--
+  Template: app-category-glass
+  Style: @jeanbbttyct "Which AI apps do I actually need in 2026?" - a dark blurred full-bleed photo, a big white "N. Category" title, a frosted-glass rounded panel holding
+         four app tiles (3 across, 1 below), dashed arrows to short descriptions above and below.  Here the arrows are replaced by captions under each tile so it stays legible.
+  Inspired by: Batch 101 iCloud photos (10 categories: text to speech, writing, marketing, image generators, coding, presentation, video, productivity, research, design).
+  Swap points: BG (a CSS gradient or a data: URI photo), CATS array [title, [[tool, colour, description],...]], HANDLE.   1080 x 1350 shown at 36 %.
+  Note: app icons are plain coloured tiles with an initial; use the vendors' own logos only where their brand rules allow.
+-->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>App Category Glass</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;800&display=swap" rel="stylesheet">
+<style>
+  :root { --s: 0.36; --ink: #ffffff; --glass: rgba(255,255,255,.14); --edge: rgba(255,255,255,.28); }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: #000; padding: 24px; display: flex; flex-wrap: wrap; gap: 24px; font-family: 'Inter', Arial, sans-serif; }
+  .frame { width: calc(1080px * var(--s)); height: calc(1350px * var(--s)); }
+  .slide { width: 1080px; height: 1350px; transform: scale(var(--s)); transform-origin: top left; position: relative; overflow: hidden; color: var(--ink); padding: 120px 70px; }
+  h1 { text-align: center; font-size: 100px; font-weight: 800; letter-spacing: -.05em; text-shadow: 0 6px 30px rgba(0,0,0,.45); }
+  .panel { margin-top: 90px; border-radius: 60px; background: var(--glass); border: 2px solid var(--edge); backdrop-filter: blur(22px); -webkit-backdrop-filter: blur(22px); padding: 60px 40px 50px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 50px 24px; box-shadow: 0 30px 80px rgba(0,0,0,.35); }
+  .app { text-align: center; }
+  .tile { width: 190px; height: 190px; margin: 0 auto; border-radius: 46px; display: grid; place-items: center; font-size: 96px; font-weight: 800; color: #fff; box-shadow: 0 14px 40px rgba(0,0,0,.35); }
+  .app b { display: block; margin-top: 22px; font-size: 38px; font-weight: 800; letter-spacing: -.02em; }
+  .app span { display: block; margin-top: 8px; font-size: 27px; line-height: 1.25; font-weight: 500; opacity: .9; text-shadow: 0 2px 12px rgba(0,0,0,.5); }
+  .by { position: absolute; right: 50px; bottom: 46px; font-size: 34px; font-weight: 600; opacity: .85; }
+</style>
+</head>
+<body>
+<div id="out" style="display:contents"></div>
+<script>
+/* ── SWAP THESE ── */
+const HANDLE = "@yourhandle";
+const BGS = ["linear-gradient(160deg,#0e1a24,#2b3a47 55%,#0a0f14)", "linear-gradient(160deg,#6d7f96,#b9c4d3 50%,#2a3340)", "linear-gradient(160deg,#1d2a3a,#6a5a7a 55%,#171520)"];
+const CATS = [
+  ["1. Text To Speech", [["Speechify", "#2d4bff", "Lifelike AI voices from written text."], ["NaturalReader", "#1a8fd8", "Reads documents and web pages aloud."], ["Animaker", "#8a4bd8", "Adds voiceovers to video from scripts."], ["ElevenLabs", "#222", "Expressive AI voices."]]],
+  ["9. Research", [["ChatGPT", "#10a37f", "Answers and summarises research."], ["Gemini", "#4a7bf0", "Gathers information from many sources."], ["ChatPDF", "#6b3fd4", "Summarises PDF documents."], ["Perplexity", "#1b1f24", "Sourced answers in real time."]]],
+  ["3. Marketing", [["Buffer", "#2d6a4f", "Schedules social posts."], ["Pixelcut", "#d63b5a", "Polished product images."], ["Gemini", "#4a7bf0", "Marketing copy and ideas."], ["Captions", "#e07a5f", "Captioned social video."]]]
+];
+const out = document.getElementById("out");
+CATS.forEach(([title, apps], i) => {
+  const f = document.createElement("div"); f.className = "frame";
+  f.innerHTML = `<div class="slide" style="background:${BGS[i % BGS.length]}"><h1>${title}</h1><div class="panel">${apps.map(([n, c, d]) => `<div class="app"><div class="tile" style="background:${c}">${n[0]}</div><b>${n}</b><span>${d}</span></div>`).join("")}</div><div class="by">${HANDLE}</div></div>`;
+  out.append(f);
+});
+</script>
+</body>
+</html>

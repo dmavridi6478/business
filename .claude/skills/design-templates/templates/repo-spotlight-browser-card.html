@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<!--
+  Template: repo-spotlight-browser-card
+  Style: near-black carousel with a fading navy square grid, an app tile + star count, a big white title,
+         a light browser-window mockup with a URL bar, and a four-line grey caption. Theme: navy-repo-spotlight
+  Inspired by: the "N GitHub repos so good they shouldn't be free" carousels (@replace.so). Original CSS; no source assets or handle reused.
+  Canvas: 1080 x 1350 (3:4). Two slides in this file: .slide--cover and .slide--repo (duplicate .slide--repo per repo).
+  Swap points:
+    :root tokens                      colours and fonts
+    .cover-title / .cover-sub         headline and one-line subtitle
+    .tile (initial) + .stars b        app tile letter or <img>, star count (quote the real figure, with a date)
+    .repo-name                        the repo or product name
+    .url                              text shown in the browser bar
+    .shot                             put an <img src="..."> inside to show a real screenshot
+    .caption                          max 4 short lines
+    .handle                           your own handle (placeholder: @yourhandle)
+-->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Repo Spotlight Browser Card</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;800;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #121214;            /* sampled from the screenshots: near-black, warm */
+    --grid: rgba(48, 76, 140, .40); /* navy squares; hue read from the screenshots, strength eyeballed */
+    --title: #F3F1F2;         /* sampled */
+    --caption: #A9ADBA;       /* eyeballed, not sampled */
+    --bar: #F3F2F4;           /* sampled: browser top bar */
+    --page: #FEFEFE;          /* sampled: browser body */
+    --url: #6B6F7B;
+    --star: #F5B72D;
+    --font: "Inter", Aptos, "Segoe UI", system-ui, sans-serif;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: #000; font-family: var(--font); display: flex; flex-direction: column; align-items: center; gap: 32px; padding: 32px 0; overflow-x: auto; }
+
+  .slide { position: relative; width: 1080px; height: 1350px; flex: none; background: var(--bg); color: var(--title); overflow: hidden; text-align: center; }
+  .grid { position: absolute; inset: auto 0 0 0; height: 62%; background-color: var(--grid);
+    background-image: repeating-linear-gradient(90deg, transparent 0 44px, var(--bg) 44px 58px), repeating-linear-gradient(0deg, transparent 0 44px, var(--bg) 44px 58px);
+    -webkit-mask-image: linear-gradient(to top, #000 0%, transparent 85%); mask-image: linear-gradient(to top, #000 0%, transparent 85%); }
+  .content { position: relative; z-index: 1; height: 100%; display: flex; flex-direction: column; align-items: center; }
+
+  /* cover */
+  .cover-title { margin-top: 200px; padding: 0 70px; font-size: 104px; line-height: .98; font-weight: 800; letter-spacing: -.045em; text-wrap: balance; }
+  .cover-sub { margin-top: 28px; font-size: 26px; color: var(--caption); max-width: 640px; line-height: 1.35; }
+  .cover-tiles { margin-top: 90px; display: flex; gap: 26px; }
+  .cover-tiles i { width: 150px; height: 150px; border-radius: 34px; background: linear-gradient(145deg, rgba(255,255,255,.22), rgba(255,255,255,.04)); border: 1px solid rgba(255,255,255,.25); box-shadow: 0 20px 50px rgba(0,0,0,.5), inset 0 1px 0 rgba(255,255,255,.35); }
+  .cover-tiles i:nth-child(odd) { transform: rotate(-7deg) translateY(14px); }
+  .cover-tiles i:nth-child(even) { transform: rotate(6deg); }
+
+  /* repo slide */
+  .head { margin-top: 160px; display: flex; align-items: center; gap: 20px; }
+  .tile { width: 92px; height: 92px; border-radius: 22px; background: #fff; color: #121214; display: grid; place-items: center; font-weight: 900; font-size: 44px; overflow: hidden; }
+  .tile img { width: 100%; height: 100%; object-fit: cover; }
+  .stars { display: flex; align-items: center; gap: 10px; font-size: 40px; font-weight: 500; }
+  .stars svg { width: 38px; height: 38px; fill: var(--star); }
+  .repo-name { margin-top: 36px; font-size: 98px; line-height: 1; font-weight: 800; letter-spacing: -.045em; }
+
+  .browser { margin-top: 56px; width: 900px; height: 560px; background: var(--page); border-radius: 28px 28px 0 0; overflow: hidden; box-shadow: 0 30px 80px rgba(0,0,0,.55); display: flex; flex-direction: column; }
+  .browser .top { flex: none; height: 56px; background: var(--bar); display: flex; align-items: center; padding: 0 22px; position: relative; }
+  .dots { display: flex; gap: 10px; }
+  .dots i { width: 16px; height: 16px; border-radius: 50%; }
+  .dots i:nth-child(1) { background: #FF5F57; } .dots i:nth-child(2) { background: #FEBC2E; } .dots i:nth-child(3) { background: #28C840; }
+  .url { position: absolute; left: 0; right: 0; text-align: center; font-size: 20px; color: var(--url); pointer-events: none; }
+  .shot { flex: 1; min-height: 0; background: linear-gradient(180deg, #fff, #eef0f4); display: grid; place-items: center; color: #9aa0ad; font-size: 22px; }
+  .shot img { width: 100%; height: 100%; object-fit: cover; object-position: top; }
+
+  .caption { margin-top: 52px; max-width: 760px; font-size: 38px; line-height: 1.32; color: var(--caption); font-weight: 400; text-wrap: balance; }
+  .foot { position: absolute; left: 0; right: 0; bottom: 44px; font-size: 26px; color: var(--title); opacity: .9; display: flex; justify-content: center; gap: 36px; }
+  .handle { opacity: .7; }
+</style>
+</head>
+<body>
+
+<section class="slide slide--cover"><div class="grid"></div><div class="content">
+  <h1 class="cover-title">6 GitHub repos so good they shouldn't be free</h1>
+  <p class="cover-sub">A hand-picked list of free open-source repositories worth trying.</p>
+  <div class="cover-tiles"><i></i><i></i><i></i><i></i><i></i></div>
+  <div class="foot"><span>Swipe →</span><span class="handle">@yourhandle</span></div>
+</div></section>
+
+<section class="slide slide--repo"><div class="grid"></div><div class="content">
+  <div class="head">
+    <div class="tile">N</div>
+    <div class="stars"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg><b>48,288</b></div>
+  </div>
+  <h2 class="repo-name">Nanobot</h2>
+  <div class="browser">
+    <div class="top"><div class="dots"><i></i><i></i><i></i></div><div class="url">github.com/owner/repo</div></div>
+    <div class="shot"><!-- <img src="screenshot.png" alt=""> -->screenshot goes here</div>
+  </div>
+  <p class="caption">Self-hosted personal AI agent platform with a web UI, chat channels, memory and MCP integrations.</p>
+  <div class="foot"><span>Swipe →</span><span class="handle">@yourhandle</span></div>
+</div></section>
+
+</body>
+</html>

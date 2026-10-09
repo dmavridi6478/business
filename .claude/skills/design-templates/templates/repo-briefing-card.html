@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<!--
+  Template: repo-briefing-card
+  Style: @githubnow "GitHub Trending daily briefing" — 3-slide 9:16 story set (cover / repo / CTA)
+  Inspired by: Batch 98 iCloud photos (NVIDIA/OpenShell, rakyll/hey, longbridge/gpui-kit, t8y2/dbx,
+               VectifyAI/PageIndex, firebase/firebase-ios-sdk cards)
+  Format: each slide is 1080 x 1920. Preview scale is --s (0.3). For PNG export set --s: 1 and
+          screenshot one .slide at a time.
+  Swap points (all in the REPO array at the bottom, plus :root tokens):
+    --green   primary accent        --amber   "stars" outline pill
+    REPO.tag, REPO.stars, REPO.owner, REPO.name, REPO.tagline, REPO.body,
+    REPO.flow[4]  (index 1 = highlighted step), REPO.cards[3], REPO.org, REPO.orgLine
+  Rule: stars/dates on a card are a snapshot — re-verify before publishing.
+-->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Repo Briefing Card</title>
+<style>
+  :root {
+    --s: 0.3;                       /* preview scale; 1 = export size */
+    --bg-top: #14213f;
+    --bg-bot: #05070d;
+    --card: #0b0f19;
+    --card-line: #1e2635;
+    --green: #3fb950;
+    --green-deep: #0f2a1a;
+    --amber: #d9a93f;
+    --text: #f5f7fa;
+    --text-body: #dfe4ec;
+    --text-dim: #8a93a3;
+    --font: "Inter", "Helvetica Neue", Arial, sans-serif;
+    --mono: "JetBrains Mono", "SF Mono", Consolas, monospace;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: #111; font-family: var(--font); padding: 24px; display: flex; flex-wrap: wrap; gap: 24px; }
+  .frame { width: calc(1080px * var(--s)); height: calc(1920px * var(--s)); }
+  .slide {
+    width: 1080px; height: 1920px; transform: scale(var(--s)); transform-origin: top left;
+    position: relative; overflow: hidden; color: var(--text);
+    background:
+      radial-gradient(520px 520px at 50% 6%, rgba(60, 90, 160, .22), transparent 70%),
+      linear-gradient(180deg, var(--bg-top) 0%, var(--bg-bot) 62%);
+    padding: 0 76px;
+  }
+  .count { position: absolute; top: 118px; left: 76px; font-size: 26px; font-weight: 700; letter-spacing: .12em; color: var(--text-dim); }
+  .badge { position: absolute; top: 104px; right: 76px; width: 54px; height: 54px; border-radius: 50%; border: 2px solid var(--green); background: #07110c; display: grid; place-items: center; font-size: 11px; font-weight: 800; color: var(--green); text-align: center; line-height: 1; }
+  .body { position: absolute; left: 76px; right: 76px; top: 440px; }
+  .pills { display: flex; gap: 16px; margin-bottom: 30px; flex-wrap: wrap; }
+  .pill { padding: 14px 28px; border-radius: 999px; font-size: 27px; font-weight: 700; }
+  .pill.fill { background: var(--green); color: #07140b; }
+  .pill.line { border: 2px solid var(--amber); color: var(--amber); }
+  .repo { font-family: var(--mono); font-size: 70px; font-weight: 800; line-height: 1.12; margin-bottom: 26px; word-break: break-all; }
+  .repo .o { color: var(--green); }
+  .tagline { font-size: 46px; font-weight: 800; line-height: 1.15; margin-bottom: 24px; }
+  .desc { font-size: 33px; line-height: 1.45; color: var(--text-body); margin-bottom: 44px; }
+  .flow { border: 2px solid var(--card-line); background: var(--card); border-radius: 36px; padding: 36px 28px; display: flex; align-items: center; gap: 14px; }
+  .step { flex: 1; text-align: center; padding: 26px 12px; border: 2px solid #232c3d; background: #0f1522; border-radius: 22px; font-size: 29px; font-weight: 700; line-height: 1.15; }
+  .step.hi { border-color: var(--green); background: var(--green-deep); color: var(--green); }
+  .arrow { color: var(--green); font-size: 34px; }
+  .caption { text-align: center; color: var(--text-dim); font-size: 29px; font-weight: 700; margin: 26px 0 42px; }
+  .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .fc { border: 2px solid var(--card-line); background: var(--card); border-radius: 24px; padding: 30px 26px; min-height: 200px; }
+  .fc h4 { font-size: 31px; font-weight: 800; margin-bottom: 12px; line-height: 1.15; }
+  .fc p { font-size: 26px; color: var(--text-dim); line-height: 1.35; }
+  .foot { position: absolute; left: 76px; right: 76px; bottom: 100px; border-top: 2px solid var(--card-line); padding-top: 34px; display: flex; align-items: center; gap: 24px; }
+  .av { width: 66px; height: 66px; border-radius: 50%; background: linear-gradient(135deg, #76b900, #1a2a05); border: 2px solid #2a3344; }
+  .foot b { display: block; font-size: 34px; }
+  .foot span { font-size: 29px; color: var(--text-dim); }
+  /* cover + CTA */
+  .eyebrow { font-size: 29px; font-weight: 800; letter-spacing: .16em; color: var(--text-dim); display: flex; align-items: center; gap: 22px; margin-bottom: 26px; }
+  .eyebrow i { width: 70px; height: 70px; border-radius: 50%; border: 3px solid var(--green); background: #07110c; }
+  .date { color: var(--green); font-size: 29px; font-weight: 800; letter-spacing: .14em; margin-bottom: 22px; }
+  .bar { width: 92px; height: 8px; border-radius: 4px; background: var(--green); margin-bottom: 46px; }
+  .h1 { font-size: 104px; font-weight: 800; line-height: 1.04; letter-spacing: -.01em; margin-bottom: 46px; }
+  .h1 em { font-style: normal; color: var(--green); }
+  .lede { font-size: 40px; line-height: 1.4; color: var(--text-body); margin-bottom: 52px; }
+  .dots { display: flex; margin-bottom: 36px; }
+  .dots i { width: 78px; height: 78px; border-radius: 50%; border: 3px solid #1a2230; margin-right: -14px; }
+  .cta { color: var(--green); font-size: 38px; font-weight: 800; line-height: 1.35; margin-bottom: 70px; }
+  .handle { display: flex; align-items: center; gap: 22px; color: var(--green); font-size: 46px; font-weight: 800; margin-bottom: 28px; }
+  .handle .av { width: 72px; height: 72px; }
+  .sub { color: var(--text-dim); font-size: 30px; line-height: 1.6; }
+  .meta { color: var(--text-dim); font-size: 29px; font-weight: 700; }
+</style>
+</head>
+<body>
+<div id="out" style="display:contents"></div>
+<script>
+/* ── SWAP THESE ── */
+const SERIES = { name: "GITHUB TRENDING", kicker: "OPEN SOURCE", date: "30 SEPTEMBER 2026", handle: "@yourhandle" };
+const COVER = {
+  head: 'Three tools reshaping <em>modern development</em>',
+  lede: 'Firebase Apple SDK, Cross-Platform DB Client, Rust GUI Component Framework — 3 repos gaining mass today.'
+};
+const REPO = {
+  n: "3 / 3", tag: "Agent Sandbox Engine", stars: "+978 stars today",
+  owner: "NVIDIA", name: "OpenShell",
+  tagline: "Kernel enforcement with formal verification.",
+  body: "OpenShell sandboxes autonomous AI agents with kernel-level policy enforcement. Formal verification reviews policy changes before deployment, flagging risky new access.",
+  flow: ["Policy Review", "Kernel Sandbox", "Agent Execution"], hi: 1,
+  caption: "Policy review → kernel enforcement → sandboxed agents",
+  cards: [["Kernel Isolation", "File and syscall policies enforced"], ["Policy Review", "Formal verification before changes"], ["Secure Credentials", "Injected only to approved endpoints"]],
+  org: "NVIDIA", orgLine: "Autonomous AI agent infrastructure"
+};
+const CTA = {
+  head: "Tomorrow's drop lands at the <em>same time</em>",
+  lede: "Star the ones that fit your stack. Fork the one you would have built yourself.",
+  cta: "→ Start with <repo> — the README gets you running in ten minutes.",
+  bio: ["I track what developers are actually building.", "No recap threads. No hype lists.", "Just the repos worth knowing about — and why."]
+};
+
+const $ = (h) => { const d = document.createElement("div"); d.className = "frame"; d.innerHTML = `<div class="slide">${h}</div>`; return d; };
+const out = document.getElementById("out");
+out.append(
+  $(`<div class="body" style="top:520px">
+      <div class="eyebrow"><i></i>${SERIES.name}</div>
+      <div class="date">${SERIES.kicker} · ${SERIES.date}</div><div class="bar"></div>
+      <div class="h1">${COVER.head}</div><div class="lede">${COVER.lede}</div>
+      <div class="dots"><i style="background:#2a1608"></i><i style="background:#1d1d24"></i><i style="background:#0c0c10"></i></div>
+      <div class="meta">3 repos trending now · daily briefing</div></div>`),
+  $(`<div class="count">${REPO.n}</div><div class="badge">GIT<br>HUB</div>
+     <div class="body"><div class="pills"><span class="pill fill">${REPO.tag}</span><span class="pill line">${REPO.stars}</span></div>
+      <div class="repo"><span class="o">${REPO.owner}/</span>${REPO.name}</div>
+      <div class="tagline">${REPO.tagline}</div><div class="desc">${REPO.body}</div>
+      <div class="flow">${REPO.flow.map((f, i) => `<div class="step ${i === REPO.hi ? "hi" : ""}">${f}</div>`).join('<span class="arrow">→</span>')}</div>
+      <div class="caption">${REPO.caption}</div>
+      <div class="cards">${REPO.cards.map(c => `<div class="fc"><h4>${c[0]}</h4><p>${c[1]}</p></div>`).join("")}</div></div>
+     <div class="foot"><div class="av"></div><div><b>${REPO.org}</b><span>${REPO.orgLine}</span></div></div>`),
+  $(`<div class="body" style="top:560px"><div class="eyebrow" style="letter-spacing:.18em">DAILY BRIEFING</div><div class="bar"></div>
+      <div class="h1" style="font-size:88px">${CTA.head}</div><div class="lede">${CTA.lede}</div>
+      <div class="cta">${CTA.cta}</div>
+      <div class="handle"><div class="av"></div>${SERIES.handle}</div>
+      <div class="sub">${CTA.bio.join("<br>")}</div></div>`)
+);
+</script>
+</body>
+</html>

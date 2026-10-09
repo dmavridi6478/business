@@ -1,0 +1,182 @@
+<title>Batch 105 Intake Report</title>
+<style>
+  /* Layout: single-column formal report, 880px measure; tables scroll inside their own wrappers.
+     Palette: ink-blue neutrals, one deep teal accent, semantic green/amber/red for status only.
+     Type: Aptos (the owner's house font) with system fallbacks; title 32pt, headings 14pt, body 11pt. */
+  :root {
+    --bg: #f6f7f9; --surface: #ffffff; --fg: #1b2330; --muted: #5a6577; --line: #d9dee6;
+    --accent: #0f5d6b; --accent-soft: #e2f0f2;
+    --ok: #17703a; --ok-bg: #e3f3e8; --warn: #8a5a00; --warn-bg: #fbefd3; --bad: #a11d2a; --bad-bg: #fbe3e5;
+    --code-bg: #eef1f5;
+    --font: Aptos, "Segoe UI Variable Text", "Segoe UI", system-ui, -apple-system, Roboto, sans-serif;
+    --mono: ui-monospace, "SF Mono", Consolas, monospace;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #11161e; --surface: #181f2a; --fg: #e6eaf0; --muted: #9aa5b6; --line: #2c3646;
+      --accent: #6cc3d1; --accent-soft: #17323a;
+      --ok: #6fd18f; --ok-bg: #173824; --warn: #f0c261; --warn-bg: #3a2e12; --bad: #ff8d98; --bad-bg: #3d1a1f;
+      --code-bg: #0e131a; color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #11161e; --surface: #181f2a; --fg: #e6eaf0; --muted: #9aa5b6; --line: #2c3646;
+    --accent: #6cc3d1; --accent-soft: #17323a;
+    --ok: #6fd18f; --ok-bg: #173824; --warn: #f0c261; --warn-bg: #3a2e12; --bad: #ff8d98; --bad-bg: #3d1a1f;
+    --code-bg: #0e131a; color-scheme: dark;
+  }
+  * { box-sizing: border-box; }
+  body { background: var(--bg); color: var(--fg); font-family: var(--font); font-size: 11pt; line-height: 1.55; padding-inline: 16px; padding-block: 28px 64px; }
+  main { max-width: 880px; margin-inline: auto; display: flex; flex-direction: column; gap: 28px; }
+  header { display: flex; flex-direction: column; gap: 8px; border-bottom: 2px solid var(--accent); padding-bottom: 18px; }
+  .eyebrow { font-size: 9pt; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
+  h1 { font-size: 32pt; line-height: 1.1; margin: 0; font-weight: 700; text-wrap: balance; }
+  h2 { font-size: 14pt; margin: 0 0 10px; font-weight: 700; color: var(--accent); text-wrap: balance; }
+  p { margin: 0 0 10px; max-width: 75ch; }
+  section { background: var(--surface); border: 1px solid var(--line); border-radius: 6px; padding: 20px 22px; min-width: 0; }
+  .lede { font-size: 11pt; color: var(--muted); max-width: 70ch; margin: 0; }
+  .truth { border-left: 4px solid var(--bad); background: var(--bad-bg); padding: 12px 16px; border-radius: 0 6px 6px 0; }
+  .truth p:last-child { margin-bottom: 0; }
+  .tw { overflow-x: auto; margin-block: 8px 4px; border: 1px solid var(--line); border-radius: 4px; }
+  table { border-collapse: collapse; width: 100%; min-width: 720px; font-size: 10pt; }
+  th, td { padding: 8px 10px; border-bottom: 1px solid var(--line); text-align: center; vertical-align: top; }
+  th { background: var(--accent-soft); color: var(--fg); font-weight: 700; font-size: 9.5pt; }
+  tr:last-child td { border-bottom: 0; }
+  td.l, th.l { text-align: center; } /* house rule: table content aligned top and centre */
+  .st { display: inline-block; padding: 1px 8px; border-radius: 10px; font-size: 9pt; font-weight: 700; white-space: nowrap; }
+  .st.ok { background: var(--ok-bg); color: var(--ok); } .st.warn { background: var(--warn-bg); color: var(--warn); } .st.bad { background: var(--bad-bg); color: var(--bad); }
+  .sw { display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 10px; margin-block: 8px; }
+  .sw div { border: 1px solid var(--line); border-radius: 4px; overflow: hidden; font-size: 9pt; text-align: center; }
+  .sw i { display: block; height: 44px; }
+  .sw span { display: block; padding: 4px 6px; font-family: var(--mono); }
+  .prompt { position: relative; margin-block: 10px; }
+  .prompt pre { margin: 0; white-space: pre-wrap; background: var(--code-bg); border: 1px solid var(--line); border-radius: 4px; padding: 12px 84px 12px 12px; font-family: var(--mono); font-size: 9.5pt; line-height: 1.5; }
+  .prompt b { display: block; font-family: var(--font); font-size: 10pt; margin-bottom: 4px; }
+  .prompt button { position: absolute; top: 30px; right: 8px; font: inherit; font-size: 9pt; padding: 4px 10px; border-radius: 4px; border: 1px solid var(--accent); background: var(--surface); color: var(--accent); cursor: pointer; }
+  .prompt button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  ul { margin: 0 0 10px; padding-left: 20px; } li { margin-bottom: 4px; max-width: 75ch; }
+  code { font-family: var(--mono); font-size: 9.5pt; background: var(--code-bg); padding: 1px 4px; border-radius: 3px; }
+  footer { color: var(--muted); font-size: 9.5pt; }
+</style><main>
+<header><span class="eyebrow">Intake report · iCloud Photos, 1 archive (32 images, 2 videos) and 2 attached images · 4 October 2026</span>
+<h1>Batch 105 Intake Report</h1>
+<p class="lede">Five social-media sources and two attached images turned into 7 skills, 4 commands, 5 design templates, a verified register of 15 repos plus the JEV model, and a user-run install script. Prepared for the owner of the business repository.</p></header>
+
+<section class="truth"><h2>What you should know first</h2>
+<p><b>The "8 open source tools" carousel is the weakest source in this batch.</b> Its product screenshots look like generated mockups (stock-style avatars, a "Sep 2, 2024" date in a post about 2026 tools), and its cover shows unrelated icons, including Notion, which is not open source. Jaaz is under a dual licence that bars team use and modification without a paid licence. OpenDraft drafts research papers, so it is not the writing workspace its slide shows. I could not find an InteraOne repo at all. The "$200/month" figure has no source. [Certain]</p>
+<p><b>Two install commands on the design-skills slides are incomplete.</b> UI UX Pro Max and Anthropic's frontend-design both need <code>/plugin marketplace add ...</code> before <code>/plugin install ...</code>; the slides skip it. Corrected commands are in the skill and section 7. [Certain]</p>
+<p><b>I installed nothing and ran no installer.</b> Installing third-party skills is not a neutral step: a skill is instructions your agent will obey, so each one deserves a read first. Octop and Hermes Agent install with piped <code>curl | bash</code> scripts, and Octop's is hosted on a cloud-storage bucket, not on github.com. [Certain]</p>
+<p><b>The connector problem from batch 104 is still open.</b> The OpenFlowKit entry for <code>.mcp.json</code> was refused last time, so I attempted no new connector edits. Notion and Higgsfield are already connected in this session, and Playwright is already in <code>.mcp.json</code>. Commands for the rest are in section 7 for you to run. [Certain]</p>
+<p><b>JEV is real and its price checks out; the infographic leaves out the part that matters.</b> $0.042 per million input tokens with free output matches two published write-ups. Both also report that confidence measures how concentrated the answer is, not whether it is right, and that injected text can move the answer. Never let a probability authorise an action alone. [Certain]</p>
+<p><b>The attached CEO KPI infographic was already handled</b> in batch 103 as the <code>ceo-kpi-framework</code> skill, including the corrected churn formula, so I did not duplicate it. [Certain]</p>
+<p><b>One of my own flags was wrong and is removed.</b> I first read OpenWhispr as dictation-only; its README also lists meeting transcription with speaker identification, so that slide is plausible. Star counts, follower figures and "6,000 stars in weeks" could not be verified; the GitHub API is blocked here. [Certain]</p></section>
+
+<section><h2>1. Inventory of the upload</h2><div class="tw"><table>
+<tr><th class="l">Source</th><th>Items</th><th class="l">Content</th><th class="l">Outcome</th></tr>
+<tr><td class="l">@ai.easily, "4 Claude skills for people who don't code"</td><td>6 images</td><td class="l">Cover, Canvas Design, Theme Factory, Slack GIF Creator, Algorithmic Art, recap</td><td class="l">All four skills already exist here; folded into <code>claude-design-skills-top5</code></td></tr>
+<tr><td class="l">@awayfromlovable, "Top 5 Claude Code design skills"</td><td>7 images</td><td class="l">Cover, Taste Skill, Impeccable, UI UX Pro Max, frontend-design, Playwright MCP, save/share/follow</td><td class="l">All five repos cloned and checked; skill <code>claude-design-skills-top5</code></td></tr>
+<tr><td class="l">@aigenesis.official, "I replaced myself with 10 AIs"</td><td>8 images</td><td class="l">Cover and 7 role slides (Apify, Hermes, Notion, Higgsfield, GPT Image 2, Claude Code, ManyChat); 3 roles have no slide</td><td class="l">Skill <code>ai-team-org-chart-10</code></td></tr>
+<tr><td class="l">@coreclasseducation, "8 underrated open source tools"</td><td>10 images</td><td class="l">Cover, 8 tool slides, save-this-post slide</td><td class="l">Eight tools matched to repos; skill <code>open-source-swap-stack-8</code></td></tr>
+<tr><td class="l">ChatGPT In-Depth Cheatsheet</td><td>1 image</td><td class="l">One-page reference sheet</td><td class="l">Skill <code>chatgpt-indepth-cheatsheet</code> with errata</td></tr>
+<tr><td class="l">@skip_ci video, 45 s</td><td>1 video</td><td class="l">Octop, a self-hosted multi-agent assistant</td><td class="l">Repo cloned and read; skill <code>octop-self-hosted-agents</code></td></tr>
+<tr><td class="l">@shiva.bytes video, 12 s</td><td>1 video</td><td class="l">15 AI governance and trust concepts infographic</td><td class="l">Skill <code>ai-governance-15-concepts</code></td></tr>
+<tr><td class="l">Attached images</td><td>2 images</td><td class="l">AIForLeaders "JEV vs LLM"; CEO KPI Framework</td><td class="l">Skill <code>jev-vs-llm</code>; KPI already in repo</td></tr>
+</table></div></section>
+
+<section><h2>2. Your instructions against what the files contained</h2><div class="tw"><table>
+<tr><th class="l">Instruction</th><th>Found</th><th class="l">What I did</th></tr>
+<tr><td class="l">Identify repos, skills, tools to clone and install</td><td><span class="st ok">yes</span></td><td class="l">15 repos cloned shallowly to a scratch folder and read; install routes recorded. Nothing installed</td></tr>
+<tr><td class="l">Turn prompts into commands or skills</td><td><span class="st bad">no prompts</span></td><td class="l">The files hold no prompts. I made 4 commands for the new skills instead</td></tr>
+<tr><td class="l">Execute actions or tasks</td><td><span class="st warn">installs only</span></td><td class="l">The only instructions are install commands. I did not run them (see the second box above)</td></tr>
+<tr><td class="l">Give prompts in plain text</td><td><span class="st warn">n/a</span></td><td class="l">Ready-to-paste prompts and commands are in section 7</td></tr>
+<tr><td class="l">Design content: templates and themes</td><td><span class="st ok">yes</span></td><td class="l">5 templates with sampled-colour tokens, rendered and geometry-checked. Layout bugs in two of them were found and fixed</td></tr>
+<tr><td class="l">Guide to build agents</td><td><span class="st bad">none</span></td><td class="l">Octop, Hermes and others are platforms, not guides. This repo already has the <code>os-*</code> agent set</td></tr>
+<tr><td class="l">Connectors referenced</td><td><span class="st warn">some</span></td><td class="l">Notion, Higgsfield and Playwright are already available; Apify has an MCP server; no connector edits attempted</td></tr>
+</table></div></section>
+
+<section><h2>3. Verification register (read on 4 October 2026)</h2><div class="tw"><table>
+<tr><th class="l">Item</th><th class="l">Real repo</th><th>Licence</th><th>Last commit</th><th class="l">Finding</th></tr>
+<tr><td class="l">Taste Skill</td><td class="l"><code>Leonxlnx/taste-skill</code></td><td>MIT</td><td>2026-09-26</td><td class="l"><span class="st ok">checked</span> install uses the full GitHub URL</td></tr>
+<tr><td class="l">Impeccable</td><td class="l"><code>pbakaus/impeccable</code></td><td>Apache-2.0</td><td>2026-10-04</td><td class="l"><span class="st ok">checked</span> 24 commands confirmed; launcher runs an engine binary</td></tr>
+<tr><td class="l">UI UX Pro Max</td><td class="l"><code>nextlevelbuilder/ui-ux-pro-max-skill</code></td><td>MIT</td><td>2026-10-03</td><td class="l"><span class="st warn">step missing</span> 192 palettes and 74 fonts confirmed; install needs the marketplace step</td></tr>
+<tr><td class="l">Anthropic skills (frontend-design, canvas-design, theme-factory, slack-gif-creator, algorithmic-art)</td><td class="l"><code>anthropics/skills</code></td><td>Apache-2.0 per skill</td><td>2026-09-28</td><td class="l"><span class="st warn">step missing</span> 10 themes confirmed; all five already installed here</td></tr>
+<tr><td class="l">Playwright MCP</td><td class="l"><code>microsoft/playwright-mcp</code></td><td>Apache-2.0</td><td>2026-09-28</td><td class="l"><span class="st ok">checked</span> already in <code>.mcp.json</code> at <code>@latest</code></td></tr>
+<tr><td class="l">Octop</td><td class="l"><code>TencentCloud/Octop</code></td><td>MIT</td><td>2026-09-29</td><td class="l"><span class="st warn">piped installer</span> needs a model provider; installer hosted on a storage bucket</td></tr>
+<tr><td class="l">Jaaz</td><td class="l"><code>11cafe/jaaz</code></td><td>Community or paid Commercial</td><td>2026-03-02</td><td class="l"><span class="st bad">not open source</span> team use and modification need the paid licence</td></tr>
+<tr><td class="l">CutScript</td><td class="l"><code>DataAnts-AI/CutScript</code></td><td>MIT</td><td>2026-03-06</td><td class="l"><span class="st ok">checked</span> small project</td></tr>
+<tr><td class="l">OmniVoice Studio</td><td class="l"><code>debpalash/OmniVoice-Studio</code></td><td>AGPL-3.0</td><td>2026-10-04</td><td class="l"><span class="st warn">copyleft, beta</span> models have separate licences</td></tr>
+<tr><td class="l">Meetily</td><td class="l"><code>Zackriya-Solutions/meeting-minutes</code></td><td>MIT</td><td>2026-09-10</td><td class="l"><span class="st warn">paid tier</span> a PRO upgrade exists</td></tr>
+<tr><td class="l">OpenDraft</td><td class="l"><code>federicodeponte/opendraft</code></td><td>MIT</td><td>2026-10-01</td><td class="l"><span class="st bad">mismatch</span> drafts research papers, not general documents</td></tr>
+<tr><td class="l">InteraOne</td><td class="l">not found</td><td>unknown</td><td>unknown</td><td class="l"><span class="st bad">unverified</span> web search describes an embeddable support assistant</td></tr>
+<tr><td class="l">Graphic Walker</td><td class="l"><code>Kanaries/graphic-walker</code></td><td>Apache-2.0</td><td>2026-10-01</td><td class="l"><span class="st ok">checked</span> a component, not a full BI platform</td></tr>
+<tr><td class="l">OpenWhispr</td><td class="l"><code>OpenWhispr/openwhispr</code></td><td>MIT</td><td>2026-10-02</td><td class="l"><span class="st ok">checked</span> dictation plus meeting transcription</td></tr>
+<tr><td class="l">Apify MCP server</td><td class="l"><code>apify/apify-mcp-server</code></td><td>MIT</td><td>2026-10-02</td><td class="l"><span class="st ok">checked</span> hosted at mcp.apify.com; needs an Apify account</td></tr>
+<tr><td class="l">Hermes Agent</td><td class="l"><code>NousResearch/hermes-agent</code></td><td>MIT</td><td>2026-10-04</td><td class="l"><span class="st warn">piped installer</span> read the script first</td></tr>
+</table></div>
+<p>Krita and the repos outside this list were not checked. Several repos ship <code>CLAUDE.md</code> or <code>AGENTS.md</code> files; I read them as data and followed none.</p></section>
+
+<section><h2>4. JEV: what the infographic says against what is published</h2><div class="tw"><table>
+<tr><th class="l">Topic</th><th class="l">Infographic</th><th class="l">Published sources</th></tr>
+<tr><td class="l">Price</td><td class="l">$0.042 per 1M input tokens; output free; checked 1 Oct 2026</td><td class="l"><span class="st ok">matches</span> both write-ups</td></tr>
+<tr><td class="l">Primitives</td><td class="l">Choice, Score, Noul</td><td class="l">Confirmed; Choice up to 255 options, Score 2 to 10 levels, Noul returns one probability</td></tr>
+<tr><td class="l">Speed</td><td class="l">not stated</td><td class="l">Vendor says 70 to 500 ms; not measured here</td></tr>
+<tr><td class="l">Limits</td><td class="l">not stated</td><td class="l">About 32k tokens of state; text only; no generation, tools or planning</td></tr>
+<tr><td class="l">Reliability</td><td class="l">"Typed does not mean correct"</td><td class="l"><span class="st warn">understated</span> weak arithmetic and date ordering; can pick a wrong allowed answer; injected text can move the answer; confidence is not correctness</td></tr>
+</table></div></section>
+
+<section><h2>5. Design templates and themes</h2><div class="tw"><table>
+<tr><th class="l">Template</th><th class="l">Source style</th><th class="l">Notes</th></tr>
+<tr><td class="l"><code>skill-spotlight-teal-gold</code></td><td class="l">@ai.easily skill carousel</td><td class="l">1080×1350; teal gradient, gold counter, fine-print panel; three slides</td></tr>
+<tr><td class="l"><code>grid-paper-repo-command-card</code></td><td class="l">@awayfromlovable design-skills carousel</td><td class="l">1080×1920; grid paper, terracotta rank, repo card, command line, save/share/follow slide</td></tr>
+<tr><td class="l"><code>ai-team-role-card</code></td><td class="l">@aigenesis.official org chart</td><td class="l">1080×1350; glossy tile, role label, screenshot slot, cluster cover</td></tr>
+<tr><td class="l"><code>swap-tool-lavender-card</code></td><td class="l">@coreclasseducation carousel</td><td class="l">1080×1296; the product window is a placeholder that tells you to use a real screenshot</td></tr>
+<tr><td class="l"><code>compare-two-approaches-cream</code></td><td class="l">AIForLeaders JEV vs LLM</td><td class="l">1080×1350; two flow cards and two "use when" lists; the first render had a node spilling out of its card and a clipped caution line, both fixed and re-checked</td></tr>
+</table></div>
+<p>Sampled colours (read from pixels) are shown below; the rest of each theme was judged by eye and is marked in the skill. Handles are placeholders and nothing from the sources was reused. Fonts are free look-alikes. Your Aptos 11 / 32 / 14 point rule is applied to this report, not to the slide canvases. [Likely]</p>
+<div class="sw"><div><i style="background:#173D49"></i><span>#173D49 teal</span></div><div><i style="background:#0E1922"></i><span>#0E1922 deep teal</span></div><div><i style="background:#F5EEE8"></i><span>#F5EEE8 paper</span></div><div><i style="background:#D77655"></i><span>#D77655 terracotta</span></div><div><i style="background:#4D23D8"></i><span>#4D23D8 indigo</span></div><div><i style="background:#222631"></i><span>#222631 window</span></div><div><i style="background:#A282F9"></i><span>#A282F9 lilac</span></div><div><i style="background:#F6F0E9"></i><span>#F6F0E9 cream</span></div></div></section>
+
+<section><h2>6. Connectors</h2><div class="tw"><table>
+<tr><th class="l">Connector</th><th>Status in this session</th><th class="l">Action</th></tr>
+<tr><td class="l">Notion</td><td><span class="st ok">connected</span></td><td class="l">None</td></tr>
+<tr><td class="l">Higgsfield</td><td><span class="st ok">connected</span></td><td class="l">None</td></tr>
+<tr><td class="l">Playwright MCP</td><td><span class="st ok">in .mcp.json</span></td><td class="l">Consider pinning the version</td></tr>
+<tr><td class="l">Apify</td><td><span class="st warn">not connected</span></td><td class="l">Run the command in section 7; needs an Apify account</td></tr>
+<tr><td class="l">OpenFlowKit MCP (batch 104)</td><td><span class="st warn">pending</span></td><td class="l">Still your decision; command in the batch 104 report</td></tr>
+<tr><td class="l">ManyChat, GPT Image 2</td><td><span class="st warn">none seen</span></td><td class="l">No connector found; nothing attempted</td></tr>
+</table></div></section>
+
+<section><h2>7. Copy-paste prompts and commands</h2>
+<p>After restarting Claude Code the four commands exist: <code>/jev-or-llm</code>, <code>/design-skills-pick</code>, <code>/swap-stack-check</code> and <code>/governance-15</code>. The prompts below do the same in plain words.</p>
+<div class="prompt"><b>1. Jev or LLM</b><pre>Use the jev-vs-llm skill. My task is [DESCRIBE THE DECISION]. Inputs are [WHAT GOES IN]. If it is wrong, [WHAT HAPPENS]. Tell me whether a typed decision model or an LLM fits, write the typed questions if it is Jev, and give me the labelled-sample test and thresholds I need before it gates anything. Do not call any model.</pre><button class="cp" type="button">Copy</button></div>
+<div class="prompt"><b>2. Pick a design skill</b><pre>Use the claude-design-skills-top5 skill. My project is [MARKETING SITE / DASHBOARD / APP]. What looks wrong today: [DESCRIBE]. Recommend one primary skill and one backup, say which are already installed in this repo, and give the correct install steps and licence. Do not install anything.</pre><button class="cp" type="button">Copy</button></div>
+<div class="prompt"><b>3. Check a "try this instead" claim</b><pre>Use the open-source-swap-stack-8 skill. Check this claim: [TOOL] instead of [PAID TOOL]. Find the real repo, read its licence, compare the README to the claim, tell me whether it is really open source for commercial use, and say what switching would cost. Clone into a scratch folder only and run no installers.</pre><button class="cp" type="button">Copy</button></div>
+<div class="prompt"><b>4. AI governance completeness check</b><pre>Use the ai-governance-15-concepts skill. My AI system is [DESCRIBE] and it is at the [DESIGN / BUILD / DEPLOY / OPERATE / EVOLVE] stage. Score each of the 15 concepts as evidence seen, claimed only or missing, list the gaps by lifecycle stage, and name the three to fix first. State that this is not a compliance conclusion.</pre><button class="cp" type="button">Copy</button></div>
+<div class="prompt"><b>5. Run yourself in Claude Code: marketplace installs</b><pre>/plugin marketplace add nextlevelbuilder/ui-ux-pro-max-skill
+/plugin install ui-ux-pro-max@ui-ux-pro-max-skill
+/plugin marketplace add anthropics/skills
+/plugin install example-skills@anthropic-agent-skills</pre><button class="cp" type="button">Copy</button></div>
+<div class="prompt"><b>6. Run yourself in a terminal: skills and Apify connector</b><pre>npx skills add https://github.com/Leonxlnx/taste-skill
+npx impeccable install
+claude mcp add --transport http apify https://mcp.apify.com</pre><button class="cp" type="button">Copy</button></div>
+<p>Read each skill's <code>SKILL.md</code> before installing it. The last command assumes the current Claude Code syntax for HTTP servers and an Apify account. [Likely]</p></section>
+
+<section><h2>8. Your next steps</h2><ul>
+<li>Restart Claude Code, then try <code>/swap-stack-check</code> on one tool you actually pay for before cancelling anything.</li>
+<li>Decide which design skill to try first (<code>/design-skills-pick</code>) and read its <code>SKILL.md</code> before installing.</li>
+<li>If any product will use Jaaz, OmniVoice Studio or another AGPL or dual-licensed tool, settle the licence question first.</li>
+<li>Decide on the OpenFlowKit and Apify connectors; I made no connector edits.</li>
+<li>If you have the three missing role slides of the 10-AI carousel or an InteraOne link, send them and I will complete those entries.</li>
+<li>Run <code>scripts/batch105-install.sh</code> on your own machine only if you want any of this installed; it asks before every step and pipes nothing into a shell.</li></ul></section>
+
+<footer>Sources: 32 JPEGs and 2 MP4s in one iCloud Photos archive, plus two attached images. Licences, dates and install routes read from shallow clones on 4 October 2026; JEV facts from two published articles; web searches located the repos for Octop, Jaaz, CutScript, OmniVoice Studio, Meetily, OpenDraft and Graphic Walker by name, and each was then cloned and read. Videos were read from frames only, with no narration. Star counts and follower figures are as printed on the slides.</footer>
+</main>
+<script>
+document.querySelectorAll('.cp').forEach(function (b) {
+  b.addEventListener('click', function () {
+    var t = b.parentNode.querySelector('pre');
+    function done() { b.textContent = 'Copied'; setTimeout(function () { b.textContent = 'Copy'; }, 1500); }
+    function fb() { var r = document.createRange(); r.selectNodeContents(t); var s = getSelection(); s.removeAllRanges(); s.addRange(r); b.textContent = 'Selected'; }
+    try { navigator.clipboard.writeText(t.textContent).then(done, fb); } catch (e) { fb(); }
+  });
+});
+</script>
