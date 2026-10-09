@@ -1,6 +1,6 @@
 ---
 name: self-hosted-docker-stack
-description: Curated directory of self-hosted, Docker-deployable services — an original 10-app batch covering game-server hosting, AI-powered local CCTV, media streaming, Docker stack management, PDF tooling, self-hosted AI chat, network-wide ad/tracker blocking, uptime monitoring, a password manager, and self-hosted Git; plus a second batch covering a document-processing pipeline (searchable document archive, messy-document-to-Markdown, RAG document prep, plain-English structured extraction, OCR) and business-ops SaaS replacements (privacy-first analytics, newsletter/mailing-list manager, screen recorder, Markdown notes, project/task board, low-code internal-tools builder, visual database, AI customer-support chatbot); plus a third batch (heavier-weight product analytics, no-code web scraping, local dubbing/subtitles, link attribution); plus a fourth batch (a personal finance / envelope-budgeting app) — each verified against its real GitHub/Codeberg repository. Use this when the user is planning a homelab, wants to self-host infrastructure instead of paying for a cloud/SaaS equivalent, asks "what should I run on my server," or is deciding between a hosted service and a self-hosted Docker alternative. Overlaps in part with lean-software-stack (both PDF tooling and password managers appear in both, as a desktop vs. server-hosted choice) — use that skill for desktop-app alternatives, this one for services meant to run continuously on a server/NAS.
+description: Curated directory of self-hosted, Docker-deployable services — an original 10-app batch covering game-server hosting, AI-powered local CCTV, media streaming, Docker stack management, PDF tooling, self-hosted AI chat, network-wide ad/tracker blocking, uptime monitoring, a password manager, and self-hosted Git; plus a second batch covering a document-processing pipeline (searchable document archive, messy-document-to-Markdown, RAG document prep, plain-English structured extraction, OCR) and business-ops SaaS replacements (privacy-first analytics, newsletter/mailing-list manager, screen recorder, Markdown notes, project/task board, low-code internal-tools builder, visual database, AI customer-support chatbot); plus a third batch (heavier-weight product analytics, no-code web scraping, local dubbing/subtitles, link attribution); plus a fourth batch (a personal finance / envelope-budgeting app); plus a fifth batch (no-code database, Firebase-alternative backend, API testing tool, Notion-alternative wiki) — each verified against its real GitHub/Codeberg repository. Use this when the user is planning a homelab, wants to self-host infrastructure instead of paying for a cloud/SaaS equivalent, asks "what should I run on my server," or is deciding between a hosted service and a self-hosted Docker alternative. Overlaps in part with lean-software-stack (both PDF tooling and password managers appear in both, as a desktop vs. server-hosted choice) — use that skill for desktop-app alternatives, this one for services meant to run continuously on a server/NAS.
 ---
 
 # Self-Hosted Docker Stack
@@ -79,6 +79,23 @@ Each confirmed to exist via `git ls-remote` before listing:
 | **Maxun** | A paid web-scraping SaaS | Point-and-click, no-code scraper — turns a website into an API/spreadsheet without writing a scraper | https://github.com/getmaxun/maxun |
 | **SmartSub** | A paid captioning/dubbing service | Desktop app: generates, translates, dubs, and burns subtitles using local Whisper speech-to-text — runs offline, no per-video cost | https://github.com/buxuku/SmartSub |
 | **Dub** | A paid link-attribution platform | Modern link-attribution/short-link platform — answers which link/creator/video actually produced a conversion; open-core (enterprise features are paid) | https://github.com/dubinc/dub |
+
+## Batch 5: business-ops apps ("10 GitHub Repos So Good They Shouldn't Be Free" carousel, @datawarlord_official)
+
+Four of the carousel's eight tools were already covered above (Appsmith,
+Memos) or explicitly excluded with reasoning in Batch 4's notes (DeerFlow,
+Excalidraw — still excluded for the same reasons: DeerFlow is an
+agent-harness, closer to `claude-code-tooling`'s territory, and Excalidraw
+has no business-ops slot, see `dev-repos-to-clone` and `design-dev-resources`
+instead). The remaining four are new. Each confirmed to exist via a live
+`git ls-remote` check before listing:
+
+| App | Replaces | What it does | Repo |
+|---|---|---|---|
+| **NocoDB** | Airtable | Open-source no-code platform that turns any SQL database into a smart spreadsheet-style workspace (tables, kanban, gallery, calendar, forms) | https://github.com/nocodb/nocodb |
+| **PocketBase** | Firebase | Lightweight self-hosted backend in a single binary — SQLite database, auth, file storage, and realtime APIs together, MIT licensed, Go | https://github.com/pocketbase/pocketbase |
+| **Hoppscotch** | Postman | Fast open-source API development tool for REST/WebSocket/GraphQL testing with real-time collaboration | https://github.com/hoppscotch/hoppscotch |
+| **Docmost** | Notion / Confluence | Self-hosted collaborative documentation and wiki platform — rich editor, real-time collaboration, nested spaces, AGPL-3.0 | https://github.com/docmost/docmost |
 
 ## When to reach for this list
 

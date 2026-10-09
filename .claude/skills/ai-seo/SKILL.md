@@ -181,6 +181,44 @@ See [references/platform-ranking-factors.md](references/platform-ranking-factors
 3. Presence (be where AI looks)
 ```
 
+### Quick scannable checklist (2026 version)
+
+A condensed checkbox version of everything below, useful for a fast audit
+before diving into the full pillars — every item maps to a section this
+skill already covers in depth, nothing new to build:
+
+- **Research & keywords** (discovery — how AI finds you): target
+  question-based queries; identify prompts where the brand should be
+  cited but isn't; audit where competitors get cited instead; cover full
+  topic journeys, not single keywords.
+- **Answer optimization** (conversation — what AI actually uses): lead
+  with the direct answer, explanation second; include FAQ/Q&A blocks; add
+  examples/scenarios/comparisons; back claims with credible, citable data.
+- **AI visibility & tracking** (reporting — how AI shows you): track AI
+  citations/mentions across tools, not just referral traffic; monitor
+  answer *inclusion*, not just impressions; compare AI share-of-voice
+  against competitors; audit the gap between SERP rank and AI-answer
+  presence — see Monitoring AI Visibility below.
+- **Authority & trust** (why AI chooses you): show first-hand experience,
+  not just theory; publish original insights/data/opinions; support
+  claims with credible external sources; make authorship and sources
+  explicit and scannable — this is Pillar 2 below.
+- **Technical foundation** (how AI reads the site): FAQ/HowTo/Article
+  schema; strong Core Web Vitals and mobile UX; clean internal
+  linking/topic clusters; simple URLs/headings/structure.
+- **Content strategy** (how AI interprets the content): clear, concise
+  headings; sections that stand alone if quoted out of context; a TL;DR
+  summary box up top; lists/tables/definitions over dense prose — this is
+  Pillar 1 below.
+- **Future proofing**: optimize for the underlying principles, not
+  trending hacks; reduce dependency on tactics that decay; update content
+  substantively, not just the timestamp; publish unique stats/data nobody
+  else has.
+- **Brand signals** (how AI knows who you are — entity clarity): connect
+  brand ↔ people ↔ topics explicitly; use consistent naming across
+  site/bios/profiles; add author bios with real experience, not filler;
+  reinforce the same 1-2 primary topic associations consistently.
+
 ### Pillar 1: Structure — Make Content Extractable
 
 AI systems extract passages, not pages. Every key claim should work as a standalone statement.

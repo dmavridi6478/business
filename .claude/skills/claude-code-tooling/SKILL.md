@@ -352,6 +352,36 @@ GPT-Image-2, 530+ reverse-engineered examples) also appeared in this same
 source batch — already documented in this repo's README (65th Addition),
 not re-added here.
 
+### Two named plugins from that directory ("5 Claude installs" carousel, IMG batch)
+
+Both confirmed real via the live `anthropics/claude-plugins-official` repo
+listing (39 plugins total) before being added — the source carousel named
+these as "Anthropic's official project scanner" and "Anthropic's official
+vulnerability hunter":
+
+| Plugin ID | What it does | Install |
+|---|---|---|
+| `claude-code-setup` | Read-only: scans the project and recommends the top 1-2 automations per category (MCP servers, skills, hooks, subagents, slash commands) — doesn't modify files itself. Already vendored in full as this repo's `claude-code-setup-plugin` skill, not duplicated here. | `/plugin install claude-code-setup@claude-plugins-official` |
+| `claude-security` | Adds a `/claude-security` command that launches a team of Claude agents hunting for vulnerabilities in the open project. Distinct from the separate `security-guidance` plugin in the same marketplace (deterministic pattern-matching on every edit, no model call, catches `eval()`/`os.system()`/hardcoded-credential-style constructs) and from this repo's own generic `security-review` skill (a checklist, not an agent-driven hunt). Neither plugin blocks writes/commits — findings surface as follow-up work in the same session. | `/plugin install claude-security@claude-plugins-official` |
+
+The carousel's third name, "OmniRoute," is a different, unrelated project
+(not part of this official directory) — see the README's third-photo-batch
+note for why it's a confirmed do-not-install, not just unverified.
+
+## Context/token-reduction tools ("6 Claude Code Tools That Can Save You Tokens", @quadri_folo)
+
+Each repo confirmed to exist via `git ls-remote` before listing. `caveman` is
+already vendored in full as its own skill in this repo — not re-added here.
+"Context Mode" (the carousel's #2) showed no distinct repo card in the
+source — it wasn't independently located, so it isn't listed below.
+
+| Tool | What it does | Repo |
+|---|---|---|
+| **Token Savior** | MCP server that gets Claude to a high score on a real coding benchmark while cutting active/wall tokens substantially, by escalating summary → relevant snippet → full file instead of always reading the whole file | https://github.com/Mibayy/token-savior |
+| **RTK** | Rust CLI proxy that compresses noisy terminal output (git, npm, build logs, test output) before Claude sees it, so it gets the errors that matter without carrying hundreds of irrelevant lines in context | https://github.com/rtk-ai/rtk |
+| **code-review-graph** | Local-first code intelligence graph (Tree-sitter + SQLite) exposed over MCP — builds a persistent structural map of a codebase once (functions → callers → dependencies → affected files) so a coding agent queries the map instead of re-reading the repository on every task. Canonical repo is `tirth8205/code-review-graph`; several same-named forks/mirrors exist under other usernames, don't install from those. Also on PyPI (`pip install code-review-graph`). Disclosed and patched a pre-launch security audit (path traversal, XSS, prompt-injection mitigations) in v1.8.0 — runs fully local, no network calls in normal use | https://github.com/tirth8205/code-review-graph |
+| **Handoff** | Claude Code skill for session handoffs — compresses a long session's decisions/current implementation/outstanding problems/next steps into a summary to start a clean session from, so multi-hour or multi-day coding tasks survive context compaction. Small project (3 contributors, ~58 stars) — review the skill's actual instructions before trusting it on anything sensitive | https://github.com/REMvisual/claude-handoff |
+
 ## Agent workspace / sandboxing platforms
 
 | Repo | What it's for | Install / link |
