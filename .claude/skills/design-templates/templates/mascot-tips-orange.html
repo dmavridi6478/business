@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<!--
+  Template: mascot-tips-orange
+  Style: @aicareersuite "11 Ways to Master Claude" - cream paper, a peach rounded square holding a big "01", a two-line black + orange headline with a hand-drawn
+         orange underline, one subtitle line, check-circle pills, a friendly white robot mascot with headphones at a laptop, a bottom icon strip, a lightbulb
+         takeaway box and a "Follow for more AI tips / Comment CLAUDE  n/8" bar.
+  Inspired by: Batch 99 iCloud photos (tips 01-07 of the series + cover).
+  Swap points: ACCENT, TIPS array [number, line1, line2 (orange), subtitle, [checks], takeaway], CTA word, TOTAL. The mascot is inline SVG (MASCOT) - recolour via ACCENT.
+  1080 x 1350 shown at 36 %.
+-->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mascot Tips Orange</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;800;900&display=swap" rel="stylesheet">
+<style>
+  :root { --s: 0.36; --accent: #f26a1b; --paper: #fdf8f3; --peach: #fbe6d2; --ink: #111; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: #cfcfcf; padding: 24px; display: flex; flex-wrap: wrap; gap: 24px; font-family: 'Inter', Arial, sans-serif; }
+  .frame { width: calc(1080px * var(--s)); height: calc(1350px * var(--s)); }
+  .slide { width: 1080px; height: 1350px; transform: scale(var(--s)); transform-origin: top left; position: relative; overflow: hidden; background: var(--paper); color: var(--ink); }
+  .num { position: absolute; left: 50px; top: 56px; background: var(--peach); border-radius: 44px; padding: 6px 38px; font-size: 170px; font-weight: 900; line-height: 1.05; letter-spacing: -.06em; }
+  .l1, .l2 { position: absolute; left: 50px; white-space: nowrap; font-size: 150px; line-height: .95; font-weight: 900; letter-spacing: -.055em; }
+  .l1 { top: 250px; } .l2 { top: 400px; color: var(--accent); }
+  .swoosh { position: absolute; left: 60px; top: 548px; width: 800px; height: 16px; border-radius: 16px; background: var(--accent); transform: rotate(-1.2deg); }
+  .sub { position: absolute; left: 50px; right: 120px; top: 600px; font-size: 50px; line-height: 1.15; font-weight: 800; letter-spacing: -.02em; }
+  .checks { position: absolute; left: 30px; top: 770px; width: 520px; }
+  .chk { background: var(--peach); border-radius: 36px; padding: 14px 24px 14px 96px; margin-bottom: 14px; font-size: 30px; font-weight: 600; position: relative; line-height: 1.15; }
+  .chk:before { content: '\2713'; position: absolute; left: 20px; top: 50%; margin-top: -30px; width: 60px; height: 60px; border-radius: 50%; background: var(--accent); color: #fff; font-size: 38px; text-align: center; line-height: 60px; }
+  .mascot { position: absolute; right: 30px; top: 690px; width: 400px; }
+  .why { position: absolute; left: 30px; right: 30px; bottom: 130px; border: 3px solid #f4c9a6; border-radius: 34px; background: #fbeee1; padding: 18px 34px; font-size: 34px; font-weight: 600; display: flex; align-items: center; gap: 26px; }
+  .why b { color: var(--accent); }
+  .cta { position: absolute; left: 30px; right: 30px; bottom: 36px; border: 3px solid #f4c9a6; border-radius: 40px; padding: 22px 34px; display: flex; align-items: center; gap: 22px; font-size: 30px; font-weight: 600; background: #fdf3e9; }
+  .cta i { width: 60px; height: 60px; border-radius: 50%; background: var(--accent); } .cta em { font-style: normal; color: var(--accent); font-weight: 800; }
+  .cta u { margin-left: auto; text-decoration: none; background: var(--peach); border-radius: 30px; padding: 10px 30px; font-size: 30px; font-weight: 800; }
+</style>
+</head>
+<body>
+<div id="out" style="display:contents"></div>
+<script>
+/* ── SWAP THESE ── */
+const CTA = "CLAUDE", TOTAL = 8;
+const MASCOT = (c) => `<svg class="mascot" viewBox="0 0 470 420" xmlns="http://www.w3.org/2000/svg"><g stroke="#111" stroke-width="7" stroke-linejoin="round" stroke-linecap="round">
+  <line x1="235" y1="40" x2="235" y2="82"/><circle cx="235" cy="30" r="14" fill="${c}"/>
+  <rect x="150" y="80" width="170" height="130" rx="52" fill="#fff"/><rect x="118" y="118" width="26" height="62" rx="12" fill="${c}"/><rect x="326" y="118" width="26" height="62" rx="12" fill="${c}"/>
+  <path d="M195 150 q12 -14 24 0 M255 150 q12 -14 24 0" fill="none"/><path d="M215 178 q22 20 44 0" fill="${c}"/>
+  <rect x="130" y="212" width="210" height="80" rx="40" fill="#fff"/><path d="M90 380 L130 305 L360 305 L400 380 Z" fill="#cfcfcf"/><rect x="60" y="378" width="400" height="14" rx="7" fill="#fff"/>
+  <g stroke="${c}" stroke-width="7"><line x1="245" y1="326" x2="245" y2="362"/><line x1="227" y1="344" x2="263" y2="344"/><line x1="232" y1="331" x2="258" y2="357"/><line x1="258" y1="331" x2="232" y2="357"/></g></g></svg>`;
+const TIPS = [
+  ["01", "Build", "Persistent Context", "Use Projects and an Identity File so Claude remembers how you work.", ["Save goals, preferences and tone", "Keep core files like project notes and voice", "Create continuity across tasks"], "Why it matters: less repetition, better results."],
+  ["05", "Clarify Before", "Creating", "Ask Claude to ask questions before it starts writing.", ["Get a clearer brief", "Reduce confusion", "Improve the first draft"], "A better brief leads to better output."]
+];
+const out = document.getElementById("out");
+TIPS.forEach(([n, a, b, sub, checks, why], i) => {
+  const fs = Math.min(150, Math.floor(960 / (Math.max(a.length, b.length) * 0.54)));
+  const f = document.createElement("div"); f.className = "frame";
+  f.innerHTML = `<div class="slide"><div class="num">${n}</div><div class="l1" style="font-size:${fs}px">${a}</div><div class="l2" style="font-size:${fs}px">${b}</div><div class="swoosh"></div>
+    <div class="sub">${sub}</div><div class="checks">${checks.map(c => `<div class="chk">${c}</div>`).join("")}</div>${MASCOT("#f26a1b")}
+    <div class="why"><span style="font-size:64px">&#128161;</span><span>${why.replace(/^(Why it matters:)/, "<b>$1</b>")}</span></div>
+    <div class="cta"><i></i>Follow for more AI tips &bull; Comment <em>&ldquo;${CTA}&rdquo;</em><u>${i + 2}/${TOTAL}</u></div></div>`;
+  out.append(f);
+});
+</script>
+</body>
+</html>

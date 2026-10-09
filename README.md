@@ -2639,7 +2639,7 @@ commercial SaaS, no repos to clone).
 **Repos cloned / registered:**
 
 **Open-source self-hosted tools (from @replace.so "5 GitHub repos so good they shouldn't be free" carousel):**
-- `Skyvern-AutoGPT/skyvern` — 22.7k★; Apache 2.0; AI browser automation using LLMs and computer vision; navigates websites by understanding their visual layout rather than brittle CSS selectors or XPaths
+- `Skyvern-AI/skyvern` — 22.7k★; Apache 2.0; AI browser automation using LLMs and computer vision; navigates websites by understanding their visual layout rather than brittle CSS selectors or XPaths
   `git clone https://github.com/Skyvern-AutoGPT/skyvern`
 - `alainm23/planify` — 5.6k★; GPL-3.0; open-source GNOME task manager for GNU/Linux; integrates with Todoist and Google Tasks; supports boards, timeline, and scheduling
   `git clone https://github.com/alainm23/planify`
@@ -3873,8 +3873,8 @@ Paste-ready prompts from this batch:
 - **[`pear-devs/pear-desktop`](https://github.com/pear-devs/pear-desktop)** (31.5k★) — Pear Desktop: open-source desktop client for YouTube Music; native-feeling app with offline support, playlist management, and no ads; Electron/TypeScript
   `git clone https://github.com/pear-devs/pear-desktop`
 
-- **[`stab1yai/orca`](https://github.com/stab1yai/orca)** (56k★, 3.8k forks) — Orca: Agent Development Environment (ADE) for running multiple coding agents in parallel side by side — Codex, Claude Code, OpenCode, and Pi in one workspace; resolves the incomplete ORCA entry from batch 34 ("from @lunktech, no GitHub slug captured") — this is the specific repo
-  `git clone https://github.com/stab1yai/orca`
+- **[`stablyai/orca`](https://github.com/stablyai/orca)** (56k★, 3.8k forks) — Orca: Agent Development Environment (ADE) for running multiple coding agents in parallel side by side — Codex, Claude Code, OpenCode, and Pi in one workspace; resolves the incomplete ORCA entry from batch 34 ("from @lunktech, no GitHub slug captured") — this is the specific repo
+  `git clone https://github.com/stablyai/orca`
 
 ### Informational only (no install action)
 
@@ -5752,3 +5752,142 @@ Source: `80c9789b-LinkedIn_Master_Guide_for_Claude.zip` — 4 static images (`.j
 > **5 — Hidden Gap Detector:** I think I already master [SKILL]. I want you to prove me wrong. Ask me 5 questions that seem simple but expose the gaps of someone who has never really gone deep. For every answer I give, tell me: what does my answer reveal about what's still missing from my foundation. Don't go easy on me. If I'm shallow, say it straight.
 
 > **6 — Forced Feynman Method:** I just studied [TOPIC]. I'm going to explain to you what I understood as if you were a 10-year-old child. As I explain, stop me at every point where I use jargon without knowing what it means, where I skip a step in the reasoning, or where I oversimplify to the point of being wrong. At the end, tell me exactly what these mistakes reveal about what is still not solid in my head.
+
+## 98. Agent Sandbox, Vectorless RAG, AI Entrepreneur OS & Four Design Themes (Batch 98)
+
+**Source:** One uploaded iCloud Photos zip (`cf87e94a-iCloud_Photos.zip`, 16.9 MB): 32 JPEGs + 2 MP4s, with an instruction to extract repos/skills/prompts/designs/agent guides/connectors and act on them. Raw photos and videos were **not** committed (see `docs/procedures/attachment-intake.md` rule 6).
+
+| Content | Creator | What it was |
+|---|---|---|
+| 9 cards | @githubnow | Daily briefings 29–30 Sep 2026: VectifyAI/PageIndex, rakyll/hey, NVIDIA/OpenShell (29th); firebase/firebase-ios-sdk, t8y2/dbx, longbridge/gpui-kit (30th) |
+| 7 cards | @will.ai.m | "Free tools Big Tech doesn't want you to run": SearXNG, Home Assistant, Pi-hole, Vaultwarden, Nextcloud + intro + follow card |
+| 16 cards | @designarchitect001 | 12 typefaces (Nura, Ancola, Urbanist, Alro, Outfit, Surgena, Ourova + Rigter, Malison, Keratus, Sparling, Badoga), two covers, two end cards — black/red + glowing-numeral design language |
+| video 1 (57 s) | @imjonathanacuna | "Claude manages 50 agents": tool stack list + Claude-orchestrator / builder-agents pattern (on-screen captions only; audio not transcribed) |
+| video 2 (86 s) | @restructureai (ReStructure AI) | "The Entire AI Entrepreneur Operating System": 200-hour blueprint, 41 agents, 7 modules, knowledge layer, approval loop |
+
+**Verified live (2026-10-01):** all six new repos exist (`git ls-remote`); PageIndex, OpenShell, dbx, hey and gpui-kit cloned shallowly into the gitignored `repos/`. Licences read from the repos: PageIndex **MIT**; OpenShell, dbx, hey **Apache-2.0**; gpui-kit Apache-2.0 + separate docs licence. `pip download pageindex` → 0.2.20; npm `@dbx-app/mcp-server` 0.4.102 and `@dbx-app/cli` 0.4.102 exist.
+
+**Created and installed in the repo:**
+- **Skill `pageindex`** (SKILL.md + LICENSE + SOURCE.md, MIT) and command `/pageindex-ask`.
+- **Skill `ai-entrepreneur-os`**, **25 subagents `os-*`** (`.claude/agents/`), commands `/os-morning-page` and `/os-run-module`, and the knowledge layer `docs/ai-os/{README,ops/*,rules/*}`. Runtime folder `data/ai-os/` is gitignored. All agents start at **autonomy tier 0 (draft only)** behind an approval gate — a deliberate departure from the video, which shows auto-replies and auto-reminders.
+- **Commands** `/loadtest` (hey wrapper with an ownership gate) and `/theme-card` (themes below).
+- **Four design templates** in `design-templates/templates/`: `repo-briefing-card.html`, `font-showcase-glow.html`, `wordmark-noir-card.html`, `tool-spotlight-light.html` — rendered in headless Chromium; a quoting bug that broke inline font-family was found and fixed in that check.
+- **`scripts/batch98-install.sh`** — user-run installer for the third-party pieces (see below).
+- Appended Batch 98 sections to `dev-repos-to-clone` and `design-templates`.
+
+**Blocked — needs you:**
+- `npx skills add NVIDIA/OpenShell | longbridge/gpui-kit | t8y2/dbx` (7 third-party skills) was **denied by the session's auto-mode classifier** as untrusted code integration. It was not retried, re-routed or replaced by copying those skill files. Run `scripts/batch98-install.sh` yourself and read each SKILL.md afterwards.
+- Connectors need your OAuth in claude.ai: **Stripe, Wispr Flow, MailerLite, Meridian QuickBooks** (needs reconnect / incomplete); **Fathom, Granola, Pipedrive, Intuit QuickBooks** exist in the directory but are not installed. Already connected and used by the agents: Notion, Slack, Gmail, Google Calendar, Canva, Klaviyo, Semrush, Ahrefs, HubSpot, Clay, Vibe Prospecting, Motion, Supermetrics, Fireflies.
+- Nothing was installed *inside* the sandbox (ephemeral; no durable value).
+
+**Findings the source cards do not tell you:**
+- Only **Urbanist** and **Outfit** are on Google Fonts. The other ten specimens — despite the "google fonts" caption — are not (checked against `fonts.google.com/metadata/fonts`). Templates use look-alike Google families, listed in `design-templates/SKILL.md`; the licence of the originals is unverified.
+- ReStructure's "41 agents": only **25** are legible on screen. The remaining modules (Operations, Content & Design, Risk & Legal, Data & Observability) were **not invented**.
+- Customer Success agent names are inferred from the Day 0/7/30/90 steps, and "Jev" in the video is unexplained; both are marked as inference.
+- Self-hosted five (SearXNG, Home Assistant, Pi-hole, Vaultwarden, Nextcloud) were already covered in Batch 97 — no new action. `firebase-ios-sdk` and `gpui-kit` are irrelevant unless you ship an Apple or native Rust app.
+
+**Not done on purpose:** starring/forking repos and "follow me" CTAs (outward social actions on your account, no instruction from you); `.mcp.json` entry for dbx (it would make every future session run `npx` code; the one-line `claude mcp add` is in the install script instead).
+
+**Paste-ready prompts from this batch (plain text):**
+
+> **1 — Start the OS safely:** Read docs/ai-os/README.md and docs/ai-os/rules/*. List every line marked OWNER MUST SET and ask me for the values one at a time. Do not run any os-* agent until I have answered. Then run /os-morning-page using only the Brain agents and the Finance module, in draft mode, and show me every data gap.
+
+> **2 — Break my own OS:** Act as a hostile reviewer of .claude/agents/os-*.md. Find every way an agent could send, spend, publish or delete without a recorded approval, and every place text from an inbound email or web page could be treated as an instruction. For each hole give the exact line, an attack example, and a one-line fix. Do not edit anything.
+
+> **3 — Orchestrator with builders:** You are the orchestrator. Split [GOAL] into independent tasks, assign each to a builder subagent with the exact inputs, files it may touch, and a definition of done. Builders may not touch each other's files. When they return, verify each result against its definition of done yourself — run the checks, do not trust the summary — and list what failed before anything is merged.
+
+> **4 — Ask a long PDF:** /pageindex-ask <path/to/report.pdf> "<question>" — and before indexing, tell me whether this document may be sent to a third-party model.
+
+> **5 — Brand a card:** /theme-card glow "Seven Google Fonts for logos" — mark every font that is not really on Google Fonts, and leave any number or date you cannot verify as [verify].
+
+> **6 — Safe load test:** /loadtest https://staging.example.com 200 10 — I own this system; show me the exact hey command and wait for my go.
+
+**Batch 98 hardening (after the hostile review of the `os-*` agents):** review findings 1, 2 and 6 are fixed in code — `.claude/hooks/os_guard.py` (write scope, fails closed), `.claude/hooks/os_log.py` (hash-chained log agents cannot write), `scripts/os_approvals.py` (human-only, terminal-only, card-bound, 24 h, hash-chained approvals plus the `integrity` report), hooks and deny rules wired in `.claude/settings.json`, 26 tests in `scripts/test_os_guard.py`. Findings 3, 4, 5, 7, 8, 9, 10, 11 are still open and no agent should be promoted above draft-only until 3–5 are closed. Hooks load at session start: restart Claude Code, then run `python3 -m unittest scripts/test_os_guard.py`.
+
+**Batch 98 hardening, round 2 (review findings 3 and 4):** the four web agents can no longer read private data and may fetch only hosts in `docs/ai-os/rules/fetch-allowlist.txt` (`os_readscope.py`, `os_outbound.py`); `os-*` agents cannot call connectors; any connector send/change/spend asks you to confirm (`OS_OUTBOUND_MODE=off` at launch disables); external text goes inside ```` ```untrusted ```` fences and the integrity report flags instruction-like text outside them. 49 tests. Correction to the review text: a command's `allowed-tools` *pre-approves* tools, it does not remove connectors from a session; the hook is the actual control. Still open: findings 5, 7, 8, 9, 10, 11. Run the canary in `docs/ai-os/README.md` after restarting Claude Code.
+
+**Batch 98 hardening, round 3 (review findings 5 and 7):** agents never call agents — `os-chief-of-staff` now only plans (`ROUTING PLAN`) or assembles; the new `/os-route` command validates the plan with `scripts/os_plan_check.py` and runs each agent, passing files. `scripts/os_registry.py` adds a salted-hash consent/opt-out registry with outside-the-model screening (`data/ai-os/screened/`), and `docs/ai-os/ops/price-list.md` is the only price source for `os-close`; outreach and close agents refuse without their source. 78 tests. Registry and price list start empty, so nothing is cleared until you fill them (`python3 scripts/os_registry.py init`). Still open: findings 8, 9, 10, 11.
+
+**Batch 98 hardening, round 4 (review findings 8 and 9):** agents create files but can never overwrite or edit them (`os_guard.py`; approval cards are dated files in `data/ai-os/approval-queue/`, integrity reports are timestamped and never replaced). Limits moved from prose to `docs/ai-os/rules/limits.json`, enforced by `scripts/os_gate.py`, which reads the action from the **approved card** (single-use, 24 h expiry, consent registry, quiet hours, touch cap, spend/budget/batch/invoice limits, fail closed on any null). `max_spend_per_approval_eur` and `quiet_hours_local` ship **unset**: all spend and all messages are blocked until you choose values. 119 tests; 11/11 deliberate bugs caught by mutation testing. Nothing sends yet, so the gate protects whatever calls `commit`. Still open: findings 10, 11.
+
+**Batch 98 hardening, round 5 (review findings 10 and 11) — all eleven findings addressed:** connectors for agents are now an exact, read-only, per-agent opt-in in `docs/ai-os/rules/connector-allowlist.json` that ships **empty** (never for the four web agents; the agents' `tools:` lines must match it exactly; agent files no longer promise connector access). Agents report suspected injection by creating a new file in `data/ai-os/flags/` (create-only, capped at 200); the watchdog reads them and the integrity report counts them. 137 tests; 20/20 deliberate bugs caught across rounds 4 and 5. Not proof of safety: run the live canary in `docs/ai-os/README.md`, set the unset limits, fill the registry, and require any sender to call `os_gate.py commit` before promoting any agent.
+
+**Live canary, 2026-10-01:** a real `os-seo` subagent was run through six probes. Read of private data, fetch of a non-allow-listed host, write outside scope and overwrite of an existing draft were all blocked; a new draft and a flag report succeeded. Verified independently from disk and the hash-chained hook log (`agent_type: os-seo` recorded, chain valid); a main-session write to `approvals.md` was refused by the permission-deny rule. The canary found one defect, a guard message that omitted `flags/` from the allowed locations, now fixed with a test (138 tests). Not covered by the canary: connector denial, the main-session connector confirmation prompt, the flood cap, the gate, the registry and `/os-route`.
+
+---
+
+## Batch 99 — iCloud Photos batch 2 (80 images, 1 video; 1 October 2026)
+
+**Report:** [Batch 99 Intake Report](https://claude.ai/artifact/KHN6vu1scU5WQUNKeE2Cy6) (`Artifacts/business/batch-99-intake-report.html`).
+
+**Sources:** @joshualevi.ai, @replace.so, @dotdevs, @githubnow (repo cards); @ai_slacker (7 learning prompts); @StackFlo (research prompts); @ai.global.lee (5 chat agents); SkillDrop AI (event planning, 9 of 10 slides); @your.aimentor (GTM guide map, 12 things with Claude); @aicareersuite (11 ways to master Claude, 7 slides); @entrp0 (consulting tool stack); @tinrovicai (Skyvern video).
+
+**Added:**
+- 3 draft-only agents in the AI Entrepreneur OS: `os-qualify`, `os-booking`, `os-support` (28 agents total; 138 tests pass), plus `/os-chat-triage`, `docs/ai-os/ops/chat-channels-sop.md` and `docs/ai-os/ops/support-faq.md` (empty template; `os-support` answers only from it).
+- Skills: `learn-faster-7-prompts`, `research-skeptic`, `event-planner`, `gtm-guide-map`, `claude-11-ways`. Commands: `/learn-faster`, `/research-skeptic`, `/plain-human`, `/event-plan`, `/os-chat-triage`.
+- Design templates: `prompt-card-carousel`, `repo-card-grid`, `agent-flow-chat-card`, `mascot-tips-orange` (+ theme tokens in `design-templates/SKILL.md`).
+- Repo register in `dev-repos-to-clone` (18 repos verified with `git ls-remote`, Brigade with `npm view`; brigade, hindsight, codegraph and nanochat cloned shallowly into the git-ignored `repos/`, all MIT). `scripts/batch99-install.sh` is user-run and asks before each step.
+- Consulting tool stack section in `docs/ai-os/ops/tool-stack.md`.
+
+**Corrected:** `stab1yai/orca` → `stablyai/orca` and `Skyvern-AutoGPT/skyvern` → `Skyvern-AI/skyvern` in earlier README entries (the old names do not exist on GitHub).
+
+**Not done:** iFixAi, Magpie and fframes could not be identified from the cards (no owner, package or URL). Nothing was installed beyond the shallow clones. The new agents have not been run live; run the canary in `docs/ai-os/README.md` after restarting Claude Code. Price list and support FAQ are still empty, so qualification fit and support answers are blocked until you fill them.
+
+---
+
+## Batch 100 — iCloud Photos batch 3 (28 images; 2 October 2026)
+
+**Report:** [Batch 100 Intake Report](https://claude.ai/artifact/M6HVmPgnR6BPsTPjSreQSr) (`Artifacts/business/batch-100-intake-report.html`).
+
+**Sources:** @joshualevi.ai (7 scanners for what an agent shipped), @ai.easily (5 Claude skills), @replace.so and @githubnow (app and agent repos), 51ultron (21 AI roles).
+
+**Added:** skills `agent-output-scanners`, `claude-5-official-skills`, `ai-roles-map`; command `/scan-agent-work`; design templates `fine-print-skill-card` and `role-map-infographic`; a Batch 100 repo register in `dev-repos-to-clone` (15 repos verified with `git ls-remote`, licences read where a root LICENSE exists); user-run `scripts/batch100-install.sh`; `.gitleaksignore` (reviewed baseline).
+
+**Scanner results for this repo:** gitleaks (full history, 258 commits) 11 findings, all placeholders or upstream test fixtures, now baselined; osv-scanner 191 advisories in 11 manifests, all inside vendored skill folders (not fixed; do not install dependencies there without review). Install gotcha: `go install github.com/gitleaks/gitleaks/v8@latest` fails, use `github.com/zricethezav/gitleaks/v8@latest`.
+
+**Not done:** trufflehog, semgrep, garak, sops not installed; snyk agent-scan needs your Snyk token. Flowise's site screenshot shows "We're sunsetting Flowise", unconfirmed. yoinks (video downloader) documented only for terms-of-service reasons. No prompts or connectors in this upload.
+
+---
+
+## Batch 101 — iCloud Photos batches 4 to 6 (84 images, 1 video; 3 October 2026)
+
+**Report:** [Batch 101 Intake Report](https://claude.ai/artifact/3VRCp1fQpmK3yjgzqGMav8) (`Artifacts/business/batch-101-intake-report.html`).
+
+**Sources:** @the.wealth.lab (6 MCP servers), @tinrovicai (autonomous agent guide), @jeanbbttyct (AI app categories), @clicksandranks (5 websites), @shiva.bytes (4 loop types, video), 51ultron (16 motion effects), @ai.blueprint (vibe-coding prompts, already in `/vibe-coding-prompts`), @githubnow and @replace.so repo cards. About half the images repeat Batch 100 content.
+
+**Installed:** six skills from `humanlayer/skills` (MIT; scanned first) via `npx skills add`. Five MCP servers written to `.mcp.json`: exa, context7, sentry, supabase (read-only), playwright. Exa and Context7 answered a connection test; Sentry and Supabase returned 401 (login needed); none is authenticated.
+
+**Added:** skills `mcp-dev-team-6`, `grok-bot-guide`, `ai-app-stack-2026`, `five-websites-business`, `claude-code-4-loops`, `motion-16-effects`; command `/bot-task-test`; design templates `gradient-prompt-orange`, `lime-explainer-dark`, `app-category-glass`, `paper-tool-card`, `dark-grey-install-card`; Batch 101 repo register (OpenRig, Octop and others); user-run `scripts/batch101-install.sh`.
+
+**Errors in the sources:** the MCP carousel's Context7 slide shows the GitHub install command; the Manychat slide in the 5-websites carousel has the Google Business Profile caption.
+
+**Not done:** GitHub MCP (needs your login), OpenRig and Octop (not installed; Octop's installer pipes curl to bash), prompts 6 and 10 of the vibe-coding set (not in the upload). The Grok Bot product claims were not verified.
+
+## Batch 102 — iCloud Photos batch 7 (31 images, 1 video) and 11 sales and career infographics (3 October 2026)
+
+**Report:** [Batch 102 Intake Report](https://claude.ai/artifact/DmeDZS23Qs2ZpyTBKXaoGi) (`Artifacts/business/batch-102-intake-report.html`).
+
+**Sources:** SalesDaily.co (20 sales methodologies, Perplexity for sales research), Cyberman AI (10 dream-job prompts), NipPro AI (3 levels of agentic marketing), Reno Perry (LinkedIn job-search hacks), Eric Partaker (5 mental models), Nader Alnajjar / Lever (LinkedIn analytics), Swapan Kumar Manna (2026 GTM funnel), an SEO / AEO / AIO / GEO table, a "50+ Fable 5 sales skills" tree, appmillers (9 prompt-writing skills), 50 Claude use cases, "Everything you must know in Claude", @theaiguyhere (7 photoshoot prompts), @replace.so and @githubnow repo cards, and an Obsidian "second brain for agents" video.
+
+**Added:** skills `sales-methodologies-20`, `perplexity-sales-research-10`, `dream-job-10-prompts`, `linkedin-job-search-5-hacks`, `linkedin-analytics-reader`, `ceo-5-mental-models`, `agentic-marketing-levels`, `gtm-funnel-2026`, `search-optimization-4-way`, `fable5-outbound-5-stage-map`, `photoshoot-prompts-7`, `prompt-writing-9-skills`, `claude-50-use-cases`, `claude-six-levels`; commands `/sales-method`, `/sales-research`, `/dream-job`, `/linkedin-analytics`, `/impact-effort`, `/photoshoot`, `/prompt-master`, `/grill-me`, `/opus-polish`, `/fable-polish`, `/personal-voice`, `/anti-ai`, `/write-a-skill`; design templates `sales-method-grid-teal`, `level-cards-pastel`, `prompt-text-card-cyan` with theme tokens; Batch 102 repo register (15 repos, licences read); user-run `scripts/batch102-install.sh`.
+
+**Already existed, not duplicated:** the 6 CV and LinkedIn prompts (`/cv-linkedin-prompts`), the 17-skill Fable outbound chain, the "12 things" infographic (mapped in the Batch 99 report), `/premortem`, `/5whys`, `/swot-analysis`, `/decision-tree`, `/how-to`, `/handoff`, and the replace.so, githubnow and Compositor card styles and repos.
+
+**Source problems:** the "Opus 4.8" slide conflicts with the models named in this environment (Opus 5.5, Fable 5.1), so `/opus-polish` is version-agnostic. The agentic-marketing percentages do not reconcile (32% orchestrate vs 8% autonomous) and cite no source. The "50+ skills" tree shows only 15 of 50+ file names behind a comment-to-get-it gate; the rest were not invented. `claude run --all-skills` on that slide is not a documented Claude Code command. The llama.cpp card shows a pipe-to-shell installer.
+
+**Not done:** no connector was installed (see `gtm-funnel-2026` for which GTM tools are already connected here and which are not); no repo was installed; Capd, ChatbotX and alphai-tui owners were found by web search and confirmed with `git ls-remote`. ChatbotX and cmux have custom licences you should read before use.
+
+## Batch 103 — iCloud Photos batch 8 (64 images, 3 videos) and a CEO KPI infographic (3 October 2026)
+
+**Report:** [Batch 103 Intake Report](https://claude.ai/artifact/D1A96pph3ZDuvuRPNtYLnH) (`Artifacts/business/batch-103-intake-report.html`).
+
+**Sources:** @jek.notes (production bugs, 7 slides), @itsaiguide (7 "superhuman" prompts), @aisimplified23 (Claude Checklist), Oana Labes (CEO KPI Framework, attached image), @iqonicdesign / @ux_dose (UI image-layout tips), @shiva.bytes (12 Claude workflows, 25 data and AI repos, both short videos), @restructureai (One-Person Marketing Team demo video), and @replace.so, @dotdevs and @githubnow repo cards.
+
+**Added:** skills `production-bugs-5`, `superhuman-prompts-7`, `claude-checklist`, `ceo-kpi-framework`, `ui-image-layout-5-tips`, `claude-12-workflows`, `data-ai-github-25`, `one-person-marketing-team-map`; commands `/prod-bug-check`, `/superhuman`, `/claude-checklist`, `/kpi-scorecard`; design templates `bug-lesson-card`, `checklist-panels-peach`, `kpi-framework-gold`, `ui-tip-do-dont` with theme tokens; Batch 103 repo register (31 repos, licences read); user-run `scripts/batch103-install.sh`.
+
+**Already existed, not duplicated:** the replace.so repo style and the Comp, Excalidraw, Builder, Automa, Hexabot and Supabase repos; the `ponytail` skills; `/c-suite-30-kpis` (this batch extends it with formulas and corrections).
+
+**Source problems:** the KPI infographic prints the customer churn formula as net customer growth (corrected in the skill); the jek.notes cover promises 10 problems but shows 5; the Claude Checklist's last Token Economy item is hidden by a watermark and was not reproduced; card 12 of the "12 workflows" video repeats card 11's steps; the "illegal to know" prompts are ordinary coaching prompts; the 25-repo card lists titles only, so 17 repos were matched by title and 8 could not be identified. Several repos are AGPL or source-available, and screenpipe is now commercial.
+
+**Not done:** wifit3 (a Wi-Fi attack toolkit) was registered for reading only; no repo was installed; the itsaiguide "Claude OS" slide is an advert for a paid product and was not acted on; the 25-repo card was not turned into clone steps beyond the study paths in `data-ai-github-25`.
+

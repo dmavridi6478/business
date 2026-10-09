@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<!--
+  Template: agent-flow-chat-card
+  Style: @ai.global.lee "5 AI agents that turn chats into customers" - a warm-photo-style cream slide with a numbered pill, a huge black headline whose last word
+         takes the agent's accent colour, a short subtitle, a chat mock-up (grey user bubbles, tinted agent bubbles) top right, and a white flow panel:
+         trigger -> accent agent node -> 4 output tiles -> green result bar -> 3 benefit icons, with a four-colour bar at the bottom.
+  Inspired by: Batch 99 iCloud photos (WhatsApp Business, Customer Support, Appointment Booking, Sales Follow-up, Lead Qualification).
+  Swap points: AGENTS array [number, name, accent colour, subtitle, chat [[who,text],...], trigger, node text, tiles [[title, sub],...], result, benefits].
+  Honest note: the product claims on the original slides ("24/7", "more conversions") are marketing copy - do not reuse them as facts about your own results.
+  1080 x 1350 shown at 36 %.
+-->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Agent Flow Chat Card</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800;900&display=swap" rel="stylesheet">
+<style>
+  :root { --s: 0.36; --ink: #0b0b0b; --soft: #5b6475; --green: #1f9d55; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: #c8c8c8; padding: 24px; display: flex; flex-wrap: wrap; gap: 24px; font-family: 'Inter', Arial, sans-serif; }
+  .frame { width: calc(1080px * var(--s)); height: calc(1350px * var(--s)); }
+  .slide { width: 1080px; height: 1350px; transform: scale(var(--s)); transform-origin: top left; position: relative; overflow: hidden; background: linear-gradient(160deg, #fbf6ef 0%, #f1e7da 100%); color: var(--ink); }
+  .pill { position: absolute; left: 50px; top: 50px; display: flex; align-items: center; gap: 20px; font-size: 38px; font-weight: 900; color: var(--accent); }
+  .pill span { background: var(--accent); color: #fff; font-size: 28px; font-weight: 600; padding: 16px 28px; border-radius: 40px; }
+  h1 { position: absolute; left: 50px; top: 140px; width: 600px; font-size: 84px; line-height: .94; font-weight: 900; letter-spacing: -.05em; }
+  h1 b { color: var(--accent); }
+  .sub { position: absolute; left: 50px; top: 430px; width: 560px; font-size: 31px; line-height: 1.25; font-weight: 800; }
+  .rule { position: absolute; left: 50px; top: 636px; width: 400px; height: 8px; border-radius: 8px; background: var(--accent); }
+  .chat { position: absolute; right: 30px; top: 40px; width: 410px; background: #fff; border-radius: 30px; padding: 28px; box-shadow: 0 10px 40px rgba(0,0,0,.12); font-size: 21px; line-height: 1.3; }
+  .msg { max-width: 85%; padding: 16px 20px; border-radius: 18px; margin-bottom: 16px; }
+  .msg.user { background: #eceef2; } .msg.bot { background: color-mix(in srgb, var(--accent) 14%, #fff); margin-left: auto; }
+  .panel { position: absolute; left: 30px; right: 30px; top: 690px; bottom: 100px; background: #fff; border-radius: 34px; padding: 26px 24px; box-shadow: 0 10px 40px rgba(0,0,0,.08); }
+  .trigger { margin: 0 auto; width: 560px; text-align: center; background: color-mix(in srgb, var(--accent) 12%, #fff); border: 2px solid color-mix(in srgb, var(--accent) 35%, #fff); border-radius: 18px; padding: 16px; font-size: 26px; font-weight: 600; }
+  .node { margin: 16px auto 0; width: 640px; background: var(--accent); color: #fff; border-radius: 22px; padding: 16px 26px; font-size: 22px; line-height: 1.25; } .node b { display: block; font-size: 28px; }
+  .tiles { display: flex; gap: 14px; margin-top: 16px; } .tile { flex: 1; border: 2px solid #e5e8ee; border-radius: 18px; padding: 12px 8px; text-align: center; font-size: 18px; color: var(--soft); } .tile b { display: block; font-size: 24px; color: var(--ink); margin: 8px 0 4px; } .tile i { display: block; width: 44px; height: 44px; margin: 0 auto; border-radius: 12px; background: color-mix(in srgb, var(--accent) 25%, #fff); }
+  .result { margin-top: 16px; background: #e7f6ee; border: 2px solid #bfe6cf; border-radius: 18px; padding: 12px 22px; color: var(--green); font-size: 25px; font-weight: 800; } .result span { display: block; font-size: 20px; font-weight: 500; color: #4a6b58; }
+  .ben { display: flex; justify-content: space-around; margin-top: 14px; font-size: 21px; font-weight: 600; }
+  .bar { position: absolute; left: 30px; right: 30px; bottom: 90px; height: 14px; border-radius: 0 0 14px 14px; background: linear-gradient(90deg, var(--accent) 0 55%, #f6c445 55% 66%, #29b36b 66% 85%, #f6c445 85%); }
+  .save { position: absolute; left: 50px; bottom: 34px; font-size: 30px; font-weight: 600; } .swipe { position: absolute; right: 50px; bottom: 34px; font-size: 30px; font-weight: 700; }
+</style>
+</head>
+<body>
+<div id="out" style="display:contents"></div>
+<script>
+/* ── SWAP THESE ── */
+const AGENTS = [
+  [2, "Customer Support Agent", "#1f63e6", "Handle common problems before they reach your team. Answer repetitive questions, solve simple issues, and route complex cases to a human.",
+    [["user", "Hi! I need help with my order. Can you check the shipping status?"], ["bot", "Of course! Let me check that for you."], ["user", "No, that’s perfect! Thank you!"]],
+    "Customer asks for help", "Customer Support Agent|Handles common support questions instantly.",
+    [["Shipping status", "Check order status"], ["Refund policy", "Explain returns"], ["Account help", "Reset details"], ["Product questions", "Answer common ones"]],
+    "Issue solved faster|Your team only handles the cases that really need humans.", ["Fewer repetitive tasks", "Faster answers", "Happier customers"]],
+  [3, "Appointment Booking Agent", "#f26a1b", "Let customers book without waiting for a reply. Offer time slots, confirm bookings, and reduce drop-off.",
+    [["user", "Hi! I’d like to book a consultation. Any availability this week?"], ["bot", "Sure! Tue 10:00, Wed 14:00 or Thu 11:00. Which works best?"], ["user", "Let’s do Wednesday at 2 PM."]],
+    "Customer wants to book", "Appointment Booking Agent|Shows availability and books the next step.",
+    [["Choose a time", "Show slots"], ["Confirm details", "Collect info"], ["Send reminder", "Email or SMS"], ["Reschedule", "Make it easy"]],
+    "Booking completed|Less back-and-forth. Faster scheduling.", ["More bookings", "Less friction", "Better experience"]]
+];
+const out = document.getElementById("out");
+AGENTS.forEach(([n, name, accent, sub, chat, trig, node, tiles, res, bens]) => {
+  const words = name.split(" "), last = words.pop();
+  const [nt, nb] = node.split("|"), [rt, rb] = res.split("|");
+  const f = document.createElement("div"); f.className = "frame";
+  f.innerHTML = `<div class="slide" style="--accent:${accent}"><div class="pill">#${n} <span>${name}</span></div>
+    <h1>${words.join(" ")} <b>${last}</b></h1><div class="sub">${sub}</div><div class="rule"></div>
+    <div class="chat">${chat.map(([w, t]) => `<div class="msg ${w}">${t}</div>`).join("")}</div>
+    <div class="panel"><div class="trigger">${trig}</div><div class="node"><b>${nt}</b>${nb}</div>
+      <div class="tiles">${tiles.map(([a, b]) => `<div class="tile"><i></i><b>${a}</b>${b}</div>`).join("")}</div>
+      <div class="result">${rt}<span>${rb}</span></div><div class="ben">${bens.map(b => `<span>${b}</span>`).join("")}</div></div>
+    <div class="bar"></div><div class="save">Save for later</div><div class="swipe">Swipe &rarr;</div></div>`;
+  out.append(f);
+});
+</script>
+</body>
+</html>

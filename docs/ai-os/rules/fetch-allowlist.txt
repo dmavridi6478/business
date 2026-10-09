@@ -1,0 +1,14 @@
+# Hosts the web-capable os-* agents (os-seo, os-market, os-pain-point, os-prospect) may fetch with WebFetch.
+# One registrable domain per line; subdomains match. https only, no IPs, no ports, short query strings.
+# Agents cannot edit this file (the write guard blocks docs/**). An empty file blocks ALL fetches.
+# Add a domain only if you would be comfortable with an attacker-influenced page on it steering an agent;
+# never add a domain whose server logs an outsider can read (paste sites, URL shorteners, webhook catchers).
+reddit.com
+news.ycombinator.com
+wikipedia.org
+trustpilot.com
+g2.com
+capterra.com
+producthunt.com
+stackoverflow.com
+github.com

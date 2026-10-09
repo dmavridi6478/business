@@ -1,0 +1,270 @@
+<title>Batch 99 Intake Report</title>
+<style>
+  /* Layout: single-column formal report, 880px measure, tables scroll inside their own wrappers.
+     Palette: ink-blue neutrals, one deep teal accent, semantic green/amber/red for status only.
+     Type: Aptos (user's house font) with system fallbacks; titles 32pt, headings 14pt, body 11pt. */
+  :root {
+    --bg: #f6f7f9; --surface: #ffffff; --fg: #1b2330; --muted: #5a6577; --line: #d9dee6;
+    --accent: #0f5d6b; --accent-soft: #e2f0f2;
+    --ok: #17703a; --ok-bg: #e3f3e8; --warn: #8a5a00; --warn-bg: #fbefd3; --bad: #a11d2a; --bad-bg: #fbe3e5;
+    --code-bg: #eef1f5;
+    --font: Aptos, "Segoe UI Variable Text", "Segoe UI", system-ui, -apple-system, Roboto, sans-serif;
+    --mono: ui-monospace, "SF Mono", Consolas, monospace;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #11161e; --surface: #181f2a; --fg: #e6eaf0; --muted: #9aa5b6; --line: #2c3646;
+      --accent: #6cc3d1; --accent-soft: #17323a;
+      --ok: #6fd18f; --ok-bg: #173824; --warn: #f0c261; --warn-bg: #3a2e12; --bad: #ff8d98; --bad-bg: #3d1a1f;
+      --code-bg: #0e131a; color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #11161e; --surface: #181f2a; --fg: #e6eaf0; --muted: #9aa5b6; --line: #2c3646;
+    --accent: #6cc3d1; --accent-soft: #17323a;
+    --ok: #6fd18f; --ok-bg: #173824; --warn: #f0c261; --warn-bg: #3a2e12; --bad: #ff8d98; --bad-bg: #3d1a1f;
+    --code-bg: #0e131a; color-scheme: dark;
+  }
+  * { box-sizing: border-box; }
+  body { background: var(--bg); color: var(--fg); font-family: var(--font); font-size: 11pt; line-height: 1.55; padding-inline: 16px; padding-block: 28px 64px; }
+  main { max-width: 880px; margin-inline: auto; display: flex; flex-direction: column; gap: 28px; }
+  header { display: flex; flex-direction: column; gap: 8px; border-bottom: 2px solid var(--accent); padding-bottom: 18px; }
+  .eyebrow { font-size: 9pt; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
+  h1 { font-size: 32pt; line-height: 1.1; margin: 0; font-weight: 700; text-wrap: balance; }
+  h2 { font-size: 14pt; margin: 0 0 10px; font-weight: 700; color: var(--accent); text-wrap: balance; }
+  h3 { font-size: 11pt; margin: 14px 0 6px; font-weight: 700; }
+  p { margin: 0 0 10px; max-width: 75ch; }
+  section { background: var(--surface); border: 1px solid var(--line); border-radius: 6px; padding: 20px 22px; min-width: 0; }
+  .lede { font-size: 11pt; color: var(--muted); max-width: 70ch; margin: 0; }
+  .truth { border-left: 4px solid var(--bad); background: var(--bad-bg); padding: 12px 16px; border-radius: 0 6px 6px 0; }
+  .truth p:last-child { margin-bottom: 0; }
+  .tag { font-family: var(--mono); font-size: 9pt; padding: 1px 6px; border-radius: 3px; background: var(--accent-soft); color: var(--accent); white-space: nowrap; }
+  .tw { overflow-x: auto; margin-block: 8px 4px; border: 1px solid var(--line); border-radius: 4px; }
+  table { border-collapse: collapse; width: 100%; min-width: 640px; font-size: 10pt; }
+  th, td { padding: 8px 10px; border-bottom: 1px solid var(--line); text-align: center; vertical-align: top; }
+  th { background: var(--accent-soft); color: var(--fg); font-weight: 700; font-size: 9.5pt; }
+  tr:last-child td { border-bottom: 0; }
+  td.l, th.l { text-align: left; }
+  .st { display: inline-block; padding: 1px 8px; border-radius: 10px; font-size: 9pt; font-weight: 700; white-space: nowrap; }
+  .st.ok { background: var(--ok-bg); color: var(--ok); } .st.warn { background: var(--warn-bg); color: var(--warn); } .st.bad { background: var(--bad-bg); color: var(--bad); }
+  .sw { display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 10px; margin-block: 8px; }
+  .sw div { border: 1px solid var(--line); border-radius: 4px; overflow: hidden; font-size: 9pt; text-align: center; }
+  .sw i { display: block; height: 44px; }
+  .sw span { display: block; padding: 4px 6px; font-family: var(--mono); }
+  .prompt { position: relative; margin-block: 10px; }
+  .prompt pre { margin: 0; white-space: pre-wrap; background: var(--code-bg); border: 1px solid var(--line); border-radius: 4px; padding: 12px 84px 12px 12px; font-family: var(--mono); font-size: 9.5pt; line-height: 1.5; }
+  .prompt b { display: block; font-family: var(--font); font-size: 10pt; margin-bottom: 4px; }
+  .prompt button { position: absolute; top: 8px; right: 8px; font: inherit; font-size: 9pt; padding: 4px 10px; border-radius: 4px; border: 1px solid var(--accent); background: var(--surface); color: var(--accent); cursor: pointer; }
+  .prompt button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  ul { margin: 0 0 10px; padding-left: 20px; } li { margin-bottom: 4px; max-width: 75ch; }
+  code { font-family: var(--mono); font-size: 9.5pt; background: var(--code-bg); padding: 1px 4px; border-radius: 3px; }
+  footer { color: var(--muted); font-size: 9.5pt; }
+</style>
+<main>
+<header>
+  <span class="eyebrow">Intake report · iCloud Photos batch 2 · 1 October 2026</span>
+  <h1>Batch 99 Intake Report</h1>
+  <p class="lede">80 images and 1 video converted into 3 draft-only agents, 6 skills, 5 commands, 4 design templates, a repo register and a user-run install script. Prepared for the owner of the business repository.</p>
+</header>
+
+<section class="truth">
+  <h2>What you should know first</h2>
+  <p><b>Most of this upload overlaps earlier batches.</b> Several repos and tools on the slides were already tracked (Paperclip, codegraph, PageIndex, Skyvern, public-apis and others), so I added only what was new. The new material is mainly prompts, the five chat-agent playbooks, the event-planning workflow and a few repos.</p>
+  <p><b>Three tools could not be identified.</b> iFixAi, Magpie and fframes appear with a name and star count but no owner, package or URL. The npm names do not exist. I did not guess a repo.</p>
+  <p><b>Two earlier README entries were wrong and are corrected.</b> <code>stab1yai/orca</code> is really <code>stablyai/orca</code>, and <code>Skyvern-AutoGPT/skyvern</code> is really <code>Skyvern-AI/skyvern</code>. Both old names fail on GitHub.</p>
+</section>
+
+<section>
+  <h2>1. Inventory of the upload</h2>
+  <div class="tw"><table>
+    <tr><th class="l">Content</th><th>Items</th><th class="l">Outcome</th></tr>
+    <tr><td class="l">GitHub repo cards (@joshualevi.ai, @replace.so, @dotdevs, @githubnow)</td><td>about 25</td><td class="l">Register added to <code>dev-repos-to-clone</code>; 18 repos verified with <code>git ls-remote</code>, Brigade with <code>npm view</code>; 4 cloned for reading (all MIT)</td></tr>
+    <tr><td class="l">Learning prompts (@ai_slacker)</td><td>7</td><td class="l">Skill <code>learn-faster-7-prompts</code> and command <code>/learn-faster</code></td></tr>
+    <tr><td class="l">Research prompts (@StackFlo)</td><td>6</td><td class="l">Skill <code>research-skeptic</code> and command <code>/research-skeptic</code></td></tr>
+    <tr><td class="l">Rewrite-like-a-human prompt</td><td>1</td><td class="l">Command <code>/plain-human</code></td></tr>
+    <tr><td class="l">5 chat agents (@ai.global.lee)</td><td>5</td><td class="l">3 new agents, 2 mapped to existing ones, <code>/os-chat-triage</code>, chat SOP, support FAQ template</td></tr>
+    <tr><td class="l">Event planning carousel (SkillDrop AI, 9 of 10 slides)</td><td>9</td><td class="l">Skill <code>event-planner</code> and command <code>/event-plan</code></td></tr>
+    <tr><td class="l">GTM guide skills map (@your.aimentor)</td><td>40 files</td><td class="l">Skill <code>gtm-guide-map</code> (index only; the skill bodies were not in the images)</td></tr>
+    <tr><td class="l">Claude tips infographics (@aicareersuite)</td><td>7 of 11</td><td class="l">Skill <code>claude-11-ways</code></td></tr>
+    <tr><td class="l">Consulting tool stack video (@entrp0)</td><td>5 tools</td><td class="l">Section added to <code>docs/ai-os/ops/tool-stack.md</code></td></tr>
+    <tr><td class="l">Skyvern demo video (@tinrovicai)</td><td>1</td><td class="l">Documented; MCP setup left to the user script</td></tr>
+    <tr><td class="l">Design styles</td><td>6 looks</td><td class="l">4 templates plus theme tokens</td></tr>
+  </table></div>
+</section>
+
+<section>
+  <h2>2. Chat agents built</h2>
+  <p>The carousel lists five agents for one chat channel. They are built inside the existing AI Entrepreneur OS, so they inherit its write guard, consent registry, approval gate and tests. All are draft-only: a human approves and sends.</p>
+  <div class="tw"><table>
+    <tr><th class="l">Carousel agent</th><th class="l">Here</th><th class="l">Source it must use</th><th>Status</th></tr>
+    <tr><td class="l">#1 WhatsApp Business</td><td class="l"><code>/os-chat-triage</code> (router)</td><td class="l">chat export you provide</td><td><span class="st ok">built</span></td></tr>
+    <tr><td class="l">#2 Customer Support</td><td class="l"><code>os-support</code> (new)</td><td class="l"><code>ops/support-faq.md</code> (empty)</td><td><span class="st warn">needs your FAQ</span></td></tr>
+    <tr><td class="l">#3 Appointment Booking</td><td class="l"><code>os-booking</code> (new)</td><td class="l">availability file from Calendar or Calendly</td><td><span class="st ok">built</span></td></tr>
+    <tr><td class="l">#4 Sales Follow-up</td><td class="l"><code>os-followup</code> (existing)</td><td class="l">earlier thread</td><td><span class="st ok">existing</span></td></tr>
+    <tr><td class="l">#5 Lead Qualification</td><td class="l"><code>os-qualify</code> (new)</td><td class="l"><code>ops/price-list.md</code> (empty)</td><td><span class="st warn">needs your prices</span></td></tr>
+  </table></div>
+  <h3>Verification</h3>
+  <ul>
+    <li>All 138 unit tests pass with 28 agents (the agent-count assertions were raised from 25).</li>
+    <li>The new agents carry the same prompt-defense block, untrusted-fence rule, create-only evidence rule and connector section as <code>os-response</code>, and have no network tool.</li>
+    <li><span class="st warn">Not run live</span> I did not run a real subagent for the new three. Run the canary in <code>docs/ai-os/README.md</code> after restarting Claude Code.</li>
+    <li>The WhatsApp policy points in the SOP (opt-in, 24-hour window, templates) are marked Likely. Verify them against Meta's current rules.</li>
+  </ul>
+</section>
+
+<section>
+  <h2>3. Repos</h2>
+  <div class="tw"><table>
+    <tr><th class="l">Repo</th><th class="l">What it is</th><th>Licence</th><th>Status</th></tr>
+    <tr><td class="l">spinabot/brigade</td><td class="l">Self-hosted agent crew; npm 1.39.0</td><td>MIT</td><td><span class="st warn">sandbox only</span></td></tr>
+    <tr><td class="l">vectorize-io/hindsight</td><td class="l">retain / recall / reflect agent memory</td><td>MIT</td><td><span class="st ok">documented</span></td></tr>
+    <tr><td class="l">colbymchenry/codegraph</td><td class="l">Local code index over MCP</td><td>MIT</td><td><span class="st warn">installer pipes curl to sh</span></td></tr>
+    <tr><td class="l">karpathy/nanochat</td><td class="l">Train a small chat model on a GPU node</td><td>MIT</td><td><span class="st ok">documented</span></td></tr>
+    <tr><td class="l">4 course repos</td><td class="l">mcp-for-beginners, generative-ai-for-beginners, agents-course, anthropics/courses</td><td>not checked</td><td><span class="st ok">verified</span></td></tr>
+    <tr><td class="l">ai-engineering-from-scratch</td><td class="l">523-lesson course</td><td>MIT (card)</td><td><span class="st ok">verified</span></td></tr>
+    <tr><td class="l">iFixAi, Magpie, fframes</td><td class="l">No owner or package shown</td><td>unknown</td><td><span class="st bad">unidentified</span></td></tr>
+  </table></div>
+  <p>I did not run any install. <code>scripts/batch99-install.sh</code> asks before each step and leaves the curl-to-shell installers and the Skyvern MCP setup to you. Brigade and Skyvern both act outside the repo, so use them only in a sandbox or on supervised tasks.</p>
+</section>
+
+<section>
+  <h2>4. Design templates</h2>
+  <div class="tw"><table>
+    <tr><th class="l">Template</th><th class="l">Style</th><th>Variants</th></tr>
+    <tr><td class="l"><code>prompt-card-carousel</code></td><td class="l">StackFlo light, ai_slacker dark</td><td>2</td></tr>
+    <tr><td class="l"><code>repo-card-grid</code></td><td class="l">joshualevi.ai grid paper, replace.so dark</td><td>2</td></tr>
+    <tr><td class="l"><code>agent-flow-chat-card</code></td><td class="l">ai.global.lee chat plus flow panel</td><td>per-agent accent</td></tr>
+    <tr><td class="l"><code>mascot-tips-orange</code></td><td class="l">aicareersuite orange mascot tips</td><td>1</td></tr>
+  </table></div>
+  <p>Each rendered without console errors in Chromium. My first render showed overlapping text in all four; I fixed the layouts and re-checked. Fonts are look-alikes (Poppins, Inter), not the originals.</p>
+</section>
+
+<section>
+  <h2>5. The "12 things" infographic, mapped to this setup</h2>
+  <div class="tw"><table>
+    <tr><th>#</th><th class="l">Capability on the slide</th><th class="l">In this session</th></tr>
+    <tr><td>03</td><td class="l">Skills and /commands</td><td class="l">1,100+ skills installed; 5 new commands this batch</td></tr>
+    <tr><td>05</td><td class="l">Scheduled tasks</td><td class="l">Available as routines; none created</td></tr>
+    <tr><td>07</td><td class="l">Connectors</td><td class="l">Notion, Gmail, Calendar, Drive, Calendly, Slack and more are connected</td></tr>
+    <tr><td>11</td><td class="l">Let AI prompt you</td><td class="l">The ask-a-question tool and <code>/clarify-first</code></td></tr>
+    <tr><td>12</td><td class="l">Design with Claude</td><td class="l">Design templates and the Artifact tool</td></tr>
+  </table></div>
+  <p>Slides 01, 02, 04, 06, 08, 09 and 10 (websites, computer use, slides, Excel, Cowork, Projects, plugins) are features of the Claude apps and need no installation here.</p>
+</section>
+
+<section>
+  <h2>6. Copy-paste prompts</h2>
+  <p>Replace the [BRACKETS]. Each is quoted from the slides. The same text lives in the skills and commands above.</p>
+  <h3>Learn faster (@ai_slacker)</h3>
+  <div class="prompt"><b>1. Find your knowledge gaps first</b><pre>I want to master [TOPIC].
+
+Before teaching me, give me a diagnostic test covering the fundamentals, conceptual understanding, practical application, and problem-solving.
+
+Analyze my answers and identify the exact areas where my knowledge is weak, incomplete, or inconsistent.
+
+Then create a personalized learning plan that focuses only on the gaps that matter most. Retest me after each section and increase the difficulty as I improve.</pre><button type="button" class="cp">Copy</button></div><div class="prompt"><b>2. Build the fastest learning roadmap</b><pre>I want to learn [SKILL/TOPIC] for [GOAL].
+
+My current level is [LEVEL] and I can study for [TIME] per day.
+
+Identify the 20% of concepts and skills that will give me 80% of the useful understanding.
+
+Put them in the best learning order and create a step-by-step roadmap using active recall, spaced repetition, practical examples, and progressively harder exercises.
+
+Start by giving me today&#x27;s exact learning task.</pre><button type="button" class="cp">Copy</button></div><div class="prompt"><b>3. Make hard concepts feel simple</b><pre>I&#x27;m struggling to understand [CONCEPT].
+
+First identify what prerequisite knowledge I may be missing.
+
+Then explain the concept in 4 layers:
+1. a simple analogy
+2. a concrete example
+3. a real-world application
+4. the more technical explanation
+
+Afterward, ask me to explain it back in my own words. Use my answer to identify exactly where my understanding breaks and teach only that part again.</pre><button type="button" class="cp">Copy</button></div><div class="prompt"><b>4. Turn learning into active recall</b><pre>Teach me [TOPIC] at [LEVEL], but keep the initial explanation short.
+
+After explaining the essentials, stop teaching and start testing me from memory. Ask one question at a time without showing the answer first.
+
+Analyze each response, correct mistakes, explain why I was wrong, and immediately retest the weak concept in a slightly different way.
+
+Keep increasing the difficulty until I can explain and apply the topic without help.</pre><button type="button" class="cp">Copy</button></div><div class="prompt"><b>5. Learn through questions only</b><pre>Teach me [TOPIC] mainly through questions instead of lectures.
+
+Start with simple foundational questions, then gradually move into reasoning, application, edge cases, and unfamiliar situations.
+
+After every answer, give concise feedback and adjust the next question based on my performance.
+
+Track the topics I struggle with and keep generating targeted questions until those weaknesses disappear. Do not move on just because I answered something correctly once.</pre><button type="button" class="cp">Copy</button></div><div class="prompt"><b>6. Train like an expert</b><pre>I want to become highly skilled at [SKILL].
+
+Break the skill into the specific subskills an expert needs.
+
+Teach me one subskill at a time, show me how an expert would think through it, then give me a realistic exercise.
+
+Evaluate my attempt, identify my biggest weakness, and create a harder practice task specifically designed to fix it.
+
+Continue adapting the training based on my performance instead of following a fixed lesson plan.</pre><button type="button" class="cp">Copy</button></div><div class="prompt"><b>7. Build a system so you do not forget</b><pre>I need to learn [TOPIC] and remember it for [TIMEFRAME].
+
+Break the topic into manageable units and create a spaced-review schedule.
+
+At every session, test me on older material before introducing anything new. Bring weak concepts back more frequently and increase the spacing for ideas I remember consistently.
+
+Include active recall questions, mini quizzes, application exercises, and periodic cumulative tests so I retain the knowledge long term.</pre><button type="button" class="cp">Copy</button></div>
+  <h3>Research skeptic (@StackFlo)</h3>
+  <div class="prompt"><b>1. Find where sources agree</b><pre>I&#x27;m researching: [TOPIC]
+
+Compare the information I&#x27;ve collected below.
+
+What do multiple independent sources agree on?
+What appears in only one source?
+Where do the sources contradict each other?
+
+Don&#x27;t treat something as true just because it&#x27;s repeated.</pre><button type="button" class="cp">Copy</button></div><div class="prompt"><b>2. Find the original source</b><pre>This claim keeps appearing: [CLAIM]
+
+Help me trace it back to the strongest original source.
+
+Prioritise primary research, official data or first-hand documentation over articles that simply repeat the claim.</pre><button type="button" class="cp">Copy</button></div><div class="prompt"><b>3. Look for evidence against it</b><pre>Here&#x27;s the conclusion my research currently points towards: [CONCLUSION]
+
+Actively look for credible evidence that challenges it.
+
+Show me the strongest counter-evidence and explain whether it genuinely weakens my conclusion.</pre><button type="button" class="cp">Copy</button></div><div class="prompt"><b>4. Tell me what is still unknown</b><pre>Based on everything I&#x27;ve collected so far: [PASTE RESEARCH]
+
+Separate my findings into:
+- WELL SUPPORTED
+- PARTIALLY SUPPORTED
+- DISPUTED
+- STILL UNKNOWN
+
+Tell me what additional evidence would move anything into &#x27;well supported&#x27;.</pre><button type="button" class="cp">Copy</button></div><div class="prompt"><b>5. Find the weakest source</b><pre>Review these sources critically.
+
+Which ones should I trust MORE and which should I treat cautiously?
+
+Consider:
+- WHO PUBLISHED IT
+- THE EVIDENCE PROVIDED
+- HOW RECENT IT IS
+- POSSIBLE CONFLICTS OF INTEREST
+- WHETHER CLAIMS LINK BACK TO ORIGINAL EVIDENCE</pre><button type="button" class="cp">Copy</button></div><div class="prompt"><b>6. The Claude prompt to save (before trusting your research)</b><pre>What conclusion am I currently most confident about - but have the weakest evidence for?</pre><button type="button" class="cp">Copy</button></div>
+  <h3>Sound like a person</h3>
+  <div class="prompt"><b>Rewrite so it reads like a person wrote it</b><pre>Review everything you have written above. Strip out em dashes, semicolons, and filler like &#x27;in conclusion,&#x27; &#x27;moreover,&#x27; &#x27;furthermore,&#x27; and &#x27;it is worth noting.&#x27; No summarising closing sentence. No wind-up opener. Say the thing directly. Vary the sentence length on purpose, short next to long. Replace any vague or abstract phrase with something concrete and specific. Then rewrite anything that does not sound like a real person wrote it.</pre><button type="button" class="cp">Copy</button></div>
+</section>
+
+<section>
+  <h2>7. Your next steps</h2>
+  <ul>
+    <li>Fill <code>docs/ai-os/ops/support-faq.md</code> and <code>price-list.md</code>. While empty, <code>os-support</code> and <code>os-qualify</code> draft nothing customer-facing.</li>
+    <li>Restart Claude Code and run the live canary, then try <code>os-qualify</code> on a sample chat.</li>
+    <li>Run <code>scripts/batch99-install.sh</code> on your own machine if you want hindsight, brigade or the course clones.</li>
+    <li>Find the real repos for iFixAi, Magpie and fframes from the source videos.</li>
+    <li>Send the missing slides if you want them covered: SkillDrop slide 4 and aicareersuite slides 08 to 11.</li>
+  </ul>
+</section>
+<footer>Sources: 80 JPEGs and 1 MP4 in b6fd74e6-iCloud_Photos_1.zip. Repo facts checked 1 October 2026; star counts come from screenshots.</footer>
+</main>
+<script>
+document.querySelectorAll('.cp').forEach(function (b) {
+  b.addEventListener('click', function () {
+    var t = b.parentNode.querySelector('pre');
+    function done() { b.textContent = 'Copied'; setTimeout(function () { b.textContent = 'Copy'; }, 1500); }
+    function fb() { var r = document.createRange(); r.selectNodeContents(t); var s = getSelection(); s.removeAllRanges(); s.addRange(r); b.textContent = 'Selected'; }
+    try { navigator.clipboard.writeText(t.textContent).then(done, fb); } catch (e) { fb(); }
+  });
+});
+</script>
