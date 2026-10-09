@@ -25,6 +25,11 @@ repos=(
   "PrismML-Eng/Bonsai-demo"
   "oblien/openship"
   "public-apis/public-apis"
+  "figranium/figranium"
+  "Vrun-design/openflowkit"
+  "ScrapeGraphAI/scrapecraft"
+  "bridge-mind/bridgeclip"
+  "knadh/listmonk"
 )
 for r in "${repos[@]}"; do
   name="${r##*/}"
