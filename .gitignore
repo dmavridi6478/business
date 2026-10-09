@@ -4,5 +4,7 @@ __pycache__/
 imgtest.docx
 repos/
 .hyperresearch/
+
+# data/ai-os/README.md documents this as gitignored (runtime: lead/client/financial data, audit logs)
 data/ai-os/*
 !data/ai-os/README.md
