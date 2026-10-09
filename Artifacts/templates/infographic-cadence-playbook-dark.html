@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cadence Playbook Dark Infographic</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;700;800&display=swap" rel="stylesheet">
+<style>
+/* TEMPLATE J: dark cadence playbook (style of "The CMO's ChatGPT Playbook"). 1080x1750.
+   4 rows (Daily/Weekly/Monthly/Ad hoc) x 3 cards. Card = icon + title + type tag + number + description + "Build it / Prompt" box. */
+:root{--bg:#07090a;--glow:#2fd06b;--lime:#d8f9a0;--card:#101417;--line:#242b30;--text:#f2f5f3;--dim:#9aa6a0;--font:'Inter','Helvetica Neue',Arial,sans-serif}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#333;display:flex;justify-content:center;padding:40px 0;font-family:var(--font)}
+.board{width:1080px;height:1750px;background:radial-gradient(ellipse 90% 22% at 50% 0,rgba(47,208,107,.75),transparent 70%),var(--bg);color:var(--text);padding:70px 56px 50px;position:relative;overflow:hidden}
+h1{text-align:center;font-size:104px;line-height:1.02;font-weight:800;letter-spacing:-2px}
+h1 span{color:var(--lime)}
+.credit{text-align:center;color:var(--dim);font-size:18px;margin:12px 0 34px}
+.row h3{font-size:30px;font-weight:800;margin:18px 0 12px}
+.row h3 small{font-size:20px;font-weight:500;color:var(--dim);margin-left:12px}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.c{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:22px 22px 18px;display:flex;flex-direction:column;gap:8px;min-height:262px}
+.top{display:flex;align-items:center;gap:14px}
+.ico{width:52px;height:52px;border-radius:14px;background:var(--lime);flex:none}
+.c h4{font-size:24px;font-weight:700;line-height:1.1}
+.tag{font-size:12px;letter-spacing:1.5px;color:var(--dim);font-weight:700;text-transform:uppercase}
+.n{margin-left:auto;color:var(--dim);font-size:16px;font-weight:700}
+.c p{font-size:17px;line-height:1.35;color:#c4cdc8}
+.box{margin-top:auto;background:#06090a;border:1px solid var(--line);border-radius:12px;padding:12px 14px;font-size:15px;line-height:1.35;color:#d8dfdb}
+.box b{color:var(--lime)}
+.foot{position:absolute;left:56px;right:56px;bottom:34px;display:flex;justify-content:space-between;font-size:22px;font-weight:700}
+</style></head><body>
+<section class="board">
+  <h1>The [Role]'s<br><span>[Tool] Playbook</span></h1>
+  <div class="credit">© [Author]</div>
+  <div class="row"><h3>Daily <small>[10 minutes, every morning]</small></h3><div class="cards">
+    <div class="c"><div class="top"><div class="ico"></div><div><h4>[Routine 01]</h4><div class="tag">Scheduled task</div></div><div class="n">01</div></div><p>[What it does in one sentence.]</p><div class="box"><b>Build it:</b> [Exact prompt or setup step]</div></div>
+    <div class="c"><div class="top"><div class="ico"></div><div><h4>[Routine 02]</h4><div class="tag">Scheduled task</div></div><div class="n">02</div></div><p>[What it does.]</p><div class="box"><b>Build it:</b> [Prompt]</div></div>
+    <div class="c"><div class="top"><div class="ico"></div><div><h4>[Routine 03]</h4><div class="tag">Prompt</div></div><div class="n">03</div></div><p>[What it does.]</p><div class="box"><b>Prompt:</b> [Prompt]</div></div>
+  </div></div>
+  <div class="row"><h3>Weekly <small>[30 minutes, every Monday]</small></h3><div class="cards">
+    <div class="c"><div class="top"><div class="ico"></div><div><h4>[Routine 04]</h4><div class="tag">Dashboard + schedule</div></div><div class="n">04</div></div><p>[What it does.]</p><div class="box"><b>Build it:</b> [Prompt]</div></div>
+    <div class="c"><div class="top"><div class="ico"></div><div><h4>[Routine 05]</h4><div class="tag">Dashboard</div></div><div class="n">05</div></div><p>[What it does.]</p><div class="box"><b>Build it:</b> [Prompt]</div></div>
+    <div class="c"><div class="top"><div class="ico"></div><div><h4>[Routine 06]</h4><div class="tag">Skill</div></div><div class="n">06</div></div><p>[What it does.]</p><div class="box"><b>Build it:</b> [Prompt]</div></div>
+  </div></div>
+  <div class="row"><h3>Monthly <small>[One hour, first week]</small></h3><div class="cards">
+    <div class="c"><div class="top"><div class="ico"></div><div><h4>[Routine 07]</h4><div class="tag">Skill</div></div><div class="n">07</div></div><p>[What it does.]</p><div class="box"><b>Build it:</b> [Prompt]</div></div>
+    <div class="c"><div class="top"><div class="ico"></div><div><h4>[Routine 08]</h4><div class="tag">Prompt</div></div><div class="n">08</div></div><p>[What it does.]</p><div class="box"><b>Prompt:</b> [Prompt]</div></div>
+    <div class="c"><div class="top"><div class="ico"></div><div><h4>[Routine 09]</h4><div class="tag">Dashboard</div></div><div class="n">09</div></div><p>[What it does.]</p><div class="box"><b>Build it:</b> [Prompt]</div></div>
+  </div></div>
+  <div class="row"><h3>Ad hoc <small>[Whenever something comes up]</small></h3><div class="cards">
+    <div class="c"><div class="top"><div class="ico"></div><div><h4>[Routine 10]</h4><div class="tag">Skill</div></div><div class="n">10</div></div><p>[What it does.]</p><div class="box"><b>Build it:</b> [Prompt]</div></div>
+    <div class="c"><div class="top"><div class="ico"></div><div><h4>[Routine 11]</h4><div class="tag">Prompt</div></div><div class="n">11</div></div><p>[What it does.]</p><div class="box"><b>Prompt:</b> [Prompt]</div></div>
+    <div class="c"><div class="top"><div class="ico"></div><div><h4>[Routine 12]</h4><div class="tag">Prompt</div></div><div class="n">12</div></div><p>[What it does.]</p><div class="box"><b>Prompt:</b> [Prompt]</div></div>
+  </div></div>
+  <div class="foot"><span>[Call to action]</span><span>[BRAND]</span></div>
+</section>
+</body></html>
