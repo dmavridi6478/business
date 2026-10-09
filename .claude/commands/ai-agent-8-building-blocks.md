@@ -103,6 +103,28 @@ Avoid: too broad, too many tools, no evals, no guardrails.
 
 Popular builders named in the source: LangGraph, LlamaIndex, CrewAI, n8n, FastAPI, Next.js, Supabase.
 
+### Platform comparison (from a second, more detailed copy of this same carousel)
+
+| Category | Product | LLM | Deployment | Key use case |
+|---|---|---|---|---|
+| Consumer AI agent | ChatGPT | GPT-5.5 | Cloud | General-purpose assistant, creative work |
+| Consumer AI agent | Claude | Claude 4.7 | Cloud | Research, writing, coding |
+| Consumer AI agent | Perplexity | Multiple | Cloud | Research assistant, fact-checking |
+| Agentic coding tool | Cursor | Claude, GPT | Local + Cloud | Professional dev, complex projects |
+| Agentic coding tool | Windsurf (Codeium) | Cascade | Local + Cloud | Team development, large codebases |
+| Agentic coding tool | Claude Code | Claude 4.7 | Local | CLI workflows, automation scripts |
+| No-code builder | Lindy | GPT-5.5 | Cloud | Business automation, non-technical teams |
+| No-code builder | Relay.app | GPT-5.5 | Cloud | Human-in-loop workflows needing approvals |
+| No-code builder | n8n | Multiple | Cloud/Self-hosted | Technical teams, data-privacy needs |
+| Dev framework | LangGraph | Any | Local/Cloud | Graph-based flows, complex multi-agent apps |
+| Dev framework | CrewAI | Any | Local/Cloud | Role-based multi-agent, task delegation |
+| Dev framework | LlamaIndex | Any | Local/Cloud | RAG-first, knowledge-intensive apps |
+
+**!! [Guessing]** on the exact model versions/labels as shown in the source
+(model names move fast) — verify current versions before quoting this table
+in anything client-facing. The category groupings and use-case fit are the
+durable part.
+
 ## Plain-text prompt to scope your own agent
 
 ```

@@ -220,3 +220,9 @@ Scale up:
 - Step 7 — Add multi-agent roles
 - Step 8 — Automate with Routines
 - Step 9 — Package for others
+
+---
+
+## Variant: Wealth Lab 6-step version
+
+A shorter 6-step variant (Context → Memory → Skills → Agents → Automation) with different prompts, including the agent-team and autopilot prompts, is in `references/wealth-lab-6-step.md`. One-shot command: `/workflow-to-agent`.

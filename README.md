@@ -15,6 +15,7 @@ A starter bundle of business-oriented Claude skills lives in `.claude/skills/`:
 - `product-marketing-context` — product/audience/positioning context doc used by other marketing skills
 - `competitor-profiling` — structured competitor research and profiles
 - `content-strategy` — content planning, topic clusters, editorial calendars
+- `instagram-content-calendar-gr` — ready-to-paste Greek-language meta-prompt that interviews the user about their business, then generates a 30-day Instagram content calendar as a table (caption structure + AI-image instructions per post)
 - `copywriting` — writes individual persuasive copy (headlines, product descriptions, email copy, CTAs) via a Problem → Promise → Proof → CTA framework, once `content-strategy` has picked the topic
 - `marketing-psychology` — 8 behavioral persuasion principles (framing, social proof, anchoring, curiosity, loss aversion, specificity, pricing context, decision friction) to pick the right lever for a message instead of stacking random tactics
 - **Corey Haines' 50-skill marketing pack** — vendored in full (Batch 82 follow-up) from [`coreyhaines31/marketingskills`](https://github.com/coreyhaines31/marketingskills) (MIT), covering SEO & content (`seo-audit`, `ai-seo`, `programmatic-seo`, `schema`, `aso`), CRO (`cro`, `signup`, `onboarding`, `popups`, `paywalls`), copy & content (`copy-editing`, `cold-email`, `emails`, `social`, `video`, `image`, `sms`), paid & measurement (`ads`, `ad-creative`, `ab-testing`, `analytics`, `attribution`), growth & retention (`referrals`, `free-tools`, `churn-prevention`, `community-marketing`, `co-marketing`, `lead-magnets`, `influencer-marketing`), sales & GTM (`revops`, `launch`, `pricing`, `competitors`, `directory-submissions`, `prospecting`, `events`, `public-relations`), and strategy (`marketing-ideas`, `marketing-loops`, `marketing-plan`, `marketing-council`, `product-marketing`, `customer-research`, `offers`, `site-architecture`). 5 skills that collided by name with the ones already listed above (`content-strategy`, `copywriting`, `marketing-psychology`, `sales-enablement`, `competitor-profiling`) were vendored under a `-corey-haines` suffix instead — use whichever version fits, they're independent, not duplicates of each other.
@@ -33,6 +34,7 @@ A starter bundle of business-oriented Claude skills lives in `.claude/skills/`:
 - `sales-workflow-catalog` — 100 named n8n sales-funnel workflows across 10 stages (prospecting → ops hygiene → reporting), each with a job, node sketch, [data]/[send] tags and a build-order rule; run via `/sales-workflow`
 - `gtm-outbound-engine` — 5-layer GTM stack (orchestration, signal, data, action, system of record) run as a 5-step Claude Code pipeline, mapped to the connected MCPs, with a tested `scripts/clean_leads.py` (dedupe, title/domain normalisation, free-mail flag) and GDPR/approval gates; run via `/outbound-pipeline`
 - `claude-marketing-jobs` — 50 named single-output marketing jobs across 10 functions under the 11-chapter "Complete Claude Marketing Guide 2026" structure (prompts reconstructed; the source guide is gated); run via `/marketing-job`
+- `business-growth-prompt-kit` — 20 ready-to-paste "act as a [role]" prompts covering the full growth lifecycle (market analysis, ICP, value prop, competitors, offers, funnels, pricing, CRO, retention, GTM, CAC, scaling), each cross-referenced to this repo's deeper skill for the same job
 - `operational-excellence-layers` — inside-out ops maturity model (standardization → automation → measurement → continuous improvement → innovation) with 0–3 scoring and a do-not-skip-a-ring rule; run via `/opex-audit`
 - `marketing-adaptability-score` — Signal/Decision/Experiment/Adoption/Learning turned into measurable latencies, scored 1–5, bottleneck stage named; run via `/adaptability-score`
 - `insight-to-deck-flow` — content + growth insights → on-brand decks (Gamma/Canva/pptx in place of Pitch MCP) → personalised decks at scale → results fed back
@@ -61,6 +63,10 @@ A design/output bundle sits alongside it, for turning business content into actu
 - Second iCloud-batch addition: template `workflow-grid-catalog.html` (dense 100-item icon grid) and theme `workflow-grid-sunset`. Note: this batch's 8-automation carousel (re-shared by a different account) duplicated content already covered by `ai-automation-blueprints`, so it was not rebuilt; one video in the batch could not be processed (no ffmpeg/cv2 in this sandbox)
 - Desktop-batch additions: templates `stacked-layer-pyramid.html`, `concentric-rings-framework.html`, `two-column-shift-comparison.html`, `control-plane-pipeline.html`; themes `peach-stack`, `concentric-rainbow`, `adaptive-pink`, `prosp-dark-grid`; `/ai-tool-finder` gained Sales, Customer Success, Productivity, Copy/Marketing and GTM-stack sections
 - Photo-batch additions (governed marketing + automation carousel): `design-templates` gained `numbered-workflow-carousel.html`, `carousel-cover-dark.html` and `layered-framework-infographic.html`; `theme-factory` gained the `warm-creator-carousel` and `governed-infographic` themes
+- Third photo-batch additions (two iCloud photo exports, ~67 images + 2 videos, mixed carousels from DataWarlord Official, Wealth Lab, data.and.ai, @martiendejong_dev, @jeanbbttyct, @monrodyxh71, @wedohype, @hackproduct9, @51ultron.com, and one uploaded infographic): `self-hosted-docker-stack` gained Batch 5 (NocoDB, PocketBase, Hoppscotch, Docmost — each confirmed via live `git ls-remote`; DeerFlow and Excalidraw from the same carousel were already reviewed and excluded in Batch 4, Appsmith/Memos already listed); `business-decision-frameworks` gained a new `references/decision-making-frameworks.md` (Eisenhower Matrix, OODA Loop, Five Whys — SWOT from the same source infographic was already covered); new skill `instagram-content-calendar-gr` (a ready-to-paste Greek 30-day Instagram content-calendar meta-prompt); `video` gained a "Keyframe-Anchored Narrative / Onboarding Tutorial Video" pipeline (Claude/ChatGPT script → GPT Image/FLUX/Midjourney or tldraw/Figma AI keyframes → Dreamina/Seedance 2.5 animation → ElevenLabs/Adobe Firefly/Canva AI voice+sound → assemble), merging two creators' near-identical workflows. Six generic "sound like a human" rewrite prompts (@martiendejong_dev) were reviewed and not vendored as a new skill — `humanizer` already covers this far more rigorously; a Claude Opus 5.5 "cheat sheet" infographic, an "AI tools for founders, ranked" graphic, and a RAG-vs-Agentic-RAG diagram were reviewed as reference-only (no new skill; treat their pricing/benchmark claims as unverified community content, not this repo's `claude-api` skill). One image (a "Dark Web Tools" carousel slide listing Tor onion search engines and breach/leak-database tools such as DeHashed and a LeakOSINT Telegram bot) was deliberately **not** processed or installed — outside what this repo builds skills for. A Claude Code plugin carousel (OmniRoute, Superpowers, Caveman, Claude Code Setup, Claude Code Security) was reviewed: `superpowers` and `caveman` are already vendored in this repo (`claude-code-tooling`, `caveman`); **OmniRoute was researched and found unsafe to install** — confirmed critical unauthenticated RCE (CVE-2026-88062, CVSS 9.5) plus an unprotected endpoint that leaks provider API keys/OAuth tokens (see the "Unverified / needs confirmation before installing" section below for detail; this repo already flagged it as suspicious in an earlier batch, now confirmed); **Claude Code Setup and Claude Code Security were searched for and confirmed real** — both are official Anthropic plugins (`claude-code-setup` and `claude-security`) in `anthropics/claude-plugins-official`, documented with exact plugin IDs and install commands in `claude-code-tooling`; `claude-code-setup` was already vendored in full as this repo's `claude-code-setup-plugin` skill. One video could not be processed (no ffmpeg in this sandbox).
+- Fourth photo-batch additions (an "in-demand marketing skills" export plus a second iCloud photo export, ~47 images/graphics total, from @datawarlord-style course/framework infographics, @aayodejii_, @usamaakrm, @aisimplified23, 51ultron.com, @the.wealth.lab, and @quadri_folo): 12 new slash commands vendored verbatim from a "15 Claude Commands" carousel (`/think`, `/role`, `/format`, `/autopilot`, `/breakdown`, `/analyze`, `/shorten`, `/translate`, `/research`, `/brainstorm`, `/custom`, `/save` — `/compare`, `/critic`, `/expand` already existed, `/compare` under a different, unrelated meaning so left untouched); `claude-code-tooling` gained a new context/token-reduction section (Token Savior, RTK, `tirth8205/code-review-graph`, Handoff — each confirmed via `git ls-remote`; `caveman` already vendored, "Context Mode" had no locatable standalone repo); `ai-agent-8-building-blocks` gained a detailed AI-agent-platform comparison table (ChatGPT/Claude/Perplexity/Cursor/Windsurf/Claude Code/Lindy/Relay.app/n8n/LangGraph/CrewAI/LlamaIndex) from a more detailed copy of the same source carousel; `build-first-claude-agent` gained a worked-example addendum (a concrete Cowork + Automations lead-follow-up recipe, @aisimplified23) alongside its existing abstract 3-level guide; `gtm-outbound-engine` gained a second, non-overlapping 9-stage tool-stack map (~40 tools: Phantombuster, Clay, MadKudu, Smartwriter.ai, and others) from a different source graphic, kept as a tool reference alongside (not a replacement for) its existing 5-layer architecture. Reviewed and left as reference-only, no skill created (course maps, WEF/industry infographics, generic AI-agent sales-pitch ad copy, standard system-design scalability patterns, and a "30 Dirty Claude Secrets" content framework substantially redundant with this repo's existing `content-strategy`/`brand-voice`/`humanizer` skills).
+- Fifth photo-batch additions (a "Networking level up" export, 6 files, from Nader Alnajjar/Lever, thechatgptmarketer.com, Beloved Brands, Matic Pogladic, and Denis Panjuta): new skill `business-growth-prompt-kit` (20 ready-to-paste growth prompts, each cross-referenced to this repo's deeper skill for the same job); `linkedin-signal-outreach` gained a new section — 12 Sales Navigator-based networking tactics (Engagement Lists, InMail rationing, first-hour commenting, mining post analytics for warm leads, trigger-alert follow-ups) that operationalize where its existing signal-detection flow gets its signals from; `gtm-outbound-engine` gained a connector-status note for a "21 Things to Install in Claude" lead-gen graphic — **6 of the 7 named MCP servers (HubSpot, Clay, Common Room, Notion, Slack, Zapier) are already connected in this account, nothing to install**; only Apollo MCP isn't connected (Apollo-style enrichment here runs through Clay/Vibe Prospecting instead); the graphic's named "Plugins" (Revenoid, BetterCallClaudeGrowth, "Claude Marketing," Octave) were not independently verified to a canonical repo and were not installed; its "Skills" column maps directly onto this skill's existing 5-step pipeline, so no redundant micro-skills were created. Reviewed and left as reference-only (an "8 ChatGPT Workflows" Input/AI/Human/Output template and two marketing-strategy mind maps — "Modern Marketing" and the "B2B Marketing" 7-step cycle — both substantially redundant with this repo's existing 13-section `marketing-plan` skill).
+- Sixth photo-batch additions (3 standalone images: an "LLM SEO Checklist 2026," "The Role of a GTM Engineer" by Matteo Fois/Kinetyca.com, and "14 Powerful Phrases for Salary Negotiations" by AIPlanetX.com): `ai-seo` gained a condensed 8-category scannable checklist mapped onto its existing pillars/audit sections (no new content, just a faster-to-scan front door to what was already there); `gtm-outbound-engine` gained a fourth tool-stack map — Claude framed as the "GTM Engineer" at the center of three overlapping tool categories, with genuinely new names (RB2B, GoExtrovert, Apify, Attio, HeyReach) alongside ones already documented; the previously-thin `salary` command was filled in with a 14-item avoid/say-instead phrase table for compensation conversations.
 - `hallmark` — "anti-AI-slop" design skill for greenfield builds, audits, redesigns, and DNA-extraction from a URL/screenshot (`audit`/`redesign`/`study` verbs); enforces structural variety across 21 named themes/21 macrostructures so builds don't converge on the same hero→3-feature→CTA→footer template; vendored in full (SKILL.md + its whole `references/` library — component cookbook, anti-patterns, typography/color/motion) from [nutlope/hallmark](https://github.com/nutlope/hallmark) (MIT)
 
 A third bundle covers **setting up a new business** — validating an idea and turning someone's own expertise into a sellable product/service before (or instead of) building a team-scale product:
@@ -1344,7 +1350,9 @@ before writing the additions above. Several entries didn't hold up:
   template, no license stated), `openrunbook/openrunbook` (5★, skews
   SRE/infra runbooks rather than general business ops),
   `diegosouzapw/OmniRoute` (claims "450+ contributors," unusually high for
-  an obscure repo — verify before trusting).
+  an obscure repo — verify before trusting; **update:** confirmed unsafe,
+  see the entry under "Unverified / needs confirmation before installing"
+  below and the third-photo-batch note near the top of this file).
 - **Reference content worth citing but not packaging as a skill:**
   [`joelparkerhenderson/pitch-deck`](https://github.com/joelparkerhenderson/pitch-deck)
   (curated pitch-deck advice from YC/500 Startups/Unusual Ventures, 432★ —
@@ -4906,7 +4914,20 @@ or repo slug visible — do not blind-install:
   `lfnovo/open-notebook` based on the description, but not confirmed from
   the screenshot itself
 - **OmniRoute** — already documented in an earlier batch with a star-count
-  discrepancy flagged; this screenshot repeats the same unverified claims
+  discrepancy flagged; this screenshot repeats the same unverified claims.
+  **Do not install, in any form (npm, Docker, or Claude Code plugin):**
+  confirmed critical unauthenticated RCE, CVE-2026-88062 (CVSS 9.5, public
+  PoC), in versions ≤3.8.49, via the `POST /api/acp/agents` endpoint; a
+  separate unprotected `/api/db-backups/export` endpoint lets anyone
+  download the full SQLite DB, including provider API keys and OAuth
+  tokens; Socket.dev blocked the npm package (v3.8.5) for suspected
+  obfuscated code/malware before the maintainer patched two real
+  vulnerabilities in v3.8.6. The tool's core design — routing Claude
+  Code's traffic through 350+ third-party providers via a local proxy,
+  plus a "TLS fingerprint stealth" feature "for circumventing AI blocks"
+  — is also built to route around AI providers' own terms of service, not
+  just around usage limits. Ignore the star count (star-growth pattern is
+  itself a red flag: tens of thousands of stars within days of launch)
 - **AI Job Search** (turns Claude Code into a job hunter: scores listings,
   tailors CV, writes cover letters) — product name only, no repo
 - **usestrix/strix** — already documented (batch 74) as a browser
@@ -5870,50 +5891,80 @@ Source: `80c9789b-LinkedIn_Master_Guide_for_Claude.zip` — 4 static images (`.j
 
 **Not done:** wifit3 (a Wi-Fi attack toolkit) was registered for reading only; no repo was installed; the itsaiguide "Claude OS" slide is an advert for a paid product and was not acted on; the 25-repo card was not turned into clone steps beyond the study paths in `data-ai-github-25`.
 
+## 98b. 8 Ps of Sales, AI-in-GTM Levels, Brand Zones, Prompt Frameworks & Design Kit (Batch 98, second photo batch)
 
-## Batch 104 — iCloud Photos, 2 archives (21 images, 1 video): open-source tool carousels and an ML code video (4 October 2026)
+Source: iCloud Photos (36 card screenshots) + "The 8 Ps of Sales" (5 infographics), Sep 2026. Full plan: `docs/batch-98-action-plan.md`; every prompt in plain text: `docs/batch-98-prompts.md`.
 
-**Report:** [Batch 104 Intake Report](https://claude.ai/artifact/NuFFMe2gyPYCn9k1hnG1KK) (`Artifacts/business/batch-104-intake-report.html`).
+- `eight-ps-of-sales` — audit a sales motion against Prospecting → Post-Sale, score 0–3 from evidence; `/8ps-audit`
+- `ai-gtm-maturity-levels` — Kinetyca's 5 Levels of AI in GTM (Tab → Brain) with a one-level-up rule; `/gtm-ai-level`
+- `brand-positioning-zones` — Winning / Risky / Dumb / Losing zone map from the Beloved Brands Venn; `/positioning-zones`
+- `prompting-frameworks-8` — TRACE, TAG, RTF, CLEAR, PACT, STAR, RISE, RASCEF with a selector; `/prompt-frame`
+- `linkedin-prospecting-8-systems` — 8-system operating model reconstructed from the guide's TOC only (its prompts are gated); `/linkedin-systems`
+- `competitor-price-watchlist` — weekly competitor price/offer brief with UNVERIFIED flags (@earchoe playbook); `/price-watchlist`
+- `/workflow-to-agent` — skill → agent team → autopilot in one pass; `build-ai-agent-10-minutes/references/wealth-lab-6-step.md` holds the 6-step variant
+- Design: templates `social-card-editorial-playbook`, `social-card-github-daily-briefing`, `social-card-repo-showcase-warm`, `infographic-framework-kit` in `Artifacts/templates/`; themes `theme-editorial-paper-red`, `theme-github-night-green` in `Artifacts/`
+- Not done (blocked by permission classifier, left for the user): registering four plugin marketplaces in `.claude/settings.json`, appending four repos to `setup-repos.sh`, vendoring `find-skills` — commands are in the action plan. Granola needs OAuth in claude.ai; Kondo is not in the connector registry.
+
+## 99. Executive Presence, CMO Cadence, AEO Metrics, 7S Model, Token Rules, Connector Stacks & Design Kit (Batch 99)
+
+Source: 5 infographics + 28 carousel slides (iCloud Photos). Details, verification results and unverified claims: `docs/batch-99-action-plan.md`; copy-paste prompts: `docs/batch-99-prompts.md`.
+
+| Skill | Command | From |
+|---|---|---|
+| executive-presence-8 | /exec-presence | Dora Vanourek, 8 ways to build executive presence |
+| cmo-operating-cadence (+ cmo-plan-reviewer, cmo-monthly-review, cmo-brief-writer) | /cmo-cadence | The CMO's ChatGPT Playbook, translated to Claude |
+| aeo-diagnostic-metrics | /aeo-score | Gartner AEO diagnostic metrics |
+| mckinsey-7s-model | /7s-audit | McKinsey 7S + 6 tips (Eric Partaker) |
+| claude-token-rules-22 | /token-audit | 22 Claude rules for token limits |
+| connector-starter-stacks | /connector-stack | 5 MCPs for life, 5 connectors for content, plugin vetting |
+
+Design: templates `Artifacts/templates/infographic-8-ways-grid.html`, `infographic-cadence-playbook-dark.html`, `infographic-7s-hexagon.html`, `infographic-rules-and-metrics.html`; themes `Artifacts/theme-playbook-night-lime.html`, `theme-dark-cream-carousel.html`, `theme-grid-paper-terracotta.html`.
+
+Not done (needs you): plugin installs (`/plugin install paypal@claude-plugins-official` etc.), five repos in `setup-repos.sh` (blocked), Fathom OAuth, recurring CMO schedules. See the action plan.
+
+## Batch 100 — iCloud Photos, 2 archives (21 images, 1 video): open-source tool carousels and an ML code video (4 October 2026)
+
+**Report:** [Batch 100 Intake Report](https://claude.ai/artifact/NuFFMe2gyPYCn9k1hnG1KK) (`Artifacts/business/batch-104-intake-report.html`).
 
 **Sources:** two @replace.so "GitHub repos so good they shouldn't be free" carousels (5 and 6 repos shown), a @dotdevs "Open-source tools for your app business" carousel (5 tools and one advert), and a "Machine Learning from Scratch" part 23 video (@machinelearningtogo).
 
-**Added:** skills `replace-so-agent-repos`, `local-first-app-stack`, `ml-six-key-lines`; commands `/oss-stack-pick`, `/local-first-audit`, `/ml-six-lines`; design templates `repo-spotlight-browser-card`, `photo-overlay-tool-card`, `code-card-six-lines` with Batch 104 theme tokens; `scripts/ml_six_key_lines.py` (numpy; all six checks pass); a register of 15 repos with licences read from the repos; user-run `scripts/batch104-install.sh`.
+**Added:** skills `replace-so-agent-repos`, `local-first-app-stack`, `ml-six-key-lines`; commands `/oss-stack-pick`, `/local-first-audit`, `/ml-six-lines`; design templates `repo-spotlight-browser-card`, `photo-overlay-tool-card`, `code-card-six-lines` with Batch 100 theme tokens; `scripts/ml_six_key_lines.py` (numpy; all six checks pass); a register of 15 repos with licences read from the repos; user-run `scripts/batch104-install.sh`.
 
 **Source problems:** the carousels promise 6 and 7 repos and show 5 and 6; star counts are from slides and unverified (Busabase's slide and a search result disagree); AutoGPT's `autogpt_platform` folder is Polyform Shield, not open source; Whitebophir, DeepDiagram, Notra and Joplin are AGPL; Goose's README now points at the `aaif-goose` organisation; the video's six lines are fragments that need context to run, and its k-means needs restarts to be reliable.
 
 **Not done:** no repo or app was installed and no `curl | sh` installer was run; Krita's licence was not checked; the OpenFlowKit MCP server was verified (MIT, no install scripts, pinned 0.1.2) but its `.mcp.json` entry was refused by the permission system, so run the one-line `claude mcp add` command in the report yourself; no prompts, connector setup steps or agent-building guide existed in the files.
 
-## Batch 105 — iCloud Photos, one archive (32 images, 2 videos) and 2 attached images (4 October 2026)
+## Batch 101 — iCloud Photos, one archive (32 images, 2 videos) and 2 attached images (4 October 2026)
 
-**Report:** [Batch 105 Intake Report](https://claude.ai/artifact/VRW8rxdGiRkGLPwLS8PDzn) (`Artifacts/business/batch-105-intake-report.html`).
+**Report:** [Batch 101 Intake Report](https://claude.ai/artifact/VRW8rxdGiRkGLPwLS8PDzn) (`Artifacts/business/batch-105-intake-report.html`).
 
 **Sources:** @ai.easily (4 Anthropic skills, 6 slides), @awayfromlovable (Top 5 Claude Code design skills, 7 slides), @aigenesis.official (10-AI org chart, 8 slides), @coreclasseducation (8 "try this instead" open-source tools, 10 slides), a ChatGPT cheatsheet image, a @skip_ci video on Octop, a @shiva.bytes video of an AI governance infographic, and two attached images (AIForLeaders "JEV vs LLM"; the CEO KPI Framework, already in the repo from batch 103).
 
-**Added:** skills `jev-vs-llm`, `claude-design-skills-top5`, `open-source-swap-stack-8`, `ai-team-org-chart-10`, `octop-self-hosted-agents`, `ai-governance-15-concepts`, `chatgpt-indepth-cheatsheet`; commands `/jev-or-llm`, `/design-skills-pick`, `/swap-stack-check`, `/governance-15`; design templates `skill-spotlight-teal-gold`, `grid-paper-repo-command-card`, `ai-team-role-card`, `swap-tool-lavender-card`, `compare-two-approaches-cream` with Batch 105 theme tokens; 15 repos cloned and read for licences, installs and claims; user-run `scripts/batch105-install.sh`.
+**Added:** skills `jev-vs-llm`, `claude-design-skills-top5`, `open-source-swap-stack-8`, `ai-team-org-chart-10`, `octop-self-hosted-agents`, `ai-governance-15-concepts`, `chatgpt-indepth-cheatsheet`; commands `/jev-or-llm`, `/design-skills-pick`, `/swap-stack-check`, `/governance-15`; design templates `skill-spotlight-teal-gold`, `grid-paper-repo-command-card`, `ai-team-role-card`, `swap-tool-lavender-card`, `compare-two-approaches-cream` with Batch 101 theme tokens; 15 repos cloned and read for licences, installs and claims; user-run `scripts/batch105-install.sh`.
 
 **Already existed, not duplicated:** the `ceo-kpi-framework` skill (the attached KPI image, with its churn formula corrected); `frontend-design`, `canvas-design`, `theme-factory`, `slack-gif-creator`, `algorithmic-art`, the `openwhispr` skill and Playwright in `.mcp.json`; `ai-governance-layers` and `/ai-governance` (the 15 concepts are mapped onto them).
 
 **Source problems:** Jaaz is under a dual Community/Commercial licence, not open source (team use, modification and redistribution need the paid licence); OpenDraft drafts research papers and InteraOne appears to be an embeddable support assistant, so neither matches its slide; the coreclasseducation product screenshots look like generated mockups and its cover icons are unrelated products; the awayfromlovable install commands for UI UX Pro Max and frontend-design skip the `/plugin marketplace add` step; Octop's installer is a piped script from a cloud-storage URL; the ChatGPT cheatsheet's temperature values are API settings; the 10-AI chart shows seven of its ten roles and its follower and outcome claims are unverifiable; star counts are from slides and unverified.
 
-**Not done:** no skill, repo, connector or app was installed and no installer was run; the `.mcp.json` entry for OpenFlowKit from batch 104 is still unapplied and no new connector entries were attempted; InteraOne's repo was not found; Krita and several licences outside these 15 were not checked.
+**Not done:** no skill, repo, connector or app was installed and no installer was run; the `.mcp.json` entry for OpenFlowKit from batch 100 is still unapplied and no new connector entries were attempted; InteraOne's repo was not found; Krita and several licences outside these 15 were not checked.
 
-## Batch 106 — iCloud Photos, one archive (53 images, 3 videos) (4 October 2026)
+## Batch 102 — iCloud Photos, one archive (53 images, 3 videos) (4 October 2026)
 
-**Report:** [Batch 106 Intake Report](https://claude.ai/artifact/QpGqNhyznDqGTWe6MXxHAK) (`Artifacts/business/batch-106-intake-report.html`).
+**Report:** [Batch 102 Intake Report](https://claude.ai/artifact/QpGqNhyznDqGTWe6MXxHAK) (`Artifacts/business/batch-106-intake-report.html`).
 
 **Sources:** @taha_pathionai (Claude Code mods, 8 slides), @aiclawbots and a cream repo-card series (Laya, Jev Ultrafast, Hindsight, Google AX, Paperclip, Hermes-LinkedIn slides), @earchoe (micro-app prompts, 9 slides), @replace.so (5 dev repos), @penny.blanco6 (4 open-source apps), @amirabanal (5 dashboard designs), @hackproduct9 (LLM to agentic ladder video), @shiva.bytes (hallucination and data-to-AI-governance infographic videos).
 
-**Added:** skills `claude-code-mods-guide`, `laya-jev-ultrafast`, `agent-repos-week-5`, `replace-so-dev-repos-6`, `open-source-apps-penny-4`, `micro-app-prompts-earchoe`, `hallucination-guardrails-6`, `data-to-ai-governance-10`, `llm-rag-agent-agentic-ladder`; commands `/mod-review`, `/micro-app`, `/hallucination-audit`, `/agent-ladder`; design templates `mod-explainer-dark-terracotta`, `repo-feature-cream-number`, `prompt-card-beige-green`, `caption-highlight-blue-grid`, `dashboard-showcase-light-blue` with Batch 106 theme tokens; ten repos cloned and read; user-run `scripts/batch106-install.sh`.
+**Added:** skills `claude-code-mods-guide`, `laya-jev-ultrafast`, `agent-repos-week-5`, `replace-so-dev-repos-6`, `open-source-apps-penny-4`, `micro-app-prompts-earchoe`, `hallucination-guardrails-6`, `data-to-ai-governance-10`, `llm-rag-agent-agentic-ladder`; commands `/mod-review`, `/micro-app`, `/hallucination-audit`, `/agent-ladder`; design templates `mod-explainer-dark-terracotta`, `repo-feature-cream-number`, `prompt-card-beige-green`, `caption-highlight-blue-grid`, `dashboard-showcase-light-blue` with Batch 102 theme tokens; ten repos cloned and read; user-run `scripts/batch106-install.sh`.
 
 **Already existed, not duplicated:** `local-first-app-stack` (Syncthing and KeePassXC), `openwhispr`, `jev-vs-llm`, `ai-governance-15-concepts`, `ai-governance-layers`, the `hermes-*` and LinkedIn skills.
 
 **Source problems:** the Claude Code mods carousel names sample mods, a version and a `--safe-mode` flag that could not be verified; Open WebUI uses a custom licence with a branding clause above 50 users; Maxun is AGPL-3.0; PocketBase is pre-1.0; Google AX is alpha and needs Kubernetes; Jev Ultrafast needs two vendor keys and drives a real browser; the "6 best repos" cover shows five; the "LinkedIn Skills" pack for Hermes was offered with no link; Suprascribe's licence was not read; star counts are from slides and unverified.
 
-**Not done:** nothing installed or run; no connector changed (the OpenFlowKit `.mcp.json` entry from batch 104 is still unapplied); the LinkedIn Skills pack, Suprascribe's repo and the unnamed sixth repo were not found; no step-by-step agent-building guide was in the files.
+**Not done:** nothing installed or run; no connector changed (the OpenFlowKit `.mcp.json` entry from batch 100 is still unapplied); the LinkedIn Skills pack, Suprascribe's repo and the unnamed sixth repo were not found; no step-by-step agent-building guide was in the files.
 
-## Batch 107 — iCloud Photos, one archive (28 images, 3 videos) (5 October 2026)
+## Batch 103 — iCloud Photos, one archive (28 images, 3 videos) (5 October 2026)
 
-**Report:** Batch 107 Intake Report (`Artifacts/business/batch-107-intake-report.html`; the published link is in the pull request).
+**Report:** Batch 103 Intake Report (`Artifacts/business/batch-107-intake-report.html`; the published link is in the pull request).
 
 **Sources:** @ai.am.claude (8-step Claude prompt workflow, 9 of 10 slides), @awayfromlovable (Top 5 Claude Code plugins that catch bugs, 7 slides), a "5 open-source tools that shouldn't be free, Part 3" carousel, a "5 tools in 2027" card series, two code videos (@quantfinancetogo bell curve; @machinelearningtogo attention) and a @githubnow top-10 video.
 
@@ -5923,13 +5974,13 @@ Source: `80c9789b-LinkedIn_Master_Guide_for_Claude.zip` — 4 static images (`.j
 
 **Source problems:** slide 2 of the workflow carousel was missing; `calcom/cal.com` is now Cal.diy (MIT, enterprise features removed, personal non-production use); Dify, n8n, Sentry's MCP server, OpenMontage and Open WebUI are not plain open source; star, install and today-star counts are as printed and unverified; SERPtag was not found; the "80% confidence" Code Review setting was not found in code.
 
-**Not done:** nothing installed or run beyond the two numpy scripts; no connector changed (OpenFlowKit `.mcp.json` entry from batch 104 still unapplied; Midpage, Sentry and Supabase connectors still need your authorisation); no agent-building guide was in the files.
+**Not done:** nothing installed or run beyond the two numpy scripts; no connector changed (OpenFlowKit `.mcp.json` entry from batch 100 still unapplied; Midpage, Sentry and Supabase connectors still need your authorisation); no agent-building guide was in the files.
 
-## Batch 108 — iCloud Photos, one archive (23 images, 1 video) plus 2 attached images (5 October 2026)
+## Batch 104 — iCloud Photos, one archive (23 images, 1 video) plus 2 attached images (5 October 2026)
 
-**Report:** Batch 108 Intake Report (`Artifacts/business/batch-108-intake-report.html`; the published link is in the pull request).
+**Report:** Batch 104 Intake Report (`Artifacts/business/batch-108-intake-report.html`; the published link is in the pull request).
 
-**Sources:** @dolorstca2h (7-step app-building method, 8 slides), @replace.so ("10 repos so good they shouldn't be free", 9 repo slides), @githubnow (4 October briefing, 3 repos), @valeridoesai (5 GitHub repos, video), a "9 GTM Infographics" cover and a JEV vs LLM infographic (already covered in batch 105).
+**Sources:** @dolorstca2h (7-step app-building method, 8 slides), @replace.so ("10 repos so good they shouldn't be free", 9 repo slides), @githubnow (4 October briefing, 3 repos), @valeridoesai (5 GitHub repos, video), a "9 GTM Infographics" cover and a JEV vs LLM infographic (already covered in batch 101).
 
 **Added:** skills `app-building-method-7-steps`, `replace-so-oss-repos-10`, `github-briefing-oct4-three`, `github-5-repos-video-oct`, `gtm-infographics-9-cover`; commands `/app-method`, `/repo-licence-check`, `/gtm-stage`; design templates `photo-step-tools-caption` and `gtm-stage-three-column` with theme tokens; user-run `scripts/batch108-install.sh`.
 
@@ -5939,11 +5990,11 @@ Source: `80c9789b-LinkedIn_Master_Guide_for_Claude.zip` — 4 static images (`.j
 
 **Not done:** nothing installed or run; no connector changed (OpenFlowKit entry still unapplied; Midpage, Sentry and Supabase need your authorisation); the tenth @replace.so repo was not in the upload; no agent-building guide was in the files.
 
-## Batch 109 — iCloud Photos, two archives (one duplicate; 15 new images) (5 October 2026)
+## Batch 105 — iCloud Photos, two archives (one duplicate; 15 new images) (5 October 2026)
 
-**Report:** Batch 109 Intake Report (`Artifacts/business/batch-109-intake-report.html`; the published link is in the pull request).
+**Report:** Batch 105 Intake Report (`Artifacts/business/batch-109-intake-report.html`; the published link is in the pull request).
 
-**Sources:** @dotdevs ("5 open source apps that replace paid subscriptions") and @replace.so ("7 GitHub repos so good they shouldn't be free", six seen). `dbdbd955-iCloud_Photos.zip` was byte-identical to the batch 108 archive and was skipped.
+**Sources:** @dotdevs ("5 open source apps that replace paid subscriptions") and @replace.so ("7 GitHub repos so good they shouldn't be free", six seen). `dbdbd955-iCloud_Photos.zip` was byte-identical to the batch 104 archive and was skipped.
 
 **Added:** skills `swap-5-dotdevs-subscriptions`, `replace-so-repos-7-jev-edition`; commands `/self-host-swap`, `/jev-supervisor`; design template `swap-card-photo-github`; user-run `scripts/batch109-install.sh`.
 
@@ -5953,9 +6004,9 @@ Source: `80c9789b-LinkedIn_Master_Guide_for_Claude.zip` — 4 static images (`.j
 
 **Not done:** nothing installed or run; no connector changed (OpenFlowKit entry still unapplied; Midpage, Sentry and Supabase need your authorisation).
 
-## Batch 110 — three infographics attached in chat (5 October 2026)
+## Batch 106 — three infographics attached in chat (5 October 2026)
 
-**Report:** Batch 110 Intake Report (`Artifacts/business/batch-110-intake-report.html`; the published link is in the pull request).
+**Report:** Batch 106 Intake Report (`Artifacts/business/batch-110-intake-report.html`; the published link is in the pull request).
 
 **Sources:** "How to Unlock GTM" (Megha Sharma, OneGTMLab), "10 Things NOT to Say in a Job Interview" (Dr. Christian Poensgen) and a "Claude Revenue System" infographic (45 roles).
 

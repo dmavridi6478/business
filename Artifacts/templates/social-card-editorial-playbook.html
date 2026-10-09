@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Editorial Playbook Card</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@800;900&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  /* =====================================================
+     TEMPLATE E: Editorial Playbook Card
+     Based on @earchoe "AI Playbook" carousel style
+     Size: 1080×1920 (9:16). Variants: .light (paper) / .dark (cover, closer)
+     Customise: kicker, page counter, headline, body, prompt block, steps
+     ===================================================== */
+  :root {
+    --paper: #ddd6c0;
+    --paper-2: #d0c9b3;
+    --ink: #17140f;
+    --ink-soft: #3a352b;
+    --muted: #7a7360;
+    --red: #9b1c1c;
+    --red-soft: #b3312b;
+    --code-bg: #17140f;
+    --code-text: #d8d2c0;
+    --serif: 'Playfair Display', Georgia, serif;
+    --mono: 'JetBrains Mono', 'SFMono-Regular', Consolas, monospace;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: #444; display: flex; flex-direction: column; align-items: center; gap: 40px; padding: 40px 0; }
+  .card { width: 1080px; height: 1920px; background: var(--paper); color: var(--ink); position: relative; padding: 150px 96px; font-family: var(--mono); overflow: hidden; }
+  .card.dark { background: #14110d; color: #f3efe4; --muted: #6f6858; }
+  .top { position: absolute; top: 140px; left: 96px; right: 96px; display: flex; justify-content: space-between; font-size: 26px; letter-spacing: 6px; text-transform: uppercase; color: var(--muted); }
+  .rule { width: 110px; height: 6px; background: var(--red); margin-bottom: 36px; }
+  .body { position: absolute; left: 96px; right: 96px; top: 520px; }
+  h1 { font-family: var(--serif); font-weight: 900; font-size: 88px; line-height: 1.02; letter-spacing: -2px; margin-bottom: 40px; }
+  h1 em { font-weight: 800; font-style: italic; color: var(--red-soft); letter-spacing: -1px; }
+  p { font-size: 34px; line-height: 1.75; color: var(--ink-soft); }
+  .dark p { color: #a49d8a; }
+  .banner { background: var(--red); color: #fff; font-weight: 600; font-size: 24px; letter-spacing: 3px; text-transform: uppercase; padding: 22px 28px; border-radius: 12px; margin: 30px 0 22px; }
+  .prompt { background: var(--code-bg); color: var(--code-text); border-radius: 18px; padding: 44px 48px; font-size: 34px; line-height: 1.7; white-space: pre-line; }
+  .prompt small { display: block; color: var(--red-soft); font-size: 22px; letter-spacing: 5px; text-transform: uppercase; margin-bottom: 26px; }
+  .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 22px; }
+  .step { background: var(--paper-2); border-radius: 12px; padding: 24px; font-size: 26px; line-height: 1.5; }
+  .step b { display: block; color: var(--red); margin-bottom: 8px; }
+  .list { display: grid; gap: 18px; }
+  .item { background: var(--paper-2); border-radius: 14px; padding: 28px 32px; font-size: 32px; line-height: 1.55; }
+  .item b { color: var(--ink); }
+  .quote { border-left: 8px solid var(--red); padding-left: 36px; font-family: var(--serif); font-style: italic; font-size: 58px; line-height: 1.3; color: #f3efe4; }
+  .tag { position: absolute; bottom: 120px; right: 96px; background: var(--red); color: #fff; font-size: 22px; letter-spacing: 4px; padding: 14px 22px; border-radius: 8px; text-transform: uppercase; }
+</style>
+</head>
+<body>
+
+<!-- SLIDE 1: cover (dark) -->
+<section class="card dark">
+  <div class="top"><span>AI Playbook · 01/09</span><span>[NN]</span></div>
+  <div class="body" style="top:620px">
+    <div class="rule"></div>
+    <div style="font-size:26px;letter-spacing:6px;color:var(--red-soft);margin-bottom:26px">[KICKER, e.g. AI MARKET MONITORING]</div>
+    <h1>[HEADLINE IN CAPS] <em>[Italic payoff line.]</em></h1>
+    <p>[One-sentence outcome of the playbook.]</p>
+  </div>
+  <div class="tag">Save this</div>
+</section>
+
+<!-- SLIDE 2: point / why it matters (paper) -->
+<section class="card">
+  <div class="top"><span>// Why this is useful</span><span>02/09</span></div>
+  <div class="body">
+    <div class="rule"></div>
+    <h1>The point is not to “use AI”. The point is to remove <em>this bottleneck.</em></h1>
+    <p>[Explain the problem and the repeatable fix. Treat AI output as a research aid, not as proof.]</p>
+  </div>
+</section>
+
+<!-- SLIDE 3: exact prompt (paper) -->
+<section class="card">
+  <div class="top"><span>// Step 1 — Exact prompt</span><span>04/09</span></div>
+  <div class="body" style="top:400px">
+    <div class="rule"></div>
+    <h1 style="font-size:72px">STEP 1 — [STEP NAME]</h1>
+    <div class="banner">Open ChatGPT / Claude → Copy the prompt → Replace [brackets] → Send</div>
+    <div class="prompt"><small>// Copy this prompt</small>[Prompt text here. Keep to ~8 lines.]</div>
+    <div class="steps">
+      <div class="step"><b>01</b>Replace every [BRACKET]</div>
+      <div class="step"><b>02</b>Attach the file if the prompt asks for one</div>
+      <div class="step"><b>03</b>Read the output before you use it</div>
+    </div>
+  </div>
+</section>
+
+<!-- SLIDE 4: checklist (paper) -->
+<section class="card">
+  <div class="top"><span>// Screenshot this</span><span>08/09</span></div>
+  <div class="body" style="top:420px">
+    <div class="rule"></div>
+    <h1 style="font-size:72px">The checklist you’ll actually use.</h1>
+    <div class="list">
+      <div class="item"><b>01 Input</b> Give AI the real context, audience and constraints.</div>
+      <div class="item"><b>02 Prompt</b> Ask for a concrete output, not “help me with this”.</div>
+      <div class="item"><b>03 Improve</b> Ask AI to find assumptions, gaps and weak spots.</div>
+      <div class="item"><b>04 Verify</b> Check anything important before publishing, sending or selling.</div>
+      <div class="item"><b>05 Apply</b> The value is what you do with the output.</div>
+    </div>
+  </div>
+</section>
+
+<!-- SLIDE 5: closer (dark) -->
+<section class="card dark">
+  <div class="top"><span>// Your turn</span><span>09/09</span></div>
+  <div class="body" style="top:560px">
+    <div class="quote">“[Closing line — the shift in thinking.]”</div>
+    <p style="margin-top:60px;font-size:30px">// What should I break down next?<br>A · [Option] &nbsp; B · [Option] &nbsp; C · [Option] &nbsp; D · [Option]</p>
+  </div>
+</section>
+
+</body>
+</html>

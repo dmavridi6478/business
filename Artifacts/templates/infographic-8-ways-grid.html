@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>8 Ways Numbered Grid Infographic</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;700;800&display=swap" rel="stylesheet">
+<style>
+/* TEMPLATE I: "8 ways" numbered grid (style of Dora Vanourek's Executive Presence card).
+   Board 1080x1350. Edit [brackets]. 8 cards: 3 / 2 (around hero) / 3. Each card = number + title + principle + arrow action. */
+:root{--paper:#efe8d8;--ink:#1f3347;--red:#d63a2f;--muted:#4a5a6a;--font:'Inter','Helvetica Neue',Arial,sans-serif}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#bbb;display:flex;justify-content:center;padding:40px 0;font-family:var(--font)}
+.board{width:1080px;height:1350px;background:var(--paper);background-image:radial-gradient(rgba(0,0,0,.035) 1px,transparent 1px);background-size:6px 6px;position:relative;overflow:hidden;color:var(--ink);padding:60px 64px}
+.head{display:flex;gap:36px;align-items:center}
+.big{width:150px;height:170px;background:var(--red);color:#fff;font-size:96px;font-weight:800;display:grid;place-items:center;flex:none}
+.head h1{font-size:76px;line-height:1.02;font-weight:800;letter-spacing:-1px}
+.by{text-align:right;font-size:20px;font-weight:700;margin:6px 0 26px}
+.grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:46px 36px;align-items:start}
+.card h2{font-size:34px;line-height:1.1;font-weight:800;margin-bottom:12px}
+.card h2 b{color:var(--red)}
+.card p{font-size:23px;line-height:1.35;color:var(--muted);font-weight:500}
+.card .act{margin-top:16px;font-size:22px;line-height:1.35;font-weight:700;color:var(--ink)}
+.card .act:before{content:"→ ";color:var(--red)}
+.hero{display:grid;place-items:center;border-radius:50%/42%;background:rgba(31,51,71,.08);min-height:330px;font-size:20px;color:var(--muted);text-align:center;padding:20px}
+.foot{position:absolute;left:64px;right:64px;bottom:40px;font-size:20px;font-weight:600;color:var(--muted);display:flex;justify-content:space-between}
+</style></head><body>
+<section class="board">
+  <div class="head"><div class="big">[8]</div><h1>Ways to Build Your [Topic]</h1></div>
+  <div class="by">by [Author]</div>
+  <div class="grid">
+    <div class="card"><h2><b>1.</b> [Habit One]</h2><p>[One-sentence principle that explains why it matters.]</p><div class="act">[Concrete line to say or action to take]</div></div>
+    <div class="card"><h2><b>2.</b> [Habit Two]</h2><p>[Principle.]</p><div class="act">[Action]</div></div>
+    <div class="card"><h2><b>3.</b> [Habit Three]</h2><p>[Principle.]</p><div class="act">[Action]</div></div>
+    <div class="card"><h2><b>4.</b> [Habit Four]</h2><p>[Principle.]</p><div class="act">[Action]</div></div>
+    <div class="hero">[hero illustration / silhouette]</div>
+    <div class="card"><h2><b>5.</b> [Habit Five]</h2><p>[Principle.]</p><div class="act">[Action]</div></div>
+    <div class="card"><h2><b>6.</b> [Habit Six]</h2><p>[Principle.]</p><div class="act">[Action]</div></div>
+    <div class="card"><h2><b>7.</b> [Habit Seven]</h2><p>[Principle.]</p><div class="act">[Action]</div></div>
+    <div class="card"><h2><b>8.</b> [Habit Eight]</h2><p>[Principle.]</p><div class="act">[Action]</div></div>
+  </div>
+  <div class="foot"><span>Follow [Author] for [topic]</span><span>[handle.com]</span></div>
+</section>
+</body></html>
