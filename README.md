@@ -6017,3 +6017,13 @@ Not done (needs you): plugin installs (`/plugin install paypal@claude-plugins-of
 **Source problems:** the revenue-system list repeats six roles; interview replacement lines are templates that must not claim things you have not done; GTM customer-count thresholds are rules of thumb.
 
 **Not done:** nothing installed; no connector changed (OpenFlowKit entry still unapplied; Midpage, Sentry and Supabase need your authorisation).
+
+## Batch 111 — five archives: 12 LinkedIn infographics and 113 iCloud photos (11 October 2026)
+
+**Sources:** `7_LinkedIn_strategies.zip` (12 infographics), iCloud Photos 1, 2, 4 and the unnumbered archive (TikTok/Instagram carousels from @aiemergence, @earchoe, @asdanyal.ai, @awayfromlovable, @martiendejong_dev, @itsnextwork, @your.aimentor, @aisimplified23, @aiwithcy, @dotdevs, @githubnow, @replace.so, @aigenesis.official). About 75 of 125 images could be read in this session; the rest returned blank from the image tool, so their content is not captured. Two photos are of an identity card: not transcribed, not stored, not committed.
+
+**Added:** skills `blotato-nine-platform-posting`, `solo-business-build-run`, `ai-research-sop-loops`, `claude-install-list-40`, `claude-skill-directories-12`, `claude-official-plugins-3`, `ai-tool-swaps-8`, `seo-agents-100-and-tools-45`, `bd-week-four-time-blocks`, `full-funnel-os`, `limitless-marketing-maturity`, `connector-picks-for-content`; commands `/blotato-post`, `/build-skill-from-job`, `/run-skill-schedule`, `/research-brief`, `/sop-from-process`, `/bd-week`, `/seo-agent-pick`, `/marketing-maturity`, `/full-funnel-audit`; design template `maturity-ladder-dark-red`; `Blotato` entry in `.mcp.json` (needs a paid plan and your OAuth); prompts in `docs/batch-111-prompts.md`; user-run `scripts/batch111-install.sh`.
+
+**Already existed, not duplicated:** `i-have-adhd`, `diagram-design` references, `hindsight` (agent-repos-week-5), `sop-builder`, `sales-methodologies-20`, `linkedin-post-types`, `ai-ecosystem-map`, Playwright and Context7 MCP entries.
+
+**Not done:** nothing installed or authenticated; no repo cloned; Blotato, Midpage, Sentry, Supabase still need your authorisation; star counts and install numbers on slides unverified.

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<!--
+  Maturity Ladder, dark red - 1080x1350 (4:5). Inspired by "The Limitless Marketing Maturity Model" (Lisa Cole) layout, redrawn from scratch.
+  SWAP POINTS: tokens in :root; five .stage cards (name, one-line, bullets); the two bars (.locked / .flex) widths.
+  Font: Aptos per house style (body 11pt equivalent scaled for 1080px export), falls back to system sans. Export: Chromium at 1080x1350.
+-->
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Maturity Ladder</title>
+<style>
+:root{--bg:#0b0b0d;--red:#ff2a2a;--red-d:#7a0c0c;--card:#f4f1ee;--ink:#141414;--mut:#8a8a8f;--font:Aptos,"Aptos Display","Segoe UI",system-ui,sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#222;font-family:var(--font)}
+.slide{width:1080px;height:1350px;margin:0 auto;background:radial-gradient(120% 60% at 100% 0,#5a0b0b 0,transparent 60%),var(--bg);color:#fff;padding:80px 60px}
+h1{font-size:64px;line-height:1.05;text-align:center;font-weight:800}h1 em{color:var(--red);font-style:normal}
+.rail{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin:56px 0 24px}
+.pill{border:1px solid #444;border-radius:999px;padding:12px 6px;text-align:center;font-size:20px;color:#ddd}.pill.on{background:var(--red);border-color:var(--red);color:#fff;font-weight:700}
+.stages{display:grid;grid-template-columns:repeat(5,1fr);gap:14px}
+.stage{background:var(--card);color:var(--ink);border-radius:14px;padding:18px;min-height:360px;font-size:17px;line-height:1.35}
+.stage b{display:block;margin-bottom:10px;font-size:18px}.stage ul{padding-left:18px}.stage li{margin:6px 0}
+.bar{margin-top:56px}.bar p{display:flex;justify-content:space-between;color:var(--mut);font-size:20px;margin-top:10px}
+.track{height:84px;border-radius:10px;display:grid;grid-template-columns:repeat(4,1fr);gap:4px;overflow:hidden}
+.track span{display:grid;place-items:center;font-size:20px;font-weight:700;padding:0 10px;text-align:center}
+.locked span{background:linear-gradient(#444,#222)}.flex span{background:linear-gradient(var(--red),var(--red-d))}
+footer{margin-top:44px;text-align:center;color:var(--mut);font-size:20px;letter-spacing:.12em;text-transform:uppercase}
+</style></head><body><section class="slide">
+<h1>The <em>Limitless</em><br>Marketing Maturity Model</h1>
+<div class="rail"><div class="pill on">01 Trapped</div><div class="pill">02 Aware</div><div class="pill">03 Systematic</div><div class="pill">04 Optimized</div><div class="pill">05 Limitless</div></div>
+<div class="stages">
+<div class="stage"><b>Ad hoc under constraint</b><ul><li>Reactive workflows</li><li>75%+ budget locked</li><li>"We need to hire"</li><li>Minimal AI</li></ul></div>
+<div class="stage"><b>Sees the paradox</b><ul><li>Freelancers as stopgaps</li><li>Vendor sprawl</li><li>Programs vs capabilities</li></ul></div>
+<div class="stage"><b>Intentional model</b><ul><li>Partners integrated</li><li>Execution offloaded</li><li>50-60% locked</li></ul></div>
+<div class="stage"><b>Performance-driven</b><ul><li>AI in workflows</li><li>Data-governed partners</li><li>40-50% locked</li></ul></div>
+<div class="stage"><b>Self-optimising</b><ul><li>Improvement loops</li><li>AI experimentation</li><li>New initiatives in &lt;2 weeks</li></ul></div>
+</div>
+<div class="bar"><div class="track locked"><span>75%+ locked</span><span>High fixed</span><span>50-60%</span><span>40-50%</span></div><p><span>Locked costs</span><span>Minimal locked costs</span></p></div>
+<div class="bar"><div class="track flex"><span>Limited</span><span>Growing</span><span>Significant</span><span>Maximum</span></div><p><span>Limited flexibility</span><span>Flexible growth budget</span></p></div>
+<footer>Percentages are the author's heuristics</footer>
+</section></body></html>
