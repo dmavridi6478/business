@@ -6074,3 +6074,15 @@ Not done (needs you): plugin installs (`/plugin install paypal@claude-plugins-of
 **Already existed, not duplicated:** connector lists (`connector-picks-for-content`), the official-plugin slides (`claude-official-plugins-3`), `caveman`, `claude-code-setup-plugin`, `claude-code-4-loops`; `operational-excellence-layers` uses a different layer order (compared in the new skill).
 
 **Caveats:** the 93% auto-approve and 41% unauthenticated-server figures, star counts and token savings are the slides' own. Plugin install commands on the slides use `claude-plugins-official`; this environment uses `anthropic-plugin-directory`.
+
+## Batch 116 — one archive (26 images) plus 3 pasted images (11 October 2026)
+
+**Sources:** `iCloud_Photos.zip` (TikTok carousels from @your.aimentor, @ty.prompts.ai, @awayfromlovable) and three pasted infographics (GTMs toolkit, salesdaily.co, Lever's LinkedIn card). All 29 images were read.
+
+**Added:** skills `job-hunt-repos-5`, `your-aimentor-5-repos-week`, `app-store-toolchain-5`, `ten-sales-agents-while-you-sell`, `linkedin-viral-8-steps-2027`; commands `/job-fit-check`, `/convert-to-markdown`, `/appstore-preflight`, `/sales-agent`, `/hook-length-check`; design templates `ranked-tools-table-purple`, `agent-schedule-two-column-red`; prompts in `docs/batch-116-prompts.md`; user-run `scripts/batch116-install.sh`.
+
+**Not installed, on purpose:** no plugin, connector or clone. AIHawk (unattended mass auto-apply) is documented with risks and excluded from the script.
+
+**Already existed, not duplicated:** `i-have-adhd`, `ecc-*`, the Corey Haines marketing skills, `pdf-to-markdown`, `linkedin-virality-playbook`, resume and job-search skills.
+
+**Caveats:** star and install counts are the slides' own; the 7:3 and 12-word LinkedIn rules are one author's heuristics; plugin commands on the slides use `claude-plugins-official`, not configured here.

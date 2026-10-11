@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<!--
+  Agent schedule card, two columns - 800x1000 (4:5). Inspired by the salesdaily.co "10 AI sales agents" card, redrawn from scratch (no illustration).
+  SWAP POINTS: tokens in :root; DAY and WEEK arrays (when, kind, title, instruction); the how-to box; the footer line.
+  kind: "time" (blue/green clock), "event" (amber bolt). Highlighted [brackets] in instructions get a marker background.
+  Font: Aptos per house style, system fallback. Export: Chromium at 800x1000. One column below 760px.
+-->
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Agent Schedule Card</title>
+<style>
+:root{--bg:#fbfaf7;--ink:#1a1a1a;--red:#d3262b;--blue:#1f5fbf;--blue-soft:#e4edfb;--green:#16794f;--green-soft:#e0f1e8;--amber:#b9680b;--amber-soft:#fbeed8;--mono:ui-monospace,Menlo,Consolas,monospace;--line:#e7e3da;--font:Aptos,"Aptos Display","Segoe UI",system-ui,sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#222;font-family:var(--font)}
+.card{width:800px;min-height:1000px;margin:0 auto;background:var(--bg);padding:28px 30px}
+h1{font-size:34px;line-height:1.1;font-weight:900;letter-spacing:-.02em}h1 em{font-style:normal;color:var(--red)}
+.sub{font-size:14px;margin:6px 0 16px;color:#444}
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.col h2{font-size:15px;color:#fff;border-radius:999px;padding:8px 18px;margin-bottom:10px}.day h2{background:var(--blue)}.week h2{background:var(--green)}
+.item{display:grid;grid-template-columns:62px 1fr;border:1px solid var(--line);border-radius:10px;overflow:hidden;margin-bottom:9px;background:#fff}
+.when{display:grid;place-items:center;text-align:center;font-weight:800;font-size:12px;padding:6px}
+.day .time{background:var(--blue-soft);color:var(--blue)}.week .time{background:var(--green-soft);color:var(--green)}.event{background:var(--amber-soft);color:var(--amber)}
+.body{padding:8px 10px}.body b{display:flex;gap:6px;align-items:center;font-size:13px;letter-spacing:.03em;text-transform:uppercase}
+.body b i{font-style:normal;background:var(--red);color:#fff;border-radius:5px;padding:1px 6px;font-size:12px}
+.body p{font-family:var(--mono);font-size:11.5px;line-height:1.4;background:#f4f3ee;border-radius:6px;padding:6px 8px;margin-top:5px}
+mark{background:#ffe97a;padding:0 2px}
+.how{background:#fff;border:1px solid var(--line);border-top:4px solid var(--red);border-radius:10px;padding:12px 14px;margin-top:6px;font-size:13px;line-height:1.4}.how h3{font-size:15px;margin-bottom:6px}.how li{margin:5px 0 5px 16px}.how .warn{background:#fdeaea;border-radius:6px;padding:6px 8px;margin-top:8px;font-weight:700}
+.foot{margin-top:14px;font-size:13px;color:#555}
+@media (max-width:760px){body{background:var(--bg)}.card{width:100%;min-height:0;padding:18px 16px}.cols{grid-template-columns:1fr}}
+</style></head><body><section class="card">
+<h1>10 AI sales agents that work <em>while you sell</em></h1>
+<p class="sub">Set them up once and get briefs, drafts and reports ready before you need them. Start with one. Add the next when it works.</p>
+<div class="cols"><div class="col day"><h2>Your day</h2><div id="day"></div></div><div class="col week"><h2>Your week</h2><div id="week"></div><div class="how"><h3>How to build one</h3><ul><li>Runs on a schedule: a scheduled task in your assistant.</li><li>Starts when something happens: build it in Zapier Agents or n8n.</li><li>Paste the line as its instructions and connect the apps it mentions.</li></ul><p class="warn">Keep every agent on drafts. You read it and hit send.</p></div></div></div>
+<p class="foot">Redrawn layout; instructions are plain text you can edit.</p>
+<script>
+const DAY=[["7:00","time","Morning brief","Check my calendar. For every external meeting today, research the company and attendees and send me a 5-line brief."],["6:00","time","Account watch","Scan news, job posts and leadership changes at [my top accounts]. Send only what's new, with one opener for each."],["Hourly","time","Inbox triage","Go through my inbox. Flag buyer replies, referrals and out-of-office return dates, and draft a reply to each."],["New lead","event","Speed-to-lead","When a demo request comes in, research the company and the person, check fit against [my ICP] and draft a personal reply."],["After calls","event","Call follow-up","When a call recording is ready, draft the recap email with next steps and dates, and add the notes to the deal in my CRM."]];
+const WEEK=[["Mon","time","Stalled deals","Find deals in my CRM with no activity in 14 days. Draft a check-in for each, based on the last conversation."],["Mon","time","Competitor watch","Check [competitor]'s pricing page, launches and new reviews. Tell me what changed and how to answer it on calls."],["Wed","time","Past champions","Check which champions from my won deals changed jobs. Draft a congrats note for each one."],["Fri","time","CRM cleanup","List deals with no next step, a past close date or empty fields, and suggest the fix for each."],["Fri","time","Pipeline report","Summarize what moved, what slipped and the 3 deals at highest risk. Draft my update for my manager."]];
+let n=0;const esc=s=>s.replace(/\[([^\]]+)\]/g,"<mark>[$1]</mark>");
+const mk=a=>a.map(r=>`<div class="item"><div class="when ${r[1]==='event'?'event':'time'}">${r[0]}</div><div class="body"><b><i>${++n}</i>${r[2]}</b><p>${esc(r[3])}</p></div></div>`).join("");
+document.getElementById("day").innerHTML=mk(DAY);document.getElementById("week").innerHTML=mk(WEEK);
+</script>
+</section></body></html>
