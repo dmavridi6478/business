@@ -95,6 +95,7 @@ All are verified to render correctly with no console errors (checked via Playwri
 | `tier-card-cream-agentic.html` | @techsupportzone automation-tier slide (cream paper, numbered badge, agentic-loop strip, icon rows) | 1100x1375 |
 | `ranked-tools-table-purple.html` | "GTMs toolkit" ranked tools table (lavender page, purple header, numbered tiles; data in a `ROWS` array) | 800x1000 |
 | `agent-schedule-two-column-red.html` | salesdaily.co agent schedule card (day and week columns, time and event chips, highlighted [brackets]; data in `DAY` and `WEEK` arrays) | 800x1000 |
+| `ranked-tool-dark-blue-card.html` | @danielmofi1 ranked analytics-tool slide (near-black, big blue rank number, "Best for" line, at-a-glance panel; data in a `TOOL` object) | 1100x1467 |
 | `carousel-cover-dark.html` | Same carousel, cover slide | Radial espresso glow + masked grid + ring, peach label block, rotated 3D tiles with inset shadows, SVG curved swipe arrow |
 | `layered-framework-infographic.html` | "The Governed Marketing Team" (prosp / Claude) | 3-column grid (who-talks-to-what · layer stack · what-it-prevents) with per-layer `--c`/`--t` colour tokens, 5-step flow strip; pre-filled with `governed-marketing-team`; Aptos 32/14/11 pt; responsive + dark mode; theme `governed-infographic` |
 | `stacked-layer-pyramid.html` | "The 5-layer GTM engine" (Cold IQ) | Slabs with per-slab `--w` width and `--top` lid colour drawn by a clipped `::before` trapezoid; pre-filled with `gtm-outbound-engine`; theme `peach-stack` |

@@ -6086,3 +6086,11 @@ Not done (needs you): plugin installs (`/plugin install paypal@claude-plugins-of
 **Already existed, not duplicated:** `i-have-adhd`, `ecc-*`, the Corey Haines marketing skills, `pdf-to-markdown`, `linkedin-virality-playbook`, resume and job-search skills.
 
 **Caveats:** star and install counts are the slides' own; the 7:3 and 12-word LinkedIn rules are one author's heuristics; plugin commands on the slides use `claude-plugins-official`, not configured here.
+
+## Batch 117 — one archive: 13 images and 1 video (11 October 2026)
+
+**Sources:** `iCloud_Photos_1.zip` (a @danielmofi1 "Top 10 AI tools for business analytics" carousel, a 51ultron.com operations-tools slide, and a @machinelearningtogo part-31 transformer video read from frames only).
+
+**Added:** skills `ai-business-analytics-tools-10`, `ai-ops-tools-16`, `ml-transformer-part31` (script ran with a stand-in dataset); commands `/analytics-tool-pick`, `/ops-stack-pick`, `/attention-demo`; design template `ranked-tool-dark-blue-card`; prompts in `docs/batch-117-prompts.md`; optional `scripts/batch117-install.sh`.
+
+**Not installed:** nothing; no plugin, connector or clone. **Caveats:** the analytics slides use AI-generated mock screens; "100% accuracy" is a vendor-style claim; the ops list includes its publisher. `ml-attention-part21` already covers the hand-set version of attention.
