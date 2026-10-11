@@ -6107,3 +6107,6 @@ Not done (needs you): plugin installs (`/plugin install paypal@claude-plugins-of
 
 ## Batch 119
 - `replace-so-repos-4-plasmic-brightbean` skill from one @replace.so video (Plasmic, BrightBean Studio, Maxun; fourth repo not shown). Prompts in `docs/batch-119-prompts.md`. Nothing installed.
+
+## Batch 120
+- `top-10-github-repos-product-managers` skill, `/pm-repo-pick` command, `docs/batch-120-prompts.md`, `scripts/batch120-install.sh` (read-only clones, asks first). The infographic looks AI-generated, so all handles are unverified. Nothing installed.
