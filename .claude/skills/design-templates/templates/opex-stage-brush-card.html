@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<!--
+  OpEx stage card - 1100x1467 (3:4). Inspired by the @succeed_at_work "5 stages of operational excellence" slides, redrawn from scratch.
+  SWAP POINTS: --stage (accent), stage number/name, tagline, the five .row items (what -> how), the footer line.
+  Accent examples: Standardise #e8590c, Measure #1971c2, Improve #2f9e44, Automate #7048e8, Innovate #d6336c.
+  Font: Aptos per house style, system fallback. Export: Chromium at 1100x1467.
+-->
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>OpEx Stage Card</title>
+<style>
+:root{--stage:#e8590c;--stage-soft:#fde8dc;--navy:#162033;--ink:#111;--bg:#fbfaf9;--font:Aptos,"Aptos Display","Segoe UI",system-ui,sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#222;font-family:var(--font)}
+.card{width:1100px;height:1467px;margin:0 auto;background:var(--bg);padding:40px;display:flex;flex-direction:column;gap:22px}
+.top{display:flex;gap:14px;align-items:center}
+.num{background:var(--stage);color:#fff;font-weight:800;font-size:52px;padding:6px 28px;border-radius:12px;letter-spacing:-.02em}
+.kicker{flex:1;background:var(--stage-soft);border-radius:12px;padding:16px 22px;font-weight:800;font-size:26px;text-transform:uppercase;letter-spacing:.02em}
+.brush{background:var(--stage);color:#fff;text-align:center;font-weight:900;font-size:150px;line-height:1.1;padding:28px 10px;text-transform:uppercase;letter-spacing:-.02em;clip-path:polygon(1% 8%,6% 0,30% 5%,60% 0,92% 6%,100% 3%,99% 50%,100% 96%,70% 100%,40% 94%,8% 100%,0 90%,2% 50%)}
+h1{font-size:60px;line-height:1.05;font-weight:900;letter-spacing:-.03em}
+.sub{font-size:34px;line-height:1.25;margin-top:-8px}
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:14px}.cols div{background:var(--stage-soft);color:var(--stage);text-align:center;font-weight:800;font-size:28px;padding:12px;border-radius:10px;text-transform:uppercase}
+.list{display:flex;flex-direction:column;gap:12px;flex:1}
+.row{display:grid;grid-template-columns:1fr 60px 1fr;align-items:center;background:#fff;border-radius:14px;padding:14px 20px;box-shadow:0 1px 4px #0001;flex:1}
+.row .what{font-size:32px;font-weight:700;line-height:1.15}
+.row .arrow{color:var(--stage);font-size:44px;text-align:center}
+.row .how{font-size:27px;line-height:1.2}
+.foot{background:var(--navy);color:#fff;border-radius:16px;padding:24px 30px;border-left:14px solid var(--stage)}
+.foot small{display:block;color:var(--stage);font-weight:800;font-size:26px;text-transform:uppercase;letter-spacing:.04em}
+.foot p{font-size:40px;font-weight:800;line-height:1.1;margin-top:6px}
+@media (max-width:1140px){body{background:var(--bg)}.card{width:100%;height:auto}.brush{font-size:min(14vw,150px)}}
+</style></head><body><section class="card">
+<div class="top"><div class="num">1 of 5</div><div class="kicker">5 stages of operational excellence</div></div>
+<div class="brush">Standardise</div>
+<h1>Make good work repeatable.</h1>
+<p class="sub">Before improving anything, get clear on how the work should happen.</p>
+<div class="cols"><div>What to do</div><div>How to achieve it</div></div>
+<div class="list">
+<div class="row"><span class="what">Define roles and ownership</span><span class="arrow">&rarr;</span><span class="how">Job descriptions + RACI</span></div>
+<div class="row"><span class="what">Agree the core process</span><span class="arrow">&rarr;</span><span class="how">Process map / SOP</span></div>
+<div class="row"><span class="what">Create simple checklists</span><span class="arrow">&rarr;</span><span class="how">Checklist template</span></div>
+<div class="row"><span class="what">Document the best known way</span><span class="arrow">&rarr;</span><span class="how">Work instructions / playbook</span></div>
+<div class="row"><span class="what">Reduce unnecessary variation</span><span class="arrow">&rarr;</span><span class="how">Templates + standards</span></div>
+</div>
+<div class="foot"><small>You're ready to move on when:</small><p>The result doesn't depend on who happens to do the work.</p></div>
+</section></body></html>

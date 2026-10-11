@@ -6062,3 +6062,15 @@ Not done (needs you): plugin installs (`/plugin install paypal@claude-plugins-of
 
 **Caveats:** star counts and token-saving percentages are the slides' own; the @githubnow "start with transformers, README runs in ten minutes" line also appears on an unrelated earlier slide, so treat it as template filler.
 
+
+## Batch 115 — two archives: 63 images and 2 videos (11 October 2026)
+
+**Sources:** `iCloud_Photos_1.zip` and `iCloud_Photos.zip` (TikTok carousels from @techsupportzone, @awayfromlovable, @succeed_at_work, @asdanyal, @aiwithcy, @aisimplified23, @githubnow, @replace.so; two short videos). All 63 images were read; the videos were read from sampled frames only (no audio), so they are low-confidence.
+
+**Added:** skills `claude-automation-stack-3-tiers`, `token-saver-repos-top5`, `operational-excellence-5-stages`, `asdanyal-claude-plugins-7`, `anatomy-explain-by-building`, `oss-repo-cards-batch-115`; `tiktok-video-tool-notes` extended; commands `/automation-tier`, `/token-saver-check`, `/opex-stage`, `/oss-repo-vet`; design templates `opex-stage-brush-card`, `tier-card-cream-agentic`; prompts in `docs/batch-115-prompts.md`; user-run `scripts/batch115-install.sh`.
+
+**Not installed, on purpose:** no plugin, connector or clone. pxpipe and OmniRoute sit in the network path and see every prompt; the optional installs are in the script, which asks before each step.
+
+**Already existed, not duplicated:** connector lists (`connector-picks-for-content`), the official-plugin slides (`claude-official-plugins-3`), `caveman`, `claude-code-setup-plugin`, `claude-code-4-loops`; `operational-excellence-layers` uses a different layer order (compared in the new skill).
+
+**Caveats:** the 93% auto-approve and 41% unauthenticated-server figures, star counts and token savings are the slides' own. Plugin install commands on the slides use `claude-plugins-official`; this environment uses `anthropic-plugin-directory`.
