@@ -1,0 +1,38 @@
+<title>Batch 114 Intake Report</title>
+<style>
+:root{--bg:#f7f6f3;--fg:#1d2330;--mut:#5b6475;--line:#d9d6cf;--acc:#1f4e79;--card:#fff;--warn:#8a4b00}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#12161d;--fg:#e6e9ef;--mut:#9aa3b2;--line:#2b3340;--acc:#7fb2e5;--card:#1a202a;--warn:#e0a458;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#12161d;--fg:#e6e9ef;--mut:#9aa3b2;--line:#2b3340;--acc:#7fb2e5;--card:#1a202a;--warn:#e0a458;color-scheme:dark}
+body{background:var(--bg);color:var(--fg);font-family:Aptos,"Segoe UI",system-ui,sans-serif;font-size:11pt;line-height:1.5;padding-inline:16px;padding-block:24px}
+main{max-width:960px;margin:0 auto}
+h1{font-size:32pt;line-height:1.1;margin:0 0 6px;text-wrap:balance}
+h2{font-size:14pt;margin:28px 0 8px;color:var(--acc)}
+p{margin:6px 0}.mut{color:var(--mut)}.warn{color:var(--warn)}
+.wrap{overflow-x:auto}
+table{border-collapse:collapse;width:100%;background:var(--card);min-width:560px}
+th,td{border:1px solid var(--line);padding:6px 8px;vertical-align:top;text-align:center}
+pre{background:var(--card);border:1px solid var(--line);padding:10px;overflow-x:auto;white-space:pre-wrap;font-size:10pt}
+</style>
+<main>
+<h1>Batch 114 Intake Report</h1>
+<p class="mut">11 October 2026 · 2 archives, 22 images, 4 videos · branch claude/peaceful-turing-jk1xpz</p>
+<h2>What was in the files</h2>
+<p>Open-source repo cards (a second "10 repos so good they shouldn't be free" set), a GitHub trending briefing, a six-tool app-business tip series, and four short videos (Ruflo, Apple design audit, eleven Anthropic plugins, Piik). No repositories to clone or tasks to execute. All 22 images were read. The videos were read from sampled frames only, with no audio, so they are leads.</p>
+<h2>Created in the repo</h2>
+<div class="wrap"><table>
+<tr><th>Type</th><th>Items</th></tr>
+<tr><td>Skills (4 new, 1 extended)</td><td>replace-so-oss-repos-10-oct, github-trending-oct10-trio, alinacoding-app-business-6, apple-design-audit; tiktok-video-tool-notes extended</td></tr>
+<tr><td>Commands (2)</td><td>/app-business-check, /apple-design-audit</td></tr>
+<tr><td>Design (2)</td><td>serif-italic-photo-tip-card, pixel-grid-repo-tile-card</td></tr>
+<tr><td>Other</td><td>docs/batch-114-prompts.md, scripts/batch114-install.sh, README Batch 114 entry</td></tr>
+</table></div>
+<h2>Judgement calls</h2>
+<p class="warn">The Apple design-audit prompt was cut off on screen. The prompt in the repo is a reconstruction and is labelled as one. Token-saving claims (Ruflo "+250%", billion-context "5x fewer tokens") come with a verification checklist, not an endorsement.</p>
+<p class="warn">The llama.cpp site shows a pipe-to-shell Windows installer. It is flagged, not run, and not added to the install script.</p>
+<p>Nothing was installed or authenticated in this batch. Several of the eleven Anthropic plugins from the video are already installed in this environment; they need connectors authorised to read live data. Existing coverage was not duplicated (first replace.so list, Twenty and ppt-master in README, quantized-export for llama.cpp).</p>
+<h2>Prompt to copy (plain text)</h2>
+<pre>Check the app version attached to this error. If it is from an old build, do not assume the new fix failed. Reproduce it in the current build before changing more code.
+
+Track the first useful action, paywall opened and purchase completed. Find the largest drop. Watch that part of the flow before adding another feature.</pre>
+<p class="mut">All other prompts: docs/batch-114-prompts.md. Star counts are the slides' own.</p>
+</main>

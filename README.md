@@ -6052,3 +6052,13 @@ Not done (needs you): plugin installs (`/plugin install paypal@claude-plugins-of
 
 **Already existed, not duplicated:** `repo-stirling-pdf`, `oss-alternatives`, `build-ai-agent-10-minutes` (Claude Code version), `customer-research`, `harness-audit`, OpenMontage mentions.
 
+## Batch 114 — two archives: 22 images and 4 videos (11 October 2026)
+
+**Sources:** `iCloud_Photos_9.zip` (22 images: @replace.so repo cards, @githubnow briefing, @alinacoding app-business tips; plus one video) and `iCloud_Photos_7.zip` (3 videos). All 22 images read; the 4 videos were read from sampled frames only (no audio), so they are low-confidence leads.
+
+**Added:** skills `replace-so-oss-repos-10-oct`, `github-trending-oct10-trio`, `alinacoding-app-business-6`, `apple-design-audit` (prompt is a reconstruction, labelled as such); `tiktok-video-tool-notes` extended (Ruflo, Apple design audit, the 11 Anthropic plugins, Piik); commands `/app-business-check`, `/apple-design-audit`; design templates `serif-italic-photo-tip-card`, `pixel-grid-repo-tile-card`; prompts in `docs/batch-114-prompts.md`; user-run `scripts/batch114-install.sh`.
+
+**Not installed:** nothing; no plugin, connector or clone. llama.cpp's site shows a pipe-to-shell installer: flagged, not run. Several of the "11 Anthropic plugins" are already installed in this environment.
+
+**Caveats:** star counts and token-saving percentages are the slides' own; the @githubnow "start with transformers, README runs in ten minutes" line also appears on an unrelated earlier slide, so treat it as template filler.
+

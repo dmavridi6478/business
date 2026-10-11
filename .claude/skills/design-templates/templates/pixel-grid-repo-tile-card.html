@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<!--
+  Template: pixel-grid-repo-tile-card
+  Style: @replace.so repo slide - near-black with a green pixel-grid footer, white rounded app-icon tile, big white title, grey 4-line description, browser window with star count top-right, "Swipe" cue
+  Swap points: ICON, TITLE, DESCRIPTION, STARS, SCREENSHOT (img), HANDLE. Size 1024x1365 (3:4). Complements repo-card-grid and photo-overlay-tool-card.
+-->
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pixel Grid Repo Tile Card</title>
+<style>
+*{box-sizing:border-box;margin:0}
+body{background:#000;display:flex;justify-content:center;padding:24px;font-family:Inter,system-ui,Arial,sans-serif}
+.slide{width:1024px;height:1365px;background:#111;color:#fff;position:relative;overflow:hidden;display:flex;flex-direction:column;align-items:center;padding-top:150px;gap:30px}
+.grid{position:absolute;left:0;right:0;bottom:0;height:700px;background:repeating-linear-gradient(90deg,transparent 0 6px,#111 6px 42px),repeating-linear-gradient(0deg,#143d24 0 36px,#0f2a1a 36px 78px);opacity:.55;mask-image:linear-gradient(0deg,#000,transparent)}
+.icon{width:74px;height:74px;border-radius:16px;background:#fff;display:grid;place-items:center;font-size:44px;color:#111;position:relative;z-index:1}
+h1{font-size:64px;letter-spacing:-.03em;position:relative;z-index:1}
+p{color:#b8b8b8;font-size:27px;line-height:1.35;text-align:center;max-width:540px;position:relative;z-index:1}
+.win{width:900px;height:560px;background:#fff;border-radius:26px 26px 0 0;margin-top:22px;position:relative;z-index:1;overflow:hidden;color:#444}
+.bar{height:48px;background:#f1f1f1;display:flex;align-items:center;justify-content:space-between;padding:0 22px;font-size:20px}
+.dots span{display:inline-block;width:12px;height:12px;border-radius:50%;margin-right:8px}
+.shot{display:grid;place-items:center;height:512px;color:#999;font-size:26px}
+.swipe{position:absolute;bottom:34px;left:0;right:0;text-align:center;font-size:24px;color:#ddd;z-index:1}
+.handle{position:absolute;right:30px;bottom:150px;font-size:34px;z-index:2}
+</style>
+</head>
+<body>
+<section class="slide">
+  <div class="grid"></div>
+  <div class="icon">ICON: ⌁</div>
+  <h1>TITLE: Emdash</h1>
+  <p>DESCRIPTION: Desktop app for running AI coding agents in parallel, isolating tasks in Git worktrees for reviewing diffs and merging changes.</p>
+  <div class="win"><div class="bar"><span class="dots"><span style="background:#ff5f57"></span><span style="background:#febc2e"></span><span style="background:#28c840"></span></span><span>★ STARS: 5,735</span></div><div class="shot">SCREENSHOT: place an &lt;img&gt; here</div></div>
+  <div class="handle">@yourhandle</div>
+  <div class="swipe">Swipe →</div>
+</section>
+</body>
+</html>

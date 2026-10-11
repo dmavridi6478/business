@@ -89,6 +89,8 @@ All are verified to render correctly with no console errors (checked via Playwri
 | `prompt-rewrite-before-after-grid.html` | @awayfromlovable "you write / Anthropic writes" prompt-rewrite slide (cream grid, coral title, charcoal mono block) | 1080x1920 |
 | `own-it-repo-stat-card.html` | @joshualevi.ai "apps you rent" repo card (grid paper, clay asterisk, big #N, five-stat repo card) | 1080x1350 |
 | `photo-bg-tool-glass-card.html` | @dotdevs tiny-tool story card (dim photo backdrop, icon tile, title, browser frame, URL) | 1080x1920 |
+| `serif-italic-photo-tip-card.html` | @alinacoding numbered tool-tip slide (dimmed photo, white logo tile, bold italic serif title and tip) | 900x1600 |
+| `pixel-grid-repo-tile-card.html` | @replace.so repo slide (near-black, green pixel-grid footer, icon tile, browser window with stars) | 1024x1365 |
 | `carousel-cover-dark.html` | Same carousel, cover slide | Radial espresso glow + masked grid + ring, peach label block, rotated 3D tiles with inset shadows, SVG curved swipe arrow |
 | `layered-framework-infographic.html` | "The Governed Marketing Team" (prosp / Claude) | 3-column grid (who-talks-to-what · layer stack · what-it-prevents) with per-layer `--c`/`--t` colour tokens, 5-step flow strip; pre-filled with `governed-marketing-team`; Aptos 32/14/11 pt; responsive + dark mode; theme `governed-infographic` |
 | `stacked-layer-pyramid.html` | "The 5-layer GTM engine" (Cold IQ) | Slabs with per-slab `--w` width and `--top` lid colour drawn by a clipped `::before` trapezoid; pre-filled with `gtm-outbound-engine`; theme `peach-stack` |

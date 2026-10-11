@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<!--
+  Template: serif-italic-photo-tip-card
+  Style: @alinacoding numbered tool-tip slide - dimmed desk photo (use your own image or the gradient fallback), white logo tile, bold italic serif "N. Tool" title, italic serif one-paragraph tip, handle bottom-right
+  Swap points: BACKDROP, LOGO (emoji/img), NUMBER_TITLE, TIP, HANDLE. Size 900x1600 (9:16). For cover slides list up to six logo tiles down the right edge.
+-->
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Serif Italic Photo Tip Card</title>
+<style>
+*{box-sizing:border-box;margin:0}
+body{background:#000;display:flex;justify-content:center;padding:24px}
+.slide{width:900px;height:1600px;background:linear-gradient(180deg,rgba(0,0,0,.72),rgba(0,0,0,.82)),linear-gradient(120deg,#1b2433,#0b0e14 60%,#241d33);color:#fff;position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:34px;padding:0 80px;text-align:center}
+.logo{width:252px;height:252px;background:#fff;display:grid;place-items:center;font-size:150px;color:#000}
+h1{font:italic 700 74px/1.1 Georgia,"Playfair Display",serif}
+p{font:italic 600 54px/1.22 Georgia,"Playfair Display",serif;max-width:760px}
+.handle{position:absolute;right:30px;bottom:110px;font:400 34px system-ui,sans-serif}
+</style>
+</head>
+<body>
+<section class="slide">
+  <div class="logo">LOGO: ✱</div>
+  <h1>NUMBER_TITLE: 1. Tally</h1>
+  <p>TIP: Ask salon owners how they handle bookings today. Who answers messages? What happens when a client cancels? Build around a problem they already spend time fixing.</p>
+  <div class="handle">@yourhandle</div>
+</section>
+</body>
+</html>
