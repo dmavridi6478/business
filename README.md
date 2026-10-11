@@ -6104,3 +6104,6 @@ Not done (needs you): plugin installs (`/plugin install paypal@claude-plugins-of
 **Not installed, on purpose:** nothing; AnyPS5 (copyright and DRM risk) is excluded from the script, Moli's piped installer was not run, and REA is flagged for use only on software you own or may inspect.
 
 **Already existed:** the @ruby.creates1 series duplicates `alinacoding-app-business-6` (a note was added there).
+
+## Batch 119
+- `replace-so-repos-4-plasmic-brightbean` skill from one @replace.so video (Plasmic, BrightBean Studio, Maxun; fourth repo not shown). Prompts in `docs/batch-119-prompts.md`. Nothing installed.
