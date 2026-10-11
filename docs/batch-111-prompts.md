@@ -2,6 +2,17 @@
 
 Replace every [BRACKET]. Slash commands: `.claude/commands/`; skills: `.claude/skills/`.
 
+## 0. AUDIT - find the work to hand off (`/audit-week`)
+Task: [your business in one line]
+Context: [paste a normal week: calendar + sent folder]
+Constraints: [hours you have, tools you use]
+01 Map the real week: list every recurring task in the context, not the ones I say I do; group by area; for each give how often, how long, and what triggers it.
+02 Score the judgment: for each task name what a stranger would need to do it well (my voice, my prices, a client's history, or my taste); if files can carry it, it can be handed off.
+03 Sort into three piles: KEEP needs my judgment or my face; DRAFT: you prepare, I approve; RUN: you do it, I spot-check weekly; when unsure, pick DRAFT.
+04 Price the time: put hours per week on every DRAFT and RUN task; rank by hours back, then by how much I dread it; the top of the list is where we start.
+05 Name the inputs: for the top three, list the exact files, folders or exports you would need to read; flag anything that only lives in my head.
+06 Verify, deliver, stop: return one table and the top three; mark every number that is an estimate; no advice beyond the list; then stop.
+
 ## 1. BUILD — turn one job into a skill (`/build-skill-from-job`)
 Task: [the #1 job from your audit]
 Context: [the files it needs + 3 past examples done well]
@@ -35,9 +46,10 @@ P2: Now identify where a new person is most likely to make a mistake. Add short 
 ## 5. Nine-platform posting (`/blotato-post`; needs paid Blotato + OAuth)
 Here's today's carousel and reel. Turn them into posts for all 9 platforms, each in its native format. Schedule for [DAY] [TIME]. Show me drafts first. Do not schedule anything until I say yes.
 
-## 6. Connector commands (run on your machine)
+## 6. Connector commands
 Claude Code: claude mcp add --transport http Blotato https://mcp.blotato.com/mcp   then /mcp -> Blotato -> Authenticate
-Plugins: /plugin install modern-web-guidance@claude-plugins-official ; /plugin install browser-use@claude-plugins-official ; /plugin install lovable@claude-plugins-official
+Plugins (the slides say claude-plugins-official; in Claude Code 2.1.296 the built-in marketplace is anthropic-plugin-directory): /plugin install modern-web-guidance@anthropic-plugin-directory ; /plugin install browser-use@anthropic-plugin-directory ; /plugin install lovable@anthropic-plugin-directory
+Slide-only extras not installed: paypal@..., hyperframes@... (check the marketplace name the same way).
 
 ## 7. Quick audits
 SEO: Use seo-agents-100-and-tools-45. For [SITE URL] and goal [GOAL], run a baseline and pick the 3-5 agents and tools I need first, with input and output for each.

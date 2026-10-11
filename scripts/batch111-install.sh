@@ -7,7 +7,7 @@ clone() { [ -d "$HOME/src/${1#*/}" ] && { echo "   $1 already cloned"; return; }
 
 echo "== 1. Claude Code plugins (official marketplace) =="
 for p in modern-web-guidance browser-use lovable; do
-  ask "run '/plugin install $p@claude-plugins-official' inside Claude Code yourself? (prints the command)" && echo "   /plugin install $p@claude-plugins-official"
+  ask "run '/plugin install $p@anthropic-plugin-directory' inside Claude Code yourself? (prints the command)" && echo "   /plugin install $p@anthropic-plugin-directory"
 done
 
 echo "== 2. Blotato connector (needs a PAID Blotato plan; OAuth in the browser) =="

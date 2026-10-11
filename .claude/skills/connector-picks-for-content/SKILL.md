@@ -17,3 +17,6 @@ Others (Blotato posting) -> `blotato-nine-platform-posting`.
 ## Read this first (slide 8)
 One audit found 41% of public MCP servers need no login. A connected server can read anything it is given access to. Connect only from the app's own official source. Start read-only; add write access only after trust. "Start with one connector, not all five."
 House rules: drafts before sends (Gmail, LinkedIn, social); confirm every calendar event; log which connectors are live (`/connector-stack`).
+
+## From the @aiwithcy MCP deck (9 slides, read later)
+MCP = Model Context Protocol, a standard way to connect AI to your apps, so Claude can read and act on an app directly instead of copy-pasting. #3 Notion (search/read/update pages and databases). #4 Apple macOS (Calendar, Contacts, Messages, Reminders, Maps, Weather in one local connector; "most private option on the list" is the slide's claim). #5 Zapier (one connector, 100s of apps; easiest first try). Web scraping slide (@aisimplified23): Apify pulls live data from LinkedIn, X, Reddit and YouTube for competitor and trend analysis; Apify's MCP server is `apify/apify-mcp-server` and needs an Apify account.

@@ -14,6 +14,15 @@ description: Where to find Claude Code skills, agents, MCP servers and marketing
 | 10 | marketingskills.sh | browse individual marketing skills | Install single skills |
 | 11 | skills.sh | discover agent skills across Claude Code and other agents | When you know the task, not the skill |
 | 12 | github.com/obra/superpowers | planning, TDD, debugging, collaboration workflows (installed) | Dev workflow |
+| 5 | marketingskills.net | marketing operators for Claude: SEO, GTM, ICP research, growth, content, creative | Marketing |
+| 6 | skillsplayground.com | skills + MCP discovery, search by use case | Find before building |
+| 7 | claudedirectory.org | agents, skills, MCP, hooks, configurations | Search by task |
+| 8 | awesome-claude-code | curated GitHub collection: skills, plugins, MCP, memory, multi-agent | Ecosystem map |
+| 13-16 | anthropic.com/research/skills ; vercel-labs/agent-skills ; vercel-labs/agent-browser ; obra/superpowers | official skills write-up, Vercel skills, browser agent | Reference |
+| 17 | openclaudia.com/skills | slash commands: /seo-audit, /write-blog, /content-repurposing, /competitor-analysis, /icp-builder | Marketing |
+| 18 | claudemarketplaces.com | searchable skill library with install commands | Check what a skill does first |
+| 19 | github.com/fablerlabs/claude-md-templates | CLAUDE.md templates: stack, rules, workflows | Project instructions |
+| 20 | github.com/dykyi-roman/awesome-claude-code | ecosystem map: MCP, agents, memory, plugins, automation | Ecosystem map |
 | 21 | openclaudia-skills/skills/icp-builder | customer data -> usable ICP | GTM, outbound |
 | 22 | .../content-repurposing | one piece -> platform-native assets | Content |
 | 23 | .../competitor-analysis | positioning, content, SEO, messaging | Competitors |
