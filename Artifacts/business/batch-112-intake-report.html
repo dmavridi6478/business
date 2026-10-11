@@ -1,0 +1,40 @@
+<title>Batch 112 Intake Report</title>
+<style>
+:root{--bg:#f7f6f3;--fg:#1d2330;--mut:#5b6475;--line:#d9d6cf;--acc:#1f4e79;--card:#fff;--warn:#8a4b00}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#12161d;--fg:#e6e9ef;--mut:#9aa3b2;--line:#2b3340;--acc:#7fb2e5;--card:#1a202a;--warn:#e0a458;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#12161d;--fg:#e6e9ef;--mut:#9aa3b2;--line:#2b3340;--acc:#7fb2e5;--card:#1a202a;--warn:#e0a458;color-scheme:dark}
+body{background:var(--bg);color:var(--fg);font-family:Aptos,"Segoe UI",system-ui,sans-serif;font-size:11pt;line-height:1.5;padding-inline:16px;padding-block:24px}
+main{max-width:960px;margin:0 auto}
+h1{font-size:32pt;line-height:1.1;margin:0 0 6px;text-wrap:balance}
+h2{font-size:14pt;margin:28px 0 8px;color:var(--acc)}
+p{margin:6px 0}.mut{color:var(--mut)}.warn{color:var(--warn)}
+.wrap{overflow-x:auto}
+table{border-collapse:collapse;width:100%;background:var(--card);min-width:560px}
+th,td{border:1px solid var(--line);padding:6px 8px;vertical-align:top;text-align:center}
+pre{background:var(--card);border:1px solid var(--line);padding:10px;overflow-x:auto;white-space:pre-wrap;font-size:10pt}
+</style>
+<main>
+<h1>Batch 112 Intake Report</h1>
+<p class="mut">11 October 2026 · 3 archives, 54 images, 4 videos · branch claude/peaceful-turing-jk1xpz</p>
+<h2>What was in the files</h2>
+<p>TikTok carousels and short videos: an agent-building infographic, plugin and repo roundups, prompt cards, tool lists. No repositories, PDFs or step-by-step tasks to execute. All 54 images were read. The 4 videos were read from sampled frames only; no audio was transcribed, so treat their content as leads.</p>
+<h2>Created in the repo</h2>
+<div class="wrap"><table>
+<tr><th>Type</th><th>Items</th></tr>
+<tr><td>Skills (7)</td><td>earchoe-idea-validation, betterprompts-life-prompts-12, claude-plugins-top5-installs, github-trending-oct8-repos, agent-build-guide-aug-2026, agency-stack-and-sales-tiers, tiktok-video-tool-notes</td></tr>
+<tr><td>Commands (3)</td><td>/validate-idea, /life-prompt, /agent-blueprint</td></tr>
+<tr><td>Agent (1)</td><td>agent-blueprint-designer (read-only; writes a spec from the 8-step guide)</td></tr>
+<tr><td>Design (3)</td><td>earchoe-recipe-cream, noir-serif-prompt-card, briefing-navy-repo-slide</td></tr>
+<tr><td>Other</td><td>docs/batch-112-prompts.md, scripts/batch112-install.sh, README Batch 112 entry</td></tr>
+</table></div>
+<h2>Installed in the cloud session (user scope)</h2>
+<p>Plugins code-simplifier, context7, frontend-design and superpowers, from the anthropic-plugin-directory marketplace. The slides say claude-plugins-official, which is not a configured marketplace here.</p>
+<p class="warn">Not installed: code-review. It is not published under that name in the built-in marketplace; similarly named entries are unverified. No repository was cloned; the install script asks per repo, and cua and codync should only run in a throwaway VM.</p>
+<h2>Judgement calls</h2>
+<p>The AI sales tier list was published by 51Ultron, which ranks itself top tier, with no criteria shown: treat it as marketing. Install and star counts are the slides' own. The reflective prompts are coaching-style, not therapy. Existing coverage was not duplicated: ponytail, ECC, openwhispr, replace.so repos, the trending-card template, the code-simplifier agent and the Context7 MCP entry.</p>
+<h2>Prompt to copy (plain text)</h2>
+<pre>Act as a skeptical product researcher. For [IDEA], identify the 10 assumptions that must be true for this to work. Label each by impact and uncertainty.
+
+Turn the highest-risk assumptions into 5 cheap validation tests. For each test, state what I should measure and what result would increase or decrease confidence.</pre>
+<p class="mut">All other prompts: docs/batch-112-prompts.md.</p>
+</main>
