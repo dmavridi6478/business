@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<!--
+  Template: briefing-navy-repo-slide
+  Style: @githubnow daily briefing - deep navy gradient, green accent, pill label + "stars today" badge, mono repo name (owner green / name white), 3-box flow strip, 3 feature cards, owner footer
+  Swap points: --accent, LABEL, STARS, OWNER, REPO, TAGLINE, BODY, FLOW_BOXES (4), FEATURES (3), AUTHOR. Size 1080x1920 (9:16). Complements github-trending-card.
+-->
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Briefing Navy Repo Slide</title>
+<style>
+:root{--bg1:#0f1c33;--bg2:#05080f;--accent:#3fb950;--gold:#d8a84a;--ink:#fff;--mute:#9aa4b5;--card:#0b1120;--line:#1f2a40}
+*{box-sizing:border-box;margin:0}
+body{background:#000;display:flex;justify-content:center;padding:24px;font-family:system-ui,"Helvetica Neue",Arial,sans-serif}
+.slide{width:1080px;height:1920px;background:radial-gradient(circle at 50% 8%,var(--bg1),var(--bg2) 60%);color:var(--ink);padding:76px;display:flex;flex-direction:column;justify-content:center;gap:34px;position:relative}
+.count{position:absolute;top:76px;left:76px;color:var(--mute);font-weight:700;font-size:26px}
+.pills{display:flex;gap:18px;flex-wrap:wrap}
+.pill{background:var(--accent);color:#08110a;font-weight:700;padding:14px 28px;border-radius:40px;font-size:30px}
+.badge{border:2px solid var(--gold);color:var(--gold);font-weight:700;padding:14px 28px;border-radius:40px;font-size:30px}
+.repo{font:700 66px ui-monospace,Menlo,monospace}.repo span{color:var(--accent)}
+h2{font-size:48px;line-height:1.2}
+p{font-size:38px;line-height:1.5;color:#dfe5ee}
+.flow{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;border:1px solid var(--line);border-radius:28px;padding:32px;background:var(--card)}
+.flow div{border:1px solid var(--line);border-radius:16px;padding:26px 10px;text-align:center;font-weight:700;font-size:28px}
+.flow .on{border-color:var(--accent);color:var(--accent)}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:28px}.card b{font-size:34px;display:block;margin-bottom:12px}.card span{color:var(--mute);font-size:28px;line-height:1.35}
+.author{border-top:1px solid var(--line);padding-top:30px;font-size:34px}.author small{display:block;color:var(--mute);font-size:28px}
+</style>
+</head>
+<body>
+<section class="slide">
+  <div class="count">1 / 3</div>
+  <div class="pills"><span class="pill">LABEL: Agent Harness OS</span><span class="badge">STARS: +1,139 stars today</span></div>
+  <div class="repo"><span>OWNER/</span>REPO</div>
+  <h2>TAGLINE: Skills, memory, security for AI agents.</h2>
+  <p>BODY: One or two sentences on what it does, who it is for and how it is distributed.</p>
+  <div class="flow"><div>Skill Definition</div><div>Agent Execution</div><div class="on">Memory Store</div><div>Security Check</div></div>
+  <div class="cards"><div class="card"><b>Memory &amp; Skills</b><span>Persistent context</span></div><div class="card"><b>Security Layer</b><span>Verification</span></div><div class="card"><b>Multi-IDE</b><span>Claude Code, Cursor</span></div></div>
+  <div class="author"><b>AUTHOR</b><small>Open source AI agent infrastructure</small></div>
+</section>
+</body>
+</html>

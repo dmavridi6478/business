@@ -6029,3 +6029,16 @@ Not done (needs you): plugin installs (`/plugin install paypal@claude-plugins-of
 **Follow-up (same day):** added the AUDIT prompt (File 01) to `solo-business-build-run` plus `/audit-week`; directory items 5-8 and 13-20; PayPal and HyperFrames slide facts; the @aiwithcy MCP deck. Installed in the cloud session at user scope: plugins `lovable`, `modern-web-guidance`, `browser-use` from `anthropic-plugin-directory` (the slides' `claude-plugins-official` is not a configured marketplace here). Blotato is in `.mcp.json` and shows 'Pending approval'; it still needs your approval, OAuth and a paid plan, and nothing was posted.
 
 **Not done:** no repo cloned; lovable, Blotato, Midpage, Sentry, Supabase still need your authorisation; star counts and install numbers on slides unverified.
+
+## Batch 112 — three archives: 54 images and 4 videos (11 October 2026)
+
+**Sources:** `iCloud_Photos_3.zip`, `iCloud_Photos_6.zip`, `iCloud_Photos_10.zip` (TikTok carousels from @earchoe, @betterpromptsai, @awayfromlovable, @githubnow, @replace.so, @clicksandranks, @51ultron.com plus an "How to Build an AI Agent" infographic and four short videos). All 54 images were read; the videos were read from sampled frames only (no audio transcript), so their content is low-confidence.
+
+**Added:** skills `earchoe-idea-validation`, `betterprompts-life-prompts-12`, `claude-plugins-top5-installs`, `github-trending-oct8-repos`, `agent-build-guide-aug-2026`, `agency-stack-and-sales-tiers`, `tiktok-video-tool-notes`; commands `/validate-idea`, `/life-prompt`, `/agent-blueprint`; agent `agent-blueprint-designer`; design templates `earchoe-recipe-cream`, `noir-serif-prompt-card`, `briefing-navy-repo-slide`; prompts in `docs/batch-112-prompts.md`; user-run `scripts/batch112-install.sh`.
+
+**Installed (cloud session, user scope):** plugins `code-simplifier`, `context7`, `frontend-design`, `superpowers` from `anthropic-plugin-directory`. `code-review` was not installed: it is not published under that name there and the similarly named entries are unverified. No repo cloned.
+
+**Already existed, not duplicated:** `ponytail*`, `ecc-*`, `openwhispr`, `replace-so-*`, `github-trending-card` template, `code-simplifier` agent, Context7 MCP entry, SkillOpt in README.
+
+**Caveats:** the AI sales tier list is vendor-authored (51Ultron ranks itself S); star and install counts are the slides' own; the reflective prompts are coaching-style, not therapy.
+

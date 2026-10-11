@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<!--
+  Template: noir-serif-prompt-card
+  Style: @betterpromptsai prompt card - near-black ground, Cormorant-style serif title in caps, coral italic tagline, grey sans prompt text, thin coral rule top-left
+  Swap points: --accent, TITLE, TAGLINE, PROMPT_TEXT, HANDLE. Size 1080x1350. Optional Google Fonts line below (remove if offline; fallbacks are set).
+-->
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Noir Serif Prompt Card</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;1,500&family=IBM+Plex+Sans:wght@400&display=swap">
+<style>
+:root{--bg:#0e0e0e;--title:#efe9e4;--accent:#e8575e;--body:#a8a39e}
+*{box-sizing:border-box;margin:0}
+body{background:#222;display:flex;justify-content:center;padding:24px}
+.card{width:1080px;height:1350px;background:radial-gradient(circle at 15% 92%,#1c1a18 0,transparent 35%),var(--bg);position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:0 150px;gap:28px}
+.card:before{content:"";position:absolute;top:42px;left:42px;width:2px;height:96px;background:var(--accent)}
+h1{font-family:"Cormorant Garamond",Georgia,serif;font-weight:500;color:var(--title);font-size:84px;line-height:1.1;letter-spacing:.04em;text-transform:uppercase;text-wrap:balance}
+.tag{font-family:"Cormorant Garamond",Georgia,serif;font-style:italic;color:var(--accent);font-size:42px}
+p{font-family:"IBM Plex Sans",system-ui,sans-serif;color:var(--body);font-size:44px;line-height:1.25;max-width:560px}
+.handle{position:absolute;bottom:40px;right:48px;color:#fff;font:600 34px system-ui,sans-serif}
+</style>
+</head>
+<body>
+<section class="card">
+  <h1>TITLE: The Uncomfortable Truth Engine</h1>
+  <div class="tag">TAGLINE: I will tell you what your friends are too afraid to say.</div>
+  <p>PROMPT_TEXT: You are a brutal truth accelerator. I will describe my current situation: [describe]. You will give me the 5 uncomfortable truths I am avoiding, why I am avoiding them, and exact steps to face each one.</p>
+  <div class="handle">@yourhandle</div>
+</section>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<!--
+  Template: earchoe-recipe-cream
+  Style: @earchoe "practical AI" 9-slide recipe carousel - warm cream paper, serif headlines, mono body, teal accent, dark code block
+  Swap points (CSS custom properties + text): --accent, --paper, HEADLINE, STEP_BOXES, PROMPT_TEXT, HANDLE, SLIDE_COUNT
+  Size: 1080x1350 (4:5). Fonts: Georgia/Source Serif fallback for headlines, ui-monospace for body (no external fonts needed).
+-->
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Recipe Carousel Cream</title>
+<style>
+:root{--paper:#ddd6c2;--panel:#cfc8b3;--ink:#16140f;--mute:#6b6556;--accent:#1f7a78;--code:#161410;--code-ink:#cdc6b2}
+*{box-sizing:border-box;margin:0}
+body{background:#999;display:flex;justify-content:center;padding:24px;font-family:ui-monospace,"SFMono-Regular",Menlo,monospace}
+.slide{width:1080px;height:1350px;background:var(--paper);color:var(--ink);padding:96px;position:relative;display:flex;flex-direction:column;justify-content:center;gap:36px}
+.top{position:absolute;top:96px;left:96px;right:96px;display:flex;justify-content:space-between;font-size:22px;letter-spacing:.18em;text-transform:uppercase;color:var(--mute)}
+.rule{width:90px;height:4px;background:var(--accent)}
+h1{font-family:Georgia,"Source Serif 4",serif;font-size:72px;line-height:1.08;font-weight:800;text-wrap:balance}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.step{border:2px solid var(--accent);border-radius:12px;padding:22px;text-align:center}
+.step b{display:block;font-family:Georgia,serif;font-size:48px;color:var(--accent);font-weight:400}
+.step span{font-size:24px;text-transform:uppercase;letter-spacing:.08em}
+.prompt{background:var(--code);color:var(--code-ink);border-radius:18px;padding:40px;font-size:34px;line-height:1.5}
+.prompt small{display:block;color:var(--accent);font-size:20px;letter-spacing:.2em;margin-bottom:16px}
+.tips{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;font-size:26px;line-height:1.35}
+.tips div{background:var(--panel);border-radius:12px;padding:20px}
+.tips b{color:var(--accent);display:block;font-size:30px}
+.handle{position:absolute;bottom:80px;right:96px;font-size:34px}
+</style>
+</head>
+<body>
+<section class="slide">
+  <div class="top"><span>// THE USEFUL PART IS THE SYSTEM</span><span>04/09</span></div>
+  <div class="rule"></div>
+  <h1>HEADLINE: copy this into your AI tool</h1>
+  <div class="steps"><div class="step"><b>01</b><span>Context</span></div><div class="step"><b>02</b><span>Structure</span></div><div class="step"><b>03</b><span>Check</span></div></div>
+  <div class="prompt"><small>// PROMPT 01</small>PROMPT_TEXT: Act as a skeptical product researcher. For [IDEA], identify the 10 assumptions that must be true for this to work. Label each by impact and uncertainty.</div>
+  <div class="tips"><div><b>01</b>Replace every [BRACKET]</div><div><b>02</b>Attach the source or context</div><div><b>03</b>Read the output before using it</div></div>
+  <div class="handle">@yourhandle</div>
+</section>
+</body>
+</html>
