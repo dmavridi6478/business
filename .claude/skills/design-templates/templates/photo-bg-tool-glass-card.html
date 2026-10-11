@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<!--
+  Template: photo-bg-tool-glass-card
+  Style: @dotdevs "tiny tools" story card - dimmed photo/gradient backdrop, app icon tile, big white title, one-line promise, rounded browser-frame screenshot, URL line, TikTok handle bottom-right
+  Swap points: BACKDROP (CSS gradient or an image URL you own), ICON (emoji or img), TITLE, PROMISE, SCREENSHOT (img), URL, HANDLE. Size 1080x1920.
+-->
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Photo Background Tool Card</title>
+<style>
+:root{--ink:#fff}
+*{box-sizing:border-box;margin:0}
+body{background:#000;display:flex;justify-content:center;padding:24px;font-family:Inter,system-ui,"Helvetica Neue",Arial,sans-serif}
+.slide{width:1080px;height:1920px;background:linear-gradient(180deg,rgba(0,0,0,.55),rgba(0,0,0,.75)),linear-gradient(135deg,#3b4a5c,#10151c 60%,#2a3340);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:28px;position:relative;color:var(--ink);text-align:center;padding:0 90px}
+.icon{width:168px;height:168px;border-radius:36px;background:#1c1c1e;display:grid;place-items:center;font-size:96px}
+h1{font-size:104px;letter-spacing:-.03em;text-shadow:0 4px 18px rgba(0,0,0,.5)}
+.promise{font-size:56px;line-height:1.2;max-width:760px;text-shadow:0 3px 14px rgba(0,0,0,.5)}
+.frame{width:816px;height:512px;border-radius:30px;background:#fff;box-shadow:0 20px 60px rgba(0,0,0,.45);overflow:hidden;display:grid;place-items:center;color:#777;font-size:30px}
+.frame img{width:100%;height:100%;object-fit:cover}
+.url{font-size:44px;font-weight:600}
+.handle{position:absolute;bottom:64px;right:70px;font-size:44px;opacity:.9}
+</style>
+</head>
+<body>
+<section class="slide">
+  <div class="icon">ICON: ⌘</div>
+  <h1>TITLE: Carbon</h1>
+  <div class="promise">PROMISE: code screenshots that look good</div>
+  <div class="frame">SCREENSHOT: place an &lt;img&gt; here</div>
+  <div class="url">URL: carbon.now.sh</div>
+  <div class="handle">@yourhandle</div>
+</section>
+</body>
+</html>

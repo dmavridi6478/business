@@ -6042,3 +6042,13 @@ Not done (needs you): plugin installs (`/plugin install paypal@claude-plugins-of
 
 **Caveats:** the AI sales tier list is vendor-authored (51Ultron ranks itself S); star and install counts are the slides' own; the reflective prompts are coaching-style, not therapy.
 
+## Batch 113 — two archives: 48 images and 4 videos (11 October 2026)
+
+**Sources:** `iCloud_Photos_5.zip` (48 TikTok carousel images: @earchoe, @awayfromlovable, @dotdevs, @joshualevi.ai, @betterpromptsai, @aisimplified23, @oxana__ray) and `iCloud_Photos_8.zip` plus 2 videos inside `iCloud_Photos_5.zip` (4 short videos). All 48 images were read. The videos were read from sampled frames only (no audio), so they are low-confidence leads.
+
+**Added:** skills `claude-code-ecosystem-map-60`, `earchoe-customer-personas`, `claude-code-prompt-rewrites-5`, `own-your-apps-joshualevi-7`, `dotdevs-app-and-dev-tools`, `glasser-data-sources`, `claude-ai-agent-10-steps-no-code`; updated `betterprompts-life-prompts-12` (now 17 prompts, #17 flagged unsafe as written, safer rewrite included) and `tiktok-video-tool-notes`; commands `/ecosystem-audit`, `/persona-from-evidence`, `/sharpen-prompt`; agent `claude-code-setup-coach`; design templates `prompt-rewrite-before-after-grid`, `own-it-repo-stat-card`, `photo-bg-tool-glass-card`; prompts in `docs/batch-113-prompts.md`; user-run `scripts/batch113-install.sh`.
+
+**Not installed, on purpose:** the Glasser.ai connector (paid pay-per-call, vendor unverified, video shows an agent being told to follow a remote SKILL.md). No plugin installed; the repos in the install script are optional shallow clones.
+
+**Already existed, not duplicated:** `repo-stirling-pdf`, `oss-alternatives`, `build-ai-agent-10-minutes` (Claude Code version), `customer-research`, `harness-audit`, OpenMontage mentions.
+

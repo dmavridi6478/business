@@ -86,6 +86,9 @@ All are verified to render correctly with no console errors (checked via Playwri
 | `earchoe-recipe-cream.html` | @earchoe practical-AI recipe carousel (cream paper, serif + mono, teal, dark prompt block) | 1080x1350 |
 | `noir-serif-prompt-card.html` | @betterpromptsai prompt card (near-black, caps serif title, coral italic tagline, grey prompt) | 1080x1350 |
 | `briefing-navy-repo-slide.html` | @githubnow daily briefing repo slide (navy gradient, green pill, gold stars badge, flow strip, 3 cards) | 1080x1920 |
+| `prompt-rewrite-before-after-grid.html` | @awayfromlovable "you write / Anthropic writes" prompt-rewrite slide (cream grid, coral title, charcoal mono block) | 1080x1920 |
+| `own-it-repo-stat-card.html` | @joshualevi.ai "apps you rent" repo card (grid paper, clay asterisk, big #N, five-stat repo card) | 1080x1350 |
+| `photo-bg-tool-glass-card.html` | @dotdevs tiny-tool story card (dim photo backdrop, icon tile, title, browser frame, URL) | 1080x1920 |
 | `carousel-cover-dark.html` | Same carousel, cover slide | Radial espresso glow + masked grid + ring, peach label block, rotated 3D tiles with inset shadows, SVG curved swipe arrow |
 | `layered-framework-infographic.html` | "The Governed Marketing Team" (prosp / Claude) | 3-column grid (who-talks-to-what · layer stack · what-it-prevents) with per-layer `--c`/`--t` colour tokens, 5-step flow strip; pre-filled with `governed-marketing-team`; Aptos 32/14/11 pt; responsive + dark mode; theme `governed-infographic` |
 | `stacked-layer-pyramid.html` | "The 5-layer GTM engine" (Cold IQ) | Slabs with per-slab `--w` width and `--top` lid colour drawn by a clipped `::before` trapezoid; pre-filled with `gtm-outbound-engine`; theme `peach-stack` |
