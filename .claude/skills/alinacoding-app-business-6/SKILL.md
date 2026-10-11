@@ -11,3 +11,5 @@ Tagline: "Build the useful part. Test it. Then ask people to pay."
 5. **Sentry** - Check the app version attached to an error. If it is from the old build, do not assume the new fix failed; reproduce in the current build before changing more code.
 6. **Canva** - Show the result your app gives people on an actual app screen with one short benefit above it. Check the image on a phone before making the rest of the set.
 Caveats: Tally, Newly, PostHog and Sentry collect user data; check consent and privacy rules (GDPR) before shipping. Connectors available here: Canva, Sentry (needs authorisation). Related: `dotdevs-app-and-dev-tools`, `attribution`, `saas-mvp-24h`.
+
+Variant source (batch 118): the same six tools in the same order appear as a @ruby.creates1 carousel, "6 tools to build a profitable app" (Tally, Newly, RevenueCat, PostHog, Sentry, Canva) with the same advice and the closing line "Find a problem worth paying to solve. Then build for it." No new content.

@@ -6094,3 +6094,13 @@ Not done (needs you): plugin installs (`/plugin install paypal@claude-plugins-of
 **Added:** skills `ai-business-analytics-tools-10`, `ai-ops-tools-16`, `ml-transformer-part31` (script ran with a stand-in dataset); commands `/analytics-tool-pick`, `/ops-stack-pick`, `/attention-demo`; design template `ranked-tool-dark-blue-card`; prompts in `docs/batch-117-prompts.md`; optional `scripts/batch117-install.sh`.
 
 **Not installed:** nothing; no plugin, connector or clone. **Caveats:** the analytics slides use AI-generated mock screens; "100% accuracy" is a vendor-style claim; the ops list includes its publisher. `ml-attention-part21` already covers the hand-set version of attention.
+
+## Batch 118 — one archive: 32 images (11 October 2026)
+
+**Sources:** `iCloud_Photos.zip` (TikTok carousels from @buildwithneej, @henryxagi, @replace.so, @ruby.creates1). All 32 images read; no videos.
+
+**Added:** skills `buildwithneej-5-repos-oct9`, `agent-terminals-mac-5`, `replace-so-oss-swap-6-oct`; commands `/agent-terminal-pick`, `/installer-safety-check`, `/reverse-engineer-own-app`, `/local-llm-fit`; design template `mac-app-laptop-card`; prompts in `docs/batch-118-prompts.md`; user-run `scripts/batch118-install.sh`.
+
+**Not installed, on purpose:** nothing; AnyPS5 (copyright and DRM risk) is excluded from the script, Moli's piped installer was not run, and REA is flagged for use only on software you own or may inspect.
+
+**Already existed:** the @ruby.creates1 series duplicates `alinacoding-app-business-6` (a note was added there).

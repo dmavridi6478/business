@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<!--
+  Mac app laptop card - 1080x1350 (4:5). Inspired by the @henryxagi "Mac apps worth a look" slides, redrawn from scratch (no logos, no screenshots).
+  SWAP POINTS: tokens in :root; APP object (name, tagline, icon letter or emoji, screen lines). The laptop is pure CSS; replace .screen contents with a real screenshot <img> if you have one.
+  Font: Aptos per house style, system fallback. Export: Chromium at 1080x1350. Fluid below 1120px.
+-->
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Mac App Laptop Card</title>
+<style>
+:root{--bg:#f7f7fb;--ink:#101114;--mut:#6b6f7a;--accent:#6c4cf5;--screen:#111320;--screen-ink:#cfd6ff;--font:Aptos,"Aptos Display","Segoe UI",system-ui,sans-serif;--mono:ui-monospace,Menlo,Consolas,monospace}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#222;font-family:var(--font)}
+.card{width:1080px;height:1350px;margin:0 auto;background:linear-gradient(#ece9ff,var(--bg) 45%);padding:90px 60px 0;text-align:center;position:relative;overflow:hidden}
+.icon{width:130px;height:130px;margin:0 auto 40px;border-radius:30px;background:#0f1a24;border:5px solid #25a0b8;display:grid;place-items:center;font-size:64px;color:#9fe8ff;font-weight:900;box-shadow:0 14px 30px #0003}
+h1{font-size:112px;font-weight:900;letter-spacing:-.04em;line-height:1}
+p.tag{font-size:42px;color:var(--mut);margin-top:22px;text-wrap:balance}
+.laptop{position:absolute;left:50%;bottom:-30px;transform:translateX(-50%);width:900px}
+.lid{background:#1c1d27;border-radius:28px 28px 0 0;padding:16px 16px 0;border:3px solid #2b2d3a}
+.notch{width:150px;height:22px;background:#1c1d27;border-radius:0 0 12px 12px;margin:0 auto -22px;position:relative;z-index:2}
+.screen{background:linear-gradient(160deg,#3b1d6e,#140a2b);border-radius:12px 12px 0 0;height:460px;padding:36px}
+.win{background:var(--screen);border-radius:10px;height:100%;padding:18px 22px;text-align:left;font-family:var(--mono);font-size:19px;color:var(--screen-ink);line-height:1.5;overflow:hidden}
+.win .dots{display:flex;gap:8px;margin-bottom:12px}.win .dots i{width:12px;height:12px;border-radius:50%;background:#ff5f57}.win .dots i:nth-child(2){background:#febc2e}.win .dots i:nth-child(3){background:#28c840}
+.base{height:26px;background:linear-gradient(#2b2d3a,#16171f);border-radius:0 0 40px 40px;width:108%;margin-left:-4%}
+.handle{position:absolute;right:50px;top:40px;font-size:26px;color:var(--mut)}
+@media (max-width:1120px){body{background:var(--bg)}.card{width:100%;height:auto;padding:40px 18px 0;min-height:640px}h1{font-size:min(14vw,112px)}p.tag{font-size:min(5vw,42px)}.laptop{position:relative;width:100%;left:0;transform:none;margin-top:30px;bottom:0}.screen{height:min(52vw,460px);padding:5%}.win{font-size:min(2.6vw,19px)}}
+</style></head><body><section class="card">
+<script>
+const APP={name:"App name",tagline:"One line on what it does for people running AI agents.",icon:">_",lines:["$ claude  # agent 1: refactor auth","$ codex   # agent 2: write tests","$ gemini  # agent 3: update docs","status: 2 running, 1 waiting for approval"],handle:"@yourhandle"};
+document.currentScript.insertAdjacentHTML("afterend",
+`<div class="handle">${APP.handle}</div><div class="icon">${APP.icon}</div><h1>${APP.name}</h1><p class="tag">${APP.tagline}</p>
+<div class="laptop"><div class="lid"><div class="notch"></div><div class="screen"><div class="win"><div class="dots"><i></i><i></i><i></i></div>${APP.lines.map(l=>`<div>${l}</div>`).join("")}</div></div></div><div class="base"></div></div>`);
+</script>
+</section></body></html>
