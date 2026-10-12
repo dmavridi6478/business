@@ -6017,3 +6017,19 @@ Not done (needs you): plugin installs (`/plugin install paypal@claude-plugins-of
 **Source problems:** the revenue-system list repeats six roles; interview replacement lines are templates that must not claim things you have not done; GTM customer-count thresholds are rules of thumb.
 
 **Not done:** nothing installed; no connector changed (OpenFlowKit entry still unapplied; Midpage, Sentry and Supabase need your authorisation).
+
+## Batch 107 — iCloud Photos, two archives (49 images, 1 video) plus 3 images attached in chat (12 October 2026)
+
+**Report:** [Batch 107 Intake Report](https://claude.ai/artifact/L5vBQ7M7PEuH3BBENSeJUv) (`Artifacts/business/batch-111-intake-report.html`). Action plan: `docs/batch-107-action-plan.md`; copy-paste prompts: `docs/batch-107-prompts.md`.
+
+**Sources:** @aigenesis.official (50 AI automations, 12 slides), @githubnow (6 trending repos, 10 slides), @awayfromlovable (top 5 Claude Code add-ons, 7), @joshualevi.ai (NVIDIA SkillSpector, 8), @githubvault (10 self-hostable tools, 11), @boscokat (5 plugins for vibe coding), an @assmooorre.ai video (Laya vs Jev), and three chat attachments (Prosp 100 lead-gen skills folder, Thomas Pearce Personal Brand Strategy, "Complete Claude SEO Team").
+
+**Added:** skills `skillspector-preinstall-scan`, `claude-code-addons-top5`, `ai-automations-50-marketing`, `personal-brand-strategy-map`, `claude-seo-team-8-areas`, `lead-gen-skill-map-10x10`, `oss-trending-picks-oct-2026`, `vibe-coding-plugin-layers-5`; commands `/skill-scan`, `/automation-pick`, `/brand-map`, `/seo-team`, `/addon-pick`, `/oss-pick-oct`, `/lead-gen-map`; agents `seo-team-orchestrator`, `campaign-planner-multi-agent`; design templates `social-card-vault-repo-mono`, `automation-list-yellow-marker`, `mind-map-tree-brand-blue`, `hub-spoke-agent-team-radial` and theme `theme-github-vault-mono-starfield`; user-run `scripts/batch110-install.sh`.
+
+**Already existed, not duplicated:** `laya-jev-ultrafast` and `jev-vs-llm` (the video), the `github-night-green` theme and daily-briefing template (@githubnow style), `grid-paper-terracotta` theme (@awayfromlovable and @joshualevi.ai style), `ai-automation-blueprints`, `claude-seo`, `claude-lead-gen`, `grill-me`, `repo-stirling-pdf`, the Superpowers plugin.
+
+**Verified:** README and LICENSE of 22 repositories read on 12 October 2026. SkillSpector installed in an isolated environment and run statically on the 8 new skills: five scored 0 to 7, three scored 29 to 30 because their text quotes install commands; no executable scripts; findings not suppressed.
+
+**Source problems:** the automation list has 49 distinct items (one repeat) and three mismatched descriptions; the SEO graphic shows eight areas, not twenty agents, and the lead-gen graphic shows folder names only (contents are behind comment gates and were not obtained); SkillUI's real repo is `amaancoderx/npxskillui` and CryptPad's is `xwiki-labs/cryptpad`; Open WebUI has a branding clause above 50 users; free-claude-code installs by piped script and proxies every prompt; Spotube and MeTube touch YouTube terms; GeminiWatermarkTool removes only the visible mark; the karpathy-skills repo has no licence file at its root; the NVIDIA 31,132-skill figures and all star counts were not re-checked.
+
+**Not done:** nothing installed on any machine, no plugin added, no connector changed. WhatsApp and n8n are not connected; Meta Ads, Google Ads and Search Console are not connected and need your authorisation. Agent Archive account setup awaits your answer.

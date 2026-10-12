@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hub and Spoke Agent Team (radial)</title>
+<style>
+  /* =====================================================
+     TEMPLATE: Hub and Spoke Agent Team
+     Based on the "Complete Claude SEO Team" graphic (eight areas around a hub).
+     Size: 800x1200 portrait, responsive. Eight nodes at fixed angles, each with
+     an icon disc (use any emoji or inline SVG), a name and a one-line job.
+     Customise: title, subtitle, eight node names and jobs, call-to-action text.
+     ===================================================== */
+  :root {
+    --page: #faf8f4; --ink: #101a3a; --accent: #e8714a; --muted: #4a5778; --cta-bg: #e8714a; --cta-fg: #fff;
+    --n1: #f08a4b; --n2: #3b6fd4; --n3: #2fb67c; --n4: #e0518f; --n5: #f2a516; --n6: #3aa6bd; --n7: #6a57d8; --n8: #8e5bd1;
+    --font: Aptos, 'Segoe UI', Arial, sans-serif;
+  }
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --page: #121522; --ink: #f1f3fb; --muted: #aeb8d4; } }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: #d8d4cc; display: grid; justify-items: center; padding: 20px 12px; font-family: var(--font); }
+  .poster { width: 800px; max-width: 100%; background: var(--page); color: var(--ink); padding: 34px 20px 28px; text-align: center; }
+  h1 { font-size: 54px; line-height: 1.05; font-weight: 800; margin-top: 8px; }
+  h1 em { color: var(--accent); font-style: normal; }
+  .sub { font-size: 22px; color: var(--muted); margin: 14px 0 26px; }
+  .wheel { position: relative; width: 100%; aspect-ratio: 1 / 1.05; }
+  .hub { position: absolute; left: 50%; top: 50%; width: 22%; aspect-ratio: 1; transform: translate(-50%,-50%); border-radius: 50%; background: radial-gradient(circle, var(--accent) 0 30%, transparent 31%); }
+  .hub::after { content: ""; position: absolute; inset: 0; border-radius: 50%; border: 6px dotted var(--accent); opacity: .5; }
+  .node { position: absolute; width: 30%; transform: translate(-50%,-50%); }
+  .node .ico { width: 62px; height: 62px; border-radius: 50%; margin: 0 auto 8px; display: grid; place-items: center; font-size: 28px; border: 3px solid var(--c); color: var(--c); background: var(--page); }
+  .node b { display: block; font-size: 18px; line-height: 1.15; }
+  .node span { display: block; font-size: 14px; color: var(--muted); margin-top: 4px; line-height: 1.3; }
+  .n1 { left: 50%; top: 9%; --c: var(--n1); } .n2 { left: 80%; top: 22%; --c: var(--n2); } .n3 { left: 86%; top: 50%; --c: var(--n3); }
+  .n4 { left: 80%; top: 78%; --c: var(--n4); } .n5 { left: 50%; top: 90%; --c: var(--n5); } .n6 { left: 20%; top: 78%; --c: var(--n6); }
+  .n7 { left: 14%; top: 50%; --c: var(--n7); } .n8 { left: 20%; top: 22%; --c: var(--n8); }
+  .cta { margin-top: 18px; background: var(--cta-bg); color: var(--cta-fg); font-size: 40px; font-weight: 800; padding: 22px; border-radius: 14px; }
+</style>
+</head>
+<body>
+<section class="poster">
+  <h1>The Complete <em>Team Name</em> Team</h1>
+  <p class="sub">Eight specialists to handle the whole workflow.</p>
+  <div class="wheel">
+    <div class="hub" aria-hidden="true"></div>
+    <div class="node n1"><div class="ico">&#128269;</div><b>Area one</b><span>One line on its job.</span></div>
+    <div class="node n2"><div class="ico">&#9881;</div><b>Area two</b><span>One line on its job.</span></div>
+    <div class="node n3"><div class="ico">&#9998;</div><b>Area three</b><span>One line on its job.</span></div>
+    <div class="node n4"><div class="ico">&#128279;</div><b>Area four</b><span>One line on its job.</span></div>
+    <div class="node n5"><div class="ico">&#127760;</div><b>Area five</b><span>One line on its job.</span></div>
+    <div class="node n6"><div class="ico">&#10024;</div><b>Area six</b><span>One line on its job.</span></div>
+    <div class="node n7"><div class="ico">&#128301;</div><b>Area seven</b><span>One line on its job.</span></div>
+    <div class="node n8"><div class="ico">&#128200;</div><b>Area eight</b><span>One line on its job.</span></div>
+  </div>
+  <div class="cta">Call to action</div>
+</section>
+</body>
+</html>

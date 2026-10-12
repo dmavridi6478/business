@@ -1,0 +1,214 @@
+<title>Batch 107 Intake Report</title>
+<style>
+  /* Layout: single formal document column; summary first, evidence tables, copy blocks last. */
+  :root {
+    --bg: #fbfaf7; --surface: #ffffff; --fg: #1b2230; --muted: #566074; --rule: #d9d6cc;
+    --accent: #14606b; --accent-soft: #e2eff0; --warn: #8a4b00; --warn-soft: #fbefdc; --code-bg: #f1efe8;
+    --font: Aptos, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif; --mono: 'Cascadia Mono', Consolas, 'SFMono-Regular', monospace;
+  }
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+    --bg: #12161d; --surface: #181e27; --fg: #e8ebf1; --muted: #a2adc0; --rule: #2d3644;
+    --accent: #6cc3cf; --accent-soft: #17323a; --warn: #f0b36a; --warn-soft: #3a2c15; --code-bg: #0e1218; color-scheme: dark; } }
+  :root[data-theme="dark"] {
+    --bg: #12161d; --surface: #181e27; --fg: #e8ebf1; --muted: #a2adc0; --rule: #2d3644;
+    --accent: #6cc3cf; --accent-soft: #17323a; --warn: #f0b36a; --warn-soft: #3a2c15; --code-bg: #0e1218; color-scheme: dark; }
+  body { background: var(--bg); color: var(--fg); font-family: var(--font); font-size: 11pt; line-height: 1.55; padding-inline: max(16px, 4vw); padding-block: 32px 64px; }
+  main { max-width: 980px; margin: 0 auto; display: grid; gap: 28px; }
+  h1 { font-size: 32pt; line-height: 1.08; font-weight: 700; text-wrap: balance; letter-spacing: -0.01em; }
+  h2 { font-size: 14pt; line-height: 1.3; font-weight: 700; padding-bottom: 6px; border-bottom: 2px solid var(--accent); margin-bottom: 12px; text-wrap: balance; }
+  h3 { font-size: 11pt; font-weight: 700; margin: 14px 0 6px; }
+  p, li { max-width: 72ch; }
+  .meta { color: var(--muted); font-size: 11pt; }
+  .eyebrow { font-size: 9pt; letter-spacing: .12em; text-transform: uppercase; color: var(--accent); font-weight: 700; }
+  .callout { background: var(--warn-soft); border-left: 4px solid var(--warn); padding: 14px 18px; border-radius: 4px; }
+  .callout strong { color: var(--warn); }
+  .good { background: var(--accent-soft); border-left: 4px solid var(--accent); padding: 14px 18px; border-radius: 4px; }
+  section { min-width: 0; }
+  .scroll { overflow-x: auto; border: 1px solid var(--rule); border-radius: 6px; background: var(--surface); }
+  table { border-collapse: collapse; width: 100%; min-width: 620px; font-size: 11pt; }
+  th, td { padding: 8px 10px; border-bottom: 1px solid var(--rule); text-align: center; vertical-align: top; }
+  th { background: var(--accent-soft); font-weight: 700; position: sticky; top: 0; }
+  tr:last-child td { border-bottom: 0; }
+  td.l, th.l { text-align: left; }
+  code { font-family: var(--mono); font-size: 10pt; background: var(--code-bg); padding: 1px 5px; border-radius: 3px; overflow-wrap: anywhere; }
+  ul { padding-left: 1.2em; display: grid; gap: 4px; }
+  .pill { display: inline-block; font-size: 9.5pt; font-weight: 700; padding: 1px 8px; border-radius: 999px; border: 1px solid currentColor; white-space: nowrap; }
+  .p-use { color: var(--accent); } .p-care { color: var(--warn); } .p-skip { color: #a3302a; }
+  :root[data-theme="dark"] .p-skip { color: #ff8a80; }
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .p-skip { color: #ff8a80; } }
+  .prompt { position: relative; background: var(--code-bg); border: 1px solid var(--rule); border-radius: 6px; padding: 12px 14px; margin: 8px 0 14px; }
+  .prompt pre { font-family: var(--mono); font-size: 10pt; white-space: pre-wrap; overflow-wrap: anywhere; margin: 0; padding-right: 64px; }
+  .prompt button { position: absolute; top: 8px; right: 8px; font: 600 9.5pt var(--font); padding: 4px 10px; border-radius: 4px; border: 1px solid var(--accent); background: var(--surface); color: var(--accent); cursor: pointer; }
+  .prompt button:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+  .grid2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; }
+  .grid2 > div { min-width: 0; background: var(--surface); border: 1px solid var(--rule); border-radius: 6px; padding: 14px 16px; }
+</style>
+<main>
+  <header>
+    <div class="eyebrow">Intake report &middot; 12 October 2026</div>
+    <h1>Batch 107 Intake Report</h1>
+    <p class="meta">Two iCloud Photos archives (49 images, 1 video) and three images attached in chat. Prepared for the business repository, branch <code>claude/zealous-davinci-u3blkz</code>.</p>
+  </header>
+
+  <section>
+    <h2>1. Executive summary</h2>
+    <div class="callout">
+      <p><strong>Principal finding.</strong> Most of this batch is promotional content: carousels whose purpose is to collect follows, comments and stars. The material of real operating value is small: a security scanner to run before every future install, verified licence facts for 17 repositories, and a structured list of marketing automations that can be built on connectors already in this workspace. The rest is either already in the repository or cannot be obtained because it sits behind comment-to-receive gates.</p>
+    </div>
+    <ul>
+      <li><strong>Created:</strong> 8 skills, 7 slash commands, 2 agents, 4 design templates, 1 design theme, 2 documents and 1 user-run install script.</li>
+      <li><strong>Verified:</strong> README and licence files of 22 repositories were read directly. Several slide claims were wrong or incomplete (section 5).</li>
+      <li><strong>Scanned:</strong> the 8 new skills were scanned with SkillSpector in static mode. Five scored 0 to 7; three scored 29 to 30 (&ldquo;caution&rdquo;), all because the documents quote install commands. Findings were not suppressed.</li>
+      <li><strong>Not done:</strong> nothing from the carousels was installed on any machine, no plugin was added and no connector was changed. Items that cannot be done from the cloud session are listed in section 8.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>2. Source inventory</h2>
+    <div class="scroll"><table>
+      <thead><tr><th class="l">Creator</th><th>Images</th><th class="l">Subject</th><th class="l">Outcome</th></tr></thead>
+      <tbody>
+        <tr><td class="l">@aigenesis.official</td><td>12</td><td class="l">50 AI Automations for marketers: cover, stack, ten categories</td><td class="l">Skill <code>ai-automations-50-marketing</code>; template <code>automation-list-yellow-marker</code></td></tr>
+        <tr><td class="l">@githubnow</td><td>10</td><td class="l">GitHub Trending: Open WebUI, BitNet, free-claude-code, AI Engineering from Scratch, WeKnora, diagram-design</td><td class="l">Skill <code>oss-trending-picks-oct-2026</code></td></tr>
+        <tr><td class="l">@awayfromlovable</td><td>7</td><td class="l">Top 5 Claude Code add-ons by stars</td><td class="l">Skill <code>claude-code-addons-top5</code></td></tr>
+        <tr><td class="l">@joshualevi.ai</td><td>8</td><td class="l">NVIDIA SkillSpector, seven slides</td><td class="l">Skill <code>skillspector-preinstall-scan</code></td></tr>
+        <tr><td class="l">@githubvault</td><td>11</td><td class="l">Ten self-hostable tools and a cover</td><td class="l">Same skill; template <code>social-card-vault-repo-mono</code>; theme</td></tr>
+        <tr><td class="l">@boscokat</td><td>1</td><td class="l">5 plugins for vibe coding</td><td class="l">Skill <code>vibe-coding-plugin-layers-5</code></td></tr>
+        <tr><td class="l">@assmooorre.ai (video, 40 s)</td><td>video</td><td class="l">Laya versus Jev decision model</td><td class="l">Already covered by <code>laya-jev-ultrafast</code> and <code>jev-vs-llm</code></td></tr>
+        <tr><td class="l">Chat: Prosp</td><td>1</td><td class="l">&ldquo;100 Claude lead generation skills&rdquo; folder structure</td><td class="l">Skill <code>lead-gen-skill-map-10x10</code></td></tr>
+        <tr><td class="l">Chat: Thomas Pearce</td><td>1</td><td class="l">Personal Brand Strategy (14 elements)</td><td class="l">Skill <code>personal-brand-strategy-map</code>; template <code>mind-map-tree-brand-blue</code></td></tr>
+        <tr><td class="l">Chat: SEO team graphic</td><td>1</td><td class="l">&ldquo;20 AI SEO agents&rdquo; (eight areas shown)</td><td class="l">Skill <code>claude-seo-team-8-areas</code>; agent; template <code>hub-spoke-agent-team-radial</code></td></tr>
+      </tbody>
+    </table></div>
+  </section>
+
+  <section>
+    <h2>3. Deliverables created</h2>
+    <div class="grid2">
+      <div><h3>Skills (8)</h3><p><code>skillspector-preinstall-scan</code>, <code>claude-code-addons-top5</code>, <code>ai-automations-50-marketing</code>, <code>personal-brand-strategy-map</code>, <code>claude-seo-team-8-areas</code>, <code>lead-gen-skill-map-10x10</code>, <code>oss-trending-picks-oct-2026</code>, <code>vibe-coding-plugin-layers-5</code></p></div>
+      <div><h3>Commands (7)</h3><p><code>/skill-scan</code>, <code>/automation-pick</code>, <code>/brand-map</code>, <code>/seo-team</code>, <code>/addon-pick</code>, <code>/oss-pick-oct</code>, <code>/lead-gen-map</code></p></div>
+      <div><h3>Agents (2)</h3><p><code>seo-team-orchestrator</code> routes work across eight SEO areas. <code>campaign-planner-multi-agent</code> runs research, write, review and launch-plan as separate passes and stops before anything is published or spent.</p></div>
+      <div><h3>Design (4 templates, 1 theme)</h3><p>Vault repo card, automation list card, two-tier tree, hub-and-spoke team poster; theme tokens for the GitHub Vault look. Each has light and dark variants and Aptos as first font.</p></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>4. Verification and security scan</h2>
+    <p>SkillSpector (NVIDIA, Apache-2.0) was installed in an isolated virtual environment and run in static mode (<code>--no-llm</code>) on each new skill.</p>
+    <div class="scroll"><table>
+      <thead><tr><th class="l">Skill</th><th>Score</th><th>Rating</th><th class="l">What was flagged</th></tr></thead>
+      <tbody>
+        <tr><td class="l"><code>skillspector-preinstall-scan</code></td><td>30</td><td>Caution</td><td class="l">Supply-chain pattern on a sentence that warns against <code>curl | sh</code>; install line for the scanner itself</td></tr>
+        <tr><td class="l"><code>oss-trending-picks-oct-2026</code></td><td>30</td><td>Caution</td><td class="l">Supply-chain pattern in a table that describes repository installers</td></tr>
+        <tr><td class="l"><code>vibe-coding-plugin-layers-5</code></td><td>29</td><td>Caution</td><td class="l">Supply-chain pattern in a table that quotes install commands</td></tr>
+        <tr><td class="l"><code>claude-code-addons-top5</code></td><td>7</td><td>Safe</td><td class="l">Generic MCP-related medium finding, no snippet</td></tr>
+        <tr><td class="l">Other four skills</td><td>0</td><td>Safe</td><td class="l">No findings</td></tr>
+      </tbody>
+    </table></div>
+    <p class="meta" style="margin-top:8px">Interpretation: every flagged line is documentation that quotes a command; no skill contains executable scripts. A clean static scan is not a guarantee of safety; the three cautions were left visible and not suppressed.</p>
+  </section>
+
+  <section>
+    <h2>5. Source problems found</h2>
+    <ul>
+      <li><strong>Automation list:</strong> 49 distinct items, not 50 (&ldquo;Content Quality Reviewer&rdquo; repeats). Three descriptions do not match their titles.</li>
+      <li><strong>SEO graphic:</strong> eight areas, not twenty named agents. The lead-generation graphic shows folder names only. Both are comment-to-receive posts; their contents were not obtained and were not invented.</li>
+      <li><strong>SkillUI:</strong> the slide gives no repository; the real project is <code>amaancoderx/npxskillui</code> (MIT). <strong>CryptPad:</strong> the real upstream is <code>xwiki-labs/cryptpad</code> (AGPL-3.0).</li>
+      <li><strong>Add-ons:</strong> the Karpathy-derived repository has no licence file at its root, and is not made by Karpathy. ECC's README gives two different counts of its own contents.</li>
+      <li><strong>NVIDIA figures</strong> (31,132 skills; 26.1% vulnerable; 5.2% malicious) could not be confirmed from the repository README. Star counts on all slides were not re-checked.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>6. Repository risk register</h2>
+    <div class="scroll"><table>
+      <thead><tr><th class="l">Repository</th><th>Licence</th><th>Verdict</th><th class="l">Reason</th></tr></thead>
+      <tbody>
+        <tr><td class="l">NVIDIA/SkillSpector</td><td>Apache-2.0</td><td><span class="pill p-use">Use</span></td><td class="l">Run before every skill install</td></tr>
+        <tr><td class="l">cathrynlavery/diagram-design</td><td>MIT</td><td><span class="pill p-use">Use</span></td><td class="l">44 diagram types confirmed in README</td></tr>
+        <tr><td class="l">microsoft/BitNet</td><td>MIT</td><td><span class="pill p-use">Use</span></td><td class="l">Speed and energy figures match README (vendor figures)</td></tr>
+        <tr><td class="l">Stirling-Tools/Stirling-PDF</td><td>MIT, open-core</td><td><span class="pill p-use">Use</span></td><td class="l">Some features in paid tiers</td></tr>
+        <tr><td class="l">Tencent/WeKnora</td><td>MIT + exceptions</td><td><span class="pill p-use">Use</span></td><td class="l">Scope the sandboxed skills and browser control</td></tr>
+        <tr><td class="l">open-webui/open-webui</td><td>Custom licence</td><td><span class="pill p-care">Careful</span></td><td class="l">Branding clause applies above 50 users</td></tr>
+        <tr><td class="l">Alishahryar1/free-claude-code</td><td>AGPL-3.0</td><td><span class="pill p-care">Careful</span></td><td class="l">Piped installer; proxy sees every prompt and file</td></tr>
+        <tr><td class="l">alexta69/metube</td><td>AGPL-3.0</td><td><span class="pill p-care">Careful</span></td><td class="l">Download only content you may copy</td></tr>
+        <tr><td class="l">OpenHub-Store/GitHub-Store</td><td>Apache-2.0</td><td><span class="pill p-care">Careful</span></td><td class="l">Installs release binaries; scan and check publisher</td></tr>
+        <tr><td class="l">jumpserver/jumpserver</td><td>GPL-3.0</td><td><span class="pill p-care">Careful</span></td><td class="l">Security infrastructure; only for managed server estates</td></tr>
+        <tr><td class="l">KRTirtho/spotube</td><td>BSD-4-Clause</td><td><span class="pill p-skip">Skip</span></td><td class="l">Plays audio sourced from YouTube; terms and rights risk</td></tr>
+        <tr><td class="l">allenk/GeminiWatermarkTool</td><td>MIT</td><td><span class="pill p-skip">Skip</span></td><td class="l">Removes only the visible mark, not SynthID; do not use to disguise AI images</td></tr>
+      </tbody>
+    </table></div>
+    <p class="meta" style="margin-top:8px">Also reviewed: AI Engineering from Scratch (MIT), Spacedrive (Apache-2.0), Translumo (Apache-2.0), Glance (AGPL-3.0), CryptPad (AGPL-3.0). Full table in the <code>oss-trending-picks-oct-2026</code> skill.</p>
+  </section>
+
+  <section>
+    <h2>7. Connectors named in the material</h2>
+    <div class="scroll"><table>
+      <thead><tr><th class="l">Layer</th><th class="l">Tool named</th><th>Status in this workspace</th></tr></thead>
+      <tbody>
+        <tr><td class="l">Emails, storage, database</td><td class="l">Gmail, Google Drive, Sheets, Airtable</td><td>Connected</td></tr>
+        <tr><td class="l">Notifications, knowledge base</td><td class="l">Slack, Notion</td><td>Connected</td></tr>
+        <tr><td class="l">Scheduling, CRM, SEO data</td><td class="l">Calendar, HubSpot, Ahrefs, Semrush, Supermetrics</td><td>Connected</td></tr>
+        <tr><td class="l">Docs, database, browser</td><td class="l">Context7, Supabase (read-only), Playwright</td><td>Configured in <code>.mcp.json</code></td></tr>
+        <tr><td class="l">Automation</td><td class="l">n8n</td><td>Not connected (Zapier is)</td></tr>
+        <tr><td class="l">Messaging</td><td class="l">WhatsApp</td><td>Not connected</td></tr>
+        <tr><td class="l">Ads and search data</td><td class="l">Meta Ads, Google Ads, Search Console</td><td>Not connected; would need your authorisation</td></tr>
+      </tbody>
+    </table></div>
+  </section>
+
+  <section>
+    <h2>8. Open items and decisions</h2>
+    <ul>
+      <li><strong>Agent Archive:</strong> account setup is waiting for your answer (existing API key, or create an account).</li>
+      <li><strong>Installs:</strong> run <code>scripts/batch110-install.sh</code> on your own machine; it asks before each step. Scan third-party plugins first with <code>/skill-scan</code>.</li>
+      <li><strong>Comment-gated material:</strong> if you obtain the vendors' lead-generation and SEO agent files, supply them and they can be scanned and merged into the maps.</li>
+      <li><strong>Decision for you:</strong> whether to add a recurring pre-install scan to the repository workflow. Recommended.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>9. Prompts to copy and paste</h2>
+    <h3>Scan before install</h3>
+    <div class="prompt"><button type="button">Copy</button><pre>Scan [path or URL] with SkillSpector in static mode only. Show the score, every finding with file and line, and tell me in plain words whether each one is a real risk or a text that only quotes a command. Do not install anything. Recommend install, install after fixes, or do not install.</pre></div>
+    <h3>Build one of the 50 automations</h3>
+    <div class="prompt"><button type="button">Copy</button><pre>Build automation #[number] "[name]" from the ai-automations-50-marketing skill. Trigger: [trigger]. Inputs: [inputs]. Output: [output]. Use only these connectors: [list]. Stop at a human approval before anything is sent, posted or written to a CRM. Give me the step list, the exact prompt for the AI step, the fields it needs, a 10-example test plan, what could go wrong, and a run log format. Do not run it; show the plan first.</pre></div>
+    <h3>Personal brand map</h3>
+    <div class="prompt"><button type="button">Copy</button><pre>Interview me with the 14 questions of the personal-brand-strategy-map skill, one at a time, starting with Niche. Do not answer for me. Score each element 0 to 4, name my weakest "Who you are" element, then give me a one-page brand sheet and a 30-day plan.</pre></div>
+    <h3>SEO team</h3>
+    <div class="prompt"><button type="button">Copy</button><pre>Act as the seo-team-orchestrator for [site URL]. Goal: [traffic, leads or sales]. Market: [country, language]. Route the work through the eight areas in the claude-seo-team-8-areas skill in the run order. Use Ahrefs or Semrush only for numbers and date every figure. Give me the plan and the first two actions this week.</pre></div>
+    <h3>Lead generation system</h3>
+    <div class="prompt"><button type="button">Copy</button><pre>Using the lead-gen-skill-map-10x10 skill, plan lead generation for [offer] aimed at [market, country]. Walk the ten folders in order, name the existing skill or agent and the connector for each step, mark what a human must do, and make every outbound message a draft for my approval.</pre></div>
+    <h3>Multi-agent campaign planner</h3>
+    <div class="prompt"><button type="button">Copy</button><pre>Use the campaign-planner-multi-agent agent. Brief: [goal, audience, budget range, deadline, channels]. Run research, write, review and launch-plan as separate passes, stop before anything is published or spent, and list the decisions you need from me.</pre></div>
+    <h3>Claude Code add-ons (inside Claude Code, one at a time)</h3>
+    <div class="prompt"><button type="button">Copy</button><pre>/plugin install superpowers@claude-plugins-official
+claude plugin install mattpocock-skills@claude-plugins-official
+/plugin marketplace add forrestchang/andrej-karpathy-skills
+/plugin install andrej-karpathy-skills@karpathy-skills
+/plugin marketplace add anthropics/skills
+/plugin install document-skills@anthropic-agent-skills
+/plugin marketplace add https://github.com/affaan-m/ECC
+/plugin install ecc@ecc</pre></div>
+    <h3>Terminal commands (your own machine)</h3>
+    <div class="prompt"><button type="button">Copy</button><pre>uv tool install git+https://github.com/NVIDIA/skillspector.git
+skillspector scan ./some-skill/ --no-llm
+npm install -g @playwright/cli@latest
+npm install -g skillui
+bash scripts/batch110-install.sh</pre></div>
+    <p class="meta">The full prompt set is in <code>docs/batch-107-prompts.md</code>.</p>
+  </section>
+</main>
+<script>
+  document.querySelectorAll('.prompt button').forEach(function (b) {
+    b.addEventListener('click', function () {
+      var pre = b.parentNode.querySelector('pre');
+      var done = function () { b.textContent = 'Copied'; setTimeout(function () { b.textContent = 'Copy'; }, 1500); };
+      var fallback = function () {
+        var r = document.createRange(); r.selectNodeContents(pre);
+        var s = window.getSelection(); s.removeAllRanges(); s.addRange(r); b.textContent = 'Selected';
+      };
+      try { navigator.clipboard.writeText(pre.textContent).then(done, fallback); } catch (e) { fallback(); }
+    });
+  });
+</script>
