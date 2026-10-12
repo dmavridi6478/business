@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<!--
+  Personal brand tree - 800x1000. Inspired by the Thomas Pearce "Personal Brand Strategy" diagram, redrawn from scratch (no logos or photos).
+  SWAP POINTS: tokens in :root; the TREES array (title, items [name, detail]). Two trees stacked; connectors are CSS borders.
+  Font: Aptos per house style, system fallback. Export: Chromium at 800x1000. Fluid below 840px; trees scroll sideways inside their own box.
+-->
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Personal Brand Tree</title>
+<style>
+:root{--bg:#ffffff;--ink:#0c0c0c;--blue:#1257b3;--blue2:#3d6fb5;--mut:#2a2f3a;--line:#111}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#10141c;--ink:#f2f4f8;--blue:#4c8be0;--blue2:#6b9be0;--mut:#c9d0dc;--line:#e6e9ef;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#10141c;--ink:#f2f4f8;--blue:#4c8be0;--blue2:#6b9be0;--mut:#c9d0dc;--line:#e6e9ef;color-scheme:dark}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Aptos,"Segoe UI",system-ui,sans-serif;padding-inline:16px;padding-block:20px}
+.card{max-width:800px;margin:0 auto}
+h1{font-size:32pt;line-height:1.1;margin:0 0 16px;text-align:center;text-wrap:balance}
+h1 b{background:var(--blue);color:#fff;padding:0 .2em;border-radius:6px}
+.tree{margin:18px 0}
+.root{display:block;width:fit-content;margin:0 auto 14px;background:var(--blue);color:#fff;font-weight:700;font-size:22pt;padding:4px 18px;border-radius:8px}
+.scroll{overflow-x:auto}
+.row{display:flex;gap:8px;min-width:640px;border-top:2px solid var(--line);padding-top:14px}
+.node{flex:1;text-align:center;font-size:11pt;color:var(--mut)}
+.node b{display:block;background:var(--blue2);color:#fff;border-radius:6px;padding:4px 6px;margin-bottom:10px;font-size:11pt}
+.foot{margin-top:16px;background:var(--blue);color:#fff;text-align:center;padding:10px;font-size:11pt;border-radius:6px}
+</style></head><body><div class="card" id="app"></div>
+<script>
+const TITLE=["Personal Brand","Strategy"];
+const TREES=[
+ {title:"Who You Are",items:[["Niche","Expertise, Audience, Platform"],["Positioning","Unique Angle, Category, Authority"],["Story","Origin, Turning Point, Mission"],["Voice","Tone, Language, Energy"],["Content Pillars","3-5 Themes, Depth, Range"],["Proof","Results, Testimonials, Case Studies"],["Offer Ladder","Free, Low-Ticket, High-Ticket"]]},
+ {title:"How You Grow",items:[["Content Engine","Formats, Frequency, Repurposing"],["Distribution","Organic, Paid, Collaborations"],["Community","Comments, DMs, Inner Circle"],["Lead Magnets","Triggers, Opt-ins, Nurture"],["Social Proof","Milestones, Features, Endorsements"],["Monetisation","Products, Services, Partnerships"],["Optimisation","Analytics, Testing, Iteration"]]}];
+const FOOT="Your name and handle here";
+const e=s=>String(s).replace(/[&<>]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;"}[c]));
+document.getElementById("app").innerHTML=`<h1><b>${e(TITLE[0])}</b> ${e(TITLE[1])}</h1>`+
+TREES.map(t=>`<section class="tree"><span class="root">${e(t.title)}</span><div class="scroll"><div class="row">${t.items.map(i=>`<div class="node"><b>${e(i[0])}</b>${e(i[1])}</div>`).join("")}</div></div></section>`).join("")+`<div class="foot">${e(FOOT)}</div>`;
+</script></body></html>

@@ -6110,3 +6110,8 @@ Not done (needs you): plugin installs (`/plugin install paypal@claude-plugins-of
 
 ## Batch 120
 - `top-10-github-repos-product-managers` skill, `/pm-repo-pick` command, `docs/batch-120-prompts.md`, `scripts/batch120-install.sh` (read-only clones, asks first). The infographic looks AI-generated, so all handles are unverified. Nothing installed.
+
+## Batch 121
+- Skills: `ml-svm-part29` (+ runnable script), `claude-seo-team-20-agents`, `personal-brand-strategy-framework`, `free-ai-prompt-sites-5`, `githubnow-trending-oct11`, `mac-ssh-tools-5`, `replace-so-picks-oct11-batch`, `tiktok-repo-videos-oct11`
+- Commands: `/personal-brand-map`, `/free-prompt-site-pick`, `/ssh-tool-pick`; template `personal-brand-tree-blue`
+- `docs/batch-121-prompts.md`, `scripts/batch121-install.sh` (read-only clones, asks first, AnyPS5 excluded). Nothing installed.
