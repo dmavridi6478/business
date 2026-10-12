@@ -1,0 +1,38 @@
+<title>Batch 113 Intake Report</title>
+<style>
+:root{--bg:#f7f6f3;--fg:#1d2330;--mut:#5b6475;--line:#d9d6cf;--acc:#1f4e79;--card:#fff;--warn:#8a4b00}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#12161d;--fg:#e6e9ef;--mut:#9aa3b2;--line:#2b3340;--acc:#7fb2e5;--card:#1a202a;--warn:#e0a458;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#12161d;--fg:#e6e9ef;--mut:#9aa3b2;--line:#2b3340;--acc:#7fb2e5;--card:#1a202a;--warn:#e0a458;color-scheme:dark}
+body{background:var(--bg);color:var(--fg);font-family:Aptos,"Segoe UI",system-ui,sans-serif;font-size:11pt;line-height:1.5;padding-inline:16px;padding-block:24px}
+main{max-width:960px;margin:0 auto}
+h1{font-size:32pt;line-height:1.1;margin:0 0 6px;text-wrap:balance}
+h2{font-size:14pt;margin:28px 0 8px;color:var(--acc)}
+p{margin:6px 0}.mut{color:var(--mut)}.warn{color:var(--warn)}
+.wrap{overflow-x:auto}
+table{border-collapse:collapse;width:100%;background:var(--card);min-width:560px}
+th,td{border:1px solid var(--line);padding:6px 8px;vertical-align:top;text-align:center}
+pre{background:var(--card);border:1px solid var(--line);padding:10px;overflow-x:auto;white-space:pre-wrap;font-size:10pt}
+</style>
+<main>
+<h1>Batch 113 Intake Report</h1>
+<p class="mut">11 October 2026 · 2 archives, 48 images, 4 videos · branch claude/peaceful-turing-jk1xpz</p>
+<h2>What was in the files</h2>
+<p>TikTok carousels and short videos: a Claude Code ecosystem cheat sheet, prompt-rewrite slides, open-source swap lists, small dev tools, prompt cards and a customer-persona workflow. No repositories to clone, PDFs or tasks to execute. All 48 images were read. The 4 videos were read from sampled frames only, with no audio, so treat them as leads.</p>
+<h2>Created in the repo</h2>
+<div class="wrap"><table>
+<tr><th>Type</th><th>Items</th></tr>
+<tr><td>Skills (7 new, 2 updated)</td><td>claude-code-ecosystem-map-60, earchoe-customer-personas, claude-code-prompt-rewrites-5, own-your-apps-joshualevi-7, dotdevs-app-and-dev-tools, glasser-data-sources, claude-ai-agent-10-steps-no-code; updated betterprompts-life-prompts-12 (17 prompts) and tiktok-video-tool-notes</td></tr>
+<tr><td>Commands (3)</td><td>/ecosystem-audit, /persona-from-evidence, /sharpen-prompt</td></tr>
+<tr><td>Agent (1)</td><td>claude-code-setup-coach (read-only audit of a repo's Claude Code setup against the 4-layer map)</td></tr>
+<tr><td>Design (3)</td><td>prompt-rewrite-before-after-grid, own-it-repo-stat-card, photo-bg-tool-glass-card</td></tr>
+<tr><td>Other</td><td>docs/batch-113-prompts.md, scripts/batch113-install.sh, README Batch 113 entry</td></tr>
+</table></div>
+<h2>Left alone, and why</h2>
+<p class="warn">The Glasser.ai connector was not added to .mcp.json: it is pay-per-call, the vendor is unverified, and the video shows an agent being told to set itself up from a remote SKILL.md, which Claude itself declined. The skill glasser-data-sources has the steps and checks if you decide to use it. No plugin was installed in this batch.</p>
+<p class="warn">Prompt 17 from the @betterpromptsai set (a 7-day plan with cold exposure and sensory deprivation) is kept but flagged unsafe as written, with a safer rewrite.</p>
+<h2>Prompt to copy (plain text)</h2>
+<pre>Analyse these customer statements [TEXT]. Cluster recurring needs, frustrations, desired outcomes, objections and buying triggers. Quote only short phrases that are actually present.
+
+Create 3 evidence-based customer profiles from the clusters. For each, show the evidence behind the profile and clearly mark anything that remains uncertain.</pre>
+<p class="mut">All other prompts: docs/batch-113-prompts.md. Star and install counts on the slides are unverified.</p>
+</main>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<!--
+  Template: own-it-repo-stat-card
+  Style: @joshualevi.ai "apps you rent" repo card - light grid paper, 3D clay asterisk top-right, big coral #N, bold name, grey description, white repo card with five stats and coloured language bar, avatar + handle footer, Swipe cue
+  Swap points: --accent, RANK, NAME, DESCRIPTION, OWNER_REPO, REPO_TAGLINE, five STATS, LANG_BAR colours, HANDLE. Size 1080x1350.
+-->
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Own It Repo Stat Card</title>
+<style>
+:root{--paper:#efeeea;--grid:rgba(0,0,0,.05);--accent:#e0562f;--ink:#171717;--mute:#6b6b66;--card:#fff}
+*{box-sizing:border-box;margin:0}
+body{background:#777;display:flex;justify-content:center;padding:24px;font-family:system-ui,"Helvetica Neue",Arial,sans-serif}
+.slide{width:1080px;height:1350px;background-color:var(--paper);background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);background-size:84px 84px;padding:64px;position:relative}
+.star{position:absolute;top:26px;right:34px;width:190px;height:190px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#f08a64,#b8431f);box-shadow:0 18px 30px rgba(0,0,0,.25);display:grid;place-items:center;color:#7a2a10;font-size:120px;font-weight:900}
+.rank{color:var(--accent);font-size:62px;font-weight:900;margin-top:150px}
+h1{font-size:76px;letter-spacing:-.02em;margin-top:6px}
+p.desc{color:var(--mute);font-size:38px;line-height:1.45;margin-top:22px;max-width:880px}
+.card{background:var(--card);border-radius:22px;box-shadow:0 12px 40px rgba(0,0,0,.1);margin-top:44px;padding:44px 52px 56px;position:relative;overflow:hidden}
+.card h2{font-size:58px;font-weight:400}.card h2 b{font-weight:800}
+.card .tag{color:var(--mute);font-size:30px;margin-top:14px;max-width:560px}
+.stats{display:flex;gap:44px;margin-top:70px;font-size:36px}.stats div span{display:block;color:var(--mute);font-size:26px}
+.bar{position:absolute;left:0;right:0;bottom:0;height:16px;background:linear-gradient(90deg,#2f6fd0 0 45%,#b9801f 45% 85%,#8a4fd6 85% 92%,#e8503a 92% 100%)}
+.foot{position:absolute;left:64px;right:64px;bottom:50px;display:flex;justify-content:space-between;font-weight:700;font-size:32px;color:#444}
+</style>
+</head>
+<body>
+<section class="slide">
+  <div class="star">✱</div>
+  <div class="rank">RANK: #1</div>
+  <h1>NAME: Stirling-PDF</h1>
+  <p class="desc">DESCRIPTION: Fifty plus PDF tools in one place. Runs as a desktop app or on your own server, so the document never goes to an outside service.</p>
+  <div class="card"><h2>OWNER_REPO: Stirling-Tools/<b>Stirling-PDF</b></h2><div class="tag">REPO_TAGLINE: #1 PDF application on GitHub</div>
+    <div class="stats"><div>321<span>Contributors</span></div><div>386<span>Issues</span></div><div>256<span>Discussions</span></div><div>94k<span>Stars</span></div><div>11k<span>Forks</span></div></div><div class="bar"></div></div>
+  <div class="foot"><span>@yourhandle</span><span>Swipe →</span></div>
+</section>
+</body>
+</html>

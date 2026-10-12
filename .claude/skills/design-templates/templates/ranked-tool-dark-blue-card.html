@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<!--
+  Ranked tool card, dark blue - 1100x1467 (3:4). Inspired by the @danielmofi1 analytics-tool carousel, redrawn from scratch (no screenshots, no logos).
+  SWAP POINTS: tokens in :root; the TOOL object (rank, brand, name, best, blurb, rows); each row = [label, value]. Works for any "N tools" ranking.
+  Font: Aptos per house style, system fallback. Export: Chromium at 1100x1467. Single column and fluid width below 1140px.
+-->
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Ranked Tool Card</title>
+<style>
+:root{--bg:#07080b;--panel:#12151c;--line:#232938;--blue:#2f7bff;--blue-soft:#7fb0ff;--ink:#fff;--mut:#aab3c5;--font:Aptos,"Aptos Display","Segoe UI",system-ui,sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#222;font-family:var(--font)}
+.card{width:1100px;height:1467px;margin:0 auto;background:var(--bg);color:var(--ink);padding:56px 60px;display:flex;flex-direction:column;gap:24px}
+.top{display:flex;justify-content:space-between;align-items:flex-start}
+.rank{font-size:210px;line-height:.85;font-weight:900;color:var(--blue);letter-spacing:-.05em}
+.brand{font-size:44px;font-weight:900;letter-spacing:.02em;text-transform:uppercase;text-align:right}
+h1{font-size:84px;line-height:1;font-weight:900;letter-spacing:-.035em;text-wrap:balance}
+.best{font-size:42px;font-weight:800;color:var(--blue-soft);line-height:1.15}
+.blurb{font-size:30px;line-height:1.35;color:#e4e8f1}
+.panel{flex:1;background:var(--panel);border:1px solid var(--line);border-radius:26px;padding:30px;display:flex;flex-direction:column;gap:14px}
+.panel h2{font-size:26px;color:var(--mut);letter-spacing:.12em;text-transform:uppercase}
+.row{display:flex;justify-content:space-between;gap:20px;background:#0c0f15;border:1px solid var(--line);border-radius:16px;padding:20px 24px;font-size:30px}
+.row b{color:var(--blue-soft);white-space:nowrap}
+.note{font-size:22px;color:var(--mut)}
+@media (max-width:1140px){body{background:var(--bg)}.card{width:100%;height:auto;padding:28px 18px}.rank{font-size:min(30vw,210px)}h1{font-size:min(10vw,84px)}.best{font-size:min(5vw,42px)}.blurb{font-size:min(4vw,30px)}.row{font-size:min(4vw,28px);flex-direction:column;gap:4px}}
+</style></head><body><section class="card">
+<script>
+const TOOL={rank:"01",brand:"Tool name",name:"Product Feature",best:"Best for: who it serves",blurb:"One or two sentences on what the tool is and its AI feature, in your own words.",
+rows:[["Place in workflow","Where it fits"],["Best feature","What it does best"],["Watch out for","One honest caveat"],["Pricing note","Check the vendor page"]],note:"Illustrative layout. Replace every field; verify claims before publishing."};
+document.currentScript.insertAdjacentHTML("afterend",
+`<div class="top"><div class="rank">${TOOL.rank}</div><div class="brand">${TOOL.brand}</div></div>
+<h1>${TOOL.name}</h1><div class="best">${TOOL.best}</div><p class="blurb">${TOOL.blurb}</p>
+<div class="panel"><h2>At a glance</h2>${TOOL.rows.map(r=>`<div class="row"><span>${r[0]}</span><b>${r[1]}</b></div>`).join("")}<p class="note">${TOOL.note}</p></div>`);
+</script>
+</section></body></html>

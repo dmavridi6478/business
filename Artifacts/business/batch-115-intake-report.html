@@ -1,0 +1,37 @@
+<title>Batch 115 Intake Report</title>
+<style>
+:root{--bg:#f7f6f3;--fg:#1d2330;--mut:#5b6475;--line:#d9d6cf;--acc:#1f4e79;--card:#fff;--warn:#8a4b00}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#12161d;--fg:#e6e9ef;--mut:#9aa3b2;--line:#2b3340;--acc:#7fb2e5;--card:#1a202a;--warn:#e0a458;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#12161d;--fg:#e6e9ef;--mut:#9aa3b2;--line:#2b3340;--acc:#7fb2e5;--card:#1a202a;--warn:#e0a458;color-scheme:dark}
+body{background:var(--bg);color:var(--fg);font-family:Aptos,"Segoe UI",system-ui,sans-serif;font-size:11pt;line-height:1.5;padding-inline:16px;padding-block:24px}
+main{max-width:960px;margin:0 auto}
+h1{font-size:32pt;line-height:1.1;margin:0 0 6px;text-wrap:balance}
+h2{font-size:14pt;margin:28px 0 8px;color:var(--acc)}
+p{margin:6px 0}.mut{color:var(--mut)}.warn{color:var(--warn)}
+.wrap{overflow-x:auto}
+table{border-collapse:collapse;width:100%;background:var(--card);min-width:560px}
+th,td{border:1px solid var(--line);padding:6px 8px;vertical-align:top;text-align:center}
+pre{background:var(--card);border:1px solid var(--line);padding:10px;overflow-x:auto;white-space:pre-wrap;font-size:10pt}
+</style>
+<main>
+<h1>Batch 115 Intake Report</h1>
+<p class="mut">11 October 2026 · 2 archives, 63 images, 2 videos · branch claude/peaceful-turing-jk1xpz</p>
+<h2>What was in the files</h2>
+<p>Seven TikTok series: @techsupportzone (Claude Code automation tiers), @awayfromlovable (token-saving repos and big-company plugins), @succeed_at_work (5 stages of operational excellence), @asdanyal (Claude plugins), @aiwithcy and @aisimplified23 (connector lists), @githubnow and @replace.so (repo cards). Two videos (an "anatomy" skill and a developer-repo list) were read from sampled frames only, so they are low-confidence. All 63 images were read.</p>
+<h2>Created in the repo</h2>
+<div class="wrap"><table>
+<tr><th>Type</th><th>Items</th></tr>
+<tr><td>Skills (6 new)</td><td>claude-automation-stack-3-tiers, token-saver-repos-top5, operational-excellence-5-stages, asdanyal-claude-plugins-7, anatomy-explain-by-building, oss-repo-cards-batch-115</td></tr>
+<tr><td>Commands (4)</td><td>/automation-tier, /token-saver-check, /opex-stage, /oss-repo-vet</td></tr>
+<tr><td>Design templates (2)</td><td>opex-stage-brush-card, tier-card-cream-agentic</td></tr>
+<tr><td>Other</td><td>docs/batch-115-prompts.md (9 copy-paste prompts), scripts/batch115-install.sh (user-run, asks before every step), README Batch 115 entry</td></tr>
+</table></div>
+<h2>Already existed, not duplicated</h2>
+<p>connector-picks-for-content and connector-starter-stacks (aiwithcy and aisimplified23 connector lists), claude-official-plugins-3 and claude-plugins-top5-installs (PayPal, Chrome, Browser Use, Lovable, HyperFrames), caveman, claude-code-setup-plugin, claude-code-4-loops, operational-excellence-layers (a different ordering, compared in the new skill), and earlier repo cards for Figranium, OpenFlowKit and Listmonk.</p>
+<h2>Not installed, on purpose</h2>
+<p class="warn">No plugin, connector or clone was added. pxpipe and OmniRoute are proxies or routers that see every prompt and credential; OmniRoute's "free billions of tokens, no API key" claim is a red flag. The anatomy skill and the repos are in the user-run script. Plugin commands in the slides use the marketplace name claude-plugins-official, which is not configured here; the script uses anthropic-plugin-directory and tells you to check the publisher if a name is not found.</p>
+<h2>Judgement calls and caveats</h2>
+<p>The 93% auto-approve figure, the 41% unauthenticated-MCP audit, star counts and token savings are the slides' own and unverified. The "tinycast, README in ten minutes" line recurs across unrelated slides and is template filler. Routine API URLs and tokens on the slides are examples, not real endpoints. The Caveman star count (110,982) is unusually high, so verify the owner before installing.</p>
+<h2>Still on you</h2>
+<p>Approve and authenticate Blotato and Lovable through /mcp (OAuth cannot be completed from a cloud session). Nothing is to be posted or scheduled without your explicit approval.</p>
+</main>

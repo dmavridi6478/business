@@ -1,0 +1,24 @@
+---
+name: buildwithneej-5-repos-oct9
+description: The @buildwithneej "5 GitHub repos that exploded this week (week of 9 Oct)" 13-slide series - AnyPS5 (PS5 executables to PC), PhotoCraft (open-source Photoshop-style editor in Rust), REA (agent-assisted reverse engineering), Moli (Rust headless browser for agents) and Strata (a 125B model split across GPU, RAM and SSD) - with slide stats, install steps as shown, hardware needs, legal and security flags (the AnyPS5 copyright risk, REA's permission rule, Moli's pipe-to-shell installer) and the narrator's pick order. Use when evaluating these repos, choosing an agent browser or local-LLM runner, or asking whether it is safe or lawful to use them.
+---
+
+# 5 repos from @buildwithneej (week of 9 Oct)
+
+Stats and benchmarks are the slides' own; "this week" gains are large relative to totals (for example PhotoCraft +32.7k on 33.5k), which suggests a viral spike, so confirm on GitHub. Nothing was installed or cloned in the cloud session.
+
+| # | Repo | What (slide) | Stats | Install as shown | Flags |
+|---|---|---|---|---|---|
+| 01 | `boykopovar/AnyPS5` | rewrites a PS5 game's program into a Windows or Linux app, no emulator; same x86-64 processor family, graphics translated to Vulkan; **one game verified** (a 2D indie, 60 fps on a 2016 GPU); you bring your own game files; progress page 9 Oct: GPU shader instructions 1,166/1,166, system libraries 2,578/3,044 | 20,838 stars, +16.8k wk | download `relinker` from Releases; read `docs/user/USAGE.md` first | **Copyright and DRM**: console executables are protected; bypassing protection can breach law (for example DMCA s1201, EU rules) even for games you own, and distributing results is infringement. Do not use on games you lack the right to modify. Parts counts are not "games that play" |
+| 02 | `storytold/photocraft` | Photoshop-style editor in Rust: layers, masks, curves, type; opens and saves layered PSD; early alpha; part of a family of seven open-source "Adobe-style" apps (Lightroom, Premiere, Acrobat, Illustrator, motion graphics, page layout) with 64,018 stars combined | 33,571 stars, +32.7k wk | download from getartcraft.com/apps/photocraft (Mac, Windows, Linux, web); the narrator's signed Mac build added Hue/Saturation and Curves layers and saved a layered PSD | alpha: keep originals; check the licence and who the "team" is; Adobe-compatibility claims are untested |
+| 03 | `morluto/rea` | point a coding agent at an app and ask how a feature works; REA gives it tools to look inside and keeps the evidence behind each answer; runs locally. Demo: how the open-source Aegis authenticator makes 30-second codes (`floor(t/30)` block plus key gives six digits) | 40,829 stars, +38.3k wk | `npx rea-agents setup`; compiled apps need Ghidra, Hopper or IDA | **Use only on software you own or have permission to inspect**; reverse engineering can breach EULAs and law; `npx` runs third-party code, so read it first |
+| 04 | `lexmount/moli` | Rust headless browser for agents: reads pages without drawing them; maker's benchmark about one tenth of headless Chrome's memory; Playwright scripts connect like to Chrome; keep Chrome for pixel-perfect work and bot-checked sites; narrator's test: a full Wikipedia article as Markdown in ~0.5 s | 14,778 stars, +7.4k wk | `curl --proto '=https' --tlsv1.2 -fsSL <github release>/moli-installer.sh \| sh` | **Piped installer: do not run it.** Download the script, read it, check the checksum or build from source. Maker benchmarks are not independent |
+| 05 | `Niko1221/Strata` | runs Qwen's 125B-parameter model (slide: "Qwen3.8-Flash-Next") by splitting it across GPU, RAM and SSD; OpenAI/Anthropic-style API on localhost; free, MIT; GPU 12 GB or more; heavily compressed so some quality loss | 19,366 stars, +8.4k wk | Windows: unzip and run `START-HERE.bat`; Linux `./setup.sh` | the two slides disagree on RAM (32 GB minimum vs "most sizes want 64 GB"); setup downloads ~70 GB; maker's numbers 53 to 94 tokens/s on an RTX 5070 12 GB; a local API on localhost is still reachable by local software, so keep it bound to 127.0.0.1; verify model provenance |
+
+**Narrator's picks (slide 12):** PhotoCraft and REA first ("on my own apps"); AnyPS5 "wait and see, one game so far"; Moli "fast for agents, keep Chrome too"; Strata "big model, needs a big PC".
+
+## My recommendation
+- Safe to trial in a container or VM: PhotoCraft (alpha), Moli (after reading the installer), REA on your own code.
+- Skip AnyPS5 unless you can show the rights to the game and understand the DRM law where you live.
+- Strata only if you already have the hardware; compare against a smaller local model for the same task first (`quantized-export`, `model-router-2026`).
+Related: `repo-licence-check`, `/oss-repo-vet`, `/installer-safety-check`, `/reverse-engineer-own-app`, `safe-browser`, `autobrowse`, `camofox-browser`. Lead magnet on the CTA: "comment REPO" for the creator's notes.

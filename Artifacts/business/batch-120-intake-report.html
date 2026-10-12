@@ -1,0 +1,31 @@
+<title>Batch 120 Intake Report</title>
+<style>
+:root{--bg:#f7f6f3;--fg:#1d2330;--mut:#5b6475;--line:#d9d6cf;--acc:#1f4e79;--card:#fff;--warn:#8a4b00}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#12161d;--fg:#e6e9ef;--mut:#9aa3b2;--line:#2b3340;--acc:#7fb2e5;--card:#1a202a;--warn:#e0a458;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#12161d;--fg:#e6e9ef;--mut:#9aa3b2;--line:#2b3340;--acc:#7fb2e5;--card:#1a202a;--warn:#e0a458;color-scheme:dark}
+body{background:var(--bg);color:var(--fg);font-family:Aptos,"Segoe UI",system-ui,sans-serif;font-size:11pt;line-height:1.5;padding-inline:16px;padding-block:24px}
+main{max-width:960px;margin:0 auto}
+h1{font-size:32pt;line-height:1.1;margin:0 0 6px}
+h2{font-size:14pt;margin:28px 0 8px;color:var(--acc)}
+.mut{color:var(--mut)}.warn{color:var(--warn)}
+.wrap{overflow-x:auto}
+table{border-collapse:collapse;width:100%;background:var(--card);min-width:520px}
+th,td{border:1px solid var(--line);padding:6px 8px;vertical-align:top;text-align:center}
+</style>
+<main>
+<h1>Batch 120 Intake Report</h1>
+<p class="mut">11 October 2026 · 1 image · branch claude/peaceful-turing-jk1xpz</p>
+<h2>What was in the file</h2>
+<p>An infographic, "Top 10 GitHub repos for product managers" (credit linkedin.com/in/aarshyy), listing ten owner/repo paths with what each offers. The image looks AI-generated, and rows 5 and 10 are near-duplicate "AI PM Toolkit for Claude Code" entries, so none of the handles is verified.</p>
+<h2>Created</h2>
+<div class="wrap"><table>
+<tr><th>Type</th><th>Items</th></tr>
+<tr><td>Skill</td><td>top-10-github-repos-product-managers</td></tr>
+<tr><td>Command</td><td>/pm-repo-pick</td></tr>
+<tr><td>Other</td><td>docs/batch-120-prompts.md, scripts/batch120-install.sh (checks each repo exists, asks before each read-only clone), README entry</td></tr>
+</table></div>
+<h2>Not installed, on purpose</h2>
+<p class="warn">No repo was cloned, because none could be verified from the cloud session. Claude Code toolkits can include hooks and scripts, so read them before copying anything into .claude/. No design template was made: the slide is a plain ranked table.</p>
+<h2>Overlap</h2>
+<p>PRD and prioritisation help already exists here (product-lens, product-strategy-session, ai-pm-skills, evermuse, product-management plugins).</p>
+</main>

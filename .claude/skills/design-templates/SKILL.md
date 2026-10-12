@@ -82,6 +82,22 @@ All are verified to render correctly with no console errors (checked via Playwri
 | `editorial-hero.html` | SiteInspire (siteinspire.com) / Httpster (httpster.net) | Oversized serif headline with one italic accent word, thin gradient rule under a category label, dotted-radial-gradient canvas — the "clean, restrained, European" register both sites curate for |
 | `infographic-card-grid.html` | GenAI Works / ByteByteGo / AIForLeaders.com / replace.so carousel infographics (see `.claude/commands/claude-skills-13.md`, `top-12-agent-skill-repos.md`) | Numbered circular badge + icon chip + title + short description, repeated in a responsive 4→2→1 CSS Grid, with an eyebrow/headline header and a source-attribution footer; ships both the cream/serif "light" variant and a near-black "dark" variant (toggle via `<body class="light\|dark">`), verified via Playwright screenshot in both modes |
 | `numbered-workflow-carousel.html` | "Best 8 AI Automation Tools" carousel (@theromanknox) | 1080×1350 slide, brown→peach `background-clip:text` headline, numbered badge, ✱ bullet, light/dark workflow node cards; theme `warm-creator-carousel` |
+| `maturity-ladder-dark-red.html` | Limitless Marketing Maturity Model (Lisa Cole), redrawn | 1080×1350 five-stage ladder with locked-cost and flexibility bars; tokens `--bg #0b0b0d`, `--red #ff2a2a`, `--card #f4f1ee` |
+| `earchoe-recipe-cream.html` | @earchoe practical-AI recipe carousel (cream paper, serif + mono, teal, dark prompt block) | 1080x1350 |
+| `noir-serif-prompt-card.html` | @betterpromptsai prompt card (near-black, caps serif title, coral italic tagline, grey prompt) | 1080x1350 |
+| `briefing-navy-repo-slide.html` | @githubnow daily briefing repo slide (navy gradient, green pill, gold stars badge, flow strip, 3 cards) | 1080x1920 |
+| `prompt-rewrite-before-after-grid.html` | @awayfromlovable "you write / Anthropic writes" prompt-rewrite slide (cream grid, coral title, charcoal mono block) | 1080x1920 |
+| `own-it-repo-stat-card.html` | @joshualevi.ai "apps you rent" repo card (grid paper, clay asterisk, big #N, five-stat repo card) | 1080x1350 |
+| `photo-bg-tool-glass-card.html` | @dotdevs tiny-tool story card (dim photo backdrop, icon tile, title, browser frame, URL) | 1080x1920 |
+| `serif-italic-photo-tip-card.html` | @alinacoding numbered tool-tip slide (dimmed photo, white logo tile, bold italic serif title and tip) | 900x1600 |
+| `pixel-grid-repo-tile-card.html` | @replace.so repo slide (near-black, green pixel-grid footer, icon tile, browser window with stars) | 1024x1365 |
+| `opex-stage-brush-card.html` | @succeed_at_work stage slide (brush-stroke headline, what -> how rows, navy "ready when" footer; accent per stage in `--stage`) | 1100x1467 |
+| `tier-card-cream-agentic.html` | @techsupportzone automation-tier slide (cream paper, numbered badge, agentic-loop strip, icon rows) | 1100x1375 |
+| `ranked-tools-table-purple.html` | "GTMs toolkit" ranked tools table (lavender page, purple header, numbered tiles; data in a `ROWS` array) | 800x1000 |
+| `agent-schedule-two-column-red.html` | salesdaily.co agent schedule card (day and week columns, time and event chips, highlighted [brackets]; data in `DAY` and `WEEK` arrays) | 800x1000 |
+| `ranked-tool-dark-blue-card.html` | @danielmofi1 ranked analytics-tool slide (near-black, big blue rank number, "Best for" line, at-a-glance panel; data in a `TOOL` object) | 1100x1467 |
+| `mac-app-laptop-card.html` | @henryxagi "Mac apps worth a look" slide (lavender gradient, icon tile, huge name, tagline, CSS laptop with a terminal window; data in an `APP` object) | 1080x1350 |
+| `personal-brand-tree-blue.html` | "Personal Brand Strategy" two-tree diagram (white page, blue root and node tags; data in a `TREES` array) | 800x1000 |
 | `carousel-cover-dark.html` | Same carousel, cover slide | Radial espresso glow + masked grid + ring, peach label block, rotated 3D tiles with inset shadows, SVG curved swipe arrow |
 | `layered-framework-infographic.html` | "The Governed Marketing Team" (prosp / Claude) | 3-column grid (who-talks-to-what · layer stack · what-it-prevents) with per-layer `--c`/`--t` colour tokens, 5-step flow strip; pre-filled with `governed-marketing-team`; Aptos 32/14/11 pt; responsive + dark mode; theme `governed-infographic` |
 | `stacked-layer-pyramid.html` | "The 5-layer GTM engine" (Cold IQ) | Slabs with per-slab `--w` width and `--top` lid colour drawn by a clipped `::before` trapezoid; pre-filled with `gtm-outbound-engine`; theme `peach-stack` |

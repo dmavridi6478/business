@@ -6017,3 +6017,104 @@ Not done (needs you): plugin installs (`/plugin install paypal@claude-plugins-of
 **Source problems:** the revenue-system list repeats six roles; interview replacement lines are templates that must not claim things you have not done; GTM customer-count thresholds are rules of thumb.
 
 **Not done:** nothing installed; no connector changed (OpenFlowKit entry still unapplied; Midpage, Sentry and Supabase need your authorisation).
+
+## Batch 111 — five archives: 12 LinkedIn infographics and 113 iCloud photos (11 October 2026)
+
+**Sources:** `7_LinkedIn_strategies.zip` (12 infographics), iCloud Photos 1, 2, 4 and the unnumbered archive (TikTok/Instagram carousels from @aiemergence, @earchoe, @asdanyal.ai, @awayfromlovable, @martiendejong_dev, @itsnextwork, @your.aimentor, @aisimplified23, @aiwithcy, @dotdevs, @githubnow, @replace.so, @aigenesis.official). About 105 of 125 images were read after retries; the remainder (mostly the identity-card photos and a few carousel slides) are not captured. Two photos are of an identity card: not transcribed, not stored, not committed.
+
+**Added:** skills `blotato-nine-platform-posting`, `solo-business-build-run`, `ai-research-sop-loops`, `claude-install-list-40`, `claude-skill-directories-12`, `claude-official-plugins-3`, `ai-tool-swaps-8`, `seo-agents-100-and-tools-45`, `bd-week-four-time-blocks`, `full-funnel-os`, `limitless-marketing-maturity`, `connector-picks-for-content`; commands `/blotato-post`, `/build-skill-from-job`, `/run-skill-schedule`, `/research-brief`, `/sop-from-process`, `/bd-week`, `/seo-agent-pick`, `/marketing-maturity`, `/full-funnel-audit`; design template `maturity-ladder-dark-red`; `Blotato` entry in `.mcp.json` (needs a paid plan and your OAuth); prompts in `docs/batch-111-prompts.md`; user-run `scripts/batch111-install.sh`.
+
+**Already existed, not duplicated:** `i-have-adhd`, `diagram-design` references, `hindsight` (agent-repos-week-5), `sop-builder`, `sales-methodologies-20`, `linkedin-post-types`, `ai-ecosystem-map`, Playwright and Context7 MCP entries.
+
+**Follow-up (same day):** added the AUDIT prompt (File 01) to `solo-business-build-run` plus `/audit-week`; directory items 5-8 and 13-20; PayPal and HyperFrames slide facts; the @aiwithcy MCP deck. Installed in the cloud session at user scope: plugins `lovable`, `modern-web-guidance`, `browser-use` from `anthropic-plugin-directory` (the slides' `claude-plugins-official` is not a configured marketplace here). Blotato is in `.mcp.json` and shows 'Pending approval'; it still needs your approval, OAuth and a paid plan, and nothing was posted.
+
+**Not done:** no repo cloned; lovable, Blotato, Midpage, Sentry, Supabase still need your authorisation; star counts and install numbers on slides unverified.
+
+## Batch 112 — three archives: 54 images and 4 videos (11 October 2026)
+
+**Sources:** `iCloud_Photos_3.zip`, `iCloud_Photos_6.zip`, `iCloud_Photos_10.zip` (TikTok carousels from @earchoe, @betterpromptsai, @awayfromlovable, @githubnow, @replace.so, @clicksandranks, @51ultron.com plus an "How to Build an AI Agent" infographic and four short videos). All 54 images were read; the videos were read from sampled frames only (no audio transcript), so their content is low-confidence.
+
+**Added:** skills `earchoe-idea-validation`, `betterprompts-life-prompts-12`, `claude-plugins-top5-installs`, `github-trending-oct8-repos`, `agent-build-guide-aug-2026`, `agency-stack-and-sales-tiers`, `tiktok-video-tool-notes`; commands `/validate-idea`, `/life-prompt`, `/agent-blueprint`; agent `agent-blueprint-designer`; design templates `earchoe-recipe-cream`, `noir-serif-prompt-card`, `briefing-navy-repo-slide`; prompts in `docs/batch-112-prompts.md`; user-run `scripts/batch112-install.sh`.
+
+**Installed (cloud session, user scope):** plugins `code-simplifier`, `context7`, `frontend-design`, `superpowers` from `anthropic-plugin-directory`. `code-review` was not installed: it is not published under that name there and the similarly named entries are unverified. No repo cloned.
+
+**Already existed, not duplicated:** `ponytail*`, `ecc-*`, `openwhispr`, `replace-so-*`, `github-trending-card` template, `code-simplifier` agent, Context7 MCP entry, SkillOpt in README.
+
+**Caveats:** the AI sales tier list is vendor-authored (51Ultron ranks itself S); star and install counts are the slides' own; the reflective prompts are coaching-style, not therapy.
+
+## Batch 113 — two archives: 48 images and 4 videos (11 October 2026)
+
+**Sources:** `iCloud_Photos_5.zip` (48 TikTok carousel images: @earchoe, @awayfromlovable, @dotdevs, @joshualevi.ai, @betterpromptsai, @aisimplified23, @oxana__ray) and `iCloud_Photos_8.zip` plus 2 videos inside `iCloud_Photos_5.zip` (4 short videos). All 48 images were read. The videos were read from sampled frames only (no audio), so they are low-confidence leads.
+
+**Added:** skills `claude-code-ecosystem-map-60`, `earchoe-customer-personas`, `claude-code-prompt-rewrites-5`, `own-your-apps-joshualevi-7`, `dotdevs-app-and-dev-tools`, `glasser-data-sources`, `claude-ai-agent-10-steps-no-code`; updated `betterprompts-life-prompts-12` (now 17 prompts, #17 flagged unsafe as written, safer rewrite included) and `tiktok-video-tool-notes`; commands `/ecosystem-audit`, `/persona-from-evidence`, `/sharpen-prompt`; agent `claude-code-setup-coach`; design templates `prompt-rewrite-before-after-grid`, `own-it-repo-stat-card`, `photo-bg-tool-glass-card`; prompts in `docs/batch-113-prompts.md`; user-run `scripts/batch113-install.sh`.
+
+**Not installed, on purpose:** the Glasser.ai connector (paid pay-per-call, vendor unverified, video shows an agent being told to follow a remote SKILL.md). No plugin installed; the repos in the install script are optional shallow clones.
+
+**Already existed, not duplicated:** `repo-stirling-pdf`, `oss-alternatives`, `build-ai-agent-10-minutes` (Claude Code version), `customer-research`, `harness-audit`, OpenMontage mentions.
+
+## Batch 114 — two archives: 22 images and 4 videos (11 October 2026)
+
+**Sources:** `iCloud_Photos_9.zip` (22 images: @replace.so repo cards, @githubnow briefing, @alinacoding app-business tips; plus one video) and `iCloud_Photos_7.zip` (3 videos). All 22 images read; the 4 videos were read from sampled frames only (no audio), so they are low-confidence leads.
+
+**Added:** skills `replace-so-oss-repos-10-oct`, `github-trending-oct10-trio`, `alinacoding-app-business-6`, `apple-design-audit` (prompt is a reconstruction, labelled as such); `tiktok-video-tool-notes` extended (Ruflo, Apple design audit, the 11 Anthropic plugins, Piik); commands `/app-business-check`, `/apple-design-audit`; design templates `serif-italic-photo-tip-card`, `pixel-grid-repo-tile-card`; prompts in `docs/batch-114-prompts.md`; user-run `scripts/batch114-install.sh`.
+
+**Not installed:** nothing; no plugin, connector or clone. llama.cpp's site shows a pipe-to-shell installer: flagged, not run. Several of the "11 Anthropic plugins" are already installed in this environment.
+
+**Caveats:** star counts and token-saving percentages are the slides' own; the @githubnow "start with transformers, README runs in ten minutes" line also appears on an unrelated earlier slide, so treat it as template filler.
+
+
+## Batch 115 — two archives: 63 images and 2 videos (11 October 2026)
+
+**Sources:** `iCloud_Photos_1.zip` and `iCloud_Photos.zip` (TikTok carousels from @techsupportzone, @awayfromlovable, @succeed_at_work, @asdanyal, @aiwithcy, @aisimplified23, @githubnow, @replace.so; two short videos). All 63 images were read; the videos were read from sampled frames only (no audio), so they are low-confidence.
+
+**Added:** skills `claude-automation-stack-3-tiers`, `token-saver-repos-top5`, `operational-excellence-5-stages`, `asdanyal-claude-plugins-7`, `anatomy-explain-by-building`, `oss-repo-cards-batch-115`; `tiktok-video-tool-notes` extended; commands `/automation-tier`, `/token-saver-check`, `/opex-stage`, `/oss-repo-vet`; design templates `opex-stage-brush-card`, `tier-card-cream-agentic`; prompts in `docs/batch-115-prompts.md`; user-run `scripts/batch115-install.sh`.
+
+**Not installed, on purpose:** no plugin, connector or clone. pxpipe and OmniRoute sit in the network path and see every prompt; the optional installs are in the script, which asks before each step.
+
+**Already existed, not duplicated:** connector lists (`connector-picks-for-content`), the official-plugin slides (`claude-official-plugins-3`), `caveman`, `claude-code-setup-plugin`, `claude-code-4-loops`; `operational-excellence-layers` uses a different layer order (compared in the new skill).
+
+**Caveats:** the 93% auto-approve and 41% unauthenticated-server figures, star counts and token savings are the slides' own. Plugin install commands on the slides use `claude-plugins-official`; this environment uses `anthropic-plugin-directory`.
+
+## Batch 116 — one archive (26 images) plus 3 pasted images (11 October 2026)
+
+**Sources:** `iCloud_Photos.zip` (TikTok carousels from @your.aimentor, @ty.prompts.ai, @awayfromlovable) and three pasted infographics (GTMs toolkit, salesdaily.co, Lever's LinkedIn card). All 29 images were read.
+
+**Added:** skills `job-hunt-repos-5`, `your-aimentor-5-repos-week`, `app-store-toolchain-5`, `ten-sales-agents-while-you-sell`, `linkedin-viral-8-steps-2027`; commands `/job-fit-check`, `/convert-to-markdown`, `/appstore-preflight`, `/sales-agent`, `/hook-length-check`; design templates `ranked-tools-table-purple`, `agent-schedule-two-column-red`; prompts in `docs/batch-116-prompts.md`; user-run `scripts/batch116-install.sh`.
+
+**Not installed, on purpose:** no plugin, connector or clone. AIHawk (unattended mass auto-apply) is documented with risks and excluded from the script.
+
+**Already existed, not duplicated:** `i-have-adhd`, `ecc-*`, the Corey Haines marketing skills, `pdf-to-markdown`, `linkedin-virality-playbook`, resume and job-search skills.
+
+**Caveats:** star and install counts are the slides' own; the 7:3 and 12-word LinkedIn rules are one author's heuristics; plugin commands on the slides use `claude-plugins-official`, not configured here.
+
+## Batch 117 — one archive: 13 images and 1 video (11 October 2026)
+
+**Sources:** `iCloud_Photos_1.zip` (a @danielmofi1 "Top 10 AI tools for business analytics" carousel, a 51ultron.com operations-tools slide, and a @machinelearningtogo part-31 transformer video read from frames only).
+
+**Added:** skills `ai-business-analytics-tools-10`, `ai-ops-tools-16`, `ml-transformer-part31` (script ran with a stand-in dataset); commands `/analytics-tool-pick`, `/ops-stack-pick`, `/attention-demo`; design template `ranked-tool-dark-blue-card`; prompts in `docs/batch-117-prompts.md`; optional `scripts/batch117-install.sh`.
+
+**Not installed:** nothing; no plugin, connector or clone. **Caveats:** the analytics slides use AI-generated mock screens; "100% accuracy" is a vendor-style claim; the ops list includes its publisher. `ml-attention-part21` already covers the hand-set version of attention.
+
+## Batch 118 — one archive: 32 images (11 October 2026)
+
+**Sources:** `iCloud_Photos.zip` (TikTok carousels from @buildwithneej, @henryxagi, @replace.so, @ruby.creates1). All 32 images read; no videos.
+
+**Added:** skills `buildwithneej-5-repos-oct9`, `agent-terminals-mac-5`, `replace-so-oss-swap-6-oct`; commands `/agent-terminal-pick`, `/installer-safety-check`, `/reverse-engineer-own-app`, `/local-llm-fit`; design template `mac-app-laptop-card`; prompts in `docs/batch-118-prompts.md`; user-run `scripts/batch118-install.sh`.
+
+**Not installed, on purpose:** nothing; AnyPS5 (copyright and DRM risk) is excluded from the script, Moli's piped installer was not run, and REA is flagged for use only on software you own or may inspect.
+
+**Already existed:** the @ruby.creates1 series duplicates `alinacoding-app-business-6` (a note was added there).
+
+## Batch 119
+- `replace-so-repos-4-plasmic-brightbean` skill from one @replace.so video (Plasmic, BrightBean Studio, Maxun; fourth repo not shown). Prompts in `docs/batch-119-prompts.md`. Nothing installed.
+
+## Batch 120
+- `top-10-github-repos-product-managers` skill, `/pm-repo-pick` command, `docs/batch-120-prompts.md`, `scripts/batch120-install.sh` (read-only clones, asks first). The infographic looks AI-generated, so all handles are unverified. Nothing installed.
+
+## Batch 121
+- Skills: `ml-svm-part29` (+ runnable script), `claude-seo-team-20-agents`, `personal-brand-strategy-framework`, `free-ai-prompt-sites-5`, `githubnow-trending-oct11`, `mac-ssh-tools-5`, `replace-so-picks-oct11-batch`, `tiktok-repo-videos-oct11`
+- Commands: `/personal-brand-map`, `/free-prompt-site-pick`, `/ssh-tool-pick`; template `personal-brand-tree-blue`
+- `docs/batch-121-prompts.md`, `scripts/batch121-install.sh` (read-only clones, asks first, AnyPS5 excluded). Nothing installed.
+
+## Batch 122
+- Skills: `cursor-alternatives-6-open-source`, `claude-learn-100x-6-prompts`; command `/learn-in-20-hours`; `docs/batch-122-prompts.md`. 17 images (DataWarlord Cursor-alternatives carousel; @ai_slacker six learning prompts). No repos cloned; the sixth Cursor alternative is never named on the slides.
