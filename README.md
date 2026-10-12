@@ -6115,3 +6115,6 @@ Not done (needs you): plugin installs (`/plugin install paypal@claude-plugins-of
 - Skills: `ml-svm-part29` (+ runnable script), `claude-seo-team-20-agents`, `personal-brand-strategy-framework`, `free-ai-prompt-sites-5`, `githubnow-trending-oct11`, `mac-ssh-tools-5`, `replace-so-picks-oct11-batch`, `tiktok-repo-videos-oct11`
 - Commands: `/personal-brand-map`, `/free-prompt-site-pick`, `/ssh-tool-pick`; template `personal-brand-tree-blue`
 - `docs/batch-121-prompts.md`, `scripts/batch121-install.sh` (read-only clones, asks first, AnyPS5 excluded). Nothing installed.
+
+## Batch 122
+- Skills: `cursor-alternatives-6-open-source`, `claude-learn-100x-6-prompts`; command `/learn-in-20-hours`; `docs/batch-122-prompts.md`. 17 images (DataWarlord Cursor-alternatives carousel; @ai_slacker six learning prompts). No repos cloned; the sixth Cursor alternative is never named on the slides.
