@@ -178,3 +178,19 @@ Summaries must be specific — "Mamba achieves linear-time sequence modeling via
 - After editing `.md` files directly, run `/usr/local/bin/hyperresearch sync` to update the index
 - Run `/usr/local/bin/hyperresearch --help` for the full command list
 <!-- hyperresearch:end -->
+
+## Standing rule: scan before install
+
+Before installing, enabling or copying in any third-party skill, plugin, agent, command, MCP server or script (anything from a repo, zip, carousel or marketplace), run the SkillSpector static scan on it first and show the result:
+
+```bash
+skillspector scan <folder-or-repo-clone> --no-llm
+```
+
+Or use `/skill-scan <path, repo URL or zip>` (skill: `skillspector-preinstall-scan`). Rules:
+
+- Scan in an empty directory, never inside the project tree; do not run anything from the scanned material.
+- Report the score and every finding with file and line. Say plainly whether each is a real risk or text that only quotes a command. Never suppress findings.
+- Recommend install, install after fixes, or do not install. A clean scan is not proof of safety.
+- Do not install until the user has seen the result. Ask-first install scripts (`scripts/batch*-install.sh`) keep their own confirmation per step.
+- If SkillSpector is unavailable, say so and ask before installing anyway.
