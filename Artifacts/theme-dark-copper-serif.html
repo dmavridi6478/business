@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dark Copper Serif - Theme</title>
+<style>
+  /* THEME: Dark Copper Serif (derived from the @claude.with.christelle launch-checklist slides, 13 October 2026)
+     Use for: checklists, audit results, "before you ship" lists where each row is a pass or fail.
+     Dark default; light variant on [data-theme="light"] or prefers-color-scheme.
+     Pairs with Artifacts/templates/checklist-dark-copper-grid.html. */
+  :root {
+    --bg: #0c1220; --surface: #121a2c; --border: #c97b4a55; --text: #f4efe8; --muted: #8e97a8; --accent: #d98a57;
+    --pass: #6dc08a; --fail: #ef7a6c; --unknown: #e6b94d; --radius: 14px;
+    --serif: 'Playfair Display', Georgia, serif; --font: Aptos, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+  }
+  @media (prefers-color-scheme: light) { :root:not([data-theme="dark"]) { --bg: #f6f1ea; --surface: #ffffff; --border: #b8652f66; --text: #1c2233; --muted: #667086; --accent: #b8652f; --pass: #23794a; --fail: #b8352a; --unknown: #8a6400; } }
+  :root[data-theme="light"] { --bg: #f6f1ea; --surface: #ffffff; --border: #b8652f66; --text: #1c2233; --muted: #667086; --accent: #b8652f; --pass: #23794a; --fail: #b8352a; --unknown: #8a6400; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: var(--bg); color: var(--text); font-family: var(--font); padding: 48px 20px; min-height: 100vh; }
+  main { max-width: 720px; margin: 0 auto; display: grid; gap: 22px; }
+  .kicker { font-size: 12px; font-weight: 700; letter-spacing: .22em; text-transform: uppercase; color: var(--accent); }
+  h1 { font: 700 clamp(30px, 6vw, 48px)/1.1 var(--serif); }
+  h1 em { color: var(--accent); font-weight: 500; }
+  .row { display: grid; grid-template-columns: 2.2rem 1fr auto; gap: 12px; align-items: baseline; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 14px 16px; }
+  .row b { color: var(--accent); }
+  .row span { min-width: 0; overflow-wrap: anywhere; }
+  .status { font: 700 12px var(--font); letter-spacing: .08em; }
+  .PASS { color: var(--pass); } .FAIL { color: var(--fail); } .CANT { color: var(--unknown); }
+  .meta { font-size: 13px; color: var(--muted); }
+</style>
+</head>
+<body>
+<main>
+  <div class="kicker">Pre-launch audit</div>
+  <h1>Twenty checks, <em>no guessing.</em></h1>
+  <div class="row"><b>01</b><span>Secrets off the frontend</span><span class="status PASS">PASS</span></div>
+  <div class="row"><b>02</b><span>Force HTTPS</span><span class="status CANT">CAN'T CHECK</span></div>
+  <div class="row"><b>03</b><span>Privacy policy page</span><span class="status FAIL">FAIL</span></div>
+  <p class="meta">A PASS means nothing wrong in what was pasted, not that the site is fine.</p>
+</main>
+</body>
+</html>

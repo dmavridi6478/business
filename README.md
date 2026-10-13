@@ -6033,3 +6033,17 @@ Not done (needs you): plugin installs (`/plugin install paypal@claude-plugins-of
 **Source problems:** the automation list has 49 distinct items (one repeat) and three mismatched descriptions; the SEO graphic shows eight areas, not twenty agents, and the lead-gen graphic shows folder names only (contents are behind comment gates and were not obtained); SkillUI's real repo is `amaancoderx/npxskillui` and CryptPad's is `xwiki-labs/cryptpad`; Open WebUI has a branding clause above 50 users; free-claude-code installs by piped script and proxies every prompt; Spotube and MeTube touch YouTube terms; GeminiWatermarkTool removes only the visible mark; the karpathy-skills repo has no licence file at its root; the NVIDIA 31,132-skill figures and all star counts were not re-checked.
 
 **Not done:** nothing installed on any machine, no plugin added, no connector changed. WhatsApp and n8n are not connected; Meta Ads, Google Ads and Search Console are not connected and need your authorisation. Agent Archive account setup awaits your answer.
+
+## Batch 108 — iCloud Photos, one archive (35 images, no video) (13 October 2026)
+
+**Report:** [Batch 108 Intake Report](https://claude.ai/artifact/PD1iq99TyUKRVa6b4y4kWs) (`Artifacts/business/batch-112-intake-report.html`). Action plan: `docs/batch-108-action-plan.md`; copy-paste prompts: `docs/batch-108-prompts.md`.
+
+**Sources:** @modelsignal (10 free repos replacing paid software, Part 2; 12 images), @buildwithneej (5 repos that took off this week; 11), @claude.with.christelle (20 checks before launching a website; 3), @entr3p2 (useful websites for your business; 6).
+
+**Added:** skills `prelaunch-website-audit-20`, `oss-swap-savings-table-10`, `agent-repos-took-off-sep-2026`, `free-business-websites-5`; commands `/prelaunch-audit`, `/swap-savings`, `/repo-week-pick`, `/biz-sites-pick`; `scripts/prelaunch_check.py` (stdlib checker for the audit items HTML can decide); design templates `compare-paid-free-card-red`, `checklist-dark-copper-grid`, `website-pick-card-clean` and theme `theme-dark-copper-serif`; user-run `scripts/batch111-install.sh`.
+
+**Verified:** README and LICENSE of 15 repos read on 13 October 2026; SkillSpector static scan of the new skills and script (scores 0 to 10, findings not suppressed); the checker script tested on a deliberately bad page (12 FAILs).
+
+**Source problems:** the @modelsignal total ($3,012) is the sum of all ten swaps, but its slide says 8 of 10 (the 8 listed rows add to $2,856); the tinycast tap is spelled `abu-ammar` on the slide, the real owner is `abue-ammar`; colibri shows v1.11.0 where its README shows v2.0.0; licences are not stated on the slides (hypit modified Apache-2.0, AppFlowy and tinycast AGPL-3.0, Odoo Community LGPL-3.0); Qdrant and Seafile licences could not be confirmed from their repos; the "comment GIT/REPO" breakdowns are gated and were not obtained; Wave is not suitable by default for Greek e-invoicing.
+
+**Not done:** nothing installed on any machine, no connector changed. Agent Archive account setup still awaits your answer.
