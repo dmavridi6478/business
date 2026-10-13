@@ -6047,3 +6047,21 @@ Not done (needs you): plugin installs (`/plugin install paypal@claude-plugins-of
 **Source problems:** the @modelsignal total ($3,012) is the sum of all ten swaps, but its slide says 8 of 10 (the 8 listed rows add to $2,856); the tinycast tap is spelled `abu-ammar` on the slide, the real owner is `abue-ammar`; colibri shows v1.11.0 where its README shows v2.0.0; licences are not stated on the slides (hypit modified Apache-2.0, AppFlowy and tinycast AGPL-3.0, Odoo Community LGPL-3.0); Qdrant and Seafile licences could not be confirmed from their repos; the "comment GIT/REPO" breakdowns are gated and were not obtained; Wave is not suitable by default for Greek e-invoicing.
 
 **Not done:** nothing installed on any machine, no connector changed. Agent Archive account setup still awaits your answer.
+
+## Batch 109 — iCloud Photos, one archive (14 images, no video) plus one infographic attached in chat (13 October 2026)
+
+**Report:** [Batch 109 Intake Report](https://claude.ai/artifact/9JNcvPqYwpbDyvNUt6cdEo) (`Artifacts/business/batch-113-intake-report.html`). Action plan: `docs/batch-109-action-plan.md`; copy-paste prompts: `docs/batch-109-prompts.md`.
+
+**Sources:** @danielmofi1 ("7 best AI tools for coding"; 9 images), @githubnow (daily briefing of 13 October 2026: open-code-review, xtool, vercel-labs/skills; 5 images), and a chat infographic "How to Make LinkedIn a Landing Page" (Charlie Hills).
+
+**Added:** skills `ai-coding-tools-7-ranking-2026`, `github-briefing-oct13-three`, `linkedin-landing-page-checklist`; commands `/coding-tool-pick`, `/briefing-oct13-pick`, `/linkedin-landing-page`; design templates `ranked-tool-card-black-blue` and `annotated-callout-map-navy`, theme `theme-black-electric-blue`; user-run `scripts/batch112-install.sh`.
+
+**Already existed, not duplicated:** the @githubnow style (`social-card-github-daily-briefing`, `theme-github-night-green`), `vercel-labs/skills` (listed in `claude-code-tooling` and Batch 98), open-code-review (Batch 108), the LinkedIn profile skills and commands.
+
+**Verified:** Aider (Apache-2.0), xtool (MIT) and vercel-labs/skills (MIT) licences and README install lines read on 13 October 2026. SkillSpector (static) scored the two CLI repos 100/100 CRITICAL; every location I opened (9 of 489, eight rated high) was ordinary text or build code, so neither is cleared and neither is condemned. The three new skills scored 0, 0 and 10.
+
+**Source problems:** the coding-tool mock-ups look invented (an undocumented Aider `--model` list, a "Claude Code v1.2 research preview" terminal, unsourced percentages, Kotlin calling `applyTerraform()`); the Claude Code "fix" accepts tokens 60 seconds after expiry; the open-code-review benchmark shows about 25% F1 at best; Windsurf's "Codeium team" is probably outdated; "Comment CODING" content is gated and was not obtained; LinkedIn sizes and Premium claims were not re-checked.
+
+**Standing rule added:** `CLAUDE.md` now requires a SkillSpector static scan before installing any third-party skill, plugin, agent, command, MCP server or script.
+
+**Not done:** nothing installed on any machine, no connector changed (Sentry would need your authorisation; Jira is available through the Atlassian connector). Agent Archive account setup still awaits your answer.

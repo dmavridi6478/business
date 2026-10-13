@@ -1,0 +1,195 @@
+<title>Batch 109 Intake Report</title>
+<style>
+  /* Layout: single formal document column; summary first, evidence tables, copy blocks last. */
+  :root {
+    --bg: #fbfaf7; --surface: #ffffff; --fg: #1b2230; --muted: #566074; --rule: #d9d6cc;
+    --accent: #14606b; --accent-soft: #e2eff0; --warn: #8a4b00; --warn-soft: #fbefdc; --code-bg: #f1efe8;
+    --font: Aptos, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif; --mono: 'Cascadia Mono', Consolas, 'SFMono-Regular', monospace;
+  }
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+    --bg: #12161d; --surface: #181e27; --fg: #e8ebf1; --muted: #a2adc0; --rule: #2d3644;
+    --accent: #6cc3cf; --accent-soft: #17323a; --warn: #f0b36a; --warn-soft: #3a2c15; --code-bg: #0e1218; color-scheme: dark; } }
+  :root[data-theme="dark"] {
+    --bg: #12161d; --surface: #181e27; --fg: #e8ebf1; --muted: #a2adc0; --rule: #2d3644;
+    --accent: #6cc3cf; --accent-soft: #17323a; --warn: #f0b36a; --warn-soft: #3a2c15; --code-bg: #0e1218; color-scheme: dark; }
+  body { background: var(--bg); color: var(--fg); font-family: var(--font); font-size: 11pt; line-height: 1.55; padding-inline: max(16px, 4vw); padding-block: 32px 64px; }
+  main { max-width: 980px; margin: 0 auto; display: grid; gap: 28px; }
+  h1 { font-size: 32pt; line-height: 1.08; font-weight: 700; text-wrap: balance; letter-spacing: -0.01em; }
+  h2 { font-size: 14pt; line-height: 1.3; font-weight: 700; padding-bottom: 6px; border-bottom: 2px solid var(--accent); margin-bottom: 12px; text-wrap: balance; }
+  h3 { font-size: 11pt; font-weight: 700; margin: 14px 0 6px; }
+  p, li { max-width: 72ch; }
+  .meta { color: var(--muted); font-size: 11pt; }
+  .eyebrow { font-size: 9pt; letter-spacing: .12em; text-transform: uppercase; color: var(--accent); font-weight: 700; }
+  .callout { background: var(--warn-soft); border-left: 4px solid var(--warn); padding: 14px 18px; border-radius: 4px; }
+  .callout strong { color: var(--warn); }
+  .good { background: var(--accent-soft); border-left: 4px solid var(--accent); padding: 14px 18px; border-radius: 4px; }
+  section { min-width: 0; }
+  .scroll { overflow-x: auto; border: 1px solid var(--rule); border-radius: 6px; background: var(--surface); }
+  table { border-collapse: collapse; width: 100%; min-width: 620px; font-size: 11pt; }
+  th, td { padding: 8px 10px; border-bottom: 1px solid var(--rule); text-align: center; vertical-align: top; }
+  th { background: var(--accent-soft); font-weight: 700; position: sticky; top: 0; }
+  tr:last-child td { border-bottom: 0; }
+  td.l, th.l { text-align: left; }
+  code { font-family: var(--mono); font-size: 10pt; background: var(--code-bg); padding: 1px 5px; border-radius: 3px; overflow-wrap: anywhere; }
+  ul { padding-left: 1.2em; display: grid; gap: 4px; }
+  .pill { display: inline-block; font-size: 9.5pt; font-weight: 700; padding: 1px 8px; border-radius: 999px; border: 1px solid currentColor; white-space: nowrap; }
+  .p-use { color: var(--accent); } .p-care { color: var(--warn); } .p-skip { color: #a3302a; }
+  :root[data-theme="dark"] .p-skip { color: #ff8a80; }
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .p-skip { color: #ff8a80; } }
+  .prompt { position: relative; background: var(--code-bg); border: 1px solid var(--rule); border-radius: 6px; padding: 12px 14px; margin: 8px 0 14px; }
+  .prompt pre { font-family: var(--mono); font-size: 10pt; white-space: pre-wrap; overflow-wrap: anywhere; margin: 0; padding-right: 64px; }
+  .prompt button { position: absolute; top: 8px; right: 8px; font: 600 9.5pt var(--font); padding: 4px 10px; border-radius: 4px; border: 1px solid var(--accent); background: var(--surface); color: var(--accent); cursor: pointer; }
+  .prompt button:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+  .grid2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; }
+  .grid2 > div { min-width: 0; background: var(--surface); border: 1px solid var(--rule); border-radius: 6px; padding: 14px 16px; }
+</style>
+<main>
+  <header>
+    <div class="eyebrow">Intake report &middot; 13 October 2026</div>
+    <h1>Batch 109 Intake Report</h1>
+    <p class="meta">One iCloud Photos archive (14 images, no video) and one infographic attached in chat. Prepared for the business repository, branch <code>claude/zealous-davinci-u3blkz</code>.</p>
+  </header>
+
+  <section>
+    <h2>1. Executive summary</h2>
+    <div class="callout">
+      <p><strong>Principal finding.</strong> The seven-tool ranking is the weakest material in this batch: its screenshots look invented, it gives no prices or sources, and several details are wrong or outdated. The most useful result of the batch is about process. Running the standing security scan on two of the repos showed a score of 100 out of 100 that meant almost nothing, because the scanner is built for skills and not for whole software repositories. Both repos remain unaudited; neither is condemned.</p>
+    </div>
+    <ul>
+      <li><strong>Created:</strong> 3 skills, 3 slash commands, 2 design templates, 1 design theme, 2 documents and 1 user-run install script.</li>
+      <li><strong>Verified:</strong> licences and install lines of Aider, xtool and vercel-labs/skills were read from the repos on 13 October 2026.</li>
+      <li><strong>Standing rule:</strong> the SkillSpector static scan before any install is now written into the repository&rsquo;s <code>CLAUDE.md</code>.</li>
+      <li><strong>Installed on any machine:</strong> nothing. No connector was changed.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>2. What the batch contained</h2>
+    <div class="scroll"><table>
+      <thead><tr><th class="l">Source</th><th>Images</th><th class="l">Subject</th><th class="l">Result</th></tr></thead>
+      <tbody>
+        <tr><td class="l">@danielmofi1</td><td>9</td><td class="l">7 best AI tools for coding</td><td class="l">Skill <code>ai-coding-tools-7-ranking-2026</code>, <code>/coding-tool-pick</code>, template <code>ranked-tool-card-black-blue</code>, theme <code>theme-black-electric-blue</code></td></tr>
+        <tr><td class="l">@githubnow</td><td>5</td><td class="l">Daily briefing: open-code-review, xtool, vercel-labs/skills</td><td class="l">Skill <code>github-briefing-oct13-three</code>, <code>/briefing-oct13-pick</code></td></tr>
+        <tr><td class="l">Chat image (Charlie Hills)</td><td>1</td><td class="l">How to Make LinkedIn a Landing Page</td><td class="l">Skill <code>linkedin-landing-page-checklist</code>, <code>/linkedin-landing-page</code>, template <code>annotated-callout-map-navy</code></td></tr>
+      </tbody>
+    </table></div>
+    <p class="meta">The @githubnow visual style already existed (<code>social-card-github-daily-briefing</code>, <code>theme-github-night-green</code>) and was not duplicated.</p>
+  </section>
+
+  <section>
+    <h2>3. The seven coding tools</h2>
+    <div class="scroll"><table>
+      <thead><tr><th>#</th><th class="l">Tool</th><th class="l">Slide&rsquo;s claim</th><th class="l">What to check</th></tr></thead>
+      <tbody>
+        <tr><td>01</td><td class="l">Cursor</td><td class="l">Best overall AI IDE; VS Code fork</td><td class="l">Invented figures in the screenshot; no price shown</td></tr>
+        <tr><td>02</td><td class="l">Claude Code</td><td class="l">Complex logic; tops SWE-bench</td><td class="l">Mock terminal with typos; the diff accepts tokens 60 seconds past expiry; benchmark unsourced</td></tr>
+        <tr><td>03</td><td class="l">GitHub Copilot</td><td class="l">Reliable standard; Jira, Docker, Sentry extensions</td><td class="l">Extension model not verified</td></tr>
+        <tr><td>04</td><td class="l">Windsurf</td><td class="l">Created by the Codeium team; Cascade agent</td><td class="l">Ownership probably changed in 2025 (from memory, not re-checked)</td></tr>
+        <tr><td>05</td><td class="l">Replit Agent</td><td class="l">Idea to live URL from one prompt</td><td class="l">Generated login and database code needs review before real data</td></tr>
+        <tr><td>06</td><td class="l">Aider</td><td class="l">Git-native CLI pair programmer</td><td class="l"><span class="pill p-use">Verified</span> Apache-2.0. The slide&rsquo;s <code>--model a,b,c</code> line is not in the README</td></tr>
+        <tr><td>07</td><td class="l">Gemini Code Assist</td><td class="l">Android and Google Cloud</td><td class="l">Unsourced percentages and cost; the Kotlin looks invented</td></tr>
+      </tbody>
+    </table></div>
+    <p class="meta">None of the slides gives a price, a version date or a source. A rank is the author&rsquo;s opinion until measured. The &ldquo;Comment CODING&rdquo; setup guide is gated and was not obtained.</p>
+  </section>
+
+  <section>
+    <h2>4. The three repos of 13 October</h2>
+    <div class="scroll"><table>
+      <thead><tr><th class="l">Repo</th><th class="l">What it is</th><th>Licence</th><th class="l">Fact to know</th></tr></thead>
+      <tbody>
+        <tr><td class="l">alibaba/open-code-review</td><td class="l">Diff-based AI code review CLI</td><td>Apache-2.0</td><td class="l">Vendor benchmark: best about 25% F1, 34% precision, 20% recall. A second pair of eyes, not a gate</td></tr>
+        <tr><td class="l">xtool-org/xtool</td><td class="l">Build, sign and install iOS apps from Linux, WSL or macOS</td><td>MIT</td><td class="l">Needs Apple Developer Services credentials: use an account you can rotate</td></tr>
+        <tr><td class="l">vercel-labs/skills</td><td class="l">Installs agent skills from any git source into 79 agents</td><td>MIT</td><td class="l"><code>--all</code> installs everything to every agent without prompts; <code>npx</code> runs the latest package each time, so pin a version</td></tr>
+      </tbody>
+    </table></div>
+  </section>
+
+  <section>
+    <h2>5. Security scan: what the numbers mean</h2>
+    <div class="scroll"><table>
+      <thead><tr><th class="l">Target</th><th>Score</th><th>Findings</th><th>Coverage</th><th class="l">Reading</th></tr></thead>
+      <tbody>
+        <tr><td class="l">vercel-labs/skills (whole repo)</td><td>100 CRITICAL</td><td>326</td><td>66%</td><td class="l">Locations opened were ordinary text or build code</td></tr>
+        <tr><td class="l">xtool-org/xtool (whole repo)</td><td>100 CRITICAL</td><td>163</td><td>98%</td><td class="l">Same: Makefile, Dockerfile, generated Swift</td></tr>
+        <tr><td class="l">New skill: coding tools</td><td>0</td><td>0</td><td>100%</td><td class="l">Clean</td></tr>
+        <tr><td class="l">New skill: LinkedIn checklist</td><td>0</td><td>0</td><td>100%</td><td class="l">Clean</td></tr>
+        <tr><td class="l">New skill: GitHub briefing</td><td>73, then 10</td><td>4, then 1</td><td>100%</td><td class="l">First run flagged phrases the skill quoted from the repos. Reworded and rescanned. One finding remains: an unpinned <code>npx skills</code> reference, which the skill tells you to pin</td></tr>
+      </tbody>
+    </table></div>
+    <div class="callout" style="margin-top:12px"><p><strong>Limit.</strong> I opened nine of the 489 locations in the two repo scans (eight rated high). All nine were harmless. I did not read the rest, so neither repo is cleared. Scan the individual skill folder you install, not the CLI repository. Static scanning reads text only; a clean result is not proof of safety.</p></div>
+  </section>
+
+  <section>
+    <h2>6. LinkedIn as a landing page</h2>
+    <div class="scroll"><table>
+      <thead><tr><th class="l">Section</th><th class="l">What the slide says</th></tr></thead>
+      <tbody>
+        <tr><td class="l">Profile picture</td><td class="l">Smile; 400 x 400; brand colours; face fills about 80%</td></tr>
+        <tr><td class="l">Banner</td><td class="l">First impression; slideshow banner of up to five images</td></tr>
+        <tr><td class="l">Headline</td><td class="l">Short, say what you do, simple language</td></tr>
+        <tr><td class="l">About</td><td class="l">Storytelling, quantified results, contact details as the call to action</td></tr>
+        <tr><td class="l">Services and Featured</td><td class="l">1200 x 628 images; point to your website or newsletter and your core offer</td></tr>
+        <tr><td class="l">Experience</td><td class="l">Add a call to action; remove irrelevant roles; add external links</td></tr>
+        <tr><td class="l">Skills</td><td class="l">Top three first; use all 50</td></tr>
+        <tr><td class="l">Custom button</td><td class="l">Premium; call to action under the headline; enable display on posts, messages and search</td></tr>
+      </tbody>
+    </table></div>
+    <p class="meta">All numbers are the slide&rsquo;s and were not re-checked against LinkedIn&rsquo;s help pages. The slide&rsquo;s &ldquo;use this prompt&rdquo; shows no prompt; the audit prompt below is mine.</p>
+  </section>
+
+  <section>
+    <h2>7. Connectors</h2>
+    <ul>
+      <li><strong>Jira:</strong> the Atlassian connector is already available in this workspace.</li>
+      <li><strong>Sentry:</strong> not connected. Authorisation cannot be started from here; it needs you.</li>
+      <li>Nothing was changed.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>8. Next steps and open decisions</h2>
+    <ul>
+      <li><strong>Standing rule:</strong> in force. Every install now starts with a scan and a reading of its findings.</li>
+      <li><strong>Decide:</strong> whether to set up Agent Archive (needs an API key or a new account; open since the first reply).</li>
+      <li><strong>Decide:</strong> whether to authorise Sentry.</li>
+      <li><strong>Installs:</strong> <code>scripts/batch112-install.sh</code> on your own machine; it scans, asks before each step and pipes nothing into a shell.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>9. Prompts to copy and paste</h2>
+    <h3>Audit my LinkedIn profile against the checklist</h3>
+    <div class="prompt"><button type="button">Copy</button><pre>Act as a LinkedIn strategist. I will paste my current headline, About section, Featured item titles, Services text, the last two Experience entries and my top skills. Check each section against this list: headline says what I do in plain words; About tells a short story, includes at least one quantified result that I supplied, and ends with a contact call to action; Featured and Services point to one clear offer; Experience has a call to action and no irrelevant roles; top three skills match my offer. For each section give PASS, FAIL or CAN'T CHECK with one line of why, then a rewrite that uses only facts I gave you. Never invent results or numbers. If a number is missing, ask me.
+
+[paste your sections here]</pre></div>
+    <h3>Build the Replit slide&rsquo;s app with the safety rules added</h3>
+    <div class="prompt"><button type="button">Copy</button><pre>Build a task tracker for a small startup team. Postgres for data, email-and-password login with hashed passwords, each user sees only their own team's tasks. Do not hard-code secrets; put them in environment variables. List every table, route and auth rule you created so I can review them before deploying.</pre></div>
+    <h3>Scan before installing a skill source</h3>
+    <div class="prompt"><button type="button">Copy</button><pre>Scan [folder or repo URL] with SkillSpector in static mode only. Show the score, the coverage, and every finding with file and line. For each high finding, open the file at that line and tell me whether it is a real risk or text that only quotes a phrase or a build command. Do not install anything. Recommend install, install after fixes, or do not install.</pre></div>
+    <h3>Slash commands and terminal</h3>
+    <div class="prompt"><button type="button">Copy</button><pre>/coding-tool-pick [what you build, editor, budget, who reviews]
+/briefing-oct13-pick [what you need to do]
+/linkedin-landing-page [paste your profile sections]
+
+skillspector scan ./some-skill/ --no-llm
+python -m pip install aider-install
+aider-install
+npx skills add [owner/repo] --list
+bash scripts/batch112-install.sh</pre></div>
+    <p class="meta">The full prompt set is in <code>docs/batch-109-prompts.md</code>.</p>
+  </section>
+</main>
+<script>
+  document.querySelectorAll('.prompt button').forEach(function (b) {
+    b.addEventListener('click', function () {
+      var pre = b.parentNode.querySelector('pre');
+      var done = function () { b.textContent = 'Copied'; setTimeout(function () { b.textContent = 'Copy'; }, 1500); };
+      var fallback = function () {
+        var r = document.createRange(); r.selectNodeContents(pre);
+        var s = window.getSelection(); s.removeAllRanges(); s.addRange(r); b.textContent = 'Selected';
+      };
+      try { navigator.clipboard.writeText(pre.textContent).then(done, fallback); } catch (e) { fallback(); }
+    });
+  });
+</script>
