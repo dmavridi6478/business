@@ -259,7 +259,7 @@ Load `references/social-photos-design.md` for sizes, templates, best practices.
 ### New Design System
 
 1. **Brand** (brand skill) → Define colors, typography, voice
-2. **Tokens** (uiux-uiux-design-system skill) → Create semantic token layers
+2. **Tokens** (uiux-design-system skill) → Create semantic token layers
 3. **Implement** (ui-styling skill) → Configure Tailwind, shadcn/ui
 
 ## References
