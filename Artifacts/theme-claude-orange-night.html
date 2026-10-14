@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Claude Orange Night - Theme</title>
+<style>
+  /* THEME: Claude Orange Night (derived from the Prosp "Claude Skills for B2B Sales" graphic, 14 October 2026)
+     Use for: skill maps, folder trees, "N skills in M stages" pages. Dark default; light variant on [data-theme="light"] or prefers-color-scheme.
+     Pairs with Artifacts/templates/skill-folder-explorer-dark.html. */
+  :root {
+    --bg: #0e1117; --surface: #151a23; --border: #263042; --text: #f3f5f9; --muted: #98a3b8; --accent: #ff6a3d; --blue: #3d7bff; --cta: #2f6df6;
+    --f1: #3d7bff; --f3: #9a63ff; --f4: #20c5b8; --f5: #2fd08a; --f6: #f0b13d; --f7: #ff5fb0; --radius: 12px;
+    --font: Aptos, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif; --mono: 'Cascadia Mono', Consolas, 'SFMono-Regular', monospace;
+  }
+  @media (prefers-color-scheme: light) { :root:not([data-theme="dark"]) { --bg: #f4f6fa; --surface: #ffffff; --border: #cfd6e4; --text: #131a2b; --muted: #55627c; --accent: #d9481f; --blue: #1f57d6; --cta: #1f57d6; } }
+  :root[data-theme="light"] { --bg: #f4f6fa; --surface: #ffffff; --border: #cfd6e4; --text: #131a2b; --muted: #55627c; --accent: #d9481f; --blue: #1f57d6; --cta: #1f57d6; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: var(--bg); color: var(--text); font-family: var(--font); padding: 48px 20px; min-height: 100vh; }
+  main { max-width: 760px; margin: 0 auto; display: grid; gap: 18px; }
+  .kicker { font: 700 12px var(--mono); letter-spacing: .18em; text-transform: uppercase; color: var(--accent); }
+  h1 { font-size: clamp(32px, 7vw, 56px); font-weight: 800; letter-spacing: -.02em; line-height: 1.04; } h1 em { color: var(--blue); font-style: normal; }
+  .folder { display: grid; grid-template-columns: 1fr auto; gap: 10px; align-items: center; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 14px 16px; }
+  .folder b::before { content: ""; display: inline-block; width: 16px; height: 12px; border-radius: 3px; margin-right: 10px; background: var(--fc, var(--f1)); }
+  .count { font: 600 12px var(--mono); color: var(--blue); border: 1px solid var(--blue); border-radius: 999px; padding: 2px 10px; }
+  .meta { color: var(--muted); font-size: 13px; }
+</style>
+</head>
+<body>
+<main>
+  <div class="kicker">Skill map</div>
+  <h1>Fifty skills, <em>seven stages.</em></h1>
+  <div class="folder" style="--fc:var(--f1)"><b>01-first-stage</b><span class="count">7 skills</span></div>
+  <div class="folder" style="--fc:var(--f3)"><b>02-second-stage</b><span class="count">8 skills</span></div>
+  <p class="meta">A title is not a skill until someone has written and tested its steps.</p>
+</main>
+</body>
+</html>

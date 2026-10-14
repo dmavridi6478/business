@@ -6065,3 +6065,19 @@ Not done (needs you): plugin installs (`/plugin install paypal@claude-plugins-of
 **Standing rule added:** `CLAUDE.md` now requires a SkillSpector static scan before installing any third-party skill, plugin, agent, command, MCP server or script.
 
 **Not done:** nothing installed on any machine, no connector changed (Sentry would need your authorisation; Jira is available through the Atlassian connector). Agent Archive account setup still awaits your answer.
+
+## Batch 110 — iCloud Photos, one archive (25 images, no video) plus two infographics attached in chat (14 October 2026)
+
+**Report:** [Batch 110 Intake Report](https://claude.ai/artifact/Hz3Rw6MCAUUg8n6srggJ2H) (`Artifacts/business/batch-114-intake-report.html`). Action plan: `docs/batch-110-action-plan.md`; copy-paste prompts: `docs/batch-110-prompts.md`.
+
+**Sources:** @modelsignal ("Save $6,846/year", Part 9; 14 images), @replace.so ("6 GitHub repos so good they shouldn't be free"; 6), @githubnow (second briefing of 13 October 2026; 5), and two chat infographics: "Machine Learning Algorithms" cheatsheet and Prosp "Claude Skills for B2B Sales".
+
+**Added:** skills `oss-swap-savings-table-12-part9`, `replace-so-six-repos-oct-2026`, `github-briefing-oct13-rea-freellmapi-substrate`, `ml-algorithms-cheatsheet-16`, `claude-skills-b2b-sales-50-map`; commands `/ml-algo-pick` and `/b2b-sales-skill` (and `/swap-savings`, `/briefing-oct13-pick` extended); agent `b2b-sales-stage-router`; design templates `cheatsheet-table-navy-matrix`, `skill-folder-explorer-dark`, `repo-pick-card-pixel-grid-dark` and theme `theme-claude-orange-night`; user-run `scripts/batch113-install.sh`.
+
+**Already existed, not duplicated:** the paid-vs-free card (`compare-paid-free-card-red`, Batch 108), the Part 2 swap table, the @githubnow card and theme, `lead-gen-skill-map-10x10` (the 100-skill Prosp graphic) and the existing sales skills the 50-skill map points to.
+
+**Verified:** README and LICENSE of 18 repos (plus WordPress's licence file) read on 14 October 2026. SkillSpector (static): REA's agent skill 40; FreeLLMAPI scripts 100 (mostly environment-file handling, one real automatic-update design); REA's whole repo and installer timed out (unscanned); Agent Substrate's scripts had nothing to scan; the five new skills scored 0, 0, 0, 0 and 7 (after rewording quoted risky commands), the new agent 8.
+
+**Source problems:** the Part 9 headline total ($6,846) counts all 12 swaps but the "8 of 12" list adds to $6,600; Convex is under the Functional Source License, not an open-source licence; Prismical's repo could not be found; OpenSign's slide says pushed 52 days ago yet says switch; five of the 12 swaps save $24 to $120 a year, less than the cost of running them; REA's own example prompt sits uneasily with its disclaimer and it ships a piped installer; FreeLLMAPI sends prompts to up to 34 third parties and can auto-update; the "Comment FREE" and "Comment SALES" contents are gated and were not obtained.
+
+**Not done:** nothing installed on any machine. REA (an MCP server) was deliberately not registered. Agent Archive was dropped after its sign-up endpoint returned server errors.

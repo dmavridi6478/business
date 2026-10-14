@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Repo Pick Card (pixel grid, dark)</title>
+<style>
+  /* =====================================================
+     TEMPLATE: Repo Pick Card
+     Based on the @replace.so "6 GitHub repos so good they shouldn't be free" carousel (14 October 2026):
+     near-black ground, a rounded app icon with a star count above a large white repo name, a browser window
+     with a screenshot, a short centred description over a faint green pixel grid, and a "Swipe" cue.
+     Size: 1024x1364 (3:4). One repo per card; duplicate .card. Do not put a star count on the card that you have not checked.
+     Customise: icon, star count, name, screenshot, description.
+     ===================================================== */
+  :root {
+    --bg: #131315; --ink: #f4f4f6; --muted: #9a9aa4; --pixel: #1a2a22; --pixel2: #16221c; --window: #f1f1f4; --win-bar: #e4e4ea; --star: #f5a524;
+    --sans: Aptos, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+  }
+  @media (prefers-color-scheme: light) { :root:not([data-theme="dark"]) { --bg: #f5f6f7; --ink: #101114; --muted: #5d606a; --pixel: #dbe8e0; --pixel2: #e7f0ea; --window: #ffffff; --win-bar: #e4e6eb; --star: #c98200; } }
+  :root[data-theme="light"] { --bg: #f5f6f7; --ink: #101114; --muted: #5d606a; --pixel: #dbe8e0; --pixel2: #e7f0ea; --window: #ffffff; --win-bar: #e4e6eb; --star: #c98200; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: #000; display: grid; justify-items: center; padding: 30px 0; font-family: var(--sans); }
+  .card { width: 1024px; height: 1364px; background: var(--bg); color: var(--ink); position: relative; overflow: hidden; text-align: center; }
+  .grid { position: absolute; left: 0; right: 0; top: 700px; bottom: 0; background-image: linear-gradient(var(--bg) 14px, transparent 14px), linear-gradient(90deg, var(--bg) 14px, transparent 14px); background-size: 56px 56px; background-color: var(--pixel); opacity: .9; -webkit-mask-image: linear-gradient(to bottom, transparent, #000 25%, #000 80%, transparent); mask-image: linear-gradient(to bottom, transparent, #000 25%, #000 80%, transparent); }
+  .head { position: relative; padding-top: 150px; display: grid; justify-items: center; gap: 28px; }
+  .id { display: flex; align-items: center; gap: 26px; font-size: 40px; }
+  .icon { width: 74px; height: 74px; border-radius: 18px; background: #fff; border: 2px solid var(--pixel); display: grid; place-items: center; color: #111; font-weight: 800; font-size: 34px; }
+  .star { color: var(--star); }
+  h1 { font-size: 92px; font-weight: 800; letter-spacing: -.04em; line-height: 1; }
+  .win { position: absolute; left: 62px; right: 62px; top: 440px; height: 560px; border-radius: 22px; background: var(--window); overflow: hidden; box-shadow: 0 24px 60px #0008; }
+  .bar { height: 48px; background: var(--win-bar); display: flex; align-items: center; gap: 10px; padding: 0 20px; } .bar i { width: 14px; height: 14px; border-radius: 50%; background: #ef6a5e; } .bar i:nth-child(2) { background: #e8b84a; } .bar i:nth-child(3) { background: #58b86a; }
+  .shot { height: calc(100% - 48px); display: grid; place-items: center; color: #777; font-size: 28px; }
+  .desc { position: absolute; left: 150px; right: 150px; top: 1040px; font-size: 38px; line-height: 1.35; color: var(--muted); }
+  .swipe { position: absolute; left: 0; right: 0; bottom: 38px; font-size: 28px; }
+</style>
+</head>
+<body>
+<section class="card">
+  <div class="grid"></div>
+  <div class="head"><div class="id"><span class="icon">R</span><span><span class="star">&#9733;</span> 12,345</span></div><h1>Repo Name</h1></div>
+  <div class="win"><div class="bar"><i></i><i></i><i></i></div><div class="shot">[ screenshot ]</div></div>
+  <p class="desc">One plain sentence on what it is, its licence, and one thing to check first.</p>
+  <div class="swipe">Swipe &rarr;</div>
+</section>
+</body>
+</html>

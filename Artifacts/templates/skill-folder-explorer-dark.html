@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Skill Folder Explorer (dark)</title>
+<style>
+  /* =====================================================
+     TEMPLATE: Skill Folder Explorer
+     Based on the Prosp "Claude Skills for B2B Sales" graphic (14 October 2026): a code-editor window with
+     a file explorer on the left (coloured numbered folders, file counts) and a main panel with a large title,
+     a one-line promise, folder cards in two columns holding numbered skill titles, and a blue call-to-action bar.
+     Size: 800x1000 (4:5). Numbers are a real sequence (skill 1 to N), so numerals are kept.
+     Customise: window tabs, 7 folder names, skill titles, headline (second line accent), CTA word.
+     ===================================================== */
+  :root {
+    --bg: #0e1117; --chrome: #151a23; --side: #11151d; --panel: #0e1117; --line: #263042; --ink: #f3f5f9; --muted: #98a3b8; --accent: #ff6a3d; --blue: #3d7bff; --cta: #2f6df6; --cta-ink: #ffffff;
+    --f1: #3d7bff; --f2: #3d7bff; --f3: #9a63ff; --f4: #20c5b8; --f5: #2fd08a; --f6: #f0b13d; --f7: #ff5fb0;
+    --sans: Aptos, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif; --mono: 'Cascadia Mono', Consolas, 'SFMono-Regular', monospace;
+  }
+  @media (prefers-color-scheme: light) { :root:not([data-theme="dark"]) { --bg: #f4f6fa; --chrome: #e7ebf3; --side: #eef1f7; --panel: #ffffff; --line: #cfd6e4; --ink: #131a2b; --muted: #55627c; --accent: #d9481f; --blue: #1f57d6; --cta: #1f57d6; } }
+  :root[data-theme="light"] { --bg: #f4f6fa; --chrome: #e7ebf3; --side: #eef1f7; --panel: #ffffff; --line: #cfd6e4; --ink: #131a2b; --muted: #55627c; --accent: #d9481f; --blue: #1f57d6; --cta: #1f57d6; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: #3a4152; display: grid; justify-items: center; padding: 30px 0; font-family: var(--sans); }
+  .card { width: 800px; height: 1000px; background: var(--bg); color: var(--ink); position: relative; overflow: hidden; }
+  .top { height: 44px; background: var(--chrome); display: flex; align-items: center; gap: 8px; padding: 0 16px; border-bottom: 1px solid var(--line); font: 600 14px var(--mono); color: var(--muted); }
+  .top i { width: 12px; height: 12px; border-radius: 50%; background: #ef6a5e; } .top i:nth-child(2) { background: #e8b84a; } .top i:nth-child(3) { background: #58b86a; } .top span { margin-left: 12px; }
+  .body { display: grid; grid-template-columns: 220px 1fr; height: calc(100% - 44px - 78px); }
+  .side { background: var(--side); border-right: 1px solid var(--line); padding: 14px 12px; display: grid; gap: 6px; align-content: start; font-size: 14px; }
+  .side h4 { font: 700 11px var(--mono); letter-spacing: .12em; text-transform: uppercase; color: var(--muted); margin-bottom: 4px; }
+  .fo { display: flex; justify-content: space-between; align-items: center; gap: 6px; padding: 4px 6px; border-radius: 6px; }
+  .fo b { font-weight: 600; } .fo b::before { content: ""; display: inline-block; width: 14px; height: 11px; border-radius: 2px; margin-right: 8px; background: var(--fc, var(--f1)); }
+  .fo em { font: 600 12px var(--mono); font-style: normal; color: var(--muted); }
+  .main { padding: 20px 22px; background: var(--panel); overflow: hidden; }
+  .mark { position: absolute; top: 60px; right: -20px; width: 150px; height: 150px; background: var(--accent); clip-path: polygon(50% 0, 58% 36%, 86% 8%, 70% 42%, 100% 40%, 72% 56%, 96% 78%, 64% 66%, 62% 100%, 50% 70%, 38% 100%, 36% 66%, 4% 78%, 28% 56%, 0 40%, 30% 42%, 14% 8%, 42% 36%); }
+  h1 { font-size: 52px; line-height: 1.02; font-weight: 800; letter-spacing: -.02em; margin: 10px 0 6px; max-width: 460px; } h1 em { color: var(--blue); font-style: normal; display: block; }
+  .sub { color: var(--muted); font-size: 18px; margin-bottom: 14px; max-width: 440px; }
+  .cards { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .fc { border: 1px solid var(--line); border-radius: 10px; padding: 10px 12px; font-size: 13px; line-height: 1.35; }
+  .fc h3 { font-size: 15px; display: flex; justify-content: space-between; gap: 6px; margin-bottom: 6px; color: var(--blue); }
+  .fc h3 span { font: 600 11px var(--mono); border: 1px solid var(--blue); border-radius: 999px; padding: 1px 8px; white-space: nowrap; }
+  .fc ol { list-style: none; display: grid; gap: 2px; } .fc li b { font: 600 11px var(--mono); color: var(--muted); margin-right: 8px; }
+  .cta { position: absolute; left: 0; right: 0; bottom: 0; height: 78px; background: var(--cta); color: var(--cta-ink); display: flex; align-items: center; justify-content: space-between; padding: 0 26px; font-size: 34px; font-weight: 800; letter-spacing: -.01em; text-transform: uppercase; }
+</style>
+</head>
+<body>
+<section class="card">
+  <div class="top"><i></i><i></i><i></i><span>skills-for-your-field</span></div>
+  <div class="body">
+    <aside class="side"><h4>Explorer</h4>
+      <div class="fo" style="--fc:var(--f1)"><b>01-first-stage</b><em>7</em></div>
+      <div class="fo" style="--fc:var(--f2)"><b>02-second-stage</b><em>8</em></div>
+      <div class="fo" style="--fc:var(--f3)"><b>03-third-stage</b><em>7</em></div>
+      <div class="fo" style="--fc:var(--f4)"><b>04-fourth-stage</b><em>7</em></div>
+    </aside>
+    <div class="main">
+      <div class="mark" aria-hidden="true"></div>
+      <h1>Skills for <em>Your Field</em></h1>
+      <p class="sub">50 skills from the first step to the last.</p>
+      <div class="cards">
+        <div class="fc"><h3>I &middot; First stage <span>1 to 7</span></h3><ol><li><b>01</b>Skill title one</li><li><b>02</b>Skill title two</li><li><b>03</b>Skill title three</li></ol></div>
+        <div class="fc"><h3>II &middot; Second stage <span>8 to 15</span></h3><ol><li><b>08</b>Skill title eight</li><li><b>09</b>Skill title nine</li><li><b>10</b>Skill title ten</li></ol></div>
+      </div>
+    </div>
+  </div>
+  <div class="cta"><span>Comment WORD</span><span>@yourhandle</span></div>
+</section>
+</body>
+</html>

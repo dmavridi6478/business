@@ -1,0 +1,217 @@
+<title>Batch 110 Intake Report</title>
+<style>
+  /* Layout: single formal document column; summary first, evidence tables, copy blocks last. */
+  :root {
+    --bg: #fbfaf7; --surface: #ffffff; --fg: #1b2230; --muted: #566074; --rule: #d9d6cc;
+    --accent: #14606b; --accent-soft: #e2eff0; --warn: #8a4b00; --warn-soft: #fbefdc; --code-bg: #f1efe8;
+    --font: Aptos, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif; --mono: 'Cascadia Mono', Consolas, 'SFMono-Regular', monospace;
+  }
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+    --bg: #12161d; --surface: #181e27; --fg: #e8ebf1; --muted: #a2adc0; --rule: #2d3644;
+    --accent: #6cc3cf; --accent-soft: #17323a; --warn: #f0b36a; --warn-soft: #3a2c15; --code-bg: #0e1218; color-scheme: dark; } }
+  :root[data-theme="dark"] {
+    --bg: #12161d; --surface: #181e27; --fg: #e8ebf1; --muted: #a2adc0; --rule: #2d3644;
+    --accent: #6cc3cf; --accent-soft: #17323a; --warn: #f0b36a; --warn-soft: #3a2c15; --code-bg: #0e1218; color-scheme: dark; }
+  body { background: var(--bg); color: var(--fg); font-family: var(--font); font-size: 11pt; line-height: 1.55; padding-inline: max(16px, 4vw); padding-block: 32px 64px; }
+  main { max-width: 980px; margin: 0 auto; display: grid; gap: 28px; }
+  h1 { font-size: 32pt; line-height: 1.08; font-weight: 700; text-wrap: balance; letter-spacing: -0.01em; }
+  h2 { font-size: 14pt; line-height: 1.3; font-weight: 700; padding-bottom: 6px; border-bottom: 2px solid var(--accent); margin-bottom: 12px; text-wrap: balance; }
+  h3 { font-size: 11pt; font-weight: 700; margin: 14px 0 6px; }
+  p, li { max-width: 72ch; }
+  .meta { color: var(--muted); font-size: 11pt; }
+  .eyebrow { font-size: 9pt; letter-spacing: .12em; text-transform: uppercase; color: var(--accent); font-weight: 700; }
+  .callout { background: var(--warn-soft); border-left: 4px solid var(--warn); padding: 14px 18px; border-radius: 4px; }
+  .callout strong { color: var(--warn); }
+  .good { background: var(--accent-soft); border-left: 4px solid var(--accent); padding: 14px 18px; border-radius: 4px; }
+  section { min-width: 0; }
+  .scroll { overflow-x: auto; border: 1px solid var(--rule); border-radius: 6px; background: var(--surface); }
+  table { border-collapse: collapse; width: 100%; min-width: 620px; font-size: 11pt; }
+  th, td { padding: 8px 10px; border-bottom: 1px solid var(--rule); text-align: center; vertical-align: top; }
+  th { background: var(--accent-soft); font-weight: 700; position: sticky; top: 0; }
+  tr:last-child td { border-bottom: 0; }
+  td.l, th.l { text-align: left; }
+  code { font-family: var(--mono); font-size: 10pt; background: var(--code-bg); padding: 1px 5px; border-radius: 3px; overflow-wrap: anywhere; }
+  ul { padding-left: 1.2em; display: grid; gap: 4px; }
+  .pill { display: inline-block; font-size: 9.5pt; font-weight: 700; padding: 1px 8px; border-radius: 999px; border: 1px solid currentColor; white-space: nowrap; }
+  .p-use { color: var(--accent); } .p-care { color: var(--warn); } .p-skip { color: #a3302a; }
+  :root[data-theme="dark"] .p-skip { color: #ff8a80; }
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .p-skip { color: #ff8a80; } }
+  .prompt { position: relative; background: var(--code-bg); border: 1px solid var(--rule); border-radius: 6px; padding: 12px 14px; margin: 8px 0 14px; }
+  .prompt pre { font-family: var(--mono); font-size: 10pt; white-space: pre-wrap; overflow-wrap: anywhere; margin: 0; padding-right: 64px; }
+  .prompt button { position: absolute; top: 8px; right: 8px; font: 600 9.5pt var(--font); padding: 4px 10px; border-radius: 4px; border: 1px solid var(--accent); background: var(--surface); color: var(--accent); cursor: pointer; }
+  .prompt button:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+  .grid2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; }
+  .grid2 > div { min-width: 0; background: var(--surface); border: 1px solid var(--rule); border-radius: 6px; padding: 14px 16px; }
+</style>
+<main>
+  <header>
+    <div class="eyebrow">Intake report &middot; 14 October 2026</div>
+    <h1>Batch 110 Intake Report</h1>
+    <p class="meta">One iCloud Photos archive (25 images, no video) and two infographics attached in chat. Prepared for the business repository, branch <code>claude/zealous-davinci-u3blkz</code>.</p>
+  </header>
+
+  <section>
+    <h2>1. Executive summary</h2>
+    <div class="callout">
+      <p><strong>Principal finding.</strong> The &ldquo;$6,846 a year&rdquo; headline is arithmetic, not a saving. It adds all twelve swaps, while the list shown on the summary slide (&ldquo;8 of 12&rdquo;) adds to $6,600. Five of the twelve save $24 to $120 a year, which is less than it costs to run them unless you already operate a server. The same error appeared in Part 2 of this series. A second claim fails on the source: Convex is labelled open source, but its licence is the Functional Source License.</p>
+    </div>
+    <ul>
+      <li><strong>Created:</strong> 5 skills, 2 new and 2 extended commands, 1 agent, 3 design templates, 1 theme, 2 documents and 1 user-run script.</li>
+      <li><strong>Verified:</strong> README and licence files of 18 repositories (plus WordPress&rsquo;s licence file) were read directly.</li>
+      <li><strong>Not obtained:</strong> the contents behind &ldquo;Comment FREE&rdquo; and &ldquo;Comment SALES&rdquo;; star counts and push dates; the Prismical repository.</li>
+      <li><strong>Installed on any machine:</strong> nothing. The REA MCP server was deliberately not registered.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>2. What the batch contained</h2>
+    <div class="scroll"><table>
+      <thead><tr><th class="l">Source</th><th>Images</th><th class="l">Subject</th><th class="l">Result</th></tr></thead>
+      <tbody>
+        <tr><td class="l">@modelsignal</td><td>14</td><td class="l">Save $6,846/year with free tools (Part 9)</td><td class="l">Skill <code>oss-swap-savings-table-12-part9</code>; <code>/swap-savings</code> extended</td></tr>
+        <tr><td class="l">@replace.so</td><td>6</td><td class="l">6 GitHub repos so good they shouldn&rsquo;t be free</td><td class="l">Skill <code>replace-so-six-repos-oct-2026</code>, template <code>repo-pick-card-pixel-grid-dark</code></td></tr>
+        <tr><td class="l">@githubnow</td><td>5</td><td class="l">Second briefing: REA, FreeLLMAPI, Agent Substrate</td><td class="l">Skill <code>github-briefing-oct13-rea-freellmapi-substrate</code></td></tr>
+        <tr><td class="l">Chat image 1</td><td>1</td><td class="l">Machine Learning Algorithms cheatsheet</td><td class="l">Skill <code>ml-algorithms-cheatsheet-16</code>, <code>/ml-algo-pick</code>, template <code>cheatsheet-table-navy-matrix</code></td></tr>
+        <tr><td class="l">Chat image 2</td><td>1</td><td class="l">Prosp: Claude Skills for B2B Sales (50)</td><td class="l">Skill <code>claude-skills-b2b-sales-50-map</code>, <code>/b2b-sales-skill</code>, agent <code>b2b-sales-stage-router</code>, template <code>skill-folder-explorer-dark</code>, theme <code>theme-claude-orange-night</code></td></tr>
+      </tbody>
+    </table></div>
+    <p class="meta">The paid-versus-free card already existed from Batch 108 and was reused, not duplicated.</p>
+  </section>
+
+  <section>
+    <h2>3. The twelve swaps, with the licence the slides omit</h2>
+    <div class="scroll"><table>
+      <thead><tr><th class="l">Job</th><th class="l">Paid (slide)</th><th>Per year</th><th class="l">Free tool</th><th>Licence (read)</th><th>Verdict</th></tr></thead>
+      <tbody>
+        <tr><td class="l">ELT pipelines</td><td class="l">Hevo</td><td>$3,180</td><td class="l">Meltano</td><td>MIT</td><td><span class="pill p-care">Needs operations</span></td></tr>
+        <tr><td class="l">Lifecycle email</td><td class="l">Customer.io</td><td>$1,200</td><td class="l">Dittofeed</td><td>MIT</td><td><span class="pill p-care">Needs operations</span></td></tr>
+        <tr><td class="l">Feedback</td><td class="l">Canny</td><td>$948</td><td class="l">Fider</td><td>AGPL-3.0</td><td><span class="pill p-care">Copyleft</span></td></tr>
+        <tr><td class="l">Labeling</td><td class="l">Roboflow</td><td>$468</td><td class="l">CVAT</td><td>MIT</td><td><span class="pill p-care">Check scope</span></td></tr>
+        <tr><td class="l">Help desk</td><td class="l">Help Scout</td><td>$300</td><td class="l">FreeScout</td><td>AGPL-3.0</td><td><span class="pill p-care">Check modules</span></td></tr>
+        <tr><td class="l">Queues</td><td class="l">CloudAMQP</td><td>$228</td><td class="l">RabbitMQ</td><td>MPL-2.0</td><td><span class="pill p-care">Needs operations</span></td></tr>
+        <tr><td class="l">Websites</td><td class="l">Weebly</td><td>$156</td><td class="l">WordPress</td><td>GPL-2.0+</td><td><span class="pill p-skip">Small saving</span></td></tr>
+        <tr><td class="l">Signatures</td><td class="l">Zoho Sign</td><td>$120</td><td class="l">OpenSign</td><td>AGPL-3.0 (one directory excepted)</td><td><span class="pill p-skip">Legal and stale</span></td></tr>
+        <tr><td class="l">Online store</td><td class="l">Ecwid</td><td>$60</td><td class="l">Bagisto</td><td>MIT</td><td><span class="pill p-skip">Small saving</span></td></tr>
+        <tr><td class="l">Writing</td><td class="l">Ulysses</td><td>$72</td><td class="l">Zettlr</td><td>GPL-3.0</td><td><span class="pill p-use">No server needed</span></td></tr>
+        <tr><td class="l">Feeds</td><td class="l">Inoreader</td><td>$90</td><td class="l">Miniflux</td><td>Apache-2.0</td><td><span class="pill p-skip">Small saving</span></td></tr>
+        <tr><td class="l">Ad blocking</td><td class="l">Control D</td><td>$24</td><td class="l">AdGuard Home</td><td>GPL-3.0</td><td><span class="pill p-skip">Small saving</span></td></tr>
+      </tbody>
+    </table></div>
+    <p class="meta">All twelve add to $6,846. The eight listed on the summary slide add to $6,600 (the gap is Ecwid $60, Ulysses $72, Inoreader $90 and Control D $24). Prices, stars and push dates are the slides&rsquo; and were not re-checked. The verdicts are my reading, not the slides&rsquo;.</p>
+  </section>
+
+  <section>
+    <h2>4. The @replace.so repositories</h2>
+    <div class="scroll"><table>
+      <thead><tr><th class="l">Repo</th><th>Licence (read)</th><th class="l">Fact to know</th></tr></thead>
+      <tbody>
+        <tr><td class="l">Convex</td><td>FSL-1.1-Apache-2.0</td><td class="l">Source-available with use restrictions, not open source; converts to Apache 2.0 later. Self-hosted builds contain a beacon</td></tr>
+        <tr><td class="l">LimeSurvey</td><td>GPL-2.0+</td><td class="l">Self-hosting survey data makes you the data controller</td></tr>
+        <tr><td class="l">Prismical</td><td><span class="pill p-care">Not verified</span></td><td class="l">Repo not found; a directory listing says MIT and about 14 stars against the slide&rsquo;s 104</td></tr>
+        <tr><td class="l">Coder</td><td>AGPL-3.0</td><td class="l">A platform team&rsquo;s tool; a Premium tier exists</td></tr>
+        <tr><td class="l">Harper</td><td>Apache-2.0</td><td class="l">Local English grammar checker; English only</td></tr>
+      </tbody>
+    </table></div>
+    <p class="meta">The cover says six repos; five are in the archive.</p>
+  </section>
+
+  <section>
+    <h2>5. REA, FreeLLMAPI and Agent Substrate</h2>
+    <div class="scroll"><table>
+      <thead><tr><th class="l">Repo</th><th>Licence</th><th class="l">What it does to you</th></tr></thead>
+      <tbody>
+        <tr><td class="l">morluto/rea</td><td>MIT</td><td class="l">Setup edits your agent&rsquo;s configuration (an MCP connector). Ships a piped installer; its skill runs an unpinned package. Its README example asks the agent to build a similar feature from an app, while its disclaimer rules out copying protected code and bypassing licence checks</td></tr>
+        <tr><td class="l">tashfeenahmed/freellmapi</td><td>MIT</td><td class="l">Routes your prompts to up to 34 free providers. Single-user by its own compose file. Optional automatic image updates. Premium catalog $19 a year</td></tr>
+        <tr><td class="l">agent-substrate/substrate</td><td>Apache-2.0</td><td class="l">Kubernetes agent-sandbox runtime for teams that already run Kubernetes. Pre-1.0: no compatibility guarantees</td></tr>
+      </tbody>
+    </table></div>
+  </section>
+
+  <section>
+    <h2>6. Security scan: what ran and what did not</h2>
+    <div class="scroll"><table>
+      <thead><tr><th class="l">Target</th><th>Score</th><th class="l">Reading</th></tr></thead>
+      <tbody>
+        <tr><td class="l">REA agent skill folder</td><td>40, MEDIUM</td><td class="l">Five real findings: the unpinned package run. The rest is documentation text</td></tr>
+        <tr><td class="l">REA whole repo and installer</td><td><span class="pill p-care">No result</span></td><td class="l">Both scans timed out. Unscanned</td></tr>
+        <tr><td class="l">FreeLLMAPI scripts and compose</td><td>100, CRITICAL</td><td class="l">Mostly environment-file handling; one real design fact: automatic updates</td></tr>
+        <tr><td class="l">Agent Substrate scripts</td><td><span class="pill p-care">No result</span></td><td class="l">Nothing to scan. Not a clean result; the runtime was not scanned</td></tr>
+        <tr><td class="l">New skills (five)</td><td>0, 0, 0, 0, 7</td><td class="l">The REA skill scored 89 first because it quoted the risky commands it warns about. Reworded, rescanned to 7. One finding remains: the setup command</td></tr>
+        <tr><td class="l">New agent</td><td>8</td><td class="l">One finding: it lists skills, by design</td></tr>
+      </tbody>
+    </table></div>
+    <div class="callout" style="margin-top:12px"><p><strong>Limit.</strong> Static scanning reads text only, over-scores whole software repositories and times out on large ones. Nothing here is cleared; no scan is a guarantee of safety. Nothing was suppressed.</p></div>
+  </section>
+
+  <section>
+    <h2>7. The two chat infographics</h2>
+    <h3>Machine Learning Algorithms cheatsheet</h3>
+    <p>Sixteen rows transcribed in full in the skill. Mostly sound. Loose or wrong entries: Random Forest &ldquo;tree independence&rdquo; (the trees are decorrelated, not independent), KNN &ldquo;few-shot&rdquo;, Transformer &ldquo;fast&rdquo; (attention cost grows with the square of the input length), RNN &ldquo;stock prediction&rdquo; (a demo, not a reliable use). The skill adds a selection order of my own, marked as such.</p>
+    <h3>Prosp &ldquo;Claude Skills for B2B Sales&rdquo;</h3>
+    <div class="scroll"><table>
+      <thead><tr><th class="l">Folder</th><th>Skills</th><th class="l">Closest installed coverage</th></tr></thead>
+      <tbody>
+        <tr><td class="l">01 ICP and targeting</td><td>1 to 7</td><td class="l"><code>/icp</code>, <code>sales:account-tiering</code>, <code>zoominfo:tam-sizer</code></td></tr>
+        <tr><td class="l">02 Prospecting</td><td>8 to 15</td><td class="l"><code>sales:account-research</code>, <code>cold-email</code>, <code>linkedin-signal-outreach</code></td></tr>
+        <tr><td class="l">03 Qualification</td><td>16 to 22</td><td class="l"><code>sales-methodologies-20</code>, <code>zoominfo:buying-committee</code></td></tr>
+        <tr><td class="l">04 Discovery</td><td>23 to 29</td><td class="l"><code>sales:call-prep</code>, <code>sales:call-summary</code></td></tr>
+        <tr><td class="l">05 Demo and evaluation</td><td>30 to 35</td><td class="l"><code>sales:competitive-intelligence</code>, <code>competitor-alternatives</code></td></tr>
+        <tr><td class="l">06 Proposal and close</td><td>36 to 43</td><td class="l"><code>/proposal-writer</code>, <code>sales:close-plan</code>, <code>sales:handle-objection</code></td></tr>
+        <tr><td class="l">07 Onboarding and expansion</td><td>44 to 50</td><td class="l"><code>/cs-onboarding</code>, <code>/cs-qbr</code>, <code>sales:renewal-radar</code></td></tr>
+      </tbody>
+    </table></div>
+    <p class="meta">7 + 8 + 7 + 7 + 6 + 8 + 7 = 50. Titles only are shown; the skill files are behind &ldquo;Comment SALES&rdquo; and were not obtained or invented. The agent <code>b2b-sales-stage-router</code> routes a deal to a stage and an installed skill, and drafts only.</p>
+  </section>
+
+  <section>
+    <h2>8. Connectors</h2>
+    <ul>
+      <li><strong>REA (MCP server):</strong> not registered. It changes your agent&rsquo;s configuration, needs your own Hopper, Ghidra or IDA for native work, and is dual-use. The install script prints the safer route (a pinned version, after reviewing the diff it proposes).</li>
+      <li>No other connector is referenced.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>9. Next steps and open decisions</h2>
+    <ul>
+      <li><strong>Standing rule:</strong> in force. Scan the folder you install, not a whole large repository.</li>
+      <li><strong>Decide:</strong> whether Prismical matters enough to ask for its real repository link.</li>
+      <li><strong>Decide:</strong> whether you want the 50 sales skills written out as full, tested skills. That is real work and would be my method, not the author&rsquo;s.</li>
+      <li><strong>Agent Archive:</strong> dropped at your request; say &ldquo;retry Agent Archive&rdquo; to revisit.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>10. Prompts to copy and paste</h2>
+    <h3>Pick an algorithm</h3>
+    <div class="prompt"><button type="button">Copy</button><pre>I have [describe the data: rows, columns, types, missing values] and I want to [predict X / group Y / detect Z]. Using the ml-algorithms-cheatsheet-16 skill, name the baseline I should try first, one stronger option, and one I should avoid, each with its assumption that my data might break. Say what test I should run to check each assumption. Do not recommend a deep network unless my data size justifies it.</pre></div>
+    <h3>Run one of the 50 B2B sales skills</h3>
+    <div class="prompt"><button type="button">Copy</button><pre>Run B2B sales skill [number and title, e.g. "26 Pain Quantifier"] for this deal. Here is what I know: [paste notes, role, product, deal stage, numbers]. Give: (1) the output for this step, (2) for each claim, the line of my notes that supports it, or "assumption", (3) the three questions I still need to ask, (4) what could be wrong. Do not invent numbers or buyer statements. Do not draft anything to send.</pre></div>
+    <h3>Check a savings claim</h3>
+    <div class="prompt"><button type="button">Copy</button><pre>Here are the paid tools I use: [tool, plan, seats, monthly price]. Using the oss-swap-savings-table-12-part9 and oss-swap-savings-table-10 skills, tell me for each: the free alternative, its real licence, who would run and patch it, what it costs me in hosting and time, and the true yearly saving for my seat count only. Flag any swap where the saving is smaller than the cost of running it. Do not use the carousel's headline total.</pre></div>
+    <h3>Check a &ldquo;free&rdquo; or &ldquo;open source&rdquo; claim</h3>
+    <div class="prompt"><button type="button">Copy</button><pre>Here is a repository and the claim made about it: [URL and claim]. Read its LICENSE file and tell me the exact licence, whether it is approved as open source, what I may not do under it, and whether it matters for my use: [your use]. Quote the licence text you relied on.</pre></div>
+    <h3>Slash commands and terminal</h3>
+    <div class="prompt"><button type="button">Copy</button><pre>/ml-algo-pick [problem, data size, labels or not, how much you must explain]
+/b2b-sales-skill [stage or skill number, and your deal facts]
+/swap-savings [paid tools, seats, who runs a server]
+/briefing-oct13-pick [what you need to do]
+
+skillspector scan [folder-you-will-install] --no-llm
+bash scripts/batch113-install.sh</pre></div>
+    <p class="meta">The full prompt set is in <code>docs/batch-110-prompts.md</code>.</p>
+  </section>
+</main>
+<script>
+  document.querySelectorAll('.prompt button').forEach(function (b) {
+    b.addEventListener('click', function () {
+      var pre = b.parentNode.querySelector('pre');
+      var done = function () { b.textContent = 'Copied'; setTimeout(function () { b.textContent = 'Copy'; }, 1500); };
+      var fallback = function () {
+        var r = document.createRange(); r.selectNodeContents(pre);
+        var s = window.getSelection(); s.removeAllRanges(); s.addRange(r); b.textContent = 'Selected';
+      };
+      try { navigator.clipboard.writeText(pre.textContent).then(done, fallback); } catch (e) { fallback(); }
+    });
+  });
+</script>
