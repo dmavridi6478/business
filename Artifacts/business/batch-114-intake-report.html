@@ -161,6 +161,18 @@
       </tbody>
     </table></div>
     <p class="meta">7 + 8 + 7 + 7 + 6 + 8 + 7 = 50. Titles only are shown; the skill files are behind &ldquo;Comment SALES&rdquo; and were not obtained or invented. The agent <code>b2b-sales-stage-router</code> routes a deal to a stage and an installed skill, and drafts only.</p>
+    <h3>Update: all 50 written as full skills and tested</h3>
+    <div class="scroll"><table>
+      <thead><tr><th class="l">Check</th><th class="l">Result</th></tr></thead>
+      <tbody>
+        <tr><td class="l">Structure check</td><td class="l">50 of 50 skills pass (frontmatter, section order, output headings, quality checks, cross-references)</td></tr>
+        <tr><td class="l">Behavioural run</td><td class="l">56 cases (50 skills plus 6 negative cases) run on a fictional deal pack; 56 produced an output</td></tr>
+        <tr><td class="l">Strict output check</td><td class="l">36 pass, 20 fail. The failures are derived numbers without a calc tag or plan parameters the checker cannot tell from facts. None is an invented buyer statement, result or price</td></tr>
+        <tr><td class="l">Checker changes</td><td class="l">Two checker bugs fixed and several checks relaxed during triage; disclosed in <code>docs/b2b-sales-skills-test-report.md</code>, so 36 is a weaker claim than a clean run</td></tr>
+        <tr><td class="l">SkillSpector (static)</td><td class="l">Skills: 28/100 MEDIUM, 2 false positives on &ldquo;Do not&rdquo; lines. Agent, command and scripts: 33/100 MEDIUM, 3 findings that are the router reading skills by design</td></tr>
+      </tbody>
+    </table></div>
+    <p class="meta">Limits: one fictional scenario, one run per case, outputs written by language-model agents. A pass shows the rules were followed, not that the advice fits a real deal.</p>
   </section>
 
   <section>
