@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vault Repo Card (mono, starfield)</title>
+<style>
+  /* =====================================================
+     TEMPLATE: Vault Repo Card
+     Based on the @githubvault carousel style (12 October 2026): near-black starfield,
+     white rounded screenshot frame with a dark star-count pill, red-pink monospace
+     repo path, monospace description.
+     Size: 1080x1350 (4:5). One card per repo. Duplicate .card for more.
+     Customise: screenshot (img src or the placeholder), stars, repo path, description, handle.
+     Use only star counts you have checked.
+     ===================================================== */
+  :root {
+    --bg: #0b0907; --grain: #1a1613; --frame: #ffffff; --pill: #14110e; --pill-text: #f3f0ea;
+    --star: #f5a623; --link: #ff3d5a; --text: #e9e5dc; --handle: #ffffff;
+    --mono: 'JetBrains Mono', 'SFMono-Regular', Consolas, monospace;
+    --font: Aptos, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+  }
+  @media (prefers-color-scheme: light) { :root:not([data-theme="dark"]) { --bg: #f4efe6; --grain: #e9e2d4; --pill: #1a1613; --link: #c4223c; --text: #2a2622; --handle: #2a2622; } }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: #000; display: grid; justify-items: center; gap: 40px; padding: 40px 0; font-family: var(--font); }
+  .card { width: 1080px; height: 1350px; position: relative; overflow: hidden; color: var(--text);
+    background: radial-gradient(circle at 20% 20%, var(--grain) 0, transparent 40%), var(--bg); }
+  .card::before { content: ""; position: absolute; inset: 0; opacity: .5;
+    background-image: radial-gradient(1px 1px at 12% 18%, #fff8 50%, transparent 51%), radial-gradient(1px 1px at 63% 9%, #fff6 50%, transparent 51%), radial-gradient(1.5px 1.5px at 84% 31%, #fff7 50%, transparent 51%), radial-gradient(1px 1px at 33% 88%, #fff6 50%, transparent 51%), radial-gradient(1px 1px at 92% 74%, #fff5 50%, transparent 51%); }
+  .shot { position: absolute; left: 100px; top: 140px; width: 880px; height: 560px; border-radius: 28px; background: var(--frame); overflow: hidden; box-shadow: 0 20px 60px #0008; }
+  .shot img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .shot .ph { width: 100%; height: 100%; display: grid; place-items: center; color: #8a8378; font: 28px var(--mono); }
+  .stars { position: absolute; right: 120px; top: 160px; background: var(--pill); color: var(--pill-text); padding: 18px 30px; border-radius: 40px; font: 700 38px var(--mono); }
+  .stars b { color: var(--star); }
+  .path { position: absolute; left: 100px; right: 100px; top: 760px; font: 700 52px/1.2 var(--mono); color: var(--link); word-break: break-all; }
+  .desc { position: absolute; left: 100px; right: 120px; top: 850px; font: 400 45px/1.55 var(--mono); }
+  .handle { position: absolute; right: 56px; bottom: 44px; font-size: 40px; font-weight: 600; color: var(--handle); }
+  .handle::before { content: "@"; }
+</style>
+</head>
+<body>
+<section class="card">
+  <div class="shot"><div class="ph">[ screenshot of the project ]</div></div>
+  <div class="stars"><b>&#9733;</b> 46.1k stars</div>
+  <div class="path">github.com/owner/repo</div>
+  <p class="desc">One or two sentences: what it is, who it is for, how it installs. Keep it under 45 words and state the licence.</p>
+  <div class="handle">yourhandle</div>
+</section>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ranked Tool Card (black, electric blue)</title>
+<style>
+  /* =====================================================
+     TEMPLATE: Ranked Tool Card
+     Based on the @danielmofi1 "7 best AI tools for coding" carousel (13 October 2026):
+     black ground, a very large electric-blue rank numeral top left, the tool name in capitals top right,
+     a heavy white headline, a blue "Best for" line, one white paragraph, and a rounded window mock-up.
+     Size: 1100x1468 (3:4). One tool per card; duplicate .card. The numeral is a real rank, so it is kept.
+     Customise: rank, tool name, headline, best-for line, paragraph, window content.
+     ===================================================== */
+  :root {
+    --bg: #05070b; --ink: #ffffff; --blue: #2f6df6; --blue-soft: #7aa2f7; --panel: #10151f; --line: #26304a; --muted: #9aa6bd;
+    --sans: Aptos, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif; --mono: 'Cascadia Mono', Consolas, 'SFMono-Regular', monospace;
+  }
+  @media (prefers-color-scheme: light) { :root:not([data-theme="dark"]) { --bg: #f6f8fc; --ink: #0b1220; --blue: #1f57d6; --blue-soft: #2b5bc4; --panel: #ffffff; --line: #cdd6ea; --muted: #5a667d; } }
+  :root[data-theme="light"] { --bg: #f6f8fc; --ink: #0b1220; --blue: #1f57d6; --blue-soft: #2b5bc4; --panel: #ffffff; --line: #cdd6ea; --muted: #5a667d; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: #000; display: grid; justify-items: center; padding: 30px 0; font-family: var(--sans); }
+  .card { width: 1100px; height: 1468px; background: var(--bg); color: var(--ink); padding: 60px 64px; position: relative; }
+  .rank { font-size: 250px; font-weight: 800; line-height: .9; letter-spacing: -.04em; color: var(--blue); }
+  .tool { position: absolute; top: 70px; right: 64px; font-size: 76px; font-weight: 800; letter-spacing: -.02em; text-transform: uppercase; }
+  h1 { font-size: 80px; font-weight: 800; letter-spacing: -.03em; line-height: 1.05; margin-top: 54px; text-wrap: balance; }
+  .best { font-size: 38px; line-height: 1.3; color: var(--blue-soft); margin-top: 22px; }
+  .para { font-size: 36px; line-height: 1.38; margin-top: 30px; max-width: 960px; }
+  .win { position: absolute; left: 64px; right: 64px; bottom: 64px; height: 640px; background: var(--panel); border: 2px solid var(--line); border-radius: 34px; overflow: hidden; }
+  .win .bar { height: 76px; display: flex; align-items: center; gap: 14px; padding: 0 28px; border-bottom: 2px solid var(--line); color: var(--muted); font: 600 28px var(--mono); }
+  .win .bar i { width: 22px; height: 22px; border-radius: 50%; background: #ef6a5e; } .win .bar i:nth-child(2) { background: #e8b84a; } .win .bar i:nth-child(3) { background: #58b86a; }
+  .win .body { padding: 34px 40px; font: 500 32px/1.55 var(--mono); color: var(--ink); }
+  .win .body .ok { color: #58b86a; } .win .body .k { color: var(--blue-soft); }
+  .handle { position: absolute; right: 64px; bottom: 22px; font-size: 26px; color: var(--muted); }
+</style>
+</head>
+<body>
+<section class="card">
+  <div class="rank">01</div>
+  <div class="tool">Tool Name</div>
+  <h1>Tool Name, the one-line verdict</h1>
+  <p class="best">Best for: who it suits &bull; the situation &bull; one more</p>
+  <p class="para">Two or three plain sentences on what it does and why it ranks here. State a fact you have checked; mark any claim you have not.</p>
+  <div class="win">
+    <div class="bar"><i></i><i></i><i></i><span>tool &mdash; session</span></div>
+    <div class="body"><span class="k">&gt;</span> example command<br>Changes proposed<br><span class="ok">&#10003;</span> Applied edit<br><span class="ok">&#10003;</span> Tests passing</div>
+  </div>
+  <div class="handle">@yourhandle</div>
+</section>
+</body>
+</html>

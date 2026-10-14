@@ -1,0 +1,193 @@
+<title>Batch 108 Intake Report</title>
+<style>
+  /* Layout: single formal document column; summary first, evidence tables, copy blocks last. */
+  :root {
+    --bg: #fbfaf7; --surface: #ffffff; --fg: #1b2230; --muted: #566074; --rule: #d9d6cc;
+    --accent: #14606b; --accent-soft: #e2eff0; --warn: #8a4b00; --warn-soft: #fbefdc; --code-bg: #f1efe8;
+    --font: Aptos, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif; --mono: 'Cascadia Mono', Consolas, 'SFMono-Regular', monospace;
+  }
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+    --bg: #12161d; --surface: #181e27; --fg: #e8ebf1; --muted: #a2adc0; --rule: #2d3644;
+    --accent: #6cc3cf; --accent-soft: #17323a; --warn: #f0b36a; --warn-soft: #3a2c15; --code-bg: #0e1218; color-scheme: dark; } }
+  :root[data-theme="dark"] {
+    --bg: #12161d; --surface: #181e27; --fg: #e8ebf1; --muted: #a2adc0; --rule: #2d3644;
+    --accent: #6cc3cf; --accent-soft: #17323a; --warn: #f0b36a; --warn-soft: #3a2c15; --code-bg: #0e1218; color-scheme: dark; }
+  body { background: var(--bg); color: var(--fg); font-family: var(--font); font-size: 11pt; line-height: 1.55; padding-inline: max(16px, 4vw); padding-block: 32px 64px; }
+  main { max-width: 980px; margin: 0 auto; display: grid; gap: 28px; }
+  h1 { font-size: 32pt; line-height: 1.08; font-weight: 700; text-wrap: balance; letter-spacing: -0.01em; }
+  h2 { font-size: 14pt; line-height: 1.3; font-weight: 700; padding-bottom: 6px; border-bottom: 2px solid var(--accent); margin-bottom: 12px; text-wrap: balance; }
+  h3 { font-size: 11pt; font-weight: 700; margin: 14px 0 6px; }
+  p, li { max-width: 72ch; }
+  .meta { color: var(--muted); font-size: 11pt; }
+  .eyebrow { font-size: 9pt; letter-spacing: .12em; text-transform: uppercase; color: var(--accent); font-weight: 700; }
+  .callout { background: var(--warn-soft); border-left: 4px solid var(--warn); padding: 14px 18px; border-radius: 4px; }
+  .callout strong { color: var(--warn); }
+  .good { background: var(--accent-soft); border-left: 4px solid var(--accent); padding: 14px 18px; border-radius: 4px; }
+  section { min-width: 0; }
+  .scroll { overflow-x: auto; border: 1px solid var(--rule); border-radius: 6px; background: var(--surface); }
+  table { border-collapse: collapse; width: 100%; min-width: 620px; font-size: 11pt; }
+  th, td { padding: 8px 10px; border-bottom: 1px solid var(--rule); text-align: center; vertical-align: top; }
+  th { background: var(--accent-soft); font-weight: 700; position: sticky; top: 0; }
+  tr:last-child td { border-bottom: 0; }
+  td.l, th.l { text-align: left; }
+  code { font-family: var(--mono); font-size: 10pt; background: var(--code-bg); padding: 1px 5px; border-radius: 3px; overflow-wrap: anywhere; }
+  ul { padding-left: 1.2em; display: grid; gap: 4px; }
+  .pill { display: inline-block; font-size: 9.5pt; font-weight: 700; padding: 1px 8px; border-radius: 999px; border: 1px solid currentColor; white-space: nowrap; }
+  .p-use { color: var(--accent); } .p-care { color: var(--warn); } .p-skip { color: #a3302a; }
+  :root[data-theme="dark"] .p-skip { color: #ff8a80; }
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .p-skip { color: #ff8a80; } }
+  .prompt { position: relative; background: var(--code-bg); border: 1px solid var(--rule); border-radius: 6px; padding: 12px 14px; margin: 8px 0 14px; }
+  .prompt pre { font-family: var(--mono); font-size: 10pt; white-space: pre-wrap; overflow-wrap: anywhere; margin: 0; padding-right: 64px; }
+  .prompt button { position: absolute; top: 8px; right: 8px; font: 600 9.5pt var(--font); padding: 4px 10px; border-radius: 4px; border: 1px solid var(--accent); background: var(--surface); color: var(--accent); cursor: pointer; }
+  .prompt button:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+  .grid2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; }
+  .grid2 > div { min-width: 0; background: var(--surface); border: 1px solid var(--rule); border-radius: 6px; padding: 14px 16px; }
+</style>
+<main>
+  <header>
+    <div class="eyebrow">Intake report &middot; 13 October 2026</div>
+    <h1>Batch 108 Intake Report</h1>
+    <p class="meta">One iCloud Photos archive: 35 images, no video. Prepared for the business repository, branch <code>claude/zealous-davinci-u3blkz</code>.</p>
+  </header>
+
+  <section>
+    <h2>1. Executive summary</h2>
+    <div class="callout">
+      <p><strong>Principal finding.</strong> Only one of the four carousels contains an instruction you can execute: the 20-point pre-launch website audit. The other three are promotional lists whose headline numbers do not survive checking. The &ldquo;$3,012 saved&rdquo; slide says 8 of 10 swaps, but its 8 listed rows add to $2,856; $3,012 is the total of all ten and applies to a single seat. Licences, which decide whether a swap is legal for you, appear on none of the slides.</p>
+    </div>
+    <ul>
+      <li><strong>Created:</strong> 4 skills, 4 slash commands, 1 stdlib checker script, 3 design templates, 1 design theme, 2 documents and 1 user-run install script.</li>
+      <li><strong>Verified:</strong> README and licence files of 15 repositories read directly; the checker was tested on a deliberately broken page (12 FAILs).</li>
+      <li><strong>Not obtained:</strong> the full breakdowns behind &ldquo;comment GIT&rdquo; and &ldquo;comment REPO&rdquo;. They were not invented.</li>
+      <li><strong>Installed on any machine:</strong> nothing. No connector was changed.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>2. What the archive contained</h2>
+    <div class="scroll"><table>
+      <thead><tr><th class="l">Creator</th><th>Images</th><th class="l">Subject</th><th class="l">Result</th></tr></thead>
+      <tbody>
+        <tr><td class="l">@modelsignal</td><td>12</td><td class="l">10 free repos replacing paid software, Part 2</td><td class="l">Skill <code>oss-swap-savings-table-10</code>, <code>/swap-savings</code>, template <code>compare-paid-free-card-red</code></td></tr>
+        <tr><td class="l">@buildwithneej</td><td>11</td><td class="l">5 repos that took off this week</td><td class="l">Skill <code>agent-repos-took-off-sep-2026</code>, <code>/repo-week-pick</code></td></tr>
+        <tr><td class="l">@claude.with.christelle</td><td>3</td><td class="l">20 checks before launching a website</td><td class="l">Skill <code>prelaunch-website-audit-20</code>, <code>/prelaunch-audit</code>, <code>scripts/prelaunch_check.py</code>, template <code>checklist-dark-copper-grid</code>, theme <code>theme-dark-copper-serif</code></td></tr>
+        <tr><td class="l">@entr3p2</td><td>6</td><td class="l">Useful websites for your business</td><td class="l">Skill <code>free-business-websites-5</code>, <code>/biz-sites-pick</code>, template <code>website-pick-card-clean</code></td></tr>
+      </tbody>
+    </table></div>
+    <p class="meta">Counted by creator group: 12 + 11 + 3 + 6 = 32. The other 3 of the 35 are cover and call-to-action slides folded into the two series they belong to. All 35 were read.</p>
+  </section>
+
+  <section>
+    <h2>3. The ten swaps, with the licence the slides omit</h2>
+    <div class="scroll"><table>
+      <thead><tr><th class="l">Paid tool</th><th class="l">Free tool</th><th>Slide saving / year</th><th class="l">Licence note</th><th>Verdict</th></tr></thead>
+      <tbody>
+        <tr><td class="l">Cloudinary</td><td class="l">imgproxy</td><td>$1,068</td><td class="l">Apache-2.0; a paid imgproxy Pro exists. No help for a marketer who used a media library</td><td><span class="pill p-care">Technical owner</span></td></tr>
+        <tr><td class="l">GitBook</td><td class="l">Docusaurus</td><td>$780</td><td class="l">MIT; you build and host the static site</td><td><span class="pill p-use">Reasonable</span></td></tr>
+        <tr><td class="l">Pinecone</td><td class="l">Qdrant</td><td>$240</td><td class="l">LICENSE file not obtained; unconfirmed</td><td><span class="pill p-care">Unconfirmed</span></td></tr>
+        <tr><td class="l">Zapier</td><td class="l">Activepieces</td><td>$240</td><td class="l">MIT except its <code>ee</code> folders</td><td><span class="pill p-care">Check</span></td></tr>
+        <tr><td class="l">CircleCI</td><td class="l">Woodpecker</td><td>$180</td><td class="l">Apache-2.0; you run the CI servers</td><td><span class="pill p-use">Reasonable</span></td></tr>
+        <tr><td class="l">Notion</td><td class="l">AppFlowy</td><td>$120</td><td class="l">AGPL-3.0</td><td><span class="pill p-care">Copyleft</span></td></tr>
+        <tr><td class="l">Dropbox</td><td class="l">Seafile</td><td>$120</td><td class="l">Server licence not confirmed from its repo</td><td><span class="pill p-care">Unconfirmed</span></td></tr>
+        <tr><td class="l">Docker Desktop</td><td class="l">Podman</td><td>$108</td><td class="l">Apache-2.0</td><td><span class="pill p-use">Reasonable</span></td></tr>
+        <tr><td class="l">HubSpot</td><td class="l">Odoo</td><td>$84</td><td class="l">Community LGPL-3.0; Enterprise is proprietary</td><td><span class="pill p-care">Check</span></td></tr>
+        <tr><td class="l">Okta</td><td class="l">Authelia</td><td>$72</td><td class="l">Apache-2.0; identity infrastructure, high stakes if misconfigured</td><td><span class="pill p-care">Careful</span></td></tr>
+      </tbody>
+    </table></div>
+    <p class="meta">The eight rows the slide counts add to $2,856; all ten add to $3,012. Prices are single-seat and were not re-checked. The licence column states what was read; the skill holds the full detail.</p>
+  </section>
+
+  <section>
+    <h2>4. The five repos that &ldquo;took off&rdquo;</h2>
+    <div class="scroll"><table>
+      <thead><tr><th class="l">Repo</th><th class="l">What it is</th><th class="l">Fact to know before installing</th></tr></thead>
+      <tbody>
+        <tr><td class="l">hypit-ai/hypit</td><td class="l">Agent-driven video creation</td><td class="l">Modified Apache-2.0: no multi-tenant service, no resale, keep its logo. Renders cost money.</td></tr>
+        <tr><td class="l">alibaba/open-code-review</td><td class="l">Code review for agents</td><td class="l">Apache-2.0; needs a model endpoint you configure.</td></tr>
+        <tr><td class="l">JustVugg/colibri</td><td class="l">Very large local model runner</td><td class="l">Slide shows v1.11.0; README shows v2.0.0. Reference model is 429 GB.</td></tr>
+        <tr><td class="l">abue-ammar/tinycast</td><td class="l">Screen recorder for macOS 26+</td><td class="l">AGPL-3.0. The slide spells the tap <code>abu-ammar</code>; the real owner is <code>abue-ammar</code>. Using the wrong spelling is a typosquatting exposure.</td></tr>
+        <tr><td class="l">cloudflare/security-audit-skill</td><td class="l">Security audit skill</td><td class="l">MIT; a full run uses many tokens.</td></tr>
+      </tbody>
+    </table></div>
+  </section>
+
+  <section>
+    <h2>5. The 20-check audit: what can and cannot be decided</h2>
+    <div class="good"><p>This is the only actionable item in the archive. <code>scripts/prelaunch_check.py</code> settles what HTML alone can decide and prints CAN&rsquo;T CHECK for everything else. A PASS means nothing is wrong in what was pasted, not that the site is fine.</p></div>
+    <div class="scroll" style="margin-top:12px"><table>
+      <thead><tr><th class="l">Decided by the script</th><th class="l">Needs a live test or a tool</th></tr></thead>
+      <tbody>
+        <tr><td class="l">Key-like strings, <code>http://</code> resources, privacy and terms links, cookie code, form <code>required</code>/<code>pattern</code>, captcha or honeypot, title and description length, <code>og:image</code>, favicon, <code>alt</code>, viewport, analytics snippet, action button</td><td class="l">HTTPS redirect and HSTS (<code>curl -I</code>), page speed and image weight (Lighthouse), colour contrast, broken links (a crawl), server-side validation, sitemap fetch status</td></tr>
+      </tbody>
+    </table></div>
+  </section>
+
+  <section>
+    <h2>6. Source problems</h2>
+    <ul>
+      <li><strong>Arithmetic:</strong> &ldquo;8 of 10&rdquo; with &ldquo;$3,012&rdquo;; the 8 rows add to $2,856.</li>
+      <li><strong>Typosquatting risk:</strong> <code>abu-ammar</code> versus <code>abue-ammar</code>.</li>
+      <li><strong>Outdated release:</strong> colibri v1.11.0 versus v2.0.0.</li>
+      <li><strong>Comment-gated material:</strong> both repo series end in &ldquo;comment a word and I will send the links&rdquo;. The lists were not obtained.</li>
+      <li><strong>Tax rule:</strong> Wave is not suitable by default for Greek e-invoicing. Confirm with an accountant before relying on it.</li>
+      <li><strong>Not re-checked:</strong> every paid price, star count and the &ldquo;installs into 75 agents&rdquo; claim.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>7. Security scan</h2>
+    <p>NVIDIA SkillSpector, static mode (<code>--no-llm</code>), run on the four new skills and the checker script. Scores 0 to 10; the one non-zero score is two generic &ldquo;MCP rug pull&rdquo; flags with no snippet. Findings were not suppressed. A clean static scan is not a guarantee of safety.</p>
+  </section>
+
+  <section>
+    <h2>8. Next steps and open decisions</h2>
+    <ul>
+      <li><strong>Run the audit</strong> on the site you intend to launch: <code>python3 -I scripts/prelaunch_check.py index.html</code>, then <code>/prelaunch-audit</code> for the rest.</li>
+      <li><strong>Decide:</strong> whether the SkillSpector pre-install scan becomes a standing step before every install (recommended).</li>
+      <li><strong>Decide:</strong> whether to set up Agent Archive (needs an API key or a new account; unanswered since the first reply).</li>
+      <li><strong>Installs:</strong> <code>scripts/batch111-install.sh</code> on your own machine; it asks before each step and pipes nothing into a shell.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>9. Prompts to copy and paste</h2>
+    <h3>The 20-check pre-launch audit</h3>
+    <div class="prompt"><button type="button">Copy</button><pre>You are a pre-launch auditor. I'll paste my site's code and page copy below.
+
+Check these 20: secrets in frontend, HTTPS, privacy policy, terms, cookie consent, form validation, spam protection, meta titles and descriptions, social preview image, favicon, sitemap and robots.txt, alt text, image compression, page speed, color contrast, mobile layout, 404 page, broken links, analytics, one clear call to action.
+
+For each: PASS / FAIL / CAN'T CHECK, one line why, and the exact fix. Never guess. If you can't verify it from what I pasted, say CAN'T CHECK.
+
+End with the 5 fixes to do first.
+
+[paste page HTML, page copy, robots.txt, sitemap.xml, a Lighthouse report, and a list of your forms here]</pre></div>
+    <h3>Honest saving from replacing paid tools</h3>
+    <div class="prompt"><button type="button">Copy</button><pre>Here are the paid tools I use: [tool, plan, seats, monthly price]. For each, use the oss-swap-savings-table-10 skill: name the free alternative, its real licence (AGPL, LGPL, MIT or custom), what I lose, who would run and patch the server, and the true yearly saving for my seat count only. Do not use the carousel's headline total. Tell me which swaps are not worth doing.</pre></div>
+    <h3>Slash commands</h3>
+    <div class="prompt"><button type="button">Copy</button><pre>/prelaunch-audit [paste of page HTML or a file path]
+/swap-savings [paid tools, seats, who runs a server]
+/repo-week-pick [what you need to do]
+/biz-sites-pick [business, country, what you sell]</pre></div>
+    <h3>Terminal commands (your own machine)</h3>
+    <div class="prompt"><button type="button">Copy</button><pre>python3 -I scripts/prelaunch_check.py index.html about.html
+skillspector scan ./some-skill/ --no-llm
+brew trust --tap abue-ammar/tinycast
+brew tap abue-ammar/tinycast
+brew install --cask tinycast
+bash scripts/batch111-install.sh</pre></div>
+    <p class="meta">The full prompt set is in <code>docs/batch-108-prompts.md</code>.</p>
+  </section>
+</main>
+<script>
+  document.querySelectorAll('.prompt button').forEach(function (b) {
+    b.addEventListener('click', function () {
+      var pre = b.parentNode.querySelector('pre');
+      var done = function () { b.textContent = 'Copied'; setTimeout(function () { b.textContent = 'Copy'; }, 1500); };
+      var fallback = function () {
+        var r = document.createRange(); r.selectNodeContents(pre);
+        var s = window.getSelection(); s.removeAllRanges(); s.addRange(r); b.textContent = 'Selected';
+      };
+      try { navigator.clipboard.writeText(pre.textContent).then(done, fallback); } catch (e) { fallback(); }
+    });
+  });
+</script>

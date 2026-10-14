@@ -1,0 +1,9 @@
+Form submission, 2026-10-12 09:14
+Name: Marios Kallis
+Email: marios@mini-courier.example.test
+Company: Mini Courier
+Role: Owner
+Employees: 12
+Country: Greece
+How did you hear about us: Google search
+Message: "Hi, we are a small courier with about 40 invoices a month. A friend said you automate invoice checking. How much does it cost and can I try it free for a month? We only need something simple."

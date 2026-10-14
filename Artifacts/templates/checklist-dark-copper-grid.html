@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Numbered Checklist Card (dark, copper)</title>
+<style>
+  /* =====================================================
+     TEMPLATE: Numbered Checklist Card
+     Based on the @claude.with.christelle "20 things to check before you launch" carousel
+     (13 October 2026): ink-navy ground with a faint grid, copper numerals, a serif headline
+     with one italic phrase, rows in two columns, a highlighted last row.
+     Size: 1080x1440 (3:4). The numbering is real here (a fixed list of 20), so numerals are kept.
+     Customise: group label, headline (second line italic), 7 to 14 rows, footer handle, page count.
+     ===================================================== */
+  :root {
+    --bg: #0c1220; --grid: #ffffff0d; --row: #ffffff08; --row-line: #c97b4a55; --ink: #f4efe8; --copper: #d98a57; --muted: #8e97a8;
+    --serif: 'Playfair Display', Georgia, 'Times New Roman', serif; --sans: Aptos, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+  }
+  @media (prefers-color-scheme: light) { :root:not([data-theme="dark"]) { --bg: #f6f1ea; --grid: #00000010; --row: #ffffffb0; --row-line: #b8652f66; --ink: #1c2233; --copper: #b8652f; --muted: #667086; } }
+  :root[data-theme="light"] { --bg: #f6f1ea; --grid: #00000010; --row: #ffffffb0; --row-line: #b8652f66; --ink: #1c2233; --copper: #b8652f; --muted: #667086; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: #000; display: grid; justify-items: center; padding: 30px 0; font-family: var(--sans); }
+  .card { width: 1080px; height: 1440px; padding: 90px 80px 70px; position: relative; color: var(--ink);
+    background: linear-gradient(var(--grid) 1px, transparent 1px) 0 0 / 40px 40px, linear-gradient(90deg, var(--grid) 1px, transparent 1px) 0 0 / 40px 40px, var(--bg); }
+  .mark { position: absolute; top: 0; right: 80px; width: 64px; height: 90px; background: var(--copper); clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 78%, 0 100%); }
+  .group { font: 700 26px var(--sans); letter-spacing: .22em; text-transform: uppercase; color: var(--copper); }
+  h1 { font: 700 78px/1.08 var(--serif); margin: 22px 0 56px; text-wrap: balance; }
+  h1 em { color: var(--copper); font-style: italic; font-weight: 500; }
+  .rows { display: grid; grid-template-columns: 1fr 1fr; gap: 16px 20px; }
+  .row { background: var(--row); border: 2px solid var(--row-line); border-radius: 16px; padding: 22px 24px; font: 600 33px/1.25 var(--sans); display: flex; gap: 14px; align-items: baseline; min-width: 0; }
+  .row b { color: var(--copper); font-weight: 800; flex: none; }
+  .row.wide { grid-column: 1 / -1; }
+  .callout { margin-top: 30px; border: 2px solid var(--row-line); border-radius: 18px; padding: 28px 30px; background: var(--row); }
+  .callout small { display: block; font: 700 24px var(--sans); letter-spacing: .2em; text-transform: uppercase; color: var(--copper); margin-bottom: 10px; }
+  .callout p { font: 500 36px/1.4 var(--sans); }
+  .foot { position: absolute; left: 80px; right: 80px; bottom: 50px; display: flex; justify-content: space-between; font: 600 26px var(--sans); color: var(--muted); }
+</style>
+</head>
+<body>
+<section class="card">
+  <div class="mark" aria-hidden="true"></div>
+  <div class="group">Group 2 &middot; 8-20</div>
+  <h1>The ones that make you <em>invisible or broken.</em></h1>
+  <div class="rows">
+    <div class="row"><b>08</b> Meta titles + descriptions</div><div class="row"><b>09</b> Social preview image</div>
+    <div class="row"><b>10</b> Favicon</div><div class="row"><b>11</b> Sitemap + robots.txt</div>
+    <div class="row"><b>12</b> Alt text on images</div><div class="row"><b>13</b> Compress images</div>
+    <div class="row"><b>14</b> Page load speed</div><div class="row"><b>15</b> Color contrast</div>
+    <div class="row"><b>16</b> Mobile friendly</div><div class="row"><b>17</b> Custom 404 page</div>
+    <div class="row"><b>18</b> Fix broken links</div><div class="row"><b>19</b> Set up analytics</div>
+    <div class="row wide"><b>20</b> One clear call to action</div>
+  </div>
+  <div class="foot"><span>@yourhandle</span><span>2 / 3</span></div>
+</section>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Website Pick Card (clean)</title>
+<style>
+  /* =====================================================
+     TEMPLATE: Website Pick Card
+     Based on the @entr3p2 "useful websites for your business" carousel (13 October 2026):
+     near-white ground, a small step number and "Swipe" cue, a heavy sans name, an underlined link,
+     one plain-language line, and a browser-window screenshot with a soft shadow.
+     Size: 1080x1350 (4:5). One site per card; duplicate .card.
+     Customise: step number, site name, URL, one line, screenshot (img or the placeholder).
+     ===================================================== */
+  :root {
+    --bg: #f4f6f9; --ink: #0b1220; --muted: #6b7587; --link: #0a8fa3; --window: #ffffff; --bar: #e7eaf0; --shadow: #0b122033;
+    --sans: Aptos, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+  }
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --bg: #10151f; --ink: #f1f4fa; --muted: #98a3b8; --link: #4fc3d6; --window: #1a2130; --bar: #232b3d; --shadow: #00000066; } }
+  :root[data-theme="dark"] { --bg: #10151f; --ink: #f1f4fa; --muted: #98a3b8; --link: #4fc3d6; --window: #1a2130; --bar: #232b3d; --shadow: #00000066; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: #cfd4dd; display: grid; justify-items: center; padding: 30px 0; font-family: var(--sans); }
+  .card { width: 1080px; height: 1350px; background: var(--bg); color: var(--ink); position: relative; padding: 70px 80px; text-align: center; }
+  .top { display: flex; justify-content: space-between; color: var(--muted); font-size: 38px; }
+  h1 { font-size: 104px; font-weight: 800; letter-spacing: -.03em; margin-top: 70px; }
+  .url { display: inline-block; margin-top: 18px; color: var(--link); font-size: 44px; text-decoration: underline; text-underline-offset: 6px; }
+  .line { font-size: 48px; line-height: 1.35; margin: 40px auto 0; max-width: 860px; }
+  .win { margin: 80px auto 0; width: 880px; height: 540px; background: var(--window); border-radius: 18px; box-shadow: 0 30px 70px var(--shadow); overflow: hidden; text-align: left; }
+  .win .bar { height: 56px; background: var(--bar); display: flex; align-items: center; gap: 12px; padding: 0 22px; }
+  .win .bar i { width: 16px; height: 16px; border-radius: 50%; background: #e06c5f; } .win .bar i:nth-child(2) { background: #e6b94d; } .win .bar i:nth-child(3) { background: #59b36a; }
+  .win .body { height: calc(100% - 56px); display: grid; place-items: center; color: var(--muted); font-size: 30px; }
+</style>
+</head>
+<body>
+<section class="card">
+  <div class="top"><span>1.</span><span>Swipe &rarr;</span></div>
+  <h1>Site Name</h1>
+  <a class="url" href="#">example.com</a>
+  <p class="line">One plain line on what it does for a small business.</p>
+  <div class="win"><div class="bar"><i></i><i></i><i></i></div><div class="body">[ screenshot ]</div></div>
+</section>
+</body>
+</html>

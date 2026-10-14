@@ -6017,3 +6017,69 @@ Not done (needs you): plugin installs (`/plugin install paypal@claude-plugins-of
 **Source problems:** the revenue-system list repeats six roles; interview replacement lines are templates that must not claim things you have not done; GTM customer-count thresholds are rules of thumb.
 
 **Not done:** nothing installed; no connector changed (OpenFlowKit entry still unapplied; Midpage, Sentry and Supabase need your authorisation).
+
+## Batch 107 — iCloud Photos, two archives (49 images, 1 video) plus 3 images attached in chat (12 October 2026)
+
+**Report:** [Batch 107 Intake Report](https://claude.ai/artifact/L5vBQ7M7PEuH3BBENSeJUv) (`Artifacts/business/batch-111-intake-report.html`). Action plan: `docs/batch-107-action-plan.md`; copy-paste prompts: `docs/batch-107-prompts.md`.
+
+**Sources:** @aigenesis.official (50 AI automations, 12 slides), @githubnow (6 trending repos, 10 slides), @awayfromlovable (top 5 Claude Code add-ons, 7), @joshualevi.ai (NVIDIA SkillSpector, 8), @githubvault (10 self-hostable tools, 11), @boscokat (5 plugins for vibe coding), an @assmooorre.ai video (Laya vs Jev), and three chat attachments (Prosp 100 lead-gen skills folder, Thomas Pearce Personal Brand Strategy, "Complete Claude SEO Team").
+
+**Added:** skills `skillspector-preinstall-scan`, `claude-code-addons-top5`, `ai-automations-50-marketing`, `personal-brand-strategy-map`, `claude-seo-team-8-areas`, `lead-gen-skill-map-10x10`, `oss-trending-picks-oct-2026`, `vibe-coding-plugin-layers-5`; commands `/skill-scan`, `/automation-pick`, `/brand-map`, `/seo-team`, `/addon-pick`, `/oss-pick-oct`, `/lead-gen-map`; agents `seo-team-orchestrator`, `campaign-planner-multi-agent`; design templates `social-card-vault-repo-mono`, `automation-list-yellow-marker`, `mind-map-tree-brand-blue`, `hub-spoke-agent-team-radial` and theme `theme-github-vault-mono-starfield`; user-run `scripts/batch110-install.sh`.
+
+**Already existed, not duplicated:** `laya-jev-ultrafast` and `jev-vs-llm` (the video), the `github-night-green` theme and daily-briefing template (@githubnow style), `grid-paper-terracotta` theme (@awayfromlovable and @joshualevi.ai style), `ai-automation-blueprints`, `claude-seo`, `claude-lead-gen`, `grill-me`, `repo-stirling-pdf`, the Superpowers plugin.
+
+**Verified:** README and LICENSE of 22 repositories read on 12 October 2026. SkillSpector installed in an isolated environment and run statically on the 8 new skills: five scored 0 to 7, three scored 29 to 30 because their text quotes install commands; no executable scripts; findings not suppressed.
+
+**Source problems:** the automation list has 49 distinct items (one repeat) and three mismatched descriptions; the SEO graphic shows eight areas, not twenty agents, and the lead-gen graphic shows folder names only (contents are behind comment gates and were not obtained); SkillUI's real repo is `amaancoderx/npxskillui` and CryptPad's is `xwiki-labs/cryptpad`; Open WebUI has a branding clause above 50 users; free-claude-code installs by piped script and proxies every prompt; Spotube and MeTube touch YouTube terms; GeminiWatermarkTool removes only the visible mark; the karpathy-skills repo has no licence file at its root; the NVIDIA 31,132-skill figures and all star counts were not re-checked.
+
+**Not done:** nothing installed on any machine, no plugin added, no connector changed. WhatsApp and n8n are not connected; Meta Ads, Google Ads and Search Console are not connected and need your authorisation. Agent Archive account setup awaits your answer.
+
+## Batch 108 — iCloud Photos, one archive (35 images, no video) (13 October 2026)
+
+**Report:** [Batch 108 Intake Report](https://claude.ai/artifact/PD1iq99TyUKRVa6b4y4kWs) (`Artifacts/business/batch-112-intake-report.html`). Action plan: `docs/batch-108-action-plan.md`; copy-paste prompts: `docs/batch-108-prompts.md`.
+
+**Sources:** @modelsignal (10 free repos replacing paid software, Part 2; 12 images), @buildwithneej (5 repos that took off this week; 11), @claude.with.christelle (20 checks before launching a website; 3), @entr3p2 (useful websites for your business; 6).
+
+**Added:** skills `prelaunch-website-audit-20`, `oss-swap-savings-table-10`, `agent-repos-took-off-sep-2026`, `free-business-websites-5`; commands `/prelaunch-audit`, `/swap-savings`, `/repo-week-pick`, `/biz-sites-pick`; `scripts/prelaunch_check.py` (stdlib checker for the audit items HTML can decide); design templates `compare-paid-free-card-red`, `checklist-dark-copper-grid`, `website-pick-card-clean` and theme `theme-dark-copper-serif`; user-run `scripts/batch111-install.sh`.
+
+**Verified:** README and LICENSE of 15 repos read on 13 October 2026; SkillSpector static scan of the new skills and script (scores 0 to 10, findings not suppressed); the checker script tested on a deliberately bad page (12 FAILs).
+
+**Source problems:** the @modelsignal total ($3,012) is the sum of all ten swaps, but its slide says 8 of 10 (the 8 listed rows add to $2,856); the tinycast tap is spelled `abu-ammar` on the slide, the real owner is `abue-ammar`; colibri shows v1.11.0 where its README shows v2.0.0; licences are not stated on the slides (hypit modified Apache-2.0, AppFlowy and tinycast AGPL-3.0, Odoo Community LGPL-3.0); Qdrant and Seafile licences could not be confirmed from their repos; the "comment GIT/REPO" breakdowns are gated and were not obtained; Wave is not suitable by default for Greek e-invoicing.
+
+**Not done:** nothing installed on any machine, no connector changed. Agent Archive account setup still awaits your answer.
+
+## Batch 109 — iCloud Photos, one archive (14 images, no video) plus one infographic attached in chat (13 October 2026)
+
+**Report:** [Batch 109 Intake Report](https://claude.ai/artifact/9JNcvPqYwpbDyvNUt6cdEo) (`Artifacts/business/batch-113-intake-report.html`). Action plan: `docs/batch-109-action-plan.md`; copy-paste prompts: `docs/batch-109-prompts.md`.
+
+**Sources:** @danielmofi1 ("7 best AI tools for coding"; 9 images), @githubnow (daily briefing of 13 October 2026: open-code-review, xtool, vercel-labs/skills; 5 images), and a chat infographic "How to Make LinkedIn a Landing Page" (Charlie Hills).
+
+**Added:** skills `ai-coding-tools-7-ranking-2026`, `github-briefing-oct13-three`, `linkedin-landing-page-checklist`; commands `/coding-tool-pick`, `/briefing-oct13-pick`, `/linkedin-landing-page`; design templates `ranked-tool-card-black-blue` and `annotated-callout-map-navy`, theme `theme-black-electric-blue`; user-run `scripts/batch112-install.sh`.
+
+**Already existed, not duplicated:** the @githubnow style (`social-card-github-daily-briefing`, `theme-github-night-green`), `vercel-labs/skills` (listed in `claude-code-tooling` and Batch 98), open-code-review (Batch 108), the LinkedIn profile skills and commands.
+
+**Verified:** Aider (Apache-2.0), xtool (MIT) and vercel-labs/skills (MIT) licences and README install lines read on 13 October 2026. SkillSpector (static) scored the two CLI repos 100/100 CRITICAL; every location I opened (9 of 489, eight rated high) was ordinary text or build code, so neither is cleared and neither is condemned. The three new skills scored 0, 0 and 10.
+
+**Source problems:** the coding-tool mock-ups look invented (an undocumented Aider `--model` list, a "Claude Code v1.2 research preview" terminal, unsourced percentages, Kotlin calling `applyTerraform()`); the Claude Code "fix" accepts tokens 60 seconds after expiry; the open-code-review benchmark shows about 25% F1 at best; Windsurf's "Codeium team" is probably outdated; "Comment CODING" content is gated and was not obtained; LinkedIn sizes and Premium claims were not re-checked.
+
+**Standing rule added:** `CLAUDE.md` now requires a SkillSpector static scan before installing any third-party skill, plugin, agent, command, MCP server or script.
+
+**Not done:** nothing installed on any machine, no connector changed (Sentry would need your authorisation; Jira is available through the Atlassian connector). Agent Archive account setup still awaits your answer.
+
+## Batch 110 — iCloud Photos, one archive (25 images, no video) plus two infographics attached in chat (14 October 2026)
+
+**Report:** [Batch 110 Intake Report](https://claude.ai/artifact/Hz3Rw6MCAUUg8n6srggJ2H) (`Artifacts/business/batch-114-intake-report.html`). Action plan: `docs/batch-110-action-plan.md`; copy-paste prompts: `docs/batch-110-prompts.md`.
+
+**Follow-up (14 October 2026): the 50 B2B sales skills are written and tested.** `b2b-sales-01-...` to `b2b-sales-50-...` plus `b2b-sales-standard`. Structure check 50 of 50; behavioural run 56 cases, 36 pass the strict output checker and 20 fail on untagged derived numbers or checker limits, none on an invented fact. Details, checker changes and SkillSpector findings: `docs/b2b-sales-skills-test-report.md`. Prismical's repo was found: `amicalhq/prismical`, MIT (confirm it is the one on the slide; the slide shows no URL).
+
+**Sources:** @modelsignal ("Save $6,846/year", Part 9; 14 images), @replace.so ("6 GitHub repos so good they shouldn't be free"; 6), @githubnow (second briefing of 13 October 2026; 5), and two chat infographics: "Machine Learning Algorithms" cheatsheet and Prosp "Claude Skills for B2B Sales".
+
+**Added:** skills `oss-swap-savings-table-12-part9`, `replace-so-six-repos-oct-2026`, `github-briefing-oct13-rea-freellmapi-substrate`, `ml-algorithms-cheatsheet-16`, `claude-skills-b2b-sales-50-map`; commands `/ml-algo-pick` and `/b2b-sales-skill` (and `/swap-savings`, `/briefing-oct13-pick` extended); agent `b2b-sales-stage-router`; design templates `cheatsheet-table-navy-matrix`, `skill-folder-explorer-dark`, `repo-pick-card-pixel-grid-dark` and theme `theme-claude-orange-night`; user-run `scripts/batch113-install.sh`.
+
+**Already existed, not duplicated:** the paid-vs-free card (`compare-paid-free-card-red`, Batch 108), the Part 2 swap table, the @githubnow card and theme, `lead-gen-skill-map-10x10` (the 100-skill Prosp graphic) and the existing sales skills the 50-skill map points to.
+
+**Verified:** README and LICENSE of 18 repos (plus WordPress's licence file) read on 14 October 2026. SkillSpector (static): REA's agent skill 40; FreeLLMAPI scripts 100 (mostly environment-file handling, one real automatic-update design); REA's whole repo and installer timed out (unscanned); Agent Substrate's scripts had nothing to scan; the five new skills scored 0, 0, 0, 0 and 7 (after rewording quoted risky commands), the new agent 8.
+
+**Source problems:** the Part 9 headline total ($6,846) counts all 12 swaps but the "8 of 12" list adds to $6,600; Convex is under the Functional Source License, not an open-source licence; Prismical's repo was found afterwards (`amicalhq/prismical`, MIT); OpenSign's slide says pushed 52 days ago yet says switch; five of the 12 swaps save $24 to $120 a year, less than the cost of running them; REA's own example prompt sits uneasily with its disclaimer and it ships a piped installer; FreeLLMAPI sends prompts to up to 34 third parties and can auto-update; the "Comment FREE" and "Comment SALES" contents are gated and were not obtained.
+
+**Not done:** nothing installed on any machine. REA (an MCP server) was deliberately not registered. Agent Archive was dropped after its sign-up endpoint returned server errors.

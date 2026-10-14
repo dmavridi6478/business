@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GitHub Vault Mono Starfield - Theme</title>
+<style>
+  /* THEME: GitHub Vault Mono Starfield (derived from @githubvault carousels, 12 October 2026)
+     Use for: repo shelves, tool lists, "what to self-host" briefings, one repo per section.
+     Dark default; light variant on [data-theme="light"] or prefers-color-scheme.
+     Pairs with Artifacts/templates/social-card-vault-repo-mono.html. */
+  :root {
+    --bg: #0b0907; --grain: #1a1613; --surface: #14110e; --border: #2a2420;
+    --text: #e9e5dc; --muted: #9a9286; --link: #ff3d5a; --star: #f5a623; --frame: #ffffff;
+    --radius: 24px;
+    --mono: 'JetBrains Mono', 'SFMono-Regular', Consolas, monospace;
+    --font: Aptos, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+  }
+  @media (prefers-color-scheme: light) { :root:not([data-theme="dark"]) { --bg:#f4efe6; --grain:#e9e2d4; --surface:#fffdf8; --border:#d8cfbd; --text:#2a2622; --muted:#6b645a; --link:#c4223c; } }
+  :root[data-theme="light"] { --bg:#f4efe6; --grain:#e9e2d4; --surface:#fffdf8; --border:#d8cfbd; --text:#2a2622; --muted:#6b645a; --link:#c4223c; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: radial-gradient(circle at 15% 10%, var(--grain), transparent 40%), var(--bg); color: var(--text); font-family: var(--font); padding: 48px 20px; min-height: 100vh; }
+  main { max-width: 760px; margin: 0 auto; display: grid; gap: 28px; }
+  .kicker { font: 700 12px var(--mono); letter-spacing: .25em; text-transform: uppercase; color: var(--muted); }
+  h1 { font-size: clamp(32px, 6vw, 52px); line-height: 1.05; font-weight: 800; }
+  .repo { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 24px; display: grid; gap: 14px; }
+  .shot { background: var(--frame); border-radius: 16px; min-height: 180px; display: grid; place-items: center; color: #8a8378; font: 14px var(--mono); position: relative; }
+  .pill { position: absolute; top: 12px; right: 12px; background: var(--surface); color: var(--text); border-radius: 999px; padding: 6px 14px; font: 700 13px var(--mono); }
+  .pill b { color: var(--star); }
+  .path { font: 700 clamp(18px, 4vw, 26px) var(--mono); color: var(--link); word-break: break-all; }
+  .desc { font: 15px/1.6 var(--mono); }
+  .meta { font: 12px var(--mono); color: var(--muted); }
+</style>
+</head>
+<body>
+<main>
+  <div class="kicker">Open source shelf</div>
+  <h1>Tools worth a look</h1>
+  <article class="repo">
+    <div class="shot">[ screenshot ]<span class="pill"><b>&#9733;</b> 12.3k stars</span></div>
+    <div class="path">github.com/owner/repo</div>
+    <p class="desc">What it is, how it installs, who it suits.</p>
+    <p class="meta">Licence: MIT &middot; Checked 12 October 2026</p>
+  </article>
+</main>
+</body>
+</html>

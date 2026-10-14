@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Black Electric Blue - Theme</title>
+<style>
+  /* THEME: Black Electric Blue (derived from the @danielmofi1 ranking slides, 13 October 2026)
+     Use for: ranked lists, "best X for Y" cards, tool comparisons where each row has a rank.
+     Dark default; light variant on [data-theme="light"] or prefers-color-scheme.
+     Pairs with Artifacts/templates/ranked-tool-card-black-blue.html. */
+  :root {
+    --bg: #05070b; --surface: #10151f; --border: #26304a; --text: #ffffff; --muted: #9aa6bd; --accent: #2f6df6; --accent-soft: #7aa2f7;
+    --good: #58b86a; --warn: #e8b84a; --radius: 16px;
+    --font: Aptos, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif; --mono: 'Cascadia Mono', Consolas, 'SFMono-Regular', monospace;
+  }
+  @media (prefers-color-scheme: light) { :root:not([data-theme="dark"]) { --bg: #f6f8fc; --surface: #ffffff; --border: #cdd6ea; --text: #0b1220; --muted: #5a667d; --accent: #1f57d6; --accent-soft: #2b5bc4; --good: #23794a; --warn: #8a6400; } }
+  :root[data-theme="light"] { --bg: #f6f8fc; --surface: #ffffff; --border: #cdd6ea; --text: #0b1220; --muted: #5a667d; --accent: #1f57d6; --accent-soft: #2b5bc4; --good: #23794a; --warn: #8a6400; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: var(--bg); color: var(--text); font-family: var(--font); padding: 48px 20px; min-height: 100vh; }
+  main { max-width: 760px; margin: 0 auto; display: grid; gap: 20px; }
+  .kicker { font-size: 12px; font-weight: 700; letter-spacing: .2em; text-transform: uppercase; color: var(--accent-soft); }
+  h1 { font-size: clamp(32px, 7vw, 56px); font-weight: 800; letter-spacing: -.03em; line-height: 1.05; }
+  .row { display: grid; grid-template-columns: 4rem 1fr auto; gap: 14px; align-items: center; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 16px 18px; }
+  .rank { font-size: 40px; font-weight: 800; color: var(--accent); letter-spacing: -.04em; }
+  .name { font-weight: 700; } .sub { color: var(--muted); font-size: 14px; }
+  .tag { font: 600 12px var(--mono); color: var(--accent-soft); border: 1px solid var(--border); border-radius: 999px; padding: 3px 10px; white-space: nowrap; }
+  .meta { color: var(--muted); font-size: 13px; }
+</style>
+</head>
+<body>
+<main>
+  <div class="kicker">Ranking</div>
+  <h1>Seven tools, one verdict each.</h1>
+  <div class="row"><span class="rank">01</span><div><div class="name">First tool</div><div class="sub">Best for: one situation</div></div><span class="tag">checked</span></div>
+  <div class="row"><span class="rank">02</span><div><div class="name">Second tool</div><div class="sub">Best for: another situation</div></div><span class="tag">unverified</span></div>
+  <p class="meta">A rank is the author's opinion until you have measured it yourself.</p>
+</main>
+</body>
+</html>

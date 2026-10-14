@@ -1,0 +1,10 @@
+id,company,industry,employees,region,buyer_role,deal_value_usd,days_open,loss_reason,note
+L1,Mistral Movers,road freight,90,Greece,Owner,18000,30,too small,"Four invoices a week; spreadsheet is fine."
+L2,Nimbus Air Cargo,air freight,1500,Germany,CFO,30000,140,no SAP connector,"Needed a native SAP connector."
+L3,Orbit Parcel,courier,240,Greece,Finance Manager,18000,66,price,"Chose a cheaper tool without exception queue."
+L4,Pinewood Transport,road freight,410,Bulgaria,Finance Director,18000,75,no decision,"Project dropped after reorganisation."
+L5,Quartz Freight,sea freight,820,Cyprus,Head of Operations,30000,92,no SAP connector,"Their ERP is SAP; wanted a native connector."
+L6,Rapid Roll,road freight,70,Greece,Owner,18000,25,too small,"Handles invoices in the accounting package."
+L7,Summit 3PL,3PL,1100,Italy,CFO,30000,130,security,"Required SOC 2 report; we had none."
+L8,Tidal Lines,sea freight,600,Greece,Finance Director,18000,80,no decision,"No budget owner agreed."
+L9,Ultra Cold,cold chain,350,Romania,Finance Manager,18000,58,price,"Went with competitor Ledgerwise at lower price."

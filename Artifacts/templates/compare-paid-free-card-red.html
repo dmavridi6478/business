@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Paid vs Free Swap Card</title>
+<style>
+  /* =====================================================
+     TEMPLATE: Paid vs Free Swap Card
+     Based on the @modelsignal "10 free GitHub repos" carousel (12 October 2026):
+     cool grey ground, a white PAID card beside a brick-red FREE card, a monospace verdict line.
+     Size: 1080x1350 (4:5). One card per swap; duplicate .card.
+     Customise: category, both tool names, prices, the repo facts line, the verdict.
+     Use only prices and counts you have checked, and say what the date of the check is.
+     ===================================================== */
+  :root {
+    --ground: #e4e8f0; --ink: #0d1a33; --muted: #5c6678; --paid-bg: #f6f8fc; --free-bg: #b3341c; --free-fg: #ffffff;
+    --pill-paid: #0d1a33; --pill-free: #ffffff; --pill-free-fg: #b3341c; --accent: #b3341c;
+    --sans: Aptos, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif; --mono: 'JetBrains Mono', 'SFMono-Regular', Consolas, monospace;
+  }
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --ground: #0f1626; --ink: #eef2fb; --muted: #9aa6bd; --paid-bg: #1a2338; --free-bg: #c2412a; --pill-paid: #eef2fb; --accent: #ff7a5c; } }
+  :root[data-theme="dark"] { --ground: #0f1626; --ink: #eef2fb; --muted: #9aa6bd; --paid-bg: #1a2338; --free-bg: #c2412a; --pill-paid: #eef2fb; --accent: #ff7a5c; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: #05070d; display: grid; justify-items: center; padding: 30px 0; font-family: var(--sans); }
+  .card { width: 1080px; height: 1350px; background: var(--ground); color: var(--ink); position: relative; padding: 70px 56px; }
+  .count { position: absolute; top: 70px; right: 56px; font: 700 34px var(--mono); color: var(--muted); letter-spacing: .08em; }
+  h1 { text-align: center; font-size: 112px; font-weight: 800; letter-spacing: -.03em; margin-top: 70px; }
+  .pair { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; margin-top: 90px; }
+  .tool { border-radius: 36px; padding: 120px 32px 40px; text-align: center; position: relative; min-height: 640px; display: grid; align-content: start; justify-items: center; gap: 12px; }
+  .tool.paid { background: var(--paid-bg); box-shadow: 0 10px 40px #0d1a3318; }
+  .tool.free { background: var(--free-bg); color: var(--free-fg); }
+  .tag { position: absolute; top: -34px; left: 50%; transform: translateX(-50%); font: 800 34px var(--mono); letter-spacing: .14em; padding: 14px 34px; border-radius: 40px; }
+  .paid .tag { background: var(--pill-paid); color: var(--paid-bg); } .free .tag { background: var(--pill-free); color: var(--pill-free-fg); }
+  .logo { width: 170px; height: 170px; border-radius: 40px; background: #fff; display: grid; place-items: center; font: 800 56px var(--sans); color: #333; }
+  .name { font-size: 54px; font-weight: 800; margin-top: 16px; }
+  .price { font-size: 110px; font-weight: 800; line-height: 1; }
+  .meta { font: 600 28px var(--mono); letter-spacing: .08em; text-transform: uppercase; opacity: .85; }
+  .yr { align-self: end; font: 600 28px var(--mono); letter-spacing: .1em; text-transform: uppercase; margin-top: 30px; }
+  .big { font-size: 56px; font-weight: 800; }
+  .verdict { margin-top: 60px; text-align: center; font: 500 36px/1.5 var(--mono); }
+  .verdict b { color: var(--accent); }
+  .note { text-align: center; font: 24px var(--mono); letter-spacing: .12em; text-transform: uppercase; color: var(--muted); margin-top: 16px; }
+</style>
+</head>
+<body>
+<section class="card">
+  <div class="count">03/12</div>
+  <h1>Category</h1>
+  <div class="pair">
+    <div class="tool paid"><span class="tag">PAID</span><div class="logo">P</div><div class="name">Paid Tool</div><div class="price">$84</div><div class="meta">Read 11 Oct</div><div class="yr">A year</div><div class="big">$84</div></div>
+    <div class="tool free"><span class="tag">FREE</span><div class="logo">F</div><div class="name">Free Tool</div><div class="price">$0</div><div class="meta">Checked 11 Oct</div><div class="yr">Licence</div><div class="big">LGPL-3.0</div></div>
+  </div>
+  <p class="verdict"><b>Worth trying.</b> One line on the real trade-off: hosting, time, features it does not match.</p>
+  <p class="note">Our call, not theirs</p>
+</section>
+</body>
+</html>

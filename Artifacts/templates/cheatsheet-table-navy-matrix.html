@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cheatsheet Table Matrix (navy)</title>
+<style>
+  /* =====================================================
+     TEMPLATE: Cheatsheet Table Matrix
+     Based on the "Cheatsheet: Machine Learning Algorithms" infographic (14 October 2026):
+     a pale tag, a heavy navy title in capitals, a navy header row whose column labels each carry a short
+     coloured underline, then ruled rows with a small icon chip beside the row name.
+     Size: 1100x1400 (about 4:5). Customise: tag, title, 9 columns, 6 to 16 rows, footer.
+     ===================================================== */
+  :root {
+    --bg: #eef3fb; --panel: #ffffff; --head: #0f2a5e; --head-ink: #ffffff; --ink: #14233f; --muted: #51617d; --line: #cfd9ea; --band: #f5f8fd; --tag: #d7ebf7;
+    --c1: #2f7de1; --c2: #1fa974; --c3: #e0912f; --c4: #8a5be0; --c5: #d9473f; --c6: #1b9fb0;
+    --sans: Aptos, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+  }
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --bg: #0b1226; --panel: #101a33; --head: #1b2f66; --head-ink: #f3f6ff; --ink: #e6ecfa; --muted: #9db0d4; --line: #2a3a63; --band: #0e1730; --tag: #17324a; --c1: #6aa6ff; --c2: #52d39c; --c3: #f0b05e; --c4: #b595ff; --c5: #ff8a80; --c6: #55cbd9; } }
+  :root[data-theme="dark"] { --bg: #0b1226; --panel: #101a33; --head: #1b2f66; --head-ink: #f3f6ff; --ink: #e6ecfa; --muted: #9db0d4; --line: #2a3a63; --band: #0e1730; --tag: #17324a; --c1: #6aa6ff; --c2: #52d39c; --c3: #f0b05e; --c4: #b595ff; --c5: #ff8a80; --c6: #55cbd9; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: #7b8aa8; display: grid; justify-items: center; padding: 30px 0; font-family: var(--sans); }
+  .card { width: 1100px; height: 1400px; background: var(--bg); color: var(--ink); padding: 28px 28px 24px; position: relative; }
+  .tag { display: inline-block; background: var(--tag); color: var(--head); font-weight: 800; letter-spacing: .08em; text-transform: uppercase; font-size: 20px; padding: 6px 18px; border-radius: 999px; }
+  h1 { font-size: 78px; line-height: 1; font-weight: 900; letter-spacing: -.02em; text-transform: uppercase; color: var(--head); margin: 10px 0 20px; text-align: center; }
+  .grid { background: var(--panel); border: 1px solid var(--line); border-radius: 16px; overflow: hidden; }
+  .r { display: grid; grid-template-columns: 1.35fr .9fr 1.1fr 1.3fr 1fr 1fr 1fr 1.1fr 1fr; align-items: center; }
+  .r > div { padding: 10px 9px; font-size: 15px; line-height: 1.25; text-align: center; border-bottom: 1px solid var(--line); min-height: 52px; display: grid; place-items: center; }
+  .r.h > div { background: var(--head); color: var(--head-ink); font-weight: 800; font-size: 14px; letter-spacing: .04em; text-transform: uppercase; border-bottom: 0; min-height: 64px; position: relative; }
+  .r.h > div::after { content: ""; position: absolute; left: 50%; bottom: 8px; width: 26px; height: 4px; border-radius: 2px; transform: translateX(-50%); background: var(--c1); }
+  .r.h > div:nth-child(2)::after { background: var(--c2); } .r.h > div:nth-child(3)::after { background: var(--c3); } .r.h > div:nth-child(4)::after { background: var(--c4); }
+  .r.h > div:nth-child(5)::after { background: var(--c5); } .r.h > div:nth-child(6)::after { background: var(--c2); } .r.h > div:nth-child(7)::after { background: var(--c3); } .r.h > div:nth-child(8)::after { background: var(--c6); } .r.h > div:nth-child(9)::after { background: var(--c4); }
+  .r:nth-child(even):not(.h) > div { background: var(--band); }
+  .r > div.n { display: flex; gap: 10px; justify-content: flex-start; font-weight: 800; text-align: left; }
+  .chip { flex: none; width: 30px; height: 30px; border-radius: 8px; border: 2px solid var(--c1); }
+  .foot { position: absolute; left: 28px; right: 28px; bottom: 6px; font-size: 13px; color: var(--muted); display: flex; justify-content: space-between; }
+</style>
+</head>
+<body>
+<section class="card">
+  <span class="tag">Cheatsheet</span>
+  <h1>Topic in Capitals</h1>
+  <div class="grid">
+    <div class="r h"><div>Item</div><div>Type</div><div>Best use</div><div>Key idea</div><div>Assumes</div><div>Pros</div><div>Cons</div><div>When not to use</div><div>Example</div></div>
+    <div class="r"><div class="n"><span class="chip"></span>First item</div><div>Type A</div><div>One short use</div><div>One short idea</div><div>One assumption</div><div>Simple, fast</div><div>One weakness</div><div>One bad fit</div><div>Real example</div></div>
+    <div class="r"><div class="n"><span class="chip"></span>Second item</div><div>Type B</div><div>One short use</div><div>One short idea</div><div>One assumption</div><div>Accurate</div><div>One weakness</div><div>One bad fit</div><div>Real example</div></div>
+    <div class="r"><div class="n"><span class="chip"></span>Third item</div><div>Type A</div><div>One short use</div><div>One short idea</div><div>None</div><div>Readable</div><div>One weakness</div><div>One bad fit</div><div>Real example</div></div>
+  </div>
+  <div class="foot"><span>Source: yours. Mark any claim you have not checked.</span><span>@yourhandle</span></div>
+</section>
+</body>
+</html>
