@@ -1,0 +1,31 @@
+id,source,employees_band,industry,role,pricing_page_visits,demo_requested,days_since_first_touch,converted
+LD1,inbound,100-250,cold chain,Finance Director,0,1,74,1
+LD2,outbound,500-1000,cold chain,CFO,1,0,78,1
+LD3,inbound,500-1000,cold chain,Finance Director,2,1,61,1
+LD4,referral,1000+,road freight,Owner,0,0,24,0
+LD5,inbound,1000+,3PL,Other,0,0,52,0
+LD6,outbound,1000+,other,Finance Director,0,0,104,0
+LD7,outbound,100-250,cold chain,CFO,0,0,63,0
+LD8,inbound,<100,3PL,CFO,0,0,51,0
+LD9,referral,1000+,other,Finance Manager,3,0,97,0
+LD10,event,250-500,sea freight,Finance Manager,3,0,62,1
+LD11,referral,250-500,road freight,Finance Manager,2,1,53,1
+LD12,outbound,500-1000,cold chain,Owner,0,1,114,1
+LD13,event,100-250,other,Head of Operations,1,0,98,0
+LD14,event,250-500,sea freight,Finance Manager,0,0,35,0
+LD15,inbound,1000+,3PL,Finance Director,2,0,61,0
+LD16,referral,100-250,cold chain,CFO,0,0,117,0
+LD17,event,1000+,cold chain,Finance Manager,4,0,13,0
+LD18,inbound,100-250,courier,Other,1,0,68,0
+LD19,referral,<100,road freight,Other,4,0,54,1
+LD20,referral,<100,courier,Other,0,0,18,0
+LD21,referral,1000+,road freight,Finance Manager,1,0,15,0
+LD22,event,100-250,3PL,Owner,1,0,41,0
+LD23,outbound,500-1000,road freight,Head of Operations,1,1,82,0
+LD24,outbound,500-1000,other,Finance Manager,3,0,33,1
+LD25,event,100-250,3PL,Finance Manager,1,0,100,0
+LD26,event,500-1000,cold chain,Other,4,1,93,0
+LD27,outbound,250-500,3PL,Head of Operations,4,0,73,1
+LD28,inbound,1000+,sea freight,Finance Manager,3,1,46,1
+LD29,referral,250-500,road freight,Finance Manager,0,0,100,0
+LD30,event,<100,other,Finance Manager,0,0,13,0

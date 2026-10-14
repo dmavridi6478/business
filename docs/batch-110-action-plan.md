@@ -26,7 +26,7 @@ File names on disk use the physical numbers 113 and 114 (`scripts/batch113-insta
 
 ## 3. What was verified, and what was not
 
-- Read from the repos on 14 October 2026 (README and LICENSE): rea, freellmapi, substrate, convex-backend, LimeSurvey, coder, harper, meltano, dittofeed, fider, cvat, freescout, rabbitmq-server, OpenSign, Zettlr, miniflux, bagisto, AdGuard Home (WordPress: licence file only). Prismical's repo was not found.
+- Read from the repos on 14 October 2026 (README and LICENSE): rea, freellmapi, substrate, convex-backend, LimeSurvey, coder, harper, meltano, dittofeed, fider, cvat, freescout, rabbitmq-server, OpenSign, Zettlr, miniflux, bagisto, AdGuard Home (WordPress: licence file only). Prismical's repo was found afterwards (`amicalhq/prismical`, MIT).
 - Not obtained: stars, "pushed N days ago" and developer counts on the slides (the GitHub API is out of reach in this session); all paid prices; the contents behind "Comment FREE" and "Comment SALES".
 - SkillSpector, static, standing step applied:
   - REA's agent skill folder: 40, MEDIUM, 12 findings (five real: the unpinned package run; the rest documentation text).
@@ -37,7 +37,7 @@ File names on disk use the physical numbers 113 and 114 (`scripts/batch113-insta
 
 - **Arithmetic (again):** all 12 swaps add to $6,846; the eight listed on the summary slide add to $6,600. The $246 difference is Ecwid, Ulysses, Inoreader and Control D.
 - **"Open source" claim:** Convex is under the Functional Source License 1.1 (Apache 2.0 after a delay), not an open-source licence, although the slide and README call it open source. Self-hosted builds contain a beacon.
-- **Unverified repo:** Prismical (slide: 104 stars; a directory listing: about 14 stars and MIT). Not found at source.
+- **Prismical (resolved later):** the slide shows no URL. A directory listing gave `amicalhq/prismical`; its LICENSE is MIT. The 104-star figure matches the directory, which labels it "last 30 days".
 - **Cover count:** @replace.so says six repos; five are in the archive.
 - **Stale maintenance:** OpenSign is marked "pushed 52 days ago" while the slide still says "Switch this one".
 - **Small swaps cost more than they save:** five of the 12 are $24 to $120 a year.

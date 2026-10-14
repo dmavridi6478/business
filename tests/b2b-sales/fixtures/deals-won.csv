@@ -1,0 +1,13 @@
+id,company,industry,employees,region,buyer_role,deal_value_usd,cycle_days,source,note
+W1,Apex Cargo,road freight,450,Greece,Finance Director,18000,62,referral,"Month-end close took 9 days; wanted it under 5."
+W2,Blue Anchor Shipping,sea freight,900,Cyprus,Head of Operations,30000,95,outbound,"Lost EUR 40k to duplicate carrier invoices last year."
+W3,Cedar Haulage,road freight,380,Greece,Finance Director,18000,48,inbound,"Auditors flagged freight accruals."
+W4,Delta Logistics,3PL,1200,Bulgaria,CFO,30000,120,outbound,"New ERP going live; needed clean carrier data."
+W5,Eastgate Transport,road freight,520,Romania,Finance Director,18000,55,referral,"Three finance clerks spend most of the month matching invoices."
+W6,Fjord Freight,sea freight,760,Greece,Head of Operations,30000,88,inbound,"Disputes with carriers took weeks."
+W7,Gale Couriers,courier,260,Greece,Finance Manager,18000,41,inbound,"Small team, rapid growth, spreadsheets failing."
+W8,Harbor Pallet Network,3PL,640,Italy,CFO,30000,101,outbound,"Private equity owner asked for cost visibility."
+W9,Iris Cold Chain,cold chain,430,Greece,Finance Director,18000,57,referral,"Rate changes not applied consistently."
+W10,Juno Trucking,road freight,300,Cyprus,Finance Manager,18000,39,inbound,"Controller left; process lived in one head."
+W11,Kappa Bulk,sea freight,980,Greece,Head of Operations,30000,110,outbound,"Demurrage charges unchecked."
+W12,Lumen Express,courier,210,Romania,Finance Manager,18000,44,inbound,"Wanted audit trail for carrier charges."

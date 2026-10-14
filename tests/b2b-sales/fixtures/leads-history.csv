@@ -1,0 +1,81 @@
+id,source,employees_band,industry,role,pricing_page_visits,demo_requested,days_since_first_touch,converted
+LD1,outbound,100-250,courier,Owner,3,0,82,0
+LD2,referral,100-250,cold chain,Finance Manager,1,1,56,1
+LD3,inbound,500-1000,other,CFO,4,1,41,0
+LD4,event,1000+,sea freight,Finance Director,4,0,28,1
+LD5,inbound,<100,other,Finance Director,1,0,51,0
+LD6,event,500-1000,road freight,Head of Operations,0,0,47,1
+LD7,outbound,<100,sea freight,Finance Director,1,0,1,0
+LD8,referral,<100,3PL,Owner,4,1,95,1
+LD9,referral,<100,3PL,Finance Director,0,1,89,1
+LD10,inbound,100-250,sea freight,Owner,1,0,105,0
+LD11,referral,<100,sea freight,Head of Operations,0,0,31,1
+LD12,outbound,250-500,cold chain,CFO,3,0,102,0
+LD13,outbound,100-250,road freight,Finance Director,2,1,61,0
+LD14,inbound,500-1000,other,Finance Manager,1,0,29,0
+LD15,referral,<100,courier,Finance Manager,1,0,102,0
+LD16,event,500-1000,courier,CFO,2,1,51,0
+LD17,event,500-1000,3PL,CFO,2,0,106,0
+LD18,outbound,100-250,courier,Finance Director,0,0,42,0
+LD19,event,100-250,other,Finance Manager,2,0,43,0
+LD20,event,1000+,road freight,Finance Director,0,0,111,0
+LD21,referral,100-250,other,CFO,2,0,38,0
+LD22,event,250-500,sea freight,Finance Director,4,0,48,1
+LD23,inbound,100-250,courier,Head of Operations,3,0,91,0
+LD24,event,100-250,3PL,Head of Operations,4,1,26,0
+LD25,referral,<100,road freight,Head of Operations,2,0,70,0
+LD26,event,250-500,road freight,Other,0,0,72,0
+LD27,inbound,500-1000,cold chain,Finance Manager,1,0,11,0
+LD28,event,<100,cold chain,CFO,2,0,40,0
+LD29,outbound,100-250,sea freight,Owner,0,0,118,0
+LD30,outbound,1000+,other,CFO,1,1,52,0
+LD31,event,<100,other,Finance Director,2,0,105,0
+LD32,outbound,250-500,other,CFO,4,1,116,0
+LD33,inbound,100-250,sea freight,Finance Director,0,1,85,0
+LD34,referral,100-250,sea freight,Owner,1,0,26,1
+LD35,event,<100,cold chain,Head of Operations,0,0,24,0
+LD36,referral,500-1000,road freight,Finance Director,2,0,96,0
+LD37,outbound,1000+,courier,Finance Director,3,0,74,0
+LD38,referral,500-1000,3PL,CFO,1,0,73,0
+LD39,referral,<100,other,CFO,1,0,50,0
+LD40,referral,250-500,3PL,Finance Director,0,1,116,0
+LD41,outbound,250-500,3PL,Finance Director,0,1,53,0
+LD42,referral,100-250,cold chain,Head of Operations,2,0,5,0
+LD43,referral,500-1000,3PL,Finance Manager,0,0,117,0
+LD44,event,1000+,3PL,Finance Director,2,0,10,0
+LD45,referral,100-250,sea freight,Finance Manager,1,0,8,1
+LD46,referral,500-1000,sea freight,Other,2,1,57,1
+LD47,referral,250-500,road freight,Finance Director,4,0,19,0
+LD48,event,100-250,road freight,Finance Manager,4,0,88,0
+LD49,outbound,100-250,courier,Owner,0,1,55,1
+LD50,outbound,500-1000,cold chain,Owner,3,0,22,0
+LD51,referral,<100,cold chain,CFO,0,1,108,0
+LD52,referral,<100,road freight,Finance Director,4,0,60,0
+LD53,referral,250-500,3PL,Finance Director,0,0,59,0
+LD54,inbound,1000+,other,Head of Operations,3,1,3,1
+LD55,event,250-500,3PL,Owner,3,0,49,0
+LD56,inbound,1000+,cold chain,Other,3,0,84,0
+LD57,event,100-250,cold chain,Head of Operations,0,0,115,0
+LD58,referral,<100,sea freight,Finance Manager,3,0,28,0
+LD59,event,100-250,sea freight,Finance Manager,3,0,34,0
+LD60,inbound,250-500,road freight,Finance Director,0,0,58,0
+LD61,inbound,500-1000,road freight,Finance Manager,3,1,100,1
+LD62,event,250-500,cold chain,Owner,2,0,106,0
+LD63,inbound,250-500,sea freight,Finance Director,0,1,30,1
+LD64,event,250-500,courier,Other,0,0,113,0
+LD65,inbound,250-500,courier,Finance Manager,1,0,75,0
+LD66,inbound,1000+,other,CFO,3,0,76,1
+LD67,outbound,500-1000,sea freight,Owner,4,0,90,0
+LD68,referral,<100,sea freight,Owner,0,0,33,1
+LD69,outbound,250-500,3PL,CFO,2,0,69,0
+LD70,inbound,500-1000,3PL,Finance Manager,1,1,82,1
+LD71,outbound,250-500,sea freight,Finance Manager,1,1,119,0
+LD72,inbound,500-1000,sea freight,Finance Director,0,0,57,0
+LD73,outbound,250-500,courier,Head of Operations,4,1,26,1
+LD74,event,100-250,sea freight,Finance Director,4,0,47,0
+LD75,outbound,1000+,cold chain,Other,2,0,7,0
+LD76,referral,500-1000,courier,CFO,3,1,97,1
+LD77,inbound,<100,road freight,CFO,0,1,29,0
+LD78,referral,<100,3PL,Finance Manager,2,0,22,0
+LD79,referral,250-500,sea freight,Head of Operations,0,0,58,0
+LD80,inbound,100-250,courier,CFO,3,1,38,1
