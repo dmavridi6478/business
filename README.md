@@ -6070,6 +6070,8 @@ Not done (needs you): plugin installs (`/plugin install paypal@claude-plugins-of
 
 **Report:** [Batch 110 Intake Report](https://claude.ai/artifact/Hz3Rw6MCAUUg8n6srggJ2H) (`Artifacts/business/batch-114-intake-report.html`). Action plan: `docs/batch-110-action-plan.md`; copy-paste prompts: `docs/batch-110-prompts.md`.
 
+**Follow-up (14 October 2026): the 50 B2B sales skills are written and tested.** `b2b-sales-01-...` to `b2b-sales-50-...` plus `b2b-sales-standard`. Structure check 50 of 50; behavioural run 56 cases, 36 pass the strict output checker and 20 fail on untagged derived numbers or checker limits, none on an invented fact. Details, checker changes and SkillSpector findings: `docs/b2b-sales-skills-test-report.md`. Prismical's repo was found: `amicalhq/prismical`, MIT (confirm it is the one on the slide; the slide shows no URL).
+
 **Sources:** @modelsignal ("Save $6,846/year", Part 9; 14 images), @replace.so ("6 GitHub repos so good they shouldn't be free"; 6), @githubnow (second briefing of 13 October 2026; 5), and two chat infographics: "Machine Learning Algorithms" cheatsheet and Prosp "Claude Skills for B2B Sales".
 
 **Added:** skills `oss-swap-savings-table-12-part9`, `replace-so-six-repos-oct-2026`, `github-briefing-oct13-rea-freellmapi-substrate`, `ml-algorithms-cheatsheet-16`, `claude-skills-b2b-sales-50-map`; commands `/ml-algo-pick` and `/b2b-sales-skill` (and `/swap-savings`, `/briefing-oct13-pick` extended); agent `b2b-sales-stage-router`; design templates `cheatsheet-table-navy-matrix`, `skill-folder-explorer-dark`, `repo-pick-card-pixel-grid-dark` and theme `theme-claude-orange-night`; user-run `scripts/batch113-install.sh`.
