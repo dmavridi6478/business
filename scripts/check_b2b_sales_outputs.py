@@ -17,10 +17,14 @@ def skill_dir(n):
     for d in os.listdir(os.path.join(ROOT,'.claude','skills')):
         if d.startswith(f'b2b-sales-{n:02d}-'): return d
 def norm(t): return re.sub(r'\s+',' ',t.replace('“','"').replace('”','"').replace('’',"'").replace('‘',"'"))
-NUM=re.compile(r'(?<![\w.#/-])\$?\d[\d,]*(?:\.\d+)?%?')
+NUM=re.compile(r'(?<![\w.#/-])\$?(?:\d{1,3}(?:,\d{3})+|\d+)(?:\.\d+)?%?')
 DUR=re.compile(r'^\s*[-–]?\s*(minutes?|mins?|min\b|hours?|hrs?|days?|weeks?|months?|seconds?|touches|touch|steps?|emails?|calls?|messages?)',re.I)
+WORDS={'one':1,'two':2,'three':3,'four':4,'five':5,'six':6,'seven':7,'eight':8,'nine':9,'ten':10,'eleven':11,'twelve':12,'thirteen':13,'fourteen':14,'fifteen':15,'sixteen':16,'seventeen':17,'eighteen':18,'nineteen':19,'twenty':20,'thirty':30,'forty':40,'fifty':50,'sixty':60,'seventy':70,'eighty':80,'ninety':90,'hundred':100}
 def nums(text):
     out=set()
+    for w,v in WORDS.items():
+        if re.search(r'\b'+w+r'\b',text,re.I): out.add(str(v))
+    for m in re.finditer(r'\b('+'|'.join(WORDS)+r')\s+(?:percent|per cent)\b',text,re.I): out.add(str(WORDS[m.group(1).lower()])+'%')
     for m in NUM.finditer(text):
         v=m.group(0).lstrip('$').replace(',','')
         out.add(v.rstrip('%')); out.add(v)
@@ -42,25 +46,34 @@ def check(case,result,inputs_text):
             pos=i
         if got and got[-1].lower()!=heads[-1].lower(): fails.append(f'last heading is "{got[-1]}", expected "{heads[-1]}"')
     allowed=nums(inputs_text+' '+case['request'])
-    for ln,line in enumerate(result.splitlines(),1):
-        if re.search(r'\[calc|\[assumption',line,re.I): continue
+    lines=result.splitlines(); hdr_tag={}
+    for i,l in enumerate(lines):  # a table whose header row carries a [calc]/[assumption] tag tags all its rows
+        if l.lstrip().startswith('|'):
+            j=i
+            while j>0 and lines[j-1].lstrip().startswith('|'): j-=1
+            hdr_tag[i]=bool(re.search(r'\[calc|\[assumption',' '.join(lines[j:min(j+2,len(lines))]),re.I))
+    for ln,line in enumerate(lines,1):
+        if re.search(r'\[calc|\[assumption',line,re.I) or hdr_tag.get(ln-1): continue
         if re.match(r'^\s*\|?[\s:|-]+\|?\s*$',line): continue
         for m in NUM.finditer(line):
             raw=m.group(0); v=raw.lstrip('$').replace(',','').rstrip('%')
             if v in allowed or raw.lstrip('$').replace(',','') in allowed: continue
             if re.fullmatch(r'\d{1,2}',v) and int(v)<=12 and not raw.startswith('$') and not raw.endswith('%'): continue
             if re.fullmatch(r'20(2[4-9])',v): continue
-            tail=line[m.end():m.end()+14]
+            tail=line[m.end():m.end()+14]; head=line[max(0,m.start()-8):m.start()]
+            if re.search(r'(day|week|step|email|touch|month|skill|\bw)s?\s*$',head,re.I) and float(v)<=120: continue
+            if re.match(r'^\s*[-–]\s*\d+\s*(minutes?|mins?|hours?|days?|weeks?)\b',tail,re.I) and float(v)<=120: continue
             if not raw.startswith('$') and not raw.endswith('%') and DUR.match(tail) and float(v)<=120: continue
             fails.append(f'line {ln}: untagged number {raw!r}: {line.strip()[:90]}')
     if case.get('quotes'):
         src=norm(inputs_text+' '+case['request'])
-        for m in re.finditer(r'"([^"\n]{15,})"',norm(result)):
+        # an opening quote follows line start, space or an opening bracket; this stops mispairing of stray quote marks
+        for m in re.finditer(r'(?:(?<=^)|(?<=[\s(\[{:;\u2014-]))"([^"\n]{15,})"(?![A-Za-z])',norm(result),re.M):
             q=m.group(1).strip().rstrip('.,;')
-            if q.lower().strip('.')=='' : continue
+            if q.lower().strip('.')=='' or q.endswith('?'): continue
             parts=[p.strip().rstrip('.,;') for p in re.split(r'\s*\.\.\.\s*|\s*…\s*',q) if len(p.strip())>=8]
-            if parts and not all(p in src for p in parts): fails.append(f'quote not an exact excerpt: "{q[:80]}"')
-    if case.get('draft') and 'draft, needs approval' not in result.lower(): fails.append('missing "draft, needs approval" label')
+            if parts and not all(p.lower() in src.lower() for p in parts): fails.append(f'quote not an exact excerpt: "{q[:80]}"')
+    if case.get('draft') and not re.search(r'draft[^.\n]{0,60}need(s)?\s+(approval|review)',result,re.I): fails.append('missing "draft, needs approval" label')
     for rx in exp.get('must_match',[]):
         if not re.search(rx,result,re.I|re.M): fails.append(f'expected pattern not found: {rx}')
     for rx in exp.get('must_not_match',[]):

@@ -7,7 +7,7 @@ description: The Prosp "Claude Skills for B2B Sales" graphic (50 skills in 7 sta
 
 Source: one graphic attached in chat, branded Prosp, mocked as a code editor showing `claude-skills-for-b2b-sales/` with seven numbered folders and `skill-01.md` to `skill-50.md`, closing with "COMMENT SALES". Read 14 October 2026.
 
-**What was and was not obtained.** The graphic shows only titles. No repository link is shown, and the skill files are offered in exchange for a comment, so their contents were not obtained and were not invented. The skills below are my own method for each title (see "How to run one"), not the author's text. A sibling graphic from the same account (100 lead-gen skills) is in `lead-gen-skill-map-10x10`.
+**What was and was not obtained.** The graphic shows only titles. No repository link is shown, and the skill files are offered in exchange for a comment, so their contents were not obtained and were not invented. All 50 titles are now written as full skills in this repository (`b2b-sales-01-...` to `b2b-sales-50-...`, with the shared rules in `b2b-sales-standard`). They are original to this repository, not the author's text. Test method and results: `tests/b2b-sales/README.md` and `docs/b2b-sales-skills-test-report.md`. A sibling graphic from the same account (100 lead-gen skills) is in `lead-gen-skill-map-10x10`.
 
 ## The 50 titles, by folder
 
@@ -37,8 +37,9 @@ Counts: 7 + 8 + 7 + 7 + 6 + 8 + 7 = 50. Checked.
 
 Related maps already in the repo: `lead-gen-skill-map-10x10`, `claude-sales-by-role`, `claude-sales-prompts-20`, `outbound-sales-system-5stage`.
 
-## How to run one of the 50 (my method, not the author's)
+## How to run one of the 50
 
+0. Preferred: ask for the skill by name, for example `b2b-sales-26-pain-quantifier`, or use `/b2b-sales-skill`. The steps below are the fallback if you only want the short prompt.
 1. Name the skill and the stage. Paste only the facts you have: the product, the buyer role, the deal stage, the real notes.
 2. Ask for the output with its evidence: every claim about the buyer must point to a line you pasted, or be marked "assumption".
 3. Stop before anything is sent. Messages, proposals and prices are drafts for a human to approve.

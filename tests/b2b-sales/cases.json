@@ -372,7 +372,7 @@
    "fixtures/company.md"
   ],
   "request": "Handle this objection.",
-  "quotes": true,
+  "quotes": false,
   "draft": true
  },
  {

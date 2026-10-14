@@ -11,6 +11,8 @@ Every skill named `b2b-sales-NN-...` follows these rules. They exist because sal
 
 - A fact taken from the user's inputs needs no tag, but must be traceable. When asked, point to the input line.
 - A number you computed carries `[calc: formula]`, for example `[calc: 7/10]` or `[calc: 12 x 3,000]`. The formula uses only input numbers or tagged assumptions.
+- A figure is computed if it is a sum, difference, ratio, percentage, rate, average, threshold, count of rows or a number of days between dates, even when the arithmetic is easy. Tag every one. Day counts, derived prices, ratios and thresholds are the figures most often left untagged by mistake.
+- In a table, put `[calc: ...]` in the header cell of each computed column, or on every row. A computed number in prose carries its tag on the same line. Restating a number that is in the inputs needs no tag.
 - A number or fact that is not in the inputs and is needed to continue carries `[assumption]`. Assumptions never enter totals presented as facts; keep them in a separate line or range.
 - Small counting numbers in prose (for example "three questions") need no tag.
 
