@@ -1,0 +1,38 @@
+---
+name: linkedin-9-lead-gen-strategies
+description: The "9 LinkedIn Strategies for Lead Generation" prompt sheet (ContentSmash / oscarhoole.com) - nine ready-to-paste role prompts (authority content, network building, lead magnets, engagement, DM sequences, profile, repurposing, social proof, conversion tracking) transcribed word for word, with the limits the sheet leaves out (unverified "100+ leads" claim, automation and engagement-bait risk, approval gates) and a map to the connectors this account already has.
+---
+
+# 9 LinkedIn strategies for lead generation
+
+Source: one infographic, "9 LinkedIn Strategies For Lead Generation - Use these to quickly generate 100+ inbound leads", footer "Download this complete LinkedIn lead generation playbook from ContentSmash. Join 12,000+ founders building authority: oscarhoole.com". Transcribed 15 October 2026. The "100+ inbound leads" and "12,000+ founders" figures are the author's marketing claims; nothing here verifies them.
+
+Replace `[your niche]` / ICP with the real one before use. Each prompt is a system-style role prompt: paste it, then add your business, ICP, offer and proof.
+
+## The nine prompts (verbatim)
+
+1. **Authority Content Strategy** - "Act as an industry expert. Create content that positions you as the go-to authority in [your niche]. Share client wins, behind-the-scenes insights, and contrarian takes. Post 5-7 times per week with strategic messaging that builds trust. Include specific results and case studies. Focus on problems your ICP faces daily. Use formats like "Here's what I learned after..." or "Most founders get this wrong..." Keep posts under 1,300 characters for maximum engagement."
+2. **Strategic Network Building** - "You're targeting decision makers. Connect with 20-30 ideal prospects daily using LinkedIn Sales Navigator. Filter by company size, role, and industry. Send personalized connection requests mentioning something specific from their profile or recent activity. Avoid generic messages. Build relationships before pitching. Focus on quality over quantity. Track connection acceptance rates and optimize your approach based on what works."
+3. **Lead Magnet Distribution** - "Act as a value provider. Create high-value resources your ICP actually wants. Share frameworks, templates, or case studies through LinkedIn posts. Use clear CTAs like "Comment 'FRAMEWORK' for the template." Gate valuable content behind email capture. Promote lead magnets 3-4 times per week. Test different formats: PDFs, video walkthroughs, or exclusive communities. Track conversion rates and double down on what performs best."
+4. **Engagement Amplification** - "You're building social proof. Engage meaningfully on your ideal prospects' content within 30 minutes of them posting. Leave thoughtful comments that add value, not generic praise. Share insights from your experience. Ask intelligent questions that spark discussion. This puts you on their radar consistently. Spend 15-20 minutes daily engaging strategically. Focus on posts from your target audience, not random content."
+5. **Direct Message Sequences** - "Act as a relationship builder. Send personalized DMs to connections who engage with your content or visit your profile. Start conversations, don't pitch immediately. Reference their recent posts or company updates. Use the formula: compliment + question + value offer. Keep initial messages under 50 words. Follow up consistently but not aggressively. Track response rates and refine your messaging based on what generates replies."
+6. **Profile Optimization System** - "You're creating a conversion machine. Optimize your LinkedIn profile as a landing page for your ideal clients. Use a professional headshot, compelling headline that states your value proposition, and a summary that speaks directly to your ICP's pain points. Include social proof, client results, and a clear CTA. Update your featured section with case studies and testimonials. Make it easy for prospects to understand how you help them."
+7. **Content Repurposing Engine** - "Act as a content multiplier. Turn one piece of successful content into 10 different formats. Transform client case studies into posts, carousels, videos, and stories. Repurpose webinar content into LinkedIn articles. Break down long-form content into bite-sized posts. Use different angles for the same core message. This maximizes your content ROI and ensures consistent posting without constant creation. Track which formats perform best for your audience."
+8. **Social Proof Amplification** - "You're building credibility at scale. Systematically collect and showcase client testimonials, case studies, and results. Create posts highlighting specific client wins with permission. Share screenshots of positive feedback and measurable outcomes. Use video testimonials when possible. Feature client logos and success metrics. This builds trust with prospects who see others achieving results. Update social proof regularly to keep content fresh and relevant."
+9. **Conversion Tracking System** - "Act as a data-driven marketer. Track every lead source, engagement metric, and conversion point. Use UTM parameters for links, monitor profile views, and measure content performance. Identify which posts generate the most leads and double down on similar content. Track the customer journey from first touch to closed deal. Use this data to optimize your strategy continuously. Set up monthly reviews to analyze what's working and eliminate what isn't."
+
+## What the sheet leaves out
+
+- **Order matters.** 6 (profile) and 8 (proof) come first in practice: prompts 2, 4 and 5 send prospects to your profile, so an unready profile wastes every touch. Suggested order: 6, 8, 1, 7, 4, 2, 5, 3, 9.
+- **Only strategy 9 can show whether any of this works.** Without a lead log (source, first touch, reply, call, close) the other eight are activity, not results.
+- **Automation risk.** Strategies 2 and 5 can be turned into bots; LinkedIn's terms are reported (by third-party tool vendors, not read from LinkedIn here) to prohibit automated tools. Connection-request limits quoted online disagree (roughly 80-200 a week or a day, depending on the source and account) and none is confirmed by LinkedIn. Treat "20-30 a day" as a ceiling to stay well under, done by a person.
+- **Engagement bait.** "Comment 'FRAMEWORK' for the template" (strategy 3) is a common pattern; LinkedIn's policy line, as quoted by vendors, is not to "artificially increase engagement". It is safest when the DM delivers a real resource immediately. Test it against reach, not assumption.
+- **Posting volume.** 5-7 posts a week (strategy 1) conflicts with advice elsewhere that consistency and quality beat frequency; the 1,300-character figure is a heuristic, not a LinkedIn limit. Test your own audience (see `linkedin-algorithm-2026-claims`).
+- **Permission.** Strategy 8 names clients: get written permission first.
+- **GDPR.** Tracking leads (strategy 9) and storing profile data makes you a controller under GDPR for EU contacts: log a lawful basis and honour deletion requests.
+
+## Connectors already in this account that map to the prompts
+
+Taplio (LinkedIn drafts, scheduling, post analytics, find posts to comment on, connection requests), Typefully (drafts, scheduling), postzen-linkedin and postonce (need authorising). None was used in this session; everything outward-facing (publish, comment, connect, DM) stays behind explicit approval - see the `linkedin-lead-gen-agent` agent. Use `/linkedin-lead-gen`.
+
+See also `linkedin-strategy`, `linkedin-virality-playbook`, `linkedin-b2b-sales-levels`, `linkedin-prospecting-8-systems`, `linkedin-signal-outreach`, `copywriting`.

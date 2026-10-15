@@ -5,7 +5,9 @@ description: Five adversarial premortem prompts from @ai_slacker — run before 
 
 # Premortem Prompts
 
-Source: @ai_slacker
+Source: @ai_slacker (7 slides: cover, "Why you need this", steps 1-5; wording below checked against the slides on 15 October 2026).
+
+**Why it works (slide 2):** ask "is this a good plan?" and the model goes looking for reasons to say yes, so you build on something broken and find out weeks later. A premortem flips the question: tell it the plan has already failed and make it explain why. Psychologist Gary Klein published the method in Harvard Business Review in 2007 ("Performing a Project Premortem"); it gives everyone permission to name the risks before they hit. The cover says "a Nobel Prize winner called it the best decision tool there is" without naming him (Daniel Kahneman is widely reported to have said this; unverified here).
 Run these **before** committing to a launch, strategy, or major decision — not after.
 A premortem assumes the plan has already failed and works backwards from failure.
 
@@ -16,7 +18,7 @@ A premortem assumes the plan has already failed and works backwards from failure
 Forensic failure analyst. Forces month-by-month autopsy tied to details you actually gave.
 
 ```
-You're a forensic failure analyst. My plan: [describe it in full, with timeline, budget, and what success looks like]. It's 6 months from today and this plan failed completely. Write the autopsy. Give me the 7 most likely causes of death, ranked, and for each: what killed it, how it unfolded month by month, the assumption I held that allowed it, and the first warning sign I'd have seen. Every failure traces back to a detail I gave you or you cut it. No generic advice. Never reassure me.
+You are a forensic failure analyst. My plan: [describe it in full, with timeline, budget, and what success looks like]. It is 6 months from today and this plan has failed completely. Write the autopsy. Give me the 7 most likely causes of death, ranked. For each one: what killed it, how it unfolded month by month, the assumption I held which let it happen, and the first warning sign I would have seen. Tie every failure to a detail I gave you, or drop it. No generic advice. Never reassure me.
 ```
 
 ---
@@ -26,7 +28,7 @@ You're a forensic failure analyst. My plan: [describe it in full, with timeline,
 Forces ranking of failures and surfaces the hidden assumption.
 
 ```
-From those [N] failures, tell me which is MOST LIKELY and which is MOST DANGEROUS, and explain why they're different. Then name the single biggest hidden assumption I'm making that I don't realise is an assumption. Be blunt. If my plan has a fatal flaw, say the words.
+Of those 7 failures, tell me which one is most likely and which one is most dangerous, and explain why they are not the same. Then name the single biggest hidden assumption I am making without realising it is an assumption. Be blunt. If my plan has a fatal flaw, say it in plain words.
 ```
 
 **What this surfaces:** the difference between "common" failure and "catastrophic" failure — they are usually not the same item.
@@ -38,7 +40,7 @@ From those [N] failures, tell me which is MOST LIKELY and which is MOST DANGEROU
 Rewrites the plan with every failure mode closed off, plus a pre-launch checklist with walk-away criteria.
 
 ```
-Rewrite my plan with every one of those failure modes closed off. Show me what changed and why. Then give me a pre-launch checklist of 3 to 5 things I must verify before I execute anything, and tell me what result on each would mean I should walk away entirely.
+Rewrite my plan with every one of those failure modes closed off. Show me what changed and why. Then give me a pre-launch checklist of 3 to 5 things I must verify before I act, and the result on each which should make me walk away entirely.
 ```
 
 ---
@@ -48,7 +50,7 @@ Rewrite my plan with every one of those failure modes closed off. Show me what c
 Play the competitor. Surfaces timing vulnerabilities and moves you've already discounted.
 
 ```
-Now play the person who benefits most from my plan failing — a competitor, a rival, someone who wants my spot. You've seen my plan. Tell me exactly where you'd attack it, what you'd do the week I launch, and the move I'd never see coming.
+Now play the person who gains most if my plan fails: a competitor, a rival, someone who wants my spot. You have seen my plan. Tell me exactly where you would attack it, what you would do the week I launch, and the move I would never see coming.
 ```
 
 **What this surfaces:** competitive blind spots, timing vulnerabilities, and the moves you've already discounted as "unlikely."
@@ -70,19 +72,19 @@ For each failure mode, give me one measurable signal that would tell me it's sta
 ```
 I want to run a premortem on this plan before I commit to it.
 
-My plan: [paste your full plan here]
+My plan: [describe it in full, with timeline, budget and what success looks like]
 
-Step 1 — THE PREMORTEM PROMPT
-You're a forensic failure analyst. It's 6 months from today and this plan failed completely. Write the autopsy. Give me the 7 most likely causes of death, ranked, and for each: what killed it, how it unfolded month by month, the assumption I held that allowed it, and the first warning sign I'd have seen. Every failure traces back to a detail I gave you or you cut it. No generic advice. Never reassure me.
+Step 1 — THE PREMORTEM
+You are a forensic failure analyst. It is 6 months from today and this plan has failed completely. Write the autopsy. Give me the 7 most likely causes of death, ranked. For each one: what killed it, how it unfolded month by month, the assumption I held which let it happen, and the first warning sign I would have seen. Tie every failure to a detail I gave you, or drop it. No generic advice. Never reassure me.
 
 Step 2 — THE VERDICT
-From those 7 failures, tell me which is MOST LIKELY and which is MOST DANGEROUS, and explain why they're different. Then name the single biggest hidden assumption I'm making that I don't realise is an assumption. Be blunt. If my plan has a fatal flaw, say the words.
+Of those 7 failures, tell me which one is most likely and which one is most dangerous, and explain why they are not the same. Then name the single biggest hidden assumption I am making without realising it is an assumption. Be blunt. If my plan has a fatal flaw, say it in plain words.
 
 Step 3 — THE REBUILD
-Rewrite my plan with every one of those failure modes closed off. Show me what changed and why. Then give me a pre-launch checklist of 3 to 5 things I must verify before I execute anything, and tell me what result on each would mean I should walk away entirely.
+Rewrite my plan with every one of those failure modes closed off. Show me what changed and why. Then give me a pre-launch checklist of 3 to 5 things I must verify before I act, and the result on each which should make me walk away entirely.
 
 Step 4 — THE ADVERSARY
-Now play the person who benefits most from my plan failing — a competitor, a rival, someone who wants my spot. You've seen my plan. Tell me exactly where you'd attack it, what you'd do the week I launch, and the move I'd never see coming.
+Now play the person who gains most if my plan fails: a competitor, a rival, someone who wants my spot. You have seen my plan. Tell me exactly where you would attack it, what you would do the week I launch, and the move I would never see coming.
 
 Step 5 — THE TRIPWIRE
 For each failure mode, give me one measurable signal that would tell me it's starting to happen, and the exact week I should check for it. I want tripwires, not vibes.

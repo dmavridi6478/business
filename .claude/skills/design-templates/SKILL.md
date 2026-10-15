@@ -352,3 +352,10 @@ Uses the existing `photo-scrim-white` theme; placeholder handle `@yourhandle`; n
 |---|---|---|
 | `grey-teal-guide` | bg `#E7E5E4` (sampled), number line `#CEE4DF` (sampled), navy `#0F2D3A` and teal `#8CC1B5` (eyeballed), red `#D8342C`, amber `#F2A93B`, green `#2E9D4F` | Oswald 700 for the title, Inter for body |
 | GTM roadmap (reference only; existing template `gtm-stage-three-column` is close) | black `#0A0A0A` (sampled), purple `#60369E` (sampled), yellow `#F0EF4B` (nearly sampled), green block `#B8F56A` (eyeballed) | Inter 800 |
+
+## Batch 107 additions - three templates and one theme (rendered and checked in headless Chromium, 15 October 2026)
+
+- **A 3x3 grid of numbered prompt tiles, each styled as a chat composer** (pastel header per tile, serif title with highlighted word, dark footer bar; pattern from the ContentSmash "9 LinkedIn Strategies" sheet) -> `templates/prompt-tile-grid-9.html`
+- **A PAID vs FREE comparison card** (cool grey canvas, rust-red free panel, monospace labels, verdict line, "figures unverified" note; pattern from @modelsignal) -> `templates/paid-vs-free-swap-card.html`
+- **A bento infographic for "how an algorithm works"** with a format table that carries an **evidence column** (published / practitioner / unsourced) and a signal-order box; responsive, light and dark -> `templates/linkedin-algorithm-bento.html`
+- **Theme `Artifacts/theme-signal-grey-rust.html`** - tokens: bg `#E9EDF2`, surface `#F3F5FA`, ink navy `#0F1B2D`, rust `#B0331A` (dark mode `#FF7A5C`), muted `#5A6B86`; Aptos with a monospace label font.

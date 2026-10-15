@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Algorithm explainer bento</title>
+<style>
+  /* Template: single-page "how a feed algorithm works" bento infographic - hero, state box, signal comparison table,
+     impact matrix, flow, checklist. Pattern from the smarterwithai.news LinkedIn 2026 graphic, with an evidence column
+     added so claims are graded instead of asserted. Responsive: 3 columns wide, 1 column on phones. */
+  :root { --bg: #eef3fb; --card: #fff; --ink: #14233a; --muted: #5b6b86; --line: #d3deee; --blue: #2b6bd6; --blue2: #dfe9fb; --ok: #17703a; --warn: #8a5a00; --bad: #a11d2a; --font: Aptos, "Segoe UI", system-ui, sans-serif; }
+  @media (prefers-color-scheme: dark) { :root { --bg: #0f1624; --card: #172136; --ink: #e8eefb; --muted: #9fb0cc; --line: #2a3a58; --blue: #7aa7f5; --blue2: #1f2f4f; --ok: #6fd18f; --warn: #f0c261; --bad: #ff8d98; } }
+  * { box-sizing: border-box; margin: 0; }
+  body { background: var(--bg); color: var(--ink); font-family: var(--font); font-size: 11pt; padding: 24px 16px 48px; }
+  .wrap { max-width: 1100px; margin: 0 auto; }
+  header { text-align: center; padding-block: 8px 20px; }
+  h1 { font-size: 32pt; line-height: 1.1; }
+  h1 em { font-style: normal; color: var(--blue); }
+  .sub { color: var(--muted); margin-top: 6px; }
+  .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+  .box { background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 16px 18px; min-width: 0; }
+  .span2 { grid-column: span 2; } .span3 { grid-column: span 3; }
+  h2 { font-size: 14pt; margin-bottom: 8px; }
+  ul { padding-left: 18px; display: grid; gap: 4px; font-size: 10.5pt; }
+  .take { margin-top: 10px; background: var(--blue2); border-radius: 6px; padding: 8px 10px; font-weight: 700; font-size: 10.5pt; }
+  table { width: 100%; border-collapse: collapse; font-size: 10pt; }
+  th, td { padding: 7px 8px; border-bottom: 1px solid var(--line); text-align: center; vertical-align: top; }
+  th { background: var(--blue2); font-size: 9.5pt; }
+  .bar { height: 8px; border-radius: 4px; background: var(--blue); margin-inline: auto; }
+  .g { font-weight: 700; } .g.ok { color: var(--ok); } .g.warn { color: var(--warn); } .g.bad { color: var(--bad); }
+  .flow { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; justify-content: center; }
+  .flow span { border: 1px solid var(--line); background: var(--blue2); padding: 6px 10px; border-radius: 6px; font-size: 10pt; text-align: center; }
+  .rank { display: grid; gap: 6px; } .rank div { background: var(--blue2); border-radius: 6px; padding: 7px 10px; font-size: 10.5pt; }
+  .rank b { color: var(--blue); margin-right: 6px; }
+  .tw { overflow-x: auto; }
+  @media (max-width: 800px) { .grid { grid-template-columns: 1fr; } .span2, .span3 { grid-column: auto; } table { min-width: 560px; } h1 { font-size: 26pt; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header><h1>How the feed <em>works</em></h1><p class="sub">Relevance + dwell time + conversation depth - claims graded by evidence.</p></header>
+  <div class="grid">
+    <section class="box span2"><h2>The state of the platform</h2>
+      <ul><li>Reach is selective: relevance beats volume.</li><li>Quality of engagement outweighs raw impressions.</li><li>Value-led content beats promotion.</li><li>Thoughtful comments beat short replies.</li></ul>
+      <p class="take">Key takeaway: create value, spark discussion, earn time-on-post.</p></section>
+    <section class="box"><h2>Distribution (simplified)</h2><div class="flow"><span>Post</span>→<span>Test audience</span>→<span>Early signals</span>→<span>Expanded reach</span>→<span>Resurfacing</span></div></section>
+    <section class="box span2"><h2>Format comparison</h2><div class="tw"><table>
+      <tr><th>Format</th><th>Best for</th><th>Watch-out</th><th>Relative</th><th>Evidence</th></tr>
+      <tr><td>Carousel documents</td><td>Deep dives</td><td>Time to create</td><td><div class="bar" style="width:92%"></div></td><td class="g warn">Practitioner</td></tr>
+      <tr><td>Native video</td><td>Demos</td><td>Needs quality</td><td><div class="bar" style="width:62%"></div></td><td class="g bad">Unsourced</td></tr>
+      <tr><td>Polls</td><td>Quick feedback</td><td>Short lifespan</td><td><div class="bar" style="width:42%"></div></td><td class="g bad">Unsourced</td></tr>
+      <tr><td>Text only</td><td>Stories, hooks</td><td>Can get lost</td><td><div class="bar" style="width:22%"></div></td><td class="g bad">Unsourced</td></tr></table></div></section>
+    <section class="box"><h2>Signal order (as claimed)</h2><div class="rank"><div><b>1</b>Reposts</div><div><b>2</b>Meaningful comments</div><div><b>3</b>Dwell time <span class="g ok">published</span></div><div><b>4</b>Saves</div><div><b>5</b>Likes</div></div></section>
+    <section class="box span3"><h2>Checklist</h2><ul><li>Post when your audience is active.</li><li>Write an opening line that earns the "See more" click.</li><li>Keep it concise but substantial; use spacing.</li><li>Pair insight with a visual.</li><li>Ask a specific question ("What would you do?"), not "Thoughts?".</li></ul></section>
+  </div>
+</div>
+</body>
+</html>

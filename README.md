@@ -6017,3 +6017,19 @@ Not done (needs you): plugin installs (`/plugin install paypal@claude-plugins-of
 **Source problems:** the revenue-system list repeats six roles; interview replacement lines are templates that must not claim things you have not done; GTM customer-count thresholds are rules of thumb.
 
 **Not done:** nothing installed; no connector changed (OpenFlowKit entry still unapplied; Midpage, Sentry and Supabase need your authorisation).
+
+## Batch 107 — two iCloud archives and two infographics attached in chat (15 October 2026)
+
+**Report:** Batch 107 Intake Report (`Artifacts/business/batch-111-intake-report.html`; the published link is in the pull request).
+
+**Sources:** 58 images - @ai_slacker premortem (7), @modelsignal paid-to-free swaps Parts 5 and 11 (26), @githubnow briefings of 28 Sept, 13 Oct and 14 Oct (15), @stackfloai first-impression prompts (8), plus the ContentSmash "9 LinkedIn Strategies for Lead Generation" sheet and the smarterwithai.news "How the New LinkedIn Algorithm Works 2026" graphic attached in chat.
+
+**Added:** skills `linkedin-9-lead-gen-strategies`, `linkedin-algorithm-2026-claims`, `first-impression-5-prompts`, `modelsignal-free-swaps-22`, `githubnow-trending-sep-oct-2026`; vendored (MIT, from `mattpocock/skills`) `grilling` and `domain-modeling`; commands `/linkedin-lead-gen`, `/linkedin-algorithm-check`, `/first-impression`, `/grill`, `/grill-with-docs`; agents `linkedin-lead-gen-agent` (draft-only) and `premortem-analyst`; design templates `prompt-tile-grid-9`, `paid-vs-free-swap-card`, `linkedin-algorithm-bento` and theme `theme-signal-grey-rust`; user-run `scripts/batch111-install.sh`.
+
+**Changed:** `ai-slacker-premortem` now uses the slides' exact wording and adds the "why it works" slide; `/premortem` runs the five steps instead of pointing at another skill.
+
+**Already existed, not duplicated:** Hindsight, Paperclip and CLI-Anything entries (`agent-memory-repos`, `agent-repos-week-5`), `open-source-swap-stack-8`, `self-hosted-docker-stack`, the `linkedin-*` skills.
+
+**Source problems:** Part 5's $4,608 headline covers ten swaps while its summary slide lists eight ($4,500); several "free" tools are AGPL, GPL, OSL or Elastic License; `ntdevlabs/tiny11builder` has no licence and its NOTICE denies redistribution rights; the LinkedIn "100+ leads" claim and the algorithm graphic's signal ranking are unsourced; stars and "pushed today" labels are unverified.
+
+**Not done:** nothing installed or run; no stars, forks, comments, posts or LinkedIn messages made; no connector changed (postzen-linkedin and postonce need your authorisation); no agent-building guide or connector reference was in the files.

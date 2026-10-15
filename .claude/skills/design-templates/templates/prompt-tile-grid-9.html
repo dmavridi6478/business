@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Prompt tile grid (9)</title>
+<style>
+  /* Template: 9 numbered prompt tiles in a 3x3 grid, each styled like a chat composer.
+     Pattern from the ContentSmash "9 LinkedIn Strategies" sheet. Canvas 800x1000 (4:5).
+     Customise: title, subtitle, nine {number, heading, prompt text}, footer line, per-tile --c (header colour) and --t (tint). */
+  :root {
+    --bg: #f3f6f3; --ink: #14342b; --hl: #c7efae; --font: Aptos, "Segoe UI", system-ui, sans-serif; --serif: Georgia, "Times New Roman", serif;
+  }
+  * { box-sizing: border-box; margin: 0; }
+  body { background: #d7dcd7; font-family: var(--font); display: grid; place-items: center; min-height: 100vh; padding: 16px; }
+  .poster { width: 800px; height: 1000px; background: var(--bg); background-image: linear-gradient(#e6ece6 1px, transparent 1px), linear-gradient(90deg, #e6ece6 1px, transparent 1px); background-size: 20px 20px; display: flex; flex-direction: column; overflow: hidden; }
+  header { text-align: center; padding: 26px 24px 8px; }
+  h1 { font-family: var(--serif); font-size: 44px; line-height: 1.05; color: var(--ink); }
+  h1 span { display: inline-block; background: var(--hl); padding: 2px 22px; margin-top: 8px; }
+  .sub { font-family: var(--serif); font-style: italic; font-size: 18px; color: #2c3d37; margin: 14px 0 12px; }
+  .grid { flex: 1; display: grid; grid-template-columns: repeat(3, 1fr); grid-template-rows: repeat(3, 1fr); gap: 16px; padding: 8px 26px 14px; min-height: 0; }
+  .tile { background: var(--t); border: 1px solid color-mix(in srgb, var(--c) 30%, white); border-radius: 12px; padding: 7px; display: flex; flex-direction: column; min-height: 0; }
+  .head { background: var(--c); color: #fff; border-radius: 8px; padding: 6px 10px; font-weight: 700; font-size: 12.5px; display: flex; gap: 8px; align-items: center; }
+  .head b { background: rgba(255,255,255,.28); border-radius: 4px; padding: 0 6px; }
+  .body { background: #fff; border-radius: 8px; margin-top: 7px; padding: 9px 10px 6px; flex: 1; display: flex; flex-direction: column; min-height: 0; }
+  .body p { font-size: 11px; line-height: 1.4; color: #25302c; flex: 1; overflow: hidden; }
+  .bar { display: flex; align-items: center; gap: 9px; color: #444; font-size: 13px; padding-top: 5px; }
+  .bar .go { margin-left: auto; width: 20px; height: 20px; border-radius: 50%; background: #111; color: #fff; display: grid; place-items: center; font-size: 12px; }
+  footer { background: #1d4d3d; color: #e8f3ee; font-size: 12px; padding: 11px 24px; text-align: center; }
+</style>
+</head>
+<body>
+<div class="poster">
+  <header>
+    <h1>9 <span>Strategies</span><br>For Lead Generation</h1>
+    <p class="sub">Use these to quickly generate inbound leads.</p>
+  </header>
+  <div class="grid">
+    <div class="tile" style="--c:#2fb67c;--t:#e1f4ea"><div class="head"><b>1</b> Authority Content</div><div class="body"><p>Act as an industry expert. Create content that positions you as the go-to authority in [your niche]. Share client wins and contrarian takes. Include specific results.</p><div class="bar">+ ⚙ <span class="go">↑</span></div></div></div>
+    <div class="tile" style="--c:#f2b01e;--t:#fdf0cf"><div class="head"><b>2</b> Network Building</div><div class="body"><p>You are targeting decision makers. Send personalised connection requests that mention something specific. Quality over quantity; track acceptance rates.</p><div class="bar">+ ⚙ <span class="go">↑</span></div></div></div>
+    <div class="tile" style="--c:#b7c92b;--t:#f0f4cf"><div class="head"><b>3</b> Lead Magnets</div><div class="body"><p>Act as a value provider. Create resources your ICP actually wants and deliver them honestly. Track conversion rates and double down on what performs.</p><div class="bar">+ ⚙ <span class="go">↑</span></div></div></div>
+    <div class="tile" style="--c:#8a6fd6;--t:#e8e1f8"><div class="head"><b>4</b> Engagement</div><div class="body"><p>Engage meaningfully on prospects' content soon after they post. Add value, not generic praise. Spend 15-20 minutes a day.</p><div class="bar">+ ⚙ <span class="go">↑</span></div></div></div>
+    <div class="tile" style="--c:#f08a3c;--t:#fde4cf"><div class="head"><b>5</b> Direct Messages</div><div class="body"><p>Act as a relationship builder. Start conversations, do not pitch at once. Compliment + question + value offer, under 50 words.</p><div class="bar">+ ⚙ <span class="go">↑</span></div></div></div>
+    <div class="tile" style="--c:#ee6aa7;--t:#fbdcea"><div class="head"><b>6</b> Profile System</div><div class="body"><p>Treat your profile as a landing page for ideal clients: headline with a value proposition, ICP pain points, proof and a clear call to action.</p><div class="bar">+ ⚙ <span class="go">↑</span></div></div></div>
+    <div class="tile" style="--c:#3db8d6;--t:#d6f0f7"><div class="head"><b>7</b> Repurposing</div><div class="body"><p>Turn one successful piece into many formats: posts, carousels, video, articles. Track which formats perform best.</p><div class="bar">+ ⚙ <span class="go">↑</span></div></div></div>
+    <div class="tile" style="--c:#d46ce0;--t:#f5dcf8"><div class="head"><b>8</b> Social Proof</div><div class="body"><p>Collect and show testimonials, case studies and results, with permission. Keep proof fresh and specific.</p><div class="bar">+ ⚙ <span class="go">↑</span></div></div></div>
+    <div class="tile" style="--c:#f59a2b;--t:#fde6c8"><div class="head"><b>9</b> Conversion Tracking</div><div class="body"><p>Track every lead source and conversion point with UTM links. Review monthly: keep what works, drop what does not.</p><div class="bar">+ ⚙ <span class="go">↑</span></div></div></div>
+  </div>
+  <footer>Replace this line with your own call to action and handle.</footer>
+</div>
+</body>
+</html>
