@@ -359,3 +359,14 @@ Uses the existing `photo-scrim-white` theme; placeholder handle `@yourhandle`; n
 - **A PAID vs FREE comparison card** (cool grey canvas, rust-red free panel, monospace labels, verdict line, "figures unverified" note; pattern from @modelsignal) -> `templates/paid-vs-free-swap-card.html`
 - **A bento infographic for "how an algorithm works"** with a format table that carries an **evidence column** (published / practitioner / unsourced) and a signal-order box; responsive, light and dark -> `templates/linkedin-algorithm-bento.html`
 - **Theme `Artifacts/theme-signal-grey-rust.html`** - tokens: bg `#E9EDF2`, surface `#F3F5FA`, ink navy `#0F1B2D`, rust `#B0331A` (dark mode `#FF7A5C`), muted `#5A6B86`; Aptos with a monospace label font.
+
+## Batch 108 intake additions - five templates and one theme (report batch-112; rendered at 390, 1050 to 1200 px in headless Chromium, no overflow or console errors)
+
+- **A "meet the function" explainer** (persona bubble, syntax bar, argument list, what-it-does box, green pros and red cons chips, mini sheet; pattern from the Your CFO Guy VLOOKUP / HLOOKUP / XLOOKUP graphic) -> `templates/function-explainer-persona-panels.html`
+- **A four-letter framework as tinted quadrant cards** with a compass mark, a fill-in positioning line, a before/after table and a where-to-use strip (pattern from the Josh Sanders MAPS graphic) -> `templates/compass-framework-quadrants.html`. A first version put a 150 px compass over the card text; the compass now sits in the header.
+- **A directory poster of numbered category cards** (coloured header, site names with domains, pill slogan, wide bonus card, call-to-action bar; pattern from the AIPlanetX "75 Websites" graphic) -> `templates/directory-category-cards-11.html`
+- **Dark 9:16 countdown slides** (podium cover, giant rank numeral, stat, one-line takeaway, soft light leak per slide; pattern from the GitHub top-3 video frames) -> `templates/rank-countdown-dark-glow.html`
+- **A pastel-panel strategy sheet** (highlighted serif headline, letter tiles, tiers, labelled rows, formats, grey bonus checklist; pattern from the Lara Acosta LinkedIn system graphic) -> `templates/pastel-panel-framework-sheet.html`
+- **Theme `Artifacts/theme-pastel-panels-ink.html`** - tokens: bg `#FBFAF6`, ink `#161616`, highlighter `#FFF0A6`, panels purple `#F1E4FB`, blue `#E3F0FD`, green `#E6F6DE`, yellow `#FFF4CF`, accent `#D9480F` (dark mode `#FF8A57`); Aptos body, Georgia headline. Colours were judged by eye from the screenshot, not sampled.
+
+All five use placeholder names and handles. No source illustration, logo or caption copy was reused; the directory template lists public site names only.

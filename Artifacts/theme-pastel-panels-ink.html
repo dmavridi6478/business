@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pastel Panels and Ink - Theme</title>
+<style>
+/* THEME: Pastel Panels & Ink (from the Lara Acosta LinkedIn system graphic). Use for one-page strategy sheets, framework panels, checklists.
+   Light default; dark variant via [data-theme="dark"] or prefers-color-scheme. Serif headline with a highlighter phrase, four pastel panels. */
+:root{--bg:#fbfaf6;--ink:#161616;--muted:#555;--hl:#fff0a6;--card:#fff;--line:rgba(0,0,0,.08);--pu:#f1e4fb;--pu-h:#d9b9f3;--bl:#e3f0fd;--bl-h:#bcd9f7;--gr:#e6f6de;--gr-h:#c5e8b4;--ye:#fff4cf;--ye-h:#f6dc86;--accent:#d9480f;--radius:8px;--font:Aptos,'Segoe UI',system-ui,sans-serif;--serif:Georgia,'Times New Roman',serif}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#141413;--ink:#f2f0ea;--muted:#b3b0a6;--hl:#4d4413;--card:#1d1d1b;--line:rgba(255,255,255,.12);--pu:#2a2033;--pu-h:#5b3d7a;--bl:#1b2735;--bl-h:#35597f;--gr:#1e2b19;--gr-h:#42693a;--ye:#332d14;--ye-h:#7a6820;--accent:#ff8a57}}
+:root[data-theme="dark"]{--bg:#141413;--ink:#f2f0ea;--muted:#b3b0a6;--hl:#4d4413;--card:#1d1d1b;--line:rgba(255,255,255,.12);--pu:#2a2033;--pu-h:#5b3d7a;--bl:#1b2735;--bl-h:#35597f;--gr:#1e2b19;--gr-h:#42693a;--ye:#332d14;--ye-h:#7a6820;--accent:#ff8a57}
+*{box-sizing:border-box;margin:0}
+body{background:var(--bg);color:var(--ink);font-family:var(--font);font-size:11pt;padding:40px 16px}
+main{max-width:760px;margin:0 auto;display:grid;gap:16px}
+h1{font-family:var(--serif);font-size:clamp(26px,6vw,40px);line-height:1.1;text-align:center}h1 span{background:var(--hl);padding:0 .25em}
+.pair{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.panel{border-radius:var(--radius);border:1px solid var(--line);overflow:hidden}.panel h2{font-size:14pt;padding:8px 14px}.panel p{padding:12px 14px;background:var(--card);margin:0}
+button{font:inherit;font-weight:700;background:var(--accent);color:#fff;border:0;border-radius:var(--radius);padding:10px 18px;cursor:pointer;justify-self:center}
+button:focus-visible{outline:3px solid var(--ink);outline-offset:2px}
+@media (max-width:560px){.pair{grid-template-columns:1fr}}
+</style></head><body><main>
+<h1>The strategy behind a <span>content system</span></h1>
+<div class="pair"><section class="panel" style="background:var(--pu)"><h2 style="background:var(--pu-h)">1 Niche</h2><p>Skill, market, problem, value.</p></section>
+<section class="panel" style="background:var(--bl)"><h2 style="background:var(--bl-h)">2 Tiers</h2><p>Diehards, drive-bys, drop-ins.</p></section>
+<section class="panel" style="background:var(--ye)"><h2 style="background:var(--ye-h)">3 Posts</h2><p>Problem, promise, proof, personality, perspective.</p></section>
+<section class="panel" style="background:var(--gr)"><h2 style="background:var(--gr-h)">4 Formats</h2><p>Four formats to copy.</p></section></div>
+<button type="button">Draft a post</button>
+</main></body></html>

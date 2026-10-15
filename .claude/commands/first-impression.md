@@ -1,6 +1,6 @@
 ---
 description: Prepare for an important first meeting, event or new job with the StackFlo prompts - ask 5 questions one at a time, then build an intro, starters, stories and mistakes to avoid
-argument-hint: [person or group] [situation] [your goal]
+argument-hint: "[person or group] [situation] [your goal]"
 ---
 
 Use the skill `first-impression-5-prompts`. Input: "$ARGUMENTS".

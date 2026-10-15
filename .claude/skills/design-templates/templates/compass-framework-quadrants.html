@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Compass framework quadrants</title>
+<style>
+  /* Template: a 4-letter framework (M-A-P-S) as four tinted cards around a compass, a fill-in positioning line,
+     a before/after table and a "where to use it" strip. Pattern from the Josh Sanders MAPS infographic.
+     Customise: letters, definitions, good/bad examples, "try this" prompts, the line template, before/after rows. */
+  :root { --bg:#f6f8fe; --ink:#142146; --muted:#55648a; --blue:#1a3fb0; --hl:#fff09a; --line:#cdd8f2; --card:#fff;
+    --c-m:#e6edfb; --c-a:#fdeee1; --c-p:#e5f4e6; --c-s:#fbe8ef; --bad:#b3261e; --good:#1d7a3c;
+    --serif: Georgia, "Times New Roman", serif; --font: Aptos, "Segoe UI", system-ui, sans-serif; }
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --bg:#0e1426; --ink:#e8eeff; --muted:#9fb0d8; --blue:#8fb0ff; --hl:#4a4310; --line:#2a3860; --card:#151d36;
+    --c-m:#18233f; --c-a:#2b2018; --c-p:#16271a; --c-s:#2b1822; --bad:#ff8d86; --good:#6fd18f; } }
+  :root[data-theme="dark"] { --bg:#0e1426; --ink:#e8eeff; --muted:#9fb0d8; --blue:#8fb0ff; --hl:#4a4310; --line:#2a3860; --card:#151d36;
+    --c-m:#18233f; --c-a:#2b2018; --c-p:#16271a; --c-s:#2b1822; --bad:#ff8d86; --good:#6fd18f; }
+  * { box-sizing: border-box; margin: 0; }
+  body { background: var(--bg); color: var(--ink); font-family: var(--font); font-size: 11pt; padding: 24px max(16px, env(safe-area-inset-left, 0px)); }
+  .wrap { max-width: 1040px; margin: 0 auto; display: grid; gap: 18px; }
+  header { text-align: center; }
+  h1 { font-family: var(--serif); color: var(--blue); font-size: 32pt; line-height: 1.1; text-wrap: balance; }
+  h1 span { background: var(--hl); color: var(--ink); padding: 0 .3em; }
+  .tag { font-family: var(--serif); font-style: italic; margin-top: 8px; }
+  .quad { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; position: relative; }
+  .compass { width: 72px; height: 72px; margin: 10px auto 0; display: grid; place-items: center; }
+  .card { border-radius: 10px; padding: 14px 16px; border: 1px solid var(--line); min-width: 0; display: grid; gap: 8px; align-content: start; }
+  .m { background: var(--c-m); } .a { background: var(--c-a); } .p { background: var(--c-p); } .s { background: var(--c-s); }
+  .card h2 { font-size: 14pt; } .card h2 b { font-family: var(--serif); color: var(--blue); }
+  .def { font-size: 10pt; color: var(--muted); }
+  .ex { display: grid; gap: 4px; font-size: 10pt; } .ex .x::before { content: "✕ "; color: var(--bad); font-weight: 700; } .ex .v::before { content: "✓ "; color: var(--good); font-weight: 700; }
+  .try { background: var(--card); border: 1px dashed var(--line); border-radius: 6px; padding: 7px 10px; font-size: 10pt; }
+  .try b { color: var(--blue); }
+  .row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  .box { background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 14px 16px; min-width: 0; }
+  .box h2 { font-size: 14pt; margin-bottom: 8px; }
+  .line { background: var(--hl); border-radius: 6px; padding: 10px 12px; font-family: var(--serif); }
+  table { width: 100%; border-collapse: collapse; font-size: 10pt; } th, td { padding: 6px 8px; border-bottom: 1px solid var(--line); text-align: center; vertical-align: top; }
+  th { color: #fff; } th:first-child { background: var(--bad); } th:last-child { background: var(--good); }
+  .use { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; font-size: 10pt; } .use div { background: var(--c-m); border-radius: 6px; padding: 8px 10px; }
+  .tw { overflow-x: auto; }
+  @media (max-width: 760px) { .quad, .row { grid-template-columns: 1fr; } .use { grid-template-columns: 1fr 1fr; } h1 { font-size: 24pt; } table { min-width: 460px; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header><h1>How to position yourself <span>as an expert</span></h1><p class="tag">The MAPS framework</p>
+    <div class="compass" aria-hidden="true"><svg viewBox="0 0 100 100" width="72" height="72"><circle cx="50" cy="50" r="44" fill="none" stroke="var(--blue)" stroke-width="2.5"/><path d="M50 6 58 42 94 50 58 58 50 94 42 58 6 50 42 42Z" fill="var(--blue)" opacity=".9"/><circle cx="50" cy="50" r="6" fill="var(--bg)"/></svg></div></header>
+  <div class="quad">
+    <section class="card m"><h2><b>M</b> = Market</h2><p class="def">The exact people you help and the problem they would happily spend money fixing.</p><div class="ex"><span class="x">"Business owners"</span><span class="v">"Founders who want LinkedIn to bring in leads"</span></div><p class="try"><b>Try this:</b> who would pay you tomorrow if you messaged them today?</p></section>
+    <section class="card a"><h2><b>A</b> = Achievements</h2><p class="def">Proof only you can point to: results you have driven, things you have built or grown.</p><p class="try"><b>Try this:</b> write down 3 results you would be proud to put a number on.</p></section>
+    <section class="card s"><h2><b>S</b> = Stance</h2><p class="def">A view you will happily defend, even if others in your space disagree.</p><div class="ex"><span class="x">"Grow your followers first."</span><span class="v">"Attention without infrastructure is wasted."</span></div><p class="try"><b>Try this:</b> name one popular piece of advice you disagree with, and why.</p></section>
+    <section class="card p"><h2><b>P</b> = Process</h2><p class="def">The steps you repeat every time to get your clients' results.</p><p class="def">Positioning → Content → Capture → Conversion</p><p class="try"><b>Try this:</b> name your process; keep it to 3 to 5 steps.</p></section>
+  </div>
+  <div class="row">
+    <section class="box"><h2>Build your positioning line</h2><p class="line">"I help [market] get [result] through [process], after [achievement]."</p><p class="def" style="margin-top:8px">Read it out loud. If it sounds like a CV, keep editing.</p></section>
+    <section class="box"><h2>Before and after</h2><div class="tw"><table><tr><th>Before</th><th>After</th></tr>
+      <tr><td>"I'm a marketing consultant."</td><td>"I help B2B SaaS founders turn LinkedIn into booked sales calls."</td></tr>
+      <tr><td>"I'm a business coach."</td><td>"I help agency owners scale past 1M without working weekends."</td></tr></table></div></section>
+  </div>
+  <section class="box"><h2>Where to use it</h2><div class="use"><div><b>Banner</b><br>Your offer in one line</div><div><b>Headline</b><br>Who you help + biggest result</div><div><b>About</b><br>Open with the positioning line</div><div><b>Posts</b><br>Market and stance in hooks</div></div></section>
+</div>
+</body>
+</html>

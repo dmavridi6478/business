@@ -6033,3 +6033,17 @@ Not done (needs you): plugin installs (`/plugin install paypal@claude-plugins-of
 **Source problems:** Part 5's $4,608 headline covers ten swaps while its summary slide lists eight ($4,500); several "free" tools are AGPL, GPL, OSL or Elastic License; `ntdevlabs/tiny11builder` has no licence and its NOTICE denies redistribution rights; the LinkedIn "100+ leads" claim and the algorithm graphic's signal ranking are unsourced; stars and "pushed today" labels are unverified.
 
 **Not done:** nothing installed or run; no stars, forks, comments, posts or LinkedIn messages made; no connector changed (postzen-linkedin and postonce need your authorisation); no agent-building guide or connector reference was in the files.
+
+## Batch 108 — one iCloud archive (16 images, 2 videos) and four infographics attached in chat (15 October 2026)
+
+**Report:** Batch 108 Intake Report (`Artifacts/business/batch-112-intake-report.html`; the published link is in the pull request).
+
+**Sources:** 16 images and 2 MP4 clips from the archive (an app-launch six-tool card set, a free-LLM-API provider list, the "5 tools that feel illegal to be free" carousel, GitHub trending briefings for the week of 14 October 2026, AnyPS5); plus four graphics attached in chat: Your CFO Guy VLOOKUP / HLOOKUP / XLOOKUP, Lara Acosta's $10k LinkedIn content system, AIPlanetX "75 Websites Every Job Seeker Should Know", and Josh Sanders' MAPS positioning framework. The videos were read as frames only; there was no audio transcript.
+
+**Added:** skills `lookup-functions-vlookup-hlookup-xlookup`, `linkedin-maps-positioning-framework`, `linkedin-10k-content-system`, `job-seeker-75-websites`, `app-launch-6-tools-ella`, `free-llm-api-providers-13`, `free-tools-feel-illegal-5`, `github-trending-oct-14-2026-week`; commands `/lookup-formula`, `/linkedin-maps`, `/linkedin-content-system`, `/job-site-pick`, `/app-launch-check`; agent `app-launch-reviewer` (read-only); practice workbook `Artifacts/business/lookup-functions-practice.xlsx` (24 formulas, recalculated, 0 errors; INDEX/MATCH used instead of XLOOKUP); design templates `function-explainer-persona-panels`, `compass-framework-quadrants`, `directory-category-cards-11`, `rank-countdown-dark-glow`, `pastel-panel-framework-sheet` and theme `theme-pastel-panels-ink`; user-run `scripts/batch112-install.sh`.
+
+**Changed:** `linkedin-lead-gen-agent` now runs the MAPS positioning step first and drafts posts with the 10k content system; `/first-impression` argument hint fixed.
+
+**Source problems:** the 75-websites list has repeated entries (Pramp, Interviewing.io, Big Interview, Exponent twice; Coursera twice; Glassdoor three times; AngelList is now Wellfound) and an India skew; the Lara Acosta graphic uses one sentence for formats 1 and 2; the free-LLM list's source repo was unreachable, so provider limits are unverified; Sentry is source-available (FSL), not open source; Upscayl, Immich and VoiceStudio are AGPL-3.0; AnyPS5 is GPL-2.0 only with an unclear legal position, so it was read but not installed; Whisper is not a drop-in Otter replacement; stars and "new this week" figures are unverified.
+
+**Not done:** nothing installed or run; no stars, forks, posts, comments or LinkedIn messages; no connector changed; the Agent Archive account question is still waiting for your answer.

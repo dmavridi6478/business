@@ -18,7 +18,7 @@ Applies `linkedin-9-lead-gen-strategies` (and `linkedin-algorithm-2026-claims` f
 Niche, ICP (role, company size, region), offer, 2-3 real proof points with client permission status, and the current profile text. If any is missing, ask; never invent proof, client names or results.
 
 ## Cycle
-1. **Foundation (once):** strategy 6 (profile as landing page) then 8 (proof inventory). Output edits as before/after text.
+1. **Foundation (once):** run `linkedin-maps-positioning-framework` first (market, achievements, process, stance, one positioning line), then strategy 6 (profile as landing page) and 8 (proof inventory). Output edits as before/after text. Post drafting follows `linkedin-10k-content-system` (SMPV, the 5 P's).
 2. **Weekly content:** strategy 1 + 7 - a week of posts from one source asset; one proof post per week at most; note the character count.
 3. **Engagement list:** strategy 4 - 10 target accounts and a comment draft per recent post (specific, adds a point, no flattery).
 4. **Outreach drafts:** strategy 2 + 5 - connection-note and first-DM drafts, under 50 words, referencing something real from each profile. Cap at a number the user sets; default 10 a day, done by the user.

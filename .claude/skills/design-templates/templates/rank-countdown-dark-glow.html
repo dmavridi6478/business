@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rank countdown slides</title>
+<style>
+  /* Template: dark 9:16 countdown slides (podium cover, giant rank numeral, stat, one-line takeaway, follow card) with a
+     soft coloured light leak per slide. Pattern from the @tiborczekay "GitHub's top 3 this week" video frames.
+     Canvas 360x640 per slide; shown side by side, wraps on narrow screens. Customise: kicker, rank, name, stat, line, --glow. */
+  :root { --bg:#07080c; --ink:#f7f1e8; --muted:#9a9fb0; --font: Aptos, "Segoe UI", system-ui, sans-serif; --pill:#1a1c24; }
+  * { box-sizing: border-box; margin: 0; }
+  body { background: #15161b; font-family: var(--font); color: var(--ink); padding: 20px max(16px, env(safe-area-inset-left, 0px)); }
+  .row { display: flex; flex-wrap: wrap; gap: 16px; justify-content: center; }
+  .slide { width: 360px; max-width: 100%; aspect-ratio: 9/16; background: var(--bg); position: relative; overflow: hidden; border-radius: 14px; padding: 22px; display: grid; grid-template-rows: auto 1fr auto; }
+  .slide::before { content: ""; position: absolute; inset: -20% -30% auto auto; width: 90%; height: 55%; background: radial-gradient(closest-side, var(--glow), transparent 70%); filter: blur(18px); opacity: .85; }
+  .kick { position: relative; font-size: 11px; color: var(--muted); display: flex; gap: 8px; } .kick b { color: var(--ink); }
+  .mid { position: relative; align-self: center; display: grid; gap: 6px; }
+  .rank { font-size: 120px; font-weight: 900; line-height: .9; letter-spacing: -.06em; }
+  .name { font-size: 40px; font-weight: 900; letter-spacing: -.04em; line-height: 1; }
+  .stat { font-size: 30px; font-weight: 800; color: var(--stat, var(--ink)); } .small { font-size: 12px; color: var(--muted); }
+  .pillx { display: inline-block; width: fit-content; background: var(--pill); border-radius: 99px; padding: 4px 10px; font-size: 11px; color: var(--muted); }
+  .cap { position: relative; text-align: center; font-weight: 800; font-size: 18px; padding-bottom: 28px; } .cap span { border: 1px solid rgba(255,255,255,.35); border-radius: 5px; padding: 0 5px; }
+  .podium { display: flex; align-items: flex-end; gap: 6px; justify-content: center; height: 140px; } .podium div { width: 64px; background: #1b1d26; border: 1px solid #2a2d3a; border-radius: 8px 8px 0 0; display: grid; place-items: center; font-size: 28px; font-weight: 800; }
+  h1 { font-size: 34px; line-height: 1.02; letter-spacing: -.04em; font-weight: 900; }
+</style>
+</head>
+<body>
+<div class="row">
+  <section class="slide" style="--glow:#bfc7ff"><div class="kick"><b>Your Name</b> News · 14 Oct 2026</div>
+    <div class="mid"><h1>GitHub's top 3<br>this week</h1><p class="small">Fastest-growing, by new stars</p><div class="podium"><div style="height:80px">2</div><div style="height:120px">1</div><div style="height:56px">3</div></div></div><p class="cap"><span>week</span></p></section>
+  <section class="slide" style="--glow:#d9a441;--stat:#ffd98a"><div class="kick"><b>Your Name</b> News · 14 Oct 2026</div>
+    <div class="mid"><div class="rank">#3</div><div class="name">Project name</div><div class="stat">+13,900</div><p class="small">new stars this week</p></div><p class="cap">Nearly <span>14,000</span> new stars</p></section>
+  <section class="slide" style="--glow:#5fd1a0;--stat:#9af0c8"><div class="kick"><b>Your Name</b> News · 14 Oct 2026</div>
+    <div class="mid"><div class="rank">#2</div><div class="name">Project name</div><div class="stat">+15,186</div><span class="pillx">One-line description of what it replaces</span></div><p class="cap">Runs on <span>your computer</span></p></section>
+</div>
+</body>
+</html>

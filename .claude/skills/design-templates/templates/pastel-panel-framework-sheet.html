@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pastel panel framework sheet</title>
+<style>
+  /* Template: one-page strategy sheet - serif headline with a highlighted phrase, four pastel panels (letter tiles,
+     stacked tiers, labelled rows, formats) and a grey bonus checklist. Pattern from the Lara Acosta LinkedIn system graphic.
+     Customise: panel colours (--p), tile letters, tier labels, row tags, formats, bonus items. Two columns wide, one on phones. */
+  :root { --bg:#fbfaf6; --ink:#161616; --muted:#555; --hl:#fff0a6; --card:#fff; --line:rgba(0,0,0,.08);
+    --pu:#f1e4fb; --pu-h:#d9b9f3; --bl:#e3f0fd; --bl-h:#bcd9f7; --gr:#e6f6de; --gr-h:#c5e8b4; --ye:#fff4cf; --ye-h:#f6dc86; --gy:#eeeeee;
+    --font: Aptos, "Segoe UI", system-ui, sans-serif; --serif: Georgia, "Times New Roman", serif; }
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --bg:#141413; --ink:#f2f0ea; --muted:#b3b0a6; --hl:#4d4413; --card:#1d1d1b; --line:rgba(255,255,255,.12);
+    --pu:#2a2033; --pu-h:#5b3d7a; --bl:#1b2735; --bl-h:#35597f; --gr:#1e2b19; --gr-h:#42693a; --ye:#332d14; --ye-h:#7a6820; --gy:#242422; } }
+  :root[data-theme="dark"] { --bg:#141413; --ink:#f2f0ea; --muted:#b3b0a6; --hl:#4d4413; --card:#1d1d1b; --line:rgba(255,255,255,.12);
+    --pu:#2a2033; --pu-h:#5b3d7a; --bl:#1b2735; --bl-h:#35597f; --gr:#1e2b19; --gr-h:#42693a; --ye:#332d14; --ye-h:#7a6820; --gy:#242422; }
+  * { box-sizing: border-box; margin: 0; }
+  body { background: var(--bg); color: var(--ink); font-family: var(--font); font-size: 11pt; padding: 24px max(16px, env(safe-area-inset-left, 0px)); }
+  .wrap { max-width: 1000px; margin: 0 auto; display: grid; gap: 14px; }
+  h1 { font-family: var(--serif); font-size: 32pt; line-height: 1.1; text-align: center; text-wrap: balance; } h1 span { background: var(--hl); padding: 0 .25em; }
+  .cols { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; align-items: start; } .col { display: grid; gap: 14px; min-width: 0; }
+  .panel { border-radius: 8px; border: 1px solid var(--line); overflow: hidden; background: var(--p); min-width: 0; }
+  .panel > h2 { font-size: 14pt; padding: 8px 14px; background: var(--h); } .panel > h2 b { margin-right: 6px; }
+  .in { padding: 12px 14px; display: grid; gap: 8px; }
+  .tile { display: grid; grid-template-columns: 56px 1fr; gap: 10px; align-items: center; background: var(--card); border-radius: 6px; padding: 8px; font-size: 10pt; }
+  .tile i { font-style: normal; font-family: var(--serif); font-size: 30px; font-weight: 700; text-align: center; background: var(--h); border-radius: 6px; padding: 2px 0; }
+  .tier { display: grid; grid-template-columns: 90px 1fr; gap: 10px; align-items: center; font-size: 10pt; } .tier b { background: var(--h); border-radius: 6px; padding: 8px; text-align: center; }
+  .rowp { display: grid; grid-template-columns: 100px 1fr; gap: 10px; align-items: start; font-size: 10pt; background: var(--card); border-radius: 6px; padding: 8px; } .rowp b { background: var(--h); border-radius: 4px; padding: 2px 8px; text-align: center; }
+  .fmt { background: var(--card); border-radius: 6px; padding: 8px 10px; font-size: 10pt; } .fmt b { display: block; }
+  .bonus { --p: var(--gy); --h: var(--gy); background: var(--gy); } .bonus ul { list-style: none; padding: 0; display: grid; gap: 4px; font-size: 10pt; } .bonus li::before { content: "☐ "; }
+  .tag { display: inline-block; background: #d9480f; color: #fff; font-size: 9pt; font-weight: 700; padding: 1px 8px; border-radius: 3px; margin-right: 6px; }
+  @media (max-width: 760px) { .cols { grid-template-columns: 1fr; } h1 { font-size: 24pt; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>The strategy behind a <span>content system</span></h1>
+  <div class="cols">
+    <div class="col">
+      <section class="panel" style="--p:var(--pu);--h:var(--pu-h)"><h2><b>1</b> Find your niche</h2><div class="in">
+        <div class="tile"><i>S</i><span><b>Skill</b> your unfair advantage, not your job title</span></div>
+        <div class="tile"><i>M</i><span><b>Market</b> who specifically needs that skill</span></div>
+        <div class="tile"><i>P</i><span><b>Problem</b> the real pain they usually misdiagnose</span></div>
+        <div class="tile"><i>V</i><span><b>Value</b> free content plus a paid service</span></div></div></section>
+      <section class="panel" style="--p:var(--ye);--h:var(--ye-h)"><h2><b>3</b> Build every post on the 5 P's</h2><div class="in">
+        <div class="rowp"><b>Problem</b><span>Name it; explain it better than your audience can.</span></div>
+        <div class="rowp"><b>Promise</b><span>Show the way out.</span></div>
+        <div class="rowp"><b>Proof</b><span>Share results, backed by stories.</span></div>
+        <div class="rowp"><b>Personality</b><span>Show why you.</span></div>
+        <div class="rowp"><b>Perspective</b><span>Share what your industry gets wrong.</span></div></div></section>
+    </div>
+    <div class="col">
+      <section class="panel" style="--p:var(--bl);--h:var(--bl-h)"><h2><b>2</b> Write for all three tiers</h2><div class="in">
+        <div class="tier"><b>Diehards</b><span>Nodding along before you finish the sentence.</span></div>
+        <div class="tier"><b>Drive-bys</b><span>Click "see more" only if something grabs them.</span></div>
+        <div class="tier"><b>Drop-ins</b><span>Never heard of you; zero context, zero trust.</span></div></div></section>
+      <section class="panel" style="--p:var(--gr);--h:var(--gr-h)"><h2><b>4</b> Four formats to copy</h2><div class="in">
+        <div class="fmt"><b>Invite the crowd to celebrate</b>Share the case study; see who raises a hand.</div>
+        <div class="fmt"><b>Package it as a lead magnet</b>A simple way to surface more leads.</div>
+        <div class="fmt"><b>The classic before and after</b>Gives readers hope change is possible.</div>
+        <div class="fmt"><b>Two-way promo</b>A client's process, closing with their recommendation.</div></div></section>
+      <section class="panel bonus"><h2 style="background:#d9480f;color:#fff"><span class="tag" style="background:#fff;color:#d9480f">Bonus</span>Mine your sales calls</h2><div class="in"><ul><li>Take a real sales, onboarding or coaching call.</li><li>Ask AI for the top 5-10 objections raised.</li><li>Turn those objections into content ideas.</li><li>Anchor each to your own experience.</li></ul></div></section>
+    </div>
+  </div>
+</div>
+</body>
+</html>
