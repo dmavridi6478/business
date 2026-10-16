@@ -381,3 +381,9 @@ All five use placeholder names and handles. No source illustration, logo or capt
 - **Theme `Artifacts/theme-editorial-blue-ink.html`** - tokens: paper `#FEFFFC` (sampled), ink `#060605` (sampled), blue `#0153D7` (sampled; dark mode `#6EA0FF`), soft blue `#E7F2FD` (sampled), soft red `#FFE2E1` (sampled); Aptos body with a Playfair Display or Georgia heading face (the specimen's display face was not identified).
 
 All use placeholder names and handles. No source illustration, logo, mascot or caption copy was reused.
+
+## Batch 110 intake additions - one template and one theme (report batch-114; rendered at 390 and 900 px in headless Chromium, no overflow or console errors)
+
+- **A free-course map** (serif title with an orange word, peach track panels, lesson cards with number tile, icon slot, one-line promise and two pills, orange call-to-action bar; pattern from the "Claude for Sales" course graphic; the mark is a generic spark, not any brand logo; Tracks 1 and 3 shown, copy a `.track` block for Track 2) -> `templates/course-tracks-peach-orange.html`
+- **Theme `Artifacts/theme-peach-orange-course.html`** - tokens: orange `#EB3C08` (sampled; dark mode `#FF7A4D`), CTA `#ED5D31` (sampled), track peach `#FEF2E4` (sampled), icon tile `#FFE3D3` (sampled), green pill `#E9F1DE` (sampled), peach pill `#FCEDDD` (sampled), navy ink `#14173A` (eyeballed); Aptos body, Playfair Display or Georgia headings.
+- The Site Tusk website slides use the existing `repo-card-beige-grunge.html` layout; no new template was needed.

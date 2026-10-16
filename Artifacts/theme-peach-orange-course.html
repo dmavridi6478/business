@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Peach and Orange Course - Theme</title>
+<style>
+/* THEME: Peach & Orange Course (from the "Claude for Sales" free-course graphic). Colours marked sampled were read from pixels; the navy ink was judged by eye.
+   Use for course maps, lesson lists, checklists. Light default; dark via [data-theme="dark"] or prefers-color-scheme. */
+:root{--bg:#fffdfb;--ink:#14173a;--muted:#4a5273;--orange:#eb3c08;--cta:#ed5d31;--track:#fef2e4;--tile:#ffe3d3;--card:#fff;--line:#f0dccb;--pill-g:#e9f1de;--radius:14px;--font:Aptos,'Segoe UI',system-ui,sans-serif;--serif:'Playfair Display',Georgia,'Times New Roman',serif}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#14100d;--ink:#f6efe8;--muted:#c3b5a6;--orange:#ff7a4d;--cta:#d9481f;--track:#241a14;--tile:#3a261b;--card:#1b1511;--line:#3a2c22;--pill-g:#22301a}}
+:root[data-theme="dark"]{--bg:#14100d;--ink:#f6efe8;--muted:#c3b5a6;--orange:#ff7a4d;--cta:#d9481f;--track:#241a14;--tile:#3a261b;--card:#1b1511;--line:#3a2c22;--pill-g:#22301a}
+*{box-sizing:border-box;margin:0}
+body{background:var(--bg);color:var(--ink);font-family:var(--font);padding-block:40px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+main{max-width:720px;margin:0 auto;display:grid;gap:14px}
+h1{font-family:var(--serif);font-weight:900;font-size:clamp(28px,6vw,44px);line-height:1.05}h1 em{font-style:normal;color:var(--orange)}
+.track{background:var(--track);border:1px solid var(--line);border-radius:var(--radius);padding:14px;display:grid;gap:8px}
+.lesson{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px;display:flex;gap:10px;align-items:center}
+.n{background:var(--tile);color:var(--orange);font-family:var(--serif);font-weight:900;font-size:20px;border-radius:8px;padding:2px 10px}
+button{font:inherit;font-weight:800;background:var(--cta);color:#fff;border:0;border-radius:var(--radius);padding:12px 18px;cursor:pointer}
+button:focus-visible{outline:3px solid var(--ink);outline-offset:2px}
+</style></head><body><main>
+<h1>Master one skill with <em>AI</em></h1>
+<div class="track"><strong>Track 1: Foundations</strong><div class="lesson"><span class="n">01</span><span>First lesson title</span></div><div class="lesson"><span class="n">02</span><span>Second lesson title</span></div></div>
+<button type="button">Start the first lesson</button>
+</main></body></html>

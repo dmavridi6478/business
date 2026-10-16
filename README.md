@@ -6061,3 +6061,17 @@ Not done (needs you): plugin installs (`/plugin install paypal@claude-plugins-of
 **Source problems:** Part 10's summary slide lists eight swaps that add to $5,256 but says "Save $5,508" (the figure is right only for all twelve); the file named "Excel Data Cleaning Cheat Sheet" holds a conditional formatting sheet; the replace.so star counts (Rea 266,353, Photocraft 62,967) do not match other sources; the Claude Ads slide says 190 checks while the repo says 250+; the "Anthropic lead engineer" prompt names no one; the CodeGraph -70% chart is labelled illustrative; the 49-process mind map has duplicated and misspelt boxes; AutoHedge, Vibe Trading and Fincept Terminal involve real-money trading risk; Open Higgsfield AI advertises no content filters; reclip downloads from sites whose terms may forbid it.
 
 **Not done:** nothing installed or run; no stars, forks, comments ("FREE", "HERMES", "GIT") or follows; no connector changed; no agent-building guide or connector reference was in the files; the Agent Archive account question is still waiting for your answer.
+
+## Batch 110 — one iCloud archive (7 images) and one infographic attached in chat (16 October 2026)
+
+**Report:** Batch 110 Intake Report (`Artifacts/business/batch-114-intake-report.html`; the published link is in the pull request).
+
+**Sources:** 7 Site Tusk slides ("5 websites they don't want you to know about": sandspiel.club, befunky.com, networthify.com, omnara.com, actualbudget.org, plus a cover and a TikTok playlist slide) and the "Claude for Sales" free-course graphic (3 tracks, 8 lessons) attached in chat.
+
+**Added:** skills `claude-for-sales-course-map`, `site-tusk-5-websites-oct`; commands `/sales-lesson` and `/sales-30-day-plan`; design template `course-tracks-peach-orange` and theme `theme-peach-orange-course`; user-run `scripts/batch114-install.sh`.
+
+**Already existed, not duplicated:** the beige Site Tusk card layout (`repo-card-beige-grunge`), Actual Budget in `self-hosted-docker-stack`, the sales prompt skills.
+
+**Source problems:** no provider, author or link is given for the "Claude for Sales" courses and a web search found no such course (only a different set of 13 Anthropic Academy courses), so it looks like a comment-to-unlock lead magnet; the Site Tusk title is clickbait (all five sites are public); the omnara slide tells an agent to read and follow a remote SKILL.md, which is untrusted third-party instructions.
+
+**Not done:** nothing installed or run; no comment ("COURSE"), bookmark, follow or sign-up; no connector changed; no agent-building guide or connector reference was in the files; the Agent Archive account question is still waiting for your answer.
