@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ranked repo sky card</title>
+<style>
+  /* Template: a numbered repo card on a bright sky-and-grass scene - giant outlined white "#N NAME", a two-line pitch, a link pill, a round cartoon mascot peeking over a browser frame.
+     Pattern from the @martiendejong_dev "10 GitHub repos" cards. The mascot here is a generic CSS face, not any licensed character. 4:5 canvas.
+     Customise: rank, name, pitch, link, frame content, sky and grass tokens. */
+  :root { --sky1:#35a7ff; --sky2:#8fd3ff; --grass1:#59c63b; --grass2:#3a9a27; --ink:#0d2b4a; --white:#ffffff; --frame:#f7f9fc; --edge:#0d2b4a; --link:#0b5ed7; --font: Aptos, "Segoe UI", system-ui, sans-serif; --display: Impact, "Arial Narrow Bold", "Helvetica Neue", Arial, sans-serif; }
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --sky1:#12408a; --sky2:#2a6bb8; --grass1:#2f7d24; --grass2:#1f5a19; --ink:#e9f3ff; --frame:#1b2432; --edge:#06101e; --link:#8fc2ff; } }
+  :root[data-theme="dark"] { --sky1:#12408a; --sky2:#2a6bb8; --grass1:#2f7d24; --grass2:#1f5a19; --ink:#e9f3ff; --frame:#1b2432; --edge:#06101e; --link:#8fc2ff; }
+  * { box-sizing: border-box; margin: 0; }
+  body { background: var(--sky1); font-family: var(--font); padding-block: 24px; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); display: grid; justify-items: center; }
+  .card { container-type: inline-size; width: min(100%, 540px); aspect-ratio: 4 / 5; position: relative; overflow: hidden; border-radius: 4px; background: linear-gradient(var(--sky1), var(--sky2) 55%, var(--grass1) 55%, var(--grass2)); display: grid; grid-template-rows: auto auto auto 1fr; padding: 6cqw 5cqw 0; gap: 2.2cqw; }
+  .cloud { position: absolute; background: #fff; border-radius: 99px; opacity: .92; } .cloud::before, .cloud::after { content: ""; position: absolute; background: #fff; border-radius: 50%; }
+  .c1 { left: -6cqw; top: 38cqw; width: 26cqw; height: 7cqw; } .c1::before { width: 11cqw; height: 11cqw; left: 5cqw; top: -6cqw; } .c1::after { width: 8cqw; height: 8cqw; left: 14cqw; top: -4cqw; }
+  .c2 { right: -6cqw; top: 33cqw; width: 28cqw; height: 7cqw; } .c2::before { width: 12cqw; height: 12cqw; left: 6cqw; top: -7cqw; }
+  h1 { font-family: var(--display); font-weight: 900; font-size: 15cqw; line-height: .95; letter-spacing: -.01em; text-align: center; color: var(--white); -webkit-text-stroke: .5cqw var(--edge); paint-order: stroke fill; text-transform: uppercase; position: relative; text-wrap: balance; overflow-wrap: anywhere; }
+  .pitch { position: relative; text-align: center; color: #0d2b4a; font-size: 3.7cqw; line-height: 1.3; }
+  .pitch b { display: block; font-size: 5.6cqw; line-height: 1.15; margin-bottom: 1cqw; }
+  .link { position: relative; justify-self: center; background: #fff; color: var(--link); border-radius: 99px; padding: .8cqw 3cqw; font-size: 3.3cqw; text-decoration: underline; margin-top: 1cqw; }
+  .scene { position: relative; align-self: end; display: grid; justify-items: center; }
+  .mascot { width: 22cqw; height: 18cqw; background: #fff; border: .7cqw solid var(--edge); border-radius: 12cqw 12cqw 6cqw 6cqw; position: relative; margin-bottom: -4.5cqw; z-index: 1; }
+  .mascot::before, .mascot::after { content: ""; position: absolute; top: 7cqw; width: 2cqw; height: 2.6cqw; background: var(--edge); border-radius: 50%; } .mascot::before { left: 6cqw; } .mascot::after { right: 6cqw; }
+  .frame { width: 100%; height: 40cqw; background: var(--frame); border: .7cqw solid var(--edge); border-radius: 3cqw 3cqw 0 0; padding: 3cqw; display: grid; gap: 1.6cqw; align-content: start; font-size: 2.3cqw; color: var(--ink); overflow: hidden; }
+  .bar { height: 2.4cqw; border-radius: 1cqw; background: color-mix(in srgb, var(--ink) 12%, transparent); } .bar.w { width: 60%; }
+  .tag { display: flex; gap: 1cqw; flex-wrap: wrap; } .tag i { font-style: normal; background: color-mix(in srgb, var(--link) 18%, transparent); color: var(--link); padding: .3cqw 1.4cqw; border-radius: 99px; }
+</style>
+</head>
+<body>
+<article class="card">
+  <i class="cloud c1"></i><i class="cloud c2"></i>
+  <h1>#4 Repo Name</h1>
+  <p class="pitch"><b>One line that says what it replaces.</b>Two short lines on what it does and who it is for. Swap in your own wording.</p>
+  <a class="link" href="#">github.com/owner/repo-name</a>
+  <div class="scene"><div class="mascot" aria-hidden="true"></div>
+    <div class="frame"><b>owner / repo-name</b><div class="bar"></div><div class="bar w"></div><div class="tag"><i>topic</i><i>open-source</i><i>agents</i></div><div class="bar"></div><div class="bar w"></div></div></div>
+</article>
+</body>
+</html>

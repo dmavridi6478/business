@@ -370,3 +370,14 @@ Uses the existing `photo-scrim-white` theme; placeholder handle `@yourhandle`; n
 - **Theme `Artifacts/theme-pastel-panels-ink.html`** - tokens: bg `#FBFAF6`, ink `#161616`, highlighter `#FFF0A6`, panels purple `#F1E4FB`, blue `#E3F0FD`, green `#E6F6DE`, yellow `#FFF4CF`, accent `#D9480F` (dark mode `#FF8A57`); Aptos body, Georgia headline. Colours were judged by eye from the screenshot, not sampled.
 
 All five use placeholder names and handles. No source illustration, logo or caption copy was reused; the directory template lists public site names only.
+
+## Batch 109 intake additions - five templates and one theme (report batch-113; rendered at 390, 600 to 1100 px in headless Chromium, no overflow or console errors)
+
+- **A repo spotlight on a beige concrete texture** (brand wordmark and rule, huge repo name, white README-style panel, one sentence, slide counter; pattern from the Site Tusk carousel) -> `templates/repo-card-beige-grunge.html`
+- **A numbered repo card on a sky-and-grass scene** (giant outlined "#N NAME", pitch, link pill, a generic CSS mascot peeking over a browser frame; pattern from the @martiendejong_dev cards, no licensed character used) -> `templates/ranked-repo-sky-cartoon.html`. A first version let the link pill stretch into a big white blob because the grid had one row too few; fixed.
+- **A blueprint-grid explainer slide** (white chart card with a before/after bar tile and a big stat tile, then bold captions in white highlight boxes; pattern from the @aiclawbots slides; figures are placeholders marked "Illustrative") -> `templates/blueprint-caption-chart-slide.html`
+- **An editorial numeral grid** (giant blue numeral, serif headline, five use-case cards 3 + 2, five-step flow strip; pattern from the @your.aimentor writing graphic) -> `templates/numeral-usecase-grid-blue.html`
+- **A winding phase road map** (dashed centre line, numbered stops, cards alternating sides with deliverable bullets; pattern from the Template22 road map; six of thirteen phases shown) -> `templates/winding-roadmap-phases.html`
+- **Theme `Artifacts/theme-editorial-blue-ink.html`** - tokens: paper `#FEFFFC` (sampled), ink `#060605` (sampled), blue `#0153D7` (sampled; dark mode `#6EA0FF`), soft blue `#E7F2FD` (sampled), soft red `#FFE2E1` (sampled); Aptos body with a Playfair Display or Georgia heading face (the specimen's display face was not identified).
+
+All use placeholder names and handles. No source illustration, logo, mascot or caption copy was reused.
