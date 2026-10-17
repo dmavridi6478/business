@@ -387,3 +387,8 @@ All use placeholder names and handles. No source illustration, logo, mascot or c
 - **A free-course map** (serif title with an orange word, peach track panels, lesson cards with number tile, icon slot, one-line promise and two pills, orange call-to-action bar; pattern from the "Claude for Sales" course graphic; the mark is a generic spark, not any brand logo; Tracks 1 and 3 shown, copy a `.track` block for Track 2) -> `templates/course-tracks-peach-orange.html`
 - **Theme `Artifacts/theme-peach-orange-course.html`** - tokens: orange `#EB3C08` (sampled; dark mode `#FF7A4D`), CTA `#ED5D31` (sampled), track peach `#FEF2E4` (sampled), icon tile `#FFE3D3` (sampled), green pill `#E9F1DE` (sampled), peach pill `#FCEDDD` (sampled), navy ink `#14173A` (eyeballed); Aptos body, Playfair Display or Georgia headings.
 - The Site Tusk website slides use the existing `repo-card-beige-grunge.html` layout; no new template was needed.
+
+## Batch 111 intake additions - one template (report batch-115; rendered at 390 and 900 px in headless Chromium, no overflow or console errors)
+
+- **A before and now stack map** (white card, grey struck-through "before" chips, blue "now" chips per function row, container-query collapse to one column; pattern from the "Healthcare Growth Marketing Stack" graphic; text chips only, no brand logos; mark it as opinion unless you have data) -> `templates/stack-before-now-map.html`
+- No new theme: no colours were sampled from this batch.

@@ -6075,3 +6075,17 @@ Not done (needs you): plugin installs (`/plugin install paypal@claude-plugins-of
 **Source problems:** no provider, author or link is given for the "Claude for Sales" courses and a web search found no such course (only a different set of 13 Anthropic Academy courses), so it looks like a comment-to-unlock lead magnet; the Site Tusk title is clickbait (all five sites are public); the omnara slide tells an agent to read and follow a remote SKILL.md, which is untrusted third-party instructions.
 
 **Not done:** nothing installed or run; no comment ("COURSE"), bookmark, follow or sign-up; no connector changed; no agent-building guide or connector reference was in the files; the Agent Archive account question is still waiting for your answer.
+
+## Batch 111 — one iCloud archive (44 images, 3 videos) and three images attached in chat (17 October 2026)
+
+**Report:** Batch 111 Intake Report (`Artifacts/business/batch-115-intake-report.html`; the published link is in the pull request).
+
+**Sources:** the Omnisend "5 minutes to smarter email marketing" infographic, "50 ways to use Claude for marketing", @your.aimentor "6 repos for Claude" cards, @martiendejong_dev "6 free GitHub repos" slides, @modelsignal Part 16 (14 slides), @usamaakram "5 Claude skills for brand owners", @dotdevs "5 apps" slides, two ReStructure AI videos and a 21-second "3 free repos" clip, plus the Healthcare Growth Marketing Stack and "10 SEO Claude Prompts" images attached in chat.
+
+**Added:** skills `modelsignal-free-swaps-part-16`, `claude-seo-10-prompts`, `claude-marketing-50-ways`, `omnisend-claude-connector-email-marketing`, `healthcare-growth-marketing-stack-before-now`, `usamaakram-claude-brand-owner-5-skills`, `dotdevs-app-business-5-apps`, `your-aimentor-6-claude-repos`, `martiendejong-6-repos-printing-cash`, `one-person-ai-creator-studio-video-flows`, `artcraft-open-source-creative-suite-notes`; command `/seo-claude-prompt`; design template `stack-before-now-map`; user-run `scripts/batch115-install.sh`.
+
+**Already existed, not duplicated:** caveman, hyperframes, claude-ads, camofox-browser, brand-brain, app-launch-6-tools-ella, the earlier modelsignal parts, the `/seo-prompts-10` command (a different ten prompts).
+
+**Source problems:** the Part 16 summary slide totals $10,203 under a "$10,689" caption (the headline needs all twelve swaps); prices, star counts and type counts conflict between cards; the Omnisend and Usama Akram slides are vendor or sales funnels; the Ads Expert slide uses a real person's likeness; the videos had no transcript.
+
+**Not done:** nothing installed or cloned; no connector authorized; no Higgsfield credits spent; no comment, follow or purchase; the EffectCraft upstream repo could not be confirmed; no new theme (no colours sampled); the Agent Archive account question is still waiting for your answer.
