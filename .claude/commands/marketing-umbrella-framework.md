@@ -20,7 +20,7 @@ marketing strategy.
 ## Where this repo already covers each branch
 
 - **Strategic Marketing** → `business-decision-frameworks` (SWOT/PESTEL/
-  MoSCoW/RICE), `competitor-profiling` + `competitor-profiling-corey-haines`,
+  MoSCoW/RICE), `competitor-profiling` + `competitor-profiling`,
   `product-marketing-context`/`product-marketing`
 - **Digital Marketing** → `ai-search-visibility` (SEO/SXO/AEO/GEO/AIO),
   `ads`, `ad-creative`, `emails`, `seo-audit`, `social`

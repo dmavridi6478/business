@@ -4800,7 +4800,7 @@ files this time, not summarized into a reference doc.
   sales-teaser graphics (prospecting → research → outreach → conversations
   → pipeline) as an actually-working sequence, mapped to skills **already
   vendored in this repo** (`prospecting`, `customer-research`, `cold-email`,
-  the new `follow-up-when-no-reply`, `sales-enablement-corey-haines`'s
+  the new `follow-up-when-no-reply`, `sales-enablement`'s
   objection library, `sales-enablement`, `revops`) — since neither source
   graphic contained any real prompt/skill content to vendor, only category
   names used as organizing structure, stated explicitly in the file rather
@@ -4821,7 +4821,7 @@ files this time, not summarized into a reference doc.
 **Already covered, cross-referenced rather than re-added:** SWOT/PESTEL
 (business-decision-frameworks), the individual OKR/KPI mechanics
 (quarterly-okr-architect, kpi-reference-handbook), objection handling
-(sales-enablement, sales-enablement-corey-haines).
+(sales-enablement, sales-enablement).
 
 **Declined — no real content to vendor:** "The Ultimate Claude LinkedIn
 Sales Department" (60 agents / 50 skills / 100 prompts / 30 workflows / 10
