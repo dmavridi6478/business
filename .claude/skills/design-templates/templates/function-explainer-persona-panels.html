@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Function explainer panels</title>
+<style>
+  /* Template: stacked "meet the function" panels - persona bubble, syntax bar, argument list, what-it-does box,
+     pros (green) and cons (red) chips, mini sheet. Pattern from the Your CFO Guy lookup infographic. Three panels shown.
+     Customise: function names, syntax, arguments, pros/cons, sample table. */
+  :root { --bg:#f1f4ea; --ink:#1d2a1c; --muted:#56654f; --card:#fff; --line:#c9d3bd; --sage:#dfe8d0; --green:#2f7d3a; --green-bg:#e3f2e1; --red:#b3261e; --red-bg:#fbe6e4; --blue:#2a5db0;
+    --font: Aptos, "Segoe UI", system-ui, sans-serif; --mono: ui-monospace, "SF Mono", Consolas, monospace; }
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --bg:#121a12; --ink:#e6f0e2; --muted:#a3b59d; --card:#1a251a; --line:#33432f; --sage:#243322; --green:#7fd18a; --green-bg:#18301b; --red:#ff9088; --red-bg:#331b19; --blue:#8fb4ff; } }
+  :root[data-theme="dark"] { --bg:#121a12; --ink:#e6f0e2; --muted:#a3b59d; --card:#1a251a; --line:#33432f; --sage:#243322; --green:#7fd18a; --green-bg:#18301b; --red:#ff9088; --red-bg:#331b19; --blue:#8fb4ff; }
+  * { box-sizing: border-box; margin: 0; }
+  body { background: var(--bg); color: var(--ink); font-family: var(--font); font-size: 11pt; padding: 24px max(16px, env(safe-area-inset-left, 0px)); }
+  .wrap { max-width: 860px; margin: 0 auto; display: grid; gap: 16px; }
+  h1 { font-size: 32pt; line-height: 1.1; text-align: center; text-wrap: balance; } h1 em { font-style: normal; color: var(--green); }
+  .def { background: var(--sage); border-radius: 10px; padding: 12px 16px; border: 1px solid var(--line); }
+  .panel { background: var(--card); border: 1.5px dashed var(--line); border-radius: 12px; padding: 14px 16px; display: grid; gap: 12px; min-width: 0; }
+  .top { display: grid; grid-template-columns: 150px 1fr; gap: 14px; align-items: center; }
+  .who { display: grid; place-items: center; gap: 4px; text-align: center; }
+  .av { width: 64px; height: 64px; border-radius: 50%; background: var(--sage); display: grid; place-items: center; font-weight: 800; font-size: 20pt; color: var(--green); }
+  .bubble { background: var(--sage); border-radius: 14px; padding: 6px 12px; font-weight: 800; }
+  .syntax { font-family: var(--mono); font-size: 10.5pt; background: var(--bg); border: 1px solid var(--line); border-radius: 6px; padding: 8px 10px; overflow-wrap: anywhere; }
+  .args { display: grid; gap: 4px; font-size: 10pt; margin-top: 8px; } .args b { font-family: var(--mono); }
+  .mid { display: grid; grid-template-columns: 1fr 1.3fr; gap: 12px; }
+  .does { background: var(--sage); border-radius: 8px; padding: 10px 12px; font-size: 10.5pt; } .does b { color: var(--green); }
+  .chips { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; font-size: 10pt; }
+  .chips div { border-radius: 8px; padding: 8px 10px; display: grid; gap: 4px; } .pro { background: var(--green-bg); } .con { background: var(--red-bg); }
+  .pro b { color: var(--green); } .con b { color: var(--red); }
+  .tw { overflow-x: auto; border: 1px solid var(--line); border-radius: 6px; }
+  table { border-collapse: collapse; width: 100%; font-size: 9.5pt; min-width: 420px; } th, td { padding: 4px 8px; text-align: right; border-bottom: 1px solid var(--line); } th { background: var(--sage); } td:first-child, th:first-child { text-align: left; }
+  td.hit { background: var(--green-bg); font-weight: 700; }
+  @media (max-width: 640px) { .top, .mid { grid-template-columns: 1fr; } h1 { font-size: 24pt; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>VLOOKUP vs HLOOKUP vs <em>XLOOKUP</em></h1>
+  <p class="def"><b>A lookup function</b> searches for a value in a table or range and retrieves the corresponding information from that location.</p>
+
+  <section class="panel">
+    <div class="top"><div class="who"><div class="av">V</div><div class="bubble">Hi! I'm VLOOKUP</div></div>
+      <div><div class="syntax">=VLOOKUP(lookup_value, table_array, col_index_num, [range_lookup])</div>
+        <div class="args"><span><b>lookup_value</b> the value to search for</span><span><b>col_index_num</b> the column number to return from</span><span><b>[range_lookup]</b> TRUE = approximate (default), FALSE = exact</span></div></div></div>
+    <div class="mid"><p class="does"><b>What I am doing:</b> searches vertically in the first column of a range and returns a value from the same row.</p>
+      <div class="chips"><div class="pro"><b>Pros</b><span>Easy for vertical lookups</span><span>Works in all Excel versions</span></div><div class="con"><b>Cons</b><span>Vertical only</span><span>Key must be in the first column</span></div></div></div>
+    <div class="tw"><table><tr><th></th><th>Jan-23</th><th>Feb-23</th><th>Mar-23</th></tr><tr><td>Revenue</td><td>41,286</td><td>13,131</td><td class="hit">35,254</td></tr><tr><td>COGS</td><td>2,327</td><td>6,490</td><td>5,587</td></tr></table></div>
+  </section>
+
+  <section class="panel">
+    <div class="top"><div class="who"><div class="av">H</div><div class="bubble">Hi! I'm HLOOKUP</div></div>
+      <div><div class="syntax">=HLOOKUP(lookup_value, table_array, row_index_num, [range_lookup])</div>
+        <div class="args"><span><b>row_index_num</b> the row number to return from</span></div></div></div>
+    <div class="mid"><p class="does"><b>What I am doing:</b> searches horizontally in the first row of a range and returns a value from the same column.</p>
+      <div class="chips"><div class="pro"><b>Pros</b><span>Easy for horizontal lookups</span></div><div class="con"><b>Cons</b><span>Horizontal only</span><span>Slow on large datasets</span></div></div></div>
+  </section>
+
+  <section class="panel">
+    <div class="top"><div class="who"><div class="av">X</div><div class="bubble">Hi! I'm XLOOKUP</div></div>
+      <div><div class="syntax">=XLOOKUP(lookup_value, lookup_array, return_array, [if_not_found], [match_mode], [search_mode])</div>
+        <div class="args"><span><b>[if_not_found]</b> value to return if there is no match</span><span><b>[search_mode]</b> search direction</span></div></div></div>
+    <div class="mid"><p class="does"><b>What I am doing:</b> searches one array and returns a value from a matching array or range.</p>
+      <div class="chips"><div class="pro"><b>Pros</b><span>Searches in any direction</span><span>Default value if no match</span></div><div class="con"><b>Cons</b><span>Newer Excel versions only</span><span>Syntax is a bit complex</span></div></div></div>
+  </section>
+</div>
+</body>
+</html>

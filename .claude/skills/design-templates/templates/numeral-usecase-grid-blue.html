@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Numeral use-case grid</title>
+<style>
+  /* Template: an editorial one-page explainer - a giant blue numeral beside a condensed-serif headline, five use-case cards (3 + 2) with big numerals and a mini illustration slot,
+     and a five-step flow strip. Pattern from the @your.aimentor "5 Claude writing use cases" graphic. Sampled colours: blue #0153D7, ink #060605, paper #FEFFFC, soft blue #E7F2FD, soft red #FFE2E1.
+     Customise: numeral, headline, cards, flow steps. Cards wrap to one column on phones. */
+  :root { --bg:#fefffc; --ink:#060605; --muted:#4a5568; --blue:#0153d7; --soft:#e7f2fd; --warn:#ffe2e1; --warn-ink:#b3261e; --card:#ffffff; --line:#cfd6e2; --font: Aptos, "Segoe UI", system-ui, sans-serif; --display: "Playfair Display", Georgia, "Times New Roman", serif; }
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --bg:#0d1118; --ink:#f4f6fb; --muted:#aab4c6; --blue:#6ea0ff; --soft:#15233a; --warn:#3a1b1b; --warn-ink:#ff9a94; --card:#141a24; --line:#2b3547; } }
+  :root[data-theme="dark"] { --bg:#0d1118; --ink:#f4f6fb; --muted:#aab4c6; --blue:#6ea0ff; --soft:#15233a; --warn:#3a1b1b; --warn-ink:#ff9a94; --card:#141a24; --line:#2b3547; }
+  * { box-sizing: border-box; margin: 0; }
+  body { background: var(--bg); color: var(--ink); font-family: var(--font); font-size: 11pt; padding-block: 28px; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+  .wrap { max-width: 1040px; margin: 0 auto; display: grid; gap: 18px; }
+  header { display: grid; grid-template-columns: auto 1fr; gap: 16px; align-items: center; }
+  .big { font-family: var(--display); font-weight: 900; font-size: clamp(90px, 18vw, 170px); line-height: .85; color: var(--blue); }
+  h1 { font-family: var(--display); font-weight: 900; font-size: 32pt; line-height: 1.02; letter-spacing: -.02em; text-wrap: balance; }
+  h1 small { display: block; font-size: 11pt; font-family: var(--font); font-weight: 600; letter-spacing: .18em; color: var(--muted); margin-top: 8px; text-transform: uppercase; }
+  .grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 12px; }
+  .card { grid-column: span 2; background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 14px 16px; display: grid; gap: 8px; align-content: start; min-width: 0; }
+  .card:nth-child(n+4) { grid-column: span 3; }
+  .num { font-family: var(--display); font-weight: 900; font-size: 34pt; color: var(--blue); line-height: 1; }
+  .card h2 { font-size: 14pt; text-transform: uppercase; letter-spacing: .01em; }
+  .card p { color: var(--muted); font-size: 10.5pt; }
+  .mini { display: flex; gap: 8px; align-items: center; background: var(--soft); border-radius: 8px; padding: 8px 10px; font-size: 10pt; }
+  .mini.warn { background: var(--warn); color: var(--warn-ink); }
+  .flow { display: grid; grid-template-columns: repeat(5, 1fr); gap: 8px; list-style: none; padding: 0; counter-reset: s; }
+  .flow li { background: var(--card); border: 1px solid var(--line); border-radius: 8px; padding: 10px 12px; font-size: 10pt; color: var(--muted); min-width: 0; }
+  .flow li b { display: block; color: var(--ink); font-size: 11pt; text-transform: uppercase; }
+  .flow li::after { content: ""; }
+  .foot { text-align: center; font-family: var(--display); font-weight: 900; font-size: 18pt; } .foot::after { content: ""; display: block; width: 160px; height: 3px; background: var(--blue); margin: 8px auto 0; border-radius: 3px; }
+  @media (max-width: 760px) { header { grid-template-columns: 1fr; } h1 { font-size: 24pt; } .grid { grid-template-columns: 1fr; } .card, .card:nth-child(n+4) { grid-column: auto; } .flow { grid-template-columns: 1fr 1fr; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header><div class="big" aria-hidden="true">5</div><h1>Writing use cases beyond "write this for me"<small>Same ideas. Better thinking. Stronger writing.</small></h1></header>
+  <div class="grid">
+    <section class="card"><span class="num">01</span><h2>Executive compression</h2><p>20 pages become one decision memo.</p><div class="mini">20 pages of reports to one clear memo</div></section>
+    <section class="card"><span class="num">02</span><h2>Audience translation</h2><p>One idea, different audiences.</p><div class="mini">Executive · Technical · General</div></section>
+    <section class="card"><span class="num">03</span><h2>Argument strengthening</h2><p>Find the weakest premise.</p><div class="mini warn">Weakest premise?</div></section>
+    <section class="card"><span class="num">04</span><h2>Voice consistency</h2><p>Compare writing against a defined voice.</p><div class="mini">Tone · Style · Vocabulary · Consistency</div></section>
+    <section class="card"><span class="num">05</span><h2>Objection anticipation</h2><p>Predict what skeptical readers will challenge.</p><div class="mini warn">What could they doubt? What evidence will they want?</div></section>
+  </div>
+  <ol class="flow"><li><b>Draft</b>Get ideas down</li><li><b>Critique</b>Find the gaps</li><li><b>Strengthen</b>Make it stronger</li><li><b>Compress</b>Say more with less</li><li><b>Publish</b>Create impact</li></ol>
+  <p class="foot">Better writing builds better thinking.</p>
+</div>
+</body>
+</html>

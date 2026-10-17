@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Course tracks peach and orange</title>
+<style>
+  /* Template: a free-course map - serif title with an orange word, three peach track panels (3 + 3 + 2 lessons), each lesson a white card with a number tile, round icon slot, title,
+     one-line promise and two pills (screens, minutes), and a full-width orange call-to-action bar. Pattern from the "Claude for Sales" course graphic; the mark here is a generic spark, not any brand logo.
+     Sampled colours: orange #EB3C08, CTA #ED5D31, track peach #FEF2E4, icon tile #FFE3D3, green pill #E9F1DE, peach pill #FCEDDD. Customise: title, tracks, lessons, pills, CTA text. */
+  :root { --bg:#fffdfb; --ink:#14173a; --muted:#4a5273; --orange:#eb3c08; --cta:#ed5d31; --track:#fef2e4; --tile:#ffe3d3; --card:#ffffff; --line:#f0dccb; --pill-g:#e9f1de; --pill-g-ink:#2f5a1e; --pill-p:#fceddd; --pill-p-ink:#8a3b12; --font: Aptos, "Segoe UI", system-ui, sans-serif; --serif: "Playfair Display", Georgia, "Times New Roman", serif; }
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --bg:#14100d; --ink:#f6efe8; --muted:#c3b5a6; --orange:#ff7a4d; --cta:#d9481f; --track:#241a14; --tile:#3a261b; --card:#1b1511; --line:#3a2c22; --pill-g:#22301a; --pill-g-ink:#b6dd9b; --pill-p:#3a2619; --pill-p-ink:#ffbf9a; } }
+  :root[data-theme="dark"] { --bg:#14100d; --ink:#f6efe8; --muted:#c3b5a6; --orange:#ff7a4d; --cta:#d9481f; --track:#241a14; --tile:#3a261b; --card:#1b1511; --line:#3a2c22; --pill-g:#22301a; --pill-g-ink:#b6dd9b; --pill-p:#3a2619; --pill-p-ink:#ffbf9a; }
+  * { box-sizing: border-box; margin: 0; }
+  body { background: var(--bg); color: var(--ink); font-family: var(--font); font-size: 11pt; padding-block: 28px; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+  .wrap { max-width: 860px; margin: 0 auto; display: grid; gap: 14px; }
+  header { text-align: center; display: grid; gap: 6px; }
+  h1 { font-family: var(--serif); font-weight: 900; font-size: 32pt; line-height: 1.05; display: flex; gap: 12px; align-items: center; justify-content: center; flex-wrap: wrap; } h1 em { font-style: normal; color: var(--orange); }
+  .spark { width: 44px; height: 44px; } .spark path { stroke: var(--orange); stroke-width: 7; stroke-linecap: round; }
+  .sub { color: var(--muted); } .sub b { color: var(--orange); }
+  .track { background: var(--track); border: 1px solid var(--line); border-radius: 14px; padding: 14px; display: grid; gap: 10px; }
+  .track h2 { font-family: var(--serif); font-size: 14pt; display: flex; gap: 10px; align-items: baseline; flex-wrap: wrap; } .track h2 small { font-family: var(--font); font-size: 10pt; font-weight: 400; color: var(--muted); }
+  .lessons { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; } .track.two .lessons { grid-template-columns: repeat(2, 1fr); }
+  .lesson { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 12px; display: grid; gap: 6px; align-content: start; min-width: 0; }
+  .top { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+  .num { background: var(--tile); color: var(--orange); font-family: var(--serif); font-weight: 900; font-size: 18pt; border-radius: 8px; padding: 2px 10px; }
+  .icon { width: 44px; height: 44px; border-radius: 50%; background: var(--tile); display: grid; place-items: center; color: var(--orange); font-size: 16pt; }
+  .lesson h3 { font-family: var(--serif); font-size: 11.5pt; line-height: 1.2; }
+  .lesson p { font-size: 9.5pt; color: var(--muted); }
+  .pills { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 4px; } .pills i { font-style: normal; font-size: 9.5pt; padding: 3px 10px; border-radius: 8px; background: var(--pill-g); color: var(--pill-g-ink); } .pills i + i { background: var(--pill-p); color: var(--pill-p-ink); }
+  .cta { background: var(--cta); color: #fff; text-align: center; border-radius: 14px; padding: 14px 18px; font-weight: 800; letter-spacing: .02em; text-transform: uppercase; }
+  @media (max-width: 700px) { h1 { font-size: 24pt; } .lessons, .track.two .lessons { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header><h1><svg class="spark" viewBox="0 0 100 100" aria-hidden="true"><path d="M50 8v84M8 50h84M20 20l60 60M80 20L20 80"/></svg><span>Your Course <em>Title</em></span></h1>
+    <p class="sub">A collection of <b>free</b> lessons to master one skill with AI.</p></header>
+  <section class="track"><h2>Track 1: Foundations <small>3 lessons · about 1 hour</small></h2><div class="lessons">
+    <article class="lesson"><div class="top"><span class="num">01</span><span class="icon" aria-hidden="true">◎</span></div><h3>Why the landscape is changing</h3><p>One sentence on what the learner gets from this lesson.</p><div class="pills"><i>9 screens</i><i>20 min</i></div></article>
+    <article class="lesson"><div class="top"><span class="num">02</span><span class="icon" aria-hidden="true">✉</span></div><h3>Do the first task in 60 seconds</h3><p>One sentence on what the learner gets from this lesson.</p><div class="pills"><i>9 screens</i><i>20 min</i></div></article>
+    <article class="lesson"><div class="top"><span class="num">03</span><span class="icon" aria-hidden="true">⌖</span></div><h3>Find the right targets</h3><p>One sentence on what the learner gets from this lesson.</p><div class="pills"><i>9 screens</i><i>20 min</i></div></article></div></section>
+  <section class="track two"><h2>Track 3: Advanced practice <small>2 lessons · about 40 min</small></h2><div class="lessons">
+    <article class="lesson"><div class="top"><span class="num">07</span><span class="icon" aria-hidden="true">▤</span></div><h3>Analyse results to improve</h3><p>One sentence on what the learner gets from this lesson.</p><div class="pills"><i>9 screens</i><i>20 min</i></div></article>
+    <article class="lesson"><div class="top"><span class="num">08</span><span class="icon" aria-hidden="true">▦</span></div><h3>Your 30-day plan</h3><p>One sentence on what the learner gets from this lesson.</p><div class="pills"><i>9 screens</i><i>20 min</i></div></article></div></section>
+  <p class="cta">Replace this line with your own call to action</p>
+</div>
+</body>
+</html>

@@ -6017,3 +6017,75 @@ Not done (needs you): plugin installs (`/plugin install paypal@claude-plugins-of
 **Source problems:** the revenue-system list repeats six roles; interview replacement lines are templates that must not claim things you have not done; GTM customer-count thresholds are rules of thumb.
 
 **Not done:** nothing installed; no connector changed (OpenFlowKit entry still unapplied; Midpage, Sentry and Supabase need your authorisation).
+
+## Batch 107 — two iCloud archives and two infographics attached in chat (15 October 2026)
+
+**Report:** Batch 107 Intake Report (`Artifacts/business/batch-111-intake-report.html`; the published link is in the pull request).
+
+**Sources:** 58 images - @ai_slacker premortem (7), @modelsignal paid-to-free swaps Parts 5 and 11 (26), @githubnow briefings of 28 Sept, 13 Oct and 14 Oct (15), @stackfloai first-impression prompts (8), plus the ContentSmash "9 LinkedIn Strategies for Lead Generation" sheet and the smarterwithai.news "How the New LinkedIn Algorithm Works 2026" graphic attached in chat.
+
+**Added:** skills `linkedin-9-lead-gen-strategies`, `linkedin-algorithm-2026-claims`, `first-impression-5-prompts`, `modelsignal-free-swaps-22`, `githubnow-trending-sep-oct-2026`; vendored (MIT, from `mattpocock/skills`) `grilling` and `domain-modeling`; commands `/linkedin-lead-gen`, `/linkedin-algorithm-check`, `/first-impression`, `/grill`, `/grill-with-docs`; agents `linkedin-lead-gen-agent` (draft-only) and `premortem-analyst`; design templates `prompt-tile-grid-9`, `paid-vs-free-swap-card`, `linkedin-algorithm-bento` and theme `theme-signal-grey-rust`; user-run `scripts/batch111-install.sh`.
+
+**Changed:** `ai-slacker-premortem` now uses the slides' exact wording and adds the "why it works" slide; `/premortem` runs the five steps instead of pointing at another skill.
+
+**Already existed, not duplicated:** Hindsight, Paperclip and CLI-Anything entries (`agent-memory-repos`, `agent-repos-week-5`), `open-source-swap-stack-8`, `self-hosted-docker-stack`, the `linkedin-*` skills.
+
+**Source problems:** Part 5's $4,608 headline covers ten swaps while its summary slide lists eight ($4,500); several "free" tools are AGPL, GPL, OSL or Elastic License; `ntdevlabs/tiny11builder` has no licence and its NOTICE denies redistribution rights; the LinkedIn "100+ leads" claim and the algorithm graphic's signal ranking are unsourced; stars and "pushed today" labels are unverified.
+
+**Not done:** nothing installed or run; no stars, forks, comments, posts or LinkedIn messages made; no connector changed (postzen-linkedin and postonce need your authorisation); no agent-building guide or connector reference was in the files.
+
+## Batch 108 — one iCloud archive (16 images, 2 videos) and four infographics attached in chat (15 October 2026)
+
+**Report:** Batch 108 Intake Report (`Artifacts/business/batch-112-intake-report.html`; the published link is in the pull request).
+
+**Sources:** 16 images and 2 MP4 clips from the archive (an app-launch six-tool card set, a free-LLM-API provider list, the "5 tools that feel illegal to be free" carousel, GitHub trending briefings for the week of 14 October 2026, AnyPS5); plus four graphics attached in chat: Your CFO Guy VLOOKUP / HLOOKUP / XLOOKUP, Lara Acosta's $10k LinkedIn content system, AIPlanetX "75 Websites Every Job Seeker Should Know", and Josh Sanders' MAPS positioning framework. The videos were read as frames only; there was no audio transcript.
+
+**Added:** skills `lookup-functions-vlookup-hlookup-xlookup`, `linkedin-maps-positioning-framework`, `linkedin-10k-content-system`, `job-seeker-75-websites`, `app-launch-6-tools-ella`, `free-llm-api-providers-13`, `free-tools-feel-illegal-5`, `github-trending-oct-14-2026-week`; commands `/lookup-formula`, `/linkedin-maps`, `/linkedin-content-system`, `/job-site-pick`, `/app-launch-check`; agent `app-launch-reviewer` (read-only); practice workbook `Artifacts/business/lookup-functions-practice.xlsx` (24 formulas, recalculated, 0 errors; INDEX/MATCH used instead of XLOOKUP); design templates `function-explainer-persona-panels`, `compass-framework-quadrants`, `directory-category-cards-11`, `rank-countdown-dark-glow`, `pastel-panel-framework-sheet` and theme `theme-pastel-panels-ink`; user-run `scripts/batch112-install.sh`.
+
+**Changed:** `linkedin-lead-gen-agent` now runs the MAPS positioning step first and drafts posts with the 10k content system; `/first-impression` argument hint fixed.
+
+**Source problems:** the 75-websites list has repeated entries (Pramp, Interviewing.io, Big Interview, Exponent twice; Coursera twice; Glassdoor three times; AngelList is now Wellfound) and an India skew; the Lara Acosta graphic uses one sentence for formats 1 and 2; the free-LLM list's source repo was unreachable, so provider limits are unverified; Sentry is source-available (FSL), not open source; Upscayl, Immich and VoiceStudio are AGPL-3.0; AnyPS5 is GPL-2.0 only with an unclear legal position, so it was read but not installed; Whisper is not a drop-in Otter replacement; stars and "new this week" figures are unverified.
+
+**Not done:** nothing installed or run; no stars, forks, posts, comments or LinkedIn messages; no connector changed; the Agent Archive account question is still waiting for your answer.
+
+## Batch 109 — three archives (iCloud Photos x2, "Deploy AI agents") and one infographic attached in chat (16 October 2026)
+
+**Report:** Batch 109 Intake Report (`Artifacts/business/batch-113-intake-report.html`; the published link is in the pull request).
+
+**Sources:** 77 images and one animated GIF from three archives (@modelsignal Part 10 paid-to-free swaps, @martiendejong_dev "10 GitHub repos", @replace.so repo cards, Site Tusk repo cards, @3hship and @githubnow trending briefings, @aiclawbots CodeGraph slides, @yassinezaanouni motion tools, Evolving AI / @nextpath.ai prompt, Template22 project management graphics, BojanFin pivot tables and a conditional formatting sheet) plus the @your.aimentor "5 Claude writing use cases" graphic attached in chat. The GIF named "Deploy AI agents" is an LLM tools logo map, not a guide.
+
+**Added:** skills `modelsignal-free-swaps-part-10`, `github-10-repos-shouldnt-be-free`, `replace-so-craft-apps-and-repos`, `site-tusk-github-repos-5`, `githubnow-briefings-aug-sep-oct-2026`, `codegraph-hermes-token-savings`, `motion-tools-6-yassine`, `claude-deeper-version-prompt`, `claude-writing-5-use-cases`, `llm-tools-cheatsheet-map`, `excel-pivot-tables-finance`, `excel-conditional-formatting-cheatsheet`, `pmbok-49-processes-and-pm-roadmap`; commands `/deeper-version`, `/writing-lab`, `/pm-roadmap`, `/excel-rule-pick`; agent `writing-reviewer` (read-only); workbook `Artifacts/business/pm-roadmap-and-excel-practice.xlsx` (80-deliverable tracker, 184 formulas, 0 errors, conditional formats and status dropdown); design templates `repo-card-beige-grunge`, `ranked-repo-sky-cartoon`, `blueprint-caption-chart-slide`, `numeral-usecase-grid-blue`, `winding-roadmap-phases` and theme `theme-editorial-blue-ink`; user-run `scripts/batch113-install.sh`.
+
+**Already existed, not duplicated:** `claude-ads`, `camofox-browser`, `hyperframes` (vendored), `oss-ai-alternatives` (LibreChat), `manim`, `dev-repos-to-clone` (codegraph).
+
+**Source problems:** Part 10's summary slide lists eight swaps that add to $5,256 but says "Save $5,508" (the figure is right only for all twelve); the file named "Excel Data Cleaning Cheat Sheet" holds a conditional formatting sheet; the replace.so star counts (Rea 266,353, Photocraft 62,967) do not match other sources; the Claude Ads slide says 190 checks while the repo says 250+; the "Anthropic lead engineer" prompt names no one; the CodeGraph -70% chart is labelled illustrative; the 49-process mind map has duplicated and misspelt boxes; AutoHedge, Vibe Trading and Fincept Terminal involve real-money trading risk; Open Higgsfield AI advertises no content filters; reclip downloads from sites whose terms may forbid it.
+
+**Not done:** nothing installed or run; no stars, forks, comments ("FREE", "HERMES", "GIT") or follows; no connector changed; no agent-building guide or connector reference was in the files; the Agent Archive account question is still waiting for your answer.
+
+## Batch 110 — one iCloud archive (7 images) and one infographic attached in chat (16 October 2026)
+
+**Report:** Batch 110 Intake Report (`Artifacts/business/batch-114-intake-report.html`; the published link is in the pull request).
+
+**Sources:** 7 Site Tusk slides ("5 websites they don't want you to know about": sandspiel.club, befunky.com, networthify.com, omnara.com, actualbudget.org, plus a cover and a TikTok playlist slide) and the "Claude for Sales" free-course graphic (3 tracks, 8 lessons) attached in chat.
+
+**Added:** skills `claude-for-sales-course-map`, `site-tusk-5-websites-oct`; commands `/sales-lesson` and `/sales-30-day-plan`; design template `course-tracks-peach-orange` and theme `theme-peach-orange-course`; user-run `scripts/batch114-install.sh`.
+
+**Already existed, not duplicated:** the beige Site Tusk card layout (`repo-card-beige-grunge`), Actual Budget in `self-hosted-docker-stack`, the sales prompt skills.
+
+**Source problems:** no provider, author or link is given for the "Claude for Sales" courses and a web search found no such course (only a different set of 13 Anthropic Academy courses), so it looks like a comment-to-unlock lead magnet; the Site Tusk title is clickbait (all five sites are public); the omnara slide tells an agent to read and follow a remote SKILL.md, which is untrusted third-party instructions.
+
+**Not done:** nothing installed or run; no comment ("COURSE"), bookmark, follow or sign-up; no connector changed; no agent-building guide or connector reference was in the files; the Agent Archive account question is still waiting for your answer.
+
+## Batch 111 — one iCloud archive (44 images, 3 videos) and three images attached in chat (17 October 2026)
+
+**Report:** Batch 111 Intake Report (`Artifacts/business/batch-115-intake-report.html`; the published link is in the pull request).
+
+**Sources:** the Omnisend "5 minutes to smarter email marketing" infographic, "50 ways to use Claude for marketing", @your.aimentor "6 repos for Claude" cards, @martiendejong_dev "6 free GitHub repos" slides, @modelsignal Part 16 (14 slides), @usamaakram "5 Claude skills for brand owners", @dotdevs "5 apps" slides, two ReStructure AI videos and a 21-second "3 free repos" clip, plus the Healthcare Growth Marketing Stack and "10 SEO Claude Prompts" images attached in chat.
+
+**Added:** skills `modelsignal-free-swaps-part-16`, `claude-seo-10-prompts`, `claude-marketing-50-ways`, `omnisend-claude-connector-email-marketing`, `healthcare-growth-marketing-stack-before-now`, `usamaakram-claude-brand-owner-5-skills`, `dotdevs-app-business-5-apps`, `your-aimentor-6-claude-repos`, `martiendejong-6-repos-printing-cash`, `one-person-ai-creator-studio-video-flows`, `artcraft-open-source-creative-suite-notes`; command `/seo-claude-prompt`; design template `stack-before-now-map`; user-run `scripts/batch115-install.sh`.
+
+**Already existed, not duplicated:** caveman, hyperframes, claude-ads, camofox-browser, brand-brain, app-launch-6-tools-ella, the earlier modelsignal parts, the `/seo-prompts-10` command (a different ten prompts).
+
+**Source problems:** the Part 16 summary slide totals $10,203 under a "$10,689" caption (the headline needs all twelve swaps); prices, star counts and type counts conflict between cards; the Omnisend and Usama Akram slides are vendor or sales funnels; the Ads Expert slide uses a real person's likeness; the videos had no transcript.
+
+**Not done:** nothing installed or cloned; no connector authorized; no Higgsfield credits spent; no comment, follow or purchase; the EffectCraft upstream repo could not be confirmed; no new theme (no colours sampled); the Agent Archive account question is still waiting for your answer.

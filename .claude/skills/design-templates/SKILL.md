@@ -352,3 +352,43 @@ Uses the existing `photo-scrim-white` theme; placeholder handle `@yourhandle`; n
 |---|---|---|
 | `grey-teal-guide` | bg `#E7E5E4` (sampled), number line `#CEE4DF` (sampled), navy `#0F2D3A` and teal `#8CC1B5` (eyeballed), red `#D8342C`, amber `#F2A93B`, green `#2E9D4F` | Oswald 700 for the title, Inter for body |
 | GTM roadmap (reference only; existing template `gtm-stage-three-column` is close) | black `#0A0A0A` (sampled), purple `#60369E` (sampled), yellow `#F0EF4B` (nearly sampled), green block `#B8F56A` (eyeballed) | Inter 800 |
+
+## Batch 107 additions - three templates and one theme (rendered and checked in headless Chromium, 15 October 2026)
+
+- **A 3x3 grid of numbered prompt tiles, each styled as a chat composer** (pastel header per tile, serif title with highlighted word, dark footer bar; pattern from the ContentSmash "9 LinkedIn Strategies" sheet) -> `templates/prompt-tile-grid-9.html`
+- **A PAID vs FREE comparison card** (cool grey canvas, rust-red free panel, monospace labels, verdict line, "figures unverified" note; pattern from @modelsignal) -> `templates/paid-vs-free-swap-card.html`
+- **A bento infographic for "how an algorithm works"** with a format table that carries an **evidence column** (published / practitioner / unsourced) and a signal-order box; responsive, light and dark -> `templates/linkedin-algorithm-bento.html`
+- **Theme `Artifacts/theme-signal-grey-rust.html`** - tokens: bg `#E9EDF2`, surface `#F3F5FA`, ink navy `#0F1B2D`, rust `#B0331A` (dark mode `#FF7A5C`), muted `#5A6B86`; Aptos with a monospace label font.
+
+## Batch 108 intake additions - five templates and one theme (report batch-112; rendered at 390, 1050 to 1200 px in headless Chromium, no overflow or console errors)
+
+- **A "meet the function" explainer** (persona bubble, syntax bar, argument list, what-it-does box, green pros and red cons chips, mini sheet; pattern from the Your CFO Guy VLOOKUP / HLOOKUP / XLOOKUP graphic) -> `templates/function-explainer-persona-panels.html`
+- **A four-letter framework as tinted quadrant cards** with a compass mark, a fill-in positioning line, a before/after table and a where-to-use strip (pattern from the Josh Sanders MAPS graphic) -> `templates/compass-framework-quadrants.html`. A first version put a 150 px compass over the card text; the compass now sits in the header.
+- **A directory poster of numbered category cards** (coloured header, site names with domains, pill slogan, wide bonus card, call-to-action bar; pattern from the AIPlanetX "75 Websites" graphic) -> `templates/directory-category-cards-11.html`
+- **Dark 9:16 countdown slides** (podium cover, giant rank numeral, stat, one-line takeaway, soft light leak per slide; pattern from the GitHub top-3 video frames) -> `templates/rank-countdown-dark-glow.html`
+- **A pastel-panel strategy sheet** (highlighted serif headline, letter tiles, tiers, labelled rows, formats, grey bonus checklist; pattern from the Lara Acosta LinkedIn system graphic) -> `templates/pastel-panel-framework-sheet.html`
+- **Theme `Artifacts/theme-pastel-panels-ink.html`** - tokens: bg `#FBFAF6`, ink `#161616`, highlighter `#FFF0A6`, panels purple `#F1E4FB`, blue `#E3F0FD`, green `#E6F6DE`, yellow `#FFF4CF`, accent `#D9480F` (dark mode `#FF8A57`); Aptos body, Georgia headline. Colours were judged by eye from the screenshot, not sampled.
+
+All five use placeholder names and handles. No source illustration, logo or caption copy was reused; the directory template lists public site names only.
+
+## Batch 109 intake additions - five templates and one theme (report batch-113; rendered at 390, 600 to 1100 px in headless Chromium, no overflow or console errors)
+
+- **A repo spotlight on a beige concrete texture** (brand wordmark and rule, huge repo name, white README-style panel, one sentence, slide counter; pattern from the Site Tusk carousel) -> `templates/repo-card-beige-grunge.html`
+- **A numbered repo card on a sky-and-grass scene** (giant outlined "#N NAME", pitch, link pill, a generic CSS mascot peeking over a browser frame; pattern from the @martiendejong_dev cards, no licensed character used) -> `templates/ranked-repo-sky-cartoon.html`. A first version let the link pill stretch into a big white blob because the grid had one row too few; fixed.
+- **A blueprint-grid explainer slide** (white chart card with a before/after bar tile and a big stat tile, then bold captions in white highlight boxes; pattern from the @aiclawbots slides; figures are placeholders marked "Illustrative") -> `templates/blueprint-caption-chart-slide.html`
+- **An editorial numeral grid** (giant blue numeral, serif headline, five use-case cards 3 + 2, five-step flow strip; pattern from the @your.aimentor writing graphic) -> `templates/numeral-usecase-grid-blue.html`
+- **A winding phase road map** (dashed centre line, numbered stops, cards alternating sides with deliverable bullets; pattern from the Template22 road map; six of thirteen phases shown) -> `templates/winding-roadmap-phases.html`
+- **Theme `Artifacts/theme-editorial-blue-ink.html`** - tokens: paper `#FEFFFC` (sampled), ink `#060605` (sampled), blue `#0153D7` (sampled; dark mode `#6EA0FF`), soft blue `#E7F2FD` (sampled), soft red `#FFE2E1` (sampled); Aptos body with a Playfair Display or Georgia heading face (the specimen's display face was not identified).
+
+All use placeholder names and handles. No source illustration, logo, mascot or caption copy was reused.
+
+## Batch 110 intake additions - one template and one theme (report batch-114; rendered at 390 and 900 px in headless Chromium, no overflow or console errors)
+
+- **A free-course map** (serif title with an orange word, peach track panels, lesson cards with number tile, icon slot, one-line promise and two pills, orange call-to-action bar; pattern from the "Claude for Sales" course graphic; the mark is a generic spark, not any brand logo; Tracks 1 and 3 shown, copy a `.track` block for Track 2) -> `templates/course-tracks-peach-orange.html`
+- **Theme `Artifacts/theme-peach-orange-course.html`** - tokens: orange `#EB3C08` (sampled; dark mode `#FF7A4D`), CTA `#ED5D31` (sampled), track peach `#FEF2E4` (sampled), icon tile `#FFE3D3` (sampled), green pill `#E9F1DE` (sampled), peach pill `#FCEDDD` (sampled), navy ink `#14173A` (eyeballed); Aptos body, Playfair Display or Georgia headings.
+- The Site Tusk website slides use the existing `repo-card-beige-grunge.html` layout; no new template was needed.
+
+## Batch 111 intake additions - one template (report batch-115; rendered at 390 and 900 px in headless Chromium, no overflow or console errors)
+
+- **A before and now stack map** (white card, grey struck-through "before" chips, blue "now" chips per function row, container-query collapse to one column; pattern from the "Healthcare Growth Marketing Stack" graphic; text chips only, no brand logos; mark it as opinion unless you have data) -> `templates/stack-before-now-map.html`
+- No new theme: no colours were sampled from this batch.

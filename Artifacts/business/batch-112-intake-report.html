@@ -1,0 +1,130 @@
+<title>Batch 108 Intake Report</title>
+<style>
+  /* Layout: single-column formal report, 880px measure; tables scroll inside their own wrappers.
+     Palette: ink-blue neutrals, one deep teal accent, semantic green/amber/red for status only.
+     Type: Aptos (the owner's house font) with system fallbacks; title 32pt, headings 14pt, body 11pt. */
+  :root {
+    --bg: #f6f7f9; --surface: #ffffff; --fg: #1b2330; --muted: #5a6577; --line: #d9dee6;
+    --accent: #0f5d6b; --accent-soft: #e2f0f2;
+    --ok: #17703a; --ok-bg: #e3f3e8; --warn: #8a5a00; --warn-bg: #fbefd3; --bad: #a11d2a; --bad-bg: #fbe3e5;
+    --code-bg: #eef1f5;
+    --font: Aptos, "Segoe UI Variable Text", "Segoe UI", system-ui, -apple-system, Roboto, sans-serif;
+    --mono: ui-monospace, "SF Mono", Consolas, monospace;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #11161e; --surface: #181f2a; --fg: #e6eaf0; --muted: #9aa5b6; --line: #2c3646;
+      --accent: #6cc3d1; --accent-soft: #17323a;
+      --ok: #6fd18f; --ok-bg: #173824; --warn: #f0c261; --warn-bg: #3a2e12; --bad: #ff8d98; --bad-bg: #3d1a1f;
+      --code-bg: #0e131a; color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #11161e; --surface: #181f2a; --fg: #e6eaf0; --muted: #9aa5b6; --line: #2c3646;
+    --accent: #6cc3d1; --accent-soft: #17323a;
+    --ok: #6fd18f; --ok-bg: #173824; --warn: #f0c261; --warn-bg: #3a2e12; --bad: #ff8d98; --bad-bg: #3d1a1f;
+    --code-bg: #0e131a; color-scheme: dark;
+  }
+  * { box-sizing: border-box; }
+  body { background: var(--bg); color: var(--fg); font-family: var(--font); font-size: 11pt; line-height: 1.55; padding-inline: 16px; padding-block: 28px 64px; }
+  main { max-width: 880px; margin-inline: auto; display: flex; flex-direction: column; gap: 28px; }
+  header { display: flex; flex-direction: column; gap: 8px; border-bottom: 2px solid var(--accent); padding-bottom: 18px; }
+  .eyebrow { font-size: 9pt; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
+  h1 { font-size: 32pt; line-height: 1.1; margin: 0; font-weight: 700; text-wrap: balance; }
+  h2 { font-size: 14pt; margin: 0 0 10px; font-weight: 700; color: var(--accent); text-wrap: balance; }
+  p { margin: 0 0 10px; max-width: 75ch; }
+  section { background: var(--surface); border: 1px solid var(--line); border-radius: 6px; padding: 20px 22px; min-width: 0; }
+  .lede { font-size: 11pt; color: var(--muted); max-width: 70ch; margin: 0; }
+  .truth { border-left: 4px solid var(--bad); background: var(--bad-bg); padding: 12px 16px; border-radius: 0 6px 6px 0; }
+  .truth p:last-child { margin-bottom: 0; }
+  .tw { overflow-x: auto; margin-block: 8px 4px; border: 1px solid var(--line); border-radius: 4px; }
+  table { border-collapse: collapse; width: 100%; min-width: 720px; font-size: 10pt; }
+  th, td { padding: 8px 10px; border-bottom: 1px solid var(--line); text-align: center; vertical-align: top; }
+  th { background: var(--accent-soft); color: var(--fg); font-weight: 700; font-size: 9.5pt; }
+  tr:last-child td { border-bottom: 0; }
+  td.l, th.l { text-align: center; } /* house rule: table content aligned top and centre */
+  .st { display: inline-block; padding: 1px 8px; border-radius: 10px; font-size: 9pt; font-weight: 700; white-space: nowrap; }
+  .st.ok { background: var(--ok-bg); color: var(--ok); } .st.warn { background: var(--warn-bg); color: var(--warn); } .st.bad { background: var(--bad-bg); color: var(--bad); }
+  .sw { display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 10px; margin-block: 8px; }
+  .sw div { border: 1px solid var(--line); border-radius: 4px; overflow: hidden; font-size: 9pt; text-align: center; }
+  .sw i { display: block; height: 44px; }
+  .sw span { display: block; padding: 4px 6px; font-family: var(--mono); }
+  .prompt { position: relative; margin-block: 10px; }
+  .prompt pre { margin: 0; white-space: pre-wrap; background: var(--code-bg); border: 1px solid var(--line); border-radius: 4px; padding: 12px 84px 12px 12px; font-family: var(--mono); font-size: 9.5pt; line-height: 1.5; }
+  .prompt b { display: block; font-family: var(--font); font-size: 10pt; margin-bottom: 4px; }
+  .prompt button { position: absolute; top: 30px; right: 8px; font: inherit; font-size: 9pt; padding: 4px 10px; border-radius: 4px; border: 1px solid var(--accent); background: var(--surface); color: var(--accent); cursor: pointer; }
+  .prompt button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  ul { margin: 0 0 10px; padding-left: 20px; } li { margin-bottom: 4px; max-width: 75ch; }
+  code { font-family: var(--mono); font-size: 9.5pt; background: var(--code-bg); padding: 1px 4px; border-radius: 3px; }
+  footer { color: var(--muted); font-size: 9.5pt; }
+</style><main>
+<header><span class="eyebrow">Intake report · one iCloud archive and four infographics · 15 October 2026</span>
+<h1>Batch 108 Intake Report</h1>
+<p class="lede">16 images and 2 short videos from one archive, plus 4 infographics attached in chat, turned into 8 skills, 5 commands, 1 read-only agent, 5 design templates, 1 theme, 1 practice workbook and 1 user-run install script. Prepared for the owner of the business repository.</p></header>
+
+<section class="truth"><h2>What you should know first</h2>
+<p><b>[Certain] The LinkedIn graphics sell a system; none of them proves it works.</b> Lara Acosta's "$10k" figure, the "1-5% Diehards" share and Josh Sanders' audience-growth example are the authors' own claims, with no data behind them in the images. The Lara Acosta graphic also repeats one sentence for formats 1 and 2, so the system as drawn has three distinct formats, not four. Use MAPS and the 5 P's as drafting aids, then measure your own posts.</p>
+<p><b>[Certain] The "75 websites" list is about 66 services, and it was written for an Indian audience.</b> Pramp, Interviewing.io, Big Interview and Exponent each appear twice, Coursera twice and Glassdoor three times; AngelList is now Wellfound. A longer list is not a better list: pick one site per job (search, resume, interview, salary) and stop.</p>
+<p><b>[Certain] "Free" is carrying a lot of weight in the tool cards.</b> Sentry is source-available under the Functional Source License, not open source. Upscayl, Immich and VoiceStudio are AGPL-3.0. VoiceStudio's model weights and voices have separate terms. Immich is not a backup by itself: its README asks for a 3-2-1 plan.</p>
+<p><b>[Likely] Whisper is not a drop-in replacement for Otter.</b> It is a command-line transcriber: no meeting bot, no speaker labels, no live notes. The slide's own footnote admits the interface shown is illustrative.</p>
+<p><b>[Certain] AnyPS5 was read and not installed.</b> It is a PlayStation 5 compatibility layer (GPL-2.0 only) with an unclear legal position, and its trending rank says nothing about that.</p>
+<p><b>[Guessing] The free-LLM provider list is probably still useful, but I could not verify it.</b> The repository it credits (cheahjs/free-llm-api-resources) was unreachable from this session, so no rate limits are quoted. Free tiers change often; read each provider's page on the day you use it.</p></section>
+<section><h2>1. What the upload contained</h2><div class="tw"><table><tr><th>Source</th><th>Items</th><th>Content</th><th>Status</th></tr><tr><td>Your CFO Guy (chat)</td><td>1</td><td>VLOOKUP vs HLOOKUP vs XLOOKUP explainer</td><td><span class="st ok">Skill, command, workbook, template</span></td></tr><tr><td>Lara Acosta (chat)</td><td>1</td><td>Strategy behind a $10k LinkedIn content system</td><td><span class="st warn">Skill, command, template; claims graded</span></td></tr><tr><td>AIPlanetX (chat)</td><td>1</td><td>75 websites every job seeker should know</td><td><span class="st warn">Skill, command, template; duplicates flagged</span></td></tr><tr><td>Josh Sanders (chat)</td><td>1</td><td>MAPS positioning framework</td><td><span class="st ok">Skill, command, template</span></td></tr><tr><td>@ella.tries1 (archive)</td><td>in archive</td><td>Six tools to take an app beyond the preview</td><td><span class="st warn">Skill, command, agent; licence catches</span></td></tr><tr><td>Free LLM API list (archive)</td><td>in archive</td><td>13 free LLM API providers</td><td><span class="st warn">Skill; source repo unreachable</span></td></tr><tr><td>Free tools carousel (archive)</td><td>in archive</td><td>Whisper, Upscayl, LocalSend, Immich, Stirling-PDF</td><td><span class="st warn">Skill; licences read</span></td></tr><tr><td>GitHub trending, week of 14 Oct (archive)</td><td>in archive</td><td>Hindsight, VoiceStudio, Paperclip; AnyPS5</td><td><span class="st warn">Skill; AnyPS5 read only</span></td></tr></table></div><p>The archive held 16 images and 2 videos in total; I did not keep a per-source count. Every image was read. The two videos were read as frames (scene-change and periodic extraction); there was no audio transcript, so spoken content is not covered. No images, archives or videos were committed to git.</p></section><section><h2>2. What was built and installed</h2><div class="tw"><table><tr><th>Item</th><th>Type</th><th>Location</th><th>Status</th></tr><tr><td>lookup-functions-vlookup-hlookup-xlookup</td><td>Skill</td><td>.claude/skills/</td><td><span class="st ok">Created</span></td></tr><tr><td>linkedin-maps-positioning-framework</td><td>Skill</td><td>.claude/skills/</td><td><span class="st ok">Created</span></td></tr><tr><td>linkedin-10k-content-system</td><td>Skill</td><td>.claude/skills/</td><td><span class="st ok">Created</span></td></tr><tr><td>job-seeker-75-websites</td><td>Skill</td><td>.claude/skills/</td><td><span class="st ok">Created (about 66 distinct services)</span></td></tr><tr><td>app-launch-6-tools-ella</td><td>Skill</td><td>.claude/skills/</td><td><span class="st ok">Created</span></td></tr><tr><td>free-llm-api-providers-13</td><td>Skill</td><td>.claude/skills/</td><td><span class="st warn">Created; limits not quoted</span></td></tr><tr><td>free-tools-feel-illegal-5</td><td>Skill</td><td>.claude/skills/</td><td><span class="st ok">Created</span></td></tr><tr><td>github-trending-oct-14-2026-week</td><td>Skill</td><td>.claude/skills/</td><td><span class="st ok">Created</span></td></tr><tr><td>/lookup-formula, /linkedin-maps, /linkedin-content-system, /job-site-pick, /app-launch-check</td><td>Commands</td><td>.claude/commands/</td><td><span class="st ok">Created</span></td></tr><tr><td>app-launch-reviewer</td><td>Agent (Read, Grep, Glob only)</td><td>.claude/agents/</td><td><span class="st ok">Created; read-only</span></td></tr><tr><td>linkedin-lead-gen-agent</td><td>Agent</td><td>.claude/agents/</td><td><span class="st warn">Updated: MAPS first, 10k system for posts</span></td></tr><tr><td>lookup-functions-practice.xlsx</td><td>Workbook</td><td>Artifacts/business/</td><td><span class="st ok">24 formulas, recalculated, 0 errors</span></td></tr><tr><td>function-explainer-persona-panels, compass-framework-quadrants, directory-category-cards-11, rank-countdown-dark-glow, pastel-panel-framework-sheet</td><td>Design templates</td><td>.claude/skills/design-templates/templates/</td><td><span class="st ok">Rendered and checked</span></td></tr><tr><td>theme-pastel-panels-ink</td><td>Design theme</td><td>Artifacts/</td><td><span class="st ok">Created</span></td></tr><tr><td>batch112-install.sh</td><td>Install script (user-run, asks before each step)</td><td>scripts/</td><td><span class="st warn">Not run</span></td></tr></table></div><p>The workbook uses INDEX/MATCH where the graphic uses XLOOKUP, because the repo rule is to avoid live XLOOKUP formulas; the XLOOKUP examples are stored as text. Templates were rendered in headless Chromium at 390 px and desktop widths with no console errors and no horizontal overflow. One defect was found on first render and fixed: the MAPS compass sat on top of two cards and hid text, so it now sits in the header.</p></section><section><h2>3. Repositories and licences identified</h2><div class="tw"><table><tr><th>Repo or product</th><th>Licence (LICENSE file)</th><th>Action</th></tr><tr><td>openai/whisper</td><td>MIT</td><td>Listed in the user-run script; command line only</td></tr><tr><td>upscayl/upscayl</td><td>AGPL-3.0</td><td>Listed; do not use on evidence or documents</td></tr><tr><td>localsend/localsend</td><td>Apache-2.0</td><td>Listed</td></tr><tr><td>immich-app/immich</td><td>AGPL-3.0</td><td>Listed; needs a separate 3-2-1 backup</td></tr><tr><td>Stirling-Tools/Stirling-PDF</td><td>MIT</td><td>Skill already existed (repo-stirling-pdf)</td></tr><tr><td>debpalash/VoiceStudio</td><td>AGPL-3.0; weights and voices separate</td><td>Listed; consent rule documented</td></tr><tr><td>boykopovar/AnyPS5</td><td>GPL-2.0 only</td><td><span class="st bad">Read only, not installed</span></td></tr><tr><td>paperclipai/paperclip, vectorize-io/hindsight</td><td>MIT, MIT</td><td>Already tracked</td></tr><tr><td>Supabase, PostHog, RevenueCat SDK</td><td>Apache-2.0, MIT, MIT</td><td>Documented in the app-launch skill</td></tr><tr><td>Sentry</td><td>Functional Source License (source-available)</td><td><span class="st warn">Documented; not open source</span></td></tr></table></div><p>Licences were read from raw LICENSE files, not from badges. Nothing was installed. Star counts and "new this week" figures on the cards were not verified.</p></section><section><h2>4. Instructions in the files, and what happened to each</h2><div class="tw"><table><tr><th>Instruction</th><th>Done?</th><th>Why</th></tr><tr><td>Use these prompts and procedures (lookups, MAPS, 5 P's, app launch)</td><td><span class="st ok">Done</span></td><td>Converted to skills and commands; plain text below</td></tr><tr><td>Build the practice sheet implied by the lookup graphic</td><td><span class="st ok">Done</span></td><td>Workbook with formulas, recalculated</td></tr><tr><td>Take the free positioning quiz, follow the authors, comment for resources</td><td><span class="st warn">Not done</span></td><td>Outward actions under your name; the quiz needs your details</td></tr><tr><td>Star, fork or follow the trending repos</td><td><span class="st warn">Not done</span></td><td>Session is scoped to this repository; also an outward action</td></tr><tr><td>Install Whisper, Immich, Upscayl, VoiceStudio</td><td><span class="st warn">Not done</span></td><td>User-run script that asks first; Immich and VoiceStudio need your hardware and consent decisions</td></tr><tr><td>Build agents from a guide</td><td><span class="st ok">Done</span></td><td>No guide was present; one read-only reviewer agent built from the app-launch card and one existing agent updated</td></tr><tr><td>Install connectors</td><td><span class="st warn">None to install</span></td><td>No connector named; Taplio, Typefully, Supabase and Sentry exist in the account but LinkedIn publishing and project connections were not touched</td></tr></table></div></section><section><h2>5. Source problems</h2><ul><li>Lara Acosta graphic: formats 1 and 2 share the same sentence; the "$10k" and "1-5% Diehards" figures are unsourced.</li><li>75 websites: duplicates (Pramp, Interviewing.io, Big Interview, Exponent twice; Coursera twice; Glassdoor three times), AngelList renamed Wellfound, heavy India skew; several URLs were checked for reachability, content was not.</li><li>Lookup graphic: the VLOOKUP example label "Net Income" does not match the figures shown; the skill notes the oddity. XLOOKUP needs a recent Excel (365 or 2021).</li><li>Free-LLM list: source repository unreachable from this session, so every limit is unverified.</li><li>App-launch card: the video's order is a list, not a sequence; the skill gives a workable order (build, lock data, instrument, test, charge).</li></ul></section><section><h2>6. Prompts in plain text</h2><p>Square brackets are your inputs. The MAPS, 5 P's, lookup, job-site and app-launch prompts were written by me from the graphics' steps; the sales-call steps follow the Lara Acosta bonus box closely. They are not the authors' own wording.</p><div class="prompt"><b>MAPS positioning coach</b><pre>Act as my LinkedIn positioning coach. Use the MAPS framework.
+
+Ask me one question at a time, in this order, and wait for my answer each time:
+1. Market: who exactly would pay me tomorrow if I messaged them today, and what problem would they happily spend money fixing?
+2. Achievements: which 3 results can I put a number on and prove?
+3. Process: what 3 to 5 steps do I repeat every time to get my clients that result?
+4. Stance: which popular advice in my field do I disagree with, and what result or story backs me up?
+
+Then write my positioning line in this form:
+&quot;I help [market] get [result] through [process], after [achievement].&quot;
+Give 3 versions, then rewrite my current headline and the first two lines of my About section to match. Flag any claim I cannot evidence.
+
+My current headline: [paste]
+My field: [paste]</pre><button class="cp" type="button">Copy</button></div><div class="prompt"><b>One post on the 5 P&#x27;s</b><pre>Write one LinkedIn post using the 5 P&#x27;s, in this order:
+Problem: name the problem I solve and explain it better than my audience can.
+Promise: show the way out.
+Proof: one real result with the story behind it.
+Personality: why me.
+Perspective: what my industry gets wrong.
+
+Write so that someone who has never heard of me can follow it and someone who knows my field still learns something. Keep it under 1,300 characters, end with a soft call to action, and do not invent any result: use only the proof I paste below.
+
+My market: [paste]
+My positioning line: [paste]
+Proof I am allowed to share: [paste]</pre><button class="cp" type="button">Copy</button></div><div class="prompt"><b>Mine a sales call for content</b><pre>Here is a call transcript with names and company details removed and with the client&#x27;s permission.
+1. List the top 5 to 10 objections raised.
+2. Turn each objection into a content idea.
+3. For each idea, suggest which of these formats fits: celebrate a case study, lead magnet, before and after, two-way promo.
+4. Leave a blank where my own experience solving it should go; do not make one up.
+
+Transcript: [paste]</pre><button class="cp" type="button">Copy</button></div><div class="prompt"><b>Pick the right lookup formula</b><pre>I need to look up a value in Excel. My table is laid out like this: [describe rows and columns, and where the key sits].
+Tell me which of VLOOKUP, HLOOKUP, XLOOKUP or INDEX/MATCH fits, and write the formula for my cells. Say what happens if there is no match, whether it uses approximate or exact match, and which Excel versions it works in. Use INDEX/MATCH if my Excel might be older than 2021.</pre><button class="cp" type="button">Copy</button></div><div class="prompt"><b>Pick job-search sites from the list</b><pre>Help me choose job-search sites. I am looking for [role] in [country], remote or on site: [choice]. For each of these jobs - find roles, improve my CV, practise interviews, check salaries - pick one site from my list below and say why. Avoid duplicates and tell me what each site does with my uploaded CV.
+
+My list: [paste]</pre><button class="cp" type="button">Copy</button></div><div class="prompt"><b>App launch check</b><pre>Review my app project against the six launch checks and report only what is missing, with the evidence for each:
+1. One complete flow works end to end on a real phone and the saved data is still there after closing the app.
+2. Three testers can finish one task without help on the second build.
+3. A second account cannot read or edit the first account&#x27;s records.
+4. A three-step funnel is tracked with real counts and the biggest drop is named.
+5. A crash was reproduced, fixed, and the task repeated on the affected version and device.
+6. Purchase, expiry and restore each grant or remove access correctly.
+
+Project description or path: [paste]</pre><button class="cp" type="button">Copy</button></div></section><section><h2>7. Next steps for you</h2><ul>
+<li>Run <code>/linkedin-maps</code> first and test the resulting line on 5 people in your market before changing your profile.</li>
+<li>Open <code>Artifacts/business/lookup-functions-practice.xlsx</code> and read the Lookups sheet against your own data before relying on any lookup formula.</li>
+<li>On your own machine, <code>scripts/batch112-install.sh</code> asks before each step; start with Whisper in its own virtual environment.</li>
+<li>Decide on Immich only if you will run a separate off-site backup; decide on VoiceStudio only if you will get the speaker's written consent.</li>
+<li>Open item: the Agent Archive account question from session start is still waiting for your answer; I created no account and saved no key.</li></ul></section>
+<footer>Sources: 16 images and 2 short videos from one iCloud archive and 4 images attached in chat; licences read from raw LICENSE files on 15 October 2026; videos read as frames only.</footer>
+</main>
+<script>
+document.querySelectorAll('.cp').forEach(function (b) {
+  b.addEventListener('click', function () {
+    var t = b.parentNode.querySelector('pre');
+    function done() { b.textContent = 'Copied'; setTimeout(function () { b.textContent = 'Copy'; }, 1500); }
+    function fb() { var r = document.createRange(); r.selectNodeContents(t); var s = getSelection(); s.removeAllRanges(); s.addRange(r); b.textContent = 'Selected'; }
+    try { navigator.clipboard.writeText(t.textContent).then(done, fb); } catch (e) { fb(); }
+  });
+});
+</script>
