@@ -6115,3 +6115,17 @@ Not done (needs you): plugin installs (`/plugin install paypal@claude-plugins-of
 **Source problems:** most of the "89 commands" are not built-in Claude commands; the marketing-team agent files were not provided; LinkedIn mock-up numbers are illustrative; the AI-tools sheet duplicates descriptions and uses dated names; three graphics end in comment-to-get funnels.
 
 **Not done:** nothing installed; no comment ("AI Tools", "ASSET", "BOOK"), sign-up or follow; no repos or licences involved; no template or theme; the Agent Archive account question is still waiting for your answer.
+
+## Batch 114 — two iCloud archives (42 images, 2 videos) (18 October 2026)
+
+**Report:** Batch 114 Intake Report (`Artifacts/business/batch-118-intake-report.html`; the published link is in the pull request).
+
+**Sources:** @palidev21 "5 GitHub projects worth saving", the @githubnow 17 October briefing, @sitetusk five GitHub projects and five websites, @martiendejong_dev ten OSS repos countdown, @replace.so six repos, a 70-second @freellmapi video and a 16-second SkillDrop AI skill demo.
+
+**Added:** skills `palidev-5-github-projects-worth-saving`, `githubnow-3-repos-17-oct-2026`, `sitetusk-5-github-projects-oct`, `martiendejong-10-oss-repos-vs-paid`, `replace-so-6-repos-too-good-free-oct`, `freellmapi-5-repos-that-blew-up-video`, `skilldrop-content-calendar-builder-demo`; command `/content-calendar-30`; user-run `scripts/batch118-install.sh`.
+
+**Already existed, not duplicated:** the five websites (existing directory skills) and gods-eye-view (`github-briefing-oct4-three`).
+
+**Source problems:** an implausible "+54,706 stars today"; star counts that disagree across cards; cursor/plugins has no root licence; two repos in the video were never named; "free" often means a free core with paid tiers.
+
+**Not done:** nothing installed or cloned; no comment ("TRENDING", "GUIDE"), bookmark or follow; no template or theme; the Agent Archive account question is still waiting for your answer.
