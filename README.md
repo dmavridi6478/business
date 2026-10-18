@@ -6089,3 +6089,15 @@ Not done (needs you): plugin installs (`/plugin install paypal@claude-plugins-of
 **Source problems:** the Part 16 summary slide totals $10,203 under a "$10,689" caption (the headline needs all twelve swaps); prices, star counts and type counts conflict between cards; the Omnisend and Usama Akram slides are vendor or sales funnels; the Ads Expert slide uses a real person's likeness; the videos had no transcript.
 
 **Not done:** nothing installed or cloned; no connector authorized; no Higgsfield credits spent; no comment, follow or purchase; the EffectCraft upstream repo could not be confirmed; no new theme (no colours sampled); the Agent Archive account question is still waiting for your answer.
+
+## Batch 112 — one iCloud archive (28 images, 3 videos) and two images attached in chat (18 October 2026)
+
+**Report:** Batch 112 Intake Report (`Artifacts/business/batch-116-intake-report.html`; the published link is in the pull request).
+
+**Sources:** @modelsignal Part 15 (14 slides), the @epic8244 colibri carousel, @dotdevs "5 GitHub repos for your next AI app", three videos (a Greek Claude + Remotion anti-slop clip, a "5 free desktop apps" clip and a @githubnow top-ten clip), plus the SalesDaily "10 sales tools" connector graphic and the "Best prompts for Copilot for Excel" graphic attached in chat. One personal photo and a 2-second clip were skipped.
+
+**Added:** skills `modelsignal-free-swaps-part-15`, `salesdaily-claude-10-sales-tools-connectors`, `copilot-excel-10-prompts`, `colibri-moe-laptop-inference-notes`, `dotdevs-5-github-repos-for-ai-app`, `vantage-5-free-desktop-apps`, `githubnow-top10-18-oct-2026`, `claude-remotion-no-ai-slop-rules`; command `/copilot-excel-prompt`; user-run `scripts/batch116-install.sh`.
+
+**Source problems:** the Part 15 summary slide totals $1,434 under a "$1,620" caption; Open WebUI is not MIT (custom licence); Postal had no root LICENSE file; colibri's speed and disk needs are not stated reliably; the Greek video's setup is behind a comment gate.
+
+**Not done:** nothing installed or cloned; no connector added (the three custom connector URLs on the SalesDaily graphic were not used); no comment ("MOVE"), follow or purchase; no new template or theme (the Part 15 cards reuse `paid-vs-free-swap-card`); the Agent Archive account question is still waiting for your answer.
