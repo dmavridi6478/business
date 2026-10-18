@@ -6101,3 +6101,17 @@ Not done (needs you): plugin installs (`/plugin install paypal@claude-plugins-of
 **Source problems:** the Part 15 summary slide totals $1,434 under a "$1,620" caption; Open WebUI is not MIT (custom licence); Postal had no root LICENSE file; colibri's speed and disk needs are not stated reliably; the Greek video's setup is behind a comment gate.
 
 **Not done:** nothing installed or cloned; no connector added (the three custom connector URLs on the SalesDaily graphic were not used); no comment ("MOVE"), follow or purchase; no new template or theme (the Part 15 cards reuse `paid-vs-free-swap-card`); the Agent Archive account question is still waiting for your answer.
+
+## Batch 113 — two archives of business infographics (13 files, 18 October 2026)
+
+**Report:** Batch 113 Intake Report (`Artifacts/business/batch-117-intake-report.html`; the published link is in the pull request).
+
+**Sources:** a "business review" archive (9-slide business review, 89 Claude commands, AI as a communicator, Excel data model, How RAG works, 10 steps to a sales proposal) and a "6 key business models" archive (50+ AI tools, 6 business models, AI visibility, GTM in 2026, LinkedIn client acquisition, 6 levels of GTM, Claude Code marketing team).
+
+**Added:** skills `beloved-brands-9-slide-business-review`, `claude-89-commands-aiplanetx`, `excel-data-model-blueprint`, `rag-how-it-works-infographic`, `sales-proposal-10-steps`, `ai-tools-50-must-have-map`, `business-models-6-key-for-leaders`, `ai-search-finds-your-brand-9-steps`, `gtm-6-levels-growth-today`, `gtm-2026-then-vs-now-stack`, `linkedin-client-acquisition-one-page-16`, `claude-code-marketing-team-50-roles`; commands `/business-review-9` and `/sales-proposal-10`.
+
+**Already existed, not duplicated:** `ai-communicator` (the communicator graphic).
+
+**Source problems:** most of the "89 commands" are not built-in Claude commands; the marketing-team agent files were not provided; LinkedIn mock-up numbers are illustrative; the AI-tools sheet duplicates descriptions and uses dated names; three graphics end in comment-to-get funnels.
+
+**Not done:** nothing installed; no comment ("AI Tools", "ASSET", "BOOK"), sign-up or follow; no repos or licences involved; no template or theme; the Agent Archive account question is still waiting for your answer.

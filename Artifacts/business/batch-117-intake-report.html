@@ -1,0 +1,87 @@
+<title>Batch 113 Intake Report</title>
+<style>
+  /* Layout: single-column formal report, 880px measure; tables scroll inside their own wrappers.
+     Palette: ink-blue neutrals, one deep teal accent, semantic green/amber/red for status only.
+     Type: Aptos (the owner's house font) with system fallbacks; title 32pt, headings 14pt, body 11pt. */
+  :root {
+    --bg: #f6f7f9; --surface: #ffffff; --fg: #1b2330; --muted: #5a6577; --line: #d9dee6;
+    --accent: #0f5d6b; --accent-soft: #e2f0f2;
+    --ok: #17703a; --ok-bg: #e3f3e8; --warn: #8a5a00; --warn-bg: #fbefd3; --bad: #a11d2a; --bad-bg: #fbe3e5;
+    --code-bg: #eef1f5;
+    --font: Aptos, "Segoe UI Variable Text", "Segoe UI", system-ui, -apple-system, Roboto, sans-serif;
+    --mono: ui-monospace, "SF Mono", Consolas, monospace;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #11161e; --surface: #181f2a; --fg: #e6eaf0; --muted: #9aa5b6; --line: #2c3646;
+      --accent: #6cc3d1; --accent-soft: #17323a;
+      --ok: #6fd18f; --ok-bg: #173824; --warn: #f0c261; --warn-bg: #3a2e12; --bad: #ff8d98; --bad-bg: #3d1a1f;
+      --code-bg: #0e131a; color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #11161e; --surface: #181f2a; --fg: #e6eaf0; --muted: #9aa5b6; --line: #2c3646;
+    --accent: #6cc3d1; --accent-soft: #17323a;
+    --ok: #6fd18f; --ok-bg: #173824; --warn: #f0c261; --warn-bg: #3a2e12; --bad: #ff8d98; --bad-bg: #3d1a1f;
+    --code-bg: #0e131a; color-scheme: dark;
+  }
+  * { box-sizing: border-box; }
+  body { background: var(--bg); color: var(--fg); font-family: var(--font); font-size: 11pt; line-height: 1.55; padding-inline: 16px; padding-block: 28px 64px; }
+  main { max-width: 880px; margin-inline: auto; display: flex; flex-direction: column; gap: 28px; }
+  header { display: flex; flex-direction: column; gap: 8px; border-bottom: 2px solid var(--accent); padding-bottom: 18px; }
+  .eyebrow { font-size: 9pt; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
+  h1 { font-size: 32pt; line-height: 1.1; margin: 0; font-weight: 700; text-wrap: balance; }
+  h2 { font-size: 14pt; margin: 0 0 10px; font-weight: 700; color: var(--accent); text-wrap: balance; }
+  p { margin: 0 0 10px; max-width: 75ch; }
+  section { background: var(--surface); border: 1px solid var(--line); border-radius: 6px; padding: 20px 22px; min-width: 0; }
+  .lede { font-size: 11pt; color: var(--muted); max-width: 70ch; margin: 0; }
+  .truth { border-left: 4px solid var(--bad); background: var(--bad-bg); padding: 12px 16px; border-radius: 0 6px 6px 0; }
+  .truth p:last-child { margin-bottom: 0; }
+  .tw { overflow-x: auto; margin-block: 8px 4px; border: 1px solid var(--line); border-radius: 4px; }
+  table { border-collapse: collapse; width: 100%; min-width: 720px; font-size: 10pt; }
+  th, td { padding: 8px 10px; border-bottom: 1px solid var(--line); text-align: center; vertical-align: top; }
+  th { background: var(--accent-soft); color: var(--fg); font-weight: 700; font-size: 9.5pt; }
+  tr:last-child td { border-bottom: 0; }
+  td.l, th.l { text-align: center; } /* house rule: table content aligned top and centre */
+  .st { display: inline-block; padding: 1px 8px; border-radius: 10px; font-size: 9pt; font-weight: 700; white-space: nowrap; }
+  .st.ok { background: var(--ok-bg); color: var(--ok); } .st.warn { background: var(--warn-bg); color: var(--warn); } .st.bad { background: var(--bad-bg); color: var(--bad); }
+  .sw { display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 10px; margin-block: 8px; }
+  .sw div { border: 1px solid var(--line); border-radius: 4px; overflow: hidden; font-size: 9pt; text-align: center; }
+  .sw i { display: block; height: 44px; }
+  .sw span { display: block; padding: 4px 6px; font-family: var(--mono); }
+  .prompt { position: relative; margin-block: 10px; }
+  .prompt pre { margin: 0; white-space: pre-wrap; background: var(--code-bg); border: 1px solid var(--line); border-radius: 4px; padding: 12px 84px 12px 12px; font-family: var(--mono); font-size: 9.5pt; line-height: 1.5; }
+  .prompt b { display: block; font-family: var(--font); font-size: 10pt; margin-bottom: 4px; }
+  .prompt button { position: absolute; top: 30px; right: 8px; font: inherit; font-size: 9pt; padding: 4px 10px; border-radius: 4px; border: 1px solid var(--accent); background: var(--surface); color: var(--accent); cursor: pointer; }
+  .prompt button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  ul { margin: 0 0 10px; padding-left: 20px; } li { margin-bottom: 4px; max-width: 75ch; }
+  code { font-family: var(--mono); font-size: 9.5pt; background: var(--code-bg); padding: 1px 4px; border-radius: 3px; }
+  footer { color: var(--muted); font-size: 9.5pt; }
+</style><main>
+<header><span class="eyebrow">Intake report · two archives · 18 October 2026</span>
+<h1>Batch 113 Intake Report</h1>
+<p class="lede">Two archives holding 13 business and marketing infographics (10 images, 3 animated GIFs), turned into 12 skills, 2 commands and no installs. These are reference graphics, so the work was transcription, de-duplication against the repo, and honest labelling of what each one can and cannot support.</p></header>
+
+<section class="truth"><h2>What you should know first</h2>
+<p><b>[Certain] The "89 Claude commands" are mostly not real commands.</b> Typing /workflow or /forecast in Claude does nothing built-in. They work only as a convention, or after you save each as your own command or skill. The graphic also ends in a "comment AI Tools for the database" funnel.</p>
+<p><b>[Certain] The "Claude Code marketing team" is an org chart, not a result.</b> The 50 agent files were not in the upload (they sit behind "Comment BOOK"), and no cost, quality or conversion data is shown. I recorded the names and duties only.</p>
+<p><b>[Certain] The LinkedIn acquisition sheet's numbers are decoration.</b> Acceptance rates and lead counts change between animation frames. Automated connection requests and comment-to-DM bots can also breach LinkedIn's terms.</p>
+<p><b>[Certain] The "50+ must-have AI tools" sheet is dated and internally inconsistent.</b> The same sentence appears under several unrelated tools, and some names (Codey, Veed GPT, Replit Ghost Writer) have since been renamed. I kept names only.</p>
+<p><b>[Likely] "How AI search finds your brand" is a simplified diagram, not a documented system.</b> Treat its two tips (be crawlable, optimise for both SEO and AI retrieval) as sound basics, not as a way to guarantee citations.</p></section>
+<section><h2>1. What the upload contained</h2><div class="tw"><table><tr><th>Archive</th><th>Content</th><th>Status</th></tr><tr><td>Business review zip (6 files)</td><td>9-slide business review (Beloved Brands); 89 Claude commands (AIPlanetX); AI as a powerful communicator (already in repo); Excel data model; How RAG works (GIF); 10 steps to master your sales proposal (Sollo)</td><td><span class="st ok">All read</span></td></tr><tr><td>6 key business models zip (7 files)</td><td>50+ must-have AI tools; 6 key business models; AI visibility; GTM in 2026 (GIF); LinkedIn acquisition one page (GIF); 6 levels of a GTM strategy; Claude Code marketing team</td><td><span class="st ok">All read</span></td></tr></table></div><p>GIFs were read from first, middle and last frames. No images or archives were committed to git.</p></section><section><h2>2. What was built and installed</h2><div class="tw"><table><tr><th>Item</th><th>Type</th><th>Status</th></tr><tr><td>beloved-brands-9-slide-business-review + /business-review-9</td><td>Skill and command</td><td><span class="st ok">Created</span></td></tr><tr><td>claude-89-commands-aiplanetx</td><td>Skill: 89 prompts in 11 groups, with the not-real-commands warning</td><td><span class="st ok">Created</span></td></tr><tr><td>excel-data-model-blueprint</td><td>Skill</td><td><span class="st ok">Created</span></td></tr><tr><td>rag-how-it-works-infographic</td><td>Skill</td><td><span class="st ok">Created</span></td></tr><tr><td>sales-proposal-10-steps + /sales-proposal-10</td><td>Skill and command (draft only)</td><td><span class="st ok">Created</span></td></tr><tr><td>ai-tools-50-must-have-map</td><td>Skill: names and groups only</td><td><span class="st ok">Created</span></td></tr><tr><td>business-models-6-key-for-leaders</td><td>Skill</td><td><span class="st ok">Created</span></td></tr><tr><td>ai-search-finds-your-brand-9-steps</td><td>Skill</td><td><span class="st ok">Created</span></td></tr><tr><td>gtm-6-levels-growth-today</td><td>Skill: six levels with example tools</td><td><span class="st ok">Created</span></td></tr><tr><td>gtm-2026-then-vs-now-stack</td><td>Skill</td><td><span class="st ok">Created</span></td></tr><tr><td>linkedin-client-acquisition-one-page-16</td><td>Skill: 16 cards</td><td><span class="st ok">Created</span></td></tr><tr><td>claude-code-marketing-team-50-roles</td><td>Skill: 10 departments, 50 role names</td><td><span class="st warn">Agent files not provided</span></td></tr></table></div><p>Not duplicated: <code>ai-communicator</code> (the communicator graphic is already covered by it). No install script, template or theme was needed: nothing here names a repo to clone, and the graphics are not new visual styles.</p></section><section><h2>3. Repositories and licences</h2><p>None of the thirteen graphics names a repository, so no licence was read. The tools and sites they mention (Apollo, Clay, HubSpot, Webflow, and so on) were not checked for pricing, features or licences.</p></section><section><h2>4. Instructions in the files, and what happened to each</h2><div class="tw"><table><tr><th>Instruction</th><th>Done?</th><th>Why</th></tr><tr><td>Comment "AI Tools" for the 38,000-tool database (AIPlanetX)</td><td><span class="st warn">Not done</span></td><td>A social action under your name; a sales funnel</td></tr><tr><td>Comment "ASSET" for the LinkedIn guide</td><td><span class="st warn">Not done</span></td><td>Same reason; the animated numbers are illustrative</td></tr><tr><td>Comment "BOOK" for the marketing-team pack</td><td><span class="st warn">Not done</span></td><td>Same reason; the agent files were not provided</td></tr><tr><td>Sign up for Sollo or follow the authors</td><td><span class="st warn">Not done</span></td><td>No sign-ups or follows made</td></tr><tr><td>Turn the frameworks into commands</td><td><span class="st ok">Done</span></td><td>/business-review-9 and /sales-proposal-10</td></tr><tr><td>Build agents from a guide</td><td><span class="st warn">No guide present</span></td><td>The marketing-team graphic names roles, not build steps</td></tr><tr><td>Install connectors</td><td><span class="st warn">None to install</span></td><td>No connector is named for installation</td></tr></table></div></section><section><h2>5. Source problems</h2><ul><li>The 9-slide review thumbnails are partly illegible, and the example brand is fictional.</li><li>"89 commands" mixes real concepts with invented slash words; several overlap (summary, summarize, tl;dr, key-points).</li><li>The AI-tools sheet duplicates descriptions across tools and mixes dated names.</li><li>The Excel data-model graphic repeats the PivotTable customisation card and does not mention that Power Pivot is not in every Excel edition.</li><li>The six-business-models sheet credits each panel to a different website; credit the originals (RACE, Steve Blank, Porter, Ohmae, McKinsey) when reusing.</li><li>Three of the graphics end in comment-to-get funnels.</li></ul></section><section><h2>6. Prompts in plain text</h2><p>The graphics print almost no literal prompts, so these four were written by me from their content; brackets are your inputs.</p><div class="prompt"><b>Business review (written by me from the structure)</b><pre>Build a 9-slide business review for [brand] for [period]. Use these facts only: [paste data]. Slide 1 scorecard table (this year, last year, plan, competitor, comment; write &quot;needed&quot; for unknown cells). Slide 2 SWOT. Slides 4 to 9 (marketplace, consumers, competitors, channels, brand, financials): exactly three numbered findings and one bold conclusion each. Slide 3 summarises the six conclusions and states one brand challenge. List the five data gaps that would change a conclusion.</pre><button class="cp" type="button">Copy</button></div><div class="prompt"><b>Sales proposal (written by me from the 10 steps)</b><pre>Draft a sales proposal for [buyer]. Title it with their desired outcome and date: [outcome]. Then in this order: recap how we got here, where they are now (problem, root cause, impact in their words: [paste notes]), where they want to go, the cost of doing nothing (show arithmetic), our solution mapped to their problems, a simple timeline, one case study [paste approved case], the investment in context with two or three options [paste prices], and one clear next step with a date. Do not invent numbers or quotes.</pre><button class="cp" type="button">Copy</button></div><div class="prompt"><b>AI search (written by me from the two tips)</b><pre>Audit [url] for AI retrieval: is the page crawlable and public (robots, noindex, login walls)? Are the brand name, product names and key claims stated consistently and in plain text? List five fixes ordered by effort, and say which affect Google SEO as well.</pre><button class="cp" type="button">Copy</button></div><div class="prompt"><b>Excel data model (written by me from the steps)</b><pre>I have these tables: [names and columns]. Propose the relationships (key column on each side, one-to-many direction), three DAX measures I will need, and the PivotTable layout. Flag any key that has duplicates or blanks.</pre><button class="cp" type="button">Copy</button></div></section><section><h2>7. Next steps for you</h2><ul>
+<li>Run <code>/business-review-9</code> on one real brand with real data, and <code>/sales-proposal-10</code> on one live deal.</li>
+<li>If you want the 50 marketing agents, ask the post's author for the files; do not follow a stranger's install command without reading it.</li>
+<li>Keep LinkedIn outreach manual and personal; use <code>linkedin-lead-gen-agent</code> for drafts only.</li>
+<li>Open item: the Agent Archive account question from session start is still waiting for your answer; I created no account and saved no key.</li></ul></section>
+<footer>Sources: 13 infographics (10 images, 3 animated GIFs) from two uploaded archives; no repositories, licences or prices were checked; nothing was installed.</footer>
+</main>
+<script>
+document.querySelectorAll('.cp').forEach(function (b) {
+  b.addEventListener('click', function () {
+    var t = b.parentNode.querySelector('pre');
+    function done() { b.textContent = 'Copied'; setTimeout(function () { b.textContent = 'Copy'; }, 1500); }
+    function fb() { var r = document.createRange(); r.selectNodeContents(t); var s = getSelection(); s.removeAllRanges(); s.addRange(r); b.textContent = 'Selected'; }
+    try { navigator.clipboard.writeText(t.textContent).then(done, fb); } catch (e) { fb(); }
+  });
+});
+</script>
