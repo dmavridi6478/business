@@ -380,24 +380,22 @@ All eight use original CSS and placeholder wording; no source logo, avatar, illu
 
 Each theme file sets body 11pt, title 32pt, headings 14pt, Aptos first in the font stack, and tables aligned top and centre.
 
-## Batch 112 additions - five templates (rendered; containment checked in headless Chromium, 19 Oct 2026)
+## Batch 112 additions - four templates (rendered; containment checked in headless Chromium, 19 Oct 2026)
 
 | File | Inspired by | Technique |
 |---|---|---|
 | `ui-tip-before-after.html` | UI-design-tips carousel (@ux_dose) | 1080x1350; white page, five pill tabs with one active, huge tight headline, grey rule line, two cards tagged Before (heavy shadow) and After (soft shadow), SWIPE pill footer |
-| `github-trending-dark.html` | trending-repo cards (@githubnow) | 1080x1350; navy gradient, green category pill and amber stars-today pill, monospace repo slug, claim, white diagram panel, three stat boxes; print the date the stars were read |
 | `side-hustle-serif-dark.html` | AI side-hustle carousel (@earchoe) | 1080x1350; near-black, green rule, serif headline with a capitals second line, monospace body, SOURCE-AI-CHECK-PACKAGE-SELL pipeline or COPY THIS prompt box |
 | `replaces-list-card.html` | "25 tools that feel illegal to be free" list (@will.ai.m) | 1080x1350; white page, five numbered soft-shadow rows with icon square, REPLACES label, name, job and FREE star count; footer states stars are unverified |
 | `parchment-repo-card.html` | "5 GitHub projects" series (@sitetusk) | 1080x1350; parchment page, wordmark and heavy rule, large repo slug, white README-screenshot panel, one-sentence description |
 
-All five use original CSS and placeholder wording; no source logo, mascot, texture or copy is reused.
+All four use original CSS and placeholder wording; no source logo, mascot, texture or copy is reused. A fifth, a GitHub-trending dark card, was dropped because `github-trending-card` and `repo-briefing-card` already cover that style.
 
 ## Batch 112 theme tokens (files in `Artifacts/theme-*.html`; colours eyeballed, not sampled)
 
 | Theme file | Light | Dark | Fonts (free) |
 |---|---|---|---|
 | `theme-ui-white-ink.html` | bg `#F6F6F7`, text `#0E0F12`, accent `#3B5BFF` | bg `#0F1013`, accent `#8EA2FF` | Inter |
-| `theme-github-night-green.html` | bg `#EAF0F8`, accent `#157A4B` | bg `#0B1020`, accent `#35D07F` | Inter + JetBrains Mono |
 | `theme-hustle-serif-dark.html` | bg `#F4F1E8`, accent `#1E8A4C` | bg `#141310`, accent `#5EE08A` | Playfair Display + JetBrains Mono |
 | `theme-replaces-list-white.html` | bg `#FFFFFF`, accent `#D9481F` | bg `#111215`, accent `#FF7A4D` | Inter |
 | `theme-parchment-tusk.html` | bg `#E2D8C5`, accent `#134B4B` | bg `#17150F`, accent `#6FC2C2` | Jost |

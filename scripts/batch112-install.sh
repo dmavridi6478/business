@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 # Batch 112 - optional installs. RUN ON YOUR OWN MACHINE. Every step asks first. Nothing here pipes a download into a shell.
-# Done in the cloud session: 9 skills, 9 commands, 5 design templates, 5 themes, a workflows page and a prompts file were added to the repo; nothing was installed.
+# Done in the cloud session: 3 skills, 3 commands, 4 design templates, 4 themes (six more skills were merged into existing ones), a workflows page and a prompts file were added to the repo; nothing was installed.
 # Repo slugs, stars and licences for the Part 17 / Part 12 / finds repos were read from GitHub pages on 19 October 2026
-# (see .claude/skills/oss-swap-part-17, oss-swap-part-12 and github-finds-oct-19).
+# (see .claude/skills/oss-swap-part-17, oss-swap-part-12 and github-trending-top10-oct5).
 set -euo pipefail
 ask() { read -r -p "$1 [y/N] " a; [[ "$a" =~ ^[Yy]$ ]]; }
 clone() { [ -d "$HOME/src/${1#*/}" ] && { echo "   $1 already cloned"; return; }; mkdir -p "$HOME/src" && git clone --depth 1 "https://github.com/$1.git" "$HOME/src/${1#*/}"; }

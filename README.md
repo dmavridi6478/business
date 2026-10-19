@@ -6036,10 +6036,11 @@ Not done (needs you): plugin installs (`/plugin install paypal@claude-plugins-of
 
 ## Batch 112 (19 October 2026)
 
-Built from `06b982f4-iCloud_Photos_2.zip` and `915c7196-iCloud_Photos.zip` (84 images, 2 videos).
+Built from `06b982f4-iCloud_Photos_2.zip` and `915c7196-iCloud_Photos.zip` (84 images, 2 videos), then consolidated.
 
-- 9 skills: `oss-swap-part-17`, `oss-swap-part-12`, `ui-polish-6-checks`, `ai-side-hustle-pilot`, `customer-research-stack`, `oss-free-replacements-25`, `github-finds-oct-19`, `docker-agent-yaml`, `claude-code-setup-recommender`.
-- 9 commands: `/oss-swap-17`, `/oss-swap-12`, `/ui-polish`, `/side-hustle-pilot`, `/research-stack`, `/oss-25`, `/github-finds`, `/docker-agent`, `/setup-recommend`.
-- 5 design templates and 5 themes (see `design-templates` "Batch 112 additions").
+- 3 new skills: `oss-swap-part-17`, `oss-swap-part-12`, `ai-side-hustle-pilot`; 3 commands: `/oss-swap-17`, `/oss-swap-12`, `/side-hustle-pilot`.
+- Merged into existing skills instead of adding new ones: the six UI polish checks into `ui-image-layout-5-tips`; the first-customer tool stack into `customer-research/references/`; the 25 free replacements into `oss-alternatives`; the 19 Oct GitHub finds into `github-trending-top10-oct5`; Docker Agent notes into `docker-patterns/references/`; the Claude Code Setup video notes into `claude-code-setup-plugin`.
+- 4 design templates (`ui-tip-before-after`, `side-hustle-serif-dark`, `replaces-list-card`, `parchment-repo-card`) and 4 themes (`ui-white-ink`, `hustle-serif-dark`, `replaces-list-white`, `parchment-tusk`); see `design-templates` "Batch 112 additions".
 - `Artifacts/operations/workflows-batch-112.html` (3 workflows), `Artifacts/business/batch-112-intake-report.html`, `docs/batch-112-prompts.md`, `scripts/batch112-install.sh` (asks before every step; not run).
-- Repo slugs, stars and licences for Part 17, Part 12 and three trending repos were read from GitHub on 19 October 2026. Card-only figures are labelled as unverified.
+- Repo slugs, stars and licences for Part 17, Part 12 and three trending repos were read from GitHub on 19 October 2026. Card-only figures are labelled unverified.
+- Net effect on the library: +3 skills, +3 commands (was +9 and +9 before consolidation).

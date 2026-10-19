@@ -1,9 +1,4 @@
----
-name: customer-research-stack
-description: Six free-or-freemium tools for finding and tracking your first customer conversations from the @dotdevs series - Tally forms, F5Bot mention alerts, SparkToro audience research, Twenty CRM, DocuSeal PDF signing, Fider feature voting - each with its one-line job and first test. Use when a founder asks where to find first customers, how to collect answers before building, or which lightweight stack replaces a spreadsheet of DMs. Run via /research-stack. Extends the customer-research skill with a tool layer; it does not replace its methods.
----
-
-# First-customer tool stack (@dotdevs)
+# First-customer tool stack (@dotdevs, Batch 112)
 
 Slides: Tally, F5Bot, SparkToro, Twenty, DocuSeal, Fider. Pricing and free limits were not on the slides; check each site before relying on them.
 

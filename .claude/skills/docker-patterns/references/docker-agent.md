@@ -1,9 +1,4 @@
----
-name: docker-agent-yaml
-description: Notes and a starter YAML sketch for Docker Agent (open source) from the @tiborczekay video 'AI agents as YAML files' - docker agent new / run agent.yaml / run org/agent:tag, a lead agent delegating to specialist agents, built-in MCP and memory, Docker Desktop 4.63 or newer, plus the video's own caveats (crowded space, thin security docs, data-collection terms). Use when someone asks how to define, share or version an AI agent as a file. Run via /docker-agent. Not a replacement for reading the official docs.
----
-
-# Docker Agent - agents as YAML files
+# Docker Agent - agents as YAML files (Batch 112)
 
 Source: ~80-second TikTok video (@tiborczekay, "How to - 18 Oct 2026, AI voice"). The video gives the shape, not the full schema: **verify every key against the official docs before use.**
 
