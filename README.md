@@ -6033,3 +6033,13 @@ Not done (needs you): plugin installs (`/plugin install paypal@claude-plugins-of
 **Source problems:** AI-search statistics are unverified vendor claims; the LinkedIn 16-page and 50-agent marketing guides are gated, so those skills are reconstructions of the visible text; the DCB wheel names no source and cannot support a promotional claim; Keep and LiteLLM report "Other" licences and need a manual LICENSE read.
 
 **Not done:** nothing installed; no connector changed (Apollo.io, n8n, Intercom, Snowflake, Profound and others need your authorisation); no scheduled task created; the "Comment BOOK / ASSET" calls to action were not actioned; commands and agents were written but not executed.
+
+## Batch 112 (19 October 2026)
+
+Built from `06b982f4-iCloud_Photos_2.zip` and `915c7196-iCloud_Photos.zip` (84 images, 2 videos).
+
+- 9 skills: `oss-swap-part-17`, `oss-swap-part-12`, `ui-polish-6-checks`, `ai-side-hustle-pilot`, `customer-research-stack`, `oss-free-replacements-25`, `github-finds-oct-19`, `docker-agent-yaml`, `claude-code-setup-recommender`.
+- 9 commands: `/oss-swap-17`, `/oss-swap-12`, `/ui-polish`, `/side-hustle-pilot`, `/research-stack`, `/oss-25`, `/github-finds`, `/docker-agent`, `/setup-recommend`.
+- 5 design templates and 5 themes (see `design-templates` "Batch 112 additions").
+- `Artifacts/operations/workflows-batch-112.html` (3 workflows), `Artifacts/business/batch-112-intake-report.html`, `docs/batch-112-prompts.md`, `scripts/batch112-install.sh` (asks before every step; not run).
+- Repo slugs, stars and licences for Part 17, Part 12 and three trending repos were read from GitHub on 19 October 2026. Card-only figures are labelled as unverified.

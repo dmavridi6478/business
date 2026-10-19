@@ -1,0 +1,117 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Batch 112 Intake Report</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<style>
+  /* Layout: single-column formal report, 880px measure; tables scroll inside their own wrappers.
+     Palette: ink-blue neutrals, one deep teal accent, semantic green/amber/red for status only.
+     Type: Aptos (the owner's house font) with system fallbacks; title 32pt, headings 14pt, body 11pt. */
+  :root {
+    --bg: #f6f7f9; --surface: #ffffff; --fg: #1b2330; --muted: #5a6577; --line: #d9dee6;
+    --accent: #0f5d6b; --accent-soft: #e2f0f2;
+    --ok: #17703a; --ok-bg: #e3f3e8; --warn: #8a5a00; --warn-bg: #fbefd3; --bad: #a11d2a; --bad-bg: #fbe3e5;
+    --code-bg: #eef1f5;
+    --font: Aptos, "Segoe UI Variable Text", "Segoe UI", system-ui, -apple-system, Roboto, sans-serif;
+    --mono: ui-monospace, "SF Mono", Consolas, monospace;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #11161e; --surface: #181f2a; --fg: #e6eaf0; --muted: #9aa5b6; --line: #2c3646;
+      --accent: #6cc3d1; --accent-soft: #17323a;
+      --ok: #6fd18f; --ok-bg: #173824; --warn: #f0c261; --warn-bg: #3a2e12; --bad: #ff8d98; --bad-bg: #3d1a1f;
+      --code-bg: #0e131a; color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #11161e; --surface: #181f2a; --fg: #e6eaf0; --muted: #9aa5b6; --line: #2c3646;
+    --accent: #6cc3d1; --accent-soft: #17323a;
+    --ok: #6fd18f; --ok-bg: #173824; --warn: #f0c261; --warn-bg: #3a2e12; --bad: #ff8d98; --bad-bg: #3d1a1f;
+    --code-bg: #0e131a; color-scheme: dark;
+  }
+  * { box-sizing: border-box; }
+  body { background: var(--bg); color: var(--fg); font-family: var(--font); font-size: 11pt; line-height: 1.55; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); padding-block: 28px 64px; }
+  main { max-width: 880px; margin-inline: auto; display: flex; flex-direction: column; gap: 28px; }
+  header { display: flex; flex-direction: column; gap: 8px; border-bottom: 2px solid var(--accent); padding-bottom: 18px; }
+  .eyebrow { font-size: 9pt; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
+  h1 { font-size: 32pt; line-height: 1.1; margin: 0; font-weight: 700; text-wrap: balance; }
+  h2 { font-size: 14pt; margin: 0 0 10px; font-weight: 700; color: var(--accent); text-wrap: balance; }
+  p { margin: 0 0 10px; max-width: 75ch; }
+  section { background: var(--surface); border: 1px solid var(--line); border-radius: 6px; padding: 20px 22px; min-width: 0; }
+  .lede { font-size: 11pt; color: var(--muted); max-width: 70ch; margin: 0; }
+  .truth { border-left: 4px solid var(--bad); background: var(--bad-bg); padding: 12px 16px; border-radius: 0 6px 6px 0; }
+  .truth p:last-child { margin-bottom: 0; }
+  .tw { overflow-x: auto; margin-block: 8px 4px; border: 1px solid var(--line); border-radius: 4px; }
+  table { border-collapse: collapse; width: 100%; min-width: 720px; font-size: 10pt; }
+  th, td { padding: 8px 10px; border-bottom: 1px solid var(--line); text-align: center; vertical-align: top; }
+  th { background: var(--accent-soft); color: var(--fg); font-weight: 700; font-size: 9.5pt; }
+  tr:last-child td { border-bottom: 0; }
+  td.l, th.l { text-align: center; } /* house rule: table content aligned top and centre */
+  .st { display: inline-block; padding: 1px 8px; border-radius: 10px; font-size: 9pt; font-weight: 700; white-space: nowrap; }
+  .st.ok { background: var(--ok-bg); color: var(--ok); } .st.warn { background: var(--warn-bg); color: var(--warn); } .st.bad { background: var(--bad-bg); color: var(--bad); }
+  .sw { display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 10px; margin-block: 8px; }
+  .sw div { border: 1px solid var(--line); border-radius: 4px; overflow: hidden; font-size: 9pt; text-align: center; }
+  .sw i { display: block; height: 44px; }
+  .sw span { display: block; padding: 4px 6px; font-family: var(--mono); }
+  .prompt { position: relative; margin-block: 10px; }
+  .prompt pre { margin: 0; white-space: pre-wrap; background: var(--code-bg); border: 1px solid var(--line); border-radius: 4px; padding: 12px 84px 12px 12px; font-family: var(--mono); font-size: 9.5pt; line-height: 1.5; }
+  .prompt b { display: block; font-family: var(--font); font-size: 10pt; margin-bottom: 4px; }
+  .prompt button { position: absolute; top: 30px; right: 8px; font: inherit; font-size: 9pt; padding: 4px 10px; border-radius: 4px; border: 1px solid var(--accent); background: var(--surface); color: var(--accent); cursor: pointer; }
+  .prompt button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  ul { margin: 0 0 10px; padding-left: 20px; } li { margin-bottom: 4px; max-width: 75ch; }
+  code { font-family: var(--mono); font-size: 9.5pt; background: var(--code-bg); padding: 1px 4px; border-radius: 3px; }
+  footer { color: var(--muted); font-size: 9.5pt; }
+</style>
+<style>
+ figure{margin:0;text-align:center} figure img{width:100%;border:1px solid var(--line);border-radius:4px;display:block} figcaption{font-size:8.5pt;color:var(--muted);margin-top:4px}
+ .thumbs{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px;margin-top:10px}
+ pre{white-space:pre-wrap;word-break:break-word;background:var(--code-bg);border:1px solid var(--line);border-radius:4px;padding:12px;font:10pt/1.5 var(--mono);margin:8px 0;overflow-x:auto}
+ details{border:1px solid var(--line);border-radius:4px;padding:8px 12px;margin-top:8px} summary{cursor:pointer;font-weight:700}
+ code{font-family:var(--mono);font-size:9.5pt;background:var(--code-bg);padding:0 4px;border-radius:3px}
+ ul{margin:0 0 10px;padding-left:20px;max-width:78ch} li{margin-bottom:4px}
+ td code{white-space:normal;word-break:break-word}
+</style>
+</head><body><style>main > section, main > header {min-width:0} p, li, code {overflow-wrap:anywhere}</style><main>
+<header><div class="eyebrow">Batch 112 · 19 October 2026 · business</div><h1>Intake report, Batch 112</h1>
+<p class="lede">Two archives (84 images, 2 videos) turned into repository assets. Prepared as an advisory report: findings first, then evidence, then what was built.</p></header>
+
+<section><h2>1. Executive findings</h2>
+<ul>
+<li><b>The repository is already past the point where more skills help.</b> It held 1,239 skills and 734 commands before this batch; it now holds 1,248 and 743. [Certain] Each addition is a description every session pays to load. Of the nine skills added, only three (<code>oss-swap-part-17</code>, <code>oss-swap-part-12</code>, <code>ai-side-hustle-pilot</code>) carry material no existing skill held; the rest are thin indexes. The better move for the next batch is to merge, not add.</li>
+<li><b>Three swaps are 75 percent of the "$8,436" claim.</b> RudderStack, Chromatic and Archbee account for $6,288 of $8,436. [Certain] Replacing the other nine saves $2,148 a year and creates nine things to patch. The headline is a sum of list prices, not a measured saving.</li>
+<li><b>Two licences need a human read.</b> Graylog and Arize Phoenix show "Other" on GitHub; os-taxonomy is ODbL (share-alike data). [Certain] Do not use them commercially on the strength of a carousel.</li>
+<li><b>"Free" has costs the cards omit.</b> Hosting, backups, patching and your hours. [Likely] For a solo business the only sensible swaps are the low-ops ones (Playwright, VitePress, BackstopJS, mitmproxy, GitHub Desktop, Ghostty).</li>
+<li><b>The side-hustle series is a decent filter and a thin business case.</b> The five questions are useful; none of the slides supports any income figure, and the slides themselves warn that product features and pricing change. [Certain]</li>
+</ul></section>
+
+<section><h2>2. Source inventory and what was built</h2><div class="tw"><table><tr><th>Source</th><th>Content</th><th>Built</th></tr><tr><td>@modelsignal Part 17 (14 cards)</td><td>12 paid vs free dev tools, $8,436</td><td>Skill <code>oss-swap-part-17</code> + <code>/oss-swap-17</code></td></tr><tr><td>@modelsignal Part 12 (12 cards)</td><td>10 paid vs free dev tools, $4,174</td><td>Skill <code>oss-swap-part-12</code> + <code>/oss-swap-12</code></td></tr><tr><td>@ux_dose / Meya Lab Studio (6 of 7 slides)</td><td>Six UI polish checks</td><td>Skill <code>ui-polish-6-checks</code> + <code>/ui-polish</code>; template <code>ui-tip-before-after</code></td></tr><tr><td>@earchoe (10 slides)</td><td>Five-question filter, pilot loop, Prompts 01 and 02</td><td>Skill <code>ai-side-hustle-pilot</code> + <code>/side-hustle-pilot</code>; template <code>side-hustle-serif-dark</code>; workflow 1</td></tr><tr><td>@dotdevs (11 slides)</td><td>Tally, F5Bot, SparkToro, Twenty, DocuSeal, Fider</td><td>Skill <code>customer-research-stack</code> + <code>/research-stack</code>; workflow 2</td></tr><tr><td>@will.ai.m (8 slides)</td><td>25 free replacements</td><td>Skill <code>oss-free-replacements-25</code> + <code>/oss-25</code>; template <code>replaces-list-card</code></td></tr><tr><td>@githubnow, @palidev21, @sitetusk (21 slides)</td><td>Trending repos, desktop apps, 10 repo spotlights</td><td>Skill <code>github-finds-oct-19</code> + <code>/github-finds</code>; templates <code>github-trending-dark</code>, <code>parchment-repo-card</code></td></tr><tr><td>Video: @tiborczekay</td><td>Docker Agent, agents as YAML</td><td>Skill <code>docker-agent-yaml</code> + <code>/docker-agent</code></td></tr><tr><td>Video: @sadie.ontech</td><td>Claude Code Setup plugin and tool tour</td><td>Skill <code>claude-code-setup-recommender</code> + <code>/setup-recommend</code></td></tr></table></div>
+<p>Not visible in the files: slide 7 of the UI series, so only six checks were recorded and none invented. The videos were sampled every six seconds; spoken captions are fragments, so only on-screen text was used.</p></section>
+
+<section><h2>3. Part 17: verified table</h2><div class="tw"><table><tr><th>Job</th><th>Paid</th><th>Per year</th><th>Free</th><th>Repo</th><th>Stars (19 Oct)</th><th>Licence</th></tr><tr><td>Caching</td><td>Redis Cloud</td><td>$60</td><td>Valkey</td><td>valkey-io/valkey</td><td>27,445</td><td>BSD-3-Clause</td></tr><tr><td>Docker on Mac</td><td>OrbStack</td><td>$96</td><td>Colima</td><td>abiosoft/colima</td><td>31,278</td><td>MIT</td></tr><tr><td>Git client</td><td>GitKraken</td><td>$120</td><td>GitHub Desktop</td><td>desktop/desktop</td><td>21,975</td><td>MIT</td></tr><tr><td>HTTP debugging</td><td>HTTP Toolkit</td><td>$180</td><td>mitmproxy</td><td>mitmproxy/mitmproxy</td><td>45,745</td><td>MIT</td></tr><tr><td>Terminal</td><td>Warp</td><td>$216</td><td>Ghostty</td><td>ghostty-org/ghostty</td><td>62,256</td><td>MIT</td></tr><tr><td>Container builds</td><td>Depot</td><td>$240</td><td>Buildah</td><td>containers/buildah (now podman-container-tools)</td><td>9,122</td><td>Apache-2.0</td></tr><tr><td>Browser IDE</td><td>StackBlitz</td><td>$300</td><td>code-server</td><td>coder/code-server</td><td>79,643</td><td>MIT</td></tr><tr><td>CD server</td><td>AppVeyor</td><td>$348</td><td>GoCD</td><td>gocd/gocd</td><td>7,430</td><td>Apache-2.0</td></tr><tr><td>Cross-browser tests</td><td>Sauce Labs</td><td>$588</td><td>Playwright</td><td>microsoft/playwright</td><td>98,069</td><td>Apache-2.0</td></tr><tr><td>Knowledge base</td><td>Archbee</td><td>$960</td><td>VitePress</td><td>vuejs/vitepress</td><td>18,399</td><td>MIT</td></tr><tr><td>Visual tests</td><td>Chromatic</td><td>$2,148</td><td>BackstopJS</td><td>garris/BackstopJS</td><td>7,186</td><td>MIT</td></tr><tr><td>Event pipeline</td><td>RudderStack</td><td>$3,180</td><td>Jitsu</td><td>jitsucom/jitsu</td><td>5,108</td><td>MIT</td></tr></table></div>
+<p><b>Arithmetic check.</b> 60+96+120+180+216+240+300+348+588+960+2,148+3,180 = $8,436, matching the cover. The "8 of 12" card lists the eight largest ($7,980). Buildah has moved organisation on GitHub (<code>containers/buildah</code> now resolves to <code>podman-container-tools/buildah</code>); OpenCode's repo is now <code>anomalyco/opencode</code>.</p></section>
+
+<section><h2>4. Part 12: verified table</h2><div class="tw"><table><tr><th>Job</th><th>Paid</th><th>Per year</th><th>Free</th><th>Repo</th><th>Stars (19 Oct)</th><th>Licence</th></tr><tr><td>Log search</td><td>SolarWinds Loggly</td><td>$948</td><td>Graylog</td><td>Graylog2/graylog2-server</td><td>8,157</td><td><span class="st warn">Other: read LICENSE</span></td></tr><tr><td>Code editor</td><td>JetBrains IntelliJ IDEA</td><td>$863</td><td>VSCodium</td><td>VSCodium/vscodium</td><td>33,636</td><td>MIT</td></tr><tr><td>LLM tracing</td><td>LangSmith</td><td>$468</td><td>Arize Phoenix</td><td>Arize-ai/phoenix</td><td>11,909</td><td><span class="st warn">Other: read LICENSE</span></td></tr><tr><td>Code scanning</td><td>SonarQube Cloud</td><td>$408</td><td>Semgrep</td><td>semgrep/semgrep</td><td>17,118</td><td>LGPL-2.1</td></tr><tr><td>Database IDE</td><td>JetBrains DataGrip</td><td>$311</td><td>DBeaver</td><td>dbeaver/dbeaver</td><td>52,121</td><td>Apache-2.0</td></tr><tr><td>Backend</td><td>Supabase</td><td>$300</td><td>PocketBase</td><td>pocketbase/pocketbase</td><td>61,492</td><td>MIT</td></tr><tr><td>Terminal AI agent</td><td>Augment Code</td><td>$240</td><td>OpenCode</td><td>anomalyco/opencode (was sst/opencode)</td><td>216,384</td><td>MIT</td></tr><tr><td>Editor AI agent</td><td>Amazon Q Developer</td><td>$228</td><td>Kilo Code</td><td>Kilo-Org/kilocode</td><td>27,602</td><td>MIT</td></tr><tr><td>CI server</td><td>JetBrains TeamCity</td><td>$180</td><td>Jenkins</td><td>jenkinsci/jenkins</td><td>26,675</td><td>MIT</td></tr><tr><td>Time series</td><td>Grafana Cloud</td><td>$228</td><td>VictoriaMetrics</td><td>VictoriaMetrics/VictoriaMetrics</td><td>17,841</td><td>Apache-2.0</td></tr></table></div>
+<p><b>Arithmetic check.</b> 948+863+468+408+311+300+240+228+180+228 = $4,174, matching the summary card; the eight largest sum to $3,766. The "$100M+ software companies" line on the cover is the author's claim and is not evidenced.</p></section>
+
+<section><h2>5. GitHub finds checked</h2><div class="tw"><table><tr><th>Repo</th><th>What it is</th><th>Stars</th><th>Licence</th></tr><tr><td>headroomlabs-ai/headroom</td><td>Compresses tool outputs, logs, RAG chunks before the LLM; library, proxy, MCP server</td><td>76,032</td><td>Apache-2.0</td></tr><tr><td>shiyu-coder/Kronos</td><td>Foundation model on candlestick tokens from 45 exchanges; open weights 4.1M-102M</td><td>41,309</td><td>MIT</td></tr><tr><td>withmarbleapp/os-taxonomy</td><td>1,590 micro-topics, 3,221 prerequisite edges, 8 subjects</td><td>5,444</td><td><span class="st warn">ODbL v1.0 (share-alike data)</span></td></tr></table></div>
+<p>Other repos (ShareX, ActivityWatch, Krokiet, HandBrake, FreeTube, Umami, public-apis, lobe-chat, Alacritty, Home Assistant, freeCodeCamp, Klipper, Jellyfin, OBS Studio, TheAlgorithms/Python) and the 25-tool list are recorded with the card descriptions and card star counts only; their stars were not independently verified.</p></section>
+
+<section><h2>6. Connectors</h2><div class="tw"><table><tr><th>Need</th><th>Finding</th><th>Status</th></tr><tr><td>Tally forms</td><td>Directory connector exists</td><td><span class="st warn">Needs your authorisation</span></td></tr><tr><td>n8n</td><td>Directory connector exists</td><td><span class="st warn">Needs your authorisation</span></td></tr><tr><td>Twenty, SparkToro, F5Bot, DocuSeal, Fider, cal.com</td><td>No connector found; Calendly is already connected for booking</td><td><span class="st bad">Not available</span></td></tr><tr><td>Docusign</td><td>Found, but a different product from DocuSeal</td><td><span class="st bad">Not a match</span></td></tr></table></div>
+<p>A session cannot authorise a connector; sign in through claude.ai connector settings.</p></section>
+
+<section><h2>7. Agents</h2><p>No new agent files. Neither guide contained an agent specification worth a file: the Docker Agent video shows a YAML shape, not a schema, so a validated sketch lives inside <code>docker-agent-yaml</code> with every unconfirmed key marked "verify". The existing ten <code>mkt-*</code> agents and the <code>os-*</code> set already cover the roles in the side-hustle and customer-research material. [Likely]</p></section>
+
+<section><h2>8. Prompts in plain text</h2><p>The two source prompts are reproduced verbatim; all command prompts are in <code>docs/batch-112-prompts.md</code>.</p><div class="prompt"><b>Prompt 01</b><pre>I want to create a paid service around [TASK] for [CUSTOMER TYPE].
+
+Design a beginner-friendly AI-assisted workflow. Show: inputs, AI steps, tools, human review points, final deliverable, quality checks, turnaround time, and what I should never automate. Keep the offer narrow enough to test with one customer.</pre></div><div class="prompt"><b>Prompt 02</b><pre>Turn the workflow above into a simple paid pilot for [CUSTOMER TYPE].
+
+Give me:
+1. The exact deliverable.
+2. A 3-step client process.
+3. What I need from the client.
+4. A quality-control checklist.
+5. A short offer description.
+6. Three sensible pricing structures without pretending any price is guaranteed.</pre></div></section>
+
+<section><h2>9. Deliverables</h2><div class="tw"><table><tr><th>Item</th><th>Count</th><th>Location</th></tr><tr><td>Skills</td><td>9</td><td><code>.claude/skills/</code></td></tr><tr><td>Slash commands</td><td>9</td><td><code>.claude/commands/</code></td></tr><tr><td>Design templates</td><td>5, rendered and checked</td><td><code>.claude/skills/design-templates/templates/</code></td></tr><tr><td>Design themes</td><td>5, light and dark</td><td><code>Artifacts/theme-*.html</code></td></tr><tr><td>Workflows</td><td>3 on one page</td><td><code>Artifacts/operations/workflows-batch-112.html</code></td></tr><tr><td>Prompts</td><td>2 verbatim + 9 command prompts</td><td><code>docs/batch-112-prompts.md</code></td></tr><tr><td>Install script</td><td>1, asks before every step</td><td><code>scripts/batch112-install.sh</code></td></tr></table></div></section>
+
+<section><h2>10. Open decisions for you</h2><ul><li>Do you want a consolidation pass (merge the thin index skills into their nearest existing skill)? I recommend yes before Batch 113.</li><li>Agent Archive: do you already have an API key, or should I create an account? The session hook keeps asking and I have deferred it.</li></ul></section>
+<footer>Stars and licences read from GitHub pages on 19 October 2026. Prices are the card figures read 15 October 2026.</footer>
+</main></body></html>
