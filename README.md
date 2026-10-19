@@ -6017,3 +6017,19 @@ Not done (needs you): plugin installs (`/plugin install paypal@claude-plugins-of
 **Source problems:** the revenue-system list repeats six roles; interview replacement lines are templates that must not claim things you have not done; GTM customer-count thresholds are rules of thumb.
 
 **Not done:** nothing installed; no connector changed (OpenFlowKit entry still unapplied; Midpage, Sentry and Supabase need your authorisation).
+
+## Batch 111 — two archives (20 AI-visibility infographics, 14 TikTok cards) and 3 infographics attached in chat (19 October 2026)
+
+**Report:** Batch 111 Intake Report (`Artifacts/business/batch-111-intake-report.html`; the published link is in the pull request). Workflows page: `Artifacts/operations/workflows-batch-111.html`. Prompts in plain text: `docs/batch-111-prompts.md`.
+
+**Sources:** Emilia Möller (50 ways to use Claude for marketing), Kevin Box (6 business models), Josh Sanders (9 personal-brand rules), Ismat Kamal (AI agents in production), Guerlain Nerestan (RevOps vs GTM), Muhammad Ahmad (GTM team setup), Jani Vrancsik and Monika Grycz (GTM levels, then/now), Harvey Lee (Tell me about yourself), Oana Labes (board dashboard), searchable.com (AI search surfaces), @modelsignal Part 18 (12 paid-to-free dev tools), a Gartner insights quadrant, "Your Marketing Metrics Can Lie" and SalesDaily.co's nine sales-email prompts, plus tool lists, a DCB evidence wheel, a 16-page LinkedIn sheet and a Claude Code marketing-team org chart.
+
+**Added:** 20 skills (`claude-marketing-50-verbs`, `business-models-6`, `seo-geo-tool-stack`, `linkedin-magnetic-brand-9-rules`, `project-plan-8-steps`, `agent-production-readiness`, `ai-hustle-flywheel`, `ai-search-surfaces`, `dcb-indication-evidence-map`, `gtm-team-roles-revops-boundary`, `gtm-six-levels-strategy`, `linkedin-client-acquisition-16`, `tell-me-about-yourself`, `board-dashboard-3-statement`, `claude-code-marketing-team`, `oss-swap-part-18`, `marketing-insights-quadrant`, `metrics-that-lie`, `sales-email-prompt-pack`, `ai-tools-50-directory`); 24 commands (`/marketing-verb`, `/business-model-pick`, `/seo-geo-tool-pick`, `/brand-rules`, `/project-plan-8`, `/agent-prod-check`, `/agent-recovery`, `/hustle-flywheel`, `/ai-surface-plan`, `/dcb-map`, `/gtm-team-roles`, `/gtm-weekly-loop`, `/revops-gate-check`, `/gtm-six-levels`, `/linkedin-client-acquisition`, `/linkedin-week`, `/tell-me-about-yourself`, `/board-dashboard`, `/marketing-team`, `/oss-swap-18`, `/insights-quadrant`, `/metric-check`, `/sales-email`, `/ai-tools-50`); 10 draft-only department agents (`mkt-*`); 8 design templates and 5 themes (see `design-templates`); `scripts/batch110-install.sh` (asks before every step).
+
+**Verified:** the 12 repositories of Part 18 (slug, stars, licence, read from GitHub on 19 October 2026; the annual savings sum to $8,621); the 8 templates render without overlap in headless Chromium.
+
+**Already existed, not duplicated:** `gartner-brand-health-framework`, `ai-gtm-maturity-levels`, `gtm-outbound-engine`, `ai-search-visibility`, `claude-marketing-jobs`, `6-free-dev-tools`.
+
+**Source problems:** AI-search statistics are unverified vendor claims; the LinkedIn 16-page and 50-agent marketing guides are gated, so those skills are reconstructions of the visible text; the DCB wheel names no source and cannot support a promotional claim; Keep and LiteLLM report "Other" licences and need a manual LICENSE read.
+
+**Not done:** nothing installed; no connector changed (Apollo.io, n8n, Intercom, Snowflake, Profound and others need your authorisation); no scheduled task created; the "Comment BOOK / ASSET" calls to action were not actioned; commands and agents were written but not executed.

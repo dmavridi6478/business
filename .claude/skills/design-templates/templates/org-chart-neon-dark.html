@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<!--
+  Template: org-chart-neon-dark
+  Style: near-black navy page, a gradient headline, a violet "CEO" node with a connector to two rows of five coloured department chips; under every chip a stack of five dark role cards with a neon outline, role name in mono and a one-line job. Theme: neon-org-dark
+  Inspired by: a "marketing team of agents" org-chart graphic. Original CSS; no source mascot, role wording or brand reused.
+  Canvas: 1080 x 1350. Ten departments x five roles. For five departments delete the second .row and increase card height.
+  Swap points:
+    :root tokens                         colours and fonts (each department has --c1..--c10)
+    h1                                   headline (gradient words in <span>)
+    .ceo                                 orchestrator label and one-line job
+    .dept (.chip, .role)                 department name, five roles (name + job)
+    .bar                                 footer bar text
+-->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Org Chart Neon Dark</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #000D1D; --card: #07162B;
+    --violet: #8E3FE6; --text: #F2F6FF; --muted: #9FB0CC;
+    --c1:#84C0F4; --c2:#BDA5F1; --c3:#8EE3B0; --c4:#F2D56B; --c5:#F5A4F0;
+    --c6:#E6A27B; --c7:#A4D4F8; --c8:#EE9ED1; --c9:#9AD0F5; --c10:#B6F67E;
+    --font: "Inter", Aptos, "Segoe UI", system-ui, sans-serif;
+    --mono: "JetBrains Mono", ui-monospace, Consolas, monospace;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: #333; display: flex; justify-content: center; padding: 32px 0; overflow-x: auto; font-family: var(--font); }
+  .slide { position: relative; width: 1080px; height: 1350px; flex: none; background: radial-gradient(900px 500px at 85% -5%, rgba(142,63,230,.28), transparent 60%), var(--bg); color: var(--text); padding: 40px 32px; overflow: hidden; }
+  h1 { font: 800 56px/1.05 var(--font); letter-spacing: -.03em; }
+  h1 span { background: linear-gradient(90deg, #7AB8FF, #C27BFF, #FF8BD2); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  .ceo { margin: 18px auto 0; width: 420px; border: 2px solid var(--violet); border-radius: 14px; padding: 12px 16px; text-align: center; background: rgba(142,63,230,.12); }
+  .ceo b { display: inline-block; background: var(--violet); border-radius: 8px; padding: 3px 12px; font: 700 15px/1.3 var(--mono); letter-spacing: .1em; }
+  .ceo p { margin-top: 6px; font: 500 15px/1.35 var(--font); color: var(--muted); }
+  .tree { position: relative; margin: 14px 0 0; height: 18px; }
+  .tree::before { content: ""; position: absolute; left: 50%; top: 0; width: 2px; height: 18px; background: #3A4F76; }
+  .row { display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; margin-top: 10px; }
+  .dept { display: flex; flex-direction: column; gap: 6px; }
+  .chip { border-radius: 10px; padding: 9px 6px; text-align: center; font: 800 15px/1.1 var(--font); color: #08121F; text-transform: uppercase; letter-spacing: .02em; min-height: 44px; display: grid; place-items: center; }
+  .role { border: 1.5px solid var(--c, #84C0F4); border-radius: 10px; padding: 7px 8px 8px; background: var(--card); min-height: 78px; }
+  .role b { display: block; font: 700 12.5px/1.2 var(--mono); color: var(--c, #84C0F4); word-break: break-word; }
+  .role p { margin-top: 5px; font: 500 12.5px/1.3 var(--font); color: var(--muted); }
+  .dept:nth-child(1) { --c: var(--c1) } .dept:nth-child(2) { --c: var(--c2) } .dept:nth-child(3) { --c: var(--c3) }
+  .dept:nth-child(4) { --c: var(--c4) } .dept:nth-child(5) { --c: var(--c5) }
+  .row.two .dept:nth-child(1) { --c: var(--c6) } .row.two .dept:nth-child(2) { --c: var(--c7) } .row.two .dept:nth-child(3) { --c: var(--c8) }
+  .row.two .dept:nth-child(4) { --c: var(--c9) } .row.two .dept:nth-child(5) { --c: var(--c10) }
+  .chip { background: var(--c); }
+  .bar { position: absolute; left: 0; right: 0; bottom: 0; height: 46px; background: linear-gradient(90deg, #6D28D9, #3653ED); display: grid; place-items: center; font: 800 18px/1 var(--font); letter-spacing: .04em; }
+</style>
+</head>
+<body>
+<div class="slide">
+  <h1>Your <span>team of agents</span> in one chart</h1>
+  <div class="ceo"><b>ORCHESTRATOR</b><p>Coordinates the whole team and turns your goal into results.</p></div>
+  <div class="tree"></div>
+  <div class="row">
+    <div class="dept"><div class="chip">Department 1</div>
+      <div class="role"><b>role-one</b><p>One-line job.</p></div><div class="role"><b>role-two</b><p>One-line job.</p></div><div class="role"><b>role-three</b><p>One-line job.</p></div><div class="role"><b>role-four</b><p>One-line job.</p></div><div class="role"><b>role-five</b><p>One-line job.</p></div></div>
+    <div class="dept"><div class="chip">Department 2</div>
+      <div class="role"><b>role-one</b><p>One-line job.</p></div><div class="role"><b>role-two</b><p>One-line job.</p></div><div class="role"><b>role-three</b><p>One-line job.</p></div><div class="role"><b>role-four</b><p>One-line job.</p></div><div class="role"><b>role-five</b><p>One-line job.</p></div></div>
+    <div class="dept"><div class="chip">Department 3</div>
+      <div class="role"><b>role-one</b><p>One-line job.</p></div><div class="role"><b>role-two</b><p>One-line job.</p></div><div class="role"><b>role-three</b><p>One-line job.</p></div><div class="role"><b>role-four</b><p>One-line job.</p></div><div class="role"><b>role-five</b><p>One-line job.</p></div></div>
+    <div class="dept"><div class="chip">Department 4</div>
+      <div class="role"><b>role-one</b><p>One-line job.</p></div><div class="role"><b>role-two</b><p>One-line job.</p></div><div class="role"><b>role-three</b><p>One-line job.</p></div><div class="role"><b>role-four</b><p>One-line job.</p></div><div class="role"><b>role-five</b><p>One-line job.</p></div></div>
+    <div class="dept"><div class="chip">Department 5</div>
+      <div class="role"><b>role-one</b><p>One-line job.</p></div><div class="role"><b>role-two</b><p>One-line job.</p></div><div class="role"><b>role-three</b><p>One-line job.</p></div><div class="role"><b>role-four</b><p>One-line job.</p></div><div class="role"><b>role-five</b><p>One-line job.</p></div></div>
+  </div>
+  <div class="row two">
+    <div class="dept"><div class="chip">Department 6</div>
+      <div class="role"><b>role-one</b><p>One-line job.</p></div><div class="role"><b>role-two</b><p>One-line job.</p></div><div class="role"><b>role-three</b><p>One-line job.</p></div><div class="role"><b>role-four</b><p>One-line job.</p></div><div class="role"><b>role-five</b><p>One-line job.</p></div></div>
+    <div class="dept"><div class="chip">Department 7</div>
+      <div class="role"><b>role-one</b><p>One-line job.</p></div><div class="role"><b>role-two</b><p>One-line job.</p></div><div class="role"><b>role-three</b><p>One-line job.</p></div><div class="role"><b>role-four</b><p>One-line job.</p></div><div class="role"><b>role-five</b><p>One-line job.</p></div></div>
+    <div class="dept"><div class="chip">Department 8</div>
+      <div class="role"><b>role-one</b><p>One-line job.</p></div><div class="role"><b>role-two</b><p>One-line job.</p></div><div class="role"><b>role-three</b><p>One-line job.</p></div><div class="role"><b>role-four</b><p>One-line job.</p></div><div class="role"><b>role-five</b><p>One-line job.</p></div></div>
+    <div class="dept"><div class="chip">Department 9</div>
+      <div class="role"><b>role-one</b><p>One-line job.</p></div><div class="role"><b>role-two</b><p>One-line job.</p></div><div class="role"><b>role-three</b><p>One-line job.</p></div><div class="role"><b>role-four</b><p>One-line job.</p></div><div class="role"><b>role-five</b><p>One-line job.</p></div></div>
+    <div class="dept"><div class="chip">Department 10</div>
+      <div class="role"><b>role-one</b><p>One-line job.</p></div><div class="role"><b>role-two</b><p>One-line job.</p></div><div class="role"><b>role-three</b><p>One-line job.</p></div><div class="role"><b>role-four</b><p>One-line job.</p></div><div class="role"><b>role-five</b><p>One-line job.</p></div></div>
+  </div>
+  <div class="bar">CALL TO ACTION TEXT</div>
+</div>
+</body>
+</html>
