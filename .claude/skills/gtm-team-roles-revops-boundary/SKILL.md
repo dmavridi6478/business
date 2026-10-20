@@ -62,3 +62,9 @@ Pairs with: `ai-gtm-maturity-levels`, `gtm-stack-20person-b2b`, `revops`, `claud
 
 ## Keywords
 GTM engineer, RevOps, SDR, account executive, CRM ownership, gated pipeline, weekly loop, scorecard
+
+## GTM is eight parts (Batch 113)
+
+Source: "GTM isn't a role. It's eight parts", a wheel from the GTM Operating System (GTM Partners). The eight parts: Total Relevant Market; Market Investment Map; Brand and Demand; Pipeline Velocity; Customer Time-to-Value; Customer Expansion; Revenue Operations; Leadership and Management. The caption says a great GTM engineer mostly moves Revenue Operations.
+
+Use: when someone asks to "hire a GTM person", check which of the eight parts is actually weak; revenue operations is one wedge, not the whole wheel. Related: `gtm-six-levels-strategy`, `revops`.

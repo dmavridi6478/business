@@ -55,3 +55,29 @@ description: A marketing team of 50 specialist roles in 10 departments (market i
 
 ## Keywords
 marketing team, sub-agents, org chart, department agents, orchestrator, 50 roles, Claude Code
+
+## Claude marketing setup: 6 steps, 7 commands, about 15 minutes (Batch 113)
+
+Source: "Claude Marketing Setup" graphic (Muhammad Ayan), also in the uploads as an animated GIF. Labels FREE and PRO are from the graphic; check current plan terms.
+
+| Setup step | Do |
+|---|---|
+| 01 Project (free) | Name it Marketing |
+| 02 Brand files (free) | A guide plus your 5 best posts |
+| 03 Memory (free) | Settings > Memory |
+| 04 Connectors (free) | Canva, HubSpot, Notion |
+| 05 Plugin (pro) | Install in Cowork |
+| 06 Your voice (pro) | `/brand-review` one post |
+
+| Stage | Command | Example on the graphic |
+|---|---|---|
+| 01 Plan (start here) | `/campaign-plan` | 200 signups, 6 weeks: channels, calendar, KPIs |
+| 01 Plan | `/competitive-brief` | Compare us vs [Rival]: where rivals are weak |
+| 02 Create | `/draft-content` | LinkedIn post, launch: a draft in your brand voice |
+| 02 Create | Claude Design | 3 graphics on brand; visuals and decks |
+| 03 Grow | `/email-sequence` | Onboarding, 5 emails |
+| 03 Grow | `/seo-audit` | yoursite.com, 1 keyword: content gaps and page fixes |
+| 04 Check | `/brand-review` | Paste any draft: line-by-line voice fixes |
+| 04 Check | `/performance-report` | Connect HubSpot or paste: what to double down on |
+
+Those commands match the `marketing:*` plugin skills (`marketing:campaign-plan`, `competitive-brief`, `draft-content`, `email-sequence`, `seo-audit`, `brand-review`, `performance-report`) that are available in this environment, so nothing new was built. Drafts only; the human publishes. Connectors (HubSpot, Canva, Notion) are authorised by the user in claude.ai connector settings.

@@ -399,3 +399,23 @@ All four use original CSS and placeholder wording; no source logo, mascot, textu
 | `theme-hustle-serif-dark.html` | bg `#F4F1E8`, accent `#1E8A4C` | bg `#141310`, accent `#5EE08A` | Playfair Display + JetBrains Mono |
 | `theme-replaces-list-white.html` | bg `#FFFFFF`, accent `#D9481F` | bg `#111215`, accent `#FF7A4D` | Inter |
 | `theme-parchment-tusk.html` | bg `#E2D8C5`, accent `#134B4B` | bg `#17150F`, accent `#6FC2C2` | Jost |
+
+## Batch 113 additions - four templates (rendered; containment checked in headless Chromium, 20 Oct 2026)
+
+| File | Inspired by | Technique |
+|---|---|---|
+| `periodic-table-grid.html` | glossary "periodic table" graphics (AEO terms, product-marketing terms) | 1080x1350; 5x7 grid of dashed-border square tiles (abbreviation, rule, full term), six family colours, legend beside the title, footer bar; placeholder terms only |
+| `iceberg-waterline-steps.html` | "build a list in 7 steps, below the waterline" infographic | 1080x1350; sky half with a clip-path iceberg between two cards, waterline, deep-blue half with seven step cards around a numbered spine |
+| `three-column-purpose-cards.html` | "3 types of content" comparison | 1080x1350; headline with highlighted word, three outlined columns (orange, violet, green) each with number, title, screenshot placeholder and four labelled sections, black footer |
+| `file-explorer-system-card.html` | "complete system" folder-tree graphics | 1080x1350; dark code-editor window, sidebar tree, gradient headline, four outlined panels of eight numbered items, gradient call-to-action bar |
+
+All four use original CSS and placeholder wording; no source logo, mascot, term list or copy is reused. Overlap checked: the existing `prompt-grid-9-olive` already covers the nine-card prompt grid, so no template was added for it; the dark MCP command card is covered by `dark-grey-install-card`.
+
+## Batch 113 theme tokens (files in `Artifacts/theme-*.html`; colours eyeballed, not sampled)
+
+| Theme file | Light | Dark | Fonts (free) |
+|---|---|---|---|
+| `theme-periodic-pastel.html` | bg `#FFFFFF`, text `#1A2250`, accent `#4A3FD0` | bg `#12142B`, accent `#A9A4FF` | Inter |
+| `theme-iceberg-blue.html` | bg `#EEF3FF`, text `#0F1A3C`, accent `#2F5BFF` | bg `#0B1230`, accent `#7C9BFF` | Inter |
+| `theme-purpose-columns.html` | bg `#FFFFFF`, text `#14161C`, accent `#C8552D` (violet `#6A4FD0` and green `#3C9B45` as column colours) | bg `#14151A`, accent `#FF8A5C` | Inter |
+| `theme-explorer-neon.html` | bg `#F3F5FB`, text `#0F1424`, accent `#5B3DDC` | bg `#070A12`, accent `#4DA3FF` | Inter + JetBrains Mono |

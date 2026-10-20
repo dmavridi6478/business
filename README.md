@@ -6044,3 +6044,13 @@ Built from `06b982f4-iCloud_Photos_2.zip` and `915c7196-iCloud_Photos.zip` (84 i
 - `Artifacts/operations/workflows-batch-112.html` (3 workflows), `Artifacts/business/batch-112-intake-report.html`, `docs/batch-112-prompts.md`, `scripts/batch112-install.sh` (asks before every step; not run).
 - Repo slugs, stars and licences for Part 17, Part 12 and three trending repos were read from GitHub on 19 October 2026. Card-only figures are labelled unverified.
 - Net effect on the library: +3 skills, +3 commands (was +9 and +9 before consolidation).
+
+## Batch 113 (20 October 2026)
+
+Built from `e0068371-B2B_lead_Generation.zip` (11 infographics), `16f6810e-iCloud_Photos.zip` (49 images) and three infographics sent inline. Most of the material duplicated what the repo already had, so the batch merges instead of adding.
+
+- 3 new skills: `llm-visibility-prompt-check`, `tal-build-7-steps`, `b2b-lead-gen-router`; 3 commands: `/llm-visibility-check`, `/build-tal`, `/lead-gen-route`.
+- Merged into existing skills: AEO glossary, SEO vs AEO funnels and the three content types into `ai-search-visibility/references/`; CMO umbrella into `marketing-org-operating-model`; strategy vs plan into `marketing-plan/references/`; the brand strategy cheat sheet into `brand-positioning-zones`; the six personal-branding levers into `linkedin-magnetic-brand-9-rules`; GTM eight parts into `gtm-team-roles-revops-boundary`; the Claude marketing setup into `claude-code-marketing-team` (commands match the installed `marketing:*` plugin skills); the 12-slide board deck into `pptx-deck-context/references/`; the 60 AI tools into `ai-tools-50-directory/references/`; the product-marketing periodic table into `product-marketing/references/`; three more MCP servers into `mcp-dev-team-6`; verified repo notes into `github-trending-top10-oct5`.
+- 4 design templates (`periodic-table-grid`, `iceberg-waterline-steps`, `three-column-purpose-cards`, `file-explorer-system-card`) and 4 themes (`periodic-pastel`, `iceberg-blue`, `purpose-columns`, `explorer-neon`).
+- `Artifacts/operations/workflows-batch-113.html` (4 workflows), `Artifacts/business/batch-113-intake-report.html`, `docs/batch-113-prompts.md` (25 + 9 prompts verbatim), `scripts/batch113-install.sh` (asks before every step; not run).
+- The "B2B Lead Generation Complete System" (50 items) and "Claude Sales Department" (48 items) graphics are lead magnets showing index pages only; the 98 underlying files are not in the uploads and were not recreated.

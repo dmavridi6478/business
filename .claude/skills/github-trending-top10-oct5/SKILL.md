@@ -51,3 +51,19 @@ Rules: star counts change daily; re-check before quoting. Never install from a c
 ## Rule
 
 A trending list measures attention in one day, not quality. Pick at most one, read its source, and install it in a throwaway project first. Use `/trending-pick`.
+
+## Batch 113 finds (verified on GitHub, 20 Oct 2026)
+
+| Repo | What it is | Stars | Licence | Note |
+|---|---|---|---|---|
+| `morluto/rea` | Reverse engineer apps with agents, from app behaviour to native binaries (MCP; `npx rea-agents setup`) | 345,008 | MIT | Dual-use; analyse only software you own or are authorised to test |
+| `mattpocock/skills` | "Skills for Real Engineers", from the author's own `.agents` directory (`claude plugin install mattpocock-skills@claude-plugins-official` per the card) | 297,519 | MIT | Read before installing |
+| `affaan-m/ECC` | Agent harness: skills, instincts, memory, security for Claude Code, Codex, OpenCode, Cursor | 284,327 | MIT | Existing `ecc-*` skills and `configure-ecc` cover it |
+| `stablyai/orca` | Fleet of agents, one git worktree each; desktop and mobile | 99,112 | MIT | Existing `orca-*` skills cover it |
+| `heygen-com/hyperframes` | Write HTML, render video, for agents | 68,225 | Apache-2.0 | Existing `hyperframes` skill covers it |
+| `cathrynlavery/diagram-design` | 44 editorial diagram types as self-contained HTML + SVG for agents (`npx skills add cathrynlavery/diagram-design`) | 58,786 | MIT | Candidate for diagrams; no Mermaid look |
+| `anthropics/financial-services` | Reference agents, skills and data connectors for banking, equity research, private equity, wealth; outputs staged for human sign-off | 40,139 | Apache-2.0 | Several of its plugins are visible in this environment |
+| `earthtojake/text-to-cad` | Agent describes a part, gets STEP/GLB/STL/3MF; design-for-manufacturing checks | 21,731 | MIT | Niche |
+| `DuarteSantos8/openGym` | Self-hosted gym and body-weight tracker (`docker compose up`) | 13,951 | **AGPL-3.0** | Network-use copyleft; personal use only unless you read the licence |
+
+Card star counts (e.g. rea 275,523, mattpocock/skills 293,108) are older than the verified figures; recheck before quoting. Also named, without repos: Mac apps AutoMounter (keeps network shares mounted), Agenttrace (agent sessions, costs, failures), Ping (uptime monitor), Maestro (multi-agent spec-driven coding), Claudoscope (browse Claude Code sessions), Agent Teams AI (messaging and task boards for coding agents), MXterm (SSH and SFTP panel, mxterm.net), Raspberry Pi Imager, Pi Stats (Pi-hole dashboard). Not verified; read each site's licence and permissions first.

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<!--
+  Template: file-explorer-system-card
+  Style: near-black code-editor window (traffic-light dots, a tab bar), a left explorer tree of numbered folders with file names, and a main pane with a gradient headline, a one-line subtitle, and four outlined panels (blue, green, orange, pink) listing eight numbered skills each with a one-line purpose; a large gradient call-to-action bar. Theme: explorer-neon
+  Inspired by: "complete system" folder-tree graphics for skill libraries. Original CSS; no source names, logos or wording reused.
+  Canvas: 1080 x 1350. Four panels x 8 items. Delete the sidebar for a wider main pane.
+  Swap points: .tab, .tree .folder/.file, h1 (.g gradient span), .sub, .panel (.ph title + range, .it num/name/desc), .cta
+-->
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>File Explorer System Card</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#070A12;--bar:#0E1220;--line:#222B45;--ink:#F2F5FF;--muted:#9AA4C4;--p1:#4DA3FF;--p2:#5EE08A;--p3:#FF8A4C;--p4:#FF4FA3;--font:"Inter",Aptos,"Segoe UI",system-ui,sans-serif;--mono:"JetBrains Mono",ui-monospace,Consolas,monospace}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#333;display:flex;justify-content:center;padding:32px 0;overflow-x:auto;font-family:var(--font)}
+.slide{position:relative;width:1080px;height:1350px;flex:none;background:var(--bg);color:var(--ink);overflow:hidden}
+.top{height:54px;background:var(--bar);border-bottom:1px solid var(--line);display:flex;align-items:center;gap:10px;padding:0 20px}.dot{width:14px;height:14px;border-radius:50%}
+.tab{margin-left:30px;flex:1;max-width:520px;background:#111729;border:1px solid var(--line);border-radius:8px;padding:8px 14px;font:500 17px/1 var(--mono);color:var(--muted)}
+.tree{position:absolute;left:0;top:54px;bottom:0;width:230px;border-right:1px solid var(--line);padding:18px 16px;font:500 15px/1.5 var(--mono);color:var(--muted)}
+.tree b{display:block;margin-top:14px;font:700 15px/1.3 var(--mono)}.tree .t1{color:var(--p1)}.tree .t2{color:var(--p2)}.tree .t3{color:var(--p3)}.tree .t4{color:var(--p4)}.tree span{display:block;padding-left:14px}
+.main{position:absolute;left:230px;right:0;top:54px;bottom:0;padding:28px 26px}
+h1{font:800 54px/1.04 var(--font);letter-spacing:-.03em}.g{background:linear-gradient(90deg,var(--p1),var(--p4));-webkit-background-clip:text;background-clip:text;color:transparent}
+.sub{margin-top:12px;font:500 21px/1.35 var(--font);color:var(--muted);max-width:760px}
+.panels{margin-top:22px;display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.panel{border:2px solid;border-radius:16px;padding:14px 14px 10px}.panel.a{border-color:var(--p1)}.panel.b{border-color:var(--p2)}.panel.c{border-color:var(--p3)}.panel.d{border-color:var(--p4)}
+.ph{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;font:800 21px/1.1 var(--font)}.ph small{font:500 13px/1 var(--mono);color:var(--muted);border:1px solid var(--line);border-radius:12px;padding:4px 9px}
+.it{display:grid;grid-template-columns:30px 1fr;gap:8px;padding:5px 0;border-top:1px solid #151B30}.it i{font:500 14px/1.4 var(--mono);color:var(--muted);font-style:normal}.it b{display:block;font:700 15px/1.2 var(--font)}.it span{display:block;font:500 13px/1.25 var(--font);color:var(--muted)}
+.cta{position:absolute;left:26px;right:26px;bottom:26px;height:92px;border-radius:18px;background:linear-gradient(90deg,#6D3BFF,#C02BFF);display:grid;place-items:center;font:800 44px/1 var(--font);letter-spacing:-.01em}
+</style></head><body>
+<div class="slide">
+  <div class="top"><span class="dot" style="background:#FF5F57"></span><span class="dot" style="background:#FEBC2E"></span><span class="dot" style="background:#28C840"></span><div class="tab">+ your-system-folder</div></div>
+  <div class="tree"><div>your-system/</div><b class="t1">01-phase-one/</b><span>item-01.md</span><span>item-02.md</span><span>...</span><b class="t2">02-phase-two/</b><span>item-01.md</span><span>item-02.md</span><span>...</span><b class="t3">03-phase-three/</b><span>item-01.md</span><span>...</span><b class="t4">04-phase-four/</b><span>item-01.md</span><span>...</span></div>
+  <div class="main">
+    <h1>Your System Name<br><span class="g">Complete System</span></h1>
+    <p class="sub">One sentence: how many frameworks, templates and prompts, and the outcome from start to finish.</p>
+    <div class="panels">
+      <div class="panel a"><div class="ph">I · Phase one<small>01-08</small></div>
+        <div class="it"><i>01</i><div><b>Item name</b><span>One-line purpose.</span></div></div><div class="it"><i>02</i><div><b>Item name</b><span>One-line purpose.</span></div></div><div class="it"><i>03</i><div><b>Item name</b><span>One-line purpose.</span></div></div><div class="it"><i>04</i><div><b>Item name</b><span>One-line purpose.</span></div></div><div class="it"><i>05</i><div><b>Item name</b><span>One-line purpose.</span></div></div><div class="it"><i>06</i><div><b>Item name</b><span>One-line purpose.</span></div></div><div class="it"><i>07</i><div><b>Item name</b><span>One-line purpose.</span></div></div><div class="it"><i>08</i><div><b>Item name</b><span>One-line purpose.</span></div></div></div>
+      <div class="panel b"><div class="ph">II · Phase two<small>09-16</small></div>
+        <div class="it"><i>09</i><div><b>Item name</b><span>One-line purpose.</span></div></div><div class="it"><i>10</i><div><b>Item name</b><span>One-line purpose.</span></div></div><div class="it"><i>11</i><div><b>Item name</b><span>One-line purpose.</span></div></div><div class="it"><i>12</i><div><b>Item name</b><span>One-line purpose.</span></div></div><div class="it"><i>13</i><div><b>Item name</b><span>One-line purpose.</span></div></div><div class="it"><i>14</i><div><b>Item name</b><span>One-line purpose.</span></div></div><div class="it"><i>15</i><div><b>Item name</b><span>One-line purpose.</span></div></div><div class="it"><i>16</i><div><b>Item name</b><span>One-line purpose.</span></div></div></div>
+      <div class="panel c"><div class="ph">III · Phase three<small>17-24</small></div>
+        <div class="it"><i>17</i><div><b>Item name</b><span>One-line purpose.</span></div></div><div class="it"><i>18</i><div><b>Item name</b><span>One-line purpose.</span></div></div><div class="it"><i>19</i><div><b>Item name</b><span>One-line purpose.</span></div></div><div class="it"><i>20</i><div><b>Item name</b><span>One-line purpose.</span></div></div><div class="it"><i>21</i><div><b>Item name</b><span>One-line purpose.</span></div></div><div class="it"><i>22</i><div><b>Item name</b><span>One-line purpose.</span></div></div><div class="it"><i>23</i><div><b>Item name</b><span>One-line purpose.</span></div></div><div class="it"><i>24</i><div><b>Item name</b><span>One-line purpose.</span></div></div></div>
+      <div class="panel d"><div class="ph">IV · Phase four<small>25-32</small></div>
+        <div class="it"><i>25</i><div><b>Item name</b><span>One-line purpose.</span></div></div><div class="it"><i>26</i><div><b>Item name</b><span>One-line purpose.</span></div></div><div class="it"><i>27</i><div><b>Item name</b><span>One-line purpose.</span></div></div><div class="it"><i>28</i><div><b>Item name</b><span>One-line purpose.</span></div></div><div class="it"><i>29</i><div><b>Item name</b><span>One-line purpose.</span></div></div><div class="it"><i>30</i><div><b>Item name</b><span>One-line purpose.</span></div></div><div class="it"><i>31</i><div><b>Item name</b><span>One-line purpose.</span></div></div><div class="it"><i>32</i><div><b>Item name</b><span>One-line purpose.</span></div></div></div>
+    </div>
+  </div>
+  <div class="cta">Your call to action</div>
+</div></body></html>

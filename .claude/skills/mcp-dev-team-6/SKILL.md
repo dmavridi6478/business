@@ -43,3 +43,19 @@ Add `--scope project` to write `.mcp.json` (shared with the repo, each person ap
 - **Exa and Context7** send your queries to third parties. Do not put client data in a search query.
 - **Playwright** can click and submit forms on real sites; use it on your own apps and test accounts.
 - **OS agents:** the `os-*` agents cannot call any of these. The connector policy in `docs/ai-os/rules/connector-allowlist.json` is empty on purpose; add a server there only as an exact read-only opt-in.
+
+## Three more from a second 7-MCP carousel (Batch 113)
+
+A second carousel (@atlasgrowth.co, "7 MCPs that make Claude Code 10x more useful") lists Context7, Playwright, Chrome DevTools, Notion, GitHub, Sentry and Stripe. Four overlap with the six above. New here:
+
+```
+claude mcp add chrome-devtools --scope user -- npx chrome-devtools-mcp@latest
+claude mcp add --transport http notion https://mcp.notion.com/mcp
+claude mcp add --transport http stripe https://mcp.stripe.com
+```
+
+(The carousel splits these across lines; the `--` separator before `npx` is standard for stdio servers, verify against each vendor's docs.) This carousel's Context7 command is `npx ctx7 setup --claude`; its GitHub command adds `--header "Authorization: Bearer YOUR_GITHUB_PAT"`, so never paste a real token into a shared command or chat. Bonus slide: run `/mcp` inside Claude Code to check your servers.
+
+- **Chrome DevTools:** reads console errors and analyses performance in a live Chrome; use on your own pages.
+- **Notion:** reads and writes docs and specs; a Notion connector already exists in claude.ai.
+- **Stripe:** manages payments, customers and products. It can change real money data: use a restricted, read-only key or test mode first, and do not register it in the shared `.mcp.json`. The Stripe and Sentry connectors are installed in claude.ai but show "needs reconnect"; only the user can reconnect them.

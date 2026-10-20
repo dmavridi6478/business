@@ -32,3 +32,16 @@ Evidence required per score (a link, a number, a note). Total /18. Under 9: fix 
 
 ## Keywords
 LinkedIn personal brand, outlier posts, TOFU MOFU BOFU, comments to pipeline, lead tracking
+
+## Six levers of personal branding (Batch 113)
+
+Source: "6 Levers of Personal Branding Success" (Nader Alnajjar, Lever). Overlaps heavily with the nine rules above; use this list as a quick audit.
+
+1. **Know your why:** grow audience, build authority, or convert followers; different goals need different content. Purpose, mission and vision decide the how and what.
+2. **Optimise your profile:** it is your landing page. Banner = one clear message plus call to action; headline = [who you are] + [how you help] + [what they achieve]; About = the audience's pain point and how you solve it; Featured = your best proof.
+3. **Pick content pillars:** 3-5 themes from your ICP's pain points, one each for reach (TOF), trust (MOF) and sales (BOF). The example: Personal Development (TOF), Systems for Solopreneurs (MOF), LinkedIn Lead Gen (BOF).
+4. **Study top creators:** do not copy; find 5-10 in your niche, look for posts that beat their norm, note the pattern (hook, structure, format), apply the idea to your own content.
+5. **Be consistent:** post 3-5 times a week, building to daily; comment genuinely on 5-10 creators' posts daily; DM people whose content you respect with one specific question. Tip: use Sales Navigator to find your ICP, then engage, comment, DM over 14 days.
+6. **Lean into what works:** repurpose past successes by changing the hook, rewriting with new stories, turning an infographic into a carousel.
+
+The comment-and-DM routine stays inside LinkedIn's terms: no bulk automation, no scraping.
