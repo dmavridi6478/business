@@ -12,7 +12,7 @@ A starter bundle of business-oriented Claude skills lives in `.claude/skills/`:
 - `quarterly-review-cadence` — a 5-step retrospective-and-planning session (Wins → Challenges → Learnings → Unfinished → Next-Quarter Targets) with 3 questions each, a 4-stage prep timeline, and 5 signs it's actually changing behavior; backward-looking companion to `quarterly-okr-architect`'s forward-only goal cascade
 - `business-intelligence-report` — reports for managers/CEO on results, trends, predictive analysis
 - `ceo-reporting-skill` — growth/business reports for the CEO (Greek healthcare context)
-- `product-marketing-context` — product/audience/positioning context doc used by other marketing skills
+- `product-marketing` — product/audience/positioning context doc used by other marketing skills
 - `competitor-profiling` — structured competitor research and profiles
 - `content-strategy` — content planning, topic clusters, editorial calendars
 - `instagram-content-calendar-gr` — ready-to-paste Greek-language meta-prompt that interviews the user about their business, then generates a 30-day Instagram content calendar as a table (caption structure + AI-image instructions per post)
@@ -1465,7 +1465,7 @@ set up.
 Each `SKILL.md` has a "Related skills in this repo" (or annotated "Related
 Skills") section pointing at the others that feed it or consume its output:
 
-- `product-marketing-context` is the foundational doc: `sales-enablement`,
+- `product-marketing` is the foundational doc: `sales-enablement`,
   `competitor-profiling`, `content-strategy`, and the design skills (for the
   user's *actual* brand, not `brand-guidelines`) all pull from it.
 - `business-decision-frameworks` prioritizes initiatives/topics that feed
@@ -1504,7 +1504,7 @@ Skills") section pointing at the others that feed it or consume its output:
   expertise → `the-productize-yourself-blueprint` turns it into a product/service
   format → `saas-idea-validator` / `product-strategy-session` stress-test it →
   `the-leverage-stack-auditor` checks it's actually leveraged →
-  `product-marketing-context` captures the validated positioning → the rest of
+  `product-marketing` captures the validated positioning → the rest of
   the business/design/output skills take over from there.
   `content-repurposing-service` is a ready-made example of running that whole
   chain and landing on a productized content service. `lean-software-stack`
@@ -1518,7 +1518,7 @@ Skills") section pointing at the others that feed it or consume its output:
   `product-strategy-session`, `quarterly-okr-architect`, and the new-business
   cluster can sanity-check decisions against via `/ask-the-board`.
   `ai-search-visibility` pulls its "who they are" content from
-  `product-marketing-context` and hands implementation to `frontend-design`.
+  `product-marketing` and hands implementation to `frontend-design`.
   `personal-growth-prompts` is the fast, no-setup alternative to
   `advisory-board` — generic archetypal personas instead of named real
   advisors — and its 10x Improvement Coach prompt is a lighter, per-goal
@@ -1578,7 +1578,7 @@ of the business/design content chain above.
 That skill is hardcoded to Anthropic's own colors (`#d97757` orange, etc.) and
 fonts (Poppins/Lora) — it's for artifacts that should carry *Anthropic's*
 look-and-feel specifically. For the user's own company or client branding, use
-`product-marketing-context` to capture their real brand and apply it manually
+`product-marketing` to capture their real brand and apply it manually
 in the design skills instead.
 
 ## Agents

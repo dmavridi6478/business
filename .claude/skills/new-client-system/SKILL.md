@@ -70,6 +70,6 @@ This skill handles the system — pairing with `lead-scraper` gets the actual li
 - **lead-scraper**: Find the actual leads this system targets
 - **sales-enablement**: Proposal writing and pitch deck layer on top of this skill's close stage
 - **content-repurposing-service**: Inbound content strategy feeds warm leads into this system
-- **product-marketing-context**: Nail the positioning before writing outreach templates
+- **product-marketing**: Nail the positioning before writing outreach templates
 - **the-leverage-stack-auditor**: Check whether client acquisition is a bottleneck vs. delivery capacity before investing in this system
 - **n8n-agent-builder**: Automate the follow-up sequence and CRM updates with n8n workflows

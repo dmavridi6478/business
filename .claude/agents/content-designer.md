@@ -32,7 +32,7 @@ repo's design skills support it, produces) what it should look like.
    visible in the thumbnail, a carousel's cover slide has to earn the
    swipe) and routing to the right one, not reimplementing them.
 4. Keep visual style consistent with any existing brand direction
-   (`product-marketing-context`, a prior `brandkit-generator` output) if
+   (`product-marketing`, a prior `brandkit-generator` output) if
    one exists in the project, rather than generating a new one-off look
    each cycle.
 

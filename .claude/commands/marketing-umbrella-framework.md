@@ -21,7 +21,7 @@ marketing strategy.
 
 - **Strategic Marketing** → `business-decision-frameworks` (SWOT/PESTEL/
   MoSCoW/RICE), `competitor-profiling` + `competitor-profiling`,
-  `product-marketing-context`/`product-marketing`
+  `product-marketing`
 - **Digital Marketing** → `ai-search-visibility` (SEO/SXO/AEO/GEO/AIO),
   `ads`, `ad-creative`, `emails`, `seo-audit`, `social`
 - **Growth Marketing** → `growth-operating-framework`, `ab-testing`, `cro`,

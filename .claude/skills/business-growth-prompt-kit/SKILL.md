@@ -35,7 +35,7 @@ triggers, objections, daily routines, and online behavior. Also include
 messaging angles that would resonate with this persona and examples of
 persuasive hooks tailored to them.
 ```
-Deeper version: `product-marketing-context`, `customer-research`.
+Deeper version: `product-marketing`, `customer-research`.
 
 ## 3. Value Proposition Optimization
 
