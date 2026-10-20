@@ -127,7 +127,7 @@ Build a password-protected admin dashboard at /admin. Show: total signups (live 
 - **saas-idea-validator**: a waitlist's signup/referral numbers are real
   validation signal — run this skill's stress-test against what the
   waitlist actually shows once real numbers exist, not just the idea.
-- **product-marketing-context**: capture the validated positioning here
+- **product-marketing**: capture the validated positioning here
   once the waitlist confirms real demand.
 - **one-person-content-system**: the content engine that drives traffic
   to the waitlist signup page in the first place.

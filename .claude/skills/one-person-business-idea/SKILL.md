@@ -90,4 +90,4 @@ in Claude or another assistant outside this skill:
 - **the-specific-knowledge-excavator** / **the-productize-yourself-blueprint**: cover the same "find and package your own expertise" territory in far more depth — run those first if the person hasn't already identified their specific knowledge; this skill's Step 2 is a faster, lighter version of that same intersection.
 - **saas-idea-validator**: a much harder validation pass for software/product ideas specifically — use it instead of (or after) this skill's lighter Step 4 validation if the idea is a software product rather than a service/content business.
 - **one-person-offer-architect**: stage 2 — takes the positioning statement this skill outputs and turns it into a sellable offer.
-- **product-marketing-context**: once an idea is validated here, capture it there as the durable positioning doc the rest of this repo's marketing/design skills pull from.
+- **product-marketing**: once an idea is validated here, capture it there as the durable positioning doc the rest of this repo's marketing/design skills pull from.
