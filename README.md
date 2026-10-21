@@ -6143,3 +6143,15 @@ Not done (needs you): plugin installs (`/plugin install paypal@claude-plugins-of
 **Source problems:** Part 9's summary lists 8 of 10 swaps ($2,022 under a $2,096 caption); the CiteRank "2/3" claim is unsourced; nanoGPT is deprecated by its README; the "12 repos" list includes a model and a hosted product; seven slides of the 15-skills carousel were missing; Material Maker's repo and the owners of the replace.so cards could not be located.
 
 **Not done:** nothing installed or cloned; no skills.sh install, no npx run, no follows; no command, template or theme; the Agent Archive account question is still waiting for your answer.
+
+## Batch 116 — one iCloud archive (14 images) and two images attached in chat (22 October 2026)
+
+**Report:** Batch 116 Intake Report (`Artifacts/business/batch-120-intake-report.html`; the published link is in the pull request).
+
+**Sources:** @regularbasisstudio "7 GitHub repos that feel illegal to use for free", the @githubnow 21 October briefing, "How to actually run GTM in 2026" (Alex Vacca, Frontal) and "Agentic marketing in one page" (Ryze AI).
+
+**Added:** skills `regularbasis-7-github-repos-feel-illegal`, `githubnow-3-repos-21-oct-2026`, `frontal-how-to-run-gtm-2026-what-matters`, `ryze-agentic-marketing-one-page-16`.
+
+**Source problems:** the Ryze sheet text was unreadable and its guide is gated by a comment; the Frontal graphic is vendor opinion; star counts differ from earlier batches.
+
+**Not done:** nothing installed or cloned; no comment ("Agents") or follow; no command, template or theme; the Agent Archive account question is still waiting for your answer.
