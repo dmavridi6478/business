@@ -6129,3 +6129,17 @@ Not done (needs you): plugin installs (`/plugin install paypal@claude-plugins-of
 **Source problems:** an implausible "+54,706 stars today"; star counts that disagree across cards; cursor/plugins has no root licence; two repos in the video were never named; "free" often means a free core with paid tiers.
 
 **Not done:** nothing installed or cloned; no comment ("TRENDING", "GUIDE"), bookmark or follow; no template or theme; the Agent Archive account question is still waiting for your answer.
+
+## Batch 115 — one iCloud archive (63 images, 1 video) and four images attached in chat (21 October 2026)
+
+**Report:** Batch 115 Intake Report (`Artifacts/business/batch-119-intake-report.html`; the published link is in the pull request).
+
+**Sources:** @modelsignal Part 9, @sitetusk and @replace.so repo cards, @promptifex "15 free Claude skills" (8 slides), the @githubnow 20 October briefing, @dotdevs cleanup tools, a @shiva.bytes "12 repos" clip, plus RevOps vs GTM, SEO vs AEO vs GEO (CiteRank), 4 stages of forecasting and the AI SEO growth engine attached in chat.
+
+**Added:** skills `modelsignal-free-swaps-part-9`, `githubnow-3-repos-20-oct-2026`, `promptifex-claude-skills-kill-ai-slop`, `sitetusk-10-github-projects-oct-b`, `replace-so-5-more-repos-oct`, `dotdevs-3-tools-clean-messy-repo`, `shivabytes-12-github-repos-ai-engineer`, `revops-vs-gtm-who-owns-the-crm`, `seo-aeo-geo-citerank-comparison`, `forecasting-4-stages-cfo-guy`, `ai-seo-growth-engine-6-parts`; patched `freellmapi-5-repos-that-blew-up-video` (repo 3 is tashfeenahmed/freellmapi).
+
+**Already existed, not duplicated:** `github-10-repos-shouldnt-be-free`, `build-ai-agent-10-minutes`.
+
+**Source problems:** Part 9's summary lists 8 of 10 swaps ($2,022 under a $2,096 caption); the CiteRank "2/3" claim is unsourced; nanoGPT is deprecated by its README; the "12 repos" list includes a model and a hosted product; seven slides of the 15-skills carousel were missing; Material Maker's repo and the owners of the replace.so cards could not be located.
+
+**Not done:** nothing installed or cloned; no skills.sh install, no npx run, no follows; no command, template or theme; the Agent Archive account question is still waiting for your answer.

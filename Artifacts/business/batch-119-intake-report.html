@@ -1,0 +1,87 @@
+<title>Batch 115 Intake Report</title>
+<style>
+  /* Layout: single-column formal report, 880px measure; tables scroll inside their own wrappers.
+     Palette: ink-blue neutrals, one deep teal accent, semantic green/amber/red for status only.
+     Type: Aptos (the owner's house font) with system fallbacks; title 32pt, headings 14pt, body 11pt. */
+  :root {
+    --bg: #f6f7f9; --surface: #ffffff; --fg: #1b2330; --muted: #5a6577; --line: #d9dee6;
+    --accent: #0f5d6b; --accent-soft: #e2f0f2;
+    --ok: #17703a; --ok-bg: #e3f3e8; --warn: #8a5a00; --warn-bg: #fbefd3; --bad: #a11d2a; --bad-bg: #fbe3e5;
+    --code-bg: #eef1f5;
+    --font: Aptos, "Segoe UI Variable Text", "Segoe UI", system-ui, -apple-system, Roboto, sans-serif;
+    --mono: ui-monospace, "SF Mono", Consolas, monospace;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #11161e; --surface: #181f2a; --fg: #e6eaf0; --muted: #9aa5b6; --line: #2c3646;
+      --accent: #6cc3d1; --accent-soft: #17323a;
+      --ok: #6fd18f; --ok-bg: #173824; --warn: #f0c261; --warn-bg: #3a2e12; --bad: #ff8d98; --bad-bg: #3d1a1f;
+      --code-bg: #0e131a; color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #11161e; --surface: #181f2a; --fg: #e6eaf0; --muted: #9aa5b6; --line: #2c3646;
+    --accent: #6cc3d1; --accent-soft: #17323a;
+    --ok: #6fd18f; --ok-bg: #173824; --warn: #f0c261; --warn-bg: #3a2e12; --bad: #ff8d98; --bad-bg: #3d1a1f;
+    --code-bg: #0e131a; color-scheme: dark;
+  }
+  * { box-sizing: border-box; }
+  body { background: var(--bg); color: var(--fg); font-family: var(--font); font-size: 11pt; line-height: 1.55; padding-inline: 16px; padding-block: 28px 64px; }
+  main { max-width: 880px; margin-inline: auto; display: flex; flex-direction: column; gap: 28px; }
+  header { display: flex; flex-direction: column; gap: 8px; border-bottom: 2px solid var(--accent); padding-bottom: 18px; }
+  .eyebrow { font-size: 9pt; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
+  h1 { font-size: 32pt; line-height: 1.1; margin: 0; font-weight: 700; text-wrap: balance; }
+  h2 { font-size: 14pt; margin: 0 0 10px; font-weight: 700; color: var(--accent); text-wrap: balance; }
+  p { margin: 0 0 10px; max-width: 75ch; }
+  section { background: var(--surface); border: 1px solid var(--line); border-radius: 6px; padding: 20px 22px; min-width: 0; }
+  .lede { font-size: 11pt; color: var(--muted); max-width: 70ch; margin: 0; }
+  .truth { border-left: 4px solid var(--bad); background: var(--bad-bg); padding: 12px 16px; border-radius: 0 6px 6px 0; }
+  .truth p:last-child { margin-bottom: 0; }
+  .tw { overflow-x: auto; margin-block: 8px 4px; border: 1px solid var(--line); border-radius: 4px; }
+  table { border-collapse: collapse; width: 100%; min-width: 720px; font-size: 10pt; }
+  th, td { padding: 8px 10px; border-bottom: 1px solid var(--line); text-align: center; vertical-align: top; }
+  th { background: var(--accent-soft); color: var(--fg); font-weight: 700; font-size: 9.5pt; }
+  tr:last-child td { border-bottom: 0; }
+  td.l, th.l { text-align: center; } /* house rule: table content aligned top and centre */
+  .st { display: inline-block; padding: 1px 8px; border-radius: 10px; font-size: 9pt; font-weight: 700; white-space: nowrap; }
+  .st.ok { background: var(--ok-bg); color: var(--ok); } .st.warn { background: var(--warn-bg); color: var(--warn); } .st.bad { background: var(--bad-bg); color: var(--bad); }
+  .sw { display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 10px; margin-block: 8px; }
+  .sw div { border: 1px solid var(--line); border-radius: 4px; overflow: hidden; font-size: 9pt; text-align: center; }
+  .sw i { display: block; height: 44px; }
+  .sw span { display: block; padding: 4px 6px; font-family: var(--mono); }
+  .prompt { position: relative; margin-block: 10px; }
+  .prompt pre { margin: 0; white-space: pre-wrap; background: var(--code-bg); border: 1px solid var(--line); border-radius: 4px; padding: 12px 84px 12px 12px; font-family: var(--mono); font-size: 9.5pt; line-height: 1.5; }
+  .prompt b { display: block; font-family: var(--font); font-size: 10pt; margin-bottom: 4px; }
+  .prompt button { position: absolute; top: 30px; right: 8px; font: inherit; font-size: 9pt; padding: 4px 10px; border-radius: 4px; border: 1px solid var(--accent); background: var(--surface); color: var(--accent); cursor: pointer; }
+  .prompt button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  ul { margin: 0 0 10px; padding-left: 20px; } li { margin-bottom: 4px; max-width: 75ch; }
+  code { font-family: var(--mono); font-size: 9.5pt; background: var(--code-bg); padding: 1px 4px; border-radius: 3px; }
+  footer { color: var(--muted); font-size: 9.5pt; }
+</style><main>
+<header><span class="eyebrow">Intake report · one archive, four images in chat · 21 October 2026</span>
+<h1>Batch 115 Intake Report</h1>
+<p class="lede">One iCloud archive (63 images and 1 video) and four infographics attached in chat, turned into 11 skills and a verified licence table. Most of it repeats earlier "free GitHub repos" carousels, so I skipped what the repo already holds and added only what is new.</p></header>
+
+<section class="truth"><h2>What you should know first</h2>
+<p><b>[Certain] Part 9's headline "Save $2,096/year" holds for all ten swaps, but the summary slide lists only 8.</b> Those 8 sum to $2,022. This is the sixth part of the series with this mismatch, and the first where the cover number is arithmetically right for the full set.</p>
+<p><b>[Certain] The CiteRank graphic's "2/3 of search goes missing when you only do SEO" has no source.</b> It is a vendor ad. SEO, AEO and GEO share the same base (crawlable, accurate, structured pages) and are not three separate channels.</p>
+<p><b>[Certain] Several cards are repeats or contradictions.</b> The diagram-design repo is "45 types" on one card and was 29 and 44 on earlier ones; karpathy/nanoGPT is described as "the simplest, fastest" repo but its own README says it is old and deprecated.</p>
+<p><b>[Certain] A list called "12 GitHub repos" is not all repos.</b> DeepSeek-V3 is a model, and the Claude Code tile links to claude.ai, not a repository.</p>
+<p><b>[Likely] The "15 free Claude skills" carousel is a directory pitch.</b> Seven of its fifteen slides were not in the upload, and skills are instructions Claude follows, so each must be read before installing.</p></section>
+<section><h2>1. What the upload contained</h2><div class="tw"><table><tr><th>Source</th><th>Content</th><th>Status</th></tr><tr><td>Archive, 63 images</td><td>@modelsignal Part 9 (all 12 slides); @sitetusk repo cards; @replace.so repo cards; @your.aimentor "10 repos shouldn't be free" (already in repo); @promptifex 8 of 15 skills; @githubnow 20 Oct briefing; @dotdevs cleanup tools; AI for Leaders agent guide (already in repo)</td><td><span class="st ok">All read</span></td></tr><tr><td>Archive, 1 video (11 s)</td><td>@shiva.bytes "12 GitHub repos every AI engineer should bookmark" (one static infographic)</td><td><span class="st ok">Frames read</span></td></tr><tr><td>Chat, 4 images</td><td>RevOps vs GTM (Guerlain Nerestan); SEO vs AEO vs GEO (CiteRank); 4 stages of forecasting (Your CFO Guy); AI SEO growth engine (Manuel Arrufat)</td><td><span class="st ok">Read</span></td></tr></table></div><p>No images, videos or archives were committed to git.</p></section><section><h2>2. What was built and installed</h2><div class="tw"><table><tr><th>Item</th><th>Type</th><th>Status</th></tr><tr><td>modelsignal-free-swaps-part-9</td><td>Skill: 10 swaps, licences, arithmetic check</td><td><span class="st ok">Created</span></td></tr><tr><td>githubnow-3-repos-20-oct-2026</td><td>Skill: freellmapi, diagram-design, ruflo</td><td><span class="st ok">Created</span></td></tr><tr><td>promptifex-claude-skills-kill-ai-slop</td><td>Skill: 8 of 15 skills</td><td><span class="st ok">Created</span></td></tr><tr><td>sitetusk-10-github-projects-oct-b</td><td>Skill: ten repo cards</td><td><span class="st ok">Created</span></td></tr><tr><td>replace-so-5-more-repos-oct</td><td>Skill: five cards, no owner shown</td><td><span class="st warn">Licences unread</span></td></tr><tr><td>dotdevs-3-tools-clean-messy-repo</td><td>Skill: lychee, delta, Knip</td><td><span class="st ok">Created</span></td></tr><tr><td>shivabytes-12-github-repos-ai-engineer</td><td>Skill: twelve tiles</td><td><span class="st ok">Created</span></td></tr><tr><td>revops-vs-gtm-who-owns-the-crm</td><td>Skill</td><td><span class="st ok">Created</span></td></tr><tr><td>seo-aeo-geo-citerank-comparison</td><td>Skill</td><td><span class="st ok">Created</span></td></tr><tr><td>forecasting-4-stages-cfo-guy</td><td>Skill with a build checklist</td><td><span class="st ok">Created</span></td></tr><tr><td>ai-seo-growth-engine-6-parts</td><td>Skill</td><td><span class="st ok">Created</span></td></tr><tr><td>freellmapi-5-repos-that-blew-up-video</td><td>Patched: the unnamed repo 3 is tashfeenahmed/freellmapi</td><td><span class="st ok">Updated</span></td></tr></table></div><p>Skipped as already in the repo: the "10 repos shouldn't be free" series (<code>github-10-repos-shouldnt-be-free</code>) and the "Build an AI agent in 10 minutes" guide (<code>build-ai-agent-10-minutes</code>). No command, template or theme was needed.</p></section><section><h2>3. Repositories and licences (read 21 October 2026)</h2><div class="tw"><table><tr><th>Repo</th><th>Licence</th><th>Note</th></tr><tr><td>tashfeenahmed/freellmapi</td><td>MIT</td><td></td></tr><tr><td>cathrynlavery/diagram-design</td><td>MIT</td><td></td></tr><tr><td>ruvnet/ruflo</td><td>MIT</td><td></td></tr><tr><td>nextlevelbuilder/ui-ux-pro-max-skill</td><td>MIT</td><td></td></tr><tr><td>pbakaus/impeccable</td><td>Apache-2.0</td><td></td></tr><tr><td>Leonxlnx/taste-skill</td><td>MIT</td><td></td></tr><tr><td>blader/humanizer</td><td>MIT</td><td></td></tr><tr><td>Egonex-AI/Understand-Anything</td><td>MIT</td><td></td></tr><tr><td>zarazhangrui/frontend-slides</td><td>MIT</td><td></td></tr><tr><td>hardikpandya/stop-slop</td><td>MIT</td><td></td></tr><tr><td>sqlitebrowser/sqlitebrowser</td><td>GPL-2.0</td><td></td></tr><tr><td>karpathy/nanoGPT</td><td>MIT</td><td>Deprecated by its README</td></tr><tr><td>logseq/logseq</td><td>AGPL-3.0</td><td></td></tr><tr><td>ajeetdsouza/zoxide</td><td>MIT</td><td></td></tr><tr><td>ggml-org/llama.cpp</td><td>MIT</td><td></td></tr><tr><td>wg-easy/wg-easy</td><td>AGPL-3.0</td><td></td></tr><tr><td>usememos/memos</td><td>MIT</td><td></td></tr><tr><td>toeverything/AFFiNE</td><td>MIT</td><td>Some folders differ</td></tr><tr><td>mezod/awesome-indie</td><td>CC BY-SA 3.0</td><td>A list</td></tr><tr><td>lycheeverse/lychee</td><td>Apache-2.0 / MIT</td><td></td></tr><tr><td>dandavison/delta</td><td>MIT</td><td></td></tr><tr><td>webpro-nl/knip</td><td>ISC</td><td></td></tr><tr><td>ownCloud/core</td><td>AGPL-3.0</td><td></td></tr><tr><td>mltframework/shotcut</td><td>GPL-3.0</td><td></td></tr><tr><td>onlyoffice/DocumentServer</td><td>AGPL-3.0</td><td></td></tr><tr><td>janhq/jan</td><td>Apache-2.0</td><td></td></tr><tr><td>bigbluebutton/bigbluebutton</td><td>LGPL-3.0</td><td></td></tr><tr><td>navidrome/navidrome</td><td>GPL-3.0</td><td></td></tr><tr><td>GNOME/gimp</td><td>GPL (COPYING), LGPL libraries</td><td></td></tr><tr><td>knadh/listmonk</td><td>AGPL-3.0</td><td></td></tr><tr><td>woocommerce/woocommerce</td><td>GPL-2.0 text in license.txt</td><td>Plugin headers not checked</td></tr><tr><td>Material Maker</td><td>Repo not located</td><td>Unverified</td></tr></table></div></section><section><h2>4. Instructions in the files, and what happened to each</h2><div class="tw"><table><tr><th>Instruction</th><th>Done?</th><th>Why</th></tr><tr><td>Install skills from skills.sh (promptifex)</td><td><span class="st warn">Not done</span></td><td>Skills are instructions Claude follows; read each first</td></tr><tr><td>Run npx ruflo@latest mcp start</td><td><span class="st warn">Not done</span></td><td>Runs the latest package unpinned</td></tr><tr><td>Bookmark the Site Tusk playlist; follow authors; "get all repos + links" at modelsignal.dev</td><td><span class="st warn">Not done</span></td><td>Viewer actions and a site not visited</td></tr><tr><td>Download the CFO Guy template via link or QR; get a CiteRank invite</td><td><span class="st warn">Not done</span></td><td>Links not followed; the second is a vendor invite</td></tr><tr><td>Build an agent with the six-step guide</td><td><span class="st ok">Already in repo</span></td><td>build-ai-agent-10-minutes</td></tr><tr><td>Install connectors</td><td><span class="st warn">None to install</span></td><td>No connector is named</td></tr></table></div></section><section><h2>5. Source problems</h2><ul><li>Part 9 summary lists 8 of 10 swaps and totals $2,022 under a $2,096 caption; WooCommerce license.txt and Material Maker could not be fully verified.</li><li>The CiteRank "2/3" claim is unsourced; the RevOps vs GTM and AI SEO wheels are opinion graphics without data.</li><li>freellmapi, ruflo and diagram-design star gains are the briefing's own; "635 free AI models" is undefined.</li><li>The @shiva.bytes list mixes repos, a model and a hosted product.</li><li>Seven slides of the 15-skills carousel were missing from the upload.</li></ul></section><section><h2>6. Prompts in plain text</h2><p>The graphics print almost no literal prompts, so these three were written by me from their content; brackets are your inputs.</p><div class="prompt"><b>AI visibility test (written by me from the wheel)</b><pre>Here are 30 prompts a buyer might ask about [category]: [paste]. For each, tell me which brands you would recommend and which sources you would cite. Run it three times and report where [brand] appears (never, sometimes, always), which competitors appear instead, and which of my pages would need to exist to be cited. Do not guess about sources you cannot see.</pre><button class="cp" type="button">Copy</button></div><div class="prompt"><b>Forecast build (written by me from the 4 levels)</b><pre>Build a [level 1, 2 or 3] forecast model for [business] in a spreadsheet. Inputs sheet: [price, volume, churn, headcount plan]. Level 1: revenue build segmented into existing, pipeline and new customers. Level 2: add a P&amp;L with a headcount build. Level 3: add a balance sheet and cash flow with a cash check equal to zero. No hard-coded numbers in formulas; show base, low and high scenarios on separate columns.</pre><button class="cp" type="button">Copy</button></div><div class="prompt"><b>RevOps vs GTM split (written by me)</b><pre>Our CRM is [tool]. List the fields RevOps must control (with sign-off), the staging fields GTM tools may write to, the Slack alerts each team needs, and four metrics for each team. Flag every place an enrichment tool could overwrite a field RevOps relies on.</pre><button class="cp" type="button">Copy</button></div></section><section><h2>7. Next steps for you</h2><ul>
+<li>Before installing any skill from a directory, read its SKILL.md and scripts, and pin a commit.</li>
+<li>For AI visibility work, test a fixed prompt list weekly and report ranges, not single answers.</li>
+<li>Pick one forecasting level that matches your stage; most early companies need Level 1 or 2.</li>
+<li>Open item: the Agent Archive account question from session start is still waiting for your answer; I created no account and saved no key.</li></ul></section>
+<footer>Sources: 63 images and 1 video from one uploaded archive and 4 images attached in chat; licences read from raw LICENSE files on 21 October 2026; no repository was cloned or installed.</footer>
+</main>
+<script>
+document.querySelectorAll('.cp').forEach(function (b) {
+  b.addEventListener('click', function () {
+    var t = b.parentNode.querySelector('pre');
+    function done() { b.textContent = 'Copied'; setTimeout(function () { b.textContent = 'Copy'; }, 1500); }
+    function fb() { var r = document.createRange(); r.selectNodeContents(t); var s = getSelection(); s.removeAllRanges(); s.addRange(r); b.textContent = 'Selected'; }
+    try { navigator.clipboard.writeText(t.textContent).then(done, fb); } catch (e) { fb(); }
+  });
+});
+</script>
