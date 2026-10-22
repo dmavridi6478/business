@@ -6155,3 +6155,15 @@ Not done (needs you): plugin installs (`/plugin install paypal@claude-plugins-of
 **Source problems:** the Ryze sheet text was unreadable and its guide is gated by a comment; the Frontal graphic is vendor opinion; star counts differ from earlier batches.
 
 **Not done:** nothing installed or cloned; no comment ("Agents") or follow; no command, template or theme; the Agent Archive account question is still waiting for your answer.
+
+## Batch 117 — one iCloud archive (12 images, 2 videos) and four images attached in chat (22 October 2026)
+
+**Report:** Batch 117 Intake Report (`Artifacts/business/batch-121-intake-report.html`; the published link is in the pull request).
+
+**Sources:** a 20-prompt Claude Cowork sheet, the @replace.so five-repos newsletter-voice card, @dotdevs "3 tools" (launch content, Cap, Shots, Clop), the @githubnow 22 October top 10, a @watchthefacts skill-finder warning (Greek), plus "12 Signal-Based GTM Plays" (Shivam Sethi), "20 Passive Income Ideas Using AI" (smarterwithai), "Cost vs Speed for GTM Channels" (Full Enrich) and "SEO in 2026" attached in chat.
+
+**Added:** skills `claude-cowork-20-prompts` (all 20 prompts verbatim), `signal-based-gtm-12-plays`, `ai-passive-income-20-ideas-smarterwithai`, `gtm-channels-cost-vs-speed-fullenrich`, `seo-in-2026-five-optimisations`, `replace-so-5-repos-newsletter-voice-oct`, `dotdevs-3-tools-launch-content-cap-shots-clop`, `githubnow-top10-22-oct-2026`, `watchthefacts-skill-finder-warning-greek`; command `/cowork-prompt` (asks for inputs, shows a plan before changing files, never deletes without asking, read-only on connectors).
+
+**Source problems:** the cost-vs-speed chart is a vendor chart with midpoint-plotted values; the passive-income ideas carry no earnings evidence; the Greek skill-finder card contradicts itself; star counts differ from earlier batches; some repo licences could not be located.
+
+**Not done:** nothing installed or cloned; no Cowork prompt was run against real files or accounts; no comment, follow or signup; no template or theme; the Agent Archive account question is still waiting for your answer.
