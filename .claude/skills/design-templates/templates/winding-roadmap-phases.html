@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Winding roadmap phases</title>
+<style>
+  /* Template: a numbered phase road map - a winding centre line with dot stops, phase cards alternating left and right, each with a bullet list of deliverables.
+     Pattern from the Template22 "Project Management Road Map". Six of the thirteen phases are shown; copy a .stop block to add more. One column on phones.
+     Customise: title, phases, deliverables, --accent. */
+  :root { --bg:#f7f9fc; --ink:#14233a; --muted:#52627a; --card:#ffffff; --line:#c9d3e3; --accent:#1b4fbd; --c1:#d9480f; --c2:#0b7a75; --c3:#7a3db8; --font: Aptos, "Segoe UI", system-ui, sans-serif; --display: Impact, "Arial Narrow Bold", Arial, sans-serif; }
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --bg:#0e1522; --ink:#e9eef8; --muted:#9fb0cc; --card:#16202f; --line:#2c3a52; --accent:#7ba5ff; --c1:#ff8a57; --c2:#4fd1c5; --c3:#c39bff; } }
+  :root[data-theme="dark"] { --bg:#0e1522; --ink:#e9eef8; --muted:#9fb0cc; --card:#16202f; --line:#2c3a52; --accent:#7ba5ff; --c1:#ff8a57; --c2:#4fd1c5; --c3:#c39bff; }
+  * { box-sizing: border-box; margin: 0; }
+  body { background: var(--bg); color: var(--ink); font-family: var(--font); font-size: 11pt; padding-block: 28px; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+  .wrap { max-width: 880px; margin: 0 auto; }
+  h1 { font-family: var(--display); text-transform: uppercase; font-size: 32pt; line-height: 1; text-align: center; color: var(--accent); letter-spacing: .01em; margin-bottom: 28px; text-wrap: balance; }
+  .road { position: relative; display: grid; gap: 22px; }
+  .road::before { content: ""; position: absolute; left: 50%; top: 0; bottom: 0; width: 4px; transform: translateX(-50%); background: repeating-linear-gradient(var(--accent) 0 14px, transparent 14px 22px); border-radius: 4px; opacity: .6; }
+  .stop { position: relative; display: grid; grid-template-columns: 1fr 1fr; align-items: start; }
+  .stop::before { content: attr(data-n); position: absolute; left: 50%; top: 14px; transform: translateX(-50%); width: 34px; height: 34px; border-radius: 50%; background: var(--c); color: #fff; display: grid; place-items: center; font-weight: 700; z-index: 1; border: 3px solid var(--bg); }
+  .stop article { grid-column: 1; margin-right: 40px; text-align: right; }
+  .stop:nth-child(even) article { grid-column: 2; margin-right: 0; margin-left: 40px; text-align: left; }
+  article { background: var(--card); border: 1px solid var(--line); border-top: 4px solid var(--c); border-radius: 8px; padding: 12px 16px; min-width: 0; }
+  article h2 { font-size: 14pt; color: var(--c); }
+  article ul { list-style: none; padding: 0; margin-top: 6px; display: grid; gap: 2px; font-size: 10pt; color: var(--muted); }
+  article ul li::before { content: "• "; color: var(--c); }
+  .stop:nth-child(3n+1) { --c: var(--c1); } .stop:nth-child(3n+2) { --c: var(--c2); } .stop:nth-child(3n) { --c: var(--c3); }
+  @media (max-width: 640px) { h1 { font-size: 24pt; } .road::before { left: 17px; } .stop { grid-template-columns: 1fr; } .stop::before { left: 17px; } .stop article, .stop:nth-child(even) article { grid-column: 1; margin: 0 0 0 52px; text-align: left; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Project management road map</h1>
+  <div class="road">
+    <div class="stop" data-n="1"><article><h2>Project initiation</h2><ul><li>Business case</li><li>Project charter</li><li>Identify stakeholders</li><li>Approval and go/no-go</li></ul></article></div>
+    <div class="stop" data-n="2"><article><h2>Project planning</h2><ul><li>Management plan</li><li>Scope statement and WBS</li><li>Schedule, cost and resource plans</li><li>Risk and communication plans</li></ul></article></div>
+    <div class="stop" data-n="3"><article><h2>Project scheduling</h2><ul><li>Activity list and sequencing</li><li>Duration estimation</li><li>Gantt chart and milestones</li><li>Schedule baseline</li></ul></article></div>
+    <div class="stop" data-n="4"><article><h2>Resource management</h2><ul><li>Planning and allocation</li><li>RACI matrix</li><li>Team development and training</li><li>Resource tracking</li></ul></article></div>
+    <div class="stop" data-n="5"><article><h2>Risk management</h2><ul><li>Identification and assessment</li><li>Risk register</li><li>Response and contingency plans</li><li>Monitoring</li></ul></article></div>
+    <div class="stop" data-n="6"><article><h2>Procurement management</h2><ul><li>Procurement plan</li><li>Make or buy analysis</li><li>Supplier evaluation</li><li>Contracts and purchase orders</li></ul></article></div>
+  </div>
+</div>
+</body>
+</html>

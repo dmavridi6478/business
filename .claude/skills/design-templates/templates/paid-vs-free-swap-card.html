@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Paid vs free swap card</title>
+<style>
+  /* Template: PAID vs FREE comparison card (cool grey canvas, rust-red free panel, mono labels).
+     Pattern from the @modelsignal series. Canvas 1080x1350 (4:5), scaled to fit the viewport.
+     Customise: category title, tool names, prices, stats, saving line, slide counter. Keep the "unverified" footnote unless you checked the numbers. */
+  :root { --bg: #e9edf2; --ink: #0f1b2d; --muted: #5a6b86; --rust: #b0331a; --paper: #f3f5fa; --font: Aptos, "Segoe UI", system-ui, sans-serif; --mono: ui-monospace, "SF Mono", Consolas, monospace; }
+  * { box-sizing: border-box; margin: 0; }
+  body { background: #cfd5dd; display: grid; place-items: center; min-height: 100vh; font-family: var(--font); padding: 12px; }
+  .stage { width: min(100vw - 24px, 540px); aspect-ratio: 1080/1350; container-type: inline-size; }
+  .card { width: 100%; height: 100%; background: var(--bg); position: relative; overflow: hidden; border-radius: 2cqw; }
+  .count { position: absolute; top: 7cqw; right: 6cqw; font-family: var(--mono); font-weight: 700; font-size: 4cqw; color: #4a5d7e; }
+  h1 { position: absolute; top: 12cqw; width: 100%; text-align: center; font-size: 11.5cqw; letter-spacing: -.04em; color: var(--ink); line-height: 1; }
+  .panel { position: absolute; top: 26cqw; width: 40.4cqw; height: 60cqw; border-radius: 3cqw; padding: 3cqw; color: var(--ink); text-align: center; }
+  .paid { left: 5.9cqw; background: var(--paper); }
+  .free { left: 53.7cqw; background: var(--rust); color: #fff; }
+  .tag { position: absolute; top: -3cqw; left: 50%; translate: -50% 0; font-family: var(--mono); font-weight: 700; letter-spacing: .2em; font-size: 3cqw; padding: 1.2cqw 3.6cqw; border-radius: 99cqw; }
+  .paid .tag { background: var(--ink); color: #fff; } .free .tag { background: #fff; color: var(--rust); }
+  .icon { width: 16.8cqw; height: 16.8cqw; background: #fff; border-radius: 4cqw; margin: 6cqw auto 2cqw; display: grid; place-items: center; font-weight: 800; font-size: 8cqw; color: var(--ink); }
+  .name { font-size: 3.6cqw; font-weight: 800; letter-spacing: -.03em; }
+  .price { font-size: 8.2cqw; font-weight: 800; letter-spacing: -.04em; line-height: 1.1; margin-top: .6cqw; }
+  .chk { font-family: var(--mono); font-size: 2.1cqw; letter-spacing: .14em; opacity: .75; }
+  .foot { position: absolute; left: 3cqw; right: 3cqw; bottom: 3cqw; text-align: left; }
+  .foot small { display: block; font-family: var(--mono); font-size: 2.1cqw; letter-spacing: .16em; }
+  .foot strong { font-size: 4.4cqw; letter-spacing: -.03em; line-height: 1.1; display: block; }
+  .verdict { position: absolute; top: 91cqw; width: 100%; text-align: center; font-family: var(--mono); font-size: 2.9cqw; line-height: 1.35; color: var(--ink); padding: 0 12cqw; }
+  .verdict b { color: var(--rust); }
+  .note { position: absolute; top: 105cqw; width: 100%; text-align: center; font-family: var(--mono); font-size: 2cqw; letter-spacing: .12em; color: #9aa7bd; }
+  .handle { position: absolute; bottom: 5cqw; left: 0; width: 100%; padding: 0 5cqw; font-family: var(--mono); font-weight: 700; letter-spacing: .12em; font-size: 2.6cqw; color: #3a4c6c; display: flex; justify-content: space-between; }
+  .handle span:last-child { color: var(--rust); font-size: 4.2cqw; letter-spacing: .1em; }
+</style>
+</head>
+<body>
+<div class="stage"><div class="card">
+  <div class="count">08/12</div>
+  <h1>DevOps</h1>
+  <div class="panel paid"><div class="tag">PAID</div><div class="icon">G</div><div class="name">GitLab</div><div class="price">$29</div><div class="chk">READ 11 OCT</div>
+    <div class="foot"><small>A YEAR</small><strong>$348</strong></div></div>
+  <div class="panel free"><div class="tag">FREE</div><div class="icon">O</div><div class="name">OneDev</div><div class="price">$0</div><div class="chk">CHECKED 11 OCT</div>
+    <div class="foot"><small>15K STARS · 61 DEVS</small><strong>pushed today</strong></div></div>
+  <p class="verdict"><b>Switch this one.</b> Same job as GitLab, $348 cheaper, and you run it.</p>
+  <p class="note">OUR CALL, NOT THEIRS · FIGURES UNVERIFIED</p>
+  <div class="handle"><span>@YOURHANDLE</span><span>SWIPE →</span></div>
+</div></div>
+</body>
+</html>

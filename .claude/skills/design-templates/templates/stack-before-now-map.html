@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<!--
+  Template: stack-before-now-map
+  Style: white card, a "before" column of grey tool chips and a "now" column of accent chips per function row, arrow between.
+  Inspired by: the "Healthcare Growth Marketing Stack" before and now graphic. Original CSS; no brand logos or names reused (placeholders only).
+  Swap points: :root tokens; .title; each .row (copy a block): .fn function name, .before chips, .now chips; .foot source line.
+  Use text chips, not scraped logos. Mark the graphic as opinion unless you have data behind it.
+-->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Stack Before Now Map</title>
+<style>
+  :root { --page:#F4F6FA; --card:#FFFFFF; --ink:#12172B; --muted:#6B7285; --old:#E8EBF1; --oldink:#59607A; --new:#E6F0FF; --newink:#0B4FD0; --line:#DCE1EA; --font:Aptos,"Segoe UI",system-ui,sans-serif; }
+  :root:not([data-theme="light"]) { color-scheme: light dark; }
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --page:#0E1220; --card:#171C30; --ink:#EDF0FA; --muted:#98A0B8; --old:#252B42; --oldink:#B2B9D0; --new:#17305F; --newink:#9CC0FF; --line:#2A3150; } }
+  :root[data-theme="dark"] { --page:#0E1220; --card:#171C30; --ink:#EDF0FA; --muted:#98A0B8; --old:#252B42; --oldink:#B2B9D0; --new:#17305F; --newink:#9CC0FF; --line:#2A3150; }
+  * { box-sizing:border-box; margin:0; padding:0; }
+  body { background:var(--page); color:var(--ink); font-family:var(--font); font-size:11pt; padding:16px; }
+  .card { container-type:inline-size; max-width:760px; margin:0 auto; background:var(--card); border:1px solid var(--line); border-radius:16px; padding:20px; }
+  .title { font-size:32px; line-height:1.1; font-weight:700; }
+  .sub { color:var(--muted); margin:6px 0 16px; }
+  .head, .row { display:grid; grid-template-columns:7.5em 1fr 1.4em 1fr; gap:10px; align-items:start; }
+  .head { font-size:12px; text-transform:uppercase; letter-spacing:.08em; color:var(--muted); padding-bottom:6px; border-bottom:1px solid var(--line); }
+  .row { padding:12px 0; border-bottom:1px solid var(--line); }
+  .fn { font-weight:700; font-size:14px; }
+  .chips { display:flex; flex-wrap:wrap; gap:6px; }
+  .chip { border-radius:999px; padding:4px 10px; font-size:12px; font-weight:600; }
+  .before .chip { background:var(--old); color:var(--oldink); text-decoration:line-through; text-decoration-color:rgba(120,128,150,.5); }
+  .now .chip { background:var(--new); color:var(--newink); }
+  .arrow { color:var(--muted); text-align:center; }
+  .foot { margin-top:14px; font-size:12px; color:var(--muted); }
+  @container (max-width: 520px) {
+    .head { display:none; }
+    .row { grid-template-columns:1fr; gap:6px; }
+    .arrow { display:none; }
+  }
+</style>
+</head>
+<body>
+<div class="card">
+  <h1 class="title">Your Stack, Before and Now</h1>
+  <p class="sub">Opinion map. Replace each chip with your own tools.</p>
+  <div class="head"><span>Function</span><span>Before</span><span></span><span>Now</span></div>
+  <div class="row"><div class="fn">SEO</div><div class="chips before"><span class="chip">Tool A</span><span class="chip">Tool B</span></div><div class="arrow">&rarr;</div><div class="chips now"><span class="chip">Tool X</span><span class="chip">Tool Y</span><span class="chip">Tool Z</span></div></div>
+  <div class="row"><div class="fn">Outbound</div><div class="chips before"><span class="chip">Tool C</span></div><div class="arrow">&rarr;</div><div class="chips now"><span class="chip">Tool P</span><span class="chip">Tool Q</span></div></div>
+  <div class="row"><div class="fn">CRM</div><div class="chips before"><span class="chip">Tool D</span></div><div class="arrow">&rarr;</div><div class="chips now"><span class="chip">Tool R</span><span class="chip">Tool S</span></div></div>
+  <div class="row"><div class="fn">Workflow</div><div class="chips before"><span class="chip">Tool E</span></div><div class="arrow">&rarr;</div><div class="chips now"><span class="chip">Tool T</span><span class="chip">Tool U</span></div></div>
+  <p class="foot">Source and date. Cost, data moved and compliance checked? Yes or no.</p>
+</div>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Repo card on beige grunge</title>
+<style>
+  /* Template: a repo spotlight slide on a warm beige "concrete" texture - brand wordmark and rule, huge repo name, a white README-style panel, one plain sentence, slide counter.
+     Pattern from the Site Tusk repo carousel. 4:5 canvas that scales with its container. Customise: brand, repo, panel content, sentence, counter, --paper tones. */
+  :root { --bg:#d8d3c8; --paper:#e4dfd3; --ink:#26211d; --muted:#5d554b; --brand:#1f4a4c; --panel:#fffdf8; --line:#2b2622; --accent:#1f4a4c; --font: Aptos, "Segoe UI", system-ui, sans-serif; --display: "Jost", "Century Gothic", Aptos, system-ui, sans-serif; }
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --bg:#16140f; --paper:#221f19; --ink:#f1ece0; --muted:#b5ab98; --brand:#7fc4c6; --panel:#2c2822; --line:#f1ece0; --accent:#7fc4c6; } }
+  :root[data-theme="dark"] { --bg:#16140f; --paper:#221f19; --ink:#f1ece0; --muted:#b5ab98; --brand:#7fc4c6; --panel:#2c2822; --line:#f1ece0; --accent:#7fc4c6; }
+  * { box-sizing: border-box; margin: 0; }
+  body { background: var(--bg); color: var(--ink); font-family: var(--font); padding-block: 24px; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); display: grid; justify-items: center; }
+  .slide { container-type: inline-size; width: min(100%, 540px); aspect-ratio: 4 / 5; background:
+      radial-gradient(circle at 20% 15%, rgba(255,255,255,.22), transparent 40%),
+      radial-gradient(circle at 80% 85%, rgba(0,0,0,.10), transparent 45%),
+      repeating-radial-gradient(circle at 30% 40%, rgba(0,0,0,.025) 0 2px, transparent 2px 7px), var(--paper);
+    border-radius: 6px; padding: 7cqw 6cqw; display: grid; grid-template-rows: auto auto 1fr auto; gap: 4cqw; position: relative; overflow: hidden; }
+  .brand { display: flex; justify-content: space-between; align-items: end; border-bottom: .5cqw solid var(--line); padding-bottom: 3cqw; }
+  .brand b { font-family: var(--display); font-weight: 800; font-size: 6cqw; line-height: .95; letter-spacing: .02em; color: var(--brand); text-transform: uppercase; }
+  .brand span { font-size: 3cqw; letter-spacing: .12em; color: var(--muted); }
+  h1 { font-family: var(--display); font-weight: 500; font-size: 8.6cqw; line-height: 1.05; letter-spacing: -.03em; text-align: center; overflow-wrap: anywhere; }
+  .panel { background: var(--panel); border-radius: 1.2cqw; padding: 4cqw; display: grid; gap: 2.2cqw; align-content: start; box-shadow: 0 .6cqw 2cqw rgba(0,0,0,.12); min-height: 0; overflow: hidden; }
+  .panel h2 { font-family: Georgia, "Times New Roman", serif; font-size: 5.4cqw; text-align: center; }
+  .panel p { font-size: 3cqw; text-align: center; color: var(--muted); }
+  .badges { display: flex; gap: 1.2cqw; justify-content: center; flex-wrap: wrap; } .badges i { font-style: normal; font-size: 2.3cqw; font-weight: 700; color: #fff; background: #555; border-radius: .8cqw; padding: .4cqw 1.4cqw; } .badges i.g { background: #4c9a2a; }
+  .line { height: 1.2cqw; border-radius: 1cqw; background: color-mix(in srgb, var(--muted) 25%, transparent); } .line.s { width: 70%; }
+  .says { font-size: 4.6cqw; line-height: 1.35; max-width: 34ch; }
+  .count { position: absolute; top: 3cqw; right: 4cqw; font-size: 2.8cqw; letter-spacing: .1em; color: var(--muted); }
+</style>
+</head>
+<body>
+<section class="slide">
+  <span class="count">5 / 7</span>
+  <div class="brand"><b>Your<br>Brand</b><span>OPEN SOURCE PICKS</span></div>
+  <h1>owner/repo-name</h1>
+  <div class="panel"><h2>Repository title</h2><p>"One quoted tagline from the README."</p>
+    <div class="badges"><i class="g">PRs welcome</i><i>License MIT</i></div>
+    <div class="line"></div><div class="line"></div><div class="line s"></div></div>
+  <p class="says">A free, open-source repository that does one clear thing for one clear audience, in a single sentence.</p>
+</section>
+</body>
+</html>
