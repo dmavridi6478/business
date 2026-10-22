@@ -67,3 +67,16 @@ A trending list measures attention in one day, not quality. Pick at most one, re
 | `DuarteSantos8/openGym` | Self-hosted gym and body-weight tracker (`docker compose up`) | 13,951 | **AGPL-3.0** | Network-use copyleft; personal use only unless you read the licence |
 
 Card star counts (e.g. rea 275,523, mattpocock/skills 293,108) are older than the verified figures; recheck before quoting. Also named, without repos: Mac apps AutoMounter (keeps network shares mounted), Agenttrace (agent sessions, costs, failures), Ping (uptime monitor), Maestro (multi-agent spec-driven coding), Claudoscope (browse Claude Code sessions), Agent Teams AI (messaging and task boards for coding agents), MXterm (SSH and SFTP panel, mxterm.net), Raspberry Pi Imager, Pi Stats (Pi-hole dashboard). Not verified; read each site's licence and permissions first.
+
+
+## Batch 114: 22 October 2026 trending cards (verified on GitHub, 22 October 2026)
+
+Card from @githubnow: today's gainers, and a "tomorrow's drop" teaser that says to start with `fastapi`. The daily star gains below are the card's; star totals and licences are from the repo pages.
+
+| Repo | Card gain | Stars | Licence | Note |
+|---|---|---|---|---|
+| `luongnv89/claude-howto` | +428 | 42,511 | MIT | Visual, example-driven Claude Code guide with copy-paste templates. Read it against `claude-code-commands-reference` and `claude-code-skills`, which already cover commands and skills here; take only what is missing |
+| `php/php-src` | +110 | 40,917 | BSD-3-Clause | The PHP interpreter source; relevant if you maintain PHP (`php-pro`, `php-reviewer` agents exist) |
+| `fastapi/fastapi` | +96 | 103,581 | MIT | Existing `fastapi-patterns` and `fastapi-templates` cover usage |
+
+A one-day star gain is attention, not quality. A separate "Today's Top GitHub Repo For Claude" video cover from @your.aimentor names no repo; it was not acted on.

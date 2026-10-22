@@ -103,3 +103,35 @@ Invoke `/oss-alternatives` when:
 - A user asks how to do background removal, audio separation, OCR, video dubbing, or audiobook creation
 - Looking to cut SaaS costs
 - Need offline/local processing for privacy
+
+
+## Batch 114 finds (verified on GitHub, 22 October 2026)
+
+Ten "free alternatives" cards (@martiendejong_dev) plus tool cards (@palidev21). Stars, forks and licences below were read from each repo page; **the cards' price comparisons ($14/month YouTube Premium, Zapier Pro $600/month, Figma $45 per editor, Calendly Teams $16 per user, Google Analytics 360 $150,000/year, Notion $20 per user) were not verified** and depend on plan and date.
+
+| Tool | Does | Stars | Licence | Card pairs it with | Licence care |
+|---|---|---|---|---|---|
+| `yt-dlp/yt-dlp` | Command-line audio/video downloader | 200,336 | Unlicense | YouTube Premium downloads | Check the site's terms and copyright before downloading |
+| `ollama/ollama` | Run open models locally | 184,295 | MIT | Hosted chat subscriptions | Model licences differ from the runner's |
+| `immich-app/immich` | Self-hosted photo and video library | 116,930 | AGPL-3.0 | Cloud photo storage | Network-use copyleft; photos are sensitive, test restore |
+| `openai/whisper` | Speech-to-text, runs offline | 111,079 | MIT | Transcription services | - |
+| `plausible/analytics` | Cookie-free web analytics | 29,602 | AGPL-3.0 | Google Analytics 360 | Self-host needs ClickHouse and Postgres; hosted plan is the default route |
+| `AppFlowy-IO/AppFlowy` | Notion-style workspace | 77,620 | AGPL-3.0 | Notion | - |
+| `penpot/penpot` | Design and prototyping | 61,491 | MPL-2.0 | Figma | - |
+| `n8n-io/n8n` | Workflow automation | 208,337 | **Other (fair-code, not OSI open source)** | Zapier Pro | Read the Sustainable Use licence before offering it as a service |
+| `calcom/cal.com` | Scheduling (repo now shows as cal.diy) | 49,134 | MIT | Calendly Teams | Repo name and homepage changed; recheck the install path |
+| `bitwarden/server` | Password manager backend | 20,443 | **Other** (server licence is not plain open source) | Paid password managers | Self-hosting a vault makes you responsible for backups |
+
+Desktop and browser tools (@palidev21):
+
+| Tool | Does | Stars | Licence |
+|---|---|---|---|
+| `mifi/lossless-cut` | Lossless video/audio trimming (FFmpeg GUI) | 44,925 | GPL-2.0 |
+| `alyssaxuu/screenity` | Screen recorder with annotation, no watermark | 18,798 | GPL-3.0 |
+| `pdfarranger/pdfarranger` | Merge, split, rotate and reorder PDF pages (Linux GTK) | 5,989 | GPL-3.0 |
+| `koodo-reader/koodo-reader` | Ebook reader and library with sync | 28,605 | AGPL-3.0 |
+| `karakeep-app/karakeep` | Bookmark-everything app with AI tagging | 29,885 | AGPL-3.0 |
+
+For more PDF work see `repo-stirling-pdf` (94,653 stars, licence shown as Other: open-core). The "10 GitHub repos that feel illegal to use" cover's "$50 billion in corporate revenue" line is not sourced.
+
+Rule: a "free" tool costs hosting, time and risk. AGPL means that offering a modified version over a network obliges you to publish your changes; for internal use, read the licence rather than assuming.

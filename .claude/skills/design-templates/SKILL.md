@@ -419,3 +419,20 @@ All four use original CSS and placeholder wording; no source logo, mascot, term 
 | `theme-iceberg-blue.html` | bg `#EEF3FF`, text `#0F1A3C`, accent `#2F5BFF` | bg `#0B1230`, accent `#7C9BFF` | Inter |
 | `theme-purpose-columns.html` | bg `#FFFFFF`, text `#14161C`, accent `#C8552D` (violet `#6A4FD0` and green `#3C9B45` as column colours) | bg `#14151A`, accent `#FF8A5C` | Inter |
 | `theme-explorer-neon.html` | bg `#F3F5FB`, text `#0F1424`, accent `#5B3DDC` | bg `#070A12`, accent `#4DA3FF` | Inter + JetBrains Mono |
+
+
+## Batch 114 additions
+
+| Template | Use for | Layout |
+|---|---|---|
+| `tools-20-numbered-grid.html` | "20 tools" directory graphics | 1080x1350; two-line headline with one highlighted word, credit or sponsor line, 4x5 grid of numbered tiles (number, tool name, category, one-line job) with four category colours, dark footer |
+| `keyword-framework-board.html` | SEO or strategy framework one-pagers | 1080x1350; teal headline, left spine of seven numbered steps, right chip cloud (ten types) and 2x4 metric grid, dark formula bar of five plus-joined terms ending in an amber result pill, teal footer |
+
+Both use original CSS and placeholder wording only. Overlap checked: `workflow-grid-catalog` and `trending-top10-leaderboard` are list layouts of a different shape, and no existing template has a formula bar.
+
+## Batch 114 theme tokens (files in `Artifacts/theme-*.html`; colours eyeballed from the template palette)
+
+| Theme file | Light | Dark | Fonts (free) |
+|---|---|---|---|
+| `theme-gtm-tools-slate.html` | bg `#EEF1F6`, text `#101828`, accent `#2F6BFF` | bg `#0C1220`, accent `#7FA3FF` | Inter |
+| `theme-keyword-teal-paper.html` | bg `#F6F1E7`, text `#10282C`, accent `#0F7C86` | bg `#0C1D20`, accent `#4FC3CD` | Inter |

@@ -6054,3 +6054,13 @@ Built from `e0068371-B2B_lead_Generation.zip` (11 infographics), `16f6810e-iClou
 - 4 design templates (`periodic-table-grid`, `iceberg-waterline-steps`, `three-column-purpose-cards`, `file-explorer-system-card`) and 4 themes (`periodic-pastel`, `iceberg-blue`, `purpose-columns`, `explorer-neon`).
 - `Artifacts/operations/workflows-batch-113.html` (4 workflows), `Artifacts/business/batch-113-intake-report.html`, `docs/batch-113-prompts.md` (25 + 9 prompts verbatim), `scripts/batch113-install.sh` (asks before every step; not run).
 - The "B2B Lead Generation Complete System" (50 items) and "Claude Sales Department" (48 items) graphics are lead magnets showing index pages only; the 98 underlying files are not in the uploads and were not recreated.
+
+## Batch 114 (22 October 2026)
+
+Built from `461a2f1c-iCloud_Photos.zip` (48 images) and two infographics sent inline (20 AI GTM tools; SEO keyword research strategy). The photo set mostly repeated earlier cards, so the batch merges instead of adding.
+
+- 1 new skill: `ai-gtm-tools-20` (directory of 20 AI GTM tools by job, mapped to what the stack already has; the source list is sponsored by the owner of one of the tools and no vendor was verified); 2 commands: `/ai-gtm-tools`, `/keyword-research-plan`.
+- New reference `seo/references/keyword-research-framework.md` (7 steps, 10 types, 10 methods, 8 metrics, scored prioritisation, live Ahrefs and Semrush route).
+- Merged into existing skills: ten free alternatives and five desktop tools into `oss-alternatives`; nine self-hosted repos into `self-hosted-docker-stack`; the 22 October trending cards into `github-trending-top10-oct5`; the Anthropic skills install route into `claude-5-official-skills`; verified figures into `repo-stirling-pdf`. All repos were checked on GitHub (stars and licences); card price comparisons were not verified.
+- 2 design templates (`tools-20-numbered-grid`, `keyword-framework-board`) and 2 themes (`gtm-tools-slate`, `keyword-teal-paper`).
+- `Artifacts/operations/workflows-batch-114.html` (4 workflows), `Artifacts/business/batch-114-intake-report.html`, `docs/batch-114-prompts.md`, `scripts/batch114-install.sh` (asks before every step; not run).
