@@ -6084,3 +6084,7 @@ Built from `6147cb7d-iCloud_Photos.zip` (71 images). Mostly GitHub project cards
 - Merged: 26 verified repos into `oss-alternatives` (three cards that mis-describe their repo are flagged) and three trending repos into `github-trending-top10-oct5` (Claude-Red recorded as dual-use and not installed).
 - 3 design templates (`two-tier-tree-14`, `system-steps-grid-10`, `story-stat-card`) and 3 themes (`brand-tree-sage`, `system-red-white`, `story-grid-paper`).
 - `Artifacts/operations/workflows-batch-116.html` (4 workflows), `Artifacts/business/batch-116-intake-report.html`, `docs/batch-116-prompts.md`, `scripts/batch116-install.sh` (asks before every step; not run).
+
+## NexLev faceless-niche workflow (23 October 2026)
+
+Added `faceless-niche-nexlev` (skill), `/faceless-niche-scan` (command) and `Artifacts/operations/workflow-faceless-niche-nexlev.html`. A nine-step, read-only-until-approval workflow on the connected NexLev tools, with gates for AI-dramatised channels, originality, and platform policy. Tested live: three of five top wildlife outliers were flagged AI-generated. Agent Archive setup was skipped at your request.

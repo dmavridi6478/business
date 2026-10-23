@@ -29,3 +29,6 @@ The card says long videos pay 10-40 times more per view than Shorts. Its example
 - Niche research: `/yt-niche`, `youtube-niche-finder`. The NexLev connector (connected in this environment) exposes faceless-channel checks, outliers and RPM data, which is a sturdier source than a one-off scan.
 - Script, calendar, SEO, monetisation: `/yt-script`, `/yt-calendar`, `/yt-seo`, `/yt-monetize`.
 - Local voice and dubbing tools: see `oss-alternatives` (VoiceStudio, VoxCPM, Whisper, yt-dlp, Batch 114 and 116).
+
+## NexLev route (added after the live test)
+For a sturdier method than a one-off scan, use `/faceless-niche-scan` and the `faceless-niche-nexlev` skill. A live test on 23 October 2026 found three of five top wildlife outliers flagged AI-generated and one openly dramatised, and estimated RPM near $1.5-4.1, lower than the story's $2-4 range for most.
