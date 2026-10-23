@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<!--
+  Template: callout-hub-20
+  Style: light page, pill-shaped headline bar, tall central picture placeholder with a round badge, ten callout cards down each side (coloured title bar, numbered bubble, short text) joined to the centre by dashed lines, dark footer. Theme: callout-navy-pink
+  Inspired by: "20 templates around one illustration" infographics. Original CSS and placeholder wording; no source illustration, logo or text reused.
+  Canvas: 1080 x 1350. Swap points: .head (title), .hub (central image or SVG), .badge, each .c (number i, title b, text p), .foot
+-->
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Callout Hub 20</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#FFFFFF;--ink:#14213D;--muted:#4A5670;--pink:#E8479A;--navy:#14213D;--teal:#1F8A8A;--line:#C9CFDC;--font:"Inter",Aptos,"Segoe UI",system-ui,sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#333;display:flex;justify-content:center;padding:32px 0;overflow-x:auto;font-family:var(--font)}
+.slide{position:relative;width:1080px;height:1350px;flex:none;background:var(--bg);color:var(--ink);overflow:hidden}
+.head{position:absolute;left:32px;right:32px;top:22px;height:80px;border-radius:18px;background:var(--pink);color:#fff;display:flex;align-items:center;justify-content:center;font:800 44px/1 var(--font);letter-spacing:-.01em}
+.head span{background:var(--navy);color:#fff;border-radius:12px;padding:8px 16px;margin-left:14px}
+.hub{position:absolute;left:410px;top:150px;width:260px;height:1000px;border-radius:130px 130px 24px 24px;background:linear-gradient(#DCE6F7,#9FB4D8);border:3px solid var(--navy);display:flex;align-items:flex-start;justify-content:center;font:700 22px/1.2 var(--font);color:var(--navy);text-align:center;padding:70px 20px 20px}
+.badge{position:absolute;left:480px;top:590px;width:120px;height:120px;border-radius:50%;background:var(--pink);border:6px solid #fff;display:flex;align-items:center;justify-content:center;color:#fff;font:800 34px/1 var(--font)}
+svg{position:absolute;inset:0;width:1080px;height:1350px;pointer-events:none}svg line{stroke:var(--navy);stroke-width:1.6;stroke-dasharray:6 6;opacity:.55}
+.col{position:absolute;top:122px;width:350px;display:grid;grid-template-rows:repeat(10,108px);gap:6px}
+.col.l{left:32px}.col.r{left:698px}
+.c{position:relative;min-width:0;border:2px solid var(--line);border-radius:10px;background:#fff;padding:6px 10px 6px 14px;overflow:hidden}
+.c b{display:block;font:800 15px/1.2 var(--font);color:#fff;background:var(--teal);margin:-6px -10px 5px -14px;padding:5px 10px 5px 40px}
+.c i{position:absolute;left:6px;top:3px;width:26px;height:26px;border-radius:50%;background:var(--pink);border:2px solid #fff;color:#fff;font:800 13px/22px var(--font);font-style:normal;text-align:center;z-index:2}
+.c p{font:500 13.5px/1.32 var(--font);color:var(--muted)}
+.c:nth-child(3n+2) b{background:var(--navy)}.c:nth-child(3n) b{background:var(--pink)}
+.foot{position:absolute;left:0;right:0;bottom:0;height:66px;background:var(--navy);color:#fff;display:flex;align-items:center;justify-content:center;font:700 24px/1 var(--font)}
+</style></head><body>
+<div class="slide">
+  <div class="head">20 PROMPT<span>TEMPLATES</span></div>
+  <div class="hub">Central picture goes here</div><div class="badge">20</div>
+  <svg><line x1="382" y1="179" x2="410" y2="179"/><line x1="670" y1="179" x2="698" y2="179"/><line x1="382" y1="293" x2="410" y2="293"/><line x1="670" y1="293" x2="698" y2="293"/><line x1="382" y1="407" x2="410" y2="407"/><line x1="670" y1="407" x2="698" y2="407"/><line x1="382" y1="521" x2="410" y2="521"/><line x1="670" y1="521" x2="698" y2="521"/><line x1="382" y1="635" x2="410" y2="635"/><line x1="670" y1="635" x2="698" y2="635"/><line x1="382" y1="749" x2="410" y2="749"/><line x1="670" y1="749" x2="698" y2="749"/><line x1="382" y1="863" x2="410" y2="863"/><line x1="670" y1="863" x2="698" y2="863"/><line x1="382" y1="977" x2="410" y2="977"/><line x1="670" y1="977" x2="698" y2="977"/><line x1="382" y1="1091" x2="410" y2="1091"/><line x1="670" y1="1091" x2="698" y2="1091"/><line x1="382" y1="1205" x2="410" y2="1205"/><line x1="670" y1="1205" x2="698" y2="1205"/></svg>
+  <div class="col l"><div class="c l"><i>1</i><b>Template title</b><p>Two or three lines of the prompt text or the point being made go here.</p></div><div class="c l"><i>2</i><b>Template title</b><p>Two or three lines of the prompt text or the point being made go here.</p></div><div class="c l"><i>3</i><b>Template title</b><p>Two or three lines of the prompt text or the point being made go here.</p></div><div class="c l"><i>4</i><b>Template title</b><p>Two or three lines of the prompt text or the point being made go here.</p></div><div class="c l"><i>5</i><b>Template title</b><p>Two or three lines of the prompt text or the point being made go here.</p></div><div class="c l"><i>6</i><b>Template title</b><p>Two or three lines of the prompt text or the point being made go here.</p></div><div class="c l"><i>7</i><b>Template title</b><p>Two or three lines of the prompt text or the point being made go here.</p></div><div class="c l"><i>8</i><b>Template title</b><p>Two or three lines of the prompt text or the point being made go here.</p></div><div class="c l"><i>9</i><b>Template title</b><p>Two or three lines of the prompt text or the point being made go here.</p></div><div class="c l"><i>10</i><b>Template title</b><p>Two or three lines of the prompt text or the point being made go here.</p></div></div><div class="col r"><div class="c r"><i>11</i><b>Template title</b><p>Two or three lines of the prompt text or the point being made go here.</p></div><div class="c r"><i>12</i><b>Template title</b><p>Two or three lines of the prompt text or the point being made go here.</p></div><div class="c r"><i>13</i><b>Template title</b><p>Two or three lines of the prompt text or the point being made go here.</p></div><div class="c r"><i>14</i><b>Template title</b><p>Two or three lines of the prompt text or the point being made go here.</p></div><div class="c r"><i>15</i><b>Template title</b><p>Two or three lines of the prompt text or the point being made go here.</p></div><div class="c r"><i>16</i><b>Template title</b><p>Two or three lines of the prompt text or the point being made go here.</p></div><div class="c r"><i>17</i><b>Template title</b><p>Two or three lines of the prompt text or the point being made go here.</p></div><div class="c r"><i>18</i><b>Template title</b><p>Two or three lines of the prompt text or the point being made go here.</p></div><div class="c r"><i>19</i><b>Template title</b><p>Two or three lines of the prompt text or the point being made go here.</p></div><div class="c r"><i>20</i><b>Template title</b><p>Two or three lines of the prompt text or the point being made go here.</p></div></div>
+  <div class="foot">Your call to action &rarr; your site</div>
+</div></body></html>

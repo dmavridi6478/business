@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<!--
+  Template: iceberg-waterline-steps
+  Style: centred headline with a blue accent word and a grey subtitle; a pale-sky top half with a faceted iceberg tip (CSS clip-path) between two white cards ("what everyone does" and "what you get"); a waterline; a deep-blue gradient below with seven white step cards in two columns around a numbered spine. Theme: iceberg-blue
+  Inspired by: a "how to build a list in 7 steps, below the waterline" infographic. Original CSS; no source illustration, mascot, logo or wording reused.
+  Canvas: 1080 x 1350. Seven steps (odd steps left, even steps right; step 7 centred).
+  Swap points: h1 (em = accent), .sub, .above .card (two), .step (.tag, h3, p), .foot
+-->
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Iceberg Waterline Steps</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;800&display=swap" rel="stylesheet">
+<style>
+:root{--sky1:#F4F7FF;--sky2:#DCE6FF;--deep1:#3F63E8;--deep2:#1B2A8C;--ink:#0F1A3C;--muted:#5B678A;--accent:#2F5BFF;--card:#FFFFFF;--line:#DDE4F7;--font:"Inter",Aptos,"Segoe UI",system-ui,sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#333;display:flex;justify-content:center;padding:32px 0;overflow-x:auto;font-family:var(--font)}
+.slide{position:relative;width:1080px;height:1350px;flex:none;color:var(--ink);overflow:hidden;background:linear-gradient(180deg,var(--sky1) 0,var(--sky2) 480px,var(--deep1) 480px,var(--deep2) 1350px)}
+h1{position:absolute;top:44px;left:0;right:0;text-align:center;font:600 60px/1.1 var(--font);letter-spacing:-.02em}h1 em{font-style:normal;color:var(--accent)}
+.sub{position:absolute;top:122px;left:0;right:0;text-align:center;font:500 24px/1.3 var(--font);color:var(--muted)}
+.berg{position:absolute;left:270px;top:170px;width:540px;height:310px;background:linear-gradient(135deg,#9DB4FF,#5C7BFF 60%,#3F5BE0);clip-path:polygon(50% 0,64% 34%,88% 62%,100% 100%,0 100%,14% 66%,34% 40%)}
+.card{position:absolute;top:210px;width:310px;background:var(--card);border:1px solid var(--line);border-radius:18px;padding:20px 22px;box-shadow:0 12px 30px rgba(31,50,140,.14)}
+.card.l{left:46px}.card.r{right:46px}.card small{display:block;font:700 15px/1 var(--font);letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.card b{display:block;margin-top:10px;font:800 26px/1.15 var(--font)}.card .big{font:800 50px/1 var(--font);color:var(--accent)}.card p{margin-top:8px;font:500 18px/1.3 var(--font);color:var(--muted)}
+.spine{position:absolute;left:539px;top:516px;width:2px;height:760px;background:rgba(255,255,255,.45)}
+.mark{position:absolute;left:512px;top:486px;width:56px;height:56px;border-radius:50%;background:#fff;box-shadow:0 0 0 8px rgba(255,255,255,.25)}
+.step{position:absolute;width:460px;height:168px;background:var(--card);border-radius:18px;padding:16px 18px;box-shadow:0 14px 30px rgba(10,20,90,.28)}
+.step .tag{display:inline-block;font:700 14px/1 var(--font);letter-spacing:.1em;text-transform:uppercase;color:var(--accent);background:#E8EEFF;border-radius:10px;padding:6px 10px}
+.step h3{margin-top:10px;font:800 25px/1.12 var(--font)}.step p{margin-top:6px;font:500 17px/1.3 var(--font);color:var(--muted)}
+.n{position:absolute;width:34px;height:34px;border-radius:50%;background:#fff;color:var(--deep2);font:800 17px/34px var(--font);text-align:center;box-shadow:0 2px 10px rgba(0,0,0,.25)}
+.s1{left:36px;top:572px}.s2{right:36px;top:586px}.s3{left:36px;top:760px}.s4{right:36px;top:774px}.s5{left:36px;top:948px}.s6{right:36px;top:962px}.s7{left:310px;top:1136px;width:460px}
+.n1{left:523px;top:620px}.n2{left:523px;top:672px}.n3{left:523px;top:808px}.n4{left:523px;top:860px}.n5{left:523px;top:996px}.n6{left:523px;top:1048px}.n7{left:523px;top:1096px}
+.foot{position:absolute;left:36px;bottom:26px;font:600 20px/1 var(--font);color:#fff}
+</style></head><body>
+<div class="slide">
+  <h1>How to build a <em>list</em> in 7 steps</h1><p class="sub">The workflow below the waterline, step by step.</p>
+  <div class="berg"></div>
+  <div class="card l"><small>What everyone does</small><b>Filter by industry and size</b><p>Industry, headcount, location, then export.</p></div>
+  <div class="card r"><small>What you get</small><div class="big">10,000</div><p>rows that look finished.</p></div>
+  <div class="mark"></div><div class="spine"></div>
+  <div class="step s1"><span class="tag">1 · Step label</span><h3>Step headline</h3><p>One or two lines saying exactly what to do.</p></div>
+  <div class="step s2"><span class="tag">2 · Step label</span><h3>Step headline</h3><p>One or two lines saying exactly what to do.</p></div>
+  <div class="step s3"><span class="tag">3 · Step label</span><h3>Step headline</h3><p>One or two lines saying exactly what to do.</p></div>
+  <div class="step s4"><span class="tag">4 · Step label</span><h3>Step headline</h3><p>One or two lines saying exactly what to do.</p></div>
+  <div class="step s5"><span class="tag">5 · Step label</span><h3>Step headline</h3><p>One or two lines saying exactly what to do.</p></div>
+  <div class="step s6"><span class="tag">6 · Step label</span><h3>Step headline</h3><p>One or two lines saying exactly what to do.</p></div>
+  <div class="step s7"><span class="tag">7 · Step label</span><h3>Step headline</h3><p>One or two lines saying exactly what to do.</p></div>
+  <span class="n n1">1</span><span class="n n2">2</span><span class="n n3">3</span><span class="n n4">4</span><span class="n n5">5</span><span class="n n6">6</span><span class="n n7">7</span>
+  <div class="foot">Your name · your site</div>
+</div></body></html>

@@ -140,3 +140,22 @@ document-processing table. Every repo path was confirmed to exist via a live
 `git ls-remote` check (including three — Kaneo, Umami, Apitable — whose org
 name wasn't visible on-screen in the source carousel and had to be
 independently located and confirmed rather than assumed).
+
+
+## Batch 114 additions (verified on GitHub, 22 October 2026)
+
+Sources: Site Tusk "5 GitHub projects" and @blank9485 "5 GitHub projects" cards. Stars and licences read from the repo pages.
+
+| Repo | Job | Stars | Licence | Note |
+|---|---|---|---|---|
+| `portainer/portainer` | Docker and Kubernetes management UI | 38,693 | zlib | Community Edition is for homelab and learning; the vendor sells Business |
+| `dgtlmoon/changedetection.io` | Website change and restock alerts | 35,200 | Apache-2.0 | Respect each site's terms |
+| `home-assistant/core` | Home automation, local control | 91,649 | Apache-2.0 | Segment IoT devices (see `homelab-vlan-segmentation`) |
+| `karakeep-app/karakeep` | Bookmarks, notes and images with AI tags | 29,885 | AGPL-3.0 | AI tagging can call an external model; choose local or hosted deliberately |
+| `meshtastic/firmware` | Off-grid LoRa mesh radio firmware | 8,462 | GPL-3.0 | Radio rules differ by country and region |
+| `donnemartin/system-design-primer` | System design study guide | 375,034 | Other (see LICENSE) | Not a service; learning material |
+| `rustdesk/rustdesk` | Self-hosted remote desktop | 126,605 | AGPL-3.0 | Exposes a remote-control surface: keep it behind a VPN or strong auth |
+| `paperless-ngx/paperless-ngx` | Scan, OCR, index and archive documents | 46,997 | GPL-3.0 | Back up the database and media together |
+| `actualbudget/actual` | Local-first personal finance | 29,670 | MIT | Already listed in an earlier batch |
+
+Order I would install, if only one: `paperless-ngx` (clear job, low blast radius). Last: `rustdesk` and `home-assistant` (remote access and device control raise the security stakes).

@@ -6017,3 +6017,78 @@ Not done (needs you): plugin installs (`/plugin install paypal@claude-plugins-of
 **Source problems:** the revenue-system list repeats six roles; interview replacement lines are templates that must not claim things you have not done; GTM customer-count thresholds are rules of thumb.
 
 **Not done:** nothing installed; no connector changed (OpenFlowKit entry still unapplied; Midpage, Sentry and Supabase need your authorisation).
+
+## Batch 111 — two archives (20 AI-visibility infographics, 14 TikTok cards) and 3 infographics attached in chat (19 October 2026)
+
+**Report:** Batch 111 Intake Report (`Artifacts/business/batch-111-intake-report.html`; the published link is in the pull request). Workflows page: `Artifacts/operations/workflows-batch-111.html`. Prompts in plain text: `docs/batch-111-prompts.md`.
+
+**Sources:** Emilia Möller (50 ways to use Claude for marketing), Kevin Box (6 business models), Josh Sanders (9 personal-brand rules), Ismat Kamal (AI agents in production), Guerlain Nerestan (RevOps vs GTM), Muhammad Ahmad (GTM team setup), Jani Vrancsik and Monika Grycz (GTM levels, then/now), Harvey Lee (Tell me about yourself), Oana Labes (board dashboard), searchable.com (AI search surfaces), @modelsignal Part 18 (12 paid-to-free dev tools), a Gartner insights quadrant, "Your Marketing Metrics Can Lie" and SalesDaily.co's nine sales-email prompts, plus tool lists, a DCB evidence wheel, a 16-page LinkedIn sheet and a Claude Code marketing-team org chart.
+
+**Added:** 20 skills (`claude-marketing-50-verbs`, `business-models-6`, `seo-geo-tool-stack`, `linkedin-magnetic-brand-9-rules`, `project-plan-8-steps`, `agent-production-readiness`, `ai-hustle-flywheel`, `ai-search-surfaces`, `dcb-indication-evidence-map`, `gtm-team-roles-revops-boundary`, `gtm-six-levels-strategy`, `linkedin-client-acquisition-16`, `tell-me-about-yourself`, `board-dashboard-3-statement`, `claude-code-marketing-team`, `oss-swap-part-18`, `marketing-insights-quadrant`, `metrics-that-lie`, `sales-email-prompt-pack`, `ai-tools-50-directory`); 24 commands (`/marketing-verb`, `/business-model-pick`, `/seo-geo-tool-pick`, `/brand-rules`, `/project-plan-8`, `/agent-prod-check`, `/agent-recovery`, `/hustle-flywheel`, `/ai-surface-plan`, `/dcb-map`, `/gtm-team-roles`, `/gtm-weekly-loop`, `/revops-gate-check`, `/gtm-six-levels`, `/linkedin-client-acquisition`, `/linkedin-week`, `/tell-me-about-yourself`, `/board-dashboard`, `/marketing-team`, `/oss-swap-18`, `/insights-quadrant`, `/metric-check`, `/sales-email`, `/ai-tools-50`); 10 draft-only department agents (`mkt-*`); 8 design templates and 5 themes (see `design-templates`); `scripts/batch110-install.sh` (asks before every step).
+
+**Verified:** the 12 repositories of Part 18 (slug, stars, licence, read from GitHub on 19 October 2026; the annual savings sum to $8,621); the 8 templates render without overlap in headless Chromium.
+
+**Already existed, not duplicated:** `gartner-brand-health-framework`, `ai-gtm-maturity-levels`, `gtm-outbound-engine`, `ai-search-visibility`, `claude-marketing-jobs`, `6-free-dev-tools`.
+
+**Source problems:** AI-search statistics are unverified vendor claims; the LinkedIn 16-page and 50-agent marketing guides are gated, so those skills are reconstructions of the visible text; the DCB wheel names no source and cannot support a promotional claim; Keep and LiteLLM report "Other" licences and need a manual LICENSE read.
+
+**Not done:** nothing installed; no connector changed (Apollo.io, n8n, Intercom, Snowflake, Profound and others need your authorisation); no scheduled task created; the "Comment BOOK / ASSET" calls to action were not actioned; commands and agents were written but not executed.
+
+## Batch 112 (19 October 2026)
+
+Built from `06b982f4-iCloud_Photos_2.zip` and `915c7196-iCloud_Photos.zip` (84 images, 2 videos), then consolidated.
+
+- 3 new skills: `oss-swap-part-17`, `oss-swap-part-12`, `ai-side-hustle-pilot`; 3 commands: `/oss-swap-17`, `/oss-swap-12`, `/side-hustle-pilot`.
+- Merged into existing skills instead of adding new ones: the six UI polish checks into `ui-image-layout-5-tips`; the first-customer tool stack into `customer-research/references/`; the 25 free replacements into `oss-alternatives`; the 19 Oct GitHub finds into `github-trending-top10-oct5`; Docker Agent notes into `docker-patterns/references/`; the Claude Code Setup video notes into `claude-code-setup-plugin`.
+- 4 design templates (`ui-tip-before-after`, `side-hustle-serif-dark`, `replaces-list-card`, `parchment-repo-card`) and 4 themes (`ui-white-ink`, `hustle-serif-dark`, `replaces-list-white`, `parchment-tusk`); see `design-templates` "Batch 112 additions".
+- `Artifacts/operations/workflows-batch-112.html` (3 workflows), `Artifacts/business/batch-112-intake-report.html`, `docs/batch-112-prompts.md`, `scripts/batch112-install.sh` (asks before every step; not run).
+- Repo slugs, stars and licences for Part 17, Part 12 and three trending repos were read from GitHub on 19 October 2026. Card-only figures are labelled unverified.
+- Net effect on the library: +3 skills, +3 commands (was +9 and +9 before consolidation).
+
+## Batch 113 (20 October 2026)
+
+Built from `e0068371-B2B_lead_Generation.zip` (11 infographics), `16f6810e-iCloud_Photos.zip` (49 images) and three infographics sent inline. Most of the material duplicated what the repo already had, so the batch merges instead of adding.
+
+- 3 new skills: `llm-visibility-prompt-check`, `tal-build-7-steps`, `b2b-lead-gen-router`; 3 commands: `/llm-visibility-check`, `/build-tal`, `/lead-gen-route`.
+- Merged into existing skills: AEO glossary, SEO vs AEO funnels and the three content types into `ai-search-visibility/references/`; CMO umbrella into `marketing-org-operating-model`; strategy vs plan into `marketing-plan/references/`; the brand strategy cheat sheet into `brand-positioning-zones`; the six personal-branding levers into `linkedin-magnetic-brand-9-rules`; GTM eight parts into `gtm-team-roles-revops-boundary`; the Claude marketing setup into `claude-code-marketing-team` (commands match the installed `marketing:*` plugin skills); the 12-slide board deck into `pptx-deck-context/references/`; the 60 AI tools into `ai-tools-50-directory/references/`; the product-marketing periodic table into `product-marketing/references/`; three more MCP servers into `mcp-dev-team-6`; verified repo notes into `github-trending-top10-oct5`.
+- 4 design templates (`periodic-table-grid`, `iceberg-waterline-steps`, `three-column-purpose-cards`, `file-explorer-system-card`) and 4 themes (`periodic-pastel`, `iceberg-blue`, `purpose-columns`, `explorer-neon`).
+- `Artifacts/operations/workflows-batch-113.html` (4 workflows), `Artifacts/business/batch-113-intake-report.html`, `docs/batch-113-prompts.md` (25 + 9 prompts verbatim), `scripts/batch113-install.sh` (asks before every step; not run).
+- The "B2B Lead Generation Complete System" (50 items) and "Claude Sales Department" (48 items) graphics are lead magnets showing index pages only; the 98 underlying files are not in the uploads and were not recreated.
+
+## Batch 114 (22 October 2026)
+
+Built from `461a2f1c-iCloud_Photos.zip` (48 images) and two infographics sent inline (20 AI GTM tools; SEO keyword research strategy). The photo set mostly repeated earlier cards, so the batch merges instead of adding.
+
+- 1 new skill: `ai-gtm-tools-20` (directory of 20 AI GTM tools by job, mapped to what the stack already has; the source list is sponsored by the owner of one of the tools and no vendor was verified); 2 commands: `/ai-gtm-tools`, `/keyword-research-plan`.
+- New reference `seo/references/keyword-research-framework.md` (7 steps, 10 types, 10 methods, 8 metrics, scored prioritisation, live Ahrefs and Semrush route).
+- Merged into existing skills: ten free alternatives and five desktop tools into `oss-alternatives`; nine self-hosted repos into `self-hosted-docker-stack`; the 22 October trending cards into `github-trending-top10-oct5`; the Anthropic skills install route into `claude-5-official-skills`; verified figures into `repo-stirling-pdf`. All repos were checked on GitHub (stars and licences); card price comparisons were not verified.
+- 2 design templates (`tools-20-numbered-grid`, `keyword-framework-board`) and 2 themes (`gtm-tools-slate`, `keyword-teal-paper`).
+- `Artifacts/operations/workflows-batch-114.html` (4 workflows), `Artifacts/business/batch-114-intake-report.html`, `docs/batch-114-prompts.md`, `scripts/batch114-install.sh` (asks before every step; not run).
+
+## Batch 115 (23 October 2026)
+
+Built from `65eac285-iCloud_Photos.zip` (22 images) and four infographics sent inline (20 Claude prompt templates; 15 Claude skills for B2B sales, cover only; Google Ads in 7 steps; 12 GTM plays). Mostly duplicated material, so the batch merges where it can.
+
+- 2 new skills: `claude-prompt-templates-20` (all 20 prompts verbatim, mapped to existing commands) and `gtm-plays-12` (12 signal-to-action plays with consent and platform-rule checks the card omits); 2 commands: `/prompt-template`, `/gtm-play`.
+- New reference `ads/references/google-ads-7-steps.md`.
+- Merged into existing skills: seven "illegal tools" repos into `oss-alternatives` (verified); five Mac apps for agent safety into `github-trending-top10-oct5` (two verified, three not); six MCPs and CLIs into `mcp-dev-team-6`.
+- 2 design templates (`callout-hub-20`, `spine-steps-detail-cards`) and 2 themes (`callout-navy-pink`, `spine-blue-soft`).
+- `Artifacts/operations/workflows-batch-115.html` (5 workflows), `Artifacts/business/batch-115-intake-report.html`, `docs/batch-115-prompts.md`, `scripts/batch115-install.sh` (asks before every step; not run).
+
+## Batch 116 (23 October 2026)
+
+Built from `6147cb7d-iCloud_Photos.zip` (71 images). Mostly GitHub project cards, so the batch merges into existing skills and adds only what was new.
+
+- 2 new skills: `claude-real-estate-4-systems` (four ten-step Claude Project systems for a realtor, with the fair-housing and consent checks the cards omit) and `claude-automation-skills-8` (eight automation skills mapped to what exists); 1 command: `/real-estate-system`.
+- 2 new references: `yt-faceless-channel/references/claude-youtube-scan.md` (scan YouTube with Claude; the money slide arithmetic checked, estimates flagged) and `linkedin-magnetic-brand-9-rules/references/personal-brand-strategy-map.md` (14-part map).
+- Merged: 26 verified repos into `oss-alternatives` (three cards that mis-describe their repo are flagged) and three trending repos into `github-trending-top10-oct5` (Claude-Red recorded as dual-use and not installed).
+- 3 design templates (`two-tier-tree-14`, `system-steps-grid-10`, `story-stat-card`) and 3 themes (`brand-tree-sage`, `system-red-white`, `story-grid-paper`).
+- `Artifacts/operations/workflows-batch-116.html` (4 workflows), `Artifacts/business/batch-116-intake-report.html`, `docs/batch-116-prompts.md`, `scripts/batch116-install.sh` (asks before every step; not run).
+
+## NexLev faceless-niche workflow (23 October 2026)
+
+Added `faceless-niche-nexlev` (skill), `/faceless-niche-scan` (command) and `Artifacts/operations/workflow-faceless-niche-nexlev.html`. A nine-step, read-only-until-approval workflow on the connected NexLev tools, with gates for AI-dramatised channels, originality, and platform policy. Tested live: three of five top wildlife outliers were flagged AI-generated. Agent Archive setup was skipped at your request.
+
+## GTM Skills subset (23 October 2026)
+
+Installed 58 skills from the Outbound pipeline, Inbound pipeline and Deal acceleration collections of gtmskills.com (`swan-gtm/gtm-skills`, MIT), plus a routing skill `gtm-skills-index`. Licence and manifest: `docs/third-party/gtm-skills/`. Three slugs on the site have no folder in the repo and were not installed. The other six collections were not installed by choice. Scripts are included but never run by installing.

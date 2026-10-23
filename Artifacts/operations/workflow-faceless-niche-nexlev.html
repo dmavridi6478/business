@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Faceless Niche Workflow</title>
+<style>
+  /* Layout: single column, six workflow panels. Each panel = steps in a row (wraps on narrow screens), gates marked, scorecard below.
+     Type: Aptos (house font) with system fallbacks; title 32pt, headings 14pt, body 11pt; table content aligned top and centre. */
+  :root {
+    --bg:#f6f7f9; --surface:#fff; --fg:#1b2330; --muted:#5a6577; --line:#d9dee6;
+    --accent:#0f5d6b; --accent-soft:#e2f0f2; --gate:#8a5a00; --gate-bg:#fbefd3; --human:#a11d2a; --human-bg:#fbe3e5; --ok:#17703a; --ok-bg:#e3f3e8;
+    --font: Aptos, "Segoe UI Variable Text", "Segoe UI", system-ui, -apple-system, Roboto, sans-serif;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) { --bg:#11161e; --surface:#181f2a; --fg:#e6eaf0; --muted:#9aa5b6; --line:#2c3646; --accent:#6cc3d1; --accent-soft:#17323a; --gate:#f0c261; --gate-bg:#3a2e12; --human:#ff8d98; --human-bg:#3d1a1f; --ok:#6fd18f; --ok-bg:#173824; color-scheme:dark; }
+  }
+  :root[data-theme="dark"] { --bg:#11161e; --surface:#181f2a; --fg:#e6eaf0; --muted:#9aa5b6; --line:#2c3646; --accent:#6cc3d1; --accent-soft:#17323a; --gate:#f0c261; --gate-bg:#3a2e12; --human:#ff8d98; --human-bg:#3d1a1f; --ok:#6fd18f; --ok-bg:#173824; color-scheme:dark; }
+  * { box-sizing:border-box; }
+  body { background:var(--bg); color:var(--fg); font-family:var(--font); font-size:11pt; line-height:1.5; margin:0; padding:28px 16px 64px; }
+  main { max-width:960px; margin-inline:auto; display:flex; flex-direction:column; gap:22px; }
+  header { border-bottom:2px solid var(--accent); padding-bottom:16px; }
+  .eyebrow { font-size:9pt; letter-spacing:.12em; text-transform:uppercase; color:var(--muted); }
+  h1 { font-size:32pt; line-height:1.1; margin:6px 0 8px; }
+  h2 { font-size:14pt; margin:0 0 4px; color:var(--accent); }
+  p { margin:0 0 8px; max-width:78ch; }
+  .lede { color:var(--muted); }
+  .legend { display:flex; flex-wrap:wrap; gap:8px; margin-top:10px; font-size:9.5pt; }
+  .tag { display:inline-block; padding:1px 9px; border-radius:10px; font-weight:700; font-size:9pt; }
+  .t-auto { background:var(--accent-soft); color:var(--accent); } .t-gate { background:var(--gate-bg); color:var(--gate); } .t-human { background:var(--human-bg); color:var(--human); } .t-ok { background:var(--ok-bg); color:var(--ok); }
+  section { background:var(--surface); border:1px solid var(--line); border-radius:6px; padding:18px 20px; min-width:0; }
+  .cmd { font-family:ui-monospace,"SF Mono",Consolas,monospace; font-size:10pt; background:var(--accent-soft); color:var(--accent); padding:1px 8px; border-radius:4px; }
+  .flow { list-style:none; margin:12px 0 10px; padding:0; display:flex; flex-wrap:wrap; gap:10px 0; counter-reset:s; }
+  .flow li { position:relative; flex:1 1 112px; min-width:100px; margin-right:24px; border:1px solid var(--line); border-radius:6px; padding:10px 10px 9px; background:var(--bg); counter-increment:s; }
+  .flow li::before { content:counter(s); position:absolute; top:-9px; left:8px; background:var(--accent); color:#fff; font-size:9pt; font-weight:700; width:20px; height:20px; border-radius:50%; display:grid; place-items:center; }
+  .flow li::after { content:"→"; position:absolute; right:-22px; top:50%; transform:translateY(-50%); color:var(--muted); font-weight:700; }
+  .flow li:last-child { margin-right:0; } .flow li:last-child::after { content:""; }
+  .flow li b { display:block; font-size:10.5pt; margin-bottom:2px; }
+  .flow li span { font-size:9.5pt; color:var(--muted); display:block; }
+  .flow li.gate { border-color:var(--gate); background:var(--gate-bg); } .flow li.human { border-color:var(--human); background:var(--human-bg); }
+  .loopback { font-size:9.5pt; color:var(--muted); border-left:3px solid var(--accent); padding-left:10px; margin:6px 0 10px; }
+  .tw { overflow-x:auto; border:1px solid var(--line); border-radius:4px; margin-top:8px; }
+  table { border-collapse:collapse; width:100%; min-width:520px; font-size:10pt; }
+  th,td { padding:7px 9px; border-bottom:1px solid var(--line); text-align:center; vertical-align:top; }
+  th { background:var(--accent-soft); font-size:9.5pt; } tr:last-child td { border-bottom:0; }
+  @media (max-width:640px) { .flow li { margin-right:0; flex-basis:100%; } .flow li::after { content:"↓"; right:auto; left:50%; top:auto; bottom:-17px; transform:translateX(-50%); } }
+</style></head><body><main><header><div class="eyebrow">23 October 2026 · operations</div><h1>Faceless niche workflow</h1><p class="lede">Find and vet a faceless YouTube niche with the NexLev connector. Research steps are read-only; saving to your NexLev swipe file needs your approval. Run it with <span class="cmd">/faceless-niche-scan</span>.</p><div class="legend"><span class="tag t-auto">Claude researches</span><span class="tag t-gate">Gate: check must pass</span><span class="tag t-human">Human approval required</span></div></header>
+<section><h2>1. The workflow</h2><p>Nine steps from inspiration to a decision. The gates sit before any video is made.</p><ol class="flow"><li class=""><b>Inspiration</b><span>Latest discovered outliers</span></li><li class=""><b>Topic search</b><span>Faceless, monetised, under 50k subs</span></li><li class="gate"><b>Triage</b><span>Flag AI-made and dramatised channels</span></li><li class=""><b>Breakout videos</b><span>Topics and title patterns, not copy</span></li><li class=""><b>Saturation</b><span>Similar-channel count</span></li><li class="gate"><b>Revenue sanity</b><span>Use the lower estimate</span></li><li class="gate"><b>Originality</b><span>Your angle, script, footage, voice</span></li><li class="human"><b>Policy and licence</b><span>Monetisation, synthetic content, licences</span></li><li class="human"><b>Decide and save</b><span>Swipe file only after approval</span></li></ol><p class="loopback">A high outlier score is not a green light: it can come from a fabricated story or a tiny sample. The policy and originality gates come before the first video, not after.</p></section>
+<section><h2>2. Live test: wildlife and nature documentary</h2><p>Faceless channels with outlier score 2 or higher, from NexLev on 23 October 2026. Revenue and RPM are NexLev estimates.</p><div class="tw"><table><tr><th>Channel</th><th>Subscribers</th><th>Est. monthly revenue</th><th>Outlier</th><th>AI flag</th><th>Est. RPM</th><th>Note</th></tr><tr><td>Wild Worldnario</td><td>9,030</td><td>$895</td><td>8.82</td><td>No</td><td>$2.46</td><td>14 videos, first video July 2026</td></tr><tr><td>Wildlife Untamed</td><td>18,100</td><td>$1,691</td><td>7.65</td><td>Yes</td><td>$1.84</td><td>26 videos, first video June 2026</td></tr><tr><td>Animal Earth Documentary</td><td>8,000</td><td>$201</td><td>3.18</td><td>No</td><td>$1.47</td><td>States a royalty-free footage licence</td></tr><tr><td>Savage Nature</td><td>240,000</td><td>$11,696</td><td>4.77</td><td>Yes</td><td>$2.37</td><td>Description: dramatized, digitally created</td></tr><tr><td>W-Wildlife Documentary</td><td>28,000</td><td>$277</td><td>8.50</td><td>Yes</td><td>$4.10</td><td>Named orca-trainer stories; no uploads since January 2026</td></tr></table></div><p class="loopback">Three of five are flagged AI-generated and one openly dramatises. Only one clears $10,000 a month. Several started in mid-2026, so the sample says nothing about durability. [Likely] the named orca-trainer stories are fabricated; verify before using that channel as a model.</p></section>
+<section><h2>3. Tool map</h2><div class="tw"><table><tr><th>Step</th><th>NexLev tool</th><th>Use</th></tr><tr><td>1</td><td>latest_discovered_faceless_niches</td><td>Recent outlier faceless channels</td></tr><tr><td>2</td><td>search_niche_finder_channels</td><td>Topic search with faceless, monetised, size and outlier filters</td></tr><tr><td>3</td><td>(read fields)</td><td>isAiChannel, editingStyle, editingVoice, description</td></tr><tr><td>4</td><td>youtube_channel_outliers, faceless_outliers_videos</td><td>Breakout videos per channel and by theme</td></tr><tr><td>5</td><td>get_similar_channels</td><td>Competitors and saturation (async)</td></tr><tr><td>6</td><td>check_channel_monetization, get_video_rpm</td><td>Monetisation status and RPM</td></tr><tr><td>9</td><td>save_to_swipefile</td><td>Writes to your NexLev account: ask first</td></tr></table></div></section>
+</main></body></html>

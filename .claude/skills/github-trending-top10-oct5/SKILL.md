@@ -1,6 +1,6 @@
 ---
 name: github-trending-top10-oct5
-description: The "10 hottest GitHub repos today" video from @githubnow (ponytail, impeccable, Agent-Reach, claude-mem, OpenCut, t3code, OpenMontage, e2e, agent-skills, marketingskills) with each repo's licence and install route read from a clone on 5 October 2026, and which ones are safe to try. Use when picking from this trending list, checking a licence, or finding the install command without piping a download into a shell.
+description: Also covers the 19 Oct 2026 batch (headroom, Kronos, os-taxonomy plus desktop-app and repo-spotlight finds, licences verified). The "10 hottest GitHub repos today" video from @githubnow (ponytail, impeccable, Agent-Reach, claude-mem, OpenCut, t3code, OpenMontage, e2e, agent-skills, marketingskills) with each repo's licence and install route read from a clone on 5 October 2026, and which ones are safe to try. Use when picking from this trending list, checking a licence, or finding the install command without piping a download into a shell.
 ---
 
 # GitHub trending top 10, 5 October 2026
@@ -20,6 +20,89 @@ Source: a @githubnow video. Today-stars and totals shown in it (e.g. ponytail +1
 | 9 | addyosmani/agent-skills | MIT | `npx skills add addyosmani/agent-skills` (`--list` to browse, `--skill name` for one) | 25 skills |
 | 10 | coreyhaines31/marketingskills | MIT | `npx skills add coreyhaines31/marketingskills` (`--list`) | Marketing skills for agents |
 
+## Later batch: GitHub finds, 19 Oct 2026
+
+## Verified on GitHub, 19 Oct 2026
+
+| Repo | What it is | Stars | Licence | Note |
+|---|---|---|---|---|
+| `headroomlabs-ai/headroom` | Compresses tool outputs, logs, files and RAG chunks before they reach the LLM; library, proxy and MCP server; runs locally | 76,032 (card: +317 today) | Apache-2.0 | Claims "20% fewer tokens for coding agents, 60-95% for JSON"; the claim is the repo's own, test on your workload |
+| `shiyu-coder/Kronos` | Foundation model pre-trained on candlestick (OHLCV) tokens from 45 exchanges; open weights 4.1M-102M params on Hugging Face; fine-tuning scripts | 41,309 (card: +355 today) | MIT | Research model; **not financial advice**; backtest is not a forecast |
+| `withmarbleapp/os-taxonomy` | 1,590 micro-topics, 3,221 prerequisite edges, 8 subjects, aligned to NGSS, Common Core, UK NC | 5,444 (card: +427 today) | **ODbL v1.0** (data licence, share-alike) | Attribution and share-alike apply to derived databases; read before reuse |
+
+Overlap: `ecc-tools-cost-audit` covers token-cost auditing; headroom is a candidate tool for it, not tested on a real run here.
+
+### From @palidev21 (desktop apps; stats not verified)
+
+| App | Job |
+|---|---|
+| ShareX (Windows) | Capture and record, annotate, OCR and QR, hotkey workflows; review upload destinations before sharing |
+| ActivityWatch | App time tracking, AFK detection, browser insights, local dashboard (data stored locally) |
+| Krokiet (czkawka family) | Find duplicate, similar, big and empty files; review results before deleting |
+| HandBrake | Convert videos to MP4/MKV/WebM, device presets, queue, audio and subtitles |
+| FreeTube | Subscriptions without a Google sign-in, playlists, mini player; independent client, not a Google product |
+
+### From @sitetusk "5 GitHub projects" (descriptions only; stats not verified)
+
+Umami (privacy-first web analytics, MIT per card badge, needs Node 18.18+ and PostgreSQL 12.14+), public-apis (curated list of public APIs), lobe-chat (multi-agent chat platform), Alacritty (GPU terminal), Home Assistant (local home automation), freeCodeCamp (curriculum), Klipper (3D-printer firmware), Jellyfin (media server, GPL-2.0 per badge), OBS Studio (recording and streaming, GPL-2.0-or-later per the README), TheAlgorithms/Python (educational algorithms; "may be less efficient than the standard library").
+
+Rules: star counts change daily; re-check before quoting. Never install from a carousel: read the README and licence first (see `scripts/batch111-install.sh`).
+
 ## Rule
 
 A trending list measures attention in one day, not quality. Pick at most one, read its source, and install it in a throwaway project first. Use `/trending-pick`.
+
+## Batch 113 finds (verified on GitHub, 20 Oct 2026)
+
+| Repo | What it is | Stars | Licence | Note |
+|---|---|---|---|---|
+| `morluto/rea` | Reverse engineer apps with agents, from app behaviour to native binaries (MCP; `npx rea-agents setup`) | 345,008 | MIT | Dual-use; analyse only software you own or are authorised to test |
+| `mattpocock/skills` | "Skills for Real Engineers", from the author's own `.agents` directory (`claude plugin install mattpocock-skills@claude-plugins-official` per the card) | 297,519 | MIT | Read before installing |
+| `affaan-m/ECC` | Agent harness: skills, instincts, memory, security for Claude Code, Codex, OpenCode, Cursor | 284,327 | MIT | Existing `ecc-*` skills and `configure-ecc` cover it |
+| `stablyai/orca` | Fleet of agents, one git worktree each; desktop and mobile | 99,112 | MIT | Existing `orca-*` skills cover it |
+| `heygen-com/hyperframes` | Write HTML, render video, for agents | 68,225 | Apache-2.0 | Existing `hyperframes` skill covers it |
+| `cathrynlavery/diagram-design` | 44 editorial diagram types as self-contained HTML + SVG for agents (`npx skills add cathrynlavery/diagram-design`) | 58,786 | MIT | Candidate for diagrams; no Mermaid look |
+| `anthropics/financial-services` | Reference agents, skills and data connectors for banking, equity research, private equity, wealth; outputs staged for human sign-off | 40,139 | Apache-2.0 | Several of its plugins are visible in this environment |
+| `earthtojake/text-to-cad` | Agent describes a part, gets STEP/GLB/STL/3MF; design-for-manufacturing checks | 21,731 | MIT | Niche |
+| `DuarteSantos8/openGym` | Self-hosted gym and body-weight tracker (`docker compose up`) | 13,951 | **AGPL-3.0** | Network-use copyleft; personal use only unless you read the licence |
+
+Card star counts (e.g. rea 275,523, mattpocock/skills 293,108) are older than the verified figures; recheck before quoting. Also named, without repos: Mac apps AutoMounter (keeps network shares mounted), Agenttrace (agent sessions, costs, failures), Ping (uptime monitor), Maestro (multi-agent spec-driven coding), Claudoscope (browse Claude Code sessions), Agent Teams AI (messaging and task boards for coding agents), MXterm (SSH and SFTP panel, mxterm.net), Raspberry Pi Imager, Pi Stats (Pi-hole dashboard). Not verified; read each site's licence and permissions first.
+
+
+## Batch 114: 22 October 2026 trending cards (verified on GitHub, 22 October 2026)
+
+Card from @githubnow: today's gainers, and a "tomorrow's drop" teaser that says to start with `fastapi`. The daily star gains below are the card's; star totals and licences are from the repo pages.
+
+| Repo | Card gain | Stars | Licence | Note |
+|---|---|---|---|---|
+| `luongnv89/claude-howto` | +428 | 42,511 | MIT | Visual, example-driven Claude Code guide with copy-paste templates. Read it against `claude-code-commands-reference` and `claude-code-skills`, which already cover commands and skills here; take only what is missing |
+| `php/php-src` | +110 | 40,917 | BSD-3-Clause | The PHP interpreter source; relevant if you maintain PHP (`php-pro`, `php-reviewer` agents exist) |
+| `fastapi/fastapi` | +96 | 103,581 | MIT | Existing `fastapi-patterns` and `fastapi-templates` cover usage |
+
+A one-day star gain is attention, not quality. A separate "Today's Top GitHub Repo For Claude" video cover from @your.aimentor names no repo; it was not acted on.
+
+
+## Batch 115: five Mac apps for AI agents (@henryxagi, "Your agent has a key. Give it a smaller room.")
+
+The theme is giving an agent less access. Only some were verifiable.
+
+| App | Card says | Verified 23 Oct 2026 |
+|---|---|---|
+| LuLu (`objective-see/LuLu`) | Firewall that blocks unknown outgoing connections | 13,338 stars, GPL-3.0, free open-source macOS firewall |
+| Berthly (`henrywang/Berthly`, berthly.net) | Native macOS app for Apple's container tool | 1 star, repo created July 2026, licence shown as Other (site says Apache-2.0). Needs Apple Silicon, macOS 26+, no telemetry per its README, not sandboxed by necessity. Very new: audit before use |
+| GhostVM | Fully isolated macOS workspaces on your machine | Not verified (search was rate-limited) |
+| MXterm (mxterm.net) | Workspace for the AI coding agents you already use | Not verified; also named in Batch 113 |
+| ClearanceKit | Kernel-level file access control for macOS | Not verified |
+
+Rule: a kernel-level tool needs more trust than the agent it restricts. Install only from a source you have checked, prefer open source you can read, and test on a spare Mac first. Do not run an agent with broad file and network access on your main machine; use a VM, a container or a restricted user.
+
+
+## Batch 116: 23 October 2026 trending cards (@githubnow, verified 23 October)
+
+| Repo | Card gain | Stars | Licence | Note |
+|---|---|---|---|---|
+| `SnailSploit/Claude-Red` | +209 | 7,917 | not captured | 78 offensive-security skills (SQLi to shellcode, EDR evasion, exploit development) loaded on demand. **Dual-use.** Not installed here. Use only on systems you own or are authorised to test, within a signed scope |
+| `OpenBMB/VoxCPM` | +144 | 40,180 | Apache-2.0 | Tokenizer-free TTS, 30 languages, voice design and cloning from a short reference clip. Clone only with consent |
+| `HKUDS/CLI-Anything` | +94 | 56,455 | Apache-2.0 | Generates agent-ready command-line harnesses for existing software; CLI-Hub for community CLIs. A CLI-Anything command already exists here |
+
+The card's "Tomorrow's drop" says to start with Claude-Red. Disagree: read the code before running anything that primes an agent with attack methodology, and prefer a throwaway VM.

@@ -13,6 +13,7 @@ Consolidates: `ai-search-marketing-2026`, `ai-discoverable-site`.
 - **A concrete day-by-day plan to improve AI search visibility** → `references/15-day-ai-search-action-plan.md`
 - **Building a marketing plan, content calendar, or explaining what modern marketing covers** → `references/marketing-taxonomy.md`
 - **Building/reviewing a marketing dashboard, CEO/board report, or challenging vanity metrics** → `references/exec-ai-questions.md`
+- **Glossary of AEO terms, SEO vs AEO funnels, authority / decision / money content types** → `references/aeo-glossary-and-funnels.md`
 - **"Where" AI visibility work needs to happen, or which sources this account can monitor with a live connector** → `references/ai-search-visibility-ecosystem.md`
 
 Read only the reference(s) relevant to the request — don't load all five for a narrow question.

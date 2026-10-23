@@ -1,6 +1,6 @@
 ---
 name: design-templates
-description: Ready-to-use, self-contained HTML/CSS templates for common content-visual needs — an iMessage chat mockup, a vertical social/story device frame, a 3D-tilted product screenshot mockup, a halftone/dithered image effect (both CSS-only and real canvas dithering), a logo/reference moodboard grid, a brand board (wordmark + palette + type pairing + app preview), a SaaS pricing table + comparison grid, a restrained editorial hero, a numbered infographic card grid (light/dark variants), a filterable design-reference-site dashboard, a light "Save For Later" social carousel (carousel-save-for-later), a dark neon agent info card (dark-neon-agent-card), a dark orange-gradient tutorial step-cards layout (dark-orange-agent-tutorial), a GitHub-style dark trending repo card (github-trending-card), a bold red grunge AI-tools carousel (@ai.global.lee style, red-grunge-ai-tools), a warm editorial carousel for thinking-partner / Claude workflow content (@parm.ai style, editorial-thinking-partner), a dark space-themed OSS repo card (@datawarlord_official style, datawarlord-oss-card), and a nature photo background with glassmorphism panels carousel (@softgirlnocode AI video style, softgirlnocode-nature-glassmorphism), a light/dark copy-this-prompt carousel (prompt-card-carousel), a repo-showcase card set (repo-card-grid), an agent explainer flow card (agent-flow-chat-card), and an orange mascot tips carousel (mascot-tips-orange), plus three Batch 104 templates: a near-black navy-grid repo spotlight with a browser mockup (repo-spotlight-browser-card), a full-bleed photo-under-scrim tool card (photo-overlay-tool-card) and a six-step highlightable code card (code-card-six-lines), plus five Batch 105 templates: a teal-and-gold skill spotlight (skill-spotlight-teal-gold), a grid-paper repo and command card (grid-paper-repo-command-card), a glossy AI-team role card (ai-team-role-card), a lavender "try this instead" tool card (swap-tool-lavender-card) and a two-approach comparison infographic (compare-two-approaches-cream), plus five Batch 106 templates: a charcoal-and-terracotta explainer table and list (mod-explainer-dark-terracotta), a cream repo-feature card with rank number and stats (repo-feature-cream-number), a beige prompt card with a dark copy box (prompt-card-beige-green), caption strips on a blue grid or photo (caption-highlight-blue-grid) and a pale-blue dashboard showcase (dashboard-showcase-light-blue). Use these instead of reaching for a paid single-purpose tool (or hand-rolling from scratch) when a design/frontend task needs a device mockup, a stylized image effect, a moodboard layout, a brand-kit deliverable, a SaaS pricing section, a quiet typography-led hero, a "N things you should know" carousel/infographic layout, a reusable reference dashboard, or any of the social-carousel/card layouts above. Batch 107 adds a red-cream numbered prompt-step carousel (prompt-step-red-cream), a night GitHub leaderboard (trending-top10-leaderboard) and a dark amber code-pane explainer (quant-code-pane-dark). Batch 108 adds a photo-scrim step carousel with tool rows (photo-step-tools-caption) and a periwinkle three-stage GTM chart (gtm-stage-three-column). Batch 109 adds a photo-scrim GitHub swap card (swap-card-photo-github). Batch 110 adds a grey-teal avoid / reason / say grid (avoid-reason-say-grid). Each template is copy-paste-ready with clear swap points marked in comments.
+description: Ready-to-use, self-contained HTML/CSS templates for common content-visual needs — an iMessage chat mockup, a vertical social/story device frame, a 3D-tilted product screenshot mockup, a halftone/dithered image effect (both CSS-only and real canvas dithering), a logo/reference moodboard grid, a brand board (wordmark + palette + type pairing + app preview), a SaaS pricing table + comparison grid, a restrained editorial hero, a numbered infographic card grid (light/dark variants), a filterable design-reference-site dashboard, a light "Save For Later" social carousel (carousel-save-for-later), a dark neon agent info card (dark-neon-agent-card), a dark orange-gradient tutorial step-cards layout (dark-orange-agent-tutorial), a GitHub-style dark trending repo card (github-trending-card), a bold red grunge AI-tools carousel (@ai.global.lee style, red-grunge-ai-tools), a warm editorial carousel for thinking-partner / Claude workflow content (@parm.ai style, editorial-thinking-partner), a dark space-themed OSS repo card (@datawarlord_official style, datawarlord-oss-card), and a nature photo background with glassmorphism panels carousel (@softgirlnocode AI video style, softgirlnocode-nature-glassmorphism), a light/dark copy-this-prompt carousel (prompt-card-carousel), a repo-showcase card set (repo-card-grid), an agent explainer flow card (agent-flow-chat-card), and an orange mascot tips carousel (mascot-tips-orange), plus three Batch 104 templates: a near-black navy-grid repo spotlight with a browser mockup (repo-spotlight-browser-card), a full-bleed photo-under-scrim tool card (photo-overlay-tool-card) and a six-step highlightable code card (code-card-six-lines), plus five Batch 105 templates: a teal-and-gold skill spotlight (skill-spotlight-teal-gold), a grid-paper repo and command card (grid-paper-repo-command-card), a glossy AI-team role card (ai-team-role-card), a lavender "try this instead" tool card (swap-tool-lavender-card) and a two-approach comparison infographic (compare-two-approaches-cream), plus five Batch 106 templates: a charcoal-and-terracotta explainer table and list (mod-explainer-dark-terracotta), a cream repo-feature card with rank number and stats (repo-feature-cream-number), a beige prompt card with a dark copy box (prompt-card-beige-green), caption strips on a blue grid or photo (caption-highlight-blue-grid) and a pale-blue dashboard showcase (dashboard-showcase-light-blue). Use these instead of reaching for a paid single-purpose tool (or hand-rolling from scratch) when a design/frontend task needs a device mockup, a stylized image effect, a moodboard layout, a brand-kit deliverable, a SaaS pricing section, a quiet typography-led hero, a "N things you should know" carousel/infographic layout, a reusable reference dashboard, or any of the social-carousel/card layouts above. Batch 107 adds a red-cream numbered prompt-step carousel (prompt-step-red-cream), a night GitHub leaderboard (trending-top10-leaderboard) and a dark amber code-pane explainer (quant-code-pane-dark). Batch 108 adds a photo-scrim step carousel with tool rows (photo-step-tools-caption) and a periwinkle three-stage GTM chart (gtm-stage-three-column). Batch 109 adds a photo-scrim GitHub swap card (swap-card-photo-github). Batch 110 adds a grey-teal avoid / reason / say grid (avoid-reason-say-grid). Batch 111 adds eight templates: a paid-versus-free comparison card (paid-vs-free-signal-card), a 16-tile cream drawing sheet (blueprint-sheet-16), a four-quadrant disc with side lists (quadrant-puzzle-center), a dark 10-department org chart (org-chart-neon-dark), a report-versus-check pairs spine (metric-pairs-spine), a radial evidence-tier wheel drawn by script (evidence-wheel-radial), a 3 x 3 olive prompt grid (prompt-grid-9-olive) and a gold board dashboard with 14 panels (board-dashboard-gold). Each template is copy-paste-ready with clear swap points marked in comments.
 ---
 
 ## When to use this skill
@@ -352,3 +352,122 @@ Uses the existing `photo-scrim-white` theme; placeholder handle `@yourhandle`; n
 |---|---|---|
 | `grey-teal-guide` | bg `#E7E5E4` (sampled), number line `#CEE4DF` (sampled), navy `#0F2D3A` and teal `#8CC1B5` (eyeballed), red `#D8342C`, amber `#F2A93B`, green `#2E9D4F` | Oswald 700 for the title, Inter for body |
 | GTM roadmap (reference only; existing template `gtm-stage-three-column` is close) | black `#0A0A0A` (sampled), purple `#60369E` (sampled), yellow `#F0EF4B` (nearly sampled), green block `#B8F56A` (eyeballed) | Inter 800 |
+
+## Batch 111 additions - eight templates (rendered; element overlap and containment checked in headless Chromium, 19 Oct 2026)
+
+| File | Inspired by | Technique |
+|---|---|---|
+| `paid-vs-free-signal-card.html` | "Use these free dev tools instead" carousel (@modelsignal) | 1080x1350; cool grey page, huge tight title, a pale PAID card and a rust FREE card with icon tiles, big prices, mono captions, verdict line; print the price-check date in the caption |
+| `blueprint-sheet-16.html` | "LinkedIn Client Acquisition in one page" | 1080x1350; cream drawing sheet, mono title block, 4x4 grid of pastel mini-cards with code label, title, preview band and arrow caption, blue CTA pill |
+| `quadrant-puzzle-center.html` | four-quadrant unified-intelligence analyst graphic | 1080x1350; sky gradient, orange-bordered callout, navy disc cut by a white cross with a glowing centre label, a five-bullet list per quadrant |
+| `org-chart-neon-dark.html` | Claude Code marketing-team org chart | 1080x1350; near-black page, gradient headline, orchestrator node, two rows of five coloured department chips each over five neon-outlined role cards |
+| `metric-pairs-spine.html` | "Your Marketing Metrics Can Lie" | 1080x1350; serif headline, blue and plum pill headers, six numbered pairs of tinted cards joined by lime arrow nodes on a grey spine, black footer bar |
+| `evidence-wheel-radial.html` | clinical evidence-level wheel | 1080x1350; SVG ring drawn from a `SEGMENTS` array (tiers high / mid / wip), legend row, centre disc with title and ticked principles; **placeholder labels only, a cited source is required before real clinical content is shown** |
+| `prompt-grid-9-olive.html` | "9 AI prompts for better sales emails" | 1080x1350; huge olive numeral and condensed headline, nine white cards with number badge, icon square, prompt with highlighted placeholders and an Impact line, newsletter footer |
+| `board-dashboard-gold.html` | "The Complete Board Dashboard" | 1080 wide, auto height; cream page, four black KPI tiles, twelve-cell ratio grid with ok/bad colouring, fourteen gold-tabbed panels with placeholder bars, black footer; every number is an `X` placeholder |
+
+All eight use original CSS and placeholder wording; no source logo, avatar, illustration or copy is reused.
+
+## Batch 111 theme tokens (files in `Artifacts/theme-*.html`)
+
+| Theme file | Light | Dark | Fonts (free) |
+|---|---|---|---|
+| `theme-signal-rust-mono.html` | bg `#E1E6EC` (sampled), surface `#F1F4FB` (sampled), text `#0B1C2E` (sampled), accent `#B4321A` (sampled) | bg `#0B1C2E`, accent `#E0573A` | Inter 800 + JetBrains Mono |
+| `theme-blueprint-cream-sheet.html` | bg `#F3ECE1`, surface `#FBF7EF`, accent `#1D5FD1` | bg `#1A1814`, accent `#6FA0FF` | Inter + JetBrains Mono |
+| `theme-neon-org-dark.html` | bg `#F3F5FB`, accent `#6D28D9` | bg `#000D1D` (sampled), surface `#07162B`, accent `#8E3FE6` (sampled) | Inter + JetBrains Mono |
+| `theme-olive-paper.html` | bg `#EBEBE9` (sampled), surface `#FFFFFF`, accent ink `#5C6000` | bg `#151610`, accent `#C9CE3A` | Inter 800 (+ Oswald for display) |
+| `theme-quadrant-navy.html` | bg `#E2F2FF` (sampled), text `#0A2A66`, accent `#2198FF` (sampled) | bg `#06142F`, accent `#4DB1FF` | Inter |
+
+Each theme file sets body 11pt, title 32pt, headings 14pt, Aptos first in the font stack, and tables aligned top and centre.
+
+## Batch 112 additions - four templates (rendered; containment checked in headless Chromium, 19 Oct 2026)
+
+| File | Inspired by | Technique |
+|---|---|---|
+| `ui-tip-before-after.html` | UI-design-tips carousel (@ux_dose) | 1080x1350; white page, five pill tabs with one active, huge tight headline, grey rule line, two cards tagged Before (heavy shadow) and After (soft shadow), SWIPE pill footer |
+| `side-hustle-serif-dark.html` | AI side-hustle carousel (@earchoe) | 1080x1350; near-black, green rule, serif headline with a capitals second line, monospace body, SOURCE-AI-CHECK-PACKAGE-SELL pipeline or COPY THIS prompt box |
+| `replaces-list-card.html` | "25 tools that feel illegal to be free" list (@will.ai.m) | 1080x1350; white page, five numbered soft-shadow rows with icon square, REPLACES label, name, job and FREE star count; footer states stars are unverified |
+| `parchment-repo-card.html` | "5 GitHub projects" series (@sitetusk) | 1080x1350; parchment page, wordmark and heavy rule, large repo slug, white README-screenshot panel, one-sentence description |
+
+All four use original CSS and placeholder wording; no source logo, mascot, texture or copy is reused. A fifth, a GitHub-trending dark card, was dropped because `github-trending-card` and `repo-briefing-card` already cover that style.
+
+## Batch 112 theme tokens (files in `Artifacts/theme-*.html`; colours eyeballed, not sampled)
+
+| Theme file | Light | Dark | Fonts (free) |
+|---|---|---|---|
+| `theme-ui-white-ink.html` | bg `#F6F6F7`, text `#0E0F12`, accent `#3B5BFF` | bg `#0F1013`, accent `#8EA2FF` | Inter |
+| `theme-hustle-serif-dark.html` | bg `#F4F1E8`, accent `#1E8A4C` | bg `#141310`, accent `#5EE08A` | Playfair Display + JetBrains Mono |
+| `theme-replaces-list-white.html` | bg `#FFFFFF`, accent `#D9481F` | bg `#111215`, accent `#FF7A4D` | Inter |
+| `theme-parchment-tusk.html` | bg `#E2D8C5`, accent `#134B4B` | bg `#17150F`, accent `#6FC2C2` | Jost |
+
+## Batch 113 additions - four templates (rendered; containment checked in headless Chromium, 20 Oct 2026)
+
+| File | Inspired by | Technique |
+|---|---|---|
+| `periodic-table-grid.html` | glossary "periodic table" graphics (AEO terms, product-marketing terms) | 1080x1350; 5x7 grid of dashed-border square tiles (abbreviation, rule, full term), six family colours, legend beside the title, footer bar; placeholder terms only |
+| `iceberg-waterline-steps.html` | "build a list in 7 steps, below the waterline" infographic | 1080x1350; sky half with a clip-path iceberg between two cards, waterline, deep-blue half with seven step cards around a numbered spine |
+| `three-column-purpose-cards.html` | "3 types of content" comparison | 1080x1350; headline with highlighted word, three outlined columns (orange, violet, green) each with number, title, screenshot placeholder and four labelled sections, black footer |
+| `file-explorer-system-card.html` | "complete system" folder-tree graphics | 1080x1350; dark code-editor window, sidebar tree, gradient headline, four outlined panels of eight numbered items, gradient call-to-action bar |
+
+All four use original CSS and placeholder wording; no source logo, mascot, term list or copy is reused. Overlap checked: the existing `prompt-grid-9-olive` already covers the nine-card prompt grid, so no template was added for it; the dark MCP command card is covered by `dark-grey-install-card`.
+
+## Batch 113 theme tokens (files in `Artifacts/theme-*.html`; colours eyeballed, not sampled)
+
+| Theme file | Light | Dark | Fonts (free) |
+|---|---|---|---|
+| `theme-periodic-pastel.html` | bg `#FFFFFF`, text `#1A2250`, accent `#4A3FD0` | bg `#12142B`, accent `#A9A4FF` | Inter |
+| `theme-iceberg-blue.html` | bg `#EEF3FF`, text `#0F1A3C`, accent `#2F5BFF` | bg `#0B1230`, accent `#7C9BFF` | Inter |
+| `theme-purpose-columns.html` | bg `#FFFFFF`, text `#14161C`, accent `#C8552D` (violet `#6A4FD0` and green `#3C9B45` as column colours) | bg `#14151A`, accent `#FF8A5C` | Inter |
+| `theme-explorer-neon.html` | bg `#F3F5FB`, text `#0F1424`, accent `#5B3DDC` | bg `#070A12`, accent `#4DA3FF` | Inter + JetBrains Mono |
+
+
+## Batch 114 additions
+
+| Template | Use for | Layout |
+|---|---|---|
+| `tools-20-numbered-grid.html` | "20 tools" directory graphics | 1080x1350; two-line headline with one highlighted word, credit or sponsor line, 4x5 grid of numbered tiles (number, tool name, category, one-line job) with four category colours, dark footer |
+| `keyword-framework-board.html` | SEO or strategy framework one-pagers | 1080x1350; teal headline, left spine of seven numbered steps, right chip cloud (ten types) and 2x4 metric grid, dark formula bar of five plus-joined terms ending in an amber result pill, teal footer |
+
+Both use original CSS and placeholder wording only. Overlap checked: `workflow-grid-catalog` and `trending-top10-leaderboard` are list layouts of a different shape, and no existing template has a formula bar.
+
+## Batch 114 theme tokens (files in `Artifacts/theme-*.html`; colours eyeballed from the template palette)
+
+| Theme file | Light | Dark | Fonts (free) |
+|---|---|---|---|
+| `theme-gtm-tools-slate.html` | bg `#EEF1F6`, text `#101828`, accent `#2F6BFF` | bg `#0C1220`, accent `#7FA3FF` | Inter |
+| `theme-keyword-teal-paper.html` | bg `#F6F1E7`, text `#10282C`, accent `#0F7C86` | bg `#0C1D20`, accent `#4FC3CD` | Inter |
+
+## Batch 115 additions
+
+| Template | Use for | Layout |
+|---|---|---|
+| `callout-hub-20.html` | "20 templates around one picture" graphics | 1080x1350; pill headline bar, tall central picture placeholder with a round badge, ten callout cards down each side (numbered bubble, coloured title bar, three lines of text) joined to the centre by dashed lines, dark footer |
+| `spine-steps-detail-cards.html` | Seven-step process infographics with a checklist per step | 1080x1350; headline, vertical spine with seven numbered nodes, wide step cards (icon, title, description) with a tinted five-bullet panel on the right, footer with handle and save line |
+
+Both use original CSS and placeholder wording only; no source illustration, logo or text is reused.
+
+## Batch 115 theme tokens (files in `Artifacts/theme-*.html`; colours eyeballed)
+
+| Theme file | Light | Dark | Fonts (free) |
+|---|---|---|---|
+| `theme-callout-navy-pink.html` | bg `#FFFFFF`, text `#14213D`, accent `#E8479A` | bg `#0E1630`, accent `#FF7DBA` | Inter |
+| `theme-spine-blue-soft.html` | bg `#F1F6FD`, text `#10223F`, accent `#2563EB` | bg `#0B1424`, accent `#6EA0FF` | Inter |
+
+
+## Batch 116 additions
+
+| Template | Use for | Layout |
+|---|---|---|
+| `two-tier-tree-14.html` | Two-level strategy trees (for example who you are / how you grow) | 1080x1350; highlighted headline, two dark head pills each joined by a bracket to a row of seven cards (icon circle, title, three lines), name pill and brand tag footer |
+| `system-steps-grid-10.html` | "Build the whole system" ten-step graphics | 1080x1350; section tag, two-tone headline, 3x3 grid of numbered step cards plus one wide tenth card, red call-to-action bar |
+| `story-stat-card.html` | One slide of a "I scanned and found" story carousel | 1080x1350; grid-paper page, counter, large number, mono tag line, bold headline, paragraph, six-row data card, two stat pills, next pointer |
+
+All three use original CSS and placeholder wording only. Overlap checked: `workflow-grid-catalog`, `trending-top10-leaderboard` and `spine-steps-detail-cards` are different shapes.
+
+## Batch 116 theme tokens (files in `Artifacts/theme-*.html`; colours eyeballed)
+
+| Theme file | Light | Dark | Fonts (free) |
+|---|---|---|---|
+| `theme-brand-tree-sage.html` | bg `#F5F2EA`, text `#1E2A24`, accent `#2E7D5B` | bg `#101A15`, accent `#5CC795` | Inter |
+| `theme-system-red-white.html` | bg `#FFFFFF`, text `#1A1A1F`, accent `#D7263D` | bg `#170C0E`, accent `#FF5A6E` | Inter |
+| `theme-story-grid-paper.html` | bg `#F7F4EE`, text `#1B1B1D`, accent `#D4623A` | bg `#14120F`, accent `#F08A62` | Inter + JetBrains Mono |
