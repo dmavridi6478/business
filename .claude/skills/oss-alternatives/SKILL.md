@@ -135,3 +135,20 @@ Desktop and browser tools (@palidev21):
 For more PDF work see `repo-stirling-pdf` (94,653 stars, licence shown as Other: open-core). The "10 GitHub repos that feel illegal to use" cover's "$50 billion in corporate revenue" line is not sourced.
 
 Rule: a "free" tool costs hosting, time and risk. AGPL means that offering a modified version over a network obliges you to publish your changes; for internal use, read the licence rather than assuming.
+
+
+## Batch 115: seven "illegal tools" (@martiendejong_dev-style cards, verified on GitHub, 23 October 2026)
+
+Card stars are older than these figures. "Replaces" is the card's claim; price claims were not verified.
+
+| Repo | Does | Stars | Licence | Card says it replaces | Care |
+|---|---|---|---|---|---|
+| `D4Vinci/Scrapling` | Adaptive web-scraping framework | 89,078 | BSD-3-Clause | ScrapingBee | Respect site terms, robots and data-protection law; "walks past bot blocks" is a legal and ethical risk, not a feature |
+| `OpenBB-finance/OpenBB` (now under `openbq-org`) | Open data platform for analysts, quants and AI agents | 74,567 | Other | A Bloomberg terminal | Data licences of the underlying providers apply |
+| `coollabsio/coolify` | Self-hosted PaaS for sites, databases, apps | 63,501 | Apache-2.0 | Vercel, Heroku | You own uptime, security patches and backups |
+| `twentyhq/twenty` | Open CRM designed for AI | 59,538 | Other | Salesforce | Read the licence for the enterprise features |
+| `myshell-ai/OpenVoice` | Instant voice cloning | 38,037 | MIT | ElevenLabs | Clone only voices you have consent for; check local law on synthetic voice |
+| `Fosowl/agenticSeek` | Fully local autonomous agent (browse, code, multi-step) | 27,531 | GPL-3.0 | Manus | Local does not mean safe: an agent that browses and runs code needs a sandbox |
+| `documenso/documenso` | Open-source e-signature | 15,516 | AGPL-3.0 | DocuSign | Legal validity of e-signatures depends on the country and document type; keep the audit trail |
+
+Re-check before quoting: star counts change daily. "$50 billion in corporate revenue" style claims on the cover are unsourced.

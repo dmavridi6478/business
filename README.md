@@ -6064,3 +6064,13 @@ Built from `461a2f1c-iCloud_Photos.zip` (48 images) and two infographics sent in
 - Merged into existing skills: ten free alternatives and five desktop tools into `oss-alternatives`; nine self-hosted repos into `self-hosted-docker-stack`; the 22 October trending cards into `github-trending-top10-oct5`; the Anthropic skills install route into `claude-5-official-skills`; verified figures into `repo-stirling-pdf`. All repos were checked on GitHub (stars and licences); card price comparisons were not verified.
 - 2 design templates (`tools-20-numbered-grid`, `keyword-framework-board`) and 2 themes (`gtm-tools-slate`, `keyword-teal-paper`).
 - `Artifacts/operations/workflows-batch-114.html` (4 workflows), `Artifacts/business/batch-114-intake-report.html`, `docs/batch-114-prompts.md`, `scripts/batch114-install.sh` (asks before every step; not run).
+
+## Batch 115 (23 October 2026)
+
+Built from `65eac285-iCloud_Photos.zip` (22 images) and four infographics sent inline (20 Claude prompt templates; 15 Claude skills for B2B sales, cover only; Google Ads in 7 steps; 12 GTM plays). Mostly duplicated material, so the batch merges where it can.
+
+- 2 new skills: `claude-prompt-templates-20` (all 20 prompts verbatim, mapped to existing commands) and `gtm-plays-12` (12 signal-to-action plays with consent and platform-rule checks the card omits); 2 commands: `/prompt-template`, `/gtm-play`.
+- New reference `ads/references/google-ads-7-steps.md`.
+- Merged into existing skills: seven "illegal tools" repos into `oss-alternatives` (verified); five Mac apps for agent safety into `github-trending-top10-oct5` (two verified, three not); six MCPs and CLIs into `mcp-dev-team-6`.
+- 2 design templates (`callout-hub-20`, `spine-steps-detail-cards`) and 2 themes (`callout-navy-pink`, `spine-blue-soft`).
+- `Artifacts/operations/workflows-batch-115.html` (5 workflows), `Artifacts/business/batch-115-intake-report.html`, `docs/batch-115-prompts.md`, `scripts/batch115-install.sh` (asks before every step; not run).

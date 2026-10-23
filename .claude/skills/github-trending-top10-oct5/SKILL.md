@@ -80,3 +80,18 @@ Card from @githubnow: today's gainers, and a "tomorrow's drop" teaser that says 
 | `fastapi/fastapi` | +96 | 103,581 | MIT | Existing `fastapi-patterns` and `fastapi-templates` cover usage |
 
 A one-day star gain is attention, not quality. A separate "Today's Top GitHub Repo For Claude" video cover from @your.aimentor names no repo; it was not acted on.
+
+
+## Batch 115: five Mac apps for AI agents (@henryxagi, "Your agent has a key. Give it a smaller room.")
+
+The theme is giving an agent less access. Only some were verifiable.
+
+| App | Card says | Verified 23 Oct 2026 |
+|---|---|---|
+| LuLu (`objective-see/LuLu`) | Firewall that blocks unknown outgoing connections | 13,338 stars, GPL-3.0, free open-source macOS firewall |
+| Berthly (`henrywang/Berthly`, berthly.net) | Native macOS app for Apple's container tool | 1 star, repo created July 2026, licence shown as Other (site says Apache-2.0). Needs Apple Silicon, macOS 26+, no telemetry per its README, not sandboxed by necessity. Very new: audit before use |
+| GhostVM | Fully isolated macOS workspaces on your machine | Not verified (search was rate-limited) |
+| MXterm (mxterm.net) | Workspace for the AI coding agents you already use | Not verified; also named in Batch 113 |
+| ClearanceKit | Kernel-level file access control for macOS | Not verified |
+
+Rule: a kernel-level tool needs more trust than the agent it restricts. Install only from a source you have checked, prefer open source you can read, and test on a spare Mac first. Do not run an agent with broad file and network access on your main machine; use a VM, a container or a restricted user.

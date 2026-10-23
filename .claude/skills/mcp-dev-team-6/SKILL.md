@@ -59,3 +59,19 @@ claude mcp add --transport http stripe https://mcp.stripe.com
 - **Chrome DevTools:** reads console errors and analyses performance in a live Chrome; use on your own pages.
 - **Notion:** reads and writes docs and specs; a Notion connector already exists in claude.ai.
 - **Stripe:** manages payments, customers and products. It can change real money data: use a restricted, read-only key or test mode first, and do not register it in the shared `.mcp.json`. The Stripe and Sentry connectors are installed in claude.ai but show "needs reconnect"; only the user can reconnect them.
+
+
+## Batch 115: six Claude Code MCPs and CLIs (@ccstrategic.io, "Claude Code MCPs I can't live without")
+
+The cards gate the "full list" behind a comment. Only what is on the cards is recorded. None of these was installed.
+
+| Tool | Card says | Here |
+|---|---|---|
+| Skool Bridge | Bridge Claude into your Skool community and manage it | Not verified; no connector found |
+| GWS CLI (`googleworkspace/cli`) | Everything in Google Workspace inside Claude; a CLI that works like an MCP | Verified: 31,807 stars, Apache-2.0, created March 2026, includes agent skills. Google Drive, Docs, Sheets, Gmail and Calendar connectors are already connected here; use the CLI only if you need an action the connectors lack. Review OAuth scopes first |
+| Apify | Best scraping tool for Claude; leads, topic research | Not verified here; scraping carries terms-of-service and data-protection duties |
+| GHL (HighLevel) | Manage your GoHighLevel CRM in a Claude Code session | The `windsor-ai:gohighlevel` skill exists; write access to a CRM needs approval |
+| Miro | Flowcharts to see plans before executing | Connected here |
+| Higgsfield AI | AI image and video generation through Claude | Connected here; generation spends credits, so confirm each job |
+
+Rule: every MCP you add is a new thing the agent can read or change. Add one per need, scope it read-only first, and keep write actions behind approval.

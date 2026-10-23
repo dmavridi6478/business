@@ -1,0 +1,89 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Batch 115 Intake Report</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<style>
+  /* Layout: single-column formal report, 880px measure; tables scroll inside their own wrappers.
+     Palette: ink-blue neutrals, one deep teal accent, semantic green/amber/red for status only.
+     Type: Aptos (the owner's house font) with system fallbacks; title 32pt, headings 14pt, body 11pt. */
+  :root {
+    --bg: #f6f7f9; --surface: #ffffff; --fg: #1b2330; --muted: #5a6577; --line: #d9dee6;
+    --accent: #0f5d6b; --accent-soft: #e2f0f2;
+    --ok: #17703a; --ok-bg: #e3f3e8; --warn: #8a5a00; --warn-bg: #fbefd3; --bad: #a11d2a; --bad-bg: #fbe3e5;
+    --code-bg: #eef1f5;
+    --font: Aptos, "Segoe UI Variable Text", "Segoe UI", system-ui, -apple-system, Roboto, sans-serif;
+    --mono: ui-monospace, "SF Mono", Consolas, monospace;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #11161e; --surface: #181f2a; --fg: #e6eaf0; --muted: #9aa5b6; --line: #2c3646;
+      --accent: #6cc3d1; --accent-soft: #17323a;
+      --ok: #6fd18f; --ok-bg: #173824; --warn: #f0c261; --warn-bg: #3a2e12; --bad: #ff8d98; --bad-bg: #3d1a1f;
+      --code-bg: #0e131a; color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #11161e; --surface: #181f2a; --fg: #e6eaf0; --muted: #9aa5b6; --line: #2c3646;
+    --accent: #6cc3d1; --accent-soft: #17323a;
+    --ok: #6fd18f; --ok-bg: #173824; --warn: #f0c261; --warn-bg: #3a2e12; --bad: #ff8d98; --bad-bg: #3d1a1f;
+    --code-bg: #0e131a; color-scheme: dark;
+  }
+  * { box-sizing: border-box; }
+  body { background: var(--bg); color: var(--fg); font-family: var(--font); font-size: 11pt; line-height: 1.55; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); padding-block: 28px 64px; }
+  main { max-width: 880px; margin-inline: auto; display: flex; flex-direction: column; gap: 28px; }
+  header { display: flex; flex-direction: column; gap: 8px; border-bottom: 2px solid var(--accent); padding-bottom: 18px; }
+  .eyebrow { font-size: 9pt; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
+  h1 { font-size: 32pt; line-height: 1.1; margin: 0; font-weight: 700; text-wrap: balance; }
+  h2 { font-size: 14pt; margin: 0 0 10px; font-weight: 700; color: var(--accent); text-wrap: balance; }
+  p { margin: 0 0 10px; max-width: 75ch; }
+  section { background: var(--surface); border: 1px solid var(--line); border-radius: 6px; padding: 20px 22px; min-width: 0; }
+  .lede { font-size: 11pt; color: var(--muted); max-width: 70ch; margin: 0; }
+  .truth { border-left: 4px solid var(--bad); background: var(--bad-bg); padding: 12px 16px; border-radius: 0 6px 6px 0; }
+  .truth p:last-child { margin-bottom: 0; }
+  .tw { overflow-x: auto; margin-block: 8px 4px; border: 1px solid var(--line); border-radius: 4px; }
+  table { border-collapse: collapse; width: 100%; min-width: 720px; font-size: 10pt; }
+  th, td { padding: 8px 10px; border-bottom: 1px solid var(--line); text-align: center; vertical-align: top; }
+  th { background: var(--accent-soft); color: var(--fg); font-weight: 700; font-size: 9.5pt; }
+  tr:last-child td { border-bottom: 0; }
+  td.l, th.l { text-align: center; } /* house rule: table content aligned top and centre */
+  .st { display: inline-block; padding: 1px 8px; border-radius: 10px; font-size: 9pt; font-weight: 700; white-space: nowrap; }
+  .st.ok { background: var(--ok-bg); color: var(--ok); } .st.warn { background: var(--warn-bg); color: var(--warn); } .st.bad { background: var(--bad-bg); color: var(--bad); }
+  .sw { display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 10px; margin-block: 8px; }
+  .sw div { border: 1px solid var(--line); border-radius: 4px; overflow: hidden; font-size: 9pt; text-align: center; }
+  .sw i { display: block; height: 44px; }
+  .sw span { display: block; padding: 4px 6px; font-family: var(--mono); }
+  .prompt { position: relative; margin-block: 10px; }
+  .prompt pre { margin: 0; white-space: pre-wrap; background: var(--code-bg); border: 1px solid var(--line); border-radius: 4px; padding: 12px 84px 12px 12px; font-family: var(--mono); font-size: 9.5pt; line-height: 1.5; }
+  .prompt b { display: block; font-family: var(--font); font-size: 10pt; margin-bottom: 4px; }
+  .prompt button { position: absolute; top: 30px; right: 8px; font: inherit; font-size: 9pt; padding: 4px 10px; border-radius: 4px; border: 1px solid var(--accent); background: var(--surface); color: var(--accent); cursor: pointer; }
+  .prompt button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  ul { margin: 0 0 10px; padding-left: 20px; } li { margin-bottom: 4px; max-width: 75ch; }
+  code { font-family: var(--mono); font-size: 9.5pt; background: var(--code-bg); padding: 1px 4px; border-radius: 3px; }
+  footer { color: var(--muted); font-size: 9.5pt; }
+</style>
+<style>
+ figure{margin:0;text-align:center} figure img{width:100%;border:1px solid var(--line);border-radius:4px;display:block} figcaption{font-size:8.5pt;color:var(--muted);margin-top:4px}
+ .thumbs{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px;margin-top:10px}
+ pre{white-space:pre-wrap;word-break:break-word;background:var(--code-bg);border:1px solid var(--line);border-radius:4px;padding:12px;font:10pt/1.5 var(--mono);margin:8px 0;overflow-x:auto}
+ details{border:1px solid var(--line);border-radius:4px;padding:8px 12px;margin-top:8px} summary{cursor:pointer;font-weight:700}
+ code{font-family:var(--mono);font-size:9.5pt;background:var(--code-bg);padding:0 4px;border-radius:3px}
+ ul{margin:0 0 10px;padding-left:20px;max-width:78ch} li{margin-bottom:4px}
+ td code{white-space:normal;word-break:break-word}
+</style>
+<style>main > section, main > header {min-width:0} p, li, code {overflow-wrap:anywhere}</style>
+<main>
+<header><div class="eyebrow">Batch 115 · 23 October 2026 · intake</div><h1>Batch 115 Intake Report</h1><p>Four inline infographics and a 22-image set, processed with the seven-step intake. Result: two new skills, one reference, two commands, three merges, two templates, two themes, five workflows.</p></header>
+<section><h2>1. Executive findings</h2><ul>
+<li><b>[Certain]</b> Most of this is duplicated. Most of the 20 prompt templates already have a near match here (<code>/status</code>, <code>/interview</code>, <code>/objection</code> and so on). I kept the exact wording as one skill because you asked for prompts in plain text, and mapped each to its command. If you only want one version, delete the skill and keep the commands.</li>
+<li><b>[Certain]</b> The 12 GTM plays are sound as patterns but the card omits the legal and platform risk. Identifying anonymous visitors, scraping post engagers and auto-DMing on LinkedIn each need a lawful basis or can breach platform rules. I added those checks to the skill. The "30% come back" figure in the closed-lost play has no source.</li>
+<li><b>[Certain]</b> The "illegal tools" and agent-safety cards promote tools. Two carry real risk: Scrapling markets walking past bot blocks, and OpenVoice clones voices. Both are recorded with consent and terms-of-service warnings. Of the five Mac agent-safety apps, I verified LuLu (13,338 stars, GPL-3.0) and Berthly (1 star, created July 2026); I could not verify GhostVM, MXterm or ClearanceKit because search was rate-limited. A kernel-level tool from an unverified source is a bigger risk than the agent it restricts.</li>
+<li><b>[Likely]</b> The Google Ads graphic is a standard checklist with no data. Its value is the order: tracking before bidding.</li>
+<li><b>[Certain]</b> Card star counts are older than live figures (Scrapling 81k on the card, 89,078 now). OpenBB now sits under a different organisation name on GitHub; Twenty and OpenBB show licence "Other".</li>
+</ul></section>
+<section><h2>2. Source inventory and what was built</h2><div class="tw"><table><tr><th>Source</th><th>Content</th><th>Result</th></tr><tr><td>Inline: 20 Claude Prompt Templates (Mindstream)</td><td>20 prompts</td><td>Skill <code>claude-prompt-templates-20</code> (verbatim) + <code>/prompt-template</code>; template <code>callout-hub-20</code></td></tr><tr><td>Inline: 12 GTM Plays I Recommend (Growth Today)</td><td>12 signal-to-action flows</td><td>Skill <code>gtm-plays-12</code> + <code>/gtm-play</code>; workflows 1-4</td></tr><tr><td>Inline: Google Ads, Pay Per Click (Marketing With Rishika)</td><td>7-step checklist</td><td>Reference <code>ads/references/google-ads-7-steps.md</code>; template <code>spine-steps-detail-cards</code>; workflow 5</td></tr><tr><td>Inline: 15 Claude Skills for B2B Sales</td><td>Cover only, no content</td><td>Not actioned; see <code>claude-sales-by-role</code></td></tr><tr><td>Zip: seven "illegal tools" cards</td><td>7 repos</td><td>Table in <code>oss-alternatives</code> (Batch 115)</td></tr><tr><td>Zip: five Mac apps for AI agents (@henryxagi)</td><td>5 apps</td><td>Section in <code>github-trending-top10-oct5</code>; 2 verified, 1 partly, 2 not</td></tr><tr><td>Zip: Claude Code MCPs I can't live without (@ccstrategic.io)</td><td>6 MCPs and CLIs</td><td>Section in <code>mcp-dev-team-6</code>; the full list is gated behind a comment</td></tr></table></div></section>
+<section><h2>3. GitHub repos checked on 23 October 2026</h2><p>Stars and licences were read from each repository page and change daily. GhostVM, MXterm and ClearanceKit were not verified.</p><div class="tw"><table><tr><th>Repo</th><th>Stars</th><th>Licence</th></tr><tr><td><code>D4Vinci/Scrapling</code></td><td>89,078</td><td>BSD-3-Clause</td></tr><tr><td><code>OpenBB-finance/OpenBB</code></td><td>74,567</td><td>Other</td></tr><tr><td><code>coollabsio/coolify</code></td><td>63,501</td><td>Apache-2.0</td></tr><tr><td><code>twentyhq/twenty</code></td><td>59,538</td><td>Other</td></tr><tr><td><code>myshell-ai/OpenVoice</code></td><td>38,037</td><td>MIT</td></tr><tr><td><code>Fosowl/agenticSeek</code></td><td>27,531</td><td>GPL-3.0</td></tr><tr><td><code>documenso/documenso</code></td><td>15,516</td><td>AGPL-3.0</td></tr><tr><td><code>googleworkspace/cli</code></td><td>31,807</td><td>Apache-2.0</td></tr><tr><td><code>objective-see/LuLu</code></td><td>13,338</td><td>GPL-3.0</td></tr><tr><td><code>henrywang/Berthly</code></td><td>1</td><td>Other (site says Apache-2.0)</td></tr></table></div></section>
+<section><h2>4. Connectors</h2><div class="tw"><table><tr><th>Need</th><th>Finding</th><th>Status</th></tr><tr><td>Miro, Higgsfield</td><td>Named on the MCP cards</td><td><span class="st ok">Connected</span></td></tr><tr><td>Google Drive, Docs, Sheets, Gmail, Calendar</td><td>Cover most of what the Google Workspace CLI does</td><td><span class="st ok">Connected</span></td></tr><tr><td>Clay, HubSpot, Apollo.io, Common Room, ZoomInfo</td><td>Cover the tools used in the 12 GTM plays</td><td><span class="st warn">Some connected, some need your authorisation</span></td></tr><tr><td>Skool, Apify, GoHighLevel</td><td>No connector confirmed</td><td><span class="st warn">Not installed</span></td></tr></table></div></section>
+<section><h2>5. Agents</h2><p>No agent-building guide was in this batch. None created.</p></section>
+<section><h2>6. Deliverables</h2><div class="tw"><table><tr><th>Item</th><th>Location</th></tr><tr><td>Skills</td><td><code>claude-prompt-templates-20</code>, <code>gtm-plays-12</code></td></tr><tr><td>Reference</td><td><code>.claude/skills/ads/references/google-ads-7-steps.md</code></td></tr><tr><td>Commands</td><td><code>/prompt-template</code>, <code>/gtm-play</code></td></tr><tr><td>Merged skills</td><td><code>oss-alternatives</code>, <code>github-trending-top10-oct5</code>, <code>mcp-dev-team-6</code>, <code>ads</code></td></tr><tr><td>Templates</td><td><code>callout-hub-20</code>, <code>spine-steps-detail-cards</code></td></tr><tr><td>Themes</td><td><code>theme-callout-navy-pink</code>, <code>theme-spine-blue-soft</code></td></tr><tr><td>Workflows</td><td><code>Artifacts/operations/workflows-batch-115.html</code></td></tr><tr><td>Prompts</td><td><code>docs/batch-115-prompts.md</code> (all 20 verbatim)</td></tr><tr><td>Install script</td><td><code>scripts/batch115-install.sh</code> (asks before every step; not run)</td></tr></table></div></section>
+<section><h2>7. Open decisions for you</h2><ul><li>Keep the prompt-templates skill, or only the commands? It duplicates by design.</li><li>Which GTM play matches a signal you can actually see today? Without one, none should run.</li><li>Agent Archive key: still unanswered. Say "skip" and I will stop asking. Also revoke the OpenAI key you pasted earlier.</li><li>The Exa search tool hit its free rate limit; verification of three Mac apps needs a retry later.</li></ul></section>
+<footer>Stars and licences read from GitHub pages on 23 October 2026.</footer>
+</main>
+</body></html>

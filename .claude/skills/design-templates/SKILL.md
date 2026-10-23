@@ -436,3 +436,19 @@ Both use original CSS and placeholder wording only. Overlap checked: `workflow-g
 |---|---|---|---|
 | `theme-gtm-tools-slate.html` | bg `#EEF1F6`, text `#101828`, accent `#2F6BFF` | bg `#0C1220`, accent `#7FA3FF` | Inter |
 | `theme-keyword-teal-paper.html` | bg `#F6F1E7`, text `#10282C`, accent `#0F7C86` | bg `#0C1D20`, accent `#4FC3CD` | Inter |
+
+## Batch 115 additions
+
+| Template | Use for | Layout |
+|---|---|---|
+| `callout-hub-20.html` | "20 templates around one picture" graphics | 1080x1350; pill headline bar, tall central picture placeholder with a round badge, ten callout cards down each side (numbered bubble, coloured title bar, three lines of text) joined to the centre by dashed lines, dark footer |
+| `spine-steps-detail-cards.html` | Seven-step process infographics with a checklist per step | 1080x1350; headline, vertical spine with seven numbered nodes, wide step cards (icon, title, description) with a tinted five-bullet panel on the right, footer with handle and save line |
+
+Both use original CSS and placeholder wording only; no source illustration, logo or text is reused.
+
+## Batch 115 theme tokens (files in `Artifacts/theme-*.html`; colours eyeballed)
+
+| Theme file | Light | Dark | Fonts (free) |
+|---|---|---|---|
+| `theme-callout-navy-pink.html` | bg `#FFFFFF`, text `#14213D`, accent `#E8479A` | bg `#0E1630`, accent `#FF7DBA` | Inter |
+| `theme-spine-blue-soft.html` | bg `#F1F6FD`, text `#10223F`, accent `#2563EB` | bg `#0B1424`, accent `#6EA0FF` | Inter |

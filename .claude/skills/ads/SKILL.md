@@ -497,3 +497,5 @@ For tracking setup, see [references/conversion-tracking.md](references/conversio
 - **analytics / attribution**: Conversion tracking setup and the blended-CAC inputs behind [payback-period.md](references/payback-period.md); **pricing** sets the ARPU + plan structure that drive its Payback math (why blended LTV:CAC hides $9-vs-$999 variance)
 - **ab-testing**: For landing page testing to improve ROAS
 - **cro**: For optimizing post-click conversion rates
+
+See also `references/google-ads-7-steps.md` (7-step Google Ads checklist; Batch 115).
