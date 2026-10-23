@@ -152,3 +152,61 @@ Card stars are older than these figures. "Replaces" is the card's claim; price c
 | `documenso/documenso` | Open-source e-signature | 15,516 | AGPL-3.0 | DocuSign | Legal validity of e-signatures depends on the country and document type; keep the audit trail |
 
 Re-check before quoting: star counts change daily. "$50 billion in corporate revenue" style claims on the cover are unsourced.
+
+
+## Batch 116: 30 repos from six card series (verified on GitHub, 23 October 2026)
+
+Stars and licences were read from each repo page. Card star counts are often far older (for example andrej-karpathy-skills 52K on the card, 222,852 now), so recheck before quoting.
+
+**@blank9485 "5 GitHub projects worth your weekend"**
+
+| Repo | Does | Stars | Licence | Care |
+|---|---|---|---|---|
+| `open-webui/open-webui` | Chat interface for Ollama and OpenAI-compatible APIs | 156,576 | Other | Custom licence with branding terms; read it before commercial use |
+| `karakeep-app/karakeep` | Bookmark-everything with AI tags | 29,885 | AGPL-3.0 | See Batch 114 |
+| `louislam/uptime-kuma` | Self-hosted uptime monitor | 92,805 | MIT | Run on an always-on host |
+| `CorentinTh/it-tools` | Handy developer tools (JSON, UUID, hashes) | 40,947 | GPL-3.0 | Use sample data in any public instance |
+| `docling-project/docling` | Convert PDFs and office files to Markdown or JSON | 69,453 | MIT | Verify extraction on a sample first |
+
+**Site Tusk "5 GitHub projects they don't want you to know about"**
+
+| Repo | Does | Stars | Licence |
+|---|---|---|---|
+| `vinta/awesome-python` | Curated list of Python frameworks and tools | 329,597 | Other |
+| `duckdb/duckdb` | In-process analytical SQL database | 42,451 | MIT |
+| `esphome/esphome` | Configure ESP32/ESP8266 devices for home automation | 11,946 | Other |
+| `jesseduffield/lazygit` | Terminal UI for git | 83,390 | MIT |
+| `dandavison/delta` | Syntax-highlighting pager for git diffs | 32,551 | MIT |
+
+**@palidev21 "5 free tools hiding on GitHub" (Windows upgrades)**
+
+| Repo | Does | Stars | Licence | Care |
+|---|---|---|---|---|
+| `microsoft/PowerToys` | Window layouts, bulk rename, color picker | 139,612 | MIT | Windows only |
+| `obsproject/obs-studio` | Screen recording and live streaming | 77,985 | GPL-2.0 | - |
+| `audacity/audacity` | Audio editor | 18,815 | Other | Optional plugins and services may cost extra |
+| `kovidgoyal/calibre` | Ebook library manager | 26,221 | GPL-3.0 | Format conversion needs DRM-free files |
+| `bleachbit/bleachbit` | System cleaner | 7,222 | GPL-3.0 | Deletes files: preview and review every selection first |
+
+**@replace.so "6 repos" (five named)**
+
+| Repo | Does | Stars | Licence | Card says it replaces |
+|---|---|---|---|---|
+| `Kilo-Org/kilocode` | Open coding agent for VS Code, JetBrains, CLI | 27,699 | MIT | Paid coding assistants |
+| `ubicloud/ubicloud` | Open cloud on bare metal (compute, Postgres, K8s) | 12,331 | AGPL-3.0 | AWS |
+| `omnara-ai/omnara` | Self-hostable managed-agent platform | 3,193 | Apache-2.0 | Claude Managed Agents |
+| `statamic/cms` | Flat-file Laravel CMS (core package) | 4,911 | Other | Hosted CMS; the Pro edition is paid |
+| `ansvisor/ansvisor` | AI search visibility tracking | 159 | MIT | Paid AEO tools; very young, 159 stars |
+
+**@martiendejong_dev "learn" cards: three do not match their repo**
+
+| Repo | Stars | Licence | What the card says | What the repo says |
+|---|---|---|---|---|
+| `debpalash/VoiceStudio` | 82,715 | AGPL-3.0 | Local voice cloning, dubbing, transcription | Matches (offline ElevenLabs alternative). Clone only voices you have consent for |
+| `thedotmack/claude-mem` | 102,396 | Apache-2.0 | A better memory for Claude | Matches (captures sessions, compresses, injects context). Overlaps the Cognee memory already used here |
+| `bilawalsidhu/gods-eye-view` | 59,321 | Other | 3D globe of planes, ships, cameras | Matches in spirit; check each data source's terms |
+| `paperclipai/paperclip` | 106,518 | MIT | "Turn any document into insights" (chat with documents) | **Mismatch:** "the open-source app to manage agents at work" |
+| `multica-ai/andrej-karpathy-skills` | 222,852 | none shown | A learning path of Karpathy's articles, videos and projects | **Mismatch:** a single CLAUDE.md of coding guidelines derived from his LLM-pitfall observations |
+| `affaan-m/ECC` | see `github-trending-top10-oct5` | MIT | "Complete computer science curriculum" | **Mismatch:** an agent harness (skills, memory, security), verified in Batch 113 |
+
+The mock screenshots on these cards show features the repos do not describe. [Certain] for the three mismatches above. Always open the repo page and read the README before trusting a card.

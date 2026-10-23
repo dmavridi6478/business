@@ -452,3 +452,22 @@ Both use original CSS and placeholder wording only; no source illustration, logo
 |---|---|---|---|
 | `theme-callout-navy-pink.html` | bg `#FFFFFF`, text `#14213D`, accent `#E8479A` | bg `#0E1630`, accent `#FF7DBA` | Inter |
 | `theme-spine-blue-soft.html` | bg `#F1F6FD`, text `#10223F`, accent `#2563EB` | bg `#0B1424`, accent `#6EA0FF` | Inter |
+
+
+## Batch 116 additions
+
+| Template | Use for | Layout |
+|---|---|---|
+| `two-tier-tree-14.html` | Two-level strategy trees (for example who you are / how you grow) | 1080x1350; highlighted headline, two dark head pills each joined by a bracket to a row of seven cards (icon circle, title, three lines), name pill and brand tag footer |
+| `system-steps-grid-10.html` | "Build the whole system" ten-step graphics | 1080x1350; section tag, two-tone headline, 3x3 grid of numbered step cards plus one wide tenth card, red call-to-action bar |
+| `story-stat-card.html` | One slide of a "I scanned and found" story carousel | 1080x1350; grid-paper page, counter, large number, mono tag line, bold headline, paragraph, six-row data card, two stat pills, next pointer |
+
+All three use original CSS and placeholder wording only. Overlap checked: `workflow-grid-catalog`, `trending-top10-leaderboard` and `spine-steps-detail-cards` are different shapes.
+
+## Batch 116 theme tokens (files in `Artifacts/theme-*.html`; colours eyeballed)
+
+| Theme file | Light | Dark | Fonts (free) |
+|---|---|---|---|
+| `theme-brand-tree-sage.html` | bg `#F5F2EA`, text `#1E2A24`, accent `#2E7D5B` | bg `#101A15`, accent `#5CC795` | Inter |
+| `theme-system-red-white.html` | bg `#FFFFFF`, text `#1A1A1F`, accent `#D7263D` | bg `#170C0E`, accent `#FF5A6E` | Inter |
+| `theme-story-grid-paper.html` | bg `#F7F4EE`, text `#1B1B1D`, accent `#D4623A` | bg `#14120F`, accent `#F08A62` | Inter + JetBrains Mono |

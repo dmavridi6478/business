@@ -45,3 +45,5 @@ Source: "6 Levers of Personal Branding Success" (Nader Alnajjar, Lever). Overlap
 6. **Lean into what works:** repurpose past successes by changing the hook, rewriting with new stories, turning an infographic into a carousel.
 
 The comment-and-DM routine stays inside LinkedIn's terms: no bulk automation, no scraping.
+
+See also `references/personal-brand-strategy-map.md` (14-part who-you-are / how-you-grow map; Batch 116).

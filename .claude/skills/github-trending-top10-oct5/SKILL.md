@@ -95,3 +95,14 @@ The theme is giving an agent less access. Only some were verifiable.
 | ClearanceKit | Kernel-level file access control for macOS | Not verified |
 
 Rule: a kernel-level tool needs more trust than the agent it restricts. Install only from a source you have checked, prefer open source you can read, and test on a spare Mac first. Do not run an agent with broad file and network access on your main machine; use a VM, a container or a restricted user.
+
+
+## Batch 116: 23 October 2026 trending cards (@githubnow, verified 23 October)
+
+| Repo | Card gain | Stars | Licence | Note |
+|---|---|---|---|---|
+| `SnailSploit/Claude-Red` | +209 | 7,917 | not captured | 78 offensive-security skills (SQLi to shellcode, EDR evasion, exploit development) loaded on demand. **Dual-use.** Not installed here. Use only on systems you own or are authorised to test, within a signed scope |
+| `OpenBMB/VoxCPM` | +144 | 40,180 | Apache-2.0 | Tokenizer-free TTS, 30 languages, voice design and cloning from a short reference clip. Clone only with consent |
+| `HKUDS/CLI-Anything` | +94 | 56,455 | Apache-2.0 | Generates agent-ready command-line harnesses for existing software; CLI-Hub for community CLIs. A CLI-Anything command already exists here |
+
+The card's "Tomorrow's drop" says to start with Claude-Red. Disagree: read the code before running anything that primes an agent with attack methodology, and prefer a throwaway VM.

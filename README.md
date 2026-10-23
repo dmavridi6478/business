@@ -6074,3 +6074,13 @@ Built from `65eac285-iCloud_Photos.zip` (22 images) and four infographics sent i
 - Merged into existing skills: seven "illegal tools" repos into `oss-alternatives` (verified); five Mac apps for agent safety into `github-trending-top10-oct5` (two verified, three not); six MCPs and CLIs into `mcp-dev-team-6`.
 - 2 design templates (`callout-hub-20`, `spine-steps-detail-cards`) and 2 themes (`callout-navy-pink`, `spine-blue-soft`).
 - `Artifacts/operations/workflows-batch-115.html` (5 workflows), `Artifacts/business/batch-115-intake-report.html`, `docs/batch-115-prompts.md`, `scripts/batch115-install.sh` (asks before every step; not run).
+
+## Batch 116 (23 October 2026)
+
+Built from `6147cb7d-iCloud_Photos.zip` (71 images). Mostly GitHub project cards, so the batch merges into existing skills and adds only what was new.
+
+- 2 new skills: `claude-real-estate-4-systems` (four ten-step Claude Project systems for a realtor, with the fair-housing and consent checks the cards omit) and `claude-automation-skills-8` (eight automation skills mapped to what exists); 1 command: `/real-estate-system`.
+- 2 new references: `yt-faceless-channel/references/claude-youtube-scan.md` (scan YouTube with Claude; the money slide arithmetic checked, estimates flagged) and `linkedin-magnetic-brand-9-rules/references/personal-brand-strategy-map.md` (14-part map).
+- Merged: 26 verified repos into `oss-alternatives` (three cards that mis-describe their repo are flagged) and three trending repos into `github-trending-top10-oct5` (Claude-Red recorded as dual-use and not installed).
+- 3 design templates (`two-tier-tree-14`, `system-steps-grid-10`, `story-stat-card`) and 3 themes (`brand-tree-sage`, `system-red-white`, `story-grid-paper`).
+- `Artifacts/operations/workflows-batch-116.html` (4 workflows), `Artifacts/business/batch-116-intake-report.html`, `docs/batch-116-prompts.md`, `scripts/batch116-install.sh` (asks before every step; not run).

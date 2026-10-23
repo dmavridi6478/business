@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<!--
+  Template: system-steps-grid-10
+  Style: white page, small section tag, large two-tone headline (black + red), subtitle, then a 3x3 grid of numbered step cards (red number badge, title, placeholder lines) and one wide tenth card, red call-to-action bar. Theme: system-red-white
+  Inspired by: "build the whole system" ten-step infographics. Original CSS and placeholder wording; no source people, screenshots or text reused.
+  Canvas: 1080 x 1350. Swap points: .tag, h1 and span, .sub, .s cards (number .b, title b, lines .ph), .wide, .cta
+-->
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>System Steps Grid 10</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#FFFFFF;--ink:#1A1A1F;--muted:#5C5C66;--red:#D7263D;--soft:#FFF4F4;--line:#F2C7C7;--font:"Inter",Aptos,"Segoe UI",system-ui,sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#333;display:flex;justify-content:center;padding:32px 0;overflow-x:auto;font-family:var(--font)}
+.slide{position:relative;width:1080px;height:1350px;flex:none;background:var(--bg);color:var(--ink);overflow:hidden;padding:44px 40px 0}
+.tag{display:inline-block;background:var(--soft);border:2px solid var(--line);color:var(--red);border-radius:999px;padding:7px 16px;font:700 18px/1 var(--font)}
+h1{margin-top:16px;font:800 76px/1.15 var(--font);letter-spacing:-.025em}h1 span{color:var(--red)}
+.sub{margin-top:8px;font:500 24px/1.3 var(--font);color:var(--muted)}
+.grid{position:absolute;left:40px;right:40px;top:340px;display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:repeat(3,220px) 190px;gap:14px}
+.s{min-width:0;background:var(--soft);border:2px solid var(--line);border-radius:18px;padding:14px 16px;display:flex;flex-direction:column;gap:10px}
+.b{width:42px;height:42px;border-radius:50%;background:var(--red);color:#fff;font:800 22px/42px var(--font);text-align:center;flex:none}
+.s b{font:800 24px/1.15 var(--font)}
+.ph{flex:1;display:flex;flex-direction:column;justify-content:center;gap:12px}.ph u{display:block;height:14px;border-radius:7px;background:#F0D3D3}.ph u:nth-child(2){width:80%}.ph u:nth-child(3){width:55%}
+.wide{grid-column:1 / -1;flex-direction:row;align-items:center;gap:18px}
+.cta{position:absolute;left:0;right:0;bottom:0;height:78px;background:var(--red);color:#fff;display:flex;align-items:center;justify-content:center;font:800 26px/1 var(--font)}
+</style></head><body>
+<div class="slide">
+  <span class="tag">1. Section name</span>
+  <h1>Your system<br><span>in ten steps</span></h1>
+  <p class="sub">One line on what the system does</p>
+  <div class="grid">
+    <div class="s"><span class="b">1</span><b>Step title</b><div class="ph"><u></u><u></u><u></u></div></div><div class="s"><span class="b">2</span><b>Step title</b><div class="ph"><u></u><u></u><u></u></div></div><div class="s"><span class="b">3</span><b>Step title</b><div class="ph"><u></u><u></u><u></u></div></div><div class="s"><span class="b">4</span><b>Step title</b><div class="ph"><u></u><u></u><u></u></div></div><div class="s"><span class="b">5</span><b>Step title</b><div class="ph"><u></u><u></u><u></u></div></div><div class="s"><span class="b">6</span><b>Step title</b><div class="ph"><u></u><u></u><u></u></div></div><div class="s"><span class="b">7</span><b>Step title</b><div class="ph"><u></u><u></u><u></u></div></div><div class="s"><span class="b">8</span><b>Step title</b><div class="ph"><u></u><u></u><u></u></div></div><div class="s"><span class="b">9</span><b>Step title</b><div class="ph"><u></u><u></u><u></u></div></div>
+    <div class="s wide"><span class="b">10</span><b>Final step title</b><div class="ph"><u></u><u></u></div></div>
+  </div>
+  <div class="cta">Your call to action</div>
+</div></body></html>
