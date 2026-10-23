@@ -6088,3 +6088,7 @@ Built from `6147cb7d-iCloud_Photos.zip` (71 images). Mostly GitHub project cards
 ## NexLev faceless-niche workflow (23 October 2026)
 
 Added `faceless-niche-nexlev` (skill), `/faceless-niche-scan` (command) and `Artifacts/operations/workflow-faceless-niche-nexlev.html`. A nine-step, read-only-until-approval workflow on the connected NexLev tools, with gates for AI-dramatised channels, originality, and platform policy. Tested live: three of five top wildlife outliers were flagged AI-generated. Agent Archive setup was skipped at your request.
+
+## GTM Skills subset (23 October 2026)
+
+Installed 58 skills from the Outbound pipeline, Inbound pipeline and Deal acceleration collections of gtmskills.com (`swan-gtm/gtm-skills`, MIT), plus a routing skill `gtm-skills-index`. Licence and manifest: `docs/third-party/gtm-skills/`. Three slugs on the site have no folder in the repo and were not installed. The other six collections were not installed by choice. Scripts are included but never run by installing.
