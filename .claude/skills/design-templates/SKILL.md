@@ -471,3 +471,22 @@ All three use original CSS and placeholder wording only. Overlap checked: `workf
 | `theme-brand-tree-sage.html` | bg `#F5F2EA`, text `#1E2A24`, accent `#2E7D5B` | bg `#101A15`, accent `#5CC795` | Inter |
 | `theme-system-red-white.html` | bg `#FFFFFF`, text `#1A1A1F`, accent `#D7263D` | bg `#170C0E`, accent `#FF5A6E` | Inter |
 | `theme-story-grid-paper.html` | bg `#F7F4EE`, text `#1B1B1D`, accent `#D4623A` | bg `#14120F`, accent `#F08A62` | Inter + JetBrains Mono |
+
+
+## Batch 117 additions
+
+| Template | Use for | Layout |
+|---|---|---|
+| `framework-lever-board.html` | One-page "four levers" framework summaries (Influence-Model style) | 1080x1350; tag, two-tone headline, subtitle, 2x2 board of lever cards (number badge, title, quoted line, ask-your-team row, red-flag row), four-step strip, orange footer bar |
+| `five-stage-column-matrix.html` | Five-stage journeys and five-phase models (Decision-Journey style) | 1080x1350; centred headline, dashed stage strip, five tall columns (header plus what happens, evidence, ask your team, your move, track), two summary panels, dark brand bar |
+| `prompt-rows-6.html` | "N prompts to build X" guides | 1080x1350; uppercase title with orange band, dashed subtitle, six alternating rows (icon circle, big number, step name, prompt, description), promo bar and follow strip |
+
+All three use original CSS and placeholder wording only. Overlap checked: `system-steps-grid-10`, `spine-steps-detail-cards` and `callout-hub-20` are different shapes. Render and overflow check done with Playwright at 1080x1350: no overflow or clipping.
+
+## Batch 117 theme tokens (files in `Artifacts/theme-*.html`; colours eyeballed from the source graphics)
+
+| Theme file | Light | Dark | Fonts (free) |
+|---|---|---|---|
+| `theme-framework-orange-ink.html` | bg `#FFFFFF`, text `#14213D`, accent `#E8590C` | bg `#0F1626`, accent `#FF8A3D` | Inter |
+| `theme-journey-teal-gold.html` | bg `#F4F7F6`, text `#0F2A2E`, accent `#0E7C7B` (second accent gold `#C9962B` in the template) | bg `#0B1D20`, accent `#3CC3BF` | Inter |
+| `theme-prompt-rows-orange.html` | bg `#F6F5F0`, text `#1B1B1B`, accent `#F26B1D` (second accent olive `#6B8E23` in the template) | bg `#17140F`, accent `#FF8A3D` | Inter |

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<!--
+  Template: prompt-rows-6
+  Style: warm off-white page, large uppercase title with an orange band on the second line, dashed subtitle box, six numbered rows (icon circle, big number, step name, prompt in italics, description), one promo or follow bar. Theme: prompt-rows-orange
+  Inspired by: "N prompts to build X" step-by-step infographics. Original CSS and placeholder wording; no source people, icons or text reused.
+  Canvas: 1080 x 1350. Swap points: h1 and .band, .sub, .row (number .n, step .st, prompt .pr, description .ds, icon .ic), .promo
+-->
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Prompt Rows 6</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#F6F5F0;--ink:#1B1B1B;--muted:#5E5E5A;--orange:#F26B1D;--olive:#6B8E23;--card:#FFF4EC;--card2:#F2F7E8;--line:#F2C9A8;--line2:#CFDDB0;--font:"Inter",Aptos,"Segoe UI",system-ui,sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#333;display:flex;justify-content:center;padding:32px 0;overflow-x:auto;font-family:var(--font)}
+.slide{position:relative;width:1080px;height:1350px;flex:none;background:var(--bg);color:var(--ink);overflow:hidden;padding:40px 40px 0;text-align:center}
+h1{font:800 58px/1.05 var(--font);text-transform:uppercase;font-style:italic;letter-spacing:-.02em}
+.band{display:inline-block;margin-top:8px;background:var(--orange);color:#fff;padding:2px 36px;border-radius:4px}
+.sub{margin:14px auto 0;width:760px;border:2px dashed #B9B6AA;border-radius:8px;padding:8px 14px;font:700 italic 22px/1.2 var(--font)}
+.rows{position:absolute;left:40px;right:40px;top:280px;display:grid;grid-template-rows:repeat(6,150px);gap:10px}
+.row{display:grid;grid-template-columns:76px 74px 170px 1fr 220px;align-items:center;gap:12px;background:var(--card);border:2px solid var(--line);border-radius:10px;padding:0 16px;text-align:left}
+.row:nth-child(even){background:var(--card2);border-color:var(--line2)}
+.ic{width:70px;height:70px;border-radius:50%;border:4px solid var(--orange);background:#fff}
+.row:nth-child(even) .ic{border-color:var(--olive)}
+.n{font:800 54px/1.25 var(--font);color:var(--orange)}
+.row:nth-child(even) .n{color:var(--olive)}
+.st{font:800 italic 21px/1.15 var(--font);text-transform:uppercase}
+.pr,.ds{font:500 17px/1.35 var(--font);color:var(--ink);overflow:hidden;max-height:128px}
+.pr{font-style:italic;font-weight:600}
+.ds{font-weight:700}
+.pr em,.ds em{display:inline-block;font:700 12px/1 var(--font);font-style:normal;color:#fff;background:var(--orange);border-radius:4px;padding:4px 8px;margin-bottom:6px}
+.row:nth-child(even) em{background:var(--olive)}
+.promo{position:absolute;left:40px;right:40px;top:1244px;height:56px;background:var(--orange);color:#fff;border-radius:6px;display:flex;align-items:center;justify-content:center;font:800 italic 22px/1 var(--font)}
+.follow{position:absolute;left:0;right:0;bottom:0;height:44px;background:#E6F1D4;color:var(--ink);display:flex;align-items:center;justify-content:center;font:600 16px/1 var(--font)}
+</style></head><body>
+<div class="slide">
+  <h1>6 prompts to build<br><span class="band">your thing</span></h1>
+  <p class="sub">One line inviting the reader to start</p>
+  <div class="rows">
+    <div class="row"><span class="ic"></span><span class="n">01</span><span class="st">Step name</span><p class="pr"><em>Prompt:</em><br>"Placeholder prompt text with [brackets] to fill in, written as a single instruction."</p><p class="ds"><em>Description:</em><br>What this step gives you.</p></div>
+    <div class="row"><span class="ic"></span><span class="n">02</span><span class="st">Step name</span><p class="pr"><em>Prompt:</em><br>"Placeholder prompt text with [brackets] to fill in, written as a single instruction."</p><p class="ds"><em>Description:</em><br>What this step gives you.</p></div>
+    <div class="row"><span class="ic"></span><span class="n">03</span><span class="st">Step name</span><p class="pr"><em>Prompt:</em><br>"Placeholder prompt text with [brackets] to fill in, written as a single instruction."</p><p class="ds"><em>Description:</em><br>What this step gives you.</p></div>
+    <div class="row"><span class="ic"></span><span class="n">04</span><span class="st">Step name</span><p class="pr"><em>Prompt:</em><br>"Placeholder prompt text with [brackets] to fill in, written as a single instruction."</p><p class="ds"><em>Description:</em><br>What this step gives you.</p></div>
+    <div class="row"><span class="ic"></span><span class="n">05</span><span class="st">Step name</span><p class="pr"><em>Prompt:</em><br>"Placeholder prompt text with [brackets] to fill in, written as a single instruction."</p><p class="ds"><em>Description:</em><br>What this step gives you.</p></div>
+    <div class="row"><span class="ic"></span><span class="n">06</span><span class="st">Step name</span><p class="pr"><em>Prompt:</em><br>"Placeholder prompt text with [brackets] to fill in, written as a single instruction."</p><p class="ds"><em>Description:</em><br>What this step gives you.</p></div>
+  </div>
+  <div class="promo">Next step or call to action</div>
+  <div class="follow">Follow @yourhandle for more</div>
+</div></body></html>

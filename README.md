@@ -6092,3 +6092,15 @@ Added `faceless-niche-nexlev` (skill), `/faceless-niche-scan` (command) and `Art
 ## GTM Skills subset (23 October 2026)
 
 Installed 58 skills from the Outbound pipeline, Inbound pipeline and Deal acceleration collections of gtmskills.com (`swan-gtm/gtm-skills`, MIT), plus a routing skill `gtm-skills-index`. Licence and manifest: `docs/third-party/gtm-skills/`. Three slugs on the site have no folder in the repo and were not installed. The other six collections were not installed by choice. Scripts are included but never run by installing.
+
+
+## Batch 117 (24 October 2026)
+
+Built from `1d52c41d-iCloud_Photos.zip` (38 images) and three infographics sent inline (McKinsey Influence Model; 6 prompts to build a digital product; 20 AI tools for product marketers). Mostly framework summaries and utility-app cards, so the batch adds three skills and merges the rest.
+
+- 3 new skills: `mckinsey-frameworks-10` (picker for ten McKinsey frameworks with a detailed reference and worked, recomputed arithmetic; the cards' statistics are flagged as unverified), `make-to-n8n-migration` (four steps, mapping table as a gate, exact prompt) and `digital-product-6-prompts` (six prompts verbatim; the allen.store promotion recorded as an advertisement).
+- 3 commands: `/mckinsey-framework`, `/make-to-n8n`, `/digital-product-6`.
+- New reference `product-marketing/references/ai-pmm-tools-20.md` (20 tools mapped to existing skills; synthetic research flagged as hypotheses, not evidence).
+- Merged: seven verified desktop utilities plus two earlier ones into `oss-alternatives` (Steg Cloak recorded as unverified and dual-use), and the eight "skills for 2027" video picks into `ai-skills-roadmap-2026` (unverified).
+- 3 design templates (`framework-lever-board`, `five-stage-column-matrix`, `prompt-rows-6`) and 3 themes (`framework-orange-ink`, `journey-teal-gold`, `prompt-rows-orange`).
+- `Artifacts/operations/workflows-batch-117.html` (4 workflows), `Artifacts/business/batch-117-intake-report.html`, `docs/batch-117-prompts.md`, `scripts/batch117-install.sh` (asks before every step; not run).

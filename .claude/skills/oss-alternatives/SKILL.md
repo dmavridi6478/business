@@ -210,3 +210,23 @@ Stars and licences were read from each repo page. Card star counts are often far
 | `affaan-m/ECC` | see `github-trending-top10-oct5` | MIT | "Complete computer science curriculum" | **Mismatch:** an agent harness (skills, memory, security), verified in Batch 113 |
 
 The mock screenshots on these cards show features the repos do not describe. [Certain] for the three mismatches above. Always open the repo page and read the README before trusting a card.
+
+
+## Batch 117 additions: desktop and utility apps (@martiendejong_dev cards)
+
+Stars and licences were read from each repo page in Batch 117 where reachable (exa rate limits hit; unreachable items are marked). [Certain] on what each repo says about itself; [Guessing] on how well each works for you.
+
+| Repo / app | Does | Licence | Care |
+|---|---|---|---|
+| `LizardByte/Sunshine` | Self-hosted game streaming host for Moonlight clients, 42,575 stars | GPL-3.0 | Opens network ports and handles input from a remote client: use on a trusted LAN or behind a VPN, set a strong PIN |
+| `hluk/CopyQ` | Clipboard history manager with scripting, 12,513 stars | GPL-3.0 | A clipboard manager stores everything you copy, including passwords: exclude password managers, encrypt or limit history |
+| `ShareX/ShareX` | Screen capture, recording, upload automation (Windows), 40,367 stars | GPL-3.0 | Windows only; check where automatic uploads go |
+| `kando-menu/kando` | Circular gesture (pie) launcher menu, 6,511 stars | Other (README is CC-BY-4.0; read the repo licence) | Macros can run arbitrary commands: review any shared menu before importing |
+| `imputnet/cobalt` | No-signup media downloader web service, 45,396 stars | AGPL-3.0 | Downloading from platforms can breach their terms of service and copyright; use only for content you may download. AGPL: publishing a modified self-hosted copy carries source obligations |
+| `GyulyVGC/sniffnet` | Real-time network traffic monitor, 41,680 stars | Apache-2.0 | Packet capture may need elevated rights; monitor only networks you own or administer |
+| `localsend/localsend` | Offline file sharing on the same Wi-Fi, cross-platform, 95,434 stars | Apache-2.0 | Only on trusted networks; confirm the receiving device name before accepting |
+| `mifi/lossless-cut` | Lossless video and audio trimming | GPL-2.0 (verified earlier) | Cuts only at keyframes unless you re-encode |
+| `rustdesk/rustdesk` | Remote desktop, self-hostable | AGPL-3.0 (verified earlier) | Exposes a remote-control surface: strong permanent password, 2FA where offered, restrict the relay server |
+| Steg Cloak | Hides an encrypted message in text with invisible Unicode characters | **Unverified** (repo not located) | Dual-use. Fine for privacy experiments; do not rely on it for secrecy without reading the code, and do not use it to hide data in ways that break an employer's or a platform's rules |
+
+All eight verified repos are alternatives to paid tools only loosely: the cards frame them as "too good to be free". Open licences still carry obligations (GPL and AGPL attribution and source rules if you distribute changes).

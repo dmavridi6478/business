@@ -255,3 +255,8 @@ After gathering information, create `.agents/product-marketing.md` with this str
 - **Ask for examples**: "Can you give me an example?" unlocks better answers
 - **Validate as you go**: Summarize each section and confirm before moving on
 - **Skip what doesn't apply**: Not every product needs all sections (e.g., Personas for B2C)
+
+
+## Reference: AI tools for PMMs
+
+See `references/ai-pmm-tools-20.md` for the 2026 list of twenty AI tools by job, with alternatives and the matching skills in this library.
