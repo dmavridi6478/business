@@ -490,3 +490,20 @@ All three use original CSS and placeholder wording only. Overlap checked: `syste
 | `theme-framework-orange-ink.html` | bg `#FFFFFF`, text `#14213D`, accent `#E8590C` | bg `#0F1626`, accent `#FF8A3D` | Inter |
 | `theme-journey-teal-gold.html` | bg `#F4F7F6`, text `#0F2A2E`, accent `#0E7C7B` (second accent gold `#C9962B` in the template) | bg `#0B1D20`, accent `#3CC3BF` | Inter |
 | `theme-prompt-rows-orange.html` | bg `#F6F5F0`, text `#1B1B1B`, accent `#F26B1D` (second accent olive `#6B8E23` in the template) | bg `#17140F`, accent `#FF8A3D` | Inter |
+
+
+## Batch 118 additions
+
+| Template | Use for | Layout |
+|---|---|---|
+| `equation-multipliers-board.html` | Formula-style framework one-pagers (result = factor x factor x factor x factor) with supporting panels | 1080x1350; serif title, framed top panel with equation chips and captions, three coloured panels, numbered-list panel, red-header table panel, blue footer bar |
+| `prompt-cards-2col-10.html` | "Best prompts for X" ten-card guides | 1080x1350; navy header band with two-tone title, 2x5 grid of cream cards (number circle, yellow name tag, icon block, quoted prompt), credit strip |
+
+Both use original CSS and placeholder wording. Overlap checked: `prompt-rows-6` (six full-width rows), `callout-hub-20` and `tools-20-numbered-grid` are different shapes. Rendered at 1080x1350, no overflow.
+
+## Batch 118 theme tokens (files in `Artifacts/theme-*.html`; colours eyeballed)
+
+| Theme file | Light | Dark | Fonts (free) |
+|---|---|---|---|
+| `theme-multiplier-blue-sky.html` | bg `#F6F7F9`, text `#12151C`, accent `#2F6BFF` (template adds teal, gold, green, orange, red panels; serif title Playfair Display) | bg `#0E1220`, accent `#6C95FF` | Inter |
+| `theme-office-teal-orange.html` | bg `#EEF1F4`, card `#FBF6E9`, text `#14213D`, accent `#0B7F69` (template uses brighter teal `#17C3A0` and orange `#F26B1D` on a navy band) | bg `#0A1628`, accent `#2FD1B0` | Inter |

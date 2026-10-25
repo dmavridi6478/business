@@ -6104,3 +6104,13 @@ Built from `1d52c41d-iCloud_Photos.zip` (38 images) and three infographics sent 
 - Merged: seven verified desktop utilities plus two earlier ones into `oss-alternatives` (Steg Cloak recorded as unverified and dual-use), and the eight "skills for 2027" video picks into `ai-skills-roadmap-2026` (unverified).
 - 3 design templates (`framework-lever-board`, `five-stage-column-matrix`, `prompt-rows-6`) and 3 themes (`framework-orange-ink`, `journey-teal-gold`, `prompt-rows-orange`).
 - `Artifacts/operations/workflows-batch-117.html` (4 workflows), `Artifacts/business/batch-117-intake-report.html`, `docs/batch-117-prompts.md`, `scripts/batch117-install.sh` (asks before every step; not run).
+
+## Batch 118 (25 October 2026)
+
+Built from `4c9201e7-iCloud_Photos.zip` (17 images) and four infographics sent inline (Perplexity for sales research; sales growth; Claude B2B sales stack; Excel/PPT prompts). The Perplexity card duplicates Batch 102 and the B2B stack card has no content, so neither was rebuilt.
+
+- 3 new skills: `unsloth-local-guide` (the card path corrected against the Unsloth docs; `export_to_gguf` replaced by `save_pretrained_gguf`), `sales-growth-4-multipliers` (with arithmetic and cautions) and `excel-ppt-prompts-10` (ten prompts verbatim with a tie-out check each).
+- 2 commands: `/sales-growth-check`, `/excel-ppt-prompt`.
+- Merged: a table of six demo-recording apps with their GitHub repos (searched, stars and licences read) into `oss-alternatives`.
+- 2 design templates (`equation-multipliers-board`, `prompt-cards-2col-10`) and 2 themes (`multiplier-blue-sky`, `office-teal-orange`).
+- `Artifacts/operations/workflows-batch-118.html` (4 workflows), `Artifacts/business/batch-118-intake-report.html`, `docs/batch-118-prompts.md`, `scripts/batch118-install.sh` (asks before every step; not run).

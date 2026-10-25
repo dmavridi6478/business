@@ -230,3 +230,19 @@ Stars and licences were read from each repo page in Batch 117 where reachable (e
 | Steg Cloak | Hides an encrypted message in text with invisible Unicode characters | **Unverified** (repo not located) | Dual-use. Fine for privacy experiments; do not rely on it for secrecy without reading the code, and do not use it to hide data in ways that break an employer's or a platform's rules |
 
 All eight verified repos are alternatives to paid tools only loosely: the cards frame them as "too good to be free". Open licences still carry obligations (GPL and AGPL attribution and source rules if you distribute changes).
+
+
+## Batch 118 additions: record and demo your app (@dotdevs "6 apps to show what your app does in 30 seconds")
+
+Repos searched on GitHub on 25 October 2026 for each app named on the cards. Stars and licences read from the repo pages.
+
+| Card app | What it is | GitHub repo | Stars | Licence | Care |
+|---|---|---|---|---|---|
+| Cap | One-action screen recording with a share link | `CapSoftware/Cap` | 23,648 | Other | Open-source Loom alternative; read the licence terms before commercial use or self-hosting |
+| Screenity | Free screen recorder inside Chrome, no watermark | `alyssaxuu/screenity` | 18,798 | GPL-3.0 | Browser extension: review the permissions it asks for |
+| VHS | Write a terminal demo as a text file; renders the same GIF every time | `charmbracelet/vhs` | 21,195 | MIT | Runs the commands you script: review a tape before running one you did not write |
+| Screen Studio (paid, Mac) | Auto-zoom that follows the cursor | No official repo. Open alternatives: `getopenscreen/openscreen` (4,880 stars, MIT, actively maintained successor to the archived `siddharthvaddem/openscreen`), `focra-app/Focra` (22 stars, unlicensed in the repo metadata), `Razee4315/Vuoom` (21 stars, Apache-2.0, Windows only) | see left | see left | Young projects; the original OpenScreen says it is "not production grade". Test on a throwaway recording |
+| Arcade (paid) | Click-through interactive product tours | No official repo. Alternatives found: `marktolson/runthru` (4 stars, MIT), `hyunghwan/showkit` (0 stars, MIT), `aximcode/demoscript` (MIT, YAML scripted demos), LiveDemo (source-available under FSL-1.1-MIT, not OSI open source) | tiny | see left | Very new, tiny communities, personal projects. Fine to trial, not yet something to run a sales process on. Tours of a logged-in app can capture customer data: blur or use a demo account |
+| Tella (paid) | Record, trim and share a walkthrough | No clear open repo found; use Cap or Screenity | - | - | - |
+
+Rule of thumb from this batch: for a scripted terminal demo use VHS; for a polished screen demo try OpenScreen or Cap; for a clickable tour use a recorded-HTML tool and always mask customer data first.
