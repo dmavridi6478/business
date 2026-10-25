@@ -6114,3 +6114,12 @@ Built from `4c9201e7-iCloud_Photos.zip` (17 images) and four infographics sent i
 - Merged: a table of six demo-recording apps with their GitHub repos (searched, stars and licences read) into `oss-alternatives`.
 - 2 design templates (`equation-multipliers-board`, `prompt-cards-2col-10`) and 2 themes (`multiplier-blue-sky`, `office-teal-orange`).
 - `Artifacts/operations/workflows-batch-118.html` (4 workflows), `Artifacts/business/batch-118-intake-report.html`, `docs/batch-118-prompts.md`, `scripts/batch118-install.sh` (asks before every step; not run).
+
+## Batch 119 (25 October 2026)
+
+Built from three infographics sent inline (a 14-element AI-SEO landing page anatomy; 40 things to install in Claude; 7 principles of powerful storytelling). None contains a verbatim prompt, so the prompts file is original.
+
+- 3 new skills: `ai-seo-landing-page-14` (14 elements with an audit and the claims it gets wrong, such as FAQ rich results and fake freshness), `storytelling-7-principles` (with a truth rule and an audit) and `claude-install-list-40` (all 40 repos checked on GitHub with stars, licences and risk notes; three have moved; advice to install about five at most).
+- 3 commands: `/ai-landing-audit`, `/story-check`, `/tell-story`. A pointer was added to `ai-seo`.
+- 3 design templates (`landing-anatomy-callouts`, `radial-principles-7`, `ide-install-list-40`) and 3 themes (`anatomy-royal-blue`, `story-blue-ink`, `terminal-orange-night`).
+- `Artifacts/operations/workflows-batch-119.html` (3 workflows), `Artifacts/business/batch-119-intake-report.html`, `docs/batch-119-prompts.md`, `scripts/batch119-install.sh` (read-only looks, asks before every step; not run).

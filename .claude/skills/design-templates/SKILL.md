@@ -507,3 +507,22 @@ Both use original CSS and placeholder wording. Overlap checked: `prompt-rows-6` 
 |---|---|---|---|
 | `theme-multiplier-blue-sky.html` | bg `#F6F7F9`, text `#12151C`, accent `#2F6BFF` (template adds teal, gold, green, orange, red panels; serif title Playfair Display) | bg `#0E1220`, accent `#6C95FF` | Inter |
 | `theme-office-teal-orange.html` | bg `#EEF1F4`, card `#FBF6E9`, text `#14213D`, accent `#0B7F69` (template uses brighter teal `#17C3A0` and orange `#F26B1D` on a navy band) | bg `#0A1628`, accent `#2FD1B0` | Inter |
+
+
+## Batch 119 additions
+
+| Template | Use for | Layout |
+|---|---|---|
+| `landing-anatomy-callouts.html` | Annotated page anatomies (a wireframe with numbered callouts) | 1080x1350; serif title with highlighted italic word, subtitle band, browser wireframe in the centre, seven numbered callout cards each side, credit line |
+| `radial-principles-7.html` | Seven-principle frameworks around a quote hub | 1080x1350; bold uppercase two-tone title, three rows (7, 1, 2 / 6, hub, 3 / 5, spare note, 4), each card with ring number, title, rule, why it works, example; blue footer bar |
+| `ide-install-list-40.html` | "N things to install" lists styled as an editor README | 1080x1350; window bar, tab strip, file-tree sidebar with folder counts, large title, five colour-coded groups listing 40 numbered rows, credit bar |
+
+Original CSS and placeholder wording only. Overlap checked: `callout-hub-20` (20 spokes) and `framework-lever-board` (2x2) are different shapes; `radial-principles-7` is the seven-spoke version. Rendered at 1080x1350 with no overflow or clipping.
+
+## Batch 119 theme tokens (files in `Artifacts/theme-*.html`; colours eyeballed)
+
+| Theme file | Light | Dark | Fonts (free) |
+|---|---|---|---|
+| `theme-anatomy-royal-blue.html` | bg `#F6F7FB`, text `#0B0F2A`, accent `#1F2BD6` (template title uses Playfair Display) | bg `#0A0D1F`, accent `#7C86FF` | Inter |
+| `theme-story-blue-ink.html` | bg `#FFFFFF`, text `#0A0A0A`, accent `#1D4ED8`, hub `#CFE6FB` | bg `#090B12`, accent `#6C95FF` | Inter |
+| `theme-terminal-orange-night.html` | bg `#F4F5F8`, text `#10131A`, accent `#C2561B` (the template is dark-first with bright orange `#F2874B`) | bg `#0A0D14`, accent `#F2874B` | Inter + JetBrains Mono |

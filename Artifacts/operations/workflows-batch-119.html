@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Workflows Batch 119</title>
+<style>
+  /* Layout: single column, six workflow panels. Each panel = steps in a row (wraps on narrow screens), gates marked, scorecard below.
+     Type: Aptos (house font) with system fallbacks; title 32pt, headings 14pt, body 11pt; table content aligned top and centre. */
+  :root {
+    --bg:#f6f7f9; --surface:#fff; --fg:#1b2330; --muted:#5a6577; --line:#d9dee6;
+    --accent:#0f5d6b; --accent-soft:#e2f0f2; --gate:#8a5a00; --gate-bg:#fbefd3; --human:#a11d2a; --human-bg:#fbe3e5; --ok:#17703a; --ok-bg:#e3f3e8;
+    --font: Aptos, "Segoe UI Variable Text", "Segoe UI", system-ui, -apple-system, Roboto, sans-serif;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) { --bg:#11161e; --surface:#181f2a; --fg:#e6eaf0; --muted:#9aa5b6; --line:#2c3646; --accent:#6cc3d1; --accent-soft:#17323a; --gate:#f0c261; --gate-bg:#3a2e12; --human:#ff8d98; --human-bg:#3d1a1f; --ok:#6fd18f; --ok-bg:#173824; color-scheme:dark; }
+  }
+  :root[data-theme="dark"] { --bg:#11161e; --surface:#181f2a; --fg:#e6eaf0; --muted:#9aa5b6; --line:#2c3646; --accent:#6cc3d1; --accent-soft:#17323a; --gate:#f0c261; --gate-bg:#3a2e12; --human:#ff8d98; --human-bg:#3d1a1f; --ok:#6fd18f; --ok-bg:#173824; color-scheme:dark; }
+  * { box-sizing:border-box; }
+  body { background:var(--bg); color:var(--fg); font-family:var(--font); font-size:11pt; line-height:1.5; margin:0; padding:28px 16px 64px; }
+  main { max-width:960px; margin-inline:auto; display:flex; flex-direction:column; gap:22px; }
+  header { border-bottom:2px solid var(--accent); padding-bottom:16px; }
+  .eyebrow { font-size:9pt; letter-spacing:.12em; text-transform:uppercase; color:var(--muted); }
+  h1 { font-size:32pt; line-height:1.1; margin:6px 0 8px; }
+  h2 { font-size:14pt; margin:0 0 4px; color:var(--accent); }
+  p { margin:0 0 8px; max-width:78ch; }
+  .lede { color:var(--muted); }
+  .legend { display:flex; flex-wrap:wrap; gap:8px; margin-top:10px; font-size:9.5pt; }
+  .tag { display:inline-block; padding:1px 9px; border-radius:10px; font-weight:700; font-size:9pt; }
+  .t-auto { background:var(--accent-soft); color:var(--accent); } .t-gate { background:var(--gate-bg); color:var(--gate); } .t-human { background:var(--human-bg); color:var(--human); } .t-ok { background:var(--ok-bg); color:var(--ok); }
+  section { background:var(--surface); border:1px solid var(--line); border-radius:6px; padding:18px 20px; min-width:0; }
+  .cmd { font-family:ui-monospace,"SF Mono",Consolas,monospace; font-size:10pt; background:var(--accent-soft); color:var(--accent); padding:1px 8px; border-radius:4px; }
+  .flow { list-style:none; margin:12px 0 10px; padding:0; display:flex; flex-wrap:wrap; gap:10px 0; counter-reset:s; }
+  .flow li { position:relative; flex:1 1 112px; min-width:100px; margin-right:24px; border:1px solid var(--line); border-radius:6px; padding:10px 10px 9px; background:var(--bg); counter-increment:s; }
+  .flow li::before { content:counter(s); position:absolute; top:-9px; left:8px; background:var(--accent); color:#fff; font-size:9pt; font-weight:700; width:20px; height:20px; border-radius:50%; display:grid; place-items:center; }
+  .flow li::after { content:"→"; position:absolute; right:-22px; top:50%; transform:translateY(-50%); color:var(--muted); font-weight:700; }
+  .flow li:last-child { margin-right:0; } .flow li:last-child::after { content:""; }
+  .flow li b { display:block; font-size:10.5pt; margin-bottom:2px; }
+  .flow li span { font-size:9.5pt; color:var(--muted); display:block; }
+  .flow li.gate { border-color:var(--gate); background:var(--gate-bg); } .flow li.human { border-color:var(--human); background:var(--human-bg); }
+  .loopback { font-size:9.5pt; color:var(--muted); border-left:3px solid var(--accent); padding-left:10px; margin:6px 0 10px; }
+  .tw { overflow-x:auto; border:1px solid var(--line); border-radius:4px; margin-top:8px; }
+  table { border-collapse:collapse; width:100%; min-width:520px; font-size:10pt; }
+  th,td { padding:7px 9px; border-bottom:1px solid var(--line); text-align:center; vertical-align:top; }
+  th { background:var(--accent-soft); font-size:9.5pt; } tr:last-child td { border-bottom:0; }
+  @media (max-width:640px) { .flow li { margin-right:0; flex-basis:100%; } .flow li::after { content:"↓"; right:auto; left:50%; top:auto; bottom:-17px; transform:translateX(-50%); } }
+</style></head><body><main><header><div class="eyebrow">Batch 119 · 25 October 2026 · operations</div><h1>Workflows pack</h1><p class="lede">Three workflows built from this batch and wired to skills and commands in this library. Gates mark checks to pass before moving on; red steps need a human.</p><div class="legend"><span class="tag t-auto">Automatable</span><span class="tag t-gate">Gate</span><span class="tag t-human">Human decision</span></div></header><section><h2>1. AI landing page audit and ship</h2><p>Run with <span class="cmd">/ai-landing-audit</span>. Source: the 14-element anatomy graphic.</p><ol class="flow"><li class=""><b>Fetch raw HTML</b><span>Not the rendered page</span></li><li class=""><b>Score 14 elements</b><span>Present, partial, missing</span></li><li class="gate"><b>Truth check</b><span>Author, logos, numbers, dates</span></li><li class=""><b>Fix top three</b><span>Answer block, schema, proof</span></li><li class="gate"><b>Validate schema</b><span>Matches visible text</span></li><li class="human"><b>Publish</b><span>Real last-updated date</span></li><li class=""><b>Re-check in AI search</b><span>Five target questions, before and after</span></li></ol><p class="loopback">No evidence in the source that the structure earns citations. Measure before and after, and do not fake a freshness date.</p><div class="tw"><table><tr><th>Scorecard</th><th>Elements present</th><th>Truth issues</th><th>Answer block words</th><th>Citations before and after</th></tr><tr><td>Owner</td><td>You</td><td>You</td><td>You</td><td>You</td></tr></table></div></section><section><h2>2. Claude add-on install triage</h2><p>Run with prompt 4 in <code>docs/batch-119-prompts.md</code>. Source: the 40-things list and the <code>claude-install-list-40</code> catalogue.</p><ol class="flow"><li class=""><b>List the jobs you do</b><span>Not the tools you want</span></li><li class=""><b>Shortlist at most 5</b><span>One per job</span></li><li class="gate"><b>Read README and licence</b><span>Hooks, permissions, last commit</span></li><li class="gate"><b>Sandbox</b><span>Throwaway branch or profile</span></li><li class=""><b>Measure</b><span>Tokens, time, errors</span></li><li class="human"><b>Keep or remove</b><span>Remove what you do not use</span></li><li class=""><b>Quarterly stocktake</b><span>Run skill-stocktake</span></li></ol><p class="loopback">Three of the 40 are memory systems, several are token savers, and a few repos have moved. Installing all of them adds context and risk without a gain you can measure.</p><div class="tw"><table><tr><th>Scorecard</th><th>Jobs listed</th><th>Add-ons kept</th><th>Tokens saved</th><th>Add-ons removed</th></tr><tr><td>Owner</td><td>You</td><td>You</td><td>You</td><td>You</td></tr></table></div></section><section><h2>3. Story drafting loop</h2><p>Run with <span class="cmd">/tell-story</span> then <span class="cmd">/story-check</span>. Source: the 7 principles graphic.</p><ol class="flow"><li class=""><b>State the point</b><span>One sentence plus the decision</span></li><li class=""><b>Gather true facts</b><span>Scene, mistake, cost, change</span></li><li class=""><b>Draft</b><span>Tension first</span></li><li class="gate"><b>Check 7 principles</b><span>Score 0 to 2 each</span></li><li class="gate"><b>Truth and permission</b><span>No invented scene; names cleared</span></li><li class="human"><b>Read aloud</b><span>Cut anything that is not the point</span></li><li class=""><b>Publish and note replies</b><span>Decisions made</span></li></ol><p class="loopback">Do not invent a scene or a quote to hit a principle, and keep the stakes honest.</p><div class="tw"><table><tr><th>Scorecard</th><th>Score (of 14)</th><th>Placeholders left</th><th>Permission cleared</th><th>Replies</th></tr><tr><td>Owner</td><td>You</td><td>You</td><td>You</td><td>You</td></tr></table></div></section></main></body></html>

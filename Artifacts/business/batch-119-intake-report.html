@@ -1,0 +1,93 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Batch 119 Intake Report</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<style>
+  /* Layout: single-column formal report, 880px measure; tables scroll inside their own wrappers.
+     Palette: ink-blue neutrals, one deep teal accent, semantic green/amber/red for status only.
+     Type: Aptos (the owner's house font) with system fallbacks; title 32pt, headings 14pt, body 11pt. */
+  :root {
+    --bg: #f6f7f9; --surface: #ffffff; --fg: #1b2330; --muted: #5a6577; --line: #d9dee6;
+    --accent: #0f5d6b; --accent-soft: #e2f0f2;
+    --ok: #17703a; --ok-bg: #e3f3e8; --warn: #8a5a00; --warn-bg: #fbefd3; --bad: #a11d2a; --bad-bg: #fbe3e5;
+    --code-bg: #eef1f5;
+    --font: Aptos, "Segoe UI Variable Text", "Segoe UI", system-ui, -apple-system, Roboto, sans-serif;
+    --mono: ui-monospace, "SF Mono", Consolas, monospace;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #11161e; --surface: #181f2a; --fg: #e6eaf0; --muted: #9aa5b6; --line: #2c3646;
+      --accent: #6cc3d1; --accent-soft: #17323a;
+      --ok: #6fd18f; --ok-bg: #173824; --warn: #f0c261; --warn-bg: #3a2e12; --bad: #ff8d98; --bad-bg: #3d1a1f;
+      --code-bg: #0e131a; color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #11161e; --surface: #181f2a; --fg: #e6eaf0; --muted: #9aa5b6; --line: #2c3646;
+    --accent: #6cc3d1; --accent-soft: #17323a;
+    --ok: #6fd18f; --ok-bg: #173824; --warn: #f0c261; --warn-bg: #3a2e12; --bad: #ff8d98; --bad-bg: #3d1a1f;
+    --code-bg: #0e131a; color-scheme: dark;
+  }
+  * { box-sizing: border-box; }
+  body { background: var(--bg); color: var(--fg); font-family: var(--font); font-size: 11pt; line-height: 1.55; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); padding-block: 28px 64px; }
+  main { max-width: 880px; margin-inline: auto; display: flex; flex-direction: column; gap: 28px; }
+  header { display: flex; flex-direction: column; gap: 8px; border-bottom: 2px solid var(--accent); padding-bottom: 18px; }
+  .eyebrow { font-size: 9pt; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
+  h1 { font-size: 32pt; line-height: 1.1; margin: 0; font-weight: 700; text-wrap: balance; }
+  h2 { font-size: 14pt; margin: 0 0 10px; font-weight: 700; color: var(--accent); text-wrap: balance; }
+  p { margin: 0 0 10px; max-width: 75ch; }
+  section { background: var(--surface); border: 1px solid var(--line); border-radius: 6px; padding: 20px 22px; min-width: 0; }
+  .lede { font-size: 11pt; color: var(--muted); max-width: 70ch; margin: 0; }
+  .truth { border-left: 4px solid var(--bad); background: var(--bad-bg); padding: 12px 16px; border-radius: 0 6px 6px 0; }
+  .truth p:last-child { margin-bottom: 0; }
+  .tw { overflow-x: auto; margin-block: 8px 4px; border: 1px solid var(--line); border-radius: 4px; }
+  table { border-collapse: collapse; width: 100%; min-width: 720px; font-size: 10pt; }
+  th, td { padding: 8px 10px; border-bottom: 1px solid var(--line); text-align: center; vertical-align: top; }
+  th { background: var(--accent-soft); color: var(--fg); font-weight: 700; font-size: 9.5pt; }
+  tr:last-child td { border-bottom: 0; }
+  td.l, th.l { text-align: center; } /* house rule: table content aligned top and centre */
+  .st { display: inline-block; padding: 1px 8px; border-radius: 10px; font-size: 9pt; font-weight: 700; white-space: nowrap; }
+  .st.ok { background: var(--ok-bg); color: var(--ok); } .st.warn { background: var(--warn-bg); color: var(--warn); } .st.bad { background: var(--bad-bg); color: var(--bad); }
+  .sw { display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 10px; margin-block: 8px; }
+  .sw div { border: 1px solid var(--line); border-radius: 4px; overflow: hidden; font-size: 9pt; text-align: center; }
+  .sw i { display: block; height: 44px; }
+  .sw span { display: block; padding: 4px 6px; font-family: var(--mono); }
+  .prompt { position: relative; margin-block: 10px; }
+  .prompt pre { margin: 0; white-space: pre-wrap; background: var(--code-bg); border: 1px solid var(--line); border-radius: 4px; padding: 12px 84px 12px 12px; font-family: var(--mono); font-size: 9.5pt; line-height: 1.5; }
+  .prompt b { display: block; font-family: var(--font); font-size: 10pt; margin-bottom: 4px; }
+  .prompt button { position: absolute; top: 30px; right: 8px; font: inherit; font-size: 9pt; padding: 4px 10px; border-radius: 4px; border: 1px solid var(--accent); background: var(--surface); color: var(--accent); cursor: pointer; }
+  .prompt button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  ul { margin: 0 0 10px; padding-left: 20px; } li { margin-bottom: 4px; max-width: 75ch; }
+  code { font-family: var(--mono); font-size: 9.5pt; background: var(--code-bg); padding: 1px 4px; border-radius: 3px; }
+  footer { color: var(--muted); font-size: 9.5pt; }
+</style>
+<style>
+ figure{margin:0;text-align:center} figure img{width:100%;border:1px solid var(--line);border-radius:4px;display:block} figcaption{font-size:8.5pt;color:var(--muted);margin-top:4px}
+ .thumbs{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px;margin-top:10px}
+ pre{white-space:pre-wrap;word-break:break-word;background:var(--code-bg);border:1px solid var(--line);border-radius:4px;padding:12px;font:10pt/1.5 var(--mono);margin:8px 0;overflow-x:auto}
+ details{border:1px solid var(--line);border-radius:4px;padding:8px 12px;margin-top:8px} summary{cursor:pointer;font-weight:700}
+ code{font-family:var(--mono);font-size:9.5pt;background:var(--code-bg);padding:0 4px;border-radius:3px}
+ ul{margin:0 0 10px;padding-left:20px;max-width:78ch} li{margin-bottom:4px}
+ td code{white-space:normal;word-break:break-word}
+</style>
+<style>main > section, main > header {min-width:0} p, li, code {overflow-wrap:anywhere}</style>
+<main>
+<header><div class="eyebrow">Batch 119 · 25 October 2026 · intake</div><h1>Batch 119 Intake Report</h1><p>Three inline infographics processed with the seven-step intake. Result: three new skills (one is a 40-item catalogue), three commands, three templates, three themes, three workflows.</p></header>
+<section><h2>1. Executive findings</h2><ul>
+<li><b>[Certain]</b> I did not install the 40 add-ons and I recommend you do not. Each skill, plugin and MCP server loads context every session and is third-party code with your permissions. The list contains three memory systems, several token-savers and five workflow frameworks that do the same job. I built a catalogue with a verified path, stars, licence and risk note per item, and a rule: one add-on per job, at most about five, tested on a throwaway branch.</li>
+<li><b>[Certain]</b> I checked all 40 on GitHub. Three have moved or redirect: <code>beads</code> (now gastownhall/beads), <code>graphify</code> (now Graphify-Labs/graphify) and <code>headroom</code> (now headroomlabs-ai/headroom). Stars on the card were not shown, so none could be compared. Three repo pages did not return a star count, so I did not quote one.</li>
+<li><b>[Certain]</b> Specific risks on the list: cc-switch says only ccswitch.io is official, so impersonation downloads are a real risk; claude-code-router and codex-plugin-cc send your code to other providers; firecrawl is AGPL-3.0; the system-prompts repo collects commercial products' prompts, some likely extracted without owners' consent; claude-mem stores your session content and overlaps the Cognee memory you already use.</li>
+<li><b>[Likely]</b> The "Million-Dollar Landing Page" is a sensible checklist with an unproven title. The graphic gives no evidence that the structure earns AI citations or revenue. Two points are wrong or risky: [Certain] since 2023 Google shows FAQ rich results only for well-known government and health sites, so FAQ markup on a commercial page will not get the rich result; and a "last updated" stamp changed without real edits is deceptive. Author, logos and proof must be real and permitted.</li>
+<li><b>[Certain]</b> The storytelling graphic is solid craft advice (tension, a human moment, images, the audience, stakes, a closed loop, a decision). The Steve Jobs quote at its centre is attributed without a source I could verify, and principle 5 (stakes) becomes manipulation if the loss is manufactured. I added a truth rule and an audit.</li>
+<li><b>[Certain]</b> There is no verbatim prompt in any of the three graphics, so the six prompts in the prompts file are original, built from their content.</li>
+</ul></section>
+<section><h2>2. Source inventory and what was built</h2><div class="tw"><table><tr><th>Source</th><th>Content</th><th>Result</th></tr><tr><td>Ankit Sharma The Million-Dollar Landing Page</td><td>14 elements of an AI-SEO landing page</td><td>Skill <code>ai-seo-landing-page-14</code>; <code>/ai-landing-audit</code>; pointer in <code>ai-seo</code>; template <code>landing-anatomy-callouts</code>; theme <code>anatomy-royal-blue</code>; workflow 1</td></tr><tr><td>Charlie Hills 40 Things to Install in Claude</td><td>40 repos in five groups</td><td>Skill <code>claude-install-list-40</code> (catalogue with checks); template <code>ide-install-list-40</code>; theme <code>terminal-orange-night</code>; workflow 2; install script (read-only looks)</td></tr><tr><td>Natan Mohart 7 Principles of Powerful Storytelling</td><td>Seven principles with examples</td><td>Skill <code>storytelling-7-principles</code>; <code>/story-check</code>; <code>/tell-story</code>; template <code>radial-principles-7</code>; theme <code>story-blue-ink</code>; workflow 3</td></tr></table></div></section>
+<section><h2>3. The 40 repos by group (checked 25 October 2026)</h2><p>Full table with stars, licences and risk notes is in <code>skills/claude-install-list-40/SKILL.md</code>. Stars change daily.</p><div class="tw"><table><tr><th>Group</th><th>Count</th><th>Examples with stars</th></tr><tr><td>Workflows</td><td>8</td><td>superpowers 304,936; ECC 288,683; ponytail 175,786; gstack 137,672; learn-claude-code 79,158; Archon 23,759</td></tr><tr><td>Skills</td><td>8</td><td>mattpocock/skills 302,818; anthropics/skills 183,653; ui-ux-pro-max 140,305; addyosmani/agent-skills 110,258</td></tr><tr><td>Memory and context</td><td>7</td><td>graphify 134,473; codegraph 75,278; agentmemory 29,883; beads 28,191 (claude-mem, repomix, planning-with-files: star count not returned)</td></tr><tr><td>Tools and connectors</td><td>10</td><td>firecrawl 195,233; cc-switch 148,446; awesome-mcp-servers 89,670; context7 63,638; multica 53,739; playwright-mcp 38,605; claude-code-router 37,839; github-mcp-server 33,942; serena 30,684; vibe-kanban 28,447</td></tr><tr><td>Prompts and usage</td><td>7</td><td>caveman 114,991; rtk 84,497; headroom 77,786; best-practice 67,980; codex-plugin-cc 34,565; claude-hud 28,838; system-prompts repo (star count not returned)</td></tr></table></div></section>
+<section><h2>4. Where I disagree with the source material</h2><ul>
+<li>I disagree that a list of 40 is something to install. The risk is context bloat, overlapping tools that conflict, and unvetted code with access to your files. I recommend one add-on per job and a measurement.</li>
+<li>I disagree with "Million-Dollar" as a promise. The risk is publishing hype claims, fake freshness or unpermitted logos in the hope of AI citations. I made the audit check truth first.</li>
+<li>I disagree with using stakes to push a decision. The risk is manufactured urgency. The skill requires a real, specific cost.</li></ul></section>
+<section><h2>5. Not done, and why</h2><ul><li>Nothing was installed; <code>scripts/batch119-install.sh</code> only offers read-only clones and was not run.</li><li>No agents or connectors: nothing in the batch is an agent guide or a connector reference.</li><li>No n8n workflow: none of the three workflows is an automation. Say if you want one (for example a weekly AI-citation check of five target questions).</li></ul></section>
+<section><h2>6. Deliverables</h2><div class="tw"><table><tr><th>Type</th><th>Items</th></tr><tr><td>Skills</td><td><code>ai-seo-landing-page-14</code>, <code>storytelling-7-principles</code>, <code>claude-install-list-40</code></td></tr><tr><td>Commands</td><td><code>/ai-landing-audit</code>, <code>/story-check</code>, <code>/tell-story</code></td></tr><tr><td>Merged skills</td><td><code>ai-seo</code>, <code>design-templates</code></td></tr><tr><td>Templates</td><td><code>landing-anatomy-callouts</code>, <code>radial-principles-7</code>, <code>ide-install-list-40</code></td></tr><tr><td>Themes</td><td><code>theme-anatomy-royal-blue</code>, <code>theme-story-blue-ink</code>, <code>theme-terminal-orange-night</code></td></tr><tr><td>Workflows</td><td><code>Artifacts/operations/workflows-batch-119.html</code></td></tr><tr><td>Prompts</td><td><code>docs/batch-119-prompts.md</code> (six original plain-text prompts)</td></tr><tr><td>Install script</td><td><code>scripts/batch119-install.sh</code> (asks before every step; not run)</td></tr></table></div></section>
+<section><h2>7. Open decisions for you</h2><ul><li>Which jobs do you actually want add-ons for? Name them and I will shortlist one per job.</li><li>Do you want me to audit one of your real landing pages with <code>/ai-landing-audit</code>?</li><li>Do you want a weekly n8n check of AI-search citations for five target questions? It needs credentials you create.</li></ul></section>
+<footer>Stars and licences read from GitHub pages on 25 October 2026.</footer>
+</main>
+</body></html>
