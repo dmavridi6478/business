@@ -15,7 +15,8 @@
     "human-resources@knowledge-work-plugins": true,
     "design@knowledge-work-plugins": true,
     "operations@knowledge-work-plugins": true,
-    "small-business@knowledge-work-plugins": true
+    "small-business@knowledge-work-plugins": true,
+    "power-automate@power-platform-skills": true
   },
   "extraKnownMarketplaces": {
     "knowledge-work-plugins": {
@@ -28,6 +29,12 @@
       "source": {
         "source": "github",
         "repo": "anthropics/claude-plugins-official"
+      }
+    },
+    "power-platform-skills": {
+      "source": {
+        "source": "github",
+        "repo": "microsoft/power-platform-skills"
       }
     }
   },
