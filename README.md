@@ -6031,3 +6031,17 @@ Not done (needs you): plugin installs (`/plugin install paypal@claude-plugins-of
 **Source problems:** no results data on any image; thresholds ($10k/mo, 14 and 7 days) are the authors' rules of thumb; the PMP sheet's DPMO and make-or-buy lines need care; tool logos on the growth card were read from small icons.
 
 **Not done:** no connector installed (Firecrawl, Webflow, PostHog, Adspirer, Windsor.ai need your sign-in; Vercel half-connected; Perplexity has no connector); `.mcp.json` unchanged; n8n workflows not published; Cowork schedules not created; no install script (nothing to run on your machine).
+
+## Batch 108 — iCloud Photos, one archive (5 images; 26 October 2026)
+
+**Report:** Batch 108 Intake Report (`Artifacts/business/batch-112-intake-report.html`; the published link is in the pull request). Action plan: `docs/batch-112-action-plan.md`.
+
+**Sources:** five @sitetusk GitHub repo cards: FreeCAD, ossu/computer-science, jq, How-To-Secure-A-Linux-Server, FreshRSS. The images contain no prompts, workflows, agents or connectors.
+
+**Added:** skills `sitetusk-free-tools-5`, `jq-json-cookbook` (12 recipes run on jq 1.7), `linux-server-hardening-guide`; commands `/free-tool-pick`, `/jq-filter`, `/harden-server`; design template `repo-card-stone-teal`; user-run `scripts/batch112-install.sh`.
+
+**Already existed, not duplicated:** FreshRSS was in `dev-repos-to-clone` and batch 103 (AGPL-3.0); OSSU's data-science sibling was in `data-ai-github-25`.
+
+**Source problems:** one sentence per card, so no maintenance or security assessment; I did not read the Linux guide's chapters (the skill gives general safe practice and says so); version and funding badges are one-day snapshots.
+
+**Not done:** nothing installed or run; no connector changed; no n8n workflow (nothing in the images called for one).

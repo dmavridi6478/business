@@ -1,0 +1,91 @@
+<title>Batch 108 Intake Report</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<style>
+:root{--bg:#faf8f4;--card:#ffffff;--ink:#1b1a17;--muted:#625d54;--line:#ddd6c9;--accent:#b5420f;--head:#e9e2d4;--code:#f1ece1;--ok:#2d6a3e;--warn:#9a5a00}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#15130f;--card:#1e1b16;--ink:#f1ece0;--muted:#a89f8f;--line:#3a352c;--accent:#ff8a57;--head:#2a261f;--code:#26221b;--ok:#8fd69c;--warn:#f0b35a;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#15130f;--card:#1e1b16;--ink:#f1ece0;--muted:#a89f8f;--line:#3a352c;--accent:#ff8a57;--head:#2a261f;--code:#26221b;--ok:#8fd69c;--warn:#f0b35a;color-scheme:dark}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Aptos,"Segoe UI",Calibri,Arial,sans-serif;font-size:11pt;line-height:1.55;padding-block:32px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.wrap{max-width:980px;margin:0 auto}
+h1{font-size:32pt;line-height:1.08;margin:0 0 6px;text-wrap:balance}
+h2{font-size:14pt;margin:30px 0 10px;padding-bottom:6px;border-bottom:2px solid var(--accent)}
+h3{font-size:11pt;margin:18px 0 6px}
+.meta{color:var(--muted);margin:0 0 18px}
+p{margin:8px 0;max-width:78ch}
+.scroll{overflow-x:auto;border:1px solid var(--line);border-radius:6px;background:var(--card)}
+table{border-collapse:collapse;width:100%;min-width:640px;font-size:11pt}
+th{background:var(--head);font-weight:700}
+th,td{border:1px solid var(--line);padding:7px 10px;text-align:center;vertical-align:top}
+td.l{text-align:left}
+.pr{background:var(--code);border:1px solid var(--line);border-radius:6px;padding:10px 12px 10px;margin:8px 0;position:relative;white-space:pre-wrap;word-break:break-word;font-family:"Cascadia Mono",Consolas,monospace;font-size:10pt}
+.pr button{float:right;margin:0 0 6px 10px;font:inherit;font-size:10pt;font-family:Aptos,"Segoe UI",Arial,sans-serif;background:var(--card);color:var(--ink);border:1px solid var(--line);border-radius:6px;padding:2px 10px;cursor:pointer}
+.pr button:focus-visible{outline:2px solid var(--accent)}
+.lab{font-weight:700;margin-top:14px}
+.tag{display:inline-block;border:1px solid var(--line);border-radius:12px;padding:0 9px;font-size:10pt;background:var(--card)}
+.ok{color:var(--ok);font-weight:700}.warn{color:var(--warn);font-weight:700}
+ul{margin:6px 0;padding-left:22px}li{margin:3px 0;max-width:78ch}
+code{font-family:"Cascadia Mono",Consolas,monospace;font-size:10pt;background:var(--code);padding:0 4px;border-radius:3px}
+</style>
+<div class="wrap">
+<h1>Batch 108 Intake Report</h1>
+<p class="meta">iCloud Photos archive &middot; 5 images &middot; 26 October 2026 &middot; repository dmavridi6478/business, branch claude/brave-fermi-y2txcn</p>
+
+<h2>1. Executive summary</h2>
+<p>The archive holds five JPEG repo cards from the @sitetusk carousel: FreeCAD, ossu/computer-science, jq, How-To-Secure-A-Linux-Server and FreshRSS. Each card is a screenshot of a README plus one sentence. There are no prompts, workflows, agents or connectors in them, so the work is skills, commands, a user-run install script and one design template.</p>
+<p><b>The uncomfortable part:</b> a one-sentence card tells you nothing about whether a project is maintained, safe or right for you. I verified existence and licences from each repository itself and tested every jq recipe I wrote; I did not assess maintenance or security, and I did not read the Linux guide's chapters.</p>
+
+<h2>2. What was found and built</h2>
+<div class="scroll"><table>
+<thead><tr><th>Repository</th><th>Purpose (per card)</th><th>Licence (read from repo)</th><th>Output</th></tr></thead>
+<tbody>
+<tr><td>FreeCAD/FreeCAD</td><td>Parametric 3D modeler</td><td>LGPL-2.1</td><td>Entry in <code>sitetusk-free-tools-5</code></td></tr>
+<tr><td>ossu/computer-science</td><td>Self-taught computer science curriculum</td><td>MIT (repo); linked courses have own terms</td><td>Same skill; about 2 years at about 20 hours a week per its README</td></tr>
+<tr><td>jqlang/jq</td><td>Command-line JSON processor</td><td>MIT</td><td>Skill <code>jq-json-cookbook</code> (12 recipes run on jq 1.7), command <code>/jq-filter</code></td></tr>
+<tr><td>imthenachoman/How-To-Secure-A-Linux-Server</td><td>Hardening guide</td><td>CC BY-SA 4.0</td><td>Skill <code>linux-server-hardening-guide</code>, command <code>/harden-server</code> (advice only)</td></tr>
+<tr><td>FreshRSS/FreshRSS</td><td>Self-hosted feed reader</td><td>AGPL-3.0</td><td>Same index skill; already in batch 103 and <code>dev-repos-to-clone</code></td></tr>
+</tbody></table></div>
+<p>Also created: command <code>/free-tool-pick</code>, design template <code>Artifacts/templates/repo-card-stone-teal.html</code> (rendered at 1280 light, 1280 dark and 390 px, no overflow; wordmark is a placeholder), user-run <code>scripts/batch112-install.sh</code> (syntax checked, not run), and <code>docs/batch-112-action-plan.md</code>.</p>
+
+<h2>3. Prompts in plain text (copy and paste)</h2>
+<p>The images contain no prompts. These invoke the new commands.</p>
+<div class="pr" data-c><button>Copy</button>/free-tool-pick I want to learn computer science without a degree</div>
+<div class="pr" data-c><button>Copy</button>/jq-filter total of paid orders per customer from orders.json</div>
+<div class="pr" data-c><button>Copy</button>/harden-server small Ubuntu 24.04 VPS running a web app, no test copy yet</div>
+
+<h2>4. Verification performed</h2>
+<ul>
+<li>All five repositories confirmed to exist with <code>git ls-remote</code>.</li>
+<li>Licences read from each repository's licence file (FreeCAD LICENSE, OSSU LICENSE, jq COPYING, the Linux guide LICENSE.txt, FreshRSS LICENSE.txt).</li>
+<li>Twelve jq recipes run against sample JSON with jq 1.7; outputs recorded in the skill (for example sum of paid orders 200.5, group totals Ann 200.5 and Bo 40, CSV rows, exit code 0 from <code>-e</code>).</li>
+<li>OSSU duration and the FreshRSS Docker option read from their READMEs.</li>
+</ul>
+
+<h2>5. Critique and risks</h2>
+<ul>
+<li><b>Cards are marketing, not assessment.</b> Check recent commits and open issues before depending on any of them.</li>
+<li><b>FreshRSS is a server you must patch and back up</b>, and AGPL-3.0 means offering a modified copy over a network requires offering its source.</li>
+<li><b>The hardening guide can lock you out.</b> The skill gives general safe practice (test machine, snapshot, second session, one change at a time); it does not summarise chapters I did not read.</li>
+<li><b>OSSU courses are third-party.</b> Content can move or require payment for certificates.</li>
+<li><b>Badges are one-day snapshots</b> (FreeCAD release v1.1.4, FreshRSS 41.27 EUR a week).</li>
+</ul>
+
+<h2>6. Not done and next steps</h2>
+<div class="scroll"><table>
+<thead><tr><th>Item</th><th>Reason</th><th>Your step</th></tr></thead>
+<tbody>
+<tr><td>Install FreeCAD, jq or FreshRSS</td><td>The cloud session cannot install on your computer</td><td>Run <code>scripts/batch112-install.sh</code> locally; it asks before each step</td></tr>
+<tr><td>Harden a server</td><td>Advice only; no server access</td><td>Plan with <code>/harden-server</code>, apply to a test machine first</td></tr>
+<tr><td>Connectors and workflows</td><td>Nothing in the images called for them</td><td>None</td></tr>
+</tbody></table></div>
+</div>
+<script>
+document.querySelectorAll('[data-c]').forEach(function(b){
+  var btn=b.querySelector('button');
+  btn.addEventListener('click',function(){
+    var t=b.innerText.replace(/^Copy\s*/,'').replace(/^\d+\.\s/,'');
+    var done=function(){btn.textContent='Copied';setTimeout(function(){btn.textContent='Copy'},1500)};
+    try{navigator.clipboard.writeText(t).then(done,function(){sel(b)})}catch(e){sel(b)}
+  });
+});
+function sel(el){var r=document.createRange();r.selectNodeContents(el);var s=getSelection();s.removeAllRanges();s.addRange(r)}
+</script>
