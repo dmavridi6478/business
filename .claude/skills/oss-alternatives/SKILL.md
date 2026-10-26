@@ -246,3 +246,18 @@ Repos searched on GitHub on 25 October 2026 for each app named on the cards. Sta
 | Tella (paid) | Record, trim and share a walkthrough | No clear open repo found; use Cap or Screenity | - | - | - |
 
 Rule of thumb from this batch: for a scripted terminal demo use VHS; for a polished screen demo try OpenScreen or Cap; for a clickable tour use a recorded-HTML tool and always mask customer data first.
+
+
+## Batch 120 additions: @replace.so "6 GitHub repos so good they shouldn't be free" (five cards seen)
+
+Repos looked up on GitHub on 26 October 2026; the cover says six, five cards were in the batch.
+
+| Repo | Does | Stars | Licence | Replaces (card) | Care |
+|---|---|---|---|---|---|
+| `milind-soni/OpenMausBot` | Local-first chat app of AI bots, each an agent running on your claude, codex or grok CLI, with its own computer and connected apps | 5,599 on the card (page count not read) | Apache-2.0 | Closed personal-agent apps | Days old (the repo says it was formerly OpenGrokBot and is not affiliated with the vendors it compares itself to). Gives agents a desktop, a VM or, with opt-in, your own computer, and 500+ apps through a connector service. Run it in a VM with minimal connectors until you have read the source |
+| `openreplay/openreplay` | Self-hosted session replay, co-browsing and product analytics | 13,048 | Other (read the licence) | Hosted session-replay tools | Records what users do on your site: consent, privacy notice and masking of sensitive fields are your responsibility |
+| `slopus/happy` | One app to run Claude, Codex and Grok sessions across devices, reusing the subscriptions you pay for | 24,323 | MIT | Single-vendor coding apps | Remote control of coding agents on your machine: check how sessions are encrypted and who can reach them; 1,081 open issues |
+| `Foundry376/Mailspring` | Open-source desktop mail client for Mac, Windows, Linux | 17,937 | GPL-3.0 | Paid mail clients | Some features are paid; mail credentials live in the app, so install only from the official site |
+| `healthchecks/healthchecks` | Cron job and background task monitoring with alerts | 10,450 | BSD-3-Clause | Hosted cron monitors | A good small tool; self-hosting means you run the alerting too, and a monitor that fails silently needs its own monitor |
+
+For pgvector (`pgvector/pgvector`, 23,483 stars, PostgreSQL licence) see `pgvector-quickstart`.

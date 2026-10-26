@@ -526,3 +526,20 @@ Original CSS and placeholder wording only. Overlap checked: `callout-hub-20` (20
 | `theme-anatomy-royal-blue.html` | bg `#F6F7FB`, text `#0B0F2A`, accent `#1F2BD6` (template title uses Playfair Display) | bg `#0A0D1F`, accent `#7C86FF` | Inter |
 | `theme-story-blue-ink.html` | bg `#FFFFFF`, text `#0A0A0A`, accent `#1D4ED8`, hub `#CFE6FB` | bg `#090B12`, accent `#6C95FF` | Inter |
 | `theme-terminal-orange-night.html` | bg `#F4F5F8`, text `#10131A`, accent `#C2561B` (the template is dark-first with bright orange `#F2874B`) | bg `#0A0D14`, accent `#F2874B` | Inter + JetBrains Mono |
+
+
+## Batch 120 additions
+
+| Template | Use for | Layout |
+|---|---|---|
+| `cowork-prompt-grid-10.html` | "10 prompts that save N hours" guides | 1080x1350; logo chip, three-line title with an orange last line, 3x3 grid of white cards (number circle, icon block, bold title, prompt text) plus one wide tenth card, outlined newsletter pill |
+| `use-case-columns-50.html` | "N use cases" reference lists | 1080x1350; bold title with an accent pill, three tall outlined columns in blue, amber and purple holding 17, 17 and 16 numbered entries, follow bar |
+
+Original CSS and placeholder wording only. Overlap checked: `prompt-grid-9-olive` (nine cards), `prompt-cards-2col-10` (2x5) and `tools-20-numbered-grid` are different shapes. Rendered at 1080x1350, no overflow.
+
+## Batch 120 theme tokens (files in `Artifacts/theme-*.html`; colours eyeballed)
+
+| Theme file | Light | Dark | Fonts (free) |
+|---|---|---|---|
+| `theme-cowork-orange-cream.html` | bg `#FBF3EA`, text `#14110F`, accent `#C84A08` (template uses `#E8590C`) | bg `#16110C`, accent `#FF8A3D` | Inter + Playfair Display |
+| `theme-usecases-triple-border.html` | bg `#FFFFFF`, text `#101418`, accent `#0C70DB` (template adds amber `#F2A900` and purple `#9B51E0` columns) | bg `#0B0F16`, accent `#5AB0FF` | Inter |

@@ -6123,3 +6123,14 @@ Built from three infographics sent inline (a 14-element AI-SEO landing page anat
 - 3 commands: `/ai-landing-audit`, `/story-check`, `/tell-story`. A pointer was added to `ai-seo`.
 - 3 design templates (`landing-anatomy-callouts`, `radial-principles-7`, `ide-install-list-40`) and 3 themes (`anatomy-royal-blue`, `story-blue-ink`, `terminal-orange-night`).
 - `Artifacts/operations/workflows-batch-119.html` (3 workflows), `Artifacts/business/batch-119-intake-report.html`, `docs/batch-119-prompts.md`, `scripts/batch119-install.sh` (read-only looks, asks before every step; not run).
+
+## Batch 120 (26 October 2026)
+
+Built from `346b5fe1-iCloud_Photos.zip` (29 images) and two infographics sent inline (10 Claude Cowork prompts for sales reps; 50 Claude use cases).
+
+- 3 new skills: `claude-cowork-sales-prompts-10` (ten prompts verbatim with data-protection and review checks), `pgvector-quickstart` (the carousel's SQL checked against the pgvector README, plus the filtered-search recall pitfall and iterative scans) and `ai-business-prompts-11` (eleven business prompts verbatim from two carousels, with validate-first rules).
+- 2 commands: `/cowork-sales-prompt`, `/business-prompt`.
+- New reference `claude-50-use-cases/references/parsons-50-capabilities.md` (the second 50-item list, by Claude surface, mapped to skills).
+- Merged: five repo cards (OpenMausBot, Openreplay, Happy, Mailspring, Healthchecks) into `oss-alternatives` with care notes.
+- 2 design templates (`cowork-prompt-grid-10`, `use-case-columns-50`) and 2 themes (`cowork-orange-cream`, `usecases-triple-border`).
+- `Artifacts/operations/workflows-batch-120.html` (4 workflows), `Artifacts/business/batch-120-intake-report.html`, `docs/batch-120-prompts.md`, `scripts/batch120-install.sh` (read-only looks, asks before every step; not run).
