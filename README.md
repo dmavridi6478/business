@@ -6017,3 +6017,17 @@ Not done (needs you): plugin installs (`/plugin install paypal@claude-plugins-of
 **Source problems:** the revenue-system list repeats six roles; interview replacement lines are templates that must not claim things you have not done; GTM customer-count thresholds are rules of thumb.
 
 **Not done:** nothing installed; no connector changed (OpenFlowKit entry still unapplied; Midpage, Sentry and Supabase need your authorisation).
+
+## Batch 107 — LinkedIn GTM funnel 2026 archive (7 images; 26 October 2026)
+
+**Report:** Batch 107 Intake Report (`Artifacts/business/batch-111-intake-report.html`; the published link is in the pull request). Plain-text prompts: `docs/batch-111-prompts.md`. Action plan: `docs/batch-111-action-plan.md`.
+
+**Sources:** the 11-module LinkedIn GTM funnel animation (Paolo Trivellato), "10 Claude Cowork Prompts" (SalesDaily), "50 Claude Use Cases" (Jonathan Parsons), "AI Market Research Engine" (The Blueprint Weekly), "Turn YouTube Videos Into Learning App" (Cyberman AI), a PMP formulas cheat sheet, and "Claude Code for Growth Marketing" (9 builds).
+
+**Added:** skills `linkedin-gtm-funnel-modules`, `cowork-sales-prompts-10`, `claude-50-use-cases-by-capability`, `ai-market-research-engine`, `youtube-to-learning-app`, `pmp-formulas-cheat-sheet`, `claude-code-growth-marketing-9`; commands `/linkedin-gtm-funnel`, `/cowork-sales-10`, `/use-case-pick`, `/market-research-engine`, `/youtube-learning-app`, `/pmp-formula`, `/growth-build`; agent `market-research-engine`; Excel workbook `pmp-project-dashboard.xlsx` (live formulas, recalculated and checked); design templates `infographic-bento-funnel-modules`, `infographic-hub-spoke-engine`, `cheatsheet-formula-grid`, `learning-app-shell` and themes `theme-sand-bento-orange`, `theme-blueprint-teal-grid`. Two n8n workflow drafts were created in your n8n account (inactive, not run): LinkedIn comment routing and a weekly market research engine.
+
+**Already existed, not duplicated:** `claude-50-use-cases` (a different 50-item slide), `claude-sales-prompts-20`, `claude-sales-by-role`, `perplexity-research-workflow`, `youtube-to-skill`, `ai-project-management`, `gtm-funnel-2026`; the nine growth builds were only a README bullet before.
+
+**Source problems:** no results data on any image; thresholds ($10k/mo, 14 and 7 days) are the authors' rules of thumb; the PMP sheet's DPMO and make-or-buy lines need care; tool logos on the growth card were read from small icons.
+
+**Not done:** no connector installed (Firecrawl, Webflow, PostHog, Adspirer, Windsor.ai need your sign-in; Vercel half-connected; Perplexity has no connector); `.mcp.json` unchanged; n8n workflows not published; Cowork schedules not created; no install script (nothing to run on your machine).

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bento Funnel Modules</title>
+<style>
+/* TEMPLATE: Bento Funnel Modules (from "How To Run a LinkedIn GTM Funnel in 2026").
+   Sand background, rounded module cards with black pill labels and one orange highlight.
+   One 1080x1350 board. Edit labels in the markup; keep 3 columns. */
+:root{--bg:#f4ede3;--card:#eadfce;--inner:#fbf8f3;--ink:#17140f;--muted:#6b6256;--accent:#e8420b;--pill:#17140f;--pill-ink:#fff;--font:Aptos,'Segoe UI',Inter,Arial,sans-serif}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#15120e;--card:#26211a;--inner:#1c1813;--ink:#f3ede2;--muted:#a69d8d;--accent:#ff6a3a;--pill:#f3ede2;--pill-ink:#15120e}}
+:root[data-theme="dark"]{--bg:#15120e;--card:#26211a;--inner:#1c1813;--ink:#f3ede2;--muted:#a69d8d;--accent:#ff6a3a;--pill:#f3ede2;--pill-ink:#15120e}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#c9c4bb;display:flex;justify-content:center;padding:24px 0;font-family:var(--font);font-size:14px}
+.board{width:1080px;min-height:1350px;background:var(--bg);color:var(--ink);padding:48px 44px 40px;position:relative}
+h1{font-size:54px;font-weight:800;letter-spacing:-1.5px;text-align:center}h1 b{color:var(--accent)}
+.lead{text-align:center;color:var(--muted);margin:10px 0 28px;font-size:16px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.m{background:var(--card);border-radius:20px;padding:14px 16px 16px}
+.m.wide{grid-column:span 2}
+.pill{display:inline-block;background:var(--pill);color:var(--pill-ink);border-radius:20px;padding:4px 12px;font-weight:700;font-size:13px;margin-bottom:10px}
+.pill i{font-style:normal;opacity:.7;margin-right:6px}
+.in{background:var(--inner);border-radius:12px;padding:10px 12px;margin-top:8px}
+.in.hot{box-shadow:0 0 0 2px var(--accent) inset}
+.in b{display:block}.in span{color:var(--muted);font-size:12px}
+.row{display:flex;gap:8px;flex-wrap:wrap}.chip{background:var(--inner);border-radius:10px;padding:6px 10px;font-weight:600;font-size:12px}.chip.on{background:var(--pill);color:var(--pill-ink)}
+.foot{margin-top:22px;text-align:center;color:var(--muted)}
+@media (max-width:1100px){.board{width:100%}.grid{grid-template-columns:1fr}.m.wide{grid-column:auto}h1{font-size:34px}}
+</style></head><body><div class="board">
+<h1>How to run a LinkedIn GTM funnel <b>in 2026</b></h1>
+<p class="lead">Turn posts into booked calls with one idea bank, one CTA per post and same-day DMs.</p>
+<div class="grid">
+ <div class="m"><span class="pill"><i>1</i>Content stack</span><div class="in"><b>Custom GPT</b><span>thinking</span></div><div class="in"><b>Writing</b><span>drafts</span></div><div class="in"><b>Visuals</b><span>one per post</span></div></div>
+ <div class="m"><span class="pill"><i>2</i>Comment routing</span><div class="in hot"><b>New comment</b><span>ICP fit? Pass: resource + DM. Not yet: nurture.</span></div><p class="foot">Every commenter gets the same-day treatment.</p></div>
+ <div class="m"><span class="pill"><i>3</i>Idea sources</span><div class="row"><span class="chip">Calls</span><span class="chip">X</span><span class="chip">Backlog</span><span class="chip">Assets</span><span class="chip">Trends</span><span class="chip">Comments</span></div></div>
+ <div class="m"><span class="pill"><i>4</i>Post jobs</span><div class="in hot"><b>Awareness</b><span>problem they do not see</span></div><div class="in"><b>Value / Opinion / Proof</b></div><div class="in"><b>Lead magnet / Case study</b></div></div>
+ <div class="m"><span class="pill"><i>5</i>Post review</span><div class="in"><b>What am I saying?</b></div><div class="in"><b>Shrink, So what, Buyer</b></div><div class="in"><b>Screenshot, CTA match</b></div></div>
+ <div class="m"><span class="pill"><i>6</i>Weekly setup</span><div class="in"><b>1 Idea bank</b></div><div class="in hot"><b>2 Test on X</b></div><div class="in"><b>3 Rewrite &middot; 4 Visual &middot; 5 Approve &middot; 6 Post</b></div></div>
+ <div class="m"><span class="pill"><i>8</i>DM handling</span><div class="in"><b>Comment captured</b><span>opt-in link in reply</span></div><div class="in"><b>Profile viewer</b><span>DM if ICP fits, 24h</span></div></div>
+ <div class="m"><span class="pill"><i>9</i>Posting calendar</span><div class="row"><span class="chip on">Mon value</span><span class="chip">Tue magnet</span><span class="chip">Wed opinion</span><span class="chip">Thu magnet</span><span class="chip">Fri proof</span></div></div>
+ <div class="m"><span class="pill"><i>7</i>Lead readiness</span><div class="in"><b>Over $10k/mo</b></div><div class="in"><b>Qualifying questions answered</b></div><div class="in"><b>VSL watched &middot; pre-sell sent</b></div></div>
+ <div class="m wide"><span class="pill"><i>10</i>Booking handoff</span><div class="row"><span class="chip on">Comment</span><span class="chip">Opt-in</span><span class="chip">DM</span><span class="chip">VSL</span><span class="chip">Book</span><span class="chip">Call</span></div><div class="row" style="margin-top:10px"><div class="in" style="flex:1"><b>Calendly</b><span>books the call</span></div><div class="in" style="flex:1"><b>Notion</b><span>records the lead</span></div><div class="in" style="flex:1"><b>Slack</b><span>alerts the team</span></div></div></div>
+ <div class="m"><span class="pill"><i>11</i>Funnel rules</span><div class="in"><b>1 post a day, 3 jobs</b></div><div class="in"><b>CTA in the image</b></div><div class="in"><b>DM same day</b></div></div>
+</div>
+<p class="foot">Source: infographic by Paolo Trivellato. Thresholds are the author's.</p>
+</div></body></html>
