@@ -6134,3 +6134,13 @@ Built from `346b5fe1-iCloud_Photos.zip` (29 images) and two infographics sent in
 - Merged: five repo cards (OpenMausBot, Openreplay, Happy, Mailspring, Healthchecks) into `oss-alternatives` with care notes.
 - 2 design templates (`cowork-prompt-grid-10`, `use-case-columns-50`) and 2 themes (`cowork-orange-cream`, `usecases-triple-border`).
 - `Artifacts/operations/workflows-batch-120.html` (4 workflows), `Artifacts/business/batch-120-intake-report.html`, `docs/batch-120-prompts.md`, `scripts/batch120-install.sh` (read-only looks, asks before every step; not run).
+
+## Batch 121 (28 October 2026)
+
+Built from four infographics sent inline (set up Claude for marketers in four steps; the six-step TAM mapping playbook; where product marketing ends; five presentation frameworks). No repositories, agents or connectors were referenced, so there is no install script.
+
+- 3 new skills: `claude-marketer-setup-4-steps` (with least-privilege connector rules; the "12 roles replaced" claim flagged), `tam-mapping-6-steps` (vendor-neutral method with survivorship-bias, data-quality and outreach-law checks) and `presentation-frameworks-5` (when to choose which, and each framework's limits).
+- 3 commands: `/claude-marketer-setup`, `/tam-map`, `/presentation-frameworks`.
+- New reference `product-marketing/references/marketing-functions-who-owns-what.md`.
+- 2 design templates (`framework-cards-lavender-5`, `hub-tall-center-4-sides`) and 2 themes (`framework-lavender-orange`, `pmm-pastel-pink`).
+- `Artifacts/operations/workflows-batch-121.html` (4 workflows), `Artifacts/business/batch-121-intake-report.html`, `docs/batch-121-prompts.md` (seven original prompts).

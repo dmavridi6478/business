@@ -260,3 +260,7 @@ After gathering information, create `.agents/product-marketing.md` with this str
 ## Reference: AI tools for PMMs
 
 See `references/ai-pmm-tools-20.md` for the 2026 list of twenty AI tools by job, with alternatives and the matching skills in this library.
+
+## Reference: who owns what
+
+See `references/marketing-functions-who-owns-what.md` for where product marketing ends and brand, demand generation, lifecycle and customer marketing begin.

@@ -543,3 +543,20 @@ Original CSS and placeholder wording only. Overlap checked: `prompt-grid-9-olive
 |---|---|---|---|
 | `theme-cowork-orange-cream.html` | bg `#FBF3EA`, text `#14110F`, accent `#C84A08` (template uses `#E8590C`) | bg `#16110C`, accent `#FF8A3D` | Inter + Playfair Display |
 | `theme-usecases-triple-border.html` | bg `#FFFFFF`, text `#101418`, accent `#0C70DB` (template adds amber `#F2A900` and purple `#9B51E0` columns) | bg `#0B0F16`, accent `#5AB0FF` | Inter |
+
+
+## Batch 121 additions
+
+| Template | Use for | Layout |
+|---|---|---|
+| `framework-cards-lavender-5.html` | "N simple frameworks" explainers (best for, why it works, structure) | 1080x1350; periwinkle frame, two-line title with lavender highlight, italic subtitle, two columns of five cards of different heights with lavender headers and orange-edged structure rows, footer bar |
+| `hub-tall-center-4-sides.html` | "Who owns what" function maps | 1080x1350; gradient page, title with pink-highlighted word, tall pink centre card (what it is, day-to-day work, success metrics, closing line) with two coloured cards on each side |
+
+Original CSS and placeholder wording only. Overlap checked: `spine-steps-detail-cards`, `framework-lever-board` and `five-stage-column-matrix` are different shapes. Not built this batch: an isometric staircase diagram (the TAM playbook graphic) and a tall four-section setup guide; both need hand-drawn art and were skipped rather than faked. Rendered at 1080x1350, no overflow.
+
+## Batch 121 theme tokens (files in `Artifacts/theme-*.html`; colours eyeballed)
+
+| Theme file | Light | Dark | Fonts (free) |
+|---|---|---|---|
+| `theme-framework-lavender-orange.html` | bg `#FFFFFF`, card `#FFFBF2`, text `#0B0B12`, accent `#4A5BE8` (template adds lavender `#E9E4FF` and orange `#F5A623`) | bg `#0E1020`, accent `#8E9CFF` | Inter |
+| `theme-pmm-pastel-pink.html` | bg `#EEF0FF`, text `#17104D`, accent `#C0147F` (template adds pink `#FF9AD1` and four pastel header colours) | bg `#120C2E`, accent `#FF7CC4` | Inter |
