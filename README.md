@@ -6045,3 +6045,17 @@ Not done (needs you): plugin installs (`/plugin install paypal@claude-plugins-of
 **Source problems:** one sentence per card, so no maintenance or security assessment; I did not read the Linux guide's chapters (the skill gives general safe practice and says so); version and funding badges are one-day snapshots.
 
 **Not done:** nothing installed or run; no connector changed; no n8n workflow (nothing in the images called for one).
+
+## Batch 109 — iCloud Photos archive (16 images) and two attached images (28 October 2026)
+
+**Report:** Batch 109 Intake Report (`Artifacts/business/batch-113-intake-report.html`; the published link is in the pull request). Plain-text prompts: `docs/batch-113-prompts.md`. Action plan: `docs/batch-113-action-plan.md`.
+
+**Sources:** "AI Growth for Corporate Leaders & Businesses" (60 tools, @mshee), "Best Prompts for Excel/PPT tasks" (15 prompts), @aiclawbots "7 GitHub repos for building AI agents" (with a Hermes guide pitch), @buildwithkenny "Trending on GitHub this week" (5 repos).
+
+**Added:** skills `ai-growth-tools-60`, `excel-ppt-prompts-15`, `github-trending-5-oct2026`, `agent-repos-licence-ledger`; commands `/ai-tool-pick`, `/excel-ppt-prompt`, `/repo-vet`, `/agent-stack-plan`; agent `agent-stack-architect`; workbook `finance-models-starter.xlsx` (live formulas, 18 values checked independently); design templates `repo-rank-dark-orange`, `tool-map-six-categories`, `prompt-sheet-green` and themes `theme-ink-orange-condensed`, `theme-pastel-category-map`; user-run `scripts/batch113-install.sh` (clones only).
+
+**Already existed, not duplicated:** the seven agent repos in `agent-github-repos-4` and `agent-memory-repos` (this batch adds licences and warnings only), the blue-grid caption template `caption-highlight-blue-grid`.
+
+**Source problems:** OpenViking is AGPL-3.0 (not mentioned on the card or in the earlier rows); "Anthropic Cybersecurity Skills" is not made by Anthropic; "Awesome Harness Engineering" is ambiguous (three repos share the name); star counts unverified; the Hermes guide is a lead magnet and was not included.
+
+**Not done:** no connector installed (registry check only; several need your sign-in); nothing cloned or installed; no workflow (none in the images); `.mcp.json` unchanged.

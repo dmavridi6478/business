@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Repo Rank Dark Orange</title>
+<style>
+/* TEMPLATE: Repo Rank Dark & Orange (from the @buildwithkenny "Trending on GitHub this week" carousel).
+   One 1080x1350 board: near-black page, condensed headline with the rank number in white and the repo name in orange,
+   a browser-frame screenshot panel, a one-line verdict with the star count in bold, a ghost rank number bottom right, a SWIPE cue.
+   Swap: .rank, .name, .url, the .about text and tags, .verdict, .handle. Star counts are the author's; verify before you publish. */
+:root{--bg:#121212;--panel:#16181c;--line:#2a2d33;--ink:#ecebe5;--muted:#8d8b84;--accent:#e8873a;--link:#58a6ff;--tag:#16294a;--tag-ink:#58a6ff;--ghost:rgba(255,255,255,.06);
+  --cond:'Bebas Neue','Oswald','Arial Narrow',Impact,sans-serif;--body:Aptos,'Segoe UI',Inter,Arial,sans-serif;--mono:'JetBrains Mono',Consolas,monospace}
+@media (prefers-color-scheme:light){:root:not([data-theme="dark"]){--bg:#f3f1ec;--panel:#fff;--line:#d9d5ca;--ink:#17160f;--muted:#6b665c;--accent:#c9621a;--tag:#dbe8fb;--tag-ink:#0b5cad;--ghost:rgba(0,0,0,.06)}}
+:root[data-theme="light"]{--bg:#f3f1ec;--panel:#fff;--line:#d9d5ca;--ink:#17160f;--muted:#6b665c;--accent:#c9621a;--tag:#dbe8fb;--tag-ink:#0b5cad;--ghost:rgba(0,0,0,.06)}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#2b2b2b;display:flex;justify-content:center;padding:24px 0;font-family:var(--body)}
+.board{width:1080px;height:1350px;background:var(--bg);color:var(--ink);position:relative;overflow:hidden;padding:80px}
+.mark{position:absolute;right:80px;top:76px;font:700 44px var(--cond);letter-spacing:1px}.mark b{color:var(--accent)}
+h1{font:400 128px/1 var(--cond);margin-top:84px;text-transform:uppercase;letter-spacing:1px;white-space:nowrap}
+h1 .rank{color:var(--ink)}h1 .name{color:var(--accent);margin-left:18px}
+h1.long{font-size:96px}
+.frame{margin-top:70px;border:2px solid var(--line);border-radius:18px;overflow:hidden;background:var(--panel)}
+.bar{display:flex;gap:10px;align-items:center;padding:20px 26px;border-bottom:2px solid var(--line)}
+.bar i{width:18px;height:18px;border-radius:50%;background:var(--line);display:block}
+.url{font:400 26px var(--mono);color:var(--muted);margin-left:20px}
+.page{display:grid;grid-template-columns:1fr 1fr;gap:26px;padding:26px;height:440px;overflow:hidden}
+.files div{display:flex;justify-content:space-between;padding:15px 10px;border-bottom:1px solid var(--line);font-size:21px;color:var(--muted)}
+.files div b{font-weight:400;color:var(--ink)}
+.about h3{font-size:26px;margin-bottom:14px}.about p{font-size:25px;line-height:1.45;margin-bottom:14px}
+.tags{display:flex;flex-wrap:wrap;gap:10px}.tags span{background:var(--tag);color:var(--tag-ink);border-radius:20px;padding:5px 14px;font-size:20px}
+.verdict{margin-top:54px;font-size:46px;line-height:1.28;color:var(--muted);max-width:820px}.verdict b{color:var(--ink)}
+.ghost{position:absolute;right:-10px;bottom:-60px;font:400 520px/1 var(--cond);color:var(--ghost);pointer-events:none}
+.swipe{position:absolute;left:80px;bottom:80px;font:500 30px var(--mono);letter-spacing:4px;color:var(--muted)}
+.handle{position:absolute;right:56px;bottom:44px;font-size:40px}
+@media (max-width:1100px){body{padding:0}.board{width:100%;height:auto;min-height:900px;padding:28px 18px 120px}.mark{position:static;font-size:26px}h1,h1.long{font-size:44px;margin-top:24px;white-space:normal}.frame{margin-top:24px}.page{grid-template-columns:1fr;height:auto}.verdict{font-size:24px;margin-top:24px}.ghost{font-size:200px;bottom:-20px}.swipe{left:18px;bottom:28px;font-size:16px}.handle{font-size:20px;right:18px;bottom:24px}.url{font-size:15px}}
+</style></head><body><div class="board">
+<div class="mark">YOUR<b>LOGO</b></div>
+<h1><span class="rank">05</span><span class="name">OpenCode</span></h1>
+<div class="frame">
+ <div class="bar"><i></i><i></i><i></i><span class="url">github.com/owner/repo</span></div>
+ <div class="page">
+  <div class="files"><div><b>feat: add native memory</b><span>2 days ago</span></div><div><b>fix: pin actions to commit SHA</b><span>10 hours ago</span></div><div><b>docs: debugger section</b><span>11 months ago</span></div><div><b>chore: update hashes</b><span>2 days ago</span></div></div>
+  <div class="about"><h3>About</h3><p>The open source coding agent.</p><div class="tags"><span>agent</span><span>terminal</span><span>mit</span></div></div>
+ </div>
+</div>
+<p class="verdict">The open source coding agent, in your terminal. <b>221K stars</b>, MIT.</p>
+<div class="ghost">05</div>
+<div class="swipe">SWIPE &rarr;</div><div class="handle">@yourhandle</div>
+</div></body></html>
