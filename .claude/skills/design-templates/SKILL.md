@@ -577,3 +577,22 @@ Original CSS and placeholder wording only. Overlap checked: `trending-top10-lead
 |---|---|---|---|
 | `theme-fpna-charcoal-lime.html` | bg `#F4F5F2`, text `#14171A`, accent `#3F7A0C` (template uses lime `#A8F04B` on charcoal `#2B2E31`) | bg `#2B2E31`, accent `#A8F04B` | Inter |
 | `theme-trending-cream-rust.html` | bg `#FBF4E8`, text `#0F0F10`, accent `#C2410C` | bg `#1B1712`, accent `#FF8A4C` | Inter + JetBrains Mono |
+
+
+## Batch 123 additions
+
+| Template | Use for | Layout |
+|---|---|---|
+| `prompt-table-10-rows.html` | "N skills every X must install" prompt tables | 1080x1500; white page, large navy title with a burst mark, pale-blue subtitle bar, intro line, bordered two-column table of ten rows (numbered name, prompt text and bullet line), navy follow bar |
+| `category-cards-3x2-60.html` | "60 tools, 6 categories" catalogues | 1080x1500; blue frame, white sheet, serif title, three-by-two grid of pastel cards (coloured header with number tag, ten-item list, "10 TOOLS" footer), dark brand band |
+| `terminal-skill-table-21.html` | Terminal-style skill or command tables with a comment-to-get-it banner | 1080x1500; black page, tool-version header, uppercase title, boxed 21-row monospace table (number, blue name, job, description), status line, blue command banner |
+
+Original CSS and placeholder wording only. Overlap checked: `prompt-rows-6` (six rows, different shape), `cowork-prompt-grid-10` and `prompt-cards-2col-10` (cards, not a ruled table) and `app-category-glass` are different layouts. Taller canvas (1500) on purpose: ten and twenty-one rows do not fit 1350 legibly. Rendered at 1080x1500, no overflow.
+
+## Batch 123 theme tokens (files in `Artifacts/theme-*.html`; colours eyeballed)
+
+| Theme file | Light | Dark | Fonts (free) |
+|---|---|---|---|
+| `theme-sales-prep-navy-blue.html` | bg `#FFFFFF`, surface `#DCE8FB`, text `#1A2340`, accent `#0B2A6F`, border `#1B2F66` | bg `#0A1226`, accent `#7FA8F5` | Inter |
+| `theme-ai-growth-pastel-six.html` | bg `#FFFFFF`, text `#060B3A`, accent `#1356D8` (template adds six pastel category pairs) | bg `#060B3A`, accent `#7FA8F5` | Inter + Merriweather |
+| `theme-strategy-terminal-black.html` | bg `#F4F4F2`, text `#111111`, accent `#0A3DAA` | bg `#050505`, accent `#6FA8FF` | Inter + JetBrains Mono |

@@ -3,7 +3,7 @@ name: ai-tools-50-directory
 description: Categorised directory of 55 AI tools across seven groups - productivity and automation, image and video, audio and voice, writing and content, coding and development, SEO and marketing, design and presentation - with each tool's one-line job as printed, the connector status in this account, and a selection method that picks by job before brand. Use when someone asks "which AI tool for X", wants a lean tool stack, or needs to know whether Claude can use a tool directly. Run via /ai-tools-50. Source - "50+ Must-Have AI Tools" cheat sheet (Matic Pogladic); names and descriptions are as printed, prices are not given.
 ---
 
-See also `references/60-ai-tools-builders.md` (a second directory: 60 tools for builders, by group).
+See also `references/60-ai-tools-builders.md` (a second directory: 60 tools for builders, by group) and `references/60-ai-growth-tools-corporate.md` (a third: 60 tools for corporate leaders, six categories, with data-governance checks).
 
 # 50+ must-have AI tools
 

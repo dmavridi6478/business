@@ -6154,3 +6154,13 @@ Built from `5b4d6aa6-iCloud_Photos.zip` (32 images: a finance graphic and repo c
 - Merged: eleven repos into `oss-alternatives` (Postiz, Trigger.dev, Open Notebook, Open Generative AI, Book to Skill, No AI Slop, I Have ADHD, DeepSeek Harness, AI Agents for Beginners, Front-End Checklist, OmniRoute's new owner) with care notes. Every card star count was out of date; the figures are from 28 October 2026.
 - 2 design templates (`variance-chart-gallery-8`, `verdict-table-5`) and 2 themes (`fpna-charcoal-lime`, `trending-cream-rust`).
 - `Artifacts/operations/workflows-batch-122.html` (3 workflows), `Artifacts/business/batch-122-intake-report.html`, `docs/batch-122-prompts.md` (six original prompts), `scripts/batch122-install.sh` (read-only looks, asks before every step; not run).
+
+## Batch 123 (28 October 2026)
+
+Built from three infographics sent inline (Claude for sales prep: ten prompts; 60 AI tools for corporate leaders; 21 of 107 Claude strategy skills). No repositories were named, so there is no install script.
+
+- 2 new skills: `claude-sales-prep-10` (the ten prompts verbatim with fact/hypothesis labels, invented-number and approval guardrails) and `claude-strategy-skills-21` (21 skills in seven jobs with original method cards; the 107 count, "$1.8M study" and five prompts each flagged as not shown).
+- New reference `ai-tools-50-directory/references/60-ai-growth-tools-corporate.md` (60 tools in six categories, data-governance checks, miscategorisations, connector status).
+- 3 commands: `/sales-prep`, `/strategy-skill`, `/ai-growth-shortlist`.
+- 3 design templates (`prompt-table-10-rows`, `category-cards-3x2-60`, `terminal-skill-table-21`, on a taller 1080x1500 canvas) and 3 themes (`sales-prep-navy-blue`, `ai-growth-pastel-six`, `strategy-terminal-black`).
+- `Artifacts/operations/workflows-batch-123.html` (3 workflows), `Artifacts/business/batch-123-intake-report.html`, `docs/batch-123-prompts.md` (ten verbatim prompts and four original).
