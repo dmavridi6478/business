@@ -560,3 +560,20 @@ Original CSS and placeholder wording only. Overlap checked: `spine-steps-detail-
 |---|---|---|---|
 | `theme-framework-lavender-orange.html` | bg `#FFFFFF`, card `#FFFBF2`, text `#0B0B12`, accent `#4A5BE8` (template adds lavender `#E9E4FF` and orange `#F5A623`) | bg `#0E1020`, accent `#8E9CFF` | Inter |
 | `theme-pmm-pastel-pink.html` | bg `#EEF0FF`, text `#17104D`, accent `#C0147F` (template adds pink `#FF9AD1` and four pastel header colours) | bg `#120C2E`, accent `#FF7CC4` | Inter |
+
+
+## Batch 122 additions
+
+| Template | Use for | Layout |
+|---|---|---|
+| `variance-chart-gallery-8.html` | "N ways to show X" chart-type galleries (finance variance views, dashboard widgets) | 1080x1350; charcoal page, white title with two lime-highlighted words, subtitle, four-by-two grid of light tiles (number badge, name, small CSS chart, "Best for" line), footer strip |
+| `verdict-table-5.html` | "Which ones I would use" verdict slides ending a repo or tool roundup | 1080x1350; cream grid-paper page, mono handle and page counter, very large two-line title, white card of five rows (mono name, verdict; first row tinted), italic-style closing line |
+
+Original CSS and placeholder wording only. Overlap checked: `trending-top10-leaderboard`, `repo-card-grid` and `two-column-shift-comparison` are different shapes. Not built: more repo-spotlight cards (the library already has seven repo-card templates). Rendered at 1080x1350, no overflow; a first waterfall tile was drawn with margins and broke, then rebuilt with absolute positions.
+
+## Batch 122 theme tokens (files in `Artifacts/theme-*.html`; colours eyeballed)
+
+| Theme file | Light | Dark | Fonts (free) |
+|---|---|---|---|
+| `theme-fpna-charcoal-lime.html` | bg `#F4F5F2`, text `#14171A`, accent `#3F7A0C` (template uses lime `#A8F04B` on charcoal `#2B2E31`) | bg `#2B2E31`, accent `#A8F04B` | Inter |
+| `theme-trending-cream-rust.html` | bg `#FBF4E8`, text `#0F0F10`, accent `#C2410C` | bg `#1B1712`, accent `#FF8A4C` | Inter + JetBrains Mono |

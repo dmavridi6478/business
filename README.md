@@ -6144,3 +6144,13 @@ Built from four infographics sent inline (set up Claude for marketers in four st
 - New reference `product-marketing/references/marketing-functions-who-owns-what.md`.
 - 2 design templates (`framework-cards-lavender-5`, `hub-tall-center-4-sides`) and 2 themes (`framework-lavender-orange`, `pmm-pastel-pink`).
 - `Artifacts/operations/workflows-batch-121.html` (4 workflows), `Artifacts/business/batch-121-intake-report.html`, `docs/batch-121-prompts.md` (seven original prompts).
+
+## Batch 122 (28 October 2026)
+
+Built from `5b4d6aa6-iCloud_Photos.zip` (32 images: a finance graphic and repo cards from four accounts). Most cards were already in the library, so this batch is mostly a merge.
+
+- 2 new skills: `fpna-budget-actual-forecast` (locked budget, rolling forecast, eight variance views, sign-convention and slippage checks; the add-in advert excluded) and `trending-repos-week-oct23` (five repos with figures read from GitHub, licences, what each can touch, and a safe-trial protocol).
+- 3 commands: `/variance-views`, `/trial-repo`, `/action-first`.
+- Merged: eleven repos into `oss-alternatives` (Postiz, Trigger.dev, Open Notebook, Open Generative AI, Book to Skill, No AI Slop, I Have ADHD, DeepSeek Harness, AI Agents for Beginners, Front-End Checklist, OmniRoute's new owner) with care notes. Every card star count was out of date; the figures are from 28 October 2026.
+- 2 design templates (`variance-chart-gallery-8`, `verdict-table-5`) and 2 themes (`fpna-charcoal-lime`, `trending-cream-rust`).
+- `Artifacts/operations/workflows-batch-122.html` (3 workflows), `Artifacts/business/batch-122-intake-report.html`, `docs/batch-122-prompts.md` (six original prompts), `scripts/batch122-install.sh` (read-only looks, asks before every step; not run).

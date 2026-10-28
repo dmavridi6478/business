@@ -261,3 +261,25 @@ Repos looked up on GitHub on 26 October 2026; the cover says six, five cards wer
 | `healthchecks/healthchecks` | Cron job and background task monitoring with alerts | 10,450 | BSD-3-Clause | Hosted cron monitors | A good small tool; self-hosting means you run the alerting too, and a monitor that fails silently needs its own monitor |
 
 For pgvector (`pgvector/pgvector`, 23,483 stars, PostgreSQL licence) see `pgvector-quickstart`.
+
+
+## Batch 122 additions: @replace.so, @martiendejong_dev, @buildwithneej and @your.aimentor repo cards
+
+Repos looked up on GitHub on 28 October 2026. Star counts on the cards were older: use the figures here and re-read before quoting. Already in this library and not re-added: OpenHands (`250-open-source-agents`), Maxun and Openwhispr (`replace-so-dev-repos-6`, `openwhispr`), Strix (`github-briefing-oct4-three`), OpenSEO (`seo-geo-tool-stack`), OmniRoute and ai-job-search (`claude-code-tooling`).
+
+| Repo | Does | Stars | Licence | Care |
+|---|---|---|---|---|
+| `gitroomhq/postiz-app` | Social media scheduling, automation and analytics with a public API, Node SDK, n8n node and agent support | 39,549 | AGPL-3.0 | Replaces paid schedulers (card says Buffer and similar). AGPL: offering a modified version as a service obliges you to publish your changes. You hold the social-account tokens, so secure and back them up. Fit for the `social-publishing` skills |
+| `triggerdotdev/trigger.dev` | Durable background tasks and AI workflows in TypeScript with retries, queues and observability | 16,620 | Apache-2.0 | Replaces paid workflow runners (card shows Zapier as the paid one; it is a developer tool, not a no-code one). Self-hosting is documented; cloud is the easy path. For n8n-style no-code, stay with n8n |
+| `lfnovo/open-notebook` | Private, multi-model open-source alternative to a notebook-style research assistant (sources, chat, notes, podcasts) | 40,626 | MIT | Local only if you choose local models; with hosted models your sources go to that provider. Check the model providers you enable before you load private documents |
+| `Anil-matcha/Open-Generative-AI` | Image, video, lip-sync and cinema studio with a large model catalogue; desktop and web | 31,669 | MIT | Card says 400+ models; the repo says 600+ in its tagline and 400+ in its text. Most generation goes to a paid third-party gateway (Muapi) using your key; local generation covers only some image and video models. The repo advertises "no content filters": you are responsible for what you generate, including likeness and consent for lip sync |
+| `virgiliojr94/book-to-skill` | Turns a book or document folder into an agent skill with per-chapter files loaded on demand | not read | not read | The "24 to 51 times fewer tokens" figure is the author's measurement. Convert only books you own, for your own use; do not redistribute the generated skill. About 1 US dollar per book on a hosted model by the author's estimate |
+| `petergyang/no-ai-slop` | Skill that edits drafts or lists AI-writing patterns without guessing who wrote them | 12,873 | MIT | Overlaps `avoid-ai-writing` and `humanizer`; try it against those on one real draft before adding it |
+| `ayghri/i-have-adhd` | Output-style skill: action first, numbered steps, no preamble | not read | MIT (SKILL.md) | Invoke-only (`disable-model-invocation`). A local version of its ten rules is `/action-first` |
+| `deepseek-ai/deepseek-harness` | Plugin-architecture agent harness from DeepSeek | 249,564 | MIT | Card says 258k stars; trackers show about 250 to 264k. Created 13 August 2026. A harness that runs tools on your machine: read the plugin model before granting access |
+| `microsoft/ai-agents-for-beginners` | Free lesson course on building agents | 77,960 | MIT | Card says 12 lessons; the repo now says 18. Already in the library as `ai-agents-for-beginners` |
+| `thedaviddias/Front-End-Checklist` | Pre-launch front-end checklist, for people and AI agents | 74,577 | MIT | Fits `frontend-a11y` and `preflight-ship-audit` as a reference list |
+| awesome-claude-skills (card: 78k) | A curated list of Claude skills | `BehiSecc/awesome-claude-skills` has 10,308 | none stated | The 78k figure does not match the repo I found; the repo the card means was not identified. Do not quote 78k |
+| `diegosouzapw/OmniRoute` (now `cheaper-inference/OmniRoute`) | One gateway to hundreds of model providers with fallback | 81,770 | MIT | Moved owner. A router sees all your prompts and code and forwards them to other providers; "free" tiers mean your data goes to whoever offers them. Already noted in `claude-code-tooling` |
+
+Five more from the @buildwithneej carousel (cleanyourtv, Filee, ai-job-search, MacNativeGames, ruflo) are in `trending-repos-week-oct23` with the safe-trial protocol. A finance infographic in the same batch is in `fpna-budget-actual-forecast`; its add-in promotion is an advert and was not added.
