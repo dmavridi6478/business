@@ -6017,3 +6017,45 @@ Not done (needs you): plugin installs (`/plugin install paypal@claude-plugins-of
 **Source problems:** the revenue-system list repeats six roles; interview replacement lines are templates that must not claim things you have not done; GTM customer-count thresholds are rules of thumb.
 
 **Not done:** nothing installed; no connector changed (OpenFlowKit entry still unapplied; Midpage, Sentry and Supabase need your authorisation).
+
+## Batch 107 — LinkedIn GTM funnel 2026 archive (7 images; 26 October 2026)
+
+**Report:** Batch 107 Intake Report (`Artifacts/business/batch-111-intake-report.html`; the published link is in the pull request). Plain-text prompts: `docs/batch-111-prompts.md`. Action plan: `docs/batch-111-action-plan.md`.
+
+**Sources:** the 11-module LinkedIn GTM funnel animation (Paolo Trivellato), "10 Claude Cowork Prompts" (SalesDaily), "50 Claude Use Cases" (Jonathan Parsons), "AI Market Research Engine" (The Blueprint Weekly), "Turn YouTube Videos Into Learning App" (Cyberman AI), a PMP formulas cheat sheet, and "Claude Code for Growth Marketing" (9 builds).
+
+**Added:** skills `linkedin-gtm-funnel-modules`, `cowork-sales-prompts-10`, `claude-50-use-cases-by-capability`, `ai-market-research-engine`, `youtube-to-learning-app`, `pmp-formulas-cheat-sheet`, `claude-code-growth-marketing-9`; commands `/linkedin-gtm-funnel`, `/cowork-sales-10`, `/use-case-pick`, `/market-research-engine`, `/youtube-learning-app`, `/pmp-formula`, `/growth-build`; agent `market-research-engine`; Excel workbook `pmp-project-dashboard.xlsx` (live formulas, recalculated and checked); design templates `infographic-bento-funnel-modules`, `infographic-hub-spoke-engine`, `cheatsheet-formula-grid`, `learning-app-shell` and themes `theme-sand-bento-orange`, `theme-blueprint-teal-grid`. Two n8n workflow drafts were created in your n8n account (inactive, not run): LinkedIn comment routing and a weekly market research engine.
+
+**Already existed, not duplicated:** `claude-50-use-cases` (a different 50-item slide), `claude-sales-prompts-20`, `claude-sales-by-role`, `perplexity-research-workflow`, `youtube-to-skill`, `ai-project-management`, `gtm-funnel-2026`; the nine growth builds were only a README bullet before.
+
+**Source problems:** no results data on any image; thresholds ($10k/mo, 14 and 7 days) are the authors' rules of thumb; the PMP sheet's DPMO and make-or-buy lines need care; tool logos on the growth card were read from small icons.
+
+**Not done:** no connector installed (Firecrawl, Webflow, PostHog, Adspirer, Windsor.ai need your sign-in; Vercel half-connected; Perplexity has no connector); `.mcp.json` unchanged; n8n workflows not published; Cowork schedules not created; no install script (nothing to run on your machine).
+
+## Batch 108 — iCloud Photos, one archive (5 images; 26 October 2026)
+
+**Report:** Batch 108 Intake Report (`Artifacts/business/batch-112-intake-report.html`; the published link is in the pull request). Action plan: `docs/batch-112-action-plan.md`.
+
+**Sources:** five @sitetusk GitHub repo cards: FreeCAD, ossu/computer-science, jq, How-To-Secure-A-Linux-Server, FreshRSS. The images contain no prompts, workflows, agents or connectors.
+
+**Added:** skills `sitetusk-free-tools-5`, `jq-json-cookbook` (12 recipes run on jq 1.7), `linux-server-hardening-guide`; commands `/free-tool-pick`, `/jq-filter`, `/harden-server`; design template `repo-card-stone-teal`; user-run `scripts/batch112-install.sh`.
+
+**Already existed, not duplicated:** FreshRSS was in `dev-repos-to-clone` and batch 103 (AGPL-3.0); OSSU's data-science sibling was in `data-ai-github-25`.
+
+**Source problems:** one sentence per card, so no maintenance or security assessment; I did not read the Linux guide's chapters (the skill gives general safe practice and says so); version and funding badges are one-day snapshots.
+
+**Not done:** nothing installed or run; no connector changed; no n8n workflow (nothing in the images called for one).
+
+## Batch 109 — iCloud Photos archive (16 images) and two attached images (28 October 2026)
+
+**Report:** Batch 109 Intake Report (`Artifacts/business/batch-113-intake-report.html`; the published link is in the pull request). Plain-text prompts: `docs/batch-113-prompts.md`. Action plan: `docs/batch-113-action-plan.md`.
+
+**Sources:** "AI Growth for Corporate Leaders & Businesses" (60 tools, @mshee), "Best Prompts for Excel/PPT tasks" (15 prompts), @aiclawbots "7 GitHub repos for building AI agents" (with a Hermes guide pitch), @buildwithkenny "Trending on GitHub this week" (5 repos).
+
+**Added:** skills `ai-growth-tools-60`, `excel-ppt-prompts-15`, `github-trending-5-oct2026`, `agent-repos-licence-ledger`; commands `/ai-tool-pick`, `/excel-ppt-prompt`, `/repo-vet`, `/agent-stack-plan`; agent `agent-stack-architect`; workbook `finance-models-starter.xlsx` (live formulas, 18 values checked independently); design templates `repo-rank-dark-orange`, `tool-map-six-categories`, `prompt-sheet-green` and themes `theme-ink-orange-condensed`, `theme-pastel-category-map`; user-run `scripts/batch113-install.sh` (clones only).
+
+**Already existed, not duplicated:** the seven agent repos in `agent-github-repos-4` and `agent-memory-repos` (this batch adds licences and warnings only), the blue-grid caption template `caption-highlight-blue-grid`.
+
+**Source problems:** OpenViking is AGPL-3.0 (not mentioned on the card or in the earlier rows); "Anthropic Cybersecurity Skills" is not made by Anthropic; "Awesome Harness Engineering" is ambiguous (three repos share the name); star counts unverified; the Hermes guide is a lead magnet and was not included.
+
+**Not done:** no connector installed (registry check only; several need your sign-in); nothing cloned or installed; no workflow (none in the images); `.mcp.json` unchanged.

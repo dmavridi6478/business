@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pastel Category Map - Theme</title>
+<style>
+/* THEME: Pastel Category Map (from "AI Growth for Corporate Leaders & Businesses"). Use for tool landscapes and category overviews.
+   Six category tints, each a pale fill plus a darker text/border colour. Light default; dark on [data-theme="dark"] or prefers-color-scheme. */
+:root{--bg:#ffffff;--ink:#0c1233;--muted:#5d6480;--card:#ffffff;--line:#d6dcf0;--blue:#eaf3ff;--blue-t:#2a5db0;--green:#eaf7ec;--green-t:#2b7a45;--violet:#f1ecfb;--violet-t:#6a4bb5;--teal:#e6f6f3;--teal-t:#1f7d6e;--amber:#fdf3dc;--amber-t:#a06a12;--rose:#fde8ee;--rose-t:#b03a63;--font:Aptos,'Segoe UI',Inter,Arial,sans-serif;--serif:'Source Serif 4',Georgia,serif}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0d1020;--ink:#eef0fb;--muted:#a3a9c6;--card:#171b33;--line:#2c3256;--blue:#14203a;--blue-t:#8db6ff;--green:#122a1b;--green-t:#7fd09a;--violet:#201a38;--violet-t:#b9a2ff;--teal:#102b28;--teal-t:#76d6c3;--amber:#2e2410;--amber-t:#f0c36a;--rose:#33151f;--rose-t:#f59ab9}}
+:root[data-theme="dark"]{--bg:#0d1020;--ink:#eef0fb;--muted:#a3a9c6;--card:#171b33;--line:#2c3256;--blue:#14203a;--blue-t:#8db6ff;--green:#122a1b;--green-t:#7fd09a;--violet:#201a38;--violet-t:#b9a2ff;--teal:#102b28;--teal-t:#76d6c3;--amber:#2e2410;--amber-t:#f0c36a;--rose:#33151f;--rose-t:#f59ab9}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--ink);font:11pt/1.5 var(--font);padding:40px 16px}
+main{max-width:640px;margin:0 auto;display:grid;gap:14px}
+h1{font:700 32pt/1.1 var(--serif)}h2{font-size:14pt}
+.row{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.chip{border:1.5px solid var(--t);background:var(--f);color:var(--t);border-radius:12px;padding:10px;font-weight:700}
+.muted{color:var(--muted)}
+@media (max-width:520px){.row{grid-template-columns:1fr}}
+</style></head><body><main>
+<h1>Six categories, one view</h1>
+<div class="row">
+ <div class="chip" style="--f:var(--blue);--t:var(--blue-t)">Research</div><div class="chip" style="--f:var(--green);--t:var(--green-t)">Content</div><div class="chip" style="--f:var(--violet);--t:var(--violet-t)">Design</div>
+ <div class="chip" style="--f:var(--teal);--t:var(--teal-t)">Video</div><div class="chip" style="--f:var(--amber);--t:var(--amber-t)">Productivity</div><div class="chip" style="--f:var(--rose);--t:var(--rose-t)">Automation</div>
+</div>
+<p class="muted">Tokens: pale fill plus darker same-hue text and border for each category; navy #0a0f33 footer bar; serif headline.</p>
+</main></body></html>

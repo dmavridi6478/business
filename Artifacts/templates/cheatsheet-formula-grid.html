@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Formula Cheat Sheet Grid</title>
+<style>
+/* TEMPLATE: Formula Cheat Sheet Grid (from the "PMP Formulas Cheat Sheet").
+   Colour-coded numbered section headers, formula rows with a name column and a monospace formula column, a key-takeaway banner.
+   Add a section by copying one <section>; set its header colour with style="--c:#hex". Tables align top and centre. */
+:root{--bg:#eef1f6;--card:#fff;--ink:#14213d;--muted:#5a6783;--line:#ccd4e3;--font:Aptos,'Segoe UI',Inter,Arial,sans-serif;--mono:'Cascadia Mono',Consolas,monospace}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0e1420;--card:#172033;--ink:#e8edf7;--muted:#9aa8c4;--line:#2c3a57}}
+:root[data-theme="dark"]{--bg:#0e1420;--card:#172033;--ink:#e8edf7;--muted:#9aa8c4;--line:#2c3a57}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--ink);font:11pt/1.45 var(--font);padding:24px 16px}
+main{max-width:1100px;margin:0 auto}
+h1{font-size:32pt;text-align:center;font-weight:800;margin-bottom:14px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+section{background:var(--card);border:1px solid var(--line);border-radius:6px;overflow:hidden}
+section h2{background:var(--c,#2a4d9b);color:#fff;font-size:14pt;padding:6px 10px;text-align:center}
+table{width:100%;border-collapse:collapse}
+td{padding:6px 8px;border-top:1px solid var(--line);vertical-align:top;text-align:center}
+td:first-child{font-weight:700;width:42%}
+td code{font-family:var(--mono);font-size:10.5pt}
+.key{margin-top:12px;background:#2a4d9b;color:#fff;border-radius:6px;padding:10px 14px;text-align:center}
+.key b{display:block;font-size:14pt}
+.note{margin-top:10px;text-align:center;color:var(--muted);font-size:10pt}
+@media (max-width:900px){.grid{grid-template-columns:1fr}h1{font-size:24pt}}
+</style></head><body><main>
+<h1>PMP formulas cheat sheet</h1>
+<div class="grid">
+<section style="--c:#2a4d9b"><h2>1. Earned value</h2><table>
+<tr><td>CV</td><td><code>EV - AC</code></td></tr><tr><td>SV</td><td><code>EV - PV</code></td></tr><tr><td>CPI</td><td><code>EV / AC</code></td></tr><tr><td>SPI</td><td><code>EV / PV</code></td></tr><tr><td>EAC</td><td><code>BAC / CPI</code><br><code>AC + (BAC - EV) / CPI</code></td></tr><tr><td>ETC</td><td><code>EAC - AC</code></td></tr><tr><td>VAC</td><td><code>BAC - EAC</code></td></tr><tr><td>TCPI</td><td><code>(BAC - EV) / (BAC - AC)</code></td></tr></table></section>
+<section style="--c:#2a4d9b"><h2>2. Schedule</h2><table>
+<tr><td>EF</td><td><code>ES + duration</code></td></tr><tr><td>LS</td><td><code>LF - duration</code></td></tr><tr><td>Total float</td><td><code>LS - ES = LF - EF</code></td></tr><tr><td>Free float</td><td><code>min(ES successors) - EF</code></td></tr><tr><td>Critical path</td><td>Zero total float</td></tr></table></section>
+<section style="--c:#2f8a5b"><h2>3. Cost and resource</h2><table>
+<tr><td>BV</td><td><code>BAC - EV</code></td></tr><tr><td>Resource use</td><td><code>actual / available x 100</code></td></tr><tr><td>ETC</td><td><code>EAC - AC</code></td></tr></table></section>
+<section style="--c:#2f7d4a"><h2>4. Quality</h2><table>
+<tr><td>Defect density</td><td><code>defects / size</code></td></tr><tr><td>DPMO</td><td><code>defects / opportunities x 10^6</code></td></tr><tr><td>Yield %</td><td><code>(opp - defects) / opp x 100</code></td></tr><tr><td>CoQ</td><td><code>prevention + appraisal + failure</code></td></tr></table></section>
+<section style="--c:#b3441f"><h2>5. Risk</h2><table>
+<tr><td>RE</td><td><code>P x I</code></td></tr><tr><td>EMV</td><td><code>sum(P x I)</code></td></tr><tr><td>RPN</td><td><code>P x I x detectability</code></td></tr></table></section>
+<section style="--c:#7a4fa3"><h2>6. Procurement and stakeholders</h2><table>
+<tr><td>TCO</td><td><code>price + operating + maintenance + disposal</code></td></tr><tr><td>SII</td><td><code>(influence + interest) / 2</code></td></tr></table></section>
+<section style="--c:#8a5a2b"><h2>9. Benefits</h2><table>
+<tr><td>ROI %</td><td><code>net benefits / investment x 100</code></td></tr><tr><td>BCR</td><td><code>benefits / costs</code></td></tr><tr><td>Payback</td><td><code>investment / annual net benefit</code></td></tr></table></section>
+<section style="--c:#5b6b7a"><h2>11. PERT</h2><table>
+<tr><td>Beta</td><td><code>(O + 4M + P) / 6</code></td></tr><tr><td>Variance</td><td><code>((P - O) / 6)^2</code></td></tr><tr><td>Triangular</td><td><code>(O + M + P) / 3</code></td></tr></table></section>
+<section style="--c:#2a4d9b"><h2>12. NPV</h2><table>
+<tr><td>NPV</td><td><code>sum CF_t / (1 + r)^t</code></td></tr><tr><td>Decision</td><td>&gt; 0 accept, = 0 break even, &lt; 0 reject</td></tr></table></section>
+</div>
+<div class="key"><b>Key takeaway</b>Use the right formula at the right time. Understand inputs and assumptions before every calculation.</div>
+<p class="note">Source: PMP formulas cheat sheet image. PMP does not require memorising formulas.</p>
+</main></body></html>
