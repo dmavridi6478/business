@@ -81,3 +81,6 @@ Source: "Claude Marketing Setup" graphic (Muhammad Ayan), also in the uploads as
 | 04 Check | `/performance-report` | Connect HubSpot or paste: what to double down on |
 
 Those commands match the `marketing:*` plugin skills (`marketing:campaign-plan`, `competitive-brief`, `draft-content`, `email-sequence`, `seo-audit`, `brand-review`, `performance-report`) that are available in this environment, so nothing new was built. Drafts only; the human publishes. Connectors (HubSpot, Canva, Notion) are authorised by the user in claude.ai connector settings.
+
+
+See also (Batch 124): `claude-marketing-department-48`, a catalogue of a 48-item Claude marketing repository (titles only; contents unverified) mapped to the skills in this library.

@@ -596,3 +596,24 @@ Original CSS and placeholder wording only. Overlap checked: `prompt-rows-6` (six
 | `theme-sales-prep-navy-blue.html` | bg `#FFFFFF`, surface `#DCE8FB`, text `#1A2340`, accent `#0B2A6F`, border `#1B2F66` | bg `#0A1226`, accent `#7FA8F5` | Inter |
 | `theme-ai-growth-pastel-six.html` | bg `#FFFFFF`, text `#060B3A`, accent `#1356D8` (template adds six pastel category pairs) | bg `#060B3A`, accent `#7FA8F5` | Inter + Merriweather |
 | `theme-strategy-terminal-black.html` | bg `#F4F4F2`, text `#111111`, accent `#0A3DAA` | bg `#050505`, accent `#6FA8FF` | Inter + JetBrains Mono |
+
+
+## Batch 124 additions
+
+| Template | Use for | Layout |
+|---|---|---|
+| `two-lane-authority-flow.html` | "X-led versus Y-led" two-engine explainers | 1080x1350; pale-blue page, serif title with a yellow-highlighted year, script subtitle, two stacked lanes (purple, green): header bar, three input cards, centre engine box with arrows, three output cards, caption; blue footer |
+| `ai-citation-scorecard.html` | Data-plus-rules graphics ("the rules of X are changing") | 1080x1350; warm off-white, heavy title with an orange-highlighted second line, data panel (line plus bar, all dummy figures), losing/gaining pair with an arrow, six rule tiles, rust quote banner, black footer |
+| `mountain-roadmap-6.html` | Six-step leadership or journey roadmaps | 1080x1350; cream page, condensed title with an orange phrase, flag box, SVG mountain with a winding path and six numbered markers, three cards per side (odd steps left, even right) |
+| `compare-matrix-rows-11.html` | "X versus Y" comparison matrices with a formula row | 1080x1350; pale-green page, one rounded table with a green header band, nine labelled rows, two formula bubbles, a "how they work together" row, author footer |
+
+Original CSS, SVG and placeholder wording only; all figures in the scorecard are dummy. Overlap checked: `two-column-shift-comparison` and `compare-two-approaches-cream` are different shapes (no row-labelled matrix, no two-lane flow). Not built: a 48-item file-explorer card, because `file-explorer-system-card` already has that shape (sidebar tree plus sectioned panels); and a duplicate of the Batch 123 "60 tools" card, because `category-cards-3x2-60` covers it. Rendered at 1080x1350 and checked for overflow; first mountain pass had cards overlapping the subtitle and flag, fixed by moving the stage down and shortening the cards.
+
+## Batch 124 theme tokens (files in `Artifacts/theme-*.html`; colours eyeballed)
+
+| Theme file | Light | Dark | Fonts (free) |
+|---|---|---|---|
+| `theme-authority-purple-green.html` | bg `#EEF4FC`, text `#101626`, accent `#6F34E8` (template adds green `#1E6B3C`) | bg `#0E1424`, accent `#B58CFF` | Inter + Merriweather |
+| `theme-citation-rust-cream.html` | bg `#FAF4EE`, text `#16181C`, accent `#B04A22` | bg `#1A1511`, accent `#FF8E5C` | Inter + JetBrains Mono |
+| `theme-culture-peach-navy.html` | bg `#FCF6EC`, text `#16213E`, accent `#D9631F` (template adds violet `#7A5BC4`) | bg `#121827`, accent `#FF9A57` | Inter + Anton |
+| `theme-gtm-compare-green.html` | bg `#EAF4E6`, text `#161A16`, accent `#2C7A2C` | bg `#0F1A10`, accent `#7BD07B` | Inter |

@@ -6164,3 +6164,12 @@ Built from three infographics sent inline (Claude for sales prep: ten prompts; 6
 - 3 commands: `/sales-prep`, `/strategy-skill`, `/ai-growth-shortlist`.
 - 3 design templates (`prompt-table-10-rows`, `category-cards-3x2-60`, `terminal-skill-table-21`, on a taller 1080x1500 canvas) and 3 themes (`sales-prep-navy-blue`, `ai-growth-pastel-six`, `strategy-terminal-black`).
 - `Artifacts/operations/workflows-batch-123.html` (3 workflows), `Artifacts/business/batch-123-intake-report.html`, `docs/batch-123-prompts.md` (ten verbatim prompts and four original).
+
+## Batch 124 (30 October 2026)
+
+Built from `12c65a1c-LinkedIn_Authority_2026.zip` (six images: LinkedIn authority, AI citation rules, 90-day team culture roadmap, GTM strategy versus engineering, a 48-item Claude marketing department, and the 60-tool AI catalogue already handled in Batch 123). No repositories were named, so there is no install script.
+
+- 5 new skills: `linkedin-authority-two-engines`, `ai-citation-rules-6` (Reddit figures checked against Promptwatch: verified but provisional; review-site figures unverified), `team-culture-rebuild-90-days`, `gtm-strategy-vs-engineering`, `claude-marketing-department-48` (titles only, contents unverified, mapped to existing skills).
+- 5 commands: `/authority-audit`, `/citation-rules`, `/culture-rebuild`, `/gtm-vs-engineering`, `/marketing-dept-map`. Pointers added to `ai-search-visibility` and `claude-code-marketing-team`.
+- 4 design templates (`two-lane-authority-flow`, `ai-citation-scorecard`, `mountain-roadmap-6`, `compare-matrix-rows-11`) and 4 themes (`authority-purple-green`, `citation-rust-cream`, `culture-peach-navy`, `gtm-compare-green`).
+- `Artifacts/operations/workflows-batch-124.html` (4 workflows), `Artifacts/business/batch-124-intake-report.html`, `docs/batch-124-prompts.md` (six original prompts).

@@ -93,3 +93,5 @@ Implementation notes:
 - **product-marketing-context**: Source of the "who they are, what they do" summary that populates both `llms.txt` and the pre-filled "Ask AI about me" prompt.
 - **frontend-design** / **web-artifacts-builder**: Implementation of the actual page structure and the AI-prompt block.
 - **design-dev-resources**: Real provider logos (via SVGL) for the ChatGPT/Claude/Perplexity/Gemini buttons.
+
+- **ai-citation-rules-6**: Six rules for earning AI citations with the Reddit citation-share figures checked against Promptwatch (verified but flagged provisional by its source) and the review-site figures that could not be verified (Batch 124).
