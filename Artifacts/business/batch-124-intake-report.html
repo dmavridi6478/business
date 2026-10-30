@@ -1,0 +1,114 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Batch 124 Intake Report</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<style>
+  /* Layout: single-column formal report, 880px measure; tables scroll inside their own wrappers.
+     Palette: ink-blue neutrals, one deep teal accent, semantic green/amber/red for status only.
+     Type: Aptos (the owner's house font) with system fallbacks; title 32pt, headings 14pt, body 11pt. */
+  :root {
+    --bg: #f6f7f9; --surface: #ffffff; --fg: #1b2330; --muted: #5a6577; --line: #d9dee6;
+    --accent: #0f5d6b; --accent-soft: #e2f0f2;
+    --ok: #17703a; --ok-bg: #e3f3e8; --warn: #8a5a00; --warn-bg: #fbefd3; --bad: #a11d2a; --bad-bg: #fbe3e5;
+    --code-bg: #eef1f5;
+    --font: Aptos, "Segoe UI Variable Text", "Segoe UI", system-ui, -apple-system, Roboto, sans-serif;
+    --mono: ui-monospace, "SF Mono", Consolas, monospace;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #11161e; --surface: #181f2a; --fg: #e6eaf0; --muted: #9aa5b6; --line: #2c3646;
+      --accent: #6cc3d1; --accent-soft: #17323a;
+      --ok: #6fd18f; --ok-bg: #173824; --warn: #f0c261; --warn-bg: #3a2e12; --bad: #ff8d98; --bad-bg: #3d1a1f;
+      --code-bg: #0e131a; color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #11161e; --surface: #181f2a; --fg: #e6eaf0; --muted: #9aa5b6; --line: #2c3646;
+    --accent: #6cc3d1; --accent-soft: #17323a;
+    --ok: #6fd18f; --ok-bg: #173824; --warn: #f0c261; --warn-bg: #3a2e12; --bad: #ff8d98; --bad-bg: #3d1a1f;
+    --code-bg: #0e131a; color-scheme: dark;
+  }
+  * { box-sizing: border-box; }
+  body { background: var(--bg); color: var(--fg); font-family: var(--font); font-size: 11pt; line-height: 1.55; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); padding-block: 28px 64px; }
+  main { max-width: 880px; margin-inline: auto; display: flex; flex-direction: column; gap: 28px; }
+  header { display: flex; flex-direction: column; gap: 8px; border-bottom: 2px solid var(--accent); padding-bottom: 18px; }
+  .eyebrow { font-size: 9pt; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
+  h1 { font-size: 32pt; line-height: 1.1; margin: 0; font-weight: 700; text-wrap: balance; }
+  h2 { font-size: 14pt; margin: 0 0 10px; font-weight: 700; color: var(--accent); text-wrap: balance; }
+  p { margin: 0 0 10px; max-width: 75ch; }
+  section { background: var(--surface); border: 1px solid var(--line); border-radius: 6px; padding: 20px 22px; min-width: 0; }
+  .lede { font-size: 11pt; color: var(--muted); max-width: 70ch; margin: 0; }
+  .truth { border-left: 4px solid var(--bad); background: var(--bad-bg); padding: 12px 16px; border-radius: 0 6px 6px 0; }
+  .truth p:last-child { margin-bottom: 0; }
+  .tw { overflow-x: auto; margin-block: 8px 4px; border: 1px solid var(--line); border-radius: 4px; }
+  table { border-collapse: collapse; width: 100%; min-width: 720px; font-size: 10pt; }
+  th, td { padding: 8px 10px; border-bottom: 1px solid var(--line); text-align: center; vertical-align: top; }
+  th { background: var(--accent-soft); color: var(--fg); font-weight: 700; font-size: 9.5pt; }
+  tr:last-child td { border-bottom: 0; }
+  td.l, th.l { text-align: center; } /* house rule: table content aligned top and centre */
+  .st { display: inline-block; padding: 1px 8px; border-radius: 10px; font-size: 9pt; font-weight: 700; white-space: nowrap; }
+  .st.ok { background: var(--ok-bg); color: var(--ok); } .st.warn { background: var(--warn-bg); color: var(--warn); } .st.bad { background: var(--bad-bg); color: var(--bad); }
+  .sw { display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 10px; margin-block: 8px; }
+  .sw div { border: 1px solid var(--line); border-radius: 4px; overflow: hidden; font-size: 9pt; text-align: center; }
+  .sw i { display: block; height: 44px; }
+  .sw span { display: block; padding: 4px 6px; font-family: var(--mono); }
+  .prompt { position: relative; margin-block: 10px; }
+  .prompt pre { margin: 0; white-space: pre-wrap; background: var(--code-bg); border: 1px solid var(--line); border-radius: 4px; padding: 12px 84px 12px 12px; font-family: var(--mono); font-size: 9.5pt; line-height: 1.5; }
+  .prompt b { display: block; font-family: var(--font); font-size: 10pt; margin-bottom: 4px; }
+  .prompt button { position: absolute; top: 30px; right: 8px; font: inherit; font-size: 9pt; padding: 4px 10px; border-radius: 4px; border: 1px solid var(--accent); background: var(--surface); color: var(--accent); cursor: pointer; }
+  .prompt button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  ul { margin: 0 0 10px; padding-left: 20px; } li { margin-bottom: 4px; max-width: 75ch; }
+  code { font-family: var(--mono); font-size: 9.5pt; background: var(--code-bg); padding: 1px 4px; border-radius: 3px; }
+  footer { color: var(--muted); font-size: 9.5pt; }
+</style>
+<style>
+ figure{margin:0;text-align:center} figure img{width:100%;border:1px solid var(--line);border-radius:4px;display:block} figcaption{font-size:8.5pt;color:var(--muted);margin-top:4px}
+ .thumbs{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px;margin-top:10px}
+ pre{white-space:pre-wrap;word-break:break-word;background:var(--code-bg);border:1px solid var(--line);border-radius:4px;padding:12px;font:10pt/1.5 var(--mono);margin:8px 0;overflow-x:auto}
+ details{border:1px solid var(--line);border-radius:4px;padding:8px 12px;margin-top:8px} summary{cursor:pointer;font-weight:700}
+ code{font-family:var(--mono);font-size:9.5pt;background:var(--code-bg);padding:0 4px;border-radius:3px}
+ ul{margin:0 0 10px;padding-left:20px;max-width:78ch} li{margin-bottom:4px}
+ td code{white-space:normal;word-break:break-word}
+</style>
+<style>main > section, main > header {min-width:0} p, li, code {overflow-wrap:anywhere}</style>
+<main>
+<header><div class="eyebrow">Batch 124 · 30 October 2026 · intake</div><h1>Batch 124 Intake Report</h1><p>A zip of six images (LinkedIn authority, AI citation rules, a 90-day team culture roadmap, GTM strategy versus engineering, a 48-item Claude marketing department, and a 60-tool AI catalogue) processed with the seven-step intake. Result: five new skills, five commands, four templates, four themes, four workflows and six original prompts. No repositories were named, so nothing was cloned and there is no install script.</p></header>
+<section><h2>1. Executive findings</h2><ul>
+<li><b>[Certain]</b> One of the six is a repeat. "AI Growth for Corporate Leaders and Businesses" (60 tools, six categories) is the same graphic handled in Batch 123 as <code>ai-tools-50-directory/references/60-ai-growth-tools-corporate.md</code>. It was not rebuilt. If you are re-sending images to be safe, the library already holds them.</li>
+<li><b>[Certain]</b> The AI-citation graphic mixes a verified statistic with an unverified one. I had a subagent read Promptwatch's own pages: the Reddit figures (3.83% falling to 0.52%, an 86.4% relative drop) are exactly as published on 18 and 20 August 2026, but the source says the size of the drop is provisional and does not state a sample size or model version. The "7% to 0%" for G2, Capterra and Trustpilot on GPT-5.1 and GPT-5.6 does not appear on any page read, and no source read names those model versions. A later Promptwatch post (22 October) gives different review-site shares (G2 0.73%, Capterra 0.32%) for a different window. The skill quotes the first as provisional and the second as unverified. The graphic is also a sales page for a citation-tracking vendor.</li>
+<li><b>[Certain]</b> The LinkedIn authority percentages (62%, 70%, 39%, 48%, 43%) have no sample size, date or population. They answer different questions and cannot be ranked against each other, and "leading primary inbound motion at 70%" is ambiguous. I kept the two-engine framework and removed the numbers from anything the skill recommends. The source is a ghostwriting agency selling a service.</li>
+<li><b>[Likely]</b> The team-culture roadmap is sound leadership practice but has no evidence base shown and promises direction, not culture, by day 90 (it says so itself). The risk it omits: after layoffs or a merger, distrust can be a rational response, and consultation law may apply. I added a 30-60-90 sequence, measures, and an acknowledge-first step.</li>
+<li><b>[Certain]</b> The GTM table was written by the CEO of an outreach-tool vendor, so its tool column includes her own product. The strategy-versus-engineering split is useful; "enrich lookalike accounts from call transcripts" raises data-protection questions the graphic never mentions, and "anyone can rebuild your table" means the moat is proof and offer, not the stack.</li>
+<li><b>[Certain]</b> The 48-item "Claude marketing department" is a screenshot of a table of contents. Only titles are visible; the files, author and licence are not. I catalogued the 48 titles and mapped them to existing skills (<code>claude-code-marketing-team</code> already has 50 roles in 10 departments, <code>claude-marketing-jobs</code> has 50 jobs) rather than inventing their contents. Two titles ("Muse MCP Server", and a named scorer in "Post Triage") are unexplained and are marked as such. "Comment CMO" is a lead-magnet hook. The sensible part is the "rollout ladder": read-only first, then capped spend.</li>
+</ul></section>
+<section><h2>2. Source inventory and what was built</h2><div class="tw"><table><tr><th>Source</th><th>Content</th><th>Result</th></tr>
+<tr><td>LinkedIn Authority 2026</td><td>Relationship-led versus algorithm-led authority</td><td>Skill <code>linkedin-authority-two-engines</code>; <code>/authority-audit</code>; template <code>two-lane-authority-flow</code>; theme <code>authority-purple-green</code>; workflow 1</td></tr>
+<tr><td>The Rules of AI Citations Are Changing</td><td>Citation-share data and six rules</td><td>Skill <code>ai-citation-rules-6</code>; <code>/citation-rules</code>; template <code>ai-citation-scorecard</code>; theme <code>citation-rust-cream</code>; workflow 2</td></tr>
+<tr><td>How to Rebuild Team Culture in the First 90 Days</td><td>Six steps, five actions each</td><td>Skill <code>team-culture-rebuild-90-days</code>; <code>/culture-rebuild</code>; template <code>mountain-roadmap-6</code>; theme <code>culture-peach-navy</code>; workflow 3</td></tr>
+<tr><td>GTM Strategy vs GTM Engineering (animated GIF, 105 frames, same table throughout)</td><td>Eleven-row comparison and two formulas</td><td>Skill <code>gtm-strategy-vs-engineering</code>; <code>/gtm-vs-engineering</code>; template <code>compare-matrix-rows-11</code>; theme <code>gtm-compare-green</code>; workflow 4</td></tr>
+<tr><td>Whole marketing department inside Claude</td><td>48 titles in six sections</td><td>Skill <code>claude-marketing-department-48</code>; <code>/marketing-dept-map</code></td></tr>
+<tr><td>AI Growth for Corporate Leaders</td><td>60 tools, six categories</td><td>Already built in Batch 123; not rebuilt</td></tr></table></div></section>
+<section><h2>3. Where I disagree with the source material</h2><ul>
+<li>I disagree with quoting "-86.4%" as the new reality for AI citations. The risk is rebuilding a content strategy on a three-week window its own source calls provisional. Track your own prompt set monthly and watch whether the shift persists.</li>
+<li>I disagree with presenting survey percentages with no base as if they were benchmarks. The risk is allocating weekly time on the strength of numbers nobody can check. Set a split by stage and review it against meetings booked.</li>
+<li>I disagree with "48 skills, agents and playbooks" as a reason to install anything. The risk is giving agents write access to ad accounts from a pack you have not read. Read every file, start read-only, and set the spend cap in the ad platform itself.</li></ul></section>
+<section><h2>4. Not done, and why</h2><ul>
+<li>No repositories were named, so nothing was cloned or installed and there is no install script.</li>
+<li>No template for the 48-item explorer: <code>file-explorer-system-card</code> already has that shape.</li>
+<li>The contents of the 48 items were not recreated; only titles were visible.</li>
+<li>The review-site citation figures could not be verified from the sources reachable here. The check was one subagent session over Promptwatch's public pages, not a full search; if the figures matter to a decision, ask the vendor for the data.</li>
+<li>No n8n workflow: none of the four workflows is a scheduled automation, and the n8n connection is not available in this session.</li></ul></section>
+<section><h2>5. Deliverables</h2><div class="tw"><table><tr><th>Type</th><th>Items</th></tr>
+<tr><td>Skills</td><td><code>linkedin-authority-two-engines</code>, <code>ai-citation-rules-6</code>, <code>team-culture-rebuild-90-days</code>, <code>gtm-strategy-vs-engineering</code>, <code>claude-marketing-department-48</code></td></tr>
+<tr><td>Commands</td><td><code>/authority-audit</code>, <code>/citation-rules</code>, <code>/culture-rebuild</code>, <code>/gtm-vs-engineering</code>, <code>/marketing-dept-map</code></td></tr>
+<tr><td>Merged skills</td><td><code>ai-search-visibility</code> (pointer), <code>claude-code-marketing-team</code> (pointer), <code>design-templates</code></td></tr>
+<tr><td>Templates</td><td><code>two-lane-authority-flow</code>, <code>ai-citation-scorecard</code>, <code>mountain-roadmap-6</code>, <code>compare-matrix-rows-11</code></td></tr>
+<tr><td>Themes</td><td><code>theme-authority-purple-green</code>, <code>theme-citation-rust-cream</code>, <code>theme-culture-peach-navy</code>, <code>theme-gtm-compare-green</code></td></tr>
+<tr><td>Workflows</td><td><code>Artifacts/operations/workflows-batch-124.html</code></td></tr>
+<tr><td>Prompts</td><td><code>docs/batch-124-prompts.md</code> (six original plain-text prompts)</td></tr></table></div></section>
+<section><h2>6. Open decisions for you</h2><ul>
+<li>Do you want the AI-citation baseline run for a real site? Send the URL and five buyer questions; the prompt set needs your market's wording.</li>
+<li>Do you want the culture plan written for a real situation? Send what changed, the team size and what has already been said.</li>
+<li>Do you run ad accounts that an agent would touch? If so, decide the spend cap and the approver before anyone installs the 48-item pack.</li>
+<li>Which of the five new skills will you use in the next two weeks? The library is past 1,300 skills; unused ones make routing worse.</li></ul></section>
+<footer>Prepared 30 October 2026. The only external check was the Promptwatch pages read by one subagent; no repositories were checked in this batch.</footer>
+</main>
+</body></html>

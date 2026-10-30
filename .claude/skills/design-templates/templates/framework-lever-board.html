@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<!--
+  Template: framework-lever-board
+  Style: white page, small tag, two-tone headline (ink + orange), subtitle, 2x2 board of numbered lever cards (badge, title, quoted line, "ask your team" and "red flag" rows), a four-step strip and an orange footer bar. Theme: framework-orange-ink
+  Inspired by: one-page consulting-framework summaries (four levers, each with a question and a warning sign). Original CSS and placeholder wording; no source people, logos or text reused.
+  Canvas: 1080 x 1350. Swap points: .tag, h1 and span, .sub, .lv cards (.b number, h2 title, .q quote, .row.ask, .row.red), .steps (4 boxes), .foot
+-->
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Framework Lever Board</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#FFFFFF;--ink:#14213D;--muted:#55607A;--orange:#E8590C;--soft:#FFF3EA;--line:#F6CDB1;--navy:#EAF0FB;--font:"Inter",Aptos,"Segoe UI",system-ui,sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#333;display:flex;justify-content:center;padding:32px 0;overflow-x:auto;font-family:var(--font)}
+.slide{position:relative;width:1080px;height:1350px;flex:none;background:var(--bg);color:var(--ink);overflow:hidden;padding:44px 40px 0}
+.tag{display:inline-block;background:var(--soft);border:2px solid var(--line);color:var(--orange);border-radius:999px;padding:7px 16px;font:700 18px/1 var(--font)}
+h1{margin-top:14px;padding-bottom:4px;font:800 62px/1.1 var(--font);letter-spacing:-.025em}h1 span{color:var(--orange)}
+.sub{margin-top:8px;font:500 22px/1.3 var(--font);color:var(--muted)}
+.board{position:absolute;left:40px;right:40px;top:312px;display:grid;grid-template-columns:1fr 1fr;grid-template-rows:370px 370px;gap:14px}
+.lv{min-width:0;background:var(--soft);border:2px solid var(--line);border-radius:18px;padding:16px 18px;display:flex;flex-direction:column;gap:9px}
+.hd{display:flex;align-items:center;gap:12px}
+.b{width:40px;height:40px;border-radius:50%;background:var(--orange);color:#fff;font:800 21px/40px var(--font);text-align:center;flex:none}
+.lv h2{font:800 25px/1.15 var(--font)}
+.q{font:600 italic 18px/1.35 var(--font);color:var(--ink);background:#fff;border-radius:10px;padding:9px 12px;height:84px;overflow:hidden}
+.row{font:500 16px/1.35 var(--font);color:var(--muted);height:76px;overflow:hidden}
+.row em{display:block;font:800 12px/1.6 var(--font);letter-spacing:.1em;text-transform:uppercase;font-style:normal}
+.row.ask em{color:var(--ink)}.row.red em{color:var(--orange)}
+.steps{position:absolute;left:40px;right:40px;top:1110px;height:150px;display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.steps div{background:var(--navy);border-radius:14px;padding:12px 14px;font:500 16px/1.35 var(--font);color:var(--ink);overflow:hidden}
+.steps b{display:block;font:800 14px/1.5 var(--font);color:var(--orange);letter-spacing:.06em;text-transform:uppercase}
+.foot{position:absolute;left:0;right:0;bottom:0;height:70px;background:var(--orange);color:#fff;display:flex;align-items:center;justify-content:center;font:800 24px/1 var(--font)}
+</style></head><body>
+<div class="slide">
+  <span class="tag">Framework</span>
+  <h1>Name of the framework<br><span>in four levers</span></h1>
+  <p class="sub">One line on when to use it</p>
+  <div class="board">
+    <div class="lv"><div class="hd"><span class="b">1</span><h2>Lever title</h2></div><p class="q">"What people should be able to say once this lever works."</p><p class="row ask"><em>Ask your team</em>One question to test this lever in your own organisation.</p><p class="row red"><em>Red flag</em>The warning sign that it is missing or going wrong.</p></div>
+    <div class="lv"><div class="hd"><span class="b">2</span><h2>Lever title</h2></div><p class="q">"What people should be able to say once this lever works."</p><p class="row ask"><em>Ask your team</em>One question to test this lever in your own organisation.</p><p class="row red"><em>Red flag</em>The warning sign that it is missing or going wrong.</p></div>
+    <div class="lv"><div class="hd"><span class="b">3</span><h2>Lever title</h2></div><p class="q">"What people should be able to say once this lever works."</p><p class="row ask"><em>Ask your team</em>One question to test this lever in your own organisation.</p><p class="row red"><em>Red flag</em>The warning sign that it is missing or going wrong.</p></div>
+    <div class="lv"><div class="hd"><span class="b">4</span><h2>Lever title</h2></div><p class="q">"What people should be able to say once this lever works."</p><p class="row ask"><em>Ask your team</em>One question to test this lever in your own organisation.</p><p class="row red"><em>Red flag</em>The warning sign that it is missing or going wrong.</p></div>
+  </div>
+  <div class="steps"><div><b>Step 1</b>Score each lever today</div><div><b>Step 2</b>Find the weakest lever</div><div><b>Step 3</b>Pick one move for it</div><div><b>Step 4</b>Re-score in a month</div></div>
+  <div class="foot">Your brand or call to action</div>
+</div></body></html>

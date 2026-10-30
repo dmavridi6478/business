@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<!--
+  Template: five-stage-column-matrix
+  Style: pale page, centred title with a coloured word, a loop or journey strip of five stage chips, then five tall columns (stage header, what happens, evidence stat, ask your team, your move, metric) and two summary panels. Theme: journey-teal-gold
+  Inspired by: customer-journey and five-phase framework summaries. Original CSS and placeholder wording; no source people, logos, statistics or text reused.
+  Canvas: 1080 x 1350. Swap points: h1 and span, .sub, .cols (5 columns: .hd stage, .blk blocks with label i), .pan panels, .brand
+-->
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Five Stage Column Matrix</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#F4F7F6;--ink:#0F2A2E;--muted:#4F6669;--teal:#0E7C7B;--gold:#C9962B;--card:#FFFFFF;--line:#CFE0DE;--soft:#E6F2F1;--font:"Inter",Aptos,"Segoe UI",system-ui,sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#333;display:flex;justify-content:center;padding:32px 0;overflow-x:auto;font-family:var(--font)}
+.slide{position:relative;width:1080px;height:1350px;flex:none;background:var(--bg);color:var(--ink);overflow:hidden;padding:44px 40px 0;text-align:center}
+h1{padding-bottom:4px;font:800 62px/1.1 var(--font);letter-spacing:-.025em}h1 span{color:var(--teal)}
+.sub{margin-top:8px;font:500 22px/1.3 var(--font);color:var(--muted)}
+.strip{position:absolute;left:40px;right:40px;top:236px;height:64px;border:2px dashed var(--line);border-radius:18px;display:flex;align-items:center;justify-content:space-around;padding:0 14px;background:var(--card)}
+.strip i{font:800 17px/1 var(--font);font-style:normal;color:var(--teal);background:var(--soft);border-radius:999px;padding:9px 14px}
+.strip i:nth-child(odd){color:var(--gold);background:#FBF3E0}
+.cols{position:absolute;left:40px;right:40px;top:322px;height:748px;display:grid;grid-template-columns:repeat(5,1fr);gap:10px}
+.col{min-width:0;background:var(--card);border:2px solid var(--line);border-radius:14px;overflow:hidden;display:flex;flex-direction:column;text-align:left}
+.hd{background:var(--teal);color:#fff;font:800 17px/1.2 var(--font);padding:12px 10px;height:60px;display:flex;align-items:center}
+.col:nth-child(even) .hd{background:var(--gold)}
+.blk{flex:1;padding:9px 10px;font:500 14px/1.35 var(--font);color:var(--muted);border-top:1px solid var(--line);overflow:hidden}
+.blk i{display:block;font:800 11px/1.6 var(--font);font-style:normal;letter-spacing:.08em;text-transform:uppercase;color:var(--teal)}
+.col:nth-child(even) .blk i{color:var(--gold)}
+.pan{position:absolute;top:1088px;height:150px;background:var(--card);border:2px solid var(--line);border-radius:14px;padding:12px 16px;text-align:left;font:500 15px/1.4 var(--font);color:var(--muted);overflow:hidden}
+.pan.l{left:40px;width:490px}.pan.r{left:550px;width:490px}
+.pan b{display:block;font:800 14px/1.6 var(--font);letter-spacing:.06em;text-transform:uppercase;color:var(--ink)}
+.brand{position:absolute;left:0;right:0;bottom:0;height:70px;background:var(--ink);color:#fff;display:flex;align-items:center;justify-content:center;font:700 22px/1 var(--font)}
+</style></head><body>
+<div class="slide">
+  <h1>Name of the model<br><span>and where to spend</span></h1>
+  <p class="sub">One line on why the usual view is wrong</p>
+  <div class="strip"><i>Stage 1</i><i>Stage 2</i><i>Stage 3</i><i>Stage 4</i><i>Stage 5</i></div>
+  <div class="cols">
+    <div class="col"><div class="hd">1 Stage name</div><div class="blk"><i>What happens</i>Two short lines about this stage.</div><div class="blk"><i>Evidence</i>One number and what it shows.</div><div class="blk"><i>Ask your team</i>One question for this stage.</div><div class="blk"><i>Your move</i>One action to take.</div><div class="blk"><i>Track</i>One metric.</div></div>
+    <div class="col"><div class="hd">2 Stage name</div><div class="blk"><i>What happens</i>Two short lines about this stage.</div><div class="blk"><i>Evidence</i>One number and what it shows.</div><div class="blk"><i>Ask your team</i>One question for this stage.</div><div class="blk"><i>Your move</i>One action to take.</div><div class="blk"><i>Track</i>One metric.</div></div>
+    <div class="col"><div class="hd">3 Stage name</div><div class="blk"><i>What happens</i>Two short lines about this stage.</div><div class="blk"><i>Evidence</i>One number and what it shows.</div><div class="blk"><i>Ask your team</i>One question for this stage.</div><div class="blk"><i>Your move</i>One action to take.</div><div class="blk"><i>Track</i>One metric.</div></div>
+    <div class="col"><div class="hd">4 Stage name</div><div class="blk"><i>What happens</i>Two short lines about this stage.</div><div class="blk"><i>Evidence</i>One number and what it shows.</div><div class="blk"><i>Ask your team</i>One question for this stage.</div><div class="blk"><i>Your move</i>One action to take.</div><div class="blk"><i>Track</i>One metric.</div></div>
+    <div class="col"><div class="hd">5 Stage name</div><div class="blk"><i>What happens</i>Two short lines about this stage.</div><div class="blk"><i>Evidence</i>One number and what it shows.</div><div class="blk"><i>Ask your team</i>One question for this stage.</div><div class="blk"><i>Your move</i>One action to take.</div><div class="blk"><i>Track</i>One metric.</div></div>
+  </div>
+  <div class="pan l"><b>Audit it in four steps</b>1. First step. 2. Second step. 3. Third step. 4. Fourth step.</div>
+  <div class="pan r"><b>What practitioners take from it</b>Two or three short lines on where the leverage is and what to watch.</div>
+  <div class="brand">Your name or handle</div>
+</div></body></html>

@@ -153,3 +153,5 @@ Fix: Generate a unique title per product using the product name and primary cate
 - `frontend-patterns`
 - `brand-voice`
 - `market-research`
+
+See also `references/keyword-research-framework.md` (7 steps, 10 types, 10 methods, 8 metrics, scored prioritisation; Batch 114) and the `/keyword-research-plan` command.

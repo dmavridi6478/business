@@ -1,0 +1,94 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Batch 118 Intake Report</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<style>
+  /* Layout: single-column formal report, 880px measure; tables scroll inside their own wrappers.
+     Palette: ink-blue neutrals, one deep teal accent, semantic green/amber/red for status only.
+     Type: Aptos (the owner's house font) with system fallbacks; title 32pt, headings 14pt, body 11pt. */
+  :root {
+    --bg: #f6f7f9; --surface: #ffffff; --fg: #1b2330; --muted: #5a6577; --line: #d9dee6;
+    --accent: #0f5d6b; --accent-soft: #e2f0f2;
+    --ok: #17703a; --ok-bg: #e3f3e8; --warn: #8a5a00; --warn-bg: #fbefd3; --bad: #a11d2a; --bad-bg: #fbe3e5;
+    --code-bg: #eef1f5;
+    --font: Aptos, "Segoe UI Variable Text", "Segoe UI", system-ui, -apple-system, Roboto, sans-serif;
+    --mono: ui-monospace, "SF Mono", Consolas, monospace;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #11161e; --surface: #181f2a; --fg: #e6eaf0; --muted: #9aa5b6; --line: #2c3646;
+      --accent: #6cc3d1; --accent-soft: #17323a;
+      --ok: #6fd18f; --ok-bg: #173824; --warn: #f0c261; --warn-bg: #3a2e12; --bad: #ff8d98; --bad-bg: #3d1a1f;
+      --code-bg: #0e131a; color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #11161e; --surface: #181f2a; --fg: #e6eaf0; --muted: #9aa5b6; --line: #2c3646;
+    --accent: #6cc3d1; --accent-soft: #17323a;
+    --ok: #6fd18f; --ok-bg: #173824; --warn: #f0c261; --warn-bg: #3a2e12; --bad: #ff8d98; --bad-bg: #3d1a1f;
+    --code-bg: #0e131a; color-scheme: dark;
+  }
+  * { box-sizing: border-box; }
+  body { background: var(--bg); color: var(--fg); font-family: var(--font); font-size: 11pt; line-height: 1.55; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); padding-block: 28px 64px; }
+  main { max-width: 880px; margin-inline: auto; display: flex; flex-direction: column; gap: 28px; }
+  header { display: flex; flex-direction: column; gap: 8px; border-bottom: 2px solid var(--accent); padding-bottom: 18px; }
+  .eyebrow { font-size: 9pt; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
+  h1 { font-size: 32pt; line-height: 1.1; margin: 0; font-weight: 700; text-wrap: balance; }
+  h2 { font-size: 14pt; margin: 0 0 10px; font-weight: 700; color: var(--accent); text-wrap: balance; }
+  p { margin: 0 0 10px; max-width: 75ch; }
+  section { background: var(--surface); border: 1px solid var(--line); border-radius: 6px; padding: 20px 22px; min-width: 0; }
+  .lede { font-size: 11pt; color: var(--muted); max-width: 70ch; margin: 0; }
+  .truth { border-left: 4px solid var(--bad); background: var(--bad-bg); padding: 12px 16px; border-radius: 0 6px 6px 0; }
+  .truth p:last-child { margin-bottom: 0; }
+  .tw { overflow-x: auto; margin-block: 8px 4px; border: 1px solid var(--line); border-radius: 4px; }
+  table { border-collapse: collapse; width: 100%; min-width: 720px; font-size: 10pt; }
+  th, td { padding: 8px 10px; border-bottom: 1px solid var(--line); text-align: center; vertical-align: top; }
+  th { background: var(--accent-soft); color: var(--fg); font-weight: 700; font-size: 9.5pt; }
+  tr:last-child td { border-bottom: 0; }
+  td.l, th.l { text-align: center; } /* house rule: table content aligned top and centre */
+  .st { display: inline-block; padding: 1px 8px; border-radius: 10px; font-size: 9pt; font-weight: 700; white-space: nowrap; }
+  .st.ok { background: var(--ok-bg); color: var(--ok); } .st.warn { background: var(--warn-bg); color: var(--warn); } .st.bad { background: var(--bad-bg); color: var(--bad); }
+  .sw { display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 10px; margin-block: 8px; }
+  .sw div { border: 1px solid var(--line); border-radius: 4px; overflow: hidden; font-size: 9pt; text-align: center; }
+  .sw i { display: block; height: 44px; }
+  .sw span { display: block; padding: 4px 6px; font-family: var(--mono); }
+  .prompt { position: relative; margin-block: 10px; }
+  .prompt pre { margin: 0; white-space: pre-wrap; background: var(--code-bg); border: 1px solid var(--line); border-radius: 4px; padding: 12px 84px 12px 12px; font-family: var(--mono); font-size: 9.5pt; line-height: 1.5; }
+  .prompt b { display: block; font-family: var(--font); font-size: 10pt; margin-bottom: 4px; }
+  .prompt button { position: absolute; top: 30px; right: 8px; font: inherit; font-size: 9pt; padding: 4px 10px; border-radius: 4px; border: 1px solid var(--accent); background: var(--surface); color: var(--accent); cursor: pointer; }
+  .prompt button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  ul { margin: 0 0 10px; padding-left: 20px; } li { margin-bottom: 4px; max-width: 75ch; }
+  code { font-family: var(--mono); font-size: 9.5pt; background: var(--code-bg); padding: 1px 4px; border-radius: 3px; }
+  footer { color: var(--muted); font-size: 9.5pt; }
+</style>
+<style>
+ figure{margin:0;text-align:center} figure img{width:100%;border:1px solid var(--line);border-radius:4px;display:block} figcaption{font-size:8.5pt;color:var(--muted);margin-top:4px}
+ .thumbs{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px;margin-top:10px}
+ pre{white-space:pre-wrap;word-break:break-word;background:var(--code-bg);border:1px solid var(--line);border-radius:4px;padding:12px;font:10pt/1.5 var(--mono);margin:8px 0;overflow-x:auto}
+ details{border:1px solid var(--line);border-radius:4px;padding:8px 12px;margin-top:8px} summary{cursor:pointer;font-weight:700}
+ code{font-family:var(--mono);font-size:9.5pt;background:var(--code-bg);padding:0 4px;border-radius:3px}
+ ul{margin:0 0 10px;padding-left:20px;max-width:78ch} li{margin-bottom:4px}
+ td code{white-space:normal;word-break:break-word}
+</style>
+<style>main > section, main > header {min-width:0} p, li, code {overflow-wrap:anywhere}</style>
+<main>
+<header><div class="eyebrow">Batch 118 · 25 October 2026 · intake</div><h1>Batch 118 Intake Report</h1><p>17 images in a zip plus four inline infographics processed with the seven-step intake. Result: three new skills, three commands, one merge, two templates, two themes, four workflows.</p></header>
+<section><h2>1. Executive findings</h2><ul>
+<li><b>[Certain]</b> The Perplexity-for-sales-research graphic is an exact duplicate of Batch 102 (<code>perplexity-sales-research-10</code> and <code>/sales-research</code>, same ten prompts and three rules). I built nothing for it. Re-sending the same card costs you review time.</li>
+<li><b>[Certain]</b> The "Claude B2B Sales Stack" graphic is a cover with layer names and counts (500+ prompts, 150+ skills, 100+ agents, 25+ workflows) and a "comment B2B" gate. It contains no prompts or skill text, so nothing was extracted. I did not verify the counts and would not trust them.</li>
+<li><b>[Certain]</b> The Unsloth export card is wrong. It imports <code>export_to_gguf</code>; the documented call is <code>model.save_pretrained_gguf(directory, tokenizer, quantization_method=...)</code>. I checked this against Unsloth's documentation and source and corrected it in the skill. The most common export failure (gibberish after moving to Ollama or llama.cpp) is a chat-template or end-of-sequence mismatch, which the cards omit.</li>
+<li><b>[Certain]</b> The Unsloth repo has changed: 78,530 stars now (the card showed 66.8k) and its description is now a local UI to run and train models, so the card's library-only picture is out of date.</li>
+<li><b>[Likely]</b> The sales-growth formula (leads x conversion x deal size x retention) is a useful diagnostic and not a model. The multiplicative effect is real (a 10% gain on all four is 1.1^4 = +46.4%), but retention does not belong in a first-sale formula, and the 70/30 and 3-yes rules are folk wisdom with no source. The 3-yes rule turns into manipulation when used as a pressure ladder.</li>
+<li><b>[Certain]</b> The six demo apps are three open and three paid. Searching GitHub as you asked: Cap, Screenity and VHS are open source; Screen Studio, Arcade and Tella are not. Screen Studio has open alternatives (OpenScreen, whose original repo is archived and now continued at getopenscreen/openscreen; Focra; Vuoom). For Arcade the open options are tiny personal projects (runthru 4 stars, showkit 0 stars), so I flagged them as trials only.</li>
+<li><b>[Certain]</b> The Excel/PPT prompts are sound but dangerous in finance: prompts 3, 4, 6 and 7 touch reconciliations, formatting of a P&L and eliminations. I added a tie-out check to each and a rule that an accountant reviews before use.</li>
+</ul></section>
+<section><h2>2. Source inventory and what was built</h2><div class="tw"><table><tr><th>Source</th><th>Content</th><th>Result</th></tr><tr><td>SalesDaily.co Perplexity for Sales Research</td><td>10 prompts, 3 rules</td><td>Duplicate of Batch 102; no action</td></tr><tr><td>Eric Partaker How to Accelerate Your Sales Growth</td><td>4 multipliers, 3 steps, closing rules, lead ways, metrics</td><td>Skill <code>sales-growth-4-multipliers</code>; <code>/sales-growth-check</code>; template <code>equation-multipliers-board</code>; theme <code>multiplier-blue-sky</code>; workflow 1</td></tr><tr><td>Claude B2B Sales Stack</td><td>Cover with layer names</td><td>No content; not actioned</td></tr><tr><td>Nicolas Boucher Best Prompts for Excel/PPT</td><td>10 prompts</td><td>Skill <code>excel-ppt-prompts-10</code>; <code>/excel-ppt-prompt</code>; template <code>prompt-cards-2col-10</code>; theme <code>office-teal-orange</code>; workflow 2</td></tr><tr><td>@aigenesis.official Unsloth carousel (8 cards)</td><td>Setup, flow, inference, GRPO, export, Studio</td><td>Skill <code>unsloth-local-guide</code> (corrected); workflow 3</td></tr><tr><td>@dotdevs six apps (8 cards)</td><td>Cap, Screen Studio, Screenity, VHS, Arcade, Tella</td><td>Batch 118 table in <code>oss-alternatives</code> with repos searched on GitHub; workflow 4</td></tr><tr><td>Cover, comment-gate and follow slides</td><td>No content</td><td>Not actioned</td></tr></table></div></section>
+<section><h2>3. GitHub repos checked on 25 October 2026</h2><p>Stars and licences were read from each repository page and change daily.</p><div class="tw"><table><tr><th>Repo</th><th>Stars</th><th>Licence</th></tr><tr><td><code>unslothai/unsloth</code></td><td>78,530</td><td>Apache-2.0</td></tr><tr><td><code>CapSoftware/Cap</code></td><td>23,648</td><td>Other</td></tr><tr><td><code>alyssaxuu/screenity</code></td><td>18,798</td><td>GPL-3.0</td></tr><tr><td><code>charmbracelet/vhs</code></td><td>21,195</td><td>MIT</td></tr><tr><td><code>getopenscreen/openscreen</code></td><td>4,880</td><td>MIT</td></tr><tr><td><code>siddharthvaddem/openscreen</code> (archived)</td><td>39,926</td><td>MIT</td></tr><tr><td><code>focra-app/Focra</code></td><td>22</td><td>not shown</td></tr><tr><td><code>Razee4315/Vuoom</code></td><td>21</td><td>Apache-2.0</td></tr><tr><td><code>marktolson/runthru</code></td><td>4</td><td>MIT</td></tr><tr><td><code>hyunghwan/showkit</code></td><td>0</td><td>MIT</td></tr></table></div><p>No open repo was found for Tella. Arcade, Screen Studio and Tella are paid products.</p></section>
+<section><h2>4. Where I disagree with the source material</h2><ul>
+<li>I disagree that the Unsloth cards are a safe copy-and-paste path. The risk is a script that fails at export or a model that misbehaves after export, with no evaluation to tell you whether training helped. I added an evaluation gate and the corrected API.</li>
+<li>I disagree with treating the sales-growth formula as a model. The risk is optimising a factor in isolation (more leads, lower conversion). The command tests each lever and the combination and says where the formula does not fit.</li>
+<li>I disagree with letting an assistant edit a finance workbook without a control. The risk is a silent formula change reaching a board pack. The skill requires a copy, live formulas and a tie-out.</li></ul></section>
+<section><h2>5. Not done, and why</h2><ul><li>No workflow was created in n8n. The instance is empty and none of the four workflows here is an automation; ask if you want one built.</li><li>No repo was cloned or installed; <code>scripts/batch118-install.sh</code> asks before each step and was not run.</li><li>No agents: nothing in the batch is an agent build guide.</li><li>No new connectors were referenced.</li></ul></section>
+<section><h2>6. Deliverables</h2><div class="tw"><table><tr><th>Type</th><th>Items</th></tr><tr><td>Skills</td><td><code>unsloth-local-guide</code>, <code>sales-growth-4-multipliers</code>, <code>excel-ppt-prompts-10</code></td></tr><tr><td>Commands</td><td><code>/sales-growth-check</code>, <code>/excel-ppt-prompt</code></td></tr><tr><td>Merged skills</td><td><code>oss-alternatives</code>, <code>design-templates</code></td></tr><tr><td>Templates</td><td><code>equation-multipliers-board</code>, <code>prompt-cards-2col-10</code></td></tr><tr><td>Themes</td><td><code>theme-multiplier-blue-sky</code>, <code>theme-office-teal-orange</code></td></tr><tr><td>Workflows</td><td><code>Artifacts/operations/workflows-batch-118.html</code></td></tr><tr><td>Prompts</td><td><code>docs/batch-118-prompts.md</code> (fourteen plain-text prompts)</td></tr><tr><td>Install script</td><td><code>scripts/batch118-install.sh</code> (asks before every step; not run)</td></tr></table></div></section>
+<section><h2>7. Open decisions for you</h2><ul><li>Do you want a real n8n workflow built, and which one (for example a weekly sales-growth digest from a sheet)?</li><li>Do you actually plan to fine-tune a model? If not, the Unsloth skill is reference only.</li><li>Which of the three new skills will you use in the next two weeks? Keep those and archive the rest.</li></ul></section>
+<footer>Stars and licences read from GitHub pages on 25 October 2026.</footer>
+</main>
+</body></html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<!--
+  Template: two-tier-tree-14
+  Style: cream page, highlighted headline, two rounded head pills (level one, level two) each with a bracket connector down to a row of seven small cards (icon circle, title, three short lines), footer with a name pill and a brand tag. Theme: brand-tree-sage
+  Inspired by: two-level strategy tree infographics. Original CSS and placeholder wording; no source illustration, icon or text reused.
+  Canvas: 1080 x 1350. Swap points: h1, .head (two), .n cards (icon .ic, title b, lines p), .foot
+-->
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Two Tier Tree 14</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#F5F2EA;--ink:#1E2A24;--muted:#5E6B62;--card:#FFFFFF;--line:#CFD8C8;--green:#2E7D5B;--mark:#F3EBA6;--font:"Inter",Aptos,"Segoe UI",system-ui,sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#333;display:flex;justify-content:center;padding:32px 0;overflow-x:auto;font-family:var(--font)}
+.slide{position:relative;width:1080px;height:1350px;flex:none;background:var(--bg);color:var(--ink);overflow:hidden}
+h1{position:absolute;left:44px;top:46px;font:800 62px/1.15 var(--font);letter-spacing:-.02em;background:linear-gradient(transparent 12%,var(--mark) 12%,var(--mark) 92%,transparent 92%);padding:0 14px}
+.tier{position:absolute;left:30px;right:30px}.t1{top:190px}.t2{top:720px}
+.head{margin:0 auto;width:300px;text-align:center;background:var(--ink);color:#fff;border-radius:14px;padding:14px 0;font:800 30px/1 var(--font)}
+.bracket{height:46px;margin:0 69px;border:3px solid var(--green);border-bottom:0;border-radius:14px 14px 0 0;position:relative}
+
+.cards{display:grid;grid-template-columns:repeat(7,1fr);gap:8px}
+.n{min-width:0;background:var(--card);border:2px solid var(--line);border-top:8px solid var(--green);border-radius:12px;padding:12px 8px 10px;min-height:290px;display:flex;flex-direction:column;align-items:center;text-align:center;gap:10px}
+.ic{width:64px;height:64px;border-radius:50%;background:#E4EFE7;color:var(--green);display:flex;align-items:center;justify-content:center;font:700 13px/1 var(--font)}
+.n b{font:800 19px/1.15 var(--font)}.n p{font:500 15px/1.5 var(--font);color:var(--muted)}
+.foot{position:absolute;left:0;right:0;bottom:0;height:78px;display:flex;align-items:center;justify-content:space-between;padding:0 44px}
+.foot span{background:var(--ink);color:#fff;border-radius:999px;padding:10px 20px;font:700 20px/1 var(--font)}.foot i{font:800 20px/1 var(--font);font-style:normal;color:var(--green)}
+</style></head><body>
+<div class="slide">
+  <h1>Strategy tree</h1>
+  <div class="tier t1"><div class="head">Level one</div><div class="bracket"></div><div class="cards"><div class="n"><span class="ic">icon</span><b>Part one</b><p>Item one<br>Item two<br>Item three</p></div><div class="n"><span class="ic">icon</span><b>Part two</b><p>Item one<br>Item two<br>Item three</p></div><div class="n"><span class="ic">icon</span><b>Part three</b><p>Item one<br>Item two<br>Item three</p></div><div class="n"><span class="ic">icon</span><b>Part four</b><p>Item one<br>Item two<br>Item three</p></div><div class="n"><span class="ic">icon</span><b>Part five</b><p>Item one<br>Item two<br>Item three</p></div><div class="n"><span class="ic">icon</span><b>Part six</b><p>Item one<br>Item two<br>Item three</p></div><div class="n"><span class="ic">icon</span><b>Part seven</b><p>Item one<br>Item two<br>Item three</p></div></div></div>
+  <div class="tier t2"><div class="head">Level two</div><div class="bracket"></div><div class="cards"><div class="n"><span class="ic">icon</span><b>Part eight</b><p>Item one<br>Item two<br>Item three</p></div><div class="n"><span class="ic">icon</span><b>Part nine</b><p>Item one<br>Item two<br>Item three</p></div><div class="n"><span class="ic">icon</span><b>Part ten</b><p>Item one<br>Item two<br>Item three</p></div><div class="n"><span class="ic">icon</span><b>Part eleven</b><p>Item one<br>Item two<br>Item three</p></div><div class="n"><span class="ic">icon</span><b>Part twelve</b><p>Item one<br>Item two<br>Item three</p></div><div class="n"><span class="ic">icon</span><b>Part thirteen</b><p>Item one<br>Item two<br>Item three</p></div><div class="n"><span class="ic">icon</span><b>Part fourteen</b><p>Item one<br>Item two<br>Item three</p></div></div></div>
+  <div class="foot"><span>Your name</span><i>YOUR BRAND</i></div>
+</div></body></html>

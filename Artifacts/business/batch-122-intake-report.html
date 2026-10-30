@@ -1,0 +1,115 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Batch 122 Intake Report</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<style>
+  /* Layout: single-column formal report, 880px measure; tables scroll inside their own wrappers.
+     Palette: ink-blue neutrals, one deep teal accent, semantic green/amber/red for status only.
+     Type: Aptos (the owner's house font) with system fallbacks; title 32pt, headings 14pt, body 11pt. */
+  :root {
+    --bg: #f6f7f9; --surface: #ffffff; --fg: #1b2330; --muted: #5a6577; --line: #d9dee6;
+    --accent: #0f5d6b; --accent-soft: #e2f0f2;
+    --ok: #17703a; --ok-bg: #e3f3e8; --warn: #8a5a00; --warn-bg: #fbefd3; --bad: #a11d2a; --bad-bg: #fbe3e5;
+    --code-bg: #eef1f5;
+    --font: Aptos, "Segoe UI Variable Text", "Segoe UI", system-ui, -apple-system, Roboto, sans-serif;
+    --mono: ui-monospace, "SF Mono", Consolas, monospace;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #11161e; --surface: #181f2a; --fg: #e6eaf0; --muted: #9aa5b6; --line: #2c3646;
+      --accent: #6cc3d1; --accent-soft: #17323a;
+      --ok: #6fd18f; --ok-bg: #173824; --warn: #f0c261; --warn-bg: #3a2e12; --bad: #ff8d98; --bad-bg: #3d1a1f;
+      --code-bg: #0e131a; color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #11161e; --surface: #181f2a; --fg: #e6eaf0; --muted: #9aa5b6; --line: #2c3646;
+    --accent: #6cc3d1; --accent-soft: #17323a;
+    --ok: #6fd18f; --ok-bg: #173824; --warn: #f0c261; --warn-bg: #3a2e12; --bad: #ff8d98; --bad-bg: #3d1a1f;
+    --code-bg: #0e131a; color-scheme: dark;
+  }
+  * { box-sizing: border-box; }
+  body { background: var(--bg); color: var(--fg); font-family: var(--font); font-size: 11pt; line-height: 1.55; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); padding-block: 28px 64px; }
+  main { max-width: 880px; margin-inline: auto; display: flex; flex-direction: column; gap: 28px; }
+  header { display: flex; flex-direction: column; gap: 8px; border-bottom: 2px solid var(--accent); padding-bottom: 18px; }
+  .eyebrow { font-size: 9pt; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
+  h1 { font-size: 32pt; line-height: 1.1; margin: 0; font-weight: 700; text-wrap: balance; }
+  h2 { font-size: 14pt; margin: 0 0 10px; font-weight: 700; color: var(--accent); text-wrap: balance; }
+  p { margin: 0 0 10px; max-width: 75ch; }
+  section { background: var(--surface); border: 1px solid var(--line); border-radius: 6px; padding: 20px 22px; min-width: 0; }
+  .lede { font-size: 11pt; color: var(--muted); max-width: 70ch; margin: 0; }
+  .truth { border-left: 4px solid var(--bad); background: var(--bad-bg); padding: 12px 16px; border-radius: 0 6px 6px 0; }
+  .truth p:last-child { margin-bottom: 0; }
+  .tw { overflow-x: auto; margin-block: 8px 4px; border: 1px solid var(--line); border-radius: 4px; }
+  table { border-collapse: collapse; width: 100%; min-width: 720px; font-size: 10pt; }
+  th, td { padding: 8px 10px; border-bottom: 1px solid var(--line); text-align: center; vertical-align: top; }
+  th { background: var(--accent-soft); color: var(--fg); font-weight: 700; font-size: 9.5pt; }
+  tr:last-child td { border-bottom: 0; }
+  td.l, th.l { text-align: center; } /* house rule: table content aligned top and centre */
+  .st { display: inline-block; padding: 1px 8px; border-radius: 10px; font-size: 9pt; font-weight: 700; white-space: nowrap; }
+  .st.ok { background: var(--ok-bg); color: var(--ok); } .st.warn { background: var(--warn-bg); color: var(--warn); } .st.bad { background: var(--bad-bg); color: var(--bad); }
+  .sw { display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 10px; margin-block: 8px; }
+  .sw div { border: 1px solid var(--line); border-radius: 4px; overflow: hidden; font-size: 9pt; text-align: center; }
+  .sw i { display: block; height: 44px; }
+  .sw span { display: block; padding: 4px 6px; font-family: var(--mono); }
+  .prompt { position: relative; margin-block: 10px; }
+  .prompt pre { margin: 0; white-space: pre-wrap; background: var(--code-bg); border: 1px solid var(--line); border-radius: 4px; padding: 12px 84px 12px 12px; font-family: var(--mono); font-size: 9.5pt; line-height: 1.5; }
+  .prompt b { display: block; font-family: var(--font); font-size: 10pt; margin-bottom: 4px; }
+  .prompt button { position: absolute; top: 30px; right: 8px; font: inherit; font-size: 9pt; padding: 4px 10px; border-radius: 4px; border: 1px solid var(--accent); background: var(--surface); color: var(--accent); cursor: pointer; }
+  .prompt button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  ul { margin: 0 0 10px; padding-left: 20px; } li { margin-bottom: 4px; max-width: 75ch; }
+  code { font-family: var(--mono); font-size: 9.5pt; background: var(--code-bg); padding: 1px 4px; border-radius: 3px; }
+  footer { color: var(--muted); font-size: 9.5pt; }
+</style>
+<style>
+ figure{margin:0;text-align:center} figure img{width:100%;border:1px solid var(--line);border-radius:4px;display:block} figcaption{font-size:8.5pt;color:var(--muted);margin-top:4px}
+ .thumbs{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px;margin-top:10px}
+ pre{white-space:pre-wrap;word-break:break-word;background:var(--code-bg);border:1px solid var(--line);border-radius:4px;padding:12px;font:10pt/1.5 var(--mono);margin:8px 0;overflow-x:auto}
+ details{border:1px solid var(--line);border-radius:4px;padding:8px 12px;margin-top:8px} summary{cursor:pointer;font-weight:700}
+ code{font-family:var(--mono);font-size:9.5pt;background:var(--code-bg);padding:0 4px;border-radius:3px}
+ ul{margin:0 0 10px;padding-left:20px;max-width:78ch} li{margin-bottom:4px}
+ td code{white-space:normal;word-break:break-word}
+</style>
+<style>main > section, main > header {min-width:0} p, li, code {overflow-wrap:anywhere}</style>
+<main>
+<header><div class="eyebrow">Batch 122 · 28 October 2026 · intake</div><h1>Batch 122 Intake Report</h1><p>A zip of 32 images (a finance graphic plus repo and tool cards from four accounts) processed with the seven-step intake. Result: two new skills, three commands, one merge of eleven repos into <code>oss-alternatives</code>, two templates, two themes, three workflows, an install script that only clones for reading.</p></header>
+<section><h2>1. Executive findings</h2><ul>
+<li><b>[Certain]</b> Most of the repo cards were already in the library. Duplicate check by search: OpenHands, Maxun, Openwhispr, Strix, OpenSEO, OmniRoute and ai-job-search each appear in an existing skill, so they were not rebuilt. Genuinely new: cleanyourtv, Filee, MacNativeGames, ruflo, Postiz, Trigger.dev, Open Notebook, Open Generative AI, Book to Skill, No AI Slop, I Have ADHD.</li>
+<li><b>[Certain]</b> Every star count on a card was out of date. Read from GitHub on 28 October 2026: cleanyourtv 41,347 (card 27,491), ai-job-search 66,618 (64,035), Filee 14,711 (10,947), MacNativeGames 5,393 (4,843), ruflo 79,407 (78,730). Two other figures were wrong in kind: the card's "78k awesome-claude-skills" matched no repo I found (<code>BehiSecc/awesome-claude-skills</code> has 10,308), and the course card says 12 lessons where the repo now says 18.</li>
+<li><b>[Certain]</b> The riskiest tool is cleanyourtv. It gives an AI agent control of a TV over ADB, its licence is "Other" and the repo is eleven days old. Its restore script is the safety net and it is worth reading first. Samsung, LG and Roku are not supported.</li>
+<li><b>[Certain]</b> MacNativeGames is not a coding question, it is a legal one. The repo ships no game, but you must dump your own copy and console keys, and that may breach law or terms where you live. I did not offer to clone it in the install script.</li>
+<li><b>[Likely]</b> ruflo is the one most likely to cost you time rather than money: it changes Claude Code settings, has 988 open issues and a very large surface. Try it in a spare project. Its "4 ms memory recall" is the author's own test.</li>
+<li><b>[Certain]</b> The finance graphic's method is sound (lock the budget, roll one forecast, compare both). Its footer is an advert for a spreadsheet add-in, which I excluded. It omits two real pitfalls: sign conventions, and a rolling forecast that hides slippage against the locked budget.</li>
+<li><b>[Certain]</b> Open Generative AI says "400+ models" in one place and "600+" in another, and most generation goes to a paid third-party gateway. "Self-hosted" is true of the app, not of most of the models.</li>
+<li><b>[Certain]</b> The carousel's "comment REPO and I will DM you the article" is an engagement hook. The repos are public; no DM is needed.</li>
+</ul></section>
+<section><h2>2. Source inventory and what was built</h2><div class="tw"><table><tr><th>Source</th><th>Content</th><th>Result</th></tr>
+<tr><td>Finance graphic</td><td>Budget to actual to forecast; eight variance views</td><td>Skill <code>fpna-budget-actual-forecast</code>; <code>/variance-views</code>; template <code>variance-chart-gallery-8</code>; theme <code>fpna-charcoal-lime</code>; workflow 1</td></tr>
+<tr><td>@buildwithneej, 13 slides</td><td>Five trending repos plus a verdict slide</td><td>Skill <code>trending-repos-week-oct23</code>; <code>/trial-repo</code>; template <code>verdict-table-5</code>; theme <code>trending-cream-rust</code>; workflow 2</td></tr>
+<tr><td>@replace.so and @martiendejong_dev cards</td><td>Postiz, Trigger.dev, Open Notebook, Open Generative AI, Book to Skill, No AI Slop, I Have ADHD and already-known repos</td><td>Merged into <code>oss-alternatives</code> (Batch 122 table); <code>/action-first</code>; workflow 3</td></tr>
+<tr><td>@your.aimentor list</td><td>Five repos with star counts</td><td>Merged; one star count not matched, flagged</td></tr></table></div></section>
+<section><h2>3. Where I disagree with the source material</h2><ul>
+<li>I disagree with ordering repos by weekly star growth. The risk is installing the newest viral repo, not the safest. A repo created ten days ago can have 40,000 stars and a licence marked "Other". Use the safe-trial protocol and read the install path first.</li>
+<li>I disagree with "paste PROMPT.md into your AI agent" as an install step. The risk is that the agent executes whatever the file says on a device you own. Read the file first and keep the restore script.</li>
+<li>I disagree with presenting open source as free of cost. Postiz is AGPL, Open Generative AI needs a paid gateway for most models, and Open Notebook sends your sources to whichever hosted model you enable.</li></ul></section>
+<section><h2>4. Not done, and why</h2><ul>
+<li>Nothing was installed or cloned. The install script clones read-only and asks first; it is not run.</li>
+<li>No separate skills for No AI Slop or I Have ADHD: the first overlaps <code>avoid-ai-writing</code> and <code>humanizer</code>; the second became an original <code>/action-first</code> command instead of copying its text.</li>
+<li>Book to Skill stars and licence were not read, so none is quoted.</li>
+<li>No n8n workflow: none of the three workflows is a scheduled automation. Ask if you want a weekly repo-radar one.</li>
+<li>No more repo-card templates: the library has seven.</li></ul></section>
+<section><h2>5. Deliverables</h2><div class="tw"><table><tr><th>Type</th><th>Items</th></tr>
+<tr><td>Skills</td><td><code>fpna-budget-actual-forecast</code>, <code>trending-repos-week-oct23</code></td></tr>
+<tr><td>Commands</td><td><code>/variance-views</code>, <code>/trial-repo</code>, <code>/action-first</code></td></tr>
+<tr><td>Merged skills</td><td><code>oss-alternatives</code> (eleven repos), <code>design-templates</code></td></tr>
+<tr><td>Templates</td><td><code>variance-chart-gallery-8</code>, <code>verdict-table-5</code></td></tr>
+<tr><td>Themes</td><td><code>theme-fpna-charcoal-lime</code>, <code>theme-trending-cream-rust</code></td></tr>
+<tr><td>Workflows</td><td><code>Artifacts/operations/workflows-batch-122.html</code></td></tr>
+<tr><td>Prompts</td><td><code>docs/batch-122-prompts.md</code> (six original plain-text prompts)</td></tr>
+<tr><td>Script</td><td><code>scripts/batch122-install.sh</code> (read-only clones, asks first, not run)</td></tr></table></div></section>
+<section><h2>6. Open decisions for you</h2><ul>
+<li>Which of cleanyourtv, Filee and ai-job-search will you actually try this week? The library is past 1,300 skills; install fewer.</li>
+<li>Do you want the finance skill set up on your real budget? Send the categories, the audience and the sign convention.</li>
+<li>Do you want a weekly repo-radar automation in n8n? It needs your credentials and a destination.</li>
+<li>Which older report links should lose their watch? The ten-per-session limit still blocks watching new ones.</li></ul></section>
+<footer>Prepared 28 October 2026. Repository figures read from GitHub pages on 28 October 2026; Book to Skill and I Have ADHD stars were not read.</footer>
+</main>
+</body></html>
