@@ -253,3 +253,15 @@ After gathering information, create `.agents/product-marketing.md` with this str
 - **Ask for examples**: "Can you give me an example?" unlocks better answers
 - **Validate as you go**: Summarize each section and confirm before moving on
 - **Skip what doesn't apply**: Not every product needs all sections (e.g., Personas for B2C)
+
+## Related skills in this repo
+
+This is the foundational context document — treat it as an input to the other skills below rather than something they duplicate:
+
+- **sales-enablement**: Pulls positioning, personas, and objections from here into battle cards and pitch materials.
+- **competitor-profiling**: Uses the Competitive Landscape and Differentiation sections as the starting comparison set.
+- **content-strategy**: Uses Target Audience, Problems & Pain Points, and Customer Language to shape topic and messaging decisions.
+- **brandkit-generator**: When this document doesn't exist yet and the request is really "give me a visual starting point for a new brand," use that skill instead — it's faster and produces a visual board, not a full positioning doc.
+- **product-strategy-session**, **saas-idea-validator**, **the-productize-yourself-blueprint**, **the-specific-knowledge-excavator**: When setting up a *new* business rather than documenting an existing product, run one of these first — this document is where the validated result gets captured.
+- **frontend-design**, **premium-html-presentation**, **canvas-design**, **pptx**: Use this document's Brand Voice and positioning as the actual brand to apply — not the `brand-guidelines` skill, which is Anthropic-specific.
+- **ai-search-visibility**: Source of the "who they are, what they do" summary that populates a site's `llms.txt` and "Ask AI about me" prompt.

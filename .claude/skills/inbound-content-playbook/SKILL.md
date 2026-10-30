@@ -113,6 +113,6 @@ plainly:
   are complementary, not duplicates.
 - **hook-writer**, **caption-writer**: write the individual posts this
   playbook's cadence calls for.
-- **product-marketing-context**: supplies the "one clear audience" and
+- **product-marketing**: supplies the "one clear audience" and
   core-message inputs steps 1 and 3 need, if that positioning work hasn't
   been done yet.

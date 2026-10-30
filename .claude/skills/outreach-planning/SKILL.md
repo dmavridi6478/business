@@ -80,7 +80,7 @@ A single `outreach-brief.md` deliverable: trigger-based ICP, persona cards, sign
 ## Related skills in this repo
 
 - **outreach-execution**: consumes this brief to write copy, execute channels, handle replies, and automate.
-- **product-marketing-context**: foundational "who's the customer" doc — pull from it rather than re-deriving personas from scratch if it already exists.
+- **product-marketing**: foundational "who's the customer" doc — pull from it rather than re-deriving personas from scratch if it already exists.
 - **competitor-profiling**: if the pain map includes "currently using a competitor," that skill's battle-card output sharpens objection-handling angle.
 - **sales-enablement**: MEDDPICC/BANT qualification criteria overlap with the buying-committee persona cards here — reuse rather than duplicate.
 - **business-decision-frameworks**: useful for prioritizing which angle/ICP combination to run first when resources don't allow testing everything at once.
