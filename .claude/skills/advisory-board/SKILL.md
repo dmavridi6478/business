@@ -31,3 +31,5 @@ A repeatable setup process for a personal advisory board — a small panel of re
 ## Notes
 
 Source: a "Claude Code builds" screenshot carousel (@theromanknox), which demonstrated `/ask-the-board Based on everything you know about me, what should I do to leverage AI?` as the payoff of this setup. Treat the specific 5-step sequence as a repeatable template, not a fixed script — the core discipline is real advisor source material in, not just names.
+
+- **advisor-room-debate**: three-round advisor debate with role lenses, plus a review of the roast-room repository (Batch 125).

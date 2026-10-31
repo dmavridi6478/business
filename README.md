@@ -6173,3 +6173,12 @@ Built from `12c65a1c-LinkedIn_Authority_2026.zip` (six images: LinkedIn authorit
 - 5 commands: `/authority-audit`, `/citation-rules`, `/culture-rebuild`, `/gtm-vs-engineering`, `/marketing-dept-map`. Pointers added to `ai-search-visibility` and `claude-code-marketing-team`.
 - 4 design templates (`two-lane-authority-flow`, `ai-citation-scorecard`, `mountain-roadmap-6`, `compare-matrix-rows-11`) and 4 themes (`authority-purple-green`, `citation-rust-cream`, `culture-peach-navy`, `gtm-compare-green`).
 - `Artifacts/operations/workflows-batch-124.html` (4 workflows), `Artifacts/business/batch-124-intake-report.html`, `docs/batch-124-prompts.md` (six original prompts).
+
+## Batch 125 (31 October 2026)
+
+Built from `58cfe341-iCloud_Photos.zip` (33 images in three series: ten due-diligence prompts, a Blotato nine-platform publishing tutorial, and a "room of billionaire advisors" series). Nothing was installed or connected.
+
+- 3 new skills: `claude-dd-first-pass-10` (ten prompts verbatim; confidentiality, arithmetic, missing-document and "what only advisers can do" guardrails), `claude-social-publishing-blotato` (setup checked against Blotato's docs: paid plan needed, verify with an accounts call; risks the carousel omits) and `advisor-room-debate` (three-round protocol with role lenses; roast-room repository reviewed: 1,271 stars, created 10 Oct 2026, licence "Other").
+- 3 commands: `/dd-first-pass`, `/social-draft-schedule`, `/advisor-room`. Pointers added to `social-publishing` and `advisory-board`.
+- 3 design templates (`chat-prompt-card-white`, `setup-step-card-blue`, `contents-index-two-col`) and 2 themes (`diligence-white-terracotta`, `social-setup-blue-pink`).
+- `Artifacts/operations/workflows-batch-125.html` (3 workflows), `Artifacts/business/batch-125-intake-report.html`, `docs/batch-125-prompts.md` (ten verbatim prompts, three printed on slides, four original), `scripts/batch125-install.sh` (read-only clone and a printed connector command; asks first; not run).

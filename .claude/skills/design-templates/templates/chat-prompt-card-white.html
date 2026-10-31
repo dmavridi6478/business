@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<!--
+  Template: chat-prompt-card-white
+  Style: white page, small rounded topic pill (top left) and "n/12 -> " counter (top right), very heavy black title, grey subtitle, one large rounded-outline panel holding a prompt (plain text, orange-brown bold [PLACEHOLDERS], numbered list, bold "Output:" line, grey closing rule) with a faint chat composer at the bottom (plus sign, model name, round orange send button), a faint corner watermark, and a footer line "Catches: bold phrase" with an author name on the right. Theme: diligence-white-terracotta
+  Inspired by: "N prompts that do X" prompt-card carousels. Original CSS and placeholder wording; no source text, handle or branding reused.
+  Canvas: 1080 x 1350. Swap points: .tag, .cnt, h1, .sub, .box (p, ol, .out, .rule), .ph (placeholders), .foot (b and .by)
+-->
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chat Prompt Card White</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#0F0F10;--mut:#7A7A7A;--ph:#B4532A;--ln:#E6E6E6;--font:"Poppins",Aptos,"Segoe UI",system-ui,sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#2a2a2a;display:flex;justify-content:center;padding:32px 0;overflow-x:auto;font-family:var(--font)}
+.slide{position:relative;width:1080px;height:1350px;flex:none;background:#fff;color:var(--ink);overflow:hidden;padding:48px 56px 0}
+.top{display:flex;justify-content:space-between;align-items:center}
+.tag{border:1.5px solid var(--ln);border-radius:999px;padding:8px 20px;font:500 20px/1 var(--font)}
+.cnt{font:500 20px/1 var(--font);color:#555}.cnt b{font-weight:500;margin-left:14px}
+h1{margin-top:34px;font:800 76px/1.05 var(--font);letter-spacing:-.035em}
+.sub{margin-top:14px;font:400 26px/1.3 var(--font);color:var(--mut)}
+.box{position:relative;margin-top:34px;border:1.5px solid var(--ln);border-radius:30px;height:950px;padding:40px 44px}
+.box p{font:400 26px/1.45 var(--font);margin-bottom:18px}
+.ph{color:var(--ph);font-weight:700}
+.box ol{margin:0 0 14px 34px}.box li{font:400 25px/1.4 var(--font);margin-bottom:10px;padding-left:6px}
+.out{font:400 25px/1.4 var(--font);margin-bottom:16px}.out b{font-weight:700}
+.rule{font:400 25px/1.4 var(--font);color:var(--mut)}
+.wm{position:absolute;right:30px;top:640px;font:500 24px/1 var(--font);color:#00000016}
+.comp{position:absolute;left:28px;right:28px;bottom:28px;height:74px;border:1.5px solid var(--ln);border-radius:20px;display:flex;align-items:center;justify-content:space-between;padding:0 18px 0 24px;color:#999;font:400 20px/1 var(--font)}
+.send{display:grid;place-items:center;width:44px;height:44px;border-radius:12px;background:#E0714F;color:#fff;font:700 22px/1 var(--font)}
+.foot{position:absolute;left:56px;right:56px;bottom:28px;display:flex;justify-content:space-between;font:400 20px/1 var(--font);color:#555}.foot b{color:var(--ink);font-weight:600}
+</style></head><body><div class="slide">
+<div class="top"><span class="tag">Topic</span><span class="cnt">4/12 <b>&rarr;</b></span></div>
+<h1>3. Prompt Title</h1>
+<p class="sub">One line saying what this prompt finds out.</p>
+<div class="box">
+<p>You are a [role] who has done this many times.</p>
+<p>Attached: [documents] for <span class="ph">[COMPANY]</span>.</p>
+<p>Do this:</p>
+<ol><li>First instruction in one sentence.</li><li>Second instruction in one sentence.</li><li>Third instruction in one sentence.</li><li>Fourth instruction in one sentence.</li><li>Fifth instruction in one sentence.</li></ol>
+<div class="out"><b>Output:</b> table, top three drivers, one range.</div>
+<div class="rule">Use only the attached data. Mark every assumption. Show your math.</div>
+<div class="wm">@handle</div>
+<div class="comp"><span>+</span><span>Model &#8964; &nbsp;<i class="send" style="display:inline-grid;vertical-align:middle">&uarr;</i></span></div>
+</div>
+<div class="foot" style="bottom:26px"><span>Catches: <b>The thing it catches</b></span><span class="by">Author Name</span></div>
+</div></body></html>

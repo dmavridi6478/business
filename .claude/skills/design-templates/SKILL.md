@@ -617,3 +617,21 @@ Original CSS, SVG and placeholder wording only; all figures in the scorecard are
 | `theme-citation-rust-cream.html` | bg `#FAF4EE`, text `#16181C`, accent `#B04A22` | bg `#1A1511`, accent `#FF8E5C` | Inter + JetBrains Mono |
 | `theme-culture-peach-navy.html` | bg `#FCF6EC`, text `#16213E`, accent `#D9631F` (template adds violet `#7A5BC4`) | bg `#121827`, accent `#FF9A57` | Inter + Anton |
 | `theme-gtm-compare-green.html` | bg `#EAF4E6`, text `#161A16`, accent `#2C7A2C` | bg `#0F1A10`, accent `#7BD07B` | Inter |
+
+
+## Batch 125 additions
+
+| Template | Use for | Layout |
+|---|---|---|
+| `chat-prompt-card-white.html` | "Copy this prompt" carousel slides with a chat look | 1080x1350; white page, topic pill and counter, heavy title, grey subtitle, large outlined panel with the prompt (orange-brown bold placeholders, numbered steps, bold Output line, grey closing rule) and a faint chat composer, "Catches:" footer |
+| `setup-step-card-blue.html` | Step-by-step connector or tool setup slides | 1080x1440 (3:4); pale blue page, dark counter pill, pink step kicker, royal-blue heading with a pink bar, 3x3 tile panel with "Connected" ticks, caption, author footer |
+| `contents-index-two-col.html` | Cover-plus-contents slide for a numbered list carousel | 1080x1350; white page, enormous two-line headline, subtitle with a brand dot and a serif word, ten-item two-column index with thin rules, author and "Swipe" |
+
+Original CSS and placeholder wording only; no source logos or platform icons. Overlap checked: `prompt-card-carousel` (light variant is blue and has no chat composer), `prompt-step-red-cream` (red step number, different structure), `system-steps-grid-10` (grid, not a ruled index). Not built: a red "Step N" tutorial title card (covered by `prompt-step-red-cream`) and a photo grid of advisors (real people's photos, not reproduced). Rendered and checked for overflow; the first chat-card pass left empty space and the first setup card let the tile grid overrun its panel, both fixed.
+
+## Batch 125 theme tokens (files in `Artifacts/theme-*.html`; colours eyeballed)
+
+| Theme file | Light | Dark | Fonts (free) |
+|---|---|---|---|
+| `theme-diligence-white-terracotta.html` | bg `#FFFFFF`, text `#0F0F10`, accent `#B4532A` (template adds send-button orange `#E0714F`) | bg `#141110`, accent `#E0714F` | Poppins |
+| `theme-social-setup-blue-pink.html` | bg `#F4F7FF`, text `#11195C`, accent `#1B2FC9` (template adds pink `#E6127E`) | bg `#0B1030`, accent `#8AA0FF` | Poppins |
