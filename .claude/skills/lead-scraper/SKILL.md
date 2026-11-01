@@ -76,4 +76,4 @@ For recurring or high-volume lead collection, an n8n workflow (see `n8n-agent-bu
 - **new-client-system**: Pair this skill (find the leads) with that skill (build the outreach system to contact them)
 - **n8n-agent-builder**: Automate the scraping and enrichment steps with n8n
 - **the-leverage-stack-auditor**: Check whether lead gen is the bottleneck or if sales conversion is — don't scale the list before fixing the pitch
-- **product-marketing-context**: Define the ICP before running this skill — feeds the first input field directly
+- **product-marketing**: Define the ICP before running this skill — feeds the first input field directly

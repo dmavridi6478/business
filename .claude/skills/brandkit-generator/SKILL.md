@@ -16,7 +16,7 @@ description: Turn a one-line idea or product description into an initial brand k
 
 ## Related skills in this repo
 
-- **product-marketing-context**: If a fuller positioning doc already exists, pull the one-liner and tone from there instead of asking again.
+- **product-marketing**: If a fuller positioning doc already exists, pull the one-liner and tone from there instead of asking again.
 - **design-templates**: Use the `brand-board.html` template to assemble the final deliverable.
 - **theme-factory**: A preset theme can seed the palette/typography starting point for a direction instead of inventing one from scratch.
 - **design-token-extractor**: Once a direction is chosen, extract it into a proper token set for the skills that build the actual product/site.

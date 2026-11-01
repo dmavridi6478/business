@@ -43,4 +43,4 @@ Format | Leverage | Feasibility | Margin | Score
 - **content-repurposing-service**: A worked example of this blueprint applied to one product format — a productized weekly content service — including the operational pipeline and cadence.
 - **oss-tool-to-service-ideas** (procedure): A second worked-example path — wrapping an existing free/open-source repo (lead-gen scraper, change-detection watchtower, doc-to-deck generator, site cloner, OCR pipeline) as the product, with the license and support-burden checks to run before quoting a client any of its illustrative prices.
 - **saas-idea-validator** / **product-strategy-session**: Stress-test the winning product concept before the Week 1 build roadmap.
-- **sales-enablement** / **product-marketing-context**: Turn the Launch Positioning Statement into real go-to-market materials.
+- **sales-enablement** / **product-marketing**: Turn the Launch Positioning Statement into real go-to-market materials.

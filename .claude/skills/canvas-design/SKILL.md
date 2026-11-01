@@ -133,6 +133,6 @@ To create additional pages when requested, create more creative pages along the 
 
 - **design-dev-resources**: Source real illustrations/logos for a canvas piece instead of hand-drawn SVG.
 - **theme-factory**: Ready-made theme as a starting palette/typography system.
-- **brand-guidelines**: Applies *Anthropic's* specific brand colors/fonts — only relevant if the piece is meant to carry Anthropic's identity. For the user's own brand, pull colors/voice from `product-marketing-context` instead.
+- **brand-guidelines**: Applies *Anthropic's* specific brand colors/fonts — only relevant if the piece is meant to carry Anthropic's identity. For the user's own brand, pull colors/voice from `product-marketing` instead.
 - **frontend-design**: The web/interface counterpart to this skill's poster/print-style output.
 - **brandkit-generator**: Can use a canvas piece instead of the HTML `brand-board.html` template for a poster-style brand board.

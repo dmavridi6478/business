@@ -130,7 +130,7 @@ Opus can build it, but expect a simpler layout and more iteration rounds to reac
 
 ### Related skills in this repo
 
-- **product-marketing-context**: Pull positioning, personas, and objections from here instead of asking from scratch.
+- **product-marketing**: Pull positioning, personas, and objections from here instead of asking from scratch.
 - **content-strategy**: Decide the campaign's angle/topic before building the page.
 - **frontend-design**: Underlying aesthetic guidance this skill's one-shot build draws on.
 - **design-dev-resources**: Source real illustrations/logos for the page instead of hand-drawn SVG.

@@ -33,7 +33,7 @@ The client is buying seven consistent assets from real expertise every week — 
 - **product-strategy-session** / **saas-idea-validator**: Validate real demand, willingness to pay, and differentiation for this as a new service business before committing to it — the critical-evaluation lens `saas-idea-validator` applies to software ideas applies equally well to "should I sell this as a service."
 - **the-specific-knowledge-excavator**: Identifies the client's (or the operator's own) unique expertise this whole pipeline depends on — use it before step 1 if the "real idea" to record isn't obvious yet.
 - **the-leverage-stack-auditor**: Diagnoses whether this service is actually leveraged (media/code) or just relabeled labor (a person still has to do the weekly extract/draft/approve loop) — useful when deciding whether to scale this into a real business or keep it as a one-person service.
-- **product-marketing-context**: Capture the target creator/founder niche and positioning for this service before pitching it.
+- **product-marketing**: Capture the target creator/founder niche and positioning for this service before pitching it.
 - **sales-enablement**: Turn this pipeline into a pitch, one-pager, or proposal for prospective clients.
 - **content-strategy**: Informs which topics/angles the "strong moments" in step 2 get prioritized into.
 - **quarterly-okr-architect** / **business-decision-frameworks**: Useful once this is running as a business — set targets for client count/retention, and prioritize which niches or formats to expand into next.

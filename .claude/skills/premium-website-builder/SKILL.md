@@ -68,6 +68,6 @@ Write the copy as if you're writing for a real business, not a template.
 ## Related skills
 
 - **saas-mvp-24h**: Phase 2 (Design) uses a similar prompt for the SaaS landing page + product UI combo
-- **product-marketing-context**: Capture positioning and ICP before running this skill — feeds the "target audience" and "core problem" inputs
+- **product-marketing**: Capture positioning and ICP before running this skill — feeds the "target audience" and "core problem" inputs
 - **sales-enablement**: If the page is for a service business, pair with this for the proposal/pitch layer
 - **thumbnail-maker**: A high-performing thumbnail drives traffic to this page — run both together for a launch

@@ -75,7 +75,7 @@ Now that my [business] minimum viable brand is live, create a simple 2-week iter
 
 ## Related skills in this repo
 
-- `product-marketing-context` — capture validated positioning after going live
+- `product-marketing` — capture validated positioning after going live
 - `brandkit-generator` — generate a fuller brand direction from a one-liner
 - `content-strategy` — plan the editorial calendar once the brand is live
 - `inbound-content-playbook` — grow traffic post-launch

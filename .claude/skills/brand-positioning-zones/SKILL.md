@@ -23,7 +23,7 @@ Nothing in the C-only or A-only area is a positioning option: C-only is irreleva
 ## Procedure
 
 1. Get the category, the target customer segment, and 2–4 named competitors. Ask for them if missing.
-2. List 8–15 candidate claims/benefits (from product-marketing-context, reviews, sales calls).
+2. List 8–15 candidate claims/benefits (from product-marketing, reviews, sales calls).
 3. For each claim, score with evidence (not opinion): **Want** (customer research, search demand, sales-call frequency), **Best** (proof rows: data, awards, testimonials, feature comparisons), **Competitor strength** (their site, reviews, pricing pages). Mark each "verified" or "assumed".
 4. Assign each claim a zone. Show the table.
 5. Pick ONE Winning claim as the lead position; choose ≤2 supporting Winning/Risky claims. Everything in Dumb/Losing is cut from headlines.
@@ -36,4 +36,4 @@ Nothing in the C-only or A-only area is a positioning option: C-only is irreleva
 - Competitor strength must be observed from public sources, never guessed.
 - Re-run every 6–12 months; zones drift as competitors copy.
 
-Pair with: `product-marketing-context`, `competitor-profiling`, `competitor-alternatives`, `customer-research`, `copywriting`, `value-proposition`.
+Pair with: `product-marketing`, `competitor-profiling`, `competitor-alternatives`, `customer-research`, `copywriting`, `value-proposition`.

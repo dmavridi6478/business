@@ -77,7 +77,7 @@ A footer block with buttons for ChatGPT, Claude, Perplexity, and Gemini. Clickin
 
 Implementation notes:
 - Each provider's support for pre-filling a prompt via URL query parameters differs and changes over time — verify current behavior for each provider before shipping, rather than assuming a pattern from an older screenshot still works. Where a provider doesn't support URL pre-fill, fall back to opening the provider's homepage and copying the prompt to the clipboard with a "prompt copied — paste it in" toast.
-- Populate `[name]` and `[domain]` from the site's actual identity/positioning (see `product-marketing-context`), not a placeholder.
+- Populate `[name]` and `[domain]` from the site's actual identity/positioning (see `product-marketing`), not a placeholder.
 - This block only pays off once the four essentials above are in place — an AI-prompt button on a page with no semantic structure, no meta description, and no llms.txt sends the visitor to an AI that still has nothing solid to say.
 
 ---
@@ -89,6 +89,6 @@ Implementation notes:
 - **business-intelligence-report** / **ceo-reporting-skill**: Run the five exec questions (`exec-ai-questions.md`) against any marketing section of these reports before they go to a CEO or board.
 - **quarterly-okr-architect**: The 15-day action plan's Day 15 "next 30-day plan" is a natural input to a quarterly goal cascade for marketing/growth.
 - **growth-operating-framework**: That skill's Step 2 (North Star metric) and Step 3 (data foundation) overlap with this skill's exec-questions discipline.
-- **product-marketing-context**: Source of the "who they are, what they do" summary that populates both `llms.txt` and the pre-filled "Ask AI about me" prompt.
+- **product-marketing**: Source of the "who they are, what they do" summary that populates both `llms.txt` and the pre-filled "Ask AI about me" prompt.
 - **frontend-design** / **web-artifacts-builder**: Implementation of the actual page structure and the AI-prompt block.
 - **design-dev-resources**: Real provider logos (via SVGL) for the ChatGPT/Claude/Perplexity/Gemini buttons.

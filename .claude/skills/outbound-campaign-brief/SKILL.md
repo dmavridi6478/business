@@ -71,7 +71,7 @@ Building the list and drafting the messages can happen autonomously. **Sending c
 - **marketing-psychology**: Picks the persuasive principle the outreach copy leans on.
 - **humanizer**: Run on drafted outreach before it goes to approval.
 - **sales-enablement**: Once a reply comes in, that skill's buyer-persona-card and objection-handling material carries the conversation forward from cold outreach into an active deal.
-- **product-marketing-context**: The source of truth for who the *real* ICP is — use it to sanity-check a one-line brief's target filters rather than taking the brief at face value if it contradicts documented positioning.
+- **product-marketing**: The source of truth for who the *real* ICP is — use it to sanity-check a one-line brief's target filters rather than taking the brief at face value if it contradicts documented positioning.
 - **the-leverage-stack-auditor**: If outbound campaigns become a recurring, mostly-manual weekly task, check whether it's actually leveraged (a repeatable system) or a labor trap dressed up as automation.
 
 ## Notes
