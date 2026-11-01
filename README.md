@@ -6182,3 +6182,12 @@ Built from `58cfe341-iCloud_Photos.zip` (33 images in three series: ten due-dili
 - 3 commands: `/dd-first-pass`, `/social-draft-schedule`, `/advisor-room`. Pointers added to `social-publishing` and `advisory-board`.
 - 3 design templates (`chat-prompt-card-white`, `setup-step-card-blue`, `contents-index-two-col`) and 2 themes (`diligence-white-terracotta`, `social-setup-blue-pink`).
 - `Artifacts/operations/workflows-batch-125.html` (3 workflows), `Artifacts/business/batch-125-intake-report.html`, `docs/batch-125-prompts.md` (ten verbatim prompts, three printed on slides, four original), `scripts/batch125-install.sh` (read-only clone and a printed connector command; asks first; not run).
+
+## Batch 126 (1 November 2026)
+
+Built from two inline infographics (four levels of strategy; a Claude Cowork B2B sales cheat sheet) and one 60-second TikTok (five tools for making videos with Claude; captions read, audio not transcribed). Nothing was installed.
+
+- 3 new skills: `strategy-four-levels` (levels, owners, cascade-alignment check, limits of the pyramid), `cowork-b2b-sales-8-jobs` (the eight example prompts verbatim; claims checked against Anthropic's Cowork pages: scheduled tasks run in the cloud unless they need local files) and `claude-video-tools-5` (HyperFrames, OneTake, Collage B-Roll, Claude Animation Base, Lemo-Opuscar checked on GitHub; OneTake's licence flagged, Collage B-Roll needs a paid Gemini API).
+- 3 commands: `/strategy-levels`, `/cowork-sales-week`, `/claude-video-pick`.
+- 1 design template (`pyramid-four-levels-callouts`) and 2 themes (`levels-cyan-red-purple`, `cowork-cheatsheet-mint`).
+- `Artifacts/operations/workflows-batch-126.html` (3 workflows), `Artifacts/business/batch-126-intake-report.html`, `docs/batch-126-prompts.md` (eight verbatim, five original), `scripts/batch126-install.sh` (read-only clones, asks first, not run).

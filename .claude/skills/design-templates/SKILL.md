@@ -635,3 +635,19 @@ Original CSS and placeholder wording only; no source logos or platform icons. Ov
 |---|---|---|---|
 | `theme-diligence-white-terracotta.html` | bg `#FFFFFF`, text `#0F0F10`, accent `#B4532A` (template adds send-button orange `#E0714F`) | bg `#141110`, accent `#E0714F` | Poppins |
 | `theme-social-setup-blue-pink.html` | bg `#F4F7FF`, text `#11195C`, accent `#1B2FC9` (template adds pink `#E6127E`) | bg `#0B1030`, accent `#8AA0FF` | Poppins |
+
+
+## Batch 126 additions
+
+| Template | Use for | Layout |
+|---|---|---|
+| `pyramid-four-levels-callouts.html` | "N levels of X" organisation or maturity pyramids | 1080x1350; white page with a gradient frame, large black title, four coloured trapezoid tiers in the centre (triangle on top), four outlined callouts (two above, two below), quotation and author footer |
+
+Original CSS and placeholder wording only. Overlap checked: `hub-tall-center-4-sides` (hub with side cards, no pyramid), `iceberg-waterline-steps` and `spine-steps-detail-cards` are different shapes. Not built: an eight-card cheat sheet (the `cowork-prompt-grid-10` and `prompt-cards-2col-10` templates already cover tag, title, text and prompt strip cards) and a five-tool video-list card (a video, not a still). First pass had the callouts covering the pyramid; moved the stack and fixed callout heights. Rendered at 1080x1350 with no overflow.
+
+## Batch 126 theme tokens (files in `Artifacts/theme-*.html`; colours eyeballed)
+
+| Theme file | Light | Dark | Fonts (free) |
+|---|---|---|---|
+| `theme-levels-cyan-red-purple.html` | bg `#FFFFFF`, text `#101010`, accent `#2F9CC0` (template adds blue `#4A74C9`, red `#E0342B`, purple `#B07BC0`) | bg `#0F1016`, accent `#6FD3EC` | Inter |
+| `theme-cowork-cheatsheet-mint.html` | bg `#EFEFEA`, text `#14171A`, accent `#0F5C4D` | bg `#101412`, accent `#58C9AE` | Inter + JetBrains Mono |
