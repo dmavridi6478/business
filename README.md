@@ -6191,3 +6191,13 @@ Built from two inline infographics (four levels of strategy; a Claude Cowork B2B
 - 3 commands: `/strategy-levels`, `/cowork-sales-week`, `/claude-video-pick`.
 - 1 design template (`pyramid-four-levels-callouts`) and 2 themes (`levels-cyan-red-purple`, `cowork-cheatsheet-mint`).
 - `Artifacts/operations/workflows-batch-126.html` (3 workflows), `Artifacts/business/batch-126-intake-report.html`, `docs/batch-126-prompts.md` (eight verbatim, five original), `scripts/batch126-install.sh` (read-only clones, asks first, not run).
+
+## Batch 127 (2 November 2026)
+
+Built from five inline images: two LinkedIn personal-brand graphics and three @githubnow cards. Mostly duplicates; nothing was installed.
+
+- 2 new skills: `personal-brand-90-days` (six phases, calendar, weekly review; splits treated as hypotheses) and `github-trending-three-nov2` (claude-seo, Claude-Code-Game-Studios, Ghidra checked against GitHub; Ghidra flagged dual-use).
+- 1 command: `/brand-90-days`. Three rows added to `oss-alternatives`.
+- Skipped as duplicates: the nine-rules graphic (`linkedin-magnetic-brand-9-rules`), claude-seo (already vendored) and Ghidra (already referenced).
+- 1 design template (`road-phases-90-days`) and 1 theme (`brand-road-green-yellow`).
+- `Artifacts/operations/workflows-batch-127.html` (2 workflows), `Artifacts/business/batch-127-intake-report.html`, `docs/batch-127-prompts.md` (four original prompts).

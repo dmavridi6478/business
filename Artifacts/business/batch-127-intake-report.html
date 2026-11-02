@@ -1,0 +1,104 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Batch 127 Intake Report</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<style>
+  /* Layout: single-column formal report, 880px measure; tables scroll inside their own wrappers.
+     Palette: ink-blue neutrals, one deep teal accent, semantic green/amber/red for status only.
+     Type: Aptos (the owner's house font) with system fallbacks; title 32pt, headings 14pt, body 11pt. */
+  :root {
+    --bg: #f6f7f9; --surface: #ffffff; --fg: #1b2330; --muted: #5a6577; --line: #d9dee6;
+    --accent: #0f5d6b; --accent-soft: #e2f0f2;
+    --ok: #17703a; --ok-bg: #e3f3e8; --warn: #8a5a00; --warn-bg: #fbefd3; --bad: #a11d2a; --bad-bg: #fbe3e5;
+    --code-bg: #eef1f5;
+    --font: Aptos, "Segoe UI Variable Text", "Segoe UI", system-ui, -apple-system, Roboto, sans-serif;
+    --mono: ui-monospace, "SF Mono", Consolas, monospace;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #11161e; --surface: #181f2a; --fg: #e6eaf0; --muted: #9aa5b6; --line: #2c3646;
+      --accent: #6cc3d1; --accent-soft: #17323a;
+      --ok: #6fd18f; --ok-bg: #173824; --warn: #f0c261; --warn-bg: #3a2e12; --bad: #ff8d98; --bad-bg: #3d1a1f;
+      --code-bg: #0e131a; color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #11161e; --surface: #181f2a; --fg: #e6eaf0; --muted: #9aa5b6; --line: #2c3646;
+    --accent: #6cc3d1; --accent-soft: #17323a;
+    --ok: #6fd18f; --ok-bg: #173824; --warn: #f0c261; --warn-bg: #3a2e12; --bad: #ff8d98; --bad-bg: #3d1a1f;
+    --code-bg: #0e131a; color-scheme: dark;
+  }
+  * { box-sizing: border-box; }
+  body { background: var(--bg); color: var(--fg); font-family: var(--font); font-size: 11pt; line-height: 1.55; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); padding-block: 28px 64px; }
+  main { max-width: 880px; margin-inline: auto; display: flex; flex-direction: column; gap: 28px; }
+  header { display: flex; flex-direction: column; gap: 8px; border-bottom: 2px solid var(--accent); padding-bottom: 18px; }
+  .eyebrow { font-size: 9pt; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
+  h1 { font-size: 32pt; line-height: 1.1; margin: 0; font-weight: 700; text-wrap: balance; }
+  h2 { font-size: 14pt; margin: 0 0 10px; font-weight: 700; color: var(--accent); text-wrap: balance; }
+  p { margin: 0 0 10px; max-width: 75ch; }
+  section { background: var(--surface); border: 1px solid var(--line); border-radius: 6px; padding: 20px 22px; min-width: 0; }
+  .lede { font-size: 11pt; color: var(--muted); max-width: 70ch; margin: 0; }
+  .truth { border-left: 4px solid var(--bad); background: var(--bad-bg); padding: 12px 16px; border-radius: 0 6px 6px 0; }
+  .truth p:last-child { margin-bottom: 0; }
+  .tw { overflow-x: auto; margin-block: 8px 4px; border: 1px solid var(--line); border-radius: 4px; }
+  table { border-collapse: collapse; width: 100%; min-width: 720px; font-size: 10pt; }
+  th, td { padding: 8px 10px; border-bottom: 1px solid var(--line); text-align: center; vertical-align: top; }
+  th { background: var(--accent-soft); color: var(--fg); font-weight: 700; font-size: 9.5pt; }
+  tr:last-child td { border-bottom: 0; }
+  td.l, th.l { text-align: center; } /* house rule: table content aligned top and centre */
+  .st { display: inline-block; padding: 1px 8px; border-radius: 10px; font-size: 9pt; font-weight: 700; white-space: nowrap; }
+  .st.ok { background: var(--ok-bg); color: var(--ok); } .st.warn { background: var(--warn-bg); color: var(--warn); } .st.bad { background: var(--bad-bg); color: var(--bad); }
+  .sw { display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 10px; margin-block: 8px; }
+  .sw div { border: 1px solid var(--line); border-radius: 4px; overflow: hidden; font-size: 9pt; text-align: center; }
+  .sw i { display: block; height: 44px; }
+  .sw span { display: block; padding: 4px 6px; font-family: var(--mono); }
+  .prompt { position: relative; margin-block: 10px; }
+  .prompt pre { margin: 0; white-space: pre-wrap; background: var(--code-bg); border: 1px solid var(--line); border-radius: 4px; padding: 12px 84px 12px 12px; font-family: var(--mono); font-size: 9.5pt; line-height: 1.5; }
+  .prompt b { display: block; font-family: var(--font); font-size: 10pt; margin-bottom: 4px; }
+  .prompt button { position: absolute; top: 30px; right: 8px; font: inherit; font-size: 9pt; padding: 4px 10px; border-radius: 4px; border: 1px solid var(--accent); background: var(--surface); color: var(--accent); cursor: pointer; }
+  .prompt button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  ul { margin: 0 0 10px; padding-left: 20px; } li { margin-bottom: 4px; max-width: 75ch; }
+  code { font-family: var(--mono); font-size: 9.5pt; background: var(--code-bg); padding: 1px 4px; border-radius: 3px; }
+  footer { color: var(--muted); font-size: 9.5pt; }
+</style>
+<style>
+ figure{margin:0;text-align:center} figure img{width:100%;border:1px solid var(--line);border-radius:4px;display:block} figcaption{font-size:8.5pt;color:var(--muted);margin-top:4px}
+ .thumbs{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px;margin-top:10px}
+ pre{white-space:pre-wrap;word-break:break-word;background:var(--code-bg);border:1px solid var(--line);border-radius:4px;padding:12px;font:10pt/1.5 var(--mono);margin:8px 0;overflow-x:auto}
+ details{border:1px solid var(--line);border-radius:4px;padding:8px 12px;margin-top:8px} summary{cursor:pointer;font-weight:700}
+ code{font-family:var(--mono);font-size:9.5pt;background:var(--code-bg);padding:0 4px;border-radius:3px}
+ ul{margin:0 0 10px;padding-left:20px;max-width:78ch} li{margin-bottom:4px}
+ td code{white-space:normal;word-break:break-word}
+</style>
+<style>main > section, main > header {min-width:0} p, li, code {overflow-wrap:anywhere}</style>
+<main>
+<header><div class="eyebrow">Batch 127 · 2 November 2026 · intake</div><h1>Batch 127 Intake Report</h1><p>Five inline images (two LinkedIn personal-brand graphics and three GitHub trending cards) processed with the seven-step intake. Most of it was already in the library, so this batch is small: two new skills, one command, one template, one theme, two workflows and four prompts. Nothing was installed.</p></header>
+<section><h2>1. Executive findings</h2><ul>
+<li><b>[Certain]</b> Three of the five were duplicates. "9 Rules for a Magnetic Personal Brand" is the existing <code>linkedin-magnetic-brand-9-rules</code> (it even names the same author and the SayWhat and TOFU/MOFU/BOFU tips). <code>claude-seo</code> is already vendored. Ghidra was already referenced in reverse-engineering skills. I added only a pointer or a care note for each; re-sending the same images costs your time, not mine.</li>
+<li><b>[Certain]</b> "Build an Unforgettable Personal Brand in 90 Days" was new: a six-phase plan with day ranges. Its numbers (70/30 reach versus trust, 70/20/10 funnel, five posts a week) are one author's rules of thumb, and two different splits appear on one graphic. The skill treats them as hypotheses and adds a weekly review. Ninety days starts a reputation; it does not finish one.</li>
+<li><b>[Certain]</b> The card figures differ from GitHub on 2 November. claude-seo has 22,736 stars (MIT) and now lists 26 sub-skills and 19 sub-agents; the card's "17 agents" and the vendored copy (24 sub-skills) are older. Claude-Code-Game-Studios says 72 workflow skills where the card says 74. Stars and licences for the game-studio kit and for Ghidra were not in the page text I read, so none is quoted.</li>
+<li><b>[Certain]</b> Ghidra is the sensitive one. It is a legitimate reverse-engineering suite built by the NSA's research directorate, and dual-use. Use it only on software you own or may analyse, run unknown binaries in a virtual machine, and check licence terms and local law on reverse engineering. "+16,685 stars this month" reflects attention, not a change in the tool.</li>
+<li><b>[Likely]</b> The game-studio kit runs 49 agents with hooks and commit gates in your Claude Code project. Hooks change tool behaviour on your machine: try it in a throwaway folder and verify that the gates actually block a commit.</li>
+</ul></section>
+<section><h2>2. Source inventory and what was built</h2><div class="tw"><table><tr><th>Source</th><th>Result</th></tr>
+<tr><td>9 Rules for a Magnetic Personal Brand (Josh Sanders)</td><td>Duplicate of <code>linkedin-magnetic-brand-9-rules</code>; not rebuilt</td></tr>
+<tr><td>Build an Unforgettable Personal Brand in 90 Days (Nader Alnajjar, Lever)</td><td>Skill <code>personal-brand-90-days</code>; <code>/brand-90-days</code>; template <code>road-phases-90-days</code>; theme <code>brand-road-green-yellow</code>; workflow 1</td></tr>
+<tr><td>@githubnow cards: claude-seo, Claude-Code-Game-Studios, Ghidra</td><td>Skill <code>github-trending-three-nov2</code>; three rows in <code>oss-alternatives</code>; workflow 2</td></tr></table></div></section>
+<section><h2>3. Where I disagree with the source material</h2><ul>
+<li>I disagree with "unforgettable in 90 days". The risk is quitting at day 91 because the graphic promised more than a quarter can deliver. Plan to continue and judge by conversations, not impressions.</li>
+<li>I disagree with ranking tools by stars gained this month. The risk is installing the most viral repo rather than the one you need, or pointing a reverse-engineering suite at something you are not allowed to analyse.</li></ul></section>
+<section><h2>4. Not done, and why</h2><ul>
+<li>No skill rebuilt for the nine-rules graphic, claude-seo or Ghidra (already in the library).</li>
+<li>No install script: nothing was recommended for installation. Use <code>/trial-repo</code> first.</li>
+<li>No GitHub-card template: <code>github-trending-card</code> already exists.</li></ul></section>
+<section><h2>5. Deliverables</h2><div class="tw"><table><tr><th>Type</th><th>Items</th></tr>
+<tr><td>Skills</td><td><code>personal-brand-90-days</code>, <code>github-trending-three-nov2</code></td></tr>
+<tr><td>Command</td><td><code>/brand-90-days</code></td></tr>
+<tr><td>Template and theme</td><td><code>road-phases-90-days</code>, <code>theme-brand-road-green-yellow</code></td></tr>
+<tr><td>Merged</td><td><code>oss-alternatives</code> (three rows), <code>design-templates</code></td></tr>
+<tr><td>Workflows and prompts</td><td><code>Artifacts/operations/workflows-batch-127.html</code>, <code>docs/batch-127-prompts.md</code></td></tr></table></div></section>
+<section><h2>6. Open decisions for you</h2><ul>
+<li>Do you want the 90-day plan written for your real role and audience? Send them plus your weekly hours.</li>
+<li>Do you plan to use Ghidra or the game-studio kit? Say for what, and I will give you the safe setup.</li>
+<li>Are you sending images in batches to confirm they were handled? They are in the README; say so and I will list what each earlier batch covered.</li></ul></section>
+<footer>Prepared 2 November 2026. External check: three GitHub repository pages read on 2 November 2026.</footer>
+</main>
+</body></html>

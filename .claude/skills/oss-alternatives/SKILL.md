@@ -283,3 +283,14 @@ Repos looked up on GitHub on 28 October 2026. Star counts on the cards were olde
 | `diegosouzapw/OmniRoute` (now `cheaper-inference/OmniRoute`) | One gateway to hundreds of model providers with fallback | 81,770 | MIT | Moved owner. A router sees all your prompts and code and forwards them to other providers; "free" tiers mean your data goes to whoever offers them. Already noted in `claude-code-tooling` |
 
 Five more from the @buildwithneej carousel (cleanyourtv, Filee, ai-job-search, MacNativeGames, ruflo) are in `trending-repos-week-oct23` with the safe-trial protocol. A finance infographic in the same batch is in `fpna-budget-actual-forecast`; its add-in promotion is an advert and was not added.
+
+
+## Batch 127 additions: @githubnow cards (read on GitHub 2 November 2026)
+
+| Repo | Does | Stars | Licence | Care |
+|---|---|---|---|---|
+| `AgriciDaniel/claude-seo` | Claude Code SEO plugin: audit, schema, GEO/AEO, 26 sub-skills and 19 sub-agents | 22,736 | MIT | Already vendored as `claude-seo` (older, top-level skill only). Audit only sites you may test |
+| `Donchitos/Claude-Code-Game-Studios` | A game studio in one Claude Code session: 49 agents, 72 workflow skills (card says 74), hooks and rules | not read | not read | Hooks change Claude Code behaviour: trial in a throwaway folder; read LICENSE |
+| `NationalSecurityAgency/ghidra` | Software reverse-engineering suite (disassembler, decompiler, scripting) | not read | read LICENSE (believed Apache-2.0) | Dual-use: authorised targets only; run unknown binaries in a VM |
+
+Details and trial rules in `github-trending-three-nov2`. The nine-rules LinkedIn graphic from the same batch is already `linkedin-magnetic-brand-9-rules`.

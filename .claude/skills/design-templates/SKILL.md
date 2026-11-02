@@ -651,3 +651,16 @@ Original CSS and placeholder wording only. Overlap checked: `hub-tall-center-4-s
 |---|---|---|---|
 | `theme-levels-cyan-red-purple.html` | bg `#FFFFFF`, text `#101010`, accent `#2F9CC0` (template adds blue `#4A74C9`, red `#E0342B`, purple `#B07BC0`) | bg `#0F1016`, accent `#6FD3EC` | Inter |
 | `theme-cowork-cheatsheet-mint.html` | bg `#EFEFEA`, text `#14171A`, accent `#0F5C4D` | bg `#101412`, accent `#58C9AE` | Inter + JetBrains Mono |
+
+
+## Batch 127 additions
+
+| Template | Use for | Layout |
+|---|---|---|
+| `road-phases-90-days.html` | Phase-by-phase 30/60/90-day plans | 1080x1500; mint page, dark-green title with a yellow-highlighted phrase, SVG winding road with flag and six numbered markers, six phase cards alternating left and right (day-range bar, line, bullets), Day 90 banner |
+
+Original SVG, CSS and placeholder wording. Overlap checked: `mountain-roadmap-6` is a mountain path with step cards, a different picture. Not built: a GitHub card (the library has `github-trending-card` and `swap-card-photo-github`). Rendered at 1080x1500, no overflow.
+
+| Theme file | Light | Dark | Fonts (free) |
+|---|---|---|---|
+| `theme-brand-road-green-yellow.html` | bg `#F4FAF5`, text `#12382A`, accent `#1F5A3E` (template adds yellow `#FBF3A8`) | bg `#0C1A14`, accent `#7BD6A0` | Inter |
