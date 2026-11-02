@@ -6201,3 +6201,11 @@ Built from five inline images: two LinkedIn personal-brand graphics and three @g
 - Skipped as duplicates: the nine-rules graphic (`linkedin-magnetic-brand-9-rules`), claude-seo (already vendored) and Ghidra (already referenced).
 - 1 design template (`road-phases-90-days`) and 1 theme (`brand-road-green-yellow`).
 - `Artifacts/operations/workflows-batch-127.html` (2 workflows), `Artifacts/business/batch-127-intake-report.html`, `docs/batch-127-prompts.md` (four original prompts).
+
+## Batch 128 (2 November 2026)
+
+Three inline images, none covered earlier: ten sales agents (SalesDaily), three levels of a PMM, and a digital-marketing prompt sheet (six of eleven prompts visible). No templates, themes or install script.
+
+- 3 new skills: `sales-agents-10-schedule` (ten instruction lines verbatim; draft-only, CRM-write, outreach-law and injection checks; one-agent-a-week rollout), `pmm-three-levels` (junior, senior, staff on ten factors with a self-assessment) and `digital-marketing-claude-prompts-6` (six prompts verbatim; data and claim checks).
+- 3 commands: `/sales-agent`, `/pmm-level`, `/dm-prompt`.
+- `Artifacts/operations/workflows-batch-128.html` (3 workflows), `Artifacts/business/batch-128-intake-report.html`, `docs/batch-128-prompts.md` (sixteen verbatim, one original).
