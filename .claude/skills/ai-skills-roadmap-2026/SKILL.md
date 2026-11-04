@@ -307,3 +307,21 @@ Output: LLM ops dashboard spec, alerting thresholds, prompt versioning SOP, obse
 | AI Video | Runway, VEED, Opus Clip | Content at scale |
 | SaaS Development | Lovable, Cursor, Bubble | Building AI products fast |
 | LLM Management | Helicone, TruLens, Arize | AI in production |
+
+
+## Batch 117 addition: the 8 skills "you cannot ignore in 2027" and a video pick for each
+
+From a @usamaakram carousel. Each card names one video. **None of the videos or their view counts was verified**, and a long video is not a learning plan: pair each with a project and a deadline.
+
+| # | Skill | Aim on the card | Video named on the card | Length shown | Library skills to use instead of or alongside |
+|---|---|---|---|---|---|
+| 1 | AI agents | Save time or make more with AI | "How to Build & Sell AI Agents in 2026: Ultimate Beginner's Guide" (Liam Ottley) | 3:05:04 | `build-ai-agent-10-minutes`, `claude-six-levels`, `n8n-agent-builder` |
+| 2 | Communication | Make people understand and trust you | "13 Years of Communication Skills Knowledge in 53 minutes" (Vinh Giang) | 53:17 | `communication-skills-12`, `executive-presence-8` |
+| 3 | Learning fast | Adapt faster than everyone else | "How To Learn Anything Fast" (Andrew Huberman) | 9:25 | `learn-faster-7-prompts`, `/learn-faster` |
+| 4 | Critical thinking | Use your own thinking instead of AI | "4 tips for developing critical thinking skills" (Steve Pearlman, TEDx) | 17:38 | `critical-thinking-48`, `/steelman-both-sides` |
+| 5 | AI for marketing | Use AI to get sales 10x | "Claude Code Marketing Full Course (6 hours)" (Nick Saraev) | 6:02:49 | `claude-code-marketing-team`, `ultimate-marketing-dept` |
+| 6 | AI literacy | Use AI as leverage | "AI Literacy Crash Course" (Lucas Soares, Automata Learning Lab) | 25:59 | `ai-concepts-2026`, `claude-cheat-sheet` |
+| 7 | Sales | Turn value into money | "The Ultimate Sales Training for 2026 [Full Course]" (Alex Hormozi) | 2:34:01 | `sales-methodologies-20`, `one-person-sales-system` |
+| 8 | Personal brand | Build distribution | "How to START a Personal Brand (Full Course)" (Caleb Ralston) | 5:05:49 | `linkedin-magnetic-brand-9-rules`, `linkedin-magnetic-brand-9-rules/references/personal-brand-strategy-map.md` |
+
+Total runtime of the eight videos as shown: about 19 hours. Check the card's "Instead of AI use your own thinking" line against item 5: the advice is to practise judgment, then use the tools.

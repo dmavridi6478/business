@@ -113,3 +113,5 @@ Be specific with numbers. Give me a roadmap I can print and follow.
 | `/yt-monetize` | Monetization roadmap from 0 to income |
 
 **Tip:** Run these in order for a new channel, or jump to any individual prompt as needed.
+
+See also `references/claude-youtube-scan.md` (scan YouTube with Claude to find faceless niches, with the money slide checked; Batch 116).

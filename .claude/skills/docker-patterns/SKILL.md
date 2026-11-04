@@ -518,3 +518,7 @@ docker network inspect <project>_default
 # BAD: Putting secrets in docker-compose.yml
 # Use .env files (gitignored) or Docker secrets
 ```
+
+## See also
+
+- `references/docker-agent.md` - Docker Agent (agents as YAML files): commands, caveats and a starter sketch from a 18 Oct 2026 video; verify against official docs.

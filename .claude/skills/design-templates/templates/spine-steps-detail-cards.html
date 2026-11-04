@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<!--
+  Template: spine-steps-detail-cards
+  Style: soft blue page, headline, a vertical spine with seven numbered nodes, each joined to a wide step card (round icon, title, description) with a tinted bullet panel on the right, footer bar with an avatar placeholder. Theme: spine-blue-soft
+  Inspired by: step-by-step process infographics with a checklist per step. Original CSS and placeholder wording; no source logo, icon or text reused.
+  Canvas: 1080 x 1350. Swap points: h1, .row (node number, .ic icon, b title, p text, ul bullets), .foot
+-->
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Spine Steps Detail Cards</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#F1F6FD;--card:#FFFFFF;--tint:#E3EDFB;--ink:#10223F;--muted:#4A5C7A;--blue:#2563EB;--line:#CFDDF3;--font:"Inter",Aptos,"Segoe UI",system-ui,sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#333;display:flex;justify-content:center;padding:32px 0;overflow-x:auto;font-family:var(--font)}
+.slide{position:relative;width:1080px;height:1350px;flex:none;background:var(--bg);color:var(--ink);overflow:hidden}
+h1{position:absolute;left:56px;top:34px;font:800 52px/1.15 var(--font);letter-spacing:-.02em}h1 span{color:var(--blue)}
+.spine{position:absolute;left:79px;top:190px;bottom:150px;width:5px;background:var(--blue);border-radius:3px}
+.rows{position:absolute;left:40px;right:36px;top:150px;display:grid;grid-template-rows:repeat(7,148px);gap:10px}
+.row{position:relative;display:grid;grid-template-columns:96px 70px 1fr 340px;align-items:center;gap:0 14px;min-width:0}
+.node{justify-self:start;width:44px;height:44px;border-radius:50%;background:var(--blue);color:#fff;border:4px solid #fff;font:800 22px/36px var(--font);text-align:center;box-shadow:0 0 0 2px var(--blue);z-index:2}
+.row::before{content:"";position:absolute;left:96px;right:0;top:0;bottom:0;background:var(--card);border:2px solid var(--line);border-radius:18px}
+.ic{position:relative;grid-column:2;width:62px;height:62px;border-radius:50%;background:var(--tint);color:var(--blue);display:flex;align-items:center;justify-content:center;font:700 13px/1 var(--font);margin-left:8px}
+.tx{position:relative;grid-column:3;min-width:0;padding:0 6px}.tx b{font:800 25px/1.1 var(--font)}.tx p{margin-top:6px;font:500 15.5px/1.3 var(--font);color:var(--muted)}
+.row ul{position:relative;grid-column:4;list-style:none;background:var(--tint);border-radius:12px;margin:10px 12px 10px 0;padding:8px 12px;font:500 13.5px/1.34 var(--font);color:var(--ink);height:calc(100% - 20px);display:flex;flex-direction:column;justify-content:center}
+.row li::before{content:"\2022  ";color:var(--blue);font-weight:800}
+.foot{position:absolute;left:0;right:0;bottom:0;height:76px;background:#fff;border-top:2px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:0 44px;font:700 21px/1.2 var(--font)}
+.foot span{color:var(--blue)}
+</style></head><body>
+<div class="slide">
+  <h1>Process in <span>seven steps</span></h1>
+  <div class="spine"></div>
+  <div class="rows">
+<div class="row"><span class="node">1</span><div class="ic">icon</div><div class="tx"><b>Step one</b><p>One or two lines on what this step is for and the decision it needs.</p></div><ul><li>Checklist point goes here</li><li>Checklist point goes here</li><li>Checklist point goes here</li><li>Checklist point goes here</li><li>Checklist point goes here</li></ul></div>
+<div class="row"><span class="node">2</span><div class="ic">icon</div><div class="tx"><b>Step two</b><p>One or two lines on what this step is for and the decision it needs.</p></div><ul><li>Checklist point goes here</li><li>Checklist point goes here</li><li>Checklist point goes here</li><li>Checklist point goes here</li><li>Checklist point goes here</li></ul></div>
+<div class="row"><span class="node">3</span><div class="ic">icon</div><div class="tx"><b>Step three</b><p>One or two lines on what this step is for and the decision it needs.</p></div><ul><li>Checklist point goes here</li><li>Checklist point goes here</li><li>Checklist point goes here</li><li>Checklist point goes here</li><li>Checklist point goes here</li></ul></div>
+<div class="row"><span class="node">4</span><div class="ic">icon</div><div class="tx"><b>Step four</b><p>One or two lines on what this step is for and the decision it needs.</p></div><ul><li>Checklist point goes here</li><li>Checklist point goes here</li><li>Checklist point goes here</li><li>Checklist point goes here</li><li>Checklist point goes here</li></ul></div>
+<div class="row"><span class="node">5</span><div class="ic">icon</div><div class="tx"><b>Step five</b><p>One or two lines on what this step is for and the decision it needs.</p></div><ul><li>Checklist point goes here</li><li>Checklist point goes here</li><li>Checklist point goes here</li><li>Checklist point goes here</li><li>Checklist point goes here</li></ul></div>
+<div class="row"><span class="node">6</span><div class="ic">icon</div><div class="tx"><b>Step six</b><p>One or two lines on what this step is for and the decision it needs.</p></div><ul><li>Checklist point goes here</li><li>Checklist point goes here</li><li>Checklist point goes here</li><li>Checklist point goes here</li><li>Checklist point goes here</li></ul></div>
+<div class="row"><span class="node">7</span><div class="ic">icon</div><div class="tx"><b>Step seven</b><p>One or two lines on what this step is for and the decision it needs.</p></div><ul><li>Checklist point goes here</li><li>Checklist point goes here</li><li>Checklist point goes here</li><li>Checklist point goes here</li><li>Checklist point goes here</li></ul></div>
+  </div>
+  <div class="foot"><span>Your name or handle</span><span>Save | Share</span></div>
+</div></body></html>

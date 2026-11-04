@@ -37,3 +37,20 @@ Nothing in the C-only or A-only area is a positioning option: C-only is irreleva
 - Re-run every 6–12 months; zones drift as competitors copy.
 
 Pair with: `product-marketing-context`, `competitor-profiling`, `competitor-alternatives`, `customer-research`, `copywriting`, `value-proposition`.
+
+## Brand strategy cheat sheet: eight frameworks (Batch 113)
+
+Source: "The Brand Strategy Cheat Sheet for Founders, Creators & Coaches" (no author credit visible). Use after the zones analysis to choose which gap to close.
+
+| # | Framework | Core | Ask yourself |
+|---|---|---|---|
+| 01 | Brand positioning matrix | Visibility vs clarity: influencer brand (known, trusted), confused brand (attention, unclear message), hidden gem (great message, needs visibility), invisible brand (needs clarity and promotion) | Is your message clear to a stranger? Would your top 3 clients describe you the same way? |
+| 02 | Pitch framework (60-second story) | Who do you help, what problem do you solve, why are you the best person, how do you deliver results | What is your commercial superpower? What problem do people pay you to solve? |
+| 03 | Content strategy quadrant | Content type to purpose to format: authority, awareness, affinity, action | Which pillar is missing? Do you create content for every funnel stage? |
+| 04 | Brand ecosystem (the 4 offers) | Gift (lead magnet), entry (paid intro), core (main programme), client product (continuity) | Do you have an offer at every stage? Which performs best? |
+| 05 | Brand profile checklist | Optimised bio; professional visuals; pinned post explaining what you do; social proof; consistent tone and look | Does your presence position you as a trusted expert? |
+| 06 | Partnership strategy | Influencer collabs, JV partners, affiliates and referrals, advisory network | Who already has your ideal audience's attention? |
+| 07 | Brand testing (CHAOS) | Concept, Hook, Audience, Offer, Sales: clear? curiosity? "this is for me"? would they pay? can you convert? | Use for new ideas before building |
+| 08 | Deep-dive: 10 questions | Transformation created; what to be famous for; 3 brand words; social proof held; where you show up; best content format; dream clients or partners; missing sales assets; hero product; referral vs inbound share | Answer in writing before choosing channels |
+
+The sheet is a prompt list; it gives no evidence that any framework outperforms another.

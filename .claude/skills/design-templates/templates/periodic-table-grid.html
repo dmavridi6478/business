@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<!--
+  Template: periodic-table-grid
+  Style: white page with a bold two-line title top-left, a six-item colour legend beside it, and a 5-column grid of square tiles with dashed navy borders, a large abbreviation, a dashed rule and a small full-term line. Tile fill = family colour (orange, red, blue, purple, green, white/outline). Theme: periodic-pastel
+  Inspired by: glossary "periodic table" infographics (AEO terms, product-marketing terms). Original CSS; no source term list, handle or wording reused.
+  Canvas: 1080 x 1350. 5 columns x 7 rows; empty slots are placed with .gap. Replace the placeholder terms with your own glossary.
+  Swap points: h1, .legend li (swatch class f1..f6), .tile (class f1..f6, .abbr, .full), .gap for empty cells, .foot
+-->
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Periodic Table Grid</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#FFFFFF;--ink:#1A2250;--muted:#5A6180;--line:#1A2250;--f1:#FFD28A;--f2:#F2A3A3;--f3:#A9CBFF;--f4:#C9C6FF;--f5:#A8E27A;--f6:#FFFFFF;--bar:#C9C6F5;--font:"Inter",Aptos,"Segoe UI",system-ui,sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#333;display:flex;justify-content:center;padding:32px 0;overflow-x:auto;font-family:var(--font)}
+.slide{position:relative;width:1080px;height:1350px;flex:none;background:var(--bg);color:var(--ink);padding:48px 40px 0;overflow:hidden}
+h1{font:800 62px/1.06 var(--font);letter-spacing:-.02em;width:640px}
+.legend{position:absolute;left:44px;top:236px;width:560px;list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:14px 20px;font:600 21px/1.2 var(--font)}
+.legend li{display:flex;gap:12px;align-items:center}.legend i{flex:none;width:30px;height:30px;border-radius:50%;border:2px dashed var(--line)}
+.grid{position:absolute;left:40px;right:40px;top:50px;bottom:104px;display:grid;grid-template-columns:repeat(5,1fr);grid-template-rows:repeat(7,1fr);gap:12px}
+.tile,.gap{min-width:0}
+.tile{border:3px dashed var(--line);border-radius:16px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:6px}
+.abbr{font:500 50px/1 var(--font);letter-spacing:-.01em}.rule{width:34px;border-top:2px solid var(--line);margin:8px 0 6px;opacity:.6}
+.full{font:500 16px/1.15 var(--font);color:var(--muted)}
+.f1{background:var(--f1)}.f2{background:var(--f2)}.f3{background:var(--f3)}.f4{background:var(--f4)}.f5{background:var(--f5)}.f6{background:var(--f6)}
+i.f1{background:var(--f1)}i.f2{background:var(--f2)}i.f3{background:var(--f3)}i.f4{background:var(--f4)}i.f5{background:var(--f5)}i.f6{background:var(--f6)}
+.foot{position:absolute;left:0;right:0;bottom:0;height:70px;background:var(--bar);display:flex;align-items:center;justify-content:space-between;padding:0 40px;font:600 22px/1 var(--font)}
+</style></head><body>
+<div class="slide">
+  <h1>Glossary<br>Periodic table</h1>
+  <ul class="legend"><li><i class="f1"></i>Family one</li><li><i class="f5"></i>Family five</li><li><i class="f6"></i>Family six</li><li><i class="f3"></i>Family three</li><li><i class="f2"></i>Family two</li><li><i class="f4"></i>Family four</li></ul>
+  <div class="grid">
+    <div class="gap"></div><div class="gap"></div><div class="gap"></div><div class="gap"></div><div class="tile f4"><div class="abbr">TRM</div><div class="rule"></div><div class="full">Term name</div></div>
+    <div class="gap"></div><div class="gap"></div><div class="gap"></div><div class="tile f4"><div class="abbr">TRM</div><div class="rule"></div><div class="full">Term name</div></div><div class="tile f4"><div class="abbr">TRM</div><div class="rule"></div><div class="full">Term name</div></div>
+    <div class="tile f4"><div class="abbr">TRM</div><div class="rule"></div><div class="full">Term name</div></div><div class="tile f4"><div class="abbr">TRM</div><div class="rule"></div><div class="full">Term name</div></div><div class="tile f4"><div class="abbr">TRM</div><div class="rule"></div><div class="full">Term name</div></div><div class="tile f1"><div class="abbr">TRM</div><div class="rule"></div><div class="full">Term name</div></div><div class="tile f4"><div class="abbr">TRM</div><div class="rule"></div><div class="full">Term name</div></div>
+    <div class="tile f1"><div class="abbr">TRM</div><div class="rule"></div><div class="full">Term name</div></div><div class="tile f3"><div class="abbr">TRM</div><div class="rule"></div><div class="full">Term name</div></div><div class="tile f4"><div class="abbr">TRM</div><div class="rule"></div><div class="full">Term name</div></div><div class="tile f2"><div class="abbr">TRM</div><div class="rule"></div><div class="full">Term name</div></div><div class="tile f1"><div class="abbr">TRM</div><div class="rule"></div><div class="full">Term name</div></div>
+    <div class="tile f2"><div class="abbr">TRM</div><div class="rule"></div><div class="full">Term name</div></div><div class="tile f2"><div class="abbr">TRM</div><div class="rule"></div><div class="full">Term name</div></div><div class="tile f3"><div class="abbr">TRM</div><div class="rule"></div><div class="full">Term name</div></div><div class="tile f2"><div class="abbr">TRM</div><div class="rule"></div><div class="full">Term name</div></div><div class="tile f2"><div class="abbr">TRM</div><div class="rule"></div><div class="full">Term name</div></div>
+    <div class="tile f6"><div class="abbr">TRM</div><div class="rule"></div><div class="full">Term name</div></div><div class="tile f6"><div class="abbr">TRM</div><div class="rule"></div><div class="full">Term name</div></div><div class="tile f6"><div class="abbr">TRM</div><div class="rule"></div><div class="full">Term name</div></div><div class="tile f6"><div class="abbr">TRM</div><div class="rule"></div><div class="full">Term name</div></div><div class="tile f3"><div class="abbr">TRM</div><div class="rule"></div><div class="full">Term name</div></div>
+    <div class="tile f6"><div class="abbr">TRM</div><div class="rule"></div><div class="full">Term name</div></div><div class="tile f5"><div class="abbr">TRM</div><div class="rule"></div><div class="full">Term name</div></div><div class="tile f5"><div class="abbr">TRM</div><div class="rule"></div><div class="full">Term name</div></div><div class="tile f5"><div class="abbr">TRM</div><div class="rule"></div><div class="full">Term name</div></div><div class="tile f6"><div class="abbr">TRM</div><div class="rule"></div><div class="full">Term name</div></div>
+  </div>
+  <div class="foot"><span>Your name</span><span>your handle or site</span></div>
+</div></body></html>

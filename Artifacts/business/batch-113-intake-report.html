@@ -1,0 +1,100 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Batch 113 Intake Report</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<style>
+  /* Layout: single-column formal report, 880px measure; tables scroll inside their own wrappers.
+     Palette: ink-blue neutrals, one deep teal accent, semantic green/amber/red for status only.
+     Type: Aptos (the owner's house font) with system fallbacks; title 32pt, headings 14pt, body 11pt. */
+  :root {
+    --bg: #f6f7f9; --surface: #ffffff; --fg: #1b2330; --muted: #5a6577; --line: #d9dee6;
+    --accent: #0f5d6b; --accent-soft: #e2f0f2;
+    --ok: #17703a; --ok-bg: #e3f3e8; --warn: #8a5a00; --warn-bg: #fbefd3; --bad: #a11d2a; --bad-bg: #fbe3e5;
+    --code-bg: #eef1f5;
+    --font: Aptos, "Segoe UI Variable Text", "Segoe UI", system-ui, -apple-system, Roboto, sans-serif;
+    --mono: ui-monospace, "SF Mono", Consolas, monospace;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #11161e; --surface: #181f2a; --fg: #e6eaf0; --muted: #9aa5b6; --line: #2c3646;
+      --accent: #6cc3d1; --accent-soft: #17323a;
+      --ok: #6fd18f; --ok-bg: #173824; --warn: #f0c261; --warn-bg: #3a2e12; --bad: #ff8d98; --bad-bg: #3d1a1f;
+      --code-bg: #0e131a; color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #11161e; --surface: #181f2a; --fg: #e6eaf0; --muted: #9aa5b6; --line: #2c3646;
+    --accent: #6cc3d1; --accent-soft: #17323a;
+    --ok: #6fd18f; --ok-bg: #173824; --warn: #f0c261; --warn-bg: #3a2e12; --bad: #ff8d98; --bad-bg: #3d1a1f;
+    --code-bg: #0e131a; color-scheme: dark;
+  }
+  * { box-sizing: border-box; }
+  body { background: var(--bg); color: var(--fg); font-family: var(--font); font-size: 11pt; line-height: 1.55; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); padding-block: 28px 64px; }
+  main { max-width: 880px; margin-inline: auto; display: flex; flex-direction: column; gap: 28px; }
+  header { display: flex; flex-direction: column; gap: 8px; border-bottom: 2px solid var(--accent); padding-bottom: 18px; }
+  .eyebrow { font-size: 9pt; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
+  h1 { font-size: 32pt; line-height: 1.1; margin: 0; font-weight: 700; text-wrap: balance; }
+  h2 { font-size: 14pt; margin: 0 0 10px; font-weight: 700; color: var(--accent); text-wrap: balance; }
+  p { margin: 0 0 10px; max-width: 75ch; }
+  section { background: var(--surface); border: 1px solid var(--line); border-radius: 6px; padding: 20px 22px; min-width: 0; }
+  .lede { font-size: 11pt; color: var(--muted); max-width: 70ch; margin: 0; }
+  .truth { border-left: 4px solid var(--bad); background: var(--bad-bg); padding: 12px 16px; border-radius: 0 6px 6px 0; }
+  .truth p:last-child { margin-bottom: 0; }
+  .tw { overflow-x: auto; margin-block: 8px 4px; border: 1px solid var(--line); border-radius: 4px; }
+  table { border-collapse: collapse; width: 100%; min-width: 720px; font-size: 10pt; }
+  th, td { padding: 8px 10px; border-bottom: 1px solid var(--line); text-align: center; vertical-align: top; }
+  th { background: var(--accent-soft); color: var(--fg); font-weight: 700; font-size: 9.5pt; }
+  tr:last-child td { border-bottom: 0; }
+  td.l, th.l { text-align: center; } /* house rule: table content aligned top and centre */
+  .st { display: inline-block; padding: 1px 8px; border-radius: 10px; font-size: 9pt; font-weight: 700; white-space: nowrap; }
+  .st.ok { background: var(--ok-bg); color: var(--ok); } .st.warn { background: var(--warn-bg); color: var(--warn); } .st.bad { background: var(--bad-bg); color: var(--bad); }
+  .sw { display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 10px; margin-block: 8px; }
+  .sw div { border: 1px solid var(--line); border-radius: 4px; overflow: hidden; font-size: 9pt; text-align: center; }
+  .sw i { display: block; height: 44px; }
+  .sw span { display: block; padding: 4px 6px; font-family: var(--mono); }
+  .prompt { position: relative; margin-block: 10px; }
+  .prompt pre { margin: 0; white-space: pre-wrap; background: var(--code-bg); border: 1px solid var(--line); border-radius: 4px; padding: 12px 84px 12px 12px; font-family: var(--mono); font-size: 9.5pt; line-height: 1.5; }
+  .prompt b { display: block; font-family: var(--font); font-size: 10pt; margin-bottom: 4px; }
+  .prompt button { position: absolute; top: 30px; right: 8px; font: inherit; font-size: 9pt; padding: 4px 10px; border-radius: 4px; border: 1px solid var(--accent); background: var(--surface); color: var(--accent); cursor: pointer; }
+  .prompt button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  ul { margin: 0 0 10px; padding-left: 20px; } li { margin-bottom: 4px; max-width: 75ch; }
+  code { font-family: var(--mono); font-size: 9.5pt; background: var(--code-bg); padding: 1px 4px; border-radius: 3px; }
+  footer { color: var(--muted); font-size: 9.5pt; }
+</style>
+<style>
+ figure{margin:0;text-align:center} figure img{width:100%;border:1px solid var(--line);border-radius:4px;display:block} figcaption{font-size:8.5pt;color:var(--muted);margin-top:4px}
+ .thumbs{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px;margin-top:10px}
+ pre{white-space:pre-wrap;word-break:break-word;background:var(--code-bg);border:1px solid var(--line);border-radius:4px;padding:12px;font:10pt/1.5 var(--mono);margin:8px 0;overflow-x:auto}
+ details{border:1px solid var(--line);border-radius:4px;padding:8px 12px;margin-top:8px} summary{cursor:pointer;font-weight:700}
+ code{font-family:var(--mono);font-size:9.5pt;background:var(--code-bg);padding:0 4px;border-radius:3px}
+ ul{margin:0 0 10px;padding-left:20px;max-width:78ch} li{margin-bottom:4px}
+ td code{white-space:normal;word-break:break-word}
+</style>
+<style>main > section, main > header {min-width:0} p, li, code {overflow-wrap:anywhere}</style>
+</head><body><main>
+<header><div class="eyebrow">Batch 113 · 20 October 2026 · business</div><h1>Intake report, Batch 113</h1>
+<p class="lede">Two archives (60 images and a GIF) and three inline infographics. Findings first, then evidence, then what was built.</p></header>
+
+<section><h2>1. Executive findings</h2>
+<ul>
+<li><b>Most of this batch was already in the repository, so I merged instead of building.</b> Three groups produced new skills; the rest went into 12 existing skills or reference files. [Certain] Net library change: +3 skills, +3 commands. I did not rebuild the AEO, GTM, LinkedIn or MCP material a second time.</li>
+<li><b>The two "complete system" graphics are lead magnets, not content.</b> The B2B lead-generation system (50 items) and the Claude sales department (48 items) show index pages only; the 98 files sit behind "comment BOOK" and "comment SALES". [Certain] I did not invent them. <code>b2b-lead-gen-router</code> maps each group to skills this repository already has.</li>
+<li><b>One vendor claim I would not follow.</b> The list-building graphic says emails are verified at export, catch-alls included, and should not be re-verified. Catch-all domains accept any address, so that check proves little. [Likely] The new skill says to send a small test batch and apply the pre-send gate first.</li>
+<li><b>The 25 prompts give a sample, not a measurement.</b> Assistants answer differently by model, location, login and run, so each prompt is run three times and the rates are your own counts. The terms BCR, AIR, SAT and SOM in the glossary graphic have no definitions on the graphic, so none were invented. [Certain]</li>
+<li><b>Connector reality.</b> Sentry and Stripe are installed in claude.ai but need reconnecting by you; Firecrawl and ElevenLabs exist but are not installed; Notion, Canva and HubSpot are named in the marketing setup. A session cannot authorise connectors. The seven marketing commands in the setup graphic already exist as installed <code>marketing:*</code> plugin skills.</li>
+</ul></section>
+
+<section><h2>2. Source inventory and what was built</h2><div class="tw"><table><tr><th>Source</th><th>Content</th><th>Built</th></tr><tr><td>3 inline: AEO periodic table, TAL in 7 steps, SEO vs AEO funnels</td><td>28 terms; 7-step list workflow; two funnels</td><td>Glossary and funnels in <code>ai-search-visibility/references/</code>; skill <code>tal-build-7-steps</code> + <code>/build-tal</code>; template <code>iceberg-waterline-steps</code>, <code>periodic-table-grid</code></td></tr><tr><td>25 prompts for LLM visibility</td><td>25 prompts in 4 groups</td><td>Skill <code>llm-visibility-prompt-check</code> + <code>/llm-visibility-check</code>; prompts verbatim</td></tr><tr><td>3 types of SEO content (Searchable)</td><td>Authority, decision, money pages</td><td>Merged into the AEO reference; template <code>three-column-purpose-cards</code></td></tr><tr><td>9 LinkedIn strategies (ContentSmash)</td><td>9 prompts</td><td>Verbatim in <code>docs/batch-113-prompts.md</code>; pointer from LinkedIn skills</td></tr><tr><td>B2B lead generation complete system</td><td>50-item index, 4 phases</td><td>Skill <code>b2b-lead-gen-router</code> (maps to existing skills); template <code>file-explorer-system-card</code></td></tr><tr><td>Claude sales department</td><td>48-item index, 6 groups</td><td>Same router skill</td></tr><tr><td>GTM 8 parts</td><td>GTM Operating System wheel</td><td>Section in <code>gtm-team-roles-revops-boundary</code></td></tr><tr><td>Modern CMO umbrella</td><td>10 pillars</td><td>Section in <code>marketing-org-operating-model</code></td></tr><tr><td>Marketing strategy vs marketing plan</td><td>Two diagrams</td><td><code>marketing-plan/references/strategy-vs-plan.md</code></td></tr><tr><td>Brand strategy cheat sheet; 6 levers of personal branding</td><td>8 frameworks; 6 levers</td><td>Sections in <code>brand-positioning-zones</code> and <code>linkedin-magnetic-brand-9-rules</code></td></tr><tr><td>Product marketing periodic table</td><td>~70 terms</td><td><code>product-marketing/references/pmm-periodic-table.md</code></td></tr><tr><td>Claude marketing setup (PNG and GIF)</td><td>6 steps, 7 commands</td><td>Section in <code>claude-code-marketing-team</code>; commands already exist as <code>marketing:*</code> plugin skills</td></tr><tr><td>Claude for boardroom decks</td><td>12-slide board deck workflow</td><td><code>pptx-deck-context/references/board-deck-12-slides.md</code></td></tr><tr><td>60 AI tools every builder needs; 7 MCPs; Mac app and GitHub cards</td><td>60 tools; 3 new MCP commands; 9 verified repos</td><td><code>ai-tools-50-directory/references/</code>; <code>mcp-dev-team-6</code>; <code>github-trending-top10-oct5</code>; <code>scripts/batch113-install.sh</code></td></tr><tr><td>Job posting (Johnson and Johnson MedTech, Athens)</td><td>One LinkedIn job screenshot</td><td>Not actionable for the repository; ignored. Tell me if you want it tracked in a job search.</td></tr></table></div>
+<p>Arithmetic checks: glossary 3+5+6+3+3+8 = 28 tiles; 60 tools = 6 groups of 10; 98 index items = 50 + 48.</p></section>
+
+<section><h2>3. GitHub repos checked on 20 October 2026</h2><div class="tw"><table><tr><th>Repo</th><th>Stars</th><th>Licence</th><th>Note</th></tr><tr><td>morluto/rea</td><td>345,008</td><td>MIT</td><td>Reverse-engineering with agents; dual-use</td></tr><tr><td>mattpocock/skills</td><td>297,519</td><td>MIT</td><td>Skills for engineers</td></tr><tr><td>affaan-m/ECC</td><td>284,327</td><td>MIT</td><td>Existing ecc-* skills</td></tr><tr><td>stablyai/orca</td><td>99,112</td><td>MIT</td><td>Existing orca-* skills</td></tr><tr><td>heygen-com/hyperframes</td><td>68,225</td><td>Apache-2.0</td><td>Existing hyperframes skill</td></tr><tr><td>cathrynlavery/diagram-design</td><td>58,786</td><td>MIT</td><td>44 diagram types</td></tr><tr><td>anthropics/financial-services</td><td>40,139</td><td>Apache-2.0</td><td>Reference agents and connectors</td></tr><tr><td>earthtojake/text-to-cad</td><td>21,731</td><td>MIT</td><td>Agent CAD</td></tr><tr><td>DuarteSantos8/openGym</td><td>13,951</td><td><span class="st warn">AGPL-3.0</span></td><td>Self-hosted tracker</td></tr></table></div>
+<p>Card star counts are older than these figures (for example rea 275,523 on the card against 345,008 now); recheck before quoting. Not verified: the Mac apps (AutoMounter, Agenttrace, Ping, Maestro, Claudoscope, Agent Teams AI, MXterm, Raspberry Pi Imager, Pi Stats), which have no repository on the cards.</p></section>
+
+<section><h2>4. Connectors</h2><div class="tw"><table><tr><th>Need</th><th>Finding</th><th>Status</th></tr><tr><td>Sentry, Stripe</td><td>Installed in claude.ai</td><td><span class="st warn">Needs reconnect by you</span></td></tr><tr><td>Firecrawl, ElevenLabs</td><td>In the directory</td><td><span class="st warn">Not installed</span></td></tr><tr><td>Notion, Canva, HubSpot, Context7, Playwright</td><td>Present in this environment earlier in the project</td><td><span class="st ok">Available or user-authorised</span></td></tr><tr><td>Chrome DevTools MCP</td><td>Command only; npx server</td><td><span class="st warn">Run on your machine</span></td></tr></table></div>
+<p>Stripe can change real payment data. Use test mode or a restricted read-only key, and keep it out of the shared <code>.mcp.json</code>.</p></section>
+
+<section><h2>5. Agents</h2><p>No new agent files. The only agent-building material is the <code>anthropics/financial-services</code> repository (reference agents and connectors with human sign-off), which is better read than copied; no guide in the uploads specifies an agent to build. [Likely]</p></section>
+
+<section><h2>6. Deliverables</h2><div class="tw"><table><tr><th>Item</th><th>Count</th><th>Location</th></tr><tr><td>New skills</td><td>3, plus 12 merges into existing skills</td><td><code>.claude/skills/</code></td></tr><tr><td>Slash commands</td><td>3</td><td><code>.claude/commands/</code></td></tr><tr><td>Design templates</td><td>4, rendered and checked</td><td><code>.claude/skills/design-templates/templates/</code></td></tr><tr><td>Design themes</td><td>4, light and dark</td><td><code>Artifacts/theme-*.html</code></td></tr><tr><td>Workflows</td><td>4 on one page</td><td><code>Artifacts/operations/workflows-batch-113.html</code></td></tr><tr><td>Prompts in plain text</td><td>25 + 9 verbatim, 3 command prompts, 2 task prompts</td><td><code>docs/batch-113-prompts.md</code></td></tr><tr><td>Install script</td><td>1, asks before every step, not run</td><td><code>scripts/batch113-install.sh</code></td></tr></table></div></section>
+
+<section><h2>7. Open decisions for you</h2><ul><li>Do you want me to write our own versions of the 98 gated items? They would be our frameworks, not the authors', and would add to the skill count; I recommend not doing it unless a specific item is missing.</li><li>Agent Archive: do you already have an API key, or should I create an account? (Still unanswered; and revoke the OpenAI key you pasted earlier.)</li></ul></section>
+<footer>Stars and licences read from GitHub pages on 20 October 2026.</footer>
+</main></body></html>

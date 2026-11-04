@@ -22,3 +22,7 @@ Uses Task as the command runner: `task install`, `task dev`, `task dev:all`, `ta
 
 ## Related
 `pdf`, `pdf-to-markdown`, `pdf-document-conversion-tools`, `docker-patterns`.
+
+
+## Verified figures (22 October 2026)
+GitHub page: 94,653 stars, 11,321 forks, licence shown as "Other" (open-core, see Licence above). The repo description calls it the "#1 PDF Application on GitHub"; that is the project's own claim. A card quoting 11.4k forks is slightly out of date.

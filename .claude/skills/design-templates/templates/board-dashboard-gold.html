@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<!--
+  Template: board-dashboard-gold
+  Style: cream page with a black serif headline and a gold highlight word, four headline KPI tiles, a ratio grid (profitability, liquidity, solvency, efficiency), and fourteen titled panels in two columns - each has a gold title tab, a plain-language sentence with the number to be filled, and a small placeholder chart - ending in a black footer bar. Theme: board-gold-cream
+  Inspired by: a one-page "complete board dashboard" built from the three financial statements. Original CSS; no source figures, QR code, brand or wording reused. ALL numbers below are placeholders "X".
+  Canvas: 1080 wide, auto height (scroll). Fill every X from tied-out statements only (see board-dashboard-3-statement skill); a failed tie-out replaces a panel with the text "does not tie".
+  Swap points:
+    :root tokens                  colours and fonts
+    .kpi                          four headline tiles (label, value, delta)
+    .ratios                       sixteen-cell ratio grid: value + target + status class ok/bad
+    .panel (.tab, p, .viz)        fourteen panels; .viz bars use inline style height %
+    .foot                         footer bar text
+-->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Board Dashboard Gold</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700;800&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #F5F1E6; --card: #FFFFFF; --ink: #15130E; --muted: #6A6454; --line: #E3DCC8;
+    --gold: #B8913A; --gold-soft: #F0E2BC; --black: #111;
+    --ok: #2E7D3E; --bad: #B3261E;
+    --serif: "Playfair Display", Georgia, serif;
+    --font: "Inter", Aptos, "Segoe UI", system-ui, sans-serif;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: #333; display: flex; justify-content: center; padding: 32px 0; overflow-x: auto; font-family: var(--font); }
+  .slide { position: relative; width: 1080px; flex: none; background: var(--bg); color: var(--ink); padding: 48px 44px 0; }
+  h1 { text-align: center; font: 800 60px/1.05 var(--serif); letter-spacing: -.015em; }
+  h1 span { background: var(--gold-soft); padding: 0 12px; }
+  .sub { margin-top: 12px; text-align: center; font: italic 600 22px/1.3 var(--serif); color: var(--gold); }
+  .by { margin-top: 8px; text-align: center; font: 600 16px/1.3 var(--font); color: var(--muted); }
+  .kpis { margin-top: 28px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+  .kpi { background: var(--black); color: #fff; border-radius: 10px; padding: 14px 16px; }
+  .kpi small { display: block; font: 600 12px/1.2 var(--font); letter-spacing: .08em; text-transform: uppercase; color: #CDBE92; }
+  .kpi b { display: block; margin-top: 6px; font: 800 34px/1 var(--font); letter-spacing: -.02em; }
+  .kpi em { display: block; margin-top: 4px; font: 600 13px/1.2 var(--font); font-style: normal; color: #9FD4A5; }
+  .ratios { margin-top: 14px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
+  .cell { background: var(--card); border: 1px solid var(--line); border-radius: 8px; padding: 9px 10px; font: 600 12px/1.25 var(--font); color: var(--muted); }
+  .cell b { display: block; font: 800 20px/1.1 var(--font); color: var(--ink); }
+  .cell.bad b { color: var(--bad); } .cell.ok b { color: var(--ok); }
+  .panels { margin-top: 18px; display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .panel { background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 12px 14px 14px; min-height: 168px; display: flex; flex-direction: column; }
+  .tab { align-self: flex-start; background: var(--gold); color: #fff; font: 800 15px/1 var(--serif); padding: 6px 12px; border-radius: 4px; }
+  .panel p { margin-top: 8px; font: 500 15px/1.4 var(--font); color: #2B2820; }
+  .viz { margin-top: auto; padding-top: 10px; height: 64px; display: flex; align-items: flex-end; gap: 6px; }
+  .viz i { flex: 1; background: var(--gold-soft); border-top: 3px solid var(--gold); border-radius: 2px 2px 0 0; }
+  .viz i.neg { background: #F3D3D0; border-color: var(--bad); }
+  .foot { margin: 26px -44px 0; background: var(--black); color: #fff; padding: 22px 44px; display: flex; justify-content: space-between; align-items: center; font: 700 20px/1.3 var(--font); }
+  .foot span:last-child { color: var(--gold); font-weight: 600; font-size: 16px; }
+</style>
+</head>
+<body>
+<div class="slide">
+  <h1>The Complete <span>Board Dashboard</span></h1>
+  <p class="sub">Foresight from the income statement, balance sheet and cash flow.</p>
+  <p class="by">Prepared by [name, role] · actuals to [date] · projections from [date] · figures are placeholders until tied out</p>
+
+  <div class="kpis">
+    <div class="kpi"><small>Revenue (FYxx)</small><b>$X.XM</b><em>▲ +X% vs prior year</em></div>
+    <div class="kpi"><small>EBITDA</small><b>$XXXK</b><em>X.X% margin</em></div>
+    <div class="kpi"><small>Net income</small><b>$XXK</b><em>X.X% margin</em></div>
+    <div class="kpi"><small>Ending cash</small><b>$X.XM</b><em>year-end balance</em></div>
+  </div>
+  <div class="ratios">
+    <div class="cell ok">Gross margin<b>XX%</b>target XX%</div><div class="cell bad">Operating margin<b>X.X%</b>target X.X%</div><div class="cell ok">Return on equity<b>X.X%</b>target X.X%</div><div class="cell ok">Return on invested capital<b>X.X%</b>target X.X%</div>
+    <div class="cell ok">Current ratio<b>X.Xx</b>target X.Xx</div><div class="cell bad">Cash conversion cycle<b>XX days</b>target XX</div><div class="cell ok">Funded debt / EBITDA<b>X.Xx</b>covenant X.Xx</div><div class="cell bad">Leverage ratio<b>X.Xx</b>target X.Xx</div>
+    <div class="cell ok">Inventory turnover<b>X.Xx</b>target X.Xx</div><div class="cell ok">Receivables turnover<b>X.Xx</b>target X.Xx</div><div class="cell ok">Debt service coverage<b>X.Xx</b>covenant X.Xx</div><div class="cell ok">Free cash flow margin<b>X.X%</b>target X.X%</div>
+  </div>
+
+  <div class="panels">
+    <div class="panel"><span class="tab">Headline numbers</span><p>Revenue is projected to grow X%. Cash is projected to end at $X.</p><div class="viz"><i style="height:40%"></i><i style="height:55%"></i><i style="height:70%"></i><i style="height:85%"></i></div></div>
+    <div class="panel"><span class="tab">Ratios against target</span><p>[Ratio] is projected at X against a target of Y.</p><div class="viz"><i style="height:70%"></i><i class="neg" style="height:35%"></i><i style="height:60%"></i><i style="height:55%"></i></div></div>
+    <div class="panel"><span class="tab">Exec summary</span><p>FYxx is projected at revenue up X% and EBITDA down Y%.</p><div class="viz"><i style="height:50%"></i><i style="height:45%"></i><i style="height:30%"></i></div></div>
+    <div class="panel"><span class="tab">Free cash flow</span><p>Free cash flow is projected at $X; the margin is X% of revenue.</p><div class="viz"><i class="neg" style="height:40%"></i><i class="neg" style="height:55%"></i><i style="height:30%"></i></div></div>
+    <div class="panel"><span class="tab">Revenue and margins</span><p>Revenue is projected to reach $X by year N.</p><div class="viz"><i style="height:30%"></i><i style="height:45%"></i><i style="height:60%"></i><i style="height:80%"></i><i style="height:95%"></i></div></div>
+    <div class="panel"><span class="tab">Year-end cash</span><p>Cash is projected to be negative at N year-ends.</p><div class="viz"><i style="height:50%"></i><i class="neg" style="height:25%"></i><i class="neg" style="height:55%"></i><i class="neg" style="height:35%"></i></div></div>
+    <div class="panel"><span class="tab">Funded debt covenant</span><p>Projected at Xx; the covenant is Yx; headroom is Z.</p><div class="viz"><i style="height:50%"></i><i style="height:60%"></i><i style="height:70%"></i></div></div>
+    <div class="panel"><span class="tab">Coverage covenant</span><p>Projected at Xx; the covenant is Yx; headroom is Z.</p><div class="viz"><i style="height:80%"></i><i style="height:65%"></i><i style="height:50%"></i></div></div>
+    <div class="panel"><span class="tab">Cash-to-cash waterfall</span><p>Customers are projected to pay $X and suppliers to take $Y.</p><div class="viz"><i style="height:40%"></i><i style="height:90%"></i><i class="neg" style="height:60%"></i><i style="height:30%"></i></div></div>
+    <div class="panel"><span class="tab">Beyond operations</span><p>Capex is projected at $X and distributions at $Y.</p><div class="viz"><i class="neg" style="height:60%"></i><i class="neg" style="height:30%"></i></div></div>
+    <div class="panel"><span class="tab">Built as a bridge</span><p>Each projected statement ties to the next; closing cash equals balance-sheet cash.</p><div class="viz"><i style="height:35%"></i><i style="height:35%"></i><i style="height:35%"></i></div></div>
+    <div class="panel"><span class="tab">Statement totals</span><p>$X of revenue is projected to become $Y of net income.</p><div class="viz"><i style="height:90%"></i><i style="height:12%"></i></div></div>
+    <div class="panel"><span class="tab">Capital structure</span><p>Equity is projected at $X on $Y of assets.</p><div class="viz"><i style="height:90%"></i><i style="height:75%"></i><i style="height:15%"></i></div></div>
+    <div class="panel"><span class="tab">Cash flow and cycle</span><p>$X of net income is projected to become $Y of operating cash; the cycle is N days.</p><div class="viz"><i style="height:20%"></i><i style="height:45%"></i><i style="height:30%"></i></div></div>
+  </div>
+  <div class="foot"><span>Your organisation · board pack</span><span>Projections, not guarantees · tied out on [date]</span></div>
+</div>
+</body>
+</html>

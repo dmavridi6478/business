@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<!--
+  Template: mountain-roadmap-6
+  Style: cream page, heavy condensed black title with an orange second phrase, italic subtitle, a flag box ("day N") on top of a blue-grey mountain drawn in SVG with a winding cream path and six numbered markers, three cards down each side (odd steps left, even steps right) a thin footer. Theme: culture-peach-navy
+  Inspired by: "N-step roadmap for leaders" mountain-path infographics. Original SVG art and CSS, placeholder wording; no source illustration, people or text reused.
+  Canvas: 1080 x 1350. Swap points: h1 and .or, .sub, .flag, six .k cards (number, title, five bullets; colours via --col), SVG marker positions, .foot
+-->
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mountain Roadmap 6</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;700;800&family=Anton&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#16213E;--font:"Inter",Aptos,"Segoe UI",system-ui,sans-serif;--head:"Anton","Arial Narrow",Impact,sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#222;display:flex;justify-content:center;padding:32px 0;overflow-x:auto;font-family:var(--font)}
+.slide{position:relative;width:1080px;height:1350px;flex:none;background:#FCF6EC;overflow:hidden;color:var(--navy)}
+h1{padding:30px 30px 0;text-align:center;font:400 84px/1.02 var(--head);letter-spacing:.01em;text-transform:uppercase;color:#111}.or{color:#F0792F}
+.sub{margin-top:12px;text-align:center;font:italic 500 30px/1.2 var(--font)}
+.stage{position:absolute;left:30px;right:30px;top:292px;height:990px}
+svg.mt{position:absolute;left:310px;top:0;width:430px;height:960px}
+.flag{position:absolute;left:330px;top:0;width:420px;background:#fff;border:3px solid #F0792F;border-radius:12px;padding:10px 16px;text-align:center;font:700 24px/1.25 var(--font)}.flag b{display:block;background:#F0792F;color:#fff;border-radius:6px;font:800 20px/1 var(--font);padding:5px 12px;margin:-24px auto 8px;width:fit-content;letter-spacing:.08em}
+.k{position:absolute;width:330px;background:var(--bg);border:3px solid var(--col);border-radius:14px;padding:10px 16px 8px;height:270px}
+.kh{display:flex;align-items:center;gap:12px;margin-bottom:6px;border-bottom:2px solid #EEE;padding-bottom:6px}.kh i{font:normal 800 38px/1 var(--head);color:var(--col)}.kh b{font:800 21px/1.1 var(--font);letter-spacing:.03em}
+.k ul{padding-left:18px}.k li{font:500 17px/1.32 var(--font);margin-bottom:6px}
+.foot{position:absolute;left:0;right:0;bottom:0;height:64px;background:#fff;border-top:2px solid #EFE4D3;display:flex;align-items:center;justify-content:center;font:500 21px/1.2 var(--font)}.foot b{font-weight:800}
+</style></head><body><div class="slide">
+<h1>How to <span class="or">achieve the goal</span><br>in the first 90 days</h1>
+<p class="sub">A 6-step roadmap for leaders after major change</p>
+<div class="stage">
+<svg class="mt" viewBox="0 0 480 1000" xmlns="http://www.w3.org/2000/svg">
+<polygon points="240,60 40,520 0,1000 480,1000 440,520" fill="#9DB0D2"/>
+<polygon points="240,60 330,300 400,520 440,1000 300,1000 330,560 270,300" fill="#7F95BE" opacity=".55"/>
+<polygon points="240,60 150,300 90,520 40,1000 0,1000 40,520" fill="#B9C7E2" opacity=".6"/>
+<path d="M240 960 C 120 930, 110 840, 230 810 C 380 770, 390 700, 250 660 C 110 620, 120 540, 250 520 C 380 500, 380 420, 270 390 C 170 360, 190 300, 250 280 C 300 262, 290 200, 245 150 L 245 70" fill="none" stroke="#FCF6EC" stroke-width="22" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M245 70 L245 34" stroke="#555" stroke-width="4"/><polygon points="245,34 296,50 245,66" fill="#E8503A"/>
+<g font-family="Inter,Arial" font-weight="800" font-size="30" text-anchor="middle">
+<circle cx="236" cy="880" r="26" fill="#EF7A3A"/><text x="236" y="891" fill="#fff">1</text>
+<circle cx="250" cy="762" r="26" fill="#7F8FA8"/><text x="250" y="773" fill="#fff">2</text>
+<circle cx="236" cy="610" r="26" fill="#EF7A3A"/><text x="236" y="621" fill="#fff">3</text>
+<circle cx="288" cy="466" r="26" fill="#EF7A3A"/><text x="288" y="477" fill="#fff">4</text>
+<circle cx="210" cy="340" r="26" fill="#7A5BC4"/><text x="210" y="351" fill="#fff">5</text>
+<circle cx="262" cy="196" r="26" fill="#7A5BC4"/><text x="262" y="207" fill="#fff">6</text></g>
+</svg>
+<div class="flag"><b>DAY 90</b>One sentence on where you will be when it is done.</div>
+<div class="k" style="top:0;left:0;--col:#EF7A3A;--bg:#fff"><div class="kh"><i>5</i><b>STEP FIVE</b></div><ul><li>Action line one</li><li>Action line two</li><li>Action line three</li><li>Action line four</li><li>Action line five</li></ul></div><div class="k" style="top:300px;left:0;--col:#7A5BC4;--bg:#fff"><div class="kh"><i>3</i><b>STEP THREE</b></div><ul><li>Action line one</li><li>Action line two</li><li>Action line three</li><li>Action line four</li><li>Action line five</li></ul></div><div class="k" style="top:600px;left:0;--col:#EF7A3A;--bg:#fff"><div class="kh"><i>1</i><b>STEP ONE</b></div><ul><li>Action line one</li><li>Action line two</li><li>Action line three</li><li>Action line four</li><li>Action line five</li></ul></div><div class="k" style="top:120px;right:0;--col:#7A5BC4;--bg:#fff"><div class="kh"><i>6</i><b>STEP SIX</b></div><ul><li>Action line one</li><li>Action line two</li><li>Action line three</li><li>Action line four</li><li>Action line five</li></ul></div><div class="k" style="top:420px;right:0;--col:#EF7A3A;--bg:#fff"><div class="kh"><i>4</i><b>STEP FOUR</b></div><ul><li>Action line one</li><li>Action line two</li><li>Action line three</li><li>Action line four</li><li>Action line five</li></ul></div><div class="k" style="top:720px;right:0;--col:#7A5BC4;--bg:#fff"><div class="kh"><i>2</i><b>STEP TWO</b></div><ul><li>Action line one</li><li>Action line two</li><li>Action line three</li><li>Action line four</li><li>Action line five</li></ul></div>
+</div>
+<div class="foot"><span>Follow <b>Author Name</b> for practical ways to keep teams delivering through change.</span></div>
+</div></body></html>

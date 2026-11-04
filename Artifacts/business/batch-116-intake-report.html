@@ -1,0 +1,90 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Batch 116 Intake Report</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<style>
+  /* Layout: single-column formal report, 880px measure; tables scroll inside their own wrappers.
+     Palette: ink-blue neutrals, one deep teal accent, semantic green/amber/red for status only.
+     Type: Aptos (the owner's house font) with system fallbacks; title 32pt, headings 14pt, body 11pt. */
+  :root {
+    --bg: #f6f7f9; --surface: #ffffff; --fg: #1b2330; --muted: #5a6577; --line: #d9dee6;
+    --accent: #0f5d6b; --accent-soft: #e2f0f2;
+    --ok: #17703a; --ok-bg: #e3f3e8; --warn: #8a5a00; --warn-bg: #fbefd3; --bad: #a11d2a; --bad-bg: #fbe3e5;
+    --code-bg: #eef1f5;
+    --font: Aptos, "Segoe UI Variable Text", "Segoe UI", system-ui, -apple-system, Roboto, sans-serif;
+    --mono: ui-monospace, "SF Mono", Consolas, monospace;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #11161e; --surface: #181f2a; --fg: #e6eaf0; --muted: #9aa5b6; --line: #2c3646;
+      --accent: #6cc3d1; --accent-soft: #17323a;
+      --ok: #6fd18f; --ok-bg: #173824; --warn: #f0c261; --warn-bg: #3a2e12; --bad: #ff8d98; --bad-bg: #3d1a1f;
+      --code-bg: #0e131a; color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #11161e; --surface: #181f2a; --fg: #e6eaf0; --muted: #9aa5b6; --line: #2c3646;
+    --accent: #6cc3d1; --accent-soft: #17323a;
+    --ok: #6fd18f; --ok-bg: #173824; --warn: #f0c261; --warn-bg: #3a2e12; --bad: #ff8d98; --bad-bg: #3d1a1f;
+    --code-bg: #0e131a; color-scheme: dark;
+  }
+  * { box-sizing: border-box; }
+  body { background: var(--bg); color: var(--fg); font-family: var(--font); font-size: 11pt; line-height: 1.55; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); padding-block: 28px 64px; }
+  main { max-width: 880px; margin-inline: auto; display: flex; flex-direction: column; gap: 28px; }
+  header { display: flex; flex-direction: column; gap: 8px; border-bottom: 2px solid var(--accent); padding-bottom: 18px; }
+  .eyebrow { font-size: 9pt; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
+  h1 { font-size: 32pt; line-height: 1.1; margin: 0; font-weight: 700; text-wrap: balance; }
+  h2 { font-size: 14pt; margin: 0 0 10px; font-weight: 700; color: var(--accent); text-wrap: balance; }
+  p { margin: 0 0 10px; max-width: 75ch; }
+  section { background: var(--surface); border: 1px solid var(--line); border-radius: 6px; padding: 20px 22px; min-width: 0; }
+  .lede { font-size: 11pt; color: var(--muted); max-width: 70ch; margin: 0; }
+  .truth { border-left: 4px solid var(--bad); background: var(--bad-bg); padding: 12px 16px; border-radius: 0 6px 6px 0; }
+  .truth p:last-child { margin-bottom: 0; }
+  .tw { overflow-x: auto; margin-block: 8px 4px; border: 1px solid var(--line); border-radius: 4px; }
+  table { border-collapse: collapse; width: 100%; min-width: 720px; font-size: 10pt; }
+  th, td { padding: 8px 10px; border-bottom: 1px solid var(--line); text-align: center; vertical-align: top; }
+  th { background: var(--accent-soft); color: var(--fg); font-weight: 700; font-size: 9.5pt; }
+  tr:last-child td { border-bottom: 0; }
+  td.l, th.l { text-align: center; } /* house rule: table content aligned top and centre */
+  .st { display: inline-block; padding: 1px 8px; border-radius: 10px; font-size: 9pt; font-weight: 700; white-space: nowrap; }
+  .st.ok { background: var(--ok-bg); color: var(--ok); } .st.warn { background: var(--warn-bg); color: var(--warn); } .st.bad { background: var(--bad-bg); color: var(--bad); }
+  .sw { display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 10px; margin-block: 8px; }
+  .sw div { border: 1px solid var(--line); border-radius: 4px; overflow: hidden; font-size: 9pt; text-align: center; }
+  .sw i { display: block; height: 44px; }
+  .sw span { display: block; padding: 4px 6px; font-family: var(--mono); }
+  .prompt { position: relative; margin-block: 10px; }
+  .prompt pre { margin: 0; white-space: pre-wrap; background: var(--code-bg); border: 1px solid var(--line); border-radius: 4px; padding: 12px 84px 12px 12px; font-family: var(--mono); font-size: 9.5pt; line-height: 1.5; }
+  .prompt b { display: block; font-family: var(--font); font-size: 10pt; margin-bottom: 4px; }
+  .prompt button { position: absolute; top: 30px; right: 8px; font: inherit; font-size: 9pt; padding: 4px 10px; border-radius: 4px; border: 1px solid var(--accent); background: var(--surface); color: var(--accent); cursor: pointer; }
+  .prompt button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  ul { margin: 0 0 10px; padding-left: 20px; } li { margin-bottom: 4px; max-width: 75ch; }
+  code { font-family: var(--mono); font-size: 9.5pt; background: var(--code-bg); padding: 1px 4px; border-radius: 3px; }
+  footer { color: var(--muted); font-size: 9.5pt; }
+</style>
+<style>
+ figure{margin:0;text-align:center} figure img{width:100%;border:1px solid var(--line);border-radius:4px;display:block} figcaption{font-size:8.5pt;color:var(--muted);margin-top:4px}
+ .thumbs{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px;margin-top:10px}
+ pre{white-space:pre-wrap;word-break:break-word;background:var(--code-bg);border:1px solid var(--line);border-radius:4px;padding:12px;font:10pt/1.5 var(--mono);margin:8px 0;overflow-x:auto}
+ details{border:1px solid var(--line);border-radius:4px;padding:8px 12px;margin-top:8px} summary{cursor:pointer;font-weight:700}
+ code{font-family:var(--mono);font-size:9.5pt;background:var(--code-bg);padding:0 4px;border-radius:3px}
+ ul{margin:0 0 10px;padding-left:20px;max-width:78ch} li{margin-bottom:4px}
+ td code{white-space:normal;word-break:break-word}
+</style>
+<style>main > section, main > header {min-width:0} p, li, code {overflow-wrap:anywhere}</style>
+<main>
+<header><div class="eyebrow">Batch 116 · 23 October 2026 · intake</div><h1>Batch 116 Intake Report</h1><p>71 images processed with the seven-step intake. Result: two new skills, two references, one command, four merges, three templates, three themes, four workflows.</p></header>
+<section><h2>1. Executive findings</h2><ul>
+<li><b>[Certain]</b> Three of the red "learn" cards describe a repo the repo is not. Paperclip is "an app to manage agents at work", not a document-chat tool. andrej-karpathy-skills is a single CLAUDE.md of coding guidelines, not a learning path of his articles and videos. The ECC card calls an agent harness a computer science curriculum. The mock screenshots show features the READMEs do not claim. Open the repository before trusting any card.</li>
+<li><b>[Certain]</b> I disagree with the trending card that says to start with Claude-Red. It is 78 offensive-security skills (exploit development, EDR evasion). It is dual-use, so I recorded it with an authorised-scope warning and did not install it.</li>
+<li><b>[Certain]</b> The faceless-channel story is reproducible but the money is not proven. I checked the arithmetic (4.0M views at $2-4 per 1,000 is $8,000-16,000; the 11 channel rows sum to about 14.26M views, so 14.2M is rounded down), but the rates are estimates, and the story omits YouTube's monetisation and synthetic-content rules, footage and voice licences, and survivorship. Those checks are now in the reference.</li>
+<li><b>[Certain]</b> The real estate systems are a sales pitch with no results. The main risk is fair-housing discrimination through lead scoring, then consent for automated messages. Both are now in the skill.</li>
+<li><b>[Certain]</b> The eight automation-skill slides show no skill file contents, so nothing was copied. The skill maps each idea to what already exists.</li>
+<li><b>[Certain]</b> Star counts on cards are stale by large factors (andrej-karpathy-skills 52K on the card, 222,852 now).</li>
+</ul></section>
+<section><h2>2. Source inventory and what was built</h2><div class="tw"><table><tr><th>Source</th><th>Content</th><th>Result</th></tr><tr><td>@siddhantt.ai 13-slide story: Claude scans 1,283 YouTube videos</td><td>Scan method, toolbox, script, money slide</td><td>Reference <code>yt-faceless-channel/references/claude-youtube-scan.md</code>; template <code>story-stat-card</code>; workflow 1</td></tr><tr><td>@usamaakrm Claude for Real Estate Part 5 (4 systems)</td><td>4 x 10 steps</td><td>Skill <code>claude-real-estate-4-systems</code> + <code>/real-estate-system</code>; template <code>system-steps-grid-10</code>; workflow 2</td></tr><tr><td>@theromanknox 8 Claude automation skills</td><td>8 skill descriptions and flows</td><td>Skill <code>claude-automation-skills-8</code></td></tr><tr><td>Personal Brand Strategy (Nader Alnajjar)</td><td>14-part two-level map</td><td>Reference in <code>linkedin-magnetic-brand-9-rules</code>; template <code>two-tier-tree-14</code>; workflow 3</td></tr><tr><td>@blank9485, Site Tusk, @palidev21, @replace.so cards</td><td>20 repos</td><td>Tables in <code>oss-alternatives</code> (Batch 116); workflow 4</td></tr><tr><td>@martiendejong_dev red "learn" cards</td><td>6 repos</td><td>Table in <code>oss-alternatives</code> with three mismatches flagged</td></tr><tr><td>@githubnow 23 October trending</td><td>3 repos</td><td>Section in <code>github-trending-top10-oct5</code></td></tr><tr><td>Cover and gate slides (comment SCAN, comment MCP, 10 repos cover)</td><td>No content</td><td>Not actioned</td></tr></table></div></section>
+<section><h2>3. GitHub repos checked on 23 October 2026</h2><p>Stars and licences were read from each repository page and change daily.</p><div class="tw"><table><tr><th>Repo</th><th>Stars</th><th>Licence</th></tr><tr><td><code>open-webui/open-webui</code></td><td>156,576</td><td>Other</td></tr><tr><td><code>louislam/uptime-kuma</code></td><td>92,805</td><td>MIT</td></tr><tr><td><code>CorentinTh/it-tools</code></td><td>40,947</td><td>GPL-3.0</td></tr><tr><td><code>docling-project/docling</code></td><td>69,453</td><td>MIT</td></tr><tr><td><code>vinta/awesome-python</code></td><td>329,597</td><td>Other</td></tr><tr><td><code>duckdb/duckdb</code></td><td>42,451</td><td>MIT</td></tr><tr><td><code>esphome/esphome</code></td><td>11,946</td><td>Other</td></tr><tr><td><code>jesseduffield/lazygit</code></td><td>83,390</td><td>MIT</td></tr><tr><td><code>dandavison/delta</code></td><td>32,551</td><td>MIT</td></tr><tr><td><code>microsoft/PowerToys</code></td><td>139,612</td><td>MIT</td></tr><tr><td><code>obsproject/obs-studio</code></td><td>77,985</td><td>GPL-2.0</td></tr><tr><td><code>audacity/audacity</code></td><td>18,815</td><td>Other</td></tr><tr><td><code>kovidgoyal/calibre</code></td><td>26,221</td><td>GPL-3.0</td></tr><tr><td><code>bleachbit/bleachbit</code></td><td>7,222</td><td>GPL-3.0</td></tr><tr><td><code>Kilo-Org/kilocode</code></td><td>27,699</td><td>MIT</td></tr><tr><td><code>ubicloud/ubicloud</code></td><td>12,331</td><td>AGPL-3.0</td></tr><tr><td><code>omnara-ai/omnara</code></td><td>3,193</td><td>Apache-2.0</td></tr><tr><td><code>statamic/cms</code></td><td>4,911</td><td>Other</td></tr><tr><td><code>ansvisor/ansvisor</code></td><td>159</td><td>MIT</td></tr><tr><td><code>debpalash/VoiceStudio</code></td><td>82,715</td><td>AGPL-3.0</td></tr><tr><td><code>paperclipai/paperclip</code></td><td>106,518</td><td>MIT</td></tr><tr><td><code>multica-ai/andrej-karpathy-skills</code></td><td>222,852</td><td>none shown</td></tr><tr><td><code>thedotmack/claude-mem</code></td><td>102,396</td><td>Apache-2.0</td></tr><tr><td><code>bilawalsidhu/gods-eye-view</code></td><td>59,321</td><td>Other</td></tr><tr><td><code>OpenBMB/VoxCPM</code></td><td>40,180</td><td>Apache-2.0</td></tr><tr><td><code>HKUDS/CLI-Anything</code></td><td>56,455</td><td>Apache-2.0</td></tr><tr><td><code>SnailSploit/Claude-Red</code></td><td>7,917</td><td>not captured</td></tr></table></div></section>
+<section><h2>4. Connectors</h2><div class="tw"><table><tr><th>Need</th><th>Finding</th><th>Status</th></tr><tr><td>NexLev</td><td>YouTube niche, outlier and RPM data; sturdier than a one-off scan</td><td><span class="st ok">Connected</span></td></tr><tr><td>Google Calendar, Gmail, Drive</td><td>Needed for appointment booking and follow-up drafts</td><td><span class="st ok">Connected</span></td></tr><tr><td>HubSpot, Clay, Higgsfield</td><td>Named in the real estate systems</td><td><span class="st warn">Connected or authorisable</span></td></tr><tr><td>n8n</td><td>Automation layer in the real estate systems</td><td><span class="st warn">Needs your authorisation</span></td></tr><tr><td>PropStream, BatchLeads, Telegram, cal.com</td><td>No connector confirmed</td><td><span class="st warn">Not installed</span></td></tr></table></div></section>
+<section><h2>5. Agents</h2><p>No guide to build an agent was in this batch. The four real estate systems are Claude Projects with prompts, not agent definitions, so none was created.</p></section>
+<section><h2>6. Deliverables</h2><div class="tw"><table><tr><th>Item</th><th>Location</th></tr><tr><td>Skills</td><td><code>claude-real-estate-4-systems</code>, <code>claude-automation-skills-8</code></td></tr><tr><td>References</td><td><code>yt-faceless-channel/references/claude-youtube-scan.md</code>, <code>linkedin-magnetic-brand-9-rules/references/personal-brand-strategy-map.md</code></td></tr><tr><td>Command</td><td><code>/real-estate-system</code></td></tr><tr><td>Merged skills</td><td><code>oss-alternatives</code>, <code>github-trending-top10-oct5</code>, <code>yt-faceless-channel</code>, <code>linkedin-magnetic-brand-9-rules</code></td></tr><tr><td>Templates</td><td><code>two-tier-tree-14</code>, <code>system-steps-grid-10</code>, <code>story-stat-card</code></td></tr><tr><td>Themes</td><td><code>theme-brand-tree-sage</code>, <code>theme-system-red-white</code>, <code>theme-story-grid-paper</code></td></tr><tr><td>Workflows</td><td><code>Artifacts/operations/workflows-batch-116.html</code></td></tr><tr><td>Prompts</td><td><code>docs/batch-116-prompts.md</code></td></tr><tr><td>Install script</td><td><code>scripts/batch116-install.sh</code> (asks before every step; not run)</td></tr></table></div></section>
+<section><h2>7. Open decisions for you</h2><ul><li>Real estate: do you work in property? If not, the skill is reference only.</li><li>Do you want me to wire the NexLev connector into a faceless-niche workflow? It needs your sign-in.</li><li>Agent Archive key: still unanswered. Say "skip" and I will stop asking. Also revoke the OpenAI key you pasted earlier.</li></ul></section>
+<footer>Stars and licences read from GitHub pages on 23 October 2026.</footer>
+</main>
+</body></html>

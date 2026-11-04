@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Workflows Pack</title>
+<style>
+  /* Layout: single column, six workflow panels. Each panel = steps in a row (wraps on narrow screens), gates marked, scorecard below.
+     Type: Aptos (house font) with system fallbacks; title 32pt, headings 14pt, body 11pt; table content aligned top and centre. */
+  :root {
+    --bg:#f6f7f9; --surface:#fff; --fg:#1b2330; --muted:#5a6577; --line:#d9dee6;
+    --accent:#0f5d6b; --accent-soft:#e2f0f2; --gate:#8a5a00; --gate-bg:#fbefd3; --human:#a11d2a; --human-bg:#fbe3e5; --ok:#17703a; --ok-bg:#e3f3e8;
+    --font: Aptos, "Segoe UI Variable Text", "Segoe UI", system-ui, -apple-system, Roboto, sans-serif;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) { --bg:#11161e; --surface:#181f2a; --fg:#e6eaf0; --muted:#9aa5b6; --line:#2c3646; --accent:#6cc3d1; --accent-soft:#17323a; --gate:#f0c261; --gate-bg:#3a2e12; --human:#ff8d98; --human-bg:#3d1a1f; --ok:#6fd18f; --ok-bg:#173824; color-scheme:dark; }
+  }
+  :root[data-theme="dark"] { --bg:#11161e; --surface:#181f2a; --fg:#e6eaf0; --muted:#9aa5b6; --line:#2c3646; --accent:#6cc3d1; --accent-soft:#17323a; --gate:#f0c261; --gate-bg:#3a2e12; --human:#ff8d98; --human-bg:#3d1a1f; --ok:#6fd18f; --ok-bg:#173824; color-scheme:dark; }
+  * { box-sizing:border-box; }
+  body { background:var(--bg); color:var(--fg); font-family:var(--font); font-size:11pt; line-height:1.5; margin:0; padding:28px 16px 64px; }
+  main { max-width:960px; margin-inline:auto; display:flex; flex-direction:column; gap:22px; }
+  header { border-bottom:2px solid var(--accent); padding-bottom:16px; }
+  .eyebrow { font-size:9pt; letter-spacing:.12em; text-transform:uppercase; color:var(--muted); }
+  h1 { font-size:32pt; line-height:1.1; margin:6px 0 8px; }
+  h2 { font-size:14pt; margin:0 0 4px; color:var(--accent); }
+  p { margin:0 0 8px; max-width:78ch; }
+  .lede { color:var(--muted); }
+  .legend { display:flex; flex-wrap:wrap; gap:8px; margin-top:10px; font-size:9.5pt; }
+  .tag { display:inline-block; padding:1px 9px; border-radius:10px; font-weight:700; font-size:9pt; }
+  .t-auto { background:var(--accent-soft); color:var(--accent); } .t-gate { background:var(--gate-bg); color:var(--gate); } .t-human { background:var(--human-bg); color:var(--human); } .t-ok { background:var(--ok-bg); color:var(--ok); }
+  section { background:var(--surface); border:1px solid var(--line); border-radius:6px; padding:18px 20px; min-width:0; }
+  .cmd { font-family:ui-monospace,"SF Mono",Consolas,monospace; font-size:10pt; background:var(--accent-soft); color:var(--accent); padding:1px 8px; border-radius:4px; }
+  .flow { list-style:none; margin:12px 0 10px; padding:0; display:flex; flex-wrap:wrap; gap:10px 0; counter-reset:s; }
+  .flow li { position:relative; flex:1 1 112px; min-width:100px; margin-right:24px; border:1px solid var(--line); border-radius:6px; padding:10px 10px 9px; background:var(--bg); counter-increment:s; }
+  .flow li::before { content:counter(s); position:absolute; top:-9px; left:8px; background:var(--accent); color:#fff; font-size:9pt; font-weight:700; width:20px; height:20px; border-radius:50%; display:grid; place-items:center; }
+  .flow li::after { content:"→"; position:absolute; right:-22px; top:50%; transform:translateY(-50%); color:var(--muted); font-weight:700; }
+  .flow li:last-child { margin-right:0; } .flow li:last-child::after { content:""; }
+  .flow li b { display:block; font-size:10.5pt; margin-bottom:2px; }
+  .flow li span { font-size:9.5pt; color:var(--muted); display:block; }
+  .flow li.gate { border-color:var(--gate); background:var(--gate-bg); } .flow li.human { border-color:var(--human); background:var(--human-bg); }
+  .loopback { font-size:9.5pt; color:var(--muted); border-left:3px solid var(--accent); padding-left:10px; margin:6px 0 10px; }
+  .tw { overflow-x:auto; border:1px solid var(--line); border-radius:4px; margin-top:8px; }
+  table { border-collapse:collapse; width:100%; min-width:520px; font-size:10pt; }
+  th,td { padding:7px 9px; border-bottom:1px solid var(--line); text-align:center; vertical-align:top; }
+  th { background:var(--accent-soft); font-size:9.5pt; } tr:last-child td { border-bottom:0; }
+  @media (max-width:640px) { .flow li { margin-right:0; flex-basis:100%; } .flow li::after { content:"↓"; right:auto; left:50%; top:auto; bottom:-17px; transform:translateX(-50%); } }
+</style></head><body><main>
+<header>
+  <div class="eyebrow">Batch 111 · 19 October 2026 · operations</div>
+  <h1>Workflows pack</h1>
+  <p class="lede">Six workflows reconstructed from the infographics and wired to commands in this repository. Each has a stop point where a human decides; nothing here sends, publishes, spends or edits a live system on its own.</p>
+  <div class="legend"><span class="tag t-auto">Claude drafts or analyses</span><span class="tag t-gate">Gate: check must pass</span><span class="tag t-human">Human approval required</span></div>
+</header>
+
+<section>
+  <h2>1. GTM weekly loop</h2>
+  <p>A loop that ships weekly: signal, enrich, write, send, review. Run with <span class="cmd">/gtm-weekly-loop &lt;segment&gt;</span>. Source: RevOps vs GTM infographic (Guerlain Nerestan).</p>
+  <ol class="flow">
+    <li><b>Signal</b><span>Job change, funding, site visit, content engagement; say which feeds were quiet</span></li>
+    <li><b>Enrich</b><span>Firmographics and verified contacts; drop rows with no lawful basis</span></li>
+    <li><b>Write</b><span>Drafts per segment from approved proof only</span></li>
+    <li class="gate"><b>Pre-send checks</b><span>Bounce rate under 5% alert line; inbox placement; send cap stated</span></li>
+    <li class="human"><b>Send</b><span>Only after explicit human approval</span></li>
+    <li><b>Review</b><span>Four scorecard numbers vs last week; change one variable</span></li>
+  </ol>
+  <div class="tw"><table><tr><th>Scorecard</th><th>Positive reply rate</th><th>Signal-to-meeting rate</th><th>Cost per meeting</th><th>Inbox placement</th></tr><tr><td>Owner</td><td>GTM</td><td>GTM</td><td>GTM + finance</td><td>GTM engineer</td></tr></table></div>
+</section>
+
+<section>
+  <h2>2. RevOps gated pipeline</h2>
+  <p>A pipeline with four gates. Run with <span class="cmd">/revops-gate-check &lt;CRM export&gt;</span>; read-only.</p>
+  <ol class="flow">
+    <li class="gate"><b>Lead matched</b><span>Matched to an account; duplicate check done</span></li>
+    <li class="gate"><b>Rep routed</b><span>Owner by rule; speed-to-lead timer running</span></li>
+    <li class="gate"><b>Stage checked</b><span>Required fields complete; not stuck beyond N days</span></li>
+    <li class="gate"><b>Forecast rolled up</b><span>Valid close date and amount; variance computed</span></li>
+  </ol>
+  <p class="loopback">A record that fails a gate is held and listed; it is never silently fixed. Weekly output: pass and fail counts per gate, three oldest stuck deals.</p>
+  <div class="tw"><table><tr><th>Scorecard</th><th>Forecast variance</th><th>Speed-to-lead</th><th>Pipeline coverage</th><th>Close-date slippage</th></tr><tr><td>Owner</td><td>RevOps</td><td>RevOps</td><td>RevOps + sales lead</td><td>RevOps</td></tr></table></div>
+</section>
+
+<section>
+  <h2>3. Agent failure and recovery</h2>
+  <p>Detect, understand, recover, resume, learn. Run with <span class="cmd">/agent-recovery &lt;agent&gt;</span>; go/no-go review with <span class="cmd">/agent-prod-check</span>. Source: "AI Agents Never Make It to Production" (Ismat Kamal).</p>
+  <ol class="flow">
+    <li><b>Detect failure</b><span>Errors, exceptions, unexpected results</span></li>
+    <li><b>Understand</b><span>Logs, context, root cause</span></li>
+    <li class="gate"><b>Recovery options</b><span>Retry · roll back · continue from a safe point · alternative tool</span></li>
+    <li class="human"><b>Escalate</b><span>When none of the options is safe</span></li>
+    <li><b>Resume safely</b><span>Continue or hand over with full context</span></li>
+    <li><b>Learn</b><span>Fix prompts, tools and process</span></li>
+  </ol>
+  <p class="loopback">Before launch, six questions must have confident answers: what can it access, what decisions can it make, what happens when it fails, how does it recover, who monitors it, can we measure its impact. Any "no" = not ready.</p>
+</section>
+
+<section>
+  <h2>4. LinkedIn weekly acquisition routine</h2>
+  <p>Forty-five minutes a day, one focus per day. Run with <span class="cmd">/linkedin-week</span>. Source: "LinkedIn Client Acquisition in one page" (routine reconstructed from the page captions).</p>
+  <ol class="flow">
+    <li><b>Mon · Write</b><span>Draft the week's three posts</span></li>
+    <li><b>Tue · Comment</b><span>20 meaningful comments</span></li>
+    <li class="human"><b>Wed · DMs</b><span>20 messages from the shortlist; you send each</span></li>
+    <li><b>Thu · Follow up</b><span>Replies, booking in the DM</span></li>
+    <li><b>Fri · Review</b><span>Reach, Accept, Reply, Call, Proposal, Won</span></li>
+  </ol>
+  <p class="loopback">The leakiest of the six numbers becomes next week's single fix. Stay inside LinkedIn's terms and GDPR; no scraping or bulk automation.</p>
+</section>
+
+<section>
+  <h2>5. AI hustle flywheel</h2>
+  <p>Repeatable output engine. Run with <span class="cmd">/hustle-flywheel</span>. Source: ChatGPT cheat sheet (smarterwithai.news).</p>
+  <ol class="flow">
+    <li><b>Define problem space</b><span>Niche, pain, outcome</span></li>
+    <li><b>Research and inputs</b><span>Sources, constraints, examples</span></li>
+    <li><b>Prompt and produce</b><span>Drafts, variants, assets</span></li>
+    <li><b>Package</b><span>Script, post, product, offer</span></li>
+    <li class="human"><b>Distribute</b><span>You publish; platform fit plus hooks</span></li>
+    <li><b>Measure and iterate</b><span>One number; feeds step 1</span></li>
+  </ol>
+</section>
+
+<section>
+  <h2>6. AI search visibility loop</h2>
+  <p>From buyer question to citation. Run with <span class="cmd">/ai-surface-plan</span>. Sources: searchable.com infographics (statistics in them are unverified).</p>
+  <ol class="flow">
+    <li><b>List questions</b><span>The 20 that matter commercially</span></li>
+    <li><b>Record today</b><span>Organic rank, Overview present, who is cited</span></li>
+    <li><b>Fix structure</b><span>Answer first in 40-60 words, schema, question headers</span></li>
+    <li><b>Build clusters</b><span>For questions where you do not rank</span></li>
+    <li class="gate"><b>Index both engines</b><span>Google and Bing sitemaps</span></li>
+    <li><b>Re-measure monthly</b><span>Citations gained, not impressions</span></li>
+  </ol>
+</section>
+</main></body></html>

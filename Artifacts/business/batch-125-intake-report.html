@@ -1,0 +1,112 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Batch 125 Intake Report</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<style>
+  /* Layout: single-column formal report, 880px measure; tables scroll inside their own wrappers.
+     Palette: ink-blue neutrals, one deep teal accent, semantic green/amber/red for status only.
+     Type: Aptos (the owner's house font) with system fallbacks; title 32pt, headings 14pt, body 11pt. */
+  :root {
+    --bg: #f6f7f9; --surface: #ffffff; --fg: #1b2330; --muted: #5a6577; --line: #d9dee6;
+    --accent: #0f5d6b; --accent-soft: #e2f0f2;
+    --ok: #17703a; --ok-bg: #e3f3e8; --warn: #8a5a00; --warn-bg: #fbefd3; --bad: #a11d2a; --bad-bg: #fbe3e5;
+    --code-bg: #eef1f5;
+    --font: Aptos, "Segoe UI Variable Text", "Segoe UI", system-ui, -apple-system, Roboto, sans-serif;
+    --mono: ui-monospace, "SF Mono", Consolas, monospace;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #11161e; --surface: #181f2a; --fg: #e6eaf0; --muted: #9aa5b6; --line: #2c3646;
+      --accent: #6cc3d1; --accent-soft: #17323a;
+      --ok: #6fd18f; --ok-bg: #173824; --warn: #f0c261; --warn-bg: #3a2e12; --bad: #ff8d98; --bad-bg: #3d1a1f;
+      --code-bg: #0e131a; color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #11161e; --surface: #181f2a; --fg: #e6eaf0; --muted: #9aa5b6; --line: #2c3646;
+    --accent: #6cc3d1; --accent-soft: #17323a;
+    --ok: #6fd18f; --ok-bg: #173824; --warn: #f0c261; --warn-bg: #3a2e12; --bad: #ff8d98; --bad-bg: #3d1a1f;
+    --code-bg: #0e131a; color-scheme: dark;
+  }
+  * { box-sizing: border-box; }
+  body { background: var(--bg); color: var(--fg); font-family: var(--font); font-size: 11pt; line-height: 1.55; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); padding-block: 28px 64px; }
+  main { max-width: 880px; margin-inline: auto; display: flex; flex-direction: column; gap: 28px; }
+  header { display: flex; flex-direction: column; gap: 8px; border-bottom: 2px solid var(--accent); padding-bottom: 18px; }
+  .eyebrow { font-size: 9pt; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
+  h1 { font-size: 32pt; line-height: 1.1; margin: 0; font-weight: 700; text-wrap: balance; }
+  h2 { font-size: 14pt; margin: 0 0 10px; font-weight: 700; color: var(--accent); text-wrap: balance; }
+  p { margin: 0 0 10px; max-width: 75ch; }
+  section { background: var(--surface); border: 1px solid var(--line); border-radius: 6px; padding: 20px 22px; min-width: 0; }
+  .lede { font-size: 11pt; color: var(--muted); max-width: 70ch; margin: 0; }
+  .truth { border-left: 4px solid var(--bad); background: var(--bad-bg); padding: 12px 16px; border-radius: 0 6px 6px 0; }
+  .truth p:last-child { margin-bottom: 0; }
+  .tw { overflow-x: auto; margin-block: 8px 4px; border: 1px solid var(--line); border-radius: 4px; }
+  table { border-collapse: collapse; width: 100%; min-width: 720px; font-size: 10pt; }
+  th, td { padding: 8px 10px; border-bottom: 1px solid var(--line); text-align: center; vertical-align: top; }
+  th { background: var(--accent-soft); color: var(--fg); font-weight: 700; font-size: 9.5pt; }
+  tr:last-child td { border-bottom: 0; }
+  td.l, th.l { text-align: center; } /* house rule: table content aligned top and centre */
+  .st { display: inline-block; padding: 1px 8px; border-radius: 10px; font-size: 9pt; font-weight: 700; white-space: nowrap; }
+  .st.ok { background: var(--ok-bg); color: var(--ok); } .st.warn { background: var(--warn-bg); color: var(--warn); } .st.bad { background: var(--bad-bg); color: var(--bad); }
+  .sw { display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 10px; margin-block: 8px; }
+  .sw div { border: 1px solid var(--line); border-radius: 4px; overflow: hidden; font-size: 9pt; text-align: center; }
+  .sw i { display: block; height: 44px; }
+  .sw span { display: block; padding: 4px 6px; font-family: var(--mono); }
+  .prompt { position: relative; margin-block: 10px; }
+  .prompt pre { margin: 0; white-space: pre-wrap; background: var(--code-bg); border: 1px solid var(--line); border-radius: 4px; padding: 12px 84px 12px 12px; font-family: var(--mono); font-size: 9.5pt; line-height: 1.5; }
+  .prompt b { display: block; font-family: var(--font); font-size: 10pt; margin-bottom: 4px; }
+  .prompt button { position: absolute; top: 30px; right: 8px; font: inherit; font-size: 9pt; padding: 4px 10px; border-radius: 4px; border: 1px solid var(--accent); background: var(--surface); color: var(--accent); cursor: pointer; }
+  .prompt button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  ul { margin: 0 0 10px; padding-left: 20px; } li { margin-bottom: 4px; max-width: 75ch; }
+  code { font-family: var(--mono); font-size: 9.5pt; background: var(--code-bg); padding: 1px 4px; border-radius: 3px; }
+  footer { color: var(--muted); font-size: 9.5pt; }
+</style>
+<style>
+ figure{margin:0;text-align:center} figure img{width:100%;border:1px solid var(--line);border-radius:4px;display:block} figcaption{font-size:8.5pt;color:var(--muted);margin-top:4px}
+ .thumbs{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px;margin-top:10px}
+ pre{white-space:pre-wrap;word-break:break-word;background:var(--code-bg);border:1px solid var(--line);border-radius:4px;padding:12px;font:10pt/1.5 var(--mono);margin:8px 0;overflow-x:auto}
+ details{border:1px solid var(--line);border-radius:4px;padding:8px 12px;margin-top:8px} summary{cursor:pointer;font-weight:700}
+ code{font-family:var(--mono);font-size:9.5pt;background:var(--code-bg);padding:0 4px;border-radius:3px}
+ ul{margin:0 0 10px;padding-left:20px;max-width:78ch} li{margin-bottom:4px}
+ td code{white-space:normal;word-break:break-word}
+</style>
+<style>main > section, main > header {min-width:0} p, li, code {overflow-wrap:anywhere}</style>
+<main>
+<header><div class="eyebrow">Batch 125 · 31 October 2026 · intake</div><h1>Batch 125 Intake Report</h1><p>A zip of 33 images in three series (a ten-prompt due-diligence carousel, a Blotato nine-platform publishing tutorial, and a "room of billionaire advisors" series) processed with the seven-step intake. Result: three new skills, three commands, three templates, two themes, three workflows, seventeen prompts and a read-only install script. Nothing was installed or connected.</p></header>
+<section><h2>1. Executive findings</h2><ul>
+<li><b>[Certain]</b> "R.I.P. Big 4" is a screening aid, not a replacement. Its own last slide lists what AI cannot do: sign an audit opinion, interview management, see what is missing from the data room, take legal responsibility. The headline comparison ($50K and 2 to 4 weeks against one subscription and one afternoon) is unsourced; the slide calls it a "typical range". I quoted all ten prompts verbatim and added what the carousel leaves out: whether you may upload a seller's data room at all (NDA and data-room terms), arithmetic errors, missing documents, context limits, and the fact that "You are a Big 4 director" changes tone, not competence.</li>
+<li><b>[Certain]</b> The Blotato setup was checked against Blotato's own documentation. The connector URL is right and it is a remote Streamable HTTP server. The slide's "check that your plan includes MCP" understates it: MCP and API access need a paid Blotato subscription and are not in the free trial, and generating an API key during a trial ends the trial and starts billing. The docs also say a "Connected" badge alone does not prove a tool call works; verify by listing the connected accounts.</li>
+<li><b>[Certain]</b> The carousel omits what the connector can do beyond posting: per Blotato it can read comments and direct messages, send DMs and create reply automations. Connecting nine accounts gives a third party posting rights on all nine. Approval before scheduling is a rule you must state, not something the tool guarantees.</li>
+<li><b>[Certain]</b> The "billionaire advisors" series is one model playing seven parts. I disagree with the framing: the risk is false independence, and the output is not what those people think. The carousel's own fine print says "simulated perspectives, not the real people or their endorsement". The repository <code>nateherkai/roast-room</code> was read on GitHub: 1,271 stars, created 10 October 2026, one contributor, licence shown as "Other", needs Node 20 or newer, runs a local app on port 4730. The skill gives the three-round protocol with role lenses instead of named people.</li>
+<li><b>[Likely]</b> Step 8 of the advisor series was not in the zip, so the ten steps are covered from seven slides plus steps 9 and 10. The "If you want all resources, link in my community" slide is a lead-generation promotion and was not followed up.</li>
+<li><b>[Certain]</b> Duplicate check: nothing in the library mentioned Blotato, roast-room or the quality-of-earnings prompts. Neighbours exist and are linked: <code>private-equity:dd-checklist</code>, <code>corporate-legal:diligence-issue-extraction</code>, <code>social-publishing</code>, <code>advisory-board</code>, <code>multi-agent-debate</code>, <code>marketing-council</code>. The skills add the verbatim prompts, the verification against the vendor and repo, and the guardrails.</li>
+<li><b>[Certain]</b> Connectors: Blotato is a new connector and needs your own paid account and a browser sign-in, so it was not added. Postzen, Typefully, Taplio and SocialGPT were already visible in this account earlier in the session and cover part of the same ground. No <code>.mcp.json</code> was committed on purpose, so that opening this repository does not connect a third-party server by default.</li>
+</ul></section>
+<section><h2>2. Source inventory and what was built</h2><div class="tw"><table><tr><th>Source</th><th>Content</th><th>Result</th></tr>
+<tr><td>R.I.P. Big 4 (Natan Mohart; 12 slides, reposted with another watermark)</td><td>Ten prompts in four groups plus how to use</td><td>Skill <code>claude-dd-first-pass-10</code>; <code>/dd-first-pass</code>; templates <code>chat-prompt-card-white</code>, <code>contents-index-two-col</code>; theme <code>diligence-white-terracotta</code>; workflow 1; prompts 1 to 10, 14, 17</td></tr>
+<tr><td>Post to 9 platforms with Claude (Abdul Subbooh Danyal; 10 slides)</td><td>Connect accounts, add connector, draft, schedule, limits</td><td>Skill <code>claude-social-publishing-blotato</code>; <code>/social-draft-schedule</code>; template <code>setup-step-card-blue</code>; theme <code>social-setup-blue-pink</code>; workflow 2; prompts 11, 12, 15</td></tr>
+<tr><td>How to turn Claude into a room of billionaire advisors (usamaakrm; steps 1 to 7, 9, 10 and a cover)</td><td>Clone a repo, start a local room, run a three-round debate</td><td>Skill <code>advisor-room-debate</code>; <code>/advisor-room</code>; workflow 3; prompts 13, 16; read-only clone in <code>scripts/batch125-install.sh</code></td></tr>
+<tr><td>Promotion slide ("Link in my Community")</td><td>Lead generation</td><td>Not actioned</td></tr></table></div></section>
+<section><h2>3. Where I disagree with the source material</h2><ul>
+<li>I disagree with "R.I.P. Big 4". The risk is a committee relying on a model's red-flag memo with unchecked arithmetic and no accountable signer, after uploading documents the NDA may not allow. Use it to shorten your advisers' first week and hand them the memo.</li>
+<li>I disagree with "turn Claude into a room of billionaire advisors". The risk is treating one model's roleplay as seven independent minds, and attributing views to real people who never said them. Use role lenses and record the dissent.</li>
+<li>I disagree with "post to nine platforms in one workflow" as a default. The risk is one mistaken schedule reaching nine audiences with a third party holding the keys. Start with one account, require approval of exact items, and keep DM automations off.</li></ul></section>
+<section><h2>4. Not done, and why</h2><ul>
+<li>Blotato was not connected and <code>roast-room</code> was not cloned or run. The script offers a read-only clone and prints the connector command; it runs neither without you.</li>
+<li>No template for the advisor photo grid or the red "Step N" tutorial title: the first uses real people's photos and the second is covered by <code>prompt-step-red-cream</code>.</li>
+<li>No separate n8n workflow: none of the three workflows is a scheduled automation.</li>
+<li>Blotato's price and rate limit are the vendor's claims and were not independently checked.</li></ul></section>
+<section><h2>5. Deliverables</h2><div class="tw"><table><tr><th>Type</th><th>Items</th></tr>
+<tr><td>Skills</td><td><code>claude-dd-first-pass-10</code>, <code>claude-social-publishing-blotato</code>, <code>advisor-room-debate</code></td></tr>
+<tr><td>Commands</td><td><code>/dd-first-pass</code>, <code>/social-draft-schedule</code>, <code>/advisor-room</code></td></tr>
+<tr><td>Templates</td><td><code>chat-prompt-card-white</code>, <code>setup-step-card-blue</code>, <code>contents-index-two-col</code></td></tr>
+<tr><td>Themes</td><td><code>theme-diligence-white-terracotta</code>, <code>theme-social-setup-blue-pink</code></td></tr>
+<tr><td>Workflows</td><td><code>Artifacts/operations/workflows-batch-125.html</code></td></tr>
+<tr><td>Prompts</td><td><code>docs/batch-125-prompts.md</code> (ten verbatim due-diligence prompts, three printed on the slides, four original)</td></tr>
+<tr><td>Script</td><td><code>scripts/batch125-install.sh</code> (read-only clone, shows the connector command, asks first, not run)</td></tr></table></div></section>
+<section><h2>6. Open decisions for you</h2><ul>
+<li>Do you have a real target and documents you are permitted to share with an AI service? Without that, the due-diligence prompts stay theory.</li>
+<li>Do you have a paid Blotato account, and which one account would be the test? If not, would one of the connectors already visible here do instead?</li>
+<li>Which decision would you put through the advisor room first? Send the brief (decision, options, numbers, your lean).</li>
+<li>Which of the three new skills will you use in the next two weeks? The library is past 1,300 skills; unused ones make routing worse.</li></ul></section>
+<footer>Prepared 31 October 2026. External checks: the roast-room repository page and README, and Blotato's public MCP setup page and home page, all read on 31 October 2026.</footer>
+</main>
+</body></html>

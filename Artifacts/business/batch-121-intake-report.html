@@ -1,0 +1,92 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Batch 121 Intake Report</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<style>
+  /* Layout: single-column formal report, 880px measure; tables scroll inside their own wrappers.
+     Palette: ink-blue neutrals, one deep teal accent, semantic green/amber/red for status only.
+     Type: Aptos (the owner's house font) with system fallbacks; title 32pt, headings 14pt, body 11pt. */
+  :root {
+    --bg: #f6f7f9; --surface: #ffffff; --fg: #1b2330; --muted: #5a6577; --line: #d9dee6;
+    --accent: #0f5d6b; --accent-soft: #e2f0f2;
+    --ok: #17703a; --ok-bg: #e3f3e8; --warn: #8a5a00; --warn-bg: #fbefd3; --bad: #a11d2a; --bad-bg: #fbe3e5;
+    --code-bg: #eef1f5;
+    --font: Aptos, "Segoe UI Variable Text", "Segoe UI", system-ui, -apple-system, Roboto, sans-serif;
+    --mono: ui-monospace, "SF Mono", Consolas, monospace;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #11161e; --surface: #181f2a; --fg: #e6eaf0; --muted: #9aa5b6; --line: #2c3646;
+      --accent: #6cc3d1; --accent-soft: #17323a;
+      --ok: #6fd18f; --ok-bg: #173824; --warn: #f0c261; --warn-bg: #3a2e12; --bad: #ff8d98; --bad-bg: #3d1a1f;
+      --code-bg: #0e131a; color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #11161e; --surface: #181f2a; --fg: #e6eaf0; --muted: #9aa5b6; --line: #2c3646;
+    --accent: #6cc3d1; --accent-soft: #17323a;
+    --ok: #6fd18f; --ok-bg: #173824; --warn: #f0c261; --warn-bg: #3a2e12; --bad: #ff8d98; --bad-bg: #3d1a1f;
+    --code-bg: #0e131a; color-scheme: dark;
+  }
+  * { box-sizing: border-box; }
+  body { background: var(--bg); color: var(--fg); font-family: var(--font); font-size: 11pt; line-height: 1.55; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); padding-block: 28px 64px; }
+  main { max-width: 880px; margin-inline: auto; display: flex; flex-direction: column; gap: 28px; }
+  header { display: flex; flex-direction: column; gap: 8px; border-bottom: 2px solid var(--accent); padding-bottom: 18px; }
+  .eyebrow { font-size: 9pt; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
+  h1 { font-size: 32pt; line-height: 1.1; margin: 0; font-weight: 700; text-wrap: balance; }
+  h2 { font-size: 14pt; margin: 0 0 10px; font-weight: 700; color: var(--accent); text-wrap: balance; }
+  p { margin: 0 0 10px; max-width: 75ch; }
+  section { background: var(--surface); border: 1px solid var(--line); border-radius: 6px; padding: 20px 22px; min-width: 0; }
+  .lede { font-size: 11pt; color: var(--muted); max-width: 70ch; margin: 0; }
+  .truth { border-left: 4px solid var(--bad); background: var(--bad-bg); padding: 12px 16px; border-radius: 0 6px 6px 0; }
+  .truth p:last-child { margin-bottom: 0; }
+  .tw { overflow-x: auto; margin-block: 8px 4px; border: 1px solid var(--line); border-radius: 4px; }
+  table { border-collapse: collapse; width: 100%; min-width: 720px; font-size: 10pt; }
+  th, td { padding: 8px 10px; border-bottom: 1px solid var(--line); text-align: center; vertical-align: top; }
+  th { background: var(--accent-soft); color: var(--fg); font-weight: 700; font-size: 9.5pt; }
+  tr:last-child td { border-bottom: 0; }
+  td.l, th.l { text-align: center; } /* house rule: table content aligned top and centre */
+  .st { display: inline-block; padding: 1px 8px; border-radius: 10px; font-size: 9pt; font-weight: 700; white-space: nowrap; }
+  .st.ok { background: var(--ok-bg); color: var(--ok); } .st.warn { background: var(--warn-bg); color: var(--warn); } .st.bad { background: var(--bad-bg); color: var(--bad); }
+  .sw { display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 10px; margin-block: 8px; }
+  .sw div { border: 1px solid var(--line); border-radius: 4px; overflow: hidden; font-size: 9pt; text-align: center; }
+  .sw i { display: block; height: 44px; }
+  .sw span { display: block; padding: 4px 6px; font-family: var(--mono); }
+  .prompt { position: relative; margin-block: 10px; }
+  .prompt pre { margin: 0; white-space: pre-wrap; background: var(--code-bg); border: 1px solid var(--line); border-radius: 4px; padding: 12px 84px 12px 12px; font-family: var(--mono); font-size: 9.5pt; line-height: 1.5; }
+  .prompt b { display: block; font-family: var(--font); font-size: 10pt; margin-bottom: 4px; }
+  .prompt button { position: absolute; top: 30px; right: 8px; font: inherit; font-size: 9pt; padding: 4px 10px; border-radius: 4px; border: 1px solid var(--accent); background: var(--surface); color: var(--accent); cursor: pointer; }
+  .prompt button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  ul { margin: 0 0 10px; padding-left: 20px; } li { margin-bottom: 4px; max-width: 75ch; }
+  code { font-family: var(--mono); font-size: 9.5pt; background: var(--code-bg); padding: 1px 4px; border-radius: 3px; }
+  footer { color: var(--muted); font-size: 9.5pt; }
+</style>
+<style>
+ figure{margin:0;text-align:center} figure img{width:100%;border:1px solid var(--line);border-radius:4px;display:block} figcaption{font-size:8.5pt;color:var(--muted);margin-top:4px}
+ .thumbs{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px;margin-top:10px}
+ pre{white-space:pre-wrap;word-break:break-word;background:var(--code-bg);border:1px solid var(--line);border-radius:4px;padding:12px;font:10pt/1.5 var(--mono);margin:8px 0;overflow-x:auto}
+ details{border:1px solid var(--line);border-radius:4px;padding:8px 12px;margin-top:8px} summary{cursor:pointer;font-weight:700}
+ code{font-family:var(--mono);font-size:9.5pt;background:var(--code-bg);padding:0 4px;border-radius:3px}
+ ul{margin:0 0 10px;padding-left:20px;max-width:78ch} li{margin-bottom:4px}
+ td code{white-space:normal;word-break:break-word}
+</style>
+<style>main > section, main > header {min-width:0} p, li, code {overflow-wrap:anywhere}</style>
+<main>
+<header><div class="eyebrow">Batch 121 · 28 October 2026 · intake</div><h1>Batch 121 Intake Report</h1><p>Four inline infographics processed with the seven-step intake. Result: three new skills, three commands, one reference, two templates, two themes, four workflows. No repositories, agents or connectors were referenced, so there is no install script this time.</p></header>
+<section><h2>1. Executive findings</h2><ul>
+<li><b>[Certain]</b> "Set up Claude for marketers" is a sensible order of work with unproven numbers. The graphic claims "12 roles replaced", a 4-hour setup, 100+ connectors and $20 a month. None is sourced. Its "skills" are saved prompt templates, not Claude's Skills feature (a SKILL.md package). I kept the four steps and added least-privilege rules: every connector gives an AI service access to company data, so start read-only on one folder and get approval for customer data.</li>
+<li><b>[Certain]</b> The TAM playbook is a vendor graphic. The six steps are sound and vendor-neutral, but the "70% unlimited lookups, 30% waterfall across 28+ providers" split describes the vendor's product. The graphic omits two real problems: your CRM only contains companies you already reached (survivorship bias in the ICP), and outreach to the DACH and UK regions it names is tightly regulated. I added a hand-check of 50 records per segment and a legal check per region. [Likely] B2B cold email is not consent-free in every country.</li>
+<li><b>[Certain]</b> "Where product marketing ends" is a clear ownership map from a PMM's point of view. It gives metrics only for PMM, so I added labelled suggestions for the other four and a rule to split by task, not title, in small companies.</li>
+<li><b>[Certain]</b> The five presentation frameworks are all standard (10-20-30 is Guy Kawasaki's investor-pitch rule; the Golden Circle is Simon Sinek's). Each has limits the graphic omits, and using all five in one deck reads as a template. I added when to choose which, and a rule to combine at most two.</li>
+<li><b>[Certain]</b> Duplicate check: the TAM topic overlaps <code>build-and-fill-a-tam</code> and <code>/gtm-engineer-skills</code>, so the new skill is a playbook that points to them. Golden Circle and STARR appear inside other skills, but there was no skill for choosing between the five.</li>
+<li><b>[Certain]</b> None of the four graphics contains a prompt, so all seven prompts in the prompts file are original.</li>
+</ul></section>
+<section><h2>2. Source inventory and what was built</h2><div class="tw"><table><tr><th>Source</th><th>Content</th><th>Result</th></tr><tr><td>Louis Cho How to Setup Claude for Marketers</td><td>Four steps: identity, projects, skills, MCP</td><td>Skill <code>claude-marketer-setup-4-steps</code>; <code>/claude-marketer-setup</code>; workflow 1</td></tr><tr><td>Michel Lieben (ColdIQ) The 6-Step TAM Mapping Playbook</td><td>CRM to first send in six steps</td><td>Skill <code>tam-mapping-6-steps</code>; <code>/tam-map</code>; workflow 2</td></tr><tr><td>Svitlana Shuliak Where Product Marketing Ends</td><td>Five functions and what each owns</td><td>Reference <code>product-marketing/references/marketing-functions-who-owns-what.md</code>; template <code>hub-tall-center-4-sides</code>; theme <code>pmm-pastel-pink</code>; workflow 4</td></tr><tr><td>Michael (Sollo) How to Give a Great Presentation</td><td>Five frameworks</td><td>Skill <code>presentation-frameworks-5</code>; <code>/presentation-frameworks</code>; template <code>framework-cards-lavender-5</code>; theme <code>framework-lavender-orange</code>; workflow 3</td></tr></table></div></section>
+<section><h2>3. Where I disagree with the source material</h2><ul>
+<li>I disagree with "12 roles replaced" as a headline. The risk is that a team treats a $20 tool as a headcount decision on an unmeasured claim. Measure time saved per task over two weeks first.</li>
+<li>I disagree with building a target list from your CRM alone and sending cold email on a tiered score. The risk is a biased ICP and unlawful outreach in strict regions. Test one new segment, hand-check the data and get legal advice per region.</li>
+<li>I disagree with connecting Claude to Drive, Gmail and the CRM in one step. The risk is giving an AI service broad access to company and customer data. Add one connector, read-only, after approval.</li></ul></section>
+<section><h2>4. Not done, and why</h2><ul><li>No repositories, agents or connectors were referenced, so nothing was cloned or installed and there is no install script.</li><li>Two layouts were skipped rather than faked: the isometric staircase of the TAM graphic and the tall four-section setup guide both need hand-drawn art.</li><li>No n8n workflow: none of the four workflows is an automation. Ask if you want one.</li></ul></section>
+<section><h2>5. Deliverables</h2><div class="tw"><table><tr><th>Type</th><th>Items</th></tr><tr><td>Skills</td><td><code>claude-marketer-setup-4-steps</code>, <code>tam-mapping-6-steps</code>, <code>presentation-frameworks-5</code></td></tr><tr><td>Reference</td><td><code>product-marketing/references/marketing-functions-who-owns-what.md</code></td></tr><tr><td>Commands</td><td><code>/claude-marketer-setup</code>, <code>/tam-map</code>, <code>/presentation-frameworks</code></td></tr><tr><td>Merged skills</td><td><code>product-marketing</code>, <code>design-templates</code></td></tr><tr><td>Templates</td><td><code>framework-cards-lavender-5</code>, <code>hub-tall-center-4-sides</code></td></tr><tr><td>Themes</td><td><code>theme-framework-lavender-orange</code>, <code>theme-pmm-pastel-pink</code></td></tr><tr><td>Workflows</td><td><code>Artifacts/operations/workflows-batch-121.html</code></td></tr><tr><td>Prompts</td><td><code>docs/batch-121-prompts.md</code> (seven original plain-text prompts)</td></tr></table></div></section>
+<section><h2>6. Open decisions for you</h2><ul><li>Which of the three new skills will you actually use in the next two weeks? The library is past 1,300 skills; unused ones make routing worse.</li><li>Do you want the Claude marketer setup written for your real role and brand? Send the role, audience and tone.</li><li>Do you plan outbound in DACH or the UK? If so, get legal advice before using the TAM playbook for sending.</li></ul></section>
+<footer>Prepared 28 October 2026. No repositories were checked in this batch.</footer>
+</main>
+</body></html>

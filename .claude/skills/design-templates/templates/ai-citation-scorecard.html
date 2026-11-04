@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<!--
+  Template: ai-citation-scorecard
+  Style: warm off-white page, heavy black title with an orange-highlighted second line, small brand line, a data panel (rust header bar, line chart with a big percentage on the left, single bar comparison on the right), a losing-ground / gaining-ground pair of boxes with a green arrow, six numbered rule tiles in a 3x2 grid, a rust quote banner and a black footer. Theme: citation-rust-cream
+  Inspired by: "the rules of X are changing" data-plus-rules graphics. Original CSS and placeholder figures (all numbers are dummy); no source brand, chart data or text reused.
+  Canvas: 1080 x 1350. Swap points: h1 and .hl, .brand, data panel numbers, .lose/.gain lists, six .t tiles, .quote, .foot
+-->
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Citation Scorecard</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root{--rust:#C2562B;--green:#1F7A4A;--ink:#16181C;--font:"Inter",Aptos,"Segoe UI",system-ui,sans-serif;--mono:"JetBrains Mono",ui-monospace,Consolas,monospace}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#222;display:flex;justify-content:center;padding:32px 0;overflow-x:auto;font-family:var(--font)}
+.slide{position:relative;width:1080px;height:1350px;flex:none;background:#FAF4EE;overflow:hidden;padding:36px 36px 0;color:var(--ink)}
+h1{text-align:center;font:800 70px/1.12 var(--font);letter-spacing:-.02em}.hl{display:inline-block;background:#FBD9C4;padding:0 20px;border-radius:12px;margin-top:6px}
+.brand{margin:18px 0 18px;text-align:center;font:700 32px/1 var(--font)}.brand i{display:inline-block;width:44px;height:44px;border-radius:50%;border:6px solid var(--rust);vertical-align:-12px;margin-right:10px}
+.data{border:2px solid var(--rust);background:#fff;border-radius:6px;overflow:hidden}
+.data header{background:var(--rust);color:#fff;display:flex;justify-content:space-between;padding:8px 14px;font:700 17px/1.2 var(--mono);letter-spacing:.04em}
+.dd{display:grid;grid-template-columns:1.1fr .9fr}.dd>div{padding:12px 16px;min-height:260px}.dd>div+div{border-left:2px solid #E9DDD2}
+.dd small{font:700 16px/1.2 var(--mono);color:#444}.big{font:800 64px/1 var(--font);color:var(--rust);margin:6px 0 0 150px}
+.ln{position:relative;height:150px;margin-top:-16px}.ln svg{width:100%;height:100%}
+.bar{display:flex;justify-content:space-around;align-items:flex-end;height:190px;border-bottom:2px solid #444;margin-top:8px}.bar i{display:block;width:34%;border-radius:2px 2px 0 0}
+.pair{display:grid;grid-template-columns:1fr 70px 1fr;align-items:center;margin-top:16px}
+.lose,.gain{border-radius:6px;overflow:hidden;border:2px solid #CFC5BA;background:#fff;height:236px}
+.lose header,.gain header{padding:6px 12px;font:700 17px/1.2 var(--mono);color:#fff;background:#7A7167}.gain header{background:var(--green)}.gain{border-color:#9CCDB2}
+.lose ul,.gain ul{list-style:none;padding:8px 14px}.lose li,.gain li{font:700 21px/1.65 var(--font)}.lose li::before{content:"\2193  ";color:#C0392B}.gain li::before{content:"\2191  ";color:var(--green)}
+.arrow{text-align:center;font:800 54px/1 var(--font);color:var(--green)}
+h2{margin:16px 0 8px;font:700 19px/1 var(--mono);color:var(--rust);letter-spacing:.04em}
+.tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.t{display:flex;gap:12px;align-items:center;background:#fff;border:1.5px solid #E2D6CA;border-radius:8px;padding:10px 12px;height:128px}
+.t i{display:block;width:56px;height:56px;border-radius:8px;flex:none}.t b{display:block;font:800 20px/1.15 var(--font)}.t span{display:block;font:500 15px/1.3 var(--font);color:#444;margin-top:2px}
+.quote{margin-top:14px;background:var(--rust);color:#fff;border-radius:8px;padding:20px 24px;font:800 32px/1.15 var(--font)}.quote span{display:block;font:600 24px/1.2 var(--font);color:#FFD9BF;margin-top:2px}
+.foot{position:absolute;left:0;right:0;bottom:0;height:62px;background:#0E0E0E;color:#fff;display:flex;align-items:center;justify-content:center;font:600 21px/1 var(--font)}
+</style></head><body><div class="slide">
+<h1>Headline About a Change<br><span class="hl">Second Highlighted Line</span></h1>
+<div class="brand"><i></i>Brand<span style="font-weight:500;color:#555">.com</span></div>
+<div class="data"><header><span>CHART TITLE &middot; PERIOD</span><span>Source: placeholder</span></header>
+<div class="dd"><div><small>SERIES NAME</small><div class="big">-00.0%</div><div class="ln"><svg viewBox="0 0 300 110" preserveAspectRatio="none"><polyline points="10,16 290,92" fill="none" stroke="#C2562B" stroke-width="5"/><circle cx="10" cy="16" r="7" fill="#C2562B"/><circle cx="290" cy="92" r="7" fill="#C2562B"/></svg></div></div>
+<div><small>GROUP NAME</small><div class="bar"><i style="height:100px;background:#D89A3C"></i><i style="height:14px;border:2px dashed #666;background:none"></i></div></div></div></div>
+<div class="pair"><div class="lose"><header>LOSING GROUND</header><ul><li>Item one</li><li>Item two</li><li>Item three</li><li>Item four</li></ul></div><div class="arrow">&rarr;</div><div class="gain"><header>GAINING GROUND</header><ul><li>Item one</li><li>Item two</li><li>Item three</li><li>Item four</li></ul></div></div>
+<h2>6 NEW RULES FOR BRANDS</h2>
+<div class="tiles"><div class="t"><i style="background:#C2562B"></i><div><b>1 &nbsp;Rule one</b><span>One supporting line</span></div></div><div class="t"><i style="background:#2F5FD0"></i><div><b>2 &nbsp;Rule two</b><span>One supporting line</span></div></div><div class="t"><i style="background:#1F7A4A"></i><div><b>3 &nbsp;Rule three</b><span>One supporting line</span></div></div><div class="t"><i style="background:#B5832B"></i><div><b>4 &nbsp;Rule four</b><span>One supporting line</span></div></div><div class="t"><i style="background:#16181C"></i><div><b>5 &nbsp;Rule five</b><span>One supporting line</span></div></div><div class="t"><i style="background:#C2562B"></i><div><b>6 &nbsp;Rule six</b><span>One supporting line</span></div></div></div>
+<div class="quote">Closing line in one sentence.<span>Second half in a lighter tone.</span></div>
+<div class="foot">Call to action and link</div>
+</div></body></html>

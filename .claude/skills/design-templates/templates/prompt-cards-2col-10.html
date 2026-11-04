@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<!--
+  Template: prompt-cards-2col-10
+  Style: dark navy header band with a two-tone title (white and an accent), subtitle line, then a 2-column x 5-row grid of cream cards (numbered circle, yellow name tag, icon block, quoted prompt), small credit footer. Theme: office-teal-orange
+  Inspired by: "best prompts for" ten-card infographics. Original CSS and placeholder wording; no source people, logos or text reused.
+  Canvas: 1080 x 1350. Swap points: .band h1 and span, .sub, .c cards (number .n, name .t, icon .ic, prompt .q), .by
+-->
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Prompt Cards 2col 10</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#EEF1F4;--navy:#0F2442;--ink:#14213D;--muted:#4A5568;--teal:#17C3A0;--orange:#F26B1D;--card:#FBF6E9;--line:#E6DCC0;--tag:#FFE15A;--font:"Inter",Aptos,"Segoe UI",system-ui,sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#333;display:flex;justify-content:center;padding:32px 0;overflow-x:auto;font-family:var(--font)}
+.slide{position:relative;width:1080px;height:1350px;flex:none;background:var(--bg);color:var(--ink);overflow:hidden}
+.band{background:var(--navy);color:#fff;height:250px;padding:30px 40px 0}
+.band h1{font:800 66px/1.12 var(--font);letter-spacing:-.02em}.band h1 span{color:var(--teal)}.band h1 em{font-style:normal;color:var(--orange)}
+.sub{margin-top:12px;font:500 22px/1.3 var(--font);color:#C9D3E3}
+.grid{position:absolute;left:30px;right:30px;top:272px;display:grid;grid-template-columns:1fr 1fr;grid-template-rows:repeat(5,192px);gap:12px}
+.c{position:relative;min-width:0;background:var(--card);border:2px solid var(--line);border-radius:16px;padding:14px 16px 12px 70px;overflow:hidden}
+.n{position:absolute;left:14px;top:14px;width:42px;height:42px;border-radius:50%;background:var(--teal);color:#fff;font:800 22px/42px var(--font);text-align:center}
+.c:nth-child(4n+3) .n,.c:nth-child(4n+4) .n{background:var(--orange)}
+.t{display:inline-block;background:var(--tag);font:800 20px/1.2 var(--font);padding:4px 10px;border-radius:5px}
+.ic{position:absolute;left:14px;top:76px;width:44px;height:44px;border-radius:10px;background:#fff;border:2px solid var(--line)}
+.q{margin-top:10px;font:500 italic 16px/1.4 var(--font);color:var(--muted);height:116px;overflow:hidden}
+.by{position:absolute;left:0;right:0;bottom:0;height:44px;background:var(--navy);color:#fff;display:flex;align-items:center;justify-content:center;font:700 16px/1 var(--font)}
+</style></head><body>
+<div class="slide">
+  <div class="band"><h1>Best prompts for<br><span>Tool A</span> / <em>Tool B</em></h1><p class="sub">One line on where to run them and why</p></div>
+  <div class="grid">
+    <div class="c"><span class="n">1</span><span class="t">Prompt name</span><span class="ic"></span><p class="q">"Placeholder prompt text with [BRACKETS] to fill in, written as a single instruction the assistant can act on directly."</p></div>
+    <div class="c"><span class="n">2</span><span class="t">Prompt name</span><span class="ic"></span><p class="q">"Placeholder prompt text with [BRACKETS] to fill in, written as a single instruction the assistant can act on directly."</p></div>
+    <div class="c"><span class="n">3</span><span class="t">Prompt name</span><span class="ic"></span><p class="q">"Placeholder prompt text with [BRACKETS] to fill in, written as a single instruction the assistant can act on directly."</p></div>
+    <div class="c"><span class="n">4</span><span class="t">Prompt name</span><span class="ic"></span><p class="q">"Placeholder prompt text with [BRACKETS] to fill in, written as a single instruction the assistant can act on directly."</p></div>
+    <div class="c"><span class="n">5</span><span class="t">Prompt name</span><span class="ic"></span><p class="q">"Placeholder prompt text with [BRACKETS] to fill in, written as a single instruction the assistant can act on directly."</p></div>
+    <div class="c"><span class="n">6</span><span class="t">Prompt name</span><span class="ic"></span><p class="q">"Placeholder prompt text with [BRACKETS] to fill in, written as a single instruction the assistant can act on directly."</p></div>
+    <div class="c"><span class="n">7</span><span class="t">Prompt name</span><span class="ic"></span><p class="q">"Placeholder prompt text with [BRACKETS] to fill in, written as a single instruction the assistant can act on directly."</p></div>
+    <div class="c"><span class="n">8</span><span class="t">Prompt name</span><span class="ic"></span><p class="q">"Placeholder prompt text with [BRACKETS] to fill in, written as a single instruction the assistant can act on directly."</p></div>
+    <div class="c"><span class="n">9</span><span class="t">Prompt name</span><span class="ic"></span><p class="q">"Placeholder prompt text with [BRACKETS] to fill in, written as a single instruction the assistant can act on directly."</p></div>
+    <div class="c"><span class="n">10</span><span class="t">Prompt name</span><span class="ic"></span><p class="q">"Placeholder prompt text with [BRACKETS] to fill in, written as a single instruction the assistant can act on directly."</p></div>
+  </div>
+  <div class="by">By Your Name</div>
+</div></body></html>

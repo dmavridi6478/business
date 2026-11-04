@@ -79,3 +79,9 @@ The source infographic is promotional (branded "The Limitless CMO," Lisa
 Cole) with no named tools or vendors — the 5 steps and their sub-items are
 reproduced as a structural framework, not verified against any specific
 product or claim.
+
+## The modern CMO umbrella (Batch 113)
+
+Source: "The Modern CMO Umbrella" infographic (generated-style graphic, no author credit). Ten pillars under one connected umbrella: 1 Brand (identity, trust, differentiation); 2 Organic search (captures intent, quality traffic); 3 AI search visibility (discoverability in AI-powered search); 4 Social media (awareness, engagement, community); 5 Paid media (reach, targeted opportunities); 6 CRM (relationships, lifetime value); 7 Content (educates, inspires, long-term trust); 8 Analytics (data into insight and direction); 9 Community (belonging, advocacy); 10 Conversion (attention into action and revenue).
+
+The flow shown: attention is captured, intent is captured, trust is built, relationships are nurtured, growth is achieved. Its message: stop chasing channels (build connections), stop managing campaigns (create momentum), stop spending more (grow smarter). The graphic offers no data; use it as a checklist for gaps, not as evidence. Overlap with `ai-search-visibility/references/marketing-taxonomy.md`: that taxonomy is the more detailed one.

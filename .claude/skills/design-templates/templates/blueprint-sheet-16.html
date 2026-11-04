@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<!--
+  Template: blueprint-sheet-16
+  Style: warm cream "drawing sheet" with a monospace title block (sheet number, scale, revision), a heavy sans headline with one blue word, a 4 x 4 grid of sixteen pastel mini-cards (code label, title, tinted preview band, arrow caption), and a solid blue call-to-action pill. Theme: blueprint-cream-sheet
+  Inspired by: the "LinkedIn Client Acquisition in one page" 16-page sheet. Original CSS; no source mock-up, wording or numbers reused.
+  Canvas: 1080 x 1350. Sixteen cards; delete or duplicate .tile for other counts (keep a multiple of four).
+  Swap points:
+    :root tokens                  colours and fonts
+    .sheet-id                     drawing number and revision chips
+    h1 (+ <em>)                   headline; the <em> word is blue
+    .tile (.code, h3, .band, .cap) one per page: label, title, preview band colour class b1..b8, caption "A -> B"
+    .cta                          button text; .foot left and right foot lines
+-->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blueprint Sheet 16</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #F3ECE1;
+    --tile: #FBF7EF;
+    --line: #DCCFB8;
+    --ink: #16181D;
+    --muted: #7A7466;
+    --blue: #1D5FD1;
+    --b1:#E4EAF7; --b2:#F6E4E8; --b3:#FBF1D6; --b4:#DDF0EA; --b5:#EADFF6; --b6:#FBE6D6; --b7:#E1F0F6; --b8:#EDEFD8;
+    --font: "Inter", Aptos, "Segoe UI", system-ui, sans-serif;
+    --mono: "JetBrains Mono", ui-monospace, Consolas, monospace;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: #333; display: flex; justify-content: center; padding: 32px 0; overflow-x: auto; font-family: var(--font); }
+  .slide { position: relative; width: 1080px; height: 1350px; flex: none; background: var(--bg); color: var(--ink); padding: 44px 48px; overflow: hidden; }
+  .sheet-id { display: flex; justify-content: space-between; align-items: center; font: 500 17px/1 var(--mono); color: var(--muted); letter-spacing: .06em; }
+  .chips { display: flex; gap: 8px; }
+  .chip { border: 1px solid var(--line); background: var(--tile); border-radius: 6px; padding: 8px 12px; color: var(--ink); }
+  h1 { margin-top: 26px; font: 800 62px/1 var(--font); letter-spacing: -.035em; }
+  h1 em { font-style: normal; color: var(--blue); }
+  .sub { margin-top: 12px; font: 500 21px/1.3 var(--font); color: var(--muted); }
+  .grid { margin-top: 26px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+  .tile { background: var(--tile); border: 1px solid var(--line); border-radius: 8px; padding: 12px 12px 10px; height: 212px; display: flex; flex-direction: column; }
+  .code { font: 700 13px/1 var(--mono); letter-spacing: .08em; color: var(--muted); }
+  .tile h3 { margin-top: 8px; font: 800 18.5px/1.15 var(--font); letter-spacing: -.01em; }
+  .band { margin-top: 10px; flex: 1; border-radius: 6px; }
+  .b1{background:var(--b1)} .b2{background:var(--b2)} .b3{background:var(--b3)} .b4{background:var(--b4)}
+  .b5{background:var(--b5)} .b6{background:var(--b6)} .b7{background:var(--b7)} .b8{background:var(--b8)}
+  .cap { margin-top: 8px; font: 700 15px/1.2 var(--font); }
+  .cap span { color: #D6342C; }
+  .cta { position: absolute; left: 50%; transform: translateX(-50%); bottom: 96px; background: var(--blue); color: #fff; font: 800 30px/1 var(--font); padding: 24px 56px; border-radius: 14px; letter-spacing: -.01em; }
+  .foot { position: absolute; left: 48px; right: 48px; bottom: 40px; display: flex; justify-content: space-between; font: 500 16px/1.2 var(--mono); color: var(--muted); letter-spacing: .04em; }
+</style>
+</head>
+<body>
+<div class="slide">
+  <div class="sheet-id"><span>drawing no. XXX-2026 · sheet 1 of 1</span><span class="chips"><span class="chip">scale 1:16</span><span class="chip">rev 01</span></span></div>
+  <h1>Your system title <em>in one page.</em></h1>
+  <p class="sub">One sentence on the outcome this sheet gets the reader to.</p>
+  <div class="grid">
+    <div class="tile"><div class="code">01 · LAYER</div><h3>Page title one</h3><div class="band b1"></div><div class="cap">Input <span>→</span> output</div></div>
+    <div class="tile"><div class="code">02 · LAYER</div><h3>Page title two</h3><div class="band b2"></div><div class="cap">Input <span>→</span> output</div></div>
+    <div class="tile"><div class="code">03 · LAYER</div><h3>Page title three</h3><div class="band b3"></div><div class="cap">Input <span>→</span> output</div></div>
+    <div class="tile"><div class="code">04 · LAYER</div><h3>Page title four</h3><div class="band b4"></div><div class="cap">Input <span>→</span> output</div></div>
+    <div class="tile"><div class="code">05 · LAYER</div><h3>Page title five</h3><div class="band b5"></div><div class="cap">Input <span>→</span> output</div></div>
+    <div class="tile"><div class="code">06 · LAYER</div><h3>Page title six</h3><div class="band b6"></div><div class="cap">Input <span>→</span> output</div></div>
+    <div class="tile"><div class="code">07 · LAYER</div><h3>Page title seven</h3><div class="band b7"></div><div class="cap">Input <span>→</span> output</div></div>
+    <div class="tile"><div class="code">08 · LAYER</div><h3>Page title eight</h3><div class="band b8"></div><div class="cap">Input <span>→</span> output</div></div>
+    <div class="tile"><div class="code">09 · LAYER</div><h3>Page title nine</h3><div class="band b3"></div><div class="cap">Input <span>→</span> output</div></div>
+    <div class="tile"><div class="code">10 · LAYER</div><h3>Page title ten</h3><div class="band b1"></div><div class="cap">Input <span>→</span> output</div></div>
+    <div class="tile"><div class="code">11 · LAYER</div><h3>Page title eleven</h3><div class="band b4"></div><div class="cap">Input <span>→</span> output</div></div>
+    <div class="tile"><div class="code">12 · LAYER</div><h3>Page title twelve</h3><div class="band b6"></div><div class="cap">Input <span>→</span> output</div></div>
+    <div class="tile"><div class="code">13 · LAYER</div><h3>Page title thirteen</h3><div class="band b8"></div><div class="cap">Input <span>→</span> output</div></div>
+    <div class="tile"><div class="code">14 · LAYER</div><h3>Page title fourteen</h3><div class="band b2"></div><div class="cap">Input <span>→</span> output</div></div>
+    <div class="tile"><div class="code">15 · LAYER</div><h3>Page title fifteen</h3><div class="band b5"></div><div class="cap">Input <span>→</span> output</div></div>
+    <div class="tile"><div class="code">16 · LAYER</div><h3>Page title sixteen</h3><div class="band b7"></div><div class="cap">Input <span>→</span> output</div></div>
+  </div>
+  <div class="cta">Call to action text</div>
+  <div class="foot"><span>left foot line</span><span>16 pages · 1 system</span></div>
+</div>
+</body>
+</html>

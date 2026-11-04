@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<!--
+  Template: compare-matrix-rows-11
+  Style: pale-green page, bold two-tone title, one large rounded table with a green header band (blank corner cell, two column heads each with a small "what / how" pill), nine labelled rows (round icon placeholder + row label | left text | right text), two green formula bubbles in the next-to-last row, a last row for "how they work together", author footer with avatar circle. Theme: gtm-compare-green
+  Inspired by: "X versus Y" matrix cards. Original CSS and placeholder wording; no source logo, avatar, tool names or text reused.
+  Canvas: 1080 x 1350. Swap points: h1 and .g, two <th> column heads (.pill), nine tr rows, .formula row, .tog row, .by
+-->
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Compare Matrix Rows 11</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--g:#2C7A2C;--gd:#1F5F20;--ink:#161A16;--line:#DCE6DA;--font:"Inter",Aptos,"Segoe UI",system-ui,sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#222;display:flex;justify-content:center;padding:32px 0;overflow-x:auto;font-family:var(--font)}
+.slide{position:relative;width:1080px;height:1350px;flex:none;background:linear-gradient(180deg,#E7F3E3,#F6FAF4);overflow:hidden;padding:46px 62px 0;color:var(--ink)}
+h1{text-align:center;font:800 56px/1.1 var(--font);letter-spacing:-.01em}h1 .g{color:var(--g);font-weight:500}
+.card{margin-top:40px;background:#fff;border:3px solid #6DB46B;border-radius:26px;overflow:hidden;box-shadow:0 8px 24px #2C7A2C22}
+table{width:100%;border-collapse:collapse;table-layout:fixed}
+col.a{width:28%}col.b{width:36%}col.c{width:36%}
+thead th{background:var(--g);color:#fff;font:800 25px/1 var(--font);text-align:left;padding:20px 18px;height:68px}thead th:first-child{background:#fff}
+.pill{display:inline-block;margin-left:8px;background:#fff;color:var(--gd);border-radius:999px;font:700 15px/1 var(--font);padding:5px 10px;vertical-align:3px}
+tbody tr{border-top:1.5px solid var(--line)}
+tbody th{text-align:left;font:800 19px/1.2 var(--font);padding:0 14px;height:80px}tbody th i{display:inline-block;width:20px;height:20px;border-radius:50%;border:2.5px solid var(--g);margin-right:10px;vertical-align:-4px}
+tbody td{font:500 18px/1.32 var(--font);padding:6px 16px 6px 18px;font-size:19px;border-left:1.5px solid var(--line)}
+tr.formula td{padding:10px 12px}tr.formula th{height:130px}
+.bub{background:var(--g);color:#fff;border-radius:16px;padding:14px 16px;font:600 17px/1.3 var(--font)}
+tr.tog th,tr.tog td{height:74px;font:800 20px/1.2 var(--font)}
+.by{position:absolute;left:0;right:0;bottom:34px;text-align:center;font:700 19px/1.3 var(--font)}.by i{display:block;margin:0 auto 6px;width:62px;height:62px;border-radius:50%;background:#C8D9C4;border:3px solid #6DB46B}.by span{display:block;font-weight:500;color:#444}
+</style></head><body><div class="slide">
+<h1>Left Concept <span class="g">vs</span> Right Concept</h1>
+<div class="card"><table><colgroup><col class="a"><col class="b"><col class="c"></colgroup>
+<thead><tr><th></th><th>Left Concept<span class="pill">what</span></th><th>Right Concept<span class="pill">how</span></th></tr></thead>
+<tbody><tr><th><i></i>Core question</th><td>Question for the left column</td><td>Question for the right column</td></tr><tr><th><i></i>Key decisions</th><td>Decision list</td><td>Decision list</td></tr><tr><th><i></i>Who to target first</th><td>Short answer</td><td>Short answer</td></tr><tr><th><i></i>Learn from customers</th><td>Two-line answer that wraps onto a second line</td><td>Two-line answer that wraps onto a second line</td></tr><tr><th><i></i>When it matters</th><td>Short answer</td><td>Short answer</td></tr><tr><th><i></i>Proof</th><td>Two-line answer that wraps onto a second line</td><td>Two-line answer that wraps onto a second line</td></tr><tr><th><i></i>Example tools</th><td>Tool one &middot; Tool two</td><td>Tool one &middot; Tool two &middot; Tool three</td></tr><tr><th><i></i>Easy to copy?</th><td>Short answer</td><td>Short answer</td></tr><tr><th><i></i>Where buyers judge you</th><td>Short answer</td><td>Short answer</td></tr>
+<tr class="formula"><th><i></i>Copy this formula</th><td><div class="bub">&ldquo;We help [customer] get [outcome] with [offer].&rdquo;</div></td><td><div class="bub">&ldquo;[Input] &rarr; process &rarr; send &rarr; log outcomes&rdquo;</div></td></tr>
+<tr class="tog"><th><i></i>How they work together</th><td>Sets the direction</td><td>Runs it and reports back</td></tr>
+</tbody></table></div>
+<div class="by"><i></i>Author Name<span>Role at Company</span></div>
+</div></body></html>

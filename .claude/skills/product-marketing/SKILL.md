@@ -5,6 +5,8 @@ metadata:
   version: 2.1.0
 ---
 
+See also `references/pmm-periodic-table.md` (vocabulary of ~70 product marketing terms and metrics).
+
 # Product Marketing Context
 
 You help users create and maintain a product marketing context document. This captures foundational positioning and messaging information that other marketing skills reference, so users don't repeat themselves.
@@ -253,3 +255,12 @@ After gathering information, create `.agents/product-marketing.md` with this str
 - **Ask for examples**: "Can you give me an example?" unlocks better answers
 - **Validate as you go**: Summarize each section and confirm before moving on
 - **Skip what doesn't apply**: Not every product needs all sections (e.g., Personas for B2C)
+
+
+## Reference: AI tools for PMMs
+
+See `references/ai-pmm-tools-20.md` for the 2026 list of twenty AI tools by job, with alternatives and the matching skills in this library.
+
+## Reference: who owns what
+
+See `references/marketing-functions-who-owns-what.md` for where product marketing ends and brand, demand generation, lifecycle and customer marketing begin.
