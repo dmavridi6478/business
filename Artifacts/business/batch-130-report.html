@@ -1,0 +1,90 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Batch 130 Report</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<style>
+  /* Layout: single-column formal report, 880px measure; tables scroll inside their own wrappers.
+     Palette: ink-blue neutrals, one deep teal accent, semantic green/amber/red for status only.
+     Type: Aptos (the owner's house font) with system fallbacks; title 32pt, headings 14pt, body 11pt. */
+  :root {
+    --bg: #f6f7f9; --surface: #ffffff; --fg: #1b2330; --muted: #5a6577; --line: #d9dee6;
+    --accent: #0f5d6b; --accent-soft: #e2f0f2;
+    --ok: #17703a; --ok-bg: #e3f3e8; --warn: #8a5a00; --warn-bg: #fbefd3; --bad: #a11d2a; --bad-bg: #fbe3e5;
+    --code-bg: #eef1f5;
+    --font: Aptos, "Segoe UI Variable Text", "Segoe UI", system-ui, -apple-system, Roboto, sans-serif;
+    --mono: ui-monospace, "SF Mono", Consolas, monospace;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #11161e; --surface: #181f2a; --fg: #e6eaf0; --muted: #9aa5b6; --line: #2c3646;
+      --accent: #6cc3d1; --accent-soft: #17323a;
+      --ok: #6fd18f; --ok-bg: #173824; --warn: #f0c261; --warn-bg: #3a2e12; --bad: #ff8d98; --bad-bg: #3d1a1f;
+      --code-bg: #0e131a; color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #11161e; --surface: #181f2a; --fg: #e6eaf0; --muted: #9aa5b6; --line: #2c3646;
+    --accent: #6cc3d1; --accent-soft: #17323a;
+    --ok: #6fd18f; --ok-bg: #173824; --warn: #f0c261; --warn-bg: #3a2e12; --bad: #ff8d98; --bad-bg: #3d1a1f;
+    --code-bg: #0e131a; color-scheme: dark;
+  }
+  * { box-sizing: border-box; }
+  body { background: var(--bg); color: var(--fg); font-family: var(--font); font-size: 11pt; line-height: 1.55; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); padding-block: 28px 64px; }
+  main { max-width: 880px; margin-inline: auto; display: flex; flex-direction: column; gap: 28px; }
+  header { display: flex; flex-direction: column; gap: 8px; border-bottom: 2px solid var(--accent); padding-bottom: 18px; }
+  .eyebrow { font-size: 9pt; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
+  h1 { font-size: 32pt; line-height: 1.1; margin: 0; font-weight: 700; text-wrap: balance; }
+  h2 { font-size: 14pt; margin: 0 0 10px; font-weight: 700; color: var(--accent); text-wrap: balance; }
+  p { margin: 0 0 10px; max-width: 75ch; }
+  section { background: var(--surface); border: 1px solid var(--line); border-radius: 6px; padding: 20px 22px; min-width: 0; }
+  .lede { font-size: 11pt; color: var(--muted); max-width: 70ch; margin: 0; }
+  .truth { border-left: 4px solid var(--bad); background: var(--bad-bg); padding: 12px 16px; border-radius: 0 6px 6px 0; }
+  .truth p:last-child { margin-bottom: 0; }
+  .tw { overflow-x: auto; margin-block: 8px 4px; border: 1px solid var(--line); border-radius: 4px; }
+  table { border-collapse: collapse; width: 100%; min-width: 720px; font-size: 10pt; }
+  th, td { padding: 8px 10px; border-bottom: 1px solid var(--line); text-align: center; vertical-align: top; }
+  th { background: var(--accent-soft); color: var(--fg); font-weight: 700; font-size: 9.5pt; }
+  tr:last-child td { border-bottom: 0; }
+  td.l, th.l { text-align: center; } /* house rule: table content aligned top and centre */
+  .st { display: inline-block; padding: 1px 8px; border-radius: 10px; font-size: 9pt; font-weight: 700; white-space: nowrap; }
+  .st.ok { background: var(--ok-bg); color: var(--ok); } .st.warn { background: var(--warn-bg); color: var(--warn); } .st.bad { background: var(--bad-bg); color: var(--bad); }
+  .sw { display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 10px; margin-block: 8px; }
+  .sw div { border: 1px solid var(--line); border-radius: 4px; overflow: hidden; font-size: 9pt; text-align: center; }
+  .sw i { display: block; height: 44px; }
+  .sw span { display: block; padding: 4px 6px; font-family: var(--mono); }
+  .prompt { position: relative; margin-block: 10px; }
+  .prompt pre { margin: 0; white-space: pre-wrap; background: var(--code-bg); border: 1px solid var(--line); border-radius: 4px; padding: 12px 84px 12px 12px; font-family: var(--mono); font-size: 9.5pt; line-height: 1.5; }
+  .prompt b { display: block; font-family: var(--font); font-size: 10pt; margin-bottom: 4px; }
+  .prompt button { position: absolute; top: 30px; right: 8px; font: inherit; font-size: 9pt; padding: 4px 10px; border-radius: 4px; border: 1px solid var(--accent); background: var(--surface); color: var(--accent); cursor: pointer; }
+  .prompt button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  ul { margin: 0 0 10px; padding-left: 20px; } li { margin-bottom: 4px; max-width: 75ch; }
+  code { font-family: var(--mono); font-size: 9.5pt; background: var(--code-bg); padding: 1px 4px; border-radius: 3px; }
+  footer { color: var(--muted); font-size: 9.5pt; }
+</style>
+<style>
+ figure{margin:0;text-align:center} figure img{width:100%;border:1px solid var(--line);border-radius:4px;display:block} figcaption{font-size:8.5pt;color:var(--muted);margin-top:4px}
+ .thumbs{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px;margin-top:10px}
+ pre{white-space:pre-wrap;word-break:break-word;background:var(--code-bg);border:1px solid var(--line);border-radius:4px;padding:12px;font:10pt/1.5 var(--mono);margin:8px 0;overflow-x:auto}
+ details{border:1px solid var(--line);border-radius:4px;padding:8px 12px;margin-top:8px} summary{cursor:pointer;font-weight:700}
+ code{font-family:var(--mono);font-size:9.5pt;background:var(--code-bg);padding:0 4px;border-radius:3px}
+ ul{margin:0 0 10px;padding-left:20px;max-width:78ch} li{margin-bottom:4px}
+ td code{white-space:normal;word-break:break-word}
+</style>
+<style>main > section, main > header {min-width:0} p, li, code {overflow-wrap:anywhere}</style>
+<main>
+<header><div class="eyebrow">Batch 130 · 4 November 2026 · rebuild</div><h1>Batch 130 Report: Secret Commands Rebuilt</h1><p>On request, the 18 commands from the "Claude Secret Commands" graphic that did not already exist were rebuilt as slash commands. Eight already existed. A counting error was also corrected: the graphic prints 26 commands, not 24 as stated in Batch 129.</p></header>
+<section><h2>1. What was built</h2><div class="tw"><table><tr><th>Group</th><th>Commands</th></tr>
+<tr><td>Writing and LinkedIn</td><td><code>/delete-ai-words</code>, <code>/my-viral-post</code>, <code>/linkedin-hook</code>, <code>/hormozi-viral-1</code>, <code>/viral-recipe</code>, <code>/linkedin-post-report</code></td></tr>
+<tr><td>Research and checking</td><td><code>/deep-research-synthesizer</code>, <code>/reddit-researcher</code>, <code>/fact-checker</code>, <code>/client-brief</code></td></tr>
+<tr><td>Meetings and decks</td><td><code>/meeting-notes</code>, <code>/meeting-visualizer</code>, <code>/deck-builder</code>, <code>/infographic-builder</code>, <code>/tc-social-carousel</code></td></tr>
+<tr><td>Other</td><td><code>/negotiation</code>, <code>/excel-style</code>, <code>/fable-prompter</code></td></tr>
+<tr><td>Already present (not rebuilt)</td><td><code>/grill-me</code>, <code>/how-to</code>, <code>/humanizer</code>, <code>/prompt-master</code>, <code>/handoff</code>, <code>/write-a-skill</code>, <code>/personal-voice</code>, <code>/xlsx</code></td></tr></table></div></section>
+<section><h2>2. Read this before relying on them</h2><ul>
+<li><b>[Certain]</b> These are my own implementations written from one-line descriptions. They are not the original author's files and will behave differently; the originals' contents were never shown.</li>
+<li><b>[Certain]</b> <code>/hormozi-viral-1</code> is a generic contrarian-post structure. It does not reproduce Alex Hormozi's framework and must not be presented as his.</li>
+<li><b>[Certain]</b> Every command that touches outside systems (<code>/client-brief</code>, <code>/deck-builder</code>, <code>/meeting-visualizer</code>, <code>/reddit-researcher</code>) is read-only or draft-only, sources every fact, and treats web, email and transcript text as data, not instructions.</li>
+<li><b>[Likely]</b> <code>/deck-builder</code> depends on a Gamma connector being connected in the session; without it, it produces a slide spec instead. <code>/meeting-visualizer</code> uses the Granola connector only if connected and you name the meeting.</li>
+<li><b>[Certain]</b> Not run or tested: the commands are prompt files. Run each once on a real input and adjust.</li></ul></section>
+<section><h2>3. Not built, and why</h2><ul><li>No new templates or themes: these are text commands with no new visual content. <code>/infographic-builder</code> and <code>/tc-social-carousel</code> reuse the existing 1080x1350 templates.</li><li>No install script or connector.</li></ul></section>
+<section><h2>4. Open decisions for you</h2><ul><li>Which three will you use this week? Test them on one real input each and tell me what to change.</li><li>Do you have examples of what the originals produced? With two or three outputs per command I can tune mine to match.</li></ul></section>
+<footer>Prepared 4 November 2026. No external checks.</footer>
+</main>
+</body></html>

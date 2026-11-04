@@ -6219,3 +6219,11 @@ Built from `2a5624a1-6_Key_Business_Models.zip` (ten graphics, three animated). 
 - 6 commands: `/gtm-five-questions`, `/linkedin-gtm-map`, `/ai-gov-25`, `/salary-prep`, `/free-site-pick`, `/secret-command-map`.
 - 1 design template (`rings-three-layers-callouts`) and 1 theme (`layers-green-blue-pink`).
 - `Artifacts/operations/workflows-batch-129.html` (3 workflows), `Artifacts/business/batch-129-intake-report.html`, `docs/batch-129-prompts.md` (six original prompts).
+
+## Batch 130 (4 November 2026)
+
+On request, rebuilt the 18 missing commands from the "Claude Secret Commands" graphic (the other 8 already existed). Corrected Batch 129: the graphic prints 26 commands, not 24.
+
+- 18 commands: `/delete-ai-words`, `/my-viral-post`, `/infographic-builder`, `/deep-research-synthesizer`, `/deck-builder`, `/linkedin-hook`, `/fable-prompter`, `/negotiation`, `/excel-style`, `/hormozi-viral-1`, `/meeting-notes`, `/client-brief`, `/linkedin-post-report`, `/viral-recipe`, `/meeting-visualizer`, `/tc-social-carousel`, `/reddit-researcher`, `/fact-checker`. My own implementations from one-line jobs, not the originals; `/hormozi-viral-1` is not Hormozi's framework.
+- Skill `claude-secret-commands-24` updated (26 commands, rebuilt status); `/secret-command-map` updated.
+- `Artifacts/operations/workflows-batch-130.html` (3 workflows), `Artifacts/business/batch-130-report.html`, `docs/batch-130-prompts.md`.

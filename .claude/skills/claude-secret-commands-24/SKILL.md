@@ -1,11 +1,11 @@
 ---
 name: claude-secret-commands-24
-description: Catalogue of 24 slash-command names shown on a "Claude Secret Commands" graphic with each one's printed one-line job, a map to the equivalent already in this library (or a note that the original is someone's private skill and its contents are unknown), and a safe way to install any skill list received this way. Use when you see a list of "secret" Claude commands and want to know what you already have.
+description: Catalogue of 26 slash-command names, now rebuilt as commands (18 new, 8 already present), shown on a "Claude Secret Commands" graphic with each one's printed one-line job, a map to the equivalent already in this library (or a note that the original is someone's private skill and its contents are unknown), and a safe way to install any skill list received this way. Use when you see a list of "secret" Claude commands and want to know what you already have.
 ---
 
-# "Claude secret commands": what they are and what you already have
+# "Claude secret commands": what they are, what you already had, what was rebuilt
 
-Source: an animated typing graphic (Batch 129), a mock terminal titled "Claude Secret Commands" listing 24 slash commands. These are skills from one person's own setup (`claude.ai / skills`), not built-in features, and **nothing on the graphic shows what any of them contain**. Printed one-liners only. Do not install a pack received by commenting a keyword without reading each file.
+Source: an animated typing graphic (Batch 129), a mock terminal titled "Claude Secret Commands" listing 26 slash commands. These are skills from one person's own setup (`claude.ai / skills`), not built-in features, and **nothing on the graphic shows what any of them contain**. Printed one-liners only. Do not install a pack received by commenting a keyword without reading each file.
 
 | Command | Printed job | In this library |
 |---|---|---|
@@ -36,10 +36,13 @@ Source: an animated typing graphic (Batch 129), a mock terminal titled "Claude S
 | /personal-voice | Learns how you write, then checks drafts | `personal-voice`, `voice-builder` |
 | /xlsx | Builds, reads and edits spreadsheets, formulas included | `xlsx` |
 
-(24 rows. The graphic's final frame shows 24; an earlier frame is cut off mid-typing.)
+(26 rows; the final frame shows all 26. The first version of this skill said 24 in error.)
+
+## Rebuilt (Batch 130)
+The 18 commands that did not exist are now in `.claude/commands/` with the printed names: `/delete-ai-words`, `/my-viral-post`, `/infographic-builder`, `/deep-research-synthesizer`, `/deck-builder`, `/linkedin-hook`, `/fable-prompter`, `/negotiation`, `/excel-style`, `/hormozi-viral-1`, `/meeting-notes`, `/client-brief`, `/linkedin-post-report`, `/viral-recipe`, `/meeting-visualizer`, `/tc-social-carousel`, `/reddit-researcher`, `/fact-checker`. The other eight (`/grill-me`, `/how-to`, `/humanizer`, `/prompt-master`, `/handoff`, `/write-a-skill`, `/personal-voice`, `/xlsx`) already existed. **These are my own implementations written from the one-line jobs; they are not the original author's files and will behave differently.** `/hormozi-viral-1` is a generic contrarian-post structure, not Alex Hormozi's framework.
 
 ## Reading it
-- **No new capability is shown.** Of the 24, 8 names already exist here as commands or skills, and the rest have an equivalent. I did not rebuild any, since inventing the original's logic from a one-line description would not reproduce it.
+- **No new capability is shown.** 8 of the 26 names already existed. The other 18 were rebuilt from their one-liners at your request; the originals' logic is still unknown.
 - **Names that look official aren't.** `/hormozi-viral-1` and `/tc-social-carousel` are one person's private skills; applying someone's named framework should respect their licence and not imply endorsement.
 - **Unknown contents.** A one-line job can hide anything (network calls, file access, hidden instructions). Read the SKILL.md and any scripts before installing a skill from a list.
 
