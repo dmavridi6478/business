@@ -6209,3 +6209,13 @@ Three inline images, none covered earlier: ten sales agents (SalesDaily), three 
 - 3 new skills: `sales-agents-10-schedule` (ten instruction lines verbatim; draft-only, CRM-write, outreach-law and injection checks; one-agent-a-week rollout), `pmm-three-levels` (junior, senior, staff on ten factors with a self-assessment) and `digital-marketing-claude-prompts-6` (six prompts verbatim; data and claim checks).
 - 3 commands: `/sales-agent`, `/pmm-level`, `/dm-prompt`.
 - `Artifacts/operations/workflows-batch-128.html` (3 workflows), `Artifacts/business/batch-128-intake-report.html`, `docs/batch-128-prompts.md` (sixteen verbatim, one original).
+
+## Batch 129 (4 November 2026)
+
+Built from `2a5624a1-6_Key_Business_Models.zip` (ten graphics, three animated). Under the skip-covered rule, three were ignored: 6 Key Business Models (`business-models-6`), 7 marketing frameworks (`/marketing-frameworks-7`) and the 14-phrases panel (`/salary`). Nothing was installed.
+
+- 6 new skills: `gtm-five-questions-three-layers`, `linkedin-gtm-map-5-rings`, `ai-governance-25-decisions` (two author trademarks attributed; scorecard), `salary-negotiation-kit` (poster statistics flagged unsourced; EU pay-transparency caution), `free-websites-22` (sites not checked live; privacy notes) and `claude-secret-commands-24` (names mapped to existing equivalents; contents unknown).
+- New reference `claude-code-marketing-team/references/deloitte-style-60-agents.md` (12 departments, 60 agent names; no prompts shown).
+- 6 commands: `/gtm-five-questions`, `/linkedin-gtm-map`, `/ai-gov-25`, `/salary-prep`, `/free-site-pick`, `/secret-command-map`.
+- 1 design template (`rings-three-layers-callouts`) and 1 theme (`layers-green-blue-pink`).
+- `Artifacts/operations/workflows-batch-129.html` (3 workflows), `Artifacts/business/batch-129-intake-report.html`, `docs/batch-129-prompts.md` (six original prompts).

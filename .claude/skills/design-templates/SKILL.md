@@ -664,3 +664,16 @@ Original SVG, CSS and placeholder wording. Overlap checked: `mountain-roadmap-6`
 | Theme file | Light | Dark | Fonts (free) |
 |---|---|---|---|
 | `theme-brand-road-green-yellow.html` | bg `#F4FAF5`, text `#12382A`, accent `#1F5A3E` (template adds yellow `#FBF3A8`) | bg `#0C1A14`, accent `#7BD6A0` | Inter |
+
+
+## Batch 129 additions
+
+| Template | Use for | Layout |
+|---|---|---|
+| `rings-three-layers-callouts.html` | "N layers of X" concentric diagrams | 1080x1350; white page, huge title, subtitle, three concentric rings (green, blue, magenta) with a label on each, three colour-matched callout cards, curved caption, footer |
+
+Original SVG and CSS only. Overlap checked: `hub-tall-center-4-sides`, `radial-principles-7` and `road-phases-90-days` are different shapes. Not built: a five-ring LinkedIn map (half-ring art, same colour system), a 60-agent grid (`system-steps-grid-10` and `file-explorer-system-card` cover that), a nine-panel poster collage. First pass had labels colliding with the rings; fixed. Rendered at 1080x1350, no overflow.
+
+| Theme file | Light | Dark | Fonts (free) |
+|---|---|---|---|
+| `theme-layers-green-blue-pink.html` | bg `#FFFFFF`, text `#111111`, accent `#169A52` (template adds blue `#2F6FE0`, magenta `#E0287F`) | bg `#0C1410`, accent `#58D68D` | Inter |

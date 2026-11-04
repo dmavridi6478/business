@@ -84,3 +84,5 @@ Those commands match the `marketing:*` plugin skills (`marketing:campaign-plan`,
 
 
 See also (Batch 124): `claude-marketing-department-48`, a catalogue of a 48-item Claude marketing repository (titles only; contents unverified) mapped to the skills in this library.
+
+- **ai-marketing-team-60 reference**: `references/deloitte-style-60-agents.md` lists a 12-department, 60-agent map (names only, contents unverified) (Batch 129).
