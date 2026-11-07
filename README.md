@@ -6087,3 +6087,17 @@ Not done (needs you): plugin installs (`/plugin install paypal@claude-plugins-of
 **Source problems:** the @sitetusk "they don't want you to know" framing is clickbait; Oh My Zsh's README install is a piped `curl | sh` and it renames your `.zshrc`; BCUninstaller's README says "Looking for maintainers"; WinDirStat can delete files; ImageMagick's "200+ formats" is not in its README; Whitebophir, DeepDiagram and SearXNG are AGPL-3.0; star counts are unverified; "Springback" is a self-promotion app.
 
 **Not done:** nothing cloned, installed or run; no connector installed (Mermaid Chart, tldraw and Whimsical need your sign-in; n8n needs re-authentication); no agent guide or workflow in the files; `.mcp.json` unchanged.
+
+## Batch 112 — iCloud Photos archive (60 images, eight creators; files numbered 116; 7 November 2026)
+
+**Report:** Batch 112 Intake Report (`Artifacts/business/batch-116-intake-report.html`; the published link is in the pull request). Plain-text prompts: `docs/batch-116-prompts.md`. Action plan: `docs/batch-116-action-plan.md`.
+
+**Sources:** @inikolov.ai (the `anatomy` skill), @emmanuelnyatefe KOOEMMA "10 free apps", @capacityso "6 GitHub repos", @raphal3494 "6 Rust repos", @dotdevs "5 GitHub projects", @vibe.worker "5 ways your vibe-coded app will get hacked", @dagier_official (Recraft, Hedra, Lovable) and "5 Websites that 10x'd my website traffic".
+
+**Added:** skills `oss-finds-eight-creators-nov2026`, `vibe-app-five-holes`, `freelance-and-traffic-sites-nov2026`; commands `/vibe-check`, `/free-app-pick`; design templates `free-app-card-green-condensed`, `neon-lime-explainer-slide`, `hole-fix-photo-scrim`, `instead-of-dark-card` and themes `theme-kooemma-green-condensed`, `theme-neon-lime-black`, `theme-night-scrim-white-label`, `theme-instead-of-dark`; user-run `scripts/batch116-install.sh` (four shallow clones for reading). All 16 repos confirmed to exist; licences read from the repos.
+
+**Already existed, not duplicated:** t3code, claude-mem, superpowers, Karpathy skills, Zed, uv, Tauri, Polars, Goose, AFFiNE, Traefik, Keila, Instatic, Automa, Excalidraw, Penpot, Syncthing, Stirling PDF, HandBrake.
+
+**Source problems:** Upscayl and RustDesk are AGPL-3.0; Czkawka deletes files and Ventoy writes to USB; the "undercut the designers" pitch has no evidence; "10x'd traffic" has no baseline; OpenMausBot runs your Claude, Codex and Grok CLIs under your login; star counts and the anatomy age claim are unverified; Capacity, Omniscio and Slothy are promotions, not assessed.
+
+**Not done:** nothing cloned, installed or run; no connector, agent or workflow (none in the files); `.mcp.json` unchanged.
