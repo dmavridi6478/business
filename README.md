@@ -6073,3 +6073,17 @@ Not done (needs you): plugin installs (`/plugin install paypal@claude-plugins-of
 **Source problems:** TruffleHog is AGPL-3.0 and its "verified" results come from testing found secrets against the real service; Trivy had a supply-chain compromise in March 2026 (a malicious binary and rewritten GitHub Action tags), so pin to a verified release or commit SHA; Craft Anything is a reverse-engineering engine and its "clean room" mode is a rule, not a sandbox; Scrapling's README advertises CAPTCHA and Cloudflare bypass; agent-desktop gives an agent control of any app you grant; the Zed Linux installer pipes a script into a shell; star counts and the authors' own test results are unverified; the Game Studios README says four games were built but its table shows two; the video's scan screens are illustrative.
 
 **Not done:** nothing cloned, installed or run; no scanner executed; `.mcp.json` unchanged (the Scrapling and agent-desktop MCP entries are in the action plan for your own machine); no connector in the registry matches these tools (TinyFish is already connected); no workflow (none in the files).
+
+## Batch 111 — iCloud Photos archive (26 images) plus two inline images (files numbered 115; 7 November 2026)
+
+**Report:** Batch 111 Intake Report (`Artifacts/business/batch-115-intake-report.html`; the published link is in the pull request). Plain-text prompts: `docs/batch-115-prompts.md`. Action plan: `docs/batch-115-action-plan.md`.
+
+**Sources:** the LinkedIn Positioning Triangle (Nader Alnajjar, LEVER), "9 Mission-Critical Go-to-Market Models" (Marceline Tsobgny, NipPro AI), @palidev21 "5 GitHub tools you'll wish you found sooner", @dotdevs "5 GitHub projects worth exploring" and "Selling unused things? Let ChatGPT help", and @sitetusk "5 GitHub projects they don't want you to know about".
+
+**Added:** skills `oss-finds-three-carousels-nov2026`, `sell-unused-things-prompts`, `linkedin-positioning-triangle`, `gtm-nine-models`; commands `/sell-listing`, `/positioning-triangle`, `/gtm-model-pick`, `/oss-tool-pick`; design templates `tool-card-mono-features`, `repo-card-dark-checker`, `infographic-positioning-triangle`, `infographic-nine-models-grid` and themes `theme-mono-blue-pop`, `theme-checker-night-green`, `theme-triad-teal-blue-orange`, `theme-mint-nine-grid`; user-run `scripts/batch115-install.sh` (shallow clones for reading and one virtualenv install of `rich`, each behind a question; no piped installers). All 15 repos were confirmed to exist and their licences read from the repos' own files.
+
+**Already existed, not duplicated:** the five @dotdevs repos (in `replace-so-agent-repos`; only a new star snapshot was added), KeePassXC and SearXNG, `/linkedin-positioning-statement` and `pricing`.
+
+**Source problems:** the @sitetusk "they don't want you to know" framing is clickbait; Oh My Zsh's README install is a piped `curl | sh` and it renames your `.zshrc`; BCUninstaller's README says "Looking for maintainers"; WinDirStat can delete files; ImageMagick's "200+ formats" is not in its README; Whitebophir, DeepDiagram and SearXNG are AGPL-3.0; star counts are unverified; "Springback" is a self-promotion app.
+
+**Not done:** nothing cloned, installed or run; no connector installed (Mermaid Chart, tldraw and Whimsical need your sign-in; n8n needs re-authentication); no agent guide or workflow in the files; `.mcp.json` unchanged.

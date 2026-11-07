@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Positioning Triangle Infographic</title>
+<style>
+/* TEMPLATE: Positioning triangle infographic (from the Nader Alnajjar / LEVER "How To Position Yourself as an Expert on LinkedIn" infographic).
+   Responsive page: T, U and D panels with weak/strong rows, a four-way differentiation band, a build-your-line panel with live preview,
+   before/after rows and a where-to-use strip. Original layout and copy structure; only the formula and the before/after examples follow the source.
+   Swap: panel text, the .ex rows, the input defaults. The line preview is plain JS; nothing is sent anywhere. */
+:root{--bg:#f7f9fa;--panel:#fff;--line:#d6e0e4;--ink:#10222a;--muted:#4f6670;--t:#0e8f8a;--u:#2b6fd6;--d:#e8742a;--font:Aptos,'Segoe UI',Inter,Arial,sans-serif}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0d1a1f;--panel:#15262d;--line:#2a414a;--ink:#e9f3f5;--muted:#97b0b8;--t:#3fd0c8;--u:#7aa2ff;--d:#ff9a55}}
+:root[data-theme="dark"]{--bg:#0d1a1f;--panel:#15262d;--line:#2a414a;--ink:#e9f3f5;--muted:#97b0b8;--t:#3fd0c8;--u:#7aa2ff;--d:#ff9a55}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--ink);font:11pt/1.55 var(--font);padding:32px max(16px,env(safe-area-inset-left,0px))}
+.wrap{max-width:1020px;margin:0 auto}
+h1{font:800 32pt/1.1 var(--font);text-wrap:balance}h2{font-size:14pt;margin-bottom:8px}
+.sub{color:var(--muted);margin:8px 0 22px;max-width:70ch}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.card{background:var(--panel);border:2px solid var(--line);border-radius:16px;padding:16px 18px}
+.card.t{border-top:6px solid var(--t)}.card.u{border-top:6px solid var(--u)}.card.d{border-top:6px solid var(--d)}
+.badge{display:inline-block;font-weight:800;font-size:14pt;margin-bottom:6px}.t .badge{color:var(--t)}.u .badge{color:var(--u)}.d .badge{color:var(--d)}
+.ex{margin-top:8px;padding:8px 10px;border-radius:10px;background:var(--bg);font-size:10.5pt}.ex b{color:var(--muted)}
+.band{margin-top:14px}.band ul{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;list-style:none;margin-top:8px}
+.band li{border:2px solid var(--d);border-radius:12px;padding:10px 12px;font-size:10.5pt}
+.build{margin-top:14px}.build label{display:block;margin-top:8px;font-size:10.5pt;color:var(--muted)}
+.build input{width:100%;margin-top:4px;padding:10px 12px;border-radius:10px;border:2px solid var(--line);background:var(--bg);color:var(--ink);font:inherit}
+.line{margin-top:12px;padding:14px 16px;border-radius:12px;border:2px dashed var(--t);font-weight:700}
+.tbl{overflow-x:auto;margin-top:14px;border:2px solid var(--line);border-radius:12px;background:var(--panel)}
+table{border-collapse:collapse;width:100%;min-width:560px}th,td{border:1px solid var(--line);padding:8px 10px;text-align:center;vertical-align:top}th{background:var(--bg)}
+.use{margin-top:14px;display:grid;grid-template-columns:repeat(4,1fr);gap:10px}.use div{background:var(--panel);border:2px solid var(--line);border-radius:12px;padding:10px 12px;font-size:10.5pt}
+@media (max-width:760px){h1{font-size:24pt}.grid3,.band ul,.use{grid-template-columns:1fr}}
+</style></head><body><div class="wrap">
+<h1>One line, three corners</h1>
+<p class="sub">Target audience, unique value, differentiation. If the line sounds like a CV, a stranger in your audience will not recognise it as theirs.</p>
+<div class="grid3">
+<div class="card t"><span class="badge">T</span><h2>Target audience</h2><p>The exact people you help and the problem they would pay to fix.</p><div class="ex"><b>Weak</b> "Business owners"</div><div class="ex"><b>Strong</b> "Founders who want LinkedIn bringing in leads"</div></div>
+<div class="card u"><span class="badge">U</span><h2>Unique value</h2><p>What they walk away with, in outcomes they recognise.</p><div class="ex"><b>Weak</b> "I help with personal branding"</div><div class="ex"><b>Strong</b> "Turn a founder's LinkedIn into steady inbound calls"</div></div>
+<div class="card d"><span class="badge">D</span><h2>Differentiation</h2><p>Why they pick you over someone making the same promise. Pick one and commit.</p></div>
+</div>
+<div class="card band"><h2>Four kinds of differentiator</h2><ul><li><b>A method</b><br>a process others do not run</li><li><b>A view</b><br>one you will defend</li><li><b>A proof point</b><br>work nobody else can claim</li><li><b>A focus</b><br>one niche, done properly</li></ul></div>
+<div class="card build"><h2>Build your line</h2>
+<label>I help (target audience)<input id="t" value="SaaS founders"></label>
+<label>get (value)<input id="u" value="booked sales calls from LinkedIn"></label>
+<label>by (differentiator)<input id="d" value="a process I can show you results for"></label>
+<div class="line" id="out"></div></div>
+<div class="tbl"><table><thead><tr><th>Before</th><th>After</th></tr></thead><tbody>
+<tr><td>"Marketing consultant"</td><td>"I help SaaS founders turn LinkedIn into booked sales calls"</td></tr>
+<tr><td>"Business coach"</td><td>"I help agency owners scale past their first hire without working weekends"</td></tr>
+<tr><td>"Recruiter"</td><td>"I help early-stage startups hire their first sales team in under a month"</td></tr>
+<tr><td>"Freelance designer"</td><td>"I design landing pages that turn founder content into booked calls"</td></tr></tbody></table></div>
+<div class="use"><div><b>1 Headline</b><br>who you help and what they get</div><div><b>2 About</b><br>open with the line, then prove it</div><div><b>3 Banner</b><br>your offer in one line</div><div><b>4 Posts</b><br>audience and view in hooks</div></div>
+<p class="sub">Use only numbers you can back. "In under a month" is a promise.</p>
+</div>
+<script>
+(function(){var t=document.getElementById('t'),u=document.getElementById('u'),d=document.getElementById('d'),o=document.getElementById('out');
+function r(){o.textContent='I help '+t.value+' get '+u.value+' by '+d.value+'.';}
+[t,u,d].forEach(function(e){e.addEventListener('input',r)});r();})();
+</script></body></html>

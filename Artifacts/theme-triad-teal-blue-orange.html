@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Triad Teal Blue Orange - Theme</title>
+<style>
+/* THEME: Triad Teal Blue Orange (from the LEVER positioning-triangle infographic: three corner colours for T, U and D). Light default; dark on prefers-color-scheme: dark or [data-theme="dark"]. Aptos first in the font stack. */
+:root{--bg:#f7f9fa;--panel:#ffffff;--line:#d6e0e4;--ink:#10222a;--muted:#4f6670;--accent:#0e8f8a;--accent2:#e8742a;--font:Aptos,'Segoe UI',Inter,Arial,sans-serif}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0d1a1f;--panel:#15262d;--line:#2a414a;--ink:#e9f3f5;--muted:#97b0b8;--accent:#3fd0c8;--accent2:#ff9a55}}
+:root[data-theme="dark"]{--bg:#0d1a1f;--panel:#15262d;--line:#2a414a;--ink:#e9f3f5;--muted:#97b0b8;--accent:#3fd0c8;--accent2:#ff9a55}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--ink);font:11pt/1.55 var(--font);padding:40px 16px}
+main{max-width:640px;margin:0 auto;display:grid;gap:16px}
+h1{font:800 32pt/1.08 var(--font)}h1 em{font-style:normal;color:var(--accent)}h2{font-size:14pt}
+.card{background:var(--panel);border:2px solid var(--line);border-radius:14px;padding:16px 18px}
+.pill{display:inline-block;background:var(--accent);color:var(--bg);border-radius:999px;padding:6px 16px;font-weight:700}
+.muted{color:var(--muted)}.two{color:var(--accent2)}
+</style></head><body><main>
+<h1>Position yourself <em>in one line</em></h1>
+<div class="card"><h2>Sample card</h2><p>Body text in Aptos at 11 pt. <span class="two">Second accent</span> for highlights.</p><p><span class="pill">Get it: GitHub</span></p></div>
+<p class="muted">Tokens: bg, panel, line, ink, muted, accent, accent2. Swap the values on :root to restyle any template that reads them.</p>
+</main></body></html>

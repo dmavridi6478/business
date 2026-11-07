@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tool Card - Mono Features</title>
+<style>
+/* TEMPLATE: Tool card, mono with feature grid (from the @palidev21 "5 GitHub tools you'll wish you found sooner" carousel).
+   One 1080x1350 slide: white page, a heavy tool name, one line of what it does, a browser-frame screenshot panel, a 2x2 feature grid
+   with simple inline icons, and a black "Get it: GitHub" pill. Original CSS; the screenshot panel is a placeholder, no source image is reused.
+   Swap: .name, .what, .shot (replace with an <img>), the four .feat items, .pill text, .handle. State the licence and platform from the repo, not from memory. */
+:root{--bg:#fff;--panel:#f4f6fa;--line:#d9dee8;--ink:#0b0b0f;--muted:#5b6170;--accent:#1f5bff;--pill:#0b0b0f;--pill-ink:#fff;--stage:#e9ecf3;
+  --font:Aptos,'Segoe UI',Inter,Arial,sans-serif}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0c0d11;--panel:#16181f;--line:#2a2e3a;--ink:#f2f3f7;--muted:#9aa1b2;--accent:#5b8cff;--pill:#f2f3f7;--pill-ink:#0c0d11;--stage:#1d2029}}
+:root[data-theme="dark"]{--bg:#0c0d11;--panel:#16181f;--line:#2a2e3a;--ink:#f2f3f7;--muted:#9aa1b2;--accent:#5b8cff;--pill:#f2f3f7;--pill-ink:#0c0d11;--stage:#1d2029}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#2b2b2b;display:flex;justify-content:center;padding:24px 0;font-family:var(--font)}
+.slide{width:1080px;height:1350px;background:var(--bg);color:var(--ink);padding:70px 76px;position:relative;overflow:hidden}
+.num{font-size:30px;font-weight:700;color:var(--accent);letter-spacing:4px}
+.name{margin-top:10px;font:900 118px/1 var(--font);letter-spacing:-3px}
+.what{margin-top:22px;font-size:36px;line-height:1.4;color:var(--muted);max-width:880px}
+.browser{margin-top:44px;border:2px solid var(--line);border-radius:26px;overflow:hidden;background:var(--panel)}
+.bar{display:flex;gap:10px;align-items:center;padding:16px 22px;border-bottom:2px solid var(--line)}
+.bar i{width:16px;height:16px;border-radius:50%;background:var(--line);display:block}
+.shot{height:300px;background:var(--stage);display:grid;place-items:center;color:var(--muted);font-size:26px;text-align:center;padding:20px}
+.feats{margin-top:34px;display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.feat{background:var(--panel);border:2px solid var(--line);border-radius:22px;padding:22px 26px;display:flex;gap:18px;align-items:flex-start}
+.feat svg{flex:none;width:44px;height:44px;stroke:var(--accent);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.feat b{display:block;font-size:30px}.feat span{font-size:25px;color:var(--muted);line-height:1.35}
+.pill{position:absolute;left:76px;bottom:70px;background:var(--pill);color:var(--pill-ink);border-radius:999px;padding:20px 44px;font-size:32px;font-weight:700}
+.handle{position:absolute;right:76px;bottom:84px;font-size:26px;color:var(--muted)}
+@media (max-width:1100px){body{padding:0}.slide{width:100%;height:auto;padding:28px 18px 96px}.name{font-size:52px;letter-spacing:-1px}.what{font-size:17px;margin-top:10px}.num{font-size:14px}.browser{margin-top:20px;border-radius:16px}.shot{height:auto;min-height:130px;font-size:13px}.feats{grid-template-columns:1fr;gap:10px;margin-top:16px}.feat{padding:12px 14px;border-radius:14px}.feat svg{width:26px;height:26px}.feat b{font-size:16px}.feat span{font-size:14px}.pill{left:18px;bottom:24px;padding:10px 22px;font-size:15px}.handle{right:18px;bottom:30px;font-size:13px}}
+</style></head><body><div class="slide">
+<div class="num">01 / 05</div>
+<div class="name">Tool name</div>
+<p class="what">One plain sentence that matches the repo's own README: what it does and who it is for.</p>
+<div class="browser"><div class="bar"><i></i><i></i><i></i></div><div class="shot">Replace with a real screenshot of the tool</div></div>
+<div class="feats">
+<div class="feat"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M8 20h8"/></svg><div><b>Feature one</b><span>Short, checked against the README.</span></div></div>
+<div class="feat"><svg viewBox="0 0 24 24"><path d="M4 6h16M4 12h10M4 18h16"/></svg><div><b>Feature two</b><span>Short, checked against the README.</span></div></div>
+<div class="feat"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><path d="M12 8v4l3 2"/></svg><div><b>Feature three</b><span>Short, checked against the README.</span></div></div>
+<div class="feat"><svg viewBox="0 0 24 24"><path d="M5 12l4 4 10-10"/></svg><div><b>Feature four</b><span>Platform and licence go here.</span></div></div>
+</div>
+<div class="pill">Get it: GitHub</div><div class="handle">@yourhandle</div>
+</div></body></html>
