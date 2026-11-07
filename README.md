@@ -6059,3 +6059,17 @@ Not done (needs you): plugin installs (`/plugin install paypal@claude-plugins-of
 **Source problems:** OpenViking is AGPL-3.0 (not mentioned on the card or in the earlier rows); "Anthropic Cybersecurity Skills" is not made by Anthropic; "Awesome Harness Engineering" is ambiguous (three repos share the name); star counts unverified; the Hermes guide is a lead magnet and was not included.
 
 **Not done:** no connector installed (registry check only; several need your sign-in); nothing cloned or installed; no workflow (none in the images); `.mcp.json` unchanged.
+
+## Batch 110 — iCloud Photos archive (11 images, 1 video; 7 November 2026)
+
+**Report:** Batch 110 Intake Report (`Artifacts/business/batch-114-intake-report.html`; the published link is in the pull request). Plain-text prompts: `docs/batch-114-prompts.md`. Action plan: `docs/batch-114-action-plan.md`.
+
+**Sources:** @your.aimentor "5 GitHub repos everyone starred this week" (Claude Code Game Studios, Craft Anything, Scrapling, Zed, agent-desktop; cover, five repo cards, five detail slides) and a @cyberwithjohann video "5 GitHub Repositories to Find Security Problems in Code" (Gitleaks, TruffleHog, Trivy, Semgrep, Prowler).
+
+**Added:** skills `five-repos-agent-tools-nov2026`, `security-scanners-five`, `game-studio-chain-of-command`; commands `/scanner-pick`, `/studio-plan`; agent `game-studio-planner`; design templates `repo-get-it-cream`, `scan-result-terminal-card` and theme `theme-scan-night-ember`; user-run `scripts/batch114-install.sh` (clones and one virtualenv install, each behind a question). All 10 repos were confirmed to exist and their licences read from the repos' own files.
+
+**Already existed, not duplicated:** `sast-configuration`, `secrets-management`, `security-scan` and `/security-sast` (the scanner map adds cautions and the order to run them), `unity-developer`, the `computer-use`, `data-scraper-agent` and `lead-scraper` skills, the cream repo card `repo-feature-cream-number`.
+
+**Source problems:** TruffleHog is AGPL-3.0 and its "verified" results come from testing found secrets against the real service; Trivy had a supply-chain compromise in March 2026 (a malicious binary and rewritten GitHub Action tags), so pin to a verified release or commit SHA; Craft Anything is a reverse-engineering engine and its "clean room" mode is a rule, not a sandbox; Scrapling's README advertises CAPTCHA and Cloudflare bypass; agent-desktop gives an agent control of any app you grant; the Zed Linux installer pipes a script into a shell; star counts and the authors' own test results are unverified; the Game Studios README says four games were built but its table shows two; the video's scan screens are illustrative.
+
+**Not done:** nothing cloned, installed or run; no scanner executed; `.mcp.json` unchanged (the Scrapling and agent-desktop MCP entries are in the action plan for your own machine); no connector in the registry matches these tools (TinyFish is already connected); no workflow (none in the files).
