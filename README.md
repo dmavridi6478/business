@@ -6101,3 +6101,17 @@ Not done (needs you): plugin installs (`/plugin install paypal@claude-plugins-of
 **Source problems:** Upscayl and RustDesk are AGPL-3.0; Czkawka deletes files and Ventoy writes to USB; the "undercut the designers" pitch has no evidence; "10x'd traffic" has no baseline; OpenMausBot runs your Claude, Codex and Grok CLIs under your login; star counts and the anatomy age claim are unverified; Capacity, Omniscio and Slothy are promotions, not assessed.
 
 **Not done:** nothing cloned, installed or run; no connector, agent or workflow (none in the files); `.mcp.json` unchanged.
+
+## Batch 113 — inline EDA sheet, 7 carousel slides and one video (files numbered 117; 8 November 2026)
+
+**Report:** Batch 113 Intake Report (`Artifacts/business/batch-117-intake-report.html`; the published link is in the pull request). Plain-text prompts: `docs/batch-117-prompts.md`. Action plan: `docs/batch-117-action-plan.md`.
+
+**Sources:** the MLTUT "Exploratory Data Analysis (EDA)" two-page infographic, the @regularbasis.studio carousel "5 More GitHub Repos That Feel Illegal To Use For Free" and the @githubnow "Top 10 GitHub Repos Trending Today" video.
+
+**Added:** skills `eda-cheat-sheet-mltut`, `oss-finds-regularbasis-nov2026`, `github-now-top10-nov8`; command `/eda-plan`; design templates `repo-card-instead-of-lime` and `eda-pipeline-infographic`; themes `theme-regularbasis-lime-black` and `theme-mltut-paper-orange`. Five repos' licences read from the repos.
+
+**Already existed, not duplicated:** Craft Anything, Agent Desktop, OpenMausBot, Zed.
+
+**Source problems:** kimi-k3-in-c runs in 8.24 GB of RAM but needs a 1.56 TB checkpoint on disk and is slow, so "instead of cloud GPUs" overstates it; the carousel title is clickbait; Sherlock profiles usernames across sites; the "security audit skill" is a guide, not an audit; the EDA sheet saves a "cleaned" file with no cleaning step; star counts and the video's list beyond the first three are unverified.
+
+**Not done:** nothing cloned, installed or run; no connector, agent, workflow or install script (none warranted); `.mcp.json` unchanged.
