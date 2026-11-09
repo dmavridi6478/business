@@ -6115,3 +6115,17 @@ Not done (needs you): plugin installs (`/plugin install paypal@claude-plugins-of
 **Source problems:** kimi-k3-in-c runs in 8.24 GB of RAM but needs a 1.56 TB checkpoint on disk and is slow, so "instead of cloud GPUs" overstates it; the carousel title is clickbait; Sherlock profiles usernames across sites; the "security audit skill" is a guide, not an audit; the EDA sheet saves a "cleaned" file with no cleaning step; star counts and the video's list beyond the first three are unverified.
 
 **Not done:** nothing cloned, installed or run; no connector, agent, workflow or install script (none warranted); `.mcp.json` unchanged.
+
+## Batch 114 — SME AI LinkedIn guide (PDF), 12 images and one inline sheet (files numbered 118; 9 November 2026)
+
+**Report:** Batch 114 Intake Report (`Artifacts/business/batch-118-intake-report.html`; the published link is in the pull request). Prompts: `docs/batch-118-prompts.md`. Plan: `docs/batch-118-action-plan.md`.
+
+**Sources:** the SME AI weekly guide "Turn Your LinkedIn Into a Lead Machine With Opus 4.8" (image-only PDF, read page by page), the @githubnow briefing, the @itsnextwork "new use cases for Claude" carousel and a ChatGPT resume cheat sheet.
+
+**Added:** skills `linkedin-opus-lead-machine`, `github-now-nov9-nextwork`; command `/linkedin-lead-machine`; template `prompt-guide-dark-cyan`; theme `theme-smeai-night-cyan`. Licences read for AnyPS5 (GPL-2.0), artcraft (MIT or Apache-2.0) and MuJoCo (Apache-2.0).
+
+**Already existed, not duplicated:** the resume cheat sheet (`resume-prompt-kit`), the anatomy skill, Craft Anything.
+
+**Source problems:** the guide's model, price and "£0" claims are unverified and it is a lead magnet; it omits that connection lists are other people's personal data; the NextWork carousel is a "comment BUILD" lead mechanic and two projects (router admin access, medical scans) carry real risk; star gains unverified.
+
+**Not done:** nothing posted, messaged, cloned or installed; no connector, agent or workflow; `.mcp.json` unchanged.
