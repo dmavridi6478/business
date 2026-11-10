@@ -1,6 +1,6 @@
 ---
 name: solo-builder-prompts
-description: Use when the user wants a ready-made prompt for a solo/indie product-marketing-context task — a landing page headline, App Store title/subtitle/keywords, a behavioral onboarding email sequence, launch-day comment replies, a reply to a first user's message, rewriting rough notes into an email, making an email sound human, or building a 30-day content calendar from 5 content pillars. Trigger phrases include "write my landing page headline", "help with App Store metadata", "onboarding emails", "launch day comments/replies", "reply to this user", "content calendar", "content pillars", "30-day content plan", or "/solo-builder-prompts". Also use when the user just wants the raw prompt text to paste elsewhere themselves.
+description: Use when the user wants a ready-made prompt for a solo/indie product-marketing task — a landing page headline, App Store title/subtitle/keywords, a behavioral onboarding email sequence, launch-day comment replies, a reply to a first user's message, rewriting rough notes into an email, making an email sound human, or building a 30-day content calendar from 5 content pillars. Trigger phrases include "write my landing page headline", "help with App Store metadata", "onboarding emails", "launch day comments/replies", "reply to this user", "content calendar", "content pillars", "30-day content plan", or "/solo-builder-prompts". Also use when the user just wants the raw prompt text to paste elsewhere themselves.
 ---
 
 # Solo Builder Prompts
