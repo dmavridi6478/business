@@ -132,3 +132,17 @@ different questions.
   discipline in that skill applies directly here — calculate these ratios
   from a verified clean data source before any AI-drafted commentary
   references them.
+
+## Addendum (10 November 2026): the sheet's own rules of thumb, and where they mislead
+
+A second copy of the same Robojan "KPIs Handbook" sheet was supplied. All 42 KPIs and the 8 steps were already in this skill, so nothing was duplicated. Two things the first pass omitted, both read from the image:
+
+- **Benchmarks printed on the sheet:** current ratio "1 to 3"; quick ratio "at least 1". A positive net working capital is read as enough liquidity for short-term obligations. Cash ratio and working-capital turnover carry no benchmark.
+- **Definitions worth using exactly:** CCC (cash conversion cycle) = DSO + DIO - DPO; the sheet writes it "DSO+DIO-DPO" and also defines "Cash Conversion Cycle" under Cash KPIs with the same formula. Days ratios use 365. Variable and fixed COGS ratios are shown "x 100", i.e. as percentages of revenue.
+
+**Cautions (my additions, not on the sheet):**
+- Benchmarks are industry-dependent: a retailer can run a current ratio below 1 safely, a manufacturer may need more than 3. Compare with your sector and your own trend (steps 6 and 7).
+- Net profit per employee, revenue per employee and EBITDA per employee depend on how headcount is counted (full-time equivalents versus heads, contractors).
+- Return on capital employed is written "Net profit / (Equity + Long term debt)"; many sources use EBIT rather than net profit. State which you use.
+- Price-to-cash-flow is "Market capitalization / Cash flow from operations"; P/E uses earnings per share. Do not mix per-share and total figures.
+- The sheet gives formulas, not data quality rules: use consistent periods, one accounting basis, and exclude one-off items or label them.
