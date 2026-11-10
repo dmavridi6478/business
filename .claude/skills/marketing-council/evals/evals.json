@@ -4,7 +4,7 @@
     {
       "id": 1,
       "prompt": "We're a B2B SaaS about to cut our price 40% to compete with a cheaper rival. Have the council review this.",
-      "expected_output": "Should check for product-marketing.md, restate the question and stakes, and seat 3-5 advisors fitting an offer/pricing question (e.g., Hormozi, Halbert) plus at least one designated dissenter (e.g., Sutherland on price-as-signal or Godin on race-to-the-bottom). Should open with the simulation disclaimer. Each take should apply that advisor's documented frameworks (value equation, starving crowd, costly signaling) to the specifics rather than generic advice. Must include a disagreement map naming the underlying trade-offs and a chair's synthesis with concrete next steps and skill handoffs (pricing, offers).",
+      "expected_output": "Should check for product-marketing-context.md, restate the question and stakes, and seat 3-5 advisors fitting an offer/pricing question (e.g., Hormozi, Halbert) plus at least one designated dissenter (e.g., Sutherland on price-as-signal or Godin on race-to-the-bottom). Should open with the simulation disclaimer. Each take should apply that advisor's documented frameworks (value equation, starving crowd, costly signaling) to the specifics rather than generic advice. Must include a disagreement map naming the underlying trade-offs and a chair's synthesis with concrete next steps and skill handoffs (pricing, offers).",
       "assertions": [
         "Includes the simulation disclaimer",
         "Seats 3-5 advisors appropriate to a pricing question",

@@ -6,13 +6,13 @@ Build a prep brief before the user appears on a podcast as a guest. The goal: wa
 
 ## Context to load first
 
-Read `.agents/product-marketing.md` (or `.claude/product-marketing.md`) for the company, positioning, and ICP. That file usually won't have the guest's *story bank*, so also collect — in one batch, not a drip:
+Read `.agents/product-marketing-context.md` (or `.claude/product-marketing-context.md`) for the company, positioning, and ICP. That file usually won't have the guest's *story bank*, so also collect — in one batch, not a drip:
 
 1. What did you build before this that comes up in conversation?
 2. What are 2–3 stories you tell well, with real numbers attached?
 3. What's one opinion you hold that most people in your space disagree with?
 
-Offer to save the answers into the product-marketing context doc so future runs skip the interview.
+Offer to save the answers into the product-marketing-context context doc so future runs skip the interview.
 
 From their message, establish (ask only if missing and it matters): the podcast name or URL, whether they've appeared before (get the prior episode link — it anchors the progression analysis and the callbacks), and roughly when they're recording.
 

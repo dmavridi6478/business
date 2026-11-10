@@ -12,13 +12,13 @@ A starter bundle of business-oriented Claude skills lives in `.claude/skills/`:
 - `quarterly-review-cadence` — a 5-step retrospective-and-planning session (Wins → Challenges → Learnings → Unfinished → Next-Quarter Targets) with 3 questions each, a 4-stage prep timeline, and 5 signs it's actually changing behavior; backward-looking companion to `quarterly-okr-architect`'s forward-only goal cascade
 - `business-intelligence-report` — reports for managers/CEO on results, trends, predictive analysis
 - `ceo-reporting-skill` — growth/business reports for the CEO (Greek healthcare context)
-- `product-marketing` — product/audience/positioning context doc used by other marketing skills
+- `product-marketing-context` — product/audience/positioning context doc used by other marketing skills
 - `competitor-profiling` — structured competitor research and profiles
 - `content-strategy` — content planning, topic clusters, editorial calendars
 - `instagram-content-calendar-gr` — ready-to-paste Greek-language meta-prompt that interviews the user about their business, then generates a 30-day Instagram content calendar as a table (caption structure + AI-image instructions per post)
 - `copywriting` — writes individual persuasive copy (headlines, product descriptions, email copy, CTAs) via a Problem → Promise → Proof → CTA framework, once `content-strategy` has picked the topic
 - `marketing-psychology` — 8 behavioral persuasion principles (framing, social proof, anchoring, curiosity, loss aversion, specificity, pricing context, decision friction) to pick the right lever for a message instead of stacking random tactics
-- **Corey Haines' 50-skill marketing pack** — vendored in full (Batch 82 follow-up) from [`coreyhaines31/marketingskills`](https://github.com/coreyhaines31/marketingskills) (MIT), covering SEO & content (`seo-audit`, `ai-seo`, `programmatic-seo`, `schema`, `aso`), CRO (`cro`, `signup`, `onboarding`, `popups`, `paywalls`), copy & content (`copy-editing`, `cold-email`, `emails`, `social`, `video`, `image`, `sms`), paid & measurement (`ads`, `ad-creative`, `ab-testing`, `analytics`, `attribution`), growth & retention (`referrals`, `free-tools`, `churn-prevention`, `community-marketing`, `co-marketing`, `lead-magnets`, `influencer-marketing`), sales & GTM (`revops`, `launch`, `pricing`, `competitors`, `directory-submissions`, `prospecting`, `events`, `public-relations`), and strategy (`marketing-ideas`, `marketing-loops`, `marketing-plan`, `marketing-council`, `product-marketing`, `customer-research`, `offers`, `site-architecture`). 5 skills that collided by name with the ones already listed above (`content-strategy`, `copywriting`, `marketing-psychology`, `sales-enablement`, `competitor-profiling`) were vendored under a `-corey-haines` suffix instead — use whichever version fits, they're independent, not duplicates of each other.
+- **Corey Haines' 50-skill marketing pack** — vendored in full (Batch 82 follow-up) from [`coreyhaines31/marketingskills`](https://github.com/coreyhaines31/marketingskills) (MIT), covering SEO & content (`seo-audit`, `ai-seo`, `programmatic-seo`, `schema`, `aso`), CRO (`cro`, `signup`, `onboarding`, `popups`, `paywalls`), copy & content (`copy-editing`, `cold-email`, `emails`, `social`, `video`, `image`, `sms`), paid & measurement (`ads`, `ad-creative`, `ab-testing`, `analytics`, `attribution`), growth & retention (`referrals`, `free-tools`, `churn-prevention`, `community-marketing`, `co-marketing`, `lead-magnets`, `influencer-marketing`), sales & GTM (`revops`, `launch`, `pricing`, `competitors`, `directory-submissions`, `prospecting`, `events`, `public-relations`), and strategy (`marketing-ideas`, `marketing-loops`, `marketing-plan`, `marketing-council`, `product-marketing-context`, `customer-research`, `offers`, `site-architecture`). 5 skills that collided by name with the ones already listed above (`content-strategy`, `copywriting`, `marketing-psychology`, `sales-enablement`, `competitor-profiling`) were vendored under a `-corey-haines` suffix instead — use whichever version fits, they're independent, not duplicates of each other.
 - `internal-comms` — company newsletters, FAQs, general internal communications
 - `doc-coauthoring` — structured workflow for co-authoring docs, proposals, and specs
 - `attachment-intake` — how to handle uploaded files (zips, photo batches, docs) that arrive with no or mismatched instructions, instead of guessing at intent
@@ -1465,7 +1465,7 @@ set up.
 Each `SKILL.md` has a "Related skills in this repo" (or annotated "Related
 Skills") section pointing at the others that feed it or consume its output:
 
-- `product-marketing` is the foundational doc: `sales-enablement`,
+- `product-marketing-context` is the foundational doc: `sales-enablement`,
   `competitor-profiling`, `content-strategy`, and the design skills (for the
   user's *actual* brand, not `brand-guidelines`) all pull from it.
 - `business-decision-frameworks` prioritizes initiatives/topics that feed
@@ -1504,7 +1504,7 @@ Skills") section pointing at the others that feed it or consume its output:
   expertise → `the-productize-yourself-blueprint` turns it into a product/service
   format → `saas-idea-validator` / `product-strategy-session` stress-test it →
   `the-leverage-stack-auditor` checks it's actually leveraged →
-  `product-marketing` captures the validated positioning → the rest of
+  `product-marketing-context` captures the validated positioning → the rest of
   the business/design/output skills take over from there.
   `content-repurposing-service` is a ready-made example of running that whole
   chain and landing on a productized content service. `lean-software-stack`
@@ -1518,7 +1518,7 @@ Skills") section pointing at the others that feed it or consume its output:
   `product-strategy-session`, `quarterly-okr-architect`, and the new-business
   cluster can sanity-check decisions against via `/ask-the-board`.
   `ai-search-visibility` pulls its "who they are" content from
-  `product-marketing` and hands implementation to `frontend-design`.
+  `product-marketing-context` and hands implementation to `frontend-design`.
   `personal-growth-prompts` is the fast, no-setup alternative to
   `advisory-board` — generic archetypal personas instead of named real
   advisors — and its 10x Improvement Coach prompt is a lighter, per-goal
@@ -1578,7 +1578,7 @@ of the business/design content chain above.
 That skill is hardcoded to Anthropic's own colors (`#d97757` orange, etc.) and
 fonts (Poppins/Lora) — it's for artifacts that should carry *Anthropic's*
 look-and-feel specifically. For the user's own company or client branding, use
-`product-marketing` to capture their real brand and apply it manually
+`product-marketing-context` to capture their real brand and apply it manually
 in the design skills instead.
 
 ## Agents

@@ -4,9 +4,9 @@
     {
       "id": 1,
       "prompt": "We need a 2-minute product demo video for our SaaS homepage. What's the fastest way to produce it?",
-      "expected_output": "Should check for product-marketing.md first. Should walk through the Product Demo Video workflow: script the key features and value props (cross-reference copywriting skill), screen record the product flow, programmatic overlay with Hyperframes or Remotion for titles/callouts/transitions, optional AI B-roll with Veo/Runway for establishing shots, voiceover via recording or AI avatar (HeyGen) for narration, export at platform-appropriate specs (16:9 for homepage). Should recommend Hyperframes for agent-friendliness (plain HTML, no React DSL). Should remind: don't use AI for product UI screens (models hallucinate UI) — use real screen recording. Should mention captions are essential (85% of social video watched without sound — applies to homepage too).",
+      "expected_output": "Should check for product-marketing-context.md first. Should walk through the Product Demo Video workflow: script the key features and value props (cross-reference copywriting skill), screen record the product flow, programmatic overlay with Hyperframes or Remotion for titles/callouts/transitions, optional AI B-roll with Veo/Runway for establishing shots, voiceover via recording or AI avatar (HeyGen) for narration, export at platform-appropriate specs (16:9 for homepage). Should recommend Hyperframes for agent-friendliness (plain HTML, no React DSL). Should remind: don't use AI for product UI screens (models hallucinate UI) — use real screen recording. Should mention captions are essential (85% of social video watched without sound — applies to homepage too).",
       "assertions": [
-        "Checks for product-marketing.md",
+        "Checks for product-marketing-context.md",
         "Walks through Product Demo workflow steps",
         "Uses real screen recording, not AI generated UI",
         "Recommends programmatic overlay tool",
