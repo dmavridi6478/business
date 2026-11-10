@@ -1,0 +1,69 @@
+<title>Batch 115 Intake Report</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<style>
+:root{--bg:#f7f6f2;--card:#ffffff;--ink:#1a1b1e;--muted:#5d6068;--line:#dcdad2;--accent:#c4561a;--head:#ebe8df;--code:#f0ede4;--warn:#9a5a00}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#121317;--card:#1b1d22;--ink:#eeece6;--muted:#a3a6ae;--line:#33363e;--accent:#f08a3c;--head:#24272e;--code:#22252b;--warn:#f0b35a;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#121317;--card:#1b1d22;--ink:#eeece6;--muted:#a3a6ae;--line:#33363e;--accent:#f08a3c;--head:#24272e;--code:#22252b;--warn:#f0b35a;color-scheme:dark}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Aptos,"Segoe UI",Calibri,Arial,sans-serif;font-size:11pt;line-height:1.55;padding-block:32px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.wrap{max-width:1020px;margin:0 auto}
+h1{font-size:32pt;line-height:1.08;margin:0 0 6px;text-wrap:balance}
+h2{font-size:14pt;margin:30px 0 10px;padding-bottom:6px;border-bottom:2px solid var(--accent)}
+.meta{color:var(--muted);margin:0 0 18px}p{margin:8px 0;max-width:80ch}
+.scroll{overflow-x:auto;border:1px solid var(--line);border-radius:6px;background:var(--card);margin:10px 0}
+table{border-collapse:collapse;width:100%;min-width:760px;font-size:10.5pt}
+th{background:var(--head);font-weight:700}
+th,td{border:1px solid var(--line);padding:7px 10px;text-align:center;vertical-align:top;overflow-wrap:anywhere}
+code{font-family:"Cascadia Mono",Consolas,monospace;font-size:10pt;background:var(--code);padding:0 4px;border-radius:3px}
+ul{margin:6px 0;padding-left:22px}li{margin:4px 0;max-width:80ch}
+</style>
+<div class="wrap">
+<h1>Batch 115 Intake Report</h1>
+<p class="meta">Four terminal screenshots (one long prompt) &middot; files numbered 119 &middot; 10 November 2026 &middot; nothing was built, installed or run</p>
+
+<h2>1. Result</h2>
+<p>The archive is four 2156 x 3836 screenshots of one long prompt, "Build a persistent context-management layer for coding agents", watermarked @wavaai.feeds. I read every page from rendered crops. It is a behavioural specification, not a repository: no code, benchmark, author or licence is shown. I added a skill that condenses and critiques it, a plan-only command, a plan-writing agent, a plain-text transcription, a template, a theme and an action plan. There were no connectors, workflows or installable tools in the files.</p>
+<p>The main finding: this is a team-scale engineering project written as a prompt. Its own section 0 and section 10 are the most valuable parts: pick Mode A (build) or Mode B (chat-only, no tools) first, never claim a summary is "restorable" unless a real tool returned the original bytes, and if a requirement is infeasible, build the closest honest subset and say so.</p>
+
+<h2>2. What the spec contains</h2>
+<div class="scroll"><table>
+<thead><tr><th>Part</th><th>Content</th></tr></thead>
+<tbody>
+<tr><td>Modes (0)</td><td>Build versus behaviour-only; Mode B offers only handoff summaries and a ledger</td></tr>
+<tr><td>Architecture (2)</td><td>Pure kernel, wire codecs for four APIs, host server, adapters</td></tr>
+<tr><td>Data model (3), pipeline (4)</td><td>Blocks in three tiers, never-reused refs, protected tool pairs, nudge thresholds</td></tr>
+<tr><td>Tools (5)</td><td><code>context_compress</code>, <code>context_restore</code>, <code>context_search</code>, <code>context_status</code>, plus optional ones</td></tr>
+<tr><td>Server (7), clients (8)</td><td>Proxy, cache stability, SQLite storage, security, panel, about twenty named clients</td></tr>
+<tr><td>Tests (9), verification (10)</td><td>17 deterministic acceptance tests; optional versus required parts; limitations section</td></tr>
+</tbody></table></div>
+
+<h2>3. Critique</h2>
+<ul>
+<li><b>Scope.</b> Sections 7 and 8 describe months of work. The staged plan in the skill starts with a no-I/O kernel and tests, then one codec, then storage, then one proxy client.</li>
+<li><b>Security.</b> The cert-MITM launcher installs a local certificate authority so a proxy can read and rewrite client traffic, exposing keys and all prompts to that process. Use it only on machines and clients you control; prefer base-URL rewrite or plugin modes.</li>
+<li><b>Terms of service.</b> Rewriting client requests may conflict with provider or client terms and request signing; the prompt says to respect them.</li>
+<li><b>Quality.</b> Summaries replace history; a poor summary loses information. Measure task success, not just tokens.</li>
+<li><b>No evidence.</b> No benchmark or result is shown, and the roughly twenty client integrations were not verified.</li>
+<li><b>Provenance.</b> Credit is a watermark only. I did not republish the text on any external service; check with the author before doing so.</li>
+</ul>
+
+<h2>4. What was added</h2>
+<div class="scroll"><table>
+<thead><tr><th>Type</th><th>Name</th><th>Purpose</th></tr></thead>
+<tbody>
+<tr><td>Skill</td><td><code>context-folding-layer-spec</code></td><td>Condensed spec, invariants, tests, critique, staged plan</td></tr>
+<tr><td>Command</td><td><code>/context-layer-plan</code></td><td>Plan only; picks mode and smallest subset</td></tr>
+<tr><td>Agent</td><td><code>context-layer-planner</code></td><td>Writes a plan file; builds and installs nothing</td></tr>
+<tr><td>Template, theme</td><td><code>terminal-prompt-window</code>, <code>theme-terminal-light-blue</code></td><td>Responsive prompt window with Copy; tokenised light and dark</td></tr>
+<tr><td>Documents</td><td><code>docs/batch-119-prompts.md</code>, <code>docs/batch-119-action-plan.md</code></td><td>Plain-text transcription of the prompt; plan</td></tr>
+</tbody></table></div>
+
+<h2>5. Verification</h2>
+<ul>
+<li><b>Done:</b> all four pages read in full; the template rendered at 1280 px light, 1280 px dark and 390 px with no overflow; the copy button falls back to selection.</li>
+<li><b>Not verified:</b> every technical claim and client integration in the prompt; the transcription may contain small reading errors on dense lines, so compare against the screenshots before relying on exact thresholds.</li>
+</ul>
+
+<h2>6. Connectors, workflows, scripts</h2>
+<p>None. No install script was written, since nothing here should be installed. <code>.mcp.json</code> is unchanged, and no sign-in is needed.</p>
+</div>

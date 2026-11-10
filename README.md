@@ -6129,3 +6129,17 @@ Not done (needs you): plugin installs (`/plugin install paypal@claude-plugins-of
 **Source problems:** the guide's model, price and "£0" claims are unverified and it is a lead magnet; it omits that connection lists are other people's personal data; the NextWork carousel is a "comment BUILD" lead mechanic and two projects (router admin access, medical scans) carry real risk; star gains unverified.
 
 **Not done:** nothing posted, messaged, cloned or installed; no connector, agent or workflow; `.mcp.json` unchanged.
+
+## Batch 115 — four screenshots of one long prompt (files numbered 119; 10 November 2026)
+
+**Report:** Batch 115 Intake Report (`Artifacts/business/batch-119-intake-report.html`; the published link is in the pull request). Prompt transcription: `docs/batch-119-prompts.md`. Plan: `docs/batch-119-action-plan.md`.
+
+**Source:** the @wavaai.feeds prompt "Build a persistent context-management layer for coding agents" (four terminal screenshots).
+
+**Added:** skill `context-folding-layer-spec`; command `/context-layer-plan`; agent `context-layer-planner`; template `terminal-prompt-window`; theme `theme-terminal-light-blue`.
+
+**Already existed, not duplicated:** nothing equivalent; related `strategic-compact`, `context-budget` and the `context-manager` agent.
+
+**Source problems:** team-scale scope; the trusted-CA proxy launcher is a high-impact security choice; provider-terms risk; no benchmark, author or licence; about twenty client integrations unverified.
+
+**Not done:** nothing built, installed or run; no certificates or proxy touched; no connector, workflow or install script; `.mcp.json` unchanged.
