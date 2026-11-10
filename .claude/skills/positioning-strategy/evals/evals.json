@@ -1,0 +1,243 @@
+{
+  "skill_name": "positioning-strategy",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "We sell an AI tool that drafts first-pass SOC 2 evidence from engineers' Jira and GitHub activity. Buyers compare us to Vanta and Drata. Deals stall because prospects say they already have Vanta. We're a 12-person startup. How should we position?",
+      "expected_output": "Should separate competitive alternatives (Vanta, Drata) from the contextual alternative (engineers manually gathering evidence). Should avoid head-on positioning against Vanta and consider complementing it. Should pick a narrow best-fit customer and state trade-offs.",
+      "assertions": [
+        "Separates competitive alternatives from the contextual alternative",
+        "Addresses the 'we already have Vanta' objection directly",
+        "Recommends one best-fit customer rather than a broad audience",
+        "States at least one trade-off the positioning gives up",
+        "Does not invent win rates, customer names, or market size figures",
+        "Runs a swap test against Vanta or Drata and reports the result",
+        "Leads with one internal positioning statement in the form '[Product] is a [category + one short differentiating phrase] for [segment]'",
+        "Includes a derivation trace that labels every slot Sourced, Assumed, or Gap",
+        "The positioning statement is one sentence of 25 words or fewer",
+        "The positioning statement contains one differentiating phrase, not a list of capabilities or checkpoints",
+        "Every capability the answer mentions appears either as the differentiating phrase or as a row in the capability table"
+      ],
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "Help me position a new stablecoin payouts API for marketplaces paying international sellers. Competitors are Stripe Connect, Payoneer, and Wise Business. Our edge is same-day settlement in 40+ countries with no FX markup.",
+      "expected_output": "Should decide whether to claim an existing category or a subcategory, and justify it. Should write one internal statement in the form '[Product] is a [category + one short differentiating phrase] for [segment]' of 25 words or fewer with concrete capabilities, and trace each slot to evidence or an assumption. Should flag which claims need proof.",
+      "assertions": [
+        "Recommends claim, subcategory, or create with a reason",
+        "Links each value claim to a capability and a buyer reason",
+        "Marks proof as have or need rather than asserting unverified numbers",
+        "Identifies which claims Stripe Connect or Wise could also make",
+        "Leads with one internal positioning statement in the form '[Product] is a [category + one short differentiating phrase] for [segment]'",
+        "Phrases the differentiating phrase as one concrete capability, not abstract nouns (visibility, insights, platform) or company assets",
+        "Includes a derivation trace that labels every slot Sourced, Assumed, or Gap",
+        "The positioning statement is one sentence of 25 words or fewer",
+        "The positioning statement contains one differentiating phrase, not a list of capabilities or checkpoints",
+        "Every capability the answer mentions appears either as the differentiating phrase or as a row in the capability table"
+      ],
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "Our positioning is 'the all-in-one workspace for modern teams.' We keep losing deals to Notion and Linear. Rework it.",
+      "expected_output": "Should diagnose that the current line fails the swap test. Should show before and after and explain what changed.",
+      "assertions": [
+        "States that the current positioning could be claimed by Notion or Linear",
+        "Shows the old statement and the new one side by side",
+        "Narrows the target customer compared to 'modern teams'",
+        "Explains what changed and why",
+        "Phrases the differentiating phrase as one concrete capability, not abstract nouns (visibility, insights, platform) or company assets",
+        "Names a specific segment instead of 'modern teams', 'everyone', or 'businesses'",
+        "The positioning statement is one sentence of 25 words or fewer",
+        "The positioning statement contains one differentiating phrase, not a list of capabilities or checkpoints",
+        "Every capability the answer mentions appears either as the differentiating phrase or as a row in the capability table"
+      ],
+      "files": []
+    },
+    {
+      "id": 4,
+      "prompt": "Position my startup. We do AI for sales.",
+      "expected_output": "Missing-context case. Should give one provisional statement in the required form, mark the unknown slots as assumptions in the derivation trace, and name the facts that would change it. Should not invent specifics as if known.",
+      "assertions": [
+        "States its assumptions explicitly",
+        "Labels the positioning as provisional",
+        "Marks the slots it had to guess as Assumption in the derivation trace",
+        "Names the specific facts that would most change the answer",
+        "Does not present invented product details as known facts",
+        "Ends with an assumptions and open questions block of at most 5 bullets",
+        "The positioning statement is one sentence of 25 words or fewer",
+        "The positioning statement contains one differentiating phrase, not a list of capabilities or checkpoints",
+        "Every capability the answer mentions appears either as the differentiating phrase or as a row in the capability table"
+      ],
+      "files": []
+    },
+    {
+      "id": 5,
+      "prompt": "Should we create a new category called 'Revenue Memory' for our call-recording tool or just call ourselves conversation intelligence?",
+      "expected_output": "Should weigh category creation against claiming with cost and evidence, and make a clear call.",
+      "assertions": [
+        "Makes a clear recommendation between creating and claiming",
+        "Explains the cost or evidence bar for category creation",
+        "Names the incumbents the buyer would compare against under each frame",
+        "Does not recommend creation merely because it sounds differentiated"
+      ],
+      "files": []
+    },
+    {
+      "id": 6,
+      "prompt": "Give me a punchy positioning line for our homepage hero. We make an invoicing tool for freelance designers that auto-drafts invoices from time logs and chases late payments.",
+      "expected_output": "Positioning vs hero line split. Should write one internal positioning statement in the required form, labeled as strategy rather than copy, with a derivation trace. Should not write a homepage hero line itself, and should hand hero lines to messaging-framework.",
+      "assertions": [
+        "Leads with one internal positioning statement in the form '[Product] is a [category + one short differentiating phrase] for [segment]'",
+        "Labels the statement as internal strategy, not copy, and adds no tagline or hero line",
+        "Says hero lines are messaging-framework's job and points there",
+        "Uses concrete capabilities such as auto-drafting invoices or automatic payment reminders",
+        "Includes a derivation trace that labels every slot Sourced, Assumed, or Gap",
+        "The positioning statement is one sentence of 25 words or fewer",
+        "The positioning statement contains one differentiating phrase, not a list of capabilities or checkpoints",
+        "Every capability the answer mentions appears either as the differentiating phrase or as a row in the capability table"
+      ],
+      "files": []
+    },
+    {
+      "id": 7,
+      "prompt": "Our positioning statement is 'Stop chasing invoices. Get paid in half the time.' Is that good positioning? We sell to freelance designers; the alternative is spreadsheets plus manual reminder emails.",
+      "expected_output": "Positioning vs hero line split. Should diagnose that this is a hero line or tagline, not a positioning statement, then rewrite it as an internal statement in the required form, with a derivation trace that marks 'half the time' as a claim needing proof.",
+      "assertions": [
+        "Identifies the line as a tagline or hero line rather than a positioning statement",
+        "Leads with one internal positioning statement in the form '[Product] is a [category + one short differentiating phrase] for [segment]'",
+        "Names spreadsheets and manual reminders as the alternative the differentiation is drawn against",
+        "Flags 'half the time' as a claim that needs proof",
+        "Includes a derivation trace that labels every slot Sourced, Assumed, or Gap",
+        "The positioning statement is one sentence of 25 words or fewer",
+        "The positioning statement contains one differentiating phrase, not a list of capabilities or checkpoints",
+        "Every capability the answer mentions appears either as the differentiating phrase or as a row in the capability table"
+      ],
+      "files": []
+    },
+    {
+      "id": 8,
+      "prompt": "Rework our positioning. Current statement: 'Ledgerly is the smart finance platform for growing companies.' Our context doc says: icp-and-buyer-personas picked Controllers at 50 to 300 person SaaS companies as the primary segment. Switching Dynamics: Habit is Excel reconciliation macros; Anxiety is losing the audit trail. Churn notes: 3 of 5 churned accounts said matching accuracy was worse than their macros. Capabilities: auto-matching bank lines to invoices (beta cut matching time 60% across 8 accounts) and a per-match audit log showing who matched what and when (no proof yet). Competitors: BlackLine, FloQast. Buyers find us searching 'bank reconciliation software.'",
+      "expected_output": "Should test the old statement before rewriting and report which stress tests it fails, directly after the new statement. Should build the capability table from the two given capabilities, labeling the audit log's missing proof as a Gap rather than dropping it or inventing new capabilities. Should treat the supplied Controller scope as exploratory unless an accepted market decision is supplied; route market selection to market-entry-brief without independently selecting/rescoring or silently upgrading the persona owner's selection to approved canon. Should give switching cost per alternative, state the current category (bank reconciliation software) with evidence and the cost of moving buyers if the frame differs, add a Trigger row, run the copy test, fail any accuracy claim on the churn data, note BlackLine or FloQast's likely response, end with Evidence gaps, and save to the Positioning section by default.",
+      "assertions": [
+        "Reports the old statement's stress-test results directly after the new statement and names which tests it fails",
+        "Includes both given capabilities (auto-matching and the per-match audit log) in the statement or capability table",
+        "Labels the audit log's proof Gap rather than dropping it or inventing proof",
+        "Does not invent product capabilities beyond the two given; any extra capability is labeled Assumed",
+        "Treats the supplied Controller scope as exploratory absent an accepted market decision, routes market selection to market-entry-brief, and does not select/rescore a market or automatically replace approved ICP; canonical conflicts require SSOT review and human approval",
+        "States a switching cost for each alternative, including Excel macros",
+        "States that buyers currently place the product in bank reconciliation software, citing the search evidence",
+        "If the recommended frame differs from the current category, names the gap and the cost of moving buyers",
+        "The derivation trace includes a Trigger row naming the event that starts the search",
+        "Runs a copy test asking whether a competitor could make the claim true within 12 months",
+        "Fails or flags any matching-accuracy claim because the churn notes contradict it",
+        "Includes one line on the main competitor's likely response in the trade-offs",
+        "Ends with an Evidence gaps section in the ranked format",
+        "Saves the result to the Positioning section of the context doc by default, without asking first"
+      ],
+      "files": []
+    },
+    {
+      "id": 100,
+      "prompt": "HND-100 from product-marketing-context, GAP-100: propose positioning implications for the accepted US mid-market scope only, using shipped CSV and buyer spreadsheet alternatives. Completion: trace support/assumptions and identify proof gaps. Do not select another market or automatically save the proposal.",
+      "expected_output": "Preserves domain ownership and returns scoped findings/proposals or dependencies without upgrading evidence or approval.",
+      "assertions": [
+        "Inherits DEC-MKT-1 instead of scoring/selecting markets",
+        "Does not make generally available SSO a differentiator",
+        "Returns findings/proposals with source references, scope, method or derivation and limitations",
+        "Keeps evidence labels and human approval separate; does not write canon",
+        "Returns to product-marketing-context for the originating handoff rather than automatically overwriting bootstrap context"
+      ],
+      "files": [
+        "skills/product-marketing-context/evals/fixtures/specialist-handoff.md"
+      ],
+      "references": []
+    },
+    {
+      "id": 101,
+      "prompt": "Use the accepted market and rich persona sources to propose positioning for ContentSignal. Persona B remains provisional. Explain which criteria/alternatives affect the proposal and preserve full-source access. Do not select another market, approve strategy or save canon.",
+      "expected_output": "Produces bounded positioning proposal from allocation and traceability intelligence; compares alternatives and limits, preserves proposed B status and missing implementation proof, and does not require approved personas for exploratory proposals.",
+      "assertions": [
+        "Inherits DEC-MKT-2 without independent selection or rescoring",
+        "Connects material decision criteria, behavior and objections to positioning choices",
+        "Preserves full-profile references and provisional B status without flattening or upgrading",
+        "Does not infer willingness to pay, causal lift or implementation guarantees",
+        "Keeps positioning decision/proposal with positioning owner, evidence with researchers and approval with SSOT",
+        "Allows bounded proposal with risks and validation rather than universal persona-approval hold"
+      ],
+      "files": [
+        "evals/fixtures/persona-intelligence/profiles.md",
+        "evals/fixtures/persona-intelligence/strategy.md"
+      ],
+      "references": [
+        "skills/_shared/ssot-consumption.md",
+        "skills/_shared/evidence-gaps.md"
+      ]
+    },
+    {
+      "id": 102,
+      "prompt": "Reassess Aiven V3 and propose a company-level repositioning architecture with one deeply developed initial beachhead. Compare credible territories, retain a concise internal statement plus the full value architecture, explain win/loss conditions and sequence future areas. Keep assumptions visible and do not save canon.",
+      "expected_output": "Separates company ambition from beachhead solution position, compares territories and named alternatives, translates capabilities or account access into buyer value with proof boundaries, and gives conditional expansion criteria.",
+      "assertions": [
+        "Separates company-level position from the initial segment-plus-business-use-case solution position and explains their relationship",
+        "Genuinely compares at least two credible positioning territories using buyer relevance, alternatives, credibility and trade-offs before selecting one",
+        "Explains at least two alternatives with buyer criteria, why attractive, proposed Aiven advantage, required proof and win/loss or disqualification conditions",
+        "Treats existing account access or operating continuity as a scoped hypothesis rather than exclusive product superiority",
+        "Includes application outcome owner, data contract owner, technical evaluator and unresolved budget authority without assuming they are the same person",
+        "Connects buyer insight and alternatives to differentiated value, positioning, proof and commercial implication with source or assumption labels",
+        "Does not invent customer demand, quotes, comparative outcomes or gateway maturity; keeps gateway early access and integrated outcomes hypothetical",
+        "Gives expansion sequencing criteria without assuming the beachhead represents all production AI",
+        "The selected solution statement and adjacent primary value express the situational reason to consider Aiven; do not leave continuity only in background research while recommending category-only value"
+      ],
+      "files": [
+        "fixtures/aiven.md"
+      ]
+    },
+    {
+      "id": 103,
+      "prompt": "Propose positioning for SecureBuild in the supplied exploratory scope. Compare credible territories and alternatives, recommend a concise statement and supporting value architecture, and state the commercial limits. Do not save or approve strategy.",
+      "expected_output": "Uses product-specific signed exception continuity as a candidate advantage, values the stronger broader competitor accurately, distinguishes release and security priorities, and remains provisional.",
+      "assertions": [
+        "Connects signed cross-CI exception continuity to accountable expiry or release governance value rather than merely listing the feature",
+        "Explains why MegaSec may win despite higher operating complexity and identifies a situation where SecureBuild should lose or disqualify",
+        "Separates security budget authority, platform evaluation and application release priorities without inventing approval certainty",
+        "Uses pilot support only for reproducible history and does not invent time savings, breach reduction or paid demand",
+        "Compares at least two positioning territories and states what the selected position gives up",
+        "Retains a concise internal statement and full buyer/problem/alternative/value/proof architecture without pretending the statement alone establishes differentiation",
+        "Selects the buyer preference before drafting and makes that choice visible in the statement/value pair, rather than only describing developer security"
+      ],
+      "files": [
+        "fixtures/securebuild.md"
+      ]
+    },
+    {
+      "id": 104,
+      "prompt": "Using only ParityStore, propose positioning in the accepted reporting scope. Competitors share the supplied capabilities. Decide whether a differentiated preference is supportable and show the strongest honest expression without inventing evidence.",
+      "expected_output": "A scoped preference decision grounded in the supplied packet, with outcome and proof limits preserved.",
+      "assertions": [
+        "Distinguishes product description and category value from demonstrated differentiation",
+        "Acknowledges no supported reason to switch and does not treat support relationship as proven advantage",
+        "Names the incumbent, its adequate fit and absent trigger rather than inventing urgency",
+        "Gives a bounded positioning hypothesis or category description with explicit preference limitation and targeted validation; does not change the market"
+      ],
+      "files": [
+        "fixtures/decision-contrast.md"
+      ]
+    },
+    {
+      "id": 105,
+      "prompt": "Using only QueueBridge, propose positioning and a concise handoff to messaging. Compare a capability-led category position with a buyer-tension-led preference. Preserve existing scope and evidence boundaries.",
+      "expected_output": "A scoped preference decision grounded in the supplied packet, with outcome and proof limits preserved.",
+      "assertions": [
+        "Selects reconciliation continuity in the existing two-processor situation against spreadsheets or migration-heavy AllPay, explaining why it could affect buying",
+        "Retains AllPay stronger coverage and switching trade-off rather than claiming universal superiority",
+        "Carries buyer tension, alternative, relative advantage, intended outcome and controlled proof to the messaging handoff",
+        "Does not invent faster resolution, merchant satisfaction, paid preference or measured ROI"
+      ],
+      "files": [
+        "fixtures/decision-contrast.md"
+      ]
+    }
+  ]
+}

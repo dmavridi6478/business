@@ -16,7 +16,12 @@
     "design@knowledge-work-plugins": true,
     "operations@knowledge-work-plugins": true,
     "small-business@knowledge-work-plugins": true,
-    "power-automate@power-platform-skills": true
+    "power-automate@power-platform-skills": true,
+    "pm-product-strategy@pm-skills": true,
+    "pm-market-research@pm-skills": true,
+    "pm-go-to-market@pm-skills": true,
+    "pm-marketing-growth@pm-skills": true,
+    "pm-data-analytics@pm-skills": true
   },
   "extraKnownMarketplaces": {
     "knowledge-work-plugins": {
@@ -35,6 +40,12 @@
       "source": {
         "source": "github",
         "repo": "microsoft/power-platform-skills"
+      }
+    },
+    "pm-skills": {
+      "source": {
+        "source": "github",
+        "repo": "phuryn/pm-skills"
       }
     }
   },
