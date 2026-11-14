@@ -4,9 +4,9 @@
     {
       "id": 1,
       "prompt": "We're a B2B SaaS that wants to start a community. Should we use Discord or Slack?",
-      "expected_output": "Should check for product-marketing.md first. Should apply the platform selection guide. Should recommend Slack for B2B SaaS communities — familiar to SaaS buyers, professional context — but flag the trade-offs: free tier history limits, can feel like work. Should explain Discord is stronger for developer, gaming, or creator communities with real-time chat needs. Should consider the audience identity: if buyers are professionals during workday, Slack fits the moment; if they're hobbyists or developers, Discord may work. Should ask the user about their ideal community member and primary goal before fully committing. Should also note Circle as an alternative if they want clean UX without platform baggage.",
+      "expected_output": "Should check for product-marketing-context.md first. Should apply the platform selection guide. Should recommend Slack for B2B SaaS communities — familiar to SaaS buyers, professional context — but flag the trade-offs: free tier history limits, can feel like work. Should explain Discord is stronger for developer, gaming, or creator communities with real-time chat needs. Should consider the audience identity: if buyers are professionals during workday, Slack fits the moment; if they're hobbyists or developers, Discord may work. Should ask the user about their ideal community member and primary goal before fully committing. Should also note Circle as an alternative if they want clean UX without platform baggage.",
       "assertions": [
-        "Checks for product-marketing.md",
+        "Checks for product-marketing-context.md",
         "Recommends Slack for B2B context",
         "Notes Slack free tier limitations",
         "Compares Discord use case",

@@ -4,9 +4,9 @@
     {
       "id": 1,
       "prompt": "We're a Shopify DTC brand doing $5M/year in skincare. We have 80K email subscribers but no SMS program yet. Where do we start?",
-      "expected_output": "Should check for product-marketing.md first. Should run Phase 0 compliance check: are they US-based, is A2P 10DLC registration started, is the opt-in mechanism planned. Should recommend Klaviyo SMS or Postscript given Shopify + DTC ecom (Klaviyo if already on Klaviyo email, Postscript for SMS-first depth). Should rank flows by ROI for skincare: (1) abandoned cart sequence first (highest-ROI flow), (2) post-purchase + replenishment (skincare has predictable cycles), (3) welcome opt-in flow with capture incentive, (4) win-back at 60-90 days. Should warn about treating SMS like email (frequency cap, relevance bar, real per-send cost ~$0.0075-$0.04). Should reference compliance.md for opt-in disclosure language and quiet hours.",
+      "expected_output": "Should check for product-marketing-context.md first. Should run Phase 0 compliance check: are they US-based, is A2P 10DLC registration started, is the opt-in mechanism planned. Should recommend Klaviyo SMS or Postscript given Shopify + DTC ecom (Klaviyo if already on Klaviyo email, Postscript for SMS-first depth). Should rank flows by ROI for skincare: (1) abandoned cart sequence first (highest-ROI flow), (2) post-purchase + replenishment (skincare has predictable cycles), (3) welcome opt-in flow with capture incentive, (4) win-back at 60-90 days. Should warn about treating SMS like email (frequency cap, relevance bar, real per-send cost ~$0.0075-$0.04). Should reference compliance.md for opt-in disclosure language and quiet hours.",
       "assertions": [
-        "Checks for product-marketing.md",
+        "Checks for product-marketing-context.md",
         "Runs compliance/A2P 10DLC readiness check",
         "Recommends Klaviyo SMS or Postscript with rationale",
         "Prioritizes abandoned cart as highest-ROI flow",

@@ -16,7 +16,7 @@ This skill has two pillars. Know which one the user needs before you dive in:
 
 Most requests start with (A). Reach for (B) only when they control the surface and want to build.
 
-Product context: check for `.agents/product-marketing.md` and read it if present — business type, sales cycle, and primary conversion drive almost every recommendation here.
+Product context: check for `.agents/product-marketing-context.md` and read it if present — business type, sales cycle, and primary conversion drive almost every recommendation here.
 
 ## Boundaries — what this skill does NOT own
 

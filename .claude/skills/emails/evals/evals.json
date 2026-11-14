@@ -4,9 +4,9 @@
     {
       "id": 1,
       "prompt": "Create a welcome email sequence for new users who sign up for our project management tool's free trial. The trial is 14 days. We want to get them to their aha moment (creating their first project and inviting a team member).",
-      "expected_output": "Should check for product-marketing.md first. Should create a welcome sequence (5-7 emails) following the core principles: one email one job, value before ask. Should map each email to a specific goal in the 14-day trial journey. Should include timing/delays between emails. Each email should follow the email copy structure: hook → context → value → CTA → sign-off. Should include subject lines following the subject line strategy. Should align sequence with the aha moment (first project + team invite). Output should follow the structured format with sequence overview and per-email specs.",
+      "expected_output": "Should check for product-marketing-context.md first. Should create a welcome sequence (5-7 emails) following the core principles: one email one job, value before ask. Should map each email to a specific goal in the 14-day trial journey. Should include timing/delays between emails. Each email should follow the email copy structure: hook → context → value → CTA → sign-off. Should include subject lines following the subject line strategy. Should align sequence with the aha moment (first project + team invite). Output should follow the structured format with sequence overview and per-email specs.",
       "assertions": [
-        "Checks for product-marketing.md",
+        "Checks for product-marketing-context.md",
         "Creates 5-7 email welcome sequence",
         "Follows one email one job principle",
         "Maps emails to trial timeline (14 days)",

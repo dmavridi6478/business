@@ -1,74 +1,165 @@
 ---
 name: product-marketing-context
-description: "When the user wants to create or update their product marketing context document. Also use when the user mentions 'product context,' 'marketing context,' 'set up context,' 'positioning,' 'who is my target audience,' 'describe my product,' 'ICP,' 'ideal customer profile,' or wants to avoid repeating foundational information across marketing tasks. Use this at the start of any new project before using other marketing skills — it creates `.agents/product-marketing-context.md` that all other skills reference for product, audience, and positioning context."
+description: "Establish reusable PMM understanding from a user goal, company folder, mixed materials or existing context. Use for context setup, research inventory, synthesis, consequential gaps and context readiness, whether research is substantial, partial or absent. Routes domain work to existing specialists and assembles proposed context in .agents/product-marketing-context.md. For research methods, see customer-research; for governed approval and persistence, see ssot-context-loop."
 metadata:
-  version: 1.1.0
+  version: 1.3.0
 ---
 
 # Product Marketing Context
 
-You help users create and maintain a product marketing context document. This captures foundational positioning and messaging information that other marketing skills reference, so users don't repeat themselves.
+Establish what is known, interpreted, assumed, conflicting and missing before
+strategy or execution. Own intake, cross-domain synthesis, decision-specific
+readiness, research routing and integration of returned findings.
 
-The document is stored at `.agents/product-marketing-context.md`.
+## Boundaries and contracts
+
+Read `../_shared/evidence-gaps.md`, `../_shared/ssot-consumption.md` and
+`../_shared/context-establishment.md` before establishing context. Use its
+inventory, provenance, contradiction, gap, handoff, return, readiness and proposal
+contracts. Preserve source IDs, evidence labels, approval and limitations.
+
+Do not perform specialist methodologies, select a market, generate personas,
+choose positioning/pricing, or author final messaging. Route those to their
+existing owners. Only ssot-context-loop writes canon, decisions, manifest and
+reconciler state. This is a bounded understanding workflow, not a GTM orchestrator.
 
 ## Workflow
 
-### Step 1: Check for Existing Context
+### 1. Resolve goal, scope and existing context
 
-First, check if `.agents/product-marketing-context.md` already exists. Also check `.claude/product-marketing-context.md` for older setups — if found there but not in `.agents/`, offer to move it.
+Identify the company/project, product, applicable region/segment and intended
+research question, decision or deliverable. Reuse supplied answers. Ask only for
+unresolved information that changes scope or the next consequential choice.
+A folder without a goal can be inventoried; do not declare readiness or prescribe
+an extensive study before the goal is clear.
 
-**If it exists:**
-- Read it and summarize what's captured
-- Ask which sections they want to update
-- Only gather info for those sections
+Load applicable manifest-mapped SSOT and approved decisions first. Check
+`.agents/product-marketing-context.md` and legacy `.claude/product-marketing-context.md`.
+Keep existing content and full bootstrap profiles intact. On a scoped refresh,
+change only relevant context and flag consequential dependencies. Do not silently
+move a legacy file, replace approved claims, or infer approval from file existence.
 
-**If it doesn't exist, offer two options:**
+### 2. Inventory mixed materials
 
-1. **Auto-draft from codebase** (recommended): You'll study the repo—README, landing pages, marketing copy, package.json, etc.—and draft a V1 of the context document. The user then reviews, corrects, and fills gaps. This is faster than starting from scratch.
+Accept folders/files, pasted statements and accessible links: interviews/calls,
+surveys, CRM/win-loss, support/sales feedback, product docs/demos, decks, analyst
+reports, competitive research, pricing, positioning/messaging, personas, journey,
+SSOT and historical approvals. Codebase extraction and conversation remain input
+modes; neither is the default substitute for company evidence.
 
-2. **Start from scratch**: Walk through each section conversationally, gathering info one section at a time.
+Create the source inventory before synthesis. Identify originals/derivatives,
+dates, source roles, scope, coverage, readability and reviewed portions. Inspect
+goal-relevant sources; keep unreadable/inaccessible/uninspected material visible.
+Do not fabricate extraction or claim comprehensive review from partial inspection.
+Reuse existing research and raw stores before gathering anything new.
 
-Most users prefer option 1. After presenting the draft, ask: "What needs correcting? What's missing?"
+### 3. Extract and synthesize candidate understanding
 
-### Step 2: Gather Information
+Record source-linked evidence separately from interpretations, assumptions,
+historical decisions, current approved decisions and unknowns. A deck establishes
+what it says, not that its claims are validated. User statements need scope and
+authority before they establish an approved decision. Preserve exact quotes.
 
-**If auto-drafting:**
-1. Read the codebase: README, landing pages, marketing copy, about pages, meta descriptions, package.json, any existing docs
-2. Draft all sections based on what you find
-3. Present the draft and ask what needs correcting or is missing
-4. Iterate until the user is satisfied
+Integrate existing domain findings; route raw material requiring domain analysis
+to its owner. Relate findings across domains without inventing their conclusions.
+For example, different buyer priorities by segment may be supported; selecting
+one segment remains market-entry-brief's decision. Classify disagreements using
+the shared contradiction register. Resolve apparent scope/time/definition
+conflicts only with demonstrated evidence; route unresolved factual/decision
+conflicts. Never favor newer or repeated wording over approved canon.
 
-**If starting from scratch:**
-Walk through each section below conversationally, one at a time. Don't dump all questions at once.
+### 4. Diagnose decision-specific readiness
 
-For each section:
-1. Briefly explain what you're capturing
-2. Ask relevant questions
-3. Confirm accuracy
-4. Move to the next
+Identify what the actual goal needs. Assess support, authority and health
+separately for each requirement. Use exactly PROCEED, PROCEED PROVISIONALLY or
+HOLD THIS DECISION with the shared meanings. For provisional work, record the
+assumption, risk, allowed scope and validation trigger. A hold names the affected
+decision, gap, owner and closure criteria; continue unrelated work.
+Evidence sufficiency never grants human approval. Missing approval is a separate
+dependency. Avoid completeness scores or forcing irrelevant context sections.
 
-Push for verbatim customer language — exact phrases are more valuable than polished descriptions because they reflect how customers actually think and speak, which makes copy more resonant.
+### 5. Route consequential research gaps
 
----
+Consolidate overlapping gaps into the smallest useful backlog, retaining context
+and lineage. Rank by what changes if wrong, uncertainty, urgency and effort.
+Retrieve → analyze existing evidence → clarify definitions → request internal
+facts → collect new research. Use the shared owner table and HND contract; one
+primary owner per question, contributors reuse the same evidence.
+
+- **Substantial research:** synthesize first; route only unanswered domain analysis
+  or consequential gaps, not a default new research program.
+- **Partial research:** identify supported versus assumed/conflicting/missing
+  context; route the gaps that change the user's goal and defer non-blocking ones.
+- **Starting from scratch:** establish problem/product boundaries and constraints;
+  route customer/category/competitive exploration before requiring an accepted
+  market, complete persona or positioning. External market/category/opportunity
+  research goes to market-intelligence; competitive landscape/facts/changes to
+  competitor-profiling. Market-entry-brief owns entry evaluation and where/whether
+  to enter. Then return evidence for market choice,
+  personas within that scope, and strategy. Do not create circular prerequisites.
+
+Handoffs do not authorize outreach or spending. If an owner is unavailable, keep
+its gap explicit and name the next action; do not silently absorb its methodology.
+
+### 6. Integrate specialist returns
+
+Check each return's scope, source locators, method, limitations and GAP completion
+criteria. Preserve supporting/opposing evidence and the original evidence/approval
+status. A report or increased citation count does not close a gap. Update answered,
+partial/inconclusive/unavailable work and reassess readiness. Follow up narrowly
+or state a stopping condition. Never loop until a preferred conclusion appears.
+Retain historical findings with supersession links instead of erasing them.
+
+### 7. Assemble proposed PMM context
+
+Read `references/context-workspace-template.md` when creating/updating the
+workspace. Keep the familiar headings below; append registers and references to
+existing domain artifacts. Reference covered approved context; retain full
+uncovered bootstrap personas, committee/anti-persona detail and attribute sources.
+Do not flatten them into summary rows. Missing applicable context stays Gap.
+
+Prepare PRP records for supported portions with wording, destination, findings,
+assumptions/conflicts, domain owner, permitted use, pending validation and the
+human decision required. Do not wait for every non-blocking gap. Held choices
+remain unresolved, not disguised as settled proposals.
+
+### 8. Review and hand off to SSOT
+
+Show the inventory coverage, integrated context, readiness, consequential gaps,
+contradictions and concrete proposals for review. Save the provisional workspace
+when authorized, without changing canon. Corrections or saving do not approve it.
+No SSOT: hand proposals to ssot-context-loop /setup and await Gate 2.
+Existing SSOT: hand findings/proposals to /scan, Gate 1, /propose and Gate 2.
+Only SSOT persists approved changes. After an approved return, record replacement
+references while retaining pending/rejected/superseded proposal history.
+Tell the user which context is provisional and which approved references readers
+can use. Do not imply that every saved section is cleared for execution.
 
 ## Sections to Capture
 
 ### 1. Product Overview
 - One-line description
 - What it does (2-3 sentences)
-- Product category (what "shelf" you sit on—how customers search for you)
+- Product category (what "shelf" you sit on: how customers search for you)
 - Product type (SaaS, marketplace, e-commerce, service, etc.)
 - Business model and pricing
 
 ### 2. Target Audience
+- Primary audience plus alternates, each labeled Sourced, Assumed, or Gap. Keep alternates that lack proof; see `../_shared/segment-selection.md`
 - Target company type (industry, size, stage)
 - Target decision-makers (roles, departments)
 - Primary use case (the main problem you solve)
 - Jobs to be done (2-3 things customers "hire" you for)
 - Specific use cases or scenarios
 
-### 3. Personas (B2B only)
-If multiple stakeholders are involved in buying, capture for each:
+### 3. Personas
+Reuse existing profiles from `icp-and-buyer-personas`; do not rebuild approved
+personas during context setup or refresh. Keep the summary below for scanning.
+Preserve full bootstrap profiles using that skill's attribute format, including
+source/version, approval, provenance/confidence and gaps. With applicable SSOT,
+reference its approved profiles instead of duplicating covered canonical facts.
+Do not collapse profiles into a summary or message map when updating the context.
+For B2B buying committees, capture:
 - User, Champion, Decision Maker, Financial Buyer, Technical Influencer
 - What each cares about, their challenge, and the value you promise them
 
@@ -124,130 +215,25 @@ The JTBD Four Forces:
 - Key conversion action (what you want people to do)
 - Current metrics (if known)
 
----
+### 13. Positioning
+Supplied by positioning-strategy as a referenced proposal or approved input. Approved mapped SSOT remains authoritative for covered positioning; this section supplies uncovered provisional context. Saving it does not approve strategy or modify canonical SSOT.
+- **Statement:** one sentence in the form "[Product] is a [category + one short differentiating phrase] for [segment]."
+- **Derivation trace:** Category, Differentiating phrase, Segment, and Trigger (the event that starts the search), each with its source and label
+- **Capability table:** every differentiating capability, with what it does for the buyer, proof, buyer voice, and label
 
-## Step 3: Create the Document
+messaging-framework uses approved mapped SSOT capabilities where applicable and this table for uncovered provisional context. If the section is empty, approved SSOT inputs remain available; recommend positioning-strategy only for missing positioning.
 
-After gathering information, create `.agents/product-marketing-context.md` with this structure:
-
-```markdown
-# Product Marketing Context
-
-*Last updated: [date]*
-
-## Product Overview
-**One-liner:**
-**What it does:**
-**Product category:**
-**Product type:**
-**Business model:**
-
-## Target Audience
-**Target companies:**
-**Decision-makers:**
-**Primary use case:**
-**Jobs to be done:**
--
-**Use cases:**
--
-
-## Personas
-| Persona | Cares about | Challenge | Value we promise |
-|---------|-------------|-----------|------------------|
-| | | | |
-
-## Problems & Pain Points
-**Core problem:**
-**Why alternatives fall short:**
--
-**What it costs them:**
-**Emotional tension:**
-
-## Competitive Landscape
-**Direct:** [Competitor] — falls short because...
-**Secondary:** [Approach] — falls short because...
-**Indirect:** [Alternative] — falls short because...
-
-## Differentiation
-**Key differentiators:**
--
-**How we do it differently:**
-**Why that's better:**
-**Why customers choose us:**
-
-## Objections
-| Objection | Response |
-|-----------|----------|
-| | |
-
-**Anti-persona:**
-
-## Switching Dynamics
-**Push:**
-**Pull:**
-**Habit:**
-**Anxiety:**
-
-## Customer Language
-**How they describe the problem:**
-- "[verbatim]"
-**How they describe us:**
-- "[verbatim]"
-**Words to use:**
-**Words to avoid:**
-**Glossary:**
-| Term | Meaning |
-|------|---------|
-| | |
-
-## Brand Voice
-**Tone:**
-**Style:**
-**Personality:**
-
-## Proof Points
-**Metrics:**
-**Customers:**
-**Testimonials:**
-> "[quote]" — [who]
-**Value themes:**
-| Theme | Proof |
-|-------|-------|
-| | |
-
-## Goals
-**Business goal:**
-**Conversion action:**
-**Current metrics:**
-```
+### 14. Persona message map
+Supplied by icp-and-buyer-personas as a referenced proposal or approved input. messaging-framework uses approved mapped SSOT persona messaging where applicable, and this map for uncovered provisional context. Preserve evidence labels and proposal/approval status; the map does not change canon.
+- **Persona:** role-based name with the buying role in brackets, such as (champion) or (financial buyer)
+- **What matters to them:** 1 to 2 short phrases
+- **Message:** the core message in 1 to 2 sentences
+- **Proof label:** Sourced, Assumed, or Gap for the proof behind the message
 
 ---
 
-## Step 4: Confirm and Save
+## Output rules
 
-- Show the completed document
-- Ask if anything needs adjustment
-- Save to `.agents/product-marketing-context.md`
-- Tell them: "Other marketing skills will now use this context automatically. Run `/product-marketing-context` anytime to update it."
-
----
-
-## Tips
-
-- **Be specific**: Ask "What's the #1 frustration that brings them to you?" not "What problem do they solve?"
-- **Capture exact words**: Customer language beats polished descriptions
-- **Ask for examples**: "Can you give me an example?" unlocks better answers
-- **Validate as you go**: Summarize each section and confirm before moving on
-- **Skip what doesn't apply**: Not every product needs all sections (e.g., Personas for B2C)
-
-## Related skills in this repo
-
-This is the foundational context document — treat it as an input to the other skills below rather than something they duplicate:
-
-- **sales-enablement**: Pulls positioning, personas, and objections from here into battle cards and pitch materials.
-- **competitor-profiling**: Uses the Competitive Landscape and Differentiation sections as the starting comparison set.
-- **content-strategy**: Uses Target Audience, Problems & Pain Points, and Customer Language to shape topic and messaging decisions.
-- **brandkit-generator**: When this document doesn't exist yet and the request is really "give me a visual starting point for a new brand," use that skill instead — it's faster and produces a visual board, not a full positioning doc.
-- **product-strategy-session**, **saas-idea-validator**, **the-productize-yourself-blueprint**, **the-specific-knowledge-excavator**: When setting up a *new* business rather than documenting an existing product, run one of these first — this document is where the validated result gets captured.
-- **frontend-design**, **premium-html-presentation**, **canvas-design**, **pptx**: Use this document's Brand Voice and positioning as the actual brand to apply — not the `brand-guidelines` skill, which is Anthropic-specific.
-- **ai-search-visibility**: Source of the "who they are, what they do" summary that populates a site's `llms.txt` and "Ask AI about me" prompt.
+Open internal output with Inputs and assumptions. End with ranked Evidence gaps,
+including all assumptions/gaps and suggested owners/milestones when unknown.
+No invented proof, source versions, quotes or approvals. No em dashes.
