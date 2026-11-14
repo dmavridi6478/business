@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blueprint Teal Grid - Theme</title>
+<style>
+/* THEME: Blueprint Teal Grid (from "How to Build a High-Performing AI Market Research Engine" and the PMP formulas sheet).
+   Use for architecture maps, research workflows and formula references. Light default; dark on [data-theme="dark"] or prefers-color-scheme. */
+:root{--bg:#f3f7fb;--grid:rgba(30,80,120,.07);--ink:#12303f;--muted:#55707f;--c1:#d9694a;--c2:#2f9e8f;--c3:#6a5acd;--card:#fff;--line:#c9d9e4;--font:Aptos,'Segoe UI',Inter,Arial,sans-serif}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0f1a22;--grid:rgba(120,190,230,.07);--ink:#e6f1f7;--muted:#93aebb;--card:#16252f;--line:#2b4352}}
+:root[data-theme="dark"]{--bg:#0f1a22;--grid:rgba(120,190,230,.07);--ink:#e6f1f7;--muted:#93aebb;--card:#16252f;--line:#2b4352}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);background-size:32px 32px;color:var(--ink);font:11pt/1.55 var(--font);padding:40px 16px}
+main{max-width:640px;margin:0 auto;display:grid;gap:16px}
+h1{font-size:32pt;line-height:1.05}h1 em{color:var(--c2)}h2{font-size:14pt}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 16px}
+.tag{display:inline-block;border:1.5px solid;border-radius:20px;padding:2px 12px;font-weight:600;font-size:10pt}.tag.a{border-color:var(--c1)}.tag.b{border-color:var(--c2)}.tag.c{border-color:var(--c3)}
+.muted{color:var(--muted)}
+</style></head><body><main>
+<h1>Research engine <em>blueprint</em></h1>
+<div class="card"><h2>Two sides, one loop</h2><p><span class="tag a">your context</span> <span class="tag b">sourced findings</span> <span class="tag c">weekly repeat</span></p></div>
+<p class="muted">Palette: ink #12303f, orange #d9694a, teal #2f9e8f, violet #6a5acd on a 32 px blueprint grid.</p>
+</main></body></html>

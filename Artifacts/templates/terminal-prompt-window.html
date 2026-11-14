@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Terminal Prompt Window</title>
+<style>
+/* TEMPLATE: Terminal prompt window (from the @wavaai.feeds long-prompt screenshots).
+   Responsive: a window frame with three dots, monospace prompt text with blue section headings, purple list markers, a green prompt line,
+   a page counter and a Copy button. Original CSS; swap the text. Credit the prompt's author and state any claim you have not verified.
+   Copy uses the clipboard inside the click handler and falls back to selecting the text. */
+:root{--bg:#e9ecf1;--win:#fff;--bar:#f1f2f5;--line:#d6dae2;--ink:#1b1f27;--muted:#5b6473;--head:#1f4fb3;--mark:#7a3fb0;--ok:#1f8a4c;--btn:#1f4fb3;--btn-ink:#fff;--mono:'JetBrains Mono','Cascadia Mono',Consolas,'Courier New',monospace;--font:Aptos,'Segoe UI',Inter,Arial,sans-serif}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0e1116;--win:#161a22;--bar:#1e232d;--line:#2d3441;--ink:#e6e9ef;--muted:#9aa3b2;--head:#7aa2ff;--mark:#c79bff;--ok:#5fd694;--btn:#7aa2ff;--btn-ink:#0e1116;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0e1116;--win:#161a22;--bar:#1e232d;--line:#2d3441;--ink:#e6e9ef;--muted:#9aa3b2;--head:#7aa2ff;--mark:#c79bff;--ok:#5fd694;--btn:#7aa2ff;--btn-ink:#0e1116;color-scheme:dark}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--ink);font:11pt/1.55 var(--font);padding-block:32px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.wrap{max-width:900px;margin:0 auto}
+h1{font:800 32pt/1.1 var(--font);text-wrap:balance;margin-bottom:6px}.sub{color:var(--muted);margin-bottom:16px;max-width:70ch}
+.win{background:var(--win);border:1px solid var(--line);border-radius:12px;overflow:hidden;box-shadow:0 8px 24px rgba(0,0,0,.12)}
+.bar{display:flex;gap:8px;align-items:center;background:var(--bar);padding:10px 14px;border-bottom:1px solid var(--line)}
+.bar i{width:12px;height:12px;border-radius:50%;display:block}.bar i:nth-child(1){background:#ff5f57}.bar i:nth-child(2){background:#febc2e}.bar i:nth-child(3){background:#28c840}
+.bar span{margin-left:auto;font:10pt var(--mono);color:var(--muted)}
+.bar button{font:inherit;font-size:10pt;background:var(--btn);color:var(--btn-ink);border:0;border-radius:6px;padding:3px 12px;cursor:pointer}
+pre{padding:16px 18px;overflow-x:auto;font:10.5pt/1.6 var(--mono);white-space:pre-wrap;overflow-wrap:anywhere}
+pre b{color:var(--head)}pre em{color:var(--mark);font-style:normal}pre u{color:var(--ok);text-decoration:none}
+@media (max-width:640px){h1{font-size:24pt}pre{font-size:10pt}}
+</style></head><body><div class="wrap">
+<h1>A long prompt, readable</h1>
+<p class="sub">Show the prompt as it was written, name its author, and say what you checked and what you did not.</p>
+<div class="win"><div class="bar"><i></i><i></i><i></i><span>1 / 4</span><button id="cp" type="button">Copy</button></div>
+<pre id="src"><b>## 0. Pick an operating mode first and state it</b>
+
+MODE A: BUILD. Use this mode if you can write files and run code.
+MODE B: BEHAVIOR-ONLY. Use this mode if you are only a chat model.
+<em>-</em> Say plainly what you cannot do.
+<em>-</em> Only offer what is real.
+
+<u>~ $</u> </pre></div>
+</div>
+<script>
+(function(){var b=document.getElementById('cp'),s=document.getElementById('src');
+b.addEventListener('click',function(){var t=s.textContent;
+function sel(){var r=document.createRange();r.selectNodeContents(s);var g=window.getSelection();g.removeAllRanges();g.addRange(r);b.textContent='Selected'}
+try{navigator.clipboard.writeText(t).then(function(){b.textContent='Copied'},sel)}catch(e){sel()}});})();
+</script></body></html>

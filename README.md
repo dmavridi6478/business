@@ -6017,3 +6017,129 @@ Not done (needs you): plugin installs (`/plugin install paypal@claude-plugins-of
 **Source problems:** the revenue-system list repeats six roles; interview replacement lines are templates that must not claim things you have not done; GTM customer-count thresholds are rules of thumb.
 
 **Not done:** nothing installed; no connector changed (OpenFlowKit entry still unapplied; Midpage, Sentry and Supabase need your authorisation).
+
+## Batch 107 — LinkedIn GTM funnel 2026 archive (7 images; 26 October 2026)
+
+**Report:** Batch 107 Intake Report (`Artifacts/business/batch-111-intake-report.html`; the published link is in the pull request). Plain-text prompts: `docs/batch-111-prompts.md`. Action plan: `docs/batch-111-action-plan.md`.
+
+**Sources:** the 11-module LinkedIn GTM funnel animation (Paolo Trivellato), "10 Claude Cowork Prompts" (SalesDaily), "50 Claude Use Cases" (Jonathan Parsons), "AI Market Research Engine" (The Blueprint Weekly), "Turn YouTube Videos Into Learning App" (Cyberman AI), a PMP formulas cheat sheet, and "Claude Code for Growth Marketing" (9 builds).
+
+**Added:** skills `linkedin-gtm-funnel-modules`, `cowork-sales-prompts-10`, `claude-50-use-cases-by-capability`, `ai-market-research-engine`, `youtube-to-learning-app`, `pmp-formulas-cheat-sheet`, `claude-code-growth-marketing-9`; commands `/linkedin-gtm-funnel`, `/cowork-sales-10`, `/use-case-pick`, `/market-research-engine`, `/youtube-learning-app`, `/pmp-formula`, `/growth-build`; agent `market-research-engine`; Excel workbook `pmp-project-dashboard.xlsx` (live formulas, recalculated and checked); design templates `infographic-bento-funnel-modules`, `infographic-hub-spoke-engine`, `cheatsheet-formula-grid`, `learning-app-shell` and themes `theme-sand-bento-orange`, `theme-blueprint-teal-grid`. Two n8n workflow drafts were created in your n8n account (inactive, not run): LinkedIn comment routing and a weekly market research engine.
+
+**Already existed, not duplicated:** `claude-50-use-cases` (a different 50-item slide), `claude-sales-prompts-20`, `claude-sales-by-role`, `perplexity-research-workflow`, `youtube-to-skill`, `ai-project-management`, `gtm-funnel-2026`; the nine growth builds were only a README bullet before.
+
+**Source problems:** no results data on any image; thresholds ($10k/mo, 14 and 7 days) are the authors' rules of thumb; the PMP sheet's DPMO and make-or-buy lines need care; tool logos on the growth card were read from small icons.
+
+**Not done:** no connector installed (Firecrawl, Webflow, PostHog, Adspirer, Windsor.ai need your sign-in; Vercel half-connected; Perplexity has no connector); `.mcp.json` unchanged; n8n workflows not published; Cowork schedules not created; no install script (nothing to run on your machine).
+
+## Batch 108 — iCloud Photos, one archive (5 images; 26 October 2026)
+
+**Report:** Batch 108 Intake Report (`Artifacts/business/batch-112-intake-report.html`; the published link is in the pull request). Action plan: `docs/batch-112-action-plan.md`.
+
+**Sources:** five @sitetusk GitHub repo cards: FreeCAD, ossu/computer-science, jq, How-To-Secure-A-Linux-Server, FreshRSS. The images contain no prompts, workflows, agents or connectors.
+
+**Added:** skills `sitetusk-free-tools-5`, `jq-json-cookbook` (12 recipes run on jq 1.7), `linux-server-hardening-guide`; commands `/free-tool-pick`, `/jq-filter`, `/harden-server`; design template `repo-card-stone-teal`; user-run `scripts/batch112-install.sh`.
+
+**Already existed, not duplicated:** FreshRSS was in `dev-repos-to-clone` and batch 103 (AGPL-3.0); OSSU's data-science sibling was in `data-ai-github-25`.
+
+**Source problems:** one sentence per card, so no maintenance or security assessment; I did not read the Linux guide's chapters (the skill gives general safe practice and says so); version and funding badges are one-day snapshots.
+
+**Not done:** nothing installed or run; no connector changed; no n8n workflow (nothing in the images called for one).
+
+## Batch 109 — iCloud Photos archive (16 images) and two attached images (28 October 2026)
+
+**Report:** Batch 109 Intake Report (`Artifacts/business/batch-113-intake-report.html`; the published link is in the pull request). Plain-text prompts: `docs/batch-113-prompts.md`. Action plan: `docs/batch-113-action-plan.md`.
+
+**Sources:** "AI Growth for Corporate Leaders & Businesses" (60 tools, @mshee), "Best Prompts for Excel/PPT tasks" (15 prompts), @aiclawbots "7 GitHub repos for building AI agents" (with a Hermes guide pitch), @buildwithkenny "Trending on GitHub this week" (5 repos).
+
+**Added:** skills `ai-growth-tools-60`, `excel-ppt-prompts-15`, `github-trending-5-oct2026`, `agent-repos-licence-ledger`; commands `/ai-tool-pick`, `/excel-ppt-prompt`, `/repo-vet`, `/agent-stack-plan`; agent `agent-stack-architect`; workbook `finance-models-starter.xlsx` (live formulas, 18 values checked independently); design templates `repo-rank-dark-orange`, `tool-map-six-categories`, `prompt-sheet-green` and themes `theme-ink-orange-condensed`, `theme-pastel-category-map`; user-run `scripts/batch113-install.sh` (clones only).
+
+**Already existed, not duplicated:** the seven agent repos in `agent-github-repos-4` and `agent-memory-repos` (this batch adds licences and warnings only), the blue-grid caption template `caption-highlight-blue-grid`.
+
+**Source problems:** OpenViking is AGPL-3.0 (not mentioned on the card or in the earlier rows); "Anthropic Cybersecurity Skills" is not made by Anthropic; "Awesome Harness Engineering" is ambiguous (three repos share the name); star counts unverified; the Hermes guide is a lead magnet and was not included.
+
+**Not done:** no connector installed (registry check only; several need your sign-in); nothing cloned or installed; no workflow (none in the images); `.mcp.json` unchanged.
+
+## Batch 110 — iCloud Photos archive (11 images, 1 video; 7 November 2026)
+
+**Report:** Batch 110 Intake Report (`Artifacts/business/batch-114-intake-report.html`; the published link is in the pull request). Plain-text prompts: `docs/batch-114-prompts.md`. Action plan: `docs/batch-114-action-plan.md`.
+
+**Sources:** @your.aimentor "5 GitHub repos everyone starred this week" (Claude Code Game Studios, Craft Anything, Scrapling, Zed, agent-desktop; cover, five repo cards, five detail slides) and a @cyberwithjohann video "5 GitHub Repositories to Find Security Problems in Code" (Gitleaks, TruffleHog, Trivy, Semgrep, Prowler).
+
+**Added:** skills `five-repos-agent-tools-nov2026`, `security-scanners-five`, `game-studio-chain-of-command`; commands `/scanner-pick`, `/studio-plan`; agent `game-studio-planner`; design templates `repo-get-it-cream`, `scan-result-terminal-card` and theme `theme-scan-night-ember`; user-run `scripts/batch114-install.sh` (clones and one virtualenv install, each behind a question). All 10 repos were confirmed to exist and their licences read from the repos' own files.
+
+**Already existed, not duplicated:** `sast-configuration`, `secrets-management`, `security-scan` and `/security-sast` (the scanner map adds cautions and the order to run them), `unity-developer`, the `computer-use`, `data-scraper-agent` and `lead-scraper` skills, the cream repo card `repo-feature-cream-number`.
+
+**Source problems:** TruffleHog is AGPL-3.0 and its "verified" results come from testing found secrets against the real service; Trivy had a supply-chain compromise in March 2026 (a malicious binary and rewritten GitHub Action tags), so pin to a verified release or commit SHA; Craft Anything is a reverse-engineering engine and its "clean room" mode is a rule, not a sandbox; Scrapling's README advertises CAPTCHA and Cloudflare bypass; agent-desktop gives an agent control of any app you grant; the Zed Linux installer pipes a script into a shell; star counts and the authors' own test results are unverified; the Game Studios README says four games were built but its table shows two; the video's scan screens are illustrative.
+
+**Not done:** nothing cloned, installed or run; no scanner executed; `.mcp.json` unchanged (the Scrapling and agent-desktop MCP entries are in the action plan for your own machine); no connector in the registry matches these tools (TinyFish is already connected); no workflow (none in the files).
+
+## Batch 111 — iCloud Photos archive (26 images) plus two inline images (files numbered 115; 7 November 2026)
+
+**Report:** Batch 111 Intake Report (`Artifacts/business/batch-115-intake-report.html`; the published link is in the pull request). Plain-text prompts: `docs/batch-115-prompts.md`. Action plan: `docs/batch-115-action-plan.md`.
+
+**Sources:** the LinkedIn Positioning Triangle (Nader Alnajjar, LEVER), "9 Mission-Critical Go-to-Market Models" (Marceline Tsobgny, NipPro AI), @palidev21 "5 GitHub tools you'll wish you found sooner", @dotdevs "5 GitHub projects worth exploring" and "Selling unused things? Let ChatGPT help", and @sitetusk "5 GitHub projects they don't want you to know about".
+
+**Added:** skills `oss-finds-three-carousels-nov2026`, `sell-unused-things-prompts`, `linkedin-positioning-triangle`, `gtm-nine-models`; commands `/sell-listing`, `/positioning-triangle`, `/gtm-model-pick`, `/oss-tool-pick`; design templates `tool-card-mono-features`, `repo-card-dark-checker`, `infographic-positioning-triangle`, `infographic-nine-models-grid` and themes `theme-mono-blue-pop`, `theme-checker-night-green`, `theme-triad-teal-blue-orange`, `theme-mint-nine-grid`; user-run `scripts/batch115-install.sh` (shallow clones for reading and one virtualenv install of `rich`, each behind a question; no piped installers). All 15 repos were confirmed to exist and their licences read from the repos' own files.
+
+**Already existed, not duplicated:** the five @dotdevs repos (in `replace-so-agent-repos`; only a new star snapshot was added), KeePassXC and SearXNG, `/linkedin-positioning-statement` and `pricing`.
+
+**Source problems:** the @sitetusk "they don't want you to know" framing is clickbait; Oh My Zsh's README install is a piped `curl | sh` and it renames your `.zshrc`; BCUninstaller's README says "Looking for maintainers"; WinDirStat can delete files; ImageMagick's "200+ formats" is not in its README; Whitebophir, DeepDiagram and SearXNG are AGPL-3.0; star counts are unverified; "Springback" is a self-promotion app.
+
+**Not done:** nothing cloned, installed or run; no connector installed (Mermaid Chart, tldraw and Whimsical need your sign-in; n8n needs re-authentication); no agent guide or workflow in the files; `.mcp.json` unchanged.
+
+## Batch 112 — iCloud Photos archive (60 images, eight creators; files numbered 116; 7 November 2026)
+
+**Report:** Batch 112 Intake Report (`Artifacts/business/batch-116-intake-report.html`; the published link is in the pull request). Plain-text prompts: `docs/batch-116-prompts.md`. Action plan: `docs/batch-116-action-plan.md`.
+
+**Sources:** @inikolov.ai (the `anatomy` skill), @emmanuelnyatefe KOOEMMA "10 free apps", @capacityso "6 GitHub repos", @raphal3494 "6 Rust repos", @dotdevs "5 GitHub projects", @vibe.worker "5 ways your vibe-coded app will get hacked", @dagier_official (Recraft, Hedra, Lovable) and "5 Websites that 10x'd my website traffic".
+
+**Added:** skills `oss-finds-eight-creators-nov2026`, `vibe-app-five-holes`, `freelance-and-traffic-sites-nov2026`; commands `/vibe-check`, `/free-app-pick`; design templates `free-app-card-green-condensed`, `neon-lime-explainer-slide`, `hole-fix-photo-scrim`, `instead-of-dark-card` and themes `theme-kooemma-green-condensed`, `theme-neon-lime-black`, `theme-night-scrim-white-label`, `theme-instead-of-dark`; user-run `scripts/batch116-install.sh` (four shallow clones for reading). All 16 repos confirmed to exist; licences read from the repos.
+
+**Already existed, not duplicated:** t3code, claude-mem, superpowers, Karpathy skills, Zed, uv, Tauri, Polars, Goose, AFFiNE, Traefik, Keila, Instatic, Automa, Excalidraw, Penpot, Syncthing, Stirling PDF, HandBrake.
+
+**Source problems:** Upscayl and RustDesk are AGPL-3.0; Czkawka deletes files and Ventoy writes to USB; the "undercut the designers" pitch has no evidence; "10x'd traffic" has no baseline; OpenMausBot runs your Claude, Codex and Grok CLIs under your login; star counts and the anatomy age claim are unverified; Capacity, Omniscio and Slothy are promotions, not assessed.
+
+**Not done:** nothing cloned, installed or run; no connector, agent or workflow (none in the files); `.mcp.json` unchanged.
+
+## Batch 113 — inline EDA sheet, 7 carousel slides and one video (files numbered 117; 8 November 2026)
+
+**Report:** Batch 113 Intake Report (`Artifacts/business/batch-117-intake-report.html`; the published link is in the pull request). Plain-text prompts: `docs/batch-117-prompts.md`. Action plan: `docs/batch-117-action-plan.md`.
+
+**Sources:** the MLTUT "Exploratory Data Analysis (EDA)" two-page infographic, the @regularbasis.studio carousel "5 More GitHub Repos That Feel Illegal To Use For Free" and the @githubnow "Top 10 GitHub Repos Trending Today" video.
+
+**Added:** skills `eda-cheat-sheet-mltut`, `oss-finds-regularbasis-nov2026`, `github-now-top10-nov8`; command `/eda-plan`; design templates `repo-card-instead-of-lime` and `eda-pipeline-infographic`; themes `theme-regularbasis-lime-black` and `theme-mltut-paper-orange`. Five repos' licences read from the repos.
+
+**Already existed, not duplicated:** Craft Anything, Agent Desktop, OpenMausBot, Zed.
+
+**Source problems:** kimi-k3-in-c runs in 8.24 GB of RAM but needs a 1.56 TB checkpoint on disk and is slow, so "instead of cloud GPUs" overstates it; the carousel title is clickbait; Sherlock profiles usernames across sites; the "security audit skill" is a guide, not an audit; the EDA sheet saves a "cleaned" file with no cleaning step; star counts and the video's list beyond the first three are unverified.
+
+**Not done:** nothing cloned, installed or run; no connector, agent, workflow or install script (none warranted); `.mcp.json` unchanged.
+
+## Batch 114 — SME AI LinkedIn guide (PDF), 12 images and one inline sheet (files numbered 118; 9 November 2026)
+
+**Report:** Batch 114 Intake Report (`Artifacts/business/batch-118-intake-report.html`; the published link is in the pull request). Prompts: `docs/batch-118-prompts.md`. Plan: `docs/batch-118-action-plan.md`.
+
+**Sources:** the SME AI weekly guide "Turn Your LinkedIn Into a Lead Machine With Opus 4.8" (image-only PDF, read page by page), the @githubnow briefing, the @itsnextwork "new use cases for Claude" carousel and a ChatGPT resume cheat sheet.
+
+**Added:** skills `linkedin-opus-lead-machine`, `github-now-nov9-nextwork`; command `/linkedin-lead-machine`; template `prompt-guide-dark-cyan`; theme `theme-smeai-night-cyan`. Licences read for AnyPS5 (GPL-2.0), artcraft (MIT or Apache-2.0) and MuJoCo (Apache-2.0).
+
+**Already existed, not duplicated:** the resume cheat sheet (`resume-prompt-kit`), the anatomy skill, Craft Anything.
+
+**Source problems:** the guide's model, price and "£0" claims are unverified and it is a lead magnet; it omits that connection lists are other people's personal data; the NextWork carousel is a "comment BUILD" lead mechanic and two projects (router admin access, medical scans) carry real risk; star gains unverified.
+
+**Not done:** nothing posted, messaged, cloned or installed; no connector, agent or workflow; `.mcp.json` unchanged.
+
+## Batch 115 — four screenshots of one long prompt (files numbered 119; 10 November 2026)
+
+**Report:** Batch 115 Intake Report (`Artifacts/business/batch-119-intake-report.html`; the published link is in the pull request). Prompt transcription: `docs/batch-119-prompts.md`. Plan: `docs/batch-119-action-plan.md`.
+
+**Source:** the @wavaai.feeds prompt "Build a persistent context-management layer for coding agents" (four terminal screenshots).
+
+**Added:** skill `context-folding-layer-spec`; command `/context-layer-plan`; agent `context-layer-planner`; template `terminal-prompt-window`; theme `theme-terminal-light-blue`.
+
+**Already existed, not duplicated:** nothing equivalent; related `strategic-compact`, `context-budget` and the `context-manager` agent.
+
+**Source problems:** team-scale scope; the trusted-CA proxy launcher is a high-impact security choice; provider-terms risk; no benchmark, author or licence; about twenty client integrations unverified.
+
+**Not done:** nothing built, installed or run; no certificates or proxy touched; no connector, workflow or install script; `.mcp.json` unchanged.

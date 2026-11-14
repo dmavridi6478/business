@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sand Bento and Orange - Theme</title>
+<style>
+/* THEME: Sand Bento & Orange (from the LinkedIn GTM funnel 2026 animation and the SalesDaily Cowork prompts card).
+   Use for process maps, funnel dashboards and numbered prompt cards. Light default; dark on [data-theme="dark"] or prefers-color-scheme. */
+:root{--bg:#f4ede3;--card:#eadfce;--inner:#fbf8f3;--ink:#17140f;--muted:#6b6256;--accent:#e8420b;--pill:#17140f;--pill-ink:#fff;--font:Aptos,'Segoe UI',Inter,Arial,sans-serif;--radius:20px}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#15120e;--card:#26211a;--inner:#1c1813;--ink:#f3ede2;--muted:#a69d8d;--accent:#ff6a3a;--pill:#f3ede2;--pill-ink:#15120e}}
+:root[data-theme="dark"]{--bg:#15120e;--card:#26211a;--inner:#1c1813;--ink:#f3ede2;--muted:#a69d8d;--accent:#ff6a3a;--pill:#f3ede2;--pill-ink:#15120e}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--ink);font:11pt/1.55 var(--font);padding:40px 16px}
+main{max-width:640px;margin:0 auto;display:grid;gap:16px}
+h1{font-size:32pt;line-height:1.05;letter-spacing:-1px}h1 span{color:var(--accent)}h2{font-size:14pt}
+.card{background:var(--card);border-radius:var(--radius);padding:16px 18px}
+.pill{display:inline-block;background:var(--pill);color:var(--pill-ink);border-radius:20px;padding:4px 14px;font-weight:700}
+.inner{background:var(--inner);border-radius:12px;padding:10px 12px;margin-top:8px}.inner.hot{box-shadow:0 0 0 2px var(--accent) inset}
+.muted{color:var(--muted)}
+</style></head><body><main>
+<h1>Turn posts into <span>booked calls</span></h1>
+<div class="card"><span class="pill">2 Comment routing</span><div class="inner hot"><h2>New comment</h2><p class="muted">ICP fit: resource and DM. Not yet: nurture.</p></div><div class="inner">Every commenter gets the same-day treatment.</div></div>
+<p class="muted">Palette: sand #f4ede3, card #eadfce, ink #17140f, accent #e8420b. Black pill labels, one orange highlight per card.</p>
+</main></body></html>

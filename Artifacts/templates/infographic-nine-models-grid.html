@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nine GTM Models Grid</title>
+<style>
+/* TEMPLATE: Nine go-to-market models grid (from the Marceline Tsobgny / NipPro AI "9 Mission-Critical Go-to-Market Models" infographic).
+   Responsive 3x3 grid; each cell has a small inline SVG diagram, the model name and the question it answers. A filter row marks which
+   models fit a stage. Original diagrams drawn for this template, not copied from the source.
+   Swap: names, questions, the data-stage values, the SVG shapes. */
+:root{--bg:#eef8f2;--panel:#fff;--line:#cfe6d8;--ink:#0f2218;--muted:#52695b;--accent:#1c8c52;--hi:#d8f0e2;--font:Aptos,'Segoe UI',Inter,Arial,sans-serif}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0e1a14;--panel:#16261d;--line:#294435;--ink:#e8f5ee;--muted:#97b8a4;--accent:#5fd694;--hi:#1d3a2a}}
+:root[data-theme="dark"]{--bg:#0e1a14;--panel:#16261d;--line:#294435;--ink:#e8f5ee;--muted:#97b8a4;--accent:#5fd694;--hi:#1d3a2a}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--ink);font:11pt/1.55 var(--font);padding:32px max(16px,env(safe-area-inset-left,0px))}
+.wrap{max-width:1020px;margin:0 auto}
+h1{font:800 32pt/1.1 var(--font);text-wrap:balance}.sub{color:var(--muted);margin:8px 0 18px;max-width:70ch}
+.filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px}
+.filters button{font:inherit;border:2px solid var(--line);background:var(--panel);color:var(--ink);border-radius:999px;padding:6px 16px;cursor:pointer}
+.filters button[aria-pressed="true"]{background:var(--accent);color:var(--bg);border-color:var(--accent);font-weight:700}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.cell{background:var(--panel);border:2px solid var(--line);border-radius:16px;padding:14px 16px}
+.cell.off{opacity:.35}.cell h2{font-size:14pt;margin:8px 0 4px}.cell p{font-size:10.5pt;color:var(--muted)}
+.n{font-weight:800;color:var(--accent)}
+svg{width:100%;height:84px;display:block;background:var(--hi);border-radius:10px}
+svg *{stroke:var(--accent);stroke-width:2;fill:none;stroke-linecap:round;stroke-linejoin:round}svg .f{fill:var(--accent);stroke:none;opacity:.45}
+@media (max-width:760px){h1{font-size:24pt}.grid{grid-template-columns:1fr}}
+</style></head><body><div class="wrap">
+<h1>Nine models, one question each</h1>
+<p class="sub">Pick the stage you are at. The cells that do not fit fade out. Each diagram is a prompt for a conversation, not a result.</p>
+<div class="filters" id="f" role="group" aria-label="Filter by stage">
+<button data-s="all" aria-pressed="true">All</button><button data-s="who" aria-pressed="false">Who</button><button data-s="proof" aria-pressed="false">Proof</button><button data-s="msg" aria-pressed="false">Message and price</button><button data-s="grow" aria-pressed="false">Growth</button></div>
+<div class="grid">
+<div class="cell" data-stage="grow"><span class="n">1</span><svg viewBox="0 0 120 84"><circle cx="60" cy="42" r="34"/><circle cx="60" cy="42" r="22"/><circle class="f" cx="60" cy="42" r="9"/></svg><h2>Bullseye Framework</h2><p>Which channel should get the effort?</p></div>
+<div class="cell" data-stage="msg"><span class="n">2</span><svg viewBox="0 0 120 84"><path d="M20 38l40-26 40 26"/><rect x="28" y="38" width="64" height="34"/><path d="M60 38v34"/></svg><h2>Positioning to Messaging</h2><p>What do we say, and where?</p></div>
+<div class="cell" data-stage="grow"><span class="n">3</span><svg viewBox="0 0 120 84"><path d="M30 42a30 22 0 1 1 60 0a30 22 0 1 1-60 0"/><path d="M84 30l8 4-2 9"/></svg><h2>Growth Loops</h2><p>How does growth feed itself?</p></div>
+<div class="cell" data-stage="proof"><span class="n">4</span><svg viewBox="0 0 120 84"><path d="M24 42a36 26 0 0 1 72 0"/><path d="M96 42a36 26 0 0 1-72 0"/><path d="M90 28l6 8-9 2"/></svg><h2>PMF Cycle</h2><p>Do we have product-market fit?</p></div>
+<div class="cell" data-stage="who"><span class="n">5</span><svg viewBox="0 0 120 84"><circle cx="46" cy="36" r="22"/><circle cx="74" cy="36" r="22"/><circle cx="60" cy="54" r="22"/></svg><h2>Minimum Viable Segment</h2><p>Who is the smallest group we can win?</p></div>
+<div class="cell" data-stage="msg"><span class="n">6</span><svg viewBox="0 0 120 84"><path d="M14 70C40 66 50 20 70 14"/><path d="M14 14C40 18 80 60 106 70"/><rect class="f" x="48" y="20" width="26" height="46"/></svg><h2>Van Westendorp's Price Meter</h2><p>What price range will buyers accept?</p></div>
+<div class="cell" data-stage="who"><span class="n">7</span><svg viewBox="0 0 120 84"><circle class="f" cx="30" cy="42" r="10"/><circle cx="30" cy="42" r="20"/><circle cx="30" cy="42" r="32"/><path d="M70 42h40M102 36l8 6-8 6"/></svg><h2>Beachhead Strategy</h2><p>Where do we start, and in what order do we expand?</p></div>
+<div class="cell" data-stage="who"><span class="n">8</span><svg viewBox="0 0 120 84"><circle cx="38" cy="30" r="12"/><path d="M18 70c0-14 8-22 20-22s20 8 20 22"/><rect x="68" y="22" width="36" height="46" rx="3"/><path d="M76 34h20M76 44h20M76 54h12"/></svg><h2>ECP vs ICP</h2><p>Who do we sell to first, and who later?</p></div>
+<div class="cell" data-stage="proof"><span class="n">9</span><svg viewBox="0 0 120 84"><path d="M14 70h92M14 70V14"/><path d="M20 62C44 58 60 40 100 18"/><circle class="f" cx="100" cy="18" r="5"/></svg><h2>Validation Methods</h2><p>How much proof can we get before building?</p></div>
+</div></div>
+<script>
+(function(){var b=document.querySelectorAll('#f button'),c=document.querySelectorAll('.cell');
+b.forEach(function(x){x.addEventListener('click',function(){var s=x.dataset.s;
+b.forEach(function(y){y.setAttribute('aria-pressed',y===x?'true':'false')});
+c.forEach(function(e){e.classList.toggle('off',s!=='all'&&e.dataset.stage!==s)});});});})();
+</script></body></html>

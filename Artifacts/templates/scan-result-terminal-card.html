@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Scan Result Terminal Card - Dark</title>
+<style>
+/* TEMPLATE: Scan-result terminal card, dark (from the @cyberwithjohann "5 GitHub Repositories to Find Security Problems in Code" video).
+   Two 1080x1920 slides in one file, shown at 40%. Slide 1 (duplicate per tool): a five-dash progress rail, "REPOSITORY n OF 5", the tool name,
+   an orange one-line job, a terminal card (traffic lights, repo link bar, one command, key/value result rows with severity colours), a link pill and a caption.
+   Slide 2: a "Save these repositories" list. All result values are SAMPLE output: label them as illustrative and never present them as a real scan.
+   Swap: .rail .on count, .kicker, .name, .job, .bar text, .cmd, the .row pairs and their .sev class (crit | warn | ok), .pill, .cap, the .save list, .handle.
+   Original CSS; no source video frame, avatar or logo is reused. */
+:root{--bg:#0b0c10;--glow:rgba(240,138,60,.14);--panel:#14161c;--line:#262a33;--ink:#eceae4;--muted:#8b8f99;--accent:#f08a3c;--crit:#ff5d5d;--warn:#f0b429;--ok:#39c48a;
+  --head:'Inter','Aptos Display','Segoe UI',Arial,sans-serif;--text:Aptos,'Segoe UI',Inter,Arial,sans-serif;--mono:'JetBrains Mono','Cascadia Mono',Consolas,'Courier New',monospace}
+@media (prefers-color-scheme:light){:root:not([data-theme="dark"]){--bg:#f4f1ea;--glow:rgba(201,98,26,.10);--panel:#fff;--line:#ddd7c8;--ink:#17160f;--muted:#6b665c;--accent:#c9621a;--crit:#c62f2f;--warn:#9a6a00;--ok:#1f7a55}}
+:root[data-theme="light"]{--bg:#f4f1ea;--glow:rgba(201,98,26,.10);--panel:#fff;--line:#ddd7c8;--ink:#17160f;--muted:#6b665c;--accent:#c9621a;--crit:#c62f2f;--warn:#9a6a00;--ok:#1f7a55}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#2b2b2b;padding:24px 12px;font-family:var(--text)}
+.deck{display:flex;gap:24px;flex-wrap:wrap;justify-content:center}
+.frame{width:432px;height:768px;overflow:hidden;border-radius:10px}
+.slide{width:1080px;height:1920px;transform:scale(.4);transform-origin:top left;position:relative;overflow:hidden;color:var(--ink);padding:150px 90px;
+  background:radial-gradient(900px 700px at 50% 0%,var(--glow),transparent 70%),var(--bg);text-align:center}
+.rail{display:flex;gap:10px;justify-content:center;align-items:center}.rail i{width:56px;height:6px;border-radius:3px;background:var(--line)}.rail i.on{background:var(--accent)}
+.kicker{margin-top:28px;font:500 26px var(--mono);letter-spacing:6px;color:var(--muted);text-transform:uppercase}
+.name{margin-top:36px;font:800 150px/1 var(--head);letter-spacing:-3px}
+.job{margin-top:18px;font-size:42px;color:var(--accent)}
+.term{margin:90px auto 0;max-width:900px;background:var(--panel);border:2px solid var(--line);border-radius:24px;overflow:hidden;text-align:left}
+.dots{display:flex;gap:12px;align-items:center;padding:22px 28px;border-bottom:2px solid var(--line)}.dots i{width:16px;height:16px;border-radius:50%;background:var(--line)}
+.bar{margin-left:18px;font:400 24px var(--mono);color:var(--muted)}
+.body{padding:34px 36px 40px}.cmd{font:500 38px var(--mono);color:var(--ink)}.cmd b{color:var(--accent);font-weight:500}
+.row{display:flex;justify-content:space-between;gap:20px;margin-top:22px;font:400 32px var(--mono);color:var(--muted)}.row span:last-child{color:var(--ink);text-align:right}
+.sev.crit span:last-child{color:var(--crit)}.sev.warn span:last-child{color:var(--warn)}.sev.ok span:last-child{color:var(--ok)}
+.sample{margin-top:30px;font:400 22px var(--mono);color:var(--muted);opacity:.8}
+.pill{display:inline-block;margin-top:70px;padding:16px 34px;border:2px solid var(--line);border-radius:40px;font:500 28px var(--mono);color:var(--accent)}
+.cap{margin-top:60px;font-size:50px;font-weight:600}
+.handle{position:absolute;right:70px;bottom:70px;font-size:30px;color:var(--muted)}
+@media (max-width:480px){.frame{width:324px;height:576px}.slide{transform:scale(.3)}}
+.save h2{font:800 78px/1.1 var(--head);margin-top:120px}.save h2 em{font-style:normal;color:var(--accent)}
+.save ol{list-style:none;margin:80px auto 0;max-width:900px;text-align:left}
+.save li{display:flex;gap:26px;align-items:baseline;padding:30px 0;border-bottom:2px solid var(--line);font:500 36px var(--mono)}
+.save li small{display:block;font:400 26px var(--text);color:var(--muted);margin-top:8px}.save li b{color:var(--accent);font-weight:500}
+</style></head><body><div class="deck">
+<div class="frame"><div class="slide">
+<div class="rail"><i class="on"></i><i class="on"></i><i></i><i></i><i></i></div>
+<div class="kicker">Repository 2 of 5</div>
+<div class="name">Tool Name</div>
+<div class="job">One line on the job it does</div>
+<div class="term"><div class="dots"><i></i><i></i><i></i><span class="bar">github.com/owner/repo</span></div>
+<div class="body"><div class="cmd"><b>$</b> tool scan .</div>
+<div class="row sev crit"><span>Findings</span><span>3</span></div>
+<div class="row"><span>Rule</span><span>generic-api-key</span></div>
+<div class="row"><span>File</span><span>app/config.py:42</span></div>
+<div class="row sev warn"><span>Severity</span><span>high</span></div>
+<div class="sample">sample output, not a real scan</div></div></div>
+<div class="pill">github.com/owner/repo</div>
+<div class="cap">What it finds, in five words</div>
+<div class="handle">@yourhandle</div>
+</div></div>
+<div class="frame"><div class="slide save">
+<h2>Save these <em>repositories</em></h2>
+<ol>
+<li><b>1</b><span>owner/tool-one<small>secret scanning</small></span></li>
+<li><b>2</b><span>owner/tool-two<small>credential checks</small></span></li>
+<li><b>3</b><span>owner/tool-three<small>container scanning</small></span></li>
+<li><b>4</b><span>owner/tool-four<small>code patterns</small></span></li>
+<li><b>5</b><span>owner/tool-five<small>cloud audits</small></span></li>
+</ol>
+<div class="handle">@yourhandle</div>
+</div></div>
+</div></body></html>

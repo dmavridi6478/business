@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hub and Spoke Engine</title>
+<style>
+/* TEMPLATE: Hub and Spoke Engine (from "How to Build a High-Performing AI Market Research Engine").
+   Two hubs, labelled spokes in two colours, a 4-step "why" row and a 6-step workflow grid on a blueprint grid.
+   Spokes are placed with CSS custom properties --a (angle) so you can edit labels without touching geometry. */
+:root{--bg:#f3f7fb;--grid:rgba(30,80,120,.07);--ink:#12303f;--muted:#55707f;--c1:#d9694a;--c2:#2f9e8f;--c3:#6a5acd;--card:#fff;--line:#c9d9e4;--font:Aptos,'Segoe UI',Inter,Arial,sans-serif}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0f1a22;--grid:rgba(120,190,230,.07);--ink:#e6f1f7;--muted:#93aebb;--card:#16252f;--line:#2b4352}}
+:root[data-theme="dark"]{--bg:#0f1a22;--grid:rgba(120,190,230,.07);--ink:#e6f1f7;--muted:#93aebb;--card:#16252f;--line:#2b4352}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);background-size:32px 32px;color:var(--ink);font:11pt/1.5 var(--font);padding:32px 16px}
+main{max-width:980px;margin:0 auto}
+h1{font-size:32pt;line-height:1.05;text-align:center;font-weight:800}h1 em{display:block;color:var(--c2);font-style:italic}
+.lead{text-align:center;color:var(--muted);margin:8px 0 22px}
+.stage{position:relative;height:420px;border:1px solid var(--line);border-radius:18px;background:var(--card);overflow:hidden}
+.hub{position:absolute;top:50%;width:92px;height:92px;margin-top:-46px;border-radius:50%;background:var(--card);border:2px solid var(--line);display:grid;place-items:center;font-weight:800;text-align:center;font-size:11pt}
+.hub.l{left:calc(50% - 150px);border-color:var(--c1)}.hub.r{left:calc(50% + 58px);border-color:var(--c2)}
+.sp{position:absolute;padding:5px 12px;border-radius:20px;border:1.5px solid;background:var(--card);font-size:10pt;font-weight:600;white-space:nowrap}
+.sp.o{border-color:var(--c1)}.sp.g{border-color:var(--c2)}
+h2{font-size:14pt;margin:26px 0 10px;text-align:center}
+.why{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.why div,.steps div{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:12px 14px}
+.why b,.steps b{display:block;margin-bottom:4px}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.n{display:inline-block;background:var(--c3);color:#fff;border-radius:6px;padding:1px 8px;font-size:10pt;font-weight:700;margin-right:6px}
+.foot{text-align:center;color:var(--muted);margin-top:18px;font-size:10pt}
+@media (max-width:760px){.why,.steps{grid-template-columns:1fr}.stage{height:auto;padding:12px;display:flex;flex-wrap:wrap;gap:8px;justify-content:center}.hub,.sp{position:static;margin:0}h1{font-size:24pt}}
+</style></head><body><main>
+<h1>How to build a high-performing<em>AI market research engine</em></h1>
+<p class="lead">Perplexity finds the information. Claude Code directs it with the context you have already written.</p>
+<div class="stage">
+ <div class="hub l">Claude<br>Code</div><div class="hub r">Perplexity</div>
+ <span class="sp o" style="left:8%;top:12%">About Me file</span><span class="sp o" style="left:3%;top:30%">Target audience</span><span class="sp o" style="left:2%;top:48%">Content strategy</span><span class="sp o" style="left:4%;top:66%">Research preferences</span><span class="sp o" style="left:14%;top:84%">Brand positioning</span>
+ <span class="sp g" style="right:12%;top:12%">Audience problems</span><span class="sp g" style="right:8%;top:30%">Search trends</span><span class="sp g" style="right:3%;top:48%">Industry reports</span><span class="sp g" style="right:4%;top:66%">Original research + stats</span><span class="sp g" style="right:14%;top:84%">Competitor content</span>
+</div>
+<h2>Why connect them</h2>
+<div class="why"><div><b>1 It knows your context</b>About Me, audience and strategy already exist.</div><div><b>2 AI talks to AI better</b>Claude briefs Perplexity precisely.</div><div><b>3 Better requests</b>No re-explaining each time.</div><div><b>4 Link by API</b>Let Claude Code manage the research.</div></div>
+<h2>6 steps for the weekly workflow</h2>
+<div class="steps">
+ <div><b><span class="n">1</span>Research your audience</b>Questions, community problems, objections.</div>
+ <div><b><span class="n">2</span>Find reliable sources</b>Dated, linked, each one checked.</div>
+ <div><b><span class="n">3</span>Identify content gaps</b>Unanswered questions, hot problems.</div>
+ <div><b><span class="n">4</span>Analyze the research</b>Patterns, conflicts, topics to explore.</div>
+ <div><b><span class="n">5</span>Organize your findings</b>Markdown report in Notion by the calendar.</div>
+ <div><b><span class="n">R</span>Then repeat</b>Weekly, biweekly or monthly.</div>
+</div>
+<p class="foot">Source: The Blueprint Weekly infographic.</p>
+</main></body></html>

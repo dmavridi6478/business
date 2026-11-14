@@ -1,0 +1,92 @@
+<title>Install Hook Scan</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<style>
+:root{--bg:#faf8f4;--card:#ffffff;--ink:#1b1a17;--muted:#625d54;--line:#ddd6c9;--accent:#b5420f;--head:#e9e2d4;--code:#f1ece1;--ok:#2d6a3e;--warn:#9a5a00}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#15130f;--card:#1e1b16;--ink:#f1ece0;--muted:#a89f8f;--line:#3a352c;--accent:#ff8a57;--head:#2a261f;--code:#26221b;--ok:#8fd69c;--warn:#f0b35a;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#15130f;--card:#1e1b16;--ink:#f1ece0;--muted:#a89f8f;--line:#3a352c;--accent:#ff8a57;--head:#2a261f;--code:#26221b;--ok:#8fd69c;--warn:#f0b35a;color-scheme:dark}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Aptos,"Segoe UI",Calibri,Arial,sans-serif;font-size:11pt;line-height:1.55;padding-block:32px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.wrap{max-width:980px;margin:0 auto}
+h1{font-size:32pt;line-height:1.08;margin:0 0 6px;text-wrap:balance}
+h2{font-size:14pt;margin:30px 0 10px;padding-bottom:6px;border-bottom:2px solid var(--accent)}
+h3{font-size:11pt;margin:18px 0 6px}
+.meta{color:var(--muted);margin:0 0 18px}
+p{margin:8px 0;max-width:78ch}
+.scroll{overflow-x:auto;border:1px solid var(--line);border-radius:6px;background:var(--card)}
+table{border-collapse:collapse;width:100%;min-width:640px;font-size:11pt}
+th{background:var(--head);font-weight:700}
+th,td{border:1px solid var(--line);padding:7px 10px;text-align:center;vertical-align:top}
+td.l{text-align:left}
+.pr{background:var(--code);border:1px solid var(--line);border-radius:6px;padding:10px 12px 10px;margin:8px 0;position:relative;white-space:pre-wrap;word-break:break-word;font-family:"Cascadia Mono",Consolas,monospace;font-size:10pt}
+.pr button{float:right;margin:0 0 6px 10px;font:inherit;font-size:10pt;font-family:Aptos,"Segoe UI",Arial,sans-serif;background:var(--card);color:var(--ink);border:1px solid var(--line);border-radius:6px;padding:2px 10px;cursor:pointer}
+.pr button:focus-visible{outline:2px solid var(--accent)}
+.lab{font-weight:700;margin-top:14px}
+.tag{display:inline-block;border:1px solid var(--line);border-radius:12px;padding:0 9px;font-size:10pt;background:var(--card)}
+.ok{color:var(--ok);font-weight:700}.warn{color:var(--warn);font-weight:700}
+ul{margin:6px 0;padding-left:22px}li{margin:3px 0;max-width:78ch}
+code{font-family:"Cascadia Mono",Consolas,monospace;font-size:10pt;background:var(--code);padding:0 4px;border-radius:3px}
+</style>
+<div class="wrap">
+<h1>Install Hook Scan</h1>
+<p class="meta">Static scan of 12 shallow clones from batch 109 &middot; 28 October 2026 &middot; nothing from the clones was executed</p>
+
+<h2>1. Result</h2>
+<p>I found no malicious install-time behaviour in any of the 12 repositories. The risk is not in installation but in what several of them are designed to do once running. Two plugins register hooks that capture your conversations, and several documents tell you or your agent to pipe a remote script into a shell.</p>
+<p><b>Method and limit:</b> I read files with grep and a Python script run in isolated mode; no package manager, build tool or script from the clones was run. A static scan finds known patterns; it cannot prove a repository is safe, and it does not cover the remote scripts the repositories tell you to download.</p>
+
+<h2>2. What each repository can run</h2>
+<div class="scroll"><table>
+<thead><tr><th>Repo</th><th>Install-time code</th><th>Hooks or MCP servers</th><th>Remote scripts</th><th>Verdict</th></tr></thead>
+<tbody>
+<tr><td>awesome-harness-engineering</td><td>None (5 files)</td><td>None</td><td>None</td><td class="ok">Reading list only</td></tr>
+<tr><td>security-audit-skill</td><td>None (22 files)</td><td>None</td><td>None</td><td class="ok">Skill files only</td></tr>
+<tr><td>diagram-design</td><td>None</td><td>None</td><td>None</td><td class="ok">Skill files only; its "IGNORE ALL PREVIOUS INSTRUCTIONS" strings are test fixtures</td></tr>
+<tr><td>scientific-agent-skills</td><td>None</td><td>None</td><td>Docs mention uv, paperclip and pi installers</td><td class="ok">Docs only</td></tr>
+<tr><td>Anthropic-Cybersecurity-Skills</td><td>None</td><td>None</td><td>Skill instructions tell an agent to install Trivy, Grype, Syft and rustup with <code>curl | sh</code></td><td class="warn">Review before letting an agent follow those steps; the pack covers offensive-security topics</td></tr>
+<tr><td>browser-use</td><td>None beyond normal packaging</td><td>None</td><td>Docs and one message string suggest <code>curl | sh</code>; the code does not run it</td><td class="ok">Low</td></tr>
+<tr><td>graphify</td><td>None</td><td>Its CLI contains a PreToolUse guard for Claude Code and similar hosts; I did not confirm how or whether its install writes it into your settings</td><td>uv installer in docs</td><td class="warn">Check what its install command writes to your settings before running it</td></tr>
+<tr><td>opencode</td><td>Root <code>postinstall</code> and <code>prepare</code> run only for a source checkout (bun, husky)</td><td>None</td><td>README install is <code>curl -fsSL https://opencode.ai/v2/install | bash</code>, a remote script I could not audit</td><td class="warn">Prefer a package manager or audit the script first</td></tr>
+<tr><td>orca</td><td>Root and mobile <code>postinstall</code> build workspace packages and native modules (source checkouts)</td><td>A fixtures MCP server in the repo's own <code>.mcp.json</code> for development</td><td>Only inside tests</td><td class="warn">Heavy native build; runs agents with your credentials</td></tr>
+<tr><td>rea</td><td><code>prepare</code> patches a dev dependency and installs husky (source checkouts)</td><td>MCP launcher script in its Codex plugin</td><td><code>install.sh</code> via <code>curl | bash</code> from raw GitHub main; it has a truncation guard</td><td class="warn">Dual-use tool; install from a pinned release, not main</td></tr>
+<tr><td>agentmemory</td><td><code>prepack</code> only (publisher side)</td><td><b>12 hook events</b> including every tool use; Cursor config runs <code>npx -y @agentmemory/mcp</code> unpinned</td><td>Offers to run an iii-engine installer</td><td class="warn">Captures tool activity; default server is localhost:3111</td></tr>
+<tr><td>OpenViking</td><td><code>setup.py</code> builds a C++ extension; npm <code>postinstall</code> only prints PATH diagnostics</td><td><b>9 hook events</b> in its Claude Code plugin including Stop, which pushes new conversation turns to an OpenViking session</td><td>Setup wizard can <code>curl | sh</code> the Ollama installer, after an "Install Ollama now?" prompt; Dockerfiles pipe nodesource and uv installers</td><td class="warn">AGPL-3.0; captures conversations; build needs cmake and a compiler</td></tr>
+</tbody></table></div>
+
+<h2>3. The two findings that matter</h2>
+<ul>
+<li><b>Memory plugins read your sessions.</b> The agentmemory and OpenViking Claude Code plugins register hooks on session start, every prompt, tool use and stop. They send what happened, including tool output and transcript turns, to a memory server. The defaults I saw point at localhost (agentmemory port 3111; OpenViking 127.0.0.1), but an environment variable or config can point them at a remote server. Tool output can contain secrets. Install them only on projects where that is acceptable, keep the server local, and read the hook scripts first.</li>
+<li><b>Remote installers are the real exposure.</b> Several READMEs and skills pipe a downloaded script into a shell. That script is not in the clone and can change after you read this. Prefer package managers, pinned releases and downloading the script to read before running.</li>
+</ul>
+
+<h2>4. Hidden text and prompt injection</h2>
+<p>I scanned all markdown, script and config files for zero-width and bidirectional characters and for injection phrases such as "ignore previous instructions". Findings: zero-width characters appear in Persian, Bengali and Malayalam translations (normal in those scripts), an emoji test table, and inside a code sample in a defensive skill. The injection phrases appear in security-defence skills and in test fixtures that exist to test detection. None was found in a skill or command file that would instruct an agent to exfiltrate data or hide actions from you.</p>
+
+<h2>5. Not checked</h2>
+<ul>
+<li>The remote scripts and the packages those repositories download when installed.</li>
+<li>Dependencies of each project; I did not audit lockfiles.</li>
+<li>Runtime behaviour. A hook script can do more at run time than its source suggests if it downloads code.</li>
+<li><code>ai-boost</code> and <code>walkinglabs</code> "awesome-harness-engineering" repositories (not cloned).</li>
+</ul>
+
+<h2>6. Suggested order</h2>
+<div class="scroll"><table>
+<thead><tr><th>Step</th><th>Do</th></tr></thead>
+<tbody>
+<tr><td>1</td><td>Start with the reading-only repos: awesome-harness-engineering, security-audit-skill, diagram-design, scientific-agent-skills</td></tr>
+<tr><td>2</td><td>Try browser-use from a package manager in a virtual environment</td></tr>
+<tr><td>3</td><td>Before any memory plugin, read its hook scripts and decide where the server runs</td></tr>
+<tr><td>4</td><td>Treat rea, orca and opencode as tools that act with your rights; use a clean git state and no production credentials</td></tr>
+</tbody></table></div>
+</div>
+<script>
+document.querySelectorAll('[data-c]').forEach(function(b){
+  var btn=b.querySelector('button');
+  btn.addEventListener('click',function(){
+    var t=b.innerText.replace(/^Copy\s*/,'').replace(/^\d+\.\s/,'');
+    var done=function(){btn.textContent='Copied';setTimeout(function(){btn.textContent='Copy'},1500)};
+    try{navigator.clipboard.writeText(t).then(done,function(){sel(b)})}catch(e){sel(b)}
+  });
+});
+function sel(el){var r=document.createRange();r.selectNodeContents(el);var s=getSelection();s.removeAllRanges();s.addRange(r)}
+</script>

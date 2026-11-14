@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EDA Pipeline Infographic</title>
+<style>
+/* TEMPLATE: EDA pipeline infographic (from the MLTUT "Exploratory Data Analysis (EDA)" two-page sheet).
+   Responsive: a five-stage flow with small inline SVG icons, a purpose and key-steps panel, statistical measures and visualisations panels,
+   a code panel with a copy button, and a summary note. Original layout and icons; stage names and measures follow the source.
+   Swap: stage text, measures, the code block. The copy button uses the clipboard inside the click handler and falls back to selection. */
+:root{--bg:#f5f2ea;--panel:#fffdf8;--line:#ddd5c4;--ink:#17202b;--muted:#566070;--accent:#e07a1f;--blue:#2b4a9a;--green:#2f7d3a;--code:#14181f;--code-ink:#e6e8ee;--note:#fbe4cc;--font:Aptos,'Segoe UI',Inter,Arial,sans-serif;--mono:'Cascadia Mono',Consolas,monospace}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#141820;--panel:#1c222d;--line:#323b4a;--ink:#edeff4;--muted:#a1abbb;--accent:#ff9a45;--blue:#8aa8ff;--green:#6fd07c;--code:#0d1016;--code-ink:#e6e8ee;--note:#3a2a1a;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#141820;--panel:#1c222d;--line:#323b4a;--ink:#edeff4;--muted:#a1abbb;--accent:#ff9a45;--blue:#8aa8ff;--green:#6fd07c;--code:#0d1016;--code-ink:#e6e8ee;--note:#3a2a1a;color-scheme:dark}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--ink);font:11pt/1.55 var(--font);padding-block:32px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.wrap{max-width:1020px;margin:0 auto}
+h1{font:800 32pt/1.1 var(--font);text-wrap:balance}h2{font-size:14pt;margin-bottom:8px}
+.sub{color:var(--muted);margin:8px 0 22px;max-width:70ch}
+.flow{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}
+.stage{background:var(--panel);border:2px solid var(--line);border-radius:14px;padding:12px;text-align:center;position:relative}
+.stage:not(:last-child)::after{content:"\2192";position:absolute;right:-16px;top:40%;color:var(--accent);font-size:18pt;z-index:1}
+.stage svg{width:56px;height:56px;stroke:var(--blue);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.stage b{display:block;margin-top:6px}.stage span{font-size:10pt;color:var(--muted)}
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:16px}
+.card{background:var(--panel);border:2px solid var(--line);border-radius:14px;padding:14px 18px;min-width:0}
+.card ul{margin:6px 0 0 18px}.card li{margin:3px 0}
+.code{margin-top:16px;background:var(--code);border-radius:14px;overflow:hidden}
+.code header{display:flex;justify-content:space-between;align-items:center;padding:8px 14px;color:var(--code-ink);border-bottom:1px solid #2a3140}
+.code button{font:inherit;background:var(--accent);color:#111;border:0;border-radius:8px;padding:4px 12px;cursor:pointer}
+.code pre{padding:14px;overflow-x:auto;color:var(--code-ink);font:10pt/1.5 var(--mono)}
+.note{margin-top:16px;background:var(--note);border:2px solid var(--accent);border-radius:12px;padding:12px 16px;text-align:center}
+@media (max-width:760px){h1{font-size:24pt}.flow{grid-template-columns:1fr}.stage:not(:last-child)::after{content:"\2193";right:calc(50% - 8px);top:auto;bottom:-22px}.cols{grid-template-columns:1fr}}
+</style></head><body><div class="wrap">
+<h1>Exploratory data analysis</h1>
+<p class="sub">Five steps from raw rows and columns to a short report. The sheet is a starting prompt: check missing values, duplicates and outliers before you trust any chart.</p>
+<div class="flow">
+<div class="stage"><svg viewBox="0 0 64 64"><ellipse cx="32" cy="14" rx="20" ry="7"/><path d="M12 14v36c0 4 9 7 20 7s20-3 20-7V14M12 32c0 4 9 7 20 7s20-3 20-7"/></svg><b>Data understanding</b><span>Summary, info, data types</span></div>
+<div class="stage"><svg viewBox="0 0 64 64"><path d="M10 54h44M18 54V32M30 54V16M42 54V26M54 54V40"/></svg><b>Univariate</b><span>Distributions, statistics</span></div>
+<div class="stage"><svg viewBox="0 0 64 64"><path d="M10 54h44M10 54V10"/><circle cx="24" cy="40" r="3"/><circle cx="34" cy="30" r="3"/><circle cx="44" cy="22" r="3"/><circle cx="30" cy="44" r="3"/></svg><b>Bivariate</b><span>Relationships, correlations</span></div>
+<div class="stage"><svg viewBox="0 0 64 64"><rect x="10" y="10" width="44" height="44" rx="3"/><path d="M10 25h44M10 40h44M25 10v44M40 10v44"/></svg><b>Multivariate</b><span>Patterns, interactions</span></div>
+<div class="stage"><svg viewBox="0 0 64 64"><rect x="14" y="10" width="36" height="46" rx="3"/><path d="M24 10V6h16v4M22 44l8-8 6 6 8-10"/></svg><b>Insights and reporting</b><span>Conclusions, visualisations</span></div>
+</div>
+<div class="cols">
+<div class="card"><h2>Purpose</h2><p>Explore, visualise and summarise data to understand its main characteristics, spot anomalies and guide later modelling.</p></div>
+<div class="card"><h2>Common measures</h2><ul><li>Central tendency: mean, median, mode</li><li>Dispersion: variance, standard deviation, IQR</li><li>Shape: skewness, kurtosis</li></ul></div>
+<div class="card"><h2>Common visualisations</h2><ul><li>Histogram, box plot, bar chart</li><li>Scatter plot, correlation heatmap, pair plot</li></ul></div>
+<div class="card"><h2>Checks to add</h2><ul><li>Missing values and duplicates</li><li>Outliers and impossible values</li><li>Leakage; correlation is not causation</li></ul></div>
+</div>
+<div class="code"><header><span>Python (pandas, seaborn)</span><button id="cp" type="button">Copy</button></header><pre id="src">import pandas as pd, seaborn as sns, matplotlib.pyplot as plt
+df = pd.read_csv("data.csv")
+print(df.head()); df.info(); print(df.describe())
+print(df.isna().sum(), df.duplicated().sum())
+sns.histplot(df["age"], kde=True); plt.show()</pre></div>
+<div class="note">EDA is the first step of a data project: understand the data before you model it.</div>
+</div>
+<script>
+(function(){var b=document.getElementById('cp'),s=document.getElementById('src');
+b.addEventListener('click',function(){var t=s.textContent;
+function sel(){var r=document.createRange();r.selectNodeContents(s);var g=window.getSelection();g.removeAllRanges();g.addRange(r);b.textContent='Selected'}
+try{navigator.clipboard.writeText(t).then(function(){b.textContent='Copied'},sel)}catch(e){sel()}});})();
+</script></body></html>
