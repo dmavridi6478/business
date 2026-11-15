@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Purple Meadow Tool Spotlight</title>
+<style>
+/* TEMPLATE: Tool spotlight on a dusk-meadow gradient (from the @martiendejong_dev "animation tools" carousel style).
+   One 1080x1350 slide: slide counter, icon tile, huge tool name, one-line tagline, three feature chips, a framed interface panel,
+   a three-item strip, the repo address and a Swipe line. Original CSS: the meadow is gradients only, no source photo or logo is reused.
+   Swap: .count, .tile (an <img> or letter), .name, .tag, the three .chip items, .panel contents (a REAL screenshot; never leave an
+   invented interface unlabelled), the three .strip items, .repo, .handle. State licence and platform from the repo, not memory.
+   Honesty rule: if the panel is an illustration, keep the label line "Illustration - not an official screenshot". */
+:root{--sky1:#e9e4ff;--sky2:#cdbdf5;--meadow1:#d58fd0;--meadow2:#b25aa8;--ink:#1b1330;--muted:#4a3f66;--panel:#ffffff;--panel-ink:#1b1330;--line:#8f7bd0;--chip:#ffffffcc;--accent:#6f3fd1;--accent2:#e0559a;--bar1:#8b5cf6;--bar2:#3b82f6;--bar3:#f59e0b;
+  --font:Aptos,'Segoe UI',Inter,Arial,sans-serif}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--sky1:#241a63;--sky2:#4b2f9a;--meadow1:#8a3d8f;--meadow2:#4a1f56;--ink:#ffffff;--muted:#d9d0f5;--panel:#14102b;--panel-ink:#efeaff;--line:#b79bff;--chip:#ffffff18;--accent:#b79bff;--accent2:#ff8bc2}}
+:root[data-theme="dark"]{--sky1:#241a63;--sky2:#4b2f9a;--meadow1:#8a3d8f;--meadow2:#4a1f56;--ink:#ffffff;--muted:#d9d0f5;--panel:#14102b;--panel-ink:#efeaff;--line:#b79bff;--chip:#ffffff18;--accent:#b79bff;--accent2:#ff8bc2}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#1d1d24;display:flex;justify-content:center;padding:24px 0;font-family:var(--font)}
+.slide{width:1080px;height:1350px;color:var(--ink);padding:60px 64px;position:relative;overflow:hidden;
+  background:radial-gradient(900px 420px at 50% 100%,var(--meadow1),transparent 70%),radial-gradient(700px 300px at 15% 96%,var(--meadow2),transparent 70%),linear-gradient(180deg,var(--sky1),var(--sky2) 70%,var(--meadow2))}
+.count{position:absolute;top:44px;right:60px;font-size:30px;font-weight:700;color:var(--muted)}
+.tile{width:128px;height:128px;border-radius:30px;background:#fff;margin:0 auto;display:grid;place-items:center;font:900 72px/1 var(--font);color:var(--accent);box-shadow:0 10px 30px #0003}
+.name{text-align:center;margin-top:18px;font:900 112px/1.05 var(--font);letter-spacing:-3px}
+.tag{text-align:center;margin-top:8px;font-size:38px;font-weight:700;color:var(--muted)}.tag b{color:var(--accent2)}
+.chips{margin-top:30px;display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.chip{background:var(--chip);border:2px solid var(--line);border-radius:999px;padding:12px 24px;font-size:26px;font-weight:600}
+.panel{margin-top:30px;background:var(--panel);color:var(--panel-ink);border:4px solid var(--line);border-radius:30px;overflow:hidden;box-shadow:0 0 40px #b79bff55}
+.panel .bar{display:flex;align-items:center;gap:10px;padding:14px 22px;border-bottom:2px solid #ffffff22;font-size:24px;font-weight:700}
+.panel .bar i{width:14px;height:14px;border-radius:50%;background:var(--accent2);display:block}
+.panel .body{height:330px;display:grid;grid-template-columns:2fr 1fr;gap:0}
+.panel .view{display:grid;place-items:center;text-align:center;padding:24px;font-size:28px;color:var(--muted)}
+.panel .side{border-left:2px solid #ffffff22;padding:22px;font-size:22px;display:grid;gap:12px;align-content:start}
+.panel .side span{display:block;background:#ffffff14;border-radius:10px;padding:10px 14px}
+.timeline{display:grid;gap:10px;padding:16px 22px 22px;border-top:2px solid #ffffff22}
+.timeline i{display:block;height:20px;border-radius:6px}
+.timeline i:nth-child(1){background:var(--bar1);width:100%}.timeline i:nth-child(2){background:var(--bar2);width:84%}.timeline i:nth-child(3){background:var(--bar3);width:92%}
+.label{padding:0 22px 14px;font-size:20px;color:var(--muted)}
+.strip{margin-top:30px;display:grid;grid-template-columns:repeat(3,1fr);gap:16px;text-align:center;font-size:28px;font-weight:700}
+.strip div{padding:6px 10px;border-left:2px solid var(--line)}.strip div:first-child{border-left:0}
+.repo{margin-top:26px;text-align:center;font-size:34px;font-weight:700}
+.swipe{margin-top:18px;text-align:center;font-size:30px;letter-spacing:10px;font-weight:700}
+.handle{position:absolute;right:60px;bottom:34px;font-size:26px;color:var(--muted)}
+@media (max-width:1100px){body{padding:0}.slide{width:100%;height:auto;padding:28px 18px 64px}.count{top:14px;right:18px;font-size:15px}.tile{width:72px;height:72px;border-radius:18px;font-size:40px}.name{font-size:46px;letter-spacing:-1px;margin-top:10px}.tag{font-size:18px}.chips{gap:8px;margin-top:16px}.chip{font-size:14px;padding:7px 13px}.panel{margin-top:18px;border-width:3px;border-radius:18px}.panel .bar{font-size:14px;padding:9px 14px}.panel .body{height:210px;grid-template-columns:1fr}.panel .side{display:none}.panel .view{font-size:15px;padding:12px}.timeline{padding:10px 14px 14px}.timeline i{height:12px}.label{font-size:12px;padding:0 14px 10px}.strip{font-size:14px;gap:6px;margin-top:16px}.repo{font-size:17px;margin-top:16px;overflow-wrap:anywhere}.swipe{font-size:15px;letter-spacing:5px}.handle{position:static;text-align:right;margin-top:18px;font-size:13px}}
+</style></head><body><div class="slide">
+<div class="count">01 / 08</div>
+<div class="tile">T</div>
+<div class="name">Tool name</div>
+<div class="tag">One line from the README, <b>with the key word lit</b></div>
+<div class="chips"><span class="chip">Feature one</span><span class="chip">Feature two</span><span class="chip">Feature three</span></div>
+<div class="panel"><div class="bar"><i></i>Tool name</div>
+<div class="body"><div class="view">Replace with a REAL screenshot of the tool</div><div class="side"><span>Properties</span><span>Layers</span><span>Export</span></div></div>
+<div class="timeline"><i></i><i></i><i></i></div><div class="label">Illustration - not an official screenshot</div></div>
+<div class="strip"><div>Licence: from repo</div><div>Platform: from README</div><div>Type: app or library</div></div>
+<div class="repo">github.com/owner/name</div>
+<div class="swipe">SWIPE &rarr;</div>
+<div class="handle">@yourhandle</div>
+</div></body></html>

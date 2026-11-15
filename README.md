@@ -6143,3 +6143,17 @@ Not done (needs you): plugin installs (`/plugin install paypal@claude-plugins-of
 **Source problems:** team-scale scope; the trusted-CA proxy launcher is a high-impact security choice; provider-terms risk; no benchmark, author or licence; about twenty client integrations unverified.
 
 **Not done:** nothing built, installed or run; no certificates or proxy touched; no connector, workflow or install script; `.mcp.json` unchanged.
+
+## Batch 118 — 19 carousel slides and three infographics (files numbered 122; 15 November 2026)
+
+**Report:** Batch 118 Intake Report (`Artifacts/business/batch-122-intake-report.html`; the published link is in the pull request).
+
+**Sources:** two @martiendejong_dev carousels ("AI for builders", seven cards; animation tools, ten tools across two numbered sets), the Nader Alnajjar (LEVER) LinkedIn headline infographic, the Dan Rosenthal (Workflows.io) founder-led versus team-led infographic, and "The Claude Head of Sales" poster.
+
+**Added:** skills `oss-ai-builders-seven-nov2026`, `oss-animation-vfx-ten-nov2026`, `linkedin-headline-six-parts`, `linkedin-founder-vs-team-led`, `claude-head-of-sales-routines`; commands `/head-of-sales`, `/linkedin-headline`; template `purple-meadow-tool-spotlight`; theme `theme-purple-meadow`. Licences read for the twelve new repos.
+
+**Already existed, not duplicated:** gstack, HyperFrames, Hallmark, claude-mem, Paperclip.
+
+**Source problems:** interface pictures on the animation cards are illustrations; the team follower total (180K+) does not match its parts (about 154,900); the headline examples are numbered differently from the formula; the Head of Sales poster shows no prompts and gates them behind a comment keyword.
+
+**Not done:** nothing cloned, installed, run, posted or messaged; no agent, workflow or install script (none warranted; n8n needs authorisation); `.mcp.json` unchanged.
