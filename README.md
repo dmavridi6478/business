@@ -6157,3 +6157,15 @@ Not done (needs you): plugin installs (`/plugin install paypal@claude-plugins-of
 **Source problems:** interface pictures on the animation cards are illustrations; the team follower total (180K+) does not match its parts (about 154,900); the headline examples are numbered differently from the formula; the Head of Sales poster shows no prompts and gates them behind a comment keyword.
 
 **Not done:** nothing cloned, installed, run, posted or messaged; no agent, workflow or install script (none warranted; n8n needs authorisation); `.mcp.json` unchanged.
+
+## Batch 123 — 20 carousel slides (files numbered 123; 16 November 2026)
+
+**Sources:** @dotdevs second "5 GitHub projects" set plus its analytics-tool slides, @martiendejong_dev "Gemini ... faceless YouTube channel in 60 days" five prompts. (The creator's own Springback and Slothy app slides were skipped as promotions.)
+
+**Added:** skills `oss-dotdevs-ai-visibility-five-nov2026`, `gemini-faceless-youtube-five-prompts`; command `/faceless-60-day`. Licences read for Mailcheap (AGPL-3.0), FluidVoice (GPL-3.0), OneGlanse (MIT), Ansvisor (MIT), Omnara (Apache-2.0).
+
+**Already existed, not duplicated:** the earlier faceless-YouTube prompt set, OpenPanel, Springback, Slothy, PostHog and Clarity mentions.
+
+**Source problems:** "monetize in 60 days" has no evidence; the script prompt has a typo; star counts are 5 Nov snapshots, unchecked; FluidVoice's AI runtime is closed source.
+
+**Not done:** no template, theme, report or script (content was text prompts and register cards); nothing cloned, installed or posted; `.mcp.json` unchanged.
