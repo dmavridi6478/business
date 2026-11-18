@@ -1,0 +1,106 @@
+<title>Batch 111 Intake Report</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<style>
+:root{--bg:#f7f6f2;--card:#ffffff;--ink:#1a1b1e;--muted:#5d6068;--line:#dcdad2;--accent:#c4561a;--head:#ebe8df;--code:#f0ede4;--ok:#1f6b3a;--warn:#9a5a00;--bad:#a42424}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#121317;--card:#1b1d22;--ink:#eeece6;--muted:#a3a6ae;--line:#33363e;--accent:#f08a3c;--head:#24272e;--code:#22252b;--ok:#8fd69c;--warn:#f0b35a;--bad:#ff8a8a;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#121317;--card:#1b1d22;--ink:#eeece6;--muted:#a3a6ae;--line:#33363e;--accent:#f08a3c;--head:#24272e;--code:#22252b;--ok:#8fd69c;--warn:#f0b35a;--bad:#ff8a8a;color-scheme:dark}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Aptos,"Segoe UI",Calibri,Arial,sans-serif;font-size:11pt;line-height:1.55;padding-block:32px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.wrap{max-width:1020px;margin:0 auto}
+h1{font-size:32pt;line-height:1.08;margin:0 0 6px;text-wrap:balance}
+h2{font-size:14pt;margin:30px 0 10px;padding-bottom:6px;border-bottom:2px solid var(--accent)}
+.meta{color:var(--muted);margin:0 0 18px}
+p{margin:8px 0;max-width:80ch}
+.scroll{overflow-x:auto;border:1px solid var(--line);border-radius:6px;background:var(--card);margin:10px 0}
+table{border-collapse:collapse;width:100%;min-width:760px;font-size:10.5pt}
+th{background:var(--head);font-weight:700}
+th,td{border:1px solid var(--line);padding:7px 10px;text-align:center;vertical-align:top;overflow-wrap:anywhere}
+code{font-family:"Cascadia Mono",Consolas,monospace;font-size:10pt;background:var(--code);padding:0 4px;border-radius:3px}
+ul{margin:6px 0;padding-left:22px}li{margin:4px 0;max-width:80ch}
+.ok{color:var(--ok);font-weight:700}.warn{color:var(--warn);font-weight:700}.bad{color:var(--bad);font-weight:700}
+</style>
+<div class="wrap">
+<h1>Batch 111 Intake Report</h1>
+<p class="meta">iCloud Photos archive (26 images) plus two inline images &middot; files numbered 115 &middot; 7 November 2026 &middot; nothing was cloned, installed or run</p>
+
+<h2>1. Result</h2>
+<p>Two inline infographics and three carousels were processed. The infographics are the LinkedIn Positioning Triangle (Nader Alnajjar, LEVER) and nine go-to-market models (Marceline Tsobgny, NipPro AI). The carousels cover 15 GitHub projects (@palidev21, @dotdevs, @sitetusk), plus a five-step "sell your unused things" prompt sequence (@dotdevs). Four skills, four commands, four templates and four themes were added, together with two documents and a user-run script. There were no agent guides and no workflows in the files, so no agent or workflow was built.</p>
+<p>The main finding: the repo carousels present tools as plain installs. Several carry a risk the slides omit, listed in section 3. The @sitetusk headline "they don't want you to know about" is clickbait; all five projects are long-established and widely used.</p>
+
+<h2>2. The 15 repositories</h2>
+<div class="scroll"><table>
+<thead><tr><th>Tool</th><th>Source</th><th>Licence (read)</th><th>Platform</th><th>Status</th></tr></thead>
+<tbody>
+<tr><td><code>mltframework/shotcut</code></td><td>@palidev21</td><td>GPL-3.0</td><td>Windows, macOS, Linux</td><td>New</td></tr>
+<tr><td><code>windirstat/windirstat</code></td><td>@palidev21</td><td>GPL-3.0</td><td>Windows only</td><td>New</td></tr>
+<tr><td><code>Klocman/Bulk-Crap-Uninstaller</code></td><td>@palidev21</td><td>Apache-2.0</td><td>Windows only</td><td>New</td></tr>
+<tr><td><code>keepassxreboot/keepassxc</code></td><td>@palidev21</td><td>GPL-2.0 or GPL-3.0</td><td>Windows, macOS, Linux</td><td>Already covered</td></tr>
+<tr><td><code>sqlitebrowser/sqlitebrowser</code></td><td>@palidev21</td><td>MPL-2.0 and GPL-3.0+</td><td>Windows, macOS, Linux</td><td>New</td></tr>
+<tr><td><code>lovasoa/whitebophir</code></td><td>@dotdevs</td><td class="warn">AGPL-3.0</td><td>Self-hosted</td><td>Already registered</td></tr>
+<tr><td><code>LingyiChen-AI/DeepDiagram</code></td><td>@dotdevs</td><td class="warn">AGPL-3.0</td><td>Needs an LLM key</td><td>Already registered</td></tr>
+<tr><td><code>openflowkit/openflowkit</code></td><td>@dotdevs</td><td>MIT</td><td>Web</td><td>Already registered</td></tr>
+<tr><td><code>HKUDS/nanobot</code></td><td>@dotdevs</td><td>MIT</td><td>Agent platform</td><td>Already registered</td></tr>
+<tr><td><code>mbrlabs/Lorien</code></td><td>@dotdevs</td><td>MIT</td><td>Desktop; quiet since 2025</td><td>Already registered</td></tr>
+<tr><td><code>ImageMagick/ImageMagick</code></td><td>@sitetusk</td><td>ImageMagick License</td><td>Cross-platform</td><td>New</td></tr>
+<tr><td><code>ohmyzsh/ohmyzsh</code></td><td>@sitetusk</td><td>MIT</td><td>zsh</td><td>New</td></tr>
+<tr><td><code>Textualize/rich</code></td><td>@sitetusk</td><td>MIT</td><td>Python</td><td>New</td></tr>
+<tr><td><code>mpv-player/mpv</code></td><td>@sitetusk</td><td>GPLv2+ (LGPLv2.1+ with <code>-Dgpl=false</code>)</td><td>Cross-platform, CLI</td><td>New</td></tr>
+<tr><td><code>searxng/searxng</code></td><td>@sitetusk</td><td class="warn">AGPL-3.0</td><td>Self-hosted</td><td>Already covered</td></tr>
+</tbody></table></div>
+<p>Star counts on the slides (for example Nanobot 49,854, Whitebophir 2,679) could not be checked because the GitHub API was blocked from the cloud container. The new @dotdevs snapshot against the October register is recorded in the skill.</p>
+
+<h2>3. What the slides omit</h2>
+<ul>
+<li><b>Oh My Zsh:</b> the README's basic install is a piped <code>curl | sh</code>; the README itself recommends downloading and reading it first. It renames your existing <code>.zshrc</code>.</li>
+<li><b>BCUninstaller:</b> the README opens with "Looking for maintainers". Bulk removal can break software you still need.</li>
+<li><b>WinDirStat:</b> the README says it can open, move and delete files and recover deleted files, so it is more than a viewer.</li>
+<li><b>ImageMagick:</b> "200+ formats" is not in the README (it says "a wide range"). Restrict it when it processes untrusted files.</li>
+<li><b>rich:</b> the README says Python 3.8 or later while the slide badge shows 3.9 to 3.14.</li>
+<li><b>AGPL-3.0</b> (Whitebophir, DeepDiagram, SearXNG): offer the source if you run a modified copy as a network service.</li>
+<li><b>Springback:</b> a self-promotion app in the @dotdevs carousel; not a tool and not assessed.</li>
+</ul>
+
+<h2>4. The two infographics</h2>
+<ul>
+<li><b>Positioning Triangle:</b> three corners (target audience, unique value, differentiation) and the formula "I help [target audience] get [value] by [differentiator]". The four before-and-after examples and the four placements are from the slide; the checks (five-second self-identification, measurable outcome, one piece of proof, only numbers you can back) are my additions and are marked as such.</li>
+<li><b>Nine GTM models:</b> what each diagram shows is from the image; the "use it when" column and the sequence (who, proof, message and price, growth) are my reading. Van Westendorp sources define the marked points slightly differently; the skill states both conventions. The slide gives no sample sizes or sources and no evidence that one model beats another.</li>
+</ul>
+
+<h2>5. What was added</h2>
+<div class="scroll"><table>
+<thead><tr><th>Type</th><th>Name</th><th>Purpose</th></tr></thead>
+<tbody>
+<tr><td>Skill</td><td><code>oss-finds-three-carousels-nov2026</code></td><td>Register of the 15 projects with licences read, platforms, installs and warnings</td></tr>
+<tr><td>Skill</td><td><code>sell-unused-things-prompts</code></td><td>Five-step sell-it prompt sequence with approval gates and scam-safety rules</td></tr>
+<tr><td>Skill</td><td><code>linkedin-positioning-triangle</code></td><td>T, U, D corners, formula, examples, placement and checks</td></tr>
+<tr><td>Skill</td><td><code>gtm-nine-models</code></td><td>Nine models, the question each answers, a sequence and the Van Westendorp note</td></tr>
+<tr><td>Command</td><td><code>/sell-listing</code>, <code>/positioning-triangle</code>, <code>/gtm-model-pick</code>, <code>/oss-tool-pick</code></td><td>Plan or draft only; none publishes, installs or messages anyone</td></tr>
+<tr><td>Template</td><td><code>tool-card-mono-features</code>, <code>repo-card-dark-checker</code></td><td>White tool card with a feature grid; dark checker repo story card</td></tr>
+<tr><td>Template</td><td><code>infographic-positioning-triangle</code>, <code>infographic-nine-models-grid</code></td><td>Responsive triangle page with a live line builder; nine-cell grid with a stage filter</td></tr>
+<tr><td>Theme</td><td><code>theme-mono-blue-pop</code>, <code>theme-checker-night-green</code>, <code>theme-triad-teal-blue-orange</code>, <code>theme-mint-nine-grid</code></td><td>Tokenised light and dark themes</td></tr>
+<tr><td>Script</td><td><code>scripts/batch115-install.sh</code></td><td>User-run; shallow clones for reading and one virtualenv install of <code>rich</code>, each behind a question; no piped installers</td></tr>
+<tr><td>Documents</td><td><code>docs/batch-115-prompts.md</code>, <code>docs/batch-115-action-plan.md</code></td><td>Copy-paste prompts and the action plan</td></tr>
+</tbody></table></div>
+
+<h2>6. Verification</h2>
+<ul>
+<li><b>Done:</b> existence and default branch of every repo by <code>git ls-remote</code>; licences read from each repo's own file; install lines and platforms read from the READMEs; the four templates rendered at 1280 px light, 1280 px dark and 390 px with no horizontal overflow; the line builder and the stage filter tested; the install script syntax-checked with <code>bash -n</code>.</li>
+<li><b>Not verified:</b> star counts; the slide claims about speed and file counts; "edit in portrait" for Shotcut; "200+ formats" for ImageMagick; any price or marketplace rule for the sell sequence.</li>
+</ul>
+
+<h2>7. Connectors, agents and workflows</h2>
+<ul>
+<li>No connector was installed. Figma, Lucid, Typefully, Taplio and Vibe Prospecting are already connected. Mermaid Chart, tldraw and Whimsical are installable but need your sign-in. The n8n connector needs re-authentication.</li>
+<li>No agent guide and no workflow were in the files, so none was created. <code>.mcp.json</code> is unchanged.</li>
+</ul>
+
+<h2>8. What needs you</h2>
+<div class="scroll"><table>
+<thead><tr><th>Item</th><th>Why</th><th>Step</th></tr></thead>
+<tbody>
+<tr><td>Clone or install any tool</td><td>The cloud session cannot reach your machine</td><td>Run <code>scripts/batch115-install.sh</code> and answer per step</td></tr>
+<tr><td>Oh My Zsh</td><td>Piped installer; renames your <code>.zshrc</code></td><td>Download and read the script first</td></tr>
+<tr><td>Bulk uninstall or disk cleanup</td><td>Can remove software or files you still need</td><td>Make a restore point; inspect before removing</td></tr>
+<tr><td>Sell an item</td><td>Price, publishing and every buyer commitment are yours</td><td>Use <code>/sell-listing</code> and approve each step</td></tr>
+</tbody></table></div>
+</div>

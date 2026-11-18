@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Scan Night Ember - Theme</title>
+<style>
+/* THEME: Scan Night Ember (from the @cyberwithjohann security-scanner video). Use for scanner results, audit summaries and "save these tools" lists.
+   Dark default with an ember-orange accent and three severity colours; light variant on [data-theme="light"] or prefers-color-scheme: light. */
+:root{--bg:#0b0c10;--panel:#14161c;--line:#262a33;--ink:#eceae4;--muted:#8b8f99;--accent:#f08a3c;--crit:#ff5d5d;--warn:#f0b429;--ok:#39c48a;--mono:'JetBrains Mono','Cascadia Mono',Consolas,monospace;--body:Aptos,'Segoe UI',Inter,Arial,sans-serif}
+@media (prefers-color-scheme:light){:root:not([data-theme="dark"]){--bg:#f4f1ea;--panel:#fff;--line:#ddd7c8;--ink:#17160f;--muted:#6b665c;--accent:#c9621a;--crit:#c62f2f;--warn:#9a6a00;--ok:#1f7a55}}
+:root[data-theme="light"]{--bg:#f4f1ea;--panel:#fff;--line:#ddd7c8;--ink:#17160f;--muted:#6b665c;--accent:#c9621a;--crit:#c62f2f;--warn:#9a6a00;--ok:#1f7a55}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--ink);font:11pt/1.55 var(--body);padding:40px 16px}
+main{max-width:640px;margin:0 auto;display:grid;gap:16px}
+h1{font:800 32pt/1.08 var(--body)}h1 em{font-style:normal;color:var(--accent)}h2{font-size:14pt}
+.card{background:var(--panel);border:2px solid var(--line);border-radius:14px;padding:16px 18px;font-family:var(--mono);font-size:10pt}
+.muted{color:var(--muted)}.crit{color:var(--crit)}.warn{color:var(--warn)}.ok{color:var(--ok)}
+</style></head><body><main>
+<h1>Five scanners, <em>one job each</em></h1>
+<div class="card"><p>$ scanner scan .</p><p class="crit">Findings&nbsp; 3 (sample)</p><p class="warn">Severity&nbsp; high (sample)</p><p class="ok">Fixed&nbsp;&nbsp;&nbsp; 0 of 3 (sample)</p></div>
+<p class="muted">Palette: near-black #0b0c10, panel #14161c, text #eceae4, ember accent #f08a3c, severity red #ff5d5d, amber #f0b429, green #39c48a. Monospace for commands and results.</p>
+</main></body></html>

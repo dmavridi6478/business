@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Prompt Sheet Green</title>
+<style>
+/* TEMPLATE: Prompt Sheet, Green (from the "Best Prompts for Excel/PPT tasks" Google Sheets screenshot).
+   A spreadsheet-styled prompt library: toolbar, green numbered name column, quoted prompt column, a Copy button and a filter box.
+   Edit the PROMPTS array. Table cells align top and centre for the name column; prompts are left-aligned for reading. */
+:root{--bg:#f8f9fa;--paper:#fff;--ink:#1f1f1f;--muted:#5f6368;--line:#dadce0;--green:#2f9e44;--green-ink:#fff;--bar:#edf2fa;--accent:#1a73e8;--font:Aptos,'Segoe UI',Arial,sans-serif}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#17191c;--paper:#1f2226;--ink:#e8eaed;--muted:#9aa0a6;--line:#3c4043;--green:#2f9e44;--bar:#26292e;--accent:#8ab4f8}}
+:root[data-theme="dark"]{--bg:#17191c;--paper:#1f2226;--ink:#e8eaed;--muted:#9aa0a6;--line:#3c4043;--green:#2f9e44;--bar:#26292e;--accent:#8ab4f8}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--ink);font:11pt/1.5 var(--font);padding:20px 16px}
+.wrap{max-width:1000px;margin:0 auto;background:var(--paper);border:1px solid var(--line);border-radius:10px;overflow:hidden}
+.top{padding:14px 18px}.top h1{font-size:32pt;line-height:1.1}.top p{color:var(--muted);margin-top:4px}
+.tool{display:flex;gap:10px;align-items:center;background:var(--bar);padding:8px 14px;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.tool input{flex:1;min-width:0;padding:7px 12px;border:1px solid var(--line);border-radius:20px;background:var(--paper);color:var(--ink);font:inherit}
+.tool span{color:var(--muted);font-size:10pt;white-space:nowrap}
+.scroll{overflow-x:auto}
+table{border-collapse:collapse;width:100%;min-width:640px}
+th{background:var(--bar);font-weight:700;border:1px solid var(--line);padding:6px 10px}
+td{border:1px solid var(--line);padding:10px 14px;vertical-align:top}
+td.name{background:var(--green);color:var(--green-ink);font-weight:700;text-align:center;width:23%;font-size:12pt}
+td.text{position:relative;text-align:left}
+button.copy{float:right;margin:0 0 6px 10px;font:inherit;font-size:10pt;background:var(--paper);color:var(--accent);border:1px solid var(--line);border-radius:6px;padding:2px 10px;cursor:pointer}
+button.copy:focus-visible{outline:2px solid var(--accent)}
+.none{padding:20px;text-align:center;color:var(--muted)}
+@media (max-width:700px){.top h1{font-size:24pt}}
+</style></head><body><div class="wrap">
+<div class="top"><h1>Best prompts for Excel and PPT tasks</h1><p>Replace each [bracket], then paste into your assistant with the file attached.</p></div>
+<div class="tool"><input id="q" type="search" placeholder="Filter prompts" aria-label="Filter prompts"><span id="n"></span></div>
+<div class="scroll"><table><thead><tr><th>Task</th><th>Prompt</th></tr></thead><tbody id="rows"></tbody></table></div>
+<div class="none" id="none" hidden>No prompt matches.</div>
+</div>
+<script>
+/* ===== EDIT THIS ARRAY ONLY: [name, prompt] ===== */
+var PROMPTS=[
+["1. Excel Formula Lookup","I'm working in Excel with two sheets: one has sales order and order amount, the other has sales orders with customer names and dates. I need a formula to fetch the customer name in the first sheet using sales order as the key. Give me the exact formula and explain how to use it."],
+["2. CAGR Formula Builder","I have annual revenue figures in [CELL RANGE], representing revenue from [YEAR 1] to [YEAR 2]. Give me the exact Excel formula to calculate Compound Annual Growth Rate (CAGR) for this period, place it in [CELL], and explain how each part of the formula works."],
+["3. Explain an Existing Formula","Explain the formula currently in cell [CELL] on the '[SHEET NAME]' tab. What does it calculate, and how do the different parts of the formula contribute to the result?"],
+["4. Scenario Planning Model","I'm the finance manager of a [COMPANY TYPE]. Build a scenario planning model for [NUMBER] products with pricing, growth, and churn assumptions. Build this for [TIME PERIOD] with formulas and dynamic assumptions. Add a graph comparing outcomes and include an assumptions tab so I can change variables easily."],
+["5. Workbook Audit","Scan this workbook for suspicious formulas, inconsistent ranges, or broken links across all tabs. Define suspicious as [e.g. 'formulas referencing deleted sheets, hardcoded values inside formula cells, or ranges that don't match the column header']. Flag anything meeting that bar before I share it with [STAKEHOLDER], listed by severity."],
+["6. DCF Model Builder","Build a DCF model for a [INDUSTRY] business. Include a [YEARS]-year revenue and cost projection, WACC input, terminal value calculation, and an output cell showing enterprise value. Put all key assumptions on a separate, clearly labeled inputs tab so they're easy to change without touching formulas."],
+["7. Anomaly Detector","Review the '[SHEET NAME]' tab, specifically the '[COLUMN]' column ([RANGE]). Highlight any transactions more than [X] standard deviations (or [X]%) from the average value, and explain why each flagged item stands out."],
+["8. Profitability Model Builder","Help me build a [X]-year profitability projection model in a new sheet. Add input cells for Year 1 Revenue, Annual Revenue Growth Rate, COGS as % of Revenue, and Fixed Operating Expenses on a separate assumptions tab so I can adjust them easily. Output Revenue, COGS, Gross Profit, Operating Expenses, and Net Profit for each year."],
+["9. Forecast Chart Builder","Based on the historical [METRIC] data in columns [A] and [B] on '[SHEET NAME]', create a forecast chart projecting [METRIC] for the next [NUMBER] months."],
+["10. Trend Summary","Analyze the [METRIC] data in columns [A], [B], and [C] from '[SHEET NAME]'. Identify and summarize the key trends observed over the last [TIME PERIOD]."],
+["11. Presentation Outline","Act as a presentation strategist. Generate a [NUMBER]-slide outline for a presentation titled [TITLE]. The objective is to [OBJECTIVE]. Suggest a slide title and key bullet points for each slide."],
+["12. Slide Content Draft","Write the content for a PowerPoint slide discussing [TOPIC]. The audience is [AUDIENCE]. Keep it concise, in bullet points (max 5), and highlight [KEY POINTS]. Suggest a relevant chart type to visualize this."],
+["13. Report-to-Slide Summarizer","Take the following text from our [REPORT TYPE]: [PASTE TEXT]. Summarize this into 3-4 key bullet points suitable for a PowerPoint slide. The tone should be [TONE]."],
+["14. SWOT Slide Generator","Generate content for a PowerPoint slide presenting a SWOT analysis for [ENTITY/PRODUCT]. List 2-3 points for each category (Strengths, Weaknesses, Opportunities, Threats) relevant to its financial viability and market position."],
+["15. Slide Rewrite for Impact","Rewrite the following PowerPoint slide content to be more concise and impactful for an executive audience. Original content: '[PASTE EXISTING TEXT]'. Focus on direct language and clear takeaways."]];
+/* ===== END EDIT ===== */
+var rows=document.getElementById("rows"),q=document.getElementById("q");
+function esc(s){return String(s).replace(/[&<>"]/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]})}
+function render(){var f=q.value.toLowerCase(),shown=0;
+ rows.innerHTML=PROMPTS.map(function(p,i){if(f&&(p[0]+" "+p[1]).toLowerCase().indexOf(f)<0)return "";shown++;
+  return '<tr><td class="name">'+esc(p[0])+'</td><td class="text"><button class="copy" data-i="'+i+'">Copy</button>“'+esc(p[1])+'”</td></tr>'}).join("");
+ document.getElementById("n").textContent=shown+" of "+PROMPTS.length;document.getElementById("none").hidden=shown>0}
+function sel(el){var r=document.createRange();r.selectNodeContents(el);var s=getSelection();s.removeAllRanges();s.addRange(r)}
+rows.addEventListener("click",function(e){var b=e.target.closest("button.copy");if(!b)return;var t=PROMPTS[+b.dataset.i][1];
+ var done=function(){b.textContent="Copied";setTimeout(function(){b.textContent="Copy"},1500)};
+ try{navigator.clipboard.writeText(t).then(done,function(){sel(b.parentNode)})}catch(x){sel(b.parentNode)}});
+q.addEventListener("input",render);render();
+</script></body></html>

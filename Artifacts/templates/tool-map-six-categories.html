@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tool Map Six Categories</title>
+<style>
+/* TEMPLATE: Tool Map, Six Categories (from "AI Growth for Corporate Leaders & Businesses").
+   Six pastel category cards in a 3x2 grid, ten tools each with a count footer, an eyebrow, a serif headline and a navy footer bar.
+   Edit the MAP object at the bottom (title, subtitle, categories, tools). Each category gets its own tint through --c / --t. */
+:root{--bg:#ffffff;--ink:#0c1233;--muted:#5d6480;--navy:#0a0f33;--card:#ffffff;--line:#d6dcf0;--font:Aptos,'Segoe UI',Inter,Arial,sans-serif;--serif:'Source Serif 4',Georgia,'Times New Roman',serif}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0d1020;--ink:#eef0fb;--muted:#a3a9c6;--navy:#05071a;--card:#171b33;--line:#2c3256}}
+:root[data-theme="dark"]{--bg:#0d1020;--ink:#eef0fb;--muted:#a3a9c6;--navy:#05071a;--card:#171b33;--line:#2c3256}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--ink);font:11pt/1.4 var(--font);padding:24px 16px}
+main{max-width:1000px;margin:0 auto;border:3px solid #2f55d4;border-radius:14px;padding:28px 24px 0;overflow:hidden}
+.eyebrow{text-align:center;letter-spacing:3px;font-size:10pt;color:#2f55d4;font-weight:600;text-transform:uppercase}
+h1{font:700 32pt/1.1 var(--serif);text-align:center;margin:8px 0 6px}
+.sub{text-align:center;font-size:14pt;font-weight:600}.count{text-align:center;color:var(--muted);margin:6px 0 22px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.cat{border:1.5px solid var(--t);border-radius:16px;background:var(--c);overflow:hidden;display:flex;flex-direction:column}
+.cat header{display:flex;justify-content:space-between;align-items:flex-start;padding:14px 16px;color:var(--t)}
+.cat h2{font-size:14pt;line-height:1.2}.cat .n{background:var(--card);border-radius:10px;padding:2px 10px;font-size:10pt;color:var(--ink)}
+.cat ul{list-style:none;background:var(--card);margin:0 10px;border-radius:12px 12px 0 0;padding:6px 14px;flex:1}
+.cat li{padding:6px 0;border-bottom:1px solid var(--line);display:flex;gap:10px;align-items:center}
+.cat li:last-child{border-bottom:0}.cat li i{width:18px;height:18px;border-radius:5px;background:var(--t);opacity:.75;display:block;flex:none}
+.cat footer{padding:8px 16px;font-size:9pt;letter-spacing:1px;color:var(--t);font-weight:700}
+.foot{background:var(--navy);color:#fff;text-align:center;padding:14px;margin:24px -24px 0;font-size:12pt}
+@media (max-width:820px){.grid{grid-template-columns:1fr}h1{font-size:24pt}}
+</style></head><body><main>
+<div class="eyebrow" id="eyebrow"></div><h1 id="ttl"></h1><div class="sub" id="sub"></div><div class="count" id="count"></div>
+<div class="grid" id="grid"></div>
+<div class="foot" id="foot"></div>
+</main>
+<script>
+/* ===== EDIT THIS OBJECT ONLY ===== */
+var MAP={eyebrow:"The ultimate collection · 2026",title:"AI Growth",subtitle:"for Corporate Leaders & Businesses",foot:"Decoding AI with Context",
+cats:[
+{n:"01",name:"AI Research & Chat",c:"#eaf3ff",t:"#2a5db0",tools:["ChatGPT","Claude","Perplexity","Gemini","DeepSeek","You.com","Elicit","NotebookLM","Poe","Ninja AI"]},
+{n:"02",name:"Content & Copywriting",c:"#eaf7ec",t:"#2b7a45",tools:["Jasper","Copy.ai","Surfer SEO","NeuronWriter","Grammarly","Anyword","Writesonic","Wordtune","Notion AI","QuillBot"]},
+{n:"03",name:"Design & Visuals",c:"#f1ecfb",t:"#6a4bb5",tools:["Midjourney","Canva AI","Adobe Firefly","Figma AI","Ideogram","Flux","Leonardo AI","Recraft","Uizard","Framer AI"]},
+{n:"04",name:"Video & Audio",c:"#e6f6f3",t:"#1f7d6e",tools:["Runway","Luma AI","Opus Clip","HeyGen","Synthesia","ElevenLabs","Descript","VEED.io","Pika","Kling"]},
+{n:"05",name:"Productivity & Workflow",c:"#fdf3dc",t:"#a06a12",tools:["Otter AI","Fathom","Motion","Akiflow","Wispr Flow","Taskade","Granola","Fireflies.ai","Mem","Limitless"]},
+{n:"06",name:"Automation",c:"#fde8ee",t:"#b03a63",tools:["Zapier AI","Make","n8n","Cursor","AgentX","Lindy","Basedash","Browserbase","Clay","AdCreative AI"]}]};
+/* ===== END EDIT ===== */
+function esc(s){return String(s).replace(/[&<>"]/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]})}
+var total=0;MAP.cats.forEach(function(c){total+=c.tools.length});
+document.getElementById("eyebrow").textContent=MAP.eyebrow;document.getElementById("ttl").textContent=MAP.title;
+document.getElementById("sub").textContent=MAP.subtitle;document.getElementById("foot").textContent=MAP.foot;
+document.getElementById("count").textContent=total+" tools. "+MAP.cats.length+" categories. One clear view.";
+document.getElementById("grid").innerHTML=MAP.cats.map(function(c){
+ return '<section class="cat" style="--c:'+c.c+';--t:'+c.t+'"><header><h2>'+esc(c.name)+'</h2><span class="n">'+esc(c.n)+'</span></header><ul>'+
+ c.tools.map(function(t){return '<li><i></i>'+esc(t)+'</li>'}).join("")+'</ul><footer>'+c.tools.length+' TOOLS</footer></section>'}).join("");
+</script></body></html>

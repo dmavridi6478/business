@@ -1,0 +1,93 @@
+<title>Batch 112 Intake Report</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<style>
+:root{--bg:#f7f6f2;--card:#ffffff;--ink:#1a1b1e;--muted:#5d6068;--line:#dcdad2;--accent:#c4561a;--head:#ebe8df;--code:#f0ede4;--ok:#1f6b3a;--warn:#9a5a00;--bad:#a42424}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#121317;--card:#1b1d22;--ink:#eeece6;--muted:#a3a6ae;--line:#33363e;--accent:#f08a3c;--head:#24272e;--code:#22252b;--ok:#8fd69c;--warn:#f0b35a;--bad:#ff8a8a;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#121317;--card:#1b1d22;--ink:#eeece6;--muted:#a3a6ae;--line:#33363e;--accent:#f08a3c;--head:#24272e;--code:#22252b;--ok:#8fd69c;--warn:#f0b35a;--bad:#ff8a8a;color-scheme:dark}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Aptos,"Segoe UI",Calibri,Arial,sans-serif;font-size:11pt;line-height:1.55;padding-block:32px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.wrap{max-width:1020px;margin:0 auto}
+h1{font-size:32pt;line-height:1.08;margin:0 0 6px;text-wrap:balance}
+h2{font-size:14pt;margin:30px 0 10px;padding-bottom:6px;border-bottom:2px solid var(--accent)}
+.meta{color:var(--muted);margin:0 0 18px}
+p{margin:8px 0;max-width:80ch}
+.scroll{overflow-x:auto;border:1px solid var(--line);border-radius:6px;background:var(--card);margin:10px 0}
+table{border-collapse:collapse;width:100%;min-width:760px;font-size:10.5pt}
+th{background:var(--head);font-weight:700}
+th,td{border:1px solid var(--line);padding:7px 10px;text-align:center;vertical-align:top;overflow-wrap:anywhere}
+code{font-family:"Cascadia Mono",Consolas,monospace;font-size:10pt;background:var(--code);padding:0 4px;border-radius:3px}
+ul{margin:6px 0;padding-left:22px}li{margin:4px 0;max-width:80ch}
+.warn{color:var(--warn);font-weight:700}
+</style>
+<div class="wrap">
+<h1>Batch 112 Intake Report</h1>
+<p class="meta">iCloud Photos archive (60 images, 8 creators) &middot; files numbered 116 &middot; 7 November 2026 &middot; nothing was cloned, installed or run</p>
+
+<h2>1. Result</h2>
+<p>The archive is a mix of carousels and short-video stills from eight creators, not one series. Most of the 25 or so named projects were already in the repository, so only the new ones were added. Three skills, two commands, four design templates, four themes, a user-run script and two documents were created. There was no agent guide and no workflow in the files, so no agent or workflow was built, and no connector was installed.</p>
+<p>The main finding: the strongest material is the security checklist (five ways a vibe-coded app gets hacked), not the repo lists. The weakest is the freelance pitch "use AI to undercut graphic designers", which has no evidence and is poor positioning. Creator promotions (Capacity, Omniscio, Slothy) sit inside several slides and were not assessed.</p>
+
+<h2>2. Sources</h2>
+<div class="scroll"><table>
+<thead><tr><th>Creator</th><th>Content</th><th>Handling</th></tr></thead>
+<tbody>
+<tr><td>@inikolov.ai</td><td>Nine slides on the <code>anatomy</code> Claude skill</td><td>New repo, verified</td></tr>
+<tr><td>@emmanuelnyatefe (KOOEMMA)</td><td>"10 free apps": Upscayl, Ventoy, Czkawka, Espanso, Syncthing, KDE Connect, HandBrake, Excalidraw, Penpot, Stirling PDF</td><td>5 new, 5 already registered</td></tr>
+<tr><td>@capacityso</td><td>"6 GitHub repos blowing up this week": t3code, claude-mem, DeepTutor, OpenMausBot, superpowers, Karpathy skills</td><td>2 new, 4 registered</td></tr>
+<tr><td>@raphal3494</td><td>"6 Rust repos": Zed, uv, Tauri, Polars, Goose, RustDesk</td><td>RustDesk new, 5 registered</td></tr>
+<tr><td>@dotdevs</td><td>"5 GitHub projects worth exploring": AFFiNE, Traefik, Keila, Instatic, Automa; Slothy app promo</td><td>All registered; snapshot only</td></tr>
+<tr><td>@vibe.worker</td><td>Five holes in a vibe-coded app</td><td>New skill and command</td></tr>
+<tr><td>@dagier_official</td><td>Recraft, Hedra, Lovable; "first client" pitch</td><td>New skill with critique</td></tr>
+<tr><td>"5 Websites that 10x'd my website traffic"</td><td>Google Trends, SERPtag, Pinterest, Bing Webmaster Tools, Google Analytics</td><td>Same skill</td></tr>
+</tbody></table></div>
+
+<h2>3. New repositories (licence read from each repo)</h2>
+<div class="scroll"><table>
+<thead><tr><th>Repo</th><th>Licence</th><th>Caution the slide omits</th></tr></thead>
+<tbody>
+<tr><td><code>wheresryan22/anatomy</code></td><td>MIT</td><td>"30 days old, 25.6k stars" unchecked; its own limits slide says no charts, no exact maps; <code>npx</code> copies files into your skills folder</td></tr>
+<tr><td><code>HKUDS/DeepTutor</code></td><td>Apache-2.0</td><td>Fast, breaking releases; needs configured model access</td></tr>
+<tr><td><code>milind-soni/OpenMausBot</code></td><td>Apache-2.0</td><td>Runs the <code>claude</code>, <code>codex</code> and <code>grok</code> CLIs on your machine under your login</td></tr>
+<tr><td><code>upscayl/upscayl</code></td><td class="warn">AGPL-3.0</td><td>Offer source if you run a modified copy as a service</td></tr>
+<tr><td><code>ventoy/Ventoy</code></td><td>GPL-3.0</td><td>Writes to a USB device; pick the right disk</td></tr>
+<tr><td><code>qarmin/czkawka</code></td><td>MIT (CLI, GTK); GPL-3.0-only (Krokiet, Cedinia)</td><td>Deletes files; back up first</td></tr>
+<tr><td><code>espanso/espanso</code></td><td>GPL-3.0</td><td>Default branch is <code>dev</code>; sees what you type</td></tr>
+<tr><td><code>KDE/kdeconnect-kde</code></td><td>GPL-2.0 file present (KDE mixes licences)</td><td>Pair only devices you own</td></tr>
+<tr><td><code>rustdesk/rustdesk</code></td><td class="warn">AGPL-3.0</td><td>High-value remote-access target; harden a self-hosted server</td></tr>
+</tbody></table></div>
+<p>Star counts and "this week" gains on the slides could not be checked because the GitHub API was blocked from the cloud container. The KOOEMMA line "all 10 work on Windows, Mac, Linux" is not repeated as fact.</p>
+
+<h2>4. Critique of two pitches</h2>
+<ul>
+<li><b>Undercut the designers:</b> competing on price attracts price-driven clients, blocks rate rises, and the same tools are available to the client. A narrow niche with a measurable outcome is the better route; the skill points to the positioning and first-100-customers skills.</li>
+<li><b>"10x'd my website traffic":</b> no baseline, timeframe or evidence. The five sites are a sensible free stack (timing, keywords, a channel, indexing, measurement), not a growth guarantee. The claim that Bing indexing helps ChatGPT search is the slide's and is unverified.</li>
+</ul>
+
+<h2>5. What was added</h2>
+<div class="scroll"><table>
+<thead><tr><th>Type</th><th>Name</th><th>Purpose</th></tr></thead>
+<tbody>
+<tr><td>Skill</td><td><code>oss-finds-eight-creators-nov2026</code></td><td>Register: new versus already covered, licences, installs, cautions</td></tr>
+<tr><td>Skill</td><td><code>vibe-app-five-holes</code></td><td>Five holes, fixes, checks, paste-ready audit prompt</td></tr>
+<tr><td>Skill</td><td><code>freelance-and-traffic-sites-nov2026</code></td><td>Tools, critique and a one-week order</td></tr>
+<tr><td>Command</td><td><code>/vibe-check</code>, <code>/free-app-pick</code></td><td>Read-only audit; plan-only tool picker</td></tr>
+<tr><td>Template</td><td><code>free-app-card-green-condensed</code>, <code>neon-lime-explainer-slide</code>, <code>hole-fix-photo-scrim</code>, <code>instead-of-dark-card</code></td><td>Four carousel layouts with placeholders</td></tr>
+<tr><td>Theme</td><td><code>theme-kooemma-green-condensed</code>, <code>theme-neon-lime-black</code>, <code>theme-night-scrim-white-label</code>, <code>theme-instead-of-dark</code></td><td>Tokenised light and dark themes</td></tr>
+<tr><td>Script, docs</td><td><code>scripts/batch116-install.sh</code>, <code>docs/batch-116-prompts.md</code>, <code>docs/batch-116-action-plan.md</code></td><td>User-run clones for reading; prompts; plan</td></tr>
+</tbody></table></div>
+
+<h2>6. Verification</h2>
+<ul>
+<li><b>Done:</b> existence and default branch of all 16 repos by <code>git ls-remote</code>; licences read from the repo files; anatomy's install line and Node requirement read from its README; the four templates rendered at 1280 px light, 1280 px dark and 390 px with no overflow; the script syntax-checked.</li>
+<li><b>Not verified:</b> star counts and weekly gains; the anatomy age claim; Goose's Linux Foundation status; the five holes were not tested against a real app; any tool's behaviour.</li>
+</ul>
+
+<h2>7. What needs you</h2>
+<div class="scroll"><table>
+<thead><tr><th>Item</th><th>Why</th><th>Step</th></tr></thead>
+<tbody>
+<tr><td>Install anatomy or any app</td><td>The cloud session cannot reach your machine</td><td>Read the repo, then run the line yourself</td></tr>
+<tr><td>Any leaked key</td><td>A key ever public is compromised</td><td>Rotate it first</td></tr>
+<tr><td>Remote access or file deletion tools</td><td>High impact if misconfigured</td><td>Back up; use strong credentials</td></tr>
+</tbody></table></div>
+</div>
