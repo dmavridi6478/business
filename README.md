@@ -6169,3 +6169,13 @@ Not done (needs you): plugin installs (`/plugin install paypal@claude-plugins-of
 **Source problems:** "monetize in 60 days" has no evidence; the script prompt has a typo; star counts are 5 Nov snapshots, unchecked; FluidVoice's AI runtime is closed source.
 
 **Not done:** no template, theme, report or script (content was text prompts and register cards); nothing cloned, installed or posted; `.mcp.json` unchanged.
+
+## Batch 124 — seven slides, one LinkedIn prompt set (files numbered 124; 18 November 2026)
+
+**Source:** @abby.ai.business "I just cancelled my LinkedIn premium" - six profile prompts.
+
+**Added:** skill `linkedin-six-profile-prompts-abby`; command `/linkedin-six-prompts`. Prompts transcribed verbatim with checks (invented numbers, keyword guesses, privacy, unmeasured ATS claims).
+
+**Already existed, not duplicated:** `/cv-linkedin-prompts`, `linkedin-opus-lead-machine`, `linkedin-headline-six-parts` (related, not equivalent).
+
+**Not done:** no template, theme, report or script (text prompts only); nothing posted or run; `.mcp.json` unchanged.
