@@ -4,9 +4,9 @@
     {
       "id": 1,
       "prompt": "Help me create an exit-intent popup for our SaaS landing page. We want to capture emails from visitors who are about to leave without signing up. Our product is a social media scheduling tool.",
-      "expected_output": "Should check for product-marketing.md first. Should identify the popup type as exit-intent email capture. Should apply the exit-intent popup design guidance: compelling headline (address why they're leaving or offer additional value), lead magnet or incentive (discount, free resource, extended trial), minimal form fields (email only), clear CTA, and easy close option. Should apply copy formulas from the skill. Should address trigger configuration (exit intent detection). Should recommend frequency rules (don't show again if dismissed). Should include benchmarks (exit intent popups typically 3-10% conversion).",
+      "expected_output": "Should check for product-marketing-context.md first. Should identify the popup type as exit-intent email capture. Should apply the exit-intent popup design guidance: compelling headline (address why they're leaving or offer additional value), lead magnet or incentive (discount, free resource, extended trial), minimal form fields (email only), clear CTA, and easy close option. Should apply copy formulas from the skill. Should address trigger configuration (exit intent detection). Should recommend frequency rules (don't show again if dismissed). Should include benchmarks (exit intent popups typically 3-10% conversion).",
       "assertions": [
-        "Checks for product-marketing.md",
+        "Checks for product-marketing-context.md",
         "Identifies as exit-intent popup type",
         "Includes compelling headline",
         "Includes lead magnet or incentive",

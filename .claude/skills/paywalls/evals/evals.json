@@ -4,9 +4,9 @@
     {
       "id": 1,
       "prompt": "Help me design the upgrade paywall for our project management tool. Free users can have 3 projects, and we want to show an upgrade screen when they try to create a 4th project.",
-      "expected_output": "Should check for product-marketing.md first. Should identify this as a usage limit trigger point. Should apply the paywall screen components: headline (communicate the value of upgrading, not just the limit), value demonstration (show what they get with paid plan), plan comparison (free vs paid), social proof, CTA (specific and action-oriented), and escape hatch (option to go back). Should provide specific copy recommendations. Should address the emotional state of the user at this moment (frustrated by the limit). Should warn against anti-patterns.",
+      "expected_output": "Should check for product-marketing-context.md first. Should identify this as a usage limit trigger point. Should apply the paywall screen components: headline (communicate the value of upgrading, not just the limit), value demonstration (show what they get with paid plan), plan comparison (free vs paid), social proof, CTA (specific and action-oriented), and escape hatch (option to go back). Should provide specific copy recommendations. Should address the emotional state of the user at this moment (frustrated by the limit). Should warn against anti-patterns.",
       "assertions": [
-        "Checks for product-marketing.md",
+        "Checks for product-marketing-context.md",
         "Identifies as usage limit trigger",
         "Applies paywall screen components framework",
         "Includes headline, value demo, comparison, social proof, CTA",

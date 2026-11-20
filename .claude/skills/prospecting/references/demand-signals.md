@@ -30,7 +30,7 @@ Define, specifically enough to *reject* weak matches:
 - geography / language constraint
 - clear disqualifiers
 
-Don't start broad collection until the brief is sharp. Pull from `.agents/product-marketing.md` if it exists.
+Don't start broad collection until the brief is sharp. Pull from `.agents/product-marketing-context.md` if it exists.
 
 ## Step 2 — Mine the five signal buckets
 

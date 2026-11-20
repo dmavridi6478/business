@@ -4,9 +4,9 @@
     {
       "id": 1,
       "prompt": "We make a project management tool for design agencies. Who should we look for as co-marketing partners?",
-      "expected_output": "Should check for product-marketing.md first. Should apply the Partner Identification Framework with audience overlap analysis. Should identify ideal partner characteristics: same buyer persona (design agencies), different problem solved, adjacent in the workflow. Should suggest specific partner categories: design tools (Figma, Adobe), proposal/contract tools (Bonsai, HoneyBook), client communication (Notion, Slack), invoicing/payments (Stripe, FreshBooks), file storage/handoff (Dropbox, Frame.io). Should recommend audience scoring criteria. Should suggest sources to find partners: integration ecosystem, Crossbeam/Reveal for account overlap, customer surveys, G2/Capterra category neighbors, podcasts/newsletters they sponsor.",
+      "expected_output": "Should check for product-marketing-context.md first. Should apply the Partner Identification Framework with audience overlap analysis. Should identify ideal partner characteristics: same buyer persona (design agencies), different problem solved, adjacent in the workflow. Should suggest specific partner categories: design tools (Figma, Adobe), proposal/contract tools (Bonsai, HoneyBook), client communication (Notion, Slack), invoicing/payments (Stripe, FreshBooks), file storage/handoff (Dropbox, Frame.io). Should recommend audience scoring criteria. Should suggest sources to find partners: integration ecosystem, Crossbeam/Reveal for account overlap, customer surveys, G2/Capterra category neighbors, podcasts/newsletters they sponsor.",
       "assertions": [
-        "Checks for product-marketing.md",
+        "Checks for product-marketing-context.md",
         "Identifies same persona / different problem characteristic",
         "Suggests specific partner categories in workflow",
         "Mentions Crossbeam or account overlap data",

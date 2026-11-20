@@ -4,9 +4,9 @@
     {
       "id": 1,
       "prompt": "We want to build a free tool to drive leads for our SEO software. We're thinking about an SEO audit tool or a keyword research tool. Which would be better and how should we approach it?",
-      "expected_output": "Should check for product-marketing.md first. Should apply the evaluation scorecard to compare both tool ideas across dimensions (audience alignment, lead quality, build effort, SEO value, maintenance burden, competitive differentiation). Should reference the tool types from the skill (analyzers, testers). Should recommend the stronger option with rationale. Should discuss lead capture gating strategy (what's free vs what requires email). Should address MVP scope — what's the minimum valuable version. Should provide implementation recommendations.",
+      "expected_output": "Should check for product-marketing-context.md first. Should apply the evaluation scorecard to compare both tool ideas across dimensions (audience alignment, lead quality, build effort, SEO value, maintenance burden, competitive differentiation). Should reference the tool types from the skill (analyzers, testers). Should recommend the stronger option with rationale. Should discuss lead capture gating strategy (what's free vs what requires email). Should address MVP scope — what's the minimum valuable version. Should provide implementation recommendations.",
       "assertions": [
-        "Checks for product-marketing.md",
+        "Checks for product-marketing-context.md",
         "Applies evaluation scorecard to compare options",
         "References tool types from the skill",
         "Recommends one option with clear rationale",

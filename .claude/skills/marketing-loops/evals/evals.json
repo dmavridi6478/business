@@ -4,9 +4,9 @@
     {
       "id": 1,
       "prompt": "I want to set up a recurring loop that watches our SEO and tells me what to do each week. We're a B2B SaaS with a content-heavy site.",
-      "expected_output": "Should check for product-marketing.md first. Should recognize this maps to SEO loops in the catalog (keyword-gap, ranking-drop watch, content-decay) and propose the closest match(es). Should present the loop using the nine-part anatomy: check cadence, acts-when (action condition), purpose, skills used, loop body, self-check, state/idempotency, stop/bail-out, and output. Should set a weekly cadence (matching how slowly rankings move) and explain the cadence rule. Should include a stop/bail-out and note that most runs may find no action. Should reference the seo-audit skill for execution.",
+      "expected_output": "Should check for product-marketing-context.md first. Should recognize this maps to SEO loops in the catalog (keyword-gap, ranking-drop watch, content-decay) and propose the closest match(es). Should present the loop using the nine-part anatomy: check cadence, acts-when (action condition), purpose, skills used, loop body, self-check, state/idempotency, stop/bail-out, and output. Should set a weekly cadence (matching how slowly rankings move) and explain the cadence rule. Should include a stop/bail-out and note that most runs may find no action. Should reference the seo-audit skill for execution.",
       "assertions": [
-        "Checks for product-marketing.md",
+        "Checks for product-marketing-context.md",
         "Selects appropriate SEO loop(s) from the catalog",
         "Presents the loop with the nine-part anatomy",
         "Includes state/idempotency (last-run marker or dedupe)",
