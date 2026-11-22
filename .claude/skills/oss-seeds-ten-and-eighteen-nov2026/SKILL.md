@@ -37,3 +37,15 @@ Checked: 19 repos exist (`git ls-remote`) and licences were read from repo files
 ## Not done
 
 No installs, clones or runs; counts and dates unverified. Use `/repo-vet owner/repo` and `/repo-licence-check` first.
+
+## Addendum, 24 November 2026: the same five repos in a @buildwithneej carousel (13 slides, "week of Nov 20")
+
+The zip repeats five repos already above (Univer, phonebox, openmotion, claude-trading-skills, kiri) with install lines and the creator's own tests. Nothing new was built; these details were added to the existing entries. The 5 in 13 slides, the creator's picks ("trying Claude Trading Skills first") and the closing "comment REPO and I'll DM you my notes" gate are promotion; star gains (+2,909, +3,760, +5,314, +3,385, +5,277 this week) are unchecked.
+
+| Repo | Install line shown | Claims by the creator | Caution |
+|---|---|---|---|
+| phonebox | `setup.sh` (Mac, Linux) or `setup.ps1` (Windows), open 127.0.0.1:8765, pick a template | Over 100 widgets, 30 templates, Android 5+, no account, no cloud; shows Claude and Codex usage limits; app comes from the GitHub releases page | Read the setup script before running it; sideloaded Android app with USB debugging; allowing or denying Claude Code permissions from a phone is a security boundary |
+| kiri | `brew install --cask libracoder/kiri/kiri`, then `kiri share web` | Public HTTPS link runs through the maker's relay server and needs a GitHub sign-in; Mac and Linux; Apache-2.0, in beta | Traffic passes a third party's relay; beta software; share only a throwaway container |
+| openmotion | `npx skills add nexu-io/openmotion --skill openmotion`, then ask your agent to set up the Studio | Free open source; image, video, music and voice models bill to your own accounts; needs Chrome and FFmpeg; "rendered a 20-second template in 31 seconds" | Model costs are yours; the 31 seconds is one unrepeated test on unknown hardware |
+| Univer | `pnpm add @univerjs/presets @univerjs/preset-sheets-core`, `univerAPI.createWorkbook({})` | Apache-2.0 core handles editing and formulas; charts, XLSX and live collaboration are commercial add-ons; "one edit by code, total recalculated to 117,541.6" | Check which features you need are in the paid tier; the sum is one sample |
+| claude-trading-skills | `cp -r skills/market-breadth-analyzer ~/.claude/skills/` | Several skills use free public data with no key; 22 need a Financial Modeling Prep key (free plan 250 calls a day); a market-breadth run scored 34.1/100 "Weakening" in 7 seconds | Educational only, not financial advice; the score is one run on data through 19 November; a keyed data vendor's terms apply |
