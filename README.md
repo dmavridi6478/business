@@ -6179,3 +6179,15 @@ Not done (needs you): plugin installs (`/plugin install paypal@claude-plugins-of
 **Already existed, not duplicated:** `/cv-linkedin-prompts`, `linkedin-opus-lead-machine`, `linkedin-headline-six-parts` (related, not equivalent).
 
 **Not done:** no template, theme, report or script (text prompts only); nothing posted or run; `.mcp.json` unchanged.
+
+## Batch 125 — 8 slides plus two infographics (files numbered 125; 22 November 2026)
+
+**Sources:** @promptifex "7 GitHub repos for high-paying clients" (8 slides), Alec Rickard "15 Marketing Terms", Nader Alnajjar (LEVER) "Your 2027 Personal Brand Blueprint".
+
+**Added:** skills `client-finding-seven-repos-promptifex`, `marketing-terms-15-alec-rickard`, `personal-brand-2027-eight-steps`. Licences read for six repos (MIT: gosom, Huginn, reacher; AGPL-3.0: Firecrawl, Listmonk; Twenty mostly AGPL-3.0); remote-jobs unchecked.
+
+**Already existed, not duplicated:** Firecrawl and Listmonk were mentioned in other skills; the positioning triangle and 2026 brand system are related.
+
+**Source problems:** "100 clients in 10 minutes" and "zero bounces" are unsupported; the LTV formula is revenue not profit; the brand sheet shows no results.
+
+**Not done:** no template, theme, report or script; nothing cloned or run; `.mcp.json` unchanged.
