@@ -6191,3 +6191,13 @@ Not done (needs you): plugin installs (`/plugin install paypal@claude-plugins-of
 **Source problems:** "100 clients in 10 minutes" and "zero bounces" are unsupported; the LTV formula is revenue not profit; the brand sheet shows no results.
 
 **Not done:** no template, theme, report or script; nothing cloned or run; `.mcp.json` unchanged.
+
+## Batch 126 — ten-repo "seeds" board plus 18 carousel slides (files numbered 126; 23 November 2026)
+
+**Added:** skill `oss-seeds-ten-and-eighteen-nov2026` (19 repos, licences read for 16). No template, theme, command or report (register only).
+
+**Already existed:** Upscayl, Stirling PDF, claude-mem, Astryx.
+
+**Source problems:** star counts unverified; GiroCrab is a new banking app; kiri share creates public links; phonebox can approve agent permissions from a phone.
+
+**Not done:** nothing cloned or run; `.mcp.json` unchanged.
