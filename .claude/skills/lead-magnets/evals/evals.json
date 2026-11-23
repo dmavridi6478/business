@@ -4,9 +4,9 @@
     {
       "id": 1,
       "prompt": "We're a B2B SaaS selling project management software to marketing agencies. What lead magnet should we create?",
-      "expected_output": "Should check for product-marketing.md first. Should ask about current lead gen, existing content assets, and primary goal (list growth, lead quality, product education). Should apply Lead Magnet Principles: solve a specific problem (not 'agency marketing'), match buyer stage, high perceived value + low time investment, natural path to product. Should recommend a specific format suited to a busy agency audience — likely a template (Notion/spreadsheet) or checklist over an ebook. Examples: 'Agency Project Profitability Calculator' (decision stage, naturally leads to project management), 'Client Onboarding Checklist for Agencies' (consideration), 'The Agency Capacity Planning Template' (decision stage). Should justify the choice by matching buyer stage and effort/value ratio. Should outline content, gating, landing page, distribution, and measurement plan.",
+      "expected_output": "Should check for product-marketing-context.md first. Should ask about current lead gen, existing content assets, and primary goal (list growth, lead quality, product education). Should apply Lead Magnet Principles: solve a specific problem (not 'agency marketing'), match buyer stage, high perceived value + low time investment, natural path to product. Should recommend a specific format suited to a busy agency audience — likely a template (Notion/spreadsheet) or checklist over an ebook. Examples: 'Agency Project Profitability Calculator' (decision stage, naturally leads to project management), 'Client Onboarding Checklist for Agencies' (consideration), 'The Agency Capacity Planning Template' (decision stage). Should justify the choice by matching buyer stage and effort/value ratio. Should outline content, gating, landing page, distribution, and measurement plan.",
       "assertions": [
-        "Checks for product-marketing.md",
+        "Checks for product-marketing-context.md",
         "Asks about buyer stage and goal",
         "Applies the 5 principles",
         "Recommends specific format with rationale",

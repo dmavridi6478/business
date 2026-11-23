@@ -1,0 +1,4 @@
+# Never commit: holds the Google login session and notebook library
+data/
+.venv/
+__pycache__/

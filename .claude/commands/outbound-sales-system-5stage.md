@@ -20,7 +20,7 @@ source since neither contained any.
 | **01 · Prospecting** | `icp-definition.md`, `target-accounts.md`, `decision-makers.md` | `prospecting` (vendored) — define ICP, build a target account list, find/qualify decision-makers |
 | **02 · Research** | `account-research.md`, `buying-signals.md`, `personalization-angles.md` | `customer-research` (vendored) — account/prospect research, buying-signal detection, personalization angles |
 | **03 · Outreach** | `cold-email.md`, `linkedin-messages.md`, `follow-up-sequences.md` | `cold-email` (vendored) for the first touch; `follow-up-when-no-reply` (this repo, Mo Bunnell's 4-stage cadence) for what happens when they go quiet |
-| **04 · Conversations** | `reply-classifier.md`, `objection-handler.md`, `next-steps.md` | `sales-enablement-corey-haines`'s `references/objection-library.md` for objection handling; `sales-enablement` (this repo's own version) for the broader qualification/demo-script layer |
+| **04 · Conversations** | `reply-classifier.md`, `objection-handler.md`, `next-steps.md` | `sales-enablement`'s `references/objection-library.md` for objection handling; `sales-enablement` (this repo's own version) for the broader qualification/demo-script layer |
 | **05 · Pipeline** | `conversation-analysis.md`, `pipeline-review.md`, `improvement-plan.md` | `revops` (vendored) — lead scoring/routing, pipeline-stage hygiene, marketing-to-sales handoff |
 
 ## How to run it
@@ -34,7 +34,7 @@ source since neither contained any.
    goes quiet, switch to `/follow-up-when-no-reply` rather than re-running
    `cold-email` — it's a different message shape (re-surface, not re-pitch).
 4. **Stage 4 (Conversations)**: once a reply comes in, use
-   `sales-enablement-corey-haines`'s objection library to handle pushback
+   `sales-enablement`'s objection library to handle pushback
    and `sales-enablement` for demo scripts/next-step recommendations.
 5. **Stage 5 (Pipeline)**: use `revops` weekly to review where deals are
    stalling, re-score leads, and decide what to fix in Stage 1-4 before

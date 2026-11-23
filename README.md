@@ -18,7 +18,7 @@ A starter bundle of business-oriented Claude skills lives in `.claude/skills/`:
 - `instagram-content-calendar-gr` — ready-to-paste Greek-language meta-prompt that interviews the user about their business, then generates a 30-day Instagram content calendar as a table (caption structure + AI-image instructions per post)
 - `copywriting` — writes individual persuasive copy (headlines, product descriptions, email copy, CTAs) via a Problem → Promise → Proof → CTA framework, once `content-strategy` has picked the topic
 - `marketing-psychology` — 8 behavioral persuasion principles (framing, social proof, anchoring, curiosity, loss aversion, specificity, pricing context, decision friction) to pick the right lever for a message instead of stacking random tactics
-- **Corey Haines' 50-skill marketing pack** — vendored in full (Batch 82 follow-up) from [`coreyhaines31/marketingskills`](https://github.com/coreyhaines31/marketingskills) (MIT), covering SEO & content (`seo-audit`, `ai-seo`, `programmatic-seo`, `schema`, `aso`), CRO (`cro`, `signup`, `onboarding`, `popups`, `paywalls`), copy & content (`copy-editing`, `cold-email`, `emails`, `social`, `video`, `image`, `sms`), paid & measurement (`ads`, `ad-creative`, `ab-testing`, `analytics`, `attribution`), growth & retention (`referrals`, `free-tools`, `churn-prevention`, `community-marketing`, `co-marketing`, `lead-magnets`, `influencer-marketing`), sales & GTM (`revops`, `launch`, `pricing`, `competitors`, `directory-submissions`, `prospecting`, `events`, `public-relations`), and strategy (`marketing-ideas`, `marketing-loops`, `marketing-plan`, `marketing-council`, `product-marketing`, `customer-research`, `offers`, `site-architecture`). 5 skills that collided by name with the ones already listed above (`content-strategy`, `copywriting`, `marketing-psychology`, `sales-enablement`, `competitor-profiling`) were vendored under a `-corey-haines` suffix instead — use whichever version fits, they're independent, not duplicates of each other.
+- **Corey Haines' 50-skill marketing pack** — vendored in full (Batch 82 follow-up) from [`coreyhaines31/marketingskills`](https://github.com/coreyhaines31/marketingskills) (MIT), covering SEO & content (`seo-audit`, `ai-seo`, `programmatic-seo`, `schema`, `aso`), CRO (`cro`, `signup`, `onboarding`, `popups`, `paywalls`), copy & content (`copy-editing`, `cold-email`, `emails`, `social`, `video`, `image`, `sms`), paid & measurement (`ads`, `ad-creative`, `ab-testing`, `analytics`, `attribution`), growth & retention (`referrals`, `free-tools`, `churn-prevention`, `community-marketing`, `co-marketing`, `lead-magnets`, `influencer-marketing`), sales & GTM (`revops`, `launch`, `pricing`, `competitors`, `directory-submissions`, `prospecting`, `events`, `public-relations`), and strategy (`marketing-ideas`, `marketing-loops`, `marketing-plan`, `marketing-council`, `product-marketing-context`, `customer-research`, `offers`, `site-architecture`). 5 skills that collided by name with the ones already listed above (`content-strategy`, `copywriting`, `marketing-psychology`, `sales-enablement`, `competitor-profiling`) were vendored under a `-corey-haines` suffix instead — use whichever version fits, they're independent, not duplicates of each other.
 - `internal-comms` — company newsletters, FAQs, general internal communications
 - `doc-coauthoring` — structured workflow for co-authoring docs, proposals, and specs
 - `attachment-intake` — how to handle uploaded files (zips, photo batches, docs) that arrive with no or mismatched instructions, instead of guessing at intent
@@ -4800,7 +4800,7 @@ files this time, not summarized into a reference doc.
   sales-teaser graphics (prospecting → research → outreach → conversations
   → pipeline) as an actually-working sequence, mapped to skills **already
   vendored in this repo** (`prospecting`, `customer-research`, `cold-email`,
-  the new `follow-up-when-no-reply`, `sales-enablement-corey-haines`'s
+  the new `follow-up-when-no-reply`, `sales-enablement`'s
   objection library, `sales-enablement`, `revops`) — since neither source
   graphic contained any real prompt/skill content to vendor, only category
   names used as organizing structure, stated explicitly in the file rather
@@ -4821,7 +4821,7 @@ files this time, not summarized into a reference doc.
 **Already covered, cross-referenced rather than re-added:** SWOT/PESTEL
 (business-decision-frameworks), the individual OKR/KPI mechanics
 (quarterly-okr-architect, kpi-reference-handbook), objection handling
-(sales-enablement, sales-enablement-corey-haines).
+(sales-enablement, sales-enablement).
 
 **Declined — no real content to vendor:** "The Ultimate Claude LinkedIn
 Sales Department" (60 agents / 50 skills / 100 prompts / 30 workflows / 10

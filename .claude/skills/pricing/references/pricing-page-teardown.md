@@ -38,7 +38,7 @@ Dimensions 7 and 10 hand off to **`schema`** (Product/Offer JSON-LD) and **`ai-s
 
 ## How to run it
 
-1. **Load context** — read `.agents/product-marketing.md` (ICP, positioning) so "clarity" is judged against the *right* buyer.
+1. **Load context** — read `.agents/product-marketing-context.md` (ICP, positioning) so "clarity" is judged against the *right* buyer.
 2. **Fetch the page as an agent would** — get the rendered text/HTML, not a screenshot. Note immediately whether prices appear in the text (that's dimension 7).
 3. **Run the paste test** — ask an LLM for the plans and prices from the URL; record what it gets wrong or misses.
 4. **Score all 10 dimensions** Pass/Partial/Gap with a one-line reason each.
