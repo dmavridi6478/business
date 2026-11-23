@@ -6227,3 +6227,7 @@ On request, rebuilt the 18 missing commands from the "Claude Secret Commands" gr
 - 18 commands: `/delete-ai-words`, `/my-viral-post`, `/infographic-builder`, `/deep-research-synthesizer`, `/deck-builder`, `/linkedin-hook`, `/fable-prompter`, `/negotiation`, `/excel-style`, `/hormozi-viral-1`, `/meeting-notes`, `/client-brief`, `/linkedin-post-report`, `/viral-recipe`, `/meeting-visualizer`, `/tc-social-carousel`, `/reddit-researcher`, `/fact-checker`. My own implementations from one-line jobs, not the originals; `/hormozi-viral-1` is not Hormozi's framework.
 - Skill `claude-secret-commands-24` updated (26 commands, rebuilt status); `/secret-command-map` updated.
 - `Artifacts/operations/workflows-batch-130.html` (3 workflows), `Artifacts/business/batch-130-report.html`, `docs/batch-130-prompts.md`.
+
+## Batch 131 (23 November 2026)
+
+Input: 3 card images from a @githubnow carousel (hyperframes, last30days-skill, OpenMausBot) and a nate.volkov video. Covered earlier and skipped: hyperframes, OpenMausBot, and every repo in the video. Added: skill `last30days-research`, command `/last30days-brief`, a Batch 131 table in `oss-alternatives`, `docs/batch-131-prompts.md`. No templates or themes (nothing new to design).

@@ -294,3 +294,11 @@ Five more from the @buildwithneej carousel (cleanyourtv, Filee, ai-job-search, M
 | `NationalSecurityAgency/ghidra` | Software reverse-engineering suite (disassembler, decompiler, scripting) | not read | read LICENSE (believed Apache-2.0) | Dual-use: authorised targets only; run unknown binaries in a VM |
 
 Details and trial rules in `github-trending-three-nov2`. The nine-rules LinkedIn graphic from the same batch is already `linkedin-magnetic-brand-9-rules`.
+
+## Batch 131 (23 November 2026)
+
+| Repo | Does | Stars | Licence | Care |
+|---|---|---|---|---|
+| `mvanhorn/last30days-skill` | Researches a topic across Reddit, X, YouTube, TikTok, HN, Polymarket and GitHub, then writes one brief | 72,918 | MIT | Account access for some sources; see `last30days-research` |
+| `heygen-com/hyperframes` | HTML to deterministic MP4 | card: +20,878 this month (page not re-read) | Apache-2.0 on the card | Already covered: `hyperframes` |
+| `milind-soni/OpenMausBot` | Chat app of CLI-backed agents | card: +20,211 this month (up from 5,599 in Batch 120; page not re-read) | Apache-2.0 | Already covered in Batch 120 |
