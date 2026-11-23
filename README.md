@@ -6231,3 +6231,7 @@ On request, rebuilt the 18 missing commands from the "Claude Secret Commands" gr
 ## Batch 131 (23 November 2026)
 
 Input: 3 card images from a @githubnow carousel (hyperframes, last30days-skill, OpenMausBot) and a nate.volkov video. Covered earlier and skipped: hyperframes, OpenMausBot, and every repo in the video. Added: skill `last30days-research`, command `/last30days-brief`, a Batch 131 table in `oss-alternatives`, `docs/batch-131-prompts.md`. No templates or themes (nothing new to design).
+
+## Batch 132 (23 November 2026)
+
+Input: 27 card images from three carousels (@raphal3494 2 GB startup stack, @dotdevs web UI, @githubnow trending). Added: skill `startup-stack-2gb-ram` (14 stack tools, 5 web-UI libraries already covered, 3 trending repos), command `/stack-pick`, Batch 132 table in `oss-alternatives`, `docs/batch-132-prompts.md`. Skipped as already covered: Uptime Kuma, Listmonk, Umami, Better Auth, Radix, Motion, TanStack Query, Tailwind, Zustand (existing skills). Stars are card figures; repo pages were not read (fetch tool rate-limited). No templates or themes.

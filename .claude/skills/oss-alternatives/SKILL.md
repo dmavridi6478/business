@@ -302,3 +302,15 @@ Details and trial rules in `github-trending-three-nov2`. The nine-rules LinkedIn
 | `mvanhorn/last30days-skill` | Researches a topic across Reddit, X, YouTube, TikTok, HN, Polymarket and GitHub, then writes one brief | 72,918 | MIT | Account access for some sources; see `last30days-research` |
 | `heygen-com/hyperframes` | HTML to deterministic MP4 | card: +20,878 this month (page not re-read) | Apache-2.0 on the card | Already covered: `hyperframes` |
 | `milind-soni/OpenMausBot` | Chat app of CLI-backed agents | card: +20,211 this month (up from 5,599 in Batch 120; page not re-read) | Apache-2.0 | Already covered in Batch 120 |
+
+## Batch 132 (23 November 2026; stars are card figures, not read)
+
+| Repo | Does | Licence | Replaces (card) | Care |
+|---|---|---|---|---|
+| `netdata/netdata` | Per-second host and container metrics | GPL-3 agent [Likely] | Datadog | Cloud dashboard is a product |
+| `GlitchTip` | Sentry-compatible error tracking | MIT [Likely] | Sentry | Fewer features |
+| `meilisearch/meilisearch` | Instant search | MIT community [Likely] | Algolia | Paid editions exist |
+| `OpenProfit` | Profit per product from Stripe, OpenAI, Vercel costs | MIT (card) | Spreadsheet | Billing API keys: use restricted keys |
+| `toeverything/AFFiNE` | Docs plus whiteboard, local-first | not read | Notion-style tools | You run sync and backups |
+| `XiaoYouChR/Ghost-Downloader-3` | Multi-protocol download manager | not read | Download managers | Copyright and terms of sites |
+| `backnotprop/plannotator` | Annotate agent plans and diffs | not read | Reading plans in the terminal | Do not paste secrets into comments |
