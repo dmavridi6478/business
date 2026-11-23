@@ -321,3 +321,11 @@ Details and trial rules in `github-trending-three-nov2`. The nine-rules LinkedIn
 |---|---|---|---|
 | `chatwoot/chatwoot` | Shared inbox across web chat, WhatsApp, Instagram and email | Intercom | You host customer messages: access control, backups, consent |
 | `calcom/cal.diy` (video label "Cal.diy") | Self-hosted scheduling | Calendly | Name as shown on screen; confirm the repo and licence before installing |
+
+## Batch 134 (23 November 2026; card figures, pages not read)
+
+| Repo | Does | Licence | Care |
+|---|---|---|---|
+| `yetone/magpie` | One local gateway and key-swapping for several coding agents, quota failover | MIT (card) | Rewrites agent configs, holds keys; account-rotation terms |
+| `Jakeschincariol/instagram-agent-skill` | 13 Instagram skills, hook scoring, beat timing | not shown | Read local scripts first |
+| `cursor/plugins` | Cursor plugin spec: directory plus plugin.json | not shown | Spec, not an app |

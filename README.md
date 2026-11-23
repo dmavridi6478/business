@@ -6239,3 +6239,7 @@ Input: 27 card images from three carousels (@raphal3494 2 GB startup stack, @dot
 ## Batch 133 (23 November 2026)
 
 Input: 6 new card images (@dotdevs "5 GitHub projects for AI agents"), 1 duplicate card (skipped) and a @valeridoesai video (8 free replacements). Added: skill `agent-frameworks-5`, Chatwoot and Cal.diy rows in `oss-alternatives`, `docs/batch-133-prompts.md`. Skipped as covered: OpenWhispr, AppFlowy, Cap, VoiceStudio, OpenSEO. Card figures not re-read; no templates or themes.
+
+## Batch 134 (23 November 2026)
+
+Input: 5 card images from a @githubnow carousel (magpie, instagram-agent-skill, cursor/plugins, intro, outro). Outro skipped as a repeat. Added: skill `trending-three-nov23`, Batch 134 table in `oss-alternatives`, `docs/batch-134-prompts.md`. Repo pages not read; no templates, themes or commands.
