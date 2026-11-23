@@ -314,3 +314,10 @@ Details and trial rules in `github-trending-three-nov2`. The nine-rules LinkedIn
 | `toeverything/AFFiNE` | Docs plus whiteboard, local-first | not read | Notion-style tools | You run sync and backups |
 | `XiaoYouChR/Ghost-Downloader-3` | Multi-protocol download manager | not read | Download managers | Copyright and terms of sites |
 | `backnotprop/plannotator` | Annotate agent plans and diffs | not read | Reading plans in the terminal | Do not paste secrets into comments |
+
+## Batch 133 (23 November 2026; from on-screen text of a TikTok video, repo pages not read)
+
+| Repo | Does | Replaces | Care |
+|---|---|---|---|
+| `chatwoot/chatwoot` | Shared inbox across web chat, WhatsApp, Instagram and email | Intercom | You host customer messages: access control, backups, consent |
+| `calcom/cal.diy` (video label "Cal.diy") | Self-hosted scheduling | Calendly | Name as shown on screen; confirm the repo and licence before installing |

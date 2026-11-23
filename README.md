@@ -6235,3 +6235,7 @@ Input: 3 card images from a @githubnow carousel (hyperframes, last30days-skill, 
 ## Batch 132 (23 November 2026)
 
 Input: 27 card images from three carousels (@raphal3494 2 GB startup stack, @dotdevs web UI, @githubnow trending). Added: skill `startup-stack-2gb-ram` (14 stack tools, 5 web-UI libraries already covered, 3 trending repos), command `/stack-pick`, Batch 132 table in `oss-alternatives`, `docs/batch-132-prompts.md`. Skipped as already covered: Uptime Kuma, Listmonk, Umami, Better Auth, Radix, Motion, TanStack Query, Tailwind, Zustand (existing skills). Stars are card figures; repo pages were not read (fetch tool rate-limited). No templates or themes.
+
+## Batch 133 (23 November 2026)
+
+Input: 6 new card images (@dotdevs "5 GitHub projects for AI agents"), 1 duplicate card (skipped) and a @valeridoesai video (8 free replacements). Added: skill `agent-frameworks-5`, Chatwoot and Cal.diy rows in `oss-alternatives`, `docs/batch-133-prompts.md`. Skipped as covered: OpenWhispr, AppFlowy, Cap, VoiceStudio, OpenSEO. Card figures not re-read; no templates or themes.
