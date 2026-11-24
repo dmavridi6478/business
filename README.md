@@ -6201,3 +6201,13 @@ Not done (needs you): plugin installs (`/plugin install paypal@claude-plugins-of
 **Source problems:** star counts unverified; GiroCrab is a new banking app; kiri share creates public links; phonebox can approve agent permissions from a phone.
 
 **Not done:** nothing cloned or run; `.mcp.json` unchanged.
+
+## Batch 128 — 56 slides, DevOps/Docker/AI stack (files numbered 128; 24 November 2026)
+
+**Added:** skill `oss-devops-docker-ai-stack-nov2026` (register only; licences as printed on slides, not read; several repos confirmed to exist). No template, theme, command or report.
+
+**Already existed:** kiri, Twenty, Traefik, AnythingLLM, Jan, Dockge, Craft Apps, Bun, Springback.
+
+**Source problems:** RAM figures are single-author tests; "alternative to" cards omit operating cost and compliance; TeleDrive, Muse4AI and Gamer carry terms-of-service risk.
+
+**Not done:** nothing cloned or run; `.mcp.json` unchanged.
