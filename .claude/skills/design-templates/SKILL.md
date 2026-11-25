@@ -433,3 +433,7 @@ Themes: `theme-regularbasis-lime-black`, `theme-mltut-paper-orange`.
 ## Batch 122 additions - one template and one theme (rendered at 1280 light, 1280 dark and 390 px; no overflow)
 
 `Artifacts/templates/purple-meadow-tool-spotlight.html`: dusk-meadow gradient (CSS only), icon tile, huge name, feature chips, framed interface panel with a mandatory "Illustration - not an official screenshot" label, licence/platform/type strip, repo line. Theme: `theme-purple-meadow`. Use a real screenshot in the panel; never present an invented interface as the real one.
+
+## Batch 129 additions - one template and one theme (rendered at 1280 light, 1280 dark and 390 px; no overflow)
+
+`Artifacts/templates/skill-card-numbered-blue.html`: kicker and handle, blue rank number and name, mono repo path, description, framed README screenshot, three pills, install bar, "Checked date" footer. Theme: `theme-skill-card-blue`. Show "Checked" only for a date you verified, and print the install line exactly as the README gives it.

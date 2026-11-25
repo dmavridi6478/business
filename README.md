@@ -6211,3 +6211,15 @@ Not done (needs you): plugin installs (`/plugin install paypal@claude-plugins-of
 **Source problems:** RAM figures are single-author tests; "alternative to" cards omit operating cost and compliance; TeleDrive, Muse4AI and Gamer carry terms-of-service risk.
 
 **Not done:** nothing cloned or run; `.mcp.json` unchanged.
+
+## Batch 129 — 36 slides: design skills, homelab, Rust and agency tools (files numbered 129; 25 November 2026)
+
+**Sources:** @jaytownley.design "5 free skills to make AI-looking screens look designed", @mapplebox.com homelab watch set, @raphal3494 Rust six and agency seven, @dotdevs free design tools.
+
+**Added:** skills `design-skills-five-ai-screens-nov2026`, `oss-homelab-rust-agency-nov2026`; commands `/design-skill-pick`, `/homelab-alerts-plan`; template `skill-card-numbered-blue`; theme `theme-skill-card-blue`; report `Artifacts/business/batch-129-intake-report.html`. Licences read for 26 repos.
+
+**Already existed, not duplicated:** Uptime Kuma, Dozzle, WUD, Beszel, Vaultwarden, RustDesk, Twenty, LobbyStack, Cap, Excalidraw, Coolors, Realtime Colors, Fontshare; the "Instead of" card template.
+
+**Source problems:** unslop slide install line is incomplete; Pingora is a library; Cap, Activepieces and Realtime Colors have non-standard licences; ntfy public topics act as passwords.
+
+**Not done:** nothing cloned or run; no workflow or agent (none warranted); `.mcp.json` unchanged.
