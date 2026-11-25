@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Skill Card Blue - Theme</title>
+<style>
+/* THEME: Skill Card Blue (from the @jaytownley.design design-skills carousel). Dark default; light on prefers-color-scheme: light or [data-theme="light"]. */
+:root{--bg:#1b1c20;--panel:#25272d;--line:#34363d;--ink:#f3f3f1;--muted:#a4a7ae;--accent:#4a5df0;--font:Aptos,'Segoe UI',Inter,Arial,sans-serif;color-scheme:dark}
+@media (prefers-color-scheme:light){:root:not([data-theme="dark"]){--bg:#f4f3ef;--panel:#fff;--line:#d8d6cf;--ink:#1b1c20;--muted:#585b63;--accent:#3347d8;color-scheme:light}}
+:root[data-theme="light"]{--bg:#f4f3ef;--panel:#fff;--line:#d8d6cf;--ink:#1b1c20;--muted:#585b63;--accent:#3347d8;color-scheme:light}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--ink);font:11pt/1.55 var(--font);padding:40px 16px}
+main{max-width:640px;margin:0 auto;display:grid;gap:16px}
+h1{font:800 32pt/1.08 var(--font)}h1 em{font-style:normal;color:var(--accent)}h2{font-size:14pt}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px 18px}
+.pill{display:inline-block;border:1px solid var(--line);border-radius:999px;padding:4px 14px;font-weight:600;margin-right:6px}
+.muted{color:var(--muted)}
+</style></head><body><main><h1>Skills that fix <em>AI-looking</em> screens</h1>
+<div class="card"><h2>Sample card</h2><p>Body text in Aptos at 11 pt.</p><p><span class="pill">MIT</span><span class="pill">Checked</span></p></div>
+<p class="muted">Tokens: bg, panel, line, ink, muted, accent.</p></main></body></html>

@@ -1,0 +1,102 @@
+<title>Batch 129 Intake Report</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<style>
+:root{--bg:#f7f6f2;--card:#ffffff;--ink:#1a1b1e;--muted:#5d6068;--line:#dcdad2;--accent:#3347d8;--head:#ebe8df;--code:#f0ede4;--ok:#1f6b3a;--warn:#9a5a00;--bad:#a42424}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#121317;--card:#1b1d22;--ink:#eeece6;--muted:#a3a6ae;--line:#33363e;--accent:#8c9bff;--head:#24272e;--code:#22252b;--ok:#8fd69c;--warn:#f0b35a;--bad:#ff8a8a;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#121317;--card:#1b1d22;--ink:#eeece6;--muted:#a3a6ae;--line:#33363e;--accent:#8c9bff;--head:#24272e;--code:#22252b;--ok:#8fd69c;--warn:#f0b35a;--bad:#ff8a8a;color-scheme:dark}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Aptos,"Segoe UI",Calibri,Arial,sans-serif;font-size:11pt;line-height:1.55;padding-block:32px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.wrap{max-width:1020px;margin:0 auto}
+h1{font-size:32pt;line-height:1.08;margin:0 0 6px;text-wrap:balance}
+h2{font-size:14pt;margin:30px 0 10px;padding-bottom:6px;border-bottom:2px solid var(--accent)}
+.meta{color:var(--muted);margin:0 0 18px}
+p{margin:8px 0;max-width:80ch}
+.scroll{overflow-x:auto;border:1px solid var(--line);border-radius:6px;background:var(--card);margin:10px 0}
+table{border-collapse:collapse;width:100%;min-width:760px;font-size:10.5pt}
+th{background:var(--head);font-weight:700}
+th,td{border:1px solid var(--line);padding:7px 10px;text-align:center;vertical-align:top;overflow-wrap:anywhere}
+code{font-family:"Cascadia Mono",Consolas,monospace;font-size:10pt;background:var(--code);padding:0 4px;border-radius:3px}
+ul{margin:6px 0;padding-left:22px}li{margin:4px 0;max-width:80ch}
+.warn{color:var(--warn);font-weight:700}
+</style>
+<div class="wrap">
+<h1>Batch 129 Intake Report</h1>
+<p class="meta">iCloud Photos archive (36 slides, four creators) &middot; files numbered 129 &middot; 25 November 2026 &middot; nothing was cloned, installed, posted or run</p>
+
+<h2>1. Result</h2>
+<p>The 36 slides held five design skills for AI-built screens, a homelab monitoring set, six Rust repositories, seven "start an agency" tools and five free design tools. Twenty-two repositories were checked and their licence files read. About half of the tools were already registered here, so the additions focus on the new ones: the five design skills, ntfy, Pingora, Microsoft Edit, Firecracker, Activepieces, Documenso, InvoiceShelf, Postiz, Squoosh and the Crest app.</p>
+<p>Main findings, in order of importance. First, "open source" is mixed: Cap is AGPL-3.0 with MIT only for two crate families, Activepieces keeps an enterprise folder under a separate licence, and the Realtime Colors code is CC BY-NC-ND 4.0, so the free website cannot be forked into a product. Second, the slide install line for unslop only adds the marketplace and installs nothing. Third, Pingora is a framework for building proxies, not a drop-in Nginx replacement. Fourth, on the public ntfy server the topic name works as the password.</p>
+
+<h2>2. Sources</h2>
+<div class="scroll"><table>
+<thead><tr><th>Source</th><th>Content</th><th>Handling</th></tr></thead>
+<tbody>
+<tr><td>@jaytownley.design, "5 free skills" (7 of 7 slides)</td><td>unslop, Web Design Engineer, hue, Open Design Agent Kit, Color Expert</td><td>New skill and command</td></tr>
+<tr><td>@mapplebox.com, "5 free tools that watch your homelab" (5 slides + bonus)</td><td>Uptime Kuma, ntfy, Beszel, Dozzle, What's Up Docker; alert setup title card</td><td>ntfy new; four already registered</td></tr>
+<tr><td>@raphal3494, "6 repos in Rust" and "7 tools to start an agency"</td><td>Codex, Firecracker, Pingora, Edit, Vaultwarden, RustDesk; Activepieces, LobbyStack, Twenty, Postiz, Documenso, InvoiceShelf, Cap</td><td>Eight new, five already registered</td></tr>
+<tr><td>@dotdevs, "Free design tools for devs who can't design"</td><td>Realtime Colors, Fontshare, Coolors, Squoosh, Excalidraw, Crest bonus</td><td>Squoosh and Crest new</td></tr>
+</tbody></table></div>
+
+<h2>3. Licences read from the repositories</h2>
+<div class="scroll"><table>
+<thead><tr><th>Repo</th><th>Licence</th><th>Caution the card omits</th></tr></thead>
+<tbody>
+<tr><td><code>heydamir/unslop</code></td><td>CC BY 4.0</td><td>Credit the author; slide install line is incomplete</td></tr>
+<tr><td><code>ConardLi/garden-skills</code></td><td>MIT</td><td>A collection of several skills; 15.2k stars are repo-wide</td></tr>
+<tr><td><code>dominikmartn/hue</code></td><td>MIT</td><td>Install is a clone into the skills folder</td></tr>
+<tr><td><code>feimacode/open-design-agent-kit</code></td><td>MIT</td><td>Hosted variant keeps designs on the author's server; brand systems are other companies' looks</td></tr>
+<tr><td><code>meodai/skill.color-expert</code></td><td>CC BY 4.0 (original files only)</td><td>Third-party reference content keeps its own licence</td></tr>
+<tr><td><code>binwiederhier/ntfy</code></td><td>Apache-2.0 and GPLv2</td><td class="warn">Public topics are guessable passwords</td></tr>
+<tr><td><code>louislam/uptime-kuma</code>, <code>henrygd/beszel</code>, <code>amir20/dozzle</code>, <code>getwud/wud</code></td><td>MIT</td><td>Logs can hold secrets; alert before auto-updating</td></tr>
+<tr><td><code>cloudflare/pingora</code></td><td>Apache-2.0</td><td>Framework, needs Rust code</td></tr>
+<tr><td><code>microsoft/edit</code>, <code>excalidraw/excalidraw</code></td><td>MIT</td><td>Size and platform claims unverified</td></tr>
+<tr><td><code>openai/codex</code>, <code>firecracker-microvm/firecracker</code>, <code>GoogleChromeLabs/squoosh</code></td><td>Apache-2.0</td><td>Codex sends code to OpenAI; Firecracker is not an app</td></tr>
+<tr><td><code>dani-garcia/vaultwarden</code>, <code>rustdesk/rustdesk</code></td><td class="warn">AGPL-3.0</td><td>Vault backups and remote-access hardening are yours</td></tr>
+<tr><td><code>gitroomhq/postiz-app</code>, <code>documenso/documenso</code>, <code>InvoiceShelf/InvoiceShelf</code></td><td class="warn">AGPL-3.0</td><td>E-signature level and invoicing rules vary by country</td></tr>
+<tr><td><code>activepieces/activepieces</code></td><td>MIT outside <code>packages/ee</code></td><td>Enterprise folders separately licensed</td></tr>
+<tr><td><code>CapSoftware/Cap</code>, <code>twentyhq/twenty</code></td><td class="warn">AGPL-3.0 mostly</td><td>Cap MIT only for two crate families</td></tr>
+<tr><td><code>juxtopposed/realtimecolors</code></td><td class="warn">CC BY-NC-ND 4.0</td><td>No commercial reuse, no derivatives</td></tr>
+</tbody></table></div>
+<p>Star counts and usage figures on all slides could not be checked because the GitHub API is blocked from the cloud container.</p>
+
+<h2>4. Checks on the slides</h2>
+<div class="scroll"><table>
+<thead><tr><th>Slide</th><th>Finding</th><th>Consequence</th></tr></thead>
+<tbody>
+<tr><td>unslop</td><td>Slide shows only <code>/plugin marketplace add</code>; README also needs <code>claude plugin install unslop@heydamir</code></td><td>Follow the README</td></tr>
+<tr><td>Web Design Engineer</td><td>Install command adds the whole garden-skills collection</td><td>Expect several skills, not one</td></tr>
+<tr><td>Color Expert</td><td>"CC-BY-4.0" covers original files only</td><td>Do not redistribute the reference folder as CC BY</td></tr>
+<tr><td>Pingora</td><td>Labelled "Instead of Nginx"</td><td>Library for building proxies</td></tr>
+<tr><td>InvoiceShelf</td><td>Slide shows stable 2.4.7; default branch is 3.x</td><td>Check the release you actually install</td></tr>
+<tr><td>Crest</td><td>Individual developer's free iOS app; store lookup showed 0 ratings, slide shows 2</td><td>Not a design tool; unverified</td></tr>
+<tr><td>Uptime Kuma + ntfy</td><td>Uptime Kuma has a built-in ntfy provider (server URL, topic, token); the "alert setup" slide has no steps</td><td>Setup was not reproduced</td></tr>
+<tr><td>All slides</td><td>No before/after results, no measured figures</td><td>Test one skill on one screen</td></tr>
+</tbody></table></div>
+
+<h2>5. What was added</h2>
+<div class="scroll"><table>
+<thead><tr><th>Type</th><th>Name</th><th>Purpose</th></tr></thead>
+<tbody>
+<tr><td>Skill</td><td><code>design-skills-five-ai-screens-nov2026</code></td><td>Five design skills, README versus slide, job guide, cautions</td></tr>
+<tr><td>Skill</td><td><code>oss-homelab-rust-agency-nov2026</code></td><td>25 slides: homelab, Rust, agency, design tools, with new versus existing</td></tr>
+<tr><td>Command</td><td><code>/design-skill-pick</code>, <code>/homelab-alerts-plan</code></td><td>Choose a design skill; plan alerts (plans only)</td></tr>
+<tr><td>Template</td><td><code>skill-card-numbered-blue</code></td><td>1080 by 1440 numbered skill card with a "Checked date" footer</td></tr>
+<tr><td>Theme</td><td><code>theme-skill-card-blue</code></td><td>Tokenised dark and light theme</td></tr>
+</tbody></table></div>
+
+<h2>6. Verification</h2>
+<ul>
+<li><b>Done:</b> existence and default branch of 26 repositories by <code>git ls-remote</code>; licence files read; five design-skill READMEs compared with the slides; Uptime Kuma's ntfy provider and ntfy's topic documentation read; the Crest App Store listing looked up; template and theme rendered at 1280 px light, 1280 px dark and 390 px with no overflow or clipping.</li>
+<li><b>Not verified:</b> every star count and usage figure; speed, size and request claims for Pingora, Firecracker and Edit; Fontshare's licence; LobbyStack's source; the alert-setup steps; whether any design skill improves a real screen.</li>
+</ul>
+
+<h2>7. What needs you</h2>
+<div class="scroll"><table>
+<thead><tr><th>Item</th><th>Why</th><th>Step</th></tr></thead>
+<tbody>
+<tr><td>Install any skill or tool</td><td>The cloud session cannot reach your machine</td><td>Read the README, check the licence, then run the line yourself</td></tr>
+<tr><td>Replace invoicing or e-signature software</td><td>Tax and signature rules differ by country, including Greece and EU eIDAS</td><td>Ask your accountant or adviser first</td></tr>
+<tr><td>Excalidraw connector</td><td>Available in the connector directory, not connected</td><td>Connect it in your connector settings if wanted</td></tr>
+<tr><td>Workflows</td><td>None built: Uptime Kuma already notifies ntfy natively</td><td>Ask if you want a scheduled summary</td></tr>
+</tbody></table></div>
+</div>

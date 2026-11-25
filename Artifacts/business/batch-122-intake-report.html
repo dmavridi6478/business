@@ -1,0 +1,103 @@
+<title>Batch 118 Intake Report</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<style>
+:root{--bg:#f7f6f2;--card:#ffffff;--ink:#1a1b1e;--muted:#5d6068;--line:#dcdad2;--accent:#6f3fd1;--head:#ebe8df;--code:#f0ede4;--ok:#1f6b3a;--warn:#9a5a00;--bad:#a42424}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#121317;--card:#1b1d22;--ink:#eeece6;--muted:#a3a6ae;--line:#33363e;--accent:#b79bff;--head:#24272e;--code:#22252b;--ok:#8fd69c;--warn:#f0b35a;--bad:#ff8a8a;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#121317;--card:#1b1d22;--ink:#eeece6;--muted:#a3a6ae;--line:#33363e;--accent:#b79bff;--head:#24272e;--code:#22252b;--ok:#8fd69c;--warn:#f0b35a;--bad:#ff8a8a;color-scheme:dark}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Aptos,"Segoe UI",Calibri,Arial,sans-serif;font-size:11pt;line-height:1.55;padding-block:32px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.wrap{max-width:1020px;margin:0 auto}
+h1{font-size:32pt;line-height:1.08;margin:0 0 6px;text-wrap:balance}
+h2{font-size:14pt;margin:30px 0 10px;padding-bottom:6px;border-bottom:2px solid var(--accent)}
+.meta{color:var(--muted);margin:0 0 18px}
+p{margin:8px 0;max-width:80ch}
+.scroll{overflow-x:auto;border:1px solid var(--line);border-radius:6px;background:var(--card);margin:10px 0}
+table{border-collapse:collapse;width:100%;min-width:760px;font-size:10.5pt}
+th{background:var(--head);font-weight:700}
+th,td{border:1px solid var(--line);padding:7px 10px;text-align:center;vertical-align:top;overflow-wrap:anywhere}
+code{font-family:"Cascadia Mono",Consolas,monospace;font-size:10pt;background:var(--code);padding:0 4px;border-radius:3px}
+ul{margin:6px 0;padding-left:22px}li{margin:4px 0;max-width:80ch}
+.warn{color:var(--warn);font-weight:700}
+</style>
+<div class="wrap">
+<h1>Batch 118 Intake Report</h1>
+<p class="meta">iCloud Photos archive (19 images, two carousels) plus three inline infographics &middot; files numbered 122 &middot; 15 November 2026 &middot; nothing was cloned, installed, posted or run</p>
+
+<h2>1. Result</h2>
+<p>The input was two different things: nineteen carousel slides from one creator about seventeen open-source projects, and three LinkedIn and sales infographics. Seventeen repositories were checked; five were already registered here, so twelve are new. Five skills, two commands, one design template and one theme were created. There was no agent guide and no workflow in the files, so no agent was built; the n8n server needs authorisation in this session, so no workflow was created.</p>
+<p>The main findings, in order of importance. First, the interface pictures on the animation carousel are illustrations, not screenshots (three cards say so on their face). Second, the founder-versus-team infographic does not add up: its eight follower counts sum to about 154,900, not the "180K+" it claims. Third, the headline formula sheet numbers its parts differently in the examples than in the formula. Fourth, the "Head of Sales" poster shows no prompts and gates them behind a comment keyword, so the routines were built from the poster's one-line jobs, with data requirements added.</p>
+
+<h2>2. Sources</h2>
+<div class="scroll"><table>
+<thead><tr><th>Source</th><th>Content</th><th>Handling</th></tr></thead>
+<tbody>
+<tr><td>@martiendejong_dev, "AI for builders" (7 of 7 cards)</td><td>VoiceStudio, HyperFrames, Hallmark, colibri, claude-mem, Paperclip, gstack</td><td>2 new, 5 already registered</td></tr>
+<tr><td>@martiendejong_dev, animation tools (7 of 8, and 3 of 13 slides)</td><td>OpenToonz, Friction, FreeMoCap, Synfig, Effekseer, Theatre.js, Pencil2D, OpenVDB, SVG.js, Natron</td><td>All new; ten slides of the 13-slide set were not supplied</td></tr>
+<tr><td>Nader Alnajjar (LEVER) infographic</td><td>Six-part LinkedIn headline formula and four examples</td><td>New skill and command</td></tr>
+<tr><td>Dan Rosenthal (Workflows.io) infographic</td><td>Founder-led versus team-led LinkedIn content</td><td>New skill with checks and a pilot plan</td></tr>
+<tr><td>"The Claude Head of Sales" poster</td><td>Nine routines, five weekly and four monthly</td><td>New skill and command</td></tr>
+</tbody></table></div>
+
+<h2>3. New repositories (licence read from each repo)</h2>
+<div class="scroll"><table>
+<thead><tr><th>Repo</th><th>Licence</th><th>Caution the card omits</th></tr></thead>
+<tbody>
+<tr><td><code>debpalash/VoiceStudio</code></td><td class="warn">AGPL-3.0</td><td>Voice cloning needs consent; the README also sells a commercial licence, so "free" means the open-source build</td></tr>
+<tr><td><code>JustVugg/colibri</code></td><td>Apache-2.0</td><td>8 GB RAM minimum and 22 GB free disk for the smallest model; largest models are slow on a laptop</td></tr>
+<tr><td><code>opentoonz/opentoonz</code></td><td>Modified BSD plus third-party licences</td><td>Check third-party folders before shipping builds</td></tr>
+<tr><td><code>friction2d/friction</code></td><td class="warn">GPL-3.0-only</td><td>Third-party licences listed inside the app</td></tr>
+<tr><td><code>freemocap/freemocap</code></td><td class="warn">AGPL-3.0</td><td>Build steps use the <code>development</code> branch; recording people raises consent duties</td></tr>
+<tr><td><code>synfig/synfig</code></td><td class="warn">GPL-3.0</td><td>None beyond copyleft</td></tr>
+<tr><td><code>effekseer/Effekseer</code></td><td>MIT</td><td>Engine plugins live in separate repos</td></tr>
+<tr><td><code>theatre-js/theatre</code></td><td>Core Apache-2.0; Studio AGPL-3.0</td><td>README says development moved temporarily to a private repo</td></tr>
+<tr><td><code>pencil2d/pencil</code></td><td class="warn">GPL-2.0</td><td>Nightly builds less stable than releases</td></tr>
+<tr><td><code>AcademySoftwareFoundation/openvdb</code></td><td>Apache-2.0</td><td>A C++ library, not an app; trunk less stable than releases</td></tr>
+<tr><td><code>svgdotjs/svg.js</code></td><td>MIT</td><td>A JavaScript library, not an app</td></tr>
+<tr><td><code>NatronGitHub/Natron</code></td><td class="warn">GPL-2.0</td><td>Default branch is <code>RB-2.6</code>; bundled plugins carry other licences</td></tr>
+</tbody></table></div>
+<p>Already registered and not duplicated: gstack, HyperFrames, Hallmark, claude-mem, Paperclip. Star counts and weekly gains on the cards could not be checked because the GitHub API is blocked from the cloud container.</p>
+
+<h2>4. Checks on the infographics</h2>
+<div class="scroll"><table>
+<thead><tr><th>Source</th><th>Finding</th><th>Consequence</th></tr></thead>
+<tbody>
+<tr><td>Animation carousel</td><td>Three cards label their interface picture "illustrative, not an official screenshot"; the others look the same</td><td>Do not judge a tool by its card; open the real site</td></tr>
+<tr><td>Animation carousel</td><td>OpenVDB and SVG.js are libraries; Theatre.js is a library plus an editor</td><td>They are not drop-in apps</td></tr>
+<tr><td>Founder versus team</td><td>Eight counts sum to about 154,900; the sheet says 180K+. Founder total (92,300) matches "90K+"</td><td>Roughly 25,000 followers are unexplained; audiences also overlap</td></tr>
+<tr><td>Founder versus team</td><td>No pipeline, meetings or revenue is shown; the author promotes his own company</td><td>One case, not proof that team-led beats founder-led</td></tr>
+<tr><td>Headline formula</td><td>Example badges number proof as 4, who you help as 6 and next step as 5; the formula numbers them 5, 2 and 6</td><td>Go by part names, not badge numbers</td></tr>
+<tr><td>Headline formula</td><td>The outcome step repeats "Name one audience"; no result data is given</td><td>Treated as a copy error; measure for four weeks</td></tr>
+<tr><td>Head of Sales</td><td>No prompts shown; access is gated behind a comment keyword; no results</td><td>Prompt skeletons are additions and are labelled so</td></tr>
+</tbody></table></div>
+
+<h2>5. What was added</h2>
+<div class="scroll"><table>
+<thead><tr><th>Type</th><th>Name</th><th>Purpose</th></tr></thead>
+<tbody>
+<tr><td>Skill</td><td><code>oss-ai-builders-seven-nov2026</code></td><td>Seven-repo register with licences, new versus existing, cautions</td></tr>
+<tr><td>Skill</td><td><code>oss-animation-vfx-ten-nov2026</code></td><td>Ten animation and VFX tools, which job each suits, licence flags</td></tr>
+<tr><td>Skill</td><td><code>linkedin-headline-six-parts</code></td><td>Formula, examples, template and checks</td></tr>
+<tr><td>Skill</td><td><code>linkedin-founder-vs-team-led</code></td><td>Audience layers, topic map, number checks, one-quarter pilot, safeguards</td></tr>
+<tr><td>Skill</td><td><code>claude-head-of-sales-routines</code></td><td>Nine routines with data needs, prompt skeleton and limits</td></tr>
+<tr><td>Command</td><td><code>/head-of-sales</code>, <code>/linkedin-headline</code></td><td>Run one routine after asking for data; draft headlines (drafts only)</td></tr>
+<tr><td>Template</td><td><code>purple-meadow-tool-spotlight</code></td><td>1080 by 1350 tool card with a mandatory illustration label</td></tr>
+<tr><td>Theme</td><td><code>theme-purple-meadow</code></td><td>Tokenised light and dark theme</td></tr>
+</tbody></table></div>
+
+<h2>6. Verification</h2>
+<ul>
+<li><b>Done:</b> existence and default branch of all 17 repos by <code>git ls-remote</code>; licences read from the repo files; README claims compared for the new repos; the template and theme rendered at 1280 px light, 1280 px dark and 390 px with no overflow, and the template's last line confirmed inside the frame; the follower sum recomputed.</li>
+<li><b>Not verified:</b> every star count and weekly gain; the "23 tools", "450 titles", "12 more" and "646 languages" claims; speeds on colibri; per-slide platform lists; whether any LinkedIn headline change improves results; the Head of Sales prompts (none were shown).</li>
+</ul>
+
+<h2>7. What needs you</h2>
+<div class="scroll"><table>
+<thead><tr><th>Item</th><th>Why</th><th>Step</th></tr></thead>
+<tbody>
+<tr><td>Install any tool</td><td>The cloud session cannot reach your machine</td><td>Read the repo, check the licence, then run the line yourself</td></tr>
+<tr><td>Voice cloning with VoiceStudio</td><td>Consent and impersonation risk</td><td>Written permission from the speaker, and label synthetic audio</td></tr>
+<tr><td>Head of Sales routines</td><td>They need your pipeline data and a context file</td><td>Paste the data; nothing connects to a CRM</td></tr>
+<tr><td>Team LinkedIn programme</td><td>Personal accounts and employment rules</td><td>Voluntary participation and written safeguards before starting</td></tr>
+<tr><td>Workflows</td><td>The n8n server needs authorisation in this session</td><td>Authorise it in your connector settings if you want a scheduled rhythm</td></tr>
+</tbody></table></div>
+</div>

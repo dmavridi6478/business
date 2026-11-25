@@ -1,0 +1,91 @@
+<title>Batch 110 Intake Report</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<style>
+:root{--bg:#f7f6f2;--card:#ffffff;--ink:#1a1b1e;--muted:#5d6068;--line:#dcdad2;--accent:#c4561a;--head:#ebe8df;--code:#f0ede4;--ok:#1f6b3a;--warn:#9a5a00;--bad:#a42424}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#121317;--card:#1b1d22;--ink:#eeece6;--muted:#a3a6ae;--line:#33363e;--accent:#f08a3c;--head:#24272e;--code:#22252b;--ok:#8fd69c;--warn:#f0b35a;--bad:#ff8a8a;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#121317;--card:#1b1d22;--ink:#eeece6;--muted:#a3a6ae;--line:#33363e;--accent:#f08a3c;--head:#24272e;--code:#22252b;--ok:#8fd69c;--warn:#f0b35a;--bad:#ff8a8a;color-scheme:dark}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Aptos,"Segoe UI",Calibri,Arial,sans-serif;font-size:11pt;line-height:1.55;padding-block:32px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.wrap{max-width:1020px;margin:0 auto}
+h1{font-size:32pt;line-height:1.08;margin:0 0 6px;text-wrap:balance}
+h2{font-size:14pt;margin:30px 0 10px;padding-bottom:6px;border-bottom:2px solid var(--accent)}
+.meta{color:var(--muted);margin:0 0 18px}
+p{margin:8px 0;max-width:80ch}
+.scroll{overflow-x:auto;border:1px solid var(--line);border-radius:6px;background:var(--card);margin:10px 0}
+table{border-collapse:collapse;width:100%;min-width:760px;font-size:10.5pt}
+th{background:var(--head);font-weight:700}
+th,td{border:1px solid var(--line);padding:7px 10px;text-align:center;vertical-align:top;overflow-wrap:anywhere}
+code{font-family:"Cascadia Mono",Consolas,monospace;font-size:10pt;background:var(--code);padding:0 4px;border-radius:3px}
+ul{margin:6px 0;padding-left:22px}li{margin:4px 0;max-width:80ch}
+.ok{color:var(--ok);font-weight:700}.warn{color:var(--warn);font-weight:700}.bad{color:var(--bad);font-weight:700}
+</style>
+<div class="wrap">
+<h1>Batch 110 Intake Report</h1>
+<p class="meta">iCloud Photos archive (11 images, 1 video) &middot; files numbered 114 &middot; 7 November 2026 &middot; nothing was cloned, installed or run</p>
+
+<h2>1. Result</h2>
+<p>The archive holds two five-tool lists: a carousel of agent and developer tools (@your.aimentor) and a video of security scanners (@cyberwithjohann). All ten repositories exist and each licence was read from the repository's own file. Three skills, two commands, one agent, two design templates and one theme were added, together with two action documents and a user-run script. No prompts, workflows or installable connectors were in the files.</p>
+<p>The main finding is that the cards and the video present these tools as plain installs. Four of the ten carry a risk that the source omits: TruffleHog tests found secrets against the real service, Trivy had a supply-chain compromise in March 2026, Craft Anything is a reverse-engineering engine, and Scrapling advertises bot-protection bypass.</p>
+
+<h2>2. The ten repositories</h2>
+<div class="scroll"><table>
+<thead><tr><th>Repository</th><th>Source</th><th>Licence (read)</th><th>Install line (README)</th><th>Main caution</th></tr></thead>
+<tbody>
+<tr><td><code>Donchitos/Claude-Code-Game-Studios</code></td><td>Carousel 01</td><td>MIT</td><td><code>git clone</code>, then <code>/start</code> in Claude Code</td><td>"Ranked last" test is the authors' own; README says four games, table shows two</td></tr>
+<tr><td><code>storytold/craft-anything</code></td><td>Carousel 02</td><td>MIT OR Apache-2.0</td><td><code>cargo run --release -p craft-anything</code></td><td>Early alpha; 320-tool reverse-engineering engine; clean room is a rule, not a sandbox</td></tr>
+<tr><td><code>D4Vinci/Scrapling</code></td><td>Carousel 03</td><td>BSD-3-Clause</td><td><code>pip install "scrapling[fetchers]"</code></td><td>Advertises CAPTCHA and Cloudflare bypass; robots.txt option is off unless set</td></tr>
+<tr><td><code>zed-industries/zed</code></td><td>Carousel 04</td><td>GPL-3.0-or-later</td><td>zed.dev/download, or a piped <code>install.sh</code> on Linux</td><td>Piped installer; "agents run inside" not checked</td></tr>
+<tr><td><code>vercel-labs/agent-desktop</code></td><td>Carousel 05</td><td>Apache-2.0</td><td><code>npm install -g agent-desktop</code></td><td>Lets an agent operate any app you grant; snapshots can hold private content</td></tr>
+<tr><td><code>gitleaks/gitleaks</code></td><td>Video 1</td><td>MIT</td><td><code>brew install gitleaks</code> or Docker</td><td>Finds committed secrets; does not rotate them</td></tr>
+<tr><td><code>trufflesecurity/trufflehog</code></td><td>Video 2</td><td class="warn">AGPL-3.0</td><td><code>brew install trufflehog</code> or Docker</td><td>Validation logs in with the found secret; scan only what you own</td></tr>
+<tr><td><code>aquasecurity/trivy</code></td><td>Video 3</td><td>Apache-2.0</td><td><code>brew install trivy</code> or Docker</td><td>March 2026 compromise: malicious binary and rewritten Action tags; pin to a verified release or commit SHA</td></tr>
+<tr><td><code>semgrep/semgrep</code></td><td>Video 4</td><td class="warn">LGPL-2.1</td><td><code>pip install semgrep</code></td><td>Registry configs send metrics unless <code>--metrics=off</code></td></tr>
+<tr><td><code>prowler-cloud/prowler</code></td><td>Video 5</td><td>Apache-2.0</td><td><code>pip install prowler</code></td><td>Needs cloud credentials; use a read-only role</td></tr>
+</tbody></table></div>
+<p>Star, fork and issue counts on the cards (36,085; 17,808; 98,794; 93,535; 18,039) could not be checked because the GitHub API was blocked from the cloud container.</p>
+
+<h2>3. What was verified</h2>
+<ul>
+<li><b>Existence and default branch:</b> <code>git ls-remote</code> for all ten (<code>master</code> for Gitleaks and Prowler, <code>develop</code> for Semgrep, <code>main</code> for the rest).</li>
+<li><b>Licences:</b> read from the repository files; Craft Anything's dual licence is from its README badge, and only the Apache file was read.</li>
+<li><b>Claims:</b> Game Studios' 49 agents, 74 skills and <code>minimal</code> default; the agent-desktop and Scrapling MCP commands; Zed's install line and its pricing (Personal $0, Pro $10 a month, Business $30 per seat per month) from zed.dev; the Trivy compromise from Aqua, Snyk and Wiz reports (tag counts differ between them).</li>
+<li><b>Not verified:</b> star counts; the authors' own test results (Game Studios, Scrapling); that Claude Agent and Codex run inside Zed; the video's scan values, which are illustrative; the cut-off command <code>prowler a...</code> (read as <code>prowler aws</code>); Trivy's current release state.</li>
+</ul>
+
+<h2>4. What was added</h2>
+<div class="scroll"><table>
+<thead><tr><th>Type</th><th>Name</th><th>Purpose</th></tr></thead>
+<tbody>
+<tr><td>Skill</td><td><code>five-repos-agent-tools-nov2026</code></td><td>Checked briefing on the five carousel repos with licences, installs, verified and unverified claims, warnings</td></tr>
+<tr><td>Skill</td><td><code>security-scanners-five</code></td><td>Scanner map: what each finds, which to run on what, order, and the cautions the video omits</td></tr>
+<tr><td>Skill</td><td><code>game-studio-chain-of-command</code></td><td>Three tiers, engine sets, process dial, evidence rule</td></tr>
+<tr><td>Command</td><td><code>/scanner-pick</code></td><td>Plans scanners for a target; runs nothing</td></tr>
+<tr><td>Command</td><td><code>/studio-plan</code></td><td>Plans a game on the lightest process</td></tr>
+<tr><td>Agent</td><td><code>game-studio-planner</code></td><td>Writes a plan file; installs and builds nothing</td></tr>
+<tr><td>Template</td><td><code>repo-get-it-cream</code></td><td>Cream "Get it" detail slide with screenshot panel and install card</td></tr>
+<tr><td>Template</td><td><code>scan-result-terminal-card</code></td><td>Dark two-slide terminal result card and save list</td></tr>
+<tr><td>Theme</td><td><code>theme-scan-night-ember</code></td><td>Near-black with ember accent and three severity colours</td></tr>
+<tr><td>Script</td><td><code>scripts/batch114-install.sh</code></td><td>User-run; clones for reading and one virtualenv install, each behind a question</td></tr>
+<tr><td>Documents</td><td><code>docs/batch-114-prompts.md</code>, <code>docs/batch-114-action-plan.md</code></td><td>Copy-paste prompts and the action plan</td></tr>
+</tbody></table></div>
+
+<h2>5. Already in the repository, not duplicated</h2>
+<p>The Semgrep, secrets and SAST material in <code>sast-configuration</code>, <code>secrets-management</code>, <code>security-scan</code> and <code>/security-sast</code> (the new map adds cautions and run order); <code>unity-developer</code>; the <code>computer-use</code>, <code>data-scraper-agent</code> and <code>lead-scraper</code> skills; the cream repo card <code>repo-feature-cream-number</code>, so only the detail slide was built.</p>
+
+<h2>6. Connectors and workflows</h2>
+<ul>
+<li>A registry search found no connector for Scrapling, Semgrep, Prowler, Trivy, Gitleaks or desktop automation. TinyFish (hosted browser and scraping) is already connected.</li>
+<li>Scrapling and agent-desktop ship local MCP servers (<code>scrapling-mcp</code>, <code>agent-desktop mcp</code>). <code>.mcp.json</code> is unchanged: neither is installed in the cloud container, and each grants real capability. The entries are in the action plan for your own machine.</li>
+<li>No workflow is described in the files, so none was created.</li>
+</ul>
+
+<h2>7. What needs you</h2>
+<div class="scroll"><table>
+<thead><tr><th>Item</th><th>Why</th><th>Step</th></tr></thead>
+<tbody>
+<tr><td>Clone or install any tool</td><td>The cloud session cannot reach your machine</td><td>Run <code>scripts/batch114-install.sh</code> and answer per step</td></tr>
+<tr><td>Run any scanner</td><td>Scan only what you own; two need credentials</td><td>Use <code>/scanner-pick</code>, then run the commands yourself</td></tr>
+<tr><td>Add the two MCP servers</td><td>Desktop control and bot-bypass scraping are your decision</td><td>Copy the entries from the action plan after installing</td></tr>
+<tr><td>Install Zed</td><td>The Linux installer pipes a script into a shell</td><td>Use the download page or a package manager</td></tr>
+</tbody></table></div>
+</div>

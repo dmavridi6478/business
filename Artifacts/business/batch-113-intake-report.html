@@ -1,0 +1,133 @@
+<title>Batch 109 Intake Report</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<style>
+:root{--bg:#faf8f4;--card:#ffffff;--ink:#1b1a17;--muted:#625d54;--line:#ddd6c9;--accent:#b5420f;--head:#e9e2d4;--code:#f1ece1;--ok:#2d6a3e;--warn:#9a5a00}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#15130f;--card:#1e1b16;--ink:#f1ece0;--muted:#a89f8f;--line:#3a352c;--accent:#ff8a57;--head:#2a261f;--code:#26221b;--ok:#8fd69c;--warn:#f0b35a;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#15130f;--card:#1e1b16;--ink:#f1ece0;--muted:#a89f8f;--line:#3a352c;--accent:#ff8a57;--head:#2a261f;--code:#26221b;--ok:#8fd69c;--warn:#f0b35a;color-scheme:dark}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Aptos,"Segoe UI",Calibri,Arial,sans-serif;font-size:11pt;line-height:1.55;padding-block:32px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.wrap{max-width:980px;margin:0 auto}
+h1{font-size:32pt;line-height:1.08;margin:0 0 6px;text-wrap:balance}
+h2{font-size:14pt;margin:30px 0 10px;padding-bottom:6px;border-bottom:2px solid var(--accent)}
+h3{font-size:11pt;margin:18px 0 6px}
+.meta{color:var(--muted);margin:0 0 18px}
+p{margin:8px 0;max-width:78ch}
+.scroll{overflow-x:auto;border:1px solid var(--line);border-radius:6px;background:var(--card)}
+table{border-collapse:collapse;width:100%;min-width:640px;font-size:11pt}
+th{background:var(--head);font-weight:700}
+th,td{border:1px solid var(--line);padding:7px 10px;text-align:center;vertical-align:top}
+td.l{text-align:left}
+.pr{background:var(--code);border:1px solid var(--line);border-radius:6px;padding:10px 12px 10px;margin:8px 0;position:relative;white-space:pre-wrap;word-break:break-word;font-family:"Cascadia Mono",Consolas,monospace;font-size:10pt}
+.pr button{float:right;margin:0 0 6px 10px;font:inherit;font-size:10pt;font-family:Aptos,"Segoe UI",Arial,sans-serif;background:var(--card);color:var(--ink);border:1px solid var(--line);border-radius:6px;padding:2px 10px;cursor:pointer}
+.pr button:focus-visible{outline:2px solid var(--accent)}
+.lab{font-weight:700;margin-top:14px}
+.tag{display:inline-block;border:1px solid var(--line);border-radius:12px;padding:0 9px;font-size:10pt;background:var(--card)}
+.ok{color:var(--ok);font-weight:700}.warn{color:var(--warn);font-weight:700}
+ul{margin:6px 0;padding-left:22px}li{margin:3px 0;max-width:78ch}
+code{font-family:"Cascadia Mono",Consolas,monospace;font-size:10pt;background:var(--code);padding:0 4px;border-radius:3px}
+</style>
+<div class="wrap">
+<h1>Batch 109 Intake Report</h1>
+<p class="meta">Two attached images and one iCloud Photos archive (16 images) &middot; 28 October 2026 &middot; repository dmavridi6478/business, branch claude/brave-fermi-y2txcn</p>
+
+<h2>1. Executive summary</h2>
+<p>The material is four sets: a 60-tool AI map, a 15-prompt Excel and PowerPoint library, a carousel of seven GitHub repos for building AI agents (with a pitch for a free Hermes guide), and a carousel of five trending repos. Most of the seven agent repos were already in the repository from an earlier batch, so I added only what that coverage lacked: licences, ownership and warnings.</p>
+<p><b>The uncomfortable part:</b> the repo carousels are promotion, and they leave out facts that matter. OpenViking is <b>AGPL-3.0</b>, a licence that can obligate you to publish your source if you run a modified copy as a network service; no slide mentions it. "Anthropic Cybersecurity Skills" is <b>not made by Anthropic</b>; the owner is an individual account. "Awesome Harness Engineering" is the name of at least three different repositories. Every star count is a screenshot I could not check, and one repo shows 44.9k stars with 14 commits.</p>
+
+<h2>2. What was built</h2>
+<div class="scroll"><table>
+<thead><tr><th>Source</th><th>Skill</th><th>Command</th><th>Other output</th></tr></thead>
+<tbody>
+<tr><td>60-tool AI map (@mshee)</td><td><code>ai-growth-tools-60</code></td><td><code>/ai-tool-pick</code></td><td>Connector status per tool; 60-tool map template</td></tr>
+<tr><td>15 Excel and PPT prompts</td><td><code>excel-ppt-prompts-15</code></td><td><code>/excel-ppt-prompt</code></td><td>Finance workbook; prompt-sheet template</td></tr>
+<tr><td>Trending five (@buildwithkenny)</td><td><code>github-trending-5-oct2026</code></td><td><code>/repo-vet</code></td><td>Rank-card template</td></tr>
+<tr><td>Seven agent repos (@aiclawbots)</td><td><code>agent-repos-licence-ledger</code></td><td><code>/agent-stack-plan</code></td><td>Agent <code>agent-stack-architect</code></td></tr>
+</tbody></table></div>
+<p>Also: <code>Artifacts/business/finance-models-starter.xlsx</code>, templates <code>repo-rank-dark-orange</code>, <code>tool-map-six-categories</code>, <code>prompt-sheet-green</code>, themes <code>theme-ink-orange-condensed</code> and <code>theme-pastel-category-map</code>, user-run <code>scripts/batch113-install.sh</code> (clones only), <code>docs/batch-113-prompts.md</code> and <code>docs/batch-113-action-plan.md</code>. The blue-grid caption style already existed as <code>caption-highlight-blue-grid</code>, so I did not duplicate it.</p>
+
+<h2>3. Prompts in plain text (copy and paste)</h2>
+<p>The 15 prompts below are from the Excel and PowerPoint sheet. Replace each [bracket]. The carousels contain no prompts.</p>
+<div class="pr" data-c><button>Copy</button>1. I'm working in Excel with two sheets: one has sales order and order amount, the other has sales orders with customer names and dates. I need a formula to fetch the customer name in the first sheet using sales order as the key. Give me the exact formula and explain how to use it.</div>
+<div class="pr" data-c><button>Copy</button>2. I have annual revenue figures in [CELL RANGE], representing revenue from [YEAR 1] to [YEAR 2]. Give me the exact Excel formula to calculate Compound Annual Growth Rate (CAGR) for this period, place it in [CELL], and explain how each part of the formula works.</div>
+<div class="pr" data-c><button>Copy</button>3. Explain the formula currently in cell [CELL] on the '[SHEET NAME]' tab. What does it calculate, and how do the different parts of the formula contribute to the result?</div>
+<div class="pr" data-c><button>Copy</button>4. I'm the finance manager of a [COMPANY TYPE]. Build a scenario planning model for [NUMBER] products with pricing, growth, and churn assumptions. Build this for [TIME PERIOD] with formulas and dynamic assumptions. Add a graph comparing outcomes and include an assumptions tab so I can change variables easily.</div>
+<div class="pr" data-c><button>Copy</button>5. Scan this workbook for suspicious formulas, inconsistent ranges, or broken links across all tabs. Define suspicious as [e.g. 'formulas referencing deleted sheets, hardcoded values inside formula cells, or ranges that don't match the column header']. Flag anything meeting that bar before I share it with [STAKEHOLDER], listed by severity.</div>
+<div class="pr" data-c><button>Copy</button>6. Build a DCF model for a [INDUSTRY] business. Include a [YEARS]-year revenue and cost projection, WACC input, terminal value calculation, and an output cell showing enterprise value. Put all key assumptions on a separate, clearly labeled inputs tab so they're easy to change without touching formulas.</div>
+<div class="pr" data-c><button>Copy</button>7. Review the '[SHEET NAME]' tab, specifically the '[COLUMN]' column ([RANGE]). Highlight any transactions more than [X] standard deviations (or [X]%) from the average value, and explain why each flagged item stands out.</div>
+<div class="pr" data-c><button>Copy</button>8. Help me build a [X]-year profitability projection model in a new sheet. Add input cells for Year 1 Revenue, Annual Revenue Growth Rate, COGS as % of Revenue, and Fixed Operating Expenses on a separate assumptions tab so I can adjust them easily. Output Revenue, COGS, Gross Profit, Operating Expenses, and Net Profit for each year.</div>
+<div class="pr" data-c><button>Copy</button>9. Based on the historical [METRIC] data in columns [A] and [B] on '[SHEET NAME]', create a forecast chart projecting [METRIC] for the next [NUMBER] months.</div>
+<div class="pr" data-c><button>Copy</button>10. Analyze the [METRIC] data in columns [A], [B], and [C] from '[SHEET NAME]'. Identify and summarize the key trends observed over the last [TIME PERIOD].</div>
+<div class="pr" data-c><button>Copy</button>11. Act as a presentation strategist. Generate a [NUMBER]-slide outline for a presentation titled [TITLE]. The objective is to [OBJECTIVE]. Suggest a slide title and key bullet points for each slide.</div>
+<div class="pr" data-c><button>Copy</button>12. Write the content for a PowerPoint slide discussing [TOPIC]. The audience is [AUDIENCE]. Keep it concise, in bullet points (max 5), and highlight [KEY POINTS]. Suggest a relevant chart type to visualize this.</div>
+<div class="pr" data-c><button>Copy</button>13. Take the following text from our [REPORT TYPE]: [PASTE TEXT]. Summarize this into 3-4 key bullet points suitable for a PowerPoint slide. The tone should be [TONE].</div>
+<div class="pr" data-c><button>Copy</button>14. Generate content for a PowerPoint slide presenting a SWOT analysis for [ENTITY/PRODUCT]. List 2-3 points for each category (Strengths, Weaknesses, Opportunities, Threats) relevant to its financial viability and market position.</div>
+<div class="pr" data-c><button>Copy</button>15. Rewrite the following PowerPoint slide content to be more concise and impactful for an executive audience. Original content: '[PASTE EXISTING TEXT]'. Focus on direct language and clear takeaways.</div>
+<div class="lab">Command prompts (written by me)</div>
+<div class="pr" data-c><button>Copy</button>/repo-vet volcengine/OpenViking</div>
+<div class="pr" data-c><button>Copy</button>/ai-tool-pick turn webinars into LinkedIn posts for a B2B audience</div>
+<div class="pr" data-c><button>Copy</button>/agent-stack-plan an agent that researches competitors weekly, remembers past findings and writes a report; runs on my laptop; used only by me</div>
+
+<h2>4. The finance workbook (executed task)</h2>
+<p>Prompts 1, 2, 4, 6, 7, 8 and 9 are implemented as formulas in <code>finance-models-starter.xlsx</code>: customer lookup, CAGR, three-scenario revenue with a chart, DCF, profitability projection, anomaly detector and a six-month forecast with a chart. I recalculated it in LibreOffice and compared 18 values with an independent calculation; all matched. Examples: CAGR 12.91%, DCF enterprise value 3,191,388 for the sample inputs, forecast slope 7.34 a month. Sample numbers are illustrative.</p>
+<p>Limit: the anomaly sheet uses the sample standard deviation including the outliers, so large outliers inflate it and can hide smaller ones. Review flagged and unflagged items, not only the flags.</p>
+
+<h2>5. Licence and ownership ledger</h2>
+<div class="scroll"><table>
+<thead><tr><th>Repo</th><th>Licence (read from repo)</th><th>Note</th></tr></thead>
+<tbody>
+<tr><td>browser-use/browser-use</td><td>MIT</td><td>See <code>browser-use-to-stagehand</code> before a new build</td></tr>
+<tr><td>rohitg00/agentmemory</td><td>Apache-2.0</td><td>Name match; card shows no owner</td></tr>
+<tr><td>K-Dense-AI/scientific-agent-skills</td><td>MIT</td><td>"160+" is the card's count</td></tr>
+<tr><td>cathrynlavery/diagram-design</td><td>MIT</td><td>Name match</td></tr>
+<tr><td>mukul975/Anthropic-Cybersecurity-Skills</td><td>Apache-2.0</td><td class="l">Not made by Anthropic</td></tr>
+<tr><td>yenanjing/awesome-harness-engineering</td><td>None found at LICENSE or LICENSE.md</td><td class="l">Three repos share this name</td></tr>
+<tr><td>volcengine/OpenViking</td><td class="warn">AGPL-3.0</td><td class="l">Network-use source obligation</td></tr>
+<tr><td>morluto/rea</td><td>MIT</td><td class="l">Reverse engineering: dual-use; own or permitted software only</td></tr>
+<tr><td>cloudflare/security-audit-skill</td><td>MIT</td><td class="l">14 commits against 44.9k stars on the card</td></tr>
+<tr><td>stablyai/orca</td><td>MIT</td><td class="l">Runs agents with your credentials</td></tr>
+<tr><td>Graphify-Labs/graphify</td><td>Apache-2.0</td><td class="l">Exclude secrets before indexing</td></tr>
+<tr><td>anomalyco/opencode</td><td>MIT</td><td class="l">Terminal agent that edits files</td></tr>
+</tbody></table></div>
+<p>All 14 candidate repositories were confirmed to exist with <code>git ls-remote</code>; licence files were read for 11 of them.</p>
+
+<h2>6. Connectors</h2>
+<div class="scroll"><table>
+<thead><tr><th>Status</th><th>Tools from the 60-tool map</th></tr></thead>
+<tbody>
+<tr><td class="ok">Connected</td><td class="l">Notion, Canva, Adobe (Firefly), Figma, AI Producer by OpusClip, Fathom, Fireflies, Zapier, n8n, Clay</td></tr>
+<tr><td class="warn">Installable, needs your sign-in</td><td class="l">Jasper, ElevenLabs (voice-agent product), Descript, HyperFrames by HeyGen, Make, Otter.ai, Granola</td></tr>
+<tr><td class="warn">Half-connected</td><td class="l">Wispr Flow</td></tr>
+<tr><td>Searched, not in registry</td><td class="l">Perplexity, Surfer SEO, Grammarly, Midjourney, Synthesia, Taskade, Limitless, Lindy, Browserbase, Luma AI, VEED.io, Leonardo AI, Recraft, Ideogram</td></tr>
+</tbody></table></div>
+<p>Of the 60 map tools I searched 24 names. The registry's "Runway" is runway.team (mobile release management), not Runway ML. No connector was installed: each needs your sign-in at claude.ai under Connectors. <code>.mcp.json</code> is unchanged.</p>
+
+<h2>7. Critique and risks</h2>
+<ul>
+<li><b>The 60-tool map has no criteria.</b> Ten tools per category are alternatives, not a stack. Pick two per category at most, and check each vendor's data terms before sending client data.</li>
+<li><b>Hermes guide.</b> The carousel offers a free guide to commenters. It is a lead magnet, was not in the archive, and nothing here claims to reproduce it.</li>
+<li><b>Tools that act on your behalf</b> (orca, opencode, Browser Use) use your credentials and can change files or sites. Start with a clean git state and read-only tasks.</li>
+<li><b>Stars are novelty, not quality.</b> The trending ranking is stars gained in seven days.</li>
+<li><b>Duplicates.</b> The repository now holds two sources for the seven-repo carousel; the ledger points to the older entries rather than repeating them.</li>
+</ul>
+
+<h2>8. Not done and next steps</h2>
+<div class="scroll"><table>
+<thead><tr><th>Item</th><th>Reason</th><th>Your step</th></tr></thead>
+<tbody>
+<tr><td>Install connectors</td><td>Needs your sign-in</td><td>claude.ai, Connectors</td></tr>
+<tr><td>Clone or install repos</td><td>The cloud session cannot touch your machine</td><td>Run <code>scripts/batch113-install.sh</code>; it asks per step and clones only</td></tr>
+<tr><td>Workflows</td><td>None described in the images</td><td>None</td></tr>
+<tr><td>Hermes guide</td><td>Lead magnet, not provided</td><td>Comment on the original post if you want it</td></tr>
+</tbody></table></div>
+</div>
+<script>
+document.querySelectorAll('[data-c]').forEach(function(b){
+  var btn=b.querySelector('button');
+  btn.addEventListener('click',function(){
+    var t=b.innerText.replace(/^Copy\s*/,'').replace(/^\d+\.\s/,'');
+    var done=function(){btn.textContent='Copied';setTimeout(function(){btn.textContent='Copy'},1500)};
+    try{navigator.clipboard.writeText(t).then(done,function(){sel(b)})}catch(e){sel(b)}
+  });
+});
+function sel(el){var r=document.createRange();r.selectNodeContents(el);var s=getSelection();s.removeAllRanges();s.addRange(r)}
+</script>

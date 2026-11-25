@@ -1,0 +1,68 @@
+<title>Batch 113 Intake Report</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<style>
+:root{--bg:#f7f6f2;--card:#ffffff;--ink:#1a1b1e;--muted:#5d6068;--line:#dcdad2;--accent:#c4561a;--head:#ebe8df;--code:#f0ede4;--warn:#9a5a00}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#121317;--card:#1b1d22;--ink:#eeece6;--muted:#a3a6ae;--line:#33363e;--accent:#f08a3c;--head:#24272e;--code:#22252b;--warn:#f0b35a;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#121317;--card:#1b1d22;--ink:#eeece6;--muted:#a3a6ae;--line:#33363e;--accent:#f08a3c;--head:#24272e;--code:#22252b;--warn:#f0b35a;color-scheme:dark}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Aptos,"Segoe UI",Calibri,Arial,sans-serif;font-size:11pt;line-height:1.55;padding-block:32px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.wrap{max-width:1020px;margin:0 auto}
+h1{font-size:32pt;line-height:1.08;margin:0 0 6px;text-wrap:balance}
+h2{font-size:14pt;margin:30px 0 10px;padding-bottom:6px;border-bottom:2px solid var(--accent)}
+.meta{color:var(--muted);margin:0 0 18px}p{margin:8px 0;max-width:80ch}
+.scroll{overflow-x:auto;border:1px solid var(--line);border-radius:6px;background:var(--card);margin:10px 0}
+table{border-collapse:collapse;width:100%;min-width:760px;font-size:10.5pt}
+th{background:var(--head);font-weight:700}
+th,td{border:1px solid var(--line);padding:7px 10px;text-align:center;vertical-align:top;overflow-wrap:anywhere}
+code{font-family:"Cascadia Mono",Consolas,monospace;font-size:10pt;background:var(--code);padding:0 4px;border-radius:3px}
+ul{margin:6px 0;padding-left:22px}li{margin:4px 0;max-width:80ch}.warn{color:var(--warn);font-weight:700}
+</style>
+<div class="wrap">
+<h1>Batch 113 Intake Report</h1>
+<p class="meta">One inline infographic, 7 carousel slides and one 26-second video &middot; files numbered 117 &middot; 8 November 2026 &middot; nothing was cloned, installed or run</p>
+
+<h2>1. Result</h2>
+<p>Three sources: the MLTUT "Exploratory Data Analysis" two-page sheet, the @regularbasis.studio carousel "5 More GitHub Repos That Feel Illegal To Use For Free", and an @githubnow video of the top 10 trending repos. Three skills, one command, two design templates, two themes, two documents and this report were added. There was no agent guide, workflow or script-worthy install, so none was built, and no connector was installed.</p>
+<p>The main finding: the headline claim of the carousel's last repo is technically true and practically misleading. <code>kimi-k3-in-c</code> does run in 8.24 GB of RAM, but its README says the checkpoint is 1.56 TB on disk and, at small RAM sizes, the whole model streams off the disk on every step, so it is slow. It is a demonstration, not a replacement for cloud GPUs.</p>
+
+<h2>2. Repositories</h2>
+<div class="scroll"><table>
+<thead><tr><th>Repo</th><th>Source</th><th>Licence (read)</th><th>Status and caution</th></tr></thead>
+<tbody>
+<tr><td><code>floci-io/floci</code></td><td>Carousel</td><td>MIT</td><td>New. Local AWS emulator on port 4566 via Docker; an emulator, so coverage and behaviour differ from AWS</td></tr>
+<tr><td><code>max-sixty/worktrunk</code></td><td>Carousel</td><td>MIT and Apache-2.0 (dual)</td><td>New. <code>brew install worktrunk &amp;&amp; wt config shell install</code> changes shell config</td></tr>
+<tr><td><code>FareedKhan-dev/kimi-k3-in-c</code></td><td>Carousel</td><td>Apache-2.0</td><td>New. 8.24 GB RAM but 1.56 TB disk and slow</td></tr>
+<tr><td><code>storytold/craft-anything</code>, <code>vercel-labs/agent-desktop</code></td><td>Carousel</td><td>Per earlier register</td><td>Already registered</td></tr>
+<tr><td><code>cloudflare/security-audit-skill</code></td><td>Video</td><td>MIT</td><td>New. A skill that guides a review, not an audit</td></tr>
+<tr><td><code>sherlock-project/sherlock</code></td><td>Video</td><td>MIT</td><td>New. Searches usernames across sites: use on yourself or with consent</td></tr>
+<tr><td>OpenMausBot, Zed</td><td>Video</td><td>Apache-2.0 / registered</td><td>Already covered</td></tr>
+<tr><td><code>mattpocock/skills</code>, <code>google/skills</code>, <code>anthropics/skills</code></td><td>Video</td><td class="warn">Not read</td><td>Exist; licences not checked</td></tr>
+<tr><td>ruff, prometheus, <code>meta/astryx</code></td><td>Video</td><td class="warn">Not read</td><td>On screen only; astryx path not confirmed</td></tr>
+</tbody></table></div>
+<p>Star counts and daily gains are as shown on the slides and the video; the GitHub API was blocked from the cloud container, so none were checked. The video's ranked list is on screen for about two seconds and was read from frames.</p>
+
+<h2>3. The EDA sheet</h2>
+<p>The five stages, measures and chart names are the sheet's. I added a runnable version of its code and the checks it omits: missing values, duplicates, outliers, leakage, sample bias, privacy and "correlation is not causation". The sheet's closing line saves a "cleaned" file without any cleaning step; the skill points this out. The code was not run against a dataset.</p>
+
+<h2>4. What was added</h2>
+<div class="scroll"><table>
+<thead><tr><th>Type</th><th>Name</th><th>Purpose</th></tr></thead>
+<tbody>
+<tr><td>Skill</td><td><code>eda-cheat-sheet-mltut</code></td><td>Five-step EDA method, runnable code, checks</td></tr>
+<tr><td>Skill</td><td><code>oss-finds-regularbasis-nov2026</code></td><td>Five repos: claims against READMEs, licences, status</td></tr>
+<tr><td>Skill</td><td><code>github-now-top10-nov8</code></td><td>The video's top 10 with verified and unverified parts</td></tr>
+<tr><td>Command</td><td><code>/eda-plan</code></td><td>Plan and code for your columns; runs nothing</td></tr>
+<tr><td>Template</td><td><code>repo-card-instead-of-lime</code>, <code>eda-pipeline-infographic</code></td><td>Story card with an "Instead of" strip; responsive EDA flow with a copy button</td></tr>
+<tr><td>Theme</td><td><code>theme-regularbasis-lime-black</code>, <code>theme-mltut-paper-orange</code></td><td>Tokenised light and dark</td></tr>
+<tr><td>Documents</td><td><code>docs/batch-117-prompts.md</code>, <code>docs/batch-117-action-plan.md</code></td><td>Prompts and plan</td></tr>
+</tbody></table></div>
+
+<h2>5. Verification</h2>
+<ul>
+<li><b>Done:</b> <code>git ls-remote</code> for ten repos; licences read for Floci, Worktrunk, kimi-k3-in-c, security-audit-skill and Sherlock; README claims for Floci, Worktrunk and K3; both templates rendered at 1280 px light, 1280 px dark and 390 px with no overflow; the copy button falls back to selection when the clipboard is refused.</li>
+<li><b>Not verified:</b> star counts; Floci's service list; Worktrunk and K3 behaviour; the video's captions; licences of the repos marked "not read".</li>
+</ul>
+
+<h2>6. Connectors, agents, workflows</h2>
+<p>None. The files contain no agent guide or workflow, and no connector was installed. <code>.mcp.json</code> is unchanged. Nothing needs your sign-in.</p>
+</div>

@@ -1,0 +1,72 @@
+<title>Batch 114 Intake Report</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<style>
+:root{--bg:#f7f6f2;--card:#ffffff;--ink:#1a1b1e;--muted:#5d6068;--line:#dcdad2;--accent:#c4561a;--head:#ebe8df;--code:#f0ede4;--warn:#9a5a00}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#121317;--card:#1b1d22;--ink:#eeece6;--muted:#a3a6ae;--line:#33363e;--accent:#f08a3c;--head:#24272e;--code:#22252b;--warn:#f0b35a;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#121317;--card:#1b1d22;--ink:#eeece6;--muted:#a3a6ae;--line:#33363e;--accent:#f08a3c;--head:#24272e;--code:#22252b;--warn:#f0b35a;color-scheme:dark}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Aptos,"Segoe UI",Calibri,Arial,sans-serif;font-size:11pt;line-height:1.55;padding-block:32px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.wrap{max-width:1020px;margin:0 auto}
+h1{font-size:32pt;line-height:1.08;margin:0 0 6px;text-wrap:balance}
+h2{font-size:14pt;margin:30px 0 10px;padding-bottom:6px;border-bottom:2px solid var(--accent)}
+.meta{color:var(--muted);margin:0 0 18px}p{margin:8px 0;max-width:80ch}
+.scroll{overflow-x:auto;border:1px solid var(--line);border-radius:6px;background:var(--card);margin:10px 0}
+table{border-collapse:collapse;width:100%;min-width:760px;font-size:10.5pt}
+th{background:var(--head);font-weight:700}
+th,td{border:1px solid var(--line);padding:7px 10px;text-align:center;vertical-align:top;overflow-wrap:anywhere}
+code{font-family:"Cascadia Mono",Consolas,monospace;font-size:10pt;background:var(--code);padding:0 4px;border-radius:3px}
+ul{margin:6px 0;padding-left:22px}li{margin:4px 0;max-width:80ch}.warn{color:var(--warn);font-weight:700}
+</style>
+<div class="wrap">
+<h1>Batch 114 Intake Report</h1>
+<p class="meta">One PDF guide (12 pages), 12 images and one inline infographic &middot; files numbered 118 &middot; 9 November 2026 &middot; nothing was posted, messaged, cloned or installed</p>
+
+<h2>1. Result</h2>
+<p>The PDF is the SME AI weekly guide "Turn Your LinkedIn Into a Lead Machine With Opus 4.8". It has no text layer, so the PDF converter returned an empty file; I read all 12 pages from rendered images. The 12 images are a @githubnow briefing (three repos) and a @itsnextwork carousel (five "Claude use cases"). The inline image is a ChatGPT resume cheat sheet, already covered by <code>resume-prompt-kit</code>. Two skills, one command, one template, one theme, two documents and this report were added. No agent guide, workflow or installable connector was in the files.</p>
+<p>The main finding: the guide's 15 prompts are sound and reusable, but its framing is a lead magnet. The model name, API price, "£0 cost" and "ghostwriters charge £5k to £15k" claims have no evidence in the file, and it never mentions that pasting your connections' names and employers into an AI service is processing other people's personal data.</p>
+
+<h2>2. The guide in one table</h2>
+<div class="scroll"><table>
+<thead><tr><th>Phase</th><th>Prompts</th><th>Output</th></tr></thead>
+<tbody>
+<tr><td>1 Audit</td><td>01 audit, 02 ideal client</td><td>Honest diagnosis and a buyer brief</td></tr>
+<tr><td>2 Rewrite</td><td>03 headline, 04 About, 05 experience, 06 Featured, 07 keywords</td><td>Profile sections written for the buyer</td></tr>
+<tr><td>3 Content</td><td>08 pillars, 09 hooks, 10 outlier analysis</td><td>A content system</td></tr>
+<tr><td>4 Connections</td><td>11 segmentation, 12 outreach, 13 follow-up, 14 replies</td><td>A-list messages and a 3-message sequence</td></tr>
+<tr><td>5 Voice</td><td>15 brand voice</td><td>A one-page voice brief to paste each session</td></tr>
+<tr><td>Routine</td><td>Monday posts, Wednesday outreach, Friday comments</td><td>90 minutes a week</td></tr>
+</tbody></table></div>
+
+<h2>3. Repositories</h2>
+<div class="scroll"><table>
+<thead><tr><th>Repo</th><th>Licence (read)</th><th>Caution</th></tr></thead>
+<tbody>
+<tr><td><code>boykopovar/AnyPS5</code></td><td>GPL-2.0 only</td><td>New. Relinks PS5 executables natively; README disclaimer says it ships no copyrighted software or keys and is not affiliated with Sony. Use only files you are entitled to</td></tr>
+<tr><td><code>storytold/artcraft</code></td><td>MIT or Apache-2.0 (README)</td><td>Creative IDE; same author as Craft Anything; generation sends prompts to the model you choose</td></tr>
+<tr><td><code>google-deepmind/mujoco</code></td><td>Apache-2.0</td><td>Mature physics engine; the slide's "+26 stars today" is a daily gain</td></tr>
+</tbody></table></div>
+<p>Star gains on the slides were not checked (the GitHub API was blocked from the cloud container).</p>
+
+<h2>4. The NextWork "new use cases"</h2>
+<p>Five striking claims (a 3D pothole simulator, an ad-free TV, a 3D jaw scan viewer, an anatomy figure, a Wi-Fi fix) each link to a free guide, and the last slide says to comment "BUILD" to receive them: a lead-capture mechanic. I did not open the guides. Two carry real risk: giving an agent admin access to your router can lock you out or open your network, and medical scans are special-category personal data that should stay local and anonymised. The anatomy figure is the <code>anatomy</code> skill already registered in batch 112.</p>
+
+<h2>5. What was added</h2>
+<div class="scroll"><table>
+<thead><tr><th>Type</th><th>Name</th><th>Purpose</th></tr></thead>
+<tbody>
+<tr><td>Skill</td><td><code>linkedin-opus-lead-machine</code></td><td>The 15 prompts, routine, checks and risks</td></tr>
+<tr><td>Skill</td><td><code>github-now-nov9-nextwork</code></td><td>Three repos and five projects with cautions</td></tr>
+<tr><td>Command</td><td><code>/linkedin-lead-machine</code></td><td>One phase at a time; drafts only</td></tr>
+<tr><td>Template, theme</td><td><code>prompt-guide-dark-cyan</code>, <code>theme-smeai-night-cyan</code></td><td>Prompt guide page with copy buttons; tokenised theme</td></tr>
+<tr><td>Documents</td><td><code>docs/batch-118-prompts.md</code>, <code>docs/batch-118-action-plan.md</code></td><td>All 15 prompts in plain text; plan</td></tr>
+</tbody></table></div>
+
+<h2>6. Verification</h2>
+<ul>
+<li><b>Done:</b> all 12 PDF pages read; <code>git ls-remote</code> and licences for the three repos; the template rendered at 1280 px light, 1280 px dark and 390 px with no overflow; the copy button falls back to selection.</li>
+<li><b>Not verified:</b> the guide's model, price and cost claims; star gains; the NextWork guides; any prompt on a real profile.</li>
+</ul>
+
+<h2>7. Connectors, agents, workflows</h2>
+<p>None. Nothing was installed, <code>.mcp.json</code> is unchanged, and no sign-in is needed.</p>
+</div>

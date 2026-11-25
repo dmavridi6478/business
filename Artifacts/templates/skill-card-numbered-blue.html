@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Skill Card Numbered Blue</title>
+<style>
+/* TEMPLATE: Numbered skill card, charcoal with blue number (from the @jaytownley.design "5 free skills" carousel style).
+   One 1080x1440 slide: kicker and handle, blue rank number plus name, mono repo path, two-line description, a framed README screenshot,
+   three pills (stars, licence, price), an install bar and a "Checked <date>" footer with a page counter. Original CSS and wording; no source logo or photo reused.
+   Swap: .kicker, .handle, .num, .name, .path, .desc, the .shot contents (a REAL screenshot), the three .pill items, .install, .checked, .count.
+   Honesty rules: show "Checked <date>" only for a date you really verified; take stars and licence from the repo at that date (stars are a snapshot);
+   print the install line exactly as the README gives it, not a shortened version; if the licence needs attribution (CC BY), say so in the pill. */
+:root{--bg:#1b1c20;--panel:#ffffff;--line:#34363d;--ink:#f3f3f1;--muted:#a4a7ae;--accent:#4a5df0;--code:#25272d;--shotink:#1b1c20;--font:Aptos,'Segoe UI',Inter,Arial,sans-serif;--mono:'Cascadia Mono',Consolas,monospace}
+@media (prefers-color-scheme:light){:root:not([data-theme="dark"]){--bg:#f4f3ef;--panel:#ffffff;--line:#d8d6cf;--ink:#1b1c20;--muted:#585b63;--accent:#3347d8;--code:#e9e7e1;--shotink:#1b1c20}}
+:root[data-theme="light"]{--bg:#f4f3ef;--panel:#ffffff;--line:#d8d6cf;--ink:#1b1c20;--muted:#585b63;--accent:#3347d8;--code:#e9e7e1;--shotink:#1b1c20}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#101114;display:flex;justify-content:center;padding:24px 0;font-family:var(--font)}
+.slide{width:1080px;height:1440px;background:var(--bg);color:var(--ink);padding:64px 72px;display:flex;flex-direction:column}
+.top{display:flex;justify-content:space-between;font-size:26px;color:var(--muted)}
+.title{display:flex;align-items:baseline;gap:22px;margin-top:70px}
+.num{font:800 84px/1 var(--font);color:var(--accent)}
+.name{font:800 76px/1.05 var(--font);letter-spacing:-1.5px}
+.path{margin-top:16px;font:26px/1.3 var(--mono);color:var(--muted)}
+.desc{margin-top:34px;font-size:40px;line-height:1.38;color:var(--muted)}
+.shot{margin-top:40px;flex:1;min-height:0;background:var(--panel);color:var(--shotink);border-radius:26px;display:grid;place-items:center;text-align:center;padding:30px;font-size:30px;overflow:hidden}
+.pills{margin-top:30px;display:flex;gap:16px;flex-wrap:wrap}
+.pill{border:2px solid var(--line);border-radius:999px;padding:12px 26px;font-size:30px;font-weight:600}
+.install{margin-top:26px;background:var(--code);border:2px solid var(--line);border-radius:18px;padding:22px 28px;font:30px/1.3 var(--mono);overflow-wrap:anywhere}
+.install b{color:var(--muted);font-weight:400;margin-right:12px}
+.foot{margin-top:30px;display:flex;justify-content:space-between;font-size:28px;color:var(--muted)}
+@media (max-width:1100px){body{padding:0}.slide{width:100%;height:auto;padding:28px 18px}.top{font-size:14px}.title{margin-top:28px;gap:12px}.num{font-size:40px}.name{font-size:36px}.path{font-size:13px;overflow-wrap:anywhere}.desc{font-size:19px;margin-top:16px}.shot{margin-top:20px;min-height:200px;font-size:15px;border-radius:14px}.pills{gap:8px;margin-top:16px}.pill{font-size:14px;padding:6px 14px}.install{font-size:14px;padding:12px 14px;margin-top:14px}.foot{font-size:14px;margin-top:16px}}
+</style></head><body><div class="slide">
+<div class="top"><span class="kicker">For designers using AI</span><span class="handle">@yourhandle</span></div>
+<div class="title"><span class="num">01</span><span class="name">Skill name</span></div>
+<div class="path">github.com/owner/repo</div>
+<div class="desc">One or two lines from the README about what it does, in your own words.</div>
+<div class="shot">Replace with a REAL screenshot of the repo README or the tool</div>
+<div class="pills"><span class="pill">&#9733; stars (snapshot)</span><span class="pill">Licence: from repo</span><span class="pill">Free</span></div>
+<div class="install"><b>$</b>install line exactly as the README gives it</div>
+<div class="foot"><span class="checked">Checked 25 Nov 2026</span><span class="count">01 / 07</span></div>
+</div></body></html>
