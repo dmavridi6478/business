@@ -9,3 +9,5 @@ skill; the full repo ships 19 skills (hyperframes-cli, hyperframes-animation,
 motion-graphics, captions-overlay, etc.) plus the CLI/renderer itself, which
 this vendoring does not include. Install the rest with:
 npx skills add heygen-com/hyperframes -g -a claude-code -s '*' -y
+
+- **claude-video-tools-5**: five open tools for making videos with Claude (HyperFrames, OneTake, Collage B-Roll, Claude Animation Base, Lemo-Opuscar) with licence, cost and requirement checks (Batch 126).

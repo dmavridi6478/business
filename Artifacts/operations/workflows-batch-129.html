@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Workflows Batch 129</title>
+<style>
+  /* Layout: single column, six workflow panels. Each panel = steps in a row (wraps on narrow screens), gates marked, scorecard below.
+     Type: Aptos (house font) with system fallbacks; title 32pt, headings 14pt, body 11pt; table content aligned top and centre. */
+  :root {
+    --bg:#f6f7f9; --surface:#fff; --fg:#1b2330; --muted:#5a6577; --line:#d9dee6;
+    --accent:#0f5d6b; --accent-soft:#e2f0f2; --gate:#8a5a00; --gate-bg:#fbefd3; --human:#a11d2a; --human-bg:#fbe3e5; --ok:#17703a; --ok-bg:#e3f3e8;
+    --font: Aptos, "Segoe UI Variable Text", "Segoe UI", system-ui, -apple-system, Roboto, sans-serif;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) { --bg:#11161e; --surface:#181f2a; --fg:#e6eaf0; --muted:#9aa5b6; --line:#2c3646; --accent:#6cc3d1; --accent-soft:#17323a; --gate:#f0c261; --gate-bg:#3a2e12; --human:#ff8d98; --human-bg:#3d1a1f; --ok:#6fd18f; --ok-bg:#173824; color-scheme:dark; }
+  }
+  :root[data-theme="dark"] { --bg:#11161e; --surface:#181f2a; --fg:#e6eaf0; --muted:#9aa5b6; --line:#2c3646; --accent:#6cc3d1; --accent-soft:#17323a; --gate:#f0c261; --gate-bg:#3a2e12; --human:#ff8d98; --human-bg:#3d1a1f; --ok:#6fd18f; --ok-bg:#173824; color-scheme:dark; }
+  * { box-sizing:border-box; }
+  body { background:var(--bg); color:var(--fg); font-family:var(--font); font-size:11pt; line-height:1.5; margin:0; padding:28px 16px 64px; }
+  main { max-width:960px; margin-inline:auto; display:flex; flex-direction:column; gap:22px; }
+  header { border-bottom:2px solid var(--accent); padding-bottom:16px; }
+  .eyebrow { font-size:9pt; letter-spacing:.12em; text-transform:uppercase; color:var(--muted); }
+  h1 { font-size:32pt; line-height:1.1; margin:6px 0 8px; }
+  h2 { font-size:14pt; margin:0 0 4px; color:var(--accent); }
+  p { margin:0 0 8px; max-width:78ch; }
+  .lede { color:var(--muted); }
+  .legend { display:flex; flex-wrap:wrap; gap:8px; margin-top:10px; font-size:9.5pt; }
+  .tag { display:inline-block; padding:1px 9px; border-radius:10px; font-weight:700; font-size:9pt; }
+  .t-auto { background:var(--accent-soft); color:var(--accent); } .t-gate { background:var(--gate-bg); color:var(--gate); } .t-human { background:var(--human-bg); color:var(--human); } .t-ok { background:var(--ok-bg); color:var(--ok); }
+  section { background:var(--surface); border:1px solid var(--line); border-radius:6px; padding:18px 20px; min-width:0; }
+  .cmd { font-family:ui-monospace,"SF Mono",Consolas,monospace; font-size:10pt; background:var(--accent-soft); color:var(--accent); padding:1px 8px; border-radius:4px; }
+  .flow { list-style:none; margin:12px 0 10px; padding:0; display:flex; flex-wrap:wrap; gap:10px 0; counter-reset:s; }
+  .flow li { position:relative; flex:1 1 112px; min-width:100px; margin-right:24px; border:1px solid var(--line); border-radius:6px; padding:10px 10px 9px; background:var(--bg); counter-increment:s; }
+  .flow li::before { content:counter(s); position:absolute; top:-9px; left:8px; background:var(--accent); color:#fff; font-size:9pt; font-weight:700; width:20px; height:20px; border-radius:50%; display:grid; place-items:center; }
+  .flow li::after { content:"→"; position:absolute; right:-22px; top:50%; transform:translateY(-50%); color:var(--muted); font-weight:700; }
+  .flow li:last-child { margin-right:0; } .flow li:last-child::after { content:""; }
+  .flow li b { display:block; font-size:10.5pt; margin-bottom:2px; }
+  .flow li span { font-size:9.5pt; color:var(--muted); display:block; }
+  .flow li.gate { border-color:var(--gate); background:var(--gate-bg); } .flow li.human { border-color:var(--human); background:var(--human-bg); }
+  .loopback { font-size:9.5pt; color:var(--muted); border-left:3px solid var(--accent); padding-left:10px; margin:6px 0 10px; }
+  .tw { overflow-x:auto; border:1px solid var(--line); border-radius:4px; margin-top:8px; }
+  table { border-collapse:collapse; width:100%; min-width:520px; font-size:10pt; }
+  th,td { padding:7px 9px; border-bottom:1px solid var(--line); text-align:center; vertical-align:top; }
+  th { background:var(--accent-soft); font-size:9.5pt; } tr:last-child td { border-bottom:0; }
+  @media (max-width:640px) { .flow li { margin-right:0; flex-basis:100%; } .flow li::after { content:"↓"; right:auto; left:50%; top:auto; bottom:-17px; transform:translateX(-50%); } }
+</style></head><body><main><header><div class="eyebrow">Batch 129 · 4 November 2026 · operations</div><h1>Workflows pack</h1><p class="lede">Three workflows built from this batch. Gates mark checks to pass before moving on; red steps need a human.</p><div class="legend"><span class="tag t-auto">Automatable</span><span class="tag t-gate">Gate</span><span class="tag t-human">Human decision</span></div></header><section><h2>1. GTM strategy into a sales play</h2><p>Run with <span class="cmd">/gtm-five-questions</span>. Source: the GTM strategy-to-sales-play and three-layers graphics.</p><ol class="flow"><li class=""><b>Answer five questions</b><span>Evidence for each</span></li><li class="gate"><b>Write the stop list</b><span>"Not what" with an owner</span></li><li class=""><b>Audit three layers</b><span>Foundation, demand, loops</span></li><li class=""><b>Three initiatives</b><span>Owner and date</span></li><li class="human"><b>Monthly review</b><span>Measure and adjust</span></li></ol><p class="loopback">Both graphics are generic and carry no data. Use your own numbers.</p><div class="tw"><table><tr><th>Scorecard</th><th>Questions answered</th><th>Stop-list items</th><th>Layers passed</th><th>Initiatives live</th></tr><tr><td>Owner</td><td>You</td><td>You</td><td>You</td><td>You</td></tr></table></div></section><section><h2>2. Score AI governance</h2><p>Run with <span class="cmd">/ai-gov-25</span>. Source: the 25 governance decisions graphic.</p><ol class="flow"><li class=""><b>Inventory systems</b><span>Including embedded and shadow AI</span></li><li class=""><b>Score 25 items</b><span>0, 1 or 2 with evidence</span></li><li class="gate"><b>Drill the human authority items</b><span>Pause, override, reversal</span></li><li class=""><b>Pick three exposures</b><span>Owner and 30-day action</span></li><li class="human"><b>Legal review</b><span>EU AI Act and contracts</span></li></ol><p class="loopback">A checklist shows what to ask, not how well the answer works. Test pause and reversal with a drill.</p><div class="tw"><table><tr><th>Scorecard</th><th>Score by group</th><th>Weakest group</th><th>Actions owned</th><th>Drill passed</th></tr><tr><td>Owner</td><td>You</td><td>You</td><td>You</td><td>You</td></tr></table></div></section><section><h2>3. Negotiate a job offer</h2><p>Run with <span class="cmd">/salary-prep</span>. Source: the nine-panel salary poster.</p><ol class="flow"><li class=""><b>Three numbers</b><span>Rock bottom, target, stretch</span></li><li class=""><b>Package list</b><span>15 non-salary items</span></li><li class="gate"><b>Level check</b><span>Before any numbers</span></li><li class=""><b>Scripts</b><span>Four situations</span></li><li class="gate"><b>Pre-signing checks</b><span>Twelve categories</span></li><li class="human"><b>Decide in writing</b><span>Read the offer and equity plan</span></li></ol><p class="loopback">The poster's statistics and dollar costs are unsourced. Check local pay-history and transparency rules.</p><div class="tw"><table><tr><th>Scorecard</th><th>Offers compared</th><th>Items asked</th><th>Checks done</th><th>Outcome</th></tr><tr><td>Owner</td><td>You</td><td>You</td><td>You</td><td>You</td></tr></table></div></section></main></body></html>

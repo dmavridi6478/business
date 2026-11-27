@@ -111,3 +111,5 @@ I'll provide copy for each day.
 - Requires active SocialClaw account with connected social accounts
 - Platform availability depends on workspace tier
 - Some platforms require video content for optimal reach (TikTok, YouTube, Instagram Reels)
+
+- **claude-social-publishing-blotato**: nine-platform drafting and scheduling through a Blotato MCP connector (Batch 125); compare connectors before adding another.

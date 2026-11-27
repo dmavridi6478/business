@@ -19,3 +19,8 @@ description: Index of 50 Claude use cases in 2026 grouped into ten areas (writin
 | Image and visual analysis | 48 image analysis; 49 chart interpretation; 50 document OCR | `image`, `pdf-to-markdown`, `invoice-receipt-processor` |
 
 Cautions (added here): the "(Assist)" items are the high-stakes ones (legal, HR, finance, security, science); a human must verify the output. Items 41 and 38-40 depend on the user's Microsoft 365 licence and are not available through this repo. Item 32 is labelled "when available" on the slide; do not assume memory exists in a given surface.
+
+
+## Second list
+
+A different 50-item list organised by Claude surface (Excel, PowerPoint, Chrome, Cowork, Claude Tag and others) is in `references/parsons-50-capabilities.md`, mapped to skills in this repo.

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<!--
+  Template: landing-anatomy-callouts
+  Style: pale page, serif title with a highlighted italic word, subtitle band, a centred browser wireframe flanked by seven numbered callout cards on each side (badge, serif title, two-line note), footer credit line. Theme: anatomy-royal-blue
+  Inspired by: annotated page-anatomy infographics. Original CSS and placeholder wording; no source people, logos or text reused.
+  Canvas: 1080 x 1350. Swap points: h1 and em, .sub, .k cards (number .b, title h3, note p), .wire blocks, .credit
+-->
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Landing Anatomy Callouts</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;700;800&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#F6F7FB;--ink:#0B0F2A;--muted:#434A6B;--blue:#1F2BD6;--soft:#E7ECFB;--line:#C9D3F2;--card:#FFFFFF;--font:"Inter",Aptos,"Segoe UI",system-ui,sans-serif;--serif:"Playfair Display",Georgia,serif}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#333;display:flex;justify-content:center;padding:32px 0;overflow-x:auto;font-family:var(--font)}
+.slide{position:relative;width:1080px;height:1350px;flex:none;background:var(--bg);color:var(--ink);overflow:hidden;padding:34px 30px 0;text-align:center}
+h1{font:700 56px/1.15 var(--serif);padding-bottom:4px}h1 em{background:var(--soft);color:var(--blue);padding:0 14px;font-style:italic;font-weight:800;border-radius:6px}
+.sub{margin:14px -30px 0;background:#ECEFF6;padding:12px 0;font:800 30px/1.2 var(--font)}
+.col{position:absolute;top:196px;width:318px;display:grid;grid-template-rows:repeat(7,1fr);gap:10px;height:1090px}
+.col.l{left:30px}.col.r{right:30px}
+.k{position:relative;background:var(--card);border:2px solid var(--line);border-radius:10px;padding:12px 14px 10px 54px;text-align:left;overflow:hidden}
+.b{position:absolute;left:12px;top:12px;width:32px;height:32px;border-radius:50%;background:var(--blue);color:#fff;font:800 16px/32px var(--font);text-align:center}
+.k h3{font:700 21px/1.2 var(--serif)}.k p{margin-top:6px;font:500 15px/1.35 var(--font);color:var(--muted)}
+.wire{position:absolute;left:372px;top:196px;width:336px;height:1090px;border:3px solid var(--blue);border-radius:16px;background:#fff;overflow:hidden;padding:0 0 10px}
+.bar{height:30px;background:#EEF1FA;display:flex;align-items:center;gap:6px;padding:0 10px}.bar i{width:10px;height:10px;border-radius:50%;background:#E5584F}.bar i:nth-child(2){background:#F2B233}.bar i:nth-child(3){background:#35B15A}
+.w{margin:12px auto 0;height:14px;border-radius:4px;background:#C5D0F0;width:70%}.w.d{background:var(--blue);width:55%;height:16px}
+.strip{margin:14px 0 0;height:44px;background:var(--blue)}
+.circ{display:flex;justify-content:space-around;margin:18px 12px 0}.circ u{width:78px;height:78px;border-radius:50%;background:#DDE5FA;display:block}
+.panel{margin:18px 12px 0;height:150px;background:#EAF0FF;border-radius:8px}
+.faq{margin:14px 12px 0;height:36px;background:#EAF0FF;border-radius:8px}
+.price{display:flex;gap:8px;margin:18px 12px 0}.price u{flex:1;height:150px;border:2px solid #DDE5FA;border-radius:8px;display:block}
+.cta{margin:16px auto 0;width:150px;height:28px;border-radius:14px;background:var(--blue)}
+.credit{position:absolute;left:0;right:0;bottom:12px;font:600 15px/1 var(--font);color:var(--muted)}
+</style></head><body>
+<div class="slide">
+  <h1>The <em>Million-Dollar</em> Landing Page</h1>
+  <p class="sub">Optimised for the new age of AI SEO.</p>
+  <div class="col l"><div class="k"><span class="b">1</span><h3>The H1</h3><p>The question your buyer would type, answered in the same line.</p></div><div class="k"><span class="b">3</span><h3>The subheadline</h3><p>One line naming the outcome they walk away with.</p></div><div class="k"><span class="b">5</span><h3>The answer block</h3><p>A 40 to 60 word answer, up top, above the fold.</p></div><div class="k"><span class="b">7</span><h3>The problem block</h3><p>Name the problem in their words, then the cost.</p></div><div class="k"><span class="b">9</span><h3>The solution block</h3><p>Outcome first, closing on one clear next step.</p></div><div class="k"><span class="b">11</span><h3>The proof block</h3><p>Named case studies with checkable numbers.</p></div><div class="k"><span class="b">13</span><h3>The pricing CTA</h3><p>One action button in plain words.</p></div></div>
+  <div class="wire"><div class="bar"><i></i><i></i><i></i></div><div class="w d"></div><div class="w"></div><div class="w" style="width:50%"></div><div class="strip"></div><div class="circ"><u></u><u></u><u></u></div><div class="w d" style="margin-top:20px"></div><div class="panel"></div><div class="faq"></div><div class="faq"></div><div class="faq"></div><div class="price"><u></u><u></u><u></u></div><div class="cta"></div></div>
+  <div class="col r"><div class="k"><span class="b">2</span><h3>The byline</h3><p>A named author with photo, credentials and bio link.</p></div><div class="k"><span class="b">4</span><h3>Question subheadings</h3><p>Every H2 and H3 as a real question.</p></div><div class="k"><span class="b">6</span><h3>The build</h3><p>Raw HTML, alt text, transcript. Nothing hidden.</p></div><div class="k"><span class="b">8</span><h3>The FAQ block</h3><p>Real questions as headers, clean answers.</p></div><div class="k"><span class="b">10</span><h3>Schema in the head</h3><p>Organisation, FAQ, Product, Article.</p></div><div class="k"><span class="b">12</span><h3>The comparison table</h3><p>Features and pricing versus alternatives.</p></div><div class="k"><span class="b">14</span><h3>The last-updated stamp</h3><p>A visible date and fresh schema.</p></div></div>
+  <p class="credit">Find this valuable? Follow Your Name</p>
+</div></body></html>

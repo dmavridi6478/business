@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Workflows Batch 125</title>
+<style>
+  /* Layout: single column, six workflow panels. Each panel = steps in a row (wraps on narrow screens), gates marked, scorecard below.
+     Type: Aptos (house font) with system fallbacks; title 32pt, headings 14pt, body 11pt; table content aligned top and centre. */
+  :root {
+    --bg:#f6f7f9; --surface:#fff; --fg:#1b2330; --muted:#5a6577; --line:#d9dee6;
+    --accent:#0f5d6b; --accent-soft:#e2f0f2; --gate:#8a5a00; --gate-bg:#fbefd3; --human:#a11d2a; --human-bg:#fbe3e5; --ok:#17703a; --ok-bg:#e3f3e8;
+    --font: Aptos, "Segoe UI Variable Text", "Segoe UI", system-ui, -apple-system, Roboto, sans-serif;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) { --bg:#11161e; --surface:#181f2a; --fg:#e6eaf0; --muted:#9aa5b6; --line:#2c3646; --accent:#6cc3d1; --accent-soft:#17323a; --gate:#f0c261; --gate-bg:#3a2e12; --human:#ff8d98; --human-bg:#3d1a1f; --ok:#6fd18f; --ok-bg:#173824; color-scheme:dark; }
+  }
+  :root[data-theme="dark"] { --bg:#11161e; --surface:#181f2a; --fg:#e6eaf0; --muted:#9aa5b6; --line:#2c3646; --accent:#6cc3d1; --accent-soft:#17323a; --gate:#f0c261; --gate-bg:#3a2e12; --human:#ff8d98; --human-bg:#3d1a1f; --ok:#6fd18f; --ok-bg:#173824; color-scheme:dark; }
+  * { box-sizing:border-box; }
+  body { background:var(--bg); color:var(--fg); font-family:var(--font); font-size:11pt; line-height:1.5; margin:0; padding:28px 16px 64px; }
+  main { max-width:960px; margin-inline:auto; display:flex; flex-direction:column; gap:22px; }
+  header { border-bottom:2px solid var(--accent); padding-bottom:16px; }
+  .eyebrow { font-size:9pt; letter-spacing:.12em; text-transform:uppercase; color:var(--muted); }
+  h1 { font-size:32pt; line-height:1.1; margin:6px 0 8px; }
+  h2 { font-size:14pt; margin:0 0 4px; color:var(--accent); }
+  p { margin:0 0 8px; max-width:78ch; }
+  .lede { color:var(--muted); }
+  .legend { display:flex; flex-wrap:wrap; gap:8px; margin-top:10px; font-size:9.5pt; }
+  .tag { display:inline-block; padding:1px 9px; border-radius:10px; font-weight:700; font-size:9pt; }
+  .t-auto { background:var(--accent-soft); color:var(--accent); } .t-gate { background:var(--gate-bg); color:var(--gate); } .t-human { background:var(--human-bg); color:var(--human); } .t-ok { background:var(--ok-bg); color:var(--ok); }
+  section { background:var(--surface); border:1px solid var(--line); border-radius:6px; padding:18px 20px; min-width:0; }
+  .cmd { font-family:ui-monospace,"SF Mono",Consolas,monospace; font-size:10pt; background:var(--accent-soft); color:var(--accent); padding:1px 8px; border-radius:4px; }
+  .flow { list-style:none; margin:12px 0 10px; padding:0; display:flex; flex-wrap:wrap; gap:10px 0; counter-reset:s; }
+  .flow li { position:relative; flex:1 1 112px; min-width:100px; margin-right:24px; border:1px solid var(--line); border-radius:6px; padding:10px 10px 9px; background:var(--bg); counter-increment:s; }
+  .flow li::before { content:counter(s); position:absolute; top:-9px; left:8px; background:var(--accent); color:#fff; font-size:9pt; font-weight:700; width:20px; height:20px; border-radius:50%; display:grid; place-items:center; }
+  .flow li::after { content:"→"; position:absolute; right:-22px; top:50%; transform:translateY(-50%); color:var(--muted); font-weight:700; }
+  .flow li:last-child { margin-right:0; } .flow li:last-child::after { content:""; }
+  .flow li b { display:block; font-size:10.5pt; margin-bottom:2px; }
+  .flow li span { font-size:9.5pt; color:var(--muted); display:block; }
+  .flow li.gate { border-color:var(--gate); background:var(--gate-bg); } .flow li.human { border-color:var(--human); background:var(--human-bg); }
+  .loopback { font-size:9.5pt; color:var(--muted); border-left:3px solid var(--accent); padding-left:10px; margin:6px 0 10px; }
+  .tw { overflow-x:auto; border:1px solid var(--line); border-radius:4px; margin-top:8px; }
+  table { border-collapse:collapse; width:100%; min-width:520px; font-size:10pt; }
+  th,td { padding:7px 9px; border-bottom:1px solid var(--line); text-align:center; vertical-align:top; }
+  th { background:var(--accent-soft); font-size:9.5pt; } tr:last-child td { border-bottom:0; }
+  @media (max-width:640px) { .flow li { margin-right:0; flex-basis:100%; } .flow li::after { content:"↓"; right:auto; left:50%; top:auto; bottom:-17px; transform:translateX(-50%); } }
+</style></head><body><main><header><div class="eyebrow">Batch 125 · 31 October 2026 · operations</div><h1>Workflows pack</h1><p class="lede">Three workflows built from this batch and wired to skills and commands in this library. Gates mark checks to pass before moving on; red steps need a human.</p><div class="legend"><span class="tag t-auto">Automatable</span><span class="tag t-gate">Gate</span><span class="tag t-human">Human decision</span></div></header><section><h2>1. Screen an acquisition target</h2><p>Run with <span class="cmd">/dd-first-pass</span>. Source: the ten due-diligence prompts.</p><ol class="flow"><li class="human"><b>Confirm you may upload</b><span>NDA, data-room terms, personal data</span></li><li class=""><b>Missing-documents check</b><span>Before prompt 1</span></li><li class=""><b>Prompts 1 to 9</b><span>One chat each, one project</span></li><li class="gate"><b>Source and arithmetic gate</b><span>Page for every figure; recompute ten by hand</span></li><li class=""><b>Red-flag memo</b><span>Prompt 10 from saved outputs only</span></li><li class="human"><b>Hand to advisers</b><span>Accountants, lawyers, management interviews</span></li><li class="human"><b>Decide</b><span>Proceed, renegotiate or walk away is yours</span></li></ol><p class="loopback">The $50K and 2 to 4 weeks versus 1 afternoon comparison is unsourced. A screen shortens the advisers' first week; it does not replace them.</p><div class="tw"><table><tr><th>Scorecard</th><th>Prompts run</th><th>Figures tied out</th><th>Red flags</th><th>Adviser actions</th></tr><tr><td>Owner</td><td>You</td><td>You</td><td>You</td><td>You</td></tr></table></div></section><section><h2>2. Publish one piece to many platforms with approval</h2><p>Run with <span class="cmd">/social-draft-schedule</span>. Source: the Blotato nine-platform carousel.</p><ol class="flow"><li class="human"><b>Paid plan and your accounts</b><span>MCP is not in the free trial</span></li><li class=""><b>Connect one account</b><span>Test before nine</span></li><li class="gate"><b>Verify the connection</b><span>Ask for the connected accounts list</span></li><li class=""><b>Draft per platform</b><span>Right format each</span></li><li class="gate"><b>Platform settings</b><span>Privacy, disclosure, board, Page</span></li><li class="human"><b>Approve exact items</b><span>Text, media, account, time in your timezone and UTC</span></li><li class=""><b>Schedule approved only</b><span>Stagger the first week</span></li></ol><p class="loopback">The carousel does not mention that the server can also read and send DMs and create reply automations. Leave those off.</p><div class="tw"><table><tr><th>Scorecard</th><th>Accounts connected</th><th>Drafts approved</th><th>Items scheduled</th><th>Corrections</th></tr><tr><td>Owner</td><td>You</td><td>You</td><td>You</td><td>You</td></tr></table></div></section><section><h2>3. Test a decision with an advisor room</h2><p>Run with <span class="cmd">/advisor-room</span>. Source: the room-of-advisors carousel and the roast-room repository.</p><ol class="flow"><li class=""><b>Write the brief</b><span>Decision, options, numbers, limits, your lean</span></li><li class=""><b>Pick lenses</b><span>Roles, not real people</span></li><li class=""><b>Round 1: independent opinions</b><span>No peeking</span></li><li class=""><b>Round 2: challenge</b><span>Assumptions, risks, trade-offs</span></li><li class=""><b>Round 3: reconsider and vote</b><span>Reason for any change</span></li><li class="gate"><b>Verify three facts</b><span>Before acting</span></li><li class="human"><b>Decide and set a review date</b><span>Record the dissent</span></li></ol><p class="loopback">One model plays every seat, so the opinions are less independent than they look. The repository was created on 10 October 2026 and its licence is shown as "Other".</p><div class="tw"><table><tr><th>Scorecard</th><th>Lenses used</th><th>Facts verified</th><th>Lean changed?</th><th>Review date</th></tr><tr><td>Owner</td><td>You</td><td>You</td><td>You</td><td>You</td></tr></table></div></section></main></body></html>

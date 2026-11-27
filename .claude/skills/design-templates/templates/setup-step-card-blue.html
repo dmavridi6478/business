@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<!--
+  Template: setup-step-card-blue
+  Style: very pale blue-white page, dark-blue counter pill (top right), pink small-caps step kicker, large royal-blue heading with a short pink underline bar, one-line subtitle, a pale-blue rounded panel with a 3x3 grid of platform tiles (name plus a green "Connected" tick), a caption sentence, a thin rule and a footer with a round brand mark, author name and handle. Theme: social-setup-blue-pink
+  Inspired by: "connect it in N steps" tutorial carousels. Original CSS and placeholder wording; no source logos, platform icons, names or text reused.
+  Canvas: 1080 x 1440 (3:4). Swap points: .pill, .kick, h1, .sub, .panel (nine .t tiles), .cap, .foot
+-->
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Setup Step Card Blue</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--blue:#1B2FC9;--pink:#E6127E;--navy:#11195C;--pale:#EAF0FD;--ln:#D3DEF7;--font:"Poppins",Aptos,"Segoe UI",system-ui,sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#222;display:flex;justify-content:center;padding:32px 0;overflow-x:auto;font-family:var(--font)}
+.slide{position:relative;width:1080px;height:1440px;flex:none;background:linear-gradient(180deg,#F8FAFF,#EEF3FF);color:var(--navy);overflow:hidden;padding:52px 60px 0}
+.pill{position:absolute;right:52px;top:44px;background:#1B2FA8;color:#fff;border-radius:999px;padding:12px 24px;font:700 26px/1 var(--font)}
+.kick{margin-top:84px;font:700 24px/1 var(--font);letter-spacing:.14em;color:var(--pink);text-transform:uppercase}
+h1{margin-top:16px;font:800 88px/1.02 var(--font);letter-spacing:-.03em;color:var(--blue)}
+.bar{width:150px;height:9px;border-radius:5px;background:var(--pink);margin-top:22px}
+.sub{margin-top:24px;font:500 32px/1.3 var(--font)}
+.panel{margin-top:36px;background:#F4F7FF;border:2px solid var(--ln);border-radius:30px;padding:30px 34px 26px;height:700px}
+.pb{display:inline-block;background:var(--pale);color:#46589A;border-radius:999px;padding:7px 16px;font:700 18px/1 var(--font);letter-spacing:.04em}
+.pt{margin:12px 0 16px;font:700 32px/1.1 var(--font)}
+.g{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.t{background:#fff;border:2px solid var(--ln);border-radius:20px;height:150px;padding:14px 18px;display:grid;align-content:center;gap:8px}
+.t i{display:block;width:54px;height:54px;border-radius:14px;background:var(--pale);border:2px solid var(--ln)}
+.t b{font:600 22px/1.1 var(--font)}.t span{font:500 17px/1 var(--font);color:#2C8A4B}
+.cap{margin-top:22px;font:500 30px/1.35 var(--font)}
+.foot{position:absolute;left:60px;right:60px;bottom:44px;border-top:2px solid var(--ln);padding-top:22px;display:flex;align-items:center;justify-content:center;gap:34px;font:500 22px/1 var(--font)}
+.foot .lg{display:inline-block;width:48px;height:48px;border-radius:50%;border:5px solid #6A5BE0;vertical-align:middle;margin-right:14px}.foot b{font-weight:700}
+</style></head><body><div class="slide">
+<div class="pill">02 / 10</div>
+<div class="kick">Step 1 &middot; Tool name</div>
+<h1>Connect your<br>social accounts</h1>
+<div class="bar"></div>
+<p class="sub">Link the platforms you want to publish on.</p>
+<div class="panel"><span class="pb">STEP 1</span><div class="pt">Connected accounts</div>
+<div class="g">
+<div class="t"><i></i><b>Platform 1</b><span>&#10003; Connected</span></div><div class="t"><i></i><b>Platform 2</b><span>&#10003; Connected</span></div><div class="t"><i></i><b>Platform 3</b><span>&#10003; Connected</span></div>
+<div class="t"><i></i><b>Platform 4</b><span>&#10003; Connected</span></div><div class="t"><i></i><b>Platform 5</b><span>&#10003; Connected</span></div><div class="t"><i></i><b>Platform 6</b><span>&#10003; Connected</span></div>
+<div class="t"><i></i><b>Platform 7</b><span>&#10003; Connected</span></div><div class="t"><i></i><b>Platform 8</b><span>&#10003; Connected</span></div><div class="t"><i></i><b>Platform 9</b><span>&#10003; Connected</span></div>
+</div></div>
+<p class="cap">Authorize each account before you start.</p>
+<div class="foot"><span><i class="lg"></i><b>Author Name</b></span><span>@handle</span></div>
+</div></body></html>

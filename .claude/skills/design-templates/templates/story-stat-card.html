@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<!--
+  Template: story-stat-card
+  Style: pale grid-paper page, short rule and page counter top, a large orange number, a small mono tag line, a two-line bold headline, a paragraph, a white data card of six rows (avatar dot, name, detail, value), two stat pills and a "Next" pointer. Theme: story-grid-paper
+  Inspired by: multi-slide "I scanned and found" story carousels. Original CSS and placeholder wording; no source channel names, numbers or text reused.
+  Canvas: 1080 x 1350. Swap points: .count, .num, .tag, h1, .para, .r rows, .pill (two), .next
+-->
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Story Stat Card</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#F7F4EE;--ink:#1B1B1D;--muted:#6B665C;--card:#FFFFFF;--line:#E1DACB;--acc:#D4623A;--font:"Inter",Aptos,"Segoe UI",system-ui,sans-serif;--mono:"JetBrains Mono",ui-monospace,Consolas,monospace}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#333;display:flex;justify-content:center;padding:32px 0;overflow-x:auto;font-family:var(--font)}
+.slide{position:relative;width:1080px;height:1350px;flex:none;color:var(--ink);overflow:hidden;padding:60px 70px 0;background-color:var(--bg);background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:54px 54px}
+.top{display:flex;justify-content:space-between;align-items:center}.top u{width:70px;border-top:5px solid var(--acc)}.count{font:700 22px/1.4 var(--mono);letter-spacing:.2em;color:var(--muted)}
+.num{margin-top:70px;font:500 120px/1.2 var(--font);color:var(--acc);letter-spacing:-.02em}
+.tag{margin-top:6px;font:700 22px/1.2 var(--mono);letter-spacing:.06em;color:var(--muted)}
+h1{margin-top:14px;font:800 76px/1.15 var(--font);letter-spacing:-.025em}
+.para{margin-top:22px;font:500 28px/1.45 var(--font);color:var(--muted);max-width:900px}
+.card{position:absolute;left:70px;right:70px;top:760px;background:var(--card);border:2px solid var(--line);border-radius:22px;padding:18px 24px;display:grid;grid-template-rows:repeat(6,1fr);height:380px}
+.r{display:grid;grid-template-columns:34px 1fr auto 110px;align-items:center;gap:14px;border-bottom:1px solid var(--line)}.r:last-child{border-bottom:0}
+.r i{width:30px;height:30px;border-radius:50%;background:var(--line)}.r b{font:700 24px/1 var(--font)}.r em{font:500 18px/1 var(--mono);font-style:normal;color:var(--muted)}.r strong{font:800 24px/1 var(--font);color:var(--acc);text-align:right}
+.pills{position:absolute;left:70px;top:1180px;display:flex;gap:16px}
+.pill{background:var(--card);border:2px solid var(--line);border-radius:14px;padding:14px 22px;font:700 22px/1 var(--mono);color:var(--muted)}.pill b{color:var(--ink);margin-left:12px;font:800 30px/1 var(--font)}
+.next{position:absolute;right:70px;top:1196px;font:600 22px/1.4 var(--mono);color:var(--muted)}.next span{color:var(--acc)}
+</style></head><body>
+<div class="slide">
+  <div class="top"><u></u><span class="count">02 / 13</span></div>
+  <div class="num">01</div>
+  <div class="tag">the step &middot; the number</div>
+  <h1>A headline that states the finding.</h1>
+  <p class="para">Two sentences that say what was done, how long it took and what came back. Put the number a reader should remember in the headline, not here.</p>
+  <div class="card"><div class="r"><i></i><b>Item name</b><em>Detail</em><strong>0.0M</strong></div><div class="r"><i></i><b>Item name</b><em>Detail</em><strong>0.0M</strong></div><div class="r"><i></i><b>Item name</b><em>Detail</em><strong>0.0M</strong></div><div class="r"><i></i><b>Item name</b><em>Detail</em><strong>0.0M</strong></div><div class="r"><i></i><b>Item name</b><em>Detail</em><strong>0.0M</strong></div><div class="r"><i></i><b>Item name</b><em>Detail</em><strong>0.0M</strong></div></div>
+  <div class="pills"><div class="pill">METRIC<b>0.0M</b></div><div class="pill">METRIC<b>0</b></div></div>
+  <div class="next">Next: <span>the next slide</span> &rarr;</div>
+</div></body></html>

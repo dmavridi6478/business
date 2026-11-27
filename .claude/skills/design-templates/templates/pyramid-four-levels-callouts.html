@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<!--
+  Template: pyramid-four-levels-callouts
+  Style: white page with a gradient hairline frame, large black title, a centre stack of four coloured trapezoid tiers (pale blue triangle top, then blue, red, purple, each with a short white label), four outlined callout panels around it (two above, two below, bracket lines running to their tier), a footer with a quotation and an author block with an avatar circle. Theme: levels-cyan-red-purple
+  Inspired by: "N levels of X" organisation pyramids. Original CSS and placeholder wording; no source logo, photo, author or text reused.
+  Canvas: 1080 x 1350. Swap points: h1, four .tier labels, four .co callouts (.h heading with coloured first word, p), .quote, .who
+-->
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pyramid Four Levels Callouts</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--cy:#3FC1E0;--bl:#4A74C9;--rd:#E0342B;--pu:#B07BC0;--ink:#101010;--font:"Inter",Aptos,"Segoe UI",system-ui,sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#222;display:flex;justify-content:center;padding:32px 0;overflow-x:auto;font-family:var(--font)}
+.slide{position:relative;width:1080px;height:1350px;flex:none;background:#fff;color:var(--ink);overflow:hidden;border:6px solid transparent;border-image:linear-gradient(135deg,#3FC1E0,#B07BC0 50%,#E0342B) 1}
+h1{padding:34px 0 28px;text-align:center;font:800 76px/1 var(--font);letter-spacing:-.04em;border-bottom:3px solid #E7D9E7}
+.stack{position:absolute;left:290px;top:452px;width:500px}
+.tier{position:relative;display:grid;place-items:center;text-align:center;color:#fff;font:700 24px/1.15 var(--font);margin-bottom:6px}
+.t1{height:110px;width:170px;margin:0 auto 6px;background:var(--cy);clip-path:polygon(50% 0,100% 100%,0 100%);padding-top:48px}
+.t2{height:100px;margin:0 auto 6px;width:340px;background:var(--bl);clip-path:polygon(14% 0,86% 0,100% 100%,0 100%)}
+.t3{height:100px;margin:0 auto 6px;width:440px;background:var(--rd);clip-path:polygon(11% 0,89% 0,100% 100%,0 100%)}
+.t4{height:120px;margin:0 auto;width:540px;background:var(--pu);clip-path:polygon(9% 0,91% 0,100% 100%,0 100%);margin-left:-20px}
+.co{position:absolute;width:420px;border:2.5px solid;padding:14px 20px 16px;background:#fff;height:220px}
+.co .h{font:800 34px/1.1 var(--font)}.co .h b{font-weight:800}
+.co p{margin-top:10px;font:500 22px/1.38 var(--font);color:#222}
+.c1{left:34px;top:190px;border-color:var(--cy);border-right-color:var(--rd);text-align:left}
+.c1 .h b{color:var(--cy)}
+.c2{right:34px;top:190px;border-color:var(--rd);border-left-color:var(--pu);text-align:right}.c2 .h b{color:var(--bl)}
+.c3{left:34px;top:950px;border-color:var(--rd);text-align:right}.c3 .h b{color:var(--rd)}
+.c4{right:34px;top:950px;border-color:var(--cy);text-align:left}.c4 .h b{color:var(--pu)}
+.ln{position:absolute;height:3px;background:linear-gradient(90deg,var(--cy),var(--pu))}
+.l1{left:454px;top:430px;width:160px;transform:rotate(-12deg)}.l2{left:620px;top:420px;width:180px;transform:rotate(12deg)}
+.foot{position:absolute;left:0;right:0;bottom:0;height:130px;border-top:3px solid #E7D9E7;display:flex;align-items:center;justify-content:space-between;padding:0 40px}
+.quote{font:800 30px/1.2 var(--font);max-width:620px}.quote span{display:block;text-align:center;font-weight:700}
+.who{display:flex;align-items:center;gap:18px;font:500 28px/1.25 var(--font)}.who i{display:block;width:96px;height:96px;border-radius:50%;background:#D9DCE6;border:3px solid #8791B5}
+</style></head><body><div class="slide">
+<h1>4 Levels of Strategy</h1>
+<div class="co c1"><div class="h"><b>Level One</b> Strategy</div><p>One-sentence description of what this level decides, written in plain words and kept under thirty words in total.</p></div>
+<div class="co c2"><div class="h"><b>Level Two</b> Strategy</div><p>One-sentence description of what this level decides, written in plain words and kept under thirty words in total.</p></div>
+<div class="stack">
+<div class="tier t1" style="font-size:20px">Top<br>Group</div>
+<div class="tier t2">Second<br>Group</div>
+<div class="tier t3">Third<br>Group</div>
+<div class="tier t4">Fourth<br>Group</div>
+</div>
+<div class="co c3"><div class="h"><b>Level Four</b> Strategy</div><p>One-sentence description of what this level decides, written in plain words and kept under thirty words in total.</p></div>
+<div class="co c4"><div class="h"><b>Level Three</b> Strategy</div><p>One-sentence description of what this level decides, written in plain words and kept under thirty words in total.</p></div>
+<div class="foot"><div class="quote">"A short quotation about the idea."<span>Author Name</span></div><div class="who"><i></i><span>Presenter Name<br>Brand.co</span></div></div>
+</div></body></html>

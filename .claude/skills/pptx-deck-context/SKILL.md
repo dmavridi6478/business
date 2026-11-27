@@ -3,6 +3,8 @@ name: pptx-deck-context
 description: "Use when preparing the narrative, sources, and design context for a new editable PPTX deck."
 ---
 
+See also `references/board-deck-12-slides.md` (12-slide board deck from supplied materials).
+
 # PPTX Deck Context
 
 Prepare the deck before coordinates or PPTX objects are authored. This skill owns the business narrative, source lineage, and design lock.

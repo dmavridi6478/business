@@ -1,0 +1,93 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Batch 117 Intake Report</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<style>
+  /* Layout: single-column formal report, 880px measure; tables scroll inside their own wrappers.
+     Palette: ink-blue neutrals, one deep teal accent, semantic green/amber/red for status only.
+     Type: Aptos (the owner's house font) with system fallbacks; title 32pt, headings 14pt, body 11pt. */
+  :root {
+    --bg: #f6f7f9; --surface: #ffffff; --fg: #1b2330; --muted: #5a6577; --line: #d9dee6;
+    --accent: #0f5d6b; --accent-soft: #e2f0f2;
+    --ok: #17703a; --ok-bg: #e3f3e8; --warn: #8a5a00; --warn-bg: #fbefd3; --bad: #a11d2a; --bad-bg: #fbe3e5;
+    --code-bg: #eef1f5;
+    --font: Aptos, "Segoe UI Variable Text", "Segoe UI", system-ui, -apple-system, Roboto, sans-serif;
+    --mono: ui-monospace, "SF Mono", Consolas, monospace;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #11161e; --surface: #181f2a; --fg: #e6eaf0; --muted: #9aa5b6; --line: #2c3646;
+      --accent: #6cc3d1; --accent-soft: #17323a;
+      --ok: #6fd18f; --ok-bg: #173824; --warn: #f0c261; --warn-bg: #3a2e12; --bad: #ff8d98; --bad-bg: #3d1a1f;
+      --code-bg: #0e131a; color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #11161e; --surface: #181f2a; --fg: #e6eaf0; --muted: #9aa5b6; --line: #2c3646;
+    --accent: #6cc3d1; --accent-soft: #17323a;
+    --ok: #6fd18f; --ok-bg: #173824; --warn: #f0c261; --warn-bg: #3a2e12; --bad: #ff8d98; --bad-bg: #3d1a1f;
+    --code-bg: #0e131a; color-scheme: dark;
+  }
+  * { box-sizing: border-box; }
+  body { background: var(--bg); color: var(--fg); font-family: var(--font); font-size: 11pt; line-height: 1.55; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); padding-block: 28px 64px; }
+  main { max-width: 880px; margin-inline: auto; display: flex; flex-direction: column; gap: 28px; }
+  header { display: flex; flex-direction: column; gap: 8px; border-bottom: 2px solid var(--accent); padding-bottom: 18px; }
+  .eyebrow { font-size: 9pt; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
+  h1 { font-size: 32pt; line-height: 1.1; margin: 0; font-weight: 700; text-wrap: balance; }
+  h2 { font-size: 14pt; margin: 0 0 10px; font-weight: 700; color: var(--accent); text-wrap: balance; }
+  p { margin: 0 0 10px; max-width: 75ch; }
+  section { background: var(--surface); border: 1px solid var(--line); border-radius: 6px; padding: 20px 22px; min-width: 0; }
+  .lede { font-size: 11pt; color: var(--muted); max-width: 70ch; margin: 0; }
+  .truth { border-left: 4px solid var(--bad); background: var(--bad-bg); padding: 12px 16px; border-radius: 0 6px 6px 0; }
+  .truth p:last-child { margin-bottom: 0; }
+  .tw { overflow-x: auto; margin-block: 8px 4px; border: 1px solid var(--line); border-radius: 4px; }
+  table { border-collapse: collapse; width: 100%; min-width: 720px; font-size: 10pt; }
+  th, td { padding: 8px 10px; border-bottom: 1px solid var(--line); text-align: center; vertical-align: top; }
+  th { background: var(--accent-soft); color: var(--fg); font-weight: 700; font-size: 9.5pt; }
+  tr:last-child td { border-bottom: 0; }
+  td.l, th.l { text-align: center; } /* house rule: table content aligned top and centre */
+  .st { display: inline-block; padding: 1px 8px; border-radius: 10px; font-size: 9pt; font-weight: 700; white-space: nowrap; }
+  .st.ok { background: var(--ok-bg); color: var(--ok); } .st.warn { background: var(--warn-bg); color: var(--warn); } .st.bad { background: var(--bad-bg); color: var(--bad); }
+  .sw { display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 10px; margin-block: 8px; }
+  .sw div { border: 1px solid var(--line); border-radius: 4px; overflow: hidden; font-size: 9pt; text-align: center; }
+  .sw i { display: block; height: 44px; }
+  .sw span { display: block; padding: 4px 6px; font-family: var(--mono); }
+  .prompt { position: relative; margin-block: 10px; }
+  .prompt pre { margin: 0; white-space: pre-wrap; background: var(--code-bg); border: 1px solid var(--line); border-radius: 4px; padding: 12px 84px 12px 12px; font-family: var(--mono); font-size: 9.5pt; line-height: 1.5; }
+  .prompt b { display: block; font-family: var(--font); font-size: 10pt; margin-bottom: 4px; }
+  .prompt button { position: absolute; top: 30px; right: 8px; font: inherit; font-size: 9pt; padding: 4px 10px; border-radius: 4px; border: 1px solid var(--accent); background: var(--surface); color: var(--accent); cursor: pointer; }
+  .prompt button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  ul { margin: 0 0 10px; padding-left: 20px; } li { margin-bottom: 4px; max-width: 75ch; }
+  code { font-family: var(--mono); font-size: 9.5pt; background: var(--code-bg); padding: 1px 4px; border-radius: 3px; }
+  footer { color: var(--muted); font-size: 9.5pt; }
+</style>
+<style>
+ figure{margin:0;text-align:center} figure img{width:100%;border:1px solid var(--line);border-radius:4px;display:block} figcaption{font-size:8.5pt;color:var(--muted);margin-top:4px}
+ .thumbs{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px;margin-top:10px}
+ pre{white-space:pre-wrap;word-break:break-word;background:var(--code-bg);border:1px solid var(--line);border-radius:4px;padding:12px;font:10pt/1.5 var(--mono);margin:8px 0;overflow-x:auto}
+ details{border:1px solid var(--line);border-radius:4px;padding:8px 12px;margin-top:8px} summary{cursor:pointer;font-weight:700}
+ code{font-family:var(--mono);font-size:9.5pt;background:var(--code-bg);padding:0 4px;border-radius:3px}
+ ul{margin:0 0 10px;padding-left:20px;max-width:78ch} li{margin-bottom:4px}
+ td code{white-space:normal;word-break:break-word}
+</style>
+<style>main > section, main > header {min-width:0} p, li, code {overflow-wrap:anywhere}</style>
+<main>
+<header><div class="eyebrow">Batch 117 · 24 October 2026 · intake</div><h1>Batch 117 Intake Report</h1><p>38 images in a zip plus three inline infographics processed with the seven-step intake. Result: three new skills, three references, three commands, three merges, three templates, three themes, four workflows.</p></header>
+<section><h2>1. Executive findings</h2><ul>
+<li><b>[Certain]</b> The McKinsey graphics are one third party's summaries, not McKinsey's own material. Their statistics and "real cases" (for example the Influence Model's "8 times more likely" and the Consumer Decision Journey's "20,000 consumers") are not verified here. I kept the frameworks and recomputed the worked arithmetic, which holds; I flagged the numbers as the cards' claims.</li>
+<li><b>[Certain]</b> Ten frameworks do not need ten skills. One picker skill (<code>mckinsey-frameworks-10</code>) with a reference file and one command covers them, and it points to the existing <code>mckinsey-7s-model</code> instead of duplicating it. Adding ten skills would have made routing worse.</li>
+<li><b>[Certain]</b> The six digital-product prompts are generic, and the real value is steps 5 and 6 (your voice, your proof). The graphic ends with an advertisement for allen.store; I recorded it as a promotion and built nothing on it.</li>
+<li><b>[Likely]</b> The Make-to-n8n method is sound as a mapping aid but the cards oversell it: credentials do not transfer, webhook URLs change, expressions differ, and some Make modules have no n8n node. The skill makes the mapping table a gate before any JSON.</li>
+<li><b>[Certain]</b> Steg Cloak is unverified (I could not locate the repo) and hides data in text with invisible characters, which is dual-use. It is recorded as unverified with a warning, not installed.</li>
+<li><b>[Certain]</b> Cobalt, Sunshine, RustDesk and CopyQ carry real risks (terms-of-service and copyright, open network ports, a remote-control surface, and a clipboard history that stores passwords). Each carries a care note in <code>oss-alternatives</code>.</li>
+<li><b>[Certain]</b> The eight "skills for 2027" video picks are unverified, add up to about 19 hours, and are no substitute for a project. They are recorded as pointers with the library skills that already cover each skill.</li>
+</ul></section>
+<section><h2>2. Source inventory and what was built</h2><div class="tw"><table><tr><th>Source</th><th>Content</th><th>Result</th></tr><tr><td>Ten McKinsey graphics (Natan Mohart)</td><td>Influence Model, Decision Journey, Three Horizons, Business System, 7S, Portfolio of Initiatives, Strategic Control Map, Cost Curve, GE-McKinsey Matrix, SCP</td><td>Skill <code>mckinsey-frameworks-10</code> with <code>references/frameworks.md</code>; command <code>/mckinsey-framework</code>; templates <code>framework-lever-board</code>, <code>five-stage-column-matrix</code>; themes <code>framework-orange-ink</code>, <code>journey-teal-gold</code>; workflows 1 and 4</td></tr><tr><td>Automated Digital four cards</td><td>Make blueprint to n8n workflow</td><td>Skill <code>make-to-n8n-migration</code>; command <code>/make-to-n8n</code>; workflow 2</td></tr><tr><td>Richard Yu 6 prompts infographic</td><td>Six verbatim prompts, allen.store promotion</td><td>Skill <code>digital-product-6-prompts</code>; command <code>/digital-product-6</code>; template <code>prompt-rows-6</code>; theme <code>prompt-rows-orange</code>; workflow 3</td></tr><tr><td>Michele Nieberding 20 AI tools for PMMs</td><td>20 tools with alternatives</td><td>Reference <code>product-marketing/references/ai-pmm-tools-20.md</code></td></tr><tr><td>@martiendejong_dev dark cards (9)</td><td>Sunshine, CopyQ, ShareX, Kando, Cobalt, Sniffnet, LocalSend, LosslessCut, Steg Cloak</td><td>Batch 117 table in <code>oss-alternatives</code></td></tr><tr><td>@usamaakram eight skills for 2027 (8 cards)</td><td>Eight skills, one video each</td><td>Section in <code>ai-skills-roadmap-2026</code></td></tr><tr><td>Personal Brand Strategy card and cover and gate slides</td><td>Already covered in Batch 116</td><td>Not duplicated</td></tr></table></div></section>
+<section><h2>3. GitHub repos checked on 24 October 2026</h2><p>Stars and licences were read from each repository page and change daily.</p><div class="tw"><table><tr><th>Repo</th><th>Stars</th><th>Licence</th></tr><tr><td><code>LizardByte/Sunshine</code></td><td>42,575</td><td>GPL-3.0</td></tr><tr><td><code>hluk/CopyQ</code></td><td>12,513</td><td>GPL-3.0</td></tr><tr><td><code>ShareX/ShareX</code></td><td>40,367</td><td>GPL-3.0</td></tr><tr><td><code>kando-menu/kando</code></td><td>6,511</td><td>Other</td></tr><tr><td><code>imputnet/cobalt</code></td><td>45,396</td><td>AGPL-3.0</td></tr><tr><td><code>GyulyVGC/sniffnet</code></td><td>41,680</td><td>Apache-2.0</td></tr><tr><td><code>localsend/localsend</code></td><td>95,434</td><td>Apache-2.0</td></tr></table></div><p>LosslessCut and RustDesk were checked earlier. Steg Cloak: not located.</p></section>
+<section><h2>4. Where I disagree with the source material</h2><ul>
+<li>I disagree that ten framework graphics each need a skill or that the statistics on them can be quoted as McKinsey findings. The risk in quoting them is repeating a figure no one can source. I built one picker and marked every number as the card's claim.</li>
+<li>I disagree with "Let Claude do the migration" as a full answer. The risk is a workflow that imports cleanly and fails silently on credentials, expressions or error paths. I made the mapping table and a parallel run mandatory.</li>
+<li>I disagree that a model drafts a product worth buying. The risk is a course that is interchangeable with every other one. The skill adds a five-buyer test before drafting and puts most effort into your own voice and proof.</li></ul></section>
+<section><h2>5. Not done, and why</h2><ul><li>n8n connector: needs your own authorisation in claude.ai; I cannot start that flow.</li><li>Steg Cloak: repo not located; dual-use.</li><li>No repo was cloned or installed; <code>scripts/batch117-install.sh</code> asks before each step and was not run.</li><li>No agents: nothing in the batch is an agent build guide.</li></ul></section>
+<section><h2>6. Deliverables</h2><div class="tw"><table><tr><th>Type</th><th>Items</th></tr><tr><td>Skills</td><td><code>mckinsey-frameworks-10</code>, <code>make-to-n8n-migration</code>, <code>digital-product-6-prompts</code></td></tr><tr><td>References</td><td><code>mckinsey-frameworks-10/references/frameworks.md</code>, <code>product-marketing/references/ai-pmm-tools-20.md</code></td></tr><tr><td>Commands</td><td><code>/mckinsey-framework</code>, <code>/make-to-n8n</code>, <code>/digital-product-6</code></td></tr><tr><td>Merged skills</td><td><code>oss-alternatives</code>, <code>ai-skills-roadmap-2026</code>, <code>product-marketing</code>, <code>design-templates</code></td></tr><tr><td>Templates</td><td><code>framework-lever-board</code>, <code>five-stage-column-matrix</code>, <code>prompt-rows-6</code></td></tr><tr><td>Themes</td><td><code>theme-framework-orange-ink</code>, <code>theme-journey-teal-gold</code>, <code>theme-prompt-rows-orange</code></td></tr><tr><td>Workflows</td><td><code>Artifacts/operations/workflows-batch-117.html</code></td></tr><tr><td>Prompts</td><td><code>docs/batch-117-prompts.md</code> (nine plain-text prompts)</td></tr><tr><td>Install script</td><td><code>scripts/batch117-install.sh</code> (asks before every step; not run)</td></tr></table></div></section>
+<section><h2>7. Open decisions for you</h2><ul><li>Do you want the n8n connector authorised so Claude can build workflows directly rather than via file import?</li><li>Which of the three new skills will you actually use in the next two weeks? Keep those; archive the rest.</li><li>Do you want any of the desktop utilities installed on your own machine? The script asks per item.</li></ul></section>
+<footer>Stars and licences read from GitHub pages on 24 October 2026.</footer>
+</main></body></html>

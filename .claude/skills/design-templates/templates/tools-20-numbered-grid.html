@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<!--
+  Template: tools-20-numbered-grid
+  Style: light slate page, large two-line headline with one highlighted word, a sponsor/credit line, then a 4-column x 5-row grid of numbered tool tiles (number badge, tool name, category label, one-line job), a footer bar. Theme: gtm-tools-slate
+  Inspired by: "20 tools" directory infographics. Original CSS and placeholder wording; no source logos, tool names or layout copied.
+  Canvas: 1080 x 1350. Swap points: h1 and span, .credit, each .tile (number .n, name b, category em, job p), colour class a/b/c/d per category, .foot
+-->
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tools 20 Numbered Grid</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#EEF1F6;--ink:#101828;--muted:#56627A;--card:#FFFFFF;--line:#D3DAE6;--a:#2F6BFF;--b:#0E9F6E;--c:#E0573A;--d:#7C4DDB;--font:"Inter",Aptos,"Segoe UI",system-ui,sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#333;display:flex;justify-content:center;padding:32px 0;overflow-x:auto;font-family:var(--font)}
+.slide{position:relative;width:1080px;height:1350px;flex:none;background:var(--bg);color:var(--ink);padding:56px 44px 0;overflow:hidden}
+h1{font:800 64px/1.1 var(--font);letter-spacing:-.02em}h1 span{color:var(--a)}
+.credit{margin-top:14px;font:600 22px/1.3 var(--font);color:var(--muted)}
+.grid{position:absolute;left:44px;right:44px;top:268px;bottom:108px;display:grid;grid-template-columns:repeat(4,1fr);grid-template-rows:repeat(5,1fr);gap:14px}
+.tile{min-width:0;background:var(--card);border:2px solid var(--line);border-radius:18px;padding:14px 14px 12px;display:flex;flex-direction:column;gap:4px;position:relative;overflow:hidden}
+.tile::before{content:"";position:absolute;left:0;top:0;bottom:0;width:8px;background:var(--k)}
+.tile.a{--k:var(--a)}.tile.b{--k:var(--b)}.tile.c{--k:var(--c)}.tile.d{--k:var(--d)}
+.n{font:800 20px/1 var(--font);color:var(--k)}
+.tile b{font:800 26px/1.1 var(--font);margin-top:4px}
+.tile em{font:700 15px/1.1 var(--font);font-style:normal;text-transform:uppercase;letter-spacing:.08em;color:var(--k)}
+.tile p{font:500 18px/1.25 var(--font);color:var(--muted);margin-top:4px}
+.foot{position:absolute;left:0;right:0;bottom:0;height:76px;background:var(--ink);color:#fff;display:flex;align-items:center;justify-content:space-between;padding:0 44px;font:700 22px/1 var(--font)}
+</style></head><body>
+<div class="slide">
+  <h1>20 tools for<br>one <span>job each</span></h1>
+  <p class="credit">Credit line or sponsor disclosure goes here</p>
+  <div class="grid">
+    <div class="tile a"><span class="n">01</span><b>Tool name</b><em>Category</em><p>One line on the job it does.</p></div>
+    <div class="tile b"><span class="n">02</span><b>Tool name</b><em>Category</em><p>One line on the job it does.</p></div>
+    <div class="tile c"><span class="n">03</span><b>Tool name</b><em>Category</em><p>One line on the job it does.</p></div>
+    <div class="tile d"><span class="n">04</span><b>Tool name</b><em>Category</em><p>One line on the job it does.</p></div>
+    <div class="tile a"><span class="n">05</span><b>Tool name</b><em>Category</em><p>One line on the job it does.</p></div>
+    <div class="tile b"><span class="n">06</span><b>Tool name</b><em>Category</em><p>One line on the job it does.</p></div>
+    <div class="tile c"><span class="n">07</span><b>Tool name</b><em>Category</em><p>One line on the job it does.</p></div>
+    <div class="tile d"><span class="n">08</span><b>Tool name</b><em>Category</em><p>One line on the job it does.</p></div>
+    <div class="tile a"><span class="n">09</span><b>Tool name</b><em>Category</em><p>One line on the job it does.</p></div>
+    <div class="tile b"><span class="n">10</span><b>Tool name</b><em>Category</em><p>One line on the job it does.</p></div>
+    <div class="tile c"><span class="n">11</span><b>Tool name</b><em>Category</em><p>One line on the job it does.</p></div>
+    <div class="tile d"><span class="n">12</span><b>Tool name</b><em>Category</em><p>One line on the job it does.</p></div>
+    <div class="tile a"><span class="n">13</span><b>Tool name</b><em>Category</em><p>One line on the job it does.</p></div>
+    <div class="tile b"><span class="n">14</span><b>Tool name</b><em>Category</em><p>One line on the job it does.</p></div>
+    <div class="tile c"><span class="n">15</span><b>Tool name</b><em>Category</em><p>One line on the job it does.</p></div>
+    <div class="tile d"><span class="n">16</span><b>Tool name</b><em>Category</em><p>One line on the job it does.</p></div>
+    <div class="tile a"><span class="n">17</span><b>Tool name</b><em>Category</em><p>One line on the job it does.</p></div>
+    <div class="tile b"><span class="n">18</span><b>Tool name</b><em>Category</em><p>One line on the job it does.</p></div>
+    <div class="tile c"><span class="n">19</span><b>Tool name</b><em>Category</em><p>One line on the job it does.</p></div>
+    <div class="tile d"><span class="n">20</span><b>Tool name</b><em>Category</em><p>One line on the job it does.</p></div>
+    
+  </div>
+  <div class="foot"><span>Your name</span><span>your handle or site</span></div>
+</div></body></html>

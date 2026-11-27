@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<!--
+  Template: keyword-framework-board
+  Style: warm paper page, teal headline, left numbered 7-step spine, right column with a chip cloud (types) and a 2x4 metric grid, bottom formula bar of five plus-joined terms ending in a result pill. Theme: keyword-teal-paper
+  Inspired by: SEO keyword research strategy one-pagers. Original CSS and placeholder wording; no source copy or icons reused.
+  Canvas: 1080 x 1350. Swap points: h1, .steps li, .chips i, .mets li, .formula span (five terms) and .result, .foot
+-->
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Keyword Framework Board</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#F6F1E7;--ink:#10282C;--muted:#5B6B6A;--card:#FFFDF8;--line:#D9CFBC;--teal:#0F7C86;--amber:#E8A23A;--font:"Inter",Aptos,"Segoe UI",system-ui,sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#333;display:flex;justify-content:center;padding:32px 0;overflow-x:auto;font-family:var(--font)}
+.slide{position:relative;width:1080px;height:1350px;flex:none;background:var(--bg);color:var(--ink);padding:52px 44px 0;overflow:hidden}
+h1{font:800 60px/1.15 var(--font);letter-spacing:-.02em;color:var(--teal);width:900px}
+.sub{margin-top:10px;font:600 22px/1.3 var(--font);color:var(--muted)}
+h2{font:800 22px/1 var(--font);text-transform:uppercase;letter-spacing:.1em;color:var(--teal);margin-bottom:12px}
+.steps{position:absolute;left:44px;top:200px;width:430px;list-style:none;display:grid;gap:12px}
+.steps li{display:flex;gap:14px;align-items:center;background:var(--card);border:2px solid var(--line);border-radius:16px;padding:14px 16px;height:118px}
+.steps span{flex:none;width:46px;height:46px;border-radius:50%;background:var(--teal);color:#fff;font:800 24px/46px var(--font);text-align:center}
+.steps b{font:700 26px/1.15 var(--font)}
+.right{position:absolute;left:502px;right:44px;top:200px}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:26px}
+.chips i{font:700 20px/1 var(--font);font-style:normal;background:#fff;border:2px solid var(--teal);color:var(--teal);border-radius:999px;padding:9px 14px}
+.mets{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.mets li{background:var(--card);border:2px solid var(--line);border-radius:14px;padding:14px 16px;min-height:118px}
+.mets b{display:block;font:800 21px/1.1 var(--font)}.mets small{display:block;margin-top:4px;font:500 16px/1.2 var(--font);color:var(--muted)}
+.formula{position:absolute;left:44px;right:44px;bottom:100px;background:var(--ink);color:#fff;border-radius:20px;padding:20px 22px;display:flex;flex-wrap:wrap;align-items:center;gap:8px 10px;font:700 22px/1.2 var(--font)}
+.formula span{background:rgba(255,255,255,.12);border-radius:10px;padding:7px 12px}.formula em{font-style:normal;color:var(--amber);font-weight:800}
+.formula .result{background:var(--amber);color:var(--ink)}
+.foot{position:absolute;left:0;right:0;bottom:0;height:70px;background:var(--teal);color:#fff;display:flex;align-items:center;justify-content:space-between;padding:0 44px;font:700 22px/1 var(--font)}
+</style></head><body>
+<div class="slide">
+  <h1>Keyword research in 7 steps</h1>
+  <p class="sub">Types, methods and metrics on one board</p>
+  <ol class="steps"><li><span>1</span><b>Understand the business</b></li><li><span>2</span><b>Find seed keywords</b></li><li><span>3</span><b>Expand ideas</b></li><li><span>4</span><b>Analyze and evaluate</b></li><li><span>5</span><b>Group and prioritize</b></li><li><span>6</span><b>Map to content</b></li><li><span>7</span><b>Track and refine</b></li></ol>
+  <div class="right">
+    <h2>10 keyword types</h2><div class="chips"><i>Short-tail</i><i>Long-tail</i><i>Branded</i><i>Non-branded</i><i>Informational</i><i>Navigational</i><i>Commercial</i><i>Transactional</i><i>Local</i><i>Question</i></div>
+    <h2>8 metrics</h2><ul class="mets"><li><b>Volume</b><small>one-line meaning</small></li><li><b>Traffic potential</b><small>one-line meaning</small></li><li><b>Difficulty</b><small>one-line meaning</small></li><li><b>Intent</b><small>one-line meaning</small></li><li><b>SERP</b><small>one-line meaning</small></li><li><b>CPC</b><small>one-line meaning</small></li><li><b>Trends</b><small>one-line meaning</small></li><li><b>Relevance</b><small>one-line meaning</small></li></ul>
+  </div>
+  <div class="formula"><span>Relevant</span><em>+</em><span>Traffic potential</span><em>+</em><span>Manageable difficulty</span><em>+</em><span>Intent match</span><em>+</em><span>Business value</span><em>=</em><span class="result">High-potential keyword</span></div>
+  <div class="foot"><span>Your name</span><span>your handle or site</span></div>
+</div></body></html>

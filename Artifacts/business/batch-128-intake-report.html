@@ -1,0 +1,96 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Batch 128 Intake Report</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<style>
+  /* Layout: single-column formal report, 880px measure; tables scroll inside their own wrappers.
+     Palette: ink-blue neutrals, one deep teal accent, semantic green/amber/red for status only.
+     Type: Aptos (the owner's house font) with system fallbacks; title 32pt, headings 14pt, body 11pt. */
+  :root {
+    --bg: #f6f7f9; --surface: #ffffff; --fg: #1b2330; --muted: #5a6577; --line: #d9dee6;
+    --accent: #0f5d6b; --accent-soft: #e2f0f2;
+    --ok: #17703a; --ok-bg: #e3f3e8; --warn: #8a5a00; --warn-bg: #fbefd3; --bad: #a11d2a; --bad-bg: #fbe3e5;
+    --code-bg: #eef1f5;
+    --font: Aptos, "Segoe UI Variable Text", "Segoe UI", system-ui, -apple-system, Roboto, sans-serif;
+    --mono: ui-monospace, "SF Mono", Consolas, monospace;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #11161e; --surface: #181f2a; --fg: #e6eaf0; --muted: #9aa5b6; --line: #2c3646;
+      --accent: #6cc3d1; --accent-soft: #17323a;
+      --ok: #6fd18f; --ok-bg: #173824; --warn: #f0c261; --warn-bg: #3a2e12; --bad: #ff8d98; --bad-bg: #3d1a1f;
+      --code-bg: #0e131a; color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #11161e; --surface: #181f2a; --fg: #e6eaf0; --muted: #9aa5b6; --line: #2c3646;
+    --accent: #6cc3d1; --accent-soft: #17323a;
+    --ok: #6fd18f; --ok-bg: #173824; --warn: #f0c261; --warn-bg: #3a2e12; --bad: #ff8d98; --bad-bg: #3d1a1f;
+    --code-bg: #0e131a; color-scheme: dark;
+  }
+  * { box-sizing: border-box; }
+  body { background: var(--bg); color: var(--fg); font-family: var(--font); font-size: 11pt; line-height: 1.55; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); padding-block: 28px 64px; }
+  main { max-width: 880px; margin-inline: auto; display: flex; flex-direction: column; gap: 28px; }
+  header { display: flex; flex-direction: column; gap: 8px; border-bottom: 2px solid var(--accent); padding-bottom: 18px; }
+  .eyebrow { font-size: 9pt; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
+  h1 { font-size: 32pt; line-height: 1.1; margin: 0; font-weight: 700; text-wrap: balance; }
+  h2 { font-size: 14pt; margin: 0 0 10px; font-weight: 700; color: var(--accent); text-wrap: balance; }
+  p { margin: 0 0 10px; max-width: 75ch; }
+  section { background: var(--surface); border: 1px solid var(--line); border-radius: 6px; padding: 20px 22px; min-width: 0; }
+  .lede { font-size: 11pt; color: var(--muted); max-width: 70ch; margin: 0; }
+  .truth { border-left: 4px solid var(--bad); background: var(--bad-bg); padding: 12px 16px; border-radius: 0 6px 6px 0; }
+  .truth p:last-child { margin-bottom: 0; }
+  .tw { overflow-x: auto; margin-block: 8px 4px; border: 1px solid var(--line); border-radius: 4px; }
+  table { border-collapse: collapse; width: 100%; min-width: 720px; font-size: 10pt; }
+  th, td { padding: 8px 10px; border-bottom: 1px solid var(--line); text-align: center; vertical-align: top; }
+  th { background: var(--accent-soft); color: var(--fg); font-weight: 700; font-size: 9.5pt; }
+  tr:last-child td { border-bottom: 0; }
+  td.l, th.l { text-align: center; } /* house rule: table content aligned top and centre */
+  .st { display: inline-block; padding: 1px 8px; border-radius: 10px; font-size: 9pt; font-weight: 700; white-space: nowrap; }
+  .st.ok { background: var(--ok-bg); color: var(--ok); } .st.warn { background: var(--warn-bg); color: var(--warn); } .st.bad { background: var(--bad-bg); color: var(--bad); }
+  .sw { display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 10px; margin-block: 8px; }
+  .sw div { border: 1px solid var(--line); border-radius: 4px; overflow: hidden; font-size: 9pt; text-align: center; }
+  .sw i { display: block; height: 44px; }
+  .sw span { display: block; padding: 4px 6px; font-family: var(--mono); }
+  .prompt { position: relative; margin-block: 10px; }
+  .prompt pre { margin: 0; white-space: pre-wrap; background: var(--code-bg); border: 1px solid var(--line); border-radius: 4px; padding: 12px 84px 12px 12px; font-family: var(--mono); font-size: 9.5pt; line-height: 1.5; }
+  .prompt b { display: block; font-family: var(--font); font-size: 10pt; margin-bottom: 4px; }
+  .prompt button { position: absolute; top: 30px; right: 8px; font: inherit; font-size: 9pt; padding: 4px 10px; border-radius: 4px; border: 1px solid var(--accent); background: var(--surface); color: var(--accent); cursor: pointer; }
+  .prompt button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  ul { margin: 0 0 10px; padding-left: 20px; } li { margin-bottom: 4px; max-width: 75ch; }
+  code { font-family: var(--mono); font-size: 9.5pt; background: var(--code-bg); padding: 1px 4px; border-radius: 3px; }
+  footer { color: var(--muted); font-size: 9.5pt; }
+</style>
+<style>
+ figure{margin:0;text-align:center} figure img{width:100%;border:1px solid var(--line);border-radius:4px;display:block} figcaption{font-size:8.5pt;color:var(--muted);margin-top:4px}
+ .thumbs{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px;margin-top:10px}
+ pre{white-space:pre-wrap;word-break:break-word;background:var(--code-bg);border:1px solid var(--line);border-radius:4px;padding:12px;font:10pt/1.5 var(--mono);margin:8px 0;overflow-x:auto}
+ details{border:1px solid var(--line);border-radius:4px;padding:8px 12px;margin-top:8px} summary{cursor:pointer;font-weight:700}
+ code{font-family:var(--mono);font-size:9.5pt;background:var(--code-bg);padding:0 4px;border-radius:3px}
+ ul{margin:0 0 10px;padding-left:20px;max-width:78ch} li{margin-bottom:4px}
+ td code{white-space:normal;word-break:break-word}
+</style>
+<style>main > section, main > header {min-width:0} p, li, code {overflow-wrap:anywhere}</style>
+<main>
+<header><div class="eyebrow">Batch 128 · 2 November 2026 · intake</div><h1>Batch 128 Intake Report</h1><p>Three inline images (ten sales agents, three levels of a PMM, a digital-marketing prompt sheet), none covered by an earlier batch. Result: three skills, three commands, three workflows and seventeen prompts. No templates or themes: existing ones cover these layouts. Nothing was installed.</p></header>
+<section><h2>1. Executive findings</h2><ul>
+<li><b>[Certain]</b> The ten-agents card is a good rollout order and a risky default. It says "keep every agent on drafts", but several agents write to a CRM, research named people and read your inbox. I kept the ten instruction lines verbatim and added a rule per risk: a hard stop on sending, write limits (agent 5 adds a note; agent 9 only suggests), personal-data and outreach-law checks, prompt injection from inbound mail, and a one-agent-a-week rollout. Scheduled agents should rely on connectors: Anthropic says new scheduled tasks run in the cloud, but tasks that need local files run on your computer.</li>
+<li><b>[Certain]</b> The PMM levels graphic is one author's picture. The scope descriptions (one launch, one motion, the portfolio) are the useful part; the stack row and "#1 LLM tool" are examples and opinion. The skill adds a self-assessment and uses scope rather than title.</li>
+<li><b>[Certain]</b> The prompt sheet says 11 prompts but shows 6. I quoted the six and did not invent the other five. Prompt 2 asks a model to list topics a competitor "ranks for" from two URLs, which it cannot see; it needs a rank-tracker export or the answer is a guess.</li>
+</ul></section>
+<section><h2>2. Source inventory and what was built</h2><div class="tw"><table><tr><th>Source</th><th>Result</th></tr>
+<tr><td>10 AI Sales Agents That Work While You Sell (SalesDaily)</td><td>Skill <code>sales-agents-10-schedule</code>; <code>/sales-agent</code>; workflow 1; prompts 1 to 10 and 17</td></tr>
+<tr><td>3 Levels of a Product Marketing Manager (Svitlana Shuliak, Jason AI)</td><td>Skill <code>pmm-three-levels</code>; <code>/pmm-level</code>; workflow 2</td></tr>
+<tr><td>11 Digital Marketing Claude Prompts (6 visible)</td><td>Skill <code>digital-marketing-claude-prompts-6</code>; <code>/dm-prompt</code>; workflow 3; prompts 11 to 16</td></tr></table></div></section>
+<section><h2>3. Where I disagree with the source material</h2><ul>
+<li>I disagree with "set them up once". The risk is ten agents that quietly send, write or mis-research while you stop looking. Add one a week, review drafts, and cut what you ignore.</li>
+<li>I disagree with treating a tool stack as a career level. Buying Gong does not make anyone staff.</li></ul></section>
+<section><h2>4. Not done, and why</h2><ul>
+<li>No templates or themes: <code>prompt-cards-2col-10</code>, <code>compare-matrix-rows-11</code> and <code>prompt-card-carousel</code> cover these layouts.</li>
+<li>No install script and no connector was added: nothing was recommended for installation.</li>
+<li>Prompts 7 to 11 of the digital-marketing sheet were not in the image.</li></ul></section>
+<section><h2>5. Open decisions for you</h2><ul>
+<li>Which of the ten agents will you start with, and which tool will run it (Cowork, ChatGPT, Zapier Agents or n8n)?</li>
+<li>Do you want the PMM scale applied to a real person? Send the scope and three pieces of work.</li>
+<li>Do you have the other five prompts from the sheet?</li></ul></section>
+<footer>Prepared 2 November 2026. No external checks were needed beyond Anthropic's Cowork scheduling pages read earlier in the session.</footer>
+</main>
+</body></html>

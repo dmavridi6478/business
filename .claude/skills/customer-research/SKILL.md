@@ -27,6 +27,8 @@ You gather intel from online sources (Reddit, G2, forums, communities, review si
 ### Mode 3: Go Ask (Primary Research)
 No signal exists yet, or you need answers only the customer can give. You run interviews and surveys directly. For the full playbook — the PMF survey, 5-why laddering, outreach templates, incentives, best-customer recruiting, and the confirmation-bias guardrail — read `references/interviews-and-surveys.md`.
 
+For a lightweight tool layer (Tally, F5Bot, SparkToro, Twenty, DocuSeal, Fider) read `references/first-customer-tool-stack.md`.
+
 Most engagements combine modes. Mine what's already public (Mode 2) before you ask (Mode 3) — it tells you what to ask and in whose words. Establish which mode(s) apply before proceeding.
 
 ---

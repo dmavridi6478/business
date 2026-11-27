@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<!--
+  Template: three-column-purpose-cards
+  Style: white page, a two-line headline with a peach highlighted phrase, three tall outlined columns (orange, violet, green) each with a numbered circle, a title, a screenshot placeholder and four labelled sections (who it is for, your goal, what to publish, what not to publish); black footer bar. Theme: purpose-columns
+  Inspired by: a "3 types of content" comparison graphic. Original CSS; no source screenshots, brand or wording reused.
+  Canvas: 1080 x 1350.
+  Swap points: h1 (mark = highlight), .col.c1/.c2/.c3 (.num, h2, .shot, .sec h4 + p/ul), .foot
+-->
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Three Column Purpose Cards</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#FFFFFF;--ink:#14161C;--muted:#4B5060;--c1:#C8552D;--c1b:#FBE9E1;--c2:#6A4FD0;--c2b:#EEEAFB;--c3:#3C9B45;--c3b:#E6F4E7;--hl:#FCE3D3;--font:"Inter",Aptos,"Segoe UI",system-ui,sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#333;display:flex;justify-content:center;padding:32px 0;overflow-x:auto;font-family:var(--font)}
+.slide{position:relative;width:1080px;height:1350px;flex:none;background:var(--bg);color:var(--ink);padding:44px 28px 0;overflow:hidden}
+h1{text-align:center;font:800 56px/1.08 var(--font);letter-spacing:-.02em}h1 mark{background:var(--hl);color:var(--c1);padding:0 12px;border-radius:6px}
+.cols{margin-top:30px;display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.col{border:2px solid;border-radius:14px;height:1040px;display:flex;flex-direction:column;overflow:hidden}
+.c1{border-color:var(--c1)}.c2{border-color:var(--c2)}.c3{border-color:var(--c3)}
+.head{padding:18px 14px 10px;text-align:center}.num{display:inline-grid;place-items:center;width:42px;height:42px;border-radius:50%;color:#fff;font:800 22px/1 var(--font)}
+.c1 .num{background:var(--c1)}.c2 .num{background:var(--c2)}.c3 .num{background:var(--c3)}
+.head h2{margin-top:8px;font:600 36px/1.05 var(--font);letter-spacing:-.02em}
+.shot{margin:4px 14px 12px;height:300px;border:2px solid;border-radius:8px;display:grid;place-items:center;font:600 18px/1 var(--font);color:var(--muted)}
+.c1 .shot{border-color:var(--c1);background:var(--c1b)}.c2 .shot{border-color:var(--c2);background:var(--c2b)}.c3 .shot{border-color:var(--c3);background:var(--c3b)}
+.sec{padding:12px 14px 14px;border-top:1px solid #E2E4EA;flex:1}.sec h4{font:800 16px/1 var(--font);letter-spacing:.06em;text-transform:uppercase;margin-bottom:8px}
+.c1 .sec h4{color:var(--c1)}.c2 .sec h4{color:var(--c2)}.c3 .sec h4{color:var(--c3)}
+.sec p,.sec li{font:500 18px/1.4 var(--font);color:var(--muted)}.sec ul{padding-left:18px;display:flex;flex-direction:column;gap:6px}
+.foot{position:absolute;left:0;right:0;bottom:0;height:78px;background:#0B0B0C;color:#fff;display:flex;align-items:center;justify-content:center;font:700 25px/1 var(--font)}
+</style></head><body>
+<div class="slide">
+  <h1>The 3 types of <mark>content</mark><br>your business can't ignore</h1>
+  <div class="cols">
+    <div class="col c1"><div class="head"><span class="num">1</span><h2>Type one</h2></div><div class="shot">Screenshot placeholder</div>
+      <div class="sec"><h4>Who it's for</h4><p>The audience and what stage they are at, in two sentences.</p></div>
+      <div class="sec"><h4>Your goal</h4><p>What this type of page must achieve.</p></div>
+      <div class="sec"><h4>What to publish</h4><ul><li>Format one</li><li>Format two</li></ul></div>
+      <div class="sec"><h4>What not to publish</h4><p>The mistake to avoid.</p></div></div>
+    <div class="col c2"><div class="head"><span class="num">2</span><h2>Type two</h2></div><div class="shot">Screenshot placeholder</div>
+      <div class="sec"><h4>Who it's for</h4><p>The audience and what stage they are at, in two sentences.</p></div>
+      <div class="sec"><h4>Your goal</h4><p>What this type of page must achieve.</p></div>
+      <div class="sec"><h4>What to publish</h4><ul><li>Format one</li><li>Format two</li></ul></div>
+      <div class="sec"><h4>What not to publish</h4><p>The mistake to avoid.</p></div></div>
+    <div class="col c3"><div class="head"><span class="num">3</span><h2>Type three</h2></div><div class="shot">Screenshot placeholder</div>
+      <div class="sec"><h4>Who it's for</h4><p>The audience and what stage they are at, in two sentences.</p></div>
+      <div class="sec"><h4>Your goal</h4><p>What this type of page must achieve.</p></div>
+      <div class="sec"><h4>What to publish</h4><ul><li>Format one</li><li>Format two</li></ul></div>
+      <div class="sec"><h4>What not to publish</h4><p>The mistake to avoid.</p></div></div>
+  </div>
+  <div class="foot">Your call to action · yoursite.example</div>
+</div></body></html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<!--
+  Template: contents-index-two-col
+  Style: white page, small rounded topic pill and "n/12 ->" counter, an enormous heavy black headline (tight tracking), a subtitle line with a small brand mark and a serif word, a two-column numbered index of ten items with thin rules (grey numbers, dark names), author name bottom left and "Swipe ->" bottom right. Theme: diligence-white-terracotta
+  Inspired by: carousel cover-plus-contents slides. Original CSS and placeholder wording; no source words, brand or art reused.
+  Canvas: 1080 x 1350. Swap points: .tag, .cnt, h1, .sub (.mk mark, .serif word), ten .it items in two .col, .by, .sw
+-->
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contents Index Two Col</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;800&family=Libre+Baskerville:ital,wght@1,700&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#0F0F10;--mut:#8A8A8A;--ln:#E4E4E4;--ac:#E0714F;--font:"Poppins",Aptos,"Segoe UI",system-ui,sans-serif;--serif:"Libre Baskerville",Georgia,serif}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#2a2a2a;display:flex;justify-content:center;padding:32px 0;overflow-x:auto;font-family:var(--font)}
+.slide{position:relative;width:1080px;height:1350px;flex:none;background:#fff;color:var(--ink);overflow:hidden;padding:48px 56px 0}
+.top{display:flex;justify-content:space-between;align-items:center}
+.tag{border:1.5px solid var(--ln);border-radius:999px;padding:8px 20px;font:500 20px/1 var(--font)}.cnt{font:500 20px/1 var(--font);color:#555}
+h1{margin-top:230px;font:800 158px/.96 var(--font);letter-spacing:-.06em}
+.sub{margin-top:60px;font:500 40px/1.3 var(--font)}.sub .mk{display:inline-block;width:30px;height:30px;border-radius:50%;background:var(--ac);vertical-align:-3px;margin:0 6px}.sub .serif{font:italic 700 40px/1 var(--serif)}
+.idx{margin-top:56px;display:grid;grid-template-columns:1fr 1fr;column-gap:70px}
+.it{display:grid;grid-template-columns:62px 1fr;align-items:center;height:62px;border-bottom:1.5px solid var(--ln);font:500 24px/1 var(--font)}.it:first-child{border-top:1.5px solid var(--ln)}
+.it i{font-style:normal;color:var(--mut);font-size:21px}
+.by{position:absolute;left:56px;bottom:54px;font:500 24px/1 var(--font);color:#555}.sw{position:absolute;right:56px;bottom:54px;font:600 24px/1 var(--font)}
+</style></head><body><div class="slide">
+<div class="top"><span class="tag">Topic</span><span class="cnt">1/12 &nbsp;&rarr;</span></div>
+<h1>Big Title<br>Words</h1>
+<p class="sub">10 <span class="mk"></span><span class="serif">Tool</span> prompts that do a job in an afternoon</p>
+<div class="idx"><div class="col">
+<div class="it"><i>01</i>Item one</div><div class="it"><i>02</i>Item two</div><div class="it"><i>03</i>Item three</div><div class="it"><i>04</i>Item four</div><div class="it"><i>05</i>Item five</div></div>
+<div class="col"><div class="it"><i>06</i>Item six</div><div class="it"><i>07</i>Item seven</div><div class="it"><i>08</i>Item eight</div><div class="it"><i>09</i>Item nine</div><div class="it"><i>10</i>Item ten</div></div></div>
+<div class="by">Author Name</div><div class="sw">Swipe &rarr;</div>
+</div></body></html>

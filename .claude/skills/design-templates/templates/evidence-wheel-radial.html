@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<!--
+  Template: evidence-wheel-radial
+  Style: white page; a large ring divided into segments coloured by evidence tier (green = high, orange = intermediate, grey = work in progress) around a white centre disc with a title, subtitle and four check-ticked principles; a legend row with three dots across the top; segment labels sit outside the ring. The SVG is drawn by a small script from a data array.
+  Inspired by: a clinical "evidence level by indication" wheel graphic. Original CSS and geometry; no source icons, medical illustrations, wording or brand reused.
+  Canvas: 1080 x 1350. Up to 14 segments (equal angles). Labels are placed automatically on a circle of radius R_LABEL.
+  Swap points:
+    SEGMENTS array (script)         label + tier ("high" | "mid" | "wip") per segment, in clockwise order from 12 o'clock
+    :root tokens                    tier colours
+    .legend                         three legend entries (colour dot, title, short meaning)
+    .centre h2 / p / ul             centre title, subtitle and principles
+    .src                            source line - REQUIRED when real clinical content is shown; this template carries placeholder labels only
+  Note: a clinical or medical-device claim needs a cited source and review before use.
+-->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Evidence Wheel Radial</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --high: #8DBF83; --high-bg: #E6F1E2; --high-ink: #25652B;
+    --mid: #F2A56B;  --mid-bg: #FCE9DB;  --mid-ink: #C2501F;
+    --wip: #B5B8BE;  --wip-bg: #E9EAEC;  --wip-ink: #5B606A;
+    --navy: #14224F; --ink: #1A2233; --muted: #596277;
+    --font: "Inter", Aptos, "Segoe UI", system-ui, sans-serif;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: #333; display: flex; justify-content: center; padding: 32px 0; overflow-x: auto; font-family: var(--font); }
+  .slide { position: relative; width: 1080px; height: 1350px; flex: none; background: #fff; color: var(--ink); overflow: hidden; }
+  .legend { position: absolute; left: 40px; right: 40px; top: 36px; display: flex; justify-content: space-between; gap: 16px; }
+  .lg { display: flex; align-items: flex-start; gap: 10px; font: 600 20px/1.2 var(--font); }
+  .lg i { width: 18px; height: 18px; border-radius: 50%; margin-top: 3px; flex: none; }
+  .lg small { display: block; font: 500 17px/1.2 var(--font); color: var(--muted); }
+  .lg.high { color: var(--high-ink); } .lg.high i { background: var(--high); }
+  .lg.mid { color: var(--mid-ink); } .lg.mid i { background: var(--mid); }
+  .lg.wip { color: var(--wip-ink); } .lg.wip i { background: var(--wip); }
+  svg { position: absolute; left: 0; top: 70px; }
+  .centre { position: absolute; left: 50%; top: 70px; width: 1080px; height: 1080px; transform: translateX(-50%); pointer-events: none; }
+  .centre .in { position: absolute; left: 50%; top: 50%; width: 400px; transform: translate(-50%,-50%); text-align: center; }
+  .centre h2 { font: 800 42px/1.05 var(--font); color: var(--navy); letter-spacing: -.02em; text-transform: uppercase; }
+  .centre p.sub { margin-top: 8px; font: 700 22px/1.2 var(--font); color: var(--high-ink); text-transform: uppercase; }
+  .centre ul { margin-top: 16px; list-style: none; text-align: left; display: inline-block; font: 500 20px/1.3 var(--font); }
+  .centre li { padding-left: 30px; position: relative; margin-bottom: 8px; }
+  .centre li::before { content: "✓"; position: absolute; left: 0; top: 0; width: 22px; height: 22px; border: 2px solid var(--high-ink); color: var(--high-ink); border-radius: 50%; display: grid; place-items: center; font-size: 13px; font-weight: 800; }
+  .src { position: absolute; left: 40px; right: 40px; bottom: 28px; font: 500 17px/1.3 var(--font); color: var(--muted); }
+  .lbl { font: 700 19px/1.15 var(--font); text-anchor: middle; }
+</style>
+</head>
+<body>
+<div class="slide">
+  <div class="legend">
+    <div class="lg high"><i></i><span>HIGH LEVEL OF EVIDENCE<small>Meaning of the green tier</small></span></div>
+    <div class="lg mid"><i></i><span>INTERMEDIATE LEVEL OF EVIDENCE<small>Meaning of the orange tier</small></span></div>
+    <div class="lg wip"><i></i><span>WORK IN PROGRESS<small>Meaning of the grey tier</small></span></div>
+  </div>
+  <svg id="wheel" width="1080" height="1080" viewBox="0 0 1080 1080" role="img" aria-label="Evidence wheel"></svg>
+  <div class="centre"><div class="in">
+    <h2>Centre title</h2>
+    <p class="sub">Centre subtitle</p>
+    <ul><li>Principle one</li><li>Principle two</li><li>Principle three</li><li>Principle four</li></ul>
+  </div></div>
+  <div class="src">Source: [cite the study, guideline or company document the tiers come from] · placeholder labels only</div>
+</div>
+<script>
+  // Swap point: clockwise from 12 o'clock. tier: "high" | "mid" | "wip"
+  var SEGMENTS = [
+    {t:"Setting 1", tier:"high"}, {t:"Setting 2", tier:"high"}, {t:"Setting 3", tier:"high"},
+    {t:"Setting 4", tier:"mid"},  {t:"Setting 5", tier:"mid"},  {t:"Setting 6", tier:"mid"},
+    {t:"Setting 7", tier:"mid"},  {t:"Setting 8", tier:"mid"},  {t:"Setting 9", tier:"mid"},
+    {t:"Setting 10", tier:"mid"}, {t:"Setting 11", tier:"wip"}, {t:"Setting 12", tier:"wip"}
+  ];
+  var NS = "http://www.w3.org/2000/svg", C = 540, R_OUT = 330, R_IN = 215, R_LABEL = 392, GAP = 1.2;
+  var COL = {high:["#8DBF83","#E6F1E2"], mid:["#F2A56B","#FCE9DB"], wip:["#B5B8BE","#E9EAEC"]};
+  var svg = document.getElementById("wheel"), n = SEGMENTS.length, step = 360 / n;
+  function pt(r, deg){ var a = (deg - 90) * Math.PI / 180; return [C + r*Math.cos(a), C + r*Math.sin(a)]; }
+  function el(name, attrs){ var e = document.createElementNS(NS, name); for (var k in attrs) e.setAttribute(k, attrs[k]); return e; }
+  SEGMENTS.forEach(function(s, i){
+    var a0 = i*step + GAP/2, a1 = (i+1)*step - GAP/2;
+    var p0 = pt(R_OUT, a0), p1 = pt(R_OUT, a1), p2 = pt(R_IN, a1), p3 = pt(R_IN, a0);
+    var d = "M"+p0+" A"+R_OUT+" "+R_OUT+" 0 0 1 "+p1+" L"+p2+" A"+R_IN+" "+R_IN+" 0 0 0 "+p3+" Z";
+    svg.appendChild(el("path", {d:d, fill:COL[s.tier][1], stroke:COL[s.tier][0], "stroke-width":3}));
+    var m = (a0 + a1) / 2, dot = pt(R_OUT + 4, m);
+    svg.appendChild(el("circle", {cx:dot[0], cy:dot[1], r:9, fill:COL[s.tier][0]}));
+    var lp = pt(R_LABEL, m), tx = el("text", {x:lp[0], y:lp[1], "class":"lbl", fill:"#1A2233"});
+    var words = s.t.split(" "), lines = [], cur = "";
+    words.forEach(function(w){ if ((cur + " " + w).trim().length > 14) { lines.push(cur); cur = w; } else { cur = (cur + " " + w).trim(); } });
+    lines.push(cur);
+    lines.forEach(function(L, j){ var ts = el("tspan", {x:lp[0], dy: j === 0 ? (-(lines.length-1)*0.55 + 0.35) + "em" : "1.1em"}); ts.textContent = L; tx.appendChild(ts); });
+    svg.appendChild(tx);
+  });
+</script>
+</body>
+</html>

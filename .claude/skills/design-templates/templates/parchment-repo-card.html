@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<!--
+  Template: parchment-repo-card
+  Style: warm parchment page with a stacked two-line wordmark and heavy rule top-left, a very large repo slug in a rounded geometric sans, a white README-screenshot panel, a one-sentence description under it, and a handle bottom-right. Theme: parchment-tusk
+  Inspired by: a "5 GitHub projects" series (@sitetusk). Original CSS; no source wordmark, mascot, texture image or wording reused.
+  Canvas: 1080 x 1350.
+  Swap points: .mark (wordmark lines), .slug, .shot (replace with a README screenshot you took), .desc, .handle
+-->
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Parchment Repo Card</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#E2D8C5;--bg2:#D6CAB1;--ink:#1D1B17;--teal:#134B4B;--panel:#FFFFFF;--muted:#4B463B;--font:"Jost","Josefin Sans",Aptos,"Segoe UI",system-ui,sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#333;display:flex;justify-content:center;padding:32px 0;overflow-x:auto;font-family:var(--font)}
+.slide{position:relative;width:1080px;height:1350px;flex:none;background:radial-gradient(circle at 30% 20%,var(--bg),var(--bg2));color:var(--ink);padding:70px 80px;overflow:hidden}
+.mark{font:600 36px/.95 var(--font);letter-spacing:.06em;color:var(--teal);text-transform:uppercase}
+.rule{margin-top:20px;height:5px;background:var(--ink)}
+.slug{margin-top:90px;text-align:center;font:500 84px/1.05 var(--font);letter-spacing:-.02em}
+.shot{margin-top:70px;height:560px;background:var(--panel);border-radius:6px;display:grid;place-items:center;font:500 30px/1 var(--font);color:#777}
+.desc{margin-top:60px;font:400 42px/1.4 var(--font);color:var(--muted)}
+.handle{position:absolute;right:80px;bottom:60px;font:500 40px/1 var(--font)}
+</style></head><body>
+<div class="slide">
+  <div class="mark">Your<br>Wordmark</div><div class="rule"></div>
+  <div class="slug">owner/repo-name</div>
+  <div class="shot">README screenshot (take your own)</div>
+  <p class="desc">A free, open-source [what it is] that [what it does]. Licence and stars verified [date].</p>
+  <div class="handle">@yourhandle</div>
+</div></body></html>

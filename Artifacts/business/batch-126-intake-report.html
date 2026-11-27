@@ -1,0 +1,112 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Batch 126 Intake Report</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<style>
+  /* Layout: single-column formal report, 880px measure; tables scroll inside their own wrappers.
+     Palette: ink-blue neutrals, one deep teal accent, semantic green/amber/red for status only.
+     Type: Aptos (the owner's house font) with system fallbacks; title 32pt, headings 14pt, body 11pt. */
+  :root {
+    --bg: #f6f7f9; --surface: #ffffff; --fg: #1b2330; --muted: #5a6577; --line: #d9dee6;
+    --accent: #0f5d6b; --accent-soft: #e2f0f2;
+    --ok: #17703a; --ok-bg: #e3f3e8; --warn: #8a5a00; --warn-bg: #fbefd3; --bad: #a11d2a; --bad-bg: #fbe3e5;
+    --code-bg: #eef1f5;
+    --font: Aptos, "Segoe UI Variable Text", "Segoe UI", system-ui, -apple-system, Roboto, sans-serif;
+    --mono: ui-monospace, "SF Mono", Consolas, monospace;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #11161e; --surface: #181f2a; --fg: #e6eaf0; --muted: #9aa5b6; --line: #2c3646;
+      --accent: #6cc3d1; --accent-soft: #17323a;
+      --ok: #6fd18f; --ok-bg: #173824; --warn: #f0c261; --warn-bg: #3a2e12; --bad: #ff8d98; --bad-bg: #3d1a1f;
+      --code-bg: #0e131a; color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #11161e; --surface: #181f2a; --fg: #e6eaf0; --muted: #9aa5b6; --line: #2c3646;
+    --accent: #6cc3d1; --accent-soft: #17323a;
+    --ok: #6fd18f; --ok-bg: #173824; --warn: #f0c261; --warn-bg: #3a2e12; --bad: #ff8d98; --bad-bg: #3d1a1f;
+    --code-bg: #0e131a; color-scheme: dark;
+  }
+  * { box-sizing: border-box; }
+  body { background: var(--bg); color: var(--fg); font-family: var(--font); font-size: 11pt; line-height: 1.55; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); padding-block: 28px 64px; }
+  main { max-width: 880px; margin-inline: auto; display: flex; flex-direction: column; gap: 28px; }
+  header { display: flex; flex-direction: column; gap: 8px; border-bottom: 2px solid var(--accent); padding-bottom: 18px; }
+  .eyebrow { font-size: 9pt; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
+  h1 { font-size: 32pt; line-height: 1.1; margin: 0; font-weight: 700; text-wrap: balance; }
+  h2 { font-size: 14pt; margin: 0 0 10px; font-weight: 700; color: var(--accent); text-wrap: balance; }
+  p { margin: 0 0 10px; max-width: 75ch; }
+  section { background: var(--surface); border: 1px solid var(--line); border-radius: 6px; padding: 20px 22px; min-width: 0; }
+  .lede { font-size: 11pt; color: var(--muted); max-width: 70ch; margin: 0; }
+  .truth { border-left: 4px solid var(--bad); background: var(--bad-bg); padding: 12px 16px; border-radius: 0 6px 6px 0; }
+  .truth p:last-child { margin-bottom: 0; }
+  .tw { overflow-x: auto; margin-block: 8px 4px; border: 1px solid var(--line); border-radius: 4px; }
+  table { border-collapse: collapse; width: 100%; min-width: 720px; font-size: 10pt; }
+  th, td { padding: 8px 10px; border-bottom: 1px solid var(--line); text-align: center; vertical-align: top; }
+  th { background: var(--accent-soft); color: var(--fg); font-weight: 700; font-size: 9.5pt; }
+  tr:last-child td { border-bottom: 0; }
+  td.l, th.l { text-align: center; } /* house rule: table content aligned top and centre */
+  .st { display: inline-block; padding: 1px 8px; border-radius: 10px; font-size: 9pt; font-weight: 700; white-space: nowrap; }
+  .st.ok { background: var(--ok-bg); color: var(--ok); } .st.warn { background: var(--warn-bg); color: var(--warn); } .st.bad { background: var(--bad-bg); color: var(--bad); }
+  .sw { display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 10px; margin-block: 8px; }
+  .sw div { border: 1px solid var(--line); border-radius: 4px; overflow: hidden; font-size: 9pt; text-align: center; }
+  .sw i { display: block; height: 44px; }
+  .sw span { display: block; padding: 4px 6px; font-family: var(--mono); }
+  .prompt { position: relative; margin-block: 10px; }
+  .prompt pre { margin: 0; white-space: pre-wrap; background: var(--code-bg); border: 1px solid var(--line); border-radius: 4px; padding: 12px 84px 12px 12px; font-family: var(--mono); font-size: 9.5pt; line-height: 1.5; }
+  .prompt b { display: block; font-family: var(--font); font-size: 10pt; margin-bottom: 4px; }
+  .prompt button { position: absolute; top: 30px; right: 8px; font: inherit; font-size: 9pt; padding: 4px 10px; border-radius: 4px; border: 1px solid var(--accent); background: var(--surface); color: var(--accent); cursor: pointer; }
+  .prompt button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  ul { margin: 0 0 10px; padding-left: 20px; } li { margin-bottom: 4px; max-width: 75ch; }
+  code { font-family: var(--mono); font-size: 9.5pt; background: var(--code-bg); padding: 1px 4px; border-radius: 3px; }
+  footer { color: var(--muted); font-size: 9.5pt; }
+</style>
+<style>
+ figure{margin:0;text-align:center} figure img{width:100%;border:1px solid var(--line);border-radius:4px;display:block} figcaption{font-size:8.5pt;color:var(--muted);margin-top:4px}
+ .thumbs{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px;margin-top:10px}
+ pre{white-space:pre-wrap;word-break:break-word;background:var(--code-bg);border:1px solid var(--line);border-radius:4px;padding:12px;font:10pt/1.5 var(--mono);margin:8px 0;overflow-x:auto}
+ details{border:1px solid var(--line);border-radius:4px;padding:8px 12px;margin-top:8px} summary{cursor:pointer;font-weight:700}
+ code{font-family:var(--mono);font-size:9.5pt;background:var(--code-bg);padding:0 4px;border-radius:3px}
+ ul{margin:0 0 10px;padding-left:20px;max-width:78ch} li{margin-bottom:4px}
+ td code{white-space:normal;word-break:break-word}
+</style>
+<style>main > section, main > header {min-width:0} p, li, code {overflow-wrap:anywhere}</style>
+<main>
+<header><div class="eyebrow">Batch 126 · 1 November 2026 · intake</div><h1>Batch 126 Intake Report</h1><p>Two inline infographics and one 60-second TikTok video processed with the seven-step intake. Result: three new skills, three commands, one design template, two themes, three workflows, thirteen prompts and a read-only install script. Nothing was installed.</p></header>
+<section><h2>1. Executive findings</h2><ul>
+<li><b>[Certain]</b> The Cowork cheat sheet's best claim is partly wrong in a way that will bite. It says /schedule "runs in the cloud, so the list is ready before your forecast call". Anthropic's help pages say new scheduled tasks do run in the cloud with no device online, but a task that needs files or apps on your computer runs on your computer and needs the desktop app open, and its own example prompt 4 reads a local <code>/calls</code> folder. The skill tells you to build the Monday sweep from connectors only.</li>
+<li><b>[Certain]</b> The video is a lead-magnet TikTok ("comment VIDEO and I'll send you"). I could read its on-screen captions and names but not its audio, since no speech-to-text was available. Everything in the video skill therefore comes from the captions plus the GitHub pages for each tool, checked on 1 November 2026.</li>
+<li><b>[Certain]</b> The riskiest tool is the one most easily missed: OneTake (<code>feitangyuan/onetake</code>, 3,444 stars, created 26 September 2026, one contributor). GitHub shows its licence as "Other" and a third-party listing says PolyForm Noncommercial. If you use it for client or company videos you may be in breach; read the LICENSE file first.</li>
+<li><b>[Certain]</b> Collage B-Roll (MIT) is not "Claude making video": it generates video with Google's Gemini Omni Flash and bills your Gemini API per clip. Claude Animation Base (MIT, 2,217 stars against 1.6k in the video) and Lemo-Opuscar (code MIT, demo films CC BY 4.0, three narration tracks excluded) are cheaper on cash and expensive on tokens; the author of Lemo-Opuscar says a film takes an agent 30 to 60 minutes.</li>
+<li><b>[Certain]</b> Lemo-Opuscar's style count is inconsistent between sources: 51 in the video, 59 in the README, and 66 and 98 on its site. I quote none as settled.</li>
+<li><b>[Likely]</b> The four-levels pyramid is textbook and fine as a map, but it pictures strategy as top-down and deliberate while its own quotation (Mintzberg: "strategy is a pattern in a stream of decisions") points at emergent strategy. I added a six-point cascade check and the limits of the picture.</li>
+<li><b>[Certain]</b> Duplicates: HyperFrames is already a skill in this library, so it is referenced, not rebuilt. The Cowork sheet comes from the same publisher as the Batch 120 sheet but covers different jobs, so it is a separate skill. No existing skill covered the four levels, the Cowork eight jobs, or these four video repos.</li>
+</ul></section>
+<section><h2>2. Source inventory and what was built</h2><div class="tw"><table><tr><th>Source</th><th>Content</th><th>Result</th></tr>
+<tr><td>4 Levels of Strategy (Igor Buinevici, WildCapital)</td><td>Corporate, business, functional, operational; Mintzberg quotation</td><td>Skill <code>strategy-four-levels</code>; <code>/strategy-levels</code>; template <code>pyramid-four-levels-callouts</code>; theme <code>levels-cyan-red-purple</code>; workflow 2; prompt 11</td></tr>
+<tr><td>Claude Cowork B2B sales cheat sheet (SalesDaily)</td><td>Eight jobs, eight example prompts, three rules</td><td>Skill <code>cowork-b2b-sales-8-jobs</code>; <code>/cowork-sales-week</code>; theme <code>cowork-cheatsheet-mint</code>; workflow 1; prompts 1 to 10</td></tr>
+<tr><td>TikTok by george.automates (60 s, 20 frames read)</td><td>Five tools to make videos with Claude</td><td>Skill <code>claude-video-tools-5</code>; <code>/claude-video-pick</code>; workflow 3; prompts 12 and 13; read-only script</td></tr></table></div></section>
+<section><h2>3. Where I disagree with the source material</h2><ul>
+<li>I disagree with "the list is ready before your forecast call" as a promise. The risk is a Monday that silently does not run, or runs late, because the task depended on a local folder. Use connectors and check the first three Mondays.</li>
+<li>I disagree with installing a video skill because it is trending. The risk is a licence you cannot use commercially, a paid API you did not notice, or hours of tokens. Read the licence, cost and requirements first.</li>
+<li>I disagree with treating the strategy pyramid as how strategy gets made. The risk is a plan the front line cannot see itself in. Ask what the front line already does that nobody decided.</li></ul></section>
+<section><h2>4. Not done, and why</h2><ul>
+<li>Nothing was cloned, installed or run. The script clones read-only after asking and does not run anything.</li>
+<li>No separate template for the eight-card Cowork sheet: <code>cowork-prompt-grid-10</code> and <code>prompt-cards-2col-10</code> cover that layout.</li>
+<li>The video's audio was not transcribed; claims in the narration that are not on screen are not in this library.</li>
+<li>Stars for HyperFrames, Collage B-Roll and Lemo-Opuscar were not read and none is quoted.</li>
+<li>The Cowork "Auto and Manual" mode names and the "Cowork uses more allowance than chat" claim were not found on the help pages read; they are marked unverified.</li></ul></section>
+<section><h2>5. Deliverables</h2><div class="tw"><table><tr><th>Type</th><th>Items</th></tr>
+<tr><td>Skills</td><td><code>strategy-four-levels</code>, <code>cowork-b2b-sales-8-jobs</code>, <code>claude-video-tools-5</code></td></tr>
+<tr><td>Commands</td><td><code>/strategy-levels</code>, <code>/cowork-sales-week</code>, <code>/claude-video-pick</code></td></tr>
+<tr><td>Template</td><td><code>pyramid-four-levels-callouts</code></td></tr>
+<tr><td>Themes</td><td><code>theme-levels-cyan-red-purple</code>, <code>theme-cowork-cheatsheet-mint</code></td></tr>
+<tr><td>Workflows</td><td><code>Artifacts/operations/workflows-batch-126.html</code></td></tr>
+<tr><td>Prompts</td><td><code>docs/batch-126-prompts.md</code> (eight verbatim, five original)</td></tr>
+<tr><td>Script</td><td><code>scripts/batch126-install.sh</code> (read-only clones, asks first, not run)</td></tr></table></div></section>
+<section><h2>6. Open decisions for you</h2><ul>
+<li>Will any of the videos be commercial? If so, OneTake is off the list until you have read its licence.</li>
+<li>Do you want the Cowork sales week set up for real accounts? Send your role, number of accounts, connectors and what must never be sent without you.</li>
+<li>Do you want the strategy levels run on your own company? Send the units, functions and the decisions on the table.</li>
+<li>Do you want the video audio transcribed? That needs a speech-to-text tool I do not have here; a pasted transcript would do.</li></ul></section>
+<footer>Prepared 1 November 2026. External checks: five GitHub repository pages, Anthropic's Cowork help pages on scheduled tasks and cloud sessions, and a third-party listing for the OneTake licence, all read on 31 October and 1 November 2026.</footer>
+</main>
+</body></html>

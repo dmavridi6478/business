@@ -524,3 +524,8 @@ For implementation, see the [tools registry](../../tools/REGISTRY.md).
 - **competitors**: For building comparison pages that get cited
 - **programmatic-seo**: For building SEO pages at scale
 - **copywriting**: For writing content that's both human-readable and AI-extractable
+
+
+## See also
+
+For a page-level checklist of 14 elements (answer block, question headings, schema, proof, comparison table, last-updated) with an audit procedure and cautions, use `ai-seo-landing-page-14` and `/ai-landing-audit`.

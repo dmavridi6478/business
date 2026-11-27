@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<!--
+  Template: prompt-grid-9-olive
+  Style: light grey paper page, a huge olive numeral beside a bold condensed headline, nine white cards in a 3 x 3 grid - each with an olive number badge, an uppercase title, a small icon square, a prompt in quotes whose [placeholders] are highlighted in olive, and an "Impact" line - and a newsletter footer bar. Theme: olive-paper
+  Inspired by: a "9 AI prompts for ..." carousel. Original CSS; no source icons, prompt wording, brand or illustration reused.
+  Canvas: 1080 x 1350. Nine cards; for six prompts use two rows and raise card height.
+  Swap points:
+    :root tokens                  colours and fonts
+    .big + h1                     numeral and headline
+    .card (.badge, h3, .ic, .prompt, .impact)   one per prompt; wrap placeholders in <mark>
+    .foot                         footer line and brand
+-->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Prompt Grid 9 Olive</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700&family=Oswald:wght@600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #EBEBE9; --card: #FFFFFF;
+    --olive: #A9AD1E; --olive-ink: #5C6000; --ink: #17181A; --muted: #5E6168; --line: #DADAD3;
+    --display: "Oswald", "Arial Narrow", Impact, sans-serif;
+    --font: "Inter", Aptos, "Segoe UI", system-ui, sans-serif;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: #333; display: flex; justify-content: center; padding: 32px 0; overflow-x: auto; font-family: var(--font); }
+  .slide { position: relative; width: 1080px; height: 1350px; flex: none; background: var(--bg); color: var(--ink); padding: 40px 36px 0; overflow: hidden; }
+  .head { display: flex; align-items: center; gap: 22px; height: 230px; }
+  .big { font: 700 230px/1 var(--display); color: var(--olive); }
+  h1 { font: 700 84px/.98 var(--display); text-transform: uppercase; letter-spacing: -.005em; }
+  .grid { margin-top: 26px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+  .card { background: var(--card); border: 1px solid var(--line); border-radius: 22px; padding: 16px 18px 14px; height: 298px; display: flex; flex-direction: column; box-shadow: 0 6px 16px rgba(0,0,0,.06); }
+  .top { display: flex; align-items: center; gap: 10px; }
+  .badge { width: 34px; height: 34px; border-radius: 50%; background: var(--olive); color: #fff; display: grid; place-items: center; font: 800 18px/1 var(--font); flex: none; }
+  h3 { font: 700 21px/1.1 var(--display); text-transform: uppercase; letter-spacing: .01em; }
+  .ic { margin: 10px 0 6px; width: 34px; height: 34px; border: 2px solid var(--ink); border-radius: 8px; flex: none; }
+  .prompt { font: 500 15.5px/1.35 var(--font); color: #2A2C30; flex: 1; overflow: hidden; }
+  mark { background: transparent; color: var(--olive-ink); font-weight: 700; }
+  .impact { margin-top: 8px; padding-top: 8px; border-top: 1px dashed var(--line); font: 500 14px/1.3 var(--font); color: var(--muted); }
+  .impact b { color: var(--olive-ink); }
+  .foot { position: absolute; left: 36px; right: 36px; bottom: 28px; background: #fff; border: 1px solid var(--line); border-radius: 20px; padding: 20px 28px; display: flex; justify-content: space-between; align-items: center; font: 600 22px/1.2 var(--font); }
+  .foot span:last-child { font: 700 26px/1 var(--display); color: var(--olive-ink); text-transform: uppercase; }
+</style>
+</head>
+<body>
+<div class="slide">
+  <div class="head"><div class="big">9</div><h1>AI Prompts<br>to do [the job]</h1></div>
+  <div class="grid">
+    <div class="card"><div class="top"><span class="badge">1</span><h3>Prompt title one</h3></div><div class="ic"></div><p class="prompt">“Here is my input: <mark>[paste]</mark>. Write three options that do X. No Y. Keep each under <mark>[N]</mark> words.”</p><p class="impact"><b>Impact:</b> One sentence on why this prompt matters.</p></div>
+    <div class="card"><div class="top"><span class="badge">2</span><h3>Prompt title two</h3></div><div class="ic"></div><p class="prompt">“Rewrite this at a simple reading level. Cut to under <mark>[N]</mark> words. Keep one clear call to action: <mark>[paste draft]</mark>”</p><p class="impact"><b>Impact:</b> One sentence on why this prompt matters.</p></div>
+    <div class="card"><div class="top"><span class="badge">3</span><h3>Prompt title three</h3></div><div class="ic"></div><p class="prompt">“Here is my text: <mark>[paste]</mark>. Give me ten variations using these angles: <mark>[angles]</mark>. Keep each short.”</p><p class="impact"><b>Impact:</b> One sentence on why this prompt matters.</p></div>
+    <div class="card"><div class="top"><span class="badge">4</span><h3>Prompt title four</h3></div><div class="ic"></div><p class="prompt">“I sell <mark>[product]</mark> to <mark>[role]</mark>. Features: <mark>[list]</mark>. Rewrite each as a benefit that starts with ‘You’.”</p><p class="impact"><b>Impact:</b> One sentence on why this prompt matters.</p></div>
+    <div class="card"><div class="top"><span class="badge">5</span><h3>Prompt title five</h3></div><div class="ic"></div><p class="prompt">“They said: ‘<mark>[exact objection]</mark>’. Write a reply that acknowledges it without agreeing and ends with a soft CTA.”</p><p class="impact"><b>Impact:</b> One sentence on why this prompt matters.</p></div>
+    <div class="card"><div class="top"><span class="badge">6</span><h3>Prompt title six</h3></div><div class="ic"></div><p class="prompt">“I have sent <mark>[number]</mark> messages over <mark>[timeframe]</mark> with no reply. Write a final, honest, zero-pressure note.”</p><p class="impact"><b>Impact:</b> One sentence on why this prompt matters.</p></div>
+    <div class="card"><div class="top"><span class="badge">7</span><h3>Prompt title seven</h3></div><div class="ic"></div><p class="prompt">“Here is a full case study: <mark>[paste]</mark>. Write a two-sentence version for <mark>[role]</mark> that leads with their metric.”</p><p class="impact"><b>Impact:</b> One sentence on why this prompt matters.</p></div>
+    <div class="card"><div class="top"><span class="badge">8</span><h3>Prompt title eight</h3></div><div class="ic"></div><p class="prompt">“Here is my message: <mark>[paste]</mark>. Flag risky phrases, rate the tone 1-10, then rewrite with your fixes.”</p><p class="impact"><b>Impact:</b> One sentence on why this prompt matters.</p></div>
+    <div class="card"><div class="top"><span class="badge">9</span><h3>Prompt title nine</h3></div><div class="ic"></div><p class="prompt">“I sell <mark>[product]</mark> to <mark>[ICP]</mark>. Pain: <mark>[pain]</mark>. Build a five-step sequence, each under <mark>[N]</mark> words.”</p><p class="impact"><b>Impact:</b> One sentence on why this prompt matters.</p></div>
+  </div>
+  <div class="foot"><span>Sign up for the newsletter at yoursite.example</span><span>Your Newsletter</span></div>
+</div>
+</body>
+</html>

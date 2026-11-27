@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<!--
+  Template: metric-pairs-spine
+  Style: white page, a large serif headline and italic grey subtitle, two coloured pill headers (blue left, plum right), a vertical grey spine with round lime arrow nodes joining six pairs of tinted rounded cards (left = what you report, right = what checks it), and a black footer bar with avatar, name and site. Theme: signal-lime-pairs
+  Inspired by: a "metrics can lie - report vs check" graphic. Original CSS; no source wording, avatar or brand reused.
+  Canvas: 1080 x 1350. Six rows; each row = numbered badge + left card + arrow node + right card.
+  Swap points:
+    :root tokens                  colours and fonts
+    h1, .sub                      headline and subtitle
+    .pill.l / .pill.r             column headers
+    .row (.n, .left, .right)      badge number (class n1..n6 sets colour), left title + line, right title + line
+    .foot                         footer bar: avatar initials, name line, site
+-->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Metric Pairs Spine</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #FFFFFF; --ink: #101216; --muted: #6A6F78;
+    --blue: #2B4BFF; --plum: #6B2A55;
+    --left: #EAF0FF; --left-line: #CFDAF7;
+    --right: #F6EBF3; --right-line: #E8CFE0;
+    --lime: #E0F45D; --spine: #D3D6E0;
+    --n1:#2B4BFF; --n2:#E0F45D; --n3:#6B2A55; --n4:#101216; --n5:#2B4BFF; --n6:#E0F45D;
+    --serif: "Playfair Display", Georgia, "Times New Roman", serif;
+    --font: "Inter", Aptos, "Segoe UI", system-ui, sans-serif;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: #333; display: flex; justify-content: center; padding: 32px 0; overflow-x: auto; font-family: var(--font); }
+  .slide { position: relative; width: 1080px; height: 1350px; flex: none; background: var(--bg); color: var(--ink); padding: 56px 60px 0; overflow: hidden; }
+  h1 { text-align: center; font: 800 62px/1.05 var(--serif); letter-spacing: -.02em; }
+  .sub { margin-top: 18px; text-align: center; font: italic 500 30px/1.3 var(--font); color: var(--muted); }
+  .heads { margin-top: 48px; display: grid; grid-template-columns: 1fr 1fr; gap: 100px; }
+  .pill { border-radius: 40px; padding: 18px 0; text-align: center; color: #fff; font: 700 24px/1 var(--font); letter-spacing: .04em; text-transform: uppercase; }
+  .pill.l { background: var(--blue); } .pill.r { background: var(--plum); }
+  .rows { position: relative; margin-top: 30px; display: flex; flex-direction: column; gap: 18px; }
+  .rows::before { content: ""; position: absolute; left: 50%; top: -6px; bottom: -6px; width: 4px; background: var(--spine); transform: translateX(-50%); }
+  .row { position: relative; display: grid; grid-template-columns: 1fr 70px 1fr; align-items: center; height: 112px; }
+  .card { height: 100%; border-radius: 20px; padding: 18px 24px 18px 84px; display: flex; flex-direction: column; justify-content: center; position: relative; }
+  .left { background: var(--left); border: 2px solid var(--left-line); }
+  .right { background: var(--right); border: 2px solid var(--right-line); padding-left: 24px; }
+  .card b { font: 800 27px/1.15 var(--font); letter-spacing: -.01em; }
+  .right b { color: var(--plum); }
+  .card p { margin-top: 6px; font: 500 21px/1.3 var(--font); color: #3B414B; }
+  .n { position: absolute; left: 20px; top: 50%; transform: translateY(-50%); width: 46px; height: 46px; border-radius: 50%; display: grid; place-items: center; font: 800 24px/1 var(--font); color: #fff; }
+  .n1{background:var(--n1)} .n2{background:var(--n2);color:#101216} .n3{background:var(--n3)} .n4{background:var(--n4)} .n5{background:var(--n5)} .n6{background:var(--n6);color:#101216}
+  .arrow { position: relative; z-index: 1; width: 66px; height: 66px; margin: auto; border-radius: 50%; background: var(--lime); border: 3px solid #fff; display: grid; place-items: center; font: 800 30px/1 var(--font); box-shadow: 0 0 0 2px var(--ink); }
+  .foot { position: absolute; left: 0; right: 0; bottom: 0; height: 100px; background: #0B0B0C; color: #fff; display: flex; align-items: center; justify-content: space-between; padding: 0 44px; font: 700 26px/1.2 var(--font); }
+  .foot .av { width: 64px; height: 64px; border-radius: 50%; background: #3B3F48; display: inline-grid; place-items: center; margin-right: 18px; font-size: 24px; }
+  .foot .site { font-weight: 500; font-size: 26px; }
+</style>
+</head>
+<body>
+<div class="slide">
+  <h1>Your short headline here</h1>
+  <p class="sub">6 metrics, each paired with the number that checks it</p>
+  <div class="heads"><div class="pill l">What you report</div><div class="pill r">What checks it</div></div>
+  <div class="rows">
+    <div class="row"><div class="card left"><span class="n n1">1</span><b>Metric one</b><p>How it misleads.</p></div><div class="arrow">→</div><div class="card right"><b>Check one</b><p>What the check shows.</p></div></div>
+    <div class="row"><div class="card left"><span class="n n2">2</span><b>Metric two</b><p>How it misleads.</p></div><div class="arrow">→</div><div class="card right"><b>Check two</b><p>What the check shows.</p></div></div>
+    <div class="row"><div class="card left"><span class="n n3">3</span><b>Metric three</b><p>How it misleads.</p></div><div class="arrow">→</div><div class="card right"><b>Check three</b><p>What the check shows.</p></div></div>
+    <div class="row"><div class="card left"><span class="n n4">4</span><b>Metric four</b><p>How it misleads.</p></div><div class="arrow">→</div><div class="card right"><b>Check four</b><p>What the check shows.</p></div></div>
+    <div class="row"><div class="card left"><span class="n n5">5</span><b>Metric five</b><p>How it misleads.</p></div><div class="arrow">→</div><div class="card right"><b>Check five</b><p>What the check shows.</p></div></div>
+    <div class="row"><div class="card left"><span class="n n6">6</span><b>Metric six</b><p>How it misleads.</p></div><div class="arrow">→</div><div class="card right"><b>Check six</b><p>What the check shows.</p></div></div>
+  </div>
+  <div class="foot"><span><span class="av">YN</span>Your Name • your role</span><span class="site">yoursite.example</span></div>
+</div>
+</body>
+</html>

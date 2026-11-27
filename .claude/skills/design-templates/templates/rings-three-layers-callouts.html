@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<!--
+  Template: rings-three-layers-callouts
+  Style: white page, huge black title, grey subtitle, three concentric thin rings (green outer, blue middle, magenta inner) with a label on each ring, three tinted callout cards (green, blue, pink) colour-matched to their ring, a curved caption along the lower ring, and a footer with two small icon-plus-text items. Theme: layers-green-blue-pink
+  Inspired by: "N layers of X" concentric diagrams. Original SVG and CSS, placeholder wording; no source logo, avatar or text reused.
+  Canvas: 1080 x 1350. Swap points: h1, .sub, three ring labels (.lbl), three .c cards (h3, three bullets), .cap, .foot
+-->
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rings Three Layers Callouts</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--g:#1FC16B;--b:#2F6FE0;--m:#E0287F;--font:"Inter",Aptos,"Segoe UI",system-ui,sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#222;display:flex;justify-content:center;padding:32px 0;overflow-x:auto;font-family:var(--font)}
+.slide{position:relative;width:1080px;height:1350px;flex:none;background:#fff;color:#111;overflow:hidden}
+h1{padding-top:54px;text-align:center;font:800 118px/1 var(--font);letter-spacing:-.04em}
+.sub{margin-top:18px;text-align:center;font:500 30px/1.3 var(--font);color:#333}
+svg{position:absolute;left:0;top:250px;width:1080px;height:960px}
+.lbl{position:absolute;white-space:nowrap;font:800 28px/1 var(--font);text-align:center;background:#fff;padding:6px 14px}
+.c{position:absolute;width:390px;border-radius:20px;padding:20px 24px}
+.c h3{font:700 32px/1.1 var(--font);margin-bottom:10px}.c li{margin:0 0 10px 22px;font:500 22px/1.35 var(--font)}
+.cg{right:50px;top:330px;background:#E8F9EF;border:3px solid var(--g)}.cb{left:50px;top:700px;background:#E4EEFD;border:3px solid var(--b)}.cm{right:50px;top:900px;background:#FCE9F1;border:3px solid var(--m)}
+.cap{position:absolute;left:150px;top:1030px;font:500 26px/1 var(--font);transform:rotate(18deg);transform-origin:left top;color:#222}
+.foot{position:absolute;left:0;right:0;bottom:0;height:90px;display:flex;align-items:center;justify-content:space-between;padding:0 40px;font:500 26px/1 var(--font)}
+.foot i{display:inline-block;width:34px;height:34px;border-radius:50%;background:#1C2A8C;vertical-align:-9px;margin-right:12px}
+</style></head><body><div class="slide">
+<h1>3 layers of X</h1>
+<p class="sub">One line on how the layers turn strategy into results.</p>
+<svg viewBox="0 0 1080 960" xmlns="http://www.w3.org/2000/svg">
+<circle cx="540" cy="470" r="440" fill="none" stroke="#1FC16B" stroke-width="3"/>
+<circle cx="540" cy="470" r="300" fill="none" stroke="#2F6FE0" stroke-width="3"/>
+<circle cx="540" cy="470" r="150" fill="none" stroke="#E0287F" stroke-width="3"/>
+</svg>
+<div class="lbl" style="left:440px;top:262px;color:#169A52">Outer Layer</div>
+<div class="lbl" style="left:437px;top:402px;color:#2F6FE0">Middle Layer</div>
+<div class="lbl" style="left:455px;top:552px;color:#E0287F">Inner Layer</div>
+<div class="c cg"><h3>Outer Layer</h3><ul><li>Bullet one in plain words</li><li>Bullet two in plain words</li><li>Bullet three in plain words</li></ul></div>
+<div class="c cb"><h3>Middle Layer</h3><ul><li>Bullet one in plain words</li><li>Bullet two in plain words</li><li>Bullet three in plain words</li></ul></div>
+<div class="c cm"><h3>Inner Layer</h3><ul><li>Bullet one in plain words</li><li>Bullet two in plain words</li><li>Bullet three in plain words</li></ul></div>
+<div class="cap">Layers of X in 2026</div>
+<div class="foot"><span><i></i>Save and repost</span><span><i></i>Follow Author Name</span></div>
+</div></body></html>

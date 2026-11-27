@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<!--
+  Template: verdict-table-5
+  Style: warm cream grid-paper page, small mono handle and page counter, a huge black two-line title, a white rounded table card of five rows (mono item name | verdict text, first row tinted), an italic closing line below. Theme: trending-cream-rust
+  Inspired by: "which ones I would use" verdict slides. Original CSS and placeholder wording; no source mascot, art or text reused.
+  Canvas: 1080 x 1350. Swap points: .meta, h1, five .row pairs (.k name, .v verdict), .close
+-->
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Verdict Table 5</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#FBF4E8;--ink:#0F0F10;--muted:#4A4640;--rust:#C2410C;--tint:#FBE9D6;--font:"Inter",Aptos,"Segoe UI",system-ui,sans-serif;--mono:"JetBrains Mono",ui-monospace,Consolas,monospace}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#2a2622;display:flex;justify-content:center;padding:32px 0;overflow-x:auto;font-family:var(--font)}
+.slide{position:relative;width:1080px;height:1350px;flex:none;color:var(--ink);overflow:hidden;padding:60px 72px 0;
+  background-color:var(--bg);background-image:linear-gradient(#0000000d 1px,transparent 1px),linear-gradient(90deg,#0000000d 1px,transparent 1px);background-size:36px 36px}
+.meta{display:flex;justify-content:space-between;font:500 22px/1 var(--mono);color:var(--muted)}
+.bar{width:70px;height:6px;background:var(--rust);margin:18px 0 44px}
+h1{font:800 150px/.98 var(--font);letter-spacing:-.04em}
+.card{margin-top:64px;background:#fff;border-radius:28px;box-shadow:0 4px 18px #3a2a1a22;padding:14px 18px}
+.row{display:grid;grid-template-columns:42% 58%;align-items:center;padding:38px 22px;border-top:2px solid #EFE7DA;gap:10px}
+.row:first-child{border-top:0;background:var(--tint);border-radius:18px}
+.k{font:700 36px/1.1 var(--mono)}.v{font:600 36px/1.2 var(--font)}.row:first-child .v{color:var(--rust)}
+.close{margin:70px 0 0;text-align:center;font:600 44px/1.25 var(--font)}
+</style></head><body><div class="slide">
+<div class="meta"><span>@handle</span><span>12 / 13</span></div><div class="bar"></div>
+<h1>Which ones<br>I would use.</h1>
+<div class="card">
+<div class="row"><span class="k">item-one</span><span class="v">trying it on my own setup</span></div>
+<div class="row"><span class="k">item-two</span><span class="v">trying it this week</span></div>
+<div class="row"><span class="k">item-three</span><span class="v">worth it if you need X</span></div>
+<div class="row"><span class="k">item-four</span><span class="v">worth it if you own Y</span></div>
+<div class="row"><span class="k">item-five</span><span class="v">worth exploring if you run Z</span></div>
+</div>
+<p class="close">I'm trying item-one and item-two first.</p>
+</div></body></html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<!--
+  Template: replaces-list-card
+  Style: white page, a bold group title with a SAVE & FOLLOW pill top right, and five numbered white rows with soft shadow: big grey number, icon square, small caps "REPLACES [paid tool]", tool name, one-line job, and a right-aligned FREE label with a star count. Theme: replaces-list-white
+  Inspired by: a "25 tools that feel illegal to be free" list carousel (@will.ai.m). Original CSS; no source icons or wording reused.
+  Canvas: 1080 x 1350. Five rows per slide.
+  Swap points: h1, .row (.n number, .ic icon placeholder, .rep replaced tool, .nm name, .job description, .free star count)
+  House rule: print the date the stars were read, or write "card figure, not verified".
+-->
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Replaces List Card</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#FFFFFF;--ink:#101114;--muted:#8B8E96;--card:#FFFFFF;--line:#EEEEF1;--accent:#D9481F;--font:"Inter",Aptos,"Segoe UI",system-ui,sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#333;display:flex;justify-content:center;padding:32px 0;overflow-x:auto;font-family:var(--font)}
+.slide{position:relative;width:1080px;height:1350px;flex:none;background:var(--bg);color:var(--ink);padding:110px 80px 0;overflow:hidden}
+.top{display:flex;justify-content:space-between;align-items:flex-start}
+h1{font:800 84px/1 var(--font);letter-spacing:-.04em}
+.pill{padding:16px 28px;border-radius:30px;box-shadow:0 6px 20px rgba(0,0,0,.12);font:700 22px/1 var(--font);letter-spacing:.08em}
+.rows{margin-top:60px;display:flex;flex-direction:column;gap:30px}
+.row{height:160px;border-radius:24px;border:1px solid var(--line);box-shadow:0 14px 36px rgba(0,0,0,.08);display:grid;grid-template-columns:88px 84px 1fr 150px;align-items:center;padding:0 32px 0 28px;background:var(--card)}
+.n{font:700 38px/1 var(--font);color:#C9CBD1}
+.ic{width:60px;height:60px;border-radius:16px;background:#EDEEF2}
+.rep{font:600 18px/1 var(--font);letter-spacing:.1em;color:var(--muted);text-transform:uppercase}
+.nm{margin-top:8px;font:800 40px/1.05 var(--font);letter-spacing:-.02em}
+.job{margin-top:8px;font:500 24px/1.25 var(--font);color:var(--muted)}
+.free{text-align:right;font:800 30px/1.1 var(--font)}.free small{display:block;margin-top:6px;font:500 20px/1 var(--font);color:var(--muted)}
+.foot{position:absolute;left:80px;bottom:60px;font:500 24px/1 var(--font);color:var(--muted)}
+</style></head><body>
+<div class="slide">
+  <div class="top"><h1>Group title</h1><span class="pill">SAVE &amp; FOLLOW</span></div>
+  <div class="rows">
+    <div class="row"><span class="n">01</span><span class="ic"></span><div><div class="rep">Replaces [paid tool]</div><div class="nm">Free tool</div><div class="job">One-line job, plain words.</div></div><div class="free">FREE<small>★ 00k</small></div></div>
+    <div class="row"><span class="n">02</span><span class="ic"></span><div><div class="rep">Replaces [paid tool]</div><div class="nm">Free tool</div><div class="job">One-line job, plain words.</div></div><div class="free">FREE<small>★ 00k</small></div></div>
+    <div class="row"><span class="n">03</span><span class="ic"></span><div><div class="rep">Replaces [paid tool]</div><div class="nm">Free tool</div><div class="job">One-line job, plain words.</div></div><div class="free">FREE<small>★ 00k</small></div></div>
+    <div class="row"><span class="n">04</span><span class="ic"></span><div><div class="rep">Replaces [paid tool]</div><div class="nm">Free tool</div><div class="job">One-line job, plain words.</div></div><div class="free">FREE<small>★ 00k</small></div></div>
+    <div class="row"><span class="n">05</span><span class="ic"></span><div><div class="rep">Replaces [paid tool]</div><div class="nm">Free tool</div><div class="job">One-line job, plain words.</div></div><div class="free">FREE<small>★ 00k</small></div></div>
+  </div>
+  <div class="foot">Stars: card figure, not verified · hosting and upkeep are not free</div>
+</div></body></html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<!--
+  Template: cowork-prompt-grid-10
+  Style: warm cream page, small logo chip, three-line title (two black lines, one orange line), 3-column grid of white rounded cards (black number circle, outline icon block, bold title, prompt text with orange bracket placeholders) and one wide tenth card, dark newsletter pill at the bottom. Theme: cowork-orange-cream
+  Inspired by: "N prompts that save X hours" sales and ops infographics. Original CSS and placeholder wording; no source people, logos or text reused.
+  Canvas: 1080 x 1350. Swap points: .chip, h1 and span, .c cards (number .n, icon .ic, h3, p; wide card .c.w), .pill
+-->
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cowork Prompt Grid 10</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;700;800&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#FBF3EA;--ink:#14110F;--muted:#4A433D;--orange:#E8590C;--card:#FFFFFF;--line:#F1DFCD;--font:"Inter",Aptos,"Segoe UI",system-ui,sans-serif;--serif:"Playfair Display",Georgia,serif}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#333;display:flex;justify-content:center;padding:32px 0;overflow-x:auto;font-family:var(--font)}
+.slide{position:relative;width:1080px;height:1350px;flex:none;background:var(--bg);color:var(--ink);overflow:hidden;padding:30px 36px 0}
+.chip{display:flex;align-items:center;gap:12px;font:600 28px/1 var(--serif)}.chip i{width:48px;height:48px;border-radius:10px;background:var(--orange);display:block}
+h1{margin-top:16px;padding-bottom:4px;font:800 56px/1.12 var(--font);letter-spacing:-.025em}h1 span{display:block;color:var(--orange);font-size:62px;line-height:1.2}
+.grid{position:absolute;left:36px;right:36px;top:322px;display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:repeat(3,262px) 130px;gap:12px}
+.c{position:relative;min-width:0;background:var(--card);border:2px solid var(--line);border-radius:16px;padding:14px 16px 10px;overflow:hidden}
+.n{position:absolute;left:14px;top:14px;width:34px;height:34px;border-radius:50%;background:var(--ink);color:#fff;font:800 17px/34px var(--font);text-align:center}
+.ic{position:absolute;right:14px;top:12px;width:40px;height:40px;border:2px solid var(--orange);border-radius:10px}
+.c h3{margin-top:50px;font:800 19px/1.2 var(--font);height:48px;overflow:hidden}
+.c p{margin-top:10px;font:500 14px/1.4 var(--font);color:var(--muted);height:112px;overflow:hidden}
+.c.w{grid-column:1 / -1}.c.w h3{margin:0 0 0 48px;height:auto;padding-top:6px}.c.w p{margin:8px 0 0 48px;height:auto;max-height:60px}.c.w .n{top:16px}.c.w .ic{display:none}
+.pill{position:absolute;left:36px;right:36px;bottom:20px;height:50px;border:3px solid var(--ink);border-radius:12px;background:#fff;display:flex;align-items:center;justify-content:center;font:700 19px/1 var(--font)}
+</style></head><body>
+<div class="slide">
+  <div class="chip"><i></i>Tool name</div>
+  <h1>10 Prompts That Save<br>Your Team<span>5+ Hours/Week</span></h1>
+  <div class="grid"><div class="c"><span class="n">1</span><span class="ic"></span><h3>Prompt title in two lines at most</h3><p>Placeholder prompt text with [BRACKETS] to fill in, written as one instruction the assistant can act on directly, in four to six short lines.</p></div><div class="c"><span class="n">2</span><span class="ic"></span><h3>Prompt title in two lines at most</h3><p>Placeholder prompt text with [BRACKETS] to fill in, written as one instruction the assistant can act on directly, in four to six short lines.</p></div><div class="c"><span class="n">3</span><span class="ic"></span><h3>Prompt title in two lines at most</h3><p>Placeholder prompt text with [BRACKETS] to fill in, written as one instruction the assistant can act on directly, in four to six short lines.</p></div><div class="c"><span class="n">4</span><span class="ic"></span><h3>Prompt title in two lines at most</h3><p>Placeholder prompt text with [BRACKETS] to fill in, written as one instruction the assistant can act on directly, in four to six short lines.</p></div><div class="c"><span class="n">5</span><span class="ic"></span><h3>Prompt title in two lines at most</h3><p>Placeholder prompt text with [BRACKETS] to fill in, written as one instruction the assistant can act on directly, in four to six short lines.</p></div><div class="c"><span class="n">6</span><span class="ic"></span><h3>Prompt title in two lines at most</h3><p>Placeholder prompt text with [BRACKETS] to fill in, written as one instruction the assistant can act on directly, in four to six short lines.</p></div><div class="c"><span class="n">7</span><span class="ic"></span><h3>Prompt title in two lines at most</h3><p>Placeholder prompt text with [BRACKETS] to fill in, written as one instruction the assistant can act on directly, in four to six short lines.</p></div><div class="c"><span class="n">8</span><span class="ic"></span><h3>Prompt title in two lines at most</h3><p>Placeholder prompt text with [BRACKETS] to fill in, written as one instruction the assistant can act on directly, in four to six short lines.</p></div><div class="c"><span class="n">9</span><span class="ic"></span><h3>Prompt title in two lines at most</h3><p>Placeholder prompt text with [BRACKETS] to fill in, written as one instruction the assistant can act on directly, in four to six short lines.</p></div><div class="c w"><span class="n">10</span><span class="ic"></span><h3>Prompt title in two lines at most</h3><p>Placeholder prompt text with [BRACKETS] to fill in, written as one instruction the assistant can act on directly, in four to six short lines.</p></div></div>
+  <div class="pill">Sign up for the newsletter at yoursite.example</div>
+</div></body></html>

@@ -178,3 +178,6 @@ Summaries must be specific — "Mamba achieves linear-time sequence modeling via
 - After editing `.md` files directly, run `/usr/local/bin/hyperresearch sync` to update the index
 - Run `/usr/local/bin/hyperresearch --help` for the full command list
 <!-- hyperresearch:end -->
+
+## Intake rule: skip already-covered input
+When a new intake batch (images, zip, video) is already covered by an earlier batch, ignore it: build nothing, do not commit, and say in one line which earlier batch covers it. A re-sent image is an accident, not a request. Only genuinely new content gets the seven-step intake. (User instruction, 2 November 2026.)

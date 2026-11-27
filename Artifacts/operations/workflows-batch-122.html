@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Workflows Batch 122</title>
+<style>
+  /* Layout: single column, six workflow panels. Each panel = steps in a row (wraps on narrow screens), gates marked, scorecard below.
+     Type: Aptos (house font) with system fallbacks; title 32pt, headings 14pt, body 11pt; table content aligned top and centre. */
+  :root {
+    --bg:#f6f7f9; --surface:#fff; --fg:#1b2330; --muted:#5a6577; --line:#d9dee6;
+    --accent:#0f5d6b; --accent-soft:#e2f0f2; --gate:#8a5a00; --gate-bg:#fbefd3; --human:#a11d2a; --human-bg:#fbe3e5; --ok:#17703a; --ok-bg:#e3f3e8;
+    --font: Aptos, "Segoe UI Variable Text", "Segoe UI", system-ui, -apple-system, Roboto, sans-serif;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) { --bg:#11161e; --surface:#181f2a; --fg:#e6eaf0; --muted:#9aa5b6; --line:#2c3646; --accent:#6cc3d1; --accent-soft:#17323a; --gate:#f0c261; --gate-bg:#3a2e12; --human:#ff8d98; --human-bg:#3d1a1f; --ok:#6fd18f; --ok-bg:#173824; color-scheme:dark; }
+  }
+  :root[data-theme="dark"] { --bg:#11161e; --surface:#181f2a; --fg:#e6eaf0; --muted:#9aa5b6; --line:#2c3646; --accent:#6cc3d1; --accent-soft:#17323a; --gate:#f0c261; --gate-bg:#3a2e12; --human:#ff8d98; --human-bg:#3d1a1f; --ok:#6fd18f; --ok-bg:#173824; color-scheme:dark; }
+  * { box-sizing:border-box; }
+  body { background:var(--bg); color:var(--fg); font-family:var(--font); font-size:11pt; line-height:1.5; margin:0; padding:28px 16px 64px; }
+  main { max-width:960px; margin-inline:auto; display:flex; flex-direction:column; gap:22px; }
+  header { border-bottom:2px solid var(--accent); padding-bottom:16px; }
+  .eyebrow { font-size:9pt; letter-spacing:.12em; text-transform:uppercase; color:var(--muted); }
+  h1 { font-size:32pt; line-height:1.1; margin:6px 0 8px; }
+  h2 { font-size:14pt; margin:0 0 4px; color:var(--accent); }
+  p { margin:0 0 8px; max-width:78ch; }
+  .lede { color:var(--muted); }
+  .legend { display:flex; flex-wrap:wrap; gap:8px; margin-top:10px; font-size:9.5pt; }
+  .tag { display:inline-block; padding:1px 9px; border-radius:10px; font-weight:700; font-size:9pt; }
+  .t-auto { background:var(--accent-soft); color:var(--accent); } .t-gate { background:var(--gate-bg); color:var(--gate); } .t-human { background:var(--human-bg); color:var(--human); } .t-ok { background:var(--ok-bg); color:var(--ok); }
+  section { background:var(--surface); border:1px solid var(--line); border-radius:6px; padding:18px 20px; min-width:0; }
+  .cmd { font-family:ui-monospace,"SF Mono",Consolas,monospace; font-size:10pt; background:var(--accent-soft); color:var(--accent); padding:1px 8px; border-radius:4px; }
+  .flow { list-style:none; margin:12px 0 10px; padding:0; display:flex; flex-wrap:wrap; gap:10px 0; counter-reset:s; }
+  .flow li { position:relative; flex:1 1 112px; min-width:100px; margin-right:24px; border:1px solid var(--line); border-radius:6px; padding:10px 10px 9px; background:var(--bg); counter-increment:s; }
+  .flow li::before { content:counter(s); position:absolute; top:-9px; left:8px; background:var(--accent); color:#fff; font-size:9pt; font-weight:700; width:20px; height:20px; border-radius:50%; display:grid; place-items:center; }
+  .flow li::after { content:"→"; position:absolute; right:-22px; top:50%; transform:translateY(-50%); color:var(--muted); font-weight:700; }
+  .flow li:last-child { margin-right:0; } .flow li:last-child::after { content:""; }
+  .flow li b { display:block; font-size:10.5pt; margin-bottom:2px; }
+  .flow li span { font-size:9.5pt; color:var(--muted); display:block; }
+  .flow li.gate { border-color:var(--gate); background:var(--gate-bg); } .flow li.human { border-color:var(--human); background:var(--human-bg); }
+  .loopback { font-size:9.5pt; color:var(--muted); border-left:3px solid var(--accent); padding-left:10px; margin:6px 0 10px; }
+  .tw { overflow-x:auto; border:1px solid var(--line); border-radius:4px; margin-top:8px; }
+  table { border-collapse:collapse; width:100%; min-width:520px; font-size:10pt; }
+  th,td { padding:7px 9px; border-bottom:1px solid var(--line); text-align:center; vertical-align:top; }
+  th { background:var(--accent-soft); font-size:9.5pt; } tr:last-child td { border-bottom:0; }
+  @media (max-width:640px) { .flow li { margin-right:0; flex-basis:100%; } .flow li::after { content:"↓"; right:auto; left:50%; top:auto; bottom:-17px; transform:translateX(-50%); } }
+</style></head><body><main><header><div class="eyebrow">Batch 122 · 28 October 2026 · operations</div><h1>Workflows pack</h1><p class="lede">Three workflows built from this batch and wired to skills and commands in this library. Gates mark checks to pass before moving on; red steps need a human.</p><div class="legend"><span class="tag t-auto">Automatable</span><span class="tag t-gate">Gate</span><span class="tag t-human">Human decision</span></div></header><section><h2>1. Monthly budget, actual and forecast pack</h2><p>Run with <span class="cmd">/variance-views</span>. Source: the budget-to-actual-to-forecast graphic.</p><ol class="flow"><li class=""><b>Build budget</b><span>One owner per line</span></li><li class="gate"><b>Sign off and record</b><span>Who, when, which version</span></li><li class="gate"><b>Save down and lock</b><span>Write-protect the copy</span></li><li class=""><b>Close the month</b><span>Load actuals from the ledger</span></li><li class=""><b>Roll the forecast</b><span>Actuals then forecast months</span></li><li class=""><b>Pick views</b><span>Per audience, from the eight</span></li><li class="gate"><b>Tie out</b><span>Ledger, locked budget, signs</span></li><li class="human"><b>Write commentary</b><span>Cause, repeat, action, owner</span></li></ol><p class="loopback">The graphic ends with a spreadsheet add-in advert. The method needs no tool; the locked budget and the sign convention matter more than the chart type.</p><div class="tw"><table><tr><th>Scorecard</th><th>Lines flagged</th><th>Commentary written</th><th>Tie-out passed</th><th>Actions with owners</th></tr><tr><td>Owner</td><td>You</td><td>You</td><td>You</td><td>You</td></tr></table></div></section><section><h2>2. Trial a trending repo safely</h2><p>Run with <span class="cmd">/trial-repo</span>. Source: the weekly trending-repos carousel.</p><ol class="flow"><li class=""><b>Read the page</b><span>Age, stars, licence today</span></li><li class="gate"><b>Read the install path</b><span>Every command and prompt file</span></li><li class="gate"><b>List permissions</b><span>Files, devices, credentials</span></li><li class=""><b>Back up</b><span>Before the first run</span></li><li class="human"><b>Sandbox trial</b><span>Spare project or device</span></li><li class=""><b>Test the rollback</b><span>Before relying on it</span></li><li class=""><b>Decide</b><span>Keep, drop or read only</span></li></ol><p class="loopback">Never repeat a star count or speed claim from a slide. A comment-for-a-DM offer is an engagement hook; the repos are public.</p><div class="tw"><table><tr><th>Scorecard</th><th>Repos looked at</th><th>Trials run</th><th>Rollbacks tested</th><th>Kept</th></tr><tr><td>Owner</td><td>You</td><td>You</td><td>You</td><td>You</td></tr></table></div></section><section><h2>3. Book to study skill (books you own)</h2><p>Run with <span class="cmd">prompt 6 in docs/batch-122-prompts.md</span>. Source: the book-to-skill repo card.</p><ol class="flow"><li class=""><b>Pick one book you own</b><span>For your own use</span></li><li class=""><b>Extract by chapter</b><span>Text only, one chapter at a time</span></li><li class=""><b>Distil</b><span>Rules, anti-patterns, glossary</span></li><li class="gate"><b>Check against the book</b><span>Sample three claims</span></li><li class=""><b>Assemble index</b><span>Which chapter for which question</span></li><li class="human"><b>Do not share</b><span>Copyright stays with the author</span></li></ol><p class="loopback">The 24 to 51 times token saving is the author's measurement on their books. Measure on yours before you rely on it.</p><div class="tw"><table><tr><th>Scorecard</th><th>Chapters done</th><th>Claims checked</th><th>Questions answered</th><th>Hours saved</th></tr><tr><td>Owner</td><td>You</td><td>You</td><td>You</td><td>You</td></tr></table></div></section></main></body></html>
