@@ -6243,3 +6243,7 @@ Input: 6 new card images (@dotdevs "5 GitHub projects for AI agents"), 1 duplica
 ## Batch 134 (23 November 2026)
 
 Input: 5 card images from a @githubnow carousel (magpie, instagram-agent-skill, cursor/plugins, intro, outro). Outro skipped as a repeat. Added: skill `trending-three-nov23`, Batch 134 table in `oss-alternatives`, `docs/batch-134-prompts.md`. Repo pages not read; no templates, themes or commands.
+
+## Batch 135 (27 November 2026)
+
+Input: 50 card images (one repeat outro skipped): @raphal3494 Rust stack part 2, @dotdevs LLM-app and tiny-tools decks, @ai_slacker six-part prompt anatomy, a "12 areas of GTM" graphic. Added: skills `gtm-12-areas`, `gpt5-prompt-anatomy`, `llm-app-tools-5`; section D in `startup-stack-2gb-ram`; commands `/gtm-12-audit`, `/gpt5-prompt`; Batch 135 table in `oss-alternatives`; `docs/batch-135-prompts.md`. Skipped as covered: Docmost, RustDesk, Vaultwarden, Documenso, Hoppscotch and the Part 1 tools. Card figures only; no repo pages read; no templates or themes.

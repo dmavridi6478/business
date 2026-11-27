@@ -329,3 +329,15 @@ Details and trial rules in `github-trending-three-nov2`. The nine-rules LinkedIn
 | `yetone/magpie` | One local gateway and key-swapping for several coding agents, quota failover | MIT (card) | Rewrites agent configs, holds keys; account-rotation terms |
 | `Jakeschincariol/instagram-agent-skill` | 13 Instagram skills, hook scoring, beat timing | not shown | Read local scripts first |
 | `cursor/plugins` | Cursor plugin spec: directory plus plugin.json | not shown | Spec, not an app |
+
+## Batch 135 (27 November 2026; card figures, pages not read)
+
+| Repo | Does | Replaces | Care |
+|---|---|---|---|
+| `gatus` | Config-file uptime checks and alerts | UptimeRobot | Monitor from another machine |
+| `litestream` | Stream SQLite changes to S3 | Manual backups | Test restores |
+| `beszel` | Light server and Docker monitoring | Datadog | Fewer features than Netdata |
+| `formbricks` | Surveys and forms | Typeform | Respondent data |
+| `twenty` | Self-hosted CRM | Salesforce | Customer data |
+| `readme.so`, `shields.io`, `omatsuri`, `tldraw` | Tiny web tools | Various | Do not paste secrets |
+| `promptfoo`, `langfuse`, `litellm`, `vllm`, `llama.cpp` | LLM app stack | Hosted LLM tooling | See `llm-app-tools-5` |

@@ -57,4 +57,27 @@ All five already have guidance in this library; nothing new to add except that t
 3. Meilisearch, Valkey, Listmonk only when the feature is needed.
 4. n8n and OpenProfit last; both touch third-party accounts.
 
+## D. Part 2 from @raphal3494: "The Rust stack that runs on 657 MB of RAM" (Batch 135)
+Same series, a Rust-based variant: app, search, backups, analytics, error tracking and monitoring on one server. Tools shown beyond Part 1 (card text, figures not verified):
+
+| Tool | Card says it replaces | Job | Catch |
+|---|---|---|---|
+| Axum | Express | Rust web framework from the Tokio team; "your whole backend, sign-in included, ran on 6 MB" | Rust skills needed; the 6 MB is one author's test |
+| SQLx | Supabase | Checks SQL at compile time; talks to SQLite | It is a library, not a hosted backend |
+| axum-login | Clerk | Sign-up, log-in and sessions for an Axum app, users in your SQLite file | Auth is security-critical: you own patches and reviews |
+| Litestream | Backups | Streams every SQLite change to cheap S3 storage; restore to the last transaction | Test restores; S3 credentials need least privilege |
+| Beszel | Datadog | CPU, memory, disk per server and Docker container with alerts; about 56 MB, "a third of Netdata" | Lighter than Netdata, fewer features |
+| Gatus | UptimeRobot | Checks sites around the clock; alerts on Slack, Discord, email; set up in one YAML file | Monitor from a different machine |
+| Docmost | Notion | Wiki edited in real time; imports Notion and Confluence | Check licence edition (open core) |
+| RustDesk | TeamViewer | Open-source remote desktop on your own server | Remote access to machines: lock down who can connect |
+| Cal.com | Calendly | Scheduling; free plan unlimited event types; Stripe or PayPal | Self-hosting is yours to secure; hosted free plan is a vendor |
+| Documenso | DocuSign | E-signatures; 5 free documents a month or self-host | Legal validity of e-signatures varies by country and document type |
+| Formbricks | Typeform | Surveys and forms; free plan 250 responses a month | You store respondents' data |
+| Twenty | Salesforce | CRM you own; self-host free or pay $9 a user | Customer data: backups and access control |
+| Vaultwarden | 1Password | Bitwarden-compatible password server | Unofficial; a password vault is your highest-value target: back up and update promptly |
+| LobbyStack | Smith.ai | AI receptionist: answers calls 24/7, books appointments | Not open source on its card; call recording and AI disclosure rules apply |
+
+Total claimed: 657 MB for the whole stack. Same cautions as Section A: one test, no workload, one server as a single point of failure.
+
+
 Run with `/stack-pick <product, traffic, budget>`. Related: `self-hosted-docker-stack`, `oss-alternatives`, `swap-5-dotdevs-subscriptions`, `lean-software-stack`, `trial-repo`, `n8n-self-hosting`, `local-first-app-stack`.
